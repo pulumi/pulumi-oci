@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -49,12 +48,6 @@ func (i AnalyticsInstanceCapacityArgs) ToAnalyticsInstanceCapacityOutput() Analy
 
 func (i AnalyticsInstanceCapacityArgs) ToAnalyticsInstanceCapacityOutputWithContext(ctx context.Context) AnalyticsInstanceCapacityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceCapacityOutput)
-}
-
-func (i AnalyticsInstanceCapacityArgs) ToOutput(ctx context.Context) pulumix.Output[AnalyticsInstanceCapacity] {
-	return pulumix.Output[AnalyticsInstanceCapacity]{
-		OutputState: i.ToAnalyticsInstanceCapacityOutputWithContext(ctx).OutputState,
-	}
 }
 
 func (i AnalyticsInstanceCapacityArgs) ToAnalyticsInstanceCapacityPtrOutput() AnalyticsInstanceCapacityPtrOutput {
@@ -98,12 +91,6 @@ func (i *analyticsInstanceCapacityPtrType) ToAnalyticsInstanceCapacityPtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceCapacityPtrOutput)
 }
 
-func (i *analyticsInstanceCapacityPtrType) ToOutput(ctx context.Context) pulumix.Output[*AnalyticsInstanceCapacity] {
-	return pulumix.Output[*AnalyticsInstanceCapacity]{
-		OutputState: i.ToAnalyticsInstanceCapacityPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnalyticsInstanceCapacityOutput struct{ *pulumi.OutputState }
 
 func (AnalyticsInstanceCapacityOutput) ElementType() reflect.Type {
@@ -128,12 +115,6 @@ func (o AnalyticsInstanceCapacityOutput) ToAnalyticsInstanceCapacityPtrOutputWit
 	}).(AnalyticsInstanceCapacityPtrOutput)
 }
 
-func (o AnalyticsInstanceCapacityOutput) ToOutput(ctx context.Context) pulumix.Output[AnalyticsInstanceCapacity] {
-	return pulumix.Output[AnalyticsInstanceCapacity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The capacity model to use.
 func (o AnalyticsInstanceCapacityOutput) CapacityType() pulumi.StringOutput {
 	return o.ApplyT(func(v AnalyticsInstanceCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
@@ -156,12 +137,6 @@ func (o AnalyticsInstanceCapacityPtrOutput) ToAnalyticsInstanceCapacityPtrOutput
 
 func (o AnalyticsInstanceCapacityPtrOutput) ToAnalyticsInstanceCapacityPtrOutputWithContext(ctx context.Context) AnalyticsInstanceCapacityPtrOutput {
 	return o
-}
-
-func (o AnalyticsInstanceCapacityPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AnalyticsInstanceCapacity] {
-	return pulumix.Output[*AnalyticsInstanceCapacity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnalyticsInstanceCapacityPtrOutput) Elem() AnalyticsInstanceCapacityOutput {
@@ -251,12 +226,6 @@ func (i AnalyticsInstanceNetworkEndpointDetailsArgs) ToAnalyticsInstanceNetworkE
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceNetworkEndpointDetailsOutput)
 }
 
-func (i AnalyticsInstanceNetworkEndpointDetailsArgs) ToOutput(ctx context.Context) pulumix.Output[AnalyticsInstanceNetworkEndpointDetails] {
-	return pulumix.Output[AnalyticsInstanceNetworkEndpointDetails]{
-		OutputState: i.ToAnalyticsInstanceNetworkEndpointDetailsOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i AnalyticsInstanceNetworkEndpointDetailsArgs) ToAnalyticsInstanceNetworkEndpointDetailsPtrOutput() AnalyticsInstanceNetworkEndpointDetailsPtrOutput {
 	return i.ToAnalyticsInstanceNetworkEndpointDetailsPtrOutputWithContext(context.Background())
 }
@@ -298,12 +267,6 @@ func (i *analyticsInstanceNetworkEndpointDetailsPtrType) ToAnalyticsInstanceNetw
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceNetworkEndpointDetailsPtrOutput)
 }
 
-func (i *analyticsInstanceNetworkEndpointDetailsPtrType) ToOutput(ctx context.Context) pulumix.Output[*AnalyticsInstanceNetworkEndpointDetails] {
-	return pulumix.Output[*AnalyticsInstanceNetworkEndpointDetails]{
-		OutputState: i.ToAnalyticsInstanceNetworkEndpointDetailsPtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnalyticsInstanceNetworkEndpointDetailsOutput struct{ *pulumi.OutputState }
 
 func (AnalyticsInstanceNetworkEndpointDetailsOutput) ElementType() reflect.Type {
@@ -326,12 +289,6 @@ func (o AnalyticsInstanceNetworkEndpointDetailsOutput) ToAnalyticsInstanceNetwor
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v AnalyticsInstanceNetworkEndpointDetails) *AnalyticsInstanceNetworkEndpointDetails {
 		return &v
 	}).(AnalyticsInstanceNetworkEndpointDetailsPtrOutput)
-}
-
-func (o AnalyticsInstanceNetworkEndpointDetailsOutput) ToOutput(ctx context.Context) pulumix.Output[AnalyticsInstanceNetworkEndpointDetails] {
-	return pulumix.Output[AnalyticsInstanceNetworkEndpointDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The type of network endpoint.
@@ -383,12 +340,6 @@ func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) ToAnalyticsInstanceNet
 
 func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) ToAnalyticsInstanceNetworkEndpointDetailsPtrOutputWithContext(ctx context.Context) AnalyticsInstanceNetworkEndpointDetailsPtrOutput {
 	return o
-}
-
-func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) ToOutput(ctx context.Context) pulumix.Output[*AnalyticsInstanceNetworkEndpointDetails] {
-	return pulumix.Output[*AnalyticsInstanceNetworkEndpointDetails]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnalyticsInstanceNetworkEndpointDetailsPtrOutput) Elem() AnalyticsInstanceNetworkEndpointDetailsOutput {
@@ -508,12 +459,6 @@ func (i AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs) ToAnalyticsIn
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutput)
 }
 
-func (i AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs) ToOutput(ctx context.Context) pulumix.Output[AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn] {
-	return pulumix.Output[AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn]{
-		OutputState: i.ToAnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayInput is an input type that accepts AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArray and AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutput values.
 // You can construct a concrete instance of `AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayInput` via:
 //
@@ -539,12 +484,6 @@ func (i AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArray) ToAnalyticsI
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutput)
 }
 
-func (i AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArray) ToOutput(ctx context.Context) pulumix.Output[[]AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn] {
-	return pulumix.Output[[]AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn]{
-		OutputState: i.ToAnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutput struct{ *pulumi.OutputState }
 
 func (AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutput) ElementType() reflect.Type {
@@ -557,12 +496,6 @@ func (o AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutput) ToAnalytics
 
 func (o AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutput) ToAnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutputWithContext(ctx context.Context) AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutput {
 	return o
-}
-
-func (o AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutput) ToOutput(ctx context.Context) pulumix.Output[AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn] {
-	return pulumix.Output[AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 // The Virtual Cloud Network OCID.
@@ -587,12 +520,6 @@ func (o AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutput) ToAnal
 
 func (o AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutput) ToAnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutputWithContext(ctx context.Context) AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutput {
 	return o
-}
-
-func (o AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn] {
-	return pulumix.Output[[]AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArrayOutput) Index(i pulumi.IntInput) AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnOutput {
@@ -638,12 +565,6 @@ func (i AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs) ToAnalyti
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput)
 }
 
-func (i AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs) ToOutput(ctx context.Context) pulumix.Output[AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone] {
-	return pulumix.Output[AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone]{
-		OutputState: i.ToAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput is an input type that accepts AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray and AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput values.
 // You can construct a concrete instance of `AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput` via:
 //
@@ -669,12 +590,6 @@ func (i AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray) ToAnalyt
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput)
 }
 
-func (i AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray) ToOutput(ctx context.Context) pulumix.Output[[]AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone] {
-	return pulumix.Output[[]AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone]{
-		OutputState: i.ToAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput struct{ *pulumi.OutputState }
 
 func (AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) ElementType() reflect.Type {
@@ -687,12 +602,6 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) ToAnaly
 
 func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) ToAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutputWithContext(ctx context.Context) AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput {
 	return o
-}
-
-func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) ToOutput(ctx context.Context) pulumix.Output[AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone] {
-	return pulumix.Output[AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Description of private source scan host zone.
@@ -717,12 +626,6 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput) To
 
 func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput) ToAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutputWithContext(ctx context.Context) AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput {
 	return o
-}
-
-func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone] {
-	return pulumix.Output[[]AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput) Index(i pulumi.IntInput) AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput {
@@ -772,12 +675,6 @@ func (i AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs) ToAnalyt
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput)
 }
 
-func (i AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs) ToOutput(ctx context.Context) pulumix.Output[AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost] {
-	return pulumix.Output[AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost]{
-		OutputState: i.ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput is an input type that accepts AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray and AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput values.
 // You can construct a concrete instance of `AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput` via:
 //
@@ -803,12 +700,6 @@ func (i AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray) ToAnaly
 	return pulumi.ToOutputWithContext(ctx, i).(AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput)
 }
 
-func (i AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray) ToOutput(ctx context.Context) pulumix.Output[[]AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost] {
-	return pulumix.Output[[]AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost]{
-		OutputState: i.ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput struct{ *pulumi.OutputState }
 
 func (AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ElementType() reflect.Type {
@@ -821,12 +712,6 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ToAnal
 
 func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ToAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutputWithContext(ctx context.Context) AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
 	return o
-}
-
-func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ToOutput(ctx context.Context) pulumix.Output[AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost] {
-	return pulumix.Output[AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Description of private source scan host zone.
@@ -858,12 +743,6 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) T
 	return o
 }
 
-func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost] {
-	return pulumix.Output[[]AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) Index(i pulumi.IntInput) AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
 		return vs[0].([]AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost)[vs[1].(int)]
@@ -872,9 +751,9 @@ func (o AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) I
 
 type GetAnalyticsInstanceCapacity struct {
 	// The capacity model to use.
-	CapacityType string `pulumi:"capacityType"`
+	CapacityType *string `pulumi:"capacityType"`
 	// The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
-	CapacityValue int `pulumi:"capacityValue"`
+	CapacityValue *int `pulumi:"capacityValue"`
 }
 
 // GetAnalyticsInstanceCapacityInput is an input type that accepts GetAnalyticsInstanceCapacityArgs and GetAnalyticsInstanceCapacityOutput values.
@@ -890,9 +769,9 @@ type GetAnalyticsInstanceCapacityInput interface {
 
 type GetAnalyticsInstanceCapacityArgs struct {
 	// The capacity model to use.
-	CapacityType pulumi.StringInput `pulumi:"capacityType"`
+	CapacityType pulumi.StringPtrInput `pulumi:"capacityType"`
 	// The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
-	CapacityValue pulumi.IntInput `pulumi:"capacityValue"`
+	CapacityValue pulumi.IntPtrInput `pulumi:"capacityValue"`
 }
 
 func (GetAnalyticsInstanceCapacityArgs) ElementType() reflect.Type {
@@ -905,12 +784,6 @@ func (i GetAnalyticsInstanceCapacityArgs) ToGetAnalyticsInstanceCapacityOutput()
 
 func (i GetAnalyticsInstanceCapacityArgs) ToGetAnalyticsInstanceCapacityOutputWithContext(ctx context.Context) GetAnalyticsInstanceCapacityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstanceCapacityOutput)
-}
-
-func (i GetAnalyticsInstanceCapacityArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstanceCapacity] {
-	return pulumix.Output[GetAnalyticsInstanceCapacity]{
-		OutputState: i.ToGetAnalyticsInstanceCapacityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnalyticsInstanceCapacityArrayInput is an input type that accepts GetAnalyticsInstanceCapacityArray and GetAnalyticsInstanceCapacityArrayOutput values.
@@ -938,12 +811,6 @@ func (i GetAnalyticsInstanceCapacityArray) ToGetAnalyticsInstanceCapacityArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstanceCapacityArrayOutput)
 }
 
-func (i GetAnalyticsInstanceCapacityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstanceCapacity] {
-	return pulumix.Output[[]GetAnalyticsInstanceCapacity]{
-		OutputState: i.ToGetAnalyticsInstanceCapacityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnalyticsInstanceCapacityOutput struct{ *pulumi.OutputState }
 
 func (GetAnalyticsInstanceCapacityOutput) ElementType() reflect.Type {
@@ -958,20 +825,14 @@ func (o GetAnalyticsInstanceCapacityOutput) ToGetAnalyticsInstanceCapacityOutput
 	return o
 }
 
-func (o GetAnalyticsInstanceCapacityOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstanceCapacity] {
-	return pulumix.Output[GetAnalyticsInstanceCapacity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The capacity model to use.
-func (o GetAnalyticsInstanceCapacityOutput) CapacityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstanceCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
+func (o GetAnalyticsInstanceCapacityOutput) CapacityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceCapacity) *string { return v.CapacityType }).(pulumi.StringPtrOutput)
 }
 
 // The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
-func (o GetAnalyticsInstanceCapacityOutput) CapacityValue() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAnalyticsInstanceCapacity) int { return v.CapacityValue }).(pulumi.IntOutput)
+func (o GetAnalyticsInstanceCapacityOutput) CapacityValue() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceCapacity) *int { return v.CapacityValue }).(pulumi.IntPtrOutput)
 }
 
 type GetAnalyticsInstanceCapacityArrayOutput struct{ *pulumi.OutputState }
@@ -988,12 +849,6 @@ func (o GetAnalyticsInstanceCapacityArrayOutput) ToGetAnalyticsInstanceCapacityA
 	return o
 }
 
-func (o GetAnalyticsInstanceCapacityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstanceCapacity] {
-	return pulumix.Output[[]GetAnalyticsInstanceCapacity]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnalyticsInstanceCapacityArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstanceCapacityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstanceCapacity {
 		return vs[0].([]GetAnalyticsInstanceCapacity)[vs[1].(int)]
@@ -1002,13 +857,13 @@ func (o GetAnalyticsInstanceCapacityArrayOutput) Index(i pulumi.IntInput) GetAna
 
 type GetAnalyticsInstanceNetworkEndpointDetail struct {
 	// The type of network endpoint.
-	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	NetworkEndpointType *string `pulumi:"networkEndpointType"`
 	// Network Security Group OCIDs for an Analytics instance.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// OCID of the customer subnet connected to private access channel.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// OCID of the customer VCN peered with private access channel.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 	// Oracle Cloud Services that are allowed to access this Analytics instance.
@@ -1030,13 +885,13 @@ type GetAnalyticsInstanceNetworkEndpointDetailInput interface {
 
 type GetAnalyticsInstanceNetworkEndpointDetailArgs struct {
 	// The type of network endpoint.
-	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	NetworkEndpointType pulumi.StringPtrInput `pulumi:"networkEndpointType"`
 	// Network Security Group OCIDs for an Analytics instance.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
 	// OCID of the customer subnet connected to private access channel.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// OCID of the customer VCN peered with private access channel.
-	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
 	// Oracle Cloud Services that are allowed to access this Analytics instance.
@@ -1055,12 +910,6 @@ func (i GetAnalyticsInstanceNetworkEndpointDetailArgs) ToGetAnalyticsInstanceNet
 
 func (i GetAnalyticsInstanceNetworkEndpointDetailArgs) ToGetAnalyticsInstanceNetworkEndpointDetailOutputWithContext(ctx context.Context) GetAnalyticsInstanceNetworkEndpointDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstanceNetworkEndpointDetailOutput)
-}
-
-func (i GetAnalyticsInstanceNetworkEndpointDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstanceNetworkEndpointDetail] {
-	return pulumix.Output[GetAnalyticsInstanceNetworkEndpointDetail]{
-		OutputState: i.ToGetAnalyticsInstanceNetworkEndpointDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnalyticsInstanceNetworkEndpointDetailArrayInput is an input type that accepts GetAnalyticsInstanceNetworkEndpointDetailArray and GetAnalyticsInstanceNetworkEndpointDetailArrayOutput values.
@@ -1088,12 +937,6 @@ func (i GetAnalyticsInstanceNetworkEndpointDetailArray) ToGetAnalyticsInstanceNe
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstanceNetworkEndpointDetailArrayOutput)
 }
 
-func (i GetAnalyticsInstanceNetworkEndpointDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstanceNetworkEndpointDetail] {
-	return pulumix.Output[[]GetAnalyticsInstanceNetworkEndpointDetail]{
-		OutputState: i.ToGetAnalyticsInstanceNetworkEndpointDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnalyticsInstanceNetworkEndpointDetailOutput struct{ *pulumi.OutputState }
 
 func (GetAnalyticsInstanceNetworkEndpointDetailOutput) ElementType() reflect.Type {
@@ -1108,15 +951,9 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) ToGetAnalyticsInstanceN
 	return o
 }
 
-func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstanceNetworkEndpointDetail] {
-	return pulumix.Output[GetAnalyticsInstanceNetworkEndpointDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of network endpoint.
-func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
+func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) *string { return v.NetworkEndpointType }).(pulumi.StringPtrOutput)
 }
 
 // Network Security Group OCIDs for an Analytics instance.
@@ -1125,13 +962,13 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) NetworkSecurityGroupIds
 }
 
 // OCID of the customer subnet connected to private access channel.
-func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the customer VCN peered with private access channel.
-func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) string { return v.VcnId }).(pulumi.StringOutput)
+func (o GetAnalyticsInstanceNetworkEndpointDetailOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetail) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 // Source IP addresses or IP address ranges in ingress rules.
@@ -1165,12 +1002,6 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailArrayOutput) ToGetAnalyticsInst
 	return o
 }
 
-func (o GetAnalyticsInstanceNetworkEndpointDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstanceNetworkEndpointDetail] {
-	return pulumix.Output[[]GetAnalyticsInstanceNetworkEndpointDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnalyticsInstanceNetworkEndpointDetailArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstanceNetworkEndpointDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstanceNetworkEndpointDetail {
 		return vs[0].([]GetAnalyticsInstanceNetworkEndpointDetail)[vs[1].(int)]
@@ -1179,7 +1010,7 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailArrayOutput) Index(i pulumi.Int
 
 type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn struct {
 	// The Virtual Cloud Network OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 }
@@ -1197,7 +1028,7 @@ type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnInput interface {
 
 type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs struct {
 	// The Virtual Cloud Network OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
 }
@@ -1212,12 +1043,6 @@ func (i GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs) ToGetAnalyt
 
 func (i GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs) ToGetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutputWithContext(ctx context.Context) GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput)
-}
-
-func (i GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn] {
-	return pulumix.Output[GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn]{
-		OutputState: i.ToGetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput is an input type that accepts GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray and GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput values.
@@ -1245,12 +1070,6 @@ func (i GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray) ToGetAnaly
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput)
 }
 
-func (i GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn] {
-	return pulumix.Output[[]GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn]{
-		OutputState: i.ToGetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput struct{ *pulumi.OutputState }
 
 func (GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) ElementType() reflect.Type {
@@ -1265,15 +1084,9 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) ToGetAnal
 	return o
 }
 
-func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn] {
-	return pulumix.Output[GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Virtual Cloud Network OCID.
-func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Source IP addresses or IP address ranges in ingress rules.
@@ -1295,12 +1108,6 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput) ToGe
 	return o
 }
 
-func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn] {
-	return pulumix.Output[[]GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn {
 		return vs[0].([]GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn)[vs[1].(int)]
@@ -1309,9 +1116,9 @@ func (o GetAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput) Inde
 
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone struct {
 	// Description of private source scan host zone.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
-	DnsZone string `pulumi:"dnsZone"`
+	DnsZone *string `pulumi:"dnsZone"`
 }
 
 // GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput is an input type that accepts GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs and GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput values.
@@ -1327,9 +1134,9 @@ type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneInput interface
 
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs struct {
 	// Description of private source scan host zone.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
-	DnsZone pulumi.StringInput `pulumi:"dnsZone"`
+	DnsZone pulumi.StringPtrInput `pulumi:"dnsZone"`
 }
 
 func (GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs) ElementType() reflect.Type {
@@ -1342,12 +1149,6 @@ func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs) ToGetA
 
 func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs) ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutputWithContext(ctx context.Context) GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput)
-}
-
-func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone] {
-	return pulumix.Output[GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone]{
-		OutputState: i.ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayInput is an input type that accepts GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray and GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput values.
@@ -1375,12 +1176,6 @@ func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray) ToGet
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput)
 }
 
-func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone] {
-	return pulumix.Output[[]GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone]{
-		OutputState: i.ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput struct{ *pulumi.OutputState }
 
 func (GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) ElementType() reflect.Type {
@@ -1395,20 +1190,14 @@ func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) ToGe
 	return o
 }
 
-func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone] {
-	return pulumix.Output[GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Description of private source scan host zone.
-func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Private Source DNS Zone. Ex: example-vcn.oraclevcn.com, corp.example.com.
-func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) DnsZone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone) string { return v.DnsZone }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput) DnsZone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone) *string { return v.DnsZone }).(pulumi.StringPtrOutput)
 }
 
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput struct{ *pulumi.OutputState }
@@ -1425,12 +1214,6 @@ func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput)
 	return o
 }
 
-func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone] {
-	return pulumix.Output[[]GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone {
 		return vs[0].([]GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone)[vs[1].(int)]
@@ -1439,11 +1222,11 @@ func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArrayOutput)
 
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost struct {
 	// Description of private source scan host zone.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
-	ScanHostname string `pulumi:"scanHostname"`
+	ScanHostname *string `pulumi:"scanHostname"`
 	// Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
-	ScanPort int `pulumi:"scanPort"`
+	ScanPort *int `pulumi:"scanPort"`
 }
 
 // GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput is an input type that accepts GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs and GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput values.
@@ -1459,11 +1242,11 @@ type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostInput interfac
 
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs struct {
 	// Description of private source scan host zone.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
-	ScanHostname pulumi.StringInput `pulumi:"scanHostname"`
+	ScanHostname pulumi.StringPtrInput `pulumi:"scanHostname"`
 	// Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
-	ScanPort pulumi.IntInput `pulumi:"scanPort"`
+	ScanPort pulumi.IntPtrInput `pulumi:"scanPort"`
 }
 
 func (GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs) ElementType() reflect.Type {
@@ -1476,12 +1259,6 @@ func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs) ToGet
 
 func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs) ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutputWithContext(ctx context.Context) GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput)
-}
-
-func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost] {
-	return pulumix.Output[GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost]{
-		OutputState: i.ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayInput is an input type that accepts GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray and GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput values.
@@ -1509,12 +1286,6 @@ func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray) ToGe
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput)
 }
 
-func (i GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost] {
-	return pulumix.Output[[]GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost]{
-		OutputState: i.ToGetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput struct{ *pulumi.OutputState }
 
 func (GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ElementType() reflect.Type {
@@ -1529,25 +1300,19 @@ func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ToG
 	return o
 }
 
-func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost] {
-	return pulumix.Output[GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Description of private source scan host zone.
-func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Private Source Scan hostname. Ex: db01-scan.corp.example.com, prd-db01-scan.mycompany.com.
-func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ScanHostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) string { return v.ScanHostname }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ScanHostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) *string { return v.ScanHostname }).(pulumi.StringPtrOutput)
 }
 
 // Private Source Scan host port. This is the source port where SCAN protocol will get connected (e.g. 1521).
-func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ScanPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) int { return v.ScanPort }).(pulumi.IntOutput)
+func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput) ScanPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost) *int { return v.ScanPort }).(pulumi.IntPtrOutput)
 }
 
 type GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput struct{ *pulumi.OutputState }
@@ -1564,12 +1329,6 @@ func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput
 	return o
 }
 
-func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost] {
-	return pulumix.Output[[]GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost {
 		return vs[0].([]GetAnalyticsInstancePrivateAccessChannelPrivateSourceScanHost)[vs[1].(int)]
@@ -1580,36 +1339,36 @@ type GetAnalyticsInstancesAnalyticsInstance struct {
 	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 	Capacities []GetAnalyticsInstancesAnalyticsInstanceCapacity `pulumi:"capacities"`
 	// The OCID of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Description of the vanity url.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// Email address receiving notifications.
-	EmailNotification string `pulumi:"emailNotification"`
+	EmailNotification *string `pulumi:"emailNotification"`
 	// A filter to only return resources matching the feature set. Values are case-insensitive.
-	FeatureSet string `pulumi:"featureSet"`
+	FeatureSet *string `pulumi:"featureSet"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
-	Id              string `pulumi:"id"`
-	IdcsAccessToken string `pulumi:"idcsAccessToken"`
+	Id              *string `pulumi:"id"`
+	IdcsAccessToken *string `pulumi:"idcsAccessToken"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The license used for the service.
-	LicenseType string `pulumi:"licenseType"`
+	LicenseType *string `pulumi:"licenseType"`
 	// A filter to return only resources that match the given name exactly.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails []GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail `pulumi:"networkEndpointDetails"`
 	// URL of the Analytics service.
-	ServiceUrl string `pulumi:"serviceUrl"`
+	ServiceUrl *string `pulumi:"serviceUrl"`
 	// A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 // GetAnalyticsInstancesAnalyticsInstanceInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceArgs and GetAnalyticsInstancesAnalyticsInstanceOutput values.
@@ -1627,36 +1386,36 @@ type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
 	// Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 	Capacities GetAnalyticsInstancesAnalyticsInstanceCapacityArrayInput `pulumi:"capacities"`
 	// The OCID of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Description of the vanity url.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// Email address receiving notifications.
-	EmailNotification pulumi.StringInput `pulumi:"emailNotification"`
+	EmailNotification pulumi.StringPtrInput `pulumi:"emailNotification"`
 	// A filter to only return resources matching the feature set. Values are case-insensitive.
-	FeatureSet pulumi.StringInput `pulumi:"featureSet"`
+	FeatureSet pulumi.StringPtrInput `pulumi:"featureSet"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
-	Id              pulumi.StringInput `pulumi:"id"`
-	IdcsAccessToken pulumi.StringInput `pulumi:"idcsAccessToken"`
+	Id              pulumi.StringPtrInput `pulumi:"id"`
+	IdcsAccessToken pulumi.StringPtrInput `pulumi:"idcsAccessToken"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 	// The license used for the service.
-	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	LicenseType pulumi.StringPtrInput `pulumi:"licenseType"`
 	// A filter to return only resources that match the given name exactly.
-	Name pulumi.StringInput `pulumi:"name"`
+	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayInput `pulumi:"networkEndpointDetails"`
 	// URL of the Analytics service.
-	ServiceUrl pulumi.StringInput `pulumi:"serviceUrl"`
+	ServiceUrl pulumi.StringPtrInput `pulumi:"serviceUrl"`
 	// A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
 }
 
 func (GetAnalyticsInstancesAnalyticsInstanceArgs) ElementType() reflect.Type {
@@ -1669,12 +1428,6 @@ func (i GetAnalyticsInstancesAnalyticsInstanceArgs) ToGetAnalyticsInstancesAnaly
 
 func (i GetAnalyticsInstancesAnalyticsInstanceArgs) ToGetAnalyticsInstancesAnalyticsInstanceOutputWithContext(ctx context.Context) GetAnalyticsInstancesAnalyticsInstanceOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancesAnalyticsInstanceOutput)
-}
-
-func (i GetAnalyticsInstancesAnalyticsInstanceArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancesAnalyticsInstance] {
-	return pulumix.Output[GetAnalyticsInstancesAnalyticsInstance]{
-		OutputState: i.ToGetAnalyticsInstancesAnalyticsInstanceOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnalyticsInstancesAnalyticsInstanceArrayInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceArray and GetAnalyticsInstancesAnalyticsInstanceArrayOutput values.
@@ -1702,12 +1455,6 @@ func (i GetAnalyticsInstancesAnalyticsInstanceArray) ToGetAnalyticsInstancesAnal
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancesAnalyticsInstanceArrayOutput)
 }
 
-func (i GetAnalyticsInstancesAnalyticsInstanceArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstance] {
-	return pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstance]{
-		OutputState: i.ToGetAnalyticsInstancesAnalyticsInstanceArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnalyticsInstancesAnalyticsInstanceOutput struct{ *pulumi.OutputState }
 
 func (GetAnalyticsInstancesAnalyticsInstanceOutput) ElementType() reflect.Type {
@@ -1722,12 +1469,6 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) ToGetAnalyticsInstancesAna
 	return o
 }
 
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancesAnalyticsInstance] {
-	return pulumix.Output[GetAnalyticsInstancesAnalyticsInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
 func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Capacities() GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput {
 	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) []GetAnalyticsInstancesAnalyticsInstanceCapacity {
@@ -1736,8 +1477,8 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Capacities() GetAnalyticsI
 }
 
 // The OCID of the compartment.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1746,18 +1487,18 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) DefinedTags() pulumi.MapOu
 }
 
 // Description of the vanity url.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.Description }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // Email address receiving notifications.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) EmailNotification() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.EmailNotification }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) EmailNotification() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.EmailNotification }).(pulumi.StringPtrOutput)
 }
 
 // A filter to only return resources matching the feature set. Values are case-insensitive.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) FeatureSet() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.FeatureSet }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) FeatureSet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.FeatureSet }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1766,27 +1507,27 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) FreeformTags() pulumi.MapO
 }
 
 // The Virtual Cloud Network OCID.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) IdcsAccessToken() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.IdcsAccessToken }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) IdcsAccessToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.IdcsAccessToken }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The license used for the service.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) LicenseType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.LicenseType }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) LicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.LicenseType }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given name exactly.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.Name }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // Base representation of a network endpoint.
@@ -1797,23 +1538,23 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) NetworkEndpointDetails() G
 }
 
 // URL of the Analytics service.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) ServiceUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.ServiceUrl }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) ServiceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.ServiceUrl }).(pulumi.StringPtrOutput)
 }
 
 // A filter to only return resources matching the lifecycle state. The state value is case-insensitive.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.State }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type GetAnalyticsInstancesAnalyticsInstanceArrayOutput struct{ *pulumi.OutputState }
@@ -1830,12 +1571,6 @@ func (o GetAnalyticsInstancesAnalyticsInstanceArrayOutput) ToGetAnalyticsInstanc
 	return o
 }
 
-func (o GetAnalyticsInstancesAnalyticsInstanceArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstance] {
-	return pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstance]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnalyticsInstancesAnalyticsInstanceArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstancesAnalyticsInstanceOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstancesAnalyticsInstance {
 		return vs[0].([]GetAnalyticsInstancesAnalyticsInstance)[vs[1].(int)]
@@ -1844,9 +1579,9 @@ func (o GetAnalyticsInstancesAnalyticsInstanceArrayOutput) Index(i pulumi.IntInp
 
 type GetAnalyticsInstancesAnalyticsInstanceCapacity struct {
 	// A filter to only return resources matching the capacity type enum. Values are case-insensitive.
-	CapacityType string `pulumi:"capacityType"`
+	CapacityType *string `pulumi:"capacityType"`
 	// The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
-	CapacityValue int `pulumi:"capacityValue"`
+	CapacityValue *int `pulumi:"capacityValue"`
 }
 
 // GetAnalyticsInstancesAnalyticsInstanceCapacityInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceCapacityArgs and GetAnalyticsInstancesAnalyticsInstanceCapacityOutput values.
@@ -1862,9 +1597,9 @@ type GetAnalyticsInstancesAnalyticsInstanceCapacityInput interface {
 
 type GetAnalyticsInstancesAnalyticsInstanceCapacityArgs struct {
 	// A filter to only return resources matching the capacity type enum. Values are case-insensitive.
-	CapacityType pulumi.StringInput `pulumi:"capacityType"`
+	CapacityType pulumi.StringPtrInput `pulumi:"capacityType"`
 	// The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
-	CapacityValue pulumi.IntInput `pulumi:"capacityValue"`
+	CapacityValue pulumi.IntPtrInput `pulumi:"capacityValue"`
 }
 
 func (GetAnalyticsInstancesAnalyticsInstanceCapacityArgs) ElementType() reflect.Type {
@@ -1877,12 +1612,6 @@ func (i GetAnalyticsInstancesAnalyticsInstanceCapacityArgs) ToGetAnalyticsInstan
 
 func (i GetAnalyticsInstancesAnalyticsInstanceCapacityArgs) ToGetAnalyticsInstancesAnalyticsInstanceCapacityOutputWithContext(ctx context.Context) GetAnalyticsInstancesAnalyticsInstanceCapacityOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancesAnalyticsInstanceCapacityOutput)
-}
-
-func (i GetAnalyticsInstancesAnalyticsInstanceCapacityArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancesAnalyticsInstanceCapacity] {
-	return pulumix.Output[GetAnalyticsInstancesAnalyticsInstanceCapacity]{
-		OutputState: i.ToGetAnalyticsInstancesAnalyticsInstanceCapacityOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnalyticsInstancesAnalyticsInstanceCapacityArrayInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceCapacityArray and GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput values.
@@ -1910,12 +1639,6 @@ func (i GetAnalyticsInstancesAnalyticsInstanceCapacityArray) ToGetAnalyticsInsta
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput)
 }
 
-func (i GetAnalyticsInstancesAnalyticsInstanceCapacityArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstanceCapacity] {
-	return pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstanceCapacity]{
-		OutputState: i.ToGetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnalyticsInstancesAnalyticsInstanceCapacityOutput struct{ *pulumi.OutputState }
 
 func (GetAnalyticsInstancesAnalyticsInstanceCapacityOutput) ElementType() reflect.Type {
@@ -1930,20 +1653,14 @@ func (o GetAnalyticsInstancesAnalyticsInstanceCapacityOutput) ToGetAnalyticsInst
 	return o
 }
 
-func (o GetAnalyticsInstancesAnalyticsInstanceCapacityOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancesAnalyticsInstanceCapacity] {
-	return pulumix.Output[GetAnalyticsInstancesAnalyticsInstanceCapacity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // A filter to only return resources matching the capacity type enum. Values are case-insensitive.
-func (o GetAnalyticsInstancesAnalyticsInstanceCapacityOutput) CapacityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceCapacityOutput) CapacityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceCapacity) *string { return v.CapacityType }).(pulumi.StringPtrOutput)
 }
 
 // The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects the number of CPUs, amount of memory or other resources allocated to the instance.
-func (o GetAnalyticsInstancesAnalyticsInstanceCapacityOutput) CapacityValue() pulumi.IntOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceCapacity) int { return v.CapacityValue }).(pulumi.IntOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceCapacityOutput) CapacityValue() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceCapacity) *int { return v.CapacityValue }).(pulumi.IntPtrOutput)
 }
 
 type GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput struct{ *pulumi.OutputState }
@@ -1960,12 +1677,6 @@ func (o GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput) ToGetAnalytic
 	return o
 }
 
-func (o GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstanceCapacity] {
-	return pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstanceCapacity]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstancesAnalyticsInstanceCapacityOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstancesAnalyticsInstanceCapacity {
 		return vs[0].([]GetAnalyticsInstancesAnalyticsInstanceCapacity)[vs[1].(int)]
@@ -1974,13 +1685,13 @@ func (o GetAnalyticsInstancesAnalyticsInstanceCapacityArrayOutput) Index(i pulum
 
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail struct {
 	// The type of network endpoint.
-	NetworkEndpointType string `pulumi:"networkEndpointType"`
+	NetworkEndpointType *string `pulumi:"networkEndpointType"`
 	// Network Security Group OCIDs for an Analytics instance.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// OCID of the customer subnet connected to private access channel.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// OCID of the customer VCN peered with private access channel.
-	VcnId string `pulumi:"vcnId"`
+	VcnId *string `pulumi:"vcnId"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 	// Oracle Cloud Services that are allowed to access this Analytics instance.
@@ -2002,13 +1713,13 @@ type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailInput interface 
 
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs struct {
 	// The type of network endpoint.
-	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
+	NetworkEndpointType pulumi.StringPtrInput `pulumi:"networkEndpointType"`
 	// Network Security Group OCIDs for an Analytics instance.
 	NetworkSecurityGroupIds pulumi.StringArrayInput `pulumi:"networkSecurityGroupIds"`
 	// OCID of the customer subnet connected to private access channel.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// OCID of the customer VCN peered with private access channel.
-	VcnId pulumi.StringInput `pulumi:"vcnId"`
+	VcnId pulumi.StringPtrInput `pulumi:"vcnId"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
 	// Oracle Cloud Services that are allowed to access this Analytics instance.
@@ -2027,12 +1738,6 @@ func (i GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs) ToGetAn
 
 func (i GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs) ToGetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutputWithContext(ctx context.Context) GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput)
-}
-
-func (i GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail] {
-	return pulumix.Output[GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail]{
-		OutputState: i.ToGetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArray and GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutput values.
@@ -2060,12 +1765,6 @@ func (i GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArray) ToGetA
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutput)
 }
 
-func (i GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail] {
-	return pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail]{
-		OutputState: i.ToGetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput struct{ *pulumi.OutputState }
 
 func (GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) ElementType() reflect.Type {
@@ -2080,17 +1779,11 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) ToGet
 	return o
 }
 
-func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail] {
-	return pulumix.Output[GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The type of network endpoint.
-func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) string {
+func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) *string {
 		return v.NetworkEndpointType
-	}).(pulumi.StringOutput)
+	}).(pulumi.StringPtrOutput)
 }
 
 // Network Security Group OCIDs for an Analytics instance.
@@ -2101,13 +1794,13 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) Netwo
 }
 
 // OCID of the customer subnet connected to private access channel.
-func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the customer VCN peered with private access channel.
-func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) VcnId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) string { return v.VcnId }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput) VcnId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail) *string { return v.VcnId }).(pulumi.StringPtrOutput)
 }
 
 // Source IP addresses or IP address ranges in ingress rules.
@@ -2143,12 +1836,6 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutput) 
 	return o
 }
 
-func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail] {
-	return pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail {
 		return vs[0].([]GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetail)[vs[1].(int)]
@@ -2157,7 +1844,7 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailArrayOutput) 
 
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn struct {
 	// The Virtual Cloud Network OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps []string `pulumi:"whitelistedIps"`
 }
@@ -2175,7 +1862,7 @@ type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnIn
 
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs struct {
 	// The Virtual Cloud Network OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Source IP addresses or IP address ranges in ingress rules.
 	WhitelistedIps pulumi.StringArrayInput `pulumi:"whitelistedIps"`
 }
@@ -2190,12 +1877,6 @@ func (i GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVc
 
 func (i GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs) ToGetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutputWithContext(ctx context.Context) GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput)
-}
-
-func (i GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn] {
-	return pulumix.Output[GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn]{
-		OutputState: i.ToGetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayInput is an input type that accepts GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray and GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput values.
@@ -2223,12 +1904,6 @@ func (i GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVc
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput)
 }
 
-func (i GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn] {
-	return pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn]{
-		OutputState: i.ToGetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput struct{ *pulumi.OutputState }
 
 func (GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) ElementType() reflect.Type {
@@ -2243,15 +1918,9 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVc
 	return o
 }
 
-func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn] {
-	return pulumix.Output[GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The Virtual Cloud Network OCID.
-func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn) string { return v.Id }).(pulumi.StringOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Source IP addresses or IP address ranges in ingress rules.
@@ -2273,12 +1942,6 @@ func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVc
 
 func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput) ToGetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutputWithContext(ctx context.Context) GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput {
 	return o
-}
-
-func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn] {
-	return pulumix.Output[[]GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcn]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstancesAnalyticsInstanceNetworkEndpointDetailWhitelistedVcnOutput {
@@ -2324,12 +1987,6 @@ func (i GetAnalyticsInstancesFilterArgs) ToGetAnalyticsInstancesFilterOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancesFilterOutput)
 }
 
-func (i GetAnalyticsInstancesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancesFilter] {
-	return pulumix.Output[GetAnalyticsInstancesFilter]{
-		OutputState: i.ToGetAnalyticsInstancesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetAnalyticsInstancesFilterArrayInput is an input type that accepts GetAnalyticsInstancesFilterArray and GetAnalyticsInstancesFilterArrayOutput values.
 // You can construct a concrete instance of `GetAnalyticsInstancesFilterArrayInput` via:
 //
@@ -2355,12 +2012,6 @@ func (i GetAnalyticsInstancesFilterArray) ToGetAnalyticsInstancesFilterArrayOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetAnalyticsInstancesFilterArrayOutput)
 }
 
-func (i GetAnalyticsInstancesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancesFilter] {
-	return pulumix.Output[[]GetAnalyticsInstancesFilter]{
-		OutputState: i.ToGetAnalyticsInstancesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetAnalyticsInstancesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetAnalyticsInstancesFilterOutput) ElementType() reflect.Type {
@@ -2373,12 +2024,6 @@ func (o GetAnalyticsInstancesFilterOutput) ToGetAnalyticsInstancesFilterOutput()
 
 func (o GetAnalyticsInstancesFilterOutput) ToGetAnalyticsInstancesFilterOutputWithContext(ctx context.Context) GetAnalyticsInstancesFilterOutput {
 	return o
-}
-
-func (o GetAnalyticsInstancesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetAnalyticsInstancesFilter] {
-	return pulumix.Output[GetAnalyticsInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 // A filter to return only resources that match the given name exactly.
@@ -2406,12 +2051,6 @@ func (o GetAnalyticsInstancesFilterArrayOutput) ToGetAnalyticsInstancesFilterArr
 
 func (o GetAnalyticsInstancesFilterArrayOutput) ToGetAnalyticsInstancesFilterArrayOutputWithContext(ctx context.Context) GetAnalyticsInstancesFilterArrayOutput {
 	return o
-}
-
-func (o GetAnalyticsInstancesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetAnalyticsInstancesFilter] {
-	return pulumix.Output[[]GetAnalyticsInstancesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetAnalyticsInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetAnalyticsInstancesFilterOutput {

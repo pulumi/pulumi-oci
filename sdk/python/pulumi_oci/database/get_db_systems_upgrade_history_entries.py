@@ -50,10 +50,7 @@ class GetDbSystemsUpgradeHistoryEntriesResult:
 
     @property
     @pulumi.getter(name="dbSystemUpgradeHistoryEntries")
-    def db_system_upgrade_history_entries(self) -> Sequence['outputs.GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryResult']:
-        """
-        The list of db_system_upgrade_history_entries.
-        """
+    def db_system_upgrade_history_entries(self) -> Optional[Sequence['outputs.GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntryResult']]:
         return pulumi.get(self, "db_system_upgrade_history_entries")
 
     @property
@@ -63,7 +60,7 @@ class GetDbSystemsUpgradeHistoryEntriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -72,9 +69,6 @@ class GetDbSystemsUpgradeHistoryEntriesResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the action.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -103,25 +97,7 @@ def get_db_systems_upgrade_history_entries(db_system_id: Optional[str] = None,
                                            upgrade_action: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemsUpgradeHistoryEntriesResult:
     """
-    This data source provides the list of Db Systems Upgrade History Entries in Oracle Cloud Infrastructure Database service.
-
-    Gets the history of the upgrade actions performed on the specified DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_systems_upgrade_history_entries = oci.Database.get_db_systems_upgrade_history_entries(db_system_id=oci_database_db_system["test_db_system"]["id"],
-        state=var["db_systems_upgrade_history_entry_state"],
-        upgrade_action=var["db_systems_upgrade_history_entry_upgrade_action"])
-    ```
-
-
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: A filter to return only upgrade history entries that match the given lifecycle state exactly.
-    :param str upgrade_action: A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
@@ -147,24 +123,6 @@ def get_db_systems_upgrade_history_entries_output(db_system_id: Optional[pulumi.
                                                   upgrade_action: Optional[pulumi.Input[Optional[str]]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbSystemsUpgradeHistoryEntriesResult]:
     """
-    This data source provides the list of Db Systems Upgrade History Entries in Oracle Cloud Infrastructure Database service.
-
-    Gets the history of the upgrade actions performed on the specified DB system.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_systems_upgrade_history_entries = oci.Database.get_db_systems_upgrade_history_entries(db_system_id=oci_database_db_system["test_db_system"]["id"],
-        state=var["db_systems_upgrade_history_entry_state"],
-        upgrade_action=var["db_systems_upgrade_history_entry_upgrade_action"])
-    ```
-
-
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str state: A filter to return only upgrade history entries that match the given lifecycle state exactly.
-    :param str upgrade_action: A filter to return only upgradeHistoryEntries that match the specified Upgrade Action.
+    Use this data source to access information about an existing resource.
     """
     ...

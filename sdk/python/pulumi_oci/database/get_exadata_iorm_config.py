@@ -44,10 +44,7 @@ class GetExadataIormConfigResult:
 
     @property
     @pulumi.getter(name="dbPlans")
-    def db_plans(self) -> Sequence['outputs.GetExadataIormConfigDbPlanResult']:
-        """
-        An array of IORM settings for all the database in the Exadata DB system.
-        """
+    def db_plans(self) -> Optional[Sequence['outputs.GetExadataIormConfigDbPlanResult']]:
         return pulumi.get(self, "db_plans")
 
     @property
@@ -57,31 +54,22 @@ class GetExadataIormConfigResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional information about the current `lifecycleState`.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter
-    def objective(self) -> str:
-        """
-        The current value for the IORM objective. The default is `AUTO`.
-        """
+    def objective(self) -> Optional[str]:
         return pulumi.get(self, "objective")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of IORM configuration for the Exadata DB system.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
 
@@ -102,29 +90,7 @@ class AwaitableGetExadataIormConfigResult(GetExadataIormConfigResult):
 def get_exadata_iorm_config(db_system_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExadataIormConfigResult:
     """
-    This data source provides details about a specific Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the IORM configuration settings for the specified cloud Exadata DB system.
-    All Exadata service instances have default IORM settings.
-
-    **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-
-    For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
-
-    The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Exadata systems using the
-    new resource model.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_exadata_iorm_config = oci.Database.get_exadata_iorm_config(db_system_id=oci_database_db_system["test_db_system"]["id"])
-    ```
-
-
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbSystemId'] = db_system_id
@@ -144,28 +110,6 @@ def get_exadata_iorm_config(db_system_id: Optional[str] = None,
 def get_exadata_iorm_config_output(db_system_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExadataIormConfigResult]:
     """
-    This data source provides details about a specific Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
-
-    Gets the IORM configuration settings for the specified cloud Exadata DB system.
-    All Exadata service instances have default IORM settings.
-
-    **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
-
-    For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
-
-    The [GetCloudVmClusterIormConfig](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/GetCloudVmClusterIormConfig/) API is used for this operation with Exadata systems using the
-    new resource model.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_exadata_iorm_config = oci.Database.get_exadata_iorm_config(db_system_id=oci_database_db_system["test_db_system"]["id"])
-    ```
-
-
-    :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

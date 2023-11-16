@@ -8,6 +8,8 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDatabasesExternalDat
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo {
@@ -15,51 +17,51 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInf
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The basic information about an external Exadata Infrastructure.
      * 
      */
-    private List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo> exadataInfraInfos;
+    private @Nullable List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo> exadataInfraInfos;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return A filter to only return the resources that match the entire display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The basic information about an external Exadata Infrastructure.
      * 
      */
     public List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo> exadataInfraInfos() {
-        return this.exadataInfraInfos;
+        return this.exadataInfraInfos == null ? List.of() : this.exadataInfraInfos;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -71,10 +73,10 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInf
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private String displayName;
-        private List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo> exadataInfraInfos;
-        private String id;
+        private @Nullable String compartmentId;
+        private @Nullable String displayName;
+        private @Nullable List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo> exadataInfraInfos;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo defaults) {
     	      Objects.requireNonNull(defaults);
@@ -85,26 +87,26 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInf
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder exadataInfraInfos(List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo> exadataInfraInfos) {
-            this.exadataInfraInfos = Objects.requireNonNull(exadataInfraInfos);
+        public Builder exadataInfraInfos(@Nullable List<GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo> exadataInfraInfos) {
+            this.exadataInfraInfos = exadataInfraInfos;
             return this;
         }
         public Builder exadataInfraInfos(GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfoExadataInfraInfo... exadataInfraInfos) {
             return exadataInfraInfos(List.of(exadataInfraInfos));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo build() {

@@ -82,7 +82,7 @@ export interface GetRemediationRecipesResult {
     /**
      * The list of remediation_recipe_collection.
      */
-    readonly remediationRecipeCollections: outputs.Adm.GetRemediationRecipesRemediationRecipeCollection[];
+    readonly remediationRecipeCollections?: outputs.Adm.GetRemediationRecipesRemediationRecipeCollection[];
     /**
      * The current lifecycle state of the Remediation Recipe.
      */

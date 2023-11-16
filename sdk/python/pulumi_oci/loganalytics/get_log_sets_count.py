@@ -34,7 +34,7 @@ class GetLogSetsCountResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -42,10 +42,7 @@ class GetLogSetsCountResult:
 
     @property
     @pulumi.getter(name="logSetsCount")
-    def log_sets_count(self) -> str:
-        """
-        This is the total number of log sets the tenancy has configured.
-        """
+    def log_sets_count(self) -> Optional[str]:
         return pulumi.get(self, "log_sets_count")
 
     @property
@@ -68,21 +65,7 @@ class AwaitableGetLogSetsCountResult(GetLogSetsCountResult):
 def get_log_sets_count(namespace: Optional[str] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetLogSetsCountResult:
     """
-    This data source provides details about a specific Log Sets Count resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API returns the count of distinct log sets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_sets_count = oci.LogAnalytics.get_log_sets_count(namespace=var["log_sets_count_namespace"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['namespace'] = namespace
@@ -99,20 +82,6 @@ def get_log_sets_count(namespace: Optional[str] = None,
 def get_log_sets_count_output(namespace: Optional[pulumi.Input[str]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetLogSetsCountResult]:
     """
-    This data source provides details about a specific Log Sets Count resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    This API returns the count of distinct log sets.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_log_sets_count = oci.LogAnalytics.get_log_sets_count(namespace=var["log_sets_count_namespace"])
-    ```
-
-
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

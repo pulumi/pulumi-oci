@@ -16,29 +16,29 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The type of a BDS patch history entity.
         /// </summary>
-        public readonly string PatchType;
+        public readonly string? PatchType;
         /// <summary>
         /// The status of the patch.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time when the patch history was last updated.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// The version of the patch.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetBdsInstancePatchHistoriesPatchHistoryResult(
-            string patchType,
+            string? patchType,
 
-            string state,
+            string? state,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string version)
+            string? version)
         {
             PatchType = patchType;
             State = state;

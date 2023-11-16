@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Identity
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name you assign to the network source during creation. The name must be unique across the tenancy and cannot be changed.
         /// </summary>
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.Identity
 
             ImmutableArray<Outputs.GetNetworkSourcesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? name,
 

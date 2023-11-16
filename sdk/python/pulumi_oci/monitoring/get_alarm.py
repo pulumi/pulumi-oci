@@ -103,186 +103,117 @@ class GetAlarmResult:
 
     @property
     @pulumi.getter
-    def body(self) -> str:
-        """
-        The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
-        """
+    def body(self) -> Optional[str]:
         return pulumi.get(self, "body")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def destinations(self) -> Sequence[str]:
-        """
-        A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications , Streaming.           Limit: One destination per supported destination service.
-        """
+    def destinations(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "destinations")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> bool:
-        """
-        Whether the alarm is enabled.  Example: `true`
-        """
+    def is_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_enabled")
 
     @property
     @pulumi.getter(name="isNotificationsPerMetricDimensionEnabled")
-    def is_notifications_per_metric_dimension_enabled(self) -> bool:
-        """
-        When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams.
-        """
+    def is_notifications_per_metric_dimension_enabled(self) -> Optional[bool]:
         return pulumi.get(self, "is_notifications_per_metric_dimension_enabled")
 
     @property
     @pulumi.getter(name="messageFormat")
-    def message_format(self) -> str:
-        """
-        The format to use for alarm notifications. The formats are:
-        """
+    def message_format(self) -> Optional[str]:
         return pulumi.get(self, "message_format")
 
     @property
     @pulumi.getter(name="metricCompartmentId")
-    def metric_compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
-        """
+    def metric_compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "metric_compartment_id")
 
     @property
     @pulumi.getter(name="metricCompartmentIdInSubtree")
-    def metric_compartment_id_in_subtree(self) -> bool:
-        """
-        When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
-        """
+    def metric_compartment_id_in_subtree(self) -> Optional[bool]:
         return pulumi.get(self, "metric_compartment_id_in_subtree")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter(name="pendingDuration")
-    def pending_duration(self) -> str:
-        """
-        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING". For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING".
-        """
+    def pending_duration(self) -> Optional[str]:
         return pulumi.get(self, "pending_duration")
 
     @property
     @pulumi.getter
-    def query(self) -> str:
-        """
-        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
-        """
+    def query(self) -> Optional[str]:
         return pulumi.get(self, "query")
 
     @property
     @pulumi.getter(name="repeatNotificationDuration")
-    def repeat_notification_duration(self) -> str:
-        """
-        The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, `PT4H` indicates four hours. Minimum: PT1M. Maximum: P30D.
-        """
+    def repeat_notification_duration(self) -> Optional[str]:
         return pulumi.get(self, "repeat_notification_duration")
 
     @property
     @pulumi.getter
-    def resolution(self) -> str:
-        """
-        The time between calculated aggregation windows for the alarm. Supported value: `1m`
-        """
+    def resolution(self) -> Optional[str]:
         return pulumi.get(self, "resolution")
 
     @property
     @pulumi.getter(name="resourceGroup")
-    def resource_group(self) -> str:
-        """
-        Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
-        """
+    def resource_group(self) -> Optional[str]:
         return pulumi.get(self, "resource_group")
 
     @property
     @pulumi.getter
-    def severity(self) -> str:
-        """
-        The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
-        """
+    def severity(self) -> Optional[str]:
         return pulumi.get(self, "severity")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the alarm.  Example: `DELETED`
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def suppressions(self) -> Sequence['outputs.GetAlarmSuppressionResult']:
-        """
-        The configuration details for suppressing an alarm.
-        """
+    def suppressions(self) -> Optional[Sequence['outputs.GetAlarmSuppressionResult']]:
         return pulumi.get(self, "suppressions")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the alarm was created. Format defined by RFC3339.  Example: `2019-02-01T01:02:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the alarm was last updated. Format defined by RFC3339.  Example: `2019-02-03T01:02:29.600Z`
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -321,29 +252,7 @@ class AwaitableGetAlarmResult(GetAlarmResult):
 def get_alarm(alarm_id: Optional[str] = None,
               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAlarmResult:
     """
-    This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
-
-    Gets the specified alarm.
-    For more information, see
-    [Getting an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm).
-    For important limits information, see
-    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-
-    This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
-    Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
-    or transactions, per second (TPS) for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alarm = oci.Monitoring.get_alarm(alarm_id=oci_monitoring_alarm["test_alarm"]["id"])
-    ```
-
-
-    :param str alarm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['alarmId'] = alarm_id
@@ -381,28 +290,6 @@ def get_alarm(alarm_id: Optional[str] = None,
 def get_alarm_output(alarm_id: Optional[pulumi.Input[str]] = None,
                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAlarmResult]:
     """
-    This data source provides details about a specific Alarm resource in Oracle Cloud Infrastructure Monitoring service.
-
-    Gets the specified alarm.
-    For more information, see
-    [Getting an Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm).
-    For important limits information, see
-    [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-
-    This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
-    Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
-    or transactions, per second (TPS) for a given tenancy.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_alarm = oci.Monitoring.get_alarm(alarm_id=oci_monitoring_alarm["test_alarm"]["id"])
-    ```
-
-
-    :param str alarm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
+    Use this data source to access information about an existing resource.
     """
     ...

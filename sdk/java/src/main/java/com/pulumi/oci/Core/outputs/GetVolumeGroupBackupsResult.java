@@ -29,12 +29,12 @@ public final class GetVolumeGroupBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The list of volume_group_backups.
      * 
      */
-    private List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups;
+    private @Nullable List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups;
     /**
      * @return The OCID of the source volume group.
      * 
@@ -63,15 +63,15 @@ public final class GetVolumeGroupBackupsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The list of volume_group_backups.
      * 
      */
     public List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups() {
-        return this.volumeGroupBackups;
+        return this.volumeGroupBackups == null ? List.of() : this.volumeGroupBackups;
     }
     /**
      * @return The OCID of the source volume group.
@@ -93,8 +93,8 @@ public final class GetVolumeGroupBackupsResult {
         private String compartmentId;
         private @Nullable String displayName;
         private @Nullable List<GetVolumeGroupBackupsFilter> filters;
-        private String id;
-        private List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups;
+        private @Nullable String id;
+        private @Nullable List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups;
         private @Nullable String volumeGroupId;
         public Builder() {}
         public Builder(GetVolumeGroupBackupsResult defaults) {
@@ -126,13 +126,13 @@ public final class GetVolumeGroupBackupsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder volumeGroupBackups(List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups) {
-            this.volumeGroupBackups = Objects.requireNonNull(volumeGroupBackups);
+        public Builder volumeGroupBackups(@Nullable List<GetVolumeGroupBackupsVolumeGroupBackup> volumeGroupBackups) {
+            this.volumeGroupBackups = volumeGroupBackups;
             return this;
         }
         public Builder volumeGroupBackups(GetVolumeGroupBackupsVolumeGroupBackup... volumeGroupBackups) {

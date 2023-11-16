@@ -86,52 +86,37 @@ class GetExternalExadataInfrastructureResult:
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Mapping[str, Any]:
-        """
-        The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-        """
+    def additional_details(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="databaseCompartments")
-    def database_compartments(self) -> Sequence[str]:
-        """
-        The list of [OCIDs] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
-        """
+    def database_compartments(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "database_compartments")
 
     @property
     @pulumi.getter(name="databaseSystems")
-    def database_systems(self) -> Sequence['outputs.GetExternalExadataInfrastructureDatabaseSystemResult']:
-        """
-        A list of DB systems.
-        """
+    def database_systems(self) -> Optional[Sequence['outputs.GetExternalExadataInfrastructureDatabaseSystemResult']]:
         return pulumi.get(self, "database_systems")
 
     @property
     @pulumi.getter(name="dbSystemIds")
-    def db_system_ids(self) -> Sequence[str]:
+    def db_system_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "db_system_ids")
 
     @property
     @pulumi.getter(name="discoveryKey")
-    def discovery_key(self) -> str:
+    def discovery_key(self) -> Optional[str]:
         return pulumi.get(self, "discovery_key")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
@@ -141,95 +126,62 @@ class GetExternalExadataInfrastructureResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="internalId")
-    def internal_id(self) -> str:
-        """
-        The internal ID of the Exadata resource.
-        """
+    def internal_id(self) -> Optional[str]:
         return pulumi.get(self, "internal_id")
 
     @property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> str:
-        """
-        The Oracle license model that applies to the database management resources.
-        """
+    def license_model(self) -> Optional[str]:
         return pulumi.get(self, "license_model")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        The details of the lifecycle state of the Exadata resource.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="rackSize")
-    def rack_size(self) -> str:
-        """
-        The rack size of the Exadata infrastructure.
-        """
+    def rack_size(self) -> Optional[str]:
         return pulumi.get(self, "rack_size")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current lifecycle state of the database resource.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
-    def status(self) -> str:
-        """
-        The status of the Exadata resource.
-        """
+    def status(self) -> Optional[str]:
         return pulumi.get(self, "status")
 
     @property
     @pulumi.getter(name="storageGrids")
-    def storage_grids(self) -> Sequence['outputs.GetExternalExadataInfrastructureStorageGridResult']:
-        """
-        The Exadata storage server grid of the Exadata infrastructure.
-        """
+    def storage_grids(self) -> Optional[Sequence['outputs.GetExternalExadataInfrastructureStorageGridResult']]:
         return pulumi.get(self, "storage_grids")
 
     @property
     @pulumi.getter(name="storageServerNames")
-    def storage_server_names(self) -> Sequence[str]:
+    def storage_server_names(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "storage_server_names")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The timestamp of the creation of the Exadata resource.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The timestamp of the last update of the Exadata resource.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter
-    def version(self) -> str:
-        """
-        The version of the Exadata resource.
-        """
+    def version(self) -> Optional[str]:
         return pulumi.get(self, "version")
 
 
@@ -264,22 +216,7 @@ class AwaitableGetExternalExadataInfrastructureResult(GetExternalExadataInfrastr
 def get_external_exadata_infrastructure(external_exadata_infrastructure_id: Optional[str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetExternalExadataInfrastructureResult:
     """
-    This data source provides details about a specific External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId. It includes the DB systems and storage grid within the
-    Exadata infrastructure.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_infrastructure = oci.DatabaseManagement.get_external_exadata_infrastructure(external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"])
-    ```
-
-
-    :param str external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['externalExadataInfrastructureId'] = external_exadata_infrastructure_id
@@ -313,21 +250,6 @@ def get_external_exadata_infrastructure(external_exadata_infrastructure_id: Opti
 def get_external_exadata_infrastructure_output(external_exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
                                                opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetExternalExadataInfrastructureResult]:
     """
-    This data source provides details about a specific External Exadata Infrastructure resource in Oracle Cloud Infrastructure Database Management service.
-
-    Gets the details for the Exadata infrastructure specified by externalExadataInfrastructureId. It includes the DB systems and storage grid within the
-    Exadata infrastructure.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_external_exadata_infrastructure = oci.DatabaseManagement.get_external_exadata_infrastructure(external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"])
-    ```
-
-
-    :param str external_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+    Use this data source to access information about an existing resource.
     """
     ...

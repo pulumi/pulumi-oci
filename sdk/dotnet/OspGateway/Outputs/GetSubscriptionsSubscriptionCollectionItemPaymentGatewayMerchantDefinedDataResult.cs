@@ -16,17 +16,17 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// <summary>
         /// Cloud account name.
         /// </summary>
-        public readonly string CloudAccountName;
+        public readonly string? CloudAccountName;
         /// <summary>
         /// Promotion type code.
         /// </summary>
-        public readonly string PromoType;
+        public readonly string? PromoType;
 
         [OutputConstructor]
         private GetSubscriptionsSubscriptionCollectionItemPaymentGatewayMerchantDefinedDataResult(
-            string cloudAccountName,
+            string? cloudAccountName,
 
-            string promoType)
+            string? promoType)
         {
             CloudAccountName = cloudAccountName;
             PromoType = promoType;

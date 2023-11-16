@@ -42,10 +42,7 @@ class GetRemediationRunApplicationDependencyRecommendationsResult:
 
     @property
     @pulumi.getter(name="applicationDependencyRecommendationCollections")
-    def application_dependency_recommendation_collections(self) -> Sequence['outputs.GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionResult']:
-        """
-        The list of application_dependency_recommendation_collection.
-        """
+    def application_dependency_recommendation_collections(self) -> Optional[Sequence['outputs.GetRemediationRunApplicationDependencyRecommendationsApplicationDependencyRecommendationCollectionResult']]:
         return pulumi.get(self, "application_dependency_recommendation_collections")
 
     @property
@@ -56,14 +53,11 @@ class GetRemediationRunApplicationDependencyRecommendationsResult:
     @property
     @pulumi.getter
     def gav(self) -> Optional[str]:
-        """
-        Unique Group Artifact Version (GAV) identifier in the format _Group:Artifact:Version_, e.g. org.graalvm.nativeimage:svm:21.1.0.
-        """
         return pulumi.get(self, "gav")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -93,23 +87,7 @@ def get_remediation_run_application_dependency_recommendations(filters: Optional
                                                                remediation_run_id: Optional[str] = None,
                                                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetRemediationRunApplicationDependencyRecommendationsResult:
     """
-    This data source provides the list of Remediation Run Application Dependency Recommendations in Oracle Cloud Infrastructure Adm service.
-
-    Returns a list of application dependency with their associated recommendations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remediation_run_application_dependency_recommendations = oci.Adm.get_remediation_run_application_dependency_recommendations(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"],
-        gav=var["remediation_run_application_dependency_recommendation_gav"])
-    ```
-
-
-    :param str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
-    :param str remediation_run_id: Unique Remediation Run identifier path parameter.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -132,22 +110,6 @@ def get_remediation_run_application_dependency_recommendations_output(filters: O
                                                                       remediation_run_id: Optional[pulumi.Input[str]] = None,
                                                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetRemediationRunApplicationDependencyRecommendationsResult]:
     """
-    This data source provides the list of Remediation Run Application Dependency Recommendations in Oracle Cloud Infrastructure Adm service.
-
-    Returns a list of application dependency with their associated recommendations.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_remediation_run_application_dependency_recommendations = oci.Adm.get_remediation_run_application_dependency_recommendations(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"],
-        gav=var["remediation_run_application_dependency_recommendation_gav"])
-    ```
-
-
-    :param str gav: A filter to return only resources that match the entire GAV (Group Artifact Version) identifier given.
-    :param str remediation_run_id: Unique Remediation Run identifier path parameter.
+    Use this data source to access information about an existing resource.
     """
     ...

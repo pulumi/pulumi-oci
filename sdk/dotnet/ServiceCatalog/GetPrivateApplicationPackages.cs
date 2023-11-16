@@ -183,7 +183,7 @@ namespace Pulumi.Oci.ServiceCatalog
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The specified package's type.
         /// </summary>
@@ -204,7 +204,7 @@ namespace Pulumi.Oci.ServiceCatalog
 
             ImmutableArray<Outputs.GetPrivateApplicationPackagesFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> packageTypes,
 

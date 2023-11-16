@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 var _ = internal.GetEnvOrDefault
@@ -57,12 +56,6 @@ func (i ContainerRepositoryReadmeArgs) ToContainerRepositoryReadmeOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerRepositoryReadmeOutput)
 }
 
-func (i ContainerRepositoryReadmeArgs) ToOutput(ctx context.Context) pulumix.Output[ContainerRepositoryReadme] {
-	return pulumix.Output[ContainerRepositoryReadme]{
-		OutputState: i.ToContainerRepositoryReadmeOutputWithContext(ctx).OutputState,
-	}
-}
-
 func (i ContainerRepositoryReadmeArgs) ToContainerRepositoryReadmePtrOutput() ContainerRepositoryReadmePtrOutput {
 	return i.ToContainerRepositoryReadmePtrOutputWithContext(context.Background())
 }
@@ -104,12 +97,6 @@ func (i *containerRepositoryReadmePtrType) ToContainerRepositoryReadmePtrOutputW
 	return pulumi.ToOutputWithContext(ctx, i).(ContainerRepositoryReadmePtrOutput)
 }
 
-func (i *containerRepositoryReadmePtrType) ToOutput(ctx context.Context) pulumix.Output[*ContainerRepositoryReadme] {
-	return pulumix.Output[*ContainerRepositoryReadme]{
-		OutputState: i.ToContainerRepositoryReadmePtrOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ContainerRepositoryReadmeOutput struct{ *pulumi.OutputState }
 
 func (ContainerRepositoryReadmeOutput) ElementType() reflect.Type {
@@ -132,12 +119,6 @@ func (o ContainerRepositoryReadmeOutput) ToContainerRepositoryReadmePtrOutputWit
 	return o.ApplyTWithContext(ctx, func(_ context.Context, v ContainerRepositoryReadme) *ContainerRepositoryReadme {
 		return &v
 	}).(ContainerRepositoryReadmePtrOutput)
-}
-
-func (o ContainerRepositoryReadmeOutput) ToOutput(ctx context.Context) pulumix.Output[ContainerRepositoryReadme] {
-	return pulumix.Output[ContainerRepositoryReadme]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Readme content. Avoid entering confidential information.
@@ -165,12 +146,6 @@ func (o ContainerRepositoryReadmePtrOutput) ToContainerRepositoryReadmePtrOutput
 
 func (o ContainerRepositoryReadmePtrOutput) ToContainerRepositoryReadmePtrOutputWithContext(ctx context.Context) ContainerRepositoryReadmePtrOutput {
 	return o
-}
-
-func (o ContainerRepositoryReadmePtrOutput) ToOutput(ctx context.Context) pulumix.Output[*ContainerRepositoryReadme] {
-	return pulumix.Output[*ContainerRepositoryReadme]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ContainerRepositoryReadmePtrOutput) Elem() ContainerRepositoryReadmeOutput {
@@ -208,11 +183,11 @@ func (o ContainerRepositoryReadmePtrOutput) Format() pulumi.StringPtrOutput {
 
 type GetContainerImageLayer struct {
 	// The sha256 digest of the image layer.
-	Digest string `pulumi:"digest"`
+	Digest *string `pulumi:"digest"`
 	// The size of the layer in bytes.
-	SizeInBytes string `pulumi:"sizeInBytes"`
+	SizeInBytes *string `pulumi:"sizeInBytes"`
 	// The creation time of the version.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetContainerImageLayerInput is an input type that accepts GetContainerImageLayerArgs and GetContainerImageLayerOutput values.
@@ -228,11 +203,11 @@ type GetContainerImageLayerInput interface {
 
 type GetContainerImageLayerArgs struct {
 	// The sha256 digest of the image layer.
-	Digest pulumi.StringInput `pulumi:"digest"`
+	Digest pulumi.StringPtrInput `pulumi:"digest"`
 	// The size of the layer in bytes.
-	SizeInBytes pulumi.StringInput `pulumi:"sizeInBytes"`
+	SizeInBytes pulumi.StringPtrInput `pulumi:"sizeInBytes"`
 	// The creation time of the version.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetContainerImageLayerArgs) ElementType() reflect.Type {
@@ -245,12 +220,6 @@ func (i GetContainerImageLayerArgs) ToGetContainerImageLayerOutput() GetContaine
 
 func (i GetContainerImageLayerArgs) ToGetContainerImageLayerOutputWithContext(ctx context.Context) GetContainerImageLayerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImageLayerOutput)
-}
-
-func (i GetContainerImageLayerArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerImageLayer] {
-	return pulumix.Output[GetContainerImageLayer]{
-		OutputState: i.ToGetContainerImageLayerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetContainerImageLayerArrayInput is an input type that accepts GetContainerImageLayerArray and GetContainerImageLayerArrayOutput values.
@@ -278,12 +247,6 @@ func (i GetContainerImageLayerArray) ToGetContainerImageLayerArrayOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImageLayerArrayOutput)
 }
 
-func (i GetContainerImageLayerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImageLayer] {
-	return pulumix.Output[[]GetContainerImageLayer]{
-		OutputState: i.ToGetContainerImageLayerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerImageLayerOutput struct{ *pulumi.OutputState }
 
 func (GetContainerImageLayerOutput) ElementType() reflect.Type {
@@ -298,25 +261,19 @@ func (o GetContainerImageLayerOutput) ToGetContainerImageLayerOutputWithContext(
 	return o
 }
 
-func (o GetContainerImageLayerOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerImageLayer] {
-	return pulumix.Output[GetContainerImageLayer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The sha256 digest of the image layer.
-func (o GetContainerImageLayerOutput) Digest() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageLayer) string { return v.Digest }).(pulumi.StringOutput)
+func (o GetContainerImageLayerOutput) Digest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageLayer) *string { return v.Digest }).(pulumi.StringPtrOutput)
 }
 
 // The size of the layer in bytes.
-func (o GetContainerImageLayerOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageLayer) string { return v.SizeInBytes }).(pulumi.StringOutput)
+func (o GetContainerImageLayerOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageLayer) *string { return v.SizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // The creation time of the version.
-func (o GetContainerImageLayerOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageLayer) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetContainerImageLayerOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageLayer) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetContainerImageLayerArrayOutput struct{ *pulumi.OutputState }
@@ -333,12 +290,6 @@ func (o GetContainerImageLayerArrayOutput) ToGetContainerImageLayerArrayOutputWi
 	return o
 }
 
-func (o GetContainerImageLayerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImageLayer] {
-	return pulumix.Output[[]GetContainerImageLayer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerImageLayerArrayOutput) Index(i pulumi.IntInput) GetContainerImageLayerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerImageLayer {
 		return vs[0].([]GetContainerImageLayer)[vs[1].(int)]
@@ -347,11 +298,11 @@ func (o GetContainerImageLayerArrayOutput) Index(i pulumi.IntInput) GetContainer
 
 type GetContainerImageVersion struct {
 	// The OCID of the user or principal that pushed the version.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// The creation time of the version.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The version name.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetContainerImageVersionInput is an input type that accepts GetContainerImageVersionArgs and GetContainerImageVersionOutput values.
@@ -367,11 +318,11 @@ type GetContainerImageVersionInput interface {
 
 type GetContainerImageVersionArgs struct {
 	// The OCID of the user or principal that pushed the version.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// The creation time of the version.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The version name.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetContainerImageVersionArgs) ElementType() reflect.Type {
@@ -384,12 +335,6 @@ func (i GetContainerImageVersionArgs) ToGetContainerImageVersionOutput() GetCont
 
 func (i GetContainerImageVersionArgs) ToGetContainerImageVersionOutputWithContext(ctx context.Context) GetContainerImageVersionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImageVersionOutput)
-}
-
-func (i GetContainerImageVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerImageVersion] {
-	return pulumix.Output[GetContainerImageVersion]{
-		OutputState: i.ToGetContainerImageVersionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetContainerImageVersionArrayInput is an input type that accepts GetContainerImageVersionArray and GetContainerImageVersionArrayOutput values.
@@ -417,12 +362,6 @@ func (i GetContainerImageVersionArray) ToGetContainerImageVersionArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImageVersionArrayOutput)
 }
 
-func (i GetContainerImageVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImageVersion] {
-	return pulumix.Output[[]GetContainerImageVersion]{
-		OutputState: i.ToGetContainerImageVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerImageVersionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerImageVersionOutput) ElementType() reflect.Type {
@@ -437,25 +376,19 @@ func (o GetContainerImageVersionOutput) ToGetContainerImageVersionOutputWithCont
 	return o
 }
 
-func (o GetContainerImageVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerImageVersion] {
-	return pulumix.Output[GetContainerImageVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the user or principal that pushed the version.
-func (o GetContainerImageVersionOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageVersion) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetContainerImageVersionOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageVersion) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The creation time of the version.
-func (o GetContainerImageVersionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageVersion) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetContainerImageVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageVersion) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The version name.
-func (o GetContainerImageVersionOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImageVersion) string { return v.Version }).(pulumi.StringOutput)
+func (o GetContainerImageVersionOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImageVersion) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetContainerImageVersionArrayOutput struct{ *pulumi.OutputState }
@@ -472,12 +405,6 @@ func (o GetContainerImageVersionArrayOutput) ToGetContainerImageVersionArrayOutp
 	return o
 }
 
-func (o GetContainerImageVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImageVersion] {
-	return pulumix.Output[[]GetContainerImageVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerImageVersionArrayOutput) Index(i pulumi.IntInput) GetContainerImageVersionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerImageVersion {
 		return vs[0].([]GetContainerImageVersion)[vs[1].(int)]
@@ -486,7 +413,7 @@ func (o GetContainerImageVersionArrayOutput) Index(i pulumi.IntInput) GetContain
 
 type GetContainerImagesContainerImageCollection struct {
 	Items               []GetContainerImagesContainerImageCollectionItem `pulumi:"items"`
-	RemainingItemsCount int                                              `pulumi:"remainingItemsCount"`
+	RemainingItemsCount *int                                             `pulumi:"remainingItemsCount"`
 }
 
 // GetContainerImagesContainerImageCollectionInput is an input type that accepts GetContainerImagesContainerImageCollectionArgs and GetContainerImagesContainerImageCollectionOutput values.
@@ -502,7 +429,7 @@ type GetContainerImagesContainerImageCollectionInput interface {
 
 type GetContainerImagesContainerImageCollectionArgs struct {
 	Items               GetContainerImagesContainerImageCollectionItemArrayInput `pulumi:"items"`
-	RemainingItemsCount pulumi.IntInput                                          `pulumi:"remainingItemsCount"`
+	RemainingItemsCount pulumi.IntPtrInput                                       `pulumi:"remainingItemsCount"`
 }
 
 func (GetContainerImagesContainerImageCollectionArgs) ElementType() reflect.Type {
@@ -515,12 +442,6 @@ func (i GetContainerImagesContainerImageCollectionArgs) ToGetContainerImagesCont
 
 func (i GetContainerImagesContainerImageCollectionArgs) ToGetContainerImagesContainerImageCollectionOutputWithContext(ctx context.Context) GetContainerImagesContainerImageCollectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImagesContainerImageCollectionOutput)
-}
-
-func (i GetContainerImagesContainerImageCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerImagesContainerImageCollection] {
-	return pulumix.Output[GetContainerImagesContainerImageCollection]{
-		OutputState: i.ToGetContainerImagesContainerImageCollectionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetContainerImagesContainerImageCollectionArrayInput is an input type that accepts GetContainerImagesContainerImageCollectionArray and GetContainerImagesContainerImageCollectionArrayOutput values.
@@ -548,12 +469,6 @@ func (i GetContainerImagesContainerImageCollectionArray) ToGetContainerImagesCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImagesContainerImageCollectionArrayOutput)
 }
 
-func (i GetContainerImagesContainerImageCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImagesContainerImageCollection] {
-	return pulumix.Output[[]GetContainerImagesContainerImageCollection]{
-		OutputState: i.ToGetContainerImagesContainerImageCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerImagesContainerImageCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerImagesContainerImageCollectionOutput) ElementType() reflect.Type {
@@ -568,20 +483,14 @@ func (o GetContainerImagesContainerImageCollectionOutput) ToGetContainerImagesCo
 	return o
 }
 
-func (o GetContainerImagesContainerImageCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerImagesContainerImageCollection] {
-	return pulumix.Output[GetContainerImagesContainerImageCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerImagesContainerImageCollectionOutput) Items() GetContainerImagesContainerImageCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetContainerImagesContainerImageCollection) []GetContainerImagesContainerImageCollectionItem {
 		return v.Items
 	}).(GetContainerImagesContainerImageCollectionItemArrayOutput)
 }
 
-func (o GetContainerImagesContainerImageCollectionOutput) RemainingItemsCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollection) int { return v.RemainingItemsCount }).(pulumi.IntOutput)
+func (o GetContainerImagesContainerImageCollectionOutput) RemainingItemsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollection) *int { return v.RemainingItemsCount }).(pulumi.IntPtrOutput)
 }
 
 type GetContainerImagesContainerImageCollectionArrayOutput struct{ *pulumi.OutputState }
@@ -598,12 +507,6 @@ func (o GetContainerImagesContainerImageCollectionArrayOutput) ToGetContainerIma
 	return o
 }
 
-func (o GetContainerImagesContainerImageCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImagesContainerImageCollection] {
-	return pulumix.Output[[]GetContainerImagesContainerImageCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerImagesContainerImageCollectionArrayOutput) Index(i pulumi.IntInput) GetContainerImagesContainerImageCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerImagesContainerImageCollection {
 		return vs[0].([]GetContainerImagesContainerImageCollection)[vs[1].(int)]
@@ -612,41 +515,41 @@ func (o GetContainerImagesContainerImageCollectionArrayOutput) Index(i pulumi.In
 
 type GetContainerImagesContainerImageCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the user or principal that pushed the version.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The sha256 digest of the image layer.
-	Digest string `pulumi:"digest"`
+	Digest *string `pulumi:"digest"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Layers of which the image is composed, ordered by the layer digest.
 	Layers []GetContainerImagesContainerImageCollectionItemLayer `pulumi:"layers"`
 	// The total size of the container image layers in bytes.
-	LayersSizeInBytes string `pulumi:"layersSizeInBytes"`
+	LayersSizeInBytes *string `pulumi:"layersSizeInBytes"`
 	// The size of the container image manifest in bytes.
-	ManifestSizeInBytes int `pulumi:"manifestSizeInBytes"`
+	ManifestSizeInBytes *int `pulumi:"manifestSizeInBytes"`
 	// Total number of pulls.
-	PullCount string `pulumi:"pullCount"`
+	PullCount *string `pulumi:"pullCount"`
 	// A filter to return container images only for the specified container repository OCID.
-	RepositoryId string `pulumi:"repositoryId"`
+	RepositoryId *string `pulumi:"repositoryId"`
 	// A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
-	RepositoryName string `pulumi:"repositoryName"`
+	RepositoryName *string `pulumi:"repositoryName"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The creation time of the version.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when the image was last pulled.
-	TimeLastPulled string `pulumi:"timeLastPulled"`
+	TimeLastPulled *string `pulumi:"timeLastPulled"`
 	// A filter to return container images that match the version.  Example: `foo` or `foo*`
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 	// The versions associated with this image.
 	Versions []GetContainerImagesContainerImageCollectionItemVersion `pulumi:"versions"`
 }
@@ -664,41 +567,41 @@ type GetContainerImagesContainerImageCollectionItemInput interface {
 
 type GetContainerImagesContainerImageCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The OCID of the user or principal that pushed the version.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The sha256 digest of the image layer.
-	Digest pulumi.StringInput `pulumi:"digest"`
+	Digest pulumi.StringPtrInput `pulumi:"digest"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Layers of which the image is composed, ordered by the layer digest.
 	Layers GetContainerImagesContainerImageCollectionItemLayerArrayInput `pulumi:"layers"`
 	// The total size of the container image layers in bytes.
-	LayersSizeInBytes pulumi.StringInput `pulumi:"layersSizeInBytes"`
+	LayersSizeInBytes pulumi.StringPtrInput `pulumi:"layersSizeInBytes"`
 	// The size of the container image manifest in bytes.
-	ManifestSizeInBytes pulumi.IntInput `pulumi:"manifestSizeInBytes"`
+	ManifestSizeInBytes pulumi.IntPtrInput `pulumi:"manifestSizeInBytes"`
 	// Total number of pulls.
-	PullCount pulumi.StringInput `pulumi:"pullCount"`
+	PullCount pulumi.StringPtrInput `pulumi:"pullCount"`
 	// A filter to return container images only for the specified container repository OCID.
-	RepositoryId pulumi.StringInput `pulumi:"repositoryId"`
+	RepositoryId pulumi.StringPtrInput `pulumi:"repositoryId"`
 	// A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
-	RepositoryName pulumi.StringInput `pulumi:"repositoryName"`
+	RepositoryName pulumi.StringPtrInput `pulumi:"repositoryName"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The creation time of the version.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when the image was last pulled.
-	TimeLastPulled pulumi.StringInput `pulumi:"timeLastPulled"`
+	TimeLastPulled pulumi.StringPtrInput `pulumi:"timeLastPulled"`
 	// A filter to return container images that match the version.  Example: `foo` or `foo*`
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 	// The versions associated with this image.
 	Versions GetContainerImagesContainerImageCollectionItemVersionArrayInput `pulumi:"versions"`
 }
@@ -713,12 +616,6 @@ func (i GetContainerImagesContainerImageCollectionItemArgs) ToGetContainerImages
 
 func (i GetContainerImagesContainerImageCollectionItemArgs) ToGetContainerImagesContainerImageCollectionItemOutputWithContext(ctx context.Context) GetContainerImagesContainerImageCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImagesContainerImageCollectionItemOutput)
-}
-
-func (i GetContainerImagesContainerImageCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerImagesContainerImageCollectionItem] {
-	return pulumix.Output[GetContainerImagesContainerImageCollectionItem]{
-		OutputState: i.ToGetContainerImagesContainerImageCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetContainerImagesContainerImageCollectionItemArrayInput is an input type that accepts GetContainerImagesContainerImageCollectionItemArray and GetContainerImagesContainerImageCollectionItemArrayOutput values.
@@ -746,12 +643,6 @@ func (i GetContainerImagesContainerImageCollectionItemArray) ToGetContainerImage
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImagesContainerImageCollectionItemArrayOutput)
 }
 
-func (i GetContainerImagesContainerImageCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImagesContainerImageCollectionItem] {
-	return pulumix.Output[[]GetContainerImagesContainerImageCollectionItem]{
-		OutputState: i.ToGetContainerImagesContainerImageCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerImagesContainerImageCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetContainerImagesContainerImageCollectionItemOutput) ElementType() reflect.Type {
@@ -766,20 +657,14 @@ func (o GetContainerImagesContainerImageCollectionItemOutput) ToGetContainerImag
 	return o
 }
 
-func (o GetContainerImagesContainerImageCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerImagesContainerImageCollectionItem] {
-	return pulumix.Output[GetContainerImagesContainerImageCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetContainerImagesContainerImageCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the user or principal that pushed the version.
-func (o GetContainerImagesContainerImageCollectionItemOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -788,13 +673,13 @@ func (o GetContainerImagesContainerImageCollectionItemOutput) DefinedTags() pulu
 }
 
 // The sha256 digest of the image layer.
-func (o GetContainerImagesContainerImageCollectionItemOutput) Digest() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.Digest }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) Digest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.Digest }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given display name exactly.
-func (o GetContainerImagesContainerImageCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -803,8 +688,8 @@ func (o GetContainerImagesContainerImageCollectionItemOutput) FreeformTags() pul
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image.  Example: `ocid1.containerimage.oc1..exampleuniqueID`
-func (o GetContainerImagesContainerImageCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Layers of which the image is composed, ordered by the layer digest.
@@ -815,33 +700,33 @@ func (o GetContainerImagesContainerImageCollectionItemOutput) Layers() GetContai
 }
 
 // The total size of the container image layers in bytes.
-func (o GetContainerImagesContainerImageCollectionItemOutput) LayersSizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.LayersSizeInBytes }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) LayersSizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.LayersSizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // The size of the container image manifest in bytes.
-func (o GetContainerImagesContainerImageCollectionItemOutput) ManifestSizeInBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) int { return v.ManifestSizeInBytes }).(pulumi.IntOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) ManifestSizeInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *int { return v.ManifestSizeInBytes }).(pulumi.IntPtrOutput)
 }
 
 // Total number of pulls.
-func (o GetContainerImagesContainerImageCollectionItemOutput) PullCount() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.PullCount }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) PullCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.PullCount }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return container images only for the specified container repository OCID.
-func (o GetContainerImagesContainerImageCollectionItemOutput) RepositoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.RepositoryId }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) RepositoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.RepositoryId }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
-func (o GetContainerImagesContainerImageCollectionItemOutput) RepositoryName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.RepositoryName }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) RepositoryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.RepositoryName }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state name exactly.
-func (o GetContainerImagesContainerImageCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -850,18 +735,18 @@ func (o GetContainerImagesContainerImageCollectionItemOutput) SystemTags() pulum
 }
 
 // The creation time of the version.
-func (o GetContainerImagesContainerImageCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC 3339 timestamp indicating when the image was last pulled.
-func (o GetContainerImagesContainerImageCollectionItemOutput) TimeLastPulled() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.TimeLastPulled }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) TimeLastPulled() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.TimeLastPulled }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return container images that match the version.  Example: `foo` or `foo*`
-func (o GetContainerImagesContainerImageCollectionItemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 // The versions associated with this image.
@@ -885,12 +770,6 @@ func (o GetContainerImagesContainerImageCollectionItemArrayOutput) ToGetContaine
 	return o
 }
 
-func (o GetContainerImagesContainerImageCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImagesContainerImageCollectionItem] {
-	return pulumix.Output[[]GetContainerImagesContainerImageCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerImagesContainerImageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetContainerImagesContainerImageCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerImagesContainerImageCollectionItem {
 		return vs[0].([]GetContainerImagesContainerImageCollectionItem)[vs[1].(int)]
@@ -899,11 +778,11 @@ func (o GetContainerImagesContainerImageCollectionItemArrayOutput) Index(i pulum
 
 type GetContainerImagesContainerImageCollectionItemLayer struct {
 	// The sha256 digest of the image layer.
-	Digest string `pulumi:"digest"`
+	Digest *string `pulumi:"digest"`
 	// The size of the layer in bytes.
-	SizeInBytes string `pulumi:"sizeInBytes"`
+	SizeInBytes *string `pulumi:"sizeInBytes"`
 	// The creation time of the version.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetContainerImagesContainerImageCollectionItemLayerInput is an input type that accepts GetContainerImagesContainerImageCollectionItemLayerArgs and GetContainerImagesContainerImageCollectionItemLayerOutput values.
@@ -919,11 +798,11 @@ type GetContainerImagesContainerImageCollectionItemLayerInput interface {
 
 type GetContainerImagesContainerImageCollectionItemLayerArgs struct {
 	// The sha256 digest of the image layer.
-	Digest pulumi.StringInput `pulumi:"digest"`
+	Digest pulumi.StringPtrInput `pulumi:"digest"`
 	// The size of the layer in bytes.
-	SizeInBytes pulumi.StringInput `pulumi:"sizeInBytes"`
+	SizeInBytes pulumi.StringPtrInput `pulumi:"sizeInBytes"`
 	// The creation time of the version.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetContainerImagesContainerImageCollectionItemLayerArgs) ElementType() reflect.Type {
@@ -936,12 +815,6 @@ func (i GetContainerImagesContainerImageCollectionItemLayerArgs) ToGetContainerI
 
 func (i GetContainerImagesContainerImageCollectionItemLayerArgs) ToGetContainerImagesContainerImageCollectionItemLayerOutputWithContext(ctx context.Context) GetContainerImagesContainerImageCollectionItemLayerOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImagesContainerImageCollectionItemLayerOutput)
-}
-
-func (i GetContainerImagesContainerImageCollectionItemLayerArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerImagesContainerImageCollectionItemLayer] {
-	return pulumix.Output[GetContainerImagesContainerImageCollectionItemLayer]{
-		OutputState: i.ToGetContainerImagesContainerImageCollectionItemLayerOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetContainerImagesContainerImageCollectionItemLayerArrayInput is an input type that accepts GetContainerImagesContainerImageCollectionItemLayerArray and GetContainerImagesContainerImageCollectionItemLayerArrayOutput values.
@@ -969,12 +842,6 @@ func (i GetContainerImagesContainerImageCollectionItemLayerArray) ToGetContainer
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImagesContainerImageCollectionItemLayerArrayOutput)
 }
 
-func (i GetContainerImagesContainerImageCollectionItemLayerArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImagesContainerImageCollectionItemLayer] {
-	return pulumix.Output[[]GetContainerImagesContainerImageCollectionItemLayer]{
-		OutputState: i.ToGetContainerImagesContainerImageCollectionItemLayerArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerImagesContainerImageCollectionItemLayerOutput struct{ *pulumi.OutputState }
 
 func (GetContainerImagesContainerImageCollectionItemLayerOutput) ElementType() reflect.Type {
@@ -989,25 +856,19 @@ func (o GetContainerImagesContainerImageCollectionItemLayerOutput) ToGetContaine
 	return o
 }
 
-func (o GetContainerImagesContainerImageCollectionItemLayerOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerImagesContainerImageCollectionItemLayer] {
-	return pulumix.Output[GetContainerImagesContainerImageCollectionItemLayer]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The sha256 digest of the image layer.
-func (o GetContainerImagesContainerImageCollectionItemLayerOutput) Digest() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItemLayer) string { return v.Digest }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemLayerOutput) Digest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItemLayer) *string { return v.Digest }).(pulumi.StringPtrOutput)
 }
 
 // The size of the layer in bytes.
-func (o GetContainerImagesContainerImageCollectionItemLayerOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItemLayer) string { return v.SizeInBytes }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemLayerOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItemLayer) *string { return v.SizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // The creation time of the version.
-func (o GetContainerImagesContainerImageCollectionItemLayerOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItemLayer) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemLayerOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItemLayer) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetContainerImagesContainerImageCollectionItemLayerArrayOutput struct{ *pulumi.OutputState }
@@ -1024,12 +885,6 @@ func (o GetContainerImagesContainerImageCollectionItemLayerArrayOutput) ToGetCon
 	return o
 }
 
-func (o GetContainerImagesContainerImageCollectionItemLayerArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImagesContainerImageCollectionItemLayer] {
-	return pulumix.Output[[]GetContainerImagesContainerImageCollectionItemLayer]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerImagesContainerImageCollectionItemLayerArrayOutput) Index(i pulumi.IntInput) GetContainerImagesContainerImageCollectionItemLayerOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerImagesContainerImageCollectionItemLayer {
 		return vs[0].([]GetContainerImagesContainerImageCollectionItemLayer)[vs[1].(int)]
@@ -1038,11 +893,11 @@ func (o GetContainerImagesContainerImageCollectionItemLayerArrayOutput) Index(i 
 
 type GetContainerImagesContainerImageCollectionItemVersion struct {
 	// The OCID of the user or principal that pushed the version.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// The creation time of the version.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// A filter to return container images that match the version.  Example: `foo` or `foo*`
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetContainerImagesContainerImageCollectionItemVersionInput is an input type that accepts GetContainerImagesContainerImageCollectionItemVersionArgs and GetContainerImagesContainerImageCollectionItemVersionOutput values.
@@ -1058,11 +913,11 @@ type GetContainerImagesContainerImageCollectionItemVersionInput interface {
 
 type GetContainerImagesContainerImageCollectionItemVersionArgs struct {
 	// The OCID of the user or principal that pushed the version.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// The creation time of the version.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// A filter to return container images that match the version.  Example: `foo` or `foo*`
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetContainerImagesContainerImageCollectionItemVersionArgs) ElementType() reflect.Type {
@@ -1075,12 +930,6 @@ func (i GetContainerImagesContainerImageCollectionItemVersionArgs) ToGetContaine
 
 func (i GetContainerImagesContainerImageCollectionItemVersionArgs) ToGetContainerImagesContainerImageCollectionItemVersionOutputWithContext(ctx context.Context) GetContainerImagesContainerImageCollectionItemVersionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImagesContainerImageCollectionItemVersionOutput)
-}
-
-func (i GetContainerImagesContainerImageCollectionItemVersionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerImagesContainerImageCollectionItemVersion] {
-	return pulumix.Output[GetContainerImagesContainerImageCollectionItemVersion]{
-		OutputState: i.ToGetContainerImagesContainerImageCollectionItemVersionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetContainerImagesContainerImageCollectionItemVersionArrayInput is an input type that accepts GetContainerImagesContainerImageCollectionItemVersionArray and GetContainerImagesContainerImageCollectionItemVersionArrayOutput values.
@@ -1108,12 +957,6 @@ func (i GetContainerImagesContainerImageCollectionItemVersionArray) ToGetContain
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImagesContainerImageCollectionItemVersionArrayOutput)
 }
 
-func (i GetContainerImagesContainerImageCollectionItemVersionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImagesContainerImageCollectionItemVersion] {
-	return pulumix.Output[[]GetContainerImagesContainerImageCollectionItemVersion]{
-		OutputState: i.ToGetContainerImagesContainerImageCollectionItemVersionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerImagesContainerImageCollectionItemVersionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerImagesContainerImageCollectionItemVersionOutput) ElementType() reflect.Type {
@@ -1128,25 +971,19 @@ func (o GetContainerImagesContainerImageCollectionItemVersionOutput) ToGetContai
 	return o
 }
 
-func (o GetContainerImagesContainerImageCollectionItemVersionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerImagesContainerImageCollectionItemVersion] {
-	return pulumix.Output[GetContainerImagesContainerImageCollectionItemVersion]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the user or principal that pushed the version.
-func (o GetContainerImagesContainerImageCollectionItemVersionOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItemVersion) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemVersionOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItemVersion) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // The creation time of the version.
-func (o GetContainerImagesContainerImageCollectionItemVersionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItemVersion) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemVersionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItemVersion) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return container images that match the version.  Example: `foo` or `foo*`
-func (o GetContainerImagesContainerImageCollectionItemVersionOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItemVersion) string { return v.Version }).(pulumi.StringOutput)
+func (o GetContainerImagesContainerImageCollectionItemVersionOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesContainerImageCollectionItemVersion) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetContainerImagesContainerImageCollectionItemVersionArrayOutput struct{ *pulumi.OutputState }
@@ -1161,12 +998,6 @@ func (o GetContainerImagesContainerImageCollectionItemVersionArrayOutput) ToGetC
 
 func (o GetContainerImagesContainerImageCollectionItemVersionArrayOutput) ToGetContainerImagesContainerImageCollectionItemVersionArrayOutputWithContext(ctx context.Context) GetContainerImagesContainerImageCollectionItemVersionArrayOutput {
 	return o
-}
-
-func (o GetContainerImagesContainerImageCollectionItemVersionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImagesContainerImageCollectionItemVersion] {
-	return pulumix.Output[[]GetContainerImagesContainerImageCollectionItemVersion]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerImagesContainerImageCollectionItemVersionArrayOutput) Index(i pulumi.IntInput) GetContainerImagesContainerImageCollectionItemVersionOutput {
@@ -1210,12 +1041,6 @@ func (i GetContainerImagesFilterArgs) ToGetContainerImagesFilterOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImagesFilterOutput)
 }
 
-func (i GetContainerImagesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerImagesFilter] {
-	return pulumix.Output[GetContainerImagesFilter]{
-		OutputState: i.ToGetContainerImagesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerImagesFilterArrayInput is an input type that accepts GetContainerImagesFilterArray and GetContainerImagesFilterArrayOutput values.
 // You can construct a concrete instance of `GetContainerImagesFilterArrayInput` via:
 //
@@ -1241,12 +1066,6 @@ func (i GetContainerImagesFilterArray) ToGetContainerImagesFilterArrayOutputWith
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerImagesFilterArrayOutput)
 }
 
-func (i GetContainerImagesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImagesFilter] {
-	return pulumix.Output[[]GetContainerImagesFilter]{
-		OutputState: i.ToGetContainerImagesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerImagesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetContainerImagesFilterOutput) ElementType() reflect.Type {
@@ -1259,12 +1078,6 @@ func (o GetContainerImagesFilterOutput) ToGetContainerImagesFilterOutput() GetCo
 
 func (o GetContainerImagesFilterOutput) ToGetContainerImagesFilterOutputWithContext(ctx context.Context) GetContainerImagesFilterOutput {
 	return o
-}
-
-func (o GetContainerImagesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerImagesFilter] {
-	return pulumix.Output[GetContainerImagesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerImagesFilterOutput) Name() pulumi.StringOutput {
@@ -1293,12 +1106,6 @@ func (o GetContainerImagesFilterArrayOutput) ToGetContainerImagesFilterArrayOutp
 	return o
 }
 
-func (o GetContainerImagesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerImagesFilter] {
-	return pulumix.Output[[]GetContainerImagesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerImagesFilterArrayOutput) Index(i pulumi.IntInput) GetContainerImagesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerImagesFilter {
 		return vs[0].([]GetContainerImagesFilter)[vs[1].(int)]
@@ -1307,14 +1114,14 @@ func (o GetContainerImagesFilterArrayOutput) Index(i pulumi.IntInput) GetContain
 
 type GetContainerRepositoriesContainerRepositoryCollection struct {
 	// Total number of images.
-	ImageCount int                                                         `pulumi:"imageCount"`
+	ImageCount *int                                                        `pulumi:"imageCount"`
 	Items      []GetContainerRepositoriesContainerRepositoryCollectionItem `pulumi:"items"`
 	// Total number of layers.
-	LayerCount int `pulumi:"layerCount"`
+	LayerCount *int `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
-	LayersSizeInBytes   string `pulumi:"layersSizeInBytes"`
-	RemainingItemsCount int    `pulumi:"remainingItemsCount"`
-	RepositoryCount     int    `pulumi:"repositoryCount"`
+	LayersSizeInBytes   *string `pulumi:"layersSizeInBytes"`
+	RemainingItemsCount *int    `pulumi:"remainingItemsCount"`
+	RepositoryCount     *int    `pulumi:"repositoryCount"`
 }
 
 // GetContainerRepositoriesContainerRepositoryCollectionInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionArgs and GetContainerRepositoriesContainerRepositoryCollectionOutput values.
@@ -1330,14 +1137,14 @@ type GetContainerRepositoriesContainerRepositoryCollectionInput interface {
 
 type GetContainerRepositoriesContainerRepositoryCollectionArgs struct {
 	// Total number of images.
-	ImageCount pulumi.IntInput                                                     `pulumi:"imageCount"`
+	ImageCount pulumi.IntPtrInput                                                  `pulumi:"imageCount"`
 	Items      GetContainerRepositoriesContainerRepositoryCollectionItemArrayInput `pulumi:"items"`
 	// Total number of layers.
-	LayerCount pulumi.IntInput `pulumi:"layerCount"`
+	LayerCount pulumi.IntPtrInput `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
-	LayersSizeInBytes   pulumi.StringInput `pulumi:"layersSizeInBytes"`
-	RemainingItemsCount pulumi.IntInput    `pulumi:"remainingItemsCount"`
-	RepositoryCount     pulumi.IntInput    `pulumi:"repositoryCount"`
+	LayersSizeInBytes   pulumi.StringPtrInput `pulumi:"layersSizeInBytes"`
+	RemainingItemsCount pulumi.IntPtrInput    `pulumi:"remainingItemsCount"`
+	RepositoryCount     pulumi.IntPtrInput    `pulumi:"repositoryCount"`
 }
 
 func (GetContainerRepositoriesContainerRepositoryCollectionArgs) ElementType() reflect.Type {
@@ -1350,12 +1157,6 @@ func (i GetContainerRepositoriesContainerRepositoryCollectionArgs) ToGetContaine
 
 func (i GetContainerRepositoriesContainerRepositoryCollectionArgs) ToGetContainerRepositoriesContainerRepositoryCollectionOutputWithContext(ctx context.Context) GetContainerRepositoriesContainerRepositoryCollectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerRepositoriesContainerRepositoryCollectionOutput)
-}
-
-func (i GetContainerRepositoriesContainerRepositoryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerRepositoriesContainerRepositoryCollection] {
-	return pulumix.Output[GetContainerRepositoriesContainerRepositoryCollection]{
-		OutputState: i.ToGetContainerRepositoriesContainerRepositoryCollectionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetContainerRepositoriesContainerRepositoryCollectionArrayInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionArray and GetContainerRepositoriesContainerRepositoryCollectionArrayOutput values.
@@ -1383,12 +1184,6 @@ func (i GetContainerRepositoriesContainerRepositoryCollectionArray) ToGetContain
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerRepositoriesContainerRepositoryCollectionArrayOutput)
 }
 
-func (i GetContainerRepositoriesContainerRepositoryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerRepositoriesContainerRepositoryCollection] {
-	return pulumix.Output[[]GetContainerRepositoriesContainerRepositoryCollection]{
-		OutputState: i.ToGetContainerRepositoriesContainerRepositoryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerRepositoriesContainerRepositoryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerRepositoriesContainerRepositoryCollectionOutput) ElementType() reflect.Type {
@@ -1403,15 +1198,9 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) ToGetContai
 	return o
 }
 
-func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerRepositoriesContainerRepositoryCollection] {
-	return pulumix.Output[GetContainerRepositoriesContainerRepositoryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Total number of images.
-func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) ImageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) int { return v.ImageCount }).(pulumi.IntOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) ImageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) *int { return v.ImageCount }).(pulumi.IntPtrOutput)
 }
 
 func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) Items() GetContainerRepositoriesContainerRepositoryCollectionItemArrayOutput {
@@ -1421,21 +1210,21 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) Items() Get
 }
 
 // Total number of layers.
-func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) LayerCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) int { return v.LayerCount }).(pulumi.IntOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) LayerCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) *int { return v.LayerCount }).(pulumi.IntPtrOutput)
 }
 
 // Total storage in bytes consumed by layers.
-func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) LayersSizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) string { return v.LayersSizeInBytes }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) LayersSizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) *string { return v.LayersSizeInBytes }).(pulumi.StringPtrOutput)
 }
 
-func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) RemainingItemsCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) int { return v.RemainingItemsCount }).(pulumi.IntOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) RemainingItemsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) *int { return v.RemainingItemsCount }).(pulumi.IntPtrOutput)
 }
 
-func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) RepositoryCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) int { return v.RepositoryCount }).(pulumi.IntOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionOutput) RepositoryCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollection) *int { return v.RepositoryCount }).(pulumi.IntPtrOutput)
 }
 
 type GetContainerRepositoriesContainerRepositoryCollectionArrayOutput struct{ *pulumi.OutputState }
@@ -1452,12 +1241,6 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionArrayOutput) ToGetC
 	return o
 }
 
-func (o GetContainerRepositoriesContainerRepositoryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerRepositoriesContainerRepositoryCollection] {
-	return pulumix.Output[[]GetContainerRepositoriesContainerRepositoryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerRepositoriesContainerRepositoryCollectionArrayOutput) Index(i pulumi.IntInput) GetContainerRepositoriesContainerRepositoryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerRepositoriesContainerRepositoryCollection {
 		return vs[0].([]GetContainerRepositoriesContainerRepositoryCollection)[vs[1].(int)]
@@ -1466,41 +1249,41 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionArrayOutput) Index(
 
 type GetContainerRepositoriesContainerRepositoryCollectionItem struct {
 	// Total storage size in GBs that will be charged.
-	BillableSizeInGbs string `pulumi:"billableSizeInGbs"`
+	BillableSizeInGbs *string `pulumi:"billableSizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Total number of images.
-	ImageCount int `pulumi:"imageCount"`
+	ImageCount *int `pulumi:"imageCount"`
 	// Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-	IsImmutable bool `pulumi:"isImmutable"`
+	IsImmutable *bool `pulumi:"isImmutable"`
 	// A filter to return resources that match the isPublic value.
-	IsPublic bool `pulumi:"isPublic"`
+	IsPublic *bool `pulumi:"isPublic"`
 	// Total number of layers.
-	LayerCount int `pulumi:"layerCount"`
+	LayerCount *int `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
-	LayersSizeInBytes string `pulumi:"layersSizeInBytes"`
+	LayersSizeInBytes *string `pulumi:"layersSizeInBytes"`
 	// The tenancy namespace used in the container repository path.
-	Namespace string `pulumi:"namespace"`
+	Namespace *string `pulumi:"namespace"`
 	// Container repository readme.
 	Readmes []GetContainerRepositoriesContainerRepositoryCollectionItemReadme `pulumi:"readmes"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the repository was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
-	TimeLastPushed string `pulumi:"timeLastPushed"`
+	TimeLastPushed *string `pulumi:"timeLastPushed"`
 }
 
 // GetContainerRepositoriesContainerRepositoryCollectionItemInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionItemArgs and GetContainerRepositoriesContainerRepositoryCollectionItemOutput values.
@@ -1516,41 +1299,41 @@ type GetContainerRepositoriesContainerRepositoryCollectionItemInput interface {
 
 type GetContainerRepositoriesContainerRepositoryCollectionItemArgs struct {
 	// Total storage size in GBs that will be charged.
-	BillableSizeInGbs pulumi.StringInput `pulumi:"billableSizeInGbs"`
+	BillableSizeInGbs pulumi.StringPtrInput `pulumi:"billableSizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Total number of images.
-	ImageCount pulumi.IntInput `pulumi:"imageCount"`
+	ImageCount pulumi.IntPtrInput `pulumi:"imageCount"`
 	// Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-	IsImmutable pulumi.BoolInput `pulumi:"isImmutable"`
+	IsImmutable pulumi.BoolPtrInput `pulumi:"isImmutable"`
 	// A filter to return resources that match the isPublic value.
-	IsPublic pulumi.BoolInput `pulumi:"isPublic"`
+	IsPublic pulumi.BoolPtrInput `pulumi:"isPublic"`
 	// Total number of layers.
-	LayerCount pulumi.IntInput `pulumi:"layerCount"`
+	LayerCount pulumi.IntPtrInput `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
-	LayersSizeInBytes pulumi.StringInput `pulumi:"layersSizeInBytes"`
+	LayersSizeInBytes pulumi.StringPtrInput `pulumi:"layersSizeInBytes"`
 	// The tenancy namespace used in the container repository path.
-	Namespace pulumi.StringInput `pulumi:"namespace"`
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Container repository readme.
 	Readmes GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayInput `pulumi:"readmes"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the repository was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
-	TimeLastPushed pulumi.StringInput `pulumi:"timeLastPushed"`
+	TimeLastPushed pulumi.StringPtrInput `pulumi:"timeLastPushed"`
 }
 
 func (GetContainerRepositoriesContainerRepositoryCollectionItemArgs) ElementType() reflect.Type {
@@ -1563,12 +1346,6 @@ func (i GetContainerRepositoriesContainerRepositoryCollectionItemArgs) ToGetCont
 
 func (i GetContainerRepositoriesContainerRepositoryCollectionItemArgs) ToGetContainerRepositoriesContainerRepositoryCollectionItemOutputWithContext(ctx context.Context) GetContainerRepositoriesContainerRepositoryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerRepositoriesContainerRepositoryCollectionItemOutput)
-}
-
-func (i GetContainerRepositoriesContainerRepositoryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerRepositoriesContainerRepositoryCollectionItem] {
-	return pulumix.Output[GetContainerRepositoriesContainerRepositoryCollectionItem]{
-		OutputState: i.ToGetContainerRepositoriesContainerRepositoryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetContainerRepositoriesContainerRepositoryCollectionItemArrayInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionItemArray and GetContainerRepositoriesContainerRepositoryCollectionItemArrayOutput values.
@@ -1596,12 +1373,6 @@ func (i GetContainerRepositoriesContainerRepositoryCollectionItemArray) ToGetCon
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerRepositoriesContainerRepositoryCollectionItemArrayOutput)
 }
 
-func (i GetContainerRepositoriesContainerRepositoryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerRepositoriesContainerRepositoryCollectionItem] {
-	return pulumix.Output[[]GetContainerRepositoriesContainerRepositoryCollectionItem]{
-		OutputState: i.ToGetContainerRepositoriesContainerRepositoryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerRepositoriesContainerRepositoryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetContainerRepositoriesContainerRepositoryCollectionItemOutput) ElementType() reflect.Type {
@@ -1616,25 +1387,19 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) ToGetCo
 	return o
 }
 
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerRepositoriesContainerRepositoryCollectionItem] {
-	return pulumix.Output[GetContainerRepositoriesContainerRepositoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Total storage size in GBs that will be charged.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) BillableSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.BillableSizeInGbs }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) BillableSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *string { return v.BillableSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The id of the user or principal that created the resource.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1645,8 +1410,8 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) Defined
 }
 
 // A filter to return only resources that match the given display name exactly.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -1657,38 +1422,38 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) Freefor
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.  Example: `ocid1.containerrepo.oc1..exampleuniqueID`
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Total number of images.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) ImageCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) int { return v.ImageCount }).(pulumi.IntOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) ImageCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *int { return v.ImageCount }).(pulumi.IntPtrOutput)
 }
 
 // Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) IsImmutable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) bool { return v.IsImmutable }).(pulumi.BoolOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) IsImmutable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *bool { return v.IsImmutable }).(pulumi.BoolPtrOutput)
 }
 
 // A filter to return resources that match the isPublic value.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) IsPublic() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) bool { return v.IsPublic }).(pulumi.BoolOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) IsPublic() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *bool { return v.IsPublic }).(pulumi.BoolPtrOutput)
 }
 
 // Total number of layers.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) LayerCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) int { return v.LayerCount }).(pulumi.IntOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) LayerCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *int { return v.LayerCount }).(pulumi.IntPtrOutput)
 }
 
 // Total storage in bytes consumed by layers.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) LayersSizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.LayersSizeInBytes }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) LayersSizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *string { return v.LayersSizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // The tenancy namespace used in the container repository path.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) Namespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
 
 // Container repository readme.
@@ -1699,8 +1464,8 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) Readmes
 }
 
 // A filter to return only resources that match the given lifecycle state name exactly.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1711,13 +1476,13 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) SystemT
 }
 
 // An RFC 3339 timestamp indicating when the repository was created.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // An RFC 3339 timestamp indicating when an image was last pushed to the repository.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) TimeLastPushed() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.TimeLastPushed }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) TimeLastPushed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) *string { return v.TimeLastPushed }).(pulumi.StringPtrOutput)
 }
 
 type GetContainerRepositoriesContainerRepositoryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -1734,12 +1499,6 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemArrayOutput) To
 	return o
 }
 
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerRepositoriesContainerRepositoryCollectionItem] {
-	return pulumix.Output[[]GetContainerRepositoriesContainerRepositoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerRepositoriesContainerRepositoryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetContainerRepositoriesContainerRepositoryCollectionItemOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerRepositoriesContainerRepositoryCollectionItem {
 		return vs[0].([]GetContainerRepositoriesContainerRepositoryCollectionItem)[vs[1].(int)]
@@ -1748,9 +1507,9 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemArrayOutput) In
 
 type GetContainerRepositoriesContainerRepositoryCollectionItemReadme struct {
 	// Readme content. Avoid entering confidential information.
-	Content string `pulumi:"content"`
+	Content *string `pulumi:"content"`
 	// Readme format. Supported formats are text/plain and text/markdown.
-	Format string `pulumi:"format"`
+	Format *string `pulumi:"format"`
 }
 
 // GetContainerRepositoriesContainerRepositoryCollectionItemReadmeInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs and GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput values.
@@ -1766,9 +1525,9 @@ type GetContainerRepositoriesContainerRepositoryCollectionItemReadmeInput interf
 
 type GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs struct {
 	// Readme content. Avoid entering confidential information.
-	Content pulumi.StringInput `pulumi:"content"`
+	Content pulumi.StringPtrInput `pulumi:"content"`
 	// Readme format. Supported formats are text/plain and text/markdown.
-	Format pulumi.StringInput `pulumi:"format"`
+	Format pulumi.StringPtrInput `pulumi:"format"`
 }
 
 func (GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs) ElementType() reflect.Type {
@@ -1781,12 +1540,6 @@ func (i GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs) ToG
 
 func (i GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs) ToGetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutputWithContext(ctx context.Context) GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput)
-}
-
-func (i GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerRepositoriesContainerRepositoryCollectionItemReadme] {
-	return pulumix.Output[GetContainerRepositoriesContainerRepositoryCollectionItemReadme]{
-		OutputState: i.ToGetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArray and GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutput values.
@@ -1814,12 +1567,6 @@ func (i GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArray) To
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutput)
 }
 
-func (i GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerRepositoriesContainerRepositoryCollectionItemReadme] {
-	return pulumix.Output[[]GetContainerRepositoriesContainerRepositoryCollectionItemReadme]{
-		OutputState: i.ToGetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput struct{ *pulumi.OutputState }
 
 func (GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput) ElementType() reflect.Type {
@@ -1834,20 +1581,14 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput) T
 	return o
 }
 
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerRepositoriesContainerRepositoryCollectionItemReadme] {
-	return pulumix.Output[GetContainerRepositoriesContainerRepositoryCollectionItemReadme]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Readme content. Avoid entering confidential information.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItemReadme) string { return v.Content }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItemReadme) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // Readme format. Supported formats are text/plain and text/markdown.
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput) Format() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItemReadme) string { return v.Format }).(pulumi.StringOutput)
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItemReadme) *string { return v.Format }).(pulumi.StringPtrOutput)
 }
 
 type GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutput struct{ *pulumi.OutputState }
@@ -1862,12 +1603,6 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutp
 
 func (o GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutput) ToGetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutputWithContext(ctx context.Context) GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutput {
 	return o
-}
-
-func (o GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerRepositoriesContainerRepositoryCollectionItemReadme] {
-	return pulumix.Output[[]GetContainerRepositoriesContainerRepositoryCollectionItemReadme]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutput) Index(i pulumi.IntInput) GetContainerRepositoriesContainerRepositoryCollectionItemReadmeOutput {
@@ -1911,12 +1646,6 @@ func (i GetContainerRepositoriesFilterArgs) ToGetContainerRepositoriesFilterOutp
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerRepositoriesFilterOutput)
 }
 
-func (i GetContainerRepositoriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerRepositoriesFilter] {
-	return pulumix.Output[GetContainerRepositoriesFilter]{
-		OutputState: i.ToGetContainerRepositoriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerRepositoriesFilterArrayInput is an input type that accepts GetContainerRepositoriesFilterArray and GetContainerRepositoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetContainerRepositoriesFilterArrayInput` via:
 //
@@ -1942,12 +1671,6 @@ func (i GetContainerRepositoriesFilterArray) ToGetContainerRepositoriesFilterArr
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerRepositoriesFilterArrayOutput)
 }
 
-func (i GetContainerRepositoriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerRepositoriesFilter] {
-	return pulumix.Output[[]GetContainerRepositoriesFilter]{
-		OutputState: i.ToGetContainerRepositoriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerRepositoriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetContainerRepositoriesFilterOutput) ElementType() reflect.Type {
@@ -1960,12 +1683,6 @@ func (o GetContainerRepositoriesFilterOutput) ToGetContainerRepositoriesFilterOu
 
 func (o GetContainerRepositoriesFilterOutput) ToGetContainerRepositoriesFilterOutputWithContext(ctx context.Context) GetContainerRepositoriesFilterOutput {
 	return o
-}
-
-func (o GetContainerRepositoriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerRepositoriesFilter] {
-	return pulumix.Output[GetContainerRepositoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerRepositoriesFilterOutput) Name() pulumi.StringOutput {
@@ -1994,12 +1711,6 @@ func (o GetContainerRepositoriesFilterArrayOutput) ToGetContainerRepositoriesFil
 	return o
 }
 
-func (o GetContainerRepositoriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerRepositoriesFilter] {
-	return pulumix.Output[[]GetContainerRepositoriesFilter]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerRepositoriesFilterArrayOutput) Index(i pulumi.IntInput) GetContainerRepositoriesFilterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerRepositoriesFilter {
 		return vs[0].([]GetContainerRepositoriesFilter)[vs[1].(int)]
@@ -2008,9 +1719,9 @@ func (o GetContainerRepositoriesFilterArrayOutput) Index(i pulumi.IntInput) GetC
 
 type GetContainerRepositoryReadme struct {
 	// Readme content. Avoid entering confidential information.
-	Content string `pulumi:"content"`
+	Content *string `pulumi:"content"`
 	// Readme format. Supported formats are text/plain and text/markdown.
-	Format string `pulumi:"format"`
+	Format *string `pulumi:"format"`
 }
 
 // GetContainerRepositoryReadmeInput is an input type that accepts GetContainerRepositoryReadmeArgs and GetContainerRepositoryReadmeOutput values.
@@ -2026,9 +1737,9 @@ type GetContainerRepositoryReadmeInput interface {
 
 type GetContainerRepositoryReadmeArgs struct {
 	// Readme content. Avoid entering confidential information.
-	Content pulumi.StringInput `pulumi:"content"`
+	Content pulumi.StringPtrInput `pulumi:"content"`
 	// Readme format. Supported formats are text/plain and text/markdown.
-	Format pulumi.StringInput `pulumi:"format"`
+	Format pulumi.StringPtrInput `pulumi:"format"`
 }
 
 func (GetContainerRepositoryReadmeArgs) ElementType() reflect.Type {
@@ -2041,12 +1752,6 @@ func (i GetContainerRepositoryReadmeArgs) ToGetContainerRepositoryReadmeOutput()
 
 func (i GetContainerRepositoryReadmeArgs) ToGetContainerRepositoryReadmeOutputWithContext(ctx context.Context) GetContainerRepositoryReadmeOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerRepositoryReadmeOutput)
-}
-
-func (i GetContainerRepositoryReadmeArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerRepositoryReadme] {
-	return pulumix.Output[GetContainerRepositoryReadme]{
-		OutputState: i.ToGetContainerRepositoryReadmeOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetContainerRepositoryReadmeArrayInput is an input type that accepts GetContainerRepositoryReadmeArray and GetContainerRepositoryReadmeArrayOutput values.
@@ -2074,12 +1779,6 @@ func (i GetContainerRepositoryReadmeArray) ToGetContainerRepositoryReadmeArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerRepositoryReadmeArrayOutput)
 }
 
-func (i GetContainerRepositoryReadmeArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerRepositoryReadme] {
-	return pulumix.Output[[]GetContainerRepositoryReadme]{
-		OutputState: i.ToGetContainerRepositoryReadmeArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerRepositoryReadmeOutput struct{ *pulumi.OutputState }
 
 func (GetContainerRepositoryReadmeOutput) ElementType() reflect.Type {
@@ -2094,20 +1793,14 @@ func (o GetContainerRepositoryReadmeOutput) ToGetContainerRepositoryReadmeOutput
 	return o
 }
 
-func (o GetContainerRepositoryReadmeOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerRepositoryReadme] {
-	return pulumix.Output[GetContainerRepositoryReadme]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Readme content. Avoid entering confidential information.
-func (o GetContainerRepositoryReadmeOutput) Content() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoryReadme) string { return v.Content }).(pulumi.StringOutput)
+func (o GetContainerRepositoryReadmeOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoryReadme) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
 // Readme format. Supported formats are text/plain and text/markdown.
-func (o GetContainerRepositoryReadmeOutput) Format() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerRepositoryReadme) string { return v.Format }).(pulumi.StringOutput)
+func (o GetContainerRepositoryReadmeOutput) Format() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoryReadme) *string { return v.Format }).(pulumi.StringPtrOutput)
 }
 
 type GetContainerRepositoryReadmeArrayOutput struct{ *pulumi.OutputState }
@@ -2124,12 +1817,6 @@ func (o GetContainerRepositoryReadmeArrayOutput) ToGetContainerRepositoryReadmeA
 	return o
 }
 
-func (o GetContainerRepositoryReadmeArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerRepositoryReadme] {
-	return pulumix.Output[[]GetContainerRepositoryReadme]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerRepositoryReadmeArrayOutput) Index(i pulumi.IntInput) GetContainerRepositoryReadmeOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerRepositoryReadme {
 		return vs[0].([]GetContainerRepositoryReadme)[vs[1].(int)]
@@ -2138,7 +1825,7 @@ func (o GetContainerRepositoryReadmeArrayOutput) Index(i pulumi.IntInput) GetCon
 
 type GetContainerSignaturesContainerImageSignatureCollection struct {
 	Items               []GetContainerSignaturesContainerImageSignatureCollectionItem `pulumi:"items"`
-	RemainingItemsCount int                                                           `pulumi:"remainingItemsCount"`
+	RemainingItemsCount *int                                                          `pulumi:"remainingItemsCount"`
 }
 
 // GetContainerSignaturesContainerImageSignatureCollectionInput is an input type that accepts GetContainerSignaturesContainerImageSignatureCollectionArgs and GetContainerSignaturesContainerImageSignatureCollectionOutput values.
@@ -2154,7 +1841,7 @@ type GetContainerSignaturesContainerImageSignatureCollectionInput interface {
 
 type GetContainerSignaturesContainerImageSignatureCollectionArgs struct {
 	Items               GetContainerSignaturesContainerImageSignatureCollectionItemArrayInput `pulumi:"items"`
-	RemainingItemsCount pulumi.IntInput                                                       `pulumi:"remainingItemsCount"`
+	RemainingItemsCount pulumi.IntPtrInput                                                    `pulumi:"remainingItemsCount"`
 }
 
 func (GetContainerSignaturesContainerImageSignatureCollectionArgs) ElementType() reflect.Type {
@@ -2167,12 +1854,6 @@ func (i GetContainerSignaturesContainerImageSignatureCollectionArgs) ToGetContai
 
 func (i GetContainerSignaturesContainerImageSignatureCollectionArgs) ToGetContainerSignaturesContainerImageSignatureCollectionOutputWithContext(ctx context.Context) GetContainerSignaturesContainerImageSignatureCollectionOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerSignaturesContainerImageSignatureCollectionOutput)
-}
-
-func (i GetContainerSignaturesContainerImageSignatureCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerSignaturesContainerImageSignatureCollection] {
-	return pulumix.Output[GetContainerSignaturesContainerImageSignatureCollection]{
-		OutputState: i.ToGetContainerSignaturesContainerImageSignatureCollectionOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetContainerSignaturesContainerImageSignatureCollectionArrayInput is an input type that accepts GetContainerSignaturesContainerImageSignatureCollectionArray and GetContainerSignaturesContainerImageSignatureCollectionArrayOutput values.
@@ -2200,12 +1881,6 @@ func (i GetContainerSignaturesContainerImageSignatureCollectionArray) ToGetConta
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerSignaturesContainerImageSignatureCollectionArrayOutput)
 }
 
-func (i GetContainerSignaturesContainerImageSignatureCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerSignaturesContainerImageSignatureCollection] {
-	return pulumix.Output[[]GetContainerSignaturesContainerImageSignatureCollection]{
-		OutputState: i.ToGetContainerSignaturesContainerImageSignatureCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerSignaturesContainerImageSignatureCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetContainerSignaturesContainerImageSignatureCollectionOutput) ElementType() reflect.Type {
@@ -2220,20 +1895,14 @@ func (o GetContainerSignaturesContainerImageSignatureCollectionOutput) ToGetCont
 	return o
 }
 
-func (o GetContainerSignaturesContainerImageSignatureCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerSignaturesContainerImageSignatureCollection] {
-	return pulumix.Output[GetContainerSignaturesContainerImageSignatureCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerSignaturesContainerImageSignatureCollectionOutput) Items() GetContainerSignaturesContainerImageSignatureCollectionItemArrayOutput {
 	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollection) []GetContainerSignaturesContainerImageSignatureCollectionItem {
 		return v.Items
 	}).(GetContainerSignaturesContainerImageSignatureCollectionItemArrayOutput)
 }
 
-func (o GetContainerSignaturesContainerImageSignatureCollectionOutput) RemainingItemsCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollection) int { return v.RemainingItemsCount }).(pulumi.IntOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionOutput) RemainingItemsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollection) *int { return v.RemainingItemsCount }).(pulumi.IntPtrOutput)
 }
 
 type GetContainerSignaturesContainerImageSignatureCollectionArrayOutput struct{ *pulumi.OutputState }
@@ -2250,12 +1919,6 @@ func (o GetContainerSignaturesContainerImageSignatureCollectionArrayOutput) ToGe
 	return o
 }
 
-func (o GetContainerSignaturesContainerImageSignatureCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerSignaturesContainerImageSignatureCollection] {
-	return pulumix.Output[[]GetContainerSignaturesContainerImageSignatureCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerSignaturesContainerImageSignatureCollectionArrayOutput) Index(i pulumi.IntInput) GetContainerSignaturesContainerImageSignatureCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetContainerSignaturesContainerImageSignatureCollection {
 		return vs[0].([]GetContainerSignaturesContainerImageSignatureCollection)[vs[1].(int)]
@@ -2264,35 +1927,35 @@ func (o GetContainerSignaturesContainerImageSignatureCollectionArrayOutput) Inde
 
 type GetContainerSignaturesContainerImageSignatureCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
-	CreatedBy string `pulumi:"createdBy"`
+	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A filter to return a container image summary only for the specified container image OCID.
-	ImageId string `pulumi:"imageId"`
+	ImageId *string `pulumi:"imageId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-	KmsKeyId string `pulumi:"kmsKeyId"`
+	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// The base64 encoded signature payload that was signed.
-	Message string `pulumi:"message"`
+	Message *string `pulumi:"message"`
 	// The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
-	Signature string `pulumi:"signature"`
+	Signature *string `pulumi:"signature"`
 	// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-	SigningAlgorithm string `pulumi:"signingAlgorithm"`
+	SigningAlgorithm *string `pulumi:"signingAlgorithm"`
 	// The current state of the container image signature.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the image was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetContainerSignaturesContainerImageSignatureCollectionItemInput is an input type that accepts GetContainerSignaturesContainerImageSignatureCollectionItemArgs and GetContainerSignaturesContainerImageSignatureCollectionItemOutput values.
@@ -2308,35 +1971,35 @@ type GetContainerSignaturesContainerImageSignatureCollectionItemInput interface 
 
 type GetContainerSignaturesContainerImageSignatureCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The id of the user or principal that created the resource.
-	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return a container image summary only for the specified container image OCID.
-	ImageId pulumi.StringInput `pulumi:"imageId"`
+	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
+	KmsKeyVersionId pulumi.StringPtrInput `pulumi:"kmsKeyVersionId"`
 	// The base64 encoded signature payload that was signed.
-	Message pulumi.StringInput `pulumi:"message"`
+	Message pulumi.StringPtrInput `pulumi:"message"`
 	// The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
-	Signature pulumi.StringInput `pulumi:"signature"`
+	Signature pulumi.StringPtrInput `pulumi:"signature"`
 	// The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-	SigningAlgorithm pulumi.StringInput `pulumi:"signingAlgorithm"`
+	SigningAlgorithm pulumi.StringPtrInput `pulumi:"signingAlgorithm"`
 	// The current state of the container image signature.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// An RFC 3339 timestamp indicating when the image was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetContainerSignaturesContainerImageSignatureCollectionItemArgs) ElementType() reflect.Type {
@@ -2349,12 +2012,6 @@ func (i GetContainerSignaturesContainerImageSignatureCollectionItemArgs) ToGetCo
 
 func (i GetContainerSignaturesContainerImageSignatureCollectionItemArgs) ToGetContainerSignaturesContainerImageSignatureCollectionItemOutputWithContext(ctx context.Context) GetContainerSignaturesContainerImageSignatureCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerSignaturesContainerImageSignatureCollectionItemOutput)
-}
-
-func (i GetContainerSignaturesContainerImageSignatureCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerSignaturesContainerImageSignatureCollectionItem] {
-	return pulumix.Output[GetContainerSignaturesContainerImageSignatureCollectionItem]{
-		OutputState: i.ToGetContainerSignaturesContainerImageSignatureCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetContainerSignaturesContainerImageSignatureCollectionItemArrayInput is an input type that accepts GetContainerSignaturesContainerImageSignatureCollectionItemArray and GetContainerSignaturesContainerImageSignatureCollectionItemArrayOutput values.
@@ -2382,12 +2039,6 @@ func (i GetContainerSignaturesContainerImageSignatureCollectionItemArray) ToGetC
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerSignaturesContainerImageSignatureCollectionItemArrayOutput)
 }
 
-func (i GetContainerSignaturesContainerImageSignatureCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerSignaturesContainerImageSignatureCollectionItem] {
-	return pulumix.Output[[]GetContainerSignaturesContainerImageSignatureCollectionItem]{
-		OutputState: i.ToGetContainerSignaturesContainerImageSignatureCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerSignaturesContainerImageSignatureCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetContainerSignaturesContainerImageSignatureCollectionItemOutput) ElementType() reflect.Type {
@@ -2402,20 +2053,14 @@ func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) ToGet
 	return o
 }
 
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerSignaturesContainerImageSignatureCollectionItem] {
-	return pulumix.Output[GetContainerSignaturesContainerImageSignatureCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The id of the user or principal that created the resource.
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -2426,8 +2071,8 @@ func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) Defin
 }
 
 // A filter to return only resources that match the given display name exactly.
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -2438,43 +2083,43 @@ func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) Freef
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container image signature.  Example: `ocid1.containerimagesignature.oc1..exampleuniqueID`
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return a container image summary only for the specified container image OCID.
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) ImageId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.ImageId }).(pulumi.StringOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the kmsKeyVersionId used to sign the container image.  Example: `ocid1.keyversion.oc1..exampleuniqueID`
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) KmsKeyVersionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) KmsKeyVersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) *string { return v.KmsKeyVersionId }).(pulumi.StringPtrOutput)
 }
 
 // The base64 encoded signature payload that was signed.
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) Message() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.Message }).(pulumi.StringOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) *string { return v.Message }).(pulumi.StringPtrOutput)
 }
 
 // The signature of the message field using the kmsKeyId, the kmsKeyVersionId, and the signingAlgorithm.
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) Signature() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.Signature }).(pulumi.StringOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) *string { return v.Signature }).(pulumi.StringPtrOutput)
 }
 
 // The algorithm to be used for signing. These are the only supported signing algorithms for container images.
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) SigningAlgorithm() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.SigningAlgorithm }).(pulumi.StringOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) SigningAlgorithm() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) *string { return v.SigningAlgorithm }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the container image signature.
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -2485,8 +2130,8 @@ func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) Syste
 }
 
 // An RFC 3339 timestamp indicating when the image was created.
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetContainerSignaturesContainerImageSignatureCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerSignaturesContainerImageSignatureCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetContainerSignaturesContainerImageSignatureCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -2501,12 +2146,6 @@ func (o GetContainerSignaturesContainerImageSignatureCollectionItemArrayOutput) 
 
 func (o GetContainerSignaturesContainerImageSignatureCollectionItemArrayOutput) ToGetContainerSignaturesContainerImageSignatureCollectionItemArrayOutputWithContext(ctx context.Context) GetContainerSignaturesContainerImageSignatureCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetContainerSignaturesContainerImageSignatureCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerSignaturesContainerImageSignatureCollectionItem] {
-	return pulumix.Output[[]GetContainerSignaturesContainerImageSignatureCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerSignaturesContainerImageSignatureCollectionItemArrayOutput) Index(i pulumi.IntInput) GetContainerSignaturesContainerImageSignatureCollectionItemOutput {
@@ -2550,12 +2189,6 @@ func (i GetContainerSignaturesFilterArgs) ToGetContainerSignaturesFilterOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerSignaturesFilterOutput)
 }
 
-func (i GetContainerSignaturesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetContainerSignaturesFilter] {
-	return pulumix.Output[GetContainerSignaturesFilter]{
-		OutputState: i.ToGetContainerSignaturesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetContainerSignaturesFilterArrayInput is an input type that accepts GetContainerSignaturesFilterArray and GetContainerSignaturesFilterArrayOutput values.
 // You can construct a concrete instance of `GetContainerSignaturesFilterArrayInput` via:
 //
@@ -2581,12 +2214,6 @@ func (i GetContainerSignaturesFilterArray) ToGetContainerSignaturesFilterArrayOu
 	return pulumi.ToOutputWithContext(ctx, i).(GetContainerSignaturesFilterArrayOutput)
 }
 
-func (i GetContainerSignaturesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerSignaturesFilter] {
-	return pulumix.Output[[]GetContainerSignaturesFilter]{
-		OutputState: i.ToGetContainerSignaturesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetContainerSignaturesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetContainerSignaturesFilterOutput) ElementType() reflect.Type {
@@ -2599,12 +2226,6 @@ func (o GetContainerSignaturesFilterOutput) ToGetContainerSignaturesFilterOutput
 
 func (o GetContainerSignaturesFilterOutput) ToGetContainerSignaturesFilterOutputWithContext(ctx context.Context) GetContainerSignaturesFilterOutput {
 	return o
-}
-
-func (o GetContainerSignaturesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerSignaturesFilter] {
-	return pulumix.Output[GetContainerSignaturesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerSignaturesFilterOutput) Name() pulumi.StringOutput {
@@ -2631,12 +2252,6 @@ func (o GetContainerSignaturesFilterArrayOutput) ToGetContainerSignaturesFilterA
 
 func (o GetContainerSignaturesFilterArrayOutput) ToGetContainerSignaturesFilterArrayOutputWithContext(ctx context.Context) GetContainerSignaturesFilterArrayOutput {
 	return o
-}
-
-func (o GetContainerSignaturesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetContainerSignaturesFilter] {
-	return pulumix.Output[[]GetContainerSignaturesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetContainerSignaturesFilterArrayOutput) Index(i pulumi.IntInput) GetContainerSignaturesFilterOutput {
@@ -2680,12 +2295,6 @@ func (i GetGenericArtifactsFilterArgs) ToGetGenericArtifactsFilterOutputWithCont
 	return pulumi.ToOutputWithContext(ctx, i).(GetGenericArtifactsFilterOutput)
 }
 
-func (i GetGenericArtifactsFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetGenericArtifactsFilter] {
-	return pulumix.Output[GetGenericArtifactsFilter]{
-		OutputState: i.ToGetGenericArtifactsFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGenericArtifactsFilterArrayInput is an input type that accepts GetGenericArtifactsFilterArray and GetGenericArtifactsFilterArrayOutput values.
 // You can construct a concrete instance of `GetGenericArtifactsFilterArrayInput` via:
 //
@@ -2711,12 +2320,6 @@ func (i GetGenericArtifactsFilterArray) ToGetGenericArtifactsFilterArrayOutputWi
 	return pulumi.ToOutputWithContext(ctx, i).(GetGenericArtifactsFilterArrayOutput)
 }
 
-func (i GetGenericArtifactsFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGenericArtifactsFilter] {
-	return pulumix.Output[[]GetGenericArtifactsFilter]{
-		OutputState: i.ToGetGenericArtifactsFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGenericArtifactsFilterOutput struct{ *pulumi.OutputState }
 
 func (GetGenericArtifactsFilterOutput) ElementType() reflect.Type {
@@ -2729,12 +2332,6 @@ func (o GetGenericArtifactsFilterOutput) ToGetGenericArtifactsFilterOutput() Get
 
 func (o GetGenericArtifactsFilterOutput) ToGetGenericArtifactsFilterOutputWithContext(ctx context.Context) GetGenericArtifactsFilterOutput {
 	return o
-}
-
-func (o GetGenericArtifactsFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetGenericArtifactsFilter] {
-	return pulumix.Output[GetGenericArtifactsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGenericArtifactsFilterOutput) Name() pulumi.StringOutput {
@@ -2761,12 +2358,6 @@ func (o GetGenericArtifactsFilterArrayOutput) ToGetGenericArtifactsFilterArrayOu
 
 func (o GetGenericArtifactsFilterArrayOutput) ToGetGenericArtifactsFilterArrayOutputWithContext(ctx context.Context) GetGenericArtifactsFilterArrayOutput {
 	return o
-}
-
-func (o GetGenericArtifactsFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGenericArtifactsFilter] {
-	return pulumix.Output[[]GetGenericArtifactsFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGenericArtifactsFilterArrayOutput) Index(i pulumi.IntInput) GetGenericArtifactsFilterOutput {
@@ -2806,12 +2397,6 @@ func (i GetGenericArtifactsGenericArtifactCollectionArgs) ToGetGenericArtifactsG
 	return pulumi.ToOutputWithContext(ctx, i).(GetGenericArtifactsGenericArtifactCollectionOutput)
 }
 
-func (i GetGenericArtifactsGenericArtifactCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetGenericArtifactsGenericArtifactCollection] {
-	return pulumix.Output[GetGenericArtifactsGenericArtifactCollection]{
-		OutputState: i.ToGetGenericArtifactsGenericArtifactCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetGenericArtifactsGenericArtifactCollectionArrayInput is an input type that accepts GetGenericArtifactsGenericArtifactCollectionArray and GetGenericArtifactsGenericArtifactCollectionArrayOutput values.
 // You can construct a concrete instance of `GetGenericArtifactsGenericArtifactCollectionArrayInput` via:
 //
@@ -2837,12 +2422,6 @@ func (i GetGenericArtifactsGenericArtifactCollectionArray) ToGetGenericArtifacts
 	return pulumi.ToOutputWithContext(ctx, i).(GetGenericArtifactsGenericArtifactCollectionArrayOutput)
 }
 
-func (i GetGenericArtifactsGenericArtifactCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGenericArtifactsGenericArtifactCollection] {
-	return pulumix.Output[[]GetGenericArtifactsGenericArtifactCollection]{
-		OutputState: i.ToGetGenericArtifactsGenericArtifactCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGenericArtifactsGenericArtifactCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetGenericArtifactsGenericArtifactCollectionOutput) ElementType() reflect.Type {
@@ -2855,12 +2434,6 @@ func (o GetGenericArtifactsGenericArtifactCollectionOutput) ToGetGenericArtifact
 
 func (o GetGenericArtifactsGenericArtifactCollectionOutput) ToGetGenericArtifactsGenericArtifactCollectionOutputWithContext(ctx context.Context) GetGenericArtifactsGenericArtifactCollectionOutput {
 	return o
-}
-
-func (o GetGenericArtifactsGenericArtifactCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetGenericArtifactsGenericArtifactCollection] {
-	return pulumix.Output[GetGenericArtifactsGenericArtifactCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGenericArtifactsGenericArtifactCollectionOutput) Items() GetGenericArtifactsGenericArtifactCollectionItemArrayOutput {
@@ -2883,12 +2456,6 @@ func (o GetGenericArtifactsGenericArtifactCollectionArrayOutput) ToGetGenericArt
 	return o
 }
 
-func (o GetGenericArtifactsGenericArtifactCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGenericArtifactsGenericArtifactCollection] {
-	return pulumix.Output[[]GetGenericArtifactsGenericArtifactCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetGenericArtifactsGenericArtifactCollectionArrayOutput) Index(i pulumi.IntInput) GetGenericArtifactsGenericArtifactCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGenericArtifactsGenericArtifactCollection {
 		return vs[0].([]GetGenericArtifactsGenericArtifactCollection)[vs[1].(int)]
@@ -2896,31 +2463,31 @@ func (o GetGenericArtifactsGenericArtifactCollectionArrayOutput) Index(i pulumi.
 }
 
 type GetGenericArtifactsGenericArtifactCollectionItem struct {
-	ArtifactId string `pulumi:"artifactId"`
+	ArtifactId *string `pulumi:"artifactId"`
 	// Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
-	ArtifactPath string `pulumi:"artifactPath"`
+	ArtifactPath *string `pulumi:"artifactPath"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to return the resources for the specified OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A filter to return the artifacts only for the specified repository OCID.
-	RepositoryId string `pulumi:"repositoryId"`
+	RepositoryId *string `pulumi:"repositoryId"`
 	// Filter results by a specified SHA256 digest for the artifact.
-	Sha256 string `pulumi:"sha256"`
+	Sha256 *string `pulumi:"sha256"`
 	// The size of the artifact in bytes.
-	SizeInBytes string `pulumi:"sizeInBytes"`
+	SizeInBytes *string `pulumi:"sizeInBytes"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// An RFC 3339 timestamp indicating when the repository was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetGenericArtifactsGenericArtifactCollectionItemInput is an input type that accepts GetGenericArtifactsGenericArtifactCollectionItemArgs and GetGenericArtifactsGenericArtifactCollectionItemOutput values.
@@ -2935,31 +2502,31 @@ type GetGenericArtifactsGenericArtifactCollectionItemInput interface {
 }
 
 type GetGenericArtifactsGenericArtifactCollectionItemArgs struct {
-	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
+	ArtifactId pulumi.StringPtrInput `pulumi:"artifactId"`
 	// Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
-	ArtifactPath pulumi.StringInput `pulumi:"artifactPath"`
+	ArtifactPath pulumi.StringPtrInput `pulumi:"artifactPath"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to return the resources for the specified OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return the artifacts only for the specified repository OCID.
-	RepositoryId pulumi.StringInput `pulumi:"repositoryId"`
+	RepositoryId pulumi.StringPtrInput `pulumi:"repositoryId"`
 	// Filter results by a specified SHA256 digest for the artifact.
-	Sha256 pulumi.StringInput `pulumi:"sha256"`
+	Sha256 pulumi.StringPtrInput `pulumi:"sha256"`
 	// The size of the artifact in bytes.
-	SizeInBytes pulumi.StringInput `pulumi:"sizeInBytes"`
+	SizeInBytes pulumi.StringPtrInput `pulumi:"sizeInBytes"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// An RFC 3339 timestamp indicating when the repository was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetGenericArtifactsGenericArtifactCollectionItemArgs) ElementType() reflect.Type {
@@ -2972,12 +2539,6 @@ func (i GetGenericArtifactsGenericArtifactCollectionItemArgs) ToGetGenericArtifa
 
 func (i GetGenericArtifactsGenericArtifactCollectionItemArgs) ToGetGenericArtifactsGenericArtifactCollectionItemOutputWithContext(ctx context.Context) GetGenericArtifactsGenericArtifactCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetGenericArtifactsGenericArtifactCollectionItemOutput)
-}
-
-func (i GetGenericArtifactsGenericArtifactCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetGenericArtifactsGenericArtifactCollectionItem] {
-	return pulumix.Output[GetGenericArtifactsGenericArtifactCollectionItem]{
-		OutputState: i.ToGetGenericArtifactsGenericArtifactCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetGenericArtifactsGenericArtifactCollectionItemArrayInput is an input type that accepts GetGenericArtifactsGenericArtifactCollectionItemArray and GetGenericArtifactsGenericArtifactCollectionItemArrayOutput values.
@@ -3005,12 +2566,6 @@ func (i GetGenericArtifactsGenericArtifactCollectionItemArray) ToGetGenericArtif
 	return pulumi.ToOutputWithContext(ctx, i).(GetGenericArtifactsGenericArtifactCollectionItemArrayOutput)
 }
 
-func (i GetGenericArtifactsGenericArtifactCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetGenericArtifactsGenericArtifactCollectionItem] {
-	return pulumix.Output[[]GetGenericArtifactsGenericArtifactCollectionItem]{
-		OutputState: i.ToGetGenericArtifactsGenericArtifactCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetGenericArtifactsGenericArtifactCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetGenericArtifactsGenericArtifactCollectionItemOutput) ElementType() reflect.Type {
@@ -3025,24 +2580,18 @@ func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) ToGetGenericArti
 	return o
 }
 
-func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetGenericArtifactsGenericArtifactCollectionItem] {
-	return pulumix.Output[GetGenericArtifactsGenericArtifactCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
-func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) ArtifactId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) string { return v.ArtifactId }).(pulumi.StringOutput)
+func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) ArtifactId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) *string { return v.ArtifactId }).(pulumi.StringPtrOutput)
 }
 
 // Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
-func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) ArtifactPath() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) string { return v.ArtifactPath }).(pulumi.StringOutput)
+func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) ArtifactPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) *string { return v.ArtifactPath }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -3051,8 +2600,8 @@ func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) DefinedTags() pu
 }
 
 // A filter to return only resources that match the given display name exactly.
-func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -3061,38 +2610,38 @@ func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) FreeformTags() p
 }
 
 // A filter to return the resources for the specified OCID.
-func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return the artifacts only for the specified repository OCID.
-func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) RepositoryId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) string { return v.RepositoryId }).(pulumi.StringOutput)
+func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) RepositoryId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) *string { return v.RepositoryId }).(pulumi.StringPtrOutput)
 }
 
 // Filter results by a specified SHA256 digest for the artifact.
-func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) Sha256() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) string { return v.Sha256 }).(pulumi.StringOutput)
+func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) Sha256() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) *string { return v.Sha256 }).(pulumi.StringPtrOutput)
 }
 
 // The size of the artifact in bytes.
-func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) SizeInBytes() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) string { return v.SizeInBytes }).(pulumi.StringOutput)
+func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) *string { return v.SizeInBytes }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state name exactly.
-func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An RFC 3339 timestamp indicating when the repository was created.
-func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
-func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetGenericArtifactsGenericArtifactCollectionItemOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGenericArtifactsGenericArtifactCollectionItem) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetGenericArtifactsGenericArtifactCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3107,12 +2656,6 @@ func (o GetGenericArtifactsGenericArtifactCollectionItemArrayOutput) ToGetGeneri
 
 func (o GetGenericArtifactsGenericArtifactCollectionItemArrayOutput) ToGetGenericArtifactsGenericArtifactCollectionItemArrayOutputWithContext(ctx context.Context) GetGenericArtifactsGenericArtifactCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetGenericArtifactsGenericArtifactCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetGenericArtifactsGenericArtifactCollectionItem] {
-	return pulumix.Output[[]GetGenericArtifactsGenericArtifactCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetGenericArtifactsGenericArtifactCollectionItemArrayOutput) Index(i pulumi.IntInput) GetGenericArtifactsGenericArtifactCollectionItemOutput {
@@ -3156,12 +2699,6 @@ func (i GetRepositoriesFilterArgs) ToGetRepositoriesFilterOutputWithContext(ctx 
 	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoriesFilterOutput)
 }
 
-func (i GetRepositoriesFilterArgs) ToOutput(ctx context.Context) pulumix.Output[GetRepositoriesFilter] {
-	return pulumix.Output[GetRepositoriesFilter]{
-		OutputState: i.ToGetRepositoriesFilterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRepositoriesFilterArrayInput is an input type that accepts GetRepositoriesFilterArray and GetRepositoriesFilterArrayOutput values.
 // You can construct a concrete instance of `GetRepositoriesFilterArrayInput` via:
 //
@@ -3187,12 +2724,6 @@ func (i GetRepositoriesFilterArray) ToGetRepositoriesFilterArrayOutputWithContex
 	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoriesFilterArrayOutput)
 }
 
-func (i GetRepositoriesFilterArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRepositoriesFilter] {
-	return pulumix.Output[[]GetRepositoriesFilter]{
-		OutputState: i.ToGetRepositoriesFilterArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRepositoriesFilterOutput struct{ *pulumi.OutputState }
 
 func (GetRepositoriesFilterOutput) ElementType() reflect.Type {
@@ -3205,12 +2736,6 @@ func (o GetRepositoriesFilterOutput) ToGetRepositoriesFilterOutput() GetReposito
 
 func (o GetRepositoriesFilterOutput) ToGetRepositoriesFilterOutputWithContext(ctx context.Context) GetRepositoriesFilterOutput {
 	return o
-}
-
-func (o GetRepositoriesFilterOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoriesFilter] {
-	return pulumix.Output[GetRepositoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRepositoriesFilterOutput) Name() pulumi.StringOutput {
@@ -3237,12 +2762,6 @@ func (o GetRepositoriesFilterArrayOutput) ToGetRepositoriesFilterArrayOutput() G
 
 func (o GetRepositoriesFilterArrayOutput) ToGetRepositoriesFilterArrayOutputWithContext(ctx context.Context) GetRepositoriesFilterArrayOutput {
 	return o
-}
-
-func (o GetRepositoriesFilterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRepositoriesFilter] {
-	return pulumix.Output[[]GetRepositoriesFilter]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRepositoriesFilterArrayOutput) Index(i pulumi.IntInput) GetRepositoriesFilterOutput {
@@ -3282,12 +2801,6 @@ func (i GetRepositoriesRepositoryCollectionArgs) ToGetRepositoriesRepositoryColl
 	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoriesRepositoryCollectionOutput)
 }
 
-func (i GetRepositoriesRepositoryCollectionArgs) ToOutput(ctx context.Context) pulumix.Output[GetRepositoriesRepositoryCollection] {
-	return pulumix.Output[GetRepositoriesRepositoryCollection]{
-		OutputState: i.ToGetRepositoriesRepositoryCollectionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // GetRepositoriesRepositoryCollectionArrayInput is an input type that accepts GetRepositoriesRepositoryCollectionArray and GetRepositoriesRepositoryCollectionArrayOutput values.
 // You can construct a concrete instance of `GetRepositoriesRepositoryCollectionArrayInput` via:
 //
@@ -3313,12 +2826,6 @@ func (i GetRepositoriesRepositoryCollectionArray) ToGetRepositoriesRepositoryCol
 	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoriesRepositoryCollectionArrayOutput)
 }
 
-func (i GetRepositoriesRepositoryCollectionArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRepositoriesRepositoryCollection] {
-	return pulumix.Output[[]GetRepositoriesRepositoryCollection]{
-		OutputState: i.ToGetRepositoriesRepositoryCollectionArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRepositoriesRepositoryCollectionOutput struct{ *pulumi.OutputState }
 
 func (GetRepositoriesRepositoryCollectionOutput) ElementType() reflect.Type {
@@ -3331,12 +2838,6 @@ func (o GetRepositoriesRepositoryCollectionOutput) ToGetRepositoriesRepositoryCo
 
 func (o GetRepositoriesRepositoryCollectionOutput) ToGetRepositoriesRepositoryCollectionOutputWithContext(ctx context.Context) GetRepositoriesRepositoryCollectionOutput {
 	return o
-}
-
-func (o GetRepositoriesRepositoryCollectionOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoriesRepositoryCollection] {
-	return pulumix.Output[GetRepositoriesRepositoryCollection]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRepositoriesRepositoryCollectionOutput) Items() GetRepositoriesRepositoryCollectionItemArrayOutput {
@@ -3357,12 +2858,6 @@ func (o GetRepositoriesRepositoryCollectionArrayOutput) ToGetRepositoriesReposit
 	return o
 }
 
-func (o GetRepositoriesRepositoryCollectionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRepositoriesRepositoryCollection] {
-	return pulumix.Output[[]GetRepositoriesRepositoryCollection]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetRepositoriesRepositoryCollectionArrayOutput) Index(i pulumi.IntInput) GetRepositoriesRepositoryCollectionOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRepositoriesRepositoryCollection {
 		return vs[0].([]GetRepositoriesRepositoryCollection)[vs[1].(int)]
@@ -3371,25 +2866,25 @@ func (o GetRepositoriesRepositoryCollectionArrayOutput) Index(i pulumi.IntInput)
 
 type GetRepositoriesRepositoryCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The repository description.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A filter to return the resources for the specified OCID.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A filter to return resources that match the isImmutable value.
-	IsImmutable bool `pulumi:"isImmutable"`
+	IsImmutable *bool `pulumi:"isImmutable"`
 	// The repository's supported artifact type.
-	RepositoryType string `pulumi:"repositoryType"`
+	RepositoryType *string `pulumi:"repositoryType"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// An RFC 3339 timestamp indicating when the repository was created.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 // GetRepositoriesRepositoryCollectionItemInput is an input type that accepts GetRepositoriesRepositoryCollectionItemArgs and GetRepositoriesRepositoryCollectionItemOutput values.
@@ -3405,25 +2900,25 @@ type GetRepositoriesRepositoryCollectionItemInput interface {
 
 type GetRepositoriesRepositoryCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The repository description.
-	Description pulumi.StringInput `pulumi:"description"`
+	Description pulumi.StringPtrInput `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A filter to return the resources for the specified OCID.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return resources that match the isImmutable value.
-	IsImmutable pulumi.BoolInput `pulumi:"isImmutable"`
+	IsImmutable pulumi.BoolPtrInput `pulumi:"isImmutable"`
 	// The repository's supported artifact type.
-	RepositoryType pulumi.StringInput `pulumi:"repositoryType"`
+	RepositoryType pulumi.StringPtrInput `pulumi:"repositoryType"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
-	State pulumi.StringInput `pulumi:"state"`
+	State pulumi.StringPtrInput `pulumi:"state"`
 	// An RFC 3339 timestamp indicating when the repository was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
 
 func (GetRepositoriesRepositoryCollectionItemArgs) ElementType() reflect.Type {
@@ -3436,12 +2931,6 @@ func (i GetRepositoriesRepositoryCollectionItemArgs) ToGetRepositoriesRepository
 
 func (i GetRepositoriesRepositoryCollectionItemArgs) ToGetRepositoriesRepositoryCollectionItemOutputWithContext(ctx context.Context) GetRepositoriesRepositoryCollectionItemOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoriesRepositoryCollectionItemOutput)
-}
-
-func (i GetRepositoriesRepositoryCollectionItemArgs) ToOutput(ctx context.Context) pulumix.Output[GetRepositoriesRepositoryCollectionItem] {
-	return pulumix.Output[GetRepositoriesRepositoryCollectionItem]{
-		OutputState: i.ToGetRepositoriesRepositoryCollectionItemOutputWithContext(ctx).OutputState,
-	}
 }
 
 // GetRepositoriesRepositoryCollectionItemArrayInput is an input type that accepts GetRepositoriesRepositoryCollectionItemArray and GetRepositoriesRepositoryCollectionItemArrayOutput values.
@@ -3469,12 +2958,6 @@ func (i GetRepositoriesRepositoryCollectionItemArray) ToGetRepositoriesRepositor
 	return pulumi.ToOutputWithContext(ctx, i).(GetRepositoriesRepositoryCollectionItemArrayOutput)
 }
 
-func (i GetRepositoriesRepositoryCollectionItemArray) ToOutput(ctx context.Context) pulumix.Output[[]GetRepositoriesRepositoryCollectionItem] {
-	return pulumix.Output[[]GetRepositoriesRepositoryCollectionItem]{
-		OutputState: i.ToGetRepositoriesRepositoryCollectionItemArrayOutputWithContext(ctx).OutputState,
-	}
-}
-
 type GetRepositoriesRepositoryCollectionItemOutput struct{ *pulumi.OutputState }
 
 func (GetRepositoriesRepositoryCollectionItemOutput) ElementType() reflect.Type {
@@ -3489,15 +2972,9 @@ func (o GetRepositoriesRepositoryCollectionItemOutput) ToGetRepositoriesReposito
 	return o
 }
 
-func (o GetRepositoriesRepositoryCollectionItemOutput) ToOutput(ctx context.Context) pulumix.Output[GetRepositoriesRepositoryCollectionItem] {
-	return pulumix.Output[GetRepositoriesRepositoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-func (o GetRepositoriesRepositoryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -3506,13 +2983,13 @@ func (o GetRepositoriesRepositoryCollectionItemOutput) DefinedTags() pulumi.MapO
 }
 
 // The repository description.
-func (o GetRepositoriesRepositoryCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given display name exactly.
-func (o GetRepositoriesRepositoryCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -3521,28 +2998,28 @@ func (o GetRepositoriesRepositoryCollectionItemOutput) FreeformTags() pulumi.Map
 }
 
 // A filter to return the resources for the specified OCID.
-func (o GetRepositoriesRepositoryCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return resources that match the isImmutable value.
-func (o GetRepositoriesRepositoryCollectionItemOutput) IsImmutable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) bool { return v.IsImmutable }).(pulumi.BoolOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) IsImmutable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) *bool { return v.IsImmutable }).(pulumi.BoolPtrOutput)
 }
 
 // The repository's supported artifact type.
-func (o GetRepositoriesRepositoryCollectionItemOutput) RepositoryType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.RepositoryType }).(pulumi.StringOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) RepositoryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) *string { return v.RepositoryType }).(pulumi.StringPtrOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state name exactly.
-func (o GetRepositoriesRepositoryCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // An RFC 3339 timestamp indicating when the repository was created.
-func (o GetRepositoriesRepositoryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type GetRepositoriesRepositoryCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -3557,12 +3034,6 @@ func (o GetRepositoriesRepositoryCollectionItemArrayOutput) ToGetRepositoriesRep
 
 func (o GetRepositoriesRepositoryCollectionItemArrayOutput) ToGetRepositoriesRepositoryCollectionItemArrayOutputWithContext(ctx context.Context) GetRepositoriesRepositoryCollectionItemArrayOutput {
 	return o
-}
-
-func (o GetRepositoriesRepositoryCollectionItemArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]GetRepositoriesRepositoryCollectionItem] {
-	return pulumix.Output[[]GetRepositoriesRepositoryCollectionItem]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o GetRepositoriesRepositoryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRepositoriesRepositoryCollectionItemOutput {

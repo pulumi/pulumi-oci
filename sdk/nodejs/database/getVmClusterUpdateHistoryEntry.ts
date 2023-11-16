@@ -51,36 +51,36 @@ export interface GetVmClusterUpdateHistoryEntryResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Descriptive text providing additional details about the lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current lifecycle state of the maintenance update operation.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time when the maintenance update action completed.
      */
-    readonly timeCompleted: string;
+    readonly timeCompleted?: string;
     /**
      * The date and time when the maintenance update action started.
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
     /**
      * The update action performed using this maintenance update.
      */
-    readonly updateAction: string;
+    readonly updateAction?: string;
     readonly updateHistoryEntryId: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
      */
-    readonly updateId: string;
+    readonly updateId?: string;
     /**
      * The type of VM cluster maintenance update.
      */
-    readonly updateType: string;
+    readonly updateType?: string;
     readonly vmClusterId: string;
 }
 /**

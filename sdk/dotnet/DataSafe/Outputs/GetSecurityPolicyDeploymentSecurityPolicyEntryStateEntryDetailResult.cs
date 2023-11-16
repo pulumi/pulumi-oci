@@ -17,23 +17,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// The security policy entry type. Allowed values:
         /// * FIREWALL_POLICY - The SQL firewall policy entry type.
         /// </summary>
-        public readonly string EntryType;
+        public readonly string? EntryType;
         /// <summary>
         /// The time the the SQL firewall policy was generated on the target database, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeGenerated;
+        public readonly string? TimeGenerated;
         /// <summary>
         /// The last date and time the status of the SQL firewall policy was updated on the target database, in the format defined by RFC3339.
         /// </summary>
-        public readonly string TimeStatusUpdated;
+        public readonly string? TimeStatusUpdated;
 
         [OutputConstructor]
         private GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailResult(
-            string entryType,
+            string? entryType,
 
-            string timeGenerated,
+            string? timeGenerated,
 
-            string timeStatusUpdated)
+            string? timeStatusUpdated)
         {
             EntryType = entryType;
             TimeGenerated = timeGenerated;

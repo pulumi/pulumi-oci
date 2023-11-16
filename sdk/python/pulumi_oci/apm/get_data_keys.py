@@ -52,10 +52,7 @@ class GetDataKeysResult:
 
     @property
     @pulumi.getter(name="dataKeys")
-    def data_keys(self) -> Sequence['outputs.GetDataKeysDataKeyResult']:
-        """
-        The list of data_keys.
-        """
+    def data_keys(self) -> Optional[Sequence['outputs.GetDataKeysDataKeyResult']]:
         return pulumi.get(self, "data_keys")
 
     @property
@@ -65,7 +62,7 @@ class GetDataKeysResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -90,24 +87,7 @@ def get_data_keys(apm_domain_id: Optional[str] = None,
                   filters: Optional[Sequence[pulumi.InputType['GetDataKeysFilterArgs']]] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDataKeysResult:
     """
-    This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.
-
-    Lists all Data Keys for the specified APM domain. The caller may filter the list by specifying the 'dataKeyType'
-    query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_keys = oci.Apm.get_data_keys(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        data_key_type=var["data_key_data_key_type"])
-    ```
-
-
-    :param str apm_domain_id: The OCID of the APM domain
-    :param str data_key_type: Data key type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apmDomainId'] = apm_domain_id
@@ -130,23 +110,6 @@ def get_data_keys_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
                          filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDataKeysFilterArgs']]]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDataKeysResult]:
     """
-    This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.
-
-    Lists all Data Keys for the specified APM domain. The caller may filter the list by specifying the 'dataKeyType'
-    query parameter.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_data_keys = oci.Apm.get_data_keys(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        data_key_type=var["data_key_data_key_type"])
-    ```
-
-
-    :param str apm_domain_id: The OCID of the APM domain
-    :param str data_key_type: Data key type.
+    Use this data source to access information about an existing resource.
     """
     ...

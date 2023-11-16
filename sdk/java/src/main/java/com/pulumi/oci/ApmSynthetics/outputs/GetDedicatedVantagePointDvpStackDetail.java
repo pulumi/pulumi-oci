@@ -6,6 +6,8 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDedicatedVantagePointDvpStackDetail {
@@ -13,51 +15,51 @@ public final class GetDedicatedVantagePointDvpStackDetail {
      * @return Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
-    private String dvpStackId;
+    private @Nullable String dvpStackId;
     /**
      * @return Type of stack.
      * 
      */
-    private String dvpStackType;
+    private @Nullable String dvpStackType;
     /**
      * @return Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
-    private String dvpStreamId;
+    private @Nullable String dvpStreamId;
     /**
      * @return Version of the dedicated vantage point.
      * 
      */
-    private String dvpVersion;
+    private @Nullable String dvpVersion;
 
     private GetDedicatedVantagePointDvpStackDetail() {}
     /**
      * @return Stack [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
-    public String dvpStackId() {
-        return this.dvpStackId;
+    public Optional<String> dvpStackId() {
+        return Optional.ofNullable(this.dvpStackId);
     }
     /**
      * @return Type of stack.
      * 
      */
-    public String dvpStackType() {
-        return this.dvpStackType;
+    public Optional<String> dvpStackType() {
+        return Optional.ofNullable(this.dvpStackType);
     }
     /**
      * @return Stream [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Resource Manager stack for dedicated vantage point.
      * 
      */
-    public String dvpStreamId() {
-        return this.dvpStreamId;
+    public Optional<String> dvpStreamId() {
+        return Optional.ofNullable(this.dvpStreamId);
     }
     /**
      * @return Version of the dedicated vantage point.
      * 
      */
-    public String dvpVersion() {
-        return this.dvpVersion;
+    public Optional<String> dvpVersion() {
+        return Optional.ofNullable(this.dvpVersion);
     }
 
     public static Builder builder() {
@@ -69,10 +71,10 @@ public final class GetDedicatedVantagePointDvpStackDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String dvpStackId;
-        private String dvpStackType;
-        private String dvpStreamId;
-        private String dvpVersion;
+        private @Nullable String dvpStackId;
+        private @Nullable String dvpStackType;
+        private @Nullable String dvpStreamId;
+        private @Nullable String dvpVersion;
         public Builder() {}
         public Builder(GetDedicatedVantagePointDvpStackDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -83,23 +85,23 @@ public final class GetDedicatedVantagePointDvpStackDetail {
         }
 
         @CustomType.Setter
-        public Builder dvpStackId(String dvpStackId) {
-            this.dvpStackId = Objects.requireNonNull(dvpStackId);
+        public Builder dvpStackId(@Nullable String dvpStackId) {
+            this.dvpStackId = dvpStackId;
             return this;
         }
         @CustomType.Setter
-        public Builder dvpStackType(String dvpStackType) {
-            this.dvpStackType = Objects.requireNonNull(dvpStackType);
+        public Builder dvpStackType(@Nullable String dvpStackType) {
+            this.dvpStackType = dvpStackType;
             return this;
         }
         @CustomType.Setter
-        public Builder dvpStreamId(String dvpStreamId) {
-            this.dvpStreamId = Objects.requireNonNull(dvpStreamId);
+        public Builder dvpStreamId(@Nullable String dvpStreamId) {
+            this.dvpStreamId = dvpStreamId;
             return this;
         }
         @CustomType.Setter
-        public Builder dvpVersion(String dvpVersion) {
-            this.dvpVersion = Objects.requireNonNull(dvpVersion);
+        public Builder dvpVersion(@Nullable String dvpVersion) {
+            this.dvpVersion = dvpVersion;
             return this;
         }
         public GetDedicatedVantagePointDvpStackDetail build() {

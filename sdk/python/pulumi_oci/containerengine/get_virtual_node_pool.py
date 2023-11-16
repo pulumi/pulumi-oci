@@ -86,146 +86,92 @@ class GetVirtualNodePoolResult:
 
     @property
     @pulumi.getter(name="clusterId")
-    def cluster_id(self) -> str:
-        """
-        The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.
-        """
+    def cluster_id(self) -> Optional[str]:
         return pulumi.get(self, "cluster_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        Compartment of the virtual node pool.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        Display name of the virtual node pool. This is a non-unique value.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID of the virtual node pool.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="initialVirtualNodeLabels")
-    def initial_virtual_node_labels(self) -> Sequence['outputs.GetVirtualNodePoolInitialVirtualNodeLabelResult']:
-        """
-        Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
-        """
+    def initial_virtual_node_labels(self) -> Optional[Sequence['outputs.GetVirtualNodePoolInitialVirtualNodeLabelResult']]:
         return pulumi.get(self, "initial_virtual_node_labels")
 
     @property
     @pulumi.getter(name="kubernetesVersion")
-    def kubernetes_version(self) -> str:
-        """
-        The version of Kubernetes running on the nodes in the node pool.
-        """
+    def kubernetes_version(self) -> Optional[str]:
         return pulumi.get(self, "kubernetes_version")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Details about the state of the Virtual Node Pool.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[str]:
-        """
-        List of network security group IDs applied to the Pod VNIC.
-        """
+    def nsg_ids(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="placementConfigurations")
-    def placement_configurations(self) -> Sequence['outputs.GetVirtualNodePoolPlacementConfigurationResult']:
-        """
-        The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
-        """
+    def placement_configurations(self) -> Optional[Sequence['outputs.GetVirtualNodePoolPlacementConfigurationResult']]:
         return pulumi.get(self, "placement_configurations")
 
     @property
     @pulumi.getter(name="podConfigurations")
-    def pod_configurations(self) -> Sequence['outputs.GetVirtualNodePoolPodConfigurationResult']:
-        """
-        The pod configuration for pods run on virtual nodes of this virtual node pool.
-        """
+    def pod_configurations(self) -> Optional[Sequence['outputs.GetVirtualNodePoolPodConfigurationResult']]:
         return pulumi.get(self, "pod_configurations")
 
     @property
     @pulumi.getter
-    def size(self) -> int:
-        """
-        The number of Virtual Nodes that should be in the Virtual Node Pool. The placement configurations determine where these virtual nodes are placed.
-        """
+    def size(self) -> Optional[int]:
         return pulumi.get(self, "size")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The state of the Virtual Node Pool.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter
-    def taints(self) -> Sequence['outputs.GetVirtualNodePoolTaintResult']:
-        """
-        A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
-        """
+    def taints(self) -> Optional[Sequence['outputs.GetVirtualNodePoolTaintResult']]:
         return pulumi.get(self, "taints")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time the virtual node pool was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time the virtual node pool was updated.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
@@ -235,10 +181,7 @@ class GetVirtualNodePoolResult:
 
     @property
     @pulumi.getter(name="virtualNodeTags")
-    def virtual_node_tags(self) -> Sequence['outputs.GetVirtualNodePoolVirtualNodeTagResult']:
-        """
-        The tags associated to the virtual nodes in this virtual node pool.
-        """
+    def virtual_node_tags(self) -> Optional[Sequence['outputs.GetVirtualNodePoolVirtualNodeTagResult']]:
         return pulumi.get(self, "virtual_node_tags")
 
 
@@ -273,21 +216,7 @@ class AwaitableGetVirtualNodePoolResult(GetVirtualNodePoolResult):
 def get_virtual_node_pool(virtual_node_pool_id: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVirtualNodePoolResult:
     """
-    This data source provides details about a specific Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get the details of a virtual node pool.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_node_pool = oci.ContainerEngine.get_virtual_node_pool(virtual_node_pool_id=oci_containerengine_virtual_node_pool["test_virtual_node_pool"]["id"])
-    ```
-
-
-    :param str virtual_node_pool_id: The OCID of the virtual node pool.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['virtualNodePoolId'] = virtual_node_pool_id
@@ -321,20 +250,6 @@ def get_virtual_node_pool(virtual_node_pool_id: Optional[str] = None,
 def get_virtual_node_pool_output(virtual_node_pool_id: Optional[pulumi.Input[str]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVirtualNodePoolResult]:
     """
-    This data source provides details about a specific Virtual Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
-
-    Get the details of a virtual node pool.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_virtual_node_pool = oci.ContainerEngine.get_virtual_node_pool(virtual_node_pool_id=oci_containerengine_virtual_node_pool["test_virtual_node_pool"]["id"])
-    ```
-
-
-    :param str virtual_node_pool_id: The OCID of the virtual node pool.
+    Use this data source to access information about an existing resource.
     """
     ...

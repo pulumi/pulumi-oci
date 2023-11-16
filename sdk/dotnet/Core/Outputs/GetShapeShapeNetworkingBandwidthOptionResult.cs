@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetShapeShapeNetworkingBandwidthOptionResult
     {
-        public readonly double DefaultPerOcpuInGbps;
-        public readonly double MaxInGbps;
-        public readonly double MinInGbps;
+        public readonly double? DefaultPerOcpuInGbps;
+        public readonly double? MaxInGbps;
+        public readonly double? MinInGbps;
 
         [OutputConstructor]
         private GetShapeShapeNetworkingBandwidthOptionResult(
-            double defaultPerOcpuInGbps,
+            double? defaultPerOcpuInGbps,
 
-            double maxInGbps,
+            double? maxInGbps,
 
-            double minInGbps)
+            double? minInGbps)
         {
             DefaultPerOcpuInGbps = defaultPerOcpuInGbps;
             MaxInGbps = maxInGbps;

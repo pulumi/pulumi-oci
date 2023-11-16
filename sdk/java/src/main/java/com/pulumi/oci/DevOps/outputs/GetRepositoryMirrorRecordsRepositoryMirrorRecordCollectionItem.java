@@ -8,66 +8,68 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem {
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
      * 
      */
-    private String mirrorStatus;
-    private String timeCompleted;
+    private @Nullable String mirrorStatus;
+    private @Nullable String timeCompleted;
     /**
      * @return The time to enqueue a mirror operation.
      * 
      */
-    private String timeEnqueued;
+    private @Nullable String timeEnqueued;
     /**
      * @return The time to start a mirror operation.
      * 
      */
-    private String timeStarted;
+    private @Nullable String timeStarted;
     /**
      * @return Workrequest ID to track current mirror operation.
      * 
      */
-    private String workRequestId;
+    private @Nullable String workRequestId;
 
     private GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem() {}
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
      * 
      */
-    public String mirrorStatus() {
-        return this.mirrorStatus;
+    public Optional<String> mirrorStatus() {
+        return Optional.ofNullable(this.mirrorStatus);
     }
-    public String timeCompleted() {
-        return this.timeCompleted;
+    public Optional<String> timeCompleted() {
+        return Optional.ofNullable(this.timeCompleted);
     }
     /**
      * @return The time to enqueue a mirror operation.
      * 
      */
-    public String timeEnqueued() {
-        return this.timeEnqueued;
+    public Optional<String> timeEnqueued() {
+        return Optional.ofNullable(this.timeEnqueued);
     }
     /**
      * @return The time to start a mirror operation.
      * 
      */
-    public String timeStarted() {
-        return this.timeStarted;
+    public Optional<String> timeStarted() {
+        return Optional.ofNullable(this.timeStarted);
     }
     /**
      * @return Workrequest ID to track current mirror operation.
      * 
      */
-    public String workRequestId() {
-        return this.workRequestId;
+    public Optional<String> workRequestId() {
+        return Optional.ofNullable(this.workRequestId);
     }
 
     public static Builder builder() {
@@ -79,12 +81,12 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionIte
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> freeformTags;
-        private String mirrorStatus;
-        private String timeCompleted;
-        private String timeEnqueued;
-        private String timeStarted;
-        private String workRequestId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String mirrorStatus;
+        private @Nullable String timeCompleted;
+        private @Nullable String timeEnqueued;
+        private @Nullable String timeStarted;
+        private @Nullable String workRequestId;
         public Builder() {}
         public Builder(GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -97,33 +99,33 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionIte
         }
 
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder mirrorStatus(String mirrorStatus) {
-            this.mirrorStatus = Objects.requireNonNull(mirrorStatus);
+        public Builder mirrorStatus(@Nullable String mirrorStatus) {
+            this.mirrorStatus = mirrorStatus;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCompleted(String timeCompleted) {
-            this.timeCompleted = Objects.requireNonNull(timeCompleted);
+        public Builder timeCompleted(@Nullable String timeCompleted) {
+            this.timeCompleted = timeCompleted;
             return this;
         }
         @CustomType.Setter
-        public Builder timeEnqueued(String timeEnqueued) {
-            this.timeEnqueued = Objects.requireNonNull(timeEnqueued);
+        public Builder timeEnqueued(@Nullable String timeEnqueued) {
+            this.timeEnqueued = timeEnqueued;
             return this;
         }
         @CustomType.Setter
-        public Builder timeStarted(String timeStarted) {
-            this.timeStarted = Objects.requireNonNull(timeStarted);
+        public Builder timeStarted(@Nullable String timeStarted) {
+            this.timeStarted = timeStarted;
             return this;
         }
         @CustomType.Setter
-        public Builder workRequestId(String workRequestId) {
-            this.workRequestId = Objects.requireNonNull(workRequestId);
+        public Builder workRequestId(@Nullable String workRequestId) {
+            this.workRequestId = workRequestId;
             return this;
         }
         public GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem build() {

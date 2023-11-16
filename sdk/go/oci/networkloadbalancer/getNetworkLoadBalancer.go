@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Network Load Balancer resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -60,39 +59,39 @@ type LookupNetworkLoadBalancerArgs struct {
 // A collection of values returned by getNetworkLoadBalancer.
 type LookupNetworkLoadBalancerResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name, which does not have to be unique, and can be changed.  Example: `exampleLoadBalancer`
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// OCID of the reserved public IP address created with the virtual cloud network.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// An array of IP addresses.
 	IpAddresses []GetNetworkLoadBalancerIpAddress `pulumi:"ipAddresses"`
 	// When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC. Packets are sent to the backend set without any changes to the source and destination IP.
-	IsPreserveSourceDestination bool `pulumi:"isPreserveSourceDestination"`
+	IsPreserveSourceDestination *bool `pulumi:"isPreserveSourceDestination"`
 	// Whether the network load balancer has a virtual cloud network-local (private) IP address.
-	IsPrivate bool `pulumi:"isPrivate"`
+	IsPrivate *bool `pulumi:"isPrivate"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails      string `pulumi:"lifecycleDetails"`
-	NetworkLoadBalancerId string `pulumi:"networkLoadBalancerId"`
+	LifecycleDetails      *string `pulumi:"lifecycleDetails"`
+	NetworkLoadBalancerId string  `pulumi:"networkLoadBalancerId"`
 	// An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// IP version associated with the NLB.
-	NlbIpVersion string                             `pulumi:"nlbIpVersion"`
+	NlbIpVersion *string                            `pulumi:"nlbIpVersion"`
 	ReservedIps  []GetNetworkLoadBalancerReservedIp `pulumi:"reservedIps"`
 	// The current state of the network load balancer.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId *string `pulumi:"subnetId"`
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func LookupNetworkLoadBalancerOutput(ctx *pulumi.Context, args LookupNetworkLoadBalancerOutputArgs, opts ...pulumi.InvokeOption) LookupNetworkLoadBalancerResultOutput {
@@ -133,15 +132,9 @@ func (o LookupNetworkLoadBalancerResultOutput) ToLookupNetworkLoadBalancerResult
 	return o
 }
 
-func (o LookupNetworkLoadBalancerResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupNetworkLoadBalancerResult] {
-	return pulumix.Output[LookupNetworkLoadBalancerResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
-func (o LookupNetworkLoadBalancerResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupNetworkLoadBalancerResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -150,8 +143,8 @@ func (o LookupNetworkLoadBalancerResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name, which does not have to be unique, and can be changed.  Example: `exampleLoadBalancer`
-func (o LookupNetworkLoadBalancerResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupNetworkLoadBalancerResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -160,8 +153,8 @@ func (o LookupNetworkLoadBalancerResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // OCID of the reserved public IP address created with the virtual cloud network.
-func (o LookupNetworkLoadBalancerResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupNetworkLoadBalancerResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // An array of IP addresses.
@@ -170,18 +163,18 @@ func (o LookupNetworkLoadBalancerResultOutput) IpAddresses() GetNetworkLoadBalan
 }
 
 // When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC. Packets are sent to the backend set without any changes to the source and destination IP.
-func (o LookupNetworkLoadBalancerResultOutput) IsPreserveSourceDestination() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) bool { return v.IsPreserveSourceDestination }).(pulumi.BoolOutput)
+func (o LookupNetworkLoadBalancerResultOutput) IsPreserveSourceDestination() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) *bool { return v.IsPreserveSourceDestination }).(pulumi.BoolPtrOutput)
 }
 
 // Whether the network load balancer has a virtual cloud network-local (private) IP address.
-func (o LookupNetworkLoadBalancerResultOutput) IsPrivate() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) bool { return v.IsPrivate }).(pulumi.BoolOutput)
+func (o LookupNetworkLoadBalancerResultOutput) IsPrivate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) *bool { return v.IsPrivate }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o LookupNetworkLoadBalancerResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupNetworkLoadBalancerResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupNetworkLoadBalancerResultOutput) NetworkLoadBalancerId() pulumi.StringOutput {
@@ -194,8 +187,8 @@ func (o LookupNetworkLoadBalancerResultOutput) NetworkSecurityGroupIds() pulumi.
 }
 
 // IP version associated with the NLB.
-func (o LookupNetworkLoadBalancerResultOutput) NlbIpVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.NlbIpVersion }).(pulumi.StringOutput)
+func (o LookupNetworkLoadBalancerResultOutput) NlbIpVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) *string { return v.NlbIpVersion }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupNetworkLoadBalancerResultOutput) ReservedIps() GetNetworkLoadBalancerReservedIpArrayOutput {
@@ -203,13 +196,13 @@ func (o LookupNetworkLoadBalancerResultOutput) ReservedIps() GetNetworkLoadBalan
 }
 
 // The current state of the network load balancer.
-func (o LookupNetworkLoadBalancerResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupNetworkLoadBalancerResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
-func (o LookupNetworkLoadBalancerResultOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.SubnetId }).(pulumi.StringOutput)
+func (o LookupNetworkLoadBalancerResultOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
@@ -218,13 +211,13 @@ func (o LookupNetworkLoadBalancerResultOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
-func (o LookupNetworkLoadBalancerResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupNetworkLoadBalancerResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
-func (o LookupNetworkLoadBalancerResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupNetworkLoadBalancerResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupNetworkLoadBalancerResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

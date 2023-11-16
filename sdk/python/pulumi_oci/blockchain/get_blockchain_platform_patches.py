@@ -44,10 +44,7 @@ class GetBlockchainPlatformPatchesResult:
 
     @property
     @pulumi.getter(name="blockchainPlatformPatchCollections")
-    def blockchain_platform_patch_collections(self) -> Sequence['outputs.GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionResult']:
-        """
-        The list of blockchain_platform_patch_collection.
-        """
+    def blockchain_platform_patch_collections(self) -> Optional[Sequence['outputs.GetBlockchainPlatformPatchesBlockchainPlatformPatchCollectionResult']]:
         return pulumi.get(self, "blockchain_platform_patch_collections")
 
     @property
@@ -57,7 +54,7 @@ class GetBlockchainPlatformPatchesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -80,21 +77,7 @@ def get_blockchain_platform_patches(blockchain_platform_id: Optional[str] = None
                                     filters: Optional[Sequence[pulumi.InputType['GetBlockchainPlatformPatchesFilterArgs']]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBlockchainPlatformPatchesResult:
     """
-    This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.
-
-    List Blockchain Platform Patches
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_blockchain_platform_patches = oci.Blockchain.get_blockchain_platform_patches(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"])
-    ```
-
-
-    :param str blockchain_platform_id: Unique service identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['blockchainPlatformId'] = blockchain_platform_id
@@ -114,20 +97,6 @@ def get_blockchain_platform_patches_output(blockchain_platform_id: Optional[pulu
                                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBlockchainPlatformPatchesFilterArgs']]]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBlockchainPlatformPatchesResult]:
     """
-    This data source provides the list of Blockchain Platform Patches in Oracle Cloud Infrastructure Blockchain service.
-
-    List Blockchain Platform Patches
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_blockchain_platform_patches = oci.Blockchain.get_blockchain_platform_patches(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"])
-    ```
-
-
-    :param str blockchain_platform_id: Unique service identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -43,26 +43,17 @@ class GetServiceCatalogAssociationResult:
 
     @property
     @pulumi.getter(name="entityId")
-    def entity_id(self) -> str:
-        """
-        Identifier of the entity being associated with service catalog.
-        """
+    def entity_id(self) -> Optional[str]:
         return pulumi.get(self, "entity_id")
 
     @property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> str:
-        """
-        The type of the entity that is associated with the service catalog.
-        """
+    def entity_type(self) -> Optional[str]:
         return pulumi.get(self, "entity_type")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        Identifier of the association.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
@@ -72,18 +63,12 @@ class GetServiceCatalogAssociationResult:
 
     @property
     @pulumi.getter(name="serviceCatalogId")
-    def service_catalog_id(self) -> str:
-        """
-        Identifier of the service catalog.
-        """
+    def service_catalog_id(self) -> Optional[str]:
         return pulumi.get(self, "service_catalog_id")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        Timestamp of when the resource was associated with service catalog.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
 
@@ -104,21 +89,7 @@ class AwaitableGetServiceCatalogAssociationResult(GetServiceCatalogAssociationRe
 def get_service_catalog_association(service_catalog_association_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetServiceCatalogAssociationResult:
     """
-    This data source provides details about a specific Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
-
-    Gets detailed information about specific service catalog association.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_catalog_association = oci.ServiceCatalog.get_service_catalog_association(service_catalog_association_id=oci_service_catalog_service_catalog_association["test_service_catalog_association"]["id"])
-    ```
-
-
-    :param str service_catalog_association_id: The unique identifier of the service catalog association.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['serviceCatalogAssociationId'] = service_catalog_association_id
@@ -138,20 +109,6 @@ def get_service_catalog_association(service_catalog_association_id: Optional[str
 def get_service_catalog_association_output(service_catalog_association_id: Optional[pulumi.Input[str]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetServiceCatalogAssociationResult]:
     """
-    This data source provides details about a specific Service Catalog Association resource in Oracle Cloud Infrastructure Service Catalog service.
-
-    Gets detailed information about specific service catalog association.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_service_catalog_association = oci.ServiceCatalog.get_service_catalog_association(service_catalog_association_id=oci_service_catalog_service_catalog_association["test_service_catalog_association"]["id"])
-    ```
-
-
-    :param str service_catalog_association_id: The unique identifier of the service catalog association.
+    Use this data source to access information about an existing resource.
     """
     ...

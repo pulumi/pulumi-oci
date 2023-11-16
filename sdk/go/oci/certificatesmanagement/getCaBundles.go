@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Ca Bundles in Oracle Cloud Infrastructure Certificates Management service.
@@ -77,7 +76,7 @@ type GetCaBundlesResult struct {
 	CompartmentId *string              `pulumi:"compartmentId"`
 	Filters       []GetCaBundlesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
 	Name *string `pulumi:"name"`
 	// The current lifecycle state of the CA bundle.
@@ -129,12 +128,6 @@ func (o GetCaBundlesResultOutput) ToGetCaBundlesResultOutputWithContext(ctx cont
 	return o
 }
 
-func (o GetCaBundlesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetCaBundlesResult] {
-	return pulumix.Output[GetCaBundlesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of ca_bundle_collection.
 func (o GetCaBundlesResultOutput) CaBundleCollections() GetCaBundlesCaBundleCollectionArrayOutput {
 	return o.ApplyT(func(v GetCaBundlesResult) []GetCaBundlesCaBundleCollection { return v.CaBundleCollections }).(GetCaBundlesCaBundleCollectionArrayOutput)
@@ -154,8 +147,8 @@ func (o GetCaBundlesResultOutput) Filters() GetCaBundlesFilterArrayOutput {
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetCaBundlesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetCaBundlesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetCaBundlesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCaBundlesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly name for the CA bundle. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.

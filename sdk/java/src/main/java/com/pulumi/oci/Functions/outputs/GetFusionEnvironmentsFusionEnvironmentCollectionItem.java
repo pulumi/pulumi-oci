@@ -15,6 +15,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
@@ -22,143 +24,143 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
      * @return Language packs
      * 
      */
-    private List<String> additionalLanguagePacks;
+    private @Nullable List<String> additionalLanguagePacks;
     /**
      * @return Patch bundle names
      * 
      */
-    private List<String> appliedPatchBundles;
+    private @Nullable List<String> appliedPatchBundles;
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
-    private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail> createFusionEnvironmentAdminUserDetails;
+    private @Nullable String compartmentId;
+    private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail> createFusionEnvironmentAdminUserDetails;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return DNS prefix
      * 
      */
-    private String dnsPrefix;
+    private @Nullable String dnsPrefix;
     /**
      * @return The IDCS domain created for the fusion instance
      * 
      */
-    private String domainId;
+    private @Nullable String domainId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The ID of the fusion environment family in which to list resources.
      * 
      */
-    private String fusionEnvironmentFamilyId;
+    private @Nullable String fusionEnvironmentFamilyId;
     /**
      * @return Type of the FusionEnvironment.
      * 
      */
-    private String fusionEnvironmentType;
+    private @Nullable String fusionEnvironmentType;
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The IDCS Domain URL
      * 
      */
-    private String idcsDomainUrl;
+    private @Nullable String idcsDomainUrl;
     /**
      * @return If it&#39;s true, then the Break Glass feature is enabled
      * 
      */
-    private Boolean isBreakGlassEnabled;
+    private @Nullable Boolean isBreakGlassEnabled;
     /**
      * @return BYOK key id
      * 
      */
-    private String kmsKeyId;
+    private @Nullable String kmsKeyId;
     /**
      * @return BYOK key info
      * 
      */
-    private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos;
+    private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
      * 
      */
-    private String lockboxId;
+    private @Nullable String lockboxId;
     /**
      * @return The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      * 
      */
-    private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy> maintenancePolicies;
+    private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy> maintenancePolicies;
     /**
      * @return Public URL
      * 
      */
-    private String publicUrl;
+    private @Nullable String publicUrl;
     /**
      * @return Describes a refresh of a fusion environment
      * 
      */
-    private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh> refreshes;
+    private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh> refreshes;
     /**
      * @return Network Access Control Rules
      * 
      */
-    private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRule> rules;
+    private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRule> rules;
     /**
      * @return A filter that returns all resources that match the specified lifecycle state.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return List of subscription IDs.
      * 
      */
-    private List<String> subscriptionIds;
+    private @Nullable List<String> subscriptionIds;
     /**
      * @return Environment Specific Guid/ System Name
      * 
      */
-    private String systemName;
+    private @Nullable String systemName;
     /**
      * @return The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The next maintenance for this environment
      * 
      */
-    private String timeUpcomingMaintenance;
+    private @Nullable String timeUpcomingMaintenance;
     /**
      * @return The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return Version of Fusion Apps used by this environment
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetFusionEnvironmentsFusionEnvironmentCollectionItem() {}
     /**
@@ -166,199 +168,199 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
      * 
      */
     public List<String> additionalLanguagePacks() {
-        return this.additionalLanguagePacks;
+        return this.additionalLanguagePacks == null ? List.of() : this.additionalLanguagePacks;
     }
     /**
      * @return Patch bundle names
      * 
      */
     public List<String> appliedPatchBundles() {
-        return this.appliedPatchBundles;
+        return this.appliedPatchBundles == null ? List.of() : this.appliedPatchBundles;
     }
     /**
      * @return The ID of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public List<GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail> createFusionEnvironmentAdminUserDetails() {
-        return this.createFusionEnvironmentAdminUserDetails;
+        return this.createFusionEnvironmentAdminUserDetails == null ? List.of() : this.createFusionEnvironmentAdminUserDetails;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return DNS prefix
      * 
      */
-    public String dnsPrefix() {
-        return this.dnsPrefix;
+    public Optional<String> dnsPrefix() {
+        return Optional.ofNullable(this.dnsPrefix);
     }
     /**
      * @return The IDCS domain created for the fusion instance
      * 
      */
-    public String domainId() {
-        return this.domainId;
+    public Optional<String> domainId() {
+        return Optional.ofNullable(this.domainId);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The ID of the fusion environment family in which to list resources.
      * 
      */
-    public String fusionEnvironmentFamilyId() {
-        return this.fusionEnvironmentFamilyId;
+    public Optional<String> fusionEnvironmentFamilyId() {
+        return Optional.ofNullable(this.fusionEnvironmentFamilyId);
     }
     /**
      * @return Type of the FusionEnvironment.
      * 
      */
-    public String fusionEnvironmentType() {
-        return this.fusionEnvironmentType;
+    public Optional<String> fusionEnvironmentType() {
+        return Optional.ofNullable(this.fusionEnvironmentType);
     }
     /**
      * @return Unique identifier that is immutable on creation
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The IDCS Domain URL
      * 
      */
-    public String idcsDomainUrl() {
-        return this.idcsDomainUrl;
+    public Optional<String> idcsDomainUrl() {
+        return Optional.ofNullable(this.idcsDomainUrl);
     }
     /**
      * @return If it&#39;s true, then the Break Glass feature is enabled
      * 
      */
-    public Boolean isBreakGlassEnabled() {
-        return this.isBreakGlassEnabled;
+    public Optional<Boolean> isBreakGlassEnabled() {
+        return Optional.ofNullable(this.isBreakGlassEnabled);
     }
     /**
      * @return BYOK key id
      * 
      */
-    public String kmsKeyId() {
-        return this.kmsKeyId;
+    public Optional<String> kmsKeyId() {
+        return Optional.ofNullable(this.kmsKeyId);
     }
     /**
      * @return BYOK key info
      * 
      */
     public List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos() {
-        return this.kmsKeyInfos;
+        return this.kmsKeyInfos == null ? List.of() : this.kmsKeyInfos;
     }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
      * 
      */
-    public String lockboxId() {
-        return this.lockboxId;
+    public Optional<String> lockboxId() {
+        return Optional.ofNullable(this.lockboxId);
     }
     /**
      * @return The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
      * 
      */
     public List<GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy> maintenancePolicies() {
-        return this.maintenancePolicies;
+        return this.maintenancePolicies == null ? List.of() : this.maintenancePolicies;
     }
     /**
      * @return Public URL
      * 
      */
-    public String publicUrl() {
-        return this.publicUrl;
+    public Optional<String> publicUrl() {
+        return Optional.ofNullable(this.publicUrl);
     }
     /**
      * @return Describes a refresh of a fusion environment
      * 
      */
     public List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh> refreshes() {
-        return this.refreshes;
+        return this.refreshes == null ? List.of() : this.refreshes;
     }
     /**
      * @return Network Access Control Rules
      * 
      */
     public List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRule> rules() {
-        return this.rules;
+        return this.rules == null ? List.of() : this.rules;
     }
     /**
      * @return A filter that returns all resources that match the specified lifecycle state.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return List of subscription IDs.
      * 
      */
     public List<String> subscriptionIds() {
-        return this.subscriptionIds;
+        return this.subscriptionIds == null ? List.of() : this.subscriptionIds;
     }
     /**
      * @return Environment Specific Guid/ System Name
      * 
      */
-    public String systemName() {
-        return this.systemName;
+    public Optional<String> systemName() {
+        return Optional.ofNullable(this.systemName);
     }
     /**
      * @return The time the the FusionEnvironment was created. An RFC3339 formatted datetime string
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The next maintenance for this environment
      * 
      */
-    public String timeUpcomingMaintenance() {
-        return this.timeUpcomingMaintenance;
+    public Optional<String> timeUpcomingMaintenance() {
+        return Optional.ofNullable(this.timeUpcomingMaintenance);
     }
     /**
      * @return The time the FusionEnvironment was updated. An RFC3339 formatted datetime string
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return Version of Fusion Apps used by this environment
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -370,35 +372,35 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> additionalLanguagePacks;
-        private List<String> appliedPatchBundles;
-        private String compartmentId;
-        private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail> createFusionEnvironmentAdminUserDetails;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private String dnsPrefix;
-        private String domainId;
-        private Map<String,Object> freeformTags;
-        private String fusionEnvironmentFamilyId;
-        private String fusionEnvironmentType;
-        private String id;
-        private String idcsDomainUrl;
-        private Boolean isBreakGlassEnabled;
-        private String kmsKeyId;
-        private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos;
-        private String lifecycleDetails;
-        private String lockboxId;
-        private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy> maintenancePolicies;
-        private String publicUrl;
-        private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh> refreshes;
-        private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRule> rules;
-        private String state;
-        private List<String> subscriptionIds;
-        private String systemName;
-        private String timeCreated;
-        private String timeUpcomingMaintenance;
-        private String timeUpdated;
-        private String version;
+        private @Nullable List<String> additionalLanguagePacks;
+        private @Nullable List<String> appliedPatchBundles;
+        private @Nullable String compartmentId;
+        private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail> createFusionEnvironmentAdminUserDetails;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable String dnsPrefix;
+        private @Nullable String domainId;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String fusionEnvironmentFamilyId;
+        private @Nullable String fusionEnvironmentType;
+        private @Nullable String id;
+        private @Nullable String idcsDomainUrl;
+        private @Nullable Boolean isBreakGlassEnabled;
+        private @Nullable String kmsKeyId;
+        private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String lockboxId;
+        private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy> maintenancePolicies;
+        private @Nullable String publicUrl;
+        private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh> refreshes;
+        private @Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRule> rules;
+        private @Nullable String state;
+        private @Nullable List<String> subscriptionIds;
+        private @Nullable String systemName;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpcomingMaintenance;
+        private @Nullable String timeUpdated;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetFusionEnvironmentsFusionEnvironmentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -434,172 +436,172 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder additionalLanguagePacks(List<String> additionalLanguagePacks) {
-            this.additionalLanguagePacks = Objects.requireNonNull(additionalLanguagePacks);
+        public Builder additionalLanguagePacks(@Nullable List<String> additionalLanguagePacks) {
+            this.additionalLanguagePacks = additionalLanguagePacks;
             return this;
         }
         public Builder additionalLanguagePacks(String... additionalLanguagePacks) {
             return additionalLanguagePacks(List.of(additionalLanguagePacks));
         }
         @CustomType.Setter
-        public Builder appliedPatchBundles(List<String> appliedPatchBundles) {
-            this.appliedPatchBundles = Objects.requireNonNull(appliedPatchBundles);
+        public Builder appliedPatchBundles(@Nullable List<String> appliedPatchBundles) {
+            this.appliedPatchBundles = appliedPatchBundles;
             return this;
         }
         public Builder appliedPatchBundles(String... appliedPatchBundles) {
             return appliedPatchBundles(List.of(appliedPatchBundles));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder createFusionEnvironmentAdminUserDetails(List<GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail> createFusionEnvironmentAdminUserDetails) {
-            this.createFusionEnvironmentAdminUserDetails = Objects.requireNonNull(createFusionEnvironmentAdminUserDetails);
+        public Builder createFusionEnvironmentAdminUserDetails(@Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail> createFusionEnvironmentAdminUserDetails) {
+            this.createFusionEnvironmentAdminUserDetails = createFusionEnvironmentAdminUserDetails;
             return this;
         }
         public Builder createFusionEnvironmentAdminUserDetails(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail... createFusionEnvironmentAdminUserDetails) {
             return createFusionEnvironmentAdminUserDetails(List.of(createFusionEnvironmentAdminUserDetails));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder dnsPrefix(String dnsPrefix) {
-            this.dnsPrefix = Objects.requireNonNull(dnsPrefix);
+        public Builder dnsPrefix(@Nullable String dnsPrefix) {
+            this.dnsPrefix = dnsPrefix;
             return this;
         }
         @CustomType.Setter
-        public Builder domainId(String domainId) {
-            this.domainId = Objects.requireNonNull(domainId);
+        public Builder domainId(@Nullable String domainId) {
+            this.domainId = domainId;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder fusionEnvironmentFamilyId(String fusionEnvironmentFamilyId) {
-            this.fusionEnvironmentFamilyId = Objects.requireNonNull(fusionEnvironmentFamilyId);
+        public Builder fusionEnvironmentFamilyId(@Nullable String fusionEnvironmentFamilyId) {
+            this.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
             return this;
         }
         @CustomType.Setter
-        public Builder fusionEnvironmentType(String fusionEnvironmentType) {
-            this.fusionEnvironmentType = Objects.requireNonNull(fusionEnvironmentType);
+        public Builder fusionEnvironmentType(@Nullable String fusionEnvironmentType) {
+            this.fusionEnvironmentType = fusionEnvironmentType;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsDomainUrl(String idcsDomainUrl) {
-            this.idcsDomainUrl = Objects.requireNonNull(idcsDomainUrl);
+        public Builder idcsDomainUrl(@Nullable String idcsDomainUrl) {
+            this.idcsDomainUrl = idcsDomainUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder isBreakGlassEnabled(Boolean isBreakGlassEnabled) {
-            this.isBreakGlassEnabled = Objects.requireNonNull(isBreakGlassEnabled);
+        public Builder isBreakGlassEnabled(@Nullable Boolean isBreakGlassEnabled) {
+            this.isBreakGlassEnabled = isBreakGlassEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyId(String kmsKeyId) {
-            this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
+        public Builder kmsKeyId(@Nullable String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder kmsKeyInfos(List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos) {
-            this.kmsKeyInfos = Objects.requireNonNull(kmsKeyInfos);
+        public Builder kmsKeyInfos(@Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo> kmsKeyInfos) {
+            this.kmsKeyInfos = kmsKeyInfos;
             return this;
         }
         public Builder kmsKeyInfos(GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo... kmsKeyInfos) {
             return kmsKeyInfos(List.of(kmsKeyInfos));
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder lockboxId(String lockboxId) {
-            this.lockboxId = Objects.requireNonNull(lockboxId);
+        public Builder lockboxId(@Nullable String lockboxId) {
+            this.lockboxId = lockboxId;
             return this;
         }
         @CustomType.Setter
-        public Builder maintenancePolicies(List<GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy> maintenancePolicies) {
-            this.maintenancePolicies = Objects.requireNonNull(maintenancePolicies);
+        public Builder maintenancePolicies(@Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy> maintenancePolicies) {
+            this.maintenancePolicies = maintenancePolicies;
             return this;
         }
         public Builder maintenancePolicies(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy... maintenancePolicies) {
             return maintenancePolicies(List.of(maintenancePolicies));
         }
         @CustomType.Setter
-        public Builder publicUrl(String publicUrl) {
-            this.publicUrl = Objects.requireNonNull(publicUrl);
+        public Builder publicUrl(@Nullable String publicUrl) {
+            this.publicUrl = publicUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder refreshes(List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh> refreshes) {
-            this.refreshes = Objects.requireNonNull(refreshes);
+        public Builder refreshes(@Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh> refreshes) {
+            this.refreshes = refreshes;
             return this;
         }
         public Builder refreshes(GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh... refreshes) {
             return refreshes(List.of(refreshes));
         }
         @CustomType.Setter
-        public Builder rules(List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRule> rules) {
-            this.rules = Objects.requireNonNull(rules);
+        public Builder rules(@Nullable List<GetFusionEnvironmentsFusionEnvironmentCollectionItemRule> rules) {
+            this.rules = rules;
             return this;
         }
         public Builder rules(GetFusionEnvironmentsFusionEnvironmentCollectionItemRule... rules) {
             return rules(List.of(rules));
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder subscriptionIds(List<String> subscriptionIds) {
-            this.subscriptionIds = Objects.requireNonNull(subscriptionIds);
+        public Builder subscriptionIds(@Nullable List<String> subscriptionIds) {
+            this.subscriptionIds = subscriptionIds;
             return this;
         }
         public Builder subscriptionIds(String... subscriptionIds) {
             return subscriptionIds(List.of(subscriptionIds));
         }
         @CustomType.Setter
-        public Builder systemName(String systemName) {
-            this.systemName = Objects.requireNonNull(systemName);
+        public Builder systemName(@Nullable String systemName) {
+            this.systemName = systemName;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpcomingMaintenance(String timeUpcomingMaintenance) {
-            this.timeUpcomingMaintenance = Objects.requireNonNull(timeUpcomingMaintenance);
+        public Builder timeUpcomingMaintenance(@Nullable String timeUpcomingMaintenance) {
+            this.timeUpcomingMaintenance = timeUpcomingMaintenance;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetFusionEnvironmentsFusionEnvironmentCollectionItem build() {

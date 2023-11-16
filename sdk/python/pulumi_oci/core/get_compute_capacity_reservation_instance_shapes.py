@@ -46,9 +46,6 @@ class GetComputeCapacityReservationInstanceShapesResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[str]:
-        """
-        The shape's availability domain.
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
@@ -58,10 +55,7 @@ class GetComputeCapacityReservationInstanceShapesResult:
 
     @property
     @pulumi.getter(name="computeCapacityReservationInstanceShapes")
-    def compute_capacity_reservation_instance_shapes(self) -> Sequence['outputs.GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShapeResult']:
-        """
-        The list of compute_capacity_reservation_instance_shapes.
-        """
+    def compute_capacity_reservation_instance_shapes(self) -> Optional[Sequence['outputs.GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShapeResult']]:
         return pulumi.get(self, "compute_capacity_reservation_instance_shapes")
 
     @property
@@ -76,7 +70,7 @@ class GetComputeCapacityReservationInstanceShapesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -103,25 +97,7 @@ def get_compute_capacity_reservation_instance_shapes(availability_domain: Option
                                                      filters: Optional[Sequence[pulumi.InputType['GetComputeCapacityReservationInstanceShapesFilterArgs']]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetComputeCapacityReservationInstanceShapesResult:
     """
-    This data source provides the list of Compute Capacity Reservation Instance Shapes in Oracle Cloud Infrastructure Core service.
-
-    Lists the shapes that can be reserved within the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_capacity_reservation_instance_shapes = oci.Core.get_compute_capacity_reservation_instance_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["compute_capacity_reservation_instance_shape_availability_domain"],
-        display_name=var["compute_capacity_reservation_instance_shape_display_name"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -147,24 +123,6 @@ def get_compute_capacity_reservation_instance_shapes_output(availability_domain:
                                                             filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetComputeCapacityReservationInstanceShapesFilterArgs']]]]] = None,
                                                             opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetComputeCapacityReservationInstanceShapesResult]:
     """
-    This data source provides the list of Compute Capacity Reservation Instance Shapes in Oracle Cloud Infrastructure Core service.
-
-    Lists the shapes that can be reserved within the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_compute_capacity_reservation_instance_shapes = oci.Core.get_compute_capacity_reservation_instance_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["compute_capacity_reservation_instance_shape_availability_domain"],
-        display_name=var["compute_capacity_reservation_instance_shape_display_name"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A filter to return only resources that match the given display name exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

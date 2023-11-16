@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         public readonly string DatabaseSoftwareImageId;
         /// <summary>
         /// List of one-off patches for Database Homes.
@@ -121,64 +121,64 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The database version with which the database software image is to be built.
         /// </summary>
-        public readonly string DatabaseVersion;
+        public readonly string? DatabaseVersion;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The user-friendly name for the database software image. The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database software image.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// To what shape the image is meant for.
         /// </summary>
-        public readonly string ImageShapeFamily;
+        public readonly string? ImageShapeFamily;
         /// <summary>
         /// The type of software image. Can be grid or database.
         /// </summary>
-        public readonly string ImageType;
+        public readonly string? ImageType;
         /// <summary>
         /// The patches included in the image and the version of the image.
         /// </summary>
-        public readonly string IncludedPatchesSummary;
+        public readonly string? IncludedPatchesSummary;
         /// <summary>
         /// True if this Database software image is supported for Upgrade.
         /// </summary>
-        public readonly bool IsUpgradeSupported;
+        public readonly bool? IsUpgradeSupported;
         /// <summary>
         /// Detailed message for the lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The output from the OPatch lsInventory command, which is passed as a string.
         /// </summary>
-        public readonly string LsInventory;
+        public readonly string? LsInventory;
         /// <summary>
         /// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
         /// </summary>
-        public readonly string PatchSet;
-        public readonly string SourceDbHomeId;
+        public readonly string? PatchSet;
+        public readonly string? SourceDbHomeId;
         /// <summary>
         /// The current state of the database software image.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the database software image was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetDatabaseSoftwareImageResult(
-            string compartmentId,
+            string? compartmentId,
 
             string databaseSoftwareImageId,
 
@@ -186,35 +186,35 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<string> databaseSoftwareImageOneOffPatches,
 
-            string databaseVersion,
+            string? databaseVersion,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string imageShapeFamily,
+            string? imageShapeFamily,
 
-            string imageType,
+            string? imageType,
 
-            string includedPatchesSummary,
+            string? includedPatchesSummary,
 
-            bool isUpgradeSupported,
+            bool? isUpgradeSupported,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string lsInventory,
+            string? lsInventory,
 
-            string patchSet,
+            string? patchSet,
 
-            string sourceDbHomeId,
+            string? sourceDbHomeId,
 
-            string state,
+            string? state,
 
-            string timeCreated)
+            string? timeCreated)
         {
             CompartmentId = compartmentId;
             DatabaseSoftwareImageId = databaseSoftwareImageId;

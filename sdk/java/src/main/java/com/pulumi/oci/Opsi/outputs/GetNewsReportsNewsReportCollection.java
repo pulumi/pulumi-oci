@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Opsi.outputs.GetNewsReportsNewsReportCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNewsReportsNewsReportCollection {
-    private List<GetNewsReportsNewsReportCollectionItem> items;
+    private @Nullable List<GetNewsReportsNewsReportCollectionItem> items;
 
     private GetNewsReportsNewsReportCollection() {}
     public List<GetNewsReportsNewsReportCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetNewsReportsNewsReportCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetNewsReportsNewsReportCollectionItem> items;
+        private @Nullable List<GetNewsReportsNewsReportCollectionItem> items;
         public Builder() {}
         public Builder(GetNewsReportsNewsReportCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetNewsReportsNewsReportCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetNewsReportsNewsReportCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetNewsReportsNewsReportCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetNewsReportsNewsReportCollectionItem... items) {

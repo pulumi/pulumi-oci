@@ -73,15 +73,15 @@ export class Osn extends pulumi.CustomResource {
     /**
      * (Updatable) OCPU allocation parameter
      */
-    public readonly ocpuAllocationParam!: pulumi.Output<outputs.Blockchain.OsnOcpuAllocationParam>;
+    public readonly ocpuAllocationParam!: pulumi.Output<outputs.Blockchain.OsnOcpuAllocationParam | undefined>;
     /**
      * OSN identifier
      */
-    public /*out*/ readonly osnKey!: pulumi.Output<string>;
+    public /*out*/ readonly osnKey!: pulumi.Output<string | undefined>;
     /**
      * The current state of the OSN.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Osn resource with the given unique name, arguments, and options.

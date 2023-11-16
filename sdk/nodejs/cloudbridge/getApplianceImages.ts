@@ -55,7 +55,7 @@ export interface GetApplianceImagesResult {
     /**
      * The list of appliance_image_collection.
      */
-    readonly applianceImageCollections: outputs.CloudBridge.GetApplianceImagesApplianceImageCollection[];
+    readonly applianceImageCollections?: outputs.CloudBridge.GetApplianceImagesApplianceImageCollection[];
     readonly compartmentId: string;
     /**
      * The name of the image to be displayed.
@@ -65,7 +65,7 @@ export interface GetApplianceImagesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
 }
 /**
  * This data source provides the list of Appliance Images in Oracle Cloud Infrastructure Cloud Bridge service.

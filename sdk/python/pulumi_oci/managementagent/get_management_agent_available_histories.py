@@ -45,10 +45,7 @@ class GetManagementAgentAvailableHistoriesResult:
 
     @property
     @pulumi.getter(name="availabilityHistories")
-    def availability_histories(self) -> Sequence['outputs.GetManagementAgentAvailableHistoriesAvailabilityHistoryResult']:
-        """
-        The list of availability_histories.
-        """
+    def availability_histories(self) -> Optional[Sequence['outputs.GetManagementAgentAvailableHistoriesAvailabilityHistoryResult']]:
         return pulumi.get(self, "availability_histories")
 
     @property
@@ -58,7 +55,7 @@ class GetManagementAgentAvailableHistoriesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,9 +64,6 @@ class GetManagementAgentAvailableHistoriesResult:
     @property
     @pulumi.getter(name="managementAgentId")
     def management_agent_id(self) -> str:
-        """
-        agent identifier
-        """
         return pulumi.get(self, "management_agent_id")
 
     @property
@@ -103,25 +97,7 @@ def get_management_agent_available_histories(filters: Optional[Sequence[pulumi.I
                                              time_availability_status_started_less_than: Optional[str] = None,
                                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagementAgentAvailableHistoriesResult:
     """
-    This data source provides the list of Management Agent Available Histories in Oracle Cloud Infrastructure Management Agent service.
-
-    Lists the availability history records of Management Agent
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_available_histories = oci.ManagementAgent.get_management_agent_available_histories(management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
-        time_availability_status_ended_greater_than=var["management_agent_available_history_time_availability_status_ended_greater_than"],
-        time_availability_status_started_less_than=var["management_agent_available_history_time_availability_status_started_less_than"])
-    ```
-
-
-    :param str management_agent_id: Unique Management Agent identifier
-    :param str time_availability_status_ended_greater_than: Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
-    :param str time_availability_status_started_less_than: Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -147,24 +123,6 @@ def get_management_agent_available_histories_output(filters: Optional[pulumi.Inp
                                                     time_availability_status_started_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagementAgentAvailableHistoriesResult]:
     """
-    This data source provides the list of Management Agent Available Histories in Oracle Cloud Infrastructure Management Agent service.
-
-    Lists the availability history records of Management Agent
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_management_agent_available_histories = oci.ManagementAgent.get_management_agent_available_histories(management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
-        time_availability_status_ended_greater_than=var["management_agent_available_history_time_availability_status_ended_greater_than"],
-        time_availability_status_started_less_than=var["management_agent_available_history_time_availability_status_started_less_than"])
-    ```
-
-
-    :param str management_agent_id: Unique Management Agent identifier
-    :param str time_availability_status_ended_greater_than: Filter to limit the availability history results to that of time after the input time including the boundary record. Defaulted to current date minus one year. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
-    :param str time_availability_status_started_less_than: Filter to limit the availability history results to that of time before the input time including the boundary record Defaulted to current date. The date and time to be given as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 5.6.
+    Use this data source to access information about an existing resource.
     """
     ...

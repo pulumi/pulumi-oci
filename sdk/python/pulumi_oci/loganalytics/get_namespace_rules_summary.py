@@ -48,7 +48,7 @@ class GetNamespaceRulesSummaryResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -56,10 +56,7 @@ class GetNamespaceRulesSummaryResult:
 
     @property
     @pulumi.getter(name="ingestTimeRulesCount")
-    def ingest_time_rules_count(self) -> int:
-        """
-        The count of ingest time rules.
-        """
+    def ingest_time_rules_count(self) -> Optional[int]:
         return pulumi.get(self, "ingest_time_rules_count")
 
     @property
@@ -69,18 +66,12 @@ class GetNamespaceRulesSummaryResult:
 
     @property
     @pulumi.getter(name="savedSearchRulesCount")
-    def saved_search_rules_count(self) -> int:
-        """
-        The count of saved search rules.
-        """
+    def saved_search_rules_count(self) -> Optional[int]:
         return pulumi.get(self, "saved_search_rules_count")
 
     @property
     @pulumi.getter(name="totalCount")
-    def total_count(self) -> int:
-        """
-        The total count of detection rules.
-        """
+    def total_count(self) -> Optional[int]:
         return pulumi.get(self, "total_count")
 
 
@@ -102,23 +93,7 @@ def get_namespace_rules_summary(compartment_id: Optional[str] = None,
                                 namespace: Optional[str] = None,
                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNamespaceRulesSummaryResult:
     """
-    This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns the count of detection rules in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_rules_summary = oci.LogAnalytics.get_namespace_rules_summary(compartment_id=var["compartment_id"],
-        namespace=var["namespace_rules_summary_namespace"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -140,22 +115,6 @@ def get_namespace_rules_summary_output(compartment_id: Optional[pulumi.Input[str
                                        namespace: Optional[pulumi.Input[str]] = None,
                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNamespaceRulesSummaryResult]:
     """
-    This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
-
-    Returns the count of detection rules in a compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_namespace_rules_summary = oci.LogAnalytics.get_namespace_rules_summary(compartment_id=var["compartment_id"],
-        namespace=var["namespace_rules_summary_namespace"])
-    ```
-
-
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str namespace: The Logging Analytics namespace used for the request.
+    Use this data source to access information about an existing resource.
     """
     ...

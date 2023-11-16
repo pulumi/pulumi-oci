@@ -58,7 +58,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// The URI to embed in the URL `https://objectstorage.${var.region}.oraclecloud.com{var.access_uri}` when using the pre-authenticated request.
         /// </summary>
         [Output("accessUri")]
-        public Output<string> AccessUri { get; private set; } = null!;
+        public Output<string?> AccessUri { get; private set; } = null!;
 
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -70,13 +70,13 @@ namespace Pulumi.Oci.ObjectStorage
         /// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
         /// </summary>
         [Output("bucketListingAction")]
-        public Output<string> BucketListingAction { get; private set; } = null!;
+        public Output<string?> BucketListingAction { get; private set; } = null!;
 
         /// <summary>
         /// The full Path for the object.
         /// </summary>
         [Output("fullPath")]
-        public Output<string> FullPath { get; private set; } = null!;
+        public Output<string?> FullPath { get; private set; } = null!;
 
         /// <summary>
         /// A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests. Avoid entering confidential information.
@@ -94,25 +94,25 @@ namespace Pulumi.Oci.ObjectStorage
         /// Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         /// </summary>
         [Output("object")]
-        public Output<string> Object { get; private set; } = null!;
+        public Output<string?> Object { get; private set; } = null!;
 
         /// <summary>
         /// The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         /// </summary>
         [Output("objectName")]
-        public Output<string> ObjectName { get; private set; } = null!;
+        public Output<string?> ObjectName { get; private set; } = null!;
 
         /// <summary>
         /// The unique identifier for the pre-authenticated request. This can be used to manage operations against the pre-authenticated request, such as GET or DELETE.
         /// </summary>
         [Output("parId")]
-        public Output<string> ParId { get; private set; } = null!;
+        public Output<string?> ParId { get; private set; } = null!;
 
         /// <summary>
         /// The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid. 

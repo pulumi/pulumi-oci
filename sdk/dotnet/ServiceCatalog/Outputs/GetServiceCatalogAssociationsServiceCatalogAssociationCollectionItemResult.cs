@@ -16,35 +16,35 @@ namespace Pulumi.Oci.ServiceCatalog.Outputs
         /// <summary>
         /// The unique identifier of the entity associated with service catalog.
         /// </summary>
-        public readonly string EntityId;
+        public readonly string? EntityId;
         /// <summary>
         /// The type of the application in the service catalog.
         /// </summary>
-        public readonly string EntityType;
+        public readonly string? EntityType;
         /// <summary>
         /// Identifier of the association.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The unique identifier for the service catalog.
         /// </summary>
-        public readonly string ServiceCatalogId;
+        public readonly string? ServiceCatalogId;
         /// <summary>
         /// Timestamp of when the resource was associated with service catalog.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
 
         [OutputConstructor]
         private GetServiceCatalogAssociationsServiceCatalogAssociationCollectionItemResult(
-            string entityId,
+            string? entityId,
 
-            string entityType,
+            string? entityType,
 
-            string id,
+            string? id,
 
-            string serviceCatalogId,
+            string? serviceCatalogId,
 
-            string timeCreated)
+            string? timeCreated)
         {
             EntityId = entityId;
             EntityType = entityType;

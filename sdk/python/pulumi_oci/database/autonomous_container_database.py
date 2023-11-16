@@ -49,38 +49,6 @@ class AutonomousContainerDatabaseArgs:
                  version_preference: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AutonomousContainerDatabase resource.
-        :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
-        :param pulumi.Input[str] patch_model: (Updatable) Database Patch model preference.
-        :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
-        :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
-        :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
-        :param pulumi.Input[str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-        :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
-        :param pulumi.Input[bool] is_dst_file_update_enabled: (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
-        :param pulumi.Input[str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
-        :param pulumi.Input[str] peer_autonomous_exadata_infrastructure_id: *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        :param pulumi.Input[str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
-        :param pulumi.Input[str] peer_cloud_autonomous_vm_cluster_id: The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
-        :param pulumi.Input[str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
-        :param pulumi.Input[str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
-        :param pulumi.Input[int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "patch_model", patch_model)
@@ -146,9 +114,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The display name for the Autonomous Container Database.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -158,9 +123,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="patchModel")
     def patch_model(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Database Patch model preference.
-        """
         return pulumi.get(self, "patch_model")
 
     @patch_model.setter
@@ -170,9 +132,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
     def autonomous_exadata_infrastructure_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        """
         return pulumi.get(self, "autonomous_exadata_infrastructure_id")
 
     @autonomous_exadata_infrastructure_id.setter
@@ -182,9 +141,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="autonomousVmClusterId")
     def autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Autonomous VM Cluster.
-        """
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @autonomous_vm_cluster_id.setter
@@ -194,9 +150,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="backupConfig")
     def backup_config(self) -> Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']]:
-        """
-        (Updatable) Backup options for the Autonomous Container Database.
-        """
         return pulumi.get(self, "backup_config")
 
     @backup_config.setter
@@ -206,9 +159,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
     def cloud_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Cloud Autonomous VM Cluster.
-        """
         return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
 
     @cloud_autonomous_vm_cluster_id.setter
@@ -218,9 +168,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -230,9 +177,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -251,9 +195,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The base version for the Autonomous Container Database.
-        """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
@@ -263,9 +204,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -275,9 +213,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
     def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        The lag time for my preference based on data loss tolerance in seconds.
-        """
         return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
 
     @fast_start_fail_over_lag_limit_in_seconds.setter
@@ -287,9 +222,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -299,9 +231,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
-        """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
     @is_automatic_failover_enabled.setter
@@ -311,9 +240,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="isDstFileUpdateEnabled")
     def is_dst_file_update_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        """
         return pulumi.get(self, "is_dst_file_update_enabled")
 
     @is_dst_file_update_enabled.setter
@@ -323,9 +249,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
@@ -335,9 +258,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -347,9 +267,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="maintenanceWindowDetails")
     def maintenance_window_details(self) -> Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]:
-        """
-        (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
         return pulumi.get(self, "maintenance_window_details")
 
     @maintenance_window_details.setter
@@ -368,9 +285,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseCompartmentId")
     def peer_autonomous_container_database_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
-        """
         return pulumi.get(self, "peer_autonomous_container_database_compartment_id")
 
     @peer_autonomous_container_database_compartment_id.setter
@@ -380,9 +294,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseDisplayName")
     def peer_autonomous_container_database_display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name for the peer Autonomous Container Database.
-        """
         return pulumi.get(self, "peer_autonomous_container_database_display_name")
 
     @peer_autonomous_container_database_display_name.setter
@@ -392,9 +303,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="peerAutonomousExadataInfrastructureId")
     def peer_autonomous_exadata_infrastructure_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        """
         return pulumi.get(self, "peer_autonomous_exadata_infrastructure_id")
 
     @peer_autonomous_exadata_infrastructure_id.setter
@@ -404,9 +312,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="peerAutonomousVmClusterId")
     def peer_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
-        """
         return pulumi.get(self, "peer_autonomous_vm_cluster_id")
 
     @peer_autonomous_vm_cluster_id.setter
@@ -416,9 +321,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="peerCloudAutonomousVmClusterId")
     def peer_cloud_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
-        """
         return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_id")
 
     @peer_cloud_autonomous_vm_cluster_id.setter
@@ -437,9 +339,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
         return pulumi.get(self, "protection_mode")
 
     @protection_mode.setter
@@ -449,9 +348,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="rotateKeyTrigger")
     def rotate_key_trigger(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
-        """
         return pulumi.get(self, "rotate_key_trigger")
 
     @rotate_key_trigger.setter
@@ -461,9 +357,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="serviceLevelAgreementType")
     def service_level_agreement_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
-        """
         return pulumi.get(self, "service_level_agreement_type")
 
     @service_level_agreement_type.setter
@@ -473,13 +366,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="standbyMaintenanceBufferInDays")
     def standby_maintenance_buffer_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "standby_maintenance_buffer_in_days")
 
     @standby_maintenance_buffer_in_days.setter
@@ -489,9 +375,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -501,9 +384,6 @@ class AutonomousContainerDatabaseArgs:
     @property
     @pulumi.getter(name="versionPreference")
     def version_preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The next maintenance version preference.
-        """
         return pulumi.get(self, "version_preference")
 
     @version_preference.setter
@@ -570,65 +450,6 @@ class _AutonomousContainerDatabaseState:
                  version_preference: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AutonomousContainerDatabase resources.
-        :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
-        :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database
-        :param pulumi.Input[float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
-        :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
-        :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster.
-        :param pulumi.Input[str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-        :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
-        :param pulumi.Input[str] dst_file_version: DST Time Zone File version of the Autonomous Container Database.
-        :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] infrastructure_type: The infrastructure type this resource belongs to.
-        :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
-        :param pulumi.Input[bool] is_dst_file_update_enabled: (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]] key_history_entries: Key History Entry.
-        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[float] largest_provisionable_autonomous_database_in_cpus: The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
-        :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowArgs']]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
-        :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        :param pulumi.Input[str] patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
-        :param pulumi.Input[str] patch_model: (Updatable) Database Patch model preference.
-        :param pulumi.Input[str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
-        :param pulumi.Input[str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
-        :param pulumi.Input[str] peer_autonomous_exadata_infrastructure_id: *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        :param pulumi.Input[str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
-        :param pulumi.Input[str] peer_cloud_autonomous_vm_cluster_id: The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
-        :param pulumi.Input[str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        :param pulumi.Input[Sequence[pulumi.Input[float]]] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        :param pulumi.Input[float] provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
-        :param pulumi.Input[float] reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
-               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        :param pulumi.Input[float] reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
-               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
-        :param pulumi.Input[str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
-        :param pulumi.Input[int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the Autonomous Container Database.
-        :param pulumi.Input[str] time_created: The date and time the Autonomous Container Database was created.
-        :param pulumi.Input[str] time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
-        :param pulumi.Input[int] total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         """
         if autonomous_exadata_infrastructure_id is not None:
             pulumi.set(__self__, "autonomous_exadata_infrastructure_id", autonomous_exadata_infrastructure_id)
@@ -742,9 +563,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
     def autonomous_exadata_infrastructure_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        """
         return pulumi.get(self, "autonomous_exadata_infrastructure_id")
 
     @autonomous_exadata_infrastructure_id.setter
@@ -754,9 +572,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="autonomousVmClusterId")
     def autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Autonomous VM Cluster.
-        """
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @autonomous_vm_cluster_id.setter
@@ -766,9 +581,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The availability domain of the Autonomous Container Database
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -778,9 +590,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        """
         return pulumi.get(self, "available_cpus")
 
     @available_cpus.setter
@@ -790,9 +599,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="backupConfig")
     def backup_config(self) -> Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']]:
-        """
-        (Updatable) Backup options for the Autonomous Container Database.
-        """
         return pulumi.get(self, "backup_config")
 
     @backup_config.setter
@@ -802,9 +608,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
     def cloud_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the Cloud Autonomous VM Cluster.
-        """
         return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
 
     @cloud_autonomous_vm_cluster_id.setter
@@ -814,9 +617,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -826,9 +626,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="computeModel")
     def compute_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        The compute model of the Autonomous VM Cluster.
-        """
         return pulumi.get(self, "compute_model")
 
     @compute_model.setter
@@ -838,9 +635,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-        """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
@@ -859,9 +653,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        The base version for the Autonomous Container Database.
-        """
         return pulumi.get(self, "db_version")
 
     @db_version.setter
@@ -871,9 +662,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -883,9 +671,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The display name for the Autonomous Container Database.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -895,9 +680,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="dstFileVersion")
     def dst_file_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        DST Time Zone File version of the Autonomous Container Database.
-        """
         return pulumi.get(self, "dst_file_version")
 
     @dst_file_version.setter
@@ -907,9 +689,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
     def fast_start_fail_over_lag_limit_in_seconds(self) -> Optional[pulumi.Input[int]]:
-        """
-        The lag time for my preference based on data loss tolerance in seconds.
-        """
         return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
 
     @fast_start_fail_over_lag_limit_in_seconds.setter
@@ -919,9 +698,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -931,9 +707,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="infrastructureType")
     def infrastructure_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The infrastructure type this resource belongs to.
-        """
         return pulumi.get(self, "infrastructure_type")
 
     @infrastructure_type.setter
@@ -943,9 +716,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="isAutomaticFailoverEnabled")
     def is_automatic_failover_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
-        """
         return pulumi.get(self, "is_automatic_failover_enabled")
 
     @is_automatic_failover_enabled.setter
@@ -955,9 +725,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="isDstFileUpdateEnabled")
     def is_dst_file_update_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        """
         return pulumi.get(self, "is_dst_file_update_enabled")
 
     @is_dst_file_update_enabled.setter
@@ -967,9 +734,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="keyHistoryEntries")
     def key_history_entries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]]:
-        """
-        Key History Entry.
-        """
         return pulumi.get(self, "key_history_entries")
 
     @key_history_entries.setter
@@ -979,9 +743,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="keyStoreId")
     def key_store_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
         return pulumi.get(self, "key_store_id")
 
     @key_store_id.setter
@@ -991,9 +752,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="keyStoreWalletName")
     def key_store_wallet_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The wallet name for Oracle Key Vault.
-        """
         return pulumi.get(self, "key_store_wallet_name")
 
     @key_store_wallet_name.setter
@@ -1003,9 +761,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
         return pulumi.get(self, "kms_key_id")
 
     @kms_key_id.setter
@@ -1015,9 +770,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
     def largest_provisionable_autonomous_database_in_cpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
-        """
         return pulumi.get(self, "largest_provisionable_autonomous_database_in_cpus")
 
     @largest_provisionable_autonomous_database_in_cpus.setter
@@ -1027,9 +779,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="lastMaintenanceRunId")
     def last_maintenance_run_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        """
         return pulumi.get(self, "last_maintenance_run_id")
 
     @last_maintenance_run_id.setter
@@ -1039,9 +788,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -1051,9 +797,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="maintenanceWindowDetails")
     def maintenance_window_details(self) -> Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']]:
-        """
-        (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
         return pulumi.get(self, "maintenance_window_details")
 
     @maintenance_window_details.setter
@@ -1063,9 +806,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="maintenanceWindows")
     def maintenance_windows(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowArgs']]]]:
-        """
-        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
         return pulumi.get(self, "maintenance_windows")
 
     @maintenance_windows.setter
@@ -1075,9 +815,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
-        """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
     @memory_per_oracle_compute_unit_in_gbs.setter
@@ -1087,9 +824,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        """
         return pulumi.get(self, "next_maintenance_run_id")
 
     @next_maintenance_run_id.setter
@@ -1099,9 +833,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="patchId")
     def patch_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
-        """
         return pulumi.get(self, "patch_id")
 
     @patch_id.setter
@@ -1111,9 +842,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="patchModel")
     def patch_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Database Patch model preference.
-        """
         return pulumi.get(self, "patch_model")
 
     @patch_model.setter
@@ -1132,9 +860,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseCompartmentId")
     def peer_autonomous_container_database_compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
-        """
         return pulumi.get(self, "peer_autonomous_container_database_compartment_id")
 
     @peer_autonomous_container_database_compartment_id.setter
@@ -1144,9 +869,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseDisplayName")
     def peer_autonomous_container_database_display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The display name for the peer Autonomous Container Database.
-        """
         return pulumi.get(self, "peer_autonomous_container_database_display_name")
 
     @peer_autonomous_container_database_display_name.setter
@@ -1156,9 +878,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="peerAutonomousExadataInfrastructureId")
     def peer_autonomous_exadata_infrastructure_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        """
         return pulumi.get(self, "peer_autonomous_exadata_infrastructure_id")
 
     @peer_autonomous_exadata_infrastructure_id.setter
@@ -1168,9 +887,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="peerAutonomousVmClusterId")
     def peer_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
-        """
         return pulumi.get(self, "peer_autonomous_vm_cluster_id")
 
     @peer_autonomous_vm_cluster_id.setter
@@ -1180,9 +896,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="peerCloudAutonomousVmClusterId")
     def peer_cloud_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
-        """
         return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_id")
 
     @peer_cloud_autonomous_vm_cluster_id.setter
@@ -1201,9 +914,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> Optional[pulumi.Input[str]]:
-        """
-        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
         return pulumi.get(self, "protection_mode")
 
     @protection_mode.setter
@@ -1213,9 +923,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[float]]]]:
-        """
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        """
         return pulumi.get(self, "provisionable_cpuses")
 
     @provisionable_cpuses.setter
@@ -1225,9 +932,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="provisionedCpus")
     def provisioned_cpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The number of CPUs provisioned in an Autonomous Container Database.
-        """
         return pulumi.get(self, "provisioned_cpus")
 
     @provisioned_cpus.setter
@@ -1237,11 +941,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        """
         return pulumi.get(self, "reclaimable_cpus")
 
     @reclaimable_cpus.setter
@@ -1251,11 +950,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="reservedCpus")
     def reserved_cpus(self) -> Optional[pulumi.Input[float]]:
-        """
-        The number of CPUs reserved in an Autonomous Container Database.
-        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        """
         return pulumi.get(self, "reserved_cpus")
 
     @reserved_cpus.setter
@@ -1265,9 +959,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -1277,9 +968,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="rotateKeyTrigger")
     def rotate_key_trigger(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
-        """
         return pulumi.get(self, "rotate_key_trigger")
 
     @rotate_key_trigger.setter
@@ -1289,9 +977,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="serviceLevelAgreementType")
     def service_level_agreement_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
-        """
         return pulumi.get(self, "service_level_agreement_type")
 
     @service_level_agreement_type.setter
@@ -1301,13 +986,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="standbyMaintenanceBufferInDays")
     def standby_maintenance_buffer_in_days(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "standby_maintenance_buffer_in_days")
 
     @standby_maintenance_buffer_in_days.setter
@@ -1317,9 +995,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the Autonomous Container Database.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -1329,9 +1004,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Autonomous Container Database was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -1341,9 +1013,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="timeSnapshotStandbyRevert")
     def time_snapshot_standby_revert(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
-        """
         return pulumi.get(self, "time_snapshot_standby_revert")
 
     @time_snapshot_standby_revert.setter
@@ -1353,9 +1022,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="totalCpus")
     def total_cpus(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        """
         return pulumi.get(self, "total_cpus")
 
     @total_cpus.setter
@@ -1365,9 +1031,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
         return pulumi.get(self, "vault_id")
 
     @vault_id.setter
@@ -1377,9 +1040,6 @@ class _AutonomousContainerDatabaseState:
     @property
     @pulumi.getter(name="versionPreference")
     def version_preference(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The next maintenance version preference.
-        """
         return pulumi.get(self, "version_preference")
 
     @version_preference.setter
@@ -1425,52 +1085,9 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  version_preference: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
-
-        Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
-
-        ## Import
-
-        AutonomousContainerDatabases can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
-        ```
-
+        Create a AutonomousContainerDatabase resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
-        :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
-        :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
-        :param pulumi.Input[str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-        :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
-        :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
-        :param pulumi.Input[bool] is_dst_file_update_enabled: (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[str] patch_model: (Updatable) Database Patch model preference.
-        :param pulumi.Input[str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
-        :param pulumi.Input[str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
-        :param pulumi.Input[str] peer_autonomous_exadata_infrastructure_id: *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        :param pulumi.Input[str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
-        :param pulumi.Input[str] peer_cloud_autonomous_vm_cluster_id: The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
-        :param pulumi.Input[str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
-        :param pulumi.Input[str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
-        :param pulumi.Input[int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         """
         ...
     @overload
@@ -1479,18 +1096,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  args: AutonomousContainerDatabaseArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
-
-        Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
-
-        ## Import
-
-        AutonomousContainerDatabases can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase test_autonomous_container_database "id"
-        ```
-
+        Create a AutonomousContainerDatabase resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AutonomousContainerDatabaseArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1675,65 +1281,6 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
-        :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database
-        :param pulumi.Input[float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
-        :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
-        :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster.
-        :param pulumi.Input[str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-        :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The display name for the Autonomous Container Database.
-        :param pulumi.Input[str] dst_file_version: DST Time Zone File version of the Autonomous Container Database.
-        :param pulumi.Input[int] fast_start_fail_over_lag_limit_in_seconds: The lag time for my preference based on data loss tolerance in seconds.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] infrastructure_type: The infrastructure type this resource belongs to.
-        :param pulumi.Input[bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
-        :param pulumi.Input[bool] is_dst_file_update_enabled: (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseKeyHistoryEntryArgs']]]] key_history_entries: Key History Entry.
-        :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        :param pulumi.Input[str] key_store_wallet_name: The wallet name for Oracle Key Vault.
-        :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param pulumi.Input[float] largest_provisionable_autonomous_database_in_cpus: The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
-        :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseMaintenanceWindowArgs']]]] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param pulumi.Input[int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
-        :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        :param pulumi.Input[str] patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
-        :param pulumi.Input[str] patch_model: (Updatable) Database Patch model preference.
-        :param pulumi.Input[str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
-        :param pulumi.Input[str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
-        :param pulumi.Input[str] peer_autonomous_exadata_infrastructure_id: *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        :param pulumi.Input[str] peer_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
-        :param pulumi.Input[str] peer_cloud_autonomous_vm_cluster_id: The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
-        :param pulumi.Input[str] protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        :param pulumi.Input[Sequence[pulumi.Input[float]]] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        :param pulumi.Input[float] provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
-        :param pulumi.Input[float] reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
-               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        :param pulumi.Input[float] reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
-               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        :param pulumi.Input[str] role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        :param pulumi.Input[bool] rotate_key_trigger: (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
-        :param pulumi.Input[str] service_level_agreement_type: The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
-        :param pulumi.Input[int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the Autonomous Container Database.
-        :param pulumi.Input[str] time_created: The date and time the Autonomous Container Database was created.
-        :param pulumi.Input[str] time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
-        :param pulumi.Input[int] total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        :param pulumi.Input[str] version_preference: (Updatable) The next maintenance version preference.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1797,432 +1344,271 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="autonomousExadataInfrastructureId")
-    def autonomous_exadata_infrastructure_id(self) -> pulumi.Output[str]:
-        """
-        **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        """
+    def autonomous_exadata_infrastructure_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "autonomous_exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="autonomousVmClusterId")
-    def autonomous_vm_cluster_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the Autonomous VM Cluster.
-        """
+    def autonomous_vm_cluster_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The availability domain of the Autonomous Container Database
-        """
+    def availability_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="availableCpus")
-    def available_cpus(self) -> pulumi.Output[float]:
-        """
-        Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        """
+    def available_cpus(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "available_cpus")
 
     @property
     @pulumi.getter(name="backupConfig")
-    def backup_config(self) -> pulumi.Output['outputs.AutonomousContainerDatabaseBackupConfig']:
-        """
-        (Updatable) Backup options for the Autonomous Container Database.
-        """
+    def backup_config(self) -> pulumi.Output[Optional['outputs.AutonomousContainerDatabaseBackupConfig']]:
         return pulumi.get(self, "backup_config")
 
     @property
     @pulumi.getter(name="cloudAutonomousVmClusterId")
-    def cloud_autonomous_vm_cluster_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the Cloud Autonomous VM Cluster.
-        """
+    def cloud_autonomous_vm_cluster_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
-        """
+    def compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="computeModel")
-    def compute_model(self) -> pulumi.Output[str]:
-        """
-        The compute model of the Autonomous VM Cluster.
-        """
+    def compute_model(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compute_model")
 
     @property
     @pulumi.getter(name="dbName")
-    def db_name(self) -> pulumi.Output[str]:
-        """
-        The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
-        """
+    def db_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_name")
 
     @property
     @pulumi.getter(name="dbUniqueName")
-    def db_unique_name(self) -> pulumi.Output[str]:
+    def db_unique_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_unique_name")
 
     @property
     @pulumi.getter(name="dbVersion")
-    def db_version(self) -> pulumi.Output[str]:
-        """
-        The base version for the Autonomous Container Database.
-        """
+    def db_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "db_version")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The display name for the Autonomous Container Database.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="dstFileVersion")
-    def dst_file_version(self) -> pulumi.Output[str]:
-        """
-        DST Time Zone File version of the Autonomous Container Database.
-        """
+    def dst_file_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "dst_file_version")
 
     @property
     @pulumi.getter(name="fastStartFailOverLagLimitInSeconds")
-    def fast_start_fail_over_lag_limit_in_seconds(self) -> pulumi.Output[int]:
-        """
-        The lag time for my preference based on data loss tolerance in seconds.
-        """
+    def fast_start_fail_over_lag_limit_in_seconds(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "fast_start_fail_over_lag_limit_in_seconds")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="infrastructureType")
-    def infrastructure_type(self) -> pulumi.Output[str]:
-        """
-        The infrastructure type this resource belongs to.
-        """
+    def infrastructure_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "infrastructure_type")
 
     @property
     @pulumi.getter(name="isAutomaticFailoverEnabled")
-    def is_automatic_failover_enabled(self) -> pulumi.Output[bool]:
-        """
-        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
-        """
+    def is_automatic_failover_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_automatic_failover_enabled")
 
     @property
     @pulumi.getter(name="isDstFileUpdateEnabled")
-    def is_dst_file_update_enabled(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        """
+    def is_dst_file_update_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_dst_file_update_enabled")
 
     @property
     @pulumi.getter(name="keyHistoryEntries")
-    def key_history_entries(self) -> pulumi.Output[Sequence['outputs.AutonomousContainerDatabaseKeyHistoryEntry']]:
-        """
-        Key History Entry.
-        """
+    def key_history_entries(self) -> pulumi.Output[Optional[Sequence['outputs.AutonomousContainerDatabaseKeyHistoryEntry']]]:
         return pulumi.get(self, "key_history_entries")
 
     @property
     @pulumi.getter(name="keyStoreId")
-    def key_store_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
-        """
+    def key_store_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key_store_id")
 
     @property
     @pulumi.getter(name="keyStoreWalletName")
-    def key_store_wallet_name(self) -> pulumi.Output[str]:
-        """
-        The wallet name for Oracle Key Vault.
-        """
+    def key_store_wallet_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "key_store_wallet_name")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        """
+    def kms_key_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
-    def largest_provisionable_autonomous_database_in_cpus(self) -> pulumi.Output[float]:
-        """
-        The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
-        """
+    def largest_provisionable_autonomous_database_in_cpus(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "largest_provisionable_autonomous_database_in_cpus")
 
     @property
     @pulumi.getter(name="lastMaintenanceRunId")
-    def last_maintenance_run_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
-        """
+    def last_maintenance_run_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "last_maintenance_run_id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maintenanceWindowDetails")
     def maintenance_window_details(self) -> pulumi.Output[Optional['outputs.AutonomousContainerDatabaseMaintenanceWindowDetails']]:
-        """
-        (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
         return pulumi.get(self, "maintenance_window_details")
 
     @property
     @pulumi.getter(name="maintenanceWindows")
-    def maintenance_windows(self) -> pulumi.Output[Sequence['outputs.AutonomousContainerDatabaseMaintenanceWindow']]:
-        """
-        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        """
+    def maintenance_windows(self) -> pulumi.Output[Optional[Sequence['outputs.AutonomousContainerDatabaseMaintenanceWindow']]]:
         return pulumi.get(self, "maintenance_windows")
 
     @property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
-    def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Output[int]:
-        """
-        The amount of memory (in GBs) enabled per OCPU or ECPU in the Autonomous VM Cluster.
-        """
+    def memory_per_oracle_compute_unit_in_gbs(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
     @property
     @pulumi.getter(name="nextMaintenanceRunId")
-    def next_maintenance_run_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
-        """
+    def next_maintenance_run_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "next_maintenance_run_id")
 
     @property
     @pulumi.getter(name="patchId")
-    def patch_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
-        """
+    def patch_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "patch_id")
 
     @property
     @pulumi.getter(name="patchModel")
     def patch_model(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Database Patch model preference.
-        """
         return pulumi.get(self, "patch_model")
 
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseBackupConfig")
-    def peer_autonomous_container_database_backup_config(self) -> pulumi.Output['outputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig']:
+    def peer_autonomous_container_database_backup_config(self) -> pulumi.Output[Optional['outputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig']]:
         return pulumi.get(self, "peer_autonomous_container_database_backup_config")
 
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseCompartmentId")
-    def peer_autonomous_container_database_compartment_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
-        """
+    def peer_autonomous_container_database_compartment_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "peer_autonomous_container_database_compartment_id")
 
     @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseDisplayName")
-    def peer_autonomous_container_database_display_name(self) -> pulumi.Output[str]:
-        """
-        The display name for the peer Autonomous Container Database.
-        """
+    def peer_autonomous_container_database_display_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "peer_autonomous_container_database_display_name")
 
     @property
     @pulumi.getter(name="peerAutonomousExadataInfrastructureId")
-    def peer_autonomous_exadata_infrastructure_id(self) -> pulumi.Output[str]:
-        """
-        *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
-        """
+    def peer_autonomous_exadata_infrastructure_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "peer_autonomous_exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="peerAutonomousVmClusterId")
-    def peer_autonomous_vm_cluster_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous VM cluster for Autonomous Data Guard. Required to enable Data Guard.
-        """
+    def peer_autonomous_vm_cluster_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "peer_autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="peerCloudAutonomousVmClusterId")
-    def peer_cloud_autonomous_vm_cluster_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the peer Autonomous Cloud VM Cluster for autonomous dataguard.
-        """
+    def peer_cloud_autonomous_vm_cluster_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="peerDbUniqueName")
-    def peer_db_unique_name(self) -> pulumi.Output[str]:
+    def peer_db_unique_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "peer_db_unique_name")
 
     @property
     @pulumi.getter(name="protectionMode")
-    def protection_mode(self) -> pulumi.Output[str]:
-        """
-        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
-        """
+    def protection_mode(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "protection_mode")
 
     @property
     @pulumi.getter(name="provisionableCpuses")
-    def provisionable_cpuses(self) -> pulumi.Output[Sequence[float]]:
-        """
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        """
+    def provisionable_cpuses(self) -> pulumi.Output[Optional[Sequence[float]]]:
         return pulumi.get(self, "provisionable_cpuses")
 
     @property
     @pulumi.getter(name="provisionedCpus")
-    def provisioned_cpus(self) -> pulumi.Output[float]:
-        """
-        The number of CPUs provisioned in an Autonomous Container Database.
-        """
+    def provisioned_cpus(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "provisioned_cpus")
 
     @property
     @pulumi.getter(name="reclaimableCpus")
-    def reclaimable_cpus(self) -> pulumi.Output[float]:
-        """
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        """
+    def reclaimable_cpus(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "reclaimable_cpus")
 
     @property
     @pulumi.getter(name="reservedCpus")
-    def reserved_cpus(self) -> pulumi.Output[float]:
-        """
-        The number of CPUs reserved in an Autonomous Container Database.
-        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-        """
+    def reserved_cpus(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "reserved_cpus")
 
     @property
     @pulumi.getter
-    def role(self) -> pulumi.Output[str]:
-        """
-        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        """
+    def role(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter(name="rotateKeyTrigger")
     def rotate_key_trigger(self) -> pulumi.Output[Optional[bool]]:
-        """
-        (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
-        """
         return pulumi.get(self, "rotate_key_trigger")
 
     @property
     @pulumi.getter(name="serviceLevelAgreementType")
-    def service_level_agreement_type(self) -> pulumi.Output[str]:
-        """
-        The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
-        """
+    def service_level_agreement_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "service_level_agreement_type")
 
     @property
     @pulumi.getter(name="standbyMaintenanceBufferInDays")
-    def standby_maintenance_buffer_in_days(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database. This value represents the number of days before the primary database maintenance schedule.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def standby_maintenance_buffer_in_days(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "standby_maintenance_buffer_in_days")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the Autonomous Container Database.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the Autonomous Container Database was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeSnapshotStandbyRevert")
-    def time_snapshot_standby_revert(self) -> pulumi.Output[str]:
-        """
-        The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
-        """
+    def time_snapshot_standby_revert(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_snapshot_standby_revert")
 
     @property
     @pulumi.getter(name="totalCpus")
-    def total_cpus(self) -> pulumi.Output[int]:
-        """
-        The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        """
+    def total_cpus(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "total_cpus")
 
     @property
     @pulumi.getter(name="vaultId")
-    def vault_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-        """
+    def vault_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "vault_id")
 
     @property
     @pulumi.getter(name="versionPreference")
-    def version_preference(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The next maintenance version preference.
-        """
+    def version_preference(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "version_preference")
 

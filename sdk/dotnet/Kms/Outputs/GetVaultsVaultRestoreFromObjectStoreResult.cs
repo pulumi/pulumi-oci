@@ -13,23 +13,23 @@ namespace Pulumi.Oci.Kms.Outputs
     [OutputType]
     public sealed class GetVaultsVaultRestoreFromObjectStoreResult
     {
-        public readonly string Bucket;
-        public readonly string Destination;
-        public readonly string Namespace;
-        public readonly string Object;
-        public readonly string Uri;
+        public readonly string? Bucket;
+        public readonly string? Destination;
+        public readonly string? Namespace;
+        public readonly string? Object;
+        public readonly string? Uri;
 
         [OutputConstructor]
         private GetVaultsVaultRestoreFromObjectStoreResult(
-            string bucket,
+            string? bucket,
 
-            string destination,
+            string? destination,
 
-            string @namespace,
+            string? @namespace,
 
-            string @object,
+            string? @object,
 
-            string uri)
+            string? uri)
         {
             Bucket = bucket;
             Destination = destination;

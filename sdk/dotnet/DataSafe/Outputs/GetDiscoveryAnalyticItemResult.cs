@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The total count for the aggregation metric.
         /// </summary>
-        public readonly string Count;
+        public readonly string? Count;
         /// <summary>
         /// The scope of analytics data.
         /// </summary>
@@ -24,15 +24,15 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The name of the aggregation metric.
         /// </summary>
-        public readonly string MetricName;
+        public readonly string? MetricName;
 
         [OutputConstructor]
         private GetDiscoveryAnalyticItemResult(
-            string count,
+            string? count,
 
             ImmutableArray<Outputs.GetDiscoveryAnalyticItemDimensionResult> dimensions,
 
-            string metricName)
+            string? metricName)
         {
             Count = count;
             Dimensions = dimensions;

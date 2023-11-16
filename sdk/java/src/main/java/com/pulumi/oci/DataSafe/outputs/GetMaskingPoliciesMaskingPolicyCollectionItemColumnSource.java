@@ -6,6 +6,8 @@ package com.pulumi.oci.DataSafe.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource {
@@ -13,39 +15,39 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource {
      * @return The source of masking columns.
      * 
      */
-    private String columnSource;
+    private @Nullable String columnSource;
     /**
      * @return A filter to return only the resources that match the specified sensitive data model OCID.
      * 
      */
-    private String sensitiveDataModelId;
+    private @Nullable String sensitiveDataModelId;
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    private String targetId;
+    private @Nullable String targetId;
 
     private GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource() {}
     /**
      * @return The source of masking columns.
      * 
      */
-    public String columnSource() {
-        return this.columnSource;
+    public Optional<String> columnSource() {
+        return Optional.ofNullable(this.columnSource);
     }
     /**
      * @return A filter to return only the resources that match the specified sensitive data model OCID.
      * 
      */
-    public String sensitiveDataModelId() {
-        return this.sensitiveDataModelId;
+    public Optional<String> sensitiveDataModelId() {
+        return Optional.ofNullable(this.sensitiveDataModelId);
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
-    public String targetId() {
-        return this.targetId;
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String columnSource;
-        private String sensitiveDataModelId;
-        private String targetId;
+        private @Nullable String columnSource;
+        private @Nullable String sensitiveDataModelId;
+        private @Nullable String targetId;
         public Builder() {}
         public Builder(GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource {
         }
 
         @CustomType.Setter
-        public Builder columnSource(String columnSource) {
-            this.columnSource = Objects.requireNonNull(columnSource);
+        public Builder columnSource(@Nullable String columnSource) {
+            this.columnSource = columnSource;
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveDataModelId(String sensitiveDataModelId) {
-            this.sensitiveDataModelId = Objects.requireNonNull(sensitiveDataModelId);
+        public Builder sensitiveDataModelId(@Nullable String sensitiveDataModelId) {
+            this.sensitiveDataModelId = sensitiveDataModelId;
             return this;
         }
         @CustomType.Setter
-        public Builder targetId(String targetId) {
-            this.targetId = Objects.requireNonNull(targetId);
+        public Builder targetId(@Nullable String targetId) {
+            this.targetId = targetId;
             return this;
         }
         public GetMaskingPoliciesMaskingPolicyCollectionItemColumnSource build() {

@@ -113,7 +113,7 @@ export interface GetTargetDatabasesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The infrastructure type the database is running on.
      */
@@ -126,7 +126,7 @@ export interface GetTargetDatabasesResult {
     /**
      * The list of target_databases.
      */
-    readonly targetDatabases: outputs.DataSafe.GetTargetDatabasesTargetDatabase[];
+    readonly targetDatabases?: outputs.DataSafe.GetTargetDatabasesTargetDatabase[];
 }
 /**
  * This data source provides the list of Target Databases in Oracle Cloud Infrastructure Data Safe service.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Network Firewall Policy Service Lists in Oracle Cloud Infrastructure Network Firewall service.
@@ -66,8 +65,8 @@ type GetNetworkFirewallPolicyServiceListsResult struct {
 	DisplayName *string                                      `pulumi:"displayName"`
 	Filters     []GetNetworkFirewallPolicyServiceListsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                      string `pulumi:"id"`
-	NetworkFirewallPolicyId string `pulumi:"networkFirewallPolicyId"`
+	Id                      *string `pulumi:"id"`
+	NetworkFirewallPolicyId string  `pulumi:"networkFirewallPolicyId"`
 	// The list of service_list_summary_collection.
 	ServiceListSummaryCollections []GetNetworkFirewallPolicyServiceListsServiceListSummaryCollection `pulumi:"serviceListSummaryCollections"`
 }
@@ -113,12 +112,6 @@ func (o GetNetworkFirewallPolicyServiceListsResultOutput) ToGetNetworkFirewallPo
 	return o
 }
 
-func (o GetNetworkFirewallPolicyServiceListsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetNetworkFirewallPolicyServiceListsResult] {
-	return pulumix.Output[GetNetworkFirewallPolicyServiceListsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetNetworkFirewallPolicyServiceListsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyServiceListsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -130,8 +123,8 @@ func (o GetNetworkFirewallPolicyServiceListsResultOutput) Filters() GetNetworkFi
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetNetworkFirewallPolicyServiceListsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyServiceListsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetNetworkFirewallPolicyServiceListsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyServiceListsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetNetworkFirewallPolicyServiceListsResultOutput) NetworkFirewallPolicyId() pulumi.StringOutput {

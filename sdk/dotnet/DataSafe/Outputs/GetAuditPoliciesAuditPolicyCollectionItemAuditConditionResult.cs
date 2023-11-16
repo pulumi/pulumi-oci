@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
         /// </summary>
-        public readonly string AuditPolicyName;
+        public readonly string? AuditPolicyName;
         /// <summary>
         /// Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
         /// </summary>
@@ -24,21 +24,21 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Indicates whether the Data Safe user activity on the target database will be audited by the policy.
         /// </summary>
-        public readonly bool IsDataSafeServiceAccountAudited;
+        public readonly bool? IsDataSafeServiceAccountAudited;
         /// <summary>
         /// Indicates whether the privileged user list is managed by Data Safe.
         /// </summary>
-        public readonly bool IsPrivUsersManagedByDataSafe;
+        public readonly bool? IsPrivUsersManagedByDataSafe;
 
         [OutputConstructor]
         private GetAuditPoliciesAuditPolicyCollectionItemAuditConditionResult(
-            string auditPolicyName,
+            string? auditPolicyName,
 
             ImmutableArray<Outputs.GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableConditionResult> enableConditions,
 
-            bool isDataSafeServiceAccountAudited,
+            bool? isDataSafeServiceAccountAudited,
 
-            bool isPrivUsersManagedByDataSafe)
+            bool? isPrivUsersManagedByDataSafe)
         {
             AuditPolicyName = auditPolicyName;
             EnableConditions = enableConditions;

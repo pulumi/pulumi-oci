@@ -16,23 +16,23 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The total amount of memory available to the node, in gigabytes.
         /// </summary>
-        public readonly int MemoryInGbs;
+        public readonly int? MemoryInGbs;
         /// <summary>
         /// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         /// </summary>
-        public readonly int Nvmes;
+        public readonly int? Nvmes;
         /// <summary>
         /// The total number of OCPUs available to the node.
         /// </summary>
-        public readonly int Ocpus;
+        public readonly int? Ocpus;
 
         [OutputConstructor]
         private GetBdsInstanceEdgeNodeShapeConfigResult(
-            int memoryInGbs,
+            int? memoryInGbs,
 
-            int nvmes,
+            int? nvmes,
 
-            int ocpus)
+            int? ocpus)
         {
             MemoryInGbs = memoryInGbs;
             Nvmes = nvmes;

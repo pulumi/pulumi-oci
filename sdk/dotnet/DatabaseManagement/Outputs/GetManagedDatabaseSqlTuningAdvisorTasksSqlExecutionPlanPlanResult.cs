@@ -16,179 +16,179 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The predicates used to locate rows in an access structure. For example, start or stop predicates for an index range scan.
         /// </summary>
-        public readonly string AccessPredicates;
+        public readonly string? AccessPredicates;
         /// <summary>
         /// The attribute of the SQL execution plan.
         /// </summary>
-        public readonly string Attribute;
+        public readonly string? Attribute;
         /// <summary>
         /// The number of bytes returned by the current operation.
         /// </summary>
-        public readonly string Bytes;
+        public readonly string? Bytes;
         /// <summary>
         /// The number of rows returned by the current operation (estimated by the CBO).
         /// </summary>
-        public readonly string Cardinality;
+        public readonly string? Cardinality;
         /// <summary>
         /// The cost of the current operation estimated by the cost-based optimizer (CBO).
         /// </summary>
-        public readonly double Cost;
+        public readonly double? Cost;
         /// <summary>
         /// The CPU cost of the current operation.
         /// </summary>
-        public readonly double CpuCost;
+        public readonly double? CpuCost;
         /// <summary>
         /// The predicates used to filter rows before producing them.
         /// </summary>
-        public readonly string FilterPredicates;
+        public readonly string? FilterPredicates;
         /// <summary>
         /// The I/O cost of the current operation.
         /// </summary>
-        public readonly double IoCost;
+        public readonly double? IoCost;
         /// <summary>
         /// Number of index columns with start and stop keys (that is, the number of columns with matching predicates).
         /// </summary>
-        public readonly int NumberOfSearchColumn;
+        public readonly int? NumberOfSearchColumn;
         /// <summary>
         /// The name of the object.
         /// </summary>
-        public readonly string Object;
+        public readonly string? Object;
         /// <summary>
         /// The name of the database link used to reference the object.
         /// </summary>
-        public readonly string ObjectNode;
+        public readonly string? ObjectNode;
         /// <summary>
         /// The owner of the object.
         /// </summary>
-        public readonly string ObjectOwner;
+        public readonly string? ObjectOwner;
         /// <summary>
         /// The numbered position of the object name in the original SQL statement.
         /// </summary>
-        public readonly int ObjectPosition;
+        public readonly int? ObjectPosition;
         /// <summary>
         /// The descriptive modifier that further describes the type of object.
         /// </summary>
-        public readonly string ObjectType;
+        public readonly string? ObjectType;
         /// <summary>
         /// The name of the operation performed at this step.
         /// </summary>
-        public readonly string Operation;
+        public readonly string? Operation;
         /// <summary>
         /// The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
         /// </summary>
-        public readonly string OptimizerMode;
+        public readonly string? OptimizerMode;
         /// <summary>
         /// The options used for the operation performed at this step.
         /// </summary>
-        public readonly string Options;
+        public readonly string? Options;
         /// <summary>
         /// Information about parallel execution servers and parallel queries
         /// </summary>
-        public readonly string Other;
+        public readonly string? Other;
         /// <summary>
         /// Describes the function of the SQL text in the OTHER column.
         /// </summary>
-        public readonly string OtherTag;
+        public readonly string? OtherTag;
         /// <summary>
         /// The ID of the next step that operates on the results of this step. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly int ParentStepId;
+        public readonly int? ParentStepId;
         /// <summary>
         /// The ID of the step in the execution plan that has computed the pair of values of partitionStart and partitionStop.
         /// </summary>
-        public readonly int PartitionId;
+        public readonly int? PartitionId;
         /// <summary>
         /// A step may get data from a range of partitions of a partitioned object, such as table or index, based on predicates and sorting order. The partionStart is the starting partition of the range. The partitionStop is the ending partition of the range.
         /// </summary>
-        public readonly string PartitionStart;
+        public readonly string? PartitionStart;
         /// <summary>
         /// A step may get data from a range of partitions of a partitioned object, such as table or index, based on predicates and sorting order. The partionStart is the starting partition of the range. The partitionStop is the ending partition of the range.
         /// </summary>
-        public readonly string PartitionStop;
+        public readonly string? PartitionStop;
         /// <summary>
         /// The numerical representation of the SQL execution plan.
         /// </summary>
-        public readonly string PlanHashValue;
+        public readonly string? PlanHashValue;
         /// <summary>
         /// The order of processing for steps with the same parent ID.
         /// </summary>
-        public readonly int Position;
+        public readonly int? Position;
         /// <summary>
         /// The place for comments that can be added to the steps of the execution plan.
         /// </summary>
-        public readonly string Remarks;
+        public readonly string? Remarks;
         /// <summary>
         /// The identification number of a step in the SQL execution plan. This is unique within the SQL execution plan. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly int StepId;
+        public readonly int? StepId;
         /// <summary>
         /// The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
         /// </summary>
-        public readonly string TempSpace;
+        public readonly string? TempSpace;
         /// <summary>
         /// The elapsed time (in seconds) of the operation as estimated by the CBO.
         /// </summary>
-        public readonly string Time;
+        public readonly string? Time;
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanResult(
-            string accessPredicates,
+            string? accessPredicates,
 
-            string attribute,
+            string? attribute,
 
-            string bytes,
+            string? bytes,
 
-            string cardinality,
+            string? cardinality,
 
-            double cost,
+            double? cost,
 
-            double cpuCost,
+            double? cpuCost,
 
-            string filterPredicates,
+            string? filterPredicates,
 
-            double ioCost,
+            double? ioCost,
 
-            int numberOfSearchColumn,
+            int? numberOfSearchColumn,
 
-            string @object,
+            string? @object,
 
-            string objectNode,
+            string? objectNode,
 
-            string objectOwner,
+            string? objectOwner,
 
-            int objectPosition,
+            int? objectPosition,
 
-            string objectType,
+            string? objectType,
 
-            string operation,
+            string? operation,
 
-            string optimizerMode,
+            string? optimizerMode,
 
-            string options,
+            string? options,
 
-            string other,
+            string? other,
 
-            string otherTag,
+            string? otherTag,
 
-            int parentStepId,
+            int? parentStepId,
 
-            int partitionId,
+            int? partitionId,
 
-            string partitionStart,
+            string? partitionStart,
 
-            string partitionStop,
+            string? partitionStop,
 
-            string planHashValue,
+            string? planHashValue,
 
-            int position,
+            int? position,
 
-            string remarks,
+            string? remarks,
 
-            int stepId,
+            int? stepId,
 
-            string tempSpace,
+            string? tempSpace,
 
-            string time)
+            string? time)
         {
             AccessPredicates = accessPredicates;
             Attribute = attribute;

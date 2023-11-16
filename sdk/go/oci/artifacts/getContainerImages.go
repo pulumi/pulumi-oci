@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Container Images in Oracle Cloud Infrastructure Artifacts service.
@@ -93,7 +92,7 @@ type GetContainerImagesResult struct {
 	DisplayName *string                    `pulumi:"displayName"`
 	Filters     []GetContainerImagesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id          string  `pulumi:"id"`
+	Id          *string `pulumi:"id"`
 	ImageId     *string `pulumi:"imageId"`
 	IsVersioned *bool   `pulumi:"isVersioned"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container repository.
@@ -161,12 +160,6 @@ func (o GetContainerImagesResultOutput) ToGetContainerImagesResultOutputWithCont
 	return o
 }
 
-func (o GetContainerImagesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerImagesResult] {
-	return pulumix.Output[GetContainerImagesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The compartment OCID to which the container image belongs. Inferred from the container repository.
 func (o GetContainerImagesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerImagesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -193,8 +186,8 @@ func (o GetContainerImagesResultOutput) Filters() GetContainerImagesFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetContainerImagesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerImagesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetContainerImagesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerImagesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetContainerImagesResultOutput) ImageId() pulumi.StringPtrOutput {

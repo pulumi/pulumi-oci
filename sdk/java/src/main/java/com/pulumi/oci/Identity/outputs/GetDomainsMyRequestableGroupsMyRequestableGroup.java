@@ -15,6 +15,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsMyRequestableGroupsMyRequestableGroup {
@@ -22,231 +24,231 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroup {
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    private String compartmentOcid;
+    private @Nullable String compartmentOcid;
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    private Boolean deleteInProgress;
+    private @Nullable Boolean deleteInProgress;
     /**
      * @return The Group display name.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    private String domainOcid;
+    private @Nullable String domainOcid;
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    private String externalId;
+    private @Nullable String externalId;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The User or App who created the Resource
      * 
      */
-    private List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsCreatedBy> idcsCreatedBies;
+    private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsCreatedBy> idcsCreatedBies;
     /**
      * @return The User or App who modified the Resource
      * 
      */
-    private List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsLastModifiedBy> idcsLastModifiedBies;
+    private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsLastModifiedBy> idcsLastModifiedBies;
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    private String idcsLastUpgradedInRelease;
+    private @Nullable String idcsLastUpgradedInRelease;
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
-    private List<String> idcsPreventedOperations;
+    private @Nullable List<String> idcsPreventedOperations;
     /**
      * @return The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      * 
      */
-    private List<GetDomainsMyRequestableGroupsMyRequestableGroupMember> members;
+    private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupMember> members;
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
-    private List<GetDomainsMyRequestableGroupsMyRequestableGroupMeta> metas;
+    private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupMeta> metas;
     /**
      * @return A human readable name for the group as defined by the Service Consumer.
      * 
      */
-    private String nonUniqueDisplayName;
+    private @Nullable String nonUniqueDisplayName;
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    private String ocid;
+    private @Nullable String ocid;
     /**
      * @return The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior. REQUIRED.
      * 
      */
-    private List<String> schemas;
+    private @Nullable List<String> schemas;
     /**
      * @return A list of tags on this resource.
      * 
      */
-    private List<GetDomainsMyRequestableGroupsMyRequestableGroupTag> tags;
+    private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupTag> tags;
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    private String tenancyOcid;
+    private @Nullable String tenancyOcid;
     /**
      * @return Oracle Identity Cloud Service Group
      * 
      */
-    private List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> urnietfparamsscimschemasoracleidcsextensiongroupGroups;
+    private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> urnietfparamsscimschemasoracleidcsextensiongroupGroups;
     /**
      * @return Requestable Group
      * 
      */
-    private List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup> urnietfparamsscimschemasoracleidcsextensionrequestableGroups;
+    private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup> urnietfparamsscimschemasoracleidcsextensionrequestableGroups;
 
     private GetDomainsMyRequestableGroupsMyRequestableGroup() {}
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
-    public String compartmentOcid() {
-        return this.compartmentOcid;
+    public Optional<String> compartmentOcid() {
+        return Optional.ofNullable(this.compartmentOcid);
     }
     /**
      * @return A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
      * 
      */
-    public Boolean deleteInProgress() {
-        return this.deleteInProgress;
+    public Optional<Boolean> deleteInProgress() {
+        return Optional.ofNullable(this.deleteInProgress);
     }
     /**
      * @return The Group display name.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
      * 
      */
-    public String domainOcid() {
-        return this.domainOcid;
+    public Optional<String> domainOcid() {
+        return Optional.ofNullable(this.domainOcid);
     }
     /**
      * @return An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      */
-    public String externalId() {
-        return this.externalId;
+    public Optional<String> externalId() {
+        return Optional.ofNullable(this.externalId);
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The User or App who created the Resource
      * 
      */
     public List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsCreatedBy> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+        return this.idcsCreatedBies == null ? List.of() : this.idcsCreatedBies;
     }
     /**
      * @return The User or App who modified the Resource
      * 
      */
     public List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsLastModifiedBy> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+        return this.idcsLastModifiedBies == null ? List.of() : this.idcsLastModifiedBies;
     }
     /**
      * @return The release number when the resource was upgraded.
      * 
      */
-    public String idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Optional<String> idcsLastUpgradedInRelease() {
+        return Optional.ofNullable(this.idcsLastUpgradedInRelease);
     }
     /**
      * @return Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
      * 
      */
     public List<String> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+        return this.idcsPreventedOperations == null ? List.of() : this.idcsPreventedOperations;
     }
     /**
      * @return The group members. &lt;b&gt;Important:&lt;/b&gt; When requesting group members, a maximum of 10,000 members can be returned in a single request. If the response contains more than 10,000 members, the request will fail. Use &#39;startIndex&#39; and &#39;count&#39; to return members in pages instead of in a single response, for example: #attributes=members[startIndex=1%26count=10]. This REST API is SCIM compliant.
      * 
      */
     public List<GetDomainsMyRequestableGroupsMyRequestableGroupMember> members() {
-        return this.members;
+        return this.members == null ? List.of() : this.members;
     }
     /**
      * @return A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
      * 
      */
     public List<GetDomainsMyRequestableGroupsMyRequestableGroupMeta> metas() {
-        return this.metas;
+        return this.metas == null ? List.of() : this.metas;
     }
     /**
      * @return A human readable name for the group as defined by the Service Consumer.
      * 
      */
-    public String nonUniqueDisplayName() {
-        return this.nonUniqueDisplayName;
+    public Optional<String> nonUniqueDisplayName() {
+        return Optional.ofNullable(this.nonUniqueDisplayName);
     }
     /**
      * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      */
-    public String ocid() {
-        return this.ocid;
+    public Optional<String> ocid() {
+        return Optional.ofNullable(this.ocid);
     }
     /**
      * @return The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior. REQUIRED.
      * 
      */
     public List<String> schemas() {
-        return this.schemas;
+        return this.schemas == null ? List.of() : this.schemas;
     }
     /**
      * @return A list of tags on this resource.
      * 
      */
     public List<GetDomainsMyRequestableGroupsMyRequestableGroupTag> tags() {
-        return this.tags;
+        return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
      * 
      */
-    public String tenancyOcid() {
-        return this.tenancyOcid;
+    public Optional<String> tenancyOcid() {
+        return Optional.ofNullable(this.tenancyOcid);
     }
     /**
      * @return Oracle Identity Cloud Service Group
      * 
      */
     public List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> urnietfparamsscimschemasoracleidcsextensiongroupGroups() {
-        return this.urnietfparamsscimschemasoracleidcsextensiongroupGroups;
+        return this.urnietfparamsscimschemasoracleidcsextensiongroupGroups == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensiongroupGroups;
     }
     /**
      * @return Requestable Group
      * 
      */
     public List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup> urnietfparamsscimschemasoracleidcsextensionrequestableGroups() {
-        return this.urnietfparamsscimschemasoracleidcsextensionrequestableGroups;
+        return this.urnietfparamsscimschemasoracleidcsextensionrequestableGroups == null ? List.of() : this.urnietfparamsscimschemasoracleidcsextensionrequestableGroups;
     }
 
     public static Builder builder() {
@@ -258,25 +260,25 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroup {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentOcid;
-        private Boolean deleteInProgress;
-        private String displayName;
-        private String domainOcid;
-        private String externalId;
-        private String id;
-        private List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsCreatedBy> idcsCreatedBies;
-        private List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsLastModifiedBy> idcsLastModifiedBies;
-        private String idcsLastUpgradedInRelease;
-        private List<String> idcsPreventedOperations;
-        private List<GetDomainsMyRequestableGroupsMyRequestableGroupMember> members;
-        private List<GetDomainsMyRequestableGroupsMyRequestableGroupMeta> metas;
-        private String nonUniqueDisplayName;
-        private String ocid;
-        private List<String> schemas;
-        private List<GetDomainsMyRequestableGroupsMyRequestableGroupTag> tags;
-        private String tenancyOcid;
-        private List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> urnietfparamsscimschemasoracleidcsextensiongroupGroups;
-        private List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup> urnietfparamsscimschemasoracleidcsextensionrequestableGroups;
+        private @Nullable String compartmentOcid;
+        private @Nullable Boolean deleteInProgress;
+        private @Nullable String displayName;
+        private @Nullable String domainOcid;
+        private @Nullable String externalId;
+        private @Nullable String id;
+        private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsCreatedBy> idcsCreatedBies;
+        private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsLastModifiedBy> idcsLastModifiedBies;
+        private @Nullable String idcsLastUpgradedInRelease;
+        private @Nullable List<String> idcsPreventedOperations;
+        private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupMember> members;
+        private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupMeta> metas;
+        private @Nullable String nonUniqueDisplayName;
+        private @Nullable String ocid;
+        private @Nullable List<String> schemas;
+        private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupTag> tags;
+        private @Nullable String tenancyOcid;
+        private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> urnietfparamsscimschemasoracleidcsextensiongroupGroups;
+        private @Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup> urnietfparamsscimschemasoracleidcsextensionrequestableGroups;
         public Builder() {}
         public Builder(GetDomainsMyRequestableGroupsMyRequestableGroup defaults) {
     	      Objects.requireNonNull(defaults);
@@ -302,122 +304,122 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroup {
         }
 
         @CustomType.Setter
-        public Builder compartmentOcid(String compartmentOcid) {
-            this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
+        public Builder compartmentOcid(@Nullable String compartmentOcid) {
+            this.compartmentOcid = compartmentOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder deleteInProgress(Boolean deleteInProgress) {
-            this.deleteInProgress = Objects.requireNonNull(deleteInProgress);
+        public Builder deleteInProgress(@Nullable Boolean deleteInProgress) {
+            this.deleteInProgress = deleteInProgress;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder domainOcid(String domainOcid) {
-            this.domainOcid = Objects.requireNonNull(domainOcid);
+        public Builder domainOcid(@Nullable String domainOcid) {
+            this.domainOcid = domainOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder externalId(String externalId) {
-            this.externalId = Objects.requireNonNull(externalId);
+        public Builder externalId(@Nullable String externalId) {
+            this.externalId = externalId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsCreatedBies(List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsCreatedBy> idcsCreatedBies) {
-            this.idcsCreatedBies = Objects.requireNonNull(idcsCreatedBies);
+        public Builder idcsCreatedBies(@Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsCreatedBy> idcsCreatedBies) {
+            this.idcsCreatedBies = idcsCreatedBies;
             return this;
         }
         public Builder idcsCreatedBies(GetDomainsMyRequestableGroupsMyRequestableGroupIdcsCreatedBy... idcsCreatedBies) {
             return idcsCreatedBies(List.of(idcsCreatedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastModifiedBies(List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsLastModifiedBy> idcsLastModifiedBies) {
-            this.idcsLastModifiedBies = Objects.requireNonNull(idcsLastModifiedBies);
+        public Builder idcsLastModifiedBies(@Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupIdcsLastModifiedBy> idcsLastModifiedBies) {
+            this.idcsLastModifiedBies = idcsLastModifiedBies;
             return this;
         }
         public Builder idcsLastModifiedBies(GetDomainsMyRequestableGroupsMyRequestableGroupIdcsLastModifiedBy... idcsLastModifiedBies) {
             return idcsLastModifiedBies(List.of(idcsLastModifiedBies));
         }
         @CustomType.Setter
-        public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
-            this.idcsLastUpgradedInRelease = Objects.requireNonNull(idcsLastUpgradedInRelease);
+        public Builder idcsLastUpgradedInRelease(@Nullable String idcsLastUpgradedInRelease) {
+            this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             return this;
         }
         @CustomType.Setter
-        public Builder idcsPreventedOperations(List<String> idcsPreventedOperations) {
-            this.idcsPreventedOperations = Objects.requireNonNull(idcsPreventedOperations);
+        public Builder idcsPreventedOperations(@Nullable List<String> idcsPreventedOperations) {
+            this.idcsPreventedOperations = idcsPreventedOperations;
             return this;
         }
         public Builder idcsPreventedOperations(String... idcsPreventedOperations) {
             return idcsPreventedOperations(List.of(idcsPreventedOperations));
         }
         @CustomType.Setter
-        public Builder members(List<GetDomainsMyRequestableGroupsMyRequestableGroupMember> members) {
-            this.members = Objects.requireNonNull(members);
+        public Builder members(@Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupMember> members) {
+            this.members = members;
             return this;
         }
         public Builder members(GetDomainsMyRequestableGroupsMyRequestableGroupMember... members) {
             return members(List.of(members));
         }
         @CustomType.Setter
-        public Builder metas(List<GetDomainsMyRequestableGroupsMyRequestableGroupMeta> metas) {
-            this.metas = Objects.requireNonNull(metas);
+        public Builder metas(@Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupMeta> metas) {
+            this.metas = metas;
             return this;
         }
         public Builder metas(GetDomainsMyRequestableGroupsMyRequestableGroupMeta... metas) {
             return metas(List.of(metas));
         }
         @CustomType.Setter
-        public Builder nonUniqueDisplayName(String nonUniqueDisplayName) {
-            this.nonUniqueDisplayName = Objects.requireNonNull(nonUniqueDisplayName);
+        public Builder nonUniqueDisplayName(@Nullable String nonUniqueDisplayName) {
+            this.nonUniqueDisplayName = nonUniqueDisplayName;
             return this;
         }
         @CustomType.Setter
-        public Builder ocid(String ocid) {
-            this.ocid = Objects.requireNonNull(ocid);
+        public Builder ocid(@Nullable String ocid) {
+            this.ocid = ocid;
             return this;
         }
         @CustomType.Setter
-        public Builder schemas(List<String> schemas) {
-            this.schemas = Objects.requireNonNull(schemas);
+        public Builder schemas(@Nullable List<String> schemas) {
+            this.schemas = schemas;
             return this;
         }
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
         }
         @CustomType.Setter
-        public Builder tags(List<GetDomainsMyRequestableGroupsMyRequestableGroupTag> tags) {
-            this.tags = Objects.requireNonNull(tags);
+        public Builder tags(@Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupTag> tags) {
+            this.tags = tags;
             return this;
         }
         public Builder tags(GetDomainsMyRequestableGroupsMyRequestableGroupTag... tags) {
             return tags(List.of(tags));
         }
         @CustomType.Setter
-        public Builder tenancyOcid(String tenancyOcid) {
-            this.tenancyOcid = Objects.requireNonNull(tenancyOcid);
+        public Builder tenancyOcid(@Nullable String tenancyOcid) {
+            this.tenancyOcid = tenancyOcid;
             return this;
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensiongroupGroups(List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> urnietfparamsscimschemasoracleidcsextensiongroupGroups) {
-            this.urnietfparamsscimschemasoracleidcsextensiongroupGroups = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensiongroupGroups);
+        public Builder urnietfparamsscimschemasoracleidcsextensiongroupGroups(@Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup> urnietfparamsscimschemasoracleidcsextensiongroupGroups) {
+            this.urnietfparamsscimschemasoracleidcsextensiongroupGroups = urnietfparamsscimschemasoracleidcsextensiongroupGroups;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensiongroupGroups(GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup... urnietfparamsscimschemasoracleidcsextensiongroupGroups) {
             return urnietfparamsscimschemasoracleidcsextensiongroupGroups(List.of(urnietfparamsscimschemasoracleidcsextensiongroupGroups));
         }
         @CustomType.Setter
-        public Builder urnietfparamsscimschemasoracleidcsextensionrequestableGroups(List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup> urnietfparamsscimschemasoracleidcsextensionrequestableGroups) {
-            this.urnietfparamsscimschemasoracleidcsextensionrequestableGroups = Objects.requireNonNull(urnietfparamsscimschemasoracleidcsextensionrequestableGroups);
+        public Builder urnietfparamsscimschemasoracleidcsextensionrequestableGroups(@Nullable List<GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup> urnietfparamsscimschemasoracleidcsextensionrequestableGroups) {
+            this.urnietfparamsscimschemasoracleidcsextensionrequestableGroups = urnietfparamsscimschemasoracleidcsextensionrequestableGroups;
             return this;
         }
         public Builder urnietfparamsscimschemasoracleidcsextensionrequestableGroups(GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup... urnietfparamsscimschemasoracleidcsextensionrequestableGroups) {

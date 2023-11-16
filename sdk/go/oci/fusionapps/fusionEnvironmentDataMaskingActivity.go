@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Fusion Environment Data Masking Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -62,13 +61,13 @@ type FusionEnvironmentDataMaskingActivity struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	IsResumeDataMasking pulumi.BoolOutput `pulumi:"isResumeDataMasking"`
+	IsResumeDataMasking pulumi.BoolPtrOutput `pulumi:"isResumeDataMasking"`
 	// The current state of the DataMaskingActivity.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the data masking activity ended. An RFC3339 formatted datetime string.
-	TimeMaskingFinish pulumi.StringOutput `pulumi:"timeMaskingFinish"`
+	TimeMaskingFinish pulumi.StringPtrOutput `pulumi:"timeMaskingFinish"`
 	// The time the data masking activity started. An RFC3339 formatted datetime string.
-	TimeMaskingStart pulumi.StringOutput `pulumi:"timeMaskingStart"`
+	TimeMaskingStart pulumi.StringPtrOutput `pulumi:"timeMaskingStart"`
 }
 
 // NewFusionEnvironmentDataMaskingActivity registers a new resource with the given unique name, arguments, and options.
@@ -183,12 +182,6 @@ func (i *FusionEnvironmentDataMaskingActivity) ToFusionEnvironmentDataMaskingAct
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentDataMaskingActivityOutput)
 }
 
-func (i *FusionEnvironmentDataMaskingActivity) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentDataMaskingActivity] {
-	return pulumix.Output[*FusionEnvironmentDataMaskingActivity]{
-		OutputState: i.ToFusionEnvironmentDataMaskingActivityOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FusionEnvironmentDataMaskingActivityArrayInput is an input type that accepts FusionEnvironmentDataMaskingActivityArray and FusionEnvironmentDataMaskingActivityArrayOutput values.
 // You can construct a concrete instance of `FusionEnvironmentDataMaskingActivityArrayInput` via:
 //
@@ -212,12 +205,6 @@ func (i FusionEnvironmentDataMaskingActivityArray) ToFusionEnvironmentDataMaskin
 
 func (i FusionEnvironmentDataMaskingActivityArray) ToFusionEnvironmentDataMaskingActivityArrayOutputWithContext(ctx context.Context) FusionEnvironmentDataMaskingActivityArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentDataMaskingActivityArrayOutput)
-}
-
-func (i FusionEnvironmentDataMaskingActivityArray) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentDataMaskingActivity] {
-	return pulumix.Output[[]*FusionEnvironmentDataMaskingActivity]{
-		OutputState: i.ToFusionEnvironmentDataMaskingActivityArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FusionEnvironmentDataMaskingActivityMapInput is an input type that accepts FusionEnvironmentDataMaskingActivityMap and FusionEnvironmentDataMaskingActivityMapOutput values.
@@ -245,12 +232,6 @@ func (i FusionEnvironmentDataMaskingActivityMap) ToFusionEnvironmentDataMaskingA
 	return pulumi.ToOutputWithContext(ctx, i).(FusionEnvironmentDataMaskingActivityMapOutput)
 }
 
-func (i FusionEnvironmentDataMaskingActivityMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentDataMaskingActivity] {
-	return pulumix.Output[map[string]*FusionEnvironmentDataMaskingActivity]{
-		OutputState: i.ToFusionEnvironmentDataMaskingActivityMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FusionEnvironmentDataMaskingActivityOutput struct{ *pulumi.OutputState }
 
 func (FusionEnvironmentDataMaskingActivityOutput) ElementType() reflect.Type {
@@ -265,12 +246,6 @@ func (o FusionEnvironmentDataMaskingActivityOutput) ToFusionEnvironmentDataMaski
 	return o
 }
 
-func (o FusionEnvironmentDataMaskingActivityOutput) ToOutput(ctx context.Context) pulumix.Output[*FusionEnvironmentDataMaskingActivity] {
-	return pulumix.Output[*FusionEnvironmentDataMaskingActivity]{
-		OutputState: o.OutputState,
-	}
-}
-
 // unique FusionEnvironment identifier
 func (o FusionEnvironmentDataMaskingActivityOutput) FusionEnvironmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FusionEnvironmentDataMaskingActivity) pulumi.StringOutput { return v.FusionEnvironmentId }).(pulumi.StringOutput)
@@ -280,23 +255,23 @@ func (o FusionEnvironmentDataMaskingActivityOutput) FusionEnvironmentId() pulumi
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o FusionEnvironmentDataMaskingActivityOutput) IsResumeDataMasking() pulumi.BoolOutput {
-	return o.ApplyT(func(v *FusionEnvironmentDataMaskingActivity) pulumi.BoolOutput { return v.IsResumeDataMasking }).(pulumi.BoolOutput)
+func (o FusionEnvironmentDataMaskingActivityOutput) IsResumeDataMasking() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentDataMaskingActivity) pulumi.BoolPtrOutput { return v.IsResumeDataMasking }).(pulumi.BoolPtrOutput)
 }
 
 // The current state of the DataMaskingActivity.
-func (o FusionEnvironmentDataMaskingActivityOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentDataMaskingActivity) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o FusionEnvironmentDataMaskingActivityOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentDataMaskingActivity) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the data masking activity ended. An RFC3339 formatted datetime string.
-func (o FusionEnvironmentDataMaskingActivityOutput) TimeMaskingFinish() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentDataMaskingActivity) pulumi.StringOutput { return v.TimeMaskingFinish }).(pulumi.StringOutput)
+func (o FusionEnvironmentDataMaskingActivityOutput) TimeMaskingFinish() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentDataMaskingActivity) pulumi.StringPtrOutput { return v.TimeMaskingFinish }).(pulumi.StringPtrOutput)
 }
 
 // The time the data masking activity started. An RFC3339 formatted datetime string.
-func (o FusionEnvironmentDataMaskingActivityOutput) TimeMaskingStart() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentDataMaskingActivity) pulumi.StringOutput { return v.TimeMaskingStart }).(pulumi.StringOutput)
+func (o FusionEnvironmentDataMaskingActivityOutput) TimeMaskingStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FusionEnvironmentDataMaskingActivity) pulumi.StringPtrOutput { return v.TimeMaskingStart }).(pulumi.StringPtrOutput)
 }
 
 type FusionEnvironmentDataMaskingActivityArrayOutput struct{ *pulumi.OutputState }
@@ -311,12 +286,6 @@ func (o FusionEnvironmentDataMaskingActivityArrayOutput) ToFusionEnvironmentData
 
 func (o FusionEnvironmentDataMaskingActivityArrayOutput) ToFusionEnvironmentDataMaskingActivityArrayOutputWithContext(ctx context.Context) FusionEnvironmentDataMaskingActivityArrayOutput {
 	return o
-}
-
-func (o FusionEnvironmentDataMaskingActivityArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*FusionEnvironmentDataMaskingActivity] {
-	return pulumix.Output[[]*FusionEnvironmentDataMaskingActivity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentDataMaskingActivityArrayOutput) Index(i pulumi.IntInput) FusionEnvironmentDataMaskingActivityOutput {
@@ -337,12 +306,6 @@ func (o FusionEnvironmentDataMaskingActivityMapOutput) ToFusionEnvironmentDataMa
 
 func (o FusionEnvironmentDataMaskingActivityMapOutput) ToFusionEnvironmentDataMaskingActivityMapOutputWithContext(ctx context.Context) FusionEnvironmentDataMaskingActivityMapOutput {
 	return o
-}
-
-func (o FusionEnvironmentDataMaskingActivityMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*FusionEnvironmentDataMaskingActivity] {
-	return pulumix.Output[map[string]*FusionEnvironmentDataMaskingActivity]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FusionEnvironmentDataMaskingActivityMapOutput) MapIndex(k pulumi.StringInput) FusionEnvironmentDataMaskingActivityOutput {

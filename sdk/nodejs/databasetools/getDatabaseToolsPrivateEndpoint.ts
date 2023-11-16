@@ -47,84 +47,84 @@ export interface GetDatabaseToolsPrivateEndpointResult {
     /**
      * A list of additional FQDNs that can be also be used for the private endpoint.
      */
-    readonly additionalFqdns: string[];
+    readonly additionalFqdns?: string[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     readonly databaseToolsPrivateEndpointId: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A description of the Database Tools private endpoint.
      */
-    readonly description: string;
+    readonly description?: string;
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Then FQDN to use for the private endpoint.
      */
-    readonly endpointFqdn: string;
+    readonly endpointFqdn?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
      */
-    readonly endpointServiceId: string;
+    readonly endpointServiceId?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      */
-    readonly nsgIds: string[];
+    readonly nsgIds?: string[];
     /**
      * The private IP address that represents the access point for the associated endpoint service.
      */
-    readonly privateEndpointIp: string;
+    readonly privateEndpointIp?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
      */
-    readonly privateEndpointVnicId: string;
+    readonly privateEndpointVnicId?: string;
     /**
      * Reverse connection configuration details of the private endpoint.
      */
-    readonly reverseConnectionConfigurations: outputs.DatabaseTools.GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration[];
+    readonly reverseConnectionConfigurations?: outputs.DatabaseTools.GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration[];
     /**
      * The current state of the Database Tools private endpoint.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
      */
-    readonly subnetId: string;
+    readonly subnetId?: string;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags?: {[key: string]: any};
     /**
      * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
      */
-    readonly vcnId: string;
+    readonly vcnId?: string;
 }
 /**
  * This data source provides details about a specific Database Tools Private Endpoint resource in Oracle Cloud Infrastructure Database Tools service.

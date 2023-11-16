@@ -6,6 +6,8 @@ package com.pulumi.oci.GoldenGate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConnectionAssignmentsConnectionAssignmentCollectionItem {
@@ -13,99 +15,99 @@ public final class GetConnectionAssignmentsConnectionAssignmentCollectionItem {
      * @return Credential store alias.
      * 
      */
-    private String aliasName;
+    private @Nullable String aliasName;
     /**
      * @return The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
      * 
      */
-    private String connectionId;
+    private @Nullable String connectionId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      * 
      */
-    private String deploymentId;
+    private @Nullable String deploymentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A filter to return only connection assignments having the &#39;lifecycleState&#39; given.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetConnectionAssignmentsConnectionAssignmentCollectionItem() {}
     /**
      * @return Credential store alias.
      * 
      */
-    public String aliasName() {
-        return this.aliasName;
+    public Optional<String> aliasName() {
+        return Optional.ofNullable(this.aliasName);
     }
     /**
      * @return The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
      * 
      */
-    public String connectionId() {
-        return this.connectionId;
+    public Optional<String> connectionId() {
+        return Optional.ofNullable(this.connectionId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      * 
      */
-    public String deploymentId() {
-        return this.deploymentId;
+    public Optional<String> deploymentId() {
+        return Optional.ofNullable(this.deploymentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A filter to return only connection assignments having the &#39;lifecycleState&#39; given.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -117,14 +119,14 @@ public final class GetConnectionAssignmentsConnectionAssignmentCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String aliasName;
-        private String compartmentId;
-        private String connectionId;
-        private String deploymentId;
-        private String id;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String aliasName;
+        private @Nullable String compartmentId;
+        private @Nullable String connectionId;
+        private @Nullable String deploymentId;
+        private @Nullable String id;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetConnectionAssignmentsConnectionAssignmentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -139,43 +141,43 @@ public final class GetConnectionAssignmentsConnectionAssignmentCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder aliasName(String aliasName) {
-            this.aliasName = Objects.requireNonNull(aliasName);
+        public Builder aliasName(@Nullable String aliasName) {
+            this.aliasName = aliasName;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder connectionId(String connectionId) {
-            this.connectionId = Objects.requireNonNull(connectionId);
+        public Builder connectionId(@Nullable String connectionId) {
+            this.connectionId = connectionId;
             return this;
         }
         @CustomType.Setter
-        public Builder deploymentId(String deploymentId) {
-            this.deploymentId = Objects.requireNonNull(deploymentId);
+        public Builder deploymentId(@Nullable String deploymentId) {
+            this.deploymentId = deploymentId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetConnectionAssignmentsConnectionAssignmentCollectionItem build() {

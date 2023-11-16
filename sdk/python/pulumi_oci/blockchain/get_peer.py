@@ -56,18 +56,12 @@ class GetPeerResult:
 
     @property
     @pulumi.getter
-    def ad(self) -> str:
-        """
-        Availability Domain of peer
-        """
+    def ad(self) -> Optional[str]:
         return pulumi.get(self, "ad")
 
     @property
     @pulumi.getter
-    def alias(self) -> str:
-        """
-        peer alias
-        """
+    def alias(self) -> Optional[str]:
         return pulumi.get(self, "alias")
 
     @property
@@ -77,23 +71,17 @@ class GetPeerResult:
 
     @property
     @pulumi.getter
-    def host(self) -> str:
-        """
-        Host on which the Peer exists
-        """
+    def host(self) -> Optional[str]:
         return pulumi.get(self, "host")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="ocpuAllocationParams")
-    def ocpu_allocation_params(self) -> Sequence['outputs.GetPeerOcpuAllocationParamResult']:
-        """
-        OCPU allocation parameter
-        """
+    def ocpu_allocation_params(self) -> Optional[Sequence['outputs.GetPeerOcpuAllocationParamResult']]:
         return pulumi.get(self, "ocpu_allocation_params")
 
     @property
@@ -103,26 +91,17 @@ class GetPeerResult:
 
     @property
     @pulumi.getter(name="peerKey")
-    def peer_key(self) -> str:
-        """
-        peer identifier
-        """
+    def peer_key(self) -> Optional[str]:
         return pulumi.get(self, "peer_key")
 
     @property
     @pulumi.getter
-    def role(self) -> str:
-        """
-        Peer role
-        """
+    def role(self) -> Optional[str]:
         return pulumi.get(self, "role")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the peer.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
 
@@ -148,23 +127,7 @@ def get_peer(blockchain_platform_id: Optional[str] = None,
              peer_id: Optional[str] = None,
              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPeerResult:
     """
-    This data source provides details about a specific Peer resource in Oracle Cloud Infrastructure Blockchain service.
-
-    Gets information about a peer identified by the specific id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_peer = oci.Blockchain.get_peer(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        peer_id=oci_blockchain_peer["test_peer"]["id"])
-    ```
-
-
-    :param str blockchain_platform_id: Unique service identifier.
-    :param str peer_id: Peer identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['blockchainPlatformId'] = blockchain_platform_id
@@ -190,22 +153,6 @@ def get_peer_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
                     peer_id: Optional[pulumi.Input[str]] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetPeerResult]:
     """
-    This data source provides details about a specific Peer resource in Oracle Cloud Infrastructure Blockchain service.
-
-    Gets information about a peer identified by the specific id
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_peer = oci.Blockchain.get_peer(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        peer_id=oci_blockchain_peer["test_peer"]["id"])
-    ```
-
-
-    :param str blockchain_platform_id: Unique service identifier.
-    :param str peer_id: Peer identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -38,15 +38,12 @@ class GetVbInstanceApplicationsResult:
 
     @property
     @pulumi.getter(name="applicationSummaryCollections")
-    def application_summary_collections(self) -> Sequence['outputs.GetVbInstanceApplicationsApplicationSummaryCollectionResult']:
-        """
-        The list of application_summary_collection.
-        """
+    def application_summary_collections(self) -> Optional[Sequence['outputs.GetVbInstanceApplicationsApplicationSummaryCollectionResult']]:
         return pulumi.get(self, "application_summary_collections")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -79,23 +76,7 @@ def get_vb_instance_applications(idcs_open_id: Optional[str] = None,
                                  vb_instance_id: Optional[str] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetVbInstanceApplicationsResult:
     """
-    This data source provides the list of published and staged applications of a Visual Builder Instance in Oracle Cloud Infrastructure Visual Builder service.
-
-    Returns a list of published and staged applications of a Visual Builder instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vb_instance_applications = oci.VisualBuilder.get_vb_instance_applications(vb_instance_id=oci_visual_builder_vb_instance["test_vb_instance"]["id"],
-        idcs_open_id="idcs_open_id_value")
-    ```
-
-
-    :param str idcs_open_id: Encrypted IDCS Open ID token which allows access to Visual Builder REST apis
-    :param str vb_instance_id: Unique Vb Instance identifier.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['idcsOpenId'] = idcs_open_id
@@ -115,22 +96,6 @@ def get_vb_instance_applications_output(idcs_open_id: Optional[pulumi.Input[Opti
                                         vb_instance_id: Optional[pulumi.Input[str]] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetVbInstanceApplicationsResult]:
     """
-    This data source provides the list of published and staged applications of a Visual Builder Instance in Oracle Cloud Infrastructure Visual Builder service.
-
-    Returns a list of published and staged applications of a Visual Builder instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_vb_instance_applications = oci.VisualBuilder.get_vb_instance_applications(vb_instance_id=oci_visual_builder_vb_instance["test_vb_instance"]["id"],
-        idcs_open_id="idcs_open_id_value")
-    ```
-
-
-    :param str idcs_open_id: Encrypted IDCS Open ID token which allows access to Visual Builder REST apis
-    :param str vb_instance_id: Unique Vb Instance identifier.
+    Use this data source to access information about an existing resource.
     """
     ...

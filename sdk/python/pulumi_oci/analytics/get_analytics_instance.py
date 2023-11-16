@@ -85,135 +85,87 @@ class GetAnalyticsInstanceResult:
 
     @property
     @pulumi.getter
-    def capacities(self) -> Sequence['outputs.GetAnalyticsInstanceCapacityResult']:
-        """
-        Service instance capacity metadata (e.g.: OLPU count, number of users, ...etc...).
-        """
+    def capacities(self) -> Optional[Sequence['outputs.GetAnalyticsInstanceCapacityResult']]:
         return pulumi.get(self, "capacities")
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The OCID of the compartment.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the vanity url.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="emailNotification")
-    def email_notification(self) -> str:
-        """
-        Email address receiving notifications.
-        """
+    def email_notification(self) -> Optional[str]:
         return pulumi.get(self, "email_notification")
 
     @property
     @pulumi.getter(name="featureSet")
-    def feature_set(self) -> str:
-        """
-        Analytics feature set.
-        """
+    def feature_set(self) -> Optional[str]:
         return pulumi.get(self, "feature_set")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The Virtual Cloud Network OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="idcsAccessToken")
-    def idcs_access_token(self) -> str:
+    def idcs_access_token(self) -> Optional[str]:
         return pulumi.get(self, "idcs_access_token")
 
     @property
     @pulumi.getter(name="kmsKeyId")
-    def kms_key_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
-        """
+    def kms_key_id(self) -> Optional[str]:
         return pulumi.get(self, "kms_key_id")
 
     @property
     @pulumi.getter(name="licenseType")
-    def license_type(self) -> str:
-        """
-        The license used for the service.
-        """
+    def license_type(self) -> Optional[str]:
         return pulumi.get(self, "license_type")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="networkEndpointDetails")
-    def network_endpoint_details(self) -> Sequence['outputs.GetAnalyticsInstanceNetworkEndpointDetailResult']:
-        """
-        Base representation of a network endpoint.
-        """
+    def network_endpoint_details(self) -> Optional[Sequence['outputs.GetAnalyticsInstanceNetworkEndpointDetailResult']]:
         return pulumi.get(self, "network_endpoint_details")
 
     @property
     @pulumi.getter(name="serviceUrl")
-    def service_url(self) -> str:
-        """
-        URL of the Analytics service.
-        """
+    def service_url(self) -> Optional[str]:
         return pulumi.get(self, "service_url")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of an instance.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the instance was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The date and time the instance was last updated (in the format defined by RFC3339). This timestamp represents updates made through this API. External events do not influence it.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
 
@@ -246,21 +198,7 @@ class AwaitableGetAnalyticsInstanceResult(GetAnalyticsInstanceResult):
 def get_analytics_instance(analytics_instance_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnalyticsInstanceResult:
     """
-    This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
-
-    Info for a specific Analytics instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_analytics_instance = oci.Analytics.get_analytics_instance(analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"])
-    ```
-
-
-    :param str analytics_instance_id: The OCID of the AnalyticsInstance.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['analyticsInstanceId'] = analytics_instance_id
@@ -292,20 +230,6 @@ def get_analytics_instance(analytics_instance_id: Optional[str] = None,
 def get_analytics_instance_output(analytics_instance_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAnalyticsInstanceResult]:
     """
-    This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
-
-    Info for a specific Analytics instance.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_analytics_instance = oci.Analytics.get_analytics_instance(analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"])
-    ```
-
-
-    :param str analytics_instance_id: The OCID of the AnalyticsInstance.
+    Use this data source to access information about an existing resource.
     """
     ...

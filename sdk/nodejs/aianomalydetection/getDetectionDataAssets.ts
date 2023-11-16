@@ -71,7 +71,7 @@ export interface GetDetectionDataAssetsResult {
     /**
      * The list of data_asset_collection.
      */
-    readonly dataAssetCollections: outputs.AiAnomalyDetection.GetDetectionDataAssetsDataAssetCollection[];
+    readonly dataAssetCollections?: outputs.AiAnomalyDetection.GetDetectionDataAssetsDataAssetCollection[];
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -80,7 +80,7 @@ export interface GetDetectionDataAssetsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The Unique project id which is created at project creation that is immutable on creation.
      */

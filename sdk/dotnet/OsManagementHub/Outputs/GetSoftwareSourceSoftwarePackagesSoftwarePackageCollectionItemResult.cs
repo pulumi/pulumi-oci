@@ -16,15 +16,15 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// The architecture for which this software was built
         /// </summary>
-        public readonly string Architecture;
+        public readonly string? Architecture;
         /// <summary>
         /// Checksum of the file.
         /// </summary>
-        public readonly string Checksum;
+        public readonly string? Checksum;
         /// <summary>
         /// Type of the checksum.
         /// </summary>
-        public readonly string ChecksumType;
+        public readonly string? ChecksumType;
         /// <summary>
         /// List of dependencies for the software package.
         /// </summary>
@@ -32,11 +32,11 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// Software source description.
         /// </summary>
-        public readonly string Description;
+        public readonly string? Description;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// List of files for the software package.
         /// </summary>
@@ -44,19 +44,19 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// A boolean variable that is used to list only the latest versions of packages, module streams, and stream profiles when set to true. All packages, module streams, and stream profiles are returned when set to false.
         /// </summary>
-        public readonly bool IsLatest;
+        public readonly bool? IsLatest;
         /// <summary>
         /// Date of the last update to the package.
         /// </summary>
-        public readonly string LastModifiedDate;
+        public readonly string? LastModifiedDate;
         /// <summary>
         /// Unique identifier for the package. NOTE - This is not an OCID.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// Size of the package in bytes.
         /// </summary>
-        public readonly string SizeInBytes;
+        public readonly string? SizeInBytes;
         /// <summary>
         /// List of software sources that provide the software package.
         /// </summary>
@@ -64,41 +64,41 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// <summary>
         /// Type of the package.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// Version of the package.
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemResult(
-            string architecture,
+            string? architecture,
 
-            string checksum,
+            string? checksum,
 
-            string checksumType,
+            string? checksumType,
 
             ImmutableArray<Outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemDependencyResult> dependencies,
 
-            string description,
+            string? description,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFileResult> files,
 
-            bool isLatest,
+            bool? isLatest,
 
-            string lastModifiedDate,
+            string? lastModifiedDate,
 
-            string name,
+            string? name,
 
-            string sizeInBytes,
+            string? sizeInBytes,
 
             ImmutableArray<Outputs.GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemSoftwareSourceResult> softwareSources,
 
-            string type,
+            string? type,
 
-            string version)
+            string? version)
         {
             Architecture = architecture;
             Checksum = checksum;

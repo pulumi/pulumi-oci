@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Email of the author of the repository.
         /// </summary>
-        public readonly string AuthorEmail;
+        public readonly string? AuthorEmail;
         /// <summary>
         /// A filter to return any commits that are pushed by the requested author.
         /// </summary>
-        public readonly string AuthorName;
+        public readonly string? AuthorName;
         /// <summary>
         /// Commit hash pointed to by reference name.
         /// </summary>
-        public readonly string CommitId;
+        public readonly string? CommitId;
         /// <summary>
         /// A filter to return any commits that contains the given message.
         /// </summary>
-        public readonly string CommitMessage;
+        public readonly string? CommitMessage;
         /// <summary>
         /// Email of who creates the commit.
         /// </summary>
-        public readonly string CommitterEmail;
+        public readonly string? CommitterEmail;
         /// <summary>
         /// Name of who creates the commit.
         /// </summary>
-        public readonly string CommitterName;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly string? CommitterName;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// An array of parent commit IDs of created commit.
         /// </summary>
@@ -46,35 +46,35 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// The time at which commit was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Tree information for the specified commit.
         /// </summary>
-        public readonly string TreeId;
+        public readonly string? TreeId;
 
         [OutputConstructor]
         private GetRepositoryCommitsRepositoryCommitCollectionItemResult(
-            string authorEmail,
+            string? authorEmail,
 
-            string authorName,
+            string? authorName,
 
-            string commitId,
+            string? commitId,
 
-            string commitMessage,
+            string? commitMessage,
 
-            string committerEmail,
+            string? committerEmail,
 
-            string committerName,
+            string? committerName,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             ImmutableArray<string> parentCommitIds,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string treeId)
+            string? treeId)
         {
             AuthorEmail = authorEmail;
             AuthorName = authorName;

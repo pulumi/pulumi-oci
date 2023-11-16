@@ -24,23 +24,23 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only resources that match the specified data types.
         /// </summary>
-        public readonly string DataType;
+        public readonly string? DataType;
         /// <summary>
         /// A filter to return the masking column resources based on the value of their isMaskingEnabled attribute. A value of true returns only those columns for which masking is enabled. A value of false returns only those columns for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
         /// </summary>
-        public readonly bool IsMaskingEnabled;
+        public readonly bool? IsMaskingEnabled;
         /// <summary>
         /// The unique key that identifies the masking column. It's numeric and unique within a masking policy.
         /// </summary>
-        public readonly string Key;
+        public readonly string? Key;
         /// <summary>
         /// Details about the current state of the masking column.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// A filter to return only the resources that match the specified masking column group.
         /// </summary>
-        public readonly string MaskingColumnGroup;
+        public readonly string? MaskingColumnGroup;
         /// <summary>
         /// An array of masking formats assigned to the masking column.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only items related to a specific object type.
         /// </summary>
-        public readonly string ObjectType;
+        public readonly string? ObjectType;
         /// <summary>
         /// A filter to return only items related to specific schema name.
         /// </summary>
@@ -64,19 +64,19 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// A filter to return only items related to a specific sensitive type OCID.
         /// </summary>
-        public readonly string SensitiveTypeId;
+        public readonly string? SensitiveTypeId;
         /// <summary>
         /// The current state of the masking column.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemResult(
@@ -84,15 +84,15 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string columnName,
 
-            string dataType,
+            string? dataType,
 
-            bool isMaskingEnabled,
+            bool? isMaskingEnabled,
 
-            string key,
+            string? key,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string maskingColumnGroup,
+            string? maskingColumnGroup,
 
             ImmutableArray<Outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatResult> maskingFormats,
 
@@ -100,17 +100,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string @object,
 
-            string objectType,
+            string? objectType,
 
             string schemaName,
 
-            string sensitiveTypeId,
+            string? sensitiveTypeId,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             ChildColumns = childColumns;
             ColumnName = columnName;

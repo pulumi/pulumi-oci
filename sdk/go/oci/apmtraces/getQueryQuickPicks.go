@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.
@@ -64,7 +63,7 @@ type GetQueryQuickPicksResult struct {
 	ApmDomainId string                     `pulumi:"apmDomainId"`
 	Filters     []GetQueryQuickPicksFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of quick_picks.
 	QuickPicks []GetQueryQuickPicksQuickPick `pulumi:"quickPicks"`
 }
@@ -108,12 +107,6 @@ func (o GetQueryQuickPicksResultOutput) ToGetQueryQuickPicksResultOutputWithCont
 	return o
 }
 
-func (o GetQueryQuickPicksResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetQueryQuickPicksResult] {
-	return pulumix.Output[GetQueryQuickPicksResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetQueryQuickPicksResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetQueryQuickPicksResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
@@ -123,8 +116,8 @@ func (o GetQueryQuickPicksResultOutput) Filters() GetQueryQuickPicksFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetQueryQuickPicksResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetQueryQuickPicksResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetQueryQuickPicksResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetQueryQuickPicksResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of quick_picks.

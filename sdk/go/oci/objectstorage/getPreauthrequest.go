@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Preauthenticated Request resource in Oracle Cloud Infrastructure Object Storage service.
@@ -66,31 +65,31 @@ type LookupPreauthrequestArgs struct {
 // A collection of values returned by getPreauthrequest.
 type LookupPreauthrequestResult struct {
 	// The operation that can be performed on this resource.
-	AccessType string `pulumi:"accessType"`
+	AccessType *string `pulumi:"accessType"`
 	// The URI to embed in the URL when using the pre-authenticated request.
-	AccessUri string `pulumi:"accessUri"`
+	AccessUri *string `pulumi:"accessUri"`
 	// The name of the bucket.  Example: `my-new-bucket1`
 	Bucket string `pulumi:"bucket"`
 	// Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-	BucketListingAction string `pulumi:"bucketListingAction"`
-	FullPath            string `pulumi:"fullPath"`
+	BucketListingAction *string `pulumi:"bucketListingAction"`
+	FullPath            *string `pulumi:"fullPath"`
 	// The unique identifier to use when directly addressing the pre-authenticated request.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The user-provided name of the pre-authenticated request.
-	Name string `pulumi:"name"`
+	Name *string `pulumi:"name"`
 	// The Object Storage namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 	// Deprecated. Instead use `objectName`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
 	//
 	// Deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.
-	Object string `pulumi:"object"`
+	Object *string `pulumi:"object"`
 	// The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
-	ObjectName string `pulumi:"objectName"`
-	ParId      string `pulumi:"parId"`
+	ObjectName *string `pulumi:"objectName"`
+	ParId      string  `pulumi:"parId"`
 	// The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
-	TimeExpires string `pulumi:"timeExpires"`
+	TimeExpires *string `pulumi:"timeExpires"`
 }
 
 func LookupPreauthrequestOutput(ctx *pulumi.Context, args LookupPreauthrequestOutputArgs, opts ...pulumi.InvokeOption) LookupPreauthrequestResultOutput {
@@ -135,20 +134,14 @@ func (o LookupPreauthrequestResultOutput) ToLookupPreauthrequestResultOutputWith
 	return o
 }
 
-func (o LookupPreauthrequestResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupPreauthrequestResult] {
-	return pulumix.Output[LookupPreauthrequestResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The operation that can be performed on this resource.
-func (o LookupPreauthrequestResultOutput) AccessType() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPreauthrequestResult) string { return v.AccessType }).(pulumi.StringOutput)
+func (o LookupPreauthrequestResultOutput) AccessType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPreauthrequestResult) *string { return v.AccessType }).(pulumi.StringPtrOutput)
 }
 
 // The URI to embed in the URL when using the pre-authenticated request.
-func (o LookupPreauthrequestResultOutput) AccessUri() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPreauthrequestResult) string { return v.AccessUri }).(pulumi.StringOutput)
+func (o LookupPreauthrequestResultOutput) AccessUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPreauthrequestResult) *string { return v.AccessUri }).(pulumi.StringPtrOutput)
 }
 
 // The name of the bucket.  Example: `my-new-bucket1`
@@ -157,22 +150,22 @@ func (o LookupPreauthrequestResultOutput) Bucket() pulumi.StringOutput {
 }
 
 // Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects: Authorizes the user to perform a list operation.
-func (o LookupPreauthrequestResultOutput) BucketListingAction() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPreauthrequestResult) string { return v.BucketListingAction }).(pulumi.StringOutput)
+func (o LookupPreauthrequestResultOutput) BucketListingAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPreauthrequestResult) *string { return v.BucketListingAction }).(pulumi.StringPtrOutput)
 }
 
-func (o LookupPreauthrequestResultOutput) FullPath() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPreauthrequestResult) string { return v.FullPath }).(pulumi.StringOutput)
+func (o LookupPreauthrequestResultOutput) FullPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPreauthrequestResult) *string { return v.FullPath }).(pulumi.StringPtrOutput)
 }
 
 // The unique identifier to use when directly addressing the pre-authenticated request.
-func (o LookupPreauthrequestResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPreauthrequestResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupPreauthrequestResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPreauthrequestResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The user-provided name of the pre-authenticated request.
-func (o LookupPreauthrequestResultOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPreauthrequestResult) string { return v.Name }).(pulumi.StringOutput)
+func (o LookupPreauthrequestResultOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPreauthrequestResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
 // The Object Storage namespace used for the request.
@@ -183,13 +176,13 @@ func (o LookupPreauthrequestResultOutput) Namespace() pulumi.StringOutput {
 // Deprecated. Instead use `objectName`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
 //
 // Deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.
-func (o LookupPreauthrequestResultOutput) Object() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPreauthrequestResult) string { return v.Object }).(pulumi.StringOutput)
+func (o LookupPreauthrequestResultOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPreauthrequestResult) *string { return v.Object }).(pulumi.StringPtrOutput)
 }
 
 // The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
-func (o LookupPreauthrequestResultOutput) ObjectName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPreauthrequestResult) string { return v.ObjectName }).(pulumi.StringOutput)
+func (o LookupPreauthrequestResultOutput) ObjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPreauthrequestResult) *string { return v.ObjectName }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupPreauthrequestResultOutput) ParId() pulumi.StringOutput {
@@ -197,13 +190,13 @@ func (o LookupPreauthrequestResultOutput) ParId() pulumi.StringOutput {
 }
 
 // The date when the pre-authenticated request was created as per specification [RFC 3339](https://tools.ietf.org/html/rfc3339).
-func (o LookupPreauthrequestResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPreauthrequestResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupPreauthrequestResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPreauthrequestResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
-func (o LookupPreauthrequestResultOutput) TimeExpires() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupPreauthrequestResult) string { return v.TimeExpires }).(pulumi.StringOutput)
+func (o LookupPreauthrequestResultOutput) TimeExpires() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupPreauthrequestResult) *string { return v.TimeExpires }).(pulumi.StringPtrOutput)
 }
 
 func init() {

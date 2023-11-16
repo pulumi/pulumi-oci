@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
@@ -47,7 +46,7 @@ type GetExadataInfrastructuresResult struct {
 	ExadataInfrastructures []GetExadataInfrastructuresExadataInfrastructure `pulumi:"exadataInfrastructures"`
 	Filters                []GetExadataInfrastructuresFilter                `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The current lifecycle state of the Exadata infrastructure.
 	State *string `pulumi:"state"`
 }
@@ -95,12 +94,6 @@ func (o GetExadataInfrastructuresResultOutput) ToGetExadataInfrastructuresResult
 	return o
 }
 
-func (o GetExadataInfrastructuresResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetExadataInfrastructuresResult] {
-	return pulumix.Output[GetExadataInfrastructuresResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetExadataInfrastructuresResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInfrastructuresResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -123,8 +116,8 @@ func (o GetExadataInfrastructuresResultOutput) Filters() GetExadataInfrastructur
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetExadataInfrastructuresResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetExadataInfrastructuresResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetExadataInfrastructuresResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetExadataInfrastructuresResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The current lifecycle state of the Exadata infrastructure.

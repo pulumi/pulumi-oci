@@ -6,100 +6,102 @@ package com.pulumi.oci.ObjectStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetObjectsObject {
-    private String archivalState;
+    private @Nullable String archivalState;
     /**
      * @return The current entity tag (ETag) for the object.
      * 
      */
-    private String etag;
+    private @Nullable String etag;
     /**
      * @return Base64-encoded MD5 hash of the object data.
      * 
      */
-    private String md5;
+    private @Nullable String md5;
     /**
      * @return The name of the object.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Size of the object in bytes.
      * 
      */
-    private String size;
+    private @Nullable String size;
     /**
      * @return The storage tier that the object is stored in.
      * * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
      * 
      */
-    private String storageTier;
+    private @Nullable String storageTier;
     /**
      * @return The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
      * 
      */
-    private String timeModified;
+    private @Nullable String timeModified;
 
     private GetObjectsObject() {}
-    public String archivalState() {
-        return this.archivalState;
+    public Optional<String> archivalState() {
+        return Optional.ofNullable(this.archivalState);
     }
     /**
      * @return The current entity tag (ETag) for the object.
      * 
      */
-    public String etag() {
-        return this.etag;
+    public Optional<String> etag() {
+        return Optional.ofNullable(this.etag);
     }
     /**
      * @return Base64-encoded MD5 hash of the object data.
      * 
      */
-    public String md5() {
-        return this.md5;
+    public Optional<String> md5() {
+        return Optional.ofNullable(this.md5);
     }
     /**
      * @return The name of the object.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Size of the object in bytes.
      * 
      */
-    public String size() {
-        return this.size;
+    public Optional<String> size() {
+        return Optional.ofNullable(this.size);
     }
     /**
      * @return The storage tier that the object is stored in.
      * * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
      * 
      */
-    public String storageTier() {
-        return this.storageTier;
+    public Optional<String> storageTier() {
+        return Optional.ofNullable(this.storageTier);
     }
     /**
      * @return The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the object was modified, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616#section-14.29).
      * 
      */
-    public String timeModified() {
-        return this.timeModified;
+    public Optional<String> timeModified() {
+        return Optional.ofNullable(this.timeModified);
     }
 
     public static Builder builder() {
@@ -111,14 +113,14 @@ public final class GetObjectsObject {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String archivalState;
-        private String etag;
-        private String md5;
-        private String name;
-        private String size;
-        private String storageTier;
-        private String timeCreated;
-        private String timeModified;
+        private @Nullable String archivalState;
+        private @Nullable String etag;
+        private @Nullable String md5;
+        private @Nullable String name;
+        private @Nullable String size;
+        private @Nullable String storageTier;
+        private @Nullable String timeCreated;
+        private @Nullable String timeModified;
         public Builder() {}
         public Builder(GetObjectsObject defaults) {
     	      Objects.requireNonNull(defaults);
@@ -133,43 +135,43 @@ public final class GetObjectsObject {
         }
 
         @CustomType.Setter
-        public Builder archivalState(String archivalState) {
-            this.archivalState = Objects.requireNonNull(archivalState);
+        public Builder archivalState(@Nullable String archivalState) {
+            this.archivalState = archivalState;
             return this;
         }
         @CustomType.Setter
-        public Builder etag(String etag) {
-            this.etag = Objects.requireNonNull(etag);
+        public Builder etag(@Nullable String etag) {
+            this.etag = etag;
             return this;
         }
         @CustomType.Setter
-        public Builder md5(String md5) {
-            this.md5 = Objects.requireNonNull(md5);
+        public Builder md5(@Nullable String md5) {
+            this.md5 = md5;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder size(String size) {
-            this.size = Objects.requireNonNull(size);
+        public Builder size(@Nullable String size) {
+            this.size = size;
             return this;
         }
         @CustomType.Setter
-        public Builder storageTier(String storageTier) {
-            this.storageTier = Objects.requireNonNull(storageTier);
+        public Builder storageTier(@Nullable String storageTier) {
+            this.storageTier = storageTier;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeModified(String timeModified) {
-            this.timeModified = Objects.requireNonNull(timeModified);
+        public Builder timeModified(@Nullable String timeModified) {
+            this.timeModified = timeModified;
             return this;
         }
         public GetObjectsObject build() {

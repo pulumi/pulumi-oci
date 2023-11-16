@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollection {
-    private List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items;
+    private @Nullable List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items;
 
     private GetLogAnalyticsEntitiesLogAnalyticsEntityCollection() {}
     public List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items;
+        private @Nullable List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items;
         public Builder() {}
         public Builder(GetLogAnalyticsEntitiesLogAnalyticsEntityCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem... items) {

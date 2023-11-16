@@ -108,15 +108,15 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// The OCID of the compartment where the environment family is located.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         /// </summary>
@@ -124,24 +124,24 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         public readonly string FusionEnvironmentFamilyId;
         /// <summary>
         /// The unique identifier (OCID) of the environment family. Can't be changed after creation.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// When set to True, a subscription update is required for the environment family.
         /// </summary>
-        public readonly bool IsSubscriptionUpdateNeeded;
+        public readonly bool? IsSubscriptionUpdateNeeded;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The current state of the FusionEnvironmentFamily.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The list of the IDs of the applications subscriptions that are associated with the environment family.
         /// </summary>
@@ -149,42 +149,42 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// Environment Specific Guid/ System Name
         /// </summary>
-        public readonly string SystemName;
+        public readonly string? SystemName;
         /// <summary>
         /// The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
         /// </summary>
-        public readonly string TimeCreated;
-        public readonly string TimeUpdated;
+        public readonly string? TimeCreated;
+        public readonly string? TimeUpdated;
 
         [OutputConstructor]
         private GetFusionEnvironmentFamilyResult(
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
             ImmutableArray<Outputs.GetFusionEnvironmentFamilyFamilyMaintenancePolicyResult> familyMaintenancePolicies,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
             string fusionEnvironmentFamilyId,
 
-            string id,
+            string? id,
 
-            bool isSubscriptionUpdateNeeded,
+            bool? isSubscriptionUpdateNeeded,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string state,
+            string? state,
 
             ImmutableArray<string> subscriptionIds,
 
-            string systemName,
+            string? systemName,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeUpdated)
+            string? timeUpdated)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

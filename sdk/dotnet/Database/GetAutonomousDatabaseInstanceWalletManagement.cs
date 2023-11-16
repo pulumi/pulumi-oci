@@ -111,34 +111,34 @@ namespace Pulumi.Oci.Database
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string AutonomousDatabaseId;
-        public readonly int GracePeriod;
-        public readonly string Id;
+        public readonly int? GracePeriod;
+        public readonly string? Id;
         /// <summary>
         /// Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
         /// </summary>
-        public readonly bool ShouldRotate;
+        public readonly bool? ShouldRotate;
         /// <summary>
         /// The current lifecycle state of the Autonomous Database wallet.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The date and time the wallet was last rotated.
         /// </summary>
-        public readonly string TimeRotated;
+        public readonly string? TimeRotated;
 
         [OutputConstructor]
         private GetAutonomousDatabaseInstanceWalletManagementResult(
             string autonomousDatabaseId,
 
-            int gracePeriod,
+            int? gracePeriod,
 
-            string id,
+            string? id,
 
-            bool shouldRotate,
+            bool? shouldRotate,
 
-            string state,
+            string? state,
 
-            string timeRotated)
+            string? timeRotated)
         {
             AutonomousDatabaseId = autonomousDatabaseId;
             GracePeriod = gracePeriod;

@@ -6,6 +6,8 @@ package com.pulumi.oci.OsubBillingSchedule.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBillingScheduleBillingScheduleProduct {
@@ -13,27 +15,27 @@ public final class GetBillingScheduleBillingScheduleProduct {
      * @return Product name
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Indicates the associated AR Invoice Number
      * 
      */
-    private String partNumber;
+    private @Nullable String partNumber;
 
     private GetBillingScheduleBillingScheduleProduct() {}
     /**
      * @return Product name
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Indicates the associated AR Invoice Number
      * 
      */
-    public String partNumber() {
-        return this.partNumber;
+    public Optional<String> partNumber() {
+        return Optional.ofNullable(this.partNumber);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetBillingScheduleBillingScheduleProduct {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String name;
-        private String partNumber;
+        private @Nullable String name;
+        private @Nullable String partNumber;
         public Builder() {}
         public Builder(GetBillingScheduleBillingScheduleProduct defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetBillingScheduleBillingScheduleProduct {
         }
 
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder partNumber(String partNumber) {
-            this.partNumber = Objects.requireNonNull(partNumber);
+        public Builder partNumber(@Nullable String partNumber) {
+            this.partNumber = partNumber;
             return this;
         }
         public GetBillingScheduleBillingScheduleProduct build() {

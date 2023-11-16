@@ -104,17 +104,17 @@ export class StorageObject extends pulumi.CustomResource {
     /**
      * (Updatable) The content length of the body.
      */
-    public /*out*/ readonly contentLength!: pulumi.Output<string>;
+    public /*out*/ readonly contentLength!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
      *
      * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
      */
-    public readonly contentMd5!: pulumi.Output<string>;
+    public readonly contentMd5!: pulumi.Output<string | undefined>;
     /**
      * The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
      */
-    public readonly contentType!: pulumi.Output<string>;
+    public readonly contentType!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
      */
@@ -135,7 +135,7 @@ export class StorageObject extends pulumi.CustomResource {
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      */
-    public readonly opcSseKmsKeyId!: pulumi.Output<string>;
+    public readonly opcSseKmsKeyId!: pulumi.Output<string | undefined>;
     /**
      * An absolute path to a file on the local system. Cannot be defined if `content` or `sourceUriDetails` is defined.
      */
@@ -145,13 +145,13 @@ export class StorageObject extends pulumi.CustomResource {
      * Note: To enable object copy, you must authorize the service to manage objects on your behalf.
      */
     public readonly sourceUriDetails!: pulumi.Output<outputs.ObjectStorage.StorageObjectSourceUriDetails | undefined>;
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The storage tier that the object should be stored in. If not specified, the object will be stored in the same storage tier as the bucket.
      */
-    public readonly storageTier!: pulumi.Output<string>;
-    public /*out*/ readonly versionId!: pulumi.Output<string>;
-    public /*out*/ readonly workRequestId!: pulumi.Output<string>;
+    public readonly storageTier!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly versionId!: pulumi.Output<string | undefined>;
+    public /*out*/ readonly workRequestId!: pulumi.Output<string | undefined>;
 
     /**
      * Create a StorageObject resource with the given unique name, arguments, and options.

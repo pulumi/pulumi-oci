@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Autonomous Database Instance Wallet Management resource in Oracle Cloud Infrastructure Database service.
@@ -54,16 +53,16 @@ type AutonomousDatabaseInstanceWalletManagement struct {
 	// (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId pulumi.StringOutput `pulumi:"autonomousDatabaseId"`
 	// (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
-	GracePeriod pulumi.IntOutput `pulumi:"gracePeriod"`
+	GracePeriod pulumi.IntPtrOutput `pulumi:"gracePeriod"`
 	// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ShouldRotate pulumi.BoolPtrOutput `pulumi:"shouldRotate"`
 	// The current lifecycle state of the Autonomous Database wallet.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The date and time the wallet was last rotated.
-	TimeRotated pulumi.StringOutput `pulumi:"timeRotated"`
+	TimeRotated pulumi.StringPtrOutput `pulumi:"timeRotated"`
 }
 
 // NewAutonomousDatabaseInstanceWalletManagement registers a new resource with the given unique name, arguments, and options.
@@ -182,12 +181,6 @@ func (i *AutonomousDatabaseInstanceWalletManagement) ToAutonomousDatabaseInstanc
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseInstanceWalletManagementOutput)
 }
 
-func (i *AutonomousDatabaseInstanceWalletManagement) ToOutput(ctx context.Context) pulumix.Output[*AutonomousDatabaseInstanceWalletManagement] {
-	return pulumix.Output[*AutonomousDatabaseInstanceWalletManagement]{
-		OutputState: i.ToAutonomousDatabaseInstanceWalletManagementOutputWithContext(ctx).OutputState,
-	}
-}
-
 // AutonomousDatabaseInstanceWalletManagementArrayInput is an input type that accepts AutonomousDatabaseInstanceWalletManagementArray and AutonomousDatabaseInstanceWalletManagementArrayOutput values.
 // You can construct a concrete instance of `AutonomousDatabaseInstanceWalletManagementArrayInput` via:
 //
@@ -211,12 +204,6 @@ func (i AutonomousDatabaseInstanceWalletManagementArray) ToAutonomousDatabaseIns
 
 func (i AutonomousDatabaseInstanceWalletManagementArray) ToAutonomousDatabaseInstanceWalletManagementArrayOutputWithContext(ctx context.Context) AutonomousDatabaseInstanceWalletManagementArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseInstanceWalletManagementArrayOutput)
-}
-
-func (i AutonomousDatabaseInstanceWalletManagementArray) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousDatabaseInstanceWalletManagement] {
-	return pulumix.Output[[]*AutonomousDatabaseInstanceWalletManagement]{
-		OutputState: i.ToAutonomousDatabaseInstanceWalletManagementArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // AutonomousDatabaseInstanceWalletManagementMapInput is an input type that accepts AutonomousDatabaseInstanceWalletManagementMap and AutonomousDatabaseInstanceWalletManagementMapOutput values.
@@ -244,12 +231,6 @@ func (i AutonomousDatabaseInstanceWalletManagementMap) ToAutonomousDatabaseInsta
 	return pulumi.ToOutputWithContext(ctx, i).(AutonomousDatabaseInstanceWalletManagementMapOutput)
 }
 
-func (i AutonomousDatabaseInstanceWalletManagementMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousDatabaseInstanceWalletManagement] {
-	return pulumix.Output[map[string]*AutonomousDatabaseInstanceWalletManagement]{
-		OutputState: i.ToAutonomousDatabaseInstanceWalletManagementMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type AutonomousDatabaseInstanceWalletManagementOutput struct{ *pulumi.OutputState }
 
 func (AutonomousDatabaseInstanceWalletManagementOutput) ElementType() reflect.Type {
@@ -264,20 +245,14 @@ func (o AutonomousDatabaseInstanceWalletManagementOutput) ToAutonomousDatabaseIn
 	return o
 }
 
-func (o AutonomousDatabaseInstanceWalletManagementOutput) ToOutput(ctx context.Context) pulumix.Output[*AutonomousDatabaseInstanceWalletManagement] {
-	return pulumix.Output[*AutonomousDatabaseInstanceWalletManagement]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o AutonomousDatabaseInstanceWalletManagementOutput) AutonomousDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseInstanceWalletManagement) pulumi.StringOutput { return v.AutonomousDatabaseId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
-func (o AutonomousDatabaseInstanceWalletManagementOutput) GracePeriod() pulumi.IntOutput {
-	return o.ApplyT(func(v *AutonomousDatabaseInstanceWalletManagement) pulumi.IntOutput { return v.GracePeriod }).(pulumi.IntOutput)
+func (o AutonomousDatabaseInstanceWalletManagementOutput) GracePeriod() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseInstanceWalletManagement) pulumi.IntPtrOutput { return v.GracePeriod }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
@@ -289,13 +264,13 @@ func (o AutonomousDatabaseInstanceWalletManagementOutput) ShouldRotate() pulumi.
 }
 
 // The current lifecycle state of the Autonomous Database wallet.
-func (o AutonomousDatabaseInstanceWalletManagementOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousDatabaseInstanceWalletManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o AutonomousDatabaseInstanceWalletManagementOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseInstanceWalletManagement) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the wallet was last rotated.
-func (o AutonomousDatabaseInstanceWalletManagementOutput) TimeRotated() pulumi.StringOutput {
-	return o.ApplyT(func(v *AutonomousDatabaseInstanceWalletManagement) pulumi.StringOutput { return v.TimeRotated }).(pulumi.StringOutput)
+func (o AutonomousDatabaseInstanceWalletManagementOutput) TimeRotated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseInstanceWalletManagement) pulumi.StringPtrOutput { return v.TimeRotated }).(pulumi.StringPtrOutput)
 }
 
 type AutonomousDatabaseInstanceWalletManagementArrayOutput struct{ *pulumi.OutputState }
@@ -310,12 +285,6 @@ func (o AutonomousDatabaseInstanceWalletManagementArrayOutput) ToAutonomousDatab
 
 func (o AutonomousDatabaseInstanceWalletManagementArrayOutput) ToAutonomousDatabaseInstanceWalletManagementArrayOutputWithContext(ctx context.Context) AutonomousDatabaseInstanceWalletManagementArrayOutput {
 	return o
-}
-
-func (o AutonomousDatabaseInstanceWalletManagementArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*AutonomousDatabaseInstanceWalletManagement] {
-	return pulumix.Output[[]*AutonomousDatabaseInstanceWalletManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutonomousDatabaseInstanceWalletManagementArrayOutput) Index(i pulumi.IntInput) AutonomousDatabaseInstanceWalletManagementOutput {
@@ -336,12 +305,6 @@ func (o AutonomousDatabaseInstanceWalletManagementMapOutput) ToAutonomousDatabas
 
 func (o AutonomousDatabaseInstanceWalletManagementMapOutput) ToAutonomousDatabaseInstanceWalletManagementMapOutputWithContext(ctx context.Context) AutonomousDatabaseInstanceWalletManagementMapOutput {
 	return o
-}
-
-func (o AutonomousDatabaseInstanceWalletManagementMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*AutonomousDatabaseInstanceWalletManagement] {
-	return pulumix.Output[map[string]*AutonomousDatabaseInstanceWalletManagement]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o AutonomousDatabaseInstanceWalletManagementMapOutput) MapIndex(k pulumi.StringInput) AutonomousDatabaseInstanceWalletManagementOutput {

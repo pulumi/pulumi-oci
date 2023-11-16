@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Log Analytics Object Collection Rules in Oracle Cloud Infrastructure Log Analytics service.
@@ -73,7 +72,7 @@ type GetLogAnalyticsObjectCollectionRulesResult struct {
 	CompartmentId string                                       `pulumi:"compartmentId"`
 	Filters       []GetLogAnalyticsObjectCollectionRulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of log_analytics_object_collection_rule_collection.
 	LogAnalyticsObjectCollectionRuleCollections []GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollection `pulumi:"logAnalyticsObjectCollectionRuleCollections"`
 	// A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
@@ -128,12 +127,6 @@ func (o GetLogAnalyticsObjectCollectionRulesResultOutput) ToGetLogAnalyticsObjec
 	return o
 }
 
-func (o GetLogAnalyticsObjectCollectionRulesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsObjectCollectionRulesResult] {
-	return pulumix.Output[GetLogAnalyticsObjectCollectionRulesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 func (o GetLogAnalyticsObjectCollectionRulesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -146,8 +139,8 @@ func (o GetLogAnalyticsObjectCollectionRulesResultOutput) Filters() GetLogAnalyt
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogAnalyticsObjectCollectionRulesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsObjectCollectionRulesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of log_analytics_object_collection_rule_collection.

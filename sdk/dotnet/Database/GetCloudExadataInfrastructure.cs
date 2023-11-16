@@ -110,32 +110,32 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The requested number of additional storage servers activated for the Exadata infrastructure.
         /// </summary>
-        public readonly int ActivatedStorageCount;
+        public readonly int? ActivatedStorageCount;
         /// <summary>
         /// The requested number of additional storage servers for the Exadata infrastructure.
         /// </summary>
-        public readonly int AdditionalStorageCount;
+        public readonly int? AdditionalStorageCount;
         /// <summary>
         /// The name of the availability domain that the cloud Exadata infrastructure resource is located in.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         /// </summary>
-        public readonly int AvailableStorageSizeInGbs;
+        public readonly int? AvailableStorageSizeInGbs;
         public readonly string CloudExadataInfrastructureId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The number of compute servers for the cloud Exadata infrastructure.
         /// </summary>
-        public readonly int ComputeCount;
+        public readonly int? ComputeCount;
         /// <summary>
         /// The total number of CPU cores allocated.
         /// </summary>
-        public readonly int CpuCount;
+        public readonly int? CpuCount;
         /// <summary>
         /// The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
         /// </summary>
@@ -143,39 +143,39 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// Size, in terabytes, of the DATA disk group.
         /// </summary>
-        public readonly double DataStorageSizeInTbs;
+        public readonly double? DataStorageSizeInTbs;
         /// <summary>
         /// The local node storage allocated in GBs.
         /// </summary>
-        public readonly int DbNodeStorageSizeInGbs;
+        public readonly int? DbNodeStorageSizeInGbs;
         /// <summary>
         /// The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         /// </summary>
-        public readonly string DbServerVersion;
+        public readonly string? DbServerVersion;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
         /// The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
-        public readonly string LastMaintenanceRunId;
+        public readonly string? LastMaintenanceRunId;
         /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
-        public readonly string LifecycleDetails;
+        public readonly string? LifecycleDetails;
         /// <summary>
         /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         /// </summary>
@@ -183,127 +183,127 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The total number of CPU cores available.
         /// </summary>
-        public readonly int MaxCpuCount;
+        public readonly int? MaxCpuCount;
         /// <summary>
         /// The total available DATA disk group size.
         /// </summary>
-        public readonly double MaxDataStorageInTbs;
+        public readonly double? MaxDataStorageInTbs;
         /// <summary>
         /// The total local node storage available in GBs.
         /// </summary>
-        public readonly int MaxDbNodeStorageInGbs;
+        public readonly int? MaxDbNodeStorageInGbs;
         /// <summary>
         /// The total memory available in GBs.
         /// </summary>
-        public readonly int MaxMemoryInGbs;
+        public readonly int? MaxMemoryInGbs;
         /// <summary>
         /// The memory allocated in GBs.
         /// </summary>
-        public readonly int MemorySizeInGbs;
+        public readonly int? MemorySizeInGbs;
         /// <summary>
         /// The monthly software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         /// </summary>
-        public readonly string MonthlyDbServerVersion;
+        public readonly string? MonthlyDbServerVersion;
         /// <summary>
         /// The monthly software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         /// </summary>
-        public readonly string MonthlyStorageServerVersion;
+        public readonly string? MonthlyStorageServerVersion;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
-        public readonly string NextMaintenanceRunId;
+        public readonly string? NextMaintenanceRunId;
         /// <summary>
         /// The model name of the cloud Exadata infrastructure resource.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
         /// <summary>
         /// The current lifecycle state of the cloud Exadata infrastructure resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The number of storage servers for the cloud Exadata infrastructure.
         /// </summary>
-        public readonly int StorageCount;
+        public readonly int? StorageCount;
         /// <summary>
         /// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         /// </summary>
-        public readonly string StorageServerVersion;
+        public readonly string? StorageServerVersion;
         /// <summary>
         /// The date and time the cloud Exadata infrastructure resource was created.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         /// </summary>
-        public readonly int TotalStorageSizeInGbs;
+        public readonly int? TotalStorageSizeInGbs;
 
         [OutputConstructor]
         private GetCloudExadataInfrastructureResult(
-            int activatedStorageCount,
+            int? activatedStorageCount,
 
-            int additionalStorageCount,
+            int? additionalStorageCount,
 
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            int availableStorageSizeInGbs,
+            int? availableStorageSizeInGbs,
 
             string cloudExadataInfrastructureId,
 
-            string compartmentId,
+            string? compartmentId,
 
-            int computeCount,
+            int? computeCount,
 
-            int cpuCount,
+            int? cpuCount,
 
             ImmutableArray<Outputs.GetCloudExadataInfrastructureCustomerContactResult> customerContacts,
 
-            double dataStorageSizeInTbs,
+            double? dataStorageSizeInTbs,
 
-            int dbNodeStorageSizeInGbs,
+            int? dbNodeStorageSizeInGbs,
 
-            string dbServerVersion,
+            string? dbServerVersion,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string id,
+            string? id,
 
-            string lastMaintenanceRunId,
+            string? lastMaintenanceRunId,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
             ImmutableArray<Outputs.GetCloudExadataInfrastructureMaintenanceWindowResult> maintenanceWindows,
 
-            int maxCpuCount,
+            int? maxCpuCount,
 
-            double maxDataStorageInTbs,
+            double? maxDataStorageInTbs,
 
-            int maxDbNodeStorageInGbs,
+            int? maxDbNodeStorageInGbs,
 
-            int maxMemoryInGbs,
+            int? maxMemoryInGbs,
 
-            int memorySizeInGbs,
+            int? memorySizeInGbs,
 
-            string monthlyDbServerVersion,
+            string? monthlyDbServerVersion,
 
-            string monthlyStorageServerVersion,
+            string? monthlyStorageServerVersion,
 
-            string nextMaintenanceRunId,
+            string? nextMaintenanceRunId,
 
-            string shape,
+            string? shape,
 
-            string state,
+            string? state,
 
-            int storageCount,
+            int? storageCount,
 
-            string storageServerVersion,
+            string? storageServerVersion,
 
-            string timeCreated,
+            string? timeCreated,
 
-            int totalStorageSizeInGbs)
+            int? totalStorageSizeInGbs)
         {
             ActivatedStorageCount = activatedStorageCount;
             AdditionalStorageCount = additionalStorageCount;

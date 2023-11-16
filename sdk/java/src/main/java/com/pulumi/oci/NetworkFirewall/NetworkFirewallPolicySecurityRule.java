@@ -165,28 +165,28 @@ public class NetworkFirewallPolicySecurityRule extends com.pulumi.resources.Cust
      * 
      */
     @Export(name="parentResourceId", refs={String.class}, tree="[0]")
-    private Output<String> parentResourceId;
+    private Output</* @Nullable */ String> parentResourceId;
 
     /**
      * @return OCID of the Network Firewall Policy this security rule belongs to.
      * 
      */
-    public Output<String> parentResourceId() {
-        return this.parentResourceId;
+    public Output<Optional<String>> parentResourceId() {
+        return Codegen.optional(this.parentResourceId);
     }
     /**
      * (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
      * 
      */
     @Export(name="positions", refs={List.class,NetworkFirewallPolicySecurityRulePosition.class}, tree="[0,1]")
-    private Output<List<NetworkFirewallPolicySecurityRulePosition>> positions;
+    private Output</* @Nullable */ List<NetworkFirewallPolicySecurityRulePosition>> positions;
 
     /**
      * @return (Updatable) An object which defines the position of the rule. Only one of the following position references should be provided.
      * 
      */
-    public Output<List<NetworkFirewallPolicySecurityRulePosition>> positions() {
-        return this.positions;
+    public Output<Optional<List<NetworkFirewallPolicySecurityRulePosition>>> positions() {
+        return Codegen.optional(this.positions);
     }
     @Export(name="priorityOrder", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> priorityOrder;

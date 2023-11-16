@@ -70,102 +70,62 @@ class GetApiResult:
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def content(self) -> str:
+    def content(self) -> Optional[str]:
         return pulumi.get(self, "content")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
-        * 'New' for just updated API Specifications
-        * 'Validating' for a document which is being validated.
-        * 'Valid' the document has been validated without any errors or warnings
-        * 'Warning' the document has been validated and contains warnings
-        * 'Error' the document has been validated and contains errors
-        * 'Failed' the document validation failed
-        * 'Canceled' the document validation was canceled
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="specificationType")
-    def specification_type(self) -> str:
-        """
-        Type of API Specification file.
-        """
+    def specification_type(self) -> Optional[str]:
         return pulumi.get(self, "specification_type")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the API.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time this resource was created. An RFC3339 formatted datetime string.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> str:
-        """
-        The time this resource was last updated. An RFC3339 formatted datetime string.
-        """
+    def time_updated(self) -> Optional[str]:
         return pulumi.get(self, "time_updated")
 
     @property
     @pulumi.getter(name="validationResults")
-    def validation_results(self) -> Sequence['outputs.GetApiValidationResultResult']:
-        """
-        Status of each feature available from the API.
-        """
+    def validation_results(self) -> Optional[Sequence['outputs.GetApiValidationResultResult']]:
         return pulumi.get(self, "validation_results")
 
 
@@ -193,21 +153,7 @@ class AwaitableGetApiResult(GetApiResult):
 def get_api(api_id: Optional[str] = None,
             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetApiResult:
     """
-    This data source provides details about a specific Api resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets an API by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_api = oci.ApiGateway.get_api(api_id=oci_apigateway_api["test_api"]["id"])
-    ```
-
-
-    :param str api_id: The ocid of the API.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['apiId'] = api_id
@@ -234,20 +180,6 @@ def get_api(api_id: Optional[str] = None,
 def get_api_output(api_id: Optional[pulumi.Input[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetApiResult]:
     """
-    This data source provides details about a specific Api resource in Oracle Cloud Infrastructure API Gateway service.
-
-    Gets an API by identifier.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_api = oci.ApiGateway.get_api(api_id=oci_apigateway_api["test_api"]["id"])
-    ```
-
-
-    :param str api_id: The ocid of the API.
+    Use this data source to access information about an existing resource.
     """
     ...

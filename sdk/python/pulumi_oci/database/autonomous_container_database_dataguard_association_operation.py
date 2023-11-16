@@ -19,9 +19,6 @@ class AutonomousContainerDatabaseDataguardAssociationOperationArgs:
                  operation: pulumi.Input[str]):
         """
         The set of arguments for constructing a AutonomousContainerDatabaseDataguardAssociationOperation resource.
-        :param pulumi.Input[str] autonomous_container_database_dataguard_association_id: The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        :param pulumi.Input[str] operation: There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
         """
         pulumi.set(__self__, "autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
@@ -30,9 +27,6 @@ class AutonomousContainerDatabaseDataguardAssociationOperationArgs:
     @property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
     def autonomous_container_database_dataguard_association_id(self) -> pulumi.Input[str]:
-        """
-        The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        """
         return pulumi.get(self, "autonomous_container_database_dataguard_association_id")
 
     @autonomous_container_database_dataguard_association_id.setter
@@ -42,9 +36,6 @@ class AutonomousContainerDatabaseDataguardAssociationOperationArgs:
     @property
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> pulumi.Input[str]:
-        """
-        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        """
         return pulumi.get(self, "autonomous_container_database_id")
 
     @autonomous_container_database_id.setter
@@ -54,9 +45,6 @@ class AutonomousContainerDatabaseDataguardAssociationOperationArgs:
     @property
     @pulumi.getter
     def operation(self) -> pulumi.Input[str]:
-        """
-        There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
-        """
         return pulumi.get(self, "operation")
 
     @operation.setter
@@ -72,9 +60,6 @@ class _AutonomousContainerDatabaseDataguardAssociationOperationState:
                  operation: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AutonomousContainerDatabaseDataguardAssociationOperation resources.
-        :param pulumi.Input[str] autonomous_container_database_dataguard_association_id: The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        :param pulumi.Input[str] operation: There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
         """
         if autonomous_container_database_dataguard_association_id is not None:
             pulumi.set(__self__, "autonomous_container_database_dataguard_association_id", autonomous_container_database_dataguard_association_id)
@@ -86,9 +71,6 @@ class _AutonomousContainerDatabaseDataguardAssociationOperationState:
     @property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
     def autonomous_container_database_dataguard_association_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        """
         return pulumi.get(self, "autonomous_container_database_dataguard_association_id")
 
     @autonomous_container_database_dataguard_association_id.setter
@@ -98,9 +80,6 @@ class _AutonomousContainerDatabaseDataguardAssociationOperationState:
     @property
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        """
         return pulumi.get(self, "autonomous_container_database_id")
 
     @autonomous_container_database_id.setter
@@ -110,9 +89,6 @@ class _AutonomousContainerDatabaseDataguardAssociationOperationState:
     @property
     @pulumi.getter
     def operation(self) -> Optional[pulumi.Input[str]]:
-        """
-        There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
-        """
         return pulumi.get(self, "operation")
 
     @operation.setter
@@ -130,31 +106,9 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
                  operation: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Autonomous Container Database Dataguard Association Operation resource in Oracle Cloud Infrastructure Database service.
-
-        Perform a new Autonomous Container Database Dataguard Association Operation on an Autonomous Container Database that has Dataguard enabled
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        switchover = oci.database.AutonomousContainerDatabaseDataguardAssociationOperation("switchover",
-            operation="switchover",
-            autonomous_container_database_id=data["oci_database_autonomous_container_database_dataguard_associations"]["dataguard_associations"]["autonomous_container_database_dataguard_associations"][0]["autonomous_container_database_id"],
-            autonomous_container_database_dataguard_association_id=data["oci_database_autonomous_container_database_dataguard_associations"]["dataguard_associations"]["autonomous_container_database_dataguard_associations"][0]["id"])
-        ```
-
-        ## Import
-
-        AutonomousContainerDatabaseDataguardAssociationOperation does not support import.
-
+        Create a AutonomousContainerDatabaseDataguardAssociationOperation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] autonomous_container_database_dataguard_association_id: The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        :param pulumi.Input[str] operation: There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
         """
         ...
     @overload
@@ -163,26 +117,7 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
                  args: AutonomousContainerDatabaseDataguardAssociationOperationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Autonomous Container Database Dataguard Association Operation resource in Oracle Cloud Infrastructure Database service.
-
-        Perform a new Autonomous Container Database Dataguard Association Operation on an Autonomous Container Database that has Dataguard enabled
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        switchover = oci.database.AutonomousContainerDatabaseDataguardAssociationOperation("switchover",
-            operation="switchover",
-            autonomous_container_database_id=data["oci_database_autonomous_container_database_dataguard_associations"]["dataguard_associations"]["autonomous_container_database_dataguard_associations"][0]["autonomous_container_database_id"],
-            autonomous_container_database_dataguard_association_id=data["oci_database_autonomous_container_database_dataguard_associations"]["dataguard_associations"]["autonomous_container_database_dataguard_associations"][0]["id"])
-        ```
-
-        ## Import
-
-        AutonomousContainerDatabaseDataguardAssociationOperation does not support import.
-
+        Create a AutonomousContainerDatabaseDataguardAssociationOperation resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param AutonomousContainerDatabaseDataguardAssociationOperationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -239,9 +174,6 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] autonomous_container_database_dataguard_association_id: The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        :param pulumi.Input[str] operation: There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -255,24 +187,15 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
     @property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
     def autonomous_container_database_dataguard_association_id(self) -> pulumi.Output[str]:
-        """
-        The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        """
         return pulumi.get(self, "autonomous_container_database_dataguard_association_id")
 
     @property
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> pulumi.Output[str]:
-        """
-        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
-        """
         return pulumi.get(self, "autonomous_container_database_id")
 
     @property
     @pulumi.getter
     def operation(self) -> pulumi.Output[str]:
-        """
-        There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
-        """
         return pulumi.get(self, "operation")
 

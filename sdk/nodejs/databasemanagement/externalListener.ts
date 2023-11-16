@@ -50,43 +50,43 @@ export class ExternalListener extends pulumi.CustomResource {
     /**
      * The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      */
-    public /*out*/ readonly adrHomeDirectory!: pulumi.Output<string>;
+    public /*out*/ readonly adrHomeDirectory!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
      */
-    public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    public /*out*/ readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * The name of the external listener.
      */
-    public /*out*/ readonly componentName!: pulumi.Output<string>;
+    public /*out*/ readonly componentName!: pulumi.Output<string | undefined>;
     /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
-    public /*out*/ readonly displayName!: pulumi.Output<string>;
+    public /*out*/ readonly displayName!: pulumi.Output<string | undefined>;
     /**
      * The list of protocol addresses the listener is configured to listen on.
      */
-    public /*out*/ readonly endpoints!: pulumi.Output<outputs.DatabaseManagement.ExternalListenerEndpoint[]>;
+    public /*out*/ readonly endpoints!: pulumi.Output<outputs.DatabaseManagement.ExternalListenerEndpoint[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
-    public readonly externalConnectorId!: pulumi.Output<string>;
+    public readonly externalConnectorId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
      */
-    public /*out*/ readonly externalDbHomeId!: pulumi.Output<string>;
+    public /*out*/ readonly externalDbHomeId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
      */
-    public /*out*/ readonly externalDbNodeId!: pulumi.Output<string>;
+    public /*out*/ readonly externalDbNodeId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the listener is a part of.
      */
-    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string>;
+    public /*out*/ readonly externalDbSystemId!: pulumi.Output<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
      *
@@ -98,59 +98,59 @@ export class ExternalListener extends pulumi.CustomResource {
     /**
      * The name of the host on which the external listener is running.
      */
-    public /*out*/ readonly hostName!: pulumi.Output<string>;
+    public /*out*/ readonly hostName!: pulumi.Output<string | undefined>;
     /**
      * Additional information about the current lifecycle state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The listener alias.
      */
-    public /*out*/ readonly listenerAlias!: pulumi.Output<string>;
+    public /*out*/ readonly listenerAlias!: pulumi.Output<string | undefined>;
     /**
      * The location of the listener configuration file listener.ora.
      */
-    public /*out*/ readonly listenerOraLocation!: pulumi.Output<string>;
+    public /*out*/ readonly listenerOraLocation!: pulumi.Output<string | undefined>;
     /**
      * The type of listener.
      */
-    public /*out*/ readonly listenerType!: pulumi.Output<string>;
+    public /*out*/ readonly listenerType!: pulumi.Output<string | undefined>;
     /**
      * The destination directory of the listener log file.
      */
-    public /*out*/ readonly logDirectory!: pulumi.Output<string>;
+    public /*out*/ readonly logDirectory!: pulumi.Output<string | undefined>;
     /**
      * The Oracle home location of the listener.
      */
-    public /*out*/ readonly oracleHome!: pulumi.Output<string>;
+    public /*out*/ readonly oracleHome!: pulumi.Output<string | undefined>;
     /**
      * The list of ASMs that are serviced by the listener.
      */
-    public /*out*/ readonly servicedAsms!: pulumi.Output<outputs.DatabaseManagement.ExternalListenerServicedAsm[]>;
+    public /*out*/ readonly servicedAsms!: pulumi.Output<outputs.DatabaseManagement.ExternalListenerServicedAsm[] | undefined>;
     /**
      * The list of databases that are serviced by the listener.
      */
-    public /*out*/ readonly servicedDatabases!: pulumi.Output<outputs.DatabaseManagement.ExternalListenerServicedDatabase[]>;
+    public /*out*/ readonly servicedDatabases!: pulumi.Output<outputs.DatabaseManagement.ExternalListenerServicedDatabase[] | undefined>;
     /**
      * The current lifecycle state of the external listener.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external listener was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time the external listener was last updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * The destination directory of the listener trace file.
      */
-    public /*out*/ readonly traceDirectory!: pulumi.Output<string>;
+    public /*out*/ readonly traceDirectory!: pulumi.Output<string | undefined>;
     /**
      * The listener version.
      */
-    public /*out*/ readonly version!: pulumi.Output<string>;
+    public /*out*/ readonly version!: pulumi.Output<string | undefined>;
 
     /**
      * Create a ExternalListener resource with the given unique name, arguments, and options.

@@ -76,7 +76,7 @@ export class BackupDestination extends pulumi.CustomResource {
     /**
      * List of databases associated with the backup destination.
      */
-    public /*out*/ readonly associatedDatabases!: pulumi.Output<outputs.Database.BackupDestinationAssociatedDatabase[]>;
+    public /*out*/ readonly associatedDatabases!: pulumi.Output<outputs.Database.BackupDestinationAssociatedDatabase[] | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -88,7 +88,7 @@ export class BackupDestination extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The user-provided name of the backup destination.
      */
@@ -96,41 +96,41 @@ export class BackupDestination extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * A descriptive text associated with the lifecycleState. Typically contains additional displayable text
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
      *
      * @deprecated The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
      */
-    public readonly localMountPointPath!: pulumi.Output<string>;
+    public readonly localMountPointPath!: pulumi.Output<string | undefined>;
     /**
      * Mount type details for backup destination.
      */
-    public readonly mountTypeDetails!: pulumi.Output<outputs.Database.BackupDestinationMountTypeDetails>;
+    public readonly mountTypeDetails!: pulumi.Output<outputs.Database.BackupDestinationMountTypeDetails | undefined>;
     /**
      * NFS Mount type for backup destination.
      */
-    public /*out*/ readonly nfsMountType!: pulumi.Output<string>;
+    public /*out*/ readonly nfsMountType!: pulumi.Output<string | undefined>;
     /**
      * Specifies the directory on which to mount the file system
      */
-    public /*out*/ readonly nfsServerExport!: pulumi.Output<string>;
+    public /*out*/ readonly nfsServerExport!: pulumi.Output<string | undefined>;
     /**
      * IP addresses for NFS Auto mount.
      */
-    public /*out*/ readonly nfsServers!: pulumi.Output<string[]>;
+    public /*out*/ readonly nfsServers!: pulumi.Output<string[] | undefined>;
     /**
      * The current lifecycle state of the backup destination.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The date and time the backup destination was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * Type of the backup destination.
      */

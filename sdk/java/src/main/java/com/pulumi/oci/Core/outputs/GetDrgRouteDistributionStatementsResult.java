@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetDrgRouteDistributionStatementsFilter;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -18,13 +19,13 @@ public final class GetDrgRouteDistributionStatementsResult {
      * @return The list of drg_route_distribution_statements.
      * 
      */
-    private List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatement> drgRouteDistributionStatements;
+    private @Nullable List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatement> drgRouteDistributionStatements;
     private @Nullable List<GetDrgRouteDistributionStatementsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetDrgRouteDistributionStatementsResult() {}
     public String drgRouteDistributionId() {
@@ -35,7 +36,7 @@ public final class GetDrgRouteDistributionStatementsResult {
      * 
      */
     public List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatement> drgRouteDistributionStatements() {
-        return this.drgRouteDistributionStatements;
+        return this.drgRouteDistributionStatements == null ? List.of() : this.drgRouteDistributionStatements;
     }
     public List<GetDrgRouteDistributionStatementsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -44,8 +45,8 @@ public final class GetDrgRouteDistributionStatementsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -58,9 +59,9 @@ public final class GetDrgRouteDistributionStatementsResult {
     @CustomType.Builder
     public static final class Builder {
         private String drgRouteDistributionId;
-        private List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatement> drgRouteDistributionStatements;
+        private @Nullable List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatement> drgRouteDistributionStatements;
         private @Nullable List<GetDrgRouteDistributionStatementsFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetDrgRouteDistributionStatementsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,8 +77,8 @@ public final class GetDrgRouteDistributionStatementsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder drgRouteDistributionStatements(List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatement> drgRouteDistributionStatements) {
-            this.drgRouteDistributionStatements = Objects.requireNonNull(drgRouteDistributionStatements);
+        public Builder drgRouteDistributionStatements(@Nullable List<GetDrgRouteDistributionStatementsDrgRouteDistributionStatement> drgRouteDistributionStatements) {
+            this.drgRouteDistributionStatements = drgRouteDistributionStatements;
             return this;
         }
         public Builder drgRouteDistributionStatements(GetDrgRouteDistributionStatementsDrgRouteDistributionStatement... drgRouteDistributionStatements) {
@@ -92,8 +93,8 @@ public final class GetDrgRouteDistributionStatementsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetDrgRouteDistributionStatementsResult build() {

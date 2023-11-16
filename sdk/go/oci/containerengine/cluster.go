@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Cluster resource in Oracle Cloud Infrastructure Container Engine service.
@@ -44,23 +43,23 @@ type Cluster struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
-	ImagePolicyConfig ClusterImagePolicyConfigOutput `pulumi:"imagePolicyConfig"`
+	ImagePolicyConfig ClusterImagePolicyConfigPtrOutput `pulumi:"imagePolicyConfig"`
 	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
-	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	KmsKeyId pulumi.StringPtrOutput `pulumi:"kmsKeyId"`
 	// (Updatable) The version of Kubernetes to install into the cluster masters.
 	KubernetesVersion pulumi.StringOutput `pulumi:"kubernetesVersion"`
 	// Details about the state of the cluster masters.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// Metadata about the cluster.
 	Metadatas ClusterMetadataArrayOutput `pulumi:"metadatas"`
 	// (Updatable) The name of the cluster. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) Optional attributes for the cluster.
-	Options ClusterOptionsOutput `pulumi:"options"`
+	Options ClusterOptionsPtrOutput `pulumi:"options"`
 	// The state of the cluster masters.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Type of cluster
-	Type pulumi.StringOutput `pulumi:"type"`
+	Type pulumi.StringPtrOutput `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
 	//
 	// ** IMPORTANT **
@@ -274,12 +273,6 @@ func (i *Cluster) ToClusterOutputWithContext(ctx context.Context) ClusterOutput 
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterOutput)
 }
 
-func (i *Cluster) ToOutput(ctx context.Context) pulumix.Output[*Cluster] {
-	return pulumix.Output[*Cluster]{
-		OutputState: i.ToClusterOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ClusterArrayInput is an input type that accepts ClusterArray and ClusterArrayOutput values.
 // You can construct a concrete instance of `ClusterArrayInput` via:
 //
@@ -303,12 +296,6 @@ func (i ClusterArray) ToClusterArrayOutput() ClusterArrayOutput {
 
 func (i ClusterArray) ToClusterArrayOutputWithContext(ctx context.Context) ClusterArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterArrayOutput)
-}
-
-func (i ClusterArray) ToOutput(ctx context.Context) pulumix.Output[[]*Cluster] {
-	return pulumix.Output[[]*Cluster]{
-		OutputState: i.ToClusterArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ClusterMapInput is an input type that accepts ClusterMap and ClusterMapOutput values.
@@ -336,12 +323,6 @@ func (i ClusterMap) ToClusterMapOutputWithContext(ctx context.Context) ClusterMa
 	return pulumi.ToOutputWithContext(ctx, i).(ClusterMapOutput)
 }
 
-func (i ClusterMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Cluster] {
-	return pulumix.Output[map[string]*Cluster]{
-		OutputState: i.ToClusterMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ClusterOutput struct{ *pulumi.OutputState }
 
 func (ClusterOutput) ElementType() reflect.Type {
@@ -354,12 +335,6 @@ func (o ClusterOutput) ToClusterOutput() ClusterOutput {
 
 func (o ClusterOutput) ToClusterOutputWithContext(ctx context.Context) ClusterOutput {
 	return o
-}
-
-func (o ClusterOutput) ToOutput(ctx context.Context) pulumix.Output[*Cluster] {
-	return pulumix.Output[*Cluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Available Kubernetes versions to which the clusters masters may be upgraded.
@@ -398,13 +373,13 @@ func (o ClusterOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
-func (o ClusterOutput) ImagePolicyConfig() ClusterImagePolicyConfigOutput {
-	return o.ApplyT(func(v *Cluster) ClusterImagePolicyConfigOutput { return v.ImagePolicyConfig }).(ClusterImagePolicyConfigOutput)
+func (o ClusterOutput) ImagePolicyConfig() ClusterImagePolicyConfigPtrOutput {
+	return o.ApplyT(func(v *Cluster) ClusterImagePolicyConfigPtrOutput { return v.ImagePolicyConfig }).(ClusterImagePolicyConfigPtrOutput)
 }
 
 // The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
-func (o ClusterOutput) KmsKeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
+func (o ClusterOutput) KmsKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringPtrOutput { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The version of Kubernetes to install into the cluster masters.
@@ -413,8 +388,8 @@ func (o ClusterOutput) KubernetesVersion() pulumi.StringOutput {
 }
 
 // Details about the state of the cluster masters.
-func (o ClusterOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o ClusterOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // Metadata about the cluster.
@@ -428,18 +403,18 @@ func (o ClusterOutput) Name() pulumi.StringOutput {
 }
 
 // (Updatable) Optional attributes for the cluster.
-func (o ClusterOutput) Options() ClusterOptionsOutput {
-	return o.ApplyT(func(v *Cluster) ClusterOptionsOutput { return v.Options }).(ClusterOptionsOutput)
+func (o ClusterOutput) Options() ClusterOptionsPtrOutput {
+	return o.ApplyT(func(v *Cluster) ClusterOptionsPtrOutput { return v.Options }).(ClusterOptionsPtrOutput)
 }
 
 // The state of the cluster masters.
-func (o ClusterOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ClusterOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Type of cluster
-func (o ClusterOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+func (o ClusterOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringPtrOutput { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the virtual cloud network (VCN) in which to create the cluster.
@@ -464,12 +439,6 @@ func (o ClusterArrayOutput) ToClusterArrayOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o ClusterArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Cluster] {
-	return pulumix.Output[[]*Cluster]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o ClusterArrayOutput) Index(i pulumi.IntInput) ClusterOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) *Cluster {
 		return vs[0].([]*Cluster)[vs[1].(int)]
@@ -488,12 +457,6 @@ func (o ClusterMapOutput) ToClusterMapOutput() ClusterMapOutput {
 
 func (o ClusterMapOutput) ToClusterMapOutputWithContext(ctx context.Context) ClusterMapOutput {
 	return o
-}
-
-func (o ClusterMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Cluster] {
-	return pulumix.Output[map[string]*Cluster]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ClusterMapOutput) MapIndex(k pulumi.StringInput) ClusterOutput {

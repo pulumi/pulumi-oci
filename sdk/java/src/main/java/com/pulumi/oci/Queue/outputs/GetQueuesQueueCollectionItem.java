@@ -10,6 +10,8 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetQueuesQueueCollectionItem {
@@ -17,215 +19,215 @@ public final class GetQueuesQueueCollectionItem {
      * @return The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
      * 
      */
-    private Integer channelConsumptionLimit;
+    private @Nullable Integer channelConsumptionLimit;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      * 
      */
-    private String customEncryptionKeyId;
+    private @Nullable String customEncryptionKeyId;
     /**
      * @return The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
      * 
      */
-    private Integer deadLetterQueueDeliveryCount;
+    private @Nullable Integer deadLetterQueueDeliveryCount;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The unique queue identifier.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Any additional details about the current state of the queue.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The endpoint to use to consume or publish messages in the queue.
      * 
      */
-    private String messagesEndpoint;
-    private Boolean purgeQueue;
-    private String purgeType;
+    private @Nullable String messagesEndpoint;
+    private @Nullable Boolean purgeQueue;
+    private @Nullable String purgeType;
     /**
      * @return The retention period of the messages in the queue, in seconds.
      * 
      */
-    private Integer retentionInSeconds;
+    private @Nullable Integer retentionInSeconds;
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The default polling timeout of the messages in the queue, in seconds.
      * 
      */
-    private Integer timeoutInSeconds;
+    private @Nullable Integer timeoutInSeconds;
     /**
      * @return The default visibility timeout of the messages consumed from the queue, in seconds.
      * 
      */
-    private Integer visibilityInSeconds;
+    private @Nullable Integer visibilityInSeconds;
 
     private GetQueuesQueueCollectionItem() {}
     /**
      * @return The percentage of allocated queue resources that can be consumed by a single channel. For example, if a queue has a storage limit of 2Gb, and a single channel consumption limit is 0.1 (10%), that means data size of a single channel  can&#39;t exceed 200Mb. Consumption limit of 100% (default) means that a single channel can consume up-to all allocated queue&#39;s resources.
      * 
      */
-    public Integer channelConsumptionLimit() {
-        return this.channelConsumptionLimit;
+    public Optional<Integer> channelConsumptionLimit() {
+        return Optional.ofNullable(this.channelConsumptionLimit);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom encryption key to be used to encrypt messages content.
      * 
      */
-    public String customEncryptionKeyId() {
-        return this.customEncryptionKeyId;
+    public Optional<String> customEncryptionKeyId() {
+        return Optional.ofNullable(this.customEncryptionKeyId);
     }
     /**
      * @return The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
      * 
      */
-    public Integer deadLetterQueueDeliveryCount() {
-        return this.deadLetterQueueDeliveryCount;
+    public Optional<Integer> deadLetterQueueDeliveryCount() {
+        return Optional.ofNullable(this.deadLetterQueueDeliveryCount);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The unique queue identifier.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Any additional details about the current state of the queue.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The endpoint to use to consume or publish messages in the queue.
      * 
      */
-    public String messagesEndpoint() {
-        return this.messagesEndpoint;
+    public Optional<String> messagesEndpoint() {
+        return Optional.ofNullable(this.messagesEndpoint);
     }
-    public Boolean purgeQueue() {
-        return this.purgeQueue;
+    public Optional<Boolean> purgeQueue() {
+        return Optional.ofNullable(this.purgeQueue);
     }
-    public String purgeType() {
-        return this.purgeType;
+    public Optional<String> purgeType() {
+        return Optional.ofNullable(this.purgeType);
     }
     /**
      * @return The retention period of the messages in the queue, in seconds.
      * 
      */
-    public Integer retentionInSeconds() {
-        return this.retentionInSeconds;
+    public Optional<Integer> retentionInSeconds() {
+        return Optional.ofNullable(this.retentionInSeconds);
     }
     /**
      * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The default polling timeout of the messages in the queue, in seconds.
      * 
      */
-    public Integer timeoutInSeconds() {
-        return this.timeoutInSeconds;
+    public Optional<Integer> timeoutInSeconds() {
+        return Optional.ofNullable(this.timeoutInSeconds);
     }
     /**
      * @return The default visibility timeout of the messages consumed from the queue, in seconds.
      * 
      */
-    public Integer visibilityInSeconds() {
-        return this.visibilityInSeconds;
+    public Optional<Integer> visibilityInSeconds() {
+        return Optional.ofNullable(this.visibilityInSeconds);
     }
 
     public static Builder builder() {
@@ -237,25 +239,25 @@ public final class GetQueuesQueueCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer channelConsumptionLimit;
-        private String compartmentId;
-        private String customEncryptionKeyId;
-        private Integer deadLetterQueueDeliveryCount;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private String lifecycleDetails;
-        private String messagesEndpoint;
-        private Boolean purgeQueue;
-        private String purgeType;
-        private Integer retentionInSeconds;
-        private String state;
-        private Map<String,Object> systemTags;
-        private String timeCreated;
-        private String timeUpdated;
-        private Integer timeoutInSeconds;
-        private Integer visibilityInSeconds;
+        private @Nullable Integer channelConsumptionLimit;
+        private @Nullable String compartmentId;
+        private @Nullable String customEncryptionKeyId;
+        private @Nullable Integer deadLetterQueueDeliveryCount;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String messagesEndpoint;
+        private @Nullable Boolean purgeQueue;
+        private @Nullable String purgeType;
+        private @Nullable Integer retentionInSeconds;
+        private @Nullable String state;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
+        private @Nullable Integer timeoutInSeconds;
+        private @Nullable Integer visibilityInSeconds;
         public Builder() {}
         public Builder(GetQueuesQueueCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -281,98 +283,98 @@ public final class GetQueuesQueueCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder channelConsumptionLimit(Integer channelConsumptionLimit) {
-            this.channelConsumptionLimit = Objects.requireNonNull(channelConsumptionLimit);
+        public Builder channelConsumptionLimit(@Nullable Integer channelConsumptionLimit) {
+            this.channelConsumptionLimit = channelConsumptionLimit;
             return this;
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder customEncryptionKeyId(String customEncryptionKeyId) {
-            this.customEncryptionKeyId = Objects.requireNonNull(customEncryptionKeyId);
+        public Builder customEncryptionKeyId(@Nullable String customEncryptionKeyId) {
+            this.customEncryptionKeyId = customEncryptionKeyId;
             return this;
         }
         @CustomType.Setter
-        public Builder deadLetterQueueDeliveryCount(Integer deadLetterQueueDeliveryCount) {
-            this.deadLetterQueueDeliveryCount = Objects.requireNonNull(deadLetterQueueDeliveryCount);
+        public Builder deadLetterQueueDeliveryCount(@Nullable Integer deadLetterQueueDeliveryCount) {
+            this.deadLetterQueueDeliveryCount = deadLetterQueueDeliveryCount;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder messagesEndpoint(String messagesEndpoint) {
-            this.messagesEndpoint = Objects.requireNonNull(messagesEndpoint);
+        public Builder messagesEndpoint(@Nullable String messagesEndpoint) {
+            this.messagesEndpoint = messagesEndpoint;
             return this;
         }
         @CustomType.Setter
-        public Builder purgeQueue(Boolean purgeQueue) {
-            this.purgeQueue = Objects.requireNonNull(purgeQueue);
+        public Builder purgeQueue(@Nullable Boolean purgeQueue) {
+            this.purgeQueue = purgeQueue;
             return this;
         }
         @CustomType.Setter
-        public Builder purgeType(String purgeType) {
-            this.purgeType = Objects.requireNonNull(purgeType);
+        public Builder purgeType(@Nullable String purgeType) {
+            this.purgeType = purgeType;
             return this;
         }
         @CustomType.Setter
-        public Builder retentionInSeconds(Integer retentionInSeconds) {
-            this.retentionInSeconds = Objects.requireNonNull(retentionInSeconds);
+        public Builder retentionInSeconds(@Nullable Integer retentionInSeconds) {
+            this.retentionInSeconds = retentionInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+        public Builder timeoutInSeconds(@Nullable Integer timeoutInSeconds) {
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder visibilityInSeconds(Integer visibilityInSeconds) {
-            this.visibilityInSeconds = Objects.requireNonNull(visibilityInSeconds);
+        public Builder visibilityInSeconds(@Nullable Integer visibilityInSeconds) {
+            this.visibilityInSeconds = visibilityInSeconds;
             return this;
         }
         public GetQueuesQueueCollectionItem build() {

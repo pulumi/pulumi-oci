@@ -47,7 +47,7 @@ class GetManagedDatabaseSqlPlanBaselineJobsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -61,17 +61,11 @@ class GetManagedDatabaseSqlPlanBaselineJobsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the job.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="sqlPlanBaselineJobCollections")
-    def sql_plan_baseline_job_collections(self) -> Sequence['outputs.GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionResult']:
-        """
-        The list of sql_plan_baseline_job_collection.
-        """
+    def sql_plan_baseline_job_collections(self) -> Optional[Sequence['outputs.GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionResult']]:
         return pulumi.get(self, "sql_plan_baseline_job_collections")
 
 
@@ -93,23 +87,7 @@ def get_managed_database_sql_plan_baseline_jobs(filters: Optional[Sequence[pulum
                                                 name: Optional[str] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedDatabaseSqlPlanBaselineJobsResult:
     """
-    This data source provides the list of Managed Database Sql Plan Baseline Jobs in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_plan_baseline_jobs = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_jobs(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_database_sql_plan_baseline_job_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return the SQL plan baseline jobs that match the name.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -132,22 +110,6 @@ def get_managed_database_sql_plan_baseline_jobs_output(filters: Optional[pulumi.
                                                        name: Optional[pulumi.Input[Optional[str]]] = None,
                                                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetManagedDatabaseSqlPlanBaselineJobsResult]:
     """
-    This data source provides the list of Managed Database Sql Plan Baseline Jobs in Oracle Cloud Infrastructure Database Management service.
-
-    Lists the database jobs used for loading SQL plan baselines in the specified Managed Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_managed_database_sql_plan_baseline_jobs = oci.DatabaseManagement.get_managed_database_sql_plan_baseline_jobs(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_database_sql_plan_baseline_job_name"])
-    ```
-
-
-    :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
-    :param str name: A filter to return the SQL plan baseline jobs that match the name.
+    Use this data source to access information about an existing resource.
     """
     ...

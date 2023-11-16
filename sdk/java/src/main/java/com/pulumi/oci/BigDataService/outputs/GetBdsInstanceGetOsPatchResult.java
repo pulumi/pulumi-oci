@@ -11,6 +11,7 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
@@ -21,17 +22,17 @@ public final class GetBdsInstanceGetOsPatchResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Minimum BDS version required to install current OS patch.
      * 
      */
-    private String minBdsVersion;
+    private @Nullable String minBdsVersion;
     /**
      * @return Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
      * 
      */
-    private Map<String,Object> minCompatibleOdhVersionMap;
+    private @Nullable Map<String,Object> minCompatibleOdhVersionMap;
     /**
      * @return Version of the os patch.
      * 
@@ -41,17 +42,17 @@ public final class GetBdsInstanceGetOsPatchResult {
      * @return Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os patches with some customizations. EMERGENT means os patches with some emergency fixes that should be prioritized.
      * 
      */
-    private String patchType;
+    private @Nullable String patchType;
     /**
      * @return Released date of the OS patch.
      * 
      */
-    private String releaseDate;
+    private @Nullable String releaseDate;
     /**
      * @return List of summaries of individual target packages.
      * 
      */
-    private List<GetBdsInstanceGetOsPatchTargetPackage> targetPackages;
+    private @Nullable List<GetBdsInstanceGetOsPatchTargetPackage> targetPackages;
 
     private GetBdsInstanceGetOsPatchResult() {}
     public String bdsInstanceId() {
@@ -64,22 +65,22 @@ public final class GetBdsInstanceGetOsPatchResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Minimum BDS version required to install current OS patch.
      * 
      */
-    public String minBdsVersion() {
-        return this.minBdsVersion;
+    public Optional<String> minBdsVersion() {
+        return Optional.ofNullable(this.minBdsVersion);
     }
     /**
      * @return Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
      * 
      */
     public Map<String,Object> minCompatibleOdhVersionMap() {
-        return this.minCompatibleOdhVersionMap;
+        return this.minCompatibleOdhVersionMap == null ? Map.of() : this.minCompatibleOdhVersionMap;
     }
     /**
      * @return Version of the os patch.
@@ -92,22 +93,22 @@ public final class GetBdsInstanceGetOsPatchResult {
      * @return Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os patches with some customizations. EMERGENT means os patches with some emergency fixes that should be prioritized.
      * 
      */
-    public String patchType() {
-        return this.patchType;
+    public Optional<String> patchType() {
+        return Optional.ofNullable(this.patchType);
     }
     /**
      * @return Released date of the OS patch.
      * 
      */
-    public String releaseDate() {
-        return this.releaseDate;
+    public Optional<String> releaseDate() {
+        return Optional.ofNullable(this.releaseDate);
     }
     /**
      * @return List of summaries of individual target packages.
      * 
      */
     public List<GetBdsInstanceGetOsPatchTargetPackage> targetPackages() {
-        return this.targetPackages;
+        return this.targetPackages == null ? List.of() : this.targetPackages;
     }
 
     public static Builder builder() {
@@ -121,13 +122,13 @@ public final class GetBdsInstanceGetOsPatchResult {
     public static final class Builder {
         private String bdsInstanceId;
         private @Nullable List<GetBdsInstanceGetOsPatchFilter> filters;
-        private String id;
-        private String minBdsVersion;
-        private Map<String,Object> minCompatibleOdhVersionMap;
+        private @Nullable String id;
+        private @Nullable String minBdsVersion;
+        private @Nullable Map<String,Object> minCompatibleOdhVersionMap;
         private String osPatchVersion;
-        private String patchType;
-        private String releaseDate;
-        private List<GetBdsInstanceGetOsPatchTargetPackage> targetPackages;
+        private @Nullable String patchType;
+        private @Nullable String releaseDate;
+        private @Nullable List<GetBdsInstanceGetOsPatchTargetPackage> targetPackages;
         public Builder() {}
         public Builder(GetBdsInstanceGetOsPatchResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -156,18 +157,18 @@ public final class GetBdsInstanceGetOsPatchResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder minBdsVersion(String minBdsVersion) {
-            this.minBdsVersion = Objects.requireNonNull(minBdsVersion);
+        public Builder minBdsVersion(@Nullable String minBdsVersion) {
+            this.minBdsVersion = minBdsVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder minCompatibleOdhVersionMap(Map<String,Object> minCompatibleOdhVersionMap) {
-            this.minCompatibleOdhVersionMap = Objects.requireNonNull(minCompatibleOdhVersionMap);
+        public Builder minCompatibleOdhVersionMap(@Nullable Map<String,Object> minCompatibleOdhVersionMap) {
+            this.minCompatibleOdhVersionMap = minCompatibleOdhVersionMap;
             return this;
         }
         @CustomType.Setter
@@ -176,18 +177,18 @@ public final class GetBdsInstanceGetOsPatchResult {
             return this;
         }
         @CustomType.Setter
-        public Builder patchType(String patchType) {
-            this.patchType = Objects.requireNonNull(patchType);
+        public Builder patchType(@Nullable String patchType) {
+            this.patchType = patchType;
             return this;
         }
         @CustomType.Setter
-        public Builder releaseDate(String releaseDate) {
-            this.releaseDate = Objects.requireNonNull(releaseDate);
+        public Builder releaseDate(@Nullable String releaseDate) {
+            this.releaseDate = releaseDate;
             return this;
         }
         @CustomType.Setter
-        public Builder targetPackages(List<GetBdsInstanceGetOsPatchTargetPackage> targetPackages) {
-            this.targetPackages = Objects.requireNonNull(targetPackages);
+        public Builder targetPackages(@Nullable List<GetBdsInstanceGetOsPatchTargetPackage> targetPackages) {
+            this.targetPackages = targetPackages;
             return this;
         }
         public Builder targetPackages(GetBdsInstanceGetOsPatchTargetPackage... targetPackages) {

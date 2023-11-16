@@ -43,22 +43,16 @@ class GetSchedulesResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The customer tenancy.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
     def filters(self) -> Optional[Sequence['outputs.GetSchedulesFilterResult']]:
-        """
-        The filter object for query usage.
-        """
         return pulumi.get(self, "filters")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -67,17 +61,11 @@ class GetSchedulesResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The unique name of the schedule created by the user.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="scheduleCollections")
-    def schedule_collections(self) -> Sequence['outputs.GetSchedulesScheduleCollectionResult']:
-        """
-        The list of schedule_collection.
-        """
+    def schedule_collections(self) -> Optional[Sequence['outputs.GetSchedulesScheduleCollectionResult']]:
         return pulumi.get(self, "schedule_collections")
 
 
@@ -99,24 +87,7 @@ def get_schedules(compartment_id: Optional[str] = None,
                   name: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSchedulesResult:
     """
-    This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the saved schedule list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_schedules = oci.MeteringComputation.get_schedules(compartment_id=var["compartment_id"],
-        name=var["schedule_name"])
-    ```
-
-
-    :param str compartment_id: The compartment ID in which to list resources.
-    :param Sequence[pulumi.InputType['GetSchedulesFilterArgs']] filters: The filter object for query usage.
-    :param str name: Query parameter for filtering by name
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -139,23 +110,6 @@ def get_schedules_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          name: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSchedulesResult]:
     """
-    This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
-
-    Returns the saved schedule list.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_schedules = oci.MeteringComputation.get_schedules(compartment_id=var["compartment_id"],
-        name=var["schedule_name"])
-    ```
-
-
-    :param str compartment_id: The compartment ID in which to list resources.
-    :param Sequence[pulumi.InputType['GetSchedulesFilterArgs']] filters: The filter object for query usage.
-    :param str name: Query parameter for filtering by name
+    Use this data source to access information about an existing resource.
     """
     ...

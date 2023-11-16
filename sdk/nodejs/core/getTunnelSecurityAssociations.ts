@@ -56,13 +56,13 @@ export interface GetTunnelSecurityAssociationsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly ipsecId: string;
     readonly tunnelId: string;
     /**
      * The list of tunnel_security_associations.
      */
-    readonly tunnelSecurityAssociations: outputs.Core.GetTunnelSecurityAssociationsTunnelSecurityAssociation[];
+    readonly tunnelSecurityAssociations?: outputs.Core.GetTunnelSecurityAssociationsTunnelSecurityAssociation[];
 }
 /**
  * This data source provides the list of Tunnel Security Associations in Oracle Cloud Infrastructure Core service.

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Container Instance Shape resource in Oracle Cloud Infrastructure Container Instances service.
@@ -65,7 +64,7 @@ type GetContainerInstanceShapeResult struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	CompartmentId      string  `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// List of shapes.
 	Items []GetContainerInstanceShapeItem `pulumi:"items"`
 }
@@ -110,12 +109,6 @@ func (o GetContainerInstanceShapeResultOutput) ToGetContainerInstanceShapeResult
 	return o
 }
 
-func (o GetContainerInstanceShapeResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetContainerInstanceShapeResult] {
-	return pulumix.Output[GetContainerInstanceShapeResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetContainerInstanceShapeResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetContainerInstanceShapeResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
@@ -125,8 +118,8 @@ func (o GetContainerInstanceShapeResultOutput) CompartmentId() pulumi.StringOutp
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetContainerInstanceShapeResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetContainerInstanceShapeResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetContainerInstanceShapeResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerInstanceShapeResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // List of shapes.

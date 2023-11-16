@@ -74,7 +74,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Network load balancer identifier, which can be renamed.
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// An array of IP addresses.
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
         /// </summary>
         [Output("isPreserveSourceDestination")]
-        public Output<bool> IsPreserveSourceDestination { get; private set; } = null!;
+        public Output<bool?> IsPreserveSourceDestination { get; private set; } = null!;
 
         /// <summary>
         /// Whether the network load balancer has a virtual cloud network-local (private) IP address.
@@ -112,13 +112,13 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// Example: `true`
         /// </summary>
         [Output("isPrivate")]
-        public Output<bool> IsPrivate { get; private set; } = null!;
+        public Output<bool?> IsPrivate { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
-        public Output<string> LifecycleDetails { get; private set; } = null!;
+        public Output<string?> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An array of network security groups [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the network load balancer.
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// (Updatable) IP version associated with the NLB.
         /// </summary>
         [Output("nlbIpVersion")]
-        public Output<string> NlbIpVersion { get; private set; } = null!;
+        public Output<string?> NlbIpVersion { get; private set; } = null!;
 
         /// <summary>
         /// An array of reserved Ips.
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// The current state of the network load balancer.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -166,19 +166,19 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
         /// </summary>
         [Output("timeCreated")]
-        public Output<string> TimeCreated { get; private set; } = null!;
+        public Output<string?> TimeCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
         /// </summary>
         [Output("timeUpdated")]
-        public Output<string> TimeUpdated { get; private set; } = null!;
+        public Output<string?> TimeUpdated { get; private set; } = null!;
 
 
         /// <summary>

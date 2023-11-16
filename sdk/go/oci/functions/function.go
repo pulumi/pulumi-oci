@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Function resource in Oracle Cloud Infrastructure Functions service.
@@ -81,7 +80,7 @@ type Function struct {
 	// The OCID of the application this function belongs to.
 	ApplicationId pulumi.StringOutput `pulumi:"applicationId"`
 	// The OCID of the compartment that contains the function.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
 	//
 	// The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
@@ -93,29 +92,29 @@ type Function struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-	Image pulumi.StringOutput `pulumi:"image"`
+	Image pulumi.StringPtrOutput `pulumi:"image"`
 	// (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-	ImageDigest pulumi.StringOutput `pulumi:"imageDigest"`
+	ImageDigest pulumi.StringPtrOutput `pulumi:"imageDigest"`
 	// The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
-	InvokeEndpoint pulumi.StringOutput `pulumi:"invokeEndpoint"`
+	InvokeEndpoint pulumi.StringPtrOutput `pulumi:"invokeEndpoint"`
 	// (Updatable) Maximum usable memory for the function (MiB).
 	MemoryInMbs pulumi.StringOutput `pulumi:"memoryInMbs"`
 	// (Updatable) Define the strategy for provisioned concurrency for the function.
-	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigOutput `pulumi:"provisionedConcurrencyConfig"`
+	ProvisionedConcurrencyConfig FunctionProvisionedConcurrencyConfigPtrOutput `pulumi:"provisionedConcurrencyConfig"`
 	// The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-	Shape pulumi.StringOutput `pulumi:"shape"`
+	Shape pulumi.StringPtrOutput `pulumi:"shape"`
 	// The source details for the Function. The function can be created from various sources.
-	SourceDetails FunctionSourceDetailsOutput `pulumi:"sourceDetails"`
+	SourceDetails FunctionSourceDetailsPtrOutput `pulumi:"sourceDetails"`
 	// The current state of the function.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) Timeout for executions of the function. Value in seconds.
-	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
+	TimeoutInSeconds pulumi.IntPtrOutput `pulumi:"timeoutInSeconds"`
 	// (Updatable) Define the tracing configuration for a function.
-	TraceConfig FunctionTraceConfigOutput `pulumi:"traceConfig"`
+	TraceConfig FunctionTraceConfigPtrOutput `pulumi:"traceConfig"`
 }
 
 // NewFunction registers a new resource with the given unique name, arguments, and options.
@@ -324,12 +323,6 @@ func (i *Function) ToFunctionOutputWithContext(ctx context.Context) FunctionOutp
 	return pulumi.ToOutputWithContext(ctx, i).(FunctionOutput)
 }
 
-func (i *Function) ToOutput(ctx context.Context) pulumix.Output[*Function] {
-	return pulumix.Output[*Function]{
-		OutputState: i.ToFunctionOutputWithContext(ctx).OutputState,
-	}
-}
-
 // FunctionArrayInput is an input type that accepts FunctionArray and FunctionArrayOutput values.
 // You can construct a concrete instance of `FunctionArrayInput` via:
 //
@@ -353,12 +346,6 @@ func (i FunctionArray) ToFunctionArrayOutput() FunctionArrayOutput {
 
 func (i FunctionArray) ToFunctionArrayOutputWithContext(ctx context.Context) FunctionArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(FunctionArrayOutput)
-}
-
-func (i FunctionArray) ToOutput(ctx context.Context) pulumix.Output[[]*Function] {
-	return pulumix.Output[[]*Function]{
-		OutputState: i.ToFunctionArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // FunctionMapInput is an input type that accepts FunctionMap and FunctionMapOutput values.
@@ -386,12 +373,6 @@ func (i FunctionMap) ToFunctionMapOutputWithContext(ctx context.Context) Functio
 	return pulumi.ToOutputWithContext(ctx, i).(FunctionMapOutput)
 }
 
-func (i FunctionMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Function] {
-	return pulumix.Output[map[string]*Function]{
-		OutputState: i.ToFunctionMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type FunctionOutput struct{ *pulumi.OutputState }
 
 func (FunctionOutput) ElementType() reflect.Type {
@@ -406,20 +387,14 @@ func (o FunctionOutput) ToFunctionOutputWithContext(ctx context.Context) Functio
 	return o
 }
 
-func (o FunctionOutput) ToOutput(ctx context.Context) pulumix.Output[*Function] {
-	return pulumix.Output[*Function]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCID of the application this function belongs to.
 func (o FunctionOutput) ApplicationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.ApplicationId }).(pulumi.StringOutput)
 }
 
 // The OCID of the compartment that contains the function.
-func (o FunctionOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o FunctionOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Function) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
@@ -445,18 +420,18 @@ func (o FunctionOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if imageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
-func (o FunctionOutput) Image() pulumi.StringOutput {
-	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.Image }).(pulumi.StringOutput)
+func (o FunctionOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Function) pulumi.StringPtrOutput { return v.Image }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. This field must be updated if image is updated. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
-func (o FunctionOutput) ImageDigest() pulumi.StringOutput {
-	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.ImageDigest }).(pulumi.StringOutput)
+func (o FunctionOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Function) pulumi.StringPtrOutput { return v.ImageDigest }).(pulumi.StringPtrOutput)
 }
 
 // The base https invoke URL to set on a client in order to invoke a function. This URL will never change over the lifetime of the function and can be cached.
-func (o FunctionOutput) InvokeEndpoint() pulumi.StringOutput {
-	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.InvokeEndpoint }).(pulumi.StringOutput)
+func (o FunctionOutput) InvokeEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Function) pulumi.StringPtrOutput { return v.InvokeEndpoint }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Maximum usable memory for the function (MiB).
@@ -465,43 +440,43 @@ func (o FunctionOutput) MemoryInMbs() pulumi.StringOutput {
 }
 
 // (Updatable) Define the strategy for provisioned concurrency for the function.
-func (o FunctionOutput) ProvisionedConcurrencyConfig() FunctionProvisionedConcurrencyConfigOutput {
-	return o.ApplyT(func(v *Function) FunctionProvisionedConcurrencyConfigOutput { return v.ProvisionedConcurrencyConfig }).(FunctionProvisionedConcurrencyConfigOutput)
+func (o FunctionOutput) ProvisionedConcurrencyConfig() FunctionProvisionedConcurrencyConfigPtrOutput {
+	return o.ApplyT(func(v *Function) FunctionProvisionedConcurrencyConfigPtrOutput { return v.ProvisionedConcurrencyConfig }).(FunctionProvisionedConcurrencyConfigPtrOutput)
 }
 
 // The processor shape (`GENERIC_X86`/`GENERIC_ARM`) on which to run functions in the application, extracted from the image manifest.
-func (o FunctionOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
+func (o FunctionOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Function) pulumi.StringPtrOutput { return v.Shape }).(pulumi.StringPtrOutput)
 }
 
 // The source details for the Function. The function can be created from various sources.
-func (o FunctionOutput) SourceDetails() FunctionSourceDetailsOutput {
-	return o.ApplyT(func(v *Function) FunctionSourceDetailsOutput { return v.SourceDetails }).(FunctionSourceDetailsOutput)
+func (o FunctionOutput) SourceDetails() FunctionSourceDetailsPtrOutput {
+	return o.ApplyT(func(v *Function) FunctionSourceDetailsPtrOutput { return v.SourceDetails }).(FunctionSourceDetailsPtrOutput)
 }
 
 // The current state of the function.
-func (o FunctionOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o FunctionOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Function) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The time the function was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-func (o FunctionOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o FunctionOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Function) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the function was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2018-09-12T22:47:12.613Z`
-func (o FunctionOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Function) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o FunctionOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Function) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Timeout for executions of the function. Value in seconds.
-func (o FunctionOutput) TimeoutInSeconds() pulumi.IntOutput {
-	return o.ApplyT(func(v *Function) pulumi.IntOutput { return v.TimeoutInSeconds }).(pulumi.IntOutput)
+func (o FunctionOutput) TimeoutInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Function) pulumi.IntPtrOutput { return v.TimeoutInSeconds }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Define the tracing configuration for a function.
-func (o FunctionOutput) TraceConfig() FunctionTraceConfigOutput {
-	return o.ApplyT(func(v *Function) FunctionTraceConfigOutput { return v.TraceConfig }).(FunctionTraceConfigOutput)
+func (o FunctionOutput) TraceConfig() FunctionTraceConfigPtrOutput {
+	return o.ApplyT(func(v *Function) FunctionTraceConfigPtrOutput { return v.TraceConfig }).(FunctionTraceConfigPtrOutput)
 }
 
 type FunctionArrayOutput struct{ *pulumi.OutputState }
@@ -516,12 +491,6 @@ func (o FunctionArrayOutput) ToFunctionArrayOutput() FunctionArrayOutput {
 
 func (o FunctionArrayOutput) ToFunctionArrayOutputWithContext(ctx context.Context) FunctionArrayOutput {
 	return o
-}
-
-func (o FunctionArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Function] {
-	return pulumix.Output[[]*Function]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FunctionArrayOutput) Index(i pulumi.IntInput) FunctionOutput {
@@ -542,12 +511,6 @@ func (o FunctionMapOutput) ToFunctionMapOutput() FunctionMapOutput {
 
 func (o FunctionMapOutput) ToFunctionMapOutputWithContext(ctx context.Context) FunctionMapOutput {
 	return o
-}
-
-func (o FunctionMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Function] {
-	return pulumix.Output[map[string]*Function]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o FunctionMapOutput) MapIndex(k pulumi.StringInput) FunctionOutput {

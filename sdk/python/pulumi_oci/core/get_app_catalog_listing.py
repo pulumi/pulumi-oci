@@ -52,31 +52,22 @@ class GetAppCatalogListingResult:
 
     @property
     @pulumi.getter(name="contactUrl")
-    def contact_url(self) -> str:
-        """
-        Listing's contact URL.
-        """
+    def contact_url(self) -> Optional[str]:
         return pulumi.get(self, "contact_url")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        Description of the listing.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -85,41 +76,26 @@ class GetAppCatalogListingResult:
     @property
     @pulumi.getter(name="listingId")
     def listing_id(self) -> str:
-        """
-        the region free ocid of the listing resource.
-        """
         return pulumi.get(self, "listing_id")
 
     @property
     @pulumi.getter(name="publisherLogoUrl")
-    def publisher_logo_url(self) -> str:
-        """
-        Publisher's logo URL.
-        """
+    def publisher_logo_url(self) -> Optional[str]:
         return pulumi.get(self, "publisher_logo_url")
 
     @property
     @pulumi.getter(name="publisherName")
-    def publisher_name(self) -> str:
-        """
-        The name of the publisher who published this listing.
-        """
+    def publisher_name(self) -> Optional[str]:
         return pulumi.get(self, "publisher_name")
 
     @property
     @pulumi.getter
-    def summary(self) -> str:
-        """
-        The short summary for the listing.
-        """
+    def summary(self) -> Optional[str]:
         return pulumi.get(self, "summary")
 
     @property
     @pulumi.getter(name="timePublished")
-    def time_published(self) -> str:
-        """
-        Date and time the listing was published, in [RFC3339](https://tools.ietf.org/html/rfc3339) format. Example: `2018-03-20T12:32:53.532Z`
-        """
+    def time_published(self) -> Optional[str]:
         return pulumi.get(self, "time_published")
 
 
@@ -143,21 +119,7 @@ class AwaitableGetAppCatalogListingResult(GetAppCatalogListingResult):
 def get_app_catalog_listing(listing_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAppCatalogListingResult:
     """
-    This data source provides details about a specific App Catalog Listing resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified listing.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app_catalog_listing = oci.Core.get_app_catalog_listing(listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
-    ```
-
-
-    :param str listing_id: The OCID of the listing.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['listingId'] = listing_id
@@ -180,20 +142,6 @@ def get_app_catalog_listing(listing_id: Optional[str] = None,
 def get_app_catalog_listing_output(listing_id: Optional[pulumi.Input[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetAppCatalogListingResult]:
     """
-    This data source provides details about a specific App Catalog Listing resource in Oracle Cloud Infrastructure Core service.
-
-    Gets the specified listing.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_app_catalog_listing = oci.Core.get_app_catalog_listing(listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
-    ```
-
-
-    :param str listing_id: The OCID of the listing.
+    Use this data source to access information about an existing resource.
     """
     ...

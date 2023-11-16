@@ -37,190 +37,190 @@ export interface GetExadataInfrastructureResult {
     /**
      * The requested number of additional storage servers activated for the Exadata infrastructure.
      */
-    readonly activatedStorageCount: number;
-    readonly activationFile: string;
+    readonly activatedStorageCount?: number;
+    readonly activationFile?: string;
     /**
      * The requested number of additional compute servers for the Exadata infrastructure.
      */
-    readonly additionalComputeCount: number;
+    readonly additionalComputeCount?: number;
     /**
      * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
      */
-    readonly additionalComputeSystemModel: string;
+    readonly additionalComputeSystemModel?: string;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      */
-    readonly additionalStorageCount: number;
+    readonly additionalStorageCount?: number;
     /**
      * The CIDR block for the Exadata administration network.
      */
-    readonly adminNetworkCidr: string;
+    readonly adminNetworkCidr?: string;
     /**
      * The name of the availability domain that the Exadata infrastructure is located in.
      */
-    readonly availabilityDomain: string;
+    readonly availabilityDomain?: string;
     /**
      * The IP address for the first control plane server.
      */
-    readonly cloudControlPlaneServer1: string;
+    readonly cloudControlPlaneServer1?: string;
     /**
      * The IP address for the second control plane server.
      */
-    readonly cloudControlPlaneServer2: string;
+    readonly cloudControlPlaneServer2?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The number of compute servers for the Exadata infrastructure.
      */
-    readonly computeCount: number;
+    readonly computeCount?: number;
     /**
      * The list of contacts for the Exadata infrastructure.
      */
-    readonly contacts: outputs.Database.GetExadataInfrastructureContact[];
+    readonly contacts?: outputs.Database.GetExadataInfrastructureContact[];
     /**
      * The corporate network proxy for access to the control plane network.
      */
-    readonly corporateProxy: string;
+    readonly corporateProxy?: string;
     /**
      * The number of enabled CPU cores.
      */
-    readonly cpusEnabled: number;
-    readonly createAsync: boolean;
+    readonly cpusEnabled?: number;
+    readonly createAsync?: boolean;
     /**
      * The CSI Number of the Exadata infrastructure.
      */
-    readonly csiNumber: string;
+    readonly csiNumber?: string;
     /**
      * Size, in terabytes, of the DATA disk group.
      */
-    readonly dataStorageSizeInTbs: number;
+    readonly dataStorageSizeInTbs?: number;
     /**
      * The local node storage allocated in GBs.
      */
-    readonly dbNodeStorageSizeInGbs: number;
+    readonly dbNodeStorageSizeInGbs?: number;
     /**
      * The software version of the database servers (dom0) in the Exadata infrastructure.
      */
-    readonly dbServerVersion: string;
+    readonly dbServerVersion?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The list of DNS server IP addresses. Maximum of 3 allowed.
      */
-    readonly dnsServers: string[];
+    readonly dnsServers?: string[];
     readonly exadataInfrastructureId: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The gateway for the control plane network.
      */
-    readonly gateway: string;
+    readonly gateway?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The CIDR block for the Exadata InfiniBand interconnect.
      */
-    readonly infiniBandNetworkCidr: string;
+    readonly infiniBandNetworkCidr?: string;
     /**
      * Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
      */
-    readonly isCpsOfflineReportEnabled: boolean;
+    readonly isCpsOfflineReportEnabled?: boolean;
     /**
      * Indicates if deployment is Multi-Rack or not.
      */
-    readonly isMultiRackDeployment: boolean;
+    readonly isMultiRackDeployment?: boolean;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
      */
-    readonly maintenanceSloStatus: string;
+    readonly maintenanceSloStatus?: string;
     /**
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    readonly maintenanceWindows: outputs.Database.GetExadataInfrastructureMaintenanceWindow[];
+    readonly maintenanceWindows?: outputs.Database.GetExadataInfrastructureMaintenanceWindow[];
     /**
      * The total number of CPU cores available.
      */
-    readonly maxCpuCount: number;
+    readonly maxCpuCount?: number;
     /**
      * The total available DATA disk group size.
      */
-    readonly maxDataStorageInTbs: number;
+    readonly maxDataStorageInTbs?: number;
     /**
      * The total local node storage available in GBs.
      */
-    readonly maxDbNodeStorageInGbs: number;
+    readonly maxDbNodeStorageInGbs?: number;
     /**
      * The total memory available in GBs.
      */
-    readonly maxMemoryInGbs: number;
+    readonly maxMemoryInGbs?: number;
     /**
      * The memory allocated in GBs.
      */
-    readonly memorySizeInGbs: number;
+    readonly memorySizeInGbs?: number;
     /**
      * The monthly software version of the database servers (dom0) in the Exadata infrastructure.
      */
-    readonly monthlyDbServerVersion: string;
+    readonly monthlyDbServerVersion?: string;
     /**
      * The base64 encoded Multi-Rack configuration json file.
      */
-    readonly multiRackConfigurationFile: string;
+    readonly multiRackConfigurationFile?: string;
     /**
      * The netmask for the control plane network.
      */
-    readonly netmask: string;
+    readonly netmask?: string;
     /**
      * Details of bonding mode for Client and Backup and DR networks of an Exadata infrastructure.
      */
-    readonly networkBondingModeDetails: outputs.Database.GetExadataInfrastructureNetworkBondingModeDetail[];
+    readonly networkBondingModeDetails?: outputs.Database.GetExadataInfrastructureNetworkBondingModeDetail[];
     /**
      * The list of NTP server IP addresses. Maximum of 3 allowed.
      */
-    readonly ntpServers: string[];
+    readonly ntpServers?: string[];
     /**
      * The serial number for the Exadata infrastructure.
      */
-    readonly rackSerialNumber: string;
+    readonly rackSerialNumber?: string;
     /**
      * The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
      */
-    readonly shape: string;
+    readonly shape?: string;
     /**
      * The current lifecycle state of the Exadata infrastructure.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The number of Exadata storage servers for the Exadata infrastructure.
      */
-    readonly storageCount: number;
+    readonly storageCount?: number;
     /**
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      */
-    readonly storageServerVersion: string;
+    readonly storageServerVersion?: string;
     /**
      * The date and time the Exadata infrastructure was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */
-    readonly timeZone: string;
+    readonly timeZone?: string;
 }
 /**
  * This data source provides details about a specific Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.

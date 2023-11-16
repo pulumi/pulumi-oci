@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
         /// </summary>
-        public readonly string AgentId;
+        public readonly string? AgentId;
         /// <summary>
         /// The connection details required to connect to an external DB system component.
         /// </summary>
@@ -24,21 +24,21 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The type of connector.
         /// </summary>
-        public readonly string ConnectorType;
+        public readonly string? ConnectorType;
         /// <summary>
         /// The user-friendly name for the DB system. The name does not have to be unique.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
 
         [OutputConstructor]
         private GetExternalDbSystemDiscoveryPatchOperationValueConnectorResult(
-            string agentId,
+            string? agentId,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoResult> connectionInfos,
 
-            string connectorType,
+            string? connectorType,
 
-            string displayName)
+            string? displayName)
         {
             AgentId = agentId;
             ConnectionInfos = connectionInfos;

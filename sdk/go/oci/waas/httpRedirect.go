@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -76,19 +75,19 @@ type HttpRedirect struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The domain from which traffic will be redirected.
 	Domain pulumi.StringOutput `pulumi:"domain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-	ResponseCode pulumi.IntOutput `pulumi:"responseCode"`
+	ResponseCode pulumi.IntPtrOutput `pulumi:"responseCode"`
 	// The current lifecycle state of the HTTP Redirect.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) The redirect target object including all the redirect data.
 	Target HttpRedirectTargetOutput `pulumi:"target"`
 	// The date and time the policy was created, expressed in RFC 3339 timestamp format.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 }
 
 // NewHttpRedirect registers a new resource with the given unique name, arguments, and options.
@@ -233,12 +232,6 @@ func (i *HttpRedirect) ToHttpRedirectOutputWithContext(ctx context.Context) Http
 	return pulumi.ToOutputWithContext(ctx, i).(HttpRedirectOutput)
 }
 
-func (i *HttpRedirect) ToOutput(ctx context.Context) pulumix.Output[*HttpRedirect] {
-	return pulumix.Output[*HttpRedirect]{
-		OutputState: i.ToHttpRedirectOutputWithContext(ctx).OutputState,
-	}
-}
-
 // HttpRedirectArrayInput is an input type that accepts HttpRedirectArray and HttpRedirectArrayOutput values.
 // You can construct a concrete instance of `HttpRedirectArrayInput` via:
 //
@@ -262,12 +255,6 @@ func (i HttpRedirectArray) ToHttpRedirectArrayOutput() HttpRedirectArrayOutput {
 
 func (i HttpRedirectArray) ToHttpRedirectArrayOutputWithContext(ctx context.Context) HttpRedirectArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(HttpRedirectArrayOutput)
-}
-
-func (i HttpRedirectArray) ToOutput(ctx context.Context) pulumix.Output[[]*HttpRedirect] {
-	return pulumix.Output[[]*HttpRedirect]{
-		OutputState: i.ToHttpRedirectArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // HttpRedirectMapInput is an input type that accepts HttpRedirectMap and HttpRedirectMapOutput values.
@@ -295,12 +282,6 @@ func (i HttpRedirectMap) ToHttpRedirectMapOutputWithContext(ctx context.Context)
 	return pulumi.ToOutputWithContext(ctx, i).(HttpRedirectMapOutput)
 }
 
-func (i HttpRedirectMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*HttpRedirect] {
-	return pulumix.Output[map[string]*HttpRedirect]{
-		OutputState: i.ToHttpRedirectMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type HttpRedirectOutput struct{ *pulumi.OutputState }
 
 func (HttpRedirectOutput) ElementType() reflect.Type {
@@ -315,12 +296,6 @@ func (o HttpRedirectOutput) ToHttpRedirectOutputWithContext(ctx context.Context)
 	return o
 }
 
-func (o HttpRedirectOutput) ToOutput(ctx context.Context) pulumix.Output[*HttpRedirect] {
-	return pulumix.Output[*HttpRedirect]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
 func (o HttpRedirectOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *HttpRedirect) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -332,8 +307,8 @@ func (o HttpRedirectOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
-func (o HttpRedirectOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpRedirect) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o HttpRedirectOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpRedirect) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The domain from which traffic will be redirected.
@@ -347,13 +322,13 @@ func (o HttpRedirectOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // (Updatable) The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
-func (o HttpRedirectOutput) ResponseCode() pulumi.IntOutput {
-	return o.ApplyT(func(v *HttpRedirect) pulumi.IntOutput { return v.ResponseCode }).(pulumi.IntOutput)
+func (o HttpRedirectOutput) ResponseCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *HttpRedirect) pulumi.IntPtrOutput { return v.ResponseCode }).(pulumi.IntPtrOutput)
 }
 
 // The current lifecycle state of the HTTP Redirect.
-func (o HttpRedirectOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpRedirect) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o HttpRedirectOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpRedirect) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The redirect target object including all the redirect data.
@@ -362,8 +337,8 @@ func (o HttpRedirectOutput) Target() HttpRedirectTargetOutput {
 }
 
 // The date and time the policy was created, expressed in RFC 3339 timestamp format.
-func (o HttpRedirectOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *HttpRedirect) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o HttpRedirectOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *HttpRedirect) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 type HttpRedirectArrayOutput struct{ *pulumi.OutputState }
@@ -378,12 +353,6 @@ func (o HttpRedirectArrayOutput) ToHttpRedirectArrayOutput() HttpRedirectArrayOu
 
 func (o HttpRedirectArrayOutput) ToHttpRedirectArrayOutputWithContext(ctx context.Context) HttpRedirectArrayOutput {
 	return o
-}
-
-func (o HttpRedirectArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*HttpRedirect] {
-	return pulumix.Output[[]*HttpRedirect]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o HttpRedirectArrayOutput) Index(i pulumi.IntInput) HttpRedirectOutput {
@@ -404,12 +373,6 @@ func (o HttpRedirectMapOutput) ToHttpRedirectMapOutput() HttpRedirectMapOutput {
 
 func (o HttpRedirectMapOutput) ToHttpRedirectMapOutputWithContext(ctx context.Context) HttpRedirectMapOutput {
 	return o
-}
-
-func (o HttpRedirectMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*HttpRedirect] {
-	return pulumix.Output[map[string]*HttpRedirect]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o HttpRedirectMapOutput) MapIndex(k pulumi.StringInput) HttpRedirectOutput {

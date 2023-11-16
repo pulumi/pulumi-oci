@@ -47,44 +47,44 @@ export interface GetKeyStoreResult {
     /**
      * List of databases associated with the key store.
      */
-    readonly associatedDatabases: outputs.Database.GetKeyStoreAssociatedDatabase[];
+    readonly associatedDatabases?: outputs.Database.GetKeyStoreAssociatedDatabase[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * The user-friendly name for the key store. The name does not need to be unique.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly keyStoreId: string;
     /**
      * Additional information about the current lifecycle state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The current state of the key store.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The date and time that the key store was created.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * Key store type details.
      */
-    readonly typeDetails: outputs.Database.GetKeyStoreTypeDetail[];
+    readonly typeDetails?: outputs.Database.GetKeyStoreTypeDetail[];
 }
 /**
  * This data source provides details about a specific Key Store resource in Oracle Cloud Infrastructure Database service.

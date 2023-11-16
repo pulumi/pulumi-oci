@@ -19,168 +19,122 @@ __all__ = [
 @pulumi.output_type
 class GetBillingScheduleBillingScheduleResult(dict):
     def __init__(__self__, *,
-                 amount: str,
-                 ar_customer_transaction_id: str,
-                 ar_invoice_number: str,
-                 billing_frequency: str,
-                 invoice_status: str,
-                 net_unit_price: str,
-                 order_number: str,
-                 products: Sequence['outputs.GetBillingScheduleBillingScheduleProductResult'],
-                 quantity: str,
-                 time_end: str,
-                 time_invoicing: str,
-                 time_start: str):
-        """
-        :param str amount: Billing schedule line net amount
-        :param str ar_customer_transaction_id: Indicates the associated AR Customer transaction id a unique identifier existing on AR.
-        :param str ar_invoice_number: Indicates the associated AR Invoice Number
-        :param str billing_frequency: Billing frequency
-        :param str invoice_status: Billing schedule invoice status
-        :param str net_unit_price: Billing schedule net unit price
-        :param str order_number: Order number associated with the Subscribed Service
-        :param Sequence['GetBillingScheduleBillingScheduleProductArgs'] products: Product description
-        :param str quantity: Billing schedule quantity
-        :param str time_end: Billing schedule end date
-        :param str time_invoicing: Billing schedule invoicing date
-        :param str time_start: Billing schedule start date
-        """
-        pulumi.set(__self__, "amount", amount)
-        pulumi.set(__self__, "ar_customer_transaction_id", ar_customer_transaction_id)
-        pulumi.set(__self__, "ar_invoice_number", ar_invoice_number)
-        pulumi.set(__self__, "billing_frequency", billing_frequency)
-        pulumi.set(__self__, "invoice_status", invoice_status)
-        pulumi.set(__self__, "net_unit_price", net_unit_price)
-        pulumi.set(__self__, "order_number", order_number)
-        pulumi.set(__self__, "products", products)
-        pulumi.set(__self__, "quantity", quantity)
-        pulumi.set(__self__, "time_end", time_end)
-        pulumi.set(__self__, "time_invoicing", time_invoicing)
-        pulumi.set(__self__, "time_start", time_start)
+                 amount: Optional[str] = None,
+                 ar_customer_transaction_id: Optional[str] = None,
+                 ar_invoice_number: Optional[str] = None,
+                 billing_frequency: Optional[str] = None,
+                 invoice_status: Optional[str] = None,
+                 net_unit_price: Optional[str] = None,
+                 order_number: Optional[str] = None,
+                 products: Optional[Sequence['outputs.GetBillingScheduleBillingScheduleProductResult']] = None,
+                 quantity: Optional[str] = None,
+                 time_end: Optional[str] = None,
+                 time_invoicing: Optional[str] = None,
+                 time_start: Optional[str] = None):
+        if amount is not None:
+            pulumi.set(__self__, "amount", amount)
+        if ar_customer_transaction_id is not None:
+            pulumi.set(__self__, "ar_customer_transaction_id", ar_customer_transaction_id)
+        if ar_invoice_number is not None:
+            pulumi.set(__self__, "ar_invoice_number", ar_invoice_number)
+        if billing_frequency is not None:
+            pulumi.set(__self__, "billing_frequency", billing_frequency)
+        if invoice_status is not None:
+            pulumi.set(__self__, "invoice_status", invoice_status)
+        if net_unit_price is not None:
+            pulumi.set(__self__, "net_unit_price", net_unit_price)
+        if order_number is not None:
+            pulumi.set(__self__, "order_number", order_number)
+        if products is not None:
+            pulumi.set(__self__, "products", products)
+        if quantity is not None:
+            pulumi.set(__self__, "quantity", quantity)
+        if time_end is not None:
+            pulumi.set(__self__, "time_end", time_end)
+        if time_invoicing is not None:
+            pulumi.set(__self__, "time_invoicing", time_invoicing)
+        if time_start is not None:
+            pulumi.set(__self__, "time_start", time_start)
 
     @property
     @pulumi.getter
-    def amount(self) -> str:
-        """
-        Billing schedule line net amount
-        """
+    def amount(self) -> Optional[str]:
         return pulumi.get(self, "amount")
 
     @property
     @pulumi.getter(name="arCustomerTransactionId")
-    def ar_customer_transaction_id(self) -> str:
-        """
-        Indicates the associated AR Customer transaction id a unique identifier existing on AR.
-        """
+    def ar_customer_transaction_id(self) -> Optional[str]:
         return pulumi.get(self, "ar_customer_transaction_id")
 
     @property
     @pulumi.getter(name="arInvoiceNumber")
-    def ar_invoice_number(self) -> str:
-        """
-        Indicates the associated AR Invoice Number
-        """
+    def ar_invoice_number(self) -> Optional[str]:
         return pulumi.get(self, "ar_invoice_number")
 
     @property
     @pulumi.getter(name="billingFrequency")
-    def billing_frequency(self) -> str:
-        """
-        Billing frequency
-        """
+    def billing_frequency(self) -> Optional[str]:
         return pulumi.get(self, "billing_frequency")
 
     @property
     @pulumi.getter(name="invoiceStatus")
-    def invoice_status(self) -> str:
-        """
-        Billing schedule invoice status
-        """
+    def invoice_status(self) -> Optional[str]:
         return pulumi.get(self, "invoice_status")
 
     @property
     @pulumi.getter(name="netUnitPrice")
-    def net_unit_price(self) -> str:
-        """
-        Billing schedule net unit price
-        """
+    def net_unit_price(self) -> Optional[str]:
         return pulumi.get(self, "net_unit_price")
 
     @property
     @pulumi.getter(name="orderNumber")
-    def order_number(self) -> str:
-        """
-        Order number associated with the Subscribed Service
-        """
+    def order_number(self) -> Optional[str]:
         return pulumi.get(self, "order_number")
 
     @property
     @pulumi.getter
-    def products(self) -> Sequence['outputs.GetBillingScheduleBillingScheduleProductResult']:
-        """
-        Product description
-        """
+    def products(self) -> Optional[Sequence['outputs.GetBillingScheduleBillingScheduleProductResult']]:
         return pulumi.get(self, "products")
 
     @property
     @pulumi.getter
-    def quantity(self) -> str:
-        """
-        Billing schedule quantity
-        """
+    def quantity(self) -> Optional[str]:
         return pulumi.get(self, "quantity")
 
     @property
     @pulumi.getter(name="timeEnd")
-    def time_end(self) -> str:
-        """
-        Billing schedule end date
-        """
+    def time_end(self) -> Optional[str]:
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeInvoicing")
-    def time_invoicing(self) -> str:
-        """
-        Billing schedule invoicing date
-        """
+    def time_invoicing(self) -> Optional[str]:
         return pulumi.get(self, "time_invoicing")
 
     @property
     @pulumi.getter(name="timeStart")
-    def time_start(self) -> str:
-        """
-        Billing schedule start date
-        """
+    def time_start(self) -> Optional[str]:
         return pulumi.get(self, "time_start")
 
 
 @pulumi.output_type
 class GetBillingScheduleBillingScheduleProductResult(dict):
     def __init__(__self__, *,
-                 name: str,
-                 part_number: str):
-        """
-        :param str name: Product name
-        :param str part_number: Indicates the associated AR Invoice Number
-        """
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "part_number", part_number)
+                 name: Optional[str] = None,
+                 part_number: Optional[str] = None):
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if part_number is not None:
+            pulumi.set(__self__, "part_number", part_number)
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Product name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="partNumber")
-    def part_number(self) -> str:
-        """
-        Indicates the associated AR Invoice Number
-        """
+    def part_number(self) -> Optional[str]:
         return pulumi.get(self, "part_number")
 
 
@@ -190,9 +144,6 @@ class GetBillingScheduleFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Product name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -201,9 +152,6 @@ class GetBillingScheduleFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Product name
-        """
         return pulumi.get(self, "name")
 
     @property

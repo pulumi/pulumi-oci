@@ -8,6 +8,8 @@ import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceStorageEncryptionKeyInfoI
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNamespaceStorageEncryptionKeyInfoResult {
@@ -15,12 +17,12 @@ public final class GetNamespaceStorageEncryptionKeyInfoResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return This is an array of encryption key info. There are at most 2 items in the list.
      * 
      */
-    private List<GetNamespaceStorageEncryptionKeyInfoItem> items;
+    private @Nullable List<GetNamespaceStorageEncryptionKeyInfoItem> items;
     private String namespace;
 
     private GetNamespaceStorageEncryptionKeyInfoResult() {}
@@ -28,15 +30,15 @@ public final class GetNamespaceStorageEncryptionKeyInfoResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return This is an array of encryption key info. There are at most 2 items in the list.
      * 
      */
     public List<GetNamespaceStorageEncryptionKeyInfoItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
     public String namespace() {
         return this.namespace;
@@ -51,8 +53,8 @@ public final class GetNamespaceStorageEncryptionKeyInfoResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private List<GetNamespaceStorageEncryptionKeyInfoItem> items;
+        private @Nullable String id;
+        private @Nullable List<GetNamespaceStorageEncryptionKeyInfoItem> items;
         private String namespace;
         public Builder() {}
         public Builder(GetNamespaceStorageEncryptionKeyInfoResult defaults) {
@@ -63,13 +65,13 @@ public final class GetNamespaceStorageEncryptionKeyInfoResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder items(List<GetNamespaceStorageEncryptionKeyInfoItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetNamespaceStorageEncryptionKeyInfoItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetNamespaceStorageEncryptionKeyInfoItem... items) {

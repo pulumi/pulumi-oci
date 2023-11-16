@@ -17,24 +17,12 @@ class OperationsInsightsWarehouseRotateWarehouseWalletArgs:
                  operations_insights_warehouse_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a OperationsInsightsWarehouseRotateWarehouseWallet resource.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
 
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> pulumi.Input[str]:
-        """
-        Unique Operations Insights Warehouse identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @operations_insights_warehouse_id.setter
@@ -48,11 +36,6 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
                  operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OperationsInsightsWarehouseRotateWarehouseWallet resources.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if operations_insights_warehouse_id is not None:
             pulumi.set(__self__, "operations_insights_warehouse_id", operations_insights_warehouse_id)
@@ -60,13 +43,6 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        Unique Operations Insights Warehouse identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
     @operations_insights_warehouse_id.setter
@@ -82,34 +58,9 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
                  operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Operations Insights Warehouse Rotate Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
-
-        Rotate the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_operations_insights_warehouse_rotate_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
-        ```
-
-        ## Import
-
-        OperationsInsightsWarehouseRotateWarehouseWallet can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet test_operations_insights_warehouse_rotate_warehouse_wallet "id"
-        ```
-
+        Create a OperationsInsightsWarehouseRotateWarehouseWallet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -118,27 +69,7 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
                  args: OperationsInsightsWarehouseRotateWarehouseWalletArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Operations Insights Warehouse Rotate Warehouse Wallet resource in Oracle Cloud Infrastructure Opsi service.
-
-        Rotate the ADW wallet for Operations Insights Warehouse using which the Hub data is exposed.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_operations_insights_warehouse_rotate_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
-        ```
-
-        ## Import
-
-        OperationsInsightsWarehouseRotateWarehouseWallet can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet test_operations_insights_warehouse_rotate_warehouse_wallet "id"
-        ```
-
+        Create a OperationsInsightsWarehouseRotateWarehouseWallet resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param OperationsInsightsWarehouseRotateWarehouseWalletArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -185,11 +116,6 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -201,12 +127,5 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
     @property
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> pulumi.Output[str]:
-        """
-        Unique Operations Insights Warehouse identifier
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "operations_insights_warehouse_id")
 

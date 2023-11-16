@@ -68,11 +68,11 @@ export interface GetMaskingPolicyMaskingObjectsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of masking_object_collection.
      */
-    readonly maskingObjectCollections: outputs.DataSafe.GetMaskingPolicyMaskingObjectsMaskingObjectCollection[];
+    readonly maskingObjectCollections?: outputs.DataSafe.GetMaskingPolicyMaskingObjectsMaskingObjectCollection[];
     readonly maskingPolicyId: string;
     /**
      * The type of the database object that contains the masking column.

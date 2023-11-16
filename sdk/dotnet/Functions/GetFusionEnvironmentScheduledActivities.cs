@@ -205,7 +205,7 @@ namespace Pulumi.Oci.Functions
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// run cadence.
         /// </summary>
@@ -229,7 +229,7 @@ namespace Pulumi.Oci.Functions
 
             string fusionEnvironmentId,
 
-            string id,
+            string? id,
 
             string? runCycle,
 

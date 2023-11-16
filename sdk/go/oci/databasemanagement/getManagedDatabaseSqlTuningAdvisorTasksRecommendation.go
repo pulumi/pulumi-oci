@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Recommendation resource in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +70,7 @@ type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs struct {
 type GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult struct {
 	ExecutionId string `pulumi:"executionId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// A list of SQL Tuning Advisor recommendations.
 	Items             []GetManagedDatabaseSqlTuningAdvisorTasksRecommendationItem `pulumi:"items"`
 	ManagedDatabaseId string                                                      `pulumi:"managedDatabaseId"`
@@ -124,19 +123,13 @@ func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResultOutput) ToGet
 	return o
 }
 
-func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult] {
-	return pulumix.Output[GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResultOutput) ExecutionId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult) string { return v.ExecutionId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetManagedDatabaseSqlTuningAdvisorTasksRecommendationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // A list of SQL Tuning Advisor recommendations.

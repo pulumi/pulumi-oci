@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Em Warehouse resource in Oracle Cloud Infrastructure Em Warehouse service.
@@ -69,34 +68,34 @@ type EmWarehouse struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// EmWarehouse Identifier
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) EMBridge Identifier
 	EmBridgeId pulumi.StringOutput `pulumi:"emBridgeId"`
 	// Type of the EmWarehouse.
-	EmWarehouseType pulumi.StringOutput `pulumi:"emWarehouseType"`
+	EmWarehouseType pulumi.StringPtrOutput `pulumi:"emWarehouseType"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Data Flow Run Status Message
-	LatestEtlRunMessage pulumi.StringOutput `pulumi:"latestEtlRunMessage"`
+	LatestEtlRunMessage pulumi.StringPtrOutput `pulumi:"latestEtlRunMessage"`
 	// Data Flow Run Status
-	LatestEtlRunStatus pulumi.StringOutput `pulumi:"latestEtlRunStatus"`
+	LatestEtlRunStatus pulumi.StringPtrOutput `pulumi:"latestEtlRunStatus"`
 	// Data Flow Run Total Time
-	LatestEtlRunTime pulumi.StringOutput `pulumi:"latestEtlRunTime"`
+	LatestEtlRunTime pulumi.StringPtrOutput `pulumi:"latestEtlRunTime"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// operations Insights Warehouse Identifier
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OperationsInsightsWarehouseId pulumi.StringOutput `pulumi:"operationsInsightsWarehouseId"`
 	// The current state of the EmWarehouse.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the the EmWarehouse was created. An RFC3339 formatted datetime string
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The time the EmWarehouse was updated. An RFC3339 formatted datetime string
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewEmWarehouse registers a new resource with the given unique name, arguments, and options.
@@ -273,12 +272,6 @@ func (i *EmWarehouse) ToEmWarehouseOutputWithContext(ctx context.Context) EmWare
 	return pulumi.ToOutputWithContext(ctx, i).(EmWarehouseOutput)
 }
 
-func (i *EmWarehouse) ToOutput(ctx context.Context) pulumix.Output[*EmWarehouse] {
-	return pulumix.Output[*EmWarehouse]{
-		OutputState: i.ToEmWarehouseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // EmWarehouseArrayInput is an input type that accepts EmWarehouseArray and EmWarehouseArrayOutput values.
 // You can construct a concrete instance of `EmWarehouseArrayInput` via:
 //
@@ -302,12 +295,6 @@ func (i EmWarehouseArray) ToEmWarehouseArrayOutput() EmWarehouseArrayOutput {
 
 func (i EmWarehouseArray) ToEmWarehouseArrayOutputWithContext(ctx context.Context) EmWarehouseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(EmWarehouseArrayOutput)
-}
-
-func (i EmWarehouseArray) ToOutput(ctx context.Context) pulumix.Output[[]*EmWarehouse] {
-	return pulumix.Output[[]*EmWarehouse]{
-		OutputState: i.ToEmWarehouseArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // EmWarehouseMapInput is an input type that accepts EmWarehouseMap and EmWarehouseMapOutput values.
@@ -335,12 +322,6 @@ func (i EmWarehouseMap) ToEmWarehouseMapOutputWithContext(ctx context.Context) E
 	return pulumi.ToOutputWithContext(ctx, i).(EmWarehouseMapOutput)
 }
 
-func (i EmWarehouseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*EmWarehouse] {
-	return pulumix.Output[map[string]*EmWarehouse]{
-		OutputState: i.ToEmWarehouseMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type EmWarehouseOutput struct{ *pulumi.OutputState }
 
 func (EmWarehouseOutput) ElementType() reflect.Type {
@@ -355,12 +336,6 @@ func (o EmWarehouseOutput) ToEmWarehouseOutputWithContext(ctx context.Context) E
 	return o
 }
 
-func (o EmWarehouseOutput) ToOutput(ctx context.Context) pulumix.Output[*EmWarehouse] {
-	return pulumix.Output[*EmWarehouse]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) Compartment Identifier
 func (o EmWarehouseOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *EmWarehouse) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -372,8 +347,8 @@ func (o EmWarehouseOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // EmWarehouse Identifier
-func (o EmWarehouseOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmWarehouse) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o EmWarehouseOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmWarehouse) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) EMBridge Identifier
@@ -382,8 +357,8 @@ func (o EmWarehouseOutput) EmBridgeId() pulumi.StringOutput {
 }
 
 // Type of the EmWarehouse.
-func (o EmWarehouseOutput) EmWarehouseType() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmWarehouse) pulumi.StringOutput { return v.EmWarehouseType }).(pulumi.StringOutput)
+func (o EmWarehouseOutput) EmWarehouseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmWarehouse) pulumi.StringPtrOutput { return v.EmWarehouseType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -392,23 +367,23 @@ func (o EmWarehouseOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Data Flow Run Status Message
-func (o EmWarehouseOutput) LatestEtlRunMessage() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmWarehouse) pulumi.StringOutput { return v.LatestEtlRunMessage }).(pulumi.StringOutput)
+func (o EmWarehouseOutput) LatestEtlRunMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmWarehouse) pulumi.StringPtrOutput { return v.LatestEtlRunMessage }).(pulumi.StringPtrOutput)
 }
 
 // Data Flow Run Status
-func (o EmWarehouseOutput) LatestEtlRunStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmWarehouse) pulumi.StringOutput { return v.LatestEtlRunStatus }).(pulumi.StringOutput)
+func (o EmWarehouseOutput) LatestEtlRunStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmWarehouse) pulumi.StringPtrOutput { return v.LatestEtlRunStatus }).(pulumi.StringPtrOutput)
 }
 
 // Data Flow Run Total Time
-func (o EmWarehouseOutput) LatestEtlRunTime() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmWarehouse) pulumi.StringOutput { return v.LatestEtlRunTime }).(pulumi.StringOutput)
+func (o EmWarehouseOutput) LatestEtlRunTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmWarehouse) pulumi.StringPtrOutput { return v.LatestEtlRunTime }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o EmWarehouseOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmWarehouse) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o EmWarehouseOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmWarehouse) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // operations Insights Warehouse Identifier
@@ -420,8 +395,8 @@ func (o EmWarehouseOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
 }
 
 // The current state of the EmWarehouse.
-func (o EmWarehouseOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmWarehouse) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o EmWarehouseOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmWarehouse) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -430,13 +405,13 @@ func (o EmWarehouseOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The time the the EmWarehouse was created. An RFC3339 formatted datetime string
-func (o EmWarehouseOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmWarehouse) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o EmWarehouseOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmWarehouse) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The time the EmWarehouse was updated. An RFC3339 formatted datetime string
-func (o EmWarehouseOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *EmWarehouse) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o EmWarehouseOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *EmWarehouse) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type EmWarehouseArrayOutput struct{ *pulumi.OutputState }
@@ -451,12 +426,6 @@ func (o EmWarehouseArrayOutput) ToEmWarehouseArrayOutput() EmWarehouseArrayOutpu
 
 func (o EmWarehouseArrayOutput) ToEmWarehouseArrayOutputWithContext(ctx context.Context) EmWarehouseArrayOutput {
 	return o
-}
-
-func (o EmWarehouseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*EmWarehouse] {
-	return pulumix.Output[[]*EmWarehouse]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EmWarehouseArrayOutput) Index(i pulumi.IntInput) EmWarehouseOutput {
@@ -477,12 +446,6 @@ func (o EmWarehouseMapOutput) ToEmWarehouseMapOutput() EmWarehouseMapOutput {
 
 func (o EmWarehouseMapOutput) ToEmWarehouseMapOutputWithContext(ctx context.Context) EmWarehouseMapOutput {
 	return o
-}
-
-func (o EmWarehouseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*EmWarehouse] {
-	return pulumix.Output[map[string]*EmWarehouse]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o EmWarehouseMapOutput) MapIndex(k pulumi.StringInput) EmWarehouseOutput {

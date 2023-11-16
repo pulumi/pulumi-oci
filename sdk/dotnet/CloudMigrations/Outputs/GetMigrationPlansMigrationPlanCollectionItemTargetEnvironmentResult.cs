@@ -16,59 +16,59 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// Availability Domain of the VM configuration.
         /// </summary>
-        public readonly string AvailabilityDomain;
+        public readonly string? AvailabilityDomain;
         /// <summary>
         /// OCID of the dedicated VM configuration host.
         /// </summary>
-        public readonly string DedicatedVmHost;
+        public readonly string? DedicatedVmHost;
         /// <summary>
         /// Fault domain of the VM configuration.
         /// </summary>
-        public readonly string FaultDomain;
+        public readonly string? FaultDomain;
         /// <summary>
         /// Microsoft license for the VM configuration.
         /// </summary>
-        public readonly string MsLicense;
+        public readonly string? MsLicense;
         /// <summary>
         /// Preferred VM shape type provided by the customer.
         /// </summary>
-        public readonly string PreferredShapeType;
+        public readonly string? PreferredShapeType;
         /// <summary>
         /// OCID of the VM configuration subnet.
         /// </summary>
-        public readonly string Subnet;
+        public readonly string? Subnet;
         /// <summary>
         /// Target compartment identifier
         /// </summary>
-        public readonly string TargetCompartmentId;
+        public readonly string? TargetCompartmentId;
         /// <summary>
         /// The type of target environment.
         /// </summary>
-        public readonly string TargetEnvironmentType;
+        public readonly string? TargetEnvironmentType;
         /// <summary>
         /// OCID of the VM configuration VCN.
         /// </summary>
-        public readonly string Vcn;
+        public readonly string? Vcn;
 
         [OutputConstructor]
         private GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentResult(
-            string availabilityDomain,
+            string? availabilityDomain,
 
-            string dedicatedVmHost,
+            string? dedicatedVmHost,
 
-            string faultDomain,
+            string? faultDomain,
 
-            string msLicense,
+            string? msLicense,
 
-            string preferredShapeType,
+            string? preferredShapeType,
 
-            string subnet,
+            string? subnet,
 
-            string targetCompartmentId,
+            string? targetCompartmentId,
 
-            string targetEnvironmentType,
+            string? targetEnvironmentType,
 
-            string vcn)
+            string? vcn)
         {
             AvailabilityDomain = availabilityDomain;
             DedicatedVmHost = dedicatedVmHost;

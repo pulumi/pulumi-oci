@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 func GetVirtualNetworks(ctx *pulumi.Context, args *GetVirtualNetworksArgs, opts ...pulumi.InvokeOption) (*GetVirtualNetworksResult, error) {
@@ -36,7 +35,7 @@ type GetVirtualNetworksResult struct {
 	DisplayName   *string                    `pulumi:"displayName"`
 	Filters       []GetVirtualNetworksFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id              string                             `pulumi:"id"`
+	Id              *string                            `pulumi:"id"`
 	State           *string                            `pulumi:"state"`
 	VirtualNetworks []GetVirtualNetworksVirtualNetwork `pulumi:"virtualNetworks"`
 }
@@ -81,12 +80,6 @@ func (o GetVirtualNetworksResultOutput) ToGetVirtualNetworksResultOutputWithCont
 	return o
 }
 
-func (o GetVirtualNetworksResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVirtualNetworksResult] {
-	return pulumix.Output[GetVirtualNetworksResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVirtualNetworksResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualNetworksResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -100,8 +93,8 @@ func (o GetVirtualNetworksResultOutput) Filters() GetVirtualNetworksFilterArrayO
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVirtualNetworksResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVirtualNetworksResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVirtualNetworksResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVirtualNetworksResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetVirtualNetworksResultOutput) State() pulumi.StringPtrOutput {

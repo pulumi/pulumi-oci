@@ -9,6 +9,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
@@ -16,7 +18,7 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
      * @return An array of child columns that are in referential relationship with the masking column.
      * 
      */
-    private List<String> childColumns;
+    private @Nullable List<String> childColumns;
     /**
      * @return A filter to return only a specific column based on column name.
      * 
@@ -26,32 +28,32 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
      * @return A filter to return only resources that match the specified data types.
      * 
      */
-    private String dataType;
+    private @Nullable String dataType;
     /**
      * @return A filter to return the masking column resources based on the value of their isMaskingEnabled attribute. A value of true returns only those columns for which masking is enabled. A value of false returns only those columns for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
      * 
      */
-    private Boolean isMaskingEnabled;
+    private @Nullable Boolean isMaskingEnabled;
     /**
      * @return The unique key that identifies the masking column. It&#39;s numeric and unique within a masking policy.
      * 
      */
-    private String key;
+    private @Nullable String key;
     /**
      * @return Details about the current state of the masking column.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return A filter to return only the resources that match the specified masking column group.
      * 
      */
-    private String maskingColumnGroup;
+    private @Nullable String maskingColumnGroup;
     /**
      * @return An array of masking formats assigned to the masking column.
      * 
      */
-    private List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat> maskingFormats;
+    private @Nullable List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat> maskingFormats;
     /**
      * @return The OCID of the masking policy.
      * 
@@ -66,7 +68,7 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
      * @return A filter to return only items related to a specific object type.
      * 
      */
-    private String objectType;
+    private @Nullable String objectType;
     /**
      * @return A filter to return only items related to specific schema name.
      * 
@@ -76,22 +78,22 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
      * @return A filter to return only items related to a specific sensitive type OCID.
      * 
      */
-    private String sensitiveTypeId;
+    private @Nullable String sensitiveTypeId;
     /**
      * @return The current state of the masking column.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
 
     private GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem() {}
     /**
@@ -99,7 +101,7 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
      * 
      */
     public List<String> childColumns() {
-        return this.childColumns;
+        return this.childColumns == null ? List.of() : this.childColumns;
     }
     /**
      * @return A filter to return only a specific column based on column name.
@@ -112,43 +114,43 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
      * @return A filter to return only resources that match the specified data types.
      * 
      */
-    public String dataType() {
-        return this.dataType;
+    public Optional<String> dataType() {
+        return Optional.ofNullable(this.dataType);
     }
     /**
      * @return A filter to return the masking column resources based on the value of their isMaskingEnabled attribute. A value of true returns only those columns for which masking is enabled. A value of false returns only those columns for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
      * 
      */
-    public Boolean isMaskingEnabled() {
-        return this.isMaskingEnabled;
+    public Optional<Boolean> isMaskingEnabled() {
+        return Optional.ofNullable(this.isMaskingEnabled);
     }
     /**
      * @return The unique key that identifies the masking column. It&#39;s numeric and unique within a masking policy.
      * 
      */
-    public String key() {
-        return this.key;
+    public Optional<String> key() {
+        return Optional.ofNullable(this.key);
     }
     /**
      * @return Details about the current state of the masking column.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return A filter to return only the resources that match the specified masking column group.
      * 
      */
-    public String maskingColumnGroup() {
-        return this.maskingColumnGroup;
+    public Optional<String> maskingColumnGroup() {
+        return Optional.ofNullable(this.maskingColumnGroup);
     }
     /**
      * @return An array of masking formats assigned to the masking column.
      * 
      */
     public List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat> maskingFormats() {
-        return this.maskingFormats;
+        return this.maskingFormats == null ? List.of() : this.maskingFormats;
     }
     /**
      * @return The OCID of the masking policy.
@@ -168,8 +170,8 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
      * @return A filter to return only items related to a specific object type.
      * 
      */
-    public String objectType() {
-        return this.objectType;
+    public Optional<String> objectType() {
+        return Optional.ofNullable(this.objectType);
     }
     /**
      * @return A filter to return only items related to specific schema name.
@@ -182,29 +184,29 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
      * @return A filter to return only items related to a specific sensitive type OCID.
      * 
      */
-    public String sensitiveTypeId() {
-        return this.sensitiveTypeId;
+    public Optional<String> sensitiveTypeId() {
+        return Optional.ofNullable(this.sensitiveTypeId);
     }
     /**
      * @return The current state of the masking column.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time the masking column was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The date and time the masking column was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
 
     public static Builder builder() {
@@ -216,22 +218,22 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> childColumns;
+        private @Nullable List<String> childColumns;
         private String columnName;
-        private String dataType;
-        private Boolean isMaskingEnabled;
-        private String key;
-        private String lifecycleDetails;
-        private String maskingColumnGroup;
-        private List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat> maskingFormats;
+        private @Nullable String dataType;
+        private @Nullable Boolean isMaskingEnabled;
+        private @Nullable String key;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String maskingColumnGroup;
+        private @Nullable List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat> maskingFormats;
         private String maskingPolicyId;
         private String object;
-        private String objectType;
+        private @Nullable String objectType;
         private String schemaName;
-        private String sensitiveTypeId;
-        private String state;
-        private String timeCreated;
-        private String timeUpdated;
+        private @Nullable String sensitiveTypeId;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeUpdated;
         public Builder() {}
         public Builder(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -254,8 +256,8 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder childColumns(List<String> childColumns) {
-            this.childColumns = Objects.requireNonNull(childColumns);
+        public Builder childColumns(@Nullable List<String> childColumns) {
+            this.childColumns = childColumns;
             return this;
         }
         public Builder childColumns(String... childColumns) {
@@ -267,33 +269,33 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder dataType(String dataType) {
-            this.dataType = Objects.requireNonNull(dataType);
+        public Builder dataType(@Nullable String dataType) {
+            this.dataType = dataType;
             return this;
         }
         @CustomType.Setter
-        public Builder isMaskingEnabled(Boolean isMaskingEnabled) {
-            this.isMaskingEnabled = Objects.requireNonNull(isMaskingEnabled);
+        public Builder isMaskingEnabled(@Nullable Boolean isMaskingEnabled) {
+            this.isMaskingEnabled = isMaskingEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder key(@Nullable String key) {
+            this.key = key;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder maskingColumnGroup(String maskingColumnGroup) {
-            this.maskingColumnGroup = Objects.requireNonNull(maskingColumnGroup);
+        public Builder maskingColumnGroup(@Nullable String maskingColumnGroup) {
+            this.maskingColumnGroup = maskingColumnGroup;
             return this;
         }
         @CustomType.Setter
-        public Builder maskingFormats(List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat> maskingFormats) {
-            this.maskingFormats = Objects.requireNonNull(maskingFormats);
+        public Builder maskingFormats(@Nullable List<GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat> maskingFormats) {
+            this.maskingFormats = maskingFormats;
             return this;
         }
         public Builder maskingFormats(GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat... maskingFormats) {
@@ -310,8 +312,8 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+        public Builder objectType(@Nullable String objectType) {
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
@@ -320,23 +322,23 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder sensitiveTypeId(String sensitiveTypeId) {
-            this.sensitiveTypeId = Objects.requireNonNull(sensitiveTypeId);
+        public Builder sensitiveTypeId(@Nullable String sensitiveTypeId) {
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         public GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem build() {

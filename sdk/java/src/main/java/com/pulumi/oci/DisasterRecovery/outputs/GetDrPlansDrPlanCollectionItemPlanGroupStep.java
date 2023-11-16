@@ -10,6 +10,8 @@ import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
@@ -17,111 +19,111 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
      * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return The error mode for this step.
      * 
      */
-    private String errorMode;
+    private @Nullable String errorMode;
     /**
      * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
-    private String groupId;
+    private @Nullable String groupId;
     /**
      * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return A flag indicating whether this step should be enabled for execution.  Example: `true`
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     /**
      * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
      * 
      */
-    private String memberId;
+    private @Nullable String memberId;
     /**
      * @return The timeout in seconds for executing this step.  Example: `600`
      * 
      */
-    private Integer timeout;
+    private @Nullable Integer timeout;
     /**
      * @return The type of the DR plan.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The details for a user-defined step in a DR plan.
      * 
      */
-    private List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep> userDefinedSteps;
+    private @Nullable List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep> userDefinedSteps;
 
     private GetDrPlansDrPlanCollectionItemPlanGroupStep() {}
     /**
      * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return The error mode for this step.
      * 
      */
-    public String errorMode() {
-        return this.errorMode;
+    public Optional<String> errorMode() {
+        return Optional.ofNullable(this.errorMode);
     }
     /**
      * @return The unique id of the group to which this step belongs. Must not be modified by user.  Example: `sgid1.group..uniqueID`
      * 
      */
-    public String groupId() {
-        return this.groupId;
+    public Optional<String> groupId() {
+        return Optional.ofNullable(this.groupId);
     }
     /**
      * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return A flag indicating whether this step should be enabled for execution.  Example: `true`
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     /**
      * @return The OCID of the member associated with this step.  Example: `ocid1.database.oc1..uniqueID`
      * 
      */
-    public String memberId() {
-        return this.memberId;
+    public Optional<String> memberId() {
+        return Optional.ofNullable(this.memberId);
     }
     /**
      * @return The timeout in seconds for executing this step.  Example: `600`
      * 
      */
-    public Integer timeout() {
-        return this.timeout;
+    public Optional<Integer> timeout() {
+        return Optional.ofNullable(this.timeout);
     }
     /**
      * @return The type of the DR plan.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The details for a user-defined step in a DR plan.
      * 
      */
     public List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep> userDefinedSteps() {
-        return this.userDefinedSteps;
+        return this.userDefinedSteps == null ? List.of() : this.userDefinedSteps;
     }
 
     public static Builder builder() {
@@ -133,15 +135,15 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String displayName;
-        private String errorMode;
-        private String groupId;
-        private String id;
-        private Boolean isEnabled;
-        private String memberId;
-        private Integer timeout;
-        private String type;
-        private List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep> userDefinedSteps;
+        private @Nullable String displayName;
+        private @Nullable String errorMode;
+        private @Nullable String groupId;
+        private @Nullable String id;
+        private @Nullable Boolean isEnabled;
+        private @Nullable String memberId;
+        private @Nullable Integer timeout;
+        private @Nullable String type;
+        private @Nullable List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep> userDefinedSteps;
         public Builder() {}
         public Builder(GetDrPlansDrPlanCollectionItemPlanGroupStep defaults) {
     	      Objects.requireNonNull(defaults);
@@ -157,48 +159,48 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStep {
         }
 
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder errorMode(String errorMode) {
-            this.errorMode = Objects.requireNonNull(errorMode);
+        public Builder errorMode(@Nullable String errorMode) {
+            this.errorMode = errorMode;
             return this;
         }
         @CustomType.Setter
-        public Builder groupId(String groupId) {
-            this.groupId = Objects.requireNonNull(groupId);
+        public Builder groupId(@Nullable String groupId) {
+            this.groupId = groupId;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
-        public Builder memberId(String memberId) {
-            this.memberId = Objects.requireNonNull(memberId);
+        public Builder memberId(@Nullable String memberId) {
+            this.memberId = memberId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeout(Integer timeout) {
-            this.timeout = Objects.requireNonNull(timeout);
+        public Builder timeout(@Nullable Integer timeout) {
+            this.timeout = timeout;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder userDefinedSteps(List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep> userDefinedSteps) {
-            this.userDefinedSteps = Objects.requireNonNull(userDefinedSteps);
+        public Builder userDefinedSteps(@Nullable List<GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep> userDefinedSteps) {
+            this.userDefinedSteps = userDefinedSteps;
             return this;
         }
         public Builder userDefinedSteps(GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep... userDefinedSteps) {

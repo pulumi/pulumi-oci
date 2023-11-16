@@ -6,6 +6,8 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPipelineRunsPipelineRunLogDetail {
@@ -13,27 +15,27 @@ public final class GetPipelineRunsPipelineRunLogDetail {
      * @return The log group id for where log objects will be for pipeline runs.
      * 
      */
-    private String logGroupId;
+    private @Nullable String logGroupId;
     /**
      * @return The log id of the log object the pipeline run logs will be shipped to.
      * 
      */
-    private String logId;
+    private @Nullable String logId;
 
     private GetPipelineRunsPipelineRunLogDetail() {}
     /**
      * @return The log group id for where log objects will be for pipeline runs.
      * 
      */
-    public String logGroupId() {
-        return this.logGroupId;
+    public Optional<String> logGroupId() {
+        return Optional.ofNullable(this.logGroupId);
     }
     /**
      * @return The log id of the log object the pipeline run logs will be shipped to.
      * 
      */
-    public String logId() {
-        return this.logId;
+    public Optional<String> logId() {
+        return Optional.ofNullable(this.logId);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetPipelineRunsPipelineRunLogDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String logGroupId;
-        private String logId;
+        private @Nullable String logGroupId;
+        private @Nullable String logId;
         public Builder() {}
         public Builder(GetPipelineRunsPipelineRunLogDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetPipelineRunsPipelineRunLogDetail {
         }
 
         @CustomType.Setter
-        public Builder logGroupId(String logGroupId) {
-            this.logGroupId = Objects.requireNonNull(logGroupId);
+        public Builder logGroupId(@Nullable String logGroupId) {
+            this.logGroupId = logGroupId;
             return this;
         }
         @CustomType.Setter
-        public Builder logId(String logId) {
-            this.logId = Objects.requireNonNull(logId);
+        public Builder logId(@Nullable String logId) {
+            this.logId = logId;
             return this;
         }
         public GetPipelineRunsPipelineRunLogDetail build() {

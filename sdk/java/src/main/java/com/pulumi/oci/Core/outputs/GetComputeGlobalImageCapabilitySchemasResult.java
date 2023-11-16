@@ -23,7 +23,7 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
      * @return The list of compute_global_image_capability_schemas.
      * 
      */
-    private List<GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema> computeGlobalImageCapabilitySchemas;
+    private @Nullable List<GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema> computeGlobalImageCapabilitySchemas;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -34,7 +34,7 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetComputeGlobalImageCapabilitySchemasResult() {}
     /**
@@ -49,7 +49,7 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
      * 
      */
     public List<GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema> computeGlobalImageCapabilitySchemas() {
-        return this.computeGlobalImageCapabilitySchemas;
+        return this.computeGlobalImageCapabilitySchemas == null ? List.of() : this.computeGlobalImageCapabilitySchemas;
     }
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
@@ -65,8 +65,8 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -79,10 +79,10 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
-        private List<GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema> computeGlobalImageCapabilitySchemas;
+        private @Nullable List<GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema> computeGlobalImageCapabilitySchemas;
         private @Nullable String displayName;
         private @Nullable List<GetComputeGlobalImageCapabilitySchemasFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetComputeGlobalImageCapabilitySchemasResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -99,8 +99,8 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
             return this;
         }
         @CustomType.Setter
-        public Builder computeGlobalImageCapabilitySchemas(List<GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema> computeGlobalImageCapabilitySchemas) {
-            this.computeGlobalImageCapabilitySchemas = Objects.requireNonNull(computeGlobalImageCapabilitySchemas);
+        public Builder computeGlobalImageCapabilitySchemas(@Nullable List<GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema> computeGlobalImageCapabilitySchemas) {
+            this.computeGlobalImageCapabilitySchemas = computeGlobalImageCapabilitySchemas;
             return this;
         }
         public Builder computeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema... computeGlobalImageCapabilitySchemas) {
@@ -120,8 +120,8 @@ public final class GetComputeGlobalImageCapabilitySchemasResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetComputeGlobalImageCapabilitySchemasResult build() {

@@ -28,14 +28,14 @@ public final class GetExternalDatabasesResult {
      * @return The list of external_database_collection.
      * 
      */
-    private List<GetExternalDatabasesExternalDatabaseCollection> externalDatabaseCollections;
+    private @Nullable List<GetExternalDatabasesExternalDatabaseCollection> externalDatabaseCollections;
     private @Nullable String externalDbSystemId;
     private @Nullable List<GetExternalDatabasesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
 
     private GetExternalDatabasesResult() {}
     /**
@@ -57,7 +57,7 @@ public final class GetExternalDatabasesResult {
      * 
      */
     public List<GetExternalDatabasesExternalDatabaseCollection> externalDatabaseCollections() {
-        return this.externalDatabaseCollections;
+        return this.externalDatabaseCollections == null ? List.of() : this.externalDatabaseCollections;
     }
     public Optional<String> externalDbSystemId() {
         return Optional.ofNullable(this.externalDbSystemId);
@@ -69,8 +69,8 @@ public final class GetExternalDatabasesResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
 
     public static Builder builder() {
@@ -84,10 +84,10 @@ public final class GetExternalDatabasesResult {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String displayName;
-        private List<GetExternalDatabasesExternalDatabaseCollection> externalDatabaseCollections;
+        private @Nullable List<GetExternalDatabasesExternalDatabaseCollection> externalDatabaseCollections;
         private @Nullable String externalDbSystemId;
         private @Nullable List<GetExternalDatabasesFilter> filters;
-        private String id;
+        private @Nullable String id;
         public Builder() {}
         public Builder(GetExternalDatabasesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -110,8 +110,8 @@ public final class GetExternalDatabasesResult {
             return this;
         }
         @CustomType.Setter
-        public Builder externalDatabaseCollections(List<GetExternalDatabasesExternalDatabaseCollection> externalDatabaseCollections) {
-            this.externalDatabaseCollections = Objects.requireNonNull(externalDatabaseCollections);
+        public Builder externalDatabaseCollections(@Nullable List<GetExternalDatabasesExternalDatabaseCollection> externalDatabaseCollections) {
+            this.externalDatabaseCollections = externalDatabaseCollections;
             return this;
         }
         public Builder externalDatabaseCollections(GetExternalDatabasesExternalDatabaseCollection... externalDatabaseCollections) {
@@ -131,8 +131,8 @@ public final class GetExternalDatabasesResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         public GetExternalDatabasesResult build() {

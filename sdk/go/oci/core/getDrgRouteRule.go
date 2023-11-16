@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Drg Route Table resource in Oracle Cloud Infrastructure Core service.
@@ -60,27 +59,27 @@ type GetDrgRouteRuleArgs struct {
 // A collection of values returned by getDrgRouteRule.
 type GetDrgRouteRuleResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG that contains this route table.
-	DrgId           string `pulumi:"drgId"`
-	DrgRouteTableId string `pulumi:"drgRouteTableId"`
+	DrgId           *string `pulumi:"drgId"`
+	DrgRouteTableId string  `pulumi:"drgRouteTableId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from referenced attachments are inserted into the DRG route table.
-	ImportDrgRouteDistributionId string `pulumi:"importDrgRouteDistributionId"`
+	ImportDrgRouteDistributionId *string `pulumi:"importDrgRouteDistributionId"`
 	// If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises network, enable ECMP on the DRG route table to which these attachments import routes.
-	IsEcmpEnabled       bool `pulumi:"isEcmpEnabled"`
-	RemoveImportTrigger bool `pulumi:"removeImportTrigger"`
+	IsEcmpEnabled       *bool `pulumi:"isEcmpEnabled"`
+	RemoveImportTrigger *bool `pulumi:"removeImportTrigger"`
 	// The DRG route table's current state.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the DRG route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 }
 
 func GetDrgRouteRuleOutput(ctx *pulumi.Context, args GetDrgRouteRuleOutputArgs, opts ...pulumi.InvokeOption) GetDrgRouteRuleResultOutput {
@@ -121,15 +120,9 @@ func (o GetDrgRouteRuleResultOutput) ToGetDrgRouteRuleResultOutputWithContext(ct
 	return o
 }
 
-func (o GetDrgRouteRuleResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDrgRouteRuleResult] {
-	return pulumix.Output[GetDrgRouteRuleResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
-func (o GetDrgRouteRuleResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrgRouteRuleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o GetDrgRouteRuleResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrgRouteRuleResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -138,13 +131,13 @@ func (o GetDrgRouteRuleResultOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetDrgRouteRuleResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrgRouteRuleResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o GetDrgRouteRuleResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrgRouteRuleResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG the DRG that contains this route table.
-func (o GetDrgRouteRuleResultOutput) DrgId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrgRouteRuleResult) string { return v.DrgId }).(pulumi.StringOutput)
+func (o GetDrgRouteRuleResultOutput) DrgId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrgRouteRuleResult) *string { return v.DrgId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDrgRouteRuleResultOutput) DrgRouteTableId() pulumi.StringOutput {
@@ -157,32 +150,32 @@ func (o GetDrgRouteRuleResultOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
-func (o GetDrgRouteRuleResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrgRouteRuleResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDrgRouteRuleResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrgRouteRuleResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution used to specify how incoming route advertisements from referenced attachments are inserted into the DRG route table.
-func (o GetDrgRouteRuleResultOutput) ImportDrgRouteDistributionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrgRouteRuleResult) string { return v.ImportDrgRouteDistributionId }).(pulumi.StringOutput)
+func (o GetDrgRouteRuleResultOutput) ImportDrgRouteDistributionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrgRouteRuleResult) *string { return v.ImportDrgRouteDistributionId }).(pulumi.StringPtrOutput)
 }
 
 // If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises network, enable ECMP on the DRG route table to which these attachments import routes.
-func (o GetDrgRouteRuleResultOutput) IsEcmpEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrgRouteRuleResult) bool { return v.IsEcmpEnabled }).(pulumi.BoolOutput)
+func (o GetDrgRouteRuleResultOutput) IsEcmpEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrgRouteRuleResult) *bool { return v.IsEcmpEnabled }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetDrgRouteRuleResultOutput) RemoveImportTrigger() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetDrgRouteRuleResult) bool { return v.RemoveImportTrigger }).(pulumi.BoolOutput)
+func (o GetDrgRouteRuleResultOutput) RemoveImportTrigger() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDrgRouteRuleResult) *bool { return v.RemoveImportTrigger }).(pulumi.BoolPtrOutput)
 }
 
 // The DRG route table's current state.
-func (o GetDrgRouteRuleResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrgRouteRuleResult) string { return v.State }).(pulumi.StringOutput)
+func (o GetDrgRouteRuleResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrgRouteRuleResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the DRG route table was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetDrgRouteRuleResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDrgRouteRuleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetDrgRouteRuleResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDrgRouteRuleResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

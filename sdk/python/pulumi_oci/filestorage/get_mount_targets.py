@@ -52,33 +52,21 @@ class GetMountTargetsResult:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> str:
-        """
-        The availability domain the mount target is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
-        """
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the mount target.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My mount target`
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="exportSetId")
     def export_set_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated export set. Controls what file systems will be exported through Network File System (NFS) protocol on this mount target.
-        """
         return pulumi.get(self, "export_set_id")
 
     @property
@@ -89,25 +77,16 @@ class GetMountTargetsResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="mountTargets")
-    def mount_targets(self) -> Sequence['outputs.GetMountTargetsMountTargetResult']:
-        """
-        The list of mount_targets.
-        """
+    def mount_targets(self) -> Optional[Sequence['outputs.GetMountTargetsMountTargetResult']]:
         return pulumi.get(self, "mount_targets")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the mount target.
-        """
         return pulumi.get(self, "state")
 
 
@@ -136,31 +115,7 @@ def get_mount_targets(availability_domain: Optional[str] = None,
                       state: Optional[str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMountTargetsResult:
     """
-    This data source provides the list of Mount Targets in Oracle Cloud Infrastructure File Storage service.
-
-    Lists the mount target resources in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_mount_targets = oci.FileStorage.get_mount_targets(availability_domain=var["mount_target_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["mount_target_display_name"],
-        export_set_id=oci_file_storage_export_set["test_export_set"]["id"],
-        id=var["mount_target_id"],
-        state=var["mount_target_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-    :param str export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-    :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-    :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
@@ -194,30 +149,6 @@ def get_mount_targets_output(availability_domain: Optional[pulumi.Input[str]] = 
                              state: Optional[pulumi.Input[Optional[str]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMountTargetsResult]:
     """
-    This data source provides the list of Mount Targets in Oracle Cloud Infrastructure File Storage service.
-
-    Lists the mount target resources in the specified compartment.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_mount_targets = oci.FileStorage.get_mount_targets(availability_domain=var["mount_target_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["mount_target_display_name"],
-        export_set_id=oci_file_storage_export_set["test_export_set"]["id"],
-        id=var["mount_target_id"],
-        state=var["mount_target_state"])
-    ```
-
-
-    :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
-    :param str export_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export set.
-    :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-    :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+    Use this data source to access information about an existing resource.
     """
     ...

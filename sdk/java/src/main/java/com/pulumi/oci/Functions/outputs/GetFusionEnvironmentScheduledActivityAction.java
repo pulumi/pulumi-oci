@@ -6,6 +6,8 @@ package com.pulumi.oci.Functions.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetFusionEnvironmentScheduledActivityAction {
@@ -13,111 +15,111 @@ public final class GetFusionEnvironmentScheduledActivityAction {
      * @return Type of action
      * 
      */
-    private String actionType;
+    private @Nullable String actionType;
     /**
      * @return patch that delivered the vertex update prerequisite
      * 
      */
-    private String artifact;
+    private @Nullable String artifact;
     /**
      * @return patch artifact category
      * 
      */
-    private String category;
+    private @Nullable String category;
     /**
      * @return A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A string that describeds whether the change is applied hot or cold
      * 
      */
-    private String mode;
+    private @Nullable String mode;
     /**
      * @return month qualifier
      * 
      */
-    private String qualifier;
+    private @Nullable String qualifier;
     /**
      * @return Unique identifier of the object that represents the action
      * 
      */
-    private String referenceKey;
+    private @Nullable String referenceKey;
     /**
      * @return The current state of the scheduledActivity.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return name of the repo
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetFusionEnvironmentScheduledActivityAction() {}
     /**
      * @return Type of action
      * 
      */
-    public String actionType() {
-        return this.actionType;
+    public Optional<String> actionType() {
+        return Optional.ofNullable(this.actionType);
     }
     /**
      * @return patch that delivered the vertex update prerequisite
      * 
      */
-    public String artifact() {
-        return this.artifact;
+    public Optional<String> artifact() {
+        return Optional.ofNullable(this.artifact);
     }
     /**
      * @return patch artifact category
      * 
      */
-    public String category() {
-        return this.category;
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
     }
     /**
      * @return A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A string that describeds whether the change is applied hot or cold
      * 
      */
-    public String mode() {
-        return this.mode;
+    public Optional<String> mode() {
+        return Optional.ofNullable(this.mode);
     }
     /**
      * @return month qualifier
      * 
      */
-    public String qualifier() {
-        return this.qualifier;
+    public Optional<String> qualifier() {
+        return Optional.ofNullable(this.qualifier);
     }
     /**
      * @return Unique identifier of the object that represents the action
      * 
      */
-    public String referenceKey() {
-        return this.referenceKey;
+    public Optional<String> referenceKey() {
+        return Optional.ofNullable(this.referenceKey);
     }
     /**
      * @return The current state of the scheduledActivity.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return name of the repo
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -129,15 +131,15 @@ public final class GetFusionEnvironmentScheduledActivityAction {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String actionType;
-        private String artifact;
-        private String category;
-        private String description;
-        private String mode;
-        private String qualifier;
-        private String referenceKey;
-        private String state;
-        private String version;
+        private @Nullable String actionType;
+        private @Nullable String artifact;
+        private @Nullable String category;
+        private @Nullable String description;
+        private @Nullable String mode;
+        private @Nullable String qualifier;
+        private @Nullable String referenceKey;
+        private @Nullable String state;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetFusionEnvironmentScheduledActivityAction defaults) {
     	      Objects.requireNonNull(defaults);
@@ -153,48 +155,48 @@ public final class GetFusionEnvironmentScheduledActivityAction {
         }
 
         @CustomType.Setter
-        public Builder actionType(String actionType) {
-            this.actionType = Objects.requireNonNull(actionType);
+        public Builder actionType(@Nullable String actionType) {
+            this.actionType = actionType;
             return this;
         }
         @CustomType.Setter
-        public Builder artifact(String artifact) {
-            this.artifact = Objects.requireNonNull(artifact);
+        public Builder artifact(@Nullable String artifact) {
+            this.artifact = artifact;
             return this;
         }
         @CustomType.Setter
-        public Builder category(String category) {
-            this.category = Objects.requireNonNull(category);
+        public Builder category(@Nullable String category) {
+            this.category = category;
             return this;
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder mode(String mode) {
-            this.mode = Objects.requireNonNull(mode);
+        public Builder mode(@Nullable String mode) {
+            this.mode = mode;
             return this;
         }
         @CustomType.Setter
-        public Builder qualifier(String qualifier) {
-            this.qualifier = Objects.requireNonNull(qualifier);
+        public Builder qualifier(@Nullable String qualifier) {
+            this.qualifier = qualifier;
             return this;
         }
         @CustomType.Setter
-        public Builder referenceKey(String referenceKey) {
-            this.referenceKey = Objects.requireNonNull(referenceKey);
+        public Builder referenceKey(@Nullable String referenceKey) {
+            this.referenceKey = referenceKey;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetFusionEnvironmentScheduledActivityAction build() {

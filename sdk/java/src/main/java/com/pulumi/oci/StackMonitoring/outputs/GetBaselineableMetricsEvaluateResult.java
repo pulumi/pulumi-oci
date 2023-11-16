@@ -9,6 +9,8 @@ import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsEvaluateItem
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetBaselineableMetricsEvaluateResult {
@@ -17,12 +19,12 @@ public final class GetBaselineableMetricsEvaluateResult {
      * @return list of anomaly data points for the metric
      * 
      */
-    private List<GetBaselineableMetricsEvaluateDataPoint> dataPoints;
+    private @Nullable List<GetBaselineableMetricsEvaluateDataPoint> dataPoints;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return List of Metric data
      * 
@@ -43,14 +45,14 @@ public final class GetBaselineableMetricsEvaluateResult {
      * 
      */
     public List<GetBaselineableMetricsEvaluateDataPoint> dataPoints() {
-        return this.dataPoints;
+        return this.dataPoints == null ? List.of() : this.dataPoints;
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return List of Metric data
@@ -77,8 +79,8 @@ public final class GetBaselineableMetricsEvaluateResult {
     @CustomType.Builder
     public static final class Builder {
         private String baselineableMetricId;
-        private List<GetBaselineableMetricsEvaluateDataPoint> dataPoints;
-        private String id;
+        private @Nullable List<GetBaselineableMetricsEvaluateDataPoint> dataPoints;
+        private @Nullable String id;
         private List<GetBaselineableMetricsEvaluateItem> items;
         private String resourceId;
         public Builder() {}
@@ -97,16 +99,16 @@ public final class GetBaselineableMetricsEvaluateResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dataPoints(List<GetBaselineableMetricsEvaluateDataPoint> dataPoints) {
-            this.dataPoints = Objects.requireNonNull(dataPoints);
+        public Builder dataPoints(@Nullable List<GetBaselineableMetricsEvaluateDataPoint> dataPoints) {
+            this.dataPoints = dataPoints;
             return this;
         }
         public Builder dataPoints(GetBaselineableMetricsEvaluateDataPoint... dataPoints) {
             return dataPoints(List.of(dataPoints));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

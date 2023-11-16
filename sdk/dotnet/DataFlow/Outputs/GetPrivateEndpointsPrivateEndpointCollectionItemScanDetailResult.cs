@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// A fully-qualified domain name (FQDN).
         /// </summary>
-        public readonly string Fqdn;
+        public readonly string? Fqdn;
         /// <summary>
         /// The port number of the FQDN
         /// </summary>
-        public readonly string Port;
+        public readonly string? Port;
 
         [OutputConstructor]
         private GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult(
-            string fqdn,
+            string? fqdn,
 
-            string port)
+            string? port)
         {
             Fqdn = fqdn;
             Port = port;

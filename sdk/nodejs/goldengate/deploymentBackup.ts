@@ -70,7 +70,7 @@ export class DeploymentBackup extends pulumi.CustomResource {
     /**
      * Possible Deployment backup types.
      */
-    public /*out*/ readonly backupType!: pulumi.Output<string>;
+    public /*out*/ readonly backupType!: pulumi.Output<string | undefined>;
     /**
      * Name of the bucket where the object is to be uploaded in the object storage
      */
@@ -82,7 +82,7 @@ export class DeploymentBackup extends pulumi.CustomResource {
     /**
      * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      */
@@ -94,15 +94,15 @@ export class DeploymentBackup extends pulumi.CustomResource {
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * True if this object is automatically created
      */
-    public /*out*/ readonly isAutomatic!: pulumi.Output<boolean>;
+    public /*out*/ readonly isAutomatic!: pulumi.Output<boolean | undefined>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Name of namespace that serves as a container for all of your buckets
      */
@@ -118,35 +118,35 @@ export class DeploymentBackup extends pulumi.CustomResource {
     /**
      * Version of OGG
      */
-    public /*out*/ readonly oggVersion!: pulumi.Output<string>;
+    public /*out*/ readonly oggVersion!: pulumi.Output<string | undefined>;
     /**
      * The size of the backup stored in object storage (in bytes)
      */
-    public /*out*/ readonly sizeInBytes!: pulumi.Output<number>;
+    public /*out*/ readonly sizeInBytes!: pulumi.Output<number | undefined>;
     /**
      * Possible lifecycle states.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeBackupFinished!: pulumi.Output<string>;
+    public /*out*/ readonly timeBackupFinished!: pulumi.Output<string | undefined>;
     /**
      * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeOfBackup!: pulumi.Output<string>;
+    public /*out*/ readonly timeOfBackup!: pulumi.Output<string | undefined>;
     /**
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a DeploymentBackup resource with the given unique name, arguments, and options.

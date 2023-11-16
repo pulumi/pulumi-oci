@@ -76,7 +76,7 @@ class GetSqlFirewallAllowedSqlAnalyticsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -89,10 +89,7 @@ class GetSqlFirewallAllowedSqlAnalyticsResult:
 
     @property
     @pulumi.getter(name="sqlFirewallAllowedSqlAnalyticsCollections")
-    def sql_firewall_allowed_sql_analytics_collections(self) -> Sequence['outputs.GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionResult']:
-        """
-        The list of sql_firewall_allowed_sql_analytics_collection.
-        """
+    def sql_firewall_allowed_sql_analytics_collections(self) -> Optional[Sequence['outputs.GetSqlFirewallAllowedSqlAnalyticsSqlFirewallAllowedSqlAnalyticsCollectionResult']]:
         return pulumi.get(self, "sql_firewall_allowed_sql_analytics_collections")
 
 
@@ -120,44 +117,7 @@ def get_sql_firewall_allowed_sql_analytics(access_level: Optional[str] = None,
                                            scim_query: Optional[str] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSqlFirewallAllowedSqlAnalyticsResult:
     """
-    This data source provides the list of Sql Firewall Allowed Sql Analytics in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns the aggregation details of all SQL firewall allowed SQL statements.
-
-    The ListSqlFirewallAllowedSqlAnalytics operation returns the aggregates of the SQL firewall allowed SQL statements in the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallAllowedSqlAnalytics on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_firewall_allowed_sql_analytics = oci.DataSafe.get_sql_firewall_allowed_sql_analytics(compartment_id=var["compartment_id"],
-        access_level=var["sql_firewall_allowed_sql_analytic_access_level"],
-        compartment_id_in_subtree=var["sql_firewall_allowed_sql_analytic_compartment_id_in_subtree"],
-        group_bies=var["sql_firewall_allowed_sql_analytic_group_by"],
-        scim_query=var["sql_firewall_allowed_sql_analytic_scim_query"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param Sequence[str] group_bies: The group by parameter to summarize the allowed SQL aggregation.
-    :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
-           
-           **Example:** query=(currentUser eq 'SCOTT') and (topLevel eq 'YES')
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -189,43 +149,6 @@ def get_sql_firewall_allowed_sql_analytics_output(access_level: Optional[pulumi.
                                                   scim_query: Optional[pulumi.Input[Optional[str]]] = None,
                                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSqlFirewallAllowedSqlAnalyticsResult]:
     """
-    This data source provides the list of Sql Firewall Allowed Sql Analytics in Oracle Cloud Infrastructure Data Safe service.
-
-    Returns the aggregation details of all SQL firewall allowed SQL statements.
-
-    The ListSqlFirewallAllowedSqlAnalytics operation returns the aggregates of the SQL firewall allowed SQL statements in the specified `compartmentId`.
-
-    The parameter `accessLevel` specifies whether to return only those compartments for which the
-    requestor has INSPECT permissions on at least one resource directly
-    or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
-    Principal doesn't have access to even one of the child compartments. This is valid only when
-    `compartmentIdInSubtree` is set to `true`.
-
-    The parameter `compartmentIdInSubtree` applies when you perform ListSqlFirewallAllowedSqlAnalytics on the
-    `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
-    set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_sql_firewall_allowed_sql_analytics = oci.DataSafe.get_sql_firewall_allowed_sql_analytics(compartment_id=var["compartment_id"],
-        access_level=var["sql_firewall_allowed_sql_analytic_access_level"],
-        compartment_id_in_subtree=var["sql_firewall_allowed_sql_analytic_compartment_id_in_subtree"],
-        group_bies=var["sql_firewall_allowed_sql_analytic_group_by"],
-        scim_query=var["sql_firewall_allowed_sql_analytic_scim_query"])
-    ```
-
-
-    :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
-    :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-    :param Sequence[str] group_bies: The group by parameter to summarize the allowed SQL aggregation.
-    :param str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
-           
-           **Example:** query=(currentUser eq 'SCOTT') and (topLevel eq 'YES')
+    Use this data source to access information about an existing resource.
     """
     ...

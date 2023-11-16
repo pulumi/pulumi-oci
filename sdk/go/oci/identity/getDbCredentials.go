@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Db Credentials in Oracle Cloud Infrastructure Identity service.
@@ -70,7 +69,7 @@ type GetDbCredentialsResult struct {
 	DbCredentials []GetDbCredentialsDbCredential `pulumi:"dbCredentials"`
 	Filters       []GetDbCredentialsFilter       `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id   string  `pulumi:"id"`
+	Id   *string `pulumi:"id"`
 	Name *string `pulumi:"name"`
 	// The credential's current state. After creating a DB credential, make sure its `lifecycleState` changes from CREATING to ACTIVE before using it.
 	State *string `pulumi:"state"`
@@ -121,12 +120,6 @@ func (o GetDbCredentialsResultOutput) ToGetDbCredentialsResultOutputWithContext(
 	return o
 }
 
-func (o GetDbCredentialsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDbCredentialsResult] {
-	return pulumix.Output[GetDbCredentialsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of db_credentials.
 func (o GetDbCredentialsResultOutput) DbCredentials() GetDbCredentialsDbCredentialArrayOutput {
 	return o.ApplyT(func(v GetDbCredentialsResult) []GetDbCredentialsDbCredential { return v.DbCredentials }).(GetDbCredentialsDbCredentialArrayOutput)
@@ -137,8 +130,8 @@ func (o GetDbCredentialsResultOutput) Filters() GetDbCredentialsFilterArrayOutpu
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDbCredentialsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDbCredentialsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDbCredentialsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbCredentialsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDbCredentialsResultOutput) Name() pulumi.StringPtrOutput {

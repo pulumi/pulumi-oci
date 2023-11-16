@@ -63,14 +63,14 @@ export interface GetAggregatedComputedUsagesResult {
     /**
      * Aggregation of computed usages for the subscribed service.
      */
-    readonly aggregatedComputedUsages: outputs.OneSubsription.GetAggregatedComputedUsagesAggregatedComputedUsage[];
+    readonly aggregatedComputedUsages?: outputs.OneSubsription.GetAggregatedComputedUsagesAggregatedComputedUsage[];
     readonly compartmentId: string;
     readonly filters?: outputs.OneSubsription.GetAggregatedComputedUsagesFilter[];
     readonly grouping?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Product description
      */

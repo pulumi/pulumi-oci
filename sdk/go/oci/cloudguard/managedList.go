@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -36,38 +35,38 @@ type ManagedList struct {
 	// (Updatable) Managed list description.
 	//
 	// Avoid entering confidential information.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Managed list display name.
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// provider of the feed
-	FeedProvider pulumi.StringOutput `pulumi:"feedProvider"`
+	FeedProvider pulumi.StringPtrOutput `pulumi:"feedProvider"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// If this list is editable or not
-	IsEditable pulumi.BoolOutput `pulumi:"isEditable"`
+	IsEditable pulumi.BoolPtrOutput `pulumi:"isEditable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecyleDetails pulumi.StringOutput `pulumi:"lifecyleDetails"`
+	LifecyleDetails pulumi.StringPtrOutput `pulumi:"lifecyleDetails"`
 	// (Updatable) List of ManagedListItem
 	ListItems pulumi.StringArrayOutput `pulumi:"listItems"`
 	// type of the list
-	ListType pulumi.StringOutput `pulumi:"listType"`
+	ListType pulumi.StringPtrOutput `pulumi:"listType"`
 	// OCID of the Source ManagedList
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SourceManagedListId pulumi.StringOutput `pulumi:"sourceManagedListId"`
+	SourceManagedListId pulumi.StringPtrOutput `pulumi:"sourceManagedListId"`
 	// The current state of the resource.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the managed list was created. Format defined by RFC3339.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time the managed list was updated. Format defined by RFC3339.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewManagedList registers a new resource with the given unique name, arguments, and options.
@@ -273,12 +272,6 @@ func (i *ManagedList) ToManagedListOutputWithContext(ctx context.Context) Manage
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedListOutput)
 }
 
-func (i *ManagedList) ToOutput(ctx context.Context) pulumix.Output[*ManagedList] {
-	return pulumix.Output[*ManagedList]{
-		OutputState: i.ToManagedListOutputWithContext(ctx).OutputState,
-	}
-}
-
 // ManagedListArrayInput is an input type that accepts ManagedListArray and ManagedListArrayOutput values.
 // You can construct a concrete instance of `ManagedListArrayInput` via:
 //
@@ -302,12 +295,6 @@ func (i ManagedListArray) ToManagedListArrayOutput() ManagedListArrayOutput {
 
 func (i ManagedListArray) ToManagedListArrayOutputWithContext(ctx context.Context) ManagedListArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedListArrayOutput)
-}
-
-func (i ManagedListArray) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedList] {
-	return pulumix.Output[[]*ManagedList]{
-		OutputState: i.ToManagedListArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // ManagedListMapInput is an input type that accepts ManagedListMap and ManagedListMapOutput values.
@@ -335,12 +322,6 @@ func (i ManagedListMap) ToManagedListMapOutputWithContext(ctx context.Context) M
 	return pulumi.ToOutputWithContext(ctx, i).(ManagedListMapOutput)
 }
 
-func (i ManagedListMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedList] {
-	return pulumix.Output[map[string]*ManagedList]{
-		OutputState: i.ToManagedListMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type ManagedListOutput struct{ *pulumi.OutputState }
 
 func (ManagedListOutput) ElementType() reflect.Type {
@@ -353,12 +334,6 @@ func (o ManagedListOutput) ToManagedListOutput() ManagedListOutput {
 
 func (o ManagedListOutput) ToManagedListOutputWithContext(ctx context.Context) ManagedListOutput {
 	return o
-}
-
-func (o ManagedListOutput) ToOutput(ctx context.Context) pulumix.Output[*ManagedList] {
-	return pulumix.Output[*ManagedList]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) Compartment Identifier
@@ -374,8 +349,8 @@ func (o ManagedListOutput) DefinedTags() pulumi.MapOutput {
 // (Updatable) Managed list description.
 //
 // Avoid entering confidential information.
-func (o ManagedListOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o ManagedListOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Managed list display name.
@@ -386,8 +361,8 @@ func (o ManagedListOutput) DisplayName() pulumi.StringOutput {
 }
 
 // provider of the feed
-func (o ManagedListOutput) FeedProvider() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.FeedProvider }).(pulumi.StringOutput)
+func (o ManagedListOutput) FeedProvider() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.StringPtrOutput { return v.FeedProvider }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -398,13 +373,13 @@ func (o ManagedListOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // If this list is editable or not
-func (o ManagedListOutput) IsEditable() pulumi.BoolOutput {
-	return o.ApplyT(func(v *ManagedList) pulumi.BoolOutput { return v.IsEditable }).(pulumi.BoolOutput)
+func (o ManagedListOutput) IsEditable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.BoolPtrOutput { return v.IsEditable }).(pulumi.BoolPtrOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-func (o ManagedListOutput) LifecyleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.LifecyleDetails }).(pulumi.StringOutput)
+func (o ManagedListOutput) LifecyleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.StringPtrOutput { return v.LifecyleDetails }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) List of ManagedListItem
@@ -413,21 +388,21 @@ func (o ManagedListOutput) ListItems() pulumi.StringArrayOutput {
 }
 
 // type of the list
-func (o ManagedListOutput) ListType() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.ListType }).(pulumi.StringOutput)
+func (o ManagedListOutput) ListType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.StringPtrOutput { return v.ListType }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the Source ManagedList
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ManagedListOutput) SourceManagedListId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.SourceManagedListId }).(pulumi.StringOutput)
+func (o ManagedListOutput) SourceManagedListId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.StringPtrOutput { return v.SourceManagedListId }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the resource.
-func (o ManagedListOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o ManagedListOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -436,13 +411,13 @@ func (o ManagedListOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the managed list was created. Format defined by RFC3339.
-func (o ManagedListOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o ManagedListOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the managed list was updated. Format defined by RFC3339.
-func (o ManagedListOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o ManagedListOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type ManagedListArrayOutput struct{ *pulumi.OutputState }
@@ -457,12 +432,6 @@ func (o ManagedListArrayOutput) ToManagedListArrayOutput() ManagedListArrayOutpu
 
 func (o ManagedListArrayOutput) ToManagedListArrayOutputWithContext(ctx context.Context) ManagedListArrayOutput {
 	return o
-}
-
-func (o ManagedListArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*ManagedList] {
-	return pulumix.Output[[]*ManagedList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedListArrayOutput) Index(i pulumi.IntInput) ManagedListOutput {
@@ -483,12 +452,6 @@ func (o ManagedListMapOutput) ToManagedListMapOutput() ManagedListMapOutput {
 
 func (o ManagedListMapOutput) ToManagedListMapOutputWithContext(ctx context.Context) ManagedListMapOutput {
 	return o
-}
-
-func (o ManagedListMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*ManagedList] {
-	return pulumix.Output[map[string]*ManagedList]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o ManagedListMapOutput) MapIndex(k pulumi.StringInput) ManagedListOutput {

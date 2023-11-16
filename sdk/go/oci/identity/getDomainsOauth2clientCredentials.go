@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of O Auth2 Client Credentials in Oracle Cloud Infrastructure Identity Domains service.
@@ -88,9 +87,9 @@ type GetDomainsOauth2clientCredentialsResult struct {
 	Authorization *string  `pulumi:"authorization"`
 	CompartmentId *string  `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                           string  `pulumi:"id"`
+	Id                           *string `pulumi:"id"`
 	IdcsEndpoint                 string  `pulumi:"idcsEndpoint"`
-	ItemsPerPage                 int     `pulumi:"itemsPerPage"`
+	ItemsPerPage                 *int    `pulumi:"itemsPerPage"`
 	Oauth2clientCredentialCount  *int    `pulumi:"oauth2clientCredentialCount"`
 	Oauth2clientCredentialFilter *string `pulumi:"oauth2clientCredentialFilter"`
 	// The list of oauth2client_credentials.
@@ -101,7 +100,7 @@ type GetDomainsOauth2clientCredentialsResult struct {
 	SortBy       *string  `pulumi:"sortBy"`
 	SortOrder    *string  `pulumi:"sortOrder"`
 	StartIndex   *int     `pulumi:"startIndex"`
-	TotalResults int      `pulumi:"totalResults"`
+	TotalResults *int     `pulumi:"totalResults"`
 }
 
 func GetDomainsOauth2clientCredentialsOutput(ctx *pulumi.Context, args GetDomainsOauth2clientCredentialsOutputArgs, opts ...pulumi.InvokeOption) GetDomainsOauth2clientCredentialsResultOutput {
@@ -159,12 +158,6 @@ func (o GetDomainsOauth2clientCredentialsResultOutput) ToGetDomainsOauth2clientC
 	return o
 }
 
-func (o GetDomainsOauth2clientCredentialsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetDomainsOauth2clientCredentialsResult] {
-	return pulumix.Output[GetDomainsOauth2clientCredentialsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetDomainsOauth2clientCredentialsResultOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDomainsOauth2clientCredentialsResult) []string { return v.AttributeSets }).(pulumi.StringArrayOutput)
 }
@@ -182,16 +175,16 @@ func (o GetDomainsOauth2clientCredentialsResultOutput) CompartmentId() pulumi.St
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetDomainsOauth2clientCredentialsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetDomainsOauth2clientCredentialsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetDomainsOauth2clientCredentialsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDomainsOauth2clientCredentialsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDomainsOauth2clientCredentialsResultOutput) IdcsEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDomainsOauth2clientCredentialsResult) string { return v.IdcsEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetDomainsOauth2clientCredentialsResultOutput) ItemsPerPage() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsOauth2clientCredentialsResult) int { return v.ItemsPerPage }).(pulumi.IntOutput)
+func (o GetDomainsOauth2clientCredentialsResultOutput) ItemsPerPage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsOauth2clientCredentialsResult) *int { return v.ItemsPerPage }).(pulumi.IntPtrOutput)
 }
 
 func (o GetDomainsOauth2clientCredentialsResultOutput) Oauth2clientCredentialCount() pulumi.IntPtrOutput {
@@ -230,8 +223,8 @@ func (o GetDomainsOauth2clientCredentialsResultOutput) StartIndex() pulumi.IntPt
 	return o.ApplyT(func(v GetDomainsOauth2clientCredentialsResult) *int { return v.StartIndex }).(pulumi.IntPtrOutput)
 }
 
-func (o GetDomainsOauth2clientCredentialsResultOutput) TotalResults() pulumi.IntOutput {
-	return o.ApplyT(func(v GetDomainsOauth2clientCredentialsResult) int { return v.TotalResults }).(pulumi.IntOutput)
+func (o GetDomainsOauth2clientCredentialsResultOutput) TotalResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetDomainsOauth2clientCredentialsResult) *int { return v.TotalResults }).(pulumi.IntPtrOutput)
 }
 
 func init() {

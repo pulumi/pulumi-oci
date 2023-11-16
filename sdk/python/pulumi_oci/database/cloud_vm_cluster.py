@@ -48,51 +48,6 @@ class CloudVmClusterArgs:
                  time_zone: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a CloudVmCluster resource.
-        :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
-        :param pulumi.Input[str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
-               * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-               * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-               * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-               * Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-               * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-               * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-               * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-        :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
-        :param pulumi.Input[str] hostname: The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
-               
-               The maximum length of the combined hostname and domain is 63 characters.
-               
-               **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        :param pulumi.Input[str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-        :param pulumi.Input['CloudVmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-        :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
-        :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
-        :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of DB servers.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-        :param pulumi.Input[bool] is_sparse_diskgroup_enabled: If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-        :param pulumi.Input[int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-        :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
-        :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-        :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
-        :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
         pulumi.set(__self__, "cloud_exadata_infrastructure_id", cloud_exadata_infrastructure_id)
@@ -149,9 +104,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="backupSubnetId")
     def backup_subnet_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
-        """
         return pulumi.get(self, "backup_subnet_id")
 
     @backup_subnet_id.setter
@@ -161,9 +113,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="cloudExadataInfrastructureId")
     def cloud_exadata_infrastructure_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
-        """
         return pulumi.get(self, "cloud_exadata_infrastructure_id")
 
     @cloud_exadata_infrastructure_id.setter
@@ -173,9 +122,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -185,16 +131,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Input[int]:
-        """
-        (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
-        * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-        * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-        * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-        * Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-        * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-        * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-        * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
-        """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
@@ -204,9 +140,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -216,9 +149,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="giVersion")
     def gi_version(self) -> pulumi.Input[str]:
-        """
-        A valid Oracle Grid Infrastructure (GI) software version.
-        """
         return pulumi.get(self, "gi_version")
 
     @gi_version.setter
@@ -228,13 +158,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter
     def hostname(self) -> pulumi.Input[str]:
-        """
-        The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
-
-        The maximum length of the combined hostname and domain is 63 characters.
-
-        **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -244,9 +167,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="sshPublicKeys")
     def ssh_public_keys(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
-        """
         return pulumi.get(self, "ssh_public_keys")
 
     @ssh_public_keys.setter
@@ -256,9 +176,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -268,9 +185,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="backupNetworkNsgIds")
     def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        """
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @backup_network_nsg_ids.setter
@@ -280,9 +194,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-        """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
@@ -301,9 +212,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="dataCollectionOptions")
     def data_collection_options(self) -> Optional[pulumi.Input['CloudVmClusterDataCollectionOptionsArgs']]:
-        """
-        (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-        """
         return pulumi.get(self, "data_collection_options")
 
     @data_collection_options.setter
@@ -313,9 +221,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="dataStoragePercentage")
     def data_storage_percentage(self) -> Optional[pulumi.Input[int]]:
-        """
-        The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
-        """
         return pulumi.get(self, "data_storage_percentage")
 
     @data_storage_percentage.setter
@@ -325,9 +230,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="dataStorageSizeInTbs")
     def data_storage_size_in_tbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The data disk group size to be allocated in TBs.
-        """
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @data_storage_size_in_tbs.setter
@@ -337,9 +239,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
     def db_node_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The local node storage to be allocated in GBs.
-        """
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @db_node_storage_size_in_gbs.setter
@@ -349,9 +248,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="dbServers")
     def db_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of DB servers.
-        """
         return pulumi.get(self, "db_servers")
 
     @db_servers.setter
@@ -361,9 +257,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -373,9 +266,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -385,9 +275,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -397,9 +284,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="isLocalBackupEnabled")
     def is_local_backup_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-        """
         return pulumi.get(self, "is_local_backup_enabled")
 
     @is_local_backup_enabled.setter
@@ -409,9 +293,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="isSparseDiskgroupEnabled")
     def is_sparse_diskgroup_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
-        """
         return pulumi.get(self, "is_sparse_diskgroup_enabled")
 
     @is_sparse_diskgroup_enabled.setter
@@ -421,9 +302,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -433,9 +311,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The memory to be allocated in GBs.
-        """
         return pulumi.get(self, "memory_size_in_gbs")
 
     @memory_size_in_gbs.setter
@@ -445,10 +320,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -458,9 +329,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="ocpuCount")
     def ocpu_count(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-        """
         return pulumi.get(self, "ocpu_count")
 
     @ocpu_count.setter
@@ -470,9 +338,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="privateZoneId")
     def private_zone_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The private zone id in which DNS records need to be created.
-        """
         return pulumi.get(self, "private_zone_id")
 
     @private_zone_id.setter
@@ -482,9 +347,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="scanListenerPortTcp")
     def scan_listener_port_tcp(self) -> Optional[pulumi.Input[int]]:
-        """
-        The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-        """
         return pulumi.get(self, "scan_listener_port_tcp")
 
     @scan_listener_port_tcp.setter
@@ -494,9 +356,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="scanListenerPortTcpSsl")
     def scan_listener_port_tcp_ssl(self) -> Optional[pulumi.Input[int]]:
-        """
-        The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
-        """
         return pulumi.get(self, "scan_listener_port_tcp_ssl")
 
     @scan_listener_port_tcp_ssl.setter
@@ -506,13 +365,6 @@ class CloudVmClusterArgs:
     @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
@@ -572,68 +424,6 @@ class _CloudVmClusterState:
                  zone_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering CloudVmCluster resources.
-        :param pulumi.Input[str] availability_domain: The name of the availability domain that the cloud Exadata infrastructure resource is located in.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
-        :param pulumi.Input[str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
-        :param pulumi.Input[str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
-               * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-               * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-               * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-               * Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-               * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-               * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-               * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
-        :param pulumi.Input['CloudVmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-        :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
-        :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
-        :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of DB servers.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-        :param pulumi.Input[str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
-        :param pulumi.Input[str] hostname: The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
-               
-               The maximum length of the combined hostname and domain is 63 characters.
-               
-               **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
-        :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCachArgs']]] iorm_config_caches: The IORM settings of the Exadata DB system.
-        :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-        :param pulumi.Input[bool] is_sparse_diskgroup_enabled: If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
-        :param pulumi.Input[str] last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] listener_port: The port number configured for the listener on the cloud VM cluster.
-        :param pulumi.Input[int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
-        :param pulumi.Input[int] node_count: The number of nodes in the cloud VM cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-        :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
-        :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-        :param pulumi.Input[str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
-        :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-        :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
-        :param pulumi.Input[str] shape: The model name of the Exadata hardware running the cloud VM cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
-        :param pulumi.Input[str] state: The current state of the cloud VM cluster.
-        :param pulumi.Input[int] storage_size_in_gbs: The storage allocation for the disk group, in gigabytes (GB).
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
-        :param pulumi.Input[str] system_version: Operating system version of the image.
-        :param pulumi.Input[str] time_created: The date and time that the cloud VM cluster was created.
-        :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
-        :param pulumi.Input[str] zone_id: The OCID of the zone the cloud VM cluster is associated with.
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -733,9 +523,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        The name of the availability domain that the cloud Exadata infrastructure resource is located in.
-        """
         return pulumi.get(self, "availability_domain")
 
     @availability_domain.setter
@@ -745,9 +532,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="backupNetworkNsgIds")
     def backup_network_nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        """
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @backup_network_nsg_ids.setter
@@ -757,9 +541,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="backupSubnetId")
     def backup_subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
-        """
         return pulumi.get(self, "backup_subnet_id")
 
     @backup_subnet_id.setter
@@ -769,9 +550,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="cloudExadataInfrastructureId")
     def cloud_exadata_infrastructure_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
-        """
         return pulumi.get(self, "cloud_exadata_infrastructure_id")
 
     @cloud_exadata_infrastructure_id.setter
@@ -781,9 +559,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="clusterName")
     def cluster_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-        """
         return pulumi.get(self, "cluster_name")
 
     @cluster_name.setter
@@ -793,9 +568,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -805,16 +577,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
-        * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-        * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-        * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-        * Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-        * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-        * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-        * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
-        """
         return pulumi.get(self, "cpu_core_count")
 
     @cpu_core_count.setter
@@ -833,9 +595,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="dataCollectionOptions")
     def data_collection_options(self) -> Optional[pulumi.Input['CloudVmClusterDataCollectionOptionsArgs']]:
-        """
-        (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-        """
         return pulumi.get(self, "data_collection_options")
 
     @data_collection_options.setter
@@ -845,9 +604,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="dataStoragePercentage")
     def data_storage_percentage(self) -> Optional[pulumi.Input[int]]:
-        """
-        The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
-        """
         return pulumi.get(self, "data_storage_percentage")
 
     @data_storage_percentage.setter
@@ -857,9 +613,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="dataStorageSizeInTbs")
     def data_storage_size_in_tbs(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The data disk group size to be allocated in TBs.
-        """
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @data_storage_size_in_tbs.setter
@@ -869,9 +622,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
     def db_node_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The local node storage to be allocated in GBs.
-        """
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @db_node_storage_size_in_gbs.setter
@@ -881,9 +631,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="dbServers")
     def db_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The list of DB servers.
-        """
         return pulumi.get(self, "db_servers")
 
     @db_servers.setter
@@ -893,9 +640,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -905,9 +649,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="diskRedundancy")
     def disk_redundancy(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
-        """
         return pulumi.get(self, "disk_redundancy")
 
     @disk_redundancy.setter
@@ -917,9 +658,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -929,9 +667,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter
     def domain(self) -> Optional[pulumi.Input[str]]:
-        """
-        A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
-        """
         return pulumi.get(self, "domain")
 
     @domain.setter
@@ -941,9 +676,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -953,9 +685,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="giVersion")
     def gi_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        A valid Oracle Grid Infrastructure (GI) software version.
-        """
         return pulumi.get(self, "gi_version")
 
     @gi_version.setter
@@ -965,13 +694,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter
     def hostname(self) -> Optional[pulumi.Input[str]]:
-        """
-        The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
-
-        The maximum length of the combined hostname and domain is 63 characters.
-
-        **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
-        """
         return pulumi.get(self, "hostname")
 
     @hostname.setter
@@ -981,9 +703,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="iormConfigCaches")
     def iorm_config_caches(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterIormConfigCachArgs']]]]:
-        """
-        The IORM settings of the Exadata DB system.
-        """
         return pulumi.get(self, "iorm_config_caches")
 
     @iorm_config_caches.setter
@@ -993,9 +712,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="isLocalBackupEnabled")
     def is_local_backup_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-        """
         return pulumi.get(self, "is_local_backup_enabled")
 
     @is_local_backup_enabled.setter
@@ -1005,9 +721,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="isSparseDiskgroupEnabled")
     def is_sparse_diskgroup_enabled(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
-        """
         return pulumi.get(self, "is_sparse_diskgroup_enabled")
 
     @is_sparse_diskgroup_enabled.setter
@@ -1017,9 +730,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="lastUpdateHistoryEntryId")
     def last_update_history_entry_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
-        """
         return pulumi.get(self, "last_update_history_entry_id")
 
     @last_update_history_entry_id.setter
@@ -1029,9 +739,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="licenseModel")
     def license_model(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-        """
         return pulumi.get(self, "license_model")
 
     @license_model.setter
@@ -1041,9 +748,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
-        """
-        Additional information about the current lifecycle state.
-        """
         return pulumi.get(self, "lifecycle_details")
 
     @lifecycle_details.setter
@@ -1053,9 +757,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="listenerPort")
     def listener_port(self) -> Optional[pulumi.Input[str]]:
-        """
-        The port number configured for the listener on the cloud VM cluster.
-        """
         return pulumi.get(self, "listener_port")
 
     @listener_port.setter
@@ -1065,9 +766,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="memorySizeInGbs")
     def memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) The memory to be allocated in GBs.
-        """
         return pulumi.get(self, "memory_size_in_gbs")
 
     @memory_size_in_gbs.setter
@@ -1077,9 +775,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        The number of nodes in the cloud VM cluster.
-        """
         return pulumi.get(self, "node_count")
 
     @node_count.setter
@@ -1089,10 +784,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        """
         return pulumi.get(self, "nsg_ids")
 
     @nsg_ids.setter
@@ -1102,9 +793,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="ocpuCount")
     def ocpu_count(self) -> Optional[pulumi.Input[float]]:
-        """
-        (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-        """
         return pulumi.get(self, "ocpu_count")
 
     @ocpu_count.setter
@@ -1114,9 +802,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="privateZoneId")
     def private_zone_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The private zone id in which DNS records need to be created.
-        """
         return pulumi.get(self, "private_zone_id")
 
     @private_zone_id.setter
@@ -1126,9 +811,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="scanDnsName")
     def scan_dns_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-        """
         return pulumi.get(self, "scan_dns_name")
 
     @scan_dns_name.setter
@@ -1138,9 +820,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="scanDnsRecordId")
     def scan_dns_record_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-        """
         return pulumi.get(self, "scan_dns_record_id")
 
     @scan_dns_record_id.setter
@@ -1150,9 +829,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="scanIpIds")
     def scan_ip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
-        """
         return pulumi.get(self, "scan_ip_ids")
 
     @scan_ip_ids.setter
@@ -1162,9 +838,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="scanListenerPortTcp")
     def scan_listener_port_tcp(self) -> Optional[pulumi.Input[int]]:
-        """
-        The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-        """
         return pulumi.get(self, "scan_listener_port_tcp")
 
     @scan_listener_port_tcp.setter
@@ -1174,9 +847,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="scanListenerPortTcpSsl")
     def scan_listener_port_tcp_ssl(self) -> Optional[pulumi.Input[int]]:
-        """
-        The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
-        """
         return pulumi.get(self, "scan_listener_port_tcp_ssl")
 
     @scan_listener_port_tcp_ssl.setter
@@ -1186,9 +856,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[str]]:
-        """
-        The model name of the Exadata hardware running the cloud VM cluster.
-        """
         return pulumi.get(self, "shape")
 
     @shape.setter
@@ -1198,9 +865,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="sshPublicKeys")
     def ssh_public_keys(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
-        """
         return pulumi.get(self, "ssh_public_keys")
 
     @ssh_public_keys.setter
@@ -1210,9 +874,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The current state of the cloud VM cluster.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -1222,9 +883,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="storageSizeInGbs")
     def storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
-        """
-        The storage allocation for the disk group, in gigabytes (GB).
-        """
         return pulumi.get(self, "storage_size_in_gbs")
 
     @storage_size_in_gbs.setter
@@ -1234,9 +892,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
-        """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -1246,9 +901,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="systemVersion")
     def system_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        Operating system version of the image.
-        """
         return pulumi.get(self, "system_version")
 
     @system_version.setter
@@ -1258,9 +910,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time that the cloud VM cluster was created.
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -1270,13 +919,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
-        """
-        The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_zone")
 
     @time_zone.setter
@@ -1286,9 +928,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="vipIds")
     def vip_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
-        """
         return pulumi.get(self, "vip_ids")
 
     @vip_ids.setter
@@ -1298,9 +937,6 @@ class _CloudVmClusterState:
     @property
     @pulumi.getter(name="zoneId")
     def zone_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        The OCID of the zone the cloud VM cluster is associated with.
-        """
         return pulumi.get(self, "zone_id")
 
     @zone_id.setter
@@ -1345,109 +981,9 @@ class CloudVmCluster(pulumi.CustomResource):
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a cloud VM cluster.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_cloud_vm_cluster = oci.database.CloudVmCluster("testCloudVmCluster",
-            backup_subnet_id=oci_core_subnet["test_subnet"]["id"],
-            cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"],
-            compartment_id=var["compartment_id"],
-            cpu_core_count=var["cloud_vm_cluster_cpu_core_count"],
-            display_name=var["cloud_vm_cluster_display_name"],
-            gi_version=var["cloud_vm_cluster_gi_version"],
-            hostname=var["cloud_vm_cluster_hostname"],
-            ssh_public_keys=var["cloud_vm_cluster_ssh_public_keys"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            backup_network_nsg_ids=var["cloud_vm_cluster_backup_network_nsg_ids"],
-            cluster_name=var["cloud_vm_cluster_cluster_name"],
-            data_collection_options=oci.database.CloudVmClusterDataCollectionOptionsArgs(
-                is_diagnostics_events_enabled=var["cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled"],
-                is_health_monitoring_enabled=var["cloud_vm_cluster_data_collection_options_is_health_monitoring_enabled"],
-                is_incident_logs_enabled=var["cloud_vm_cluster_data_collection_options_is_incident_logs_enabled"],
-            ),
-            data_storage_percentage=var["cloud_vm_cluster_data_storage_percentage"],
-            data_storage_size_in_tbs=var["cloud_vm_cluster_data_storage_size_in_tbs"],
-            db_node_storage_size_in_gbs=var["cloud_vm_cluster_db_node_storage_size_in_gbs"],
-            db_servers=var["cloud_vm_cluster_db_servers"],
-            defined_tags=var["cloud_vm_cluster_defined_tags"],
-            domain=var["cloud_vm_cluster_domain"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_local_backup_enabled=var["cloud_vm_cluster_is_local_backup_enabled"],
-            is_sparse_diskgroup_enabled=var["cloud_vm_cluster_is_sparse_diskgroup_enabled"],
-            license_model=var["cloud_vm_cluster_license_model"],
-            memory_size_in_gbs=var["cloud_vm_cluster_memory_size_in_gbs"],
-            nsg_ids=var["cloud_vm_cluster_nsg_ids"],
-            ocpu_count=var["cloud_vm_cluster_ocpu_count"],
-            private_zone_id=oci_dns_zone["test_zone"]["id"],
-            scan_listener_port_tcp=var["cloud_vm_cluster_scan_listener_port_tcp"],
-            scan_listener_port_tcp_ssl=var["cloud_vm_cluster_scan_listener_port_tcp_ssl"],
-            time_zone=var["cloud_vm_cluster_time_zone"])
-        ```
-
-        ## Import
-
-        CloudVmClusters can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
-        ```
-
+        Create a CloudVmCluster resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
-        :param pulumi.Input[str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
-        :param pulumi.Input[str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
-               * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-               * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-               * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-               * Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-               * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-               * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-               * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
-        :param pulumi.Input[pulumi.InputType['CloudVmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-        :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
-        :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
-        :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of DB servers.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-        :param pulumi.Input[str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
-        :param pulumi.Input[str] hostname: The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
-               
-               The maximum length of the combined hostname and domain is 63 characters.
-               
-               **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
-        :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-        :param pulumi.Input[bool] is_sparse_diskgroup_enabled: If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-        :param pulumi.Input[int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-        :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
-        :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-        :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
-        :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -1456,62 +992,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  args: CloudVmClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
-
-        Creates a cloud VM cluster.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_cloud_vm_cluster = oci.database.CloudVmCluster("testCloudVmCluster",
-            backup_subnet_id=oci_core_subnet["test_subnet"]["id"],
-            cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"],
-            compartment_id=var["compartment_id"],
-            cpu_core_count=var["cloud_vm_cluster_cpu_core_count"],
-            display_name=var["cloud_vm_cluster_display_name"],
-            gi_version=var["cloud_vm_cluster_gi_version"],
-            hostname=var["cloud_vm_cluster_hostname"],
-            ssh_public_keys=var["cloud_vm_cluster_ssh_public_keys"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            backup_network_nsg_ids=var["cloud_vm_cluster_backup_network_nsg_ids"],
-            cluster_name=var["cloud_vm_cluster_cluster_name"],
-            data_collection_options=oci.database.CloudVmClusterDataCollectionOptionsArgs(
-                is_diagnostics_events_enabled=var["cloud_vm_cluster_data_collection_options_is_diagnostics_events_enabled"],
-                is_health_monitoring_enabled=var["cloud_vm_cluster_data_collection_options_is_health_monitoring_enabled"],
-                is_incident_logs_enabled=var["cloud_vm_cluster_data_collection_options_is_incident_logs_enabled"],
-            ),
-            data_storage_percentage=var["cloud_vm_cluster_data_storage_percentage"],
-            data_storage_size_in_tbs=var["cloud_vm_cluster_data_storage_size_in_tbs"],
-            db_node_storage_size_in_gbs=var["cloud_vm_cluster_db_node_storage_size_in_gbs"],
-            db_servers=var["cloud_vm_cluster_db_servers"],
-            defined_tags=var["cloud_vm_cluster_defined_tags"],
-            domain=var["cloud_vm_cluster_domain"],
-            freeform_tags={
-                "Department": "Finance",
-            },
-            is_local_backup_enabled=var["cloud_vm_cluster_is_local_backup_enabled"],
-            is_sparse_diskgroup_enabled=var["cloud_vm_cluster_is_sparse_diskgroup_enabled"],
-            license_model=var["cloud_vm_cluster_license_model"],
-            memory_size_in_gbs=var["cloud_vm_cluster_memory_size_in_gbs"],
-            nsg_ids=var["cloud_vm_cluster_nsg_ids"],
-            ocpu_count=var["cloud_vm_cluster_ocpu_count"],
-            private_zone_id=oci_dns_zone["test_zone"]["id"],
-            scan_listener_port_tcp=var["cloud_vm_cluster_scan_listener_port_tcp"],
-            scan_listener_port_tcp_ssl=var["cloud_vm_cluster_scan_listener_port_tcp_ssl"],
-            time_zone=var["cloud_vm_cluster_time_zone"])
-        ```
-
-        ## Import
-
-        CloudVmClusters can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Database/cloudVmCluster:CloudVmCluster test_cloud_vm_cluster "id"
-        ```
-
+        Create a CloudVmCluster resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param CloudVmClusterArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -1695,68 +1176,6 @@ class CloudVmCluster(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] availability_domain: The name of the availability domain that the cloud Exadata infrastructure resource is located in.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        :param pulumi.Input[str] backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
-        :param pulumi.Input[str] cloud_exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
-        :param pulumi.Input[str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[int] cpu_core_count: (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
-               * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-               * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-               * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-               * Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-               * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-               * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-               * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
-        :param pulumi.Input[pulumi.InputType['CloudVmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-        :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
-        :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
-        :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of DB servers.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[str] disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
-        :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-        :param pulumi.Input[str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
-        :param pulumi.Input[str] hostname: The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
-               
-               The maximum length of the combined hostname and domain is 63 characters.
-               
-               **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudVmClusterIormConfigCachArgs']]]] iorm_config_caches: The IORM settings of the Exadata DB system.
-        :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-        :param pulumi.Input[bool] is_sparse_diskgroup_enabled: If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
-        :param pulumi.Input[str] last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
-        :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
-        :param pulumi.Input[str] listener_port: The port number configured for the listener on the cloud VM cluster.
-        :param pulumi.Input[int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
-        :param pulumi.Input[int] node_count: The number of nodes in the cloud VM cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-        :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
-        :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-        :param pulumi.Input[str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
-        :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-        :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
-        :param pulumi.Input[str] shape: The model name of the Exadata hardware running the cloud VM cluster.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
-        :param pulumi.Input[str] state: The current state of the cloud VM cluster.
-        :param pulumi.Input[int] storage_size_in_gbs: The storage allocation for the disk group, in gigabytes (GB).
-        :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
-        :param pulumi.Input[str] system_version: Operating system version of the image.
-        :param pulumi.Input[str] time_created: The date and time that the cloud VM cluster was created.
-        :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
-        :param pulumi.Input[str] zone_id: The OCID of the zone the cloud VM cluster is associated with.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1813,65 +1232,37 @@ class CloudVmCluster(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> pulumi.Output[str]:
-        """
-        The name of the availability domain that the cloud Exadata infrastructure resource is located in.
-        """
+    def availability_domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="backupNetworkNsgIds")
-    def backup_network_nsg_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-        """
+    def backup_network_nsg_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "backup_network_nsg_ids")
 
     @property
     @pulumi.getter(name="backupSubnetId")
     def backup_subnet_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the cloud VM cluster.
-        """
         return pulumi.get(self, "backup_subnet_id")
 
     @property
     @pulumi.getter(name="cloudExadataInfrastructureId")
     def cloud_exadata_infrastructure_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
-        """
         return pulumi.get(self, "cloud_exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="clusterName")
-    def cluster_name(self) -> pulumi.Output[str]:
-        """
-        The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-        """
+    def cluster_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "cluster_name")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
-        * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
-        * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
-        * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
-        * Exadata.Full1.336 - Specify a multiple of 8, from 88 to 336.
-        * Exadata.Quarter2.92 - Specify a multiple of 2, from 0 to 92.
-        * Exadata.Half2.184 - Specify a multiple of 4, from 0 to 184.
-        * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
-        """
         return pulumi.get(self, "cpu_core_count")
 
     @property
@@ -1881,322 +1272,196 @@ class CloudVmCluster(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="dataCollectionOptions")
-    def data_collection_options(self) -> pulumi.Output['outputs.CloudVmClusterDataCollectionOptions']:
-        """
-        (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-        """
+    def data_collection_options(self) -> pulumi.Output[Optional['outputs.CloudVmClusterDataCollectionOptions']]:
         return pulumi.get(self, "data_collection_options")
 
     @property
     @pulumi.getter(name="dataStoragePercentage")
-    def data_storage_percentage(self) -> pulumi.Output[int]:
-        """
-        The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
-        """
+    def data_storage_percentage(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "data_storage_percentage")
 
     @property
     @pulumi.getter(name="dataStorageSizeInTbs")
-    def data_storage_size_in_tbs(self) -> pulumi.Output[float]:
-        """
-        (Updatable) The data disk group size to be allocated in TBs.
-        """
+    def data_storage_size_in_tbs(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "data_storage_size_in_tbs")
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The local node storage to be allocated in GBs.
-        """
+    def db_node_storage_size_in_gbs(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="dbServers")
-    def db_servers(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The list of DB servers.
-        """
+    def db_servers(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "db_servers")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="diskRedundancy")
-    def disk_redundancy(self) -> pulumi.Output[str]:
-        """
-        The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
-        """
+    def disk_redundancy(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "disk_redundancy")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter
-    def domain(self) -> pulumi.Output[str]:
-        """
-        A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
-        """
+    def domain(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="giVersion")
     def gi_version(self) -> pulumi.Output[str]:
-        """
-        A valid Oracle Grid Infrastructure (GI) software version.
-        """
         return pulumi.get(self, "gi_version")
 
     @property
     @pulumi.getter
     def hostname(self) -> pulumi.Output[str]:
-        """
-        The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
-
-        The maximum length of the combined hostname and domain is 63 characters.
-
-        **Note:** The hostname must be unique within the subnet. If it is not unique, the cloud VM Cluster will fail to provision.
-        """
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter(name="iormConfigCaches")
-    def iorm_config_caches(self) -> pulumi.Output[Sequence['outputs.CloudVmClusterIormConfigCach']]:
-        """
-        The IORM settings of the Exadata DB system.
-        """
+    def iorm_config_caches(self) -> pulumi.Output[Optional[Sequence['outputs.CloudVmClusterIormConfigCach']]]:
         return pulumi.get(self, "iorm_config_caches")
 
     @property
     @pulumi.getter(name="isLocalBackupEnabled")
-    def is_local_backup_enabled(self) -> pulumi.Output[bool]:
-        """
-        If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
-        """
+    def is_local_backup_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_local_backup_enabled")
 
     @property
     @pulumi.getter(name="isSparseDiskgroupEnabled")
-    def is_sparse_diskgroup_enabled(self) -> pulumi.Output[bool]:
-        """
-        If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
-        """
+    def is_sparse_diskgroup_enabled(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_sparse_diskgroup_enabled")
 
     @property
     @pulumi.getter(name="lastUpdateHistoryEntryId")
-    def last_update_history_entry_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
-        """
+    def last_update_history_entry_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "last_update_history_entry_id")
 
     @property
     @pulumi.getter(name="licenseModel")
-    def license_model(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
-        """
+    def license_model(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "license_model")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> pulumi.Output[str]:
-        """
-        Additional information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="listenerPort")
-    def listener_port(self) -> pulumi.Output[str]:
-        """
-        The port number configured for the listener on the cloud VM cluster.
-        """
+    def listener_port(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "listener_port")
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> pulumi.Output[int]:
-        """
-        (Updatable) The memory to be allocated in GBs.
-        """
+    def memory_size_in_gbs(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter(name="nodeCount")
-    def node_count(self) -> pulumi.Output[int]:
-        """
-        The number of nodes in the cloud VM cluster.
-        """
+    def node_count(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "node_count")
 
     @property
     @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
-        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        """
+    def nsg_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "nsg_ids")
 
     @property
     @pulumi.getter(name="ocpuCount")
-    def ocpu_count(self) -> pulumi.Output[float]:
-        """
-        (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-        """
+    def ocpu_count(self) -> pulumi.Output[Optional[float]]:
         return pulumi.get(self, "ocpu_count")
 
     @property
     @pulumi.getter(name="privateZoneId")
-    def private_zone_id(self) -> pulumi.Output[str]:
-        """
-        The private zone id in which DNS records need to be created.
-        """
+    def private_zone_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "private_zone_id")
 
     @property
     @pulumi.getter(name="scanDnsName")
-    def scan_dns_name(self) -> pulumi.Output[str]:
-        """
-        The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-        """
+    def scan_dns_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "scan_dns_name")
 
     @property
     @pulumi.getter(name="scanDnsRecordId")
-    def scan_dns_record_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
-        """
+    def scan_dns_record_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "scan_dns_record_id")
 
     @property
     @pulumi.getter(name="scanIpIds")
-    def scan_ip_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
-        """
+    def scan_ip_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "scan_ip_ids")
 
     @property
     @pulumi.getter(name="scanListenerPortTcp")
-    def scan_listener_port_tcp(self) -> pulumi.Output[int]:
-        """
-        The TCP Single Client Access Name (SCAN) port. The default port is 1521.
-        """
+    def scan_listener_port_tcp(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "scan_listener_port_tcp")
 
     @property
     @pulumi.getter(name="scanListenerPortTcpSsl")
-    def scan_listener_port_tcp_ssl(self) -> pulumi.Output[int]:
-        """
-        The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
-        """
+    def scan_listener_port_tcp_ssl(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "scan_listener_port_tcp_ssl")
 
     @property
     @pulumi.getter
-    def shape(self) -> pulumi.Output[str]:
-        """
-        The model name of the Exadata hardware running the cloud VM cluster.
-        """
+    def shape(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="sshPublicKeys")
     def ssh_public_keys(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
-        """
         return pulumi.get(self, "ssh_public_keys")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The current state of the cloud VM cluster.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="storageSizeInGbs")
-    def storage_size_in_gbs(self) -> pulumi.Output[int]:
-        """
-        The storage allocation for the disk group, in gigabytes (GB).
-        """
+    def storage_size_in_gbs(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
-        """
         return pulumi.get(self, "subnet_id")
 
     @property
     @pulumi.getter(name="systemVersion")
-    def system_version(self) -> pulumi.Output[str]:
-        """
-        Operating system version of the image.
-        """
+    def system_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "system_version")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time that the cloud VM cluster was created.
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeZone")
-    def time_zone(self) -> pulumi.Output[str]:
-        """
-        The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
+    def time_zone(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_zone")
 
     @property
     @pulumi.getter(name="vipIds")
-    def vip_ids(self) -> pulumi.Output[Sequence[str]]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
-        """
+    def vip_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "vip_ids")
 
     @property
     @pulumi.getter(name="zoneId")
-    def zone_id(self) -> pulumi.Output[str]:
-        """
-        The OCID of the zone the cloud VM cluster is associated with.
-        """
+    def zone_id(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "zone_id")
 

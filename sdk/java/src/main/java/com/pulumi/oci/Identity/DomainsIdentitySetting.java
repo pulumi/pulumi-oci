@@ -97,7 +97,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="compartmentOcid", refs={String.class}, tree="[0]")
-    private Output<String> compartmentOcid;
+    private Output</* @Nullable */ String> compartmentOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
@@ -113,8 +113,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<String> compartmentOcid() {
-        return this.compartmentOcid;
+    public Output<Optional<String>> compartmentOcid() {
+        return Codegen.optional(this.compartmentOcid);
     }
     /**
      * (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -131,7 +131,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="deleteInProgress", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> deleteInProgress;
+    private Output</* @Nullable */ Boolean> deleteInProgress;
 
     /**
      * @return (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
@@ -147,8 +147,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> deleteInProgress() {
-        return this.deleteInProgress;
+    public Output<Optional<Boolean>> deleteInProgress() {
+        return Codegen.optional(this.deleteInProgress);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -165,7 +165,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="domainOcid", refs={String.class}, tree="[0]")
-    private Output<String> domainOcid;
+    private Output</* @Nullable */ String> domainOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
@@ -181,8 +181,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<String> domainOcid() {
-        return this.domainOcid;
+    public Output<Optional<String>> domainOcid() {
+        return Codegen.optional(this.domainOcid);
     }
     /**
      * (Updatable) Indicates whether to show the &#39;user-is-locked&#39; message during authentication if the user is already locked. The default value is false, which tells the system to show a generic &#39;authentication-failure&#39; message. This is the most secure behavior. If the option is set to true, the system shows a more detailed &#39;error-message&#39; that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
@@ -200,7 +200,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="emitLockedMessageWhenUserIsLocked", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> emitLockedMessageWhenUserIsLocked;
+    private Output</* @Nullable */ Boolean> emitLockedMessageWhenUserIsLocked;
 
     /**
      * @return (Updatable) Indicates whether to show the &#39;user-is-locked&#39; message during authentication if the user is already locked. The default value is false, which tells the system to show a generic &#39;authentication-failure&#39; message. This is the most secure behavior. If the option is set to true, the system shows a more detailed &#39;error-message&#39; that says the user is locked. This is more helpful but is less secure, for example, because the difference in error-messages could be used to determine which usernames exist and which do not.
@@ -217,8 +217,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> emitLockedMessageWhenUserIsLocked() {
-        return this.emitLockedMessageWhenUserIsLocked;
+    public Output<Optional<Boolean>> emitLockedMessageWhenUserIsLocked() {
+        return Codegen.optional(this.emitLockedMessageWhenUserIsLocked);
     }
     /**
      * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
@@ -234,7 +234,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="externalId", refs={String.class}, tree="[0]")
-    private Output<String> externalId;
+    private Output</* @Nullable */ String> externalId;
 
     /**
      * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
@@ -249,8 +249,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<String> externalId() {
-        return this.externalId;
+    public Output<Optional<String>> externalId() {
+        return Codegen.optional(this.externalId);
     }
     /**
      * (Updatable) The User or App who created the Resource
@@ -265,7 +265,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="idcsCreatedBies", refs={List.class,DomainsIdentitySettingIdcsCreatedBy.class}, tree="[0,1]")
-    private Output<List<DomainsIdentitySettingIdcsCreatedBy>> idcsCreatedBies;
+    private Output</* @Nullable */ List<DomainsIdentitySettingIdcsCreatedBy>> idcsCreatedBies;
 
     /**
      * @return (Updatable) The User or App who created the Resource
@@ -279,8 +279,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * type: complex
      * 
      */
-    public Output<List<DomainsIdentitySettingIdcsCreatedBy>> idcsCreatedBies() {
-        return this.idcsCreatedBies;
+    public Output<Optional<List<DomainsIdentitySettingIdcsCreatedBy>>> idcsCreatedBies() {
+        return Codegen.optional(this.idcsCreatedBies);
     }
     /**
      * The basic endpoint for the identity domain
@@ -309,7 +309,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="idcsLastModifiedBies", refs={List.class,DomainsIdentitySettingIdcsLastModifiedBy.class}, tree="[0,1]")
-    private Output<List<DomainsIdentitySettingIdcsLastModifiedBy>> idcsLastModifiedBies;
+    private Output</* @Nullable */ List<DomainsIdentitySettingIdcsLastModifiedBy>> idcsLastModifiedBies;
 
     /**
      * @return (Updatable) The User or App who modified the Resource
@@ -323,8 +323,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * type: complex
      * 
      */
-    public Output<List<DomainsIdentitySettingIdcsLastModifiedBy>> idcsLastModifiedBies() {
-        return this.idcsLastModifiedBies;
+    public Output<Optional<List<DomainsIdentitySettingIdcsLastModifiedBy>>> idcsLastModifiedBies() {
+        return Codegen.optional(this.idcsLastModifiedBies);
     }
     /**
      * (Updatable) The release number when the resource was upgraded.
@@ -341,7 +341,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="idcsLastUpgradedInRelease", refs={String.class}, tree="[0]")
-    private Output<String> idcsLastUpgradedInRelease;
+    private Output</* @Nullable */ String> idcsLastUpgradedInRelease;
 
     /**
      * @return (Updatable) The release number when the resource was upgraded.
@@ -357,8 +357,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<String> idcsLastUpgradedInRelease() {
-        return this.idcsLastUpgradedInRelease;
+    public Output<Optional<String>> idcsLastUpgradedInRelease() {
+        return Codegen.optional(this.idcsLastUpgradedInRelease);
     }
     /**
      * (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -374,7 +374,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="idcsPreventedOperations", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> idcsPreventedOperations;
+    private Output</* @Nullable */ List<String>> idcsPreventedOperations;
 
     /**
      * @return (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
@@ -389,8 +389,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<List<String>> idcsPreventedOperations() {
-        return this.idcsPreventedOperations;
+    public Output<Optional<List<String>>> idcsPreventedOperations() {
+        return Codegen.optional(this.idcsPreventedOperations);
     }
     /**
      * ID of the resource
@@ -421,7 +421,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="metas", refs={List.class,DomainsIdentitySettingMeta.class}, tree="[0,1]")
-    private Output<List<DomainsIdentitySettingMeta>> metas;
+    private Output</* @Nullable */ List<DomainsIdentitySettingMeta>> metas;
 
     /**
      * @return (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
@@ -437,8 +437,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * type: complex
      * 
      */
-    public Output<List<DomainsIdentitySettingMeta>> metas() {
-        return this.metas;
+    public Output<Optional<List<DomainsIdentitySettingMeta>>> metas() {
+        return Codegen.optional(this.metas);
     }
     /**
      * (Updatable) Whether to allow users to update their own profile.
@@ -454,7 +454,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="myProfile", refs={DomainsIdentitySettingMyProfile.class}, tree="[0]")
-    private Output<DomainsIdentitySettingMyProfile> myProfile;
+    private Output</* @Nullable */ DomainsIdentitySettingMyProfile> myProfile;
 
     /**
      * @return (Updatable) Whether to allow users to update their own profile.
@@ -469,8 +469,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<DomainsIdentitySettingMyProfile> myProfile() {
-        return this.myProfile;
+    public Output<Optional<DomainsIdentitySettingMyProfile>> myProfile() {
+        return Codegen.optional(this.myProfile);
     }
     /**
      * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -487,7 +487,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
-    private Output<String> ocid;
+    private Output</* @Nullable */ String> ocid;
 
     /**
      * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
@@ -503,8 +503,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: global
      * 
      */
-    public Output<String> ocid() {
-        return this.ocid;
+    public Output<Optional<String>> ocid() {
+        return Codegen.optional(this.ocid);
     }
     /**
      * (Updatable) A list of Posix Gid settings.
@@ -520,7 +520,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="posixGid", refs={DomainsIdentitySettingPosixGid.class}, tree="[0]")
-    private Output<DomainsIdentitySettingPosixGid> posixGid;
+    private Output</* @Nullable */ DomainsIdentitySettingPosixGid> posixGid;
 
     /**
      * @return (Updatable) A list of Posix Gid settings.
@@ -535,8 +535,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<DomainsIdentitySettingPosixGid> posixGid() {
-        return this.posixGid;
+    public Output<Optional<DomainsIdentitySettingPosixGid>> posixGid() {
+        return Codegen.optional(this.posixGid);
     }
     /**
      * (Updatable) A list of Posix Uid settings.
@@ -552,7 +552,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="posixUid", refs={DomainsIdentitySettingPosixUid.class}, tree="[0]")
-    private Output<DomainsIdentitySettingPosixUid> posixUid;
+    private Output</* @Nullable */ DomainsIdentitySettingPosixUid> posixUid;
 
     /**
      * @return (Updatable) A list of Posix Uid settings.
@@ -567,8 +567,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<DomainsIdentitySettingPosixUid> posixUid() {
-        return this.posixUid;
+    public Output<Optional<DomainsIdentitySettingPosixUid>> posixUid() {
+        return Codegen.optional(this.posixUid);
     }
     /**
      * (Updatable) Indicates whether the primary email is required.
@@ -586,7 +586,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="primaryEmailRequired", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> primaryEmailRequired;
+    private Output</* @Nullable */ Boolean> primaryEmailRequired;
 
     /**
      * @return (Updatable) Indicates whether the primary email is required.
@@ -603,8 +603,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> primaryEmailRequired() {
-        return this.primaryEmailRequired;
+    public Output<Optional<Boolean>> primaryEmailRequired() {
+        return Codegen.optional(this.primaryEmailRequired);
     }
     /**
      * (Updatable) Indicates whether to remove non-RFC5322 compliant emails before creating a user.
@@ -622,7 +622,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="removeInvalidEmails", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> removeInvalidEmails;
+    private Output</* @Nullable */ Boolean> removeInvalidEmails;
 
     /**
      * @return (Updatable) Indicates whether to remove non-RFC5322 compliant emails before creating a user.
@@ -639,8 +639,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<Boolean> removeInvalidEmails() {
-        return this.removeInvalidEmails;
+    public Output<Optional<Boolean>> removeInvalidEmails() {
+        return Codegen.optional(this.removeInvalidEmails);
     }
     /**
      * (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
@@ -670,7 +670,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="returnInactiveOverLockedMessage", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> returnInactiveOverLockedMessage;
+    private Output</* @Nullable */ Boolean> returnInactiveOverLockedMessage;
 
     /**
      * @return (Updatable) **Added In:** 2302092332
@@ -685,8 +685,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none Determines the PasswordAuthenticator API response when a user is both &#39;locked&#39; and &#39;inactive.&#39; If false (default), a &#39;locked&#39; message is shown. If true, an &#39;inactive&#39; message is shown.
      * 
      */
-    public Output<Boolean> returnInactiveOverLockedMessage() {
-        return this.returnInactiveOverLockedMessage;
+    public Output<Optional<Boolean>> returnInactiveOverLockedMessage() {
+        return Codegen.optional(this.returnInactiveOverLockedMessage);
     }
     /**
      * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
@@ -737,7 +737,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="tags", refs={List.class,DomainsIdentitySettingTag.class}, tree="[0,1]")
-    private Output<List<DomainsIdentitySettingTag>> tags;
+    private Output</* @Nullable */ List<DomainsIdentitySettingTag>> tags;
 
     /**
      * @return (Updatable) A list of tags on this resource.
@@ -753,8 +753,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsIdentitySettingTag>> tags() {
-        return this.tags;
+    public Output<Optional<List<DomainsIdentitySettingTag>>> tags() {
+        return Codegen.optional(this.tags);
     }
     /**
      * (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -771,7 +771,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="tenancyOcid", refs={String.class}, tree="[0]")
-    private Output<String> tenancyOcid;
+    private Output</* @Nullable */ String> tenancyOcid;
 
     /**
      * @return (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
@@ -787,8 +787,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<String> tenancyOcid() {
-        return this.tenancyOcid;
+    public Output<Optional<String>> tenancyOcid() {
+        return Codegen.optional(this.tenancyOcid);
     }
     /**
      * (Updatable) A list of tokens and their expiry length.
@@ -803,7 +803,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="tokens", refs={List.class,DomainsIdentitySettingToken.class}, tree="[0,1]")
-    private Output<List<DomainsIdentitySettingToken>> tokens;
+    private Output</* @Nullable */ List<DomainsIdentitySettingToken>> tokens;
 
     /**
      * @return (Updatable) A list of tokens and their expiry length.
@@ -817,8 +817,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * * uniqueness: none
      * 
      */
-    public Output<List<DomainsIdentitySettingToken>> tokens() {
-        return this.tokens;
+    public Output<Optional<List<DomainsIdentitySettingToken>>> tokens() {
+        return Codegen.optional(this.tokens);
     }
     /**
      * (Updatable) Indicates whether a user is allowed to change their own recovery email.
@@ -837,7 +837,7 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * 
      */
     @Export(name="userAllowedToSetRecoveryEmail", refs={Boolean.class}, tree="[0]")
-    private Output<Boolean> userAllowedToSetRecoveryEmail;
+    private Output</* @Nullable */ Boolean> userAllowedToSetRecoveryEmail;
 
     /**
      * @return (Updatable) Indicates whether a user is allowed to change their own recovery email.
@@ -855,8 +855,8 @@ public class DomainsIdentitySetting extends com.pulumi.resources.CustomResource 
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Boolean> userAllowedToSetRecoveryEmail() {
-        return this.userAllowedToSetRecoveryEmail;
+    public Output<Optional<Boolean>> userAllowedToSetRecoveryEmail() {
+        return Codegen.optional(this.userAllowedToSetRecoveryEmail);
     }
 
     /**

@@ -156,7 +156,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly string? PdbConversionAction;
         /// <summary>
         /// The list of pdb_conversion_history_entries.
@@ -173,7 +173,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetDatabasePdbConversionHistoryEntriesFilterResult> filters,
 
-            string id,
+            string? id,
 
             string? pdbConversionAction,
 

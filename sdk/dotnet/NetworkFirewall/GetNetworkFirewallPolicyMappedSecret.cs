@@ -73,7 +73,7 @@ namespace Pulumi.Oci.NetworkFirewall
     [OutputType]
     public sealed class GetNetworkFirewallPolicyMappedSecretResult
     {
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// Name of the secret.
         /// </summary>
@@ -82,41 +82,41 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// OCID of the Network Firewall Policy this Mapped Secret belongs to.
         /// </summary>
-        public readonly string ParentResourceId;
+        public readonly string? ParentResourceId;
         /// <summary>
         /// Source of the secrets, where the secrets are stored.
         /// </summary>
-        public readonly string Source;
+        public readonly string? Source;
         /// <summary>
         /// Type of the secrets mapped based on the policy.
         /// </summary>
-        public readonly string Type;
+        public readonly string? Type;
         /// <summary>
         /// OCID for the Vault Secret to be used.
         /// </summary>
-        public readonly string VaultSecretId;
+        public readonly string? VaultSecretId;
         /// <summary>
         /// Version number of the secret to be used.
         /// </summary>
-        public readonly int VersionNumber;
+        public readonly int? VersionNumber;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyMappedSecretResult(
-            string id,
+            string? id,
 
             string name,
 
             string networkFirewallPolicyId,
 
-            string parentResourceId,
+            string? parentResourceId,
 
-            string source,
+            string? source,
 
-            string type,
+            string? type,
 
-            string vaultSecretId,
+            string? vaultSecretId,
 
-            int versionNumber)
+            int? versionNumber)
         {
             Id = id;
             Name = name;

@@ -108,61 +108,61 @@ namespace Pulumi.Oci.ManagementAgent
         /// <summary>
         /// The current availability status of managementAgent
         /// </summary>
-        public readonly string AvailabilityStatus;
+        public readonly string? AvailabilityStatus;
         /// <summary>
         /// Compartment Identifier
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, object>? DefinedTags;
         public readonly ImmutableArray<string> DeployPluginsIds;
         /// <summary>
         /// Management Agent Name
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
         /// Management Agent host machine name
         /// </summary>
-        public readonly string Host;
+        public readonly string? Host;
         /// <summary>
         /// Host resource ocid
         /// </summary>
-        public readonly string HostId;
+        public readonly string? HostId;
         /// <summary>
         /// agent identifier
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// agent install key identifier
         /// </summary>
-        public readonly string InstallKeyId;
+        public readonly string? InstallKeyId;
         /// <summary>
         /// Path where Management Agent is installed
         /// </summary>
-        public readonly string InstallPath;
+        public readonly string? InstallPath;
         /// <summary>
         /// The install type, either AGENT or GATEWAY
         /// </summary>
-        public readonly string InstallType;
+        public readonly string? InstallType;
         /// <summary>
         /// true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
         /// </summary>
-        public readonly bool IsAgentAutoUpgradable;
+        public readonly bool? IsAgentAutoUpgradable;
         /// <summary>
         /// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
         /// </summary>
-        public readonly bool IsCustomerDeployed;
+        public readonly bool? IsCustomerDeployed;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
-        public readonly string LifecycleDetails;
-        public readonly string ManagedAgentId;
+        public readonly string? LifecycleDetails;
+        public readonly string? ManagedAgentId;
         public readonly string ManagementAgentId;
         /// <summary>
         /// Additional properties for this Management Agent
@@ -171,15 +171,15 @@ namespace Pulumi.Oci.ManagementAgent
         /// <summary>
         /// Platform Name
         /// </summary>
-        public readonly string PlatformName;
+        public readonly string? PlatformName;
         /// <summary>
         /// Platform Type
         /// </summary>
-        public readonly string PlatformType;
+        public readonly string? PlatformType;
         /// <summary>
         /// Platform Version
         /// </summary>
-        public readonly string PlatformVersion;
+        public readonly string? PlatformVersion;
         /// <summary>
         /// list of managementAgentPlugins associated with the agent
         /// </summary>
@@ -187,85 +187,85 @@ namespace Pulumi.Oci.ManagementAgent
         /// <summary>
         /// Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
         /// </summary>
-        public readonly string ResourceArtifactVersion;
+        public readonly string? ResourceArtifactVersion;
         /// <summary>
         /// The current state of managementAgent
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The time the Management Agent was created. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeLastHeartbeat;
+        public readonly string? TimeLastHeartbeat;
         /// <summary>
         /// The time the Management Agent was last updated. An RFC3339 formatted datetime string
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string? TimeUpdated;
         /// <summary>
         /// Management Agent Version
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetManagementAgentResult(
-            string availabilityStatus,
+            string? availabilityStatus,
 
-            string compartmentId,
+            string? compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, object>? definedTags,
 
             ImmutableArray<string> deployPluginsIds,
 
-            string displayName,
+            string? displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, object>? freeformTags,
 
-            string host,
+            string? host,
 
-            string hostId,
+            string? hostId,
 
-            string id,
+            string? id,
 
-            string installKeyId,
+            string? installKeyId,
 
-            string installPath,
+            string? installPath,
 
-            string installType,
+            string? installType,
 
-            bool isAgentAutoUpgradable,
+            bool? isAgentAutoUpgradable,
 
-            bool isCustomerDeployed,
+            bool? isCustomerDeployed,
 
-            string lifecycleDetails,
+            string? lifecycleDetails,
 
-            string managedAgentId,
+            string? managedAgentId,
 
             string managementAgentId,
 
             ImmutableArray<Outputs.GetManagementAgentManagementAgentPropertyResult> managementAgentProperties,
 
-            string platformName,
+            string? platformName,
 
-            string platformType,
+            string? platformType,
 
-            string platformVersion,
+            string? platformVersion,
 
             ImmutableArray<Outputs.GetManagementAgentPluginListResult> pluginLists,
 
-            string resourceArtifactVersion,
+            string? resourceArtifactVersion,
 
-            string state,
+            string? state,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastHeartbeat,
+            string? timeLastHeartbeat,
 
-            string timeUpdated,
+            string? timeUpdated,
 
-            string version)
+            string? version)
         {
             AvailabilityStatus = availabilityStatus;
             CompartmentId = compartmentId;

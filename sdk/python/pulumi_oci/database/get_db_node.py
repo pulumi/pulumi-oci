@@ -100,42 +100,27 @@ class GetDbNodeResult:
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> str:
-        """
-        Additional information about the planned maintenance.
-        """
+    def additional_details(self) -> Optional[str]:
         return pulumi.get(self, "additional_details")
 
     @property
     @pulumi.getter(name="backupIpId")
-    def backup_ip_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IP address associated with the database node. Use this OCID with either the [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address needed to make a database connection.
-        """
+    def backup_ip_id(self) -> Optional[str]:
         return pulumi.get(self, "backup_ip_id")
 
     @property
     @pulumi.getter(name="backupVnic2id")
-    def backup_vnic2id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
-        """
+    def backup_vnic2id(self) -> Optional[str]:
         return pulumi.get(self, "backup_vnic2id")
 
     @property
     @pulumi.getter(name="backupVnicId")
-    def backup_vnic_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
-        """
+    def backup_vnic_id(self) -> Optional[str]:
         return pulumi.get(self, "backup_vnic_id")
 
     @property
     @pulumi.getter(name="cpuCoreCount")
-    def cpu_core_count(self) -> int:
-        """
-        The number of CPU cores enabled on the Db node.
-        """
+    def cpu_core_count(self) -> Optional[int]:
         return pulumi.get(self, "cpu_core_count")
 
     @property
@@ -145,155 +130,97 @@ class GetDbNodeResult:
 
     @property
     @pulumi.getter(name="dbNodeStorageSizeInGbs")
-    def db_node_storage_size_in_gbs(self) -> int:
-        """
-        The allocated local node storage in GBs on the Db node.
-        """
+    def db_node_storage_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="dbServerId")
-    def db_server_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
-        """
+    def db_server_id(self) -> Optional[str]:
         return pulumi.get(self, "db_server_id")
 
     @property
     @pulumi.getter(name="dbSystemId")
-    def db_system_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
-        """
+    def db_system_id(self) -> Optional[str]:
         return pulumi.get(self, "db_system_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> str:
-        """
-        The name of the Fault Domain the instance is contained in.
-        """
+    def fault_domain(self) -> Optional[str]:
         return pulumi.get(self, "fault_domain")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter(name="hostIpId")
-    def host_ip_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
-        **Note:** Applies only to Exadata Cloud Service.
-        """
+    def host_ip_id(self) -> Optional[str]:
         return pulumi.get(self, "host_ip_id")
 
     @property
     @pulumi.getter
-    def hostname(self) -> str:
-        """
-        The host name for the database node.
-        """
+    def hostname(self) -> Optional[str]:
         return pulumi.get(self, "hostname")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database node.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Information about the current lifecycle state.
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="maintenanceType")
-    def maintenance_type(self) -> str:
-        """
-        The type of database node maintenance.
-        """
+    def maintenance_type(self) -> Optional[str]:
         return pulumi.get(self, "maintenance_type")
 
     @property
     @pulumi.getter(name="memorySizeInGbs")
-    def memory_size_in_gbs(self) -> int:
-        """
-        The allocated memory in GBs on the Db node.
-        """
+    def memory_size_in_gbs(self) -> Optional[int]:
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter(name="softwareStorageSizeInGb")
-    def software_storage_size_in_gb(self) -> int:
-        """
-        The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
-        """
+    def software_storage_size_in_gb(self) -> Optional[int]:
         return pulumi.get(self, "software_storage_size_in_gb")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The current state of the database node.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time that the database node was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeMaintenanceWindowEnd")
-    def time_maintenance_window_end(self) -> str:
-        """
-        End date and time of maintenance window.
-        """
+    def time_maintenance_window_end(self) -> Optional[str]:
         return pulumi.get(self, "time_maintenance_window_end")
 
     @property
     @pulumi.getter(name="timeMaintenanceWindowStart")
-    def time_maintenance_window_start(self) -> str:
-        """
-        Start date and time of maintenance window.
-        """
+    def time_maintenance_window_start(self) -> Optional[str]:
         return pulumi.get(self, "time_maintenance_window_start")
 
     @property
     @pulumi.getter
-    def vnic2id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
-        """
+    def vnic2id(self) -> Optional[str]:
         return pulumi.get(self, "vnic2id")
 
     @property
     @pulumi.getter(name="vnicId")
-    def vnic_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
-        """
+    def vnic_id(self) -> Optional[str]:
         return pulumi.get(self, "vnic_id")
 
 
@@ -333,21 +260,7 @@ class AwaitableGetDbNodeResult(GetDbNodeResult):
 def get_db_node(db_node_id: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbNodeResult:
     """
-    This data source provides details about a specific Db Node resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified database node.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_node = oci.Database.get_db_node(db_node_id=var["db_node_id"])
-    ```
-
-
-    :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['dbNodeId'] = db_node_id
@@ -386,20 +299,6 @@ def get_db_node(db_node_id: Optional[str] = None,
 def get_db_node_output(db_node_id: Optional[pulumi.Input[str]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDbNodeResult]:
     """
-    This data source provides details about a specific Db Node resource in Oracle Cloud Infrastructure Database service.
-
-    Gets information about the specified database node.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_db_node = oci.Database.get_db_node(db_node_id=var["db_node_id"])
-    ```
-
-
-    :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    Use this data source to access information about an existing resource.
     """
     ...

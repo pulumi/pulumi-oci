@@ -16,23 +16,23 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// A filter to return resources that match exact resource name.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
         /// </summary>
-        public readonly string Service;
+        public readonly string? Service;
         /// <summary>
         /// The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
         /// </summary>
-        public readonly string Source;
+        public readonly string? Source;
 
         [OutputConstructor]
         private GetMonitoredResourcesMonitoredResourceCollectionItemAdditionalAliasCredentialResult(
-            string name,
+            string? name,
 
-            string service,
+            string? service,
 
-            string source)
+            string? source)
         {
             Name = name;
             Service = service;

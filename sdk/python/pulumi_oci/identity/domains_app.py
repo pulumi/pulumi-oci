@@ -113,883 +113,6 @@ class DomainsAppArgs:
                  urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] = None):
         """
         The set of arguments for constructing a DomainsApp resource.
-        :param pulumi.Input['DomainsAppBasedOnTemplateArgs'] based_on_template: (Updatable) Application template on which the application is based.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[int] access_token_expiry: (Updatable) Access token expiry
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: dateTime
-               * uniqueness: none
-        :param pulumi.Input[bool] active: (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]] alias_apps: (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[bool] all_url_schemes_allowed: (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] allow_access_control: (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] allow_offline: (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_grants: (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_operations: (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]] allowed_scopes: (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [fqs]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]] allowed_tags: (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] app_icon: (Updatable) Application icon.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsAppAppSignonPolicyArgs'] app_signon_policy: (Updatable) App Sign-on Policy.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] app_thumbnail: (Updatable) Application thumbnail.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]] apps_network_perimeters: (Updatable) Network Perimeter
-               
-               **Added In:** 2010242156
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input['DomainsAppAsOpcServiceArgs'] as_opc_service: (Updatable) OPCService facet of the application.
-               
-               **Deprecated Since: 17.3.4**
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]] attr_rendering_metadatas: (Updatable) Label for the attribute to be shown in the UI.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [name]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] audience: (Updatable) The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[bool] bypass_consent: (Updatable) If true, indicates that consent should be skipped for all scopes
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppCertificateArgs']]] certificates: (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [certAlias]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] client_ip_checking: (Updatable) Network Perimeters checking mode
-               
-               **Added In:** 2010242156
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] client_type: (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] contact_email_address: (Updatable) Contact Email Address
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] delegated_service_names: (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
-               
-               **Added In:** 2207040824
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] description: (Updatable) The description of the AppRole.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] disable_kmsi_token_authentication: (Updatable) Indicates whether the application is allowed to be access using kmsi token.
-               
-               **Added In:** 2111190457
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: always
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] error_page_url: (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] home_page_url: (Updatable) Home Page URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] icon: (Updatable) URL of application icon.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: reference
-               * uniqueness: none
-        :param pulumi.Input[str] id_token_enc_algo: (Updatable) Encryption Alogrithm to use for encrypting ID token.
-               
-               **Added In:** 2010242156
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]] identity_providers: (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-        :param pulumi.Input['DomainsAppIdpPolicyArgs'] idp_policy: (Updatable) IDP Policy.
-               
-               **Added In:** 18.1.2
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[bool] is_alias_app: If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: always
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_enterprise_app: (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_form_fill: (Updatable) If true, this application acts as FormFill Application
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_kerberos_realm: (Updatable) If true, indicates that this App supports Kerberos Authentication
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_login_target: (Updatable) If true, this App allows runtime services to log end users into this App automatically.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_mobile_target: (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_multicloud_service_app: (Updatable) If true, indicates the app is used for multicloud service integration.
-               
-               **Added In:** 2301202328
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_oauth_client: (Updatable) If true, this application acts as an OAuth Client
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_oauth_resource: (Updatable) If true, indicates that this application acts as an OAuth Resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_obligation_capable: (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_radius_app: (Updatable) If true, this application acts as an Radius App
-               
-               **Added In:** 20.1.3
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_saml_service_provider: (Updatable) If true, then this App acts as a SAML Service Provider.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_unmanaged_app: If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_web_tier_policy: (Updatable) If true, the webtier policy is active
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] landing_page_url: (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] linking_callback_url: (Updatable) This attribute specifies the callback URL for the social linking operation.
-               
-               **Added In:** 18.2.4
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] login_mechanism: (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] login_page_url: (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] logout_page_url: (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
-               
-               **Added In:** 17.4.2
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] logout_uri: (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-               
-               **Deprecated Since: 18.2.2**
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * idcsValuePersistedInOtherAttribute: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] post_logout_redirect_uris: (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] privacy_policy_url: (Updatable) Privacy Policy URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] product_logo_url: (Updatable) Application Logo URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] product_name: (Updatable) Product Name
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]] protectable_secondary_audiences: (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-               
-               **Added In:** 18.2.2
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [value]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input['DomainsAppRadiusPolicyArgs'] radius_policy: (Updatable) RADIUS Policy assigned to this application.
-               
-               **Added In:** 2209070044
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] redirect_uris: (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[int] refresh_token_expiry: (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: integer
-               * uniqueness: none
-        :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input['DomainsAppSamlServiceProviderArgs'] saml_service_provider: (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppScopeArgs']]] scopes: (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] secondary_audiences: (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-               
-               **Deprecated Since: 18.2.6**
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]] service_params: (Updatable) Custom attribute that is required to compute other attribute values during app creation.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [name]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: always
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] service_type_urn: (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] service_type_version: (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] show_in_my_apps: (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
-               
-               **Added In:** 18.1.2
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input['DomainsAppSignonPolicyArgs'] signon_policy: (Updatable) Sign-on Policy.
-               
-               **Deprecated Since: 17.3.4**
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppTagArgs']]] tags: (Updatable) A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] terms_of_service_url: (Updatable) Terms of Service URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsAppTermsOfUseArgs'] terms_of_use: (Updatable) Terms Of Use.
-               
-               **Added In:** 18.2.6
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]] trust_policies: (Updatable) Trust Policies.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] trust_scope: (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-               
-               **Added In:** 17.4.2
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs'] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs'] urnietfparamsscimschemasoracleidcsextensiondbcs_app: (Updatable) This extension provides attributes for database service facet of an App
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs'] urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: (Updatable) This extension defines the Enterprise App related attributes.
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs'] urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: (Updatable) This extension provides attributes for Form-Fill facet of App
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs'] urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs'] urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: (Updatable) Kerberos Realm
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs'] urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: (Updatable) Managed App
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs'] urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs'] urnietfparamsscimschemasoracleidcsextensionopc_service_app: (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs'] urnietfparamsscimschemasoracleidcsextensionradius_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs'] urnietfparamsscimschemasoracleidcsextensionrequestable_app: (Updatable) Requestable App
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs'] urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: (Updatable) This extension defines attributes related to the Service Providers configuration.
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs'] urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: (Updatable) WebTier Policy
         """
         pulumi.set(__self__, "based_on_template", based_on_template)
         pulumi.set(__self__, "display_name", display_name)
@@ -1181,17 +304,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="basedOnTemplate")
     def based_on_template(self) -> pulumi.Input['DomainsAppBasedOnTemplateArgs']:
-        """
-        (Updatable) Application template on which the application is based.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "based_on_template")
 
     @based_on_template.setter
@@ -1201,19 +313,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -1223,9 +322,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> pulumi.Input[str]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
@@ -1235,19 +331,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter
     def schemas(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
-        """
-        (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @schemas.setter
@@ -1257,19 +340,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="accessTokenExpiry")
     def access_token_expiry(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Access token expiry
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: dateTime
-        * uniqueness: none
-        """
         return pulumi.get(self, "access_token_expiry")
 
     @access_token_expiry.setter
@@ -1279,18 +349,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "active")
 
     @active.setter
@@ -1300,20 +358,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="aliasApps")
     def alias_apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]]:
-        """
-        (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "alias_apps")
 
     @alias_apps.setter
@@ -1323,18 +367,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="allUrlSchemesAllowed")
     def all_url_schemes_allowed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "all_url_schemes_allowed")
 
     @all_url_schemes_allowed.setter
@@ -1344,18 +376,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="allowAccessControl")
     def allow_access_control(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "allow_access_control")
 
     @allow_access_control.setter
@@ -1365,18 +385,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="allowOffline")
     def allow_offline(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "allow_offline")
 
     @allow_offline.setter
@@ -1386,19 +394,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="allowedGrants")
     def allowed_grants(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "allowed_grants")
 
     @allowed_grants.setter
@@ -1408,19 +403,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="allowedOperations")
     def allowed_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "allowed_operations")
 
     @allowed_operations.setter
@@ -1430,20 +412,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="allowedScopes")
     def allowed_scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]]:
-        """
-        (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCompositeKey: [fqs]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "allowed_scopes")
 
     @allowed_scopes.setter
@@ -1453,21 +421,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="allowedTags")
     def allowed_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]]:
-        """
-        (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
-
-        **Added In:** 17.4.6
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "allowed_tags")
 
     @allowed_tags.setter
@@ -1477,18 +430,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="appIcon")
     def app_icon(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Application icon.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "app_icon")
 
     @app_icon.setter
@@ -1498,17 +439,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="appSignonPolicy")
     def app_signon_policy(self) -> Optional[pulumi.Input['DomainsAppAppSignonPolicyArgs']]:
-        """
-        (Updatable) App Sign-on Policy.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "app_signon_policy")
 
     @app_signon_policy.setter
@@ -1518,18 +448,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="appThumbnail")
     def app_thumbnail(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Application thumbnail.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "app_thumbnail")
 
     @app_thumbnail.setter
@@ -1539,19 +457,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="appsNetworkPerimeters")
     def apps_network_perimeters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]]:
-        """
-        (Updatable) Network Perimeter
-
-        **Added In:** 2010242156
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "apps_network_perimeters")
 
     @apps_network_perimeters.setter
@@ -1561,19 +466,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="asOpcService")
     def as_opc_service(self) -> Optional[pulumi.Input['DomainsAppAsOpcServiceArgs']]:
-        """
-        (Updatable) OPCService facet of the application.
-
-        **Deprecated Since: 17.3.4**
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "as_opc_service")
 
     @as_opc_service.setter
@@ -1583,19 +475,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="attrRenderingMetadatas")
     def attr_rendering_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]]:
-        """
-        (Updatable) Label for the attribute to be shown in the UI.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [name]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "attr_rendering_metadatas")
 
     @attr_rendering_metadatas.setter
@@ -1605,9 +484,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
@@ -1617,9 +493,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter
     def attributes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
@@ -1629,19 +502,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter
     def audience(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "audience")
 
     @audience.setter
@@ -1651,9 +511,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter
     def authorization(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
@@ -1663,21 +520,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="bypassConsent")
     def bypass_consent(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that consent should be skipped for all scopes
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "bypass_consent")
 
     @bypass_consent.setter
@@ -1687,20 +529,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter
     def certificates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]]:
-        """
-        (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCompositeKey: [certAlias]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "certificates")
 
     @certificates.setter
@@ -1710,21 +538,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="clientIpChecking")
     def client_ip_checking(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Network Perimeters checking mode
-
-        **Added In:** 2010242156
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "client_ip_checking")
 
     @client_ip_checking.setter
@@ -1734,19 +547,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="clientType")
     def client_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "client_type")
 
     @client_type.setter
@@ -1756,20 +556,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="contactEmailAddress")
     def contact_email_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Contact Email Address
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "contact_email_address")
 
     @contact_email_address.setter
@@ -1779,21 +565,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="delegatedServiceNames")
     def delegated_service_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
-
-        **Added In:** 2207040824
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "delegated_service_names")
 
     @delegated_service_names.setter
@@ -1803,18 +574,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the AppRole.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -1824,20 +583,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="disableKmsiTokenAuthentication")
     def disable_kmsi_token_authentication(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether the application is allowed to be access using kmsi token.
-
-        **Added In:** 2111190457
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: always
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "disable_kmsi_token_authentication")
 
     @disable_kmsi_token_authentication.setter
@@ -1847,19 +592,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="errorPageUrl")
     def error_page_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "error_page_url")
 
     @error_page_url.setter
@@ -1869,20 +601,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="homePageUrl")
     def home_page_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Home Page URL
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "home_page_url")
 
     @home_page_url.setter
@@ -1892,18 +610,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter
     def icon(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) URL of application icon.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: reference
-        * uniqueness: none
-        """
         return pulumi.get(self, "icon")
 
     @icon.setter
@@ -1913,21 +619,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="idTokenEncAlgo")
     def id_token_enc_algo(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Encryption Alogrithm to use for encrypting ID token.
-
-        **Added In:** 2010242156
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "id_token_enc_algo")
 
     @id_token_enc_algo.setter
@@ -1937,18 +628,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="identityProviders")
     def identity_providers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]]:
-        """
-        (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        """
         return pulumi.get(self, "identity_providers")
 
     @identity_providers.setter
@@ -1958,19 +637,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="idpPolicy")
     def idp_policy(self) -> Optional[pulumi.Input['DomainsAppIdpPolicyArgs']]:
-        """
-        (Updatable) IDP Policy.
-
-        **Added In:** 18.1.2
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "idp_policy")
 
     @idp_policy.setter
@@ -1980,18 +646,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isAliasApp")
     def is_alias_app(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: always
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_alias_app")
 
     @is_alias_app.setter
@@ -2001,20 +655,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isEnterpriseApp")
     def is_enterprise_app(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_enterprise_app")
 
     @is_enterprise_app.setter
@@ -2024,18 +664,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isFormFill")
     def is_form_fill(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this application acts as FormFill Application
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_form_fill")
 
     @is_form_fill.setter
@@ -2045,18 +673,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isKerberosRealm")
     def is_kerberos_realm(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that this App supports Kerberos Authentication
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_kerberos_realm")
 
     @is_kerberos_realm.setter
@@ -2066,18 +682,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isLoginTarget")
     def is_login_target(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this App allows runtime services to log end users into this App automatically.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_login_target")
 
     @is_login_target.setter
@@ -2087,18 +691,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isMobileTarget")
     def is_mobile_target(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_mobile_target")
 
     @is_mobile_target.setter
@@ -2108,20 +700,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isMulticloudServiceApp")
     def is_multicloud_service_app(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates the app is used for multicloud service integration.
-
-        **Added In:** 2301202328
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_multicloud_service_app")
 
     @is_multicloud_service_app.setter
@@ -2131,18 +709,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isOauthClient")
     def is_oauth_client(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this application acts as an OAuth Client
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_oauth_client")
 
     @is_oauth_client.setter
@@ -2152,18 +718,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isOauthResource")
     def is_oauth_resource(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that this application acts as an OAuth Resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_oauth_resource")
 
     @is_oauth_resource.setter
@@ -2173,19 +727,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isObligationCapable")
     def is_obligation_capable(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_obligation_capable")
 
     @is_obligation_capable.setter
@@ -2195,20 +736,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isRadiusApp")
     def is_radius_app(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this application acts as an Radius App
-
-        **Added In:** 20.1.3
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_radius_app")
 
     @is_radius_app.setter
@@ -2218,18 +745,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isSamlServiceProvider")
     def is_saml_service_provider(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, then this App acts as a SAML Service Provider.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_saml_service_provider")
 
     @is_saml_service_provider.setter
@@ -2239,18 +754,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isUnmanagedApp")
     def is_unmanaged_app(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_unmanaged_app")
 
     @is_unmanaged_app.setter
@@ -2260,18 +763,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="isWebTierPolicy")
     def is_web_tier_policy(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, the webtier policy is active
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_web_tier_policy")
 
     @is_web_tier_policy.setter
@@ -2281,18 +772,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="landingPageUrl")
     def landing_page_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "landing_page_url")
 
     @landing_page_url.setter
@@ -2302,21 +781,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="linkingCallbackUrl")
     def linking_callback_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This attribute specifies the callback URL for the social linking operation.
-
-        **Added In:** 18.2.4
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "linking_callback_url")
 
     @linking_callback_url.setter
@@ -2326,19 +790,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="loginMechanism")
     def login_mechanism(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "login_mechanism")
 
     @login_mechanism.setter
@@ -2348,19 +799,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="loginPageUrl")
     def login_page_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "login_page_url")
 
     @login_page_url.setter
@@ -2370,21 +808,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="logoutPageUrl")
     def logout_page_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
-
-        **Added In:** 17.4.2
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "logout_page_url")
 
     @logout_page_url.setter
@@ -2394,19 +817,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="logoutUri")
     def logout_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "logout_uri")
 
     @logout_uri.setter
@@ -2416,22 +826,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-
-        **Deprecated Since: 18.2.2**
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * idcsValuePersistedInOtherAttribute: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -2441,19 +835,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "ocid")
 
     @ocid.setter
@@ -2463,19 +844,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="postLogoutRedirectUris")
     def post_logout_redirect_uris(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "post_logout_redirect_uris")
 
     @post_logout_redirect_uris.setter
@@ -2485,20 +853,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="privacyPolicyUrl")
     def privacy_policy_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Privacy Policy URL
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "privacy_policy_url")
 
     @privacy_policy_url.setter
@@ -2508,20 +862,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="productLogoUrl")
     def product_logo_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Application Logo URL
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "product_logo_url")
 
     @product_logo_url.setter
@@ -2531,20 +871,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="productName")
     def product_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Product Name
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "product_name")
 
     @product_name.setter
@@ -2554,22 +880,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="protectableSecondaryAudiences")
     def protectable_secondary_audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]]:
-        """
-        (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-
-        **Added In:** 18.2.2
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCompositeKey: [value]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "protectable_secondary_audiences")
 
     @protectable_secondary_audiences.setter
@@ -2579,19 +889,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="radiusPolicy")
     def radius_policy(self) -> Optional[pulumi.Input['DomainsAppRadiusPolicyArgs']]:
-        """
-        (Updatable) RADIUS Policy assigned to this application.
-
-        **Added In:** 2209070044
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "radius_policy")
 
     @radius_policy.setter
@@ -2601,19 +898,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="redirectUris")
     def redirect_uris(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "redirect_uris")
 
     @redirect_uris.setter
@@ -2623,18 +907,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="refreshTokenExpiry")
     def refresh_token_expiry(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: integer
-        * uniqueness: none
-        """
         return pulumi.get(self, "refresh_token_expiry")
 
     @refresh_token_expiry.setter
@@ -2644,9 +916,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
@@ -2656,18 +925,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="samlServiceProvider")
     def saml_service_provider(self) -> Optional[pulumi.Input['DomainsAppSamlServiceProviderArgs']]:
-        """
-        (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "saml_service_provider")
 
     @saml_service_provider.setter
@@ -2677,20 +934,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter
     def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppScopeArgs']]]]:
-        """
-        (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "scopes")
 
     @scopes.setter
@@ -2700,21 +943,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="secondaryAudiences")
     def secondary_audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-
-        **Deprecated Since: 18.2.6**
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "secondary_audiences")
 
     @secondary_audiences.setter
@@ -2724,19 +952,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="serviceParams")
     def service_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]]:
-        """
-        (Updatable) Custom attribute that is required to compute other attribute values during app creation.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [name]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: always
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "service_params")
 
     @service_params.setter
@@ -2746,19 +961,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="serviceTypeUrn")
     def service_type_urn(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "service_type_urn")
 
     @service_type_urn.setter
@@ -2768,19 +970,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="serviceTypeVersion")
     def service_type_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "service_type_version")
 
     @service_type_version.setter
@@ -2790,20 +979,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="showInMyApps")
     def show_in_my_apps(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
-
-        **Added In:** 18.1.2
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "show_in_my_apps")
 
     @show_in_my_apps.setter
@@ -2813,19 +988,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="signonPolicy")
     def signon_policy(self) -> Optional[pulumi.Input['DomainsAppSignonPolicyArgs']]:
-        """
-        (Updatable) Sign-on Policy.
-
-        **Deprecated Since: 17.3.4**
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "signon_policy")
 
     @signon_policy.setter
@@ -2835,19 +997,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTagArgs']]]]:
-        """
-        (Updatable) A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -2857,20 +1006,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="termsOfServiceUrl")
     def terms_of_service_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Terms of Service URL
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "terms_of_service_url")
 
     @terms_of_service_url.setter
@@ -2880,19 +1015,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="termsOfUse")
     def terms_of_use(self) -> Optional[pulumi.Input['DomainsAppTermsOfUseArgs']]:
-        """
-        (Updatable) Terms Of Use.
-
-        **Added In:** 18.2.6
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "terms_of_use")
 
     @terms_of_use.setter
@@ -2902,18 +1024,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="trustPolicies")
     def trust_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]]:
-        """
-        (Updatable) Trust Policies.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "trust_policies")
 
     @trust_policies.setter
@@ -2923,21 +1033,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="trustScope")
     def trust_scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-
-        **Added In:** 17.4.2
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "trust_scope")
 
     @trust_scope.setter
@@ -2947,9 +1042,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
     def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tags.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
@@ -2959,9 +1051,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbcsApp")
     def urnietfparamsscimschemasoracleidcsextensiondbcs_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']]:
-        """
-        (Updatable) This extension provides attributes for database service facet of an App
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondbcs_app")
 
     @urnietfparamsscimschemasoracleidcsextensiondbcs_app.setter
@@ -2971,9 +1060,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp")
     def urnietfparamsscimschemasoracleidcsextensionenterprise_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']]:
-        """
-        (Updatable) This extension defines the Enterprise App related attributes.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionenterprise_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionenterprise_app_app.setter
@@ -2983,9 +1069,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionformFillAppApp")
     def urnietfparamsscimschemasoracleidcsextensionform_fill_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']]:
-        """
-        (Updatable) This extension provides attributes for Form-Fill facet of App
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionform_fill_app_app.setter
@@ -2995,9 +1078,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate")
     def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']]:
-        """
-        (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template")
 
     @urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template.setter
@@ -3007,9 +1087,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp")
     def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']]:
-        """
-        (Updatable) Kerberos Realm
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app")
 
     @urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app.setter
@@ -3019,9 +1096,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmanagedappApp")
     def urnietfparamsscimschemasoracleidcsextensionmanagedapp_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']]:
-        """
-        (Updatable) Managed App
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmanagedapp_app")
 
     @urnietfparamsscimschemasoracleidcsextensionmanagedapp_app.setter
@@ -3031,9 +1105,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp")
     def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']]:
-        """
-        (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app.setter
@@ -3043,9 +1114,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionopcServiceApp")
     def urnietfparamsscimschemasoracleidcsextensionopc_service_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']]:
-        """
-        (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionopc_service_app")
 
     @urnietfparamsscimschemasoracleidcsextensionopc_service_app.setter
@@ -3055,9 +1123,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionradiusAppApp")
     def urnietfparamsscimschemasoracleidcsextensionradius_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']]:
-        """
-        (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionradius_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionradius_app_app.setter
@@ -3067,9 +1132,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionrequestableApp")
     def urnietfparamsscimschemasoracleidcsextensionrequestable_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']]:
-        """
-        (Updatable) Requestable App
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_app")
 
     @urnietfparamsscimschemasoracleidcsextensionrequestable_app.setter
@@ -3079,9 +1141,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp")
     def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']]:
-        """
-        (Updatable) This extension defines attributes related to the Service Providers configuration.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app")
 
     @urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app.setter
@@ -3091,9 +1150,6 @@ class DomainsAppArgs:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp")
     def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']]:
-        """
-        (Updatable) WebTier Policy
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app")
 
     @urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app.setter
@@ -3227,1166 +1283,6 @@ class _DomainsAppState:
                  user_roles: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]]] = None):
         """
         Input properties used for looking up and filtering DomainsApp resources.
-        :param pulumi.Input[int] access_token_expiry: (Updatable) Access token expiry
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: dateTime
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppAccountArgs']]] accounts: (Updatable) Accounts of App
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[bool] active: (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppAdminRoleArgs']]] admin_roles: (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]] alias_apps: (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[bool] all_url_schemes_allowed: (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] allow_access_control: (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] allow_offline: (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_grants: (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_operations: (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]] allowed_scopes: (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [fqs]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]] allowed_tags: (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] app_icon: (Updatable) Application icon.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsAppAppSignonPolicyArgs'] app_signon_policy: (Updatable) App Sign-on Policy.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] app_thumbnail: (Updatable) Application thumbnail.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]] apps_network_perimeters: (Updatable) Network Perimeter
-               
-               **Added In:** 2010242156
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input['DomainsAppAsOpcServiceArgs'] as_opc_service: (Updatable) OPCService facet of the application.
-               
-               **Deprecated Since: 17.3.4**
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]] attr_rendering_metadatas: (Updatable) Label for the attribute to be shown in the UI.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [name]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] audience: (Updatable) The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input['DomainsAppBasedOnTemplateArgs'] based_on_template: (Updatable) Application template on which the application is based.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[bool] bypass_consent: (Updatable) If true, indicates that consent should be skipped for all scopes
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] callback_service_url: (Updatable) Callback Service URL
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppCertificateArgs']]] certificates: (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [certAlias]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] client_ip_checking: (Updatable) Network Perimeters checking mode
-               
-               **Added In:** 2010242156
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] client_secret: (Updatable) This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * idcsSensitive: none
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] client_type: (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppCloudControlPropertyArgs']]] cloud_control_properties: (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
-               
-               **Added In:** 18.4.2
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [name]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] contact_email_address: (Updatable) Contact Email Address
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] delegated_service_names: (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
-               
-               **Added In:** 2207040824
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] description: (Updatable) The description of the AppRole.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] disable_kmsi_token_authentication: (Updatable) Indicates whether the application is allowed to be access using kmsi token.
-               
-               **Added In:** 2111190457
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: always
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppEditableAttributeArgs']]] editable_attributes: (Updatable) App attributes editable by subject
-               
-               **Added In:** 18.2.6
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [name]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] error_page_url: (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantedAppRoleArgs']]] granted_app_roles: (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantArgs']]] grants: (Updatable) Grants assigned to the app
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] hashed_client_secret: (Updatable) Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
-               
-               **Added In:** 2106240046
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * idcsSensitive: hash_sc
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] home_page_url: (Updatable) Home Page URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] icon: (Updatable) URL of application icon.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: reference
-               * uniqueness: none
-        :param pulumi.Input[str] id_token_enc_algo: (Updatable) Encryption Alogrithm to use for encrypting ID token.
-               
-               **Added In:** 2010242156
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppIdcsCreatedByArgs']]] idcs_created_bies: (Updatable) The User or App who created the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppIdcsLastModifiedByArgs']]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]] identity_providers: (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-        :param pulumi.Input['DomainsAppIdpPolicyArgs'] idp_policy: (Updatable) IDP Policy.
-               
-               **Added In:** 18.1.2
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[bool] infrastructure: (Updatable) If true, this App is an internal infrastructure App.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_alias_app: If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: always
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_database_service: (Updatable) If true, this application acts as database service Application
-               
-               **Added In:** 18.2.2
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * type: boolean
-        :param pulumi.Input[bool] is_enterprise_app: (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_form_fill: (Updatable) If true, this application acts as FormFill Application
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_kerberos_realm: (Updatable) If true, indicates that this App supports Kerberos Authentication
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_login_target: (Updatable) If true, this App allows runtime services to log end users into this App automatically.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_managed_app: (Updatable) If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_mobile_target: (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_multicloud_service_app: (Updatable) If true, indicates the app is used for multicloud service integration.
-               
-               **Added In:** 2301202328
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_oauth_client: (Updatable) If true, this application acts as an OAuth Client
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_oauth_resource: (Updatable) If true, indicates that this application acts as an OAuth Resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_obligation_capable: (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_opc_service: (Updatable) If true, this application is an Oracle Public Cloud service-instance.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_radius_app: (Updatable) If true, this application acts as an Radius App
-               
-               **Added In:** 20.1.3
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_saml_service_provider: (Updatable) If true, then this App acts as a SAML Service Provider.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_unmanaged_app: If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_web_tier_policy: (Updatable) If true, the webtier policy is active
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] landing_page_url: (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] linking_callback_url: (Updatable) This attribute specifies the callback URL for the social linking operation.
-               
-               **Added In:** 18.2.4
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] login_mechanism: (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] login_page_url: (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] logout_page_url: (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
-               
-               **Added In:** 17.4.2
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] logout_uri: (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppMetaArgs']]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-               * type: complex
-        :param pulumi.Input[bool] meter_as_opc_service: (Updatable) Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
-               
-               **Added In:** 18.4.2
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: always
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] migrated: (Updatable) If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-               
-               **Deprecated Since: 18.2.2**
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * idcsValuePersistedInOtherAttribute: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] post_logout_redirect_uris: (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] privacy_policy_url: (Updatable) Privacy Policy URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] product_logo_url: (Updatable) Application Logo URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] product_name: (Updatable) Product Name
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]] protectable_secondary_audiences: (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-               
-               **Added In:** 18.2.2
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [value]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input['DomainsAppRadiusPolicyArgs'] radius_policy: (Updatable) RADIUS Policy assigned to this application.
-               
-               **Added In:** 2209070044
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[bool] ready_to_upgrade: (Updatable) If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] redirect_uris: (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[int] refresh_token_expiry: (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: integer
-               * uniqueness: none
-        :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input['DomainsAppSamlServiceProviderArgs'] saml_service_provider: (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppScopeArgs']]] scopes: (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] secondary_audiences: (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-               
-               **Deprecated Since: 18.2.6**
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]] service_params: (Updatable) Custom attribute that is required to compute other attribute values during app creation.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [name]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: always
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] service_type_urn: (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] service_type_version: (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] show_in_my_apps: (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
-               
-               **Added In:** 18.1.2
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input['DomainsAppSignonPolicyArgs'] signon_policy: (Updatable) Sign-on Policy.
-               
-               **Deprecated Since: 17.3.4**
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppTagArgs']]] tags: (Updatable) A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] terms_of_service_url: (Updatable) Terms of Service URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsAppTermsOfUseArgs'] terms_of_use: (Updatable) Terms Of Use.
-               
-               **Added In:** 18.2.6
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]] trust_policies: (Updatable) Trust Policies.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] trust_scope: (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-               
-               **Added In:** 17.4.2
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs'] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs'] urnietfparamsscimschemasoracleidcsextensiondbcs_app: (Updatable) This extension provides attributes for database service facet of an App
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs'] urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: (Updatable) This extension defines the Enterprise App related attributes.
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs'] urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: (Updatable) This extension provides attributes for Form-Fill facet of App
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs'] urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs'] urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: (Updatable) Kerberos Realm
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs'] urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: (Updatable) Managed App
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs'] urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs'] urnietfparamsscimschemasoracleidcsextensionopc_service_app: (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs'] urnietfparamsscimschemasoracleidcsextensionradius_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs'] urnietfparamsscimschemasoracleidcsextensionrequestable_app: (Updatable) Requestable App
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs'] urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: (Updatable) This extension defines attributes related to the Service Providers configuration.
-        :param pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs'] urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: (Updatable) WebTier Policy
-        :param pulumi.Input[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]] user_roles: (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
         """
         if access_token_expiry is not None:
             pulumi.set(__self__, "access_token_expiry", access_token_expiry)
@@ -4634,19 +1530,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="accessTokenExpiry")
     def access_token_expiry(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Access token expiry
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: dateTime
-        * uniqueness: none
-        """
         return pulumi.get(self, "access_token_expiry")
 
     @access_token_expiry.setter
@@ -4656,19 +1539,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def accounts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAccountArgs']]]]:
-        """
-        (Updatable) Accounts of App
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "accounts")
 
     @accounts.setter
@@ -4678,18 +1548,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def active(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "active")
 
     @active.setter
@@ -4699,18 +1557,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="adminRoles")
     def admin_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAdminRoleArgs']]]]:
-        """
-        (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        """
         return pulumi.get(self, "admin_roles")
 
     @admin_roles.setter
@@ -4720,20 +1566,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="aliasApps")
     def alias_apps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAliasAppArgs']]]]:
-        """
-        (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "alias_apps")
 
     @alias_apps.setter
@@ -4743,18 +1575,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="allUrlSchemesAllowed")
     def all_url_schemes_allowed(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "all_url_schemes_allowed")
 
     @all_url_schemes_allowed.setter
@@ -4764,18 +1584,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="allowAccessControl")
     def allow_access_control(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "allow_access_control")
 
     @allow_access_control.setter
@@ -4785,18 +1593,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="allowOffline")
     def allow_offline(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "allow_offline")
 
     @allow_offline.setter
@@ -4806,19 +1602,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="allowedGrants")
     def allowed_grants(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "allowed_grants")
 
     @allowed_grants.setter
@@ -4828,19 +1611,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="allowedOperations")
     def allowed_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "allowed_operations")
 
     @allowed_operations.setter
@@ -4850,20 +1620,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="allowedScopes")
     def allowed_scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedScopeArgs']]]]:
-        """
-        (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCompositeKey: [fqs]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "allowed_scopes")
 
     @allowed_scopes.setter
@@ -4873,21 +1629,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="allowedTags")
     def allowed_tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAllowedTagArgs']]]]:
-        """
-        (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
-
-        **Added In:** 17.4.6
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "allowed_tags")
 
     @allowed_tags.setter
@@ -4897,18 +1638,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="appIcon")
     def app_icon(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Application icon.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "app_icon")
 
     @app_icon.setter
@@ -4918,17 +1647,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="appSignonPolicy")
     def app_signon_policy(self) -> Optional[pulumi.Input['DomainsAppAppSignonPolicyArgs']]:
-        """
-        (Updatable) App Sign-on Policy.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "app_signon_policy")
 
     @app_signon_policy.setter
@@ -4938,18 +1656,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="appThumbnail")
     def app_thumbnail(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Application thumbnail.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "app_thumbnail")
 
     @app_thumbnail.setter
@@ -4959,19 +1665,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="appsNetworkPerimeters")
     def apps_network_perimeters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAppsNetworkPerimeterArgs']]]]:
-        """
-        (Updatable) Network Perimeter
-
-        **Added In:** 2010242156
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "apps_network_perimeters")
 
     @apps_network_perimeters.setter
@@ -4981,19 +1674,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="asOpcService")
     def as_opc_service(self) -> Optional[pulumi.Input['DomainsAppAsOpcServiceArgs']]:
-        """
-        (Updatable) OPCService facet of the application.
-
-        **Deprecated Since: 17.3.4**
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "as_opc_service")
 
     @as_opc_service.setter
@@ -5003,19 +1683,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="attrRenderingMetadatas")
     def attr_rendering_metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppAttrRenderingMetadataArgs']]]]:
-        """
-        (Updatable) Label for the attribute to be shown in the UI.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [name]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "attr_rendering_metadatas")
 
     @attr_rendering_metadatas.setter
@@ -5025,9 +1692,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @attribute_sets.setter
@@ -5037,9 +1701,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def attributes(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
@@ -5049,19 +1710,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def audience(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "audience")
 
     @audience.setter
@@ -5071,9 +1719,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def authorization(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @authorization.setter
@@ -5083,17 +1728,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="basedOnTemplate")
     def based_on_template(self) -> Optional[pulumi.Input['DomainsAppBasedOnTemplateArgs']]:
-        """
-        (Updatable) Application template on which the application is based.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "based_on_template")
 
     @based_on_template.setter
@@ -5103,21 +1737,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="bypassConsent")
     def bypass_consent(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that consent should be skipped for all scopes
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "bypass_consent")
 
     @bypass_consent.setter
@@ -5127,19 +1746,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="callbackServiceUrl")
     def callback_service_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Callback Service URL
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "callback_service_url")
 
     @callback_service_url.setter
@@ -5149,20 +1755,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def certificates(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCertificateArgs']]]]:
-        """
-        (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCompositeKey: [certAlias]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "certificates")
 
     @certificates.setter
@@ -5172,21 +1764,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="clientIpChecking")
     def client_ip_checking(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Network Perimeters checking mode
-
-        **Added In:** 2010242156
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "client_ip_checking")
 
     @client_ip_checking.setter
@@ -5196,20 +1773,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="clientSecret")
     def client_secret(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * idcsSensitive: none
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "client_secret")
 
     @client_secret.setter
@@ -5219,19 +1782,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="clientType")
     def client_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "client_type")
 
     @client_type.setter
@@ -5241,21 +1791,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="cloudControlProperties")
     def cloud_control_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppCloudControlPropertyArgs']]]]:
-        """
-        (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
-
-        **Added In:** 18.4.2
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [name]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "cloud_control_properties")
 
     @cloud_control_properties.setter
@@ -5265,19 +1800,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="compartmentOcid")
     def compartment_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "compartment_ocid")
 
     @compartment_ocid.setter
@@ -5287,20 +1809,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="contactEmailAddress")
     def contact_email_address(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Contact Email Address
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "contact_email_address")
 
     @contact_email_address.setter
@@ -5310,21 +1818,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="delegatedServiceNames")
     def delegated_service_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
-
-        **Added In:** 2207040824
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "delegated_service_names")
 
     @delegated_service_names.setter
@@ -5334,19 +1827,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="deleteInProgress")
     def delete_in_progress(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "delete_in_progress")
 
     @delete_in_progress.setter
@@ -5356,18 +1836,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The description of the AppRole.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "description")
 
     @description.setter
@@ -5377,20 +1845,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="disableKmsiTokenAuthentication")
     def disable_kmsi_token_authentication(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether the application is allowed to be access using kmsi token.
-
-        **Added In:** 2111190457
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: always
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "disable_kmsi_token_authentication")
 
     @disable_kmsi_token_authentication.setter
@@ -5400,19 +1854,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -5422,19 +1863,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="domainOcid")
     def domain_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "domain_ocid")
 
     @domain_ocid.setter
@@ -5444,22 +1872,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="editableAttributes")
     def editable_attributes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppEditableAttributeArgs']]]]:
-        """
-        (Updatable) App attributes editable by subject
-
-        **Added In:** 18.2.6
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCompositeKey: [name]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "editable_attributes")
 
     @editable_attributes.setter
@@ -5469,19 +1881,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="errorPageUrl")
     def error_page_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "error_page_url")
 
     @error_page_url.setter
@@ -5491,20 +1890,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="grantedAppRoles")
     def granted_app_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantedAppRoleArgs']]]]:
-        """
-        (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "granted_app_roles")
 
     @granted_app_roles.setter
@@ -5514,19 +1899,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def grants(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppGrantArgs']]]]:
-        """
-        (Updatable) Grants assigned to the app
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "grants")
 
     @grants.setter
@@ -5536,21 +1908,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="hashedClientSecret")
     def hashed_client_secret(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
-
-        **Added In:** 2106240046
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * idcsSensitive: hash_sc
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "hashed_client_secret")
 
     @hashed_client_secret.setter
@@ -5560,20 +1917,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="homePageUrl")
     def home_page_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Home Page URL
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "home_page_url")
 
     @home_page_url.setter
@@ -5583,18 +1926,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def icon(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) URL of application icon.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: reference
-        * uniqueness: none
-        """
         return pulumi.get(self, "icon")
 
     @icon.setter
@@ -5604,21 +1935,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="idTokenEncAlgo")
     def id_token_enc_algo(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Encryption Alogrithm to use for encrypting ID token.
-
-        **Added In:** 2010242156
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "id_token_enc_algo")
 
     @id_token_enc_algo.setter
@@ -5628,17 +1944,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="idcsCreatedBies")
     def idcs_created_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdcsCreatedByArgs']]]]:
-        """
-        (Updatable) The User or App who created the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: true
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "idcs_created_bies")
 
     @idcs_created_bies.setter
@@ -5648,9 +1953,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> Optional[pulumi.Input[str]]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @idcs_endpoint.setter
@@ -5660,17 +1962,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
     def idcs_last_modified_bies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdcsLastModifiedByArgs']]]]:
-        """
-        (Updatable) The User or App who modified the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @idcs_last_modified_bies.setter
@@ -5680,19 +1971,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
     def idcs_last_upgraded_in_release(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The release number when the resource was upgraded.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @idcs_last_upgraded_in_release.setter
@@ -5702,18 +1980,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="idcsPreventedOperations")
     def idcs_prevented_operations(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "idcs_prevented_operations")
 
     @idcs_prevented_operations.setter
@@ -5723,18 +1989,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="identityProviders")
     def identity_providers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppIdentityProviderArgs']]]]:
-        """
-        (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        """
         return pulumi.get(self, "identity_providers")
 
     @identity_providers.setter
@@ -5744,19 +1998,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="idpPolicy")
     def idp_policy(self) -> Optional[pulumi.Input['DomainsAppIdpPolicyArgs']]:
-        """
-        (Updatable) IDP Policy.
-
-        **Added In:** 18.1.2
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "idp_policy")
 
     @idp_policy.setter
@@ -5766,18 +2007,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def infrastructure(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this App is an internal infrastructure App.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "infrastructure")
 
     @infrastructure.setter
@@ -5787,18 +2016,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isAliasApp")
     def is_alias_app(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: always
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_alias_app")
 
     @is_alias_app.setter
@@ -5808,18 +2025,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isDatabaseService")
     def is_database_service(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this application acts as database service Application
-
-        **Added In:** 18.2.2
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * type: boolean
-        """
         return pulumi.get(self, "is_database_service")
 
     @is_database_service.setter
@@ -5829,20 +2034,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isEnterpriseApp")
     def is_enterprise_app(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_enterprise_app")
 
     @is_enterprise_app.setter
@@ -5852,18 +2043,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isFormFill")
     def is_form_fill(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this application acts as FormFill Application
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_form_fill")
 
     @is_form_fill.setter
@@ -5873,18 +2052,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isKerberosRealm")
     def is_kerberos_realm(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that this App supports Kerberos Authentication
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_kerberos_realm")
 
     @is_kerberos_realm.setter
@@ -5894,18 +2061,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isLoginTarget")
     def is_login_target(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this App allows runtime services to log end users into this App automatically.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_login_target")
 
     @is_login_target.setter
@@ -5915,18 +2070,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isManagedApp")
     def is_managed_app(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_managed_app")
 
     @is_managed_app.setter
@@ -5936,18 +2079,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isMobileTarget")
     def is_mobile_target(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_mobile_target")
 
     @is_mobile_target.setter
@@ -5957,20 +2088,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isMulticloudServiceApp")
     def is_multicloud_service_app(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates the app is used for multicloud service integration.
-
-        **Added In:** 2301202328
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_multicloud_service_app")
 
     @is_multicloud_service_app.setter
@@ -5980,18 +2097,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isOauthClient")
     def is_oauth_client(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this application acts as an OAuth Client
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_oauth_client")
 
     @is_oauth_client.setter
@@ -6001,18 +2106,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isOauthResource")
     def is_oauth_resource(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, indicates that this application acts as an OAuth Resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_oauth_resource")
 
     @is_oauth_resource.setter
@@ -6022,19 +2115,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isObligationCapable")
     def is_obligation_capable(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_obligation_capable")
 
     @is_obligation_capable.setter
@@ -6044,18 +2124,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isOpcService")
     def is_opc_service(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this application is an Oracle Public Cloud service-instance.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_opc_service")
 
     @is_opc_service.setter
@@ -6065,20 +2133,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isRadiusApp")
     def is_radius_app(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this application acts as an Radius App
-
-        **Added In:** 20.1.3
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_radius_app")
 
     @is_radius_app.setter
@@ -6088,18 +2142,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isSamlServiceProvider")
     def is_saml_service_provider(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, then this App acts as a SAML Service Provider.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_saml_service_provider")
 
     @is_saml_service_provider.setter
@@ -6109,18 +2151,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isUnmanagedApp")
     def is_unmanaged_app(self) -> Optional[pulumi.Input[bool]]:
-        """
-        If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_unmanaged_app")
 
     @is_unmanaged_app.setter
@@ -6130,18 +2160,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="isWebTierPolicy")
     def is_web_tier_policy(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, the webtier policy is active
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "is_web_tier_policy")
 
     @is_web_tier_policy.setter
@@ -6151,18 +2169,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="landingPageUrl")
     def landing_page_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "landing_page_url")
 
     @landing_page_url.setter
@@ -6172,21 +2178,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="linkingCallbackUrl")
     def linking_callback_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This attribute specifies the callback URL for the social linking operation.
-
-        **Added In:** 18.2.4
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "linking_callback_url")
 
     @linking_callback_url.setter
@@ -6196,19 +2187,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="loginMechanism")
     def login_mechanism(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "login_mechanism")
 
     @login_mechanism.setter
@@ -6218,19 +2196,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="loginPageUrl")
     def login_page_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "login_page_url")
 
     @login_page_url.setter
@@ -6240,21 +2205,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="logoutPageUrl")
     def logout_page_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
-
-        **Added In:** 17.4.2
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "logout_page_url")
 
     @logout_page_url.setter
@@ -6264,19 +2214,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="logoutUri")
     def logout_uri(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "logout_uri")
 
     @logout_uri.setter
@@ -6286,19 +2223,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def metas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppMetaArgs']]]]:
-        """
-        (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-        * type: complex
-        """
         return pulumi.get(self, "metas")
 
     @metas.setter
@@ -6308,20 +2232,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="meterAsOpcService")
     def meter_as_opc_service(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
-
-        **Added In:** 18.4.2
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: always
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "meter_as_opc_service")
 
     @meter_as_opc_service.setter
@@ -6331,18 +2241,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def migrated(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "migrated")
 
     @migrated.setter
@@ -6352,22 +2250,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-
-        **Deprecated Since: 18.2.2**
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * idcsValuePersistedInOtherAttribute: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -6377,19 +2259,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: global
-        """
         return pulumi.get(self, "ocid")
 
     @ocid.setter
@@ -6399,19 +2268,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="postLogoutRedirectUris")
     def post_logout_redirect_uris(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "post_logout_redirect_uris")
 
     @post_logout_redirect_uris.setter
@@ -6421,20 +2277,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="privacyPolicyUrl")
     def privacy_policy_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Privacy Policy URL
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "privacy_policy_url")
 
     @privacy_policy_url.setter
@@ -6444,20 +2286,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="productLogoUrl")
     def product_logo_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Application Logo URL
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "product_logo_url")
 
     @product_logo_url.setter
@@ -6467,20 +2295,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="productName")
     def product_name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Product Name
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "product_name")
 
     @product_name.setter
@@ -6490,22 +2304,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="protectableSecondaryAudiences")
     def protectable_secondary_audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppProtectableSecondaryAudienceArgs']]]]:
-        """
-        (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-
-        **Added In:** 18.2.2
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCompositeKey: [value]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "protectable_secondary_audiences")
 
     @protectable_secondary_audiences.setter
@@ -6515,19 +2313,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="radiusPolicy")
     def radius_policy(self) -> Optional[pulumi.Input['DomainsAppRadiusPolicyArgs']]:
-        """
-        (Updatable) RADIUS Policy assigned to this application.
-
-        **Added In:** 2209070044
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "radius_policy")
 
     @radius_policy.setter
@@ -6537,18 +2322,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="readyToUpgrade")
     def ready_to_upgrade(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "ready_to_upgrade")
 
     @ready_to_upgrade.setter
@@ -6558,19 +2331,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="redirectUris")
     def redirect_uris(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "redirect_uris")
 
     @redirect_uris.setter
@@ -6580,18 +2340,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="refreshTokenExpiry")
     def refresh_token_expiry(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: integer
-        * uniqueness: none
-        """
         return pulumi.get(self, "refresh_token_expiry")
 
     @refresh_token_expiry.setter
@@ -6601,9 +2349,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @resource_type_schema_version.setter
@@ -6613,18 +2358,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="samlServiceProvider")
     def saml_service_provider(self) -> Optional[pulumi.Input['DomainsAppSamlServiceProviderArgs']]:
-        """
-        (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "saml_service_provider")
 
     @saml_service_provider.setter
@@ -6634,19 +2367,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def schemas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @schemas.setter
@@ -6656,20 +2376,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def scopes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppScopeArgs']]]]:
-        """
-        (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "scopes")
 
     @scopes.setter
@@ -6679,21 +2385,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="secondaryAudiences")
     def secondary_audiences(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
-        """
-        (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-
-        **Deprecated Since: 18.2.6**
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "secondary_audiences")
 
     @secondary_audiences.setter
@@ -6703,19 +2394,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="serviceParams")
     def service_params(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppServiceParamArgs']]]]:
-        """
-        (Updatable) Custom attribute that is required to compute other attribute values during app creation.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [name]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: always
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "service_params")
 
     @service_params.setter
@@ -6725,19 +2403,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="serviceTypeUrn")
     def service_type_urn(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "service_type_urn")
 
     @service_type_urn.setter
@@ -6747,19 +2412,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="serviceTypeVersion")
     def service_type_version(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "service_type_version")
 
     @service_type_version.setter
@@ -6769,20 +2421,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="showInMyApps")
     def show_in_my_apps(self) -> Optional[pulumi.Input[bool]]:
-        """
-        (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
-
-        **Added In:** 18.1.2
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
         return pulumi.get(self, "show_in_my_apps")
 
     @show_in_my_apps.setter
@@ -6792,19 +2430,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="signonPolicy")
     def signon_policy(self) -> Optional[pulumi.Input['DomainsAppSignonPolicyArgs']]:
-        """
-        (Updatable) Sign-on Policy.
-
-        **Deprecated Since: 17.3.4**
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "signon_policy")
 
     @signon_policy.setter
@@ -6814,19 +2439,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTagArgs']]]]:
-        """
-        (Updatable) A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
         return pulumi.get(self, "tags")
 
     @tags.setter
@@ -6836,19 +2448,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="tenancyOcid")
     def tenancy_ocid(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "tenancy_ocid")
 
     @tenancy_ocid.setter
@@ -6858,20 +2457,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="termsOfServiceUrl")
     def terms_of_service_url(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Terms of Service URL
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "terms_of_service_url")
 
     @terms_of_service_url.setter
@@ -6881,19 +2466,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="termsOfUse")
     def terms_of_use(self) -> Optional[pulumi.Input['DomainsAppTermsOfUseArgs']]:
-        """
-        (Updatable) Terms Of Use.
-
-        **Added In:** 18.2.6
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "terms_of_use")
 
     @terms_of_use.setter
@@ -6903,18 +2475,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="trustPolicies")
     def trust_policies(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppTrustPolicyArgs']]]]:
-        """
-        (Updatable) Trust Policies.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "trust_policies")
 
     @trust_policies.setter
@@ -6924,21 +2484,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="trustScope")
     def trust_scope(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-
-        **Added In:** 17.4.2
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "trust_scope")
 
     @trust_scope.setter
@@ -6948,9 +2493,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
     def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tags.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @urnietfparamsscimschemasoracleidcsextension_oci_tags.setter
@@ -6960,9 +2502,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbcsApp")
     def urnietfparamsscimschemasoracleidcsextensiondbcs_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']]:
-        """
-        (Updatable) This extension provides attributes for database service facet of an App
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondbcs_app")
 
     @urnietfparamsscimschemasoracleidcsextensiondbcs_app.setter
@@ -6972,9 +2511,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp")
     def urnietfparamsscimschemasoracleidcsextensionenterprise_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']]:
-        """
-        (Updatable) This extension defines the Enterprise App related attributes.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionenterprise_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionenterprise_app_app.setter
@@ -6984,9 +2520,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionformFillAppApp")
     def urnietfparamsscimschemasoracleidcsextensionform_fill_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']]:
-        """
-        (Updatable) This extension provides attributes for Form-Fill facet of App
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionform_fill_app_app.setter
@@ -6996,9 +2529,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate")
     def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']]:
-        """
-        (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template")
 
     @urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template.setter
@@ -7008,9 +2538,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp")
     def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']]:
-        """
-        (Updatable) Kerberos Realm
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app")
 
     @urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app.setter
@@ -7020,9 +2547,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmanagedappApp")
     def urnietfparamsscimschemasoracleidcsextensionmanagedapp_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']]:
-        """
-        (Updatable) Managed App
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmanagedapp_app")
 
     @urnietfparamsscimschemasoracleidcsextensionmanagedapp_app.setter
@@ -7032,9 +2556,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp")
     def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']]:
-        """
-        (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app.setter
@@ -7044,9 +2565,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionopcServiceApp")
     def urnietfparamsscimschemasoracleidcsextensionopc_service_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']]:
-        """
-        (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionopc_service_app")
 
     @urnietfparamsscimschemasoracleidcsextensionopc_service_app.setter
@@ -7056,9 +2574,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionradiusAppApp")
     def urnietfparamsscimschemasoracleidcsextensionradius_app_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']]:
-        """
-        (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionradius_app_app")
 
     @urnietfparamsscimschemasoracleidcsextensionradius_app_app.setter
@@ -7068,9 +2583,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionrequestableApp")
     def urnietfparamsscimschemasoracleidcsextensionrequestable_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']]:
-        """
-        (Updatable) Requestable App
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_app")
 
     @urnietfparamsscimschemasoracleidcsextensionrequestable_app.setter
@@ -7080,9 +2592,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp")
     def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']]:
-        """
-        (Updatable) This extension defines attributes related to the Service Providers configuration.
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app")
 
     @urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app.setter
@@ -7092,9 +2601,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp")
     def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app(self) -> Optional[pulumi.Input['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']]:
-        """
-        (Updatable) WebTier Policy
-        """
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app")
 
     @urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app.setter
@@ -7104,18 +2610,6 @@ class _DomainsAppState:
     @property
     @pulumi.getter(name="userRoles")
     def user_roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsAppUserRoleArgs']]]]:
-        """
-        (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        """
         return pulumi.get(self, "user_roles")
 
     @user_roles.setter
@@ -7225,897 +2719,9 @@ class DomainsApp(pulumi.CustomResource):
                  urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: Optional[pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']]] = None,
                  __props__=None):
         """
-        This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create an App
-
-        ## Import
-
-        Apps can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
-        ```
-
+        Create a DomainsApp resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] access_token_expiry: (Updatable) Access token expiry
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: dateTime
-               * uniqueness: none
-        :param pulumi.Input[bool] active: (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppAliasAppArgs']]]] alias_apps: (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[bool] all_url_schemes_allowed: (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] allow_access_control: (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] allow_offline: (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_grants: (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_operations: (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppAllowedScopeArgs']]]] allowed_scopes: (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [fqs]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppAllowedTagArgs']]]] allowed_tags: (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] app_icon: (Updatable) Application icon.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAppAppSignonPolicyArgs']] app_signon_policy: (Updatable) App Sign-on Policy.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] app_thumbnail: (Updatable) Application thumbnail.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppAppsNetworkPerimeterArgs']]]] apps_network_perimeters: (Updatable) Network Perimeter
-               
-               **Added In:** 2010242156
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[pulumi.InputType['DomainsAppAsOpcServiceArgs']] as_opc_service: (Updatable) OPCService facet of the application.
-               
-               **Deprecated Since: 17.3.4**
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppAttrRenderingMetadataArgs']]]] attr_rendering_metadatas: (Updatable) Label for the attribute to be shown in the UI.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [name]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] audience: (Updatable) The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[pulumi.InputType['DomainsAppBasedOnTemplateArgs']] based_on_template: (Updatable) Application template on which the application is based.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[bool] bypass_consent: (Updatable) If true, indicates that consent should be skipped for all scopes
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppCertificateArgs']]]] certificates: (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [certAlias]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] client_ip_checking: (Updatable) Network Perimeters checking mode
-               
-               **Added In:** 2010242156
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] client_type: (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] contact_email_address: (Updatable) Contact Email Address
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] delegated_service_names: (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
-               
-               **Added In:** 2207040824
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] description: (Updatable) The description of the AppRole.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] disable_kmsi_token_authentication: (Updatable) Indicates whether the application is allowed to be access using kmsi token.
-               
-               **Added In:** 2111190457
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: always
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] error_page_url: (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] home_page_url: (Updatable) Home Page URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] icon: (Updatable) URL of application icon.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: reference
-               * uniqueness: none
-        :param pulumi.Input[str] id_token_enc_algo: (Updatable) Encryption Alogrithm to use for encrypting ID token.
-               
-               **Added In:** 2010242156
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppIdentityProviderArgs']]]] identity_providers: (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-        :param pulumi.Input[pulumi.InputType['DomainsAppIdpPolicyArgs']] idp_policy: (Updatable) IDP Policy.
-               
-               **Added In:** 18.1.2
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[bool] is_alias_app: If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: always
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_enterprise_app: (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_form_fill: (Updatable) If true, this application acts as FormFill Application
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_kerberos_realm: (Updatable) If true, indicates that this App supports Kerberos Authentication
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_login_target: (Updatable) If true, this App allows runtime services to log end users into this App automatically.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_mobile_target: (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_multicloud_service_app: (Updatable) If true, indicates the app is used for multicloud service integration.
-               
-               **Added In:** 2301202328
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_oauth_client: (Updatable) If true, this application acts as an OAuth Client
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_oauth_resource: (Updatable) If true, indicates that this application acts as an OAuth Resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_obligation_capable: (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_radius_app: (Updatable) If true, this application acts as an Radius App
-               
-               **Added In:** 20.1.3
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_saml_service_provider: (Updatable) If true, then this App acts as a SAML Service Provider.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_unmanaged_app: If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_web_tier_policy: (Updatable) If true, the webtier policy is active
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] landing_page_url: (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] linking_callback_url: (Updatable) This attribute specifies the callback URL for the social linking operation.
-               
-               **Added In:** 18.2.4
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] login_mechanism: (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] login_page_url: (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] logout_page_url: (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
-               
-               **Added In:** 17.4.2
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] logout_uri: (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-               
-               **Deprecated Since: 18.2.2**
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * idcsValuePersistedInOtherAttribute: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] post_logout_redirect_uris: (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] privacy_policy_url: (Updatable) Privacy Policy URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] product_logo_url: (Updatable) Application Logo URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] product_name: (Updatable) Product Name
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppProtectableSecondaryAudienceArgs']]]] protectable_secondary_audiences: (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-               
-               **Added In:** 18.2.2
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [value]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAppRadiusPolicyArgs']] radius_policy: (Updatable) RADIUS Policy assigned to this application.
-               
-               **Added In:** 2209070044
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] redirect_uris: (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[int] refresh_token_expiry: (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: integer
-               * uniqueness: none
-        :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[pulumi.InputType['DomainsAppSamlServiceProviderArgs']] saml_service_provider: (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppScopeArgs']]]] scopes: (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] secondary_audiences: (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-               
-               **Deprecated Since: 18.2.6**
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppServiceParamArgs']]]] service_params: (Updatable) Custom attribute that is required to compute other attribute values during app creation.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [name]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: always
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] service_type_urn: (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] service_type_version: (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] show_in_my_apps: (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
-               
-               **Added In:** 18.1.2
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAppSignonPolicyArgs']] signon_policy: (Updatable) Sign-on Policy.
-               
-               **Deprecated Since: 17.3.4**
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppTagArgs']]]] tags: (Updatable) A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] terms_of_service_url: (Updatable) Terms of Service URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAppTermsOfUseArgs']] terms_of_use: (Updatable) Terms Of Use.
-               
-               **Added In:** 18.2.6
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppTrustPolicyArgs']]]] trust_policies: (Updatable) Trust Policies.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] trust_scope: (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-               
-               **Added In:** 17.4.2
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']] urnietfparamsscimschemasoracleidcsextensiondbcs_app: (Updatable) This extension provides attributes for database service facet of an App
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']] urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: (Updatable) This extension defines the Enterprise App related attributes.
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']] urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: (Updatable) This extension provides attributes for Form-Fill facet of App
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']] urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']] urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: (Updatable) Kerberos Realm
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']] urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: (Updatable) Managed App
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']] urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']] urnietfparamsscimschemasoracleidcsextensionopc_service_app: (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']] urnietfparamsscimschemasoracleidcsextensionradius_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']] urnietfparamsscimschemasoracleidcsextensionrequestable_app: (Updatable) Requestable App
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']] urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: (Updatable) This extension defines attributes related to the Service Providers configuration.
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: (Updatable) WebTier Policy
         """
         ...
     @overload
@@ -8124,18 +2730,7 @@ class DomainsApp(pulumi.CustomResource):
                  args: DomainsAppArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
-
-        Create an App
-
-        ## Import
-
-        Apps can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Identity/domainsApp:DomainsApp test_app "idcsEndpoint/{idcsEndpoint}/apps/{appId}"
-        ```
-
+        Create a DomainsApp resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param DomainsAppArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -8522,1166 +3117,6 @@ class DomainsApp(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[int] access_token_expiry: (Updatable) Access token expiry
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: dateTime
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppAccountArgs']]]] accounts: (Updatable) Accounts of App
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[bool] active: (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppAdminRoleArgs']]]] admin_roles: (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppAliasAppArgs']]]] alias_apps: (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[bool] all_url_schemes_allowed: (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] allow_access_control: (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] allow_offline: (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_grants: (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allowed_operations: (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppAllowedScopeArgs']]]] allowed_scopes: (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [fqs]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppAllowedTagArgs']]]] allowed_tags: (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
-               
-               **Added In:** 17.4.6
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] app_icon: (Updatable) Application icon.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAppAppSignonPolicyArgs']] app_signon_policy: (Updatable) App Sign-on Policy.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] app_thumbnail: (Updatable) Application thumbnail.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppAppsNetworkPerimeterArgs']]]] apps_network_perimeters: (Updatable) Network Perimeter
-               
-               **Added In:** 2010242156
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[pulumi.InputType['DomainsAppAsOpcServiceArgs']] as_opc_service: (Updatable) OPCService facet of the application.
-               
-               **Deprecated Since: 17.3.4**
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppAttrRenderingMetadataArgs']]]] attr_rendering_metadatas: (Updatable) Label for the attribute to be shown in the UI.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [name]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        :param pulumi.Input[str] attributes: (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        :param pulumi.Input[str] audience: (Updatable) The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] authorization: (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        :param pulumi.Input[pulumi.InputType['DomainsAppBasedOnTemplateArgs']] based_on_template: (Updatable) Application template on which the application is based.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[bool] bypass_consent: (Updatable) If true, indicates that consent should be skipped for all scopes
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] callback_service_url: (Updatable) Callback Service URL
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppCertificateArgs']]]] certificates: (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [certAlias]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] client_ip_checking: (Updatable) Network Perimeters checking mode
-               
-               **Added In:** 2010242156
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] client_secret: (Updatable) This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * idcsSensitive: none
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] client_type: (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppCloudControlPropertyArgs']]]] cloud_control_properties: (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
-               
-               **Added In:** 18.4.2
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [name]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] compartment_ocid: (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] contact_email_address: (Updatable) Contact Email Address
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] delegated_service_names: (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
-               
-               **Added In:** 2207040824
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] delete_in_progress: (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] description: (Updatable) The description of the AppRole.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] disable_kmsi_token_authentication: (Updatable) Indicates whether the application is allowed to be access using kmsi token.
-               
-               **Added In:** 2111190457
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: always
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] display_name: (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] domain_ocid: (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppEditableAttributeArgs']]]] editable_attributes: (Updatable) App attributes editable by subject
-               
-               **Added In:** 18.2.6
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [name]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] error_page_url: (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppGrantedAppRoleArgs']]]] granted_app_roles: (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppGrantArgs']]]] grants: (Updatable) Grants assigned to the app
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] hashed_client_secret: (Updatable) Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
-               
-               **Added In:** 2106240046
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * idcsSensitive: hash_sc
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] home_page_url: (Updatable) Home Page URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] icon: (Updatable) URL of application icon.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: reference
-               * uniqueness: none
-        :param pulumi.Input[str] id_token_enc_algo: (Updatable) Encryption Alogrithm to use for encrypting ID token.
-               
-               **Added In:** 2010242156
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: true
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppIdcsLastModifiedByArgs']]]] idcs_last_modified_bies: (Updatable) The User or App who modified the Resource
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] idcs_last_upgraded_in_release: (Updatable) The release number when the resource was upgraded.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] idcs_prevented_operations: (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppIdentityProviderArgs']]]] identity_providers: (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-        :param pulumi.Input[pulumi.InputType['DomainsAppIdpPolicyArgs']] idp_policy: (Updatable) IDP Policy.
-               
-               **Added In:** 18.1.2
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[bool] infrastructure: (Updatable) If true, this App is an internal infrastructure App.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_alias_app: If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: always
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_database_service: (Updatable) If true, this application acts as database service Application
-               
-               **Added In:** 18.2.2
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * type: boolean
-        :param pulumi.Input[bool] is_enterprise_app: (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_form_fill: (Updatable) If true, this application acts as FormFill Application
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_kerberos_realm: (Updatable) If true, indicates that this App supports Kerberos Authentication
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_login_target: (Updatable) If true, this App allows runtime services to log end users into this App automatically.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_managed_app: (Updatable) If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_mobile_target: (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_multicloud_service_app: (Updatable) If true, indicates the app is used for multicloud service integration.
-               
-               **Added In:** 2301202328
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_oauth_client: (Updatable) If true, this application acts as an OAuth Client
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_oauth_resource: (Updatable) If true, indicates that this application acts as an OAuth Resource.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_obligation_capable: (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_opc_service: (Updatable) If true, this application is an Oracle Public Cloud service-instance.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_radius_app: (Updatable) If true, this application acts as an Radius App
-               
-               **Added In:** 20.1.3
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_saml_service_provider: (Updatable) If true, then this App acts as a SAML Service Provider.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_unmanaged_app: If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] is_web_tier_policy: (Updatable) If true, the webtier policy is active
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] landing_page_url: (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] linking_callback_url: (Updatable) This attribute specifies the callback URL for the social linking operation.
-               
-               **Added In:** 18.2.4
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] login_mechanism: (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] login_page_url: (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] logout_page_url: (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
-               
-               **Added In:** 17.4.2
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] logout_uri: (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-               * type: complex
-        :param pulumi.Input[bool] meter_as_opc_service: (Updatable) Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
-               
-               **Added In:** 18.4.2
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: always
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[bool] migrated: (Updatable) If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[str] name: (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-               
-               **Deprecated Since: 18.2.2**
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * idcsValuePersistedInOtherAttribute: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] ocid: (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: immutable
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: global
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] post_logout_redirect_uris: (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] privacy_policy_url: (Updatable) Privacy Policy URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] product_logo_url: (Updatable) Application Logo URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] product_name: (Updatable) Product Name
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppProtectableSecondaryAudienceArgs']]]] protectable_secondary_audiences: (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-               
-               **Added In:** 18.2.2
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsCompositeKey: [value]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAppRadiusPolicyArgs']] radius_policy: (Updatable) RADIUS Policy assigned to this application.
-               
-               **Added In:** 2209070044
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[bool] ready_to_upgrade: (Updatable) If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] redirect_uris: (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[int] refresh_token_expiry: (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: integer
-               * uniqueness: none
-        :param pulumi.Input[str] resource_type_schema_version: (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[pulumi.InputType['DomainsAppSamlServiceProviderArgs']] saml_service_provider: (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: true
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppScopeArgs']]]] scopes: (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] secondary_audiences: (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-               
-               **Deprecated Since: 18.2.6**
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppServiceParamArgs']]]] service_params: (Updatable) Custom attribute that is required to compute other attribute values during app creation.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [name]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: always
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] service_type_urn: (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] service_type_version: (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[bool] show_in_my_apps: (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
-               
-               **Added In:** 18.1.2
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: boolean
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAppSignonPolicyArgs']] signon_policy: (Updatable) Sign-on Policy.
-               
-               **Deprecated Since: 17.3.4**
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppTagArgs']]]] tags: (Updatable) A list of tags on this resource.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [key, value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: request
-               * type: complex
-               * uniqueness: none
-        :param pulumi.Input[str] tenancy_ocid: (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-               
-               **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readOnly
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] terms_of_service_url: (Updatable) Terms of Service URL
-               
-               **Added In:** 19.2.1
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAppTermsOfUseArgs']] terms_of_use: (Updatable) Terms Of Use.
-               
-               **Added In:** 18.2.6
-               
-               **SCIM++ Properties:**
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppTrustPolicyArgs']]]] trust_policies: (Updatable) Trust Policies.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: true
-               * multiValued: true
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: complex
-        :param pulumi.Input[str] trust_scope: (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-               
-               **Added In:** 17.4.2
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: false
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs']] urnietfparamsscimschemasoracleidcsextension_oci_tags: (Updatable) Oracle Cloud Infrastructure Tags.
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs']] urnietfparamsscimschemasoracleidcsextensiondbcs_app: (Updatable) This extension provides attributes for database service facet of an App
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs']] urnietfparamsscimschemasoracleidcsextensionenterprise_app_app: (Updatable) This extension defines the Enterprise App related attributes.
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs']] urnietfparamsscimschemasoracleidcsextensionform_fill_app_app: (Updatable) This extension provides attributes for Form-Fill facet of App
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs']] urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template: (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs']] urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app: (Updatable) Kerberos Realm
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs']] urnietfparamsscimschemasoracleidcsextensionmanagedapp_app: (Updatable) Managed App
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs']] urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs']] urnietfparamsscimschemasoracleidcsextensionopc_service_app: (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs']] urnietfparamsscimschemasoracleidcsextensionradius_app_app: (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs']] urnietfparamsscimschemasoracleidcsextensionrequestable_app: (Updatable) Requestable App
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs']] urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app: (Updatable) This extension defines attributes related to the Service Providers configuration.
-        :param pulumi.Input[pulumi.InputType['DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs']] urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app: (Updatable) WebTier Policy
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsAppUserRoleArgs']]]] user_roles: (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
-               
-               **SCIM++ Properties:**
-               * idcsCompositeKey: [value]
-               * idcsSearchable: false
-               * multiValued: true
-               * mutability: readOnly
-               * required: false
-               * returned: request
-               * type: complex
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -9812,2008 +3247,606 @@ class DomainsApp(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="accessTokenExpiry")
-    def access_token_expiry(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Access token expiry
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: dateTime
-        * uniqueness: none
-        """
+    def access_token_expiry(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "access_token_expiry")
 
     @property
     @pulumi.getter
-    def accounts(self) -> pulumi.Output[Sequence['outputs.DomainsAppAccount']]:
-        """
-        (Updatable) Accounts of App
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
+    def accounts(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppAccount']]]:
         return pulumi.get(self, "accounts")
 
     @property
     @pulumi.getter
-    def active(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def active(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "active")
 
     @property
     @pulumi.getter(name="adminRoles")
-    def admin_roles(self) -> pulumi.Output[Sequence['outputs.DomainsAppAdminRole']]:
-        """
-        (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers administrative privilege within this App.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        """
+    def admin_roles(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppAdminRole']]]:
         return pulumi.get(self, "admin_roles")
 
     @property
     @pulumi.getter(name="aliasApps")
-    def alias_apps(self) -> pulumi.Output[Sequence['outputs.DomainsAppAliasApp']]:
-        """
-        (Updatable) Each value of this internal attribute refers to an Oracle Public Cloud infrastructure App on which this App depends.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def alias_apps(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppAliasApp']]]:
         return pulumi.get(self, "alias_apps")
 
     @property
     @pulumi.getter(name="allUrlSchemesAllowed")
-    def all_url_schemes_allowed(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, indicates that the system should allow all URL-schemes within each value of the 'redirectUris' attribute.  Also indicates that the system should not attempt to confirm that each value of the 'redirectUris' attribute is a valid URI.  In particular, the system should not confirm that the domain component of the URI is a top-level domain and the system should not confirm that the hostname portion is a valid system that is reachable over the network.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def all_url_schemes_allowed(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "all_url_schemes_allowed")
 
     @property
     @pulumi.getter(name="allowAccessControl")
-    def allow_access_control(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, any managed App that is based on this template is checked for access control that is, access to this app is subject to successful authorization at SSO service, viz. app grants to start with.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def allow_access_control(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "allow_access_control")
 
     @property
     @pulumi.getter(name="allowOffline")
-    def allow_offline(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, indicates that the Refresh Token is allowed when this App acts as an OAuth Resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def allow_offline(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "allow_offline")
 
     @property
     @pulumi.getter(name="allowedGrants")
-    def allowed_grants(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) List of grant-types that this App is allowed to use when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def allowed_grants(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "allowed_grants")
 
     @property
     @pulumi.getter(name="allowedOperations")
-    def allowed_operations(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) OPTIONAL. Required only when this App acts as an OAuthClient. Supported values are 'introspect' and 'onBehalfOfUser'. The value 'introspect' allows the client to look inside the access-token. The value 'onBehalfOfUser' overrides how the client's privileges are combined with the privileges of the Subject User. Ordinarily, authorization calculates the set of effective privileges as the intersection of the client's privileges and the user's privileges. The value 'onBehalfOf' indicates that authorization should ignore the privileges of the client and use only the user's privileges to calculate the effective privileges.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def allowed_operations(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "allowed_operations")
 
     @property
     @pulumi.getter(name="allowedScopes")
-    def allowed_scopes(self) -> pulumi.Output[Sequence['outputs.DomainsAppAllowedScope']]:
-        """
-        (Updatable) A list of scopes (exposed by this App or by other Apps) that this App is allowed to access when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCompositeKey: [fqs]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def allowed_scopes(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppAllowedScope']]]:
         return pulumi.get(self, "allowed_scopes")
 
     @property
     @pulumi.getter(name="allowedTags")
-    def allowed_tags(self) -> pulumi.Output[Sequence['outputs.DomainsAppAllowedTag']]:
-        """
-        (Updatable) A list of tags, acting as an OAuthClient, this App is allowed to access.
-
-        **Added In:** 17.4.6
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def allowed_tags(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppAllowedTag']]]:
         return pulumi.get(self, "allowed_tags")
 
     @property
     @pulumi.getter(name="appIcon")
-    def app_icon(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Application icon.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def app_icon(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "app_icon")
 
     @property
     @pulumi.getter(name="appSignonPolicy")
-    def app_signon_policy(self) -> pulumi.Output['outputs.DomainsAppAppSignonPolicy']:
-        """
-        (Updatable) App Sign-on Policy.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def app_signon_policy(self) -> pulumi.Output[Optional['outputs.DomainsAppAppSignonPolicy']]:
         return pulumi.get(self, "app_signon_policy")
 
     @property
     @pulumi.getter(name="appThumbnail")
-    def app_thumbnail(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Application thumbnail.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def app_thumbnail(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "app_thumbnail")
 
     @property
     @pulumi.getter(name="appsNetworkPerimeters")
-    def apps_network_perimeters(self) -> pulumi.Output[Sequence['outputs.DomainsAppAppsNetworkPerimeter']]:
-        """
-        (Updatable) Network Perimeter
-
-        **Added In:** 2010242156
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def apps_network_perimeters(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppAppsNetworkPerimeter']]]:
         return pulumi.get(self, "apps_network_perimeters")
 
     @property
     @pulumi.getter(name="asOpcService")
-    def as_opc_service(self) -> pulumi.Output['outputs.DomainsAppAsOpcService']:
-        """
-        (Updatable) OPCService facet of the application.
-
-        **Deprecated Since: 17.3.4**
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def as_opc_service(self) -> pulumi.Output[Optional['outputs.DomainsAppAsOpcService']]:
         return pulumi.get(self, "as_opc_service")
 
     @property
     @pulumi.getter(name="attrRenderingMetadatas")
-    def attr_rendering_metadatas(self) -> pulumi.Output[Sequence['outputs.DomainsAppAttrRenderingMetadata']]:
-        """
-        (Updatable) Label for the attribute to be shown in the UI.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [name]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def attr_rendering_metadatas(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppAttrRenderingMetadata']]]:
         return pulumi.get(self, "attr_rendering_metadatas")
 
     @property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> pulumi.Output[Optional[Sequence[str]]]:
-        """
-        (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
-        """
         return pulumi.get(self, "attribute_sets")
 
     @property
     @pulumi.getter
     def attributes(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
-        """
         return pulumi.get(self, "attributes")
 
     @property
     @pulumi.getter
-    def audience(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The base URI for all of the scopes defined in this App. The value of 'audience' is combined with the 'value' of each scope to form an 'fqs' or fully qualified scope.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def audience(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "audience")
 
     @property
     @pulumi.getter
     def authorization(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
-        """
         return pulumi.get(self, "authorization")
 
     @property
     @pulumi.getter(name="basedOnTemplate")
     def based_on_template(self) -> pulumi.Output['outputs.DomainsAppBasedOnTemplate']:
-        """
-        (Updatable) Application template on which the application is based.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: true
-        * returned: default
-        * type: complex
-        """
         return pulumi.get(self, "based_on_template")
 
     @property
     @pulumi.getter(name="bypassConsent")
-    def bypass_consent(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, indicates that consent should be skipped for all scopes
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def bypass_consent(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "bypass_consent")
 
     @property
     @pulumi.getter(name="callbackServiceUrl")
-    def callback_service_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Callback Service URL
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def callback_service_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "callback_service_url")
 
     @property
     @pulumi.getter
-    def certificates(self) -> pulumi.Output[Sequence['outputs.DomainsAppCertificate']]:
-        """
-        (Updatable) Each value of this attribute represent a certificate that this App uses when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCompositeKey: [certAlias]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def certificates(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppCertificate']]]:
         return pulumi.get(self, "certificates")
 
     @property
     @pulumi.getter(name="clientIpChecking")
-    def client_ip_checking(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Network Perimeters checking mode
-
-        **Added In:** 2010242156
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def client_ip_checking(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "client_ip_checking")
 
     @property
     @pulumi.getter(name="clientSecret")
-    def client_secret(self) -> pulumi.Output[str]:
-        """
-        (Updatable) This value is the credential of this App, which this App supplies as a password when this App authenticates to the Oracle Public Cloud infrastructure. This value is also the client secret of this App when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * idcsSensitive: none
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def client_secret(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "client_secret")
 
     @property
     @pulumi.getter(name="clientType")
-    def client_type(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Specifies the type of access that this App has when it acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def client_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "client_type")
 
     @property
     @pulumi.getter(name="cloudControlProperties")
-    def cloud_control_properties(self) -> pulumi.Output[Sequence['outputs.DomainsAppCloudControlProperty']]:
-        """
-        (Updatable) A collection of arbitrary properties that scope the privileges of a cloud-control App.
-
-        **Added In:** 18.4.2
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [name]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
+    def cloud_control_properties(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppCloudControlProperty']]]:
         return pulumi.get(self, "cloud_control_properties")
 
     @property
     @pulumi.getter(name="compartmentOcid")
-    def compartment_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def compartment_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "compartment_ocid")
 
     @property
     @pulumi.getter(name="contactEmailAddress")
-    def contact_email_address(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Contact Email Address
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def contact_email_address(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "contact_email_address")
 
     @property
     @pulumi.getter(name="delegatedServiceNames")
-    def delegated_service_names(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) Service Names allow to use Oracle Cloud Infrastructure signature for client authentication instead of client credentials
-
-        **Added In:** 2207040824
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def delegated_service_names(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "delegated_service_names")
 
     @property
     @pulumi.getter(name="deleteInProgress")
-    def delete_in_progress(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def delete_in_progress(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "delete_in_progress")
 
     @property
     @pulumi.getter
-    def description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The description of the AppRole.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="disableKmsiTokenAuthentication")
-    def disable_kmsi_token_authentication(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates whether the application is allowed to be access using kmsi token.
-
-        **Added In:** 2111190457
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: always
-        * type: boolean
-        * uniqueness: none
-        """
+    def disable_kmsi_token_authentication(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "disable_kmsi_token_authentication")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="domainOcid")
-    def domain_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def domain_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "domain_ocid")
 
     @property
     @pulumi.getter(name="editableAttributes")
-    def editable_attributes(self) -> pulumi.Output[Sequence['outputs.DomainsAppEditableAttribute']]:
-        """
-        (Updatable) App attributes editable by subject
-
-        **Added In:** 18.2.6
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCompositeKey: [name]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
+    def editable_attributes(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppEditableAttribute']]]:
         return pulumi.get(self, "editable_attributes")
 
     @property
     @pulumi.getter(name="errorPageUrl")
-    def error_page_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) This attribute specifies the URL of the page to which an application will redirect an end-user in case of error.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def error_page_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "error_page_url")
 
     @property
     @pulumi.getter(name="grantedAppRoles")
-    def granted_app_roles(self) -> pulumi.Output[Sequence['outputs.DomainsAppGrantedAppRole']]:
-        """
-        (Updatable) A list of AppRoles that are granted to this App (and that are defined by other Apps). Within the Oracle Public Cloud infrastructure, this allows AppID-based association. Such an association allows this App to act as a consumer and thus to access resources of another App that acts as a producer.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def granted_app_roles(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppGrantedAppRole']]]:
         return pulumi.get(self, "granted_app_roles")
 
     @property
     @pulumi.getter
-    def grants(self) -> pulumi.Output[Sequence['outputs.DomainsAppGrant']]:
-        """
-        (Updatable) Grants assigned to the app
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
+    def grants(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppGrant']]]:
         return pulumi.get(self, "grants")
 
     @property
     @pulumi.getter(name="hashedClientSecret")
-    def hashed_client_secret(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Hashed Client Secret. This hash-value is used to verify the 'clientSecret' credential of this App
-
-        **Added In:** 2106240046
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * idcsSensitive: hash_sc
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def hashed_client_secret(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "hashed_client_secret")
 
     @property
     @pulumi.getter(name="homePageUrl")
-    def home_page_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Home Page URL
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def home_page_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "home_page_url")
 
     @property
     @pulumi.getter
-    def icon(self) -> pulumi.Output[str]:
-        """
-        (Updatable) URL of application icon.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: reference
-        * uniqueness: none
-        """
+    def icon(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "icon")
 
     @property
     @pulumi.getter(name="idTokenEncAlgo")
-    def id_token_enc_algo(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Encryption Alogrithm to use for encrypting ID token.
-
-        **Added In:** 2010242156
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def id_token_enc_algo(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "id_token_enc_algo")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
-    def idcs_created_bies(self) -> pulumi.Output[Sequence['outputs.DomainsAppIdcsCreatedBy']]:
-        """
-        (Updatable) The User or App who created the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: true
-        * returned: default
-        * type: complex
-        """
+    def idcs_created_bies(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppIdcsCreatedBy']]]:
         return pulumi.get(self, "idcs_created_bies")
 
     @property
     @pulumi.getter(name="idcsEndpoint")
     def idcs_endpoint(self) -> pulumi.Output[str]:
-        """
-        The basic endpoint for the identity domain
-        """
         return pulumi.get(self, "idcs_endpoint")
 
     @property
     @pulumi.getter(name="idcsLastModifiedBies")
-    def idcs_last_modified_bies(self) -> pulumi.Output[Sequence['outputs.DomainsAppIdcsLastModifiedBy']]:
-        """
-        (Updatable) The User or App who modified the Resource
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def idcs_last_modified_bies(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppIdcsLastModifiedBy']]]:
         return pulumi.get(self, "idcs_last_modified_bies")
 
     @property
     @pulumi.getter(name="idcsLastUpgradedInRelease")
-    def idcs_last_upgraded_in_release(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The release number when the resource was upgraded.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def idcs_last_upgraded_in_release(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "idcs_last_upgraded_in_release")
 
     @property
     @pulumi.getter(name="idcsPreventedOperations")
-    def idcs_prevented_operations(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: string
-        * uniqueness: none
-        """
+    def idcs_prevented_operations(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "idcs_prevented_operations")
 
     @property
     @pulumi.getter(name="identityProviders")
-    def identity_providers(self) -> pulumi.Output[Sequence['outputs.DomainsAppIdentityProvider']]:
-        """
-        (Updatable) A list of IdentityProvider assigned to app. A user trying to access this app will be automatically redirected to configured IdP during the authentication phase, before being able to access App.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        """
+    def identity_providers(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppIdentityProvider']]]:
         return pulumi.get(self, "identity_providers")
 
     @property
     @pulumi.getter(name="idpPolicy")
-    def idp_policy(self) -> pulumi.Output['outputs.DomainsAppIdpPolicy']:
-        """
-        (Updatable) IDP Policy.
-
-        **Added In:** 18.1.2
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def idp_policy(self) -> pulumi.Output[Optional['outputs.DomainsAppIdpPolicy']]:
         return pulumi.get(self, "idp_policy")
 
     @property
     @pulumi.getter
-    def infrastructure(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this App is an internal infrastructure App.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def infrastructure(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "infrastructure")
 
     @property
     @pulumi.getter(name="isAliasApp")
-    def is_alias_app(self) -> pulumi.Output[bool]:
-        """
-        If true, this App is an AliasApp and it cannot be granted to an end-user directly.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: always
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_alias_app(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_alias_app")
 
     @property
     @pulumi.getter(name="isDatabaseService")
-    def is_database_service(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this application acts as database service Application
-
-        **Added In:** 18.2.2
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * type: boolean
-        """
+    def is_database_service(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_database_service")
 
     @property
     @pulumi.getter(name="isEnterpriseApp")
-    def is_enterprise_app(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this app acts as Enterprise app with Authentication and URL Authz policy.
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_enterprise_app(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_enterprise_app")
 
     @property
     @pulumi.getter(name="isFormFill")
-    def is_form_fill(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this application acts as FormFill Application
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_form_fill(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_form_fill")
 
     @property
     @pulumi.getter(name="isKerberosRealm")
-    def is_kerberos_realm(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, indicates that this App supports Kerberos Authentication
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_kerberos_realm(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_kerberos_realm")
 
     @property
     @pulumi.getter(name="isLoginTarget")
-    def is_login_target(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this App allows runtime services to log end users into this App automatically.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_login_target(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_login_target")
 
     @property
     @pulumi.getter(name="isManagedApp")
-    def is_managed_app(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, indicates that access to this App requires an account. That is, in order to log in to the App, a User must use an application-specific identity that is maintained in the remote identity-repository of that App.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_managed_app(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_managed_app")
 
     @property
     @pulumi.getter(name="isMobileTarget")
-    def is_mobile_target(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, indicates that the App should be visible in each end-user's mobile application.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_mobile_target(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_mobile_target")
 
     @property
     @pulumi.getter(name="isMulticloudServiceApp")
-    def is_multicloud_service_app(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, indicates the app is used for multicloud service integration.
-
-        **Added In:** 2301202328
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_multicloud_service_app(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_multicloud_service_app")
 
     @property
     @pulumi.getter(name="isOauthClient")
-    def is_oauth_client(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this application acts as an OAuth Client
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_oauth_client(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_oauth_client")
 
     @property
     @pulumi.getter(name="isOauthResource")
-    def is_oauth_resource(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, indicates that this application acts as an OAuth Resource.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_oauth_resource(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_oauth_resource")
 
     @property
     @pulumi.getter(name="isObligationCapable")
-    def is_obligation_capable(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) This flag indicates if the App is capable of validating obligations with the token for allowing access to the App.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_obligation_capable(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_obligation_capable")
 
     @property
     @pulumi.getter(name="isOpcService")
-    def is_opc_service(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this application is an Oracle Public Cloud service-instance.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_opc_service(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_opc_service")
 
     @property
     @pulumi.getter(name="isRadiusApp")
-    def is_radius_app(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this application acts as an Radius App
-
-        **Added In:** 20.1.3
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_radius_app(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_radius_app")
 
     @property
     @pulumi.getter(name="isSamlServiceProvider")
-    def is_saml_service_provider(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, then this App acts as a SAML Service Provider.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_saml_service_provider(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_saml_service_provider")
 
     @property
     @pulumi.getter(name="isUnmanagedApp")
-    def is_unmanaged_app(self) -> pulumi.Output[bool]:
-        """
-        If true, indicates that this application accepts an Oracle Cloud Identity Service User as a login-identity (does not require an account) and relies for authorization on the User's memberships in AppRoles.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_unmanaged_app(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_unmanaged_app")
 
     @property
     @pulumi.getter(name="isWebTierPolicy")
-    def is_web_tier_policy(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, the webtier policy is active
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def is_web_tier_policy(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "is_web_tier_policy")
 
     @property
     @pulumi.getter(name="landingPageUrl")
-    def landing_page_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The URL of the landing page for this App, which is the first page that an end user should see if runtime services log that end user in to this App automatically.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def landing_page_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "landing_page_url")
 
     @property
     @pulumi.getter(name="linkingCallbackUrl")
-    def linking_callback_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) This attribute specifies the callback URL for the social linking operation.
-
-        **Added In:** 18.2.4
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def linking_callback_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "linking_callback_url")
 
     @property
     @pulumi.getter(name="loginMechanism")
-    def login_mechanism(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The protocol that runtime services will use to log end users in to this App automatically. If 'OIDC', then runtime services use the OpenID Connect protocol. If 'SAML', then runtime services use Security Assertion Markup Language protocol.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def login_mechanism(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "login_mechanism")
 
     @property
     @pulumi.getter(name="loginPageUrl")
-    def login_page_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs in to that App.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def login_page_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "login_page_url")
 
     @property
     @pulumi.getter(name="logoutPageUrl")
-    def logout_page_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) This attribute specifies the URL of the page that the App uses when an end-user signs out.
-
-        **Added In:** 17.4.2
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def logout_page_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "logout_page_url")
 
     @property
     @pulumi.getter(name="logoutUri")
-    def logout_uri(self) -> pulumi.Output[str]:
-        """
-        (Updatable) OAuth will use this URI to logout if this App wants to participate in SSO, and if this App's session gets cleared as part of global logout. Note: This attribute is used only if this App acts as an OAuthClient.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def logout_uri(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "logout_uri")
 
     @property
     @pulumi.getter
-    def metas(self) -> pulumi.Output[Sequence['outputs.DomainsAppMeta']]:
-        """
-        (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
-        * type: complex
-        """
+    def metas(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppMeta']]]:
         return pulumi.get(self, "metas")
 
     @property
     @pulumi.getter(name="meterAsOpcService")
-    def meter_as_opc_service(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) Indicates whether the application is billed as an OPCService. If true, customer is not billed for runtime operations of the app.
-
-        **Added In:** 18.4.2
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: always
-        * type: boolean
-        * uniqueness: none
-        """
+    def meter_as_opc_service(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "meter_as_opc_service")
 
     @property
     @pulumi.getter
-    def migrated(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this App was migrated from an earlier version of Oracle Public Cloud infrastructure (and may therefore require special handling from runtime services such as OAuth or SAML). If false, this App requires no special handling from runtime services.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def migrated(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "migrated")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-
-        **Deprecated Since: 18.2.2**
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * idcsValuePersistedInOtherAttribute: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter
-    def ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: immutable
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: global
-        """
+    def ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "ocid")
 
     @property
     @pulumi.getter(name="postLogoutRedirectUris")
-    def post_logout_redirect_uris(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) Each value of this attribute is the URI of a landing page within this App. It is used only when this App, acting as an OAuthClient, initiates the logout flow and wants to be redirected back to one of its landing pages.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def post_logout_redirect_uris(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "post_logout_redirect_uris")
 
     @property
     @pulumi.getter(name="privacyPolicyUrl")
-    def privacy_policy_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Privacy Policy URL
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def privacy_policy_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "privacy_policy_url")
 
     @property
     @pulumi.getter(name="productLogoUrl")
-    def product_logo_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Application Logo URL
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def product_logo_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "product_logo_url")
 
     @property
     @pulumi.getter(name="productName")
-    def product_name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Product Name
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def product_name(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "product_name")
 
     @property
     @pulumi.getter(name="protectableSecondaryAudiences")
-    def protectable_secondary_audiences(self) -> pulumi.Output[Sequence['outputs.DomainsAppProtectableSecondaryAudience']]:
-        """
-        (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-
-        **Added In:** 18.2.2
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsCompositeKey: [value]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def protectable_secondary_audiences(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppProtectableSecondaryAudience']]]:
         return pulumi.get(self, "protectable_secondary_audiences")
 
     @property
     @pulumi.getter(name="radiusPolicy")
-    def radius_policy(self) -> pulumi.Output['outputs.DomainsAppRadiusPolicy']:
-        """
-        (Updatable) RADIUS Policy assigned to this application.
-
-        **Added In:** 2209070044
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def radius_policy(self) -> pulumi.Output[Optional['outputs.DomainsAppRadiusPolicy']]:
         return pulumi.get(self, "radius_policy")
 
     @property
     @pulumi.getter(name="readyToUpgrade")
-    def ready_to_upgrade(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this App requires an upgrade and mandates attention from application administrator. The flag is used by UI to indicate this app is ready to upgrade.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def ready_to_upgrade(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "ready_to_upgrade")
 
     @property
     @pulumi.getter(name="redirectUris")
-    def redirect_uris(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) OPTIONAL. Each value is a URI within this App. This attribute is required when this App acts as an OAuthClient and is involved in three-legged flows (authorization-code flows).
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def redirect_uris(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "redirect_uris")
 
     @property
     @pulumi.getter(name="refreshTokenExpiry")
-    def refresh_token_expiry(self) -> pulumi.Output[int]:
-        """
-        (Updatable) Expiry-time in seconds for a Refresh Token.  Any token that allows access to this App, once refreshed, will expire after the specified duration.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: integer
-        * uniqueness: none
-        """
+    def refresh_token_expiry(self) -> pulumi.Output[Optional[int]]:
         return pulumi.get(self, "refresh_token_expiry")
 
     @property
     @pulumi.getter(name="resourceTypeSchemaVersion")
     def resource_type_schema_version(self) -> pulumi.Output[Optional[str]]:
-        """
-        (Updatable) An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        """
         return pulumi.get(self, "resource_type_schema_version")
 
     @property
     @pulumi.getter(name="samlServiceProvider")
-    def saml_service_provider(self) -> pulumi.Output['outputs.DomainsAppSamlServiceProvider']:
-        """
-        (Updatable) An attribute that refers to the SAML Service Provider that runtime services will use to log an end user in to this App automatically. Note that this will be used only if the loginMechanism is 'SAML'.
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def saml_service_provider(self) -> pulumi.Output[Optional['outputs.DomainsAppSamlServiceProvider']]:
         return pulumi.get(self, "saml_service_provider")
 
     @property
     @pulumi.getter
     def schemas(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: true
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
         return pulumi.get(self, "schemas")
 
     @property
     @pulumi.getter
-    def scopes(self) -> pulumi.Output[Sequence['outputs.DomainsAppScope']]:
-        """
-        (Updatable) Scopes defined by this App. Used when this App acts as an OAuth Resource.
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        * uniqueness: none
-        """
+    def scopes(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppScope']]]:
         return pulumi.get(self, "scopes")
 
     @property
     @pulumi.getter(name="secondaryAudiences")
-    def secondary_audiences(self) -> pulumi.Output[Sequence[str]]:
-        """
-        (Updatable) A list of secondary audiences--additional URIs to be added automatically to any OAuth token that allows access to this App. Note: This attribute is used mainly for backward compatibility in certain Oracle Public Cloud Apps.
-
-        **Deprecated Since: 18.2.6**
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def secondary_audiences(self) -> pulumi.Output[Optional[Sequence[str]]]:
         return pulumi.get(self, "secondary_audiences")
 
     @property
     @pulumi.getter(name="serviceParams")
-    def service_params(self) -> pulumi.Output[Sequence['outputs.DomainsAppServiceParam']]:
-        """
-        (Updatable) Custom attribute that is required to compute other attribute values during app creation.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [name]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: always
-        * type: complex
-        * uniqueness: none
-        """
+    def service_params(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppServiceParam']]]:
         return pulumi.get(self, "service_params")
 
     @property
     @pulumi.getter(name="serviceTypeUrn")
-    def service_type_urn(self) -> pulumi.Output[str]:
-        """
-        (Updatable) This Uniform Resource Name (URN) value identifies the type of Oracle Public Cloud service of which this app is an instance.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def service_type_urn(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "service_type_urn")
 
     @property
     @pulumi.getter(name="serviceTypeVersion")
-    def service_type_version(self) -> pulumi.Output[str]:
-        """
-        (Updatable) This value specifies the version of the Oracle Public Cloud service of which this App is an instance
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def service_type_version(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "service_type_version")
 
     @property
     @pulumi.getter(name="showInMyApps")
-    def show_in_my_apps(self) -> pulumi.Output[bool]:
-        """
-        (Updatable) If true, this app will be displayed in the MyApps page of each end-user who has access to the App.
-
-        **Added In:** 18.1.2
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: boolean
-        * uniqueness: none
-        """
+    def show_in_my_apps(self) -> pulumi.Output[Optional[bool]]:
         return pulumi.get(self, "show_in_my_apps")
 
     @property
     @pulumi.getter(name="signonPolicy")
-    def signon_policy(self) -> pulumi.Output['outputs.DomainsAppSignonPolicy']:
-        """
-        (Updatable) Sign-on Policy.
-
-        **Deprecated Since: 17.3.4**
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def signon_policy(self) -> pulumi.Output[Optional['outputs.DomainsAppSignonPolicy']]:
         return pulumi.get(self, "signon_policy")
 
     @property
     @pulumi.getter
-    def tags(self) -> pulumi.Output[Sequence['outputs.DomainsAppTag']]:
-        """
-        (Updatable) A list of tags on this resource.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [key, value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: request
-        * type: complex
-        * uniqueness: none
-        """
+    def tags(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppTag']]]:
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenancyOcid")
-    def tenancy_ocid(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tenant Id (ocid) in which the resource lives.
-
-        **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readOnly
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def tenancy_ocid(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "tenancy_ocid")
 
     @property
     @pulumi.getter(name="termsOfServiceUrl")
-    def terms_of_service_url(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Terms of Service URL
-
-        **Added In:** 19.2.1
-
-        **SCIM++ Properties:**
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def terms_of_service_url(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "terms_of_service_url")
 
     @property
     @pulumi.getter(name="termsOfUse")
-    def terms_of_use(self) -> pulumi.Output['outputs.DomainsAppTermsOfUse']:
-        """
-        (Updatable) Terms Of Use.
-
-        **Added In:** 18.2.6
-
-        **SCIM++ Properties:**
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def terms_of_use(self) -> pulumi.Output[Optional['outputs.DomainsAppTermsOfUse']]:
         return pulumi.get(self, "terms_of_use")
 
     @property
     @pulumi.getter(name="trustPolicies")
-    def trust_policies(self) -> pulumi.Output[Sequence['outputs.DomainsAppTrustPolicy']]:
-        """
-        (Updatable) Trust Policies.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: true
-        * multiValued: true
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: complex
-        """
+    def trust_policies(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppTrustPolicy']]]:
         return pulumi.get(self, "trust_policies")
 
     @property
     @pulumi.getter(name="trustScope")
-    def trust_scope(self) -> pulumi.Output[str]:
-        """
-        (Updatable) Indicates the scope of trust for this App when acting as an OAuthClient. A value of 'Explicit' indicates that the App is allowed to access only the scopes of OAuthResources that are explicitly specified as 'allowedScopes'. A value of 'Account' indicates that the App is allowed implicitly to access any scope of any OAuthResource within the same Oracle Cloud Account. A value of 'Tags' indicates that the App is allowed to access any scope of any OAuthResource with a matching tag within the same Oracle Cloud Account. A value of 'Default' indicates that the Tenant default trust scope configured in the Tenant Settings is used.
-
-        **Added In:** 17.4.2
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: false
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
+    def trust_scope(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "trust_scope")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionOciTags")
-    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags']:
-        """
-        (Updatable) Oracle Cloud Infrastructure Tags.
-        """
+    def urnietfparamsscimschemasoracleidcsextension_oci_tags(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextension_oci_tags")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensiondbcsApp")
-    def urnietfparamsscimschemasoracleidcsextensiondbcs_app(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp']:
-        """
-        (Updatable) This extension provides attributes for database service facet of an App
-        """
+    def urnietfparamsscimschemasoracleidcsextensiondbcs_app(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensiondbcs_app")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp")
-    def urnietfparamsscimschemasoracleidcsextensionenterprise_app_app(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp']:
-        """
-        (Updatable) This extension defines the Enterprise App related attributes.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionenterprise_app_app(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionenterprise_app_app")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionformFillAppApp")
-    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_app(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp']:
-        """
-        (Updatable) This extension provides attributes for Form-Fill facet of App
-        """
+    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_app(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppApp']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_app")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate")
-    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate']:
-        """
-        (Updatable) This extension provides attributes for Form-Fill facet of AppTemplate
-        """
+    def urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionform_fill_app_template_app_template")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp")
-    def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp']:
-        """
-        (Updatable) Kerberos Realm
-        """
+    def urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionkerberos_realm_app")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmanagedappApp")
-    def urnietfparamsscimschemasoracleidcsextensionmanagedapp_app(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp']:
-        """
-        (Updatable) Managed App
-        """
+    def urnietfparamsscimschemasoracleidcsextensionmanagedapp_app(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmanagedapp_app")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp")
-    def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp']:
-        """
-        (Updatable) This extension defines attributes specific to Apps that represent instances of Multicloud Service App
-        """
+    def urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionmulticloud_service_app_app")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionopcServiceApp")
-    def urnietfparamsscimschemasoracleidcsextensionopc_service_app(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp']:
-        """
-        (Updatable) This extension defines attributes specific to Apps that represent instances of an Oracle Public Cloud (OPC) service.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionopc_service_app(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceApp']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionopc_service_app")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionradiusAppApp")
-    def urnietfparamsscimschemasoracleidcsextensionradius_app_app(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp']:
-        """
-        (Updatable) This extension defines attributes specific to Apps that represent instances of Radius App.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionradius_app_app(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionradius_app_app")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionrequestableApp")
-    def urnietfparamsscimschemasoracleidcsextensionrequestable_app(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp']:
-        """
-        (Updatable) Requestable App
-        """
+    def urnietfparamsscimschemasoracleidcsextensionrequestable_app(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableApp']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionrequestable_app")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp")
-    def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp']:
-        """
-        (Updatable) This extension defines attributes related to the Service Providers configuration.
-        """
+    def urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionsaml_service_provider_app")
 
     @property
     @pulumi.getter(name="urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp")
-    def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app(self) -> pulumi.Output['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp']:
-        """
-        (Updatable) WebTier Policy
-        """
+    def urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app(self) -> pulumi.Output[Optional['outputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp']]:
         return pulumi.get(self, "urnietfparamsscimschemasoracleidcsextensionweb_tier_policy_app")
 
     @property
     @pulumi.getter(name="userRoles")
-    def user_roles(self) -> pulumi.Output[Sequence['outputs.DomainsAppUserRole']]:
-        """
-        (Updatable) A list of AppRoles defined by this UnmanagedApp. Membership in each of these AppRoles confers end-user privilege within this App.
-
-        **SCIM++ Properties:**
-        * idcsCompositeKey: [value]
-        * idcsSearchable: false
-        * multiValued: true
-        * mutability: readOnly
-        * required: false
-        * returned: request
-        * type: complex
-        """
+    def user_roles(self) -> pulumi.Output[Optional[Sequence['outputs.DomainsAppUserRole']]]:
         return pulumi.get(self, "user_roles")
 

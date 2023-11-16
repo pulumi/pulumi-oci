@@ -16,29 +16,29 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// <summary>
         /// The registry label for `asn`, usually the name of the organization that owns the ASN. May be omitted or null.
         /// </summary>
-        public readonly string AsLabel;
+        public readonly string? AsLabel;
         /// <summary>
         /// The Autonomous System Number (ASN) identifying the organization responsible for routing packets to `prefix`.
         /// </summary>
-        public readonly int Asn;
+        public readonly int? Asn;
         /// <summary>
         /// An IP prefix (CIDR syntax) that is less specific than `address`, through which `address` is routed.
         /// </summary>
-        public readonly string Prefix;
+        public readonly string? Prefix;
         /// <summary>
         /// An integer between 0 and 100 used to select between multiple origin ASNs when routing to `prefix`. Most prefixes have exactly one origin ASN, in which case `weight` will be 100.
         /// </summary>
-        public readonly int Weight;
+        public readonly int? Weight;
 
         [OutputConstructor]
         private GetVantagePointsHealthChecksVantagePointRoutingResult(
-            string asLabel,
+            string? asLabel,
 
-            int asn,
+            int? asn,
 
-            string prefix,
+            string? prefix,
 
-            int weight)
+            int? weight)
         {
             AsLabel = asLabel;
             Asn = asn;

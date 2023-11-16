@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Ip Sec Connection resource in Oracle Cloud Infrastructure Core service.
@@ -107,19 +106,19 @@ type Ipsec struct {
 	// Example IP address: `10.0.3.3`
 	//
 	// Example hostname: `cpe.example.com`
-	CpeLocalIdentifier pulumi.StringOutput `pulumi:"cpeLocalIdentifier"`
+	CpeLocalIdentifier pulumi.StringPtrOutput `pulumi:"cpeLocalIdentifier"`
 	// (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
-	CpeLocalIdentifierType pulumi.StringOutput `pulumi:"cpeLocalIdentifierType"`
+	CpeLocalIdentifierType pulumi.StringPtrOutput `pulumi:"cpeLocalIdentifierType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
 	DrgId pulumi.StringOutput `pulumi:"drgId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The IPSec connection's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
 	//
 	// Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
@@ -130,9 +129,9 @@ type Ipsec struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StaticRoutes pulumi.StringArrayOutput `pulumi:"staticRoutes"`
 	// The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The transport type used for the IPSec connection.
-	TransportType pulumi.StringOutput `pulumi:"transportType"`
+	TransportType pulumi.StringPtrOutput `pulumi:"transportType"`
 }
 
 // NewIpsec registers a new resource with the given unique name, arguments, and options.
@@ -360,12 +359,6 @@ func (i *Ipsec) ToIpsecOutputWithContext(ctx context.Context) IpsecOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IpsecOutput)
 }
 
-func (i *Ipsec) ToOutput(ctx context.Context) pulumix.Output[*Ipsec] {
-	return pulumix.Output[*Ipsec]{
-		OutputState: i.ToIpsecOutputWithContext(ctx).OutputState,
-	}
-}
-
 // IpsecArrayInput is an input type that accepts IpsecArray and IpsecArrayOutput values.
 // You can construct a concrete instance of `IpsecArrayInput` via:
 //
@@ -389,12 +382,6 @@ func (i IpsecArray) ToIpsecArrayOutput() IpsecArrayOutput {
 
 func (i IpsecArray) ToIpsecArrayOutputWithContext(ctx context.Context) IpsecArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(IpsecArrayOutput)
-}
-
-func (i IpsecArray) ToOutput(ctx context.Context) pulumix.Output[[]*Ipsec] {
-	return pulumix.Output[[]*Ipsec]{
-		OutputState: i.ToIpsecArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // IpsecMapInput is an input type that accepts IpsecMap and IpsecMapOutput values.
@@ -422,12 +409,6 @@ func (i IpsecMap) ToIpsecMapOutputWithContext(ctx context.Context) IpsecMapOutpu
 	return pulumi.ToOutputWithContext(ctx, i).(IpsecMapOutput)
 }
 
-func (i IpsecMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*Ipsec] {
-	return pulumix.Output[map[string]*Ipsec]{
-		OutputState: i.ToIpsecMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type IpsecOutput struct{ *pulumi.OutputState }
 
 func (IpsecOutput) ElementType() reflect.Type {
@@ -440,12 +421,6 @@ func (o IpsecOutput) ToIpsecOutput() IpsecOutput {
 
 func (o IpsecOutput) ToIpsecOutputWithContext(ctx context.Context) IpsecOutput {
 	return o
-}
-
-func (o IpsecOutput) ToOutput(ctx context.Context) pulumix.Output[*Ipsec] {
-	return pulumix.Output[*Ipsec]{
-		OutputState: o.OutputState,
-	}
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
@@ -467,13 +442,13 @@ func (o IpsecOutput) CpeId() pulumi.StringOutput {
 // Example IP address: `10.0.3.3`
 //
 // Example hostname: `cpe.example.com`
-func (o IpsecOutput) CpeLocalIdentifier() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipsec) pulumi.StringOutput { return v.CpeLocalIdentifier }).(pulumi.StringOutput)
+func (o IpsecOutput) CpeLocalIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipsec) pulumi.StringPtrOutput { return v.CpeLocalIdentifier }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The type of identifier for your CPE device. The value you provide here must correspond to the value for `cpeLocalIdentifier`.
-func (o IpsecOutput) CpeLocalIdentifierType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipsec) pulumi.StringOutput { return v.CpeLocalIdentifierType }).(pulumi.StringOutput)
+func (o IpsecOutput) CpeLocalIdentifierType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipsec) pulumi.StringPtrOutput { return v.CpeLocalIdentifierType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -482,8 +457,8 @@ func (o IpsecOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o IpsecOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipsec) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o IpsecOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipsec) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
@@ -497,8 +472,8 @@ func (o IpsecOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // The IPSec connection's current state.
-func (o IpsecOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipsec) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o IpsecOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipsec) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
@@ -514,13 +489,13 @@ func (o IpsecOutput) StaticRoutes() pulumi.StringArrayOutput {
 }
 
 // The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o IpsecOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipsec) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o IpsecOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipsec) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The transport type used for the IPSec connection.
-func (o IpsecOutput) TransportType() pulumi.StringOutput {
-	return o.ApplyT(func(v *Ipsec) pulumi.StringOutput { return v.TransportType }).(pulumi.StringOutput)
+func (o IpsecOutput) TransportType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Ipsec) pulumi.StringPtrOutput { return v.TransportType }).(pulumi.StringPtrOutput)
 }
 
 type IpsecArrayOutput struct{ *pulumi.OutputState }
@@ -535,12 +510,6 @@ func (o IpsecArrayOutput) ToIpsecArrayOutput() IpsecArrayOutput {
 
 func (o IpsecArrayOutput) ToIpsecArrayOutputWithContext(ctx context.Context) IpsecArrayOutput {
 	return o
-}
-
-func (o IpsecArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*Ipsec] {
-	return pulumix.Output[[]*Ipsec]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IpsecArrayOutput) Index(i pulumi.IntInput) IpsecOutput {
@@ -561,12 +530,6 @@ func (o IpsecMapOutput) ToIpsecMapOutput() IpsecMapOutput {
 
 func (o IpsecMapOutput) ToIpsecMapOutputWithContext(ctx context.Context) IpsecMapOutput {
 	return o
-}
-
-func (o IpsecMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*Ipsec] {
-	return pulumix.Output[map[string]*Ipsec]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o IpsecMapOutput) MapIndex(k pulumi.StringInput) IpsecOutput {

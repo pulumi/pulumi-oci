@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetKeyStoreResult {
@@ -18,53 +20,53 @@ public final class GetKeyStoreResult {
      * @return List of databases associated with the key store.
      * 
      */
-    private List<GetKeyStoreAssociatedDatabase> associatedDatabases;
+    private @Nullable List<GetKeyStoreAssociatedDatabase> associatedDatabases;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return The user-friendly name for the key store. The name does not need to be unique.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String keyStoreId;
     /**
      * @return Additional information about the current lifecycle state.
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The current state of the key store.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The date and time that the key store was created.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return Key store type details.
      * 
      */
-    private List<GetKeyStoreTypeDetail> typeDetails;
+    private @Nullable List<GetKeyStoreTypeDetail> typeDetails;
 
     private GetKeyStoreResult() {}
     /**
@@ -72,42 +74,42 @@ public final class GetKeyStoreResult {
      * 
      */
     public List<GetKeyStoreAssociatedDatabase> associatedDatabases() {
-        return this.associatedDatabases;
+        return this.associatedDatabases == null ? List.of() : this.associatedDatabases;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return The user-friendly name for the key store. The name does not need to be unique.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String keyStoreId() {
         return this.keyStoreId;
@@ -116,29 +118,29 @@ public final class GetKeyStoreResult {
      * @return Additional information about the current lifecycle state.
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The current state of the key store.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The date and time that the key store was created.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return Key store type details.
      * 
      */
     public List<GetKeyStoreTypeDetail> typeDetails() {
-        return this.typeDetails;
+        return this.typeDetails == null ? List.of() : this.typeDetails;
     }
 
     public static Builder builder() {
@@ -150,17 +152,17 @@ public final class GetKeyStoreResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetKeyStoreAssociatedDatabase> associatedDatabases;
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String id;
+        private @Nullable List<GetKeyStoreAssociatedDatabase> associatedDatabases;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
         private String keyStoreId;
-        private String lifecycleDetails;
-        private String state;
-        private String timeCreated;
-        private List<GetKeyStoreTypeDetail> typeDetails;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable List<GetKeyStoreTypeDetail> typeDetails;
         public Builder() {}
         public Builder(GetKeyStoreResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -178,36 +180,36 @@ public final class GetKeyStoreResult {
         }
 
         @CustomType.Setter
-        public Builder associatedDatabases(List<GetKeyStoreAssociatedDatabase> associatedDatabases) {
-            this.associatedDatabases = Objects.requireNonNull(associatedDatabases);
+        public Builder associatedDatabases(@Nullable List<GetKeyStoreAssociatedDatabase> associatedDatabases) {
+            this.associatedDatabases = associatedDatabases;
             return this;
         }
         public Builder associatedDatabases(GetKeyStoreAssociatedDatabase... associatedDatabases) {
             return associatedDatabases(List.of(associatedDatabases));
         }
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -216,23 +218,23 @@ public final class GetKeyStoreResult {
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder typeDetails(List<GetKeyStoreTypeDetail> typeDetails) {
-            this.typeDetails = Objects.requireNonNull(typeDetails);
+        public Builder typeDetails(@Nullable List<GetKeyStoreTypeDetail> typeDetails) {
+            this.typeDetails = typeDetails;
             return this;
         }
         public Builder typeDetails(GetKeyStoreTypeDetail... typeDetails) {

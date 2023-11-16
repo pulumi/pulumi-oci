@@ -10,6 +10,8 @@ import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPipelinesPipelineStepDetail {
@@ -17,42 +19,42 @@ public final class GetPipelinesPipelineStepDetail {
      * @return The list of step names this current step depends on for execution.
      * 
      */
-    private List<String> dependsOns;
+    private @Nullable List<String> dependsOns;
     /**
      * @return A short description of the step.
      * 
      */
-    private String description;
+    private @Nullable String description;
     /**
      * @return A flag to indicate whether the artifact has been uploaded for this step or not.
      * 
      */
-    private Boolean isArtifactUploaded;
+    private @Nullable Boolean isArtifactUploaded;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
      * 
      */
-    private String jobId;
+    private @Nullable String jobId;
     /**
      * @return The configuration details of a step.
      * 
      */
-    private List<GetPipelinesPipelineStepDetailStepConfigurationDetail> stepConfigurationDetails;
+    private @Nullable List<GetPipelinesPipelineStepDetailStepConfigurationDetail> stepConfigurationDetails;
     /**
      * @return The infrastructure configuration details of a pipeline or a step.
      * 
      */
-    private List<GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails;
+    private @Nullable List<GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails;
     /**
      * @return The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
      * 
      */
-    private String stepName;
+    private @Nullable String stepName;
     /**
      * @return The type of step.
      * 
      */
-    private String stepType;
+    private @Nullable String stepType;
 
     private GetPipelinesPipelineStepDetail() {}
     /**
@@ -60,56 +62,56 @@ public final class GetPipelinesPipelineStepDetail {
      * 
      */
     public List<String> dependsOns() {
-        return this.dependsOns;
+        return this.dependsOns == null ? List.of() : this.dependsOns;
     }
     /**
      * @return A short description of the step.
      * 
      */
-    public String description() {
-        return this.description;
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return A flag to indicate whether the artifact has been uploaded for this step or not.
      * 
      */
-    public Boolean isArtifactUploaded() {
-        return this.isArtifactUploaded;
+    public Optional<Boolean> isArtifactUploaded() {
+        return Optional.ofNullable(this.isArtifactUploaded);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
      * 
      */
-    public String jobId() {
-        return this.jobId;
+    public Optional<String> jobId() {
+        return Optional.ofNullable(this.jobId);
     }
     /**
      * @return The configuration details of a step.
      * 
      */
     public List<GetPipelinesPipelineStepDetailStepConfigurationDetail> stepConfigurationDetails() {
-        return this.stepConfigurationDetails;
+        return this.stepConfigurationDetails == null ? List.of() : this.stepConfigurationDetails;
     }
     /**
      * @return The infrastructure configuration details of a pipeline or a step.
      * 
      */
     public List<GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails() {
-        return this.stepInfrastructureConfigurationDetails;
+        return this.stepInfrastructureConfigurationDetails == null ? List.of() : this.stepInfrastructureConfigurationDetails;
     }
     /**
      * @return The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
      * 
      */
-    public String stepName() {
-        return this.stepName;
+    public Optional<String> stepName() {
+        return Optional.ofNullable(this.stepName);
     }
     /**
      * @return The type of step.
      * 
      */
-    public String stepType() {
-        return this.stepType;
+    public Optional<String> stepType() {
+        return Optional.ofNullable(this.stepType);
     }
 
     public static Builder builder() {
@@ -121,14 +123,14 @@ public final class GetPipelinesPipelineStepDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<String> dependsOns;
-        private String description;
-        private Boolean isArtifactUploaded;
-        private String jobId;
-        private List<GetPipelinesPipelineStepDetailStepConfigurationDetail> stepConfigurationDetails;
-        private List<GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails;
-        private String stepName;
-        private String stepType;
+        private @Nullable List<String> dependsOns;
+        private @Nullable String description;
+        private @Nullable Boolean isArtifactUploaded;
+        private @Nullable String jobId;
+        private @Nullable List<GetPipelinesPipelineStepDetailStepConfigurationDetail> stepConfigurationDetails;
+        private @Nullable List<GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails;
+        private @Nullable String stepName;
+        private @Nullable String stepType;
         public Builder() {}
         public Builder(GetPipelinesPipelineStepDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -143,52 +145,52 @@ public final class GetPipelinesPipelineStepDetail {
         }
 
         @CustomType.Setter
-        public Builder dependsOns(List<String> dependsOns) {
-            this.dependsOns = Objects.requireNonNull(dependsOns);
+        public Builder dependsOns(@Nullable List<String> dependsOns) {
+            this.dependsOns = dependsOns;
             return this;
         }
         public Builder dependsOns(String... dependsOns) {
             return dependsOns(List.of(dependsOns));
         }
         @CustomType.Setter
-        public Builder description(String description) {
-            this.description = Objects.requireNonNull(description);
+        public Builder description(@Nullable String description) {
+            this.description = description;
             return this;
         }
         @CustomType.Setter
-        public Builder isArtifactUploaded(Boolean isArtifactUploaded) {
-            this.isArtifactUploaded = Objects.requireNonNull(isArtifactUploaded);
+        public Builder isArtifactUploaded(@Nullable Boolean isArtifactUploaded) {
+            this.isArtifactUploaded = isArtifactUploaded;
             return this;
         }
         @CustomType.Setter
-        public Builder jobId(String jobId) {
-            this.jobId = Objects.requireNonNull(jobId);
+        public Builder jobId(@Nullable String jobId) {
+            this.jobId = jobId;
             return this;
         }
         @CustomType.Setter
-        public Builder stepConfigurationDetails(List<GetPipelinesPipelineStepDetailStepConfigurationDetail> stepConfigurationDetails) {
-            this.stepConfigurationDetails = Objects.requireNonNull(stepConfigurationDetails);
+        public Builder stepConfigurationDetails(@Nullable List<GetPipelinesPipelineStepDetailStepConfigurationDetail> stepConfigurationDetails) {
+            this.stepConfigurationDetails = stepConfigurationDetails;
             return this;
         }
         public Builder stepConfigurationDetails(GetPipelinesPipelineStepDetailStepConfigurationDetail... stepConfigurationDetails) {
             return stepConfigurationDetails(List.of(stepConfigurationDetails));
         }
         @CustomType.Setter
-        public Builder stepInfrastructureConfigurationDetails(List<GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails) {
-            this.stepInfrastructureConfigurationDetails = Objects.requireNonNull(stepInfrastructureConfigurationDetails);
+        public Builder stepInfrastructureConfigurationDetails(@Nullable List<GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails) {
+            this.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             return this;
         }
         public Builder stepInfrastructureConfigurationDetails(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail... stepInfrastructureConfigurationDetails) {
             return stepInfrastructureConfigurationDetails(List.of(stepInfrastructureConfigurationDetails));
         }
         @CustomType.Setter
-        public Builder stepName(String stepName) {
-            this.stepName = Objects.requireNonNull(stepName);
+        public Builder stepName(@Nullable String stepName) {
+            this.stepName = stepName;
             return this;
         }
         @CustomType.Setter
-        public Builder stepType(String stepType) {
-            this.stepType = Objects.requireNonNull(stepType);
+        public Builder stepType(@Nullable String stepType) {
+            this.stepType = stepType;
             return this;
         }
         public GetPipelinesPipelineStepDetail build() {

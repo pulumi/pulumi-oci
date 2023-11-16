@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDomainsIdentitySettingsIdentitySettingToken {
@@ -14,27 +16,27 @@ public final class GetDomainsIdentitySettingsIdentitySettingToken {
      * @return Indicates the number of minutes after which the token expires automatically.
      * 
      */
-    private Integer expiresAfter;
+    private @Nullable Integer expiresAfter;
     /**
      * @return The token type.
      * 
      */
-    private String type;
+    private @Nullable String type;
 
     private GetDomainsIdentitySettingsIdentitySettingToken() {}
     /**
      * @return Indicates the number of minutes after which the token expires automatically.
      * 
      */
-    public Integer expiresAfter() {
-        return this.expiresAfter;
+    public Optional<Integer> expiresAfter() {
+        return Optional.ofNullable(this.expiresAfter);
     }
     /**
      * @return The token type.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDomainsIdentitySettingsIdentitySettingToken {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer expiresAfter;
-        private String type;
+        private @Nullable Integer expiresAfter;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetDomainsIdentitySettingsIdentitySettingToken defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetDomainsIdentitySettingsIdentitySettingToken {
         }
 
         @CustomType.Setter
-        public Builder expiresAfter(Integer expiresAfter) {
-            this.expiresAfter = Objects.requireNonNull(expiresAfter);
+        public Builder expiresAfter(@Nullable Integer expiresAfter) {
+            this.expiresAfter = expiresAfter;
             return this;
         }
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         public GetDomainsIdentitySettingsIdentitySettingToken build() {

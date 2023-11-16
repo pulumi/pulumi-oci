@@ -74,11 +74,11 @@ export class CustomProtectionRule extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A description for the Custom Protection rule.
      */
-    public readonly description!: pulumi.Output<string>;
+    public readonly description!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) A user-friendly name for the custom protection rule.
      */
@@ -86,15 +86,15 @@ export class CustomProtectionRule extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
      */
-    public /*out*/ readonly modSecurityRuleIds!: pulumi.Output<string[]>;
+    public /*out*/ readonly modSecurityRuleIds!: pulumi.Output<string[] | undefined>;
     /**
      * The current lifecycle state of the custom protection rule.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
      *
@@ -122,7 +122,7 @@ export class CustomProtectionRule extends pulumi.CustomResource {
     /**
      * The date and time the protection rule was created, expressed in RFC 3339 timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a CustomProtectionRule resource with the given unique name, arguments, and options.

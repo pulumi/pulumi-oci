@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Remediation Run resource in Oracle Cloud Infrastructure Adm service.
@@ -63,13 +62,13 @@ type RemediationRun struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrOutput `pulumi:"compartmentId"`
 	// The type of the current stage of the remediation run.
-	CurrentStageType pulumi.StringOutput `pulumi:"currentStageType"`
+	CurrentStageType pulumi.StringPtrOutput `pulumi:"currentStageType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The name of the remediation run.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Remediation Recipe.
@@ -78,21 +77,21 @@ type RemediationRun struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RemediationRecipeId pulumi.StringOutput `pulumi:"remediationRecipeId"`
 	// The source that triggered the Remediation Recipe.
-	RemediationRunSource pulumi.StringOutput `pulumi:"remediationRunSource"`
+	RemediationRunSource pulumi.StringPtrOutput `pulumi:"remediationRunSource"`
 	// The list of remediation run stage summaries.
 	Stages RemediationRunStageArrayOutput `pulumi:"stages"`
 	// The current lifecycle state of the remediation run.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeFinished pulumi.StringOutput `pulumi:"timeFinished"`
+	TimeFinished pulumi.StringPtrOutput `pulumi:"timeFinished"`
 	// The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeStarted pulumi.StringOutput `pulumi:"timeStarted"`
+	TimeStarted pulumi.StringPtrOutput `pulumi:"timeStarted"`
 	// The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 }
 
 // NewRemediationRun registers a new resource with the given unique name, arguments, and options.
@@ -255,12 +254,6 @@ func (i *RemediationRun) ToRemediationRunOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRunOutput)
 }
 
-func (i *RemediationRun) ToOutput(ctx context.Context) pulumix.Output[*RemediationRun] {
-	return pulumix.Output[*RemediationRun]{
-		OutputState: i.ToRemediationRunOutputWithContext(ctx).OutputState,
-	}
-}
-
 // RemediationRunArrayInput is an input type that accepts RemediationRunArray and RemediationRunArrayOutput values.
 // You can construct a concrete instance of `RemediationRunArrayInput` via:
 //
@@ -284,12 +277,6 @@ func (i RemediationRunArray) ToRemediationRunArrayOutput() RemediationRunArrayOu
 
 func (i RemediationRunArray) ToRemediationRunArrayOutputWithContext(ctx context.Context) RemediationRunArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRunArrayOutput)
-}
-
-func (i RemediationRunArray) ToOutput(ctx context.Context) pulumix.Output[[]*RemediationRun] {
-	return pulumix.Output[[]*RemediationRun]{
-		OutputState: i.ToRemediationRunArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // RemediationRunMapInput is an input type that accepts RemediationRunMap and RemediationRunMapOutput values.
@@ -317,12 +304,6 @@ func (i RemediationRunMap) ToRemediationRunMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(RemediationRunMapOutput)
 }
 
-func (i RemediationRunMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*RemediationRun] {
-	return pulumix.Output[map[string]*RemediationRun]{
-		OutputState: i.ToRemediationRunMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type RemediationRunOutput struct{ *pulumi.OutputState }
 
 func (RemediationRunOutput) ElementType() reflect.Type {
@@ -337,20 +318,14 @@ func (o RemediationRunOutput) ToRemediationRunOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o RemediationRunOutput) ToOutput(ctx context.Context) pulumix.Output[*RemediationRun] {
-	return pulumix.Output[*RemediationRun]{
-		OutputState: o.OutputState,
-	}
-}
-
 // (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
-func (o RemediationRunOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRun) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+func (o RemediationRunOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRun) pulumi.StringPtrOutput { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The type of the current stage of the remediation run.
-func (o RemediationRunOutput) CurrentStageType() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRun) pulumi.StringOutput { return v.CurrentStageType }).(pulumi.StringOutput)
+func (o RemediationRunOutput) CurrentStageType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRun) pulumi.StringPtrOutput { return v.CurrentStageType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -359,8 +334,8 @@ func (o RemediationRunOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The name of the remediation run.
-func (o RemediationRunOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRun) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o RemediationRunOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRun) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -377,8 +352,8 @@ func (o RemediationRunOutput) RemediationRecipeId() pulumi.StringOutput {
 }
 
 // The source that triggered the Remediation Recipe.
-func (o RemediationRunOutput) RemediationRunSource() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRun) pulumi.StringOutput { return v.RemediationRunSource }).(pulumi.StringOutput)
+func (o RemediationRunOutput) RemediationRunSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRun) pulumi.StringPtrOutput { return v.RemediationRunSource }).(pulumi.StringPtrOutput)
 }
 
 // The list of remediation run stage summaries.
@@ -387,8 +362,8 @@ func (o RemediationRunOutput) Stages() RemediationRunStageArrayOutput {
 }
 
 // The current lifecycle state of the remediation run.
-func (o RemediationRunOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRun) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o RemediationRunOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRun) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -397,23 +372,23 @@ func (o RemediationRunOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o RemediationRunOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRun) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o RemediationRunOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRun) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o RemediationRunOutput) TimeFinished() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRun) pulumi.StringOutput { return v.TimeFinished }).(pulumi.StringOutput)
+func (o RemediationRunOutput) TimeFinished() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRun) pulumi.StringPtrOutput { return v.TimeFinished }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o RemediationRunOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRun) pulumi.StringOutput { return v.TimeStarted }).(pulumi.StringOutput)
+func (o RemediationRunOutput) TimeStarted() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRun) pulumi.StringPtrOutput { return v.TimeStarted }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the remediation run was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o RemediationRunOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *RemediationRun) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o RemediationRunOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RemediationRun) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 type RemediationRunArrayOutput struct{ *pulumi.OutputState }
@@ -428,12 +403,6 @@ func (o RemediationRunArrayOutput) ToRemediationRunArrayOutput() RemediationRunA
 
 func (o RemediationRunArrayOutput) ToRemediationRunArrayOutputWithContext(ctx context.Context) RemediationRunArrayOutput {
 	return o
-}
-
-func (o RemediationRunArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*RemediationRun] {
-	return pulumix.Output[[]*RemediationRun]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemediationRunArrayOutput) Index(i pulumi.IntInput) RemediationRunOutput {
@@ -454,12 +423,6 @@ func (o RemediationRunMapOutput) ToRemediationRunMapOutput() RemediationRunMapOu
 
 func (o RemediationRunMapOutput) ToRemediationRunMapOutputWithContext(ctx context.Context) RemediationRunMapOutput {
 	return o
-}
-
-func (o RemediationRunMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*RemediationRun] {
-	return pulumix.Output[map[string]*RemediationRun]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o RemediationRunMapOutput) MapIndex(k pulumi.StringInput) RemediationRunOutput {

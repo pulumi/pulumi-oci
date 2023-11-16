@@ -82,7 +82,7 @@ export interface GetAuditEventsResult {
     /**
      * The list of audit_event_collection.
      */
-    readonly auditEventCollections: outputs.DataSafe.GetAuditEventsAuditEventCollection[];
+    readonly auditEventCollections?: outputs.DataSafe.GetAuditEventsAuditEventCollection[];
     /**
      * The OCID of the compartment containing the audit event. This is the same as that of audit profile of the target database resource compartment.
      */
@@ -92,7 +92,7 @@ export interface GetAuditEventsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly scimQuery?: string;
 }
 /**

@@ -49,17 +49,11 @@ class GetNodePoolsResult:
     @property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> Optional[str]:
-        """
-        The OCID of the cluster to which this node pool is attached.
-        """
         return pulumi.get(self, "cluster_id")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The OCID of the compartment in which the node pool exists.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -69,7 +63,7 @@ class GetNodePoolsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -78,25 +72,16 @@ class GetNodePoolsResult:
     @property
     @pulumi.getter
     def name(self) -> Optional[str]:
-        """
-        The name of the node pool.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="nodePools")
-    def node_pools(self) -> Sequence['outputs.GetNodePoolsNodePoolResult']:
-        """
-        The list of node_pools.
-        """
+    def node_pools(self) -> Optional[Sequence['outputs.GetNodePoolsNodePoolResult']]:
         return pulumi.get(self, "node_pools")
 
     @property
     @pulumi.getter
     def states(self) -> Optional[Sequence[str]]:
-        """
-        The state of the nodepool.
-        """
         return pulumi.get(self, "states")
 
 
@@ -122,27 +107,7 @@ def get_node_pools(cluster_id: Optional[str] = None,
                    states: Optional[Sequence[str]] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNodePoolsResult:
     """
-    This data source provides the list of Node Pools in Oracle Cloud Infrastructure Container Engine service.
-
-    List all the node pools in a compartment, and optionally filter by cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_node_pools = oci.ContainerEngine.get_node_pools(compartment_id=var["compartment_id"],
-        cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        name=var["node_pool_name"],
-        states=var["node_pool_state"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
-    :param str compartment_id: The OCID of the compartment.
-    :param str name: The name to filter on.
-    :param Sequence[str] states: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
@@ -171,26 +136,6 @@ def get_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
                           states: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNodePoolsResult]:
     """
-    This data source provides the list of Node Pools in Oracle Cloud Infrastructure Container Engine service.
-
-    List all the node pools in a compartment, and optionally filter by cluster.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_node_pools = oci.ContainerEngine.get_node_pools(compartment_id=var["compartment_id"],
-        cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
-        name=var["node_pool_name"],
-        states=var["node_pool_state"])
-    ```
-
-
-    :param str cluster_id: The OCID of the cluster.
-    :param str compartment_id: The OCID of the compartment.
-    :param str name: The name to filter on.
-    :param Sequence[str] states: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
+    Use this data source to access information about an existing resource.
     """
     ...

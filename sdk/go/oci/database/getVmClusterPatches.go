@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Vm Cluster Patches in Oracle Cloud Infrastructure Database service.
@@ -62,7 +61,7 @@ type GetVmClusterPatchesArgs struct {
 type GetVmClusterPatchesResult struct {
 	Filters []GetVmClusterPatchesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The list of patches.
 	Patches     []GetVmClusterPatchesPatch `pulumi:"patches"`
 	VmClusterId string                     `pulumi:"vmClusterId"`
@@ -107,19 +106,13 @@ func (o GetVmClusterPatchesResultOutput) ToGetVmClusterPatchesResultOutputWithCo
 	return o
 }
 
-func (o GetVmClusterPatchesResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetVmClusterPatchesResult] {
-	return pulumix.Output[GetVmClusterPatchesResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetVmClusterPatchesResultOutput) Filters() GetVmClusterPatchesFilterArrayOutput {
 	return o.ApplyT(func(v GetVmClusterPatchesResult) []GetVmClusterPatchesFilter { return v.Filters }).(GetVmClusterPatchesFilterArrayOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetVmClusterPatchesResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetVmClusterPatchesResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetVmClusterPatchesResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetVmClusterPatchesResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The list of patches.

@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Target Database resource in Oracle Cloud Infrastructure Data Safe service.
@@ -95,31 +94,31 @@ type TargetDatabase struct {
 	// (Updatable) The OCID of the compartment in which to create the Data Safe target database.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Types of connection supported by Data Safe.
-	ConnectionOption TargetDatabaseConnectionOptionOutput `pulumi:"connectionOption"`
+	ConnectionOption TargetDatabaseConnectionOptionPtrOutput `pulumi:"connectionOption"`
 	// (Updatable) The database credentials required for Data Safe to connect to the database.
-	Credentials TargetDatabaseCredentialsOutput `pulumi:"credentials"`
+	Credentials TargetDatabaseCredentialsPtrOutput `pulumi:"credentials"`
 	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetailsOutput `pulumi:"databaseDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the target database in Data Safe.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the target database in Data Safe.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringPtrOutput `pulumi:"lifecycleDetails"`
 	// The current state of the target database in Data Safe.
-	State pulumi.StringOutput `pulumi:"state"`
+	State pulumi.StringPtrOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
-	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringPtrOutput `pulumi:"timeCreated"`
 	// The date and time of the target database update in Data Safe.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// (Updatable) The details required to establish a TLS enabled connection.
-	TlsConfig TargetDatabaseTlsConfigOutput `pulumi:"tlsConfig"`
+	TlsConfig TargetDatabaseTlsConfigPtrOutput `pulumi:"tlsConfig"`
 }
 
 // NewTargetDatabase registers a new resource with the given unique name, arguments, and options.
@@ -293,12 +292,6 @@ func (i *TargetDatabase) ToTargetDatabaseOutputWithContext(ctx context.Context) 
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseOutput)
 }
 
-func (i *TargetDatabase) ToOutput(ctx context.Context) pulumix.Output[*TargetDatabase] {
-	return pulumix.Output[*TargetDatabase]{
-		OutputState: i.ToTargetDatabaseOutputWithContext(ctx).OutputState,
-	}
-}
-
 // TargetDatabaseArrayInput is an input type that accepts TargetDatabaseArray and TargetDatabaseArrayOutput values.
 // You can construct a concrete instance of `TargetDatabaseArrayInput` via:
 //
@@ -322,12 +315,6 @@ func (i TargetDatabaseArray) ToTargetDatabaseArrayOutput() TargetDatabaseArrayOu
 
 func (i TargetDatabaseArray) ToTargetDatabaseArrayOutputWithContext(ctx context.Context) TargetDatabaseArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseArrayOutput)
-}
-
-func (i TargetDatabaseArray) ToOutput(ctx context.Context) pulumix.Output[[]*TargetDatabase] {
-	return pulumix.Output[[]*TargetDatabase]{
-		OutputState: i.ToTargetDatabaseArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // TargetDatabaseMapInput is an input type that accepts TargetDatabaseMap and TargetDatabaseMapOutput values.
@@ -355,12 +342,6 @@ func (i TargetDatabaseMap) ToTargetDatabaseMapOutputWithContext(ctx context.Cont
 	return pulumi.ToOutputWithContext(ctx, i).(TargetDatabaseMapOutput)
 }
 
-func (i TargetDatabaseMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*TargetDatabase] {
-	return pulumix.Output[map[string]*TargetDatabase]{
-		OutputState: i.ToTargetDatabaseMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type TargetDatabaseOutput struct{ *pulumi.OutputState }
 
 func (TargetDatabaseOutput) ElementType() reflect.Type {
@@ -375,12 +356,6 @@ func (o TargetDatabaseOutput) ToTargetDatabaseOutputWithContext(ctx context.Cont
 	return o
 }
 
-func (o TargetDatabaseOutput) ToOutput(ctx context.Context) pulumix.Output[*TargetDatabase] {
-	return pulumix.Output[*TargetDatabase]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The OCIDs of associated resources like database, Data Safe private endpoint etc.
 func (o TargetDatabaseOutput) AssociatedResourceIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *TargetDatabase) pulumi.StringArrayOutput { return v.AssociatedResourceIds }).(pulumi.StringArrayOutput)
@@ -392,13 +367,13 @@ func (o TargetDatabaseOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Types of connection supported by Data Safe.
-func (o TargetDatabaseOutput) ConnectionOption() TargetDatabaseConnectionOptionOutput {
-	return o.ApplyT(func(v *TargetDatabase) TargetDatabaseConnectionOptionOutput { return v.ConnectionOption }).(TargetDatabaseConnectionOptionOutput)
+func (o TargetDatabaseOutput) ConnectionOption() TargetDatabaseConnectionOptionPtrOutput {
+	return o.ApplyT(func(v *TargetDatabase) TargetDatabaseConnectionOptionPtrOutput { return v.ConnectionOption }).(TargetDatabaseConnectionOptionPtrOutput)
 }
 
 // (Updatable) The database credentials required for Data Safe to connect to the database.
-func (o TargetDatabaseOutput) Credentials() TargetDatabaseCredentialsOutput {
-	return o.ApplyT(func(v *TargetDatabase) TargetDatabaseCredentialsOutput { return v.Credentials }).(TargetDatabaseCredentialsOutput)
+func (o TargetDatabaseOutput) Credentials() TargetDatabaseCredentialsPtrOutput {
+	return o.ApplyT(func(v *TargetDatabase) TargetDatabaseCredentialsPtrOutput { return v.Credentials }).(TargetDatabaseCredentialsPtrOutput)
 }
 
 // (Updatable) Details of the database for the registration in Data Safe.
@@ -412,13 +387,13 @@ func (o TargetDatabaseOutput) DefinedTags() pulumi.MapOutput {
 }
 
 // (Updatable) The description of the target database in Data Safe.
-func (o TargetDatabaseOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetDatabase) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
+func (o TargetDatabaseOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabase) pulumi.StringPtrOutput { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-func (o TargetDatabaseOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetDatabase) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+func (o TargetDatabaseOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabase) pulumi.StringPtrOutput { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
@@ -427,13 +402,13 @@ func (o TargetDatabaseOutput) FreeformTags() pulumi.MapOutput {
 }
 
 // Details about the current state of the target database in Data Safe.
-func (o TargetDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetDatabase) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o TargetDatabaseOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabase) pulumi.StringPtrOutput { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the target database in Data Safe.
-func (o TargetDatabaseOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetDatabase) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+func (o TargetDatabaseOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabase) pulumi.StringPtrOutput { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -442,18 +417,18 @@ func (o TargetDatabaseOutput) SystemTags() pulumi.MapOutput {
 }
 
 // The date and time the database was registered in Data Safe and created as a target database in Data Safe.
-func (o TargetDatabaseOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetDatabase) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+func (o TargetDatabaseOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabase) pulumi.StringPtrOutput { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The date and time of the target database update in Data Safe.
-func (o TargetDatabaseOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v *TargetDatabase) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o TargetDatabaseOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TargetDatabase) pulumi.StringPtrOutput { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The details required to establish a TLS enabled connection.
-func (o TargetDatabaseOutput) TlsConfig() TargetDatabaseTlsConfigOutput {
-	return o.ApplyT(func(v *TargetDatabase) TargetDatabaseTlsConfigOutput { return v.TlsConfig }).(TargetDatabaseTlsConfigOutput)
+func (o TargetDatabaseOutput) TlsConfig() TargetDatabaseTlsConfigPtrOutput {
+	return o.ApplyT(func(v *TargetDatabase) TargetDatabaseTlsConfigPtrOutput { return v.TlsConfig }).(TargetDatabaseTlsConfigPtrOutput)
 }
 
 type TargetDatabaseArrayOutput struct{ *pulumi.OutputState }
@@ -468,12 +443,6 @@ func (o TargetDatabaseArrayOutput) ToTargetDatabaseArrayOutput() TargetDatabaseA
 
 func (o TargetDatabaseArrayOutput) ToTargetDatabaseArrayOutputWithContext(ctx context.Context) TargetDatabaseArrayOutput {
 	return o
-}
-
-func (o TargetDatabaseArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*TargetDatabase] {
-	return pulumix.Output[[]*TargetDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetDatabaseArrayOutput) Index(i pulumi.IntInput) TargetDatabaseOutput {
@@ -494,12 +463,6 @@ func (o TargetDatabaseMapOutput) ToTargetDatabaseMapOutput() TargetDatabaseMapOu
 
 func (o TargetDatabaseMapOutput) ToTargetDatabaseMapOutputWithContext(ctx context.Context) TargetDatabaseMapOutput {
 	return o
-}
-
-func (o TargetDatabaseMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*TargetDatabase] {
-	return pulumix.Output[map[string]*TargetDatabase]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o TargetDatabaseMapOutput) MapIndex(k pulumi.StringInput) TargetDatabaseOutput {

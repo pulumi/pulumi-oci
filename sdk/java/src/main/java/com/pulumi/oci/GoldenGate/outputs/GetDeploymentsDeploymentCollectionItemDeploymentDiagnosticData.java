@@ -6,6 +6,8 @@ package com.pulumi.oci.GoldenGate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData {
@@ -13,75 +15,75 @@ public final class GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDat
      * @return Name of the bucket where the object is to be uploaded in the object storage
      * 
      */
-    private String bucket;
+    private @Nullable String bucket;
     /**
      * @return The state of the deployment diagnostic collection.
      * 
      */
-    private String diagnosticState;
+    private @Nullable String diagnosticState;
     /**
      * @return Name of namespace that serves as a container for all of your buckets
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Name of the diagnostic collected and uploaded to object storage
      * 
      */
-    private String object;
+    private @Nullable String object;
     /**
      * @return The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeDiagnosticEnd;
+    private @Nullable String timeDiagnosticEnd;
     /**
      * @return The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    private String timeDiagnosticStart;
+    private @Nullable String timeDiagnosticStart;
 
     private GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData() {}
     /**
      * @return Name of the bucket where the object is to be uploaded in the object storage
      * 
      */
-    public String bucket() {
-        return this.bucket;
+    public Optional<String> bucket() {
+        return Optional.ofNullable(this.bucket);
     }
     /**
      * @return The state of the deployment diagnostic collection.
      * 
      */
-    public String diagnosticState() {
-        return this.diagnosticState;
+    public Optional<String> diagnosticState() {
+        return Optional.ofNullable(this.diagnosticState);
     }
     /**
      * @return Name of namespace that serves as a container for all of your buckets
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Name of the diagnostic collected and uploaded to object storage
      * 
      */
-    public String object() {
-        return this.object;
+    public Optional<String> object() {
+        return Optional.ofNullable(this.object);
     }
     /**
      * @return The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeDiagnosticEnd() {
-        return this.timeDiagnosticEnd;
+    public Optional<String> timeDiagnosticEnd() {
+        return Optional.ofNullable(this.timeDiagnosticEnd);
     }
     /**
      * @return The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
-    public String timeDiagnosticStart() {
-        return this.timeDiagnosticStart;
+    public Optional<String> timeDiagnosticStart() {
+        return Optional.ofNullable(this.timeDiagnosticStart);
     }
 
     public static Builder builder() {
@@ -93,12 +95,12 @@ public final class GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDat
     }
     @CustomType.Builder
     public static final class Builder {
-        private String bucket;
-        private String diagnosticState;
-        private String namespace;
-        private String object;
-        private String timeDiagnosticEnd;
-        private String timeDiagnosticStart;
+        private @Nullable String bucket;
+        private @Nullable String diagnosticState;
+        private @Nullable String namespace;
+        private @Nullable String object;
+        private @Nullable String timeDiagnosticEnd;
+        private @Nullable String timeDiagnosticStart;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData defaults) {
     	      Objects.requireNonNull(defaults);
@@ -111,33 +113,33 @@ public final class GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDat
         }
 
         @CustomType.Setter
-        public Builder bucket(String bucket) {
-            this.bucket = Objects.requireNonNull(bucket);
+        public Builder bucket(@Nullable String bucket) {
+            this.bucket = bucket;
             return this;
         }
         @CustomType.Setter
-        public Builder diagnosticState(String diagnosticState) {
-            this.diagnosticState = Objects.requireNonNull(diagnosticState);
+        public Builder diagnosticState(@Nullable String diagnosticState) {
+            this.diagnosticState = diagnosticState;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder object(String object) {
-            this.object = Objects.requireNonNull(object);
+        public Builder object(@Nullable String object) {
+            this.object = object;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDiagnosticEnd(String timeDiagnosticEnd) {
-            this.timeDiagnosticEnd = Objects.requireNonNull(timeDiagnosticEnd);
+        public Builder timeDiagnosticEnd(@Nullable String timeDiagnosticEnd) {
+            this.timeDiagnosticEnd = timeDiagnosticEnd;
             return this;
         }
         @CustomType.Setter
-        public Builder timeDiagnosticStart(String timeDiagnosticStart) {
-            this.timeDiagnosticStart = Objects.requireNonNull(timeDiagnosticStart);
+        public Builder timeDiagnosticStart(@Nullable String timeDiagnosticStart) {
+            this.timeDiagnosticStart = timeDiagnosticStart;
             return this;
         }
         public GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData build() {

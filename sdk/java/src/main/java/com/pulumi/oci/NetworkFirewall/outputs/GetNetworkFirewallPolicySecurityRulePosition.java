@@ -6,6 +6,8 @@ package com.pulumi.oci.NetworkFirewall.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNetworkFirewallPolicySecurityRulePosition {
@@ -13,27 +15,27 @@ public final class GetNetworkFirewallPolicySecurityRulePosition {
      * @return Identifier for rule after which this rule lies.
      * 
      */
-    private String afterRule;
+    private @Nullable String afterRule;
     /**
      * @return Identifier for rule before which this rule lies.
      * 
      */
-    private String beforeRule;
+    private @Nullable String beforeRule;
 
     private GetNetworkFirewallPolicySecurityRulePosition() {}
     /**
      * @return Identifier for rule after which this rule lies.
      * 
      */
-    public String afterRule() {
-        return this.afterRule;
+    public Optional<String> afterRule() {
+        return Optional.ofNullable(this.afterRule);
     }
     /**
      * @return Identifier for rule before which this rule lies.
      * 
      */
-    public String beforeRule() {
-        return this.beforeRule;
+    public Optional<String> beforeRule() {
+        return Optional.ofNullable(this.beforeRule);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetNetworkFirewallPolicySecurityRulePosition {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String afterRule;
-        private String beforeRule;
+        private @Nullable String afterRule;
+        private @Nullable String beforeRule;
         public Builder() {}
         public Builder(GetNetworkFirewallPolicySecurityRulePosition defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetNetworkFirewallPolicySecurityRulePosition {
         }
 
         @CustomType.Setter
-        public Builder afterRule(String afterRule) {
-            this.afterRule = Objects.requireNonNull(afterRule);
+        public Builder afterRule(@Nullable String afterRule) {
+            this.afterRule = afterRule;
             return this;
         }
         @CustomType.Setter
-        public Builder beforeRule(String beforeRule) {
-            this.beforeRule = Objects.requireNonNull(beforeRule);
+        public Builder beforeRule(@Nullable String beforeRule) {
+            this.beforeRule = beforeRule;
             return this;
         }
         public GetNetworkFirewallPolicySecurityRulePosition build() {

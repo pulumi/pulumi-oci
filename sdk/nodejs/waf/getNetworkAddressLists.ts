@@ -80,7 +80,7 @@ export interface GetNetworkAddressListsResult {
     /**
      * The list of network_address_list_collection.
      */
-    readonly networkAddressListCollections: outputs.Waf.GetNetworkAddressListsNetworkAddressListCollection[];
+    readonly networkAddressListCollections?: outputs.Waf.GetNetworkAddressListsNetworkAddressListCollection[];
     /**
      * The current state of the NetworkAddressList.
      */

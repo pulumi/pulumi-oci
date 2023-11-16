@@ -16,29 +16,29 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Estimated time, in minutes, to patch one database server.
         /// </summary>
-        public readonly int EstimatedPatchDuration;
+        public readonly int? EstimatedPatchDuration;
         /// <summary>
         /// The status of the patching operation.
         /// </summary>
-        public readonly string PatchingStatus;
+        public readonly string? PatchingStatus;
         /// <summary>
         /// The time when the patching operation ended.
         /// </summary>
-        public readonly string TimePatchingEnded;
+        public readonly string? TimePatchingEnded;
         /// <summary>
         /// The time when the patching operation started.
         /// </summary>
-        public readonly string TimePatchingStarted;
+        public readonly string? TimePatchingStarted;
 
         [OutputConstructor]
         private GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetailResult(
-            int estimatedPatchDuration,
+            int? estimatedPatchDuration,
 
-            string patchingStatus,
+            string? patchingStatus,
 
-            string timePatchingEnded,
+            string? timePatchingEnded,
 
-            string timePatchingStarted)
+            string? timePatchingStarted)
         {
             EstimatedPatchDuration = estimatedPatchDuration;
             PatchingStatus = patchingStatus;

@@ -6,6 +6,8 @@ package com.pulumi.oci.CertificatesManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName {
@@ -13,27 +15,27 @@ public final class GetCertificatesCertificateCollectionItemCurrentVersionSubject
      * @return The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
      * 
      */
-    private String type;
+    private @Nullable String type;
     /**
      * @return The subject alternative name.
      * 
      */
-    private String value;
+    private @Nullable String value;
 
     private GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName() {}
     /**
      * @return The subject alternative name type. Currently only DNS domain or host names and IP addresses are supported.
      * 
      */
-    public String type() {
-        return this.type;
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
     }
     /**
      * @return The subject alternative name.
      * 
      */
-    public String value() {
-        return this.value;
+    public Optional<String> value() {
+        return Optional.ofNullable(this.value);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetCertificatesCertificateCollectionItemCurrentVersionSubject
     }
     @CustomType.Builder
     public static final class Builder {
-        private String type;
-        private String value;
+        private @Nullable String type;
+        private @Nullable String value;
         public Builder() {}
         public Builder(GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetCertificatesCertificateCollectionItemCurrentVersionSubject
         }
 
         @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
+        public Builder type(@Nullable String type) {
+            this.type = type;
             return this;
         }
         @CustomType.Setter
-        public Builder value(String value) {
-            this.value = Objects.requireNonNull(value);
+        public Builder value(@Nullable String value) {
+            this.value = value;
             return this;
         }
         public GetCertificatesCertificateCollectionItemCurrentVersionSubjectAlternativeName build() {

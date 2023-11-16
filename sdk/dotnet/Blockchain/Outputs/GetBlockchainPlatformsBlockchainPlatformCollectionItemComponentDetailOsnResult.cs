@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Blockchain.Outputs
         /// <summary>
         /// Availability Domain of peer
         /// </summary>
-        public readonly string Ad;
+        public readonly string? Ad;
         /// <summary>
         /// OCPU allocation parameter
         /// </summary>
@@ -24,21 +24,21 @@ namespace Pulumi.Oci.Blockchain.Outputs
         /// <summary>
         /// OSN identifier
         /// </summary>
-        public readonly string OsnKey;
+        public readonly string? OsnKey;
         /// <summary>
         /// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
 
         [OutputConstructor]
         private GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnResult(
-            string ad,
+            string? ad,
 
             ImmutableArray<Outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsnOcpuAllocationParamResult> ocpuAllocationParams,
 
-            string osnKey,
+            string? osnKey,
 
-            string state)
+            string? state)
         {
             Ad = ad;
             OcpuAllocationParams = ocpuAllocationParams;

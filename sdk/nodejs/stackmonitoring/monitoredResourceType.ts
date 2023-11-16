@@ -85,7 +85,7 @@ export class MonitoredResourceType extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A friendly description.
      */
@@ -97,15 +97,15 @@ export class MonitoredResourceType extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) The metadata details for resource type.
      */
-    public readonly metadata!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceTypeMetadata>;
+    public readonly metadata!: pulumi.Output<outputs.StackMonitoring.MonitoredResourceTypeMetadata | undefined>;
     /**
      * (Updatable) Metric namespace for resource type.
      */
-    public readonly metricNamespace!: pulumi.Output<string>;
+    public readonly metricNamespace!: pulumi.Output<string | undefined>;
     /**
      * A unique monitored resource type name. The name must be unique across tenancy.  Name can not be changed. 
      *
@@ -117,19 +117,19 @@ export class MonitoredResourceType extends pulumi.CustomResource {
     /**
      * Lifecycle state of the monitored resource type.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
 
     /**
      * Create a MonitoredResourceType resource with the given unique name, arguments, and options.

@@ -16,68 +16,68 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
         /// </summary>
-        public readonly string Bucket;
-        public readonly string DeleteObjectInDestinationBucket;
+        public readonly string? Bucket;
+        public readonly string? DeleteObjectInDestinationBucket;
         /// <summary>
         /// The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
         /// </summary>
-        public readonly string DestinationBucketName;
+        public readonly string? DestinationBucketName;
         /// <summary>
         /// The destination region to replicate to, for example "us-ashburn-1".
         /// </summary>
-        public readonly string DestinationRegionName;
+        public readonly string? DestinationRegionName;
         /// <summary>
         /// The id of the replication policy.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The name of the policy.
         /// </summary>
-        public readonly string Name;
+        public readonly string? Name;
         /// <summary>
         /// The Object Storage namespace used for the request.
         /// </summary>
-        public readonly string Namespace;
+        public readonly string? Namespace;
         /// <summary>
         /// The replication status of the policy. If the status is CLIENT_ERROR, once the user fixes the issue described in the status message, the status will become ACTIVE.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// A human-readable description of the status.
         /// </summary>
-        public readonly string StatusMessage;
+        public readonly string? StatusMessage;
         /// <summary>
         /// The date when the replication policy was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Changes made to the source bucket before this time has been replicated.
         /// </summary>
-        public readonly string TimeLastSync;
+        public readonly string? TimeLastSync;
 
         [OutputConstructor]
         private GetReplicationPoliciesReplicationPolicyResult(
-            string bucket,
+            string? bucket,
 
-            string deleteObjectInDestinationBucket,
+            string? deleteObjectInDestinationBucket,
 
-            string destinationBucketName,
+            string? destinationBucketName,
 
-            string destinationRegionName,
+            string? destinationRegionName,
 
-            string id,
+            string? id,
 
-            string name,
+            string? name,
 
-            string @namespace,
+            string? @namespace,
 
-            string status,
+            string? status,
 
-            string statusMessage,
+            string? statusMessage,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string timeLastSync)
+            string? timeLastSync)
         {
             Bucket = bucket;
             DeleteObjectInDestinationBucket = deleteObjectInDestinationBucket;

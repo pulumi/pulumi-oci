@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetInstallationSitesInstallationSiteCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetInstallationSitesInstallationSiteCollection {
@@ -14,7 +15,7 @@ public final class GetInstallationSitesInstallationSiteCollection {
      * @return A list of Java installation sites.
      * 
      */
-    private List<GetInstallationSitesInstallationSiteCollectionItem> items;
+    private @Nullable List<GetInstallationSitesInstallationSiteCollectionItem> items;
 
     private GetInstallationSitesInstallationSiteCollection() {}
     /**
@@ -22,7 +23,7 @@ public final class GetInstallationSitesInstallationSiteCollection {
      * 
      */
     public List<GetInstallationSitesInstallationSiteCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -34,7 +35,7 @@ public final class GetInstallationSitesInstallationSiteCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInstallationSitesInstallationSiteCollectionItem> items;
+        private @Nullable List<GetInstallationSitesInstallationSiteCollectionItem> items;
         public Builder() {}
         public Builder(GetInstallationSitesInstallationSiteCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -42,8 +43,8 @@ public final class GetInstallationSitesInstallationSiteCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetInstallationSitesInstallationSiteCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetInstallationSitesInstallationSiteCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetInstallationSitesInstallationSiteCollectionItem... items) {

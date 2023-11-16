@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -68,36 +67,36 @@ type LookupDataAssetResult struct {
 	// The data catalog's OCID.
 	CatalogId string `pulumi:"catalogId"`
 	// OCID of the user who created the data asset.
-	CreatedById  string `pulumi:"createdById"`
-	DataAssetKey string `pulumi:"dataAssetKey"`
+	CreatedById  *string `pulumi:"createdById"`
+	DataAssetKey string  `pulumi:"dataAssetKey"`
 	// Detailed description of the data asset.
-	Description string `pulumi:"description"`
+	Description *string `pulumi:"description"`
 	// A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// External URI that can be used to reference the object. Format will differ based on the type of object.
-	ExternalKey string   `pulumi:"externalKey"`
+	ExternalKey *string  `pulumi:"externalKey"`
 	Fields      []string `pulumi:"fields"`
-	Id          string   `pulumi:"id"`
+	Id          *string  `pulumi:"id"`
 	// Unique data asset key that is immutable.
-	Key string `pulumi:"key"`
+	Key *string `pulumi:"key"`
 	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
 	Properties map[string]interface{} `pulumi:"properties"`
 	// The current state of the data asset.
-	State string `pulumi:"state"`
+	State *string `pulumi:"state"`
 	// The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeHarvested string `pulumi:"timeHarvested"`
+	TimeHarvested *string `pulumi:"timeHarvested"`
 	// The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
-	TypeKey string `pulumi:"typeKey"`
+	TypeKey *string `pulumi:"typeKey"`
 	// OCID of the user who last modified the data asset.
-	UpdatedById string `pulumi:"updatedById"`
+	UpdatedById *string `pulumi:"updatedById"`
 	// URI to the data asset instance in the API.
-	Uri string `pulumi:"uri"`
+	Uri *string `pulumi:"uri"`
 }
 
 func LookupDataAssetOutput(ctx *pulumi.Context, args LookupDataAssetOutputArgs, opts ...pulumi.InvokeOption) LookupDataAssetResultOutput {
@@ -142,20 +141,14 @@ func (o LookupDataAssetResultOutput) ToLookupDataAssetResultOutputWithContext(ct
 	return o
 }
 
-func (o LookupDataAssetResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupDataAssetResult] {
-	return pulumix.Output[LookupDataAssetResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The data catalog's OCID.
 func (o LookupDataAssetResultOutput) CatalogId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataAssetResult) string { return v.CatalogId }).(pulumi.StringOutput)
 }
 
 // OCID of the user who created the data asset.
-func (o LookupDataAssetResultOutput) CreatedById() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.CreatedById }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) CreatedById() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.CreatedById }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDataAssetResultOutput) DataAssetKey() pulumi.StringOutput {
@@ -163,36 +156,36 @@ func (o LookupDataAssetResultOutput) DataAssetKey() pulumi.StringOutput {
 }
 
 // Detailed description of the data asset.
-func (o LookupDataAssetResultOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.Description }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
 // A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o LookupDataAssetResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
 // External URI that can be used to reference the object. Format will differ based on the type of object.
-func (o LookupDataAssetResultOutput) ExternalKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.ExternalKey }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) ExternalKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.ExternalKey }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupDataAssetResultOutput) Fields() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDataAssetResult) []string { return v.Fields }).(pulumi.StringArrayOutput)
 }
 
-func (o LookupDataAssetResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Unique data asset key that is immutable.
-func (o LookupDataAssetResultOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.Key }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
 // A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-func (o LookupDataAssetResultOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) LifecycleDetails() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
 // A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
@@ -201,38 +194,38 @@ func (o LookupDataAssetResultOutput) Properties() pulumi.MapOutput {
 }
 
 // The current state of the data asset.
-func (o LookupDataAssetResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
 // The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
-func (o LookupDataAssetResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupDataAssetResultOutput) TimeHarvested() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.TimeHarvested }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) TimeHarvested() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.TimeHarvested }).(pulumi.StringPtrOutput)
 }
 
 // The last time that any change was made to the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-func (o LookupDataAssetResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 // The key of the object type. Type key's can be found via the '/types' endpoint.
-func (o LookupDataAssetResultOutput) TypeKey() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.TypeKey }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) TypeKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.TypeKey }).(pulumi.StringPtrOutput)
 }
 
 // OCID of the user who last modified the data asset.
-func (o LookupDataAssetResultOutput) UpdatedById() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.UpdatedById }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) UpdatedById() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.UpdatedById }).(pulumi.StringPtrOutput)
 }
 
 // URI to the data asset instance in the API.
-func (o LookupDataAssetResultOutput) Uri() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) string { return v.Uri }).(pulumi.StringOutput)
+func (o LookupDataAssetResultOutput) Uri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) *string { return v.Uri }).(pulumi.StringPtrOutput)
 }
 
 func init() {

@@ -16,47 +16,47 @@ namespace Pulumi.Oci.LicenseManager.Outputs
         /// <summary>
         /// Specifies if the license unit count is unlimited.
         /// </summary>
-        public readonly bool IsUnlimited;
+        public readonly bool? IsUnlimited;
         /// <summary>
         /// The product license [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
-        public readonly string ProductLicenseId;
+        public readonly string? ProductLicenseId;
         /// <summary>
         /// The product type.
         /// </summary>
-        public readonly string ProductType;
+        public readonly string? ProductType;
         /// <summary>
         /// The current product license status.
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// Total number of license units in the product license provided by the user.
         /// </summary>
-        public readonly int TotalLicenseUnitCount;
+        public readonly int? TotalLicenseUnitCount;
         /// <summary>
         /// Number of license units consumed.
         /// </summary>
-        public readonly double TotalUnitsConsumed;
+        public readonly double? TotalUnitsConsumed;
         /// <summary>
         /// The product license unit.
         /// </summary>
-        public readonly string UnitType;
+        public readonly string? UnitType;
 
         [OutputConstructor]
         private GetTopUtilizedProductLicensesItemResult(
-            bool isUnlimited,
+            bool? isUnlimited,
 
-            string productLicenseId,
+            string? productLicenseId,
 
-            string productType,
+            string? productType,
 
-            string status,
+            string? status,
 
-            int totalLicenseUnitCount,
+            int? totalLicenseUnitCount,
 
-            double totalUnitsConsumed,
+            double? totalUnitsConsumed,
 
-            string unitType)
+            string? unitType)
         {
             IsUnlimited = isUnlimited;
             ProductLicenseId = productLicenseId;

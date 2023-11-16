@@ -85,7 +85,7 @@ export interface GetWaasPoliciesResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly ids?: string[];
     readonly states?: string[];
     readonly timeCreatedGreaterThanOrEqualTo?: string;
@@ -93,7 +93,7 @@ export interface GetWaasPoliciesResult {
     /**
      * The list of waas_policies.
      */
-    readonly waasPolicies: outputs.Waas.GetWaasPoliciesWaasPolicy[];
+    readonly waasPolicies?: outputs.Waas.GetWaasPoliciesWaasPolicy[];
 }
 /**
  * This data source provides the list of Waas Policies in Oracle Cloud Infrastructure Web Application Acceleration and Security service.

@@ -49,33 +49,21 @@ class GetCloudVmClustersResult:
     @property
     @pulumi.getter(name="cloudExadataInfrastructureId")
     def cloud_exadata_infrastructure_id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
-        """
         return pulumi.get(self, "cloud_exadata_infrastructure_id")
 
     @property
     @pulumi.getter(name="cloudVmClusters")
-    def cloud_vm_clusters(self) -> Sequence['outputs.GetCloudVmClustersCloudVmClusterResult']:
-        """
-        The list of cloud_vm_clusters.
-        """
+    def cloud_vm_clusters(self) -> Optional[Sequence['outputs.GetCloudVmClustersCloudVmClusterResult']]:
         return pulumi.get(self, "cloud_vm_clusters")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        The user-friendly name for the cloud VM cluster. The name does not need to be unique.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -85,7 +73,7 @@ class GetCloudVmClustersResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -94,9 +82,6 @@ class GetCloudVmClustersResult:
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the cloud VM cluster.
-        """
         return pulumi.get(self, "state")
 
 
@@ -122,27 +107,7 @@ def get_cloud_vm_clusters(cloud_exadata_infrastructure_id: Optional[str] = None,
                           state: Optional[str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCloudVmClustersResult:
     """
-    This data source provides the list of Cloud Vm Clusters in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_vm_clusters = oci.Database.get_cloud_vm_clusters(compartment_id=var["compartment_id"],
-        cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"],
-        display_name=var["cloud_vm_cluster_display_name"],
-        state=var["cloud_vm_cluster_state"])
-    ```
-
-
-    :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only cloud VM clusters that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['cloudExadataInfrastructureId'] = cloud_exadata_infrastructure_id
@@ -171,26 +136,6 @@ def get_cloud_vm_clusters_output(cloud_exadata_infrastructure_id: Optional[pulum
                                  state: Optional[pulumi.Input[Optional[str]]] = None,
                                  opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetCloudVmClustersResult]:
     """
-    This data source provides the list of Cloud Vm Clusters in Oracle Cloud Infrastructure Database service.
-
-    Gets a list of the cloud VM clusters in the specified compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_cloud_vm_clusters = oci.Database.get_cloud_vm_clusters(compartment_id=var["compartment_id"],
-        cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"],
-        display_name=var["cloud_vm_cluster_display_name"],
-        state=var["cloud_vm_cluster_state"])
-    ```
-
-
-    :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
-    :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-    :param str state: A filter to return only cloud VM clusters that match the given lifecycle state exactly.
+    Use this data source to access information about an existing resource.
     """
     ...

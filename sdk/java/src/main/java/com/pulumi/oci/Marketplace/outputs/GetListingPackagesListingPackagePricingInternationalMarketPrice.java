@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetListingPackagesListingPackagePricingInternationalMarketPrice {
@@ -14,39 +16,39 @@ public final class GetListingPackagesListingPackagePricingInternationalMarketPri
      * @return The currency of the pricing model.
      * 
      */
-    private String currencyCode;
+    private @Nullable String currencyCode;
     /**
      * @return The symbol of the currency
      * 
      */
-    private String currencySymbol;
+    private @Nullable String currencySymbol;
     /**
      * @return The pricing rate.
      * 
      */
-    private Double rate;
+    private @Nullable Double rate;
 
     private GetListingPackagesListingPackagePricingInternationalMarketPrice() {}
     /**
      * @return The currency of the pricing model.
      * 
      */
-    public String currencyCode() {
-        return this.currencyCode;
+    public Optional<String> currencyCode() {
+        return Optional.ofNullable(this.currencyCode);
     }
     /**
      * @return The symbol of the currency
      * 
      */
-    public String currencySymbol() {
-        return this.currencySymbol;
+    public Optional<String> currencySymbol() {
+        return Optional.ofNullable(this.currencySymbol);
     }
     /**
      * @return The pricing rate.
      * 
      */
-    public Double rate() {
-        return this.rate;
+    public Optional<Double> rate() {
+        return Optional.ofNullable(this.rate);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetListingPackagesListingPackagePricingInternationalMarketPri
     }
     @CustomType.Builder
     public static final class Builder {
-        private String currencyCode;
-        private String currencySymbol;
-        private Double rate;
+        private @Nullable String currencyCode;
+        private @Nullable String currencySymbol;
+        private @Nullable Double rate;
         public Builder() {}
         public Builder(GetListingPackagesListingPackagePricingInternationalMarketPrice defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetListingPackagesListingPackagePricingInternationalMarketPri
         }
 
         @CustomType.Setter
-        public Builder currencyCode(String currencyCode) {
-            this.currencyCode = Objects.requireNonNull(currencyCode);
+        public Builder currencyCode(@Nullable String currencyCode) {
+            this.currencyCode = currencyCode;
             return this;
         }
         @CustomType.Setter
-        public Builder currencySymbol(String currencySymbol) {
-            this.currencySymbol = Objects.requireNonNull(currencySymbol);
+        public Builder currencySymbol(@Nullable String currencySymbol) {
+            this.currencySymbol = currencySymbol;
             return this;
         }
         @CustomType.Setter
-        public Builder rate(Double rate) {
-            this.rate = Objects.requireNonNull(rate);
+        public Builder rate(@Nullable Double rate) {
+            this.rate = rate;
             return this;
         }
         public GetListingPackagesListingPackagePricingInternationalMarketPrice build() {

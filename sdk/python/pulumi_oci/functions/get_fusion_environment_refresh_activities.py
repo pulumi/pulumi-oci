@@ -52,9 +52,6 @@ class GetFusionEnvironmentRefreshActivitiesResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A friendly name for the refresh activity. Can be changed later.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -69,7 +66,7 @@ class GetFusionEnvironmentRefreshActivitiesResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -77,18 +74,12 @@ class GetFusionEnvironmentRefreshActivitiesResult:
 
     @property
     @pulumi.getter(name="refreshActivityCollections")
-    def refresh_activity_collections(self) -> Sequence['outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionResult']:
-        """
-        The list of refresh_activity_collection.
-        """
+    def refresh_activity_collections(self) -> Optional[Sequence['outputs.GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionResult']]:
         return pulumi.get(self, "refresh_activity_collections")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the refreshActivity.
-        """
         return pulumi.get(self, "state")
 
     @property
@@ -126,29 +117,7 @@ def get_fusion_environment_refresh_activities(display_name: Optional[str] = None
                                               time_scheduled_start_greater_than_or_equal_to: Optional[str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetFusionEnvironmentRefreshActivitiesResult:
     """
-    This data source provides the list of Fusion Environment Refresh Activities in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Returns a list of RefreshActivities.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_refresh_activities = oci.Functions.get_fusion_environment_refresh_activities(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        display_name=var["fusion_environment_refresh_activity_display_name"],
-        state=var["fusion_environment_refresh_activity_state"],
-        time_expected_finish_less_than_or_equal_to=var["fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to"],
-        time_scheduled_start_greater_than_or_equal_to=var["fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str state: A filter that returns all resources that match the specified status
-    :param str time_expected_finish_less_than_or_equal_to: A filter that returns all resources that end before this date
-    :param str time_scheduled_start_greater_than_or_equal_to: A filter that returns all resources that are scheduled after this date
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
@@ -180,28 +149,6 @@ def get_fusion_environment_refresh_activities_output(display_name: Optional[pulu
                                                      time_scheduled_start_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
                                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetFusionEnvironmentRefreshActivitiesResult]:
     """
-    This data source provides the list of Fusion Environment Refresh Activities in Oracle Cloud Infrastructure Fusion Apps service.
-
-    Returns a list of RefreshActivities.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_fusion_environment_refresh_activities = oci.Functions.get_fusion_environment_refresh_activities(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-        display_name=var["fusion_environment_refresh_activity_display_name"],
-        state=var["fusion_environment_refresh_activity_state"],
-        time_expected_finish_less_than_or_equal_to=var["fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to"],
-        time_scheduled_start_greater_than_or_equal_to=var["fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to"])
-    ```
-
-
-    :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str fusion_environment_id: unique FusionEnvironment identifier
-    :param str state: A filter that returns all resources that match the specified status
-    :param str time_expected_finish_less_than_or_equal_to: A filter that returns all resources that end before this date
-    :param str time_scheduled_start_greater_than_or_equal_to: A filter that returns all resources that are scheduled after this date
+    Use this data source to access information about an existing resource.
     """
     ...

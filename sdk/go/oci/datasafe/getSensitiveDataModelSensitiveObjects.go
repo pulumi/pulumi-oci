@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Sensitive Data Model Sensitive Objects in Oracle Cloud Infrastructure Data Safe service.
@@ -71,7 +70,7 @@ type GetSensitiveDataModelSensitiveObjectsArgs struct {
 type GetSensitiveDataModelSensitiveObjectsResult struct {
 	Filters []GetSensitiveDataModelSensitiveObjectsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// The type of the database object that contains the sensitive column.
 	ObjectTypes []string `pulumi:"objectTypes"`
 	// The database object that contains the sensitive column.
@@ -128,12 +127,6 @@ func (o GetSensitiveDataModelSensitiveObjectsResultOutput) ToGetSensitiveDataMod
 	return o
 }
 
-func (o GetSensitiveDataModelSensitiveObjectsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetSensitiveDataModelSensitiveObjectsResult] {
-	return pulumix.Output[GetSensitiveDataModelSensitiveObjectsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetSensitiveDataModelSensitiveObjectsResultOutput) Filters() GetSensitiveDataModelSensitiveObjectsFilterArrayOutput {
 	return o.ApplyT(func(v GetSensitiveDataModelSensitiveObjectsResult) []GetSensitiveDataModelSensitiveObjectsFilter {
 		return v.Filters
@@ -141,8 +134,8 @@ func (o GetSensitiveDataModelSensitiveObjectsResultOutput) Filters() GetSensitiv
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetSensitiveDataModelSensitiveObjectsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetSensitiveDataModelSensitiveObjectsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetSensitiveDataModelSensitiveObjectsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelSensitiveObjectsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The type of the database object that contains the sensitive column.

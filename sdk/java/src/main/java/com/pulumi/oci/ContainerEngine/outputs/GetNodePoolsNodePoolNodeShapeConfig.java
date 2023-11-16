@@ -6,6 +6,8 @@ package com.pulumi.oci.ContainerEngine.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetNodePoolsNodePoolNodeShapeConfig {
@@ -13,27 +15,27 @@ public final class GetNodePoolsNodePoolNodeShapeConfig {
      * @return The total amount of memory available to each node, in gigabytes.
      * 
      */
-    private Double memoryInGbs;
+    private @Nullable Double memoryInGbs;
     /**
      * @return The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
      * 
      */
-    private Double ocpus;
+    private @Nullable Double ocpus;
 
     private GetNodePoolsNodePoolNodeShapeConfig() {}
     /**
      * @return The total amount of memory available to each node, in gigabytes.
      * 
      */
-    public Double memoryInGbs() {
-        return this.memoryInGbs;
+    public Optional<Double> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
     }
     /**
      * @return The total number of OCPUs available to each node in the node pool. See [here](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Shape/) for details.
      * 
      */
-    public Double ocpus() {
-        return this.ocpus;
+    public Optional<Double> ocpus() {
+        return Optional.ofNullable(this.ocpus);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class GetNodePoolsNodePoolNodeShapeConfig {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Double memoryInGbs;
-        private Double ocpus;
+        private @Nullable Double memoryInGbs;
+        private @Nullable Double ocpus;
         public Builder() {}
         public Builder(GetNodePoolsNodePoolNodeShapeConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class GetNodePoolsNodePoolNodeShapeConfig {
         }
 
         @CustomType.Setter
-        public Builder memoryInGbs(Double memoryInGbs) {
-            this.memoryInGbs = Objects.requireNonNull(memoryInGbs);
+        public Builder memoryInGbs(@Nullable Double memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
             return this;
         }
         @CustomType.Setter
-        public Builder ocpus(Double ocpus) {
-            this.ocpus = Objects.requireNonNull(ocpus);
+        public Builder ocpus(@Nullable Double ocpus) {
+            this.ocpus = ocpus;
             return this;
         }
         public GetNodePoolsNodePoolNodeShapeConfig build() {

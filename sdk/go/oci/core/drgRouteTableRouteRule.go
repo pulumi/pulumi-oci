@@ -10,7 +10,6 @@ import (
 	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This resource provides the Drg Route Table Route Rule resource in Oracle Cloud Infrastructure Core service.
@@ -73,18 +72,18 @@ type DrgRouteTableRouteRule struct {
 	// * IP address range in CIDR notation. This can be an IPv4 CIDR block or IPv6 prefix. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
 	DrgRouteTableId pulumi.StringOutput `pulumi:"drgRouteTableId"`
 	// Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
-	IsBlackhole pulumi.BoolOutput `pulumi:"isBlackhole"`
+	IsBlackhole pulumi.BoolPtrOutput `pulumi:"isBlackhole"`
 	// Indicates that the route was not imported due to a conflict between route rules.
-	IsConflict pulumi.BoolOutput `pulumi:"isConflict"`
+	IsConflict pulumi.BoolPtrOutput `pulumi:"isConflict"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	NextHopDrgAttachmentId pulumi.StringOutput `pulumi:"nextHopDrgAttachmentId"`
 	// The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
-	RouteProvenance pulumi.StringOutput `pulumi:"routeProvenance"`
+	RouteProvenance pulumi.StringPtrOutput `pulumi:"routeProvenance"`
 	// You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
-	RouteType pulumi.StringOutput `pulumi:"routeType"`
+	RouteType pulumi.StringPtrOutput `pulumi:"routeType"`
 }
 
 // NewDrgRouteTableRouteRule registers a new resource with the given unique name, arguments, and options.
@@ -256,12 +255,6 @@ func (i *DrgRouteTableRouteRule) ToDrgRouteTableRouteRuleOutputWithContext(ctx c
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteTableRouteRuleOutput)
 }
 
-func (i *DrgRouteTableRouteRule) ToOutput(ctx context.Context) pulumix.Output[*DrgRouteTableRouteRule] {
-	return pulumix.Output[*DrgRouteTableRouteRule]{
-		OutputState: i.ToDrgRouteTableRouteRuleOutputWithContext(ctx).OutputState,
-	}
-}
-
 // DrgRouteTableRouteRuleArrayInput is an input type that accepts DrgRouteTableRouteRuleArray and DrgRouteTableRouteRuleArrayOutput values.
 // You can construct a concrete instance of `DrgRouteTableRouteRuleArrayInput` via:
 //
@@ -285,12 +278,6 @@ func (i DrgRouteTableRouteRuleArray) ToDrgRouteTableRouteRuleArrayOutput() DrgRo
 
 func (i DrgRouteTableRouteRuleArray) ToDrgRouteTableRouteRuleArrayOutputWithContext(ctx context.Context) DrgRouteTableRouteRuleArrayOutput {
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteTableRouteRuleArrayOutput)
-}
-
-func (i DrgRouteTableRouteRuleArray) ToOutput(ctx context.Context) pulumix.Output[[]*DrgRouteTableRouteRule] {
-	return pulumix.Output[[]*DrgRouteTableRouteRule]{
-		OutputState: i.ToDrgRouteTableRouteRuleArrayOutputWithContext(ctx).OutputState,
-	}
 }
 
 // DrgRouteTableRouteRuleMapInput is an input type that accepts DrgRouteTableRouteRuleMap and DrgRouteTableRouteRuleMapOutput values.
@@ -318,12 +305,6 @@ func (i DrgRouteTableRouteRuleMap) ToDrgRouteTableRouteRuleMapOutputWithContext(
 	return pulumi.ToOutputWithContext(ctx, i).(DrgRouteTableRouteRuleMapOutput)
 }
 
-func (i DrgRouteTableRouteRuleMap) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgRouteTableRouteRule] {
-	return pulumix.Output[map[string]*DrgRouteTableRouteRule]{
-		OutputState: i.ToDrgRouteTableRouteRuleMapOutputWithContext(ctx).OutputState,
-	}
-}
-
 type DrgRouteTableRouteRuleOutput struct{ *pulumi.OutputState }
 
 func (DrgRouteTableRouteRuleOutput) ElementType() reflect.Type {
@@ -336,12 +317,6 @@ func (o DrgRouteTableRouteRuleOutput) ToDrgRouteTableRouteRuleOutput() DrgRouteT
 
 func (o DrgRouteTableRouteRuleOutput) ToDrgRouteTableRouteRuleOutputWithContext(ctx context.Context) DrgRouteTableRouteRuleOutput {
 	return o
-}
-
-func (o DrgRouteTableRouteRuleOutput) ToOutput(ctx context.Context) pulumix.Output[*DrgRouteTableRouteRule] {
-	return pulumix.Output[*DrgRouteTableRouteRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 // Additional properties for the route, computed by the service.
@@ -371,13 +346,13 @@ func (o DrgRouteTableRouteRuleOutput) DrgRouteTableId() pulumi.StringOutput {
 }
 
 // Indicates that if the next hop attachment does not exist, so traffic for this route is discarded without notification.
-func (o DrgRouteTableRouteRuleOutput) IsBlackhole() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.BoolOutput { return v.IsBlackhole }).(pulumi.BoolOutput)
+func (o DrgRouteTableRouteRuleOutput) IsBlackhole() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.BoolPtrOutput { return v.IsBlackhole }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates that the route was not imported due to a conflict between route rules.
-func (o DrgRouteTableRouteRuleOutput) IsConflict() pulumi.BoolOutput {
-	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.BoolOutput { return v.IsConflict }).(pulumi.BoolOutput)
+func (o DrgRouteTableRouteRuleOutput) IsConflict() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.BoolPtrOutput { return v.IsConflict }).(pulumi.BoolPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible for reaching the network destination.
@@ -389,13 +364,13 @@ func (o DrgRouteTableRouteRuleOutput) NextHopDrgAttachmentId() pulumi.StringOutp
 }
 
 // The earliest origin of a route. If a route is advertised to a DRG through an IPsec tunnel attachment, and is propagated to peered DRGs via RPC attachments, the route's provenance in the peered DRGs remains `IPSEC_TUNNEL`, because that is the earliest origin.
-func (o DrgRouteTableRouteRuleOutput) RouteProvenance() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.StringOutput { return v.RouteProvenance }).(pulumi.StringOutput)
+func (o DrgRouteTableRouteRuleOutput) RouteProvenance() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.StringPtrOutput { return v.RouteProvenance }).(pulumi.StringPtrOutput)
 }
 
 // You can specify static routes for the DRG route table using the API. The DRG learns dynamic routes from the DRG attachments using various routing protocols.
-func (o DrgRouteTableRouteRuleOutput) RouteType() pulumi.StringOutput {
-	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.StringOutput { return v.RouteType }).(pulumi.StringOutput)
+func (o DrgRouteTableRouteRuleOutput) RouteType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.StringPtrOutput { return v.RouteType }).(pulumi.StringPtrOutput)
 }
 
 type DrgRouteTableRouteRuleArrayOutput struct{ *pulumi.OutputState }
@@ -410,12 +385,6 @@ func (o DrgRouteTableRouteRuleArrayOutput) ToDrgRouteTableRouteRuleArrayOutput()
 
 func (o DrgRouteTableRouteRuleArrayOutput) ToDrgRouteTableRouteRuleArrayOutputWithContext(ctx context.Context) DrgRouteTableRouteRuleArrayOutput {
 	return o
-}
-
-func (o DrgRouteTableRouteRuleArrayOutput) ToOutput(ctx context.Context) pulumix.Output[[]*DrgRouteTableRouteRule] {
-	return pulumix.Output[[]*DrgRouteTableRouteRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrgRouteTableRouteRuleArrayOutput) Index(i pulumi.IntInput) DrgRouteTableRouteRuleOutput {
@@ -436,12 +405,6 @@ func (o DrgRouteTableRouteRuleMapOutput) ToDrgRouteTableRouteRuleMapOutput() Drg
 
 func (o DrgRouteTableRouteRuleMapOutput) ToDrgRouteTableRouteRuleMapOutputWithContext(ctx context.Context) DrgRouteTableRouteRuleMapOutput {
 	return o
-}
-
-func (o DrgRouteTableRouteRuleMapOutput) ToOutput(ctx context.Context) pulumix.Output[map[string]*DrgRouteTableRouteRule] {
-	return pulumix.Output[map[string]*DrgRouteTableRouteRule]{
-		OutputState: o.OutputState,
-	}
 }
 
 func (o DrgRouteTableRouteRuleMapOutput) MapIndex(k pulumi.StringInput) DrgRouteTableRouteRuleOutput {

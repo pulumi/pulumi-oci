@@ -15,6 +15,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -125,14 +126,14 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="availabilityDomains", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> availabilityDomains;
+    private Output</* @Nullable */ List<String>> availabilityDomains;
 
     /**
      * @return The availability domains to distribute the cluser nodes across.
      * 
      */
-    public Output<List<String>> availabilityDomains() {
-        return this.availabilityDomains;
+    public Output<Optional<List<String>>> availabilityDomains() {
+        return Codegen.optional(this.availabilityDomains);
     }
     /**
      * The OCID of the compartment to create the cluster in.
@@ -167,14 +168,14 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="dataNodeHostBareMetalShape", refs={String.class}, tree="[0]")
-    private Output<String> dataNodeHostBareMetalShape;
+    private Output</* @Nullable */ String> dataNodeHostBareMetalShape;
 
     /**
      * @return The bare metal shape for the cluster&#39;s data nodes.
      * 
      */
-    public Output<String> dataNodeHostBareMetalShape() {
-        return this.dataNodeHostBareMetalShape;
+    public Output<Optional<String>> dataNodeHostBareMetalShape() {
+        return Codegen.optional(this.dataNodeHostBareMetalShape);
     }
     /**
      * (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s data nodes.
@@ -237,14 +238,14 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * (Updatable) The name of the cluster. Avoid entering confidential information.
@@ -265,42 +266,42 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="fqdn", refs={String.class}, tree="[0]")
-    private Output<String> fqdn;
+    private Output</* @Nullable */ String> fqdn;
 
     /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s API endpoint.
      * 
      */
-    public Output<String> fqdn() {
-        return this.fqdn;
+    public Output<Optional<String>> fqdn() {
+        return Codegen.optional(this.fqdn);
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * Additional information about the current lifecycle state of the cluster.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return Additional information about the current lifecycle state of the cluster.
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * (Updatable) The number of master nodes to configure for the cluster.
@@ -321,14 +322,14 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="masterNodeHostBareMetalShape", refs={String.class}, tree="[0]")
-    private Output<String> masterNodeHostBareMetalShape;
+    private Output</* @Nullable */ String> masterNodeHostBareMetalShape;
 
     /**
      * @return The bare metal shape for the cluster&#39;s master nodes.
      * 
      */
-    public Output<String> masterNodeHostBareMetalShape() {
-        return this.masterNodeHostBareMetalShape;
+    public Output<Optional<String>> masterNodeHostBareMetalShape() {
+        return Codegen.optional(this.masterNodeHostBareMetalShape);
     }
     /**
      * (Updatable) The amount of memory in GB, to configure per node for the cluster&#39;s master nodes.
@@ -377,14 +378,14 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="opendashboardFqdn", refs={String.class}, tree="[0]")
-    private Output<String> opendashboardFqdn;
+    private Output</* @Nullable */ String> opendashboardFqdn;
 
     /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s OpenSearch Dashboard API endpoint.
      * 
      */
-    public Output<String> opendashboardFqdn() {
-        return this.opendashboardFqdn;
+    public Output<Optional<String>> opendashboardFqdn() {
+        return Codegen.optional(this.opendashboardFqdn);
     }
     /**
      * (Updatable) The number of OpenSearch Dashboard nodes to configure for the cluster.
@@ -433,84 +434,84 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="opendashboardPrivateIp", refs={String.class}, tree="[0]")
-    private Output<String> opendashboardPrivateIp;
+    private Output</* @Nullable */ String> opendashboardPrivateIp;
 
     /**
      * @return The private IP address for the cluster&#39;s OpenSearch Dashboard.
      * 
      */
-    public Output<String> opendashboardPrivateIp() {
-        return this.opendashboardPrivateIp;
+    public Output<Optional<String>> opendashboardPrivateIp() {
+        return Codegen.optional(this.opendashboardPrivateIp);
     }
     /**
      * The fully qualified domain name (FQDN) for the cluster&#39;s API endpoint.
      * 
      */
     @Export(name="opensearchFqdn", refs={String.class}, tree="[0]")
-    private Output<String> opensearchFqdn;
+    private Output</* @Nullable */ String> opensearchFqdn;
 
     /**
      * @return The fully qualified domain name (FQDN) for the cluster&#39;s API endpoint.
      * 
      */
-    public Output<String> opensearchFqdn() {
-        return this.opensearchFqdn;
+    public Output<Optional<String>> opensearchFqdn() {
+        return Codegen.optional(this.opensearchFqdn);
     }
     /**
      * The cluster&#39;s private IP address.
      * 
      */
     @Export(name="opensearchPrivateIp", refs={String.class}, tree="[0]")
-    private Output<String> opensearchPrivateIp;
+    private Output</* @Nullable */ String> opensearchPrivateIp;
 
     /**
      * @return The cluster&#39;s private IP address.
      * 
      */
-    public Output<String> opensearchPrivateIp() {
-        return this.opensearchPrivateIp;
+    public Output<Optional<String>> opensearchPrivateIp() {
+        return Codegen.optional(this.opensearchPrivateIp);
     }
     /**
      * (Updatable) The name of the master user that are used to manage security config
      * 
      */
     @Export(name="securityMasterUserName", refs={String.class}, tree="[0]")
-    private Output<String> securityMasterUserName;
+    private Output</* @Nullable */ String> securityMasterUserName;
 
     /**
      * @return (Updatable) The name of the master user that are used to manage security config
      * 
      */
-    public Output<String> securityMasterUserName() {
-        return this.securityMasterUserName;
+    public Output<Optional<String>> securityMasterUserName() {
+        return Codegen.optional(this.securityMasterUserName);
     }
     /**
      * (Updatable) The password hash of the master user that are used to manage security config
      * 
      */
     @Export(name="securityMasterUserPasswordHash", refs={String.class}, tree="[0]")
-    private Output<String> securityMasterUserPasswordHash;
+    private Output</* @Nullable */ String> securityMasterUserPasswordHash;
 
     /**
      * @return (Updatable) The password hash of the master user that are used to manage security config
      * 
      */
-    public Output<String> securityMasterUserPasswordHash() {
-        return this.securityMasterUserPasswordHash;
+    public Output<Optional<String>> securityMasterUserPasswordHash() {
+        return Codegen.optional(this.securityMasterUserPasswordHash);
     }
     /**
      * (Updatable) The security mode of the cluster.
      * 
      */
     @Export(name="securityMode", refs={String.class}, tree="[0]")
-    private Output<String> securityMode;
+    private Output</* @Nullable */ String> securityMode;
 
     /**
      * @return (Updatable) The security mode of the cluster.
      * 
      */
-    public Output<String> securityMode() {
-        return this.securityMode;
+    public Output<Optional<String>> securityMode() {
+        return Codegen.optional(this.securityMode);
     }
     /**
      * (Updatable) The version of the software the cluster is running.
@@ -531,14 +532,14 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current state of the cluster.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The OCID for the compartment where the cluster&#39;s subnet is located.
@@ -573,70 +574,70 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    private Output</* @Nullable */ Map<String,Object>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Output<Map<String,Object>> systemTags() {
-        return this.systemTags;
+    public Output<Optional<Map<String,Object>>> systemTags() {
+        return Codegen.optional(this.systemTags);
     }
     /**
      * The amount of time in milliseconds since the cluster was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The amount of time in milliseconds since the cluster was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * The amount of time in milliseconds since the cluster was updated.
      * 
      */
     @Export(name="timeDeleted", refs={String.class}, tree="[0]")
-    private Output<String> timeDeleted;
+    private Output</* @Nullable */ String> timeDeleted;
 
     /**
      * @return The amount of time in milliseconds since the cluster was updated.
      * 
      */
-    public Output<String> timeDeleted() {
-        return this.timeDeleted;
+    public Output<Optional<String>> timeDeleted() {
+        return Codegen.optional(this.timeDeleted);
     }
     /**
      * The amount of time in milliseconds since the cluster was updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The amount of time in milliseconds since the cluster was updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
      * The size in GB of the cluster&#39;s total storage.
      * 
      */
     @Export(name="totalStorageGb", refs={Integer.class}, tree="[0]")
-    private Output<Integer> totalStorageGb;
+    private Output</* @Nullable */ Integer> totalStorageGb;
 
     /**
      * @return The size in GB of the cluster&#39;s total storage.
      * 
      */
-    public Output<Integer> totalStorageGb() {
-        return this.totalStorageGb;
+    public Output<Optional<Integer>> totalStorageGb() {
+        return Codegen.optional(this.totalStorageGb);
     }
     /**
      * The OCID for the compartment where the cluster&#39;s VCN is located.

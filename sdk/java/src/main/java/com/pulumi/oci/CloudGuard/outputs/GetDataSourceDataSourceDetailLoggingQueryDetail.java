@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDataSourceDataSourceDetailLoggingQueryDetail {
@@ -14,27 +16,27 @@ public final class GetDataSourceDataSourceDetailLoggingQueryDetail {
      * @return The key entities count used for data source query
      * 
      */
-    private Integer keyEntitiesCount;
+    private @Nullable Integer keyEntitiesCount;
     /**
      * @return Logging query type for data source (Sighting/Insight)
      * 
      */
-    private String loggingQueryType;
+    private @Nullable String loggingQueryType;
 
     private GetDataSourceDataSourceDetailLoggingQueryDetail() {}
     /**
      * @return The key entities count used for data source query
      * 
      */
-    public Integer keyEntitiesCount() {
-        return this.keyEntitiesCount;
+    public Optional<Integer> keyEntitiesCount() {
+        return Optional.ofNullable(this.keyEntitiesCount);
     }
     /**
      * @return Logging query type for data source (Sighting/Insight)
      * 
      */
-    public String loggingQueryType() {
-        return this.loggingQueryType;
+    public Optional<String> loggingQueryType() {
+        return Optional.ofNullable(this.loggingQueryType);
     }
 
     public static Builder builder() {
@@ -46,8 +48,8 @@ public final class GetDataSourceDataSourceDetailLoggingQueryDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer keyEntitiesCount;
-        private String loggingQueryType;
+        private @Nullable Integer keyEntitiesCount;
+        private @Nullable String loggingQueryType;
         public Builder() {}
         public Builder(GetDataSourceDataSourceDetailLoggingQueryDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -56,13 +58,13 @@ public final class GetDataSourceDataSourceDetailLoggingQueryDetail {
         }
 
         @CustomType.Setter
-        public Builder keyEntitiesCount(Integer keyEntitiesCount) {
-            this.keyEntitiesCount = Objects.requireNonNull(keyEntitiesCount);
+        public Builder keyEntitiesCount(@Nullable Integer keyEntitiesCount) {
+            this.keyEntitiesCount = keyEntitiesCount;
             return this;
         }
         @CustomType.Setter
-        public Builder loggingQueryType(String loggingQueryType) {
-            this.loggingQueryType = Objects.requireNonNull(loggingQueryType);
+        public Builder loggingQueryType(@Nullable String loggingQueryType) {
+            this.loggingQueryType = loggingQueryType;
             return this;
         }
         public GetDataSourceDataSourceDetailLoggingQueryDetail build() {

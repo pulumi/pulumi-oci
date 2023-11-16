@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Media Workflow Task Declaration resource in Oracle Cloud Infrastructure Media Services service.
@@ -70,8 +69,8 @@ type GetMediaWorkflowTaskDeclarationArgs struct {
 type GetMediaWorkflowTaskDeclarationResult struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string `pulumi:"id"`
-	IsCurrent *bool  `pulumi:"isCurrent"`
+	Id        *string `pulumi:"id"`
+	IsCurrent *bool   `pulumi:"isCurrent"`
 	// List of MediaWorkflowTaskDeclaration objects.
 	Items []GetMediaWorkflowTaskDeclarationItem `pulumi:"items"`
 	// MediaWorkflowTaskDeclaration identifier. The name and version should be unique among MediaWorkflowTaskDeclarations.
@@ -124,19 +123,13 @@ func (o GetMediaWorkflowTaskDeclarationResultOutput) ToGetMediaWorkflowTaskDecla
 	return o
 }
 
-func (o GetMediaWorkflowTaskDeclarationResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetMediaWorkflowTaskDeclarationResult] {
-	return pulumix.Output[GetMediaWorkflowTaskDeclarationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o GetMediaWorkflowTaskDeclarationResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetMediaWorkflowTaskDeclarationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetMediaWorkflowTaskDeclarationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMediaWorkflowTaskDeclarationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetMediaWorkflowTaskDeclarationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMediaWorkflowTaskDeclarationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 func (o GetMediaWorkflowTaskDeclarationResultOutput) IsCurrent() pulumi.BoolPtrOutput {

@@ -75,12 +75,12 @@ export interface GetAuditProfileCollectedAuditVolumesResult {
     /**
      * The list of collected_audit_volume_collection.
      */
-    readonly collectedAuditVolumeCollections: outputs.DataSafe.GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection[];
+    readonly collectedAuditVolumeCollections?: outputs.DataSafe.GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection[];
     readonly filters?: outputs.DataSafe.GetAuditProfileCollectedAuditVolumesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     readonly monthInConsiderationGreaterThan?: string;
     readonly monthInConsiderationLessThan?: string;
     readonly workRequestId: string;

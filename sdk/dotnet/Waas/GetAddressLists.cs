@@ -239,7 +239,7 @@ namespace Pulumi.Oci.Waas
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         public readonly ImmutableArray<string> Ids;
         public readonly ImmutableArray<string> Names;
         public readonly ImmutableArray<string> States;
@@ -254,7 +254,7 @@ namespace Pulumi.Oci.Waas
 
             ImmutableArray<Outputs.GetAddressListsFilterResult> filters,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> ids,
 

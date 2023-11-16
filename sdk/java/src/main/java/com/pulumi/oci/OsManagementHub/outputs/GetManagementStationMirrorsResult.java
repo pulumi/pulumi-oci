@@ -25,14 +25,14 @@ public final class GetManagementStationMirrorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     private String managementStationId;
     private @Nullable List<String> mirrorStates;
     /**
      * @return The list of mirrors_collection.
      * 
      */
-    private List<GetManagementStationMirrorsMirrorsCollection> mirrorsCollections;
+    private @Nullable List<GetManagementStationMirrorsMirrorsCollection> mirrorsCollections;
 
     private GetManagementStationMirrorsResult() {}
     /**
@@ -52,8 +52,8 @@ public final class GetManagementStationMirrorsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     public String managementStationId() {
         return this.managementStationId;
@@ -66,7 +66,7 @@ public final class GetManagementStationMirrorsResult {
      * 
      */
     public List<GetManagementStationMirrorsMirrorsCollection> mirrorsCollections() {
-        return this.mirrorsCollections;
+        return this.mirrorsCollections == null ? List.of() : this.mirrorsCollections;
     }
 
     public static Builder builder() {
@@ -81,10 +81,10 @@ public final class GetManagementStationMirrorsResult {
         private @Nullable String displayName;
         private @Nullable String displayNameContains;
         private @Nullable List<GetManagementStationMirrorsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private String managementStationId;
         private @Nullable List<String> mirrorStates;
-        private List<GetManagementStationMirrorsMirrorsCollection> mirrorsCollections;
+        private @Nullable List<GetManagementStationMirrorsMirrorsCollection> mirrorsCollections;
         public Builder() {}
         public Builder(GetManagementStationMirrorsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -116,8 +116,8 @@ public final class GetManagementStationMirrorsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -134,8 +134,8 @@ public final class GetManagementStationMirrorsResult {
             return mirrorStates(List.of(mirrorStates));
         }
         @CustomType.Setter
-        public Builder mirrorsCollections(List<GetManagementStationMirrorsMirrorsCollection> mirrorsCollections) {
-            this.mirrorsCollections = Objects.requireNonNull(mirrorsCollections);
+        public Builder mirrorsCollections(@Nullable List<GetManagementStationMirrorsMirrorsCollection> mirrorsCollections) {
+            this.mirrorsCollections = mirrorsCollections;
             return this;
         }
         public Builder mirrorsCollections(GetManagementStationMirrorsMirrorsCollection... mirrorsCollections) {

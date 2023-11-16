@@ -84,14 +84,14 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="associatedDatabases", refs={List.class,BackupDestinationAssociatedDatabase.class}, tree="[0,1]")
-    private Output<List<BackupDestinationAssociatedDatabase>> associatedDatabases;
+    private Output</* @Nullable */ List<BackupDestinationAssociatedDatabase>> associatedDatabases;
 
     /**
      * @return List of databases associated with the backup destination.
      * 
      */
-    public Output<List<BackupDestinationAssociatedDatabase>> associatedDatabases() {
-        return this.associatedDatabases;
+    public Output<Optional<List<BackupDestinationAssociatedDatabase>>> associatedDatabases() {
+        return Codegen.optional(this.associatedDatabases);
     }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -126,14 +126,14 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    private Output</* @Nullable */ Map<String,Object>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
-        return this.definedTags;
+    public Output<Optional<Map<String,Object>>> definedTags() {
+        return Codegen.optional(this.definedTags);
     }
     /**
      * The user-provided name of the backup destination.
@@ -154,28 +154,28 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    private Output</* @Nullable */ Map<String,Object>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,Object>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * A descriptive text associated with the lifecycleState. Typically contains additional displayable text
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
-    private Output<String> lifecycleDetails;
+    private Output</* @Nullable */ String> lifecycleDetails;
 
     /**
      * @return A descriptive text associated with the lifecycleState. Typically contains additional displayable text
      * 
      */
-    public Output<String> lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Output<Optional<String>> lifecycleDetails() {
+        return Codegen.optional(this.lifecycleDetails);
     }
     /**
      * The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
@@ -186,98 +186,98 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
      */
     @Deprecated /* The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead. */
     @Export(name="localMountPointPath", refs={String.class}, tree="[0]")
-    private Output<String> localMountPointPath;
+    private Output</* @Nullable */ String> localMountPointPath;
 
     /**
      * @return The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
      * 
      */
-    public Output<String> localMountPointPath() {
-        return this.localMountPointPath;
+    public Output<Optional<String>> localMountPointPath() {
+        return Codegen.optional(this.localMountPointPath);
     }
     /**
      * Mount type details for backup destination.
      * 
      */
     @Export(name="mountTypeDetails", refs={BackupDestinationMountTypeDetails.class}, tree="[0]")
-    private Output<BackupDestinationMountTypeDetails> mountTypeDetails;
+    private Output</* @Nullable */ BackupDestinationMountTypeDetails> mountTypeDetails;
 
     /**
      * @return Mount type details for backup destination.
      * 
      */
-    public Output<BackupDestinationMountTypeDetails> mountTypeDetails() {
-        return this.mountTypeDetails;
+    public Output<Optional<BackupDestinationMountTypeDetails>> mountTypeDetails() {
+        return Codegen.optional(this.mountTypeDetails);
     }
     /**
      * NFS Mount type for backup destination.
      * 
      */
     @Export(name="nfsMountType", refs={String.class}, tree="[0]")
-    private Output<String> nfsMountType;
+    private Output</* @Nullable */ String> nfsMountType;
 
     /**
      * @return NFS Mount type for backup destination.
      * 
      */
-    public Output<String> nfsMountType() {
-        return this.nfsMountType;
+    public Output<Optional<String>> nfsMountType() {
+        return Codegen.optional(this.nfsMountType);
     }
     /**
      * Specifies the directory on which to mount the file system
      * 
      */
     @Export(name="nfsServerExport", refs={String.class}, tree="[0]")
-    private Output<String> nfsServerExport;
+    private Output</* @Nullable */ String> nfsServerExport;
 
     /**
      * @return Specifies the directory on which to mount the file system
      * 
      */
-    public Output<String> nfsServerExport() {
-        return this.nfsServerExport;
+    public Output<Optional<String>> nfsServerExport() {
+        return Codegen.optional(this.nfsServerExport);
     }
     /**
      * IP addresses for NFS Auto mount.
      * 
      */
     @Export(name="nfsServers", refs={List.class,String.class}, tree="[0,1]")
-    private Output<List<String>> nfsServers;
+    private Output</* @Nullable */ List<String>> nfsServers;
 
     /**
      * @return IP addresses for NFS Auto mount.
      * 
      */
-    public Output<List<String>> nfsServers() {
-        return this.nfsServers;
+    public Output<Optional<List<String>>> nfsServers() {
+        return Codegen.optional(this.nfsServers);
     }
     /**
      * The current lifecycle state of the backup destination.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
-    private Output<String> state;
+    private Output</* @Nullable */ String> state;
 
     /**
      * @return The current lifecycle state of the backup destination.
      * 
      */
-    public Output<String> state() {
-        return this.state;
+    public Output<Optional<String>> state() {
+        return Codegen.optional(this.state);
     }
     /**
      * The date and time the backup destination was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
-    private Output<String> timeCreated;
+    private Output</* @Nullable */ String> timeCreated;
 
     /**
      * @return The date and time the backup destination was created.
      * 
      */
-    public Output<String> timeCreated() {
-        return this.timeCreated;
+    public Output<Optional<String>> timeCreated() {
+        return Codegen.optional(this.timeCreated);
     }
     /**
      * Type of the backup destination.

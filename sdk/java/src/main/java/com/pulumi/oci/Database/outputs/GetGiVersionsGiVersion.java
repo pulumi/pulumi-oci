@@ -6,6 +6,8 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGiVersionsGiVersion {
@@ -13,15 +15,15 @@ public final class GetGiVersionsGiVersion {
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetGiVersionsGiVersion() {}
     /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -33,7 +35,7 @@ public final class GetGiVersionsGiVersion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String version;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetGiVersionsGiVersion defaults) {
     	      Objects.requireNonNull(defaults);
@@ -41,8 +43,8 @@ public final class GetGiVersionsGiVersion {
         }
 
         @CustomType.Setter
-        public Builder version(String version) {
-            this.version = Objects.requireNonNull(version);
+        public Builder version(@Nullable String version) {
+            this.version = version;
             return this;
         }
         public GetGiVersionsGiVersion build() {

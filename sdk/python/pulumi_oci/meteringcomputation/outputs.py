@@ -97,14 +97,6 @@ class CustomTableSavedCustomTable(dict):
                  group_by_tags: Optional[Sequence['outputs.CustomTableSavedCustomTableGroupByTag']] = None,
                  row_group_bies: Optional[Sequence[str]] = None,
                  version: Optional[float] = None):
-        """
-        :param str display_name: (Updatable) The name of the custom table.
-        :param Sequence[str] column_group_bies: (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param float compartment_depth: (Updatable) The compartment depth level.
-        :param Sequence['CustomTableSavedCustomTableGroupByTagArgs'] group_by_tags: (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        :param Sequence[str] row_group_bies: (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param float version: (Updatable) The version of the custom table.
-        """
         pulumi.set(__self__, "display_name", display_name)
         if column_group_bies is not None:
             pulumi.set(__self__, "column_group_bies", column_group_bies)
@@ -120,49 +112,31 @@ class CustomTableSavedCustomTable(dict):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
-        """
-        (Updatable) The name of the custom table.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="columnGroupBies")
     def column_group_bies(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        """
         return pulumi.get(self, "column_group_bies")
 
     @property
     @pulumi.getter(name="compartmentDepth")
     def compartment_depth(self) -> Optional[float]:
-        """
-        (Updatable) The compartment depth level.
-        """
         return pulumi.get(self, "compartment_depth")
 
     @property
     @pulumi.getter(name="groupByTags")
     def group_by_tags(self) -> Optional[Sequence['outputs.CustomTableSavedCustomTableGroupByTag']]:
-        """
-        (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        """
         return pulumi.get(self, "group_by_tags")
 
     @property
     @pulumi.getter(name="rowGroupBies")
     def row_group_bies(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        """
         return pulumi.get(self, "row_group_bies")
 
     @property
     @pulumi.getter
     def version(self) -> Optional[float]:
-        """
-        (Updatable) The version of the custom table.
-        """
         return pulumi.get(self, "version")
 
 
@@ -172,11 +146,6 @@ class CustomTableSavedCustomTableGroupByTag(dict):
                  key: Optional[str] = None,
                  namespace: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str key: (Updatable) The tag key.
-        :param str namespace: (Updatable) The tag namespace.
-        :param str value: (Updatable) The tag value.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if namespace is not None:
@@ -187,25 +156,16 @@ class CustomTableSavedCustomTableGroupByTag(dict):
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        (Updatable) The tag key.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        (Updatable) The tag namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        (Updatable) The tag value.
-        """
         return pulumi.get(self, "value")
 
 
@@ -237,16 +197,6 @@ class QueryQueryDefinition(dict):
                  display_name: str,
                  report_query: 'outputs.QueryQueryDefinitionReportQuery',
                  version: float):
-        """
-        :param 'QueryQueryDefinitionCostAnalysisUiArgs' cost_analysis_ui: (Updatable) The common fields for Cost Analysis UI rendering.
-        :param str display_name: (Updatable) The query display name. Avoid entering confidential information.
-        :param 'QueryQueryDefinitionReportQueryArgs' report_query: (Updatable) The request of the generated Cost Analysis report.
-        :param float version: (Updatable) The saved query version.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         pulumi.set(__self__, "cost_analysis_ui", cost_analysis_ui)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "report_query", report_query)
@@ -255,37 +205,21 @@ class QueryQueryDefinition(dict):
     @property
     @pulumi.getter(name="costAnalysisUi")
     def cost_analysis_ui(self) -> 'outputs.QueryQueryDefinitionCostAnalysisUi':
-        """
-        (Updatable) The common fields for Cost Analysis UI rendering.
-        """
         return pulumi.get(self, "cost_analysis_ui")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
-        """
-        (Updatable) The query display name. Avoid entering confidential information.
-        """
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="reportQuery")
     def report_query(self) -> 'outputs.QueryQueryDefinitionReportQuery':
-        """
-        (Updatable) The request of the generated Cost Analysis report.
-        """
         return pulumi.get(self, "report_query")
 
     @property
     @pulumi.getter
     def version(self) -> float:
-        """
-        (Updatable) The saved query version.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "version")
 
 
@@ -311,10 +245,6 @@ class QueryQueryDefinitionCostAnalysisUi(dict):
     def __init__(__self__, *,
                  graph: Optional[str] = None,
                  is_cumulative_graph: Optional[bool] = None):
-        """
-        :param str graph: (Updatable) The graph type.
-        :param bool is_cumulative_graph: (Updatable) A cumulative graph.
-        """
         if graph is not None:
             pulumi.set(__self__, "graph", graph)
         if is_cumulative_graph is not None:
@@ -323,17 +253,11 @@ class QueryQueryDefinitionCostAnalysisUi(dict):
     @property
     @pulumi.getter
     def graph(self) -> Optional[str]:
-        """
-        (Updatable) The graph type.
-        """
         return pulumi.get(self, "graph")
 
     @property
     @pulumi.getter(name="isCumulativeGraph")
     def is_cumulative_graph(self) -> Optional[bool]:
-        """
-        (Updatable) A cumulative graph.
-        """
         return pulumi.get(self, "is_cumulative_graph")
 
 
@@ -385,20 +309,6 @@ class QueryQueryDefinitionReportQuery(dict):
                  query_type: Optional[str] = None,
                  time_usage_ended: Optional[str] = None,
                  time_usage_started: Optional[str] = None):
-        """
-        :param str granularity: (Updatable) The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-        :param str tenant_id: (Updatable) Tenant ID.
-        :param float compartment_depth: (Updatable) The compartment depth level.
-        :param str date_range_name: (Updatable) The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-        :param str filter: (Updatable) The filter object for query usage.
-        :param 'QueryQueryDefinitionReportQueryForecastArgs' forecast: (Updatable) Forecast configuration of usage/cost.
-        :param Sequence[str] group_bies: (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param Sequence['QueryQueryDefinitionReportQueryGroupByTagArgs'] group_by_tags: (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        :param bool is_aggregate_by_time: (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        :param str query_type: (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-        :param str time_usage_ended: (Updatable) The usage end time.
-        :param str time_usage_started: (Updatable) The usage start time.
-        """
         pulumi.set(__self__, "granularity", granularity)
         pulumi.set(__self__, "tenant_id", tenant_id)
         if compartment_depth is not None:
@@ -425,97 +335,61 @@ class QueryQueryDefinitionReportQuery(dict):
     @property
     @pulumi.getter
     def granularity(self) -> str:
-        """
-        (Updatable) The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-        """
         return pulumi.get(self, "granularity")
 
     @property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> str:
-        """
-        (Updatable) Tenant ID.
-        """
         return pulumi.get(self, "tenant_id")
 
     @property
     @pulumi.getter(name="compartmentDepth")
     def compartment_depth(self) -> Optional[float]:
-        """
-        (Updatable) The compartment depth level.
-        """
         return pulumi.get(self, "compartment_depth")
 
     @property
     @pulumi.getter(name="dateRangeName")
     def date_range_name(self) -> Optional[str]:
-        """
-        (Updatable) The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-        """
         return pulumi.get(self, "date_range_name")
 
     @property
     @pulumi.getter
     def filter(self) -> Optional[str]:
-        """
-        (Updatable) The filter object for query usage.
-        """
         return pulumi.get(self, "filter")
 
     @property
     @pulumi.getter
     def forecast(self) -> Optional['outputs.QueryQueryDefinitionReportQueryForecast']:
-        """
-        (Updatable) Forecast configuration of usage/cost.
-        """
         return pulumi.get(self, "forecast")
 
     @property
     @pulumi.getter(name="groupBies")
     def group_bies(self) -> Optional[Sequence[str]]:
-        """
-        (Updatable) Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        """
         return pulumi.get(self, "group_bies")
 
     @property
     @pulumi.getter(name="groupByTags")
     def group_by_tags(self) -> Optional[Sequence['outputs.QueryQueryDefinitionReportQueryGroupByTag']]:
-        """
-        (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        """
         return pulumi.get(self, "group_by_tags")
 
     @property
     @pulumi.getter(name="isAggregateByTime")
     def is_aggregate_by_time(self) -> Optional[bool]:
-        """
-        (Updatable) Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        """
         return pulumi.get(self, "is_aggregate_by_time")
 
     @property
     @pulumi.getter(name="queryType")
     def query_type(self) -> Optional[str]:
-        """
-        (Updatable) The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-        """
         return pulumi.get(self, "query_type")
 
     @property
     @pulumi.getter(name="timeUsageEnded")
     def time_usage_ended(self) -> Optional[str]:
-        """
-        (Updatable) The usage end time.
-        """
         return pulumi.get(self, "time_usage_ended")
 
     @property
     @pulumi.getter(name="timeUsageStarted")
     def time_usage_started(self) -> Optional[str]:
-        """
-        (Updatable) The usage start time.
-        """
         return pulumi.get(self, "time_usage_started")
 
 
@@ -546,11 +420,6 @@ class QueryQueryDefinitionReportQueryForecast(dict):
                  time_forecast_ended: str,
                  forecast_type: Optional[str] = None,
                  time_forecast_started: Optional[str] = None):
-        """
-        :param str time_forecast_ended: (Updatable) The forecast end time.
-        :param str forecast_type: (Updatable) BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-        :param str time_forecast_started: (Updatable) The forecast start time. Defaults to UTC-1 if not specified.
-        """
         pulumi.set(__self__, "time_forecast_ended", time_forecast_ended)
         if forecast_type is not None:
             pulumi.set(__self__, "forecast_type", forecast_type)
@@ -560,25 +429,16 @@ class QueryQueryDefinitionReportQueryForecast(dict):
     @property
     @pulumi.getter(name="timeForecastEnded")
     def time_forecast_ended(self) -> str:
-        """
-        (Updatable) The forecast end time.
-        """
         return pulumi.get(self, "time_forecast_ended")
 
     @property
     @pulumi.getter(name="forecastType")
     def forecast_type(self) -> Optional[str]:
-        """
-        (Updatable) BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-        """
         return pulumi.get(self, "forecast_type")
 
     @property
     @pulumi.getter(name="timeForecastStarted")
     def time_forecast_started(self) -> Optional[str]:
-        """
-        (Updatable) The forecast start time. Defaults to UTC-1 if not specified.
-        """
         return pulumi.get(self, "time_forecast_started")
 
 
@@ -588,11 +448,6 @@ class QueryQueryDefinitionReportQueryGroupByTag(dict):
                  key: Optional[str] = None,
                  namespace: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str key: (Updatable) The tag key.
-        :param str namespace: (Updatable) The tag namespace.
-        :param str value: (Updatable) The tag value.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if namespace is not None:
@@ -603,25 +458,16 @@ class QueryQueryDefinitionReportQueryGroupByTag(dict):
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        (Updatable) The tag key.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        (Updatable) The tag namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        (Updatable) The tag value.
-        """
         return pulumi.get(self, "value")
 
 
@@ -663,16 +509,6 @@ class ScheduleQueryProperties(dict):
                  group_by_tags: Optional[Sequence['outputs.ScheduleQueryPropertiesGroupByTag']] = None,
                  is_aggregate_by_time: Optional[bool] = None,
                  query_type: Optional[str] = None):
-        """
-        :param 'ScheduleQueryPropertiesDateRangeArgs' date_range: Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
-        :param str granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-        :param float compartment_depth: The depth level of the compartment.
-        :param str filter: The filter object for query usage.
-        :param Sequence[str] group_bies: Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
-        :param Sequence['ScheduleQueryPropertiesGroupByTagArgs'] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-        :param bool is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-        :param str query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-        """
         pulumi.set(__self__, "date_range", date_range)
         pulumi.set(__self__, "granularity", granularity)
         if compartment_depth is not None:
@@ -691,65 +527,41 @@ class ScheduleQueryProperties(dict):
     @property
     @pulumi.getter(name="dateRange")
     def date_range(self) -> 'outputs.ScheduleQueryPropertiesDateRange':
-        """
-        Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
-        """
         return pulumi.get(self, "date_range")
 
     @property
     @pulumi.getter
     def granularity(self) -> str:
-        """
-        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-        """
         return pulumi.get(self, "granularity")
 
     @property
     @pulumi.getter(name="compartmentDepth")
     def compartment_depth(self) -> Optional[float]:
-        """
-        The depth level of the compartment.
-        """
         return pulumi.get(self, "compartment_depth")
 
     @property
     @pulumi.getter
     def filter(self) -> Optional[str]:
-        """
-        The filter object for query usage.
-        """
         return pulumi.get(self, "filter")
 
     @property
     @pulumi.getter(name="groupBies")
     def group_bies(self) -> Optional[Sequence[str]]:
-        """
-        Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
-        """
         return pulumi.get(self, "group_bies")
 
     @property
     @pulumi.getter(name="groupByTags")
     def group_by_tags(self) -> Optional[Sequence['outputs.ScheduleQueryPropertiesGroupByTag']]:
-        """
-        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-        """
         return pulumi.get(self, "group_by_tags")
 
     @property
     @pulumi.getter(name="isAggregateByTime")
     def is_aggregate_by_time(self) -> Optional[bool]:
-        """
-        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-        """
         return pulumi.get(self, "is_aggregate_by_time")
 
     @property
     @pulumi.getter(name="queryType")
     def query_type(self) -> Optional[str]:
-        """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-        """
         return pulumi.get(self, "query_type")
 
 
@@ -783,11 +595,6 @@ class ScheduleQueryPropertiesDateRange(dict):
                  dynamic_date_range_type: Optional[str] = None,
                  time_usage_ended: Optional[str] = None,
                  time_usage_started: Optional[str] = None):
-        """
-        :param str date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC.
-        :param str time_usage_ended: The usage end time.
-        :param str time_usage_started: The usage start time.
-        """
         pulumi.set(__self__, "date_range_type", date_range_type)
         if dynamic_date_range_type is not None:
             pulumi.set(__self__, "dynamic_date_range_type", dynamic_date_range_type)
@@ -799,9 +606,6 @@ class ScheduleQueryPropertiesDateRange(dict):
     @property
     @pulumi.getter(name="dateRangeType")
     def date_range_type(self) -> str:
-        """
-        Defines whether the schedule date range is STATIC or DYNAMIC.
-        """
         return pulumi.get(self, "date_range_type")
 
     @property
@@ -812,17 +616,11 @@ class ScheduleQueryPropertiesDateRange(dict):
     @property
     @pulumi.getter(name="timeUsageEnded")
     def time_usage_ended(self) -> Optional[str]:
-        """
-        The usage end time.
-        """
         return pulumi.get(self, "time_usage_ended")
 
     @property
     @pulumi.getter(name="timeUsageStarted")
     def time_usage_started(self) -> Optional[str]:
-        """
-        The usage start time.
-        """
         return pulumi.get(self, "time_usage_started")
 
 
@@ -832,11 +630,6 @@ class ScheduleQueryPropertiesGroupByTag(dict):
                  key: Optional[str] = None,
                  namespace: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str key: The tag key.
-        :param str namespace: (Updatable) The namespace needed to determine the object storage bucket.
-        :param str value: The tag value.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if namespace is not None:
@@ -847,25 +640,16 @@ class ScheduleQueryPropertiesGroupByTag(dict):
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        The tag key.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        (Updatable) The namespace needed to determine the object storage bucket.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        The tag value.
-        """
         return pulumi.get(self, "value")
 
 
@@ -893,12 +677,6 @@ class ScheduleResultLocation(dict):
                  location_type: str,
                  namespace: str,
                  region: str):
-        """
-        :param str bucket: (Updatable) The bucket name where usage or cost CSVs will be uploaded.
-        :param str location_type: (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
-        :param str namespace: (Updatable) The namespace needed to determine the object storage bucket.
-        :param str region: (Updatable) The destination Object Store Region specified by the customer.
-        """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "location_type", location_type)
         pulumi.set(__self__, "namespace", namespace)
@@ -907,33 +685,21 @@ class ScheduleResultLocation(dict):
     @property
     @pulumi.getter
     def bucket(self) -> str:
-        """
-        (Updatable) The bucket name where usage or cost CSVs will be uploaded.
-        """
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="locationType")
     def location_type(self) -> str:
-        """
-        (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
-        """
         return pulumi.get(self, "location_type")
 
     @property
     @pulumi.getter
     def namespace(self) -> str:
-        """
-        (Updatable) The namespace needed to determine the object storage bucket.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def region(self) -> str:
-        """
-        (Updatable) The destination Object Store Region specified by the customer.
-        """
         return pulumi.get(self, "region")
 
 
@@ -964,11 +730,6 @@ class UsageForecast(dict):
                  time_forecast_ended: str,
                  forecast_type: Optional[str] = None,
                  time_forecast_started: Optional[str] = None):
-        """
-        :param str time_forecast_ended: The forecast end time.
-        :param str forecast_type: BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-        :param str time_forecast_started: The forecast start time. Defaults to UTC-1 if not specified.
-        """
         pulumi.set(__self__, "time_forecast_ended", time_forecast_ended)
         if forecast_type is not None:
             pulumi.set(__self__, "forecast_type", forecast_type)
@@ -978,25 +739,16 @@ class UsageForecast(dict):
     @property
     @pulumi.getter(name="timeForecastEnded")
     def time_forecast_ended(self) -> str:
-        """
-        The forecast end time.
-        """
         return pulumi.get(self, "time_forecast_ended")
 
     @property
     @pulumi.getter(name="forecastType")
     def forecast_type(self) -> Optional[str]:
-        """
-        BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-        """
         return pulumi.get(self, "forecast_type")
 
     @property
     @pulumi.getter(name="timeForecastStarted")
     def time_forecast_started(self) -> Optional[str]:
-        """
-        The forecast start time. Defaults to UTC-1 if not specified.
-        """
         return pulumi.get(self, "time_forecast_started")
 
 
@@ -1006,11 +758,6 @@ class UsageGroupByTag(dict):
                  key: Optional[str] = None,
                  namespace: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str key: The tag key.
-        :param str namespace: The tag namespace.
-        :param str value: The tag value.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if namespace is not None:
@@ -1021,25 +768,16 @@ class UsageGroupByTag(dict):
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        The tag key.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        The tag namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        The tag value.
-        """
         return pulumi.get(self, "value")
 
 
@@ -1126,41 +864,6 @@ class UsageItem(dict):
                  unit: Optional[str] = None,
                  unit_price: Optional[float] = None,
                  weight: Optional[float] = None):
-        """
-        :param str ad: The availability domain of the usage.
-        :param str compartment_id: The compartment OCID.
-        :param str compartment_name: The compartment name.
-        :param str compartment_path: The compartment path, starting from root.
-        :param float computed_amount: The computed cost.
-        :param float computed_quantity: The usage number.
-        :param str currency: The price currency.
-        :param float discount: The discretionary discount applied to the SKU.
-        :param bool is_forecast: The forecasted data.
-        :param float list_rate: The SKU list rate (not discount).
-        :param str overage: The overage usage.
-        :param str overages_flag: The SPM OverageFlag.
-        :param str platform: Platform for the cost.
-        :param str region: The region of the usage.
-        :param str resource_id: The resource OCID that is incurring the cost.
-        :param str resource_name: The resource name that is incurring the cost.
-        :param str service: The service name that is incurring the cost.
-        :param str shape: The resource shape.
-        :param str sku_name: The SKU friendly name.
-        :param str sku_part_number: The SKU part number.
-        :param str subscription_id: The subscription ID.
-        :param Sequence['UsageItemTagArgs'] tags: For grouping, a tag definition. For filtering, a definition and key.
-        :param str tenant_id: Tenant ID.
-        :param str tenant_name: The tenancy name.
-        :param str time_usage_ended: The usage end time.
-        :param str time_usage_started: The usage start time.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param str unit: The usage unit.
-        :param float unit_price: The price per unit.
-        :param float weight: The resource size being metered.
-        """
         if ad is not None:
             pulumi.set(__self__, "ad", ad)
         if compartment_id is not None:
@@ -1223,237 +926,146 @@ class UsageItem(dict):
     @property
     @pulumi.getter
     def ad(self) -> Optional[str]:
-        """
-        The availability domain of the usage.
-        """
         return pulumi.get(self, "ad")
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
-        """
-        The compartment OCID.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="compartmentName")
     def compartment_name(self) -> Optional[str]:
-        """
-        The compartment name.
-        """
         return pulumi.get(self, "compartment_name")
 
     @property
     @pulumi.getter(name="compartmentPath")
     def compartment_path(self) -> Optional[str]:
-        """
-        The compartment path, starting from root.
-        """
         return pulumi.get(self, "compartment_path")
 
     @property
     @pulumi.getter(name="computedAmount")
     def computed_amount(self) -> Optional[float]:
-        """
-        The computed cost.
-        """
         return pulumi.get(self, "computed_amount")
 
     @property
     @pulumi.getter(name="computedQuantity")
     def computed_quantity(self) -> Optional[float]:
-        """
-        The usage number.
-        """
         return pulumi.get(self, "computed_quantity")
 
     @property
     @pulumi.getter
     def currency(self) -> Optional[str]:
-        """
-        The price currency.
-        """
         return pulumi.get(self, "currency")
 
     @property
     @pulumi.getter
     def discount(self) -> Optional[float]:
-        """
-        The discretionary discount applied to the SKU.
-        """
         return pulumi.get(self, "discount")
 
     @property
     @pulumi.getter(name="isForecast")
     def is_forecast(self) -> Optional[bool]:
-        """
-        The forecasted data.
-        """
         return pulumi.get(self, "is_forecast")
 
     @property
     @pulumi.getter(name="listRate")
     def list_rate(self) -> Optional[float]:
-        """
-        The SKU list rate (not discount).
-        """
         return pulumi.get(self, "list_rate")
 
     @property
     @pulumi.getter
     def overage(self) -> Optional[str]:
-        """
-        The overage usage.
-        """
         return pulumi.get(self, "overage")
 
     @property
     @pulumi.getter(name="overagesFlag")
     def overages_flag(self) -> Optional[str]:
-        """
-        The SPM OverageFlag.
-        """
         return pulumi.get(self, "overages_flag")
 
     @property
     @pulumi.getter
     def platform(self) -> Optional[str]:
-        """
-        Platform for the cost.
-        """
         return pulumi.get(self, "platform")
 
     @property
     @pulumi.getter
     def region(self) -> Optional[str]:
-        """
-        The region of the usage.
-        """
         return pulumi.get(self, "region")
 
     @property
     @pulumi.getter(name="resourceId")
     def resource_id(self) -> Optional[str]:
-        """
-        The resource OCID that is incurring the cost.
-        """
         return pulumi.get(self, "resource_id")
 
     @property
     @pulumi.getter(name="resourceName")
     def resource_name(self) -> Optional[str]:
-        """
-        The resource name that is incurring the cost.
-        """
         return pulumi.get(self, "resource_name")
 
     @property
     @pulumi.getter
     def service(self) -> Optional[str]:
-        """
-        The service name that is incurring the cost.
-        """
         return pulumi.get(self, "service")
 
     @property
     @pulumi.getter
     def shape(self) -> Optional[str]:
-        """
-        The resource shape.
-        """
         return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter(name="skuName")
     def sku_name(self) -> Optional[str]:
-        """
-        The SKU friendly name.
-        """
         return pulumi.get(self, "sku_name")
 
     @property
     @pulumi.getter(name="skuPartNumber")
     def sku_part_number(self) -> Optional[str]:
-        """
-        The SKU part number.
-        """
         return pulumi.get(self, "sku_part_number")
 
     @property
     @pulumi.getter(name="subscriptionId")
     def subscription_id(self) -> Optional[str]:
-        """
-        The subscription ID.
-        """
         return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter
     def tags(self) -> Optional[Sequence['outputs.UsageItemTag']]:
-        """
-        For grouping, a tag definition. For filtering, a definition and key.
-        """
         return pulumi.get(self, "tags")
 
     @property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> Optional[str]:
-        """
-        Tenant ID.
-        """
         return pulumi.get(self, "tenant_id")
 
     @property
     @pulumi.getter(name="tenantName")
     def tenant_name(self) -> Optional[str]:
-        """
-        The tenancy name.
-        """
         return pulumi.get(self, "tenant_name")
 
     @property
     @pulumi.getter(name="timeUsageEnded")
     def time_usage_ended(self) -> Optional[str]:
-        """
-        The usage end time.
-        """
         return pulumi.get(self, "time_usage_ended")
 
     @property
     @pulumi.getter(name="timeUsageStarted")
     def time_usage_started(self) -> Optional[str]:
-        """
-        The usage start time.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
         return pulumi.get(self, "time_usage_started")
 
     @property
     @pulumi.getter
     def unit(self) -> Optional[str]:
-        """
-        The usage unit.
-        """
         return pulumi.get(self, "unit")
 
     @property
     @pulumi.getter(name="unitPrice")
     def unit_price(self) -> Optional[float]:
-        """
-        The price per unit.
-        """
         return pulumi.get(self, "unit_price")
 
     @property
     @pulumi.getter
     def weight(self) -> Optional[float]:
-        """
-        The resource size being metered.
-        """
         return pulumi.get(self, "weight")
 
 
@@ -1463,11 +1075,6 @@ class UsageItemTag(dict):
                  key: Optional[str] = None,
                  namespace: Optional[str] = None,
                  value: Optional[str] = None):
-        """
-        :param str key: The tag key.
-        :param str namespace: The tag namespace.
-        :param str value: The tag value.
-        """
         if key is not None:
             pulumi.set(__self__, "key", key)
         if namespace is not None:
@@ -1478,343 +1085,251 @@ class UsageItemTag(dict):
     @property
     @pulumi.getter
     def key(self) -> Optional[str]:
-        """
-        The tag key.
-        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def namespace(self) -> Optional[str]:
-        """
-        The tag namespace.
-        """
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
     def value(self) -> Optional[str]:
-        """
-        The tag value.
-        """
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetConfigurationItemResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 values: Sequence[str]):
-        """
-        :param str key: The configuration key.
-        :param Sequence[str] values: The configuration value.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "values", values)
+                 key: Optional[str] = None,
+                 values: Optional[Sequence[str]] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The configuration key.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def values(self) -> Sequence[str]:
-        """
-        The configuration value.
-        """
+    def values(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "values")
 
 
 @pulumi.output_type
 class GetCustomTableSavedCustomTableResult(dict):
     def __init__(__self__, *,
-                 column_group_bies: Sequence[str],
-                 compartment_depth: float,
-                 display_name: str,
-                 group_by_tags: Sequence['outputs.GetCustomTableSavedCustomTableGroupByTagResult'],
-                 row_group_bies: Sequence[str],
-                 version: float):
-        """
-        :param Sequence[str] column_group_bies: The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param float compartment_depth: The compartment depth level.
-        :param str display_name: The name of the custom table.
-        :param Sequence['GetCustomTableSavedCustomTableGroupByTagArgs'] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        :param Sequence[str] row_group_bies: The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param float version: The version of the custom table.
-        """
-        pulumi.set(__self__, "column_group_bies", column_group_bies)
-        pulumi.set(__self__, "compartment_depth", compartment_depth)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "group_by_tags", group_by_tags)
-        pulumi.set(__self__, "row_group_bies", row_group_bies)
-        pulumi.set(__self__, "version", version)
+                 column_group_bies: Optional[Sequence[str]] = None,
+                 compartment_depth: Optional[float] = None,
+                 display_name: Optional[str] = None,
+                 group_by_tags: Optional[Sequence['outputs.GetCustomTableSavedCustomTableGroupByTagResult']] = None,
+                 row_group_bies: Optional[Sequence[str]] = None,
+                 version: Optional[float] = None):
+        if column_group_bies is not None:
+            pulumi.set(__self__, "column_group_bies", column_group_bies)
+        if compartment_depth is not None:
+            pulumi.set(__self__, "compartment_depth", compartment_depth)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if group_by_tags is not None:
+            pulumi.set(__self__, "group_by_tags", group_by_tags)
+        if row_group_bies is not None:
+            pulumi.set(__self__, "row_group_bies", row_group_bies)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="columnGroupBies")
-    def column_group_bies(self) -> Sequence[str]:
-        """
-        The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        """
+    def column_group_bies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "column_group_bies")
 
     @property
     @pulumi.getter(name="compartmentDepth")
-    def compartment_depth(self) -> float:
-        """
-        The compartment depth level.
-        """
+    def compartment_depth(self) -> Optional[float]:
         return pulumi.get(self, "compartment_depth")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name of the custom table.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="groupByTags")
-    def group_by_tags(self) -> Sequence['outputs.GetCustomTableSavedCustomTableGroupByTagResult']:
-        """
-        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        """
+    def group_by_tags(self) -> Optional[Sequence['outputs.GetCustomTableSavedCustomTableGroupByTagResult']]:
         return pulumi.get(self, "group_by_tags")
 
     @property
     @pulumi.getter(name="rowGroupBies")
-    def row_group_bies(self) -> Sequence[str]:
-        """
-        The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        """
+    def row_group_bies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "row_group_bies")
 
     @property
     @pulumi.getter
-    def version(self) -> float:
-        """
-        The version of the custom table.
-        """
+    def version(self) -> Optional[float]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetCustomTableSavedCustomTableGroupByTagResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 namespace: str,
-                 value: str):
-        """
-        :param str key: The tag key.
-        :param str namespace: The tag namespace.
-        :param str value: The tag value.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "value", value)
+                 key: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 value: Optional[str] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The tag key.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The tag namespace.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The tag value.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetCustomTablesCustomTableCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetCustomTablesCustomTableCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetCustomTablesCustomTableCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetCustomTablesCustomTableCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetCustomTablesCustomTableCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetCustomTablesCustomTableCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 id: str,
-                 saved_custom_tables: Sequence['outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTableResult'],
-                 saved_report_id: str):
-        """
-        :param str compartment_id: The compartment ID in which to list resources.
-        :param str id: The custom table OCID.
-        :param Sequence['GetCustomTablesCustomTableCollectionItemSavedCustomTableArgs'] saved_custom_tables: The custom table for Cost Analysis UI rendering.
-        :param str saved_report_id: The saved report ID in which to list resources.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "saved_custom_tables", saved_custom_tables)
-        pulumi.set(__self__, "saved_report_id", saved_report_id)
+                 compartment_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 saved_custom_tables: Optional[Sequence['outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTableResult']] = None,
+                 saved_report_id: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if saved_custom_tables is not None:
+            pulumi.set(__self__, "saved_custom_tables", saved_custom_tables)
+        if saved_report_id is not None:
+            pulumi.set(__self__, "saved_report_id", saved_report_id)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment ID in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The custom table OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="savedCustomTables")
-    def saved_custom_tables(self) -> Sequence['outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTableResult']:
-        """
-        The custom table for Cost Analysis UI rendering.
-        """
+    def saved_custom_tables(self) -> Optional[Sequence['outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTableResult']]:
         return pulumi.get(self, "saved_custom_tables")
 
     @property
     @pulumi.getter(name="savedReportId")
-    def saved_report_id(self) -> str:
-        """
-        The saved report ID in which to list resources.
-        """
+    def saved_report_id(self) -> Optional[str]:
         return pulumi.get(self, "saved_report_id")
 
 
 @pulumi.output_type
 class GetCustomTablesCustomTableCollectionItemSavedCustomTableResult(dict):
     def __init__(__self__, *,
-                 column_group_bies: Sequence[str],
-                 compartment_depth: float,
-                 display_name: str,
-                 group_by_tags: Sequence['outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagResult'],
-                 row_group_bies: Sequence[str],
-                 version: float):
-        """
-        :param Sequence[str] column_group_bies: The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param float compartment_depth: The compartment depth level.
-        :param str display_name: The name of the custom table.
-        :param Sequence['GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagArgs'] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        :param Sequence[str] row_group_bies: The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param float version: The version of the custom table.
-        """
-        pulumi.set(__self__, "column_group_bies", column_group_bies)
-        pulumi.set(__self__, "compartment_depth", compartment_depth)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "group_by_tags", group_by_tags)
-        pulumi.set(__self__, "row_group_bies", row_group_bies)
-        pulumi.set(__self__, "version", version)
+                 column_group_bies: Optional[Sequence[str]] = None,
+                 compartment_depth: Optional[float] = None,
+                 display_name: Optional[str] = None,
+                 group_by_tags: Optional[Sequence['outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagResult']] = None,
+                 row_group_bies: Optional[Sequence[str]] = None,
+                 version: Optional[float] = None):
+        if column_group_bies is not None:
+            pulumi.set(__self__, "column_group_bies", column_group_bies)
+        if compartment_depth is not None:
+            pulumi.set(__self__, "compartment_depth", compartment_depth)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if group_by_tags is not None:
+            pulumi.set(__self__, "group_by_tags", group_by_tags)
+        if row_group_bies is not None:
+            pulumi.set(__self__, "row_group_bies", row_group_bies)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="columnGroupBies")
-    def column_group_bies(self) -> Sequence[str]:
-        """
-        The column groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        """
+    def column_group_bies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "column_group_bies")
 
     @property
     @pulumi.getter(name="compartmentDepth")
-    def compartment_depth(self) -> float:
-        """
-        The compartment depth level.
-        """
+    def compartment_depth(self) -> Optional[float]:
         return pulumi.get(self, "compartment_depth")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The name of the custom table.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="groupByTags")
-    def group_by_tags(self) -> Sequence['outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagResult']:
-        """
-        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only one tag in the list is supported. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        """
+    def group_by_tags(self) -> Optional[Sequence['outputs.GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagResult']]:
         return pulumi.get(self, "group_by_tags")
 
     @property
     @pulumi.getter(name="rowGroupBies")
-    def row_group_bies(self) -> Sequence[str]:
-        """
-        The row groupBy key list. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        """
+    def row_group_bies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "row_group_bies")
 
     @property
     @pulumi.getter
-    def version(self) -> float:
-        """
-        The version of the custom table.
-        """
+    def version(self) -> Optional[float]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetCustomTablesCustomTableCollectionItemSavedCustomTableGroupByTagResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 namespace: str,
-                 value: str):
-        """
-        :param str key: The tag key.
-        :param str namespace: The tag namespace.
-        :param str value: The tag value.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "value", value)
+                 key: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 value: Optional[str] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The tag key.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The tag namespace.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The tag value.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
@@ -1875,883 +1390,648 @@ class GetQueriesFilterResult(dict):
 @pulumi.output_type
 class GetQueriesQueryCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetQueriesQueryCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetQueriesQueryCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetQueriesQueryCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetQueriesQueryCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetQueriesQueryCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 id: str,
-                 query_definitions: Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionResult']):
-        """
-        :param str compartment_id: The compartment ID in which to list resources.
-        :param str id: The query OCID.
-        :param Sequence['GetQueriesQueryCollectionItemQueryDefinitionArgs'] query_definitions: The common fields for queries.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "query_definitions", query_definitions)
+                 compartment_id: Optional[str] = None,
+                 id: Optional[str] = None,
+                 query_definitions: Optional[Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionResult']] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if query_definitions is not None:
+            pulumi.set(__self__, "query_definitions", query_definitions)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment ID in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The query OCID.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="queryDefinitions")
-    def query_definitions(self) -> Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionResult']:
-        """
-        The common fields for queries.
-        """
+    def query_definitions(self) -> Optional[Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionResult']]:
         return pulumi.get(self, "query_definitions")
 
 
 @pulumi.output_type
 class GetQueriesQueryCollectionItemQueryDefinitionResult(dict):
     def __init__(__self__, *,
-                 cost_analysis_uis: Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiResult'],
-                 display_name: str,
-                 report_queries: Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryResult'],
-                 version: float):
-        """
-        :param Sequence['GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiArgs'] cost_analysis_uis: The common fields for Cost Analysis UI rendering.
-        :param str display_name: The query display name. Avoid entering confidential information.
-        :param Sequence['GetQueriesQueryCollectionItemQueryDefinitionReportQueryArgs'] report_queries: The request of the generated Cost Analysis report.
-        :param float version: The saved query version.
-        """
-        pulumi.set(__self__, "cost_analysis_uis", cost_analysis_uis)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "report_queries", report_queries)
-        pulumi.set(__self__, "version", version)
+                 cost_analysis_uis: Optional[Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiResult']] = None,
+                 display_name: Optional[str] = None,
+                 report_queries: Optional[Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryResult']] = None,
+                 version: Optional[float] = None):
+        if cost_analysis_uis is not None:
+            pulumi.set(__self__, "cost_analysis_uis", cost_analysis_uis)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if report_queries is not None:
+            pulumi.set(__self__, "report_queries", report_queries)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="costAnalysisUis")
-    def cost_analysis_uis(self) -> Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiResult']:
-        """
-        The common fields for Cost Analysis UI rendering.
-        """
+    def cost_analysis_uis(self) -> Optional[Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiResult']]:
         return pulumi.get(self, "cost_analysis_uis")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The query display name. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="reportQueries")
-    def report_queries(self) -> Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryResult']:
-        """
-        The request of the generated Cost Analysis report.
-        """
+    def report_queries(self) -> Optional[Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryResult']]:
         return pulumi.get(self, "report_queries")
 
     @property
     @pulumi.getter
-    def version(self) -> float:
-        """
-        The saved query version.
-        """
+    def version(self) -> Optional[float]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetQueriesQueryCollectionItemQueryDefinitionCostAnalysisUiResult(dict):
     def __init__(__self__, *,
-                 graph: str,
-                 is_cumulative_graph: bool):
-        """
-        :param str graph: The graph type.
-        :param bool is_cumulative_graph: A cumulative graph.
-        """
-        pulumi.set(__self__, "graph", graph)
-        pulumi.set(__self__, "is_cumulative_graph", is_cumulative_graph)
+                 graph: Optional[str] = None,
+                 is_cumulative_graph: Optional[bool] = None):
+        if graph is not None:
+            pulumi.set(__self__, "graph", graph)
+        if is_cumulative_graph is not None:
+            pulumi.set(__self__, "is_cumulative_graph", is_cumulative_graph)
 
     @property
     @pulumi.getter
-    def graph(self) -> str:
-        """
-        The graph type.
-        """
+    def graph(self) -> Optional[str]:
         return pulumi.get(self, "graph")
 
     @property
     @pulumi.getter(name="isCumulativeGraph")
-    def is_cumulative_graph(self) -> bool:
-        """
-        A cumulative graph.
-        """
+    def is_cumulative_graph(self) -> Optional[bool]:
         return pulumi.get(self, "is_cumulative_graph")
 
 
 @pulumi.output_type
 class GetQueriesQueryCollectionItemQueryDefinitionReportQueryResult(dict):
     def __init__(__self__, *,
-                 compartment_depth: float,
-                 date_range_name: str,
-                 filter: str,
-                 forecasts: Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastResult'],
-                 granularity: str,
-                 group_bies: Sequence[str],
-                 group_by_tags: Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagResult'],
-                 is_aggregate_by_time: bool,
-                 query_type: str,
-                 tenant_id: str,
-                 time_usage_ended: str,
-                 time_usage_started: str):
-        """
-        :param float compartment_depth: The compartment depth level.
-        :param str date_range_name: The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-        :param str filter: The filter object for query usage.
-        :param Sequence['GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastArgs'] forecasts: Forecast configuration of usage/cost.
-        :param str granularity: The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-        :param Sequence[str] group_bies: Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param Sequence['GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagArgs'] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        :param bool is_aggregate_by_time: Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        :param str query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-        :param str tenant_id: Tenant ID.
-        :param str time_usage_ended: The usage end time.
-        :param str time_usage_started: The usage start time.
-        """
-        pulumi.set(__self__, "compartment_depth", compartment_depth)
-        pulumi.set(__self__, "date_range_name", date_range_name)
-        pulumi.set(__self__, "filter", filter)
-        pulumi.set(__self__, "forecasts", forecasts)
-        pulumi.set(__self__, "granularity", granularity)
-        pulumi.set(__self__, "group_bies", group_bies)
-        pulumi.set(__self__, "group_by_tags", group_by_tags)
-        pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
-        pulumi.set(__self__, "query_type", query_type)
-        pulumi.set(__self__, "tenant_id", tenant_id)
-        pulumi.set(__self__, "time_usage_ended", time_usage_ended)
-        pulumi.set(__self__, "time_usage_started", time_usage_started)
+                 compartment_depth: Optional[float] = None,
+                 date_range_name: Optional[str] = None,
+                 filter: Optional[str] = None,
+                 forecasts: Optional[Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastResult']] = None,
+                 granularity: Optional[str] = None,
+                 group_bies: Optional[Sequence[str]] = None,
+                 group_by_tags: Optional[Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagResult']] = None,
+                 is_aggregate_by_time: Optional[bool] = None,
+                 query_type: Optional[str] = None,
+                 tenant_id: Optional[str] = None,
+                 time_usage_ended: Optional[str] = None,
+                 time_usage_started: Optional[str] = None):
+        if compartment_depth is not None:
+            pulumi.set(__self__, "compartment_depth", compartment_depth)
+        if date_range_name is not None:
+            pulumi.set(__self__, "date_range_name", date_range_name)
+        if filter is not None:
+            pulumi.set(__self__, "filter", filter)
+        if forecasts is not None:
+            pulumi.set(__self__, "forecasts", forecasts)
+        if granularity is not None:
+            pulumi.set(__self__, "granularity", granularity)
+        if group_bies is not None:
+            pulumi.set(__self__, "group_bies", group_bies)
+        if group_by_tags is not None:
+            pulumi.set(__self__, "group_by_tags", group_by_tags)
+        if is_aggregate_by_time is not None:
+            pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
+        if query_type is not None:
+            pulumi.set(__self__, "query_type", query_type)
+        if tenant_id is not None:
+            pulumi.set(__self__, "tenant_id", tenant_id)
+        if time_usage_ended is not None:
+            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+        if time_usage_started is not None:
+            pulumi.set(__self__, "time_usage_started", time_usage_started)
 
     @property
     @pulumi.getter(name="compartmentDepth")
-    def compartment_depth(self) -> float:
-        """
-        The compartment depth level.
-        """
+    def compartment_depth(self) -> Optional[float]:
         return pulumi.get(self, "compartment_depth")
 
     @property
     @pulumi.getter(name="dateRangeName")
-    def date_range_name(self) -> str:
-        """
-        The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-        """
+    def date_range_name(self) -> Optional[str]:
         return pulumi.get(self, "date_range_name")
 
     @property
     @pulumi.getter
-    def filter(self) -> str:
-        """
-        The filter object for query usage.
-        """
+    def filter(self) -> Optional[str]:
         return pulumi.get(self, "filter")
 
     @property
     @pulumi.getter
-    def forecasts(self) -> Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastResult']:
-        """
-        Forecast configuration of usage/cost.
-        """
+    def forecasts(self) -> Optional[Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastResult']]:
         return pulumi.get(self, "forecasts")
 
     @property
     @pulumi.getter
-    def granularity(self) -> str:
-        """
-        The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-        """
+    def granularity(self) -> Optional[str]:
         return pulumi.get(self, "granularity")
 
     @property
     @pulumi.getter(name="groupBies")
-    def group_bies(self) -> Sequence[str]:
-        """
-        Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        """
+    def group_bies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "group_bies")
 
     @property
     @pulumi.getter(name="groupByTags")
-    def group_by_tags(self) -> Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagResult']:
-        """
-        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        """
+    def group_by_tags(self) -> Optional[Sequence['outputs.GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagResult']]:
         return pulumi.get(self, "group_by_tags")
 
     @property
     @pulumi.getter(name="isAggregateByTime")
-    def is_aggregate_by_time(self) -> bool:
-        """
-        Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        """
+    def is_aggregate_by_time(self) -> Optional[bool]:
         return pulumi.get(self, "is_aggregate_by_time")
 
     @property
     @pulumi.getter(name="queryType")
-    def query_type(self) -> str:
-        """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-        """
+    def query_type(self) -> Optional[str]:
         return pulumi.get(self, "query_type")
 
     @property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> str:
-        """
-        Tenant ID.
-        """
+    def tenant_id(self) -> Optional[str]:
         return pulumi.get(self, "tenant_id")
 
     @property
     @pulumi.getter(name="timeUsageEnded")
-    def time_usage_ended(self) -> str:
-        """
-        The usage end time.
-        """
+    def time_usage_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_usage_ended")
 
     @property
     @pulumi.getter(name="timeUsageStarted")
-    def time_usage_started(self) -> str:
-        """
-        The usage start time.
-        """
+    def time_usage_started(self) -> Optional[str]:
         return pulumi.get(self, "time_usage_started")
 
 
 @pulumi.output_type
 class GetQueriesQueryCollectionItemQueryDefinitionReportQueryForecastResult(dict):
     def __init__(__self__, *,
-                 forecast_type: str,
-                 time_forecast_ended: str,
-                 time_forecast_started: str):
-        """
-        :param str forecast_type: BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-        :param str time_forecast_ended: The forecast end time.
-        :param str time_forecast_started: The forecast start time. Defaults to UTC-1 if not specified.
-        """
-        pulumi.set(__self__, "forecast_type", forecast_type)
-        pulumi.set(__self__, "time_forecast_ended", time_forecast_ended)
-        pulumi.set(__self__, "time_forecast_started", time_forecast_started)
+                 forecast_type: Optional[str] = None,
+                 time_forecast_ended: Optional[str] = None,
+                 time_forecast_started: Optional[str] = None):
+        if forecast_type is not None:
+            pulumi.set(__self__, "forecast_type", forecast_type)
+        if time_forecast_ended is not None:
+            pulumi.set(__self__, "time_forecast_ended", time_forecast_ended)
+        if time_forecast_started is not None:
+            pulumi.set(__self__, "time_forecast_started", time_forecast_started)
 
     @property
     @pulumi.getter(name="forecastType")
-    def forecast_type(self) -> str:
-        """
-        BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-        """
+    def forecast_type(self) -> Optional[str]:
         return pulumi.get(self, "forecast_type")
 
     @property
     @pulumi.getter(name="timeForecastEnded")
-    def time_forecast_ended(self) -> str:
-        """
-        The forecast end time.
-        """
+    def time_forecast_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_forecast_ended")
 
     @property
     @pulumi.getter(name="timeForecastStarted")
-    def time_forecast_started(self) -> str:
-        """
-        The forecast start time. Defaults to UTC-1 if not specified.
-        """
+    def time_forecast_started(self) -> Optional[str]:
         return pulumi.get(self, "time_forecast_started")
 
 
 @pulumi.output_type
 class GetQueriesQueryCollectionItemQueryDefinitionReportQueryGroupByTagResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 namespace: str,
-                 value: str):
-        """
-        :param str key: The tag key.
-        :param str namespace: The tag namespace.
-        :param str value: The tag value.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "value", value)
+                 key: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 value: Optional[str] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The tag key.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The tag namespace.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The tag value.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetQueryQueryDefinitionResult(dict):
     def __init__(__self__, *,
-                 cost_analysis_uis: Sequence['outputs.GetQueryQueryDefinitionCostAnalysisUiResult'],
-                 display_name: str,
-                 report_queries: Sequence['outputs.GetQueryQueryDefinitionReportQueryResult'],
-                 version: float):
-        """
-        :param Sequence['GetQueryQueryDefinitionCostAnalysisUiArgs'] cost_analysis_uis: The common fields for Cost Analysis UI rendering.
-        :param str display_name: The query display name. Avoid entering confidential information.
-        :param Sequence['GetQueryQueryDefinitionReportQueryArgs'] report_queries: The request of the generated Cost Analysis report.
-        :param float version: The saved query version.
-        """
-        pulumi.set(__self__, "cost_analysis_uis", cost_analysis_uis)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "report_queries", report_queries)
-        pulumi.set(__self__, "version", version)
+                 cost_analysis_uis: Optional[Sequence['outputs.GetQueryQueryDefinitionCostAnalysisUiResult']] = None,
+                 display_name: Optional[str] = None,
+                 report_queries: Optional[Sequence['outputs.GetQueryQueryDefinitionReportQueryResult']] = None,
+                 version: Optional[float] = None):
+        if cost_analysis_uis is not None:
+            pulumi.set(__self__, "cost_analysis_uis", cost_analysis_uis)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if report_queries is not None:
+            pulumi.set(__self__, "report_queries", report_queries)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="costAnalysisUis")
-    def cost_analysis_uis(self) -> Sequence['outputs.GetQueryQueryDefinitionCostAnalysisUiResult']:
-        """
-        The common fields for Cost Analysis UI rendering.
-        """
+    def cost_analysis_uis(self) -> Optional[Sequence['outputs.GetQueryQueryDefinitionCostAnalysisUiResult']]:
         return pulumi.get(self, "cost_analysis_uis")
 
     @property
     @pulumi.getter(name="displayName")
-    def display_name(self) -> str:
-        """
-        The query display name. Avoid entering confidential information.
-        """
+    def display_name(self) -> Optional[str]:
         return pulumi.get(self, "display_name")
 
     @property
     @pulumi.getter(name="reportQueries")
-    def report_queries(self) -> Sequence['outputs.GetQueryQueryDefinitionReportQueryResult']:
-        """
-        The request of the generated Cost Analysis report.
-        """
+    def report_queries(self) -> Optional[Sequence['outputs.GetQueryQueryDefinitionReportQueryResult']]:
         return pulumi.get(self, "report_queries")
 
     @property
     @pulumi.getter
-    def version(self) -> float:
-        """
-        The saved query version.
-        """
+    def version(self) -> Optional[float]:
         return pulumi.get(self, "version")
 
 
 @pulumi.output_type
 class GetQueryQueryDefinitionCostAnalysisUiResult(dict):
     def __init__(__self__, *,
-                 graph: str,
-                 is_cumulative_graph: bool):
-        """
-        :param str graph: The graph type.
-        :param bool is_cumulative_graph: A cumulative graph.
-        """
-        pulumi.set(__self__, "graph", graph)
-        pulumi.set(__self__, "is_cumulative_graph", is_cumulative_graph)
+                 graph: Optional[str] = None,
+                 is_cumulative_graph: Optional[bool] = None):
+        if graph is not None:
+            pulumi.set(__self__, "graph", graph)
+        if is_cumulative_graph is not None:
+            pulumi.set(__self__, "is_cumulative_graph", is_cumulative_graph)
 
     @property
     @pulumi.getter
-    def graph(self) -> str:
-        """
-        The graph type.
-        """
+    def graph(self) -> Optional[str]:
         return pulumi.get(self, "graph")
 
     @property
     @pulumi.getter(name="isCumulativeGraph")
-    def is_cumulative_graph(self) -> bool:
-        """
-        A cumulative graph.
-        """
+    def is_cumulative_graph(self) -> Optional[bool]:
         return pulumi.get(self, "is_cumulative_graph")
 
 
 @pulumi.output_type
 class GetQueryQueryDefinitionReportQueryResult(dict):
     def __init__(__self__, *,
-                 compartment_depth: float,
-                 date_range_name: str,
-                 filter: str,
-                 forecasts: Sequence['outputs.GetQueryQueryDefinitionReportQueryForecastResult'],
-                 granularity: str,
-                 group_bies: Sequence[str],
-                 group_by_tags: Sequence['outputs.GetQueryQueryDefinitionReportQueryGroupByTagResult'],
-                 is_aggregate_by_time: bool,
-                 query_type: str,
-                 tenant_id: str,
-                 time_usage_ended: str,
-                 time_usage_started: str):
-        """
-        :param float compartment_depth: The compartment depth level.
-        :param str date_range_name: The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-        :param str filter: The filter object for query usage.
-        :param Sequence['GetQueryQueryDefinitionReportQueryForecastArgs'] forecasts: Forecast configuration of usage/cost.
-        :param str granularity: The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-        :param Sequence[str] group_bies: Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        :param Sequence['GetQueryQueryDefinitionReportQueryGroupByTagArgs'] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        :param bool is_aggregate_by_time: Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        :param str query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-        :param str tenant_id: Tenant ID.
-        :param str time_usage_ended: The usage end time.
-        :param str time_usage_started: The usage start time.
-        """
-        pulumi.set(__self__, "compartment_depth", compartment_depth)
-        pulumi.set(__self__, "date_range_name", date_range_name)
-        pulumi.set(__self__, "filter", filter)
-        pulumi.set(__self__, "forecasts", forecasts)
-        pulumi.set(__self__, "granularity", granularity)
-        pulumi.set(__self__, "group_bies", group_bies)
-        pulumi.set(__self__, "group_by_tags", group_by_tags)
-        pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
-        pulumi.set(__self__, "query_type", query_type)
-        pulumi.set(__self__, "tenant_id", tenant_id)
-        pulumi.set(__self__, "time_usage_ended", time_usage_ended)
-        pulumi.set(__self__, "time_usage_started", time_usage_started)
+                 compartment_depth: Optional[float] = None,
+                 date_range_name: Optional[str] = None,
+                 filter: Optional[str] = None,
+                 forecasts: Optional[Sequence['outputs.GetQueryQueryDefinitionReportQueryForecastResult']] = None,
+                 granularity: Optional[str] = None,
+                 group_bies: Optional[Sequence[str]] = None,
+                 group_by_tags: Optional[Sequence['outputs.GetQueryQueryDefinitionReportQueryGroupByTagResult']] = None,
+                 is_aggregate_by_time: Optional[bool] = None,
+                 query_type: Optional[str] = None,
+                 tenant_id: Optional[str] = None,
+                 time_usage_ended: Optional[str] = None,
+                 time_usage_started: Optional[str] = None):
+        if compartment_depth is not None:
+            pulumi.set(__self__, "compartment_depth", compartment_depth)
+        if date_range_name is not None:
+            pulumi.set(__self__, "date_range_name", date_range_name)
+        if filter is not None:
+            pulumi.set(__self__, "filter", filter)
+        if forecasts is not None:
+            pulumi.set(__self__, "forecasts", forecasts)
+        if granularity is not None:
+            pulumi.set(__self__, "granularity", granularity)
+        if group_bies is not None:
+            pulumi.set(__self__, "group_bies", group_bies)
+        if group_by_tags is not None:
+            pulumi.set(__self__, "group_by_tags", group_by_tags)
+        if is_aggregate_by_time is not None:
+            pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
+        if query_type is not None:
+            pulumi.set(__self__, "query_type", query_type)
+        if tenant_id is not None:
+            pulumi.set(__self__, "tenant_id", tenant_id)
+        if time_usage_ended is not None:
+            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+        if time_usage_started is not None:
+            pulumi.set(__self__, "time_usage_started", time_usage_started)
 
     @property
     @pulumi.getter(name="compartmentDepth")
-    def compartment_depth(self) -> float:
-        """
-        The compartment depth level.
-        """
+    def compartment_depth(self) -> Optional[float]:
         return pulumi.get(self, "compartment_depth")
 
     @property
     @pulumi.getter(name="dateRangeName")
-    def date_range_name(self) -> str:
-        """
-        The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
-        """
+    def date_range_name(self) -> Optional[str]:
         return pulumi.get(self, "date_range_name")
 
     @property
     @pulumi.getter
-    def filter(self) -> str:
-        """
-        The filter object for query usage.
-        """
+    def filter(self) -> Optional[str]:
         return pulumi.get(self, "filter")
 
     @property
     @pulumi.getter
-    def forecasts(self) -> Sequence['outputs.GetQueryQueryDefinitionReportQueryForecastResult']:
-        """
-        Forecast configuration of usage/cost.
-        """
+    def forecasts(self) -> Optional[Sequence['outputs.GetQueryQueryDefinitionReportQueryForecastResult']]:
         return pulumi.get(self, "forecasts")
 
     @property
     @pulumi.getter
-    def granularity(self) -> str:
-        """
-        The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-        """
+    def granularity(self) -> Optional[str]:
         return pulumi.get(self, "granularity")
 
     @property
     @pulumi.getter(name="groupBies")
-    def group_bies(self) -> Sequence[str]:
-        """
-        Aggregate the result by. example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
-        """
+    def group_bies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "group_bies")
 
     @property
     @pulumi.getter(name="groupByTags")
-    def group_by_tags(self) -> Sequence['outputs.GetQueryQueryDefinitionReportQueryGroupByTagResult']:
-        """
-        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
-        """
+    def group_by_tags(self) -> Optional[Sequence['outputs.GetQueryQueryDefinitionReportQueryGroupByTagResult']]:
         return pulumi.get(self, "group_by_tags")
 
     @property
     @pulumi.getter(name="isAggregateByTime")
-    def is_aggregate_by_time(self) -> bool:
-        """
-        Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
-        """
+    def is_aggregate_by_time(self) -> Optional[bool]:
         return pulumi.get(self, "is_aggregate_by_time")
 
     @property
     @pulumi.getter(name="queryType")
-    def query_type(self) -> str:
-        """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-        """
+    def query_type(self) -> Optional[str]:
         return pulumi.get(self, "query_type")
 
     @property
     @pulumi.getter(name="tenantId")
-    def tenant_id(self) -> str:
-        """
-        Tenant ID.
-        """
+    def tenant_id(self) -> Optional[str]:
         return pulumi.get(self, "tenant_id")
 
     @property
     @pulumi.getter(name="timeUsageEnded")
-    def time_usage_ended(self) -> str:
-        """
-        The usage end time.
-        """
+    def time_usage_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_usage_ended")
 
     @property
     @pulumi.getter(name="timeUsageStarted")
-    def time_usage_started(self) -> str:
-        """
-        The usage start time.
-        """
+    def time_usage_started(self) -> Optional[str]:
         return pulumi.get(self, "time_usage_started")
 
 
 @pulumi.output_type
 class GetQueryQueryDefinitionReportQueryForecastResult(dict):
     def __init__(__self__, *,
-                 forecast_type: str,
-                 time_forecast_ended: str,
-                 time_forecast_started: str):
-        """
-        :param str forecast_type: BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-        :param str time_forecast_ended: The forecast end time.
-        :param str time_forecast_started: The forecast start time. Defaults to UTC-1 if not specified.
-        """
-        pulumi.set(__self__, "forecast_type", forecast_type)
-        pulumi.set(__self__, "time_forecast_ended", time_forecast_ended)
-        pulumi.set(__self__, "time_forecast_started", time_forecast_started)
+                 forecast_type: Optional[str] = None,
+                 time_forecast_ended: Optional[str] = None,
+                 time_forecast_started: Optional[str] = None):
+        if forecast_type is not None:
+            pulumi.set(__self__, "forecast_type", forecast_type)
+        if time_forecast_ended is not None:
+            pulumi.set(__self__, "time_forecast_ended", time_forecast_ended)
+        if time_forecast_started is not None:
+            pulumi.set(__self__, "time_forecast_started", time_forecast_started)
 
     @property
     @pulumi.getter(name="forecastType")
-    def forecast_type(self) -> str:
-        """
-        BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
-        """
+    def forecast_type(self) -> Optional[str]:
         return pulumi.get(self, "forecast_type")
 
     @property
     @pulumi.getter(name="timeForecastEnded")
-    def time_forecast_ended(self) -> str:
-        """
-        The forecast end time.
-        """
+    def time_forecast_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_forecast_ended")
 
     @property
     @pulumi.getter(name="timeForecastStarted")
-    def time_forecast_started(self) -> str:
-        """
-        The forecast start time. Defaults to UTC-1 if not specified.
-        """
+    def time_forecast_started(self) -> Optional[str]:
         return pulumi.get(self, "time_forecast_started")
 
 
 @pulumi.output_type
 class GetQueryQueryDefinitionReportQueryGroupByTagResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 namespace: str,
-                 value: str):
-        """
-        :param str key: The tag key.
-        :param str namespace: The tag namespace.
-        :param str value: The tag value.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "value", value)
+                 key: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 value: Optional[str] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The tag key.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The tag namespace.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The tag value.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetScheduleQueryPropertyResult(dict):
     def __init__(__self__, *,
-                 compartment_depth: float,
-                 date_ranges: Sequence['outputs.GetScheduleQueryPropertyDateRangeResult'],
-                 filter: str,
-                 granularity: str,
-                 group_bies: Sequence[str],
-                 group_by_tags: Sequence['outputs.GetScheduleQueryPropertyGroupByTagResult'],
-                 is_aggregate_by_time: bool,
-                 query_type: str):
-        """
-        :param float compartment_depth: The depth level of the compartment.
-        :param Sequence['GetScheduleQueryPropertyDateRangeArgs'] date_ranges: Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
-        :param str filter: The filter object for query usage.
-        :param str granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-        :param Sequence[str] group_bies: Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
-        :param Sequence['GetScheduleQueryPropertyGroupByTagArgs'] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-        :param bool is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-        :param str query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-        """
-        pulumi.set(__self__, "compartment_depth", compartment_depth)
-        pulumi.set(__self__, "date_ranges", date_ranges)
-        pulumi.set(__self__, "filter", filter)
-        pulumi.set(__self__, "granularity", granularity)
-        pulumi.set(__self__, "group_bies", group_bies)
-        pulumi.set(__self__, "group_by_tags", group_by_tags)
-        pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
-        pulumi.set(__self__, "query_type", query_type)
+                 compartment_depth: Optional[float] = None,
+                 date_ranges: Optional[Sequence['outputs.GetScheduleQueryPropertyDateRangeResult']] = None,
+                 filter: Optional[str] = None,
+                 granularity: Optional[str] = None,
+                 group_bies: Optional[Sequence[str]] = None,
+                 group_by_tags: Optional[Sequence['outputs.GetScheduleQueryPropertyGroupByTagResult']] = None,
+                 is_aggregate_by_time: Optional[bool] = None,
+                 query_type: Optional[str] = None):
+        if compartment_depth is not None:
+            pulumi.set(__self__, "compartment_depth", compartment_depth)
+        if date_ranges is not None:
+            pulumi.set(__self__, "date_ranges", date_ranges)
+        if filter is not None:
+            pulumi.set(__self__, "filter", filter)
+        if granularity is not None:
+            pulumi.set(__self__, "granularity", granularity)
+        if group_bies is not None:
+            pulumi.set(__self__, "group_bies", group_bies)
+        if group_by_tags is not None:
+            pulumi.set(__self__, "group_by_tags", group_by_tags)
+        if is_aggregate_by_time is not None:
+            pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
+        if query_type is not None:
+            pulumi.set(__self__, "query_type", query_type)
 
     @property
     @pulumi.getter(name="compartmentDepth")
-    def compartment_depth(self) -> float:
-        """
-        The depth level of the compartment.
-        """
+    def compartment_depth(self) -> Optional[float]:
         return pulumi.get(self, "compartment_depth")
 
     @property
     @pulumi.getter(name="dateRanges")
-    def date_ranges(self) -> Sequence['outputs.GetScheduleQueryPropertyDateRangeResult']:
-        """
-        Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
-        """
+    def date_ranges(self) -> Optional[Sequence['outputs.GetScheduleQueryPropertyDateRangeResult']]:
         return pulumi.get(self, "date_ranges")
 
     @property
     @pulumi.getter
-    def filter(self) -> str:
-        """
-        The filter object for query usage.
-        """
+    def filter(self) -> Optional[str]:
         return pulumi.get(self, "filter")
 
     @property
     @pulumi.getter
-    def granularity(self) -> str:
-        """
-        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-        """
+    def granularity(self) -> Optional[str]:
         return pulumi.get(self, "granularity")
 
     @property
     @pulumi.getter(name="groupBies")
-    def group_bies(self) -> Sequence[str]:
-        """
-        Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
-        """
+    def group_bies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "group_bies")
 
     @property
     @pulumi.getter(name="groupByTags")
-    def group_by_tags(self) -> Sequence['outputs.GetScheduleQueryPropertyGroupByTagResult']:
-        """
-        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-        """
+    def group_by_tags(self) -> Optional[Sequence['outputs.GetScheduleQueryPropertyGroupByTagResult']]:
         return pulumi.get(self, "group_by_tags")
 
     @property
     @pulumi.getter(name="isAggregateByTime")
-    def is_aggregate_by_time(self) -> bool:
-        """
-        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-        """
+    def is_aggregate_by_time(self) -> Optional[bool]:
         return pulumi.get(self, "is_aggregate_by_time")
 
     @property
     @pulumi.getter(name="queryType")
-    def query_type(self) -> str:
-        """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-        """
+    def query_type(self) -> Optional[str]:
         return pulumi.get(self, "query_type")
 
 
 @pulumi.output_type
 class GetScheduleQueryPropertyDateRangeResult(dict):
     def __init__(__self__, *,
-                 date_range_type: str,
-                 dynamic_date_range_type: str,
-                 time_usage_ended: str,
-                 time_usage_started: str):
-        """
-        :param str date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC.
-        :param str time_usage_ended: The usage end time.
-        :param str time_usage_started: The usage start time.
-        """
-        pulumi.set(__self__, "date_range_type", date_range_type)
-        pulumi.set(__self__, "dynamic_date_range_type", dynamic_date_range_type)
-        pulumi.set(__self__, "time_usage_ended", time_usage_ended)
-        pulumi.set(__self__, "time_usage_started", time_usage_started)
+                 date_range_type: Optional[str] = None,
+                 dynamic_date_range_type: Optional[str] = None,
+                 time_usage_ended: Optional[str] = None,
+                 time_usage_started: Optional[str] = None):
+        if date_range_type is not None:
+            pulumi.set(__self__, "date_range_type", date_range_type)
+        if dynamic_date_range_type is not None:
+            pulumi.set(__self__, "dynamic_date_range_type", dynamic_date_range_type)
+        if time_usage_ended is not None:
+            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+        if time_usage_started is not None:
+            pulumi.set(__self__, "time_usage_started", time_usage_started)
 
     @property
     @pulumi.getter(name="dateRangeType")
-    def date_range_type(self) -> str:
-        """
-        Defines whether the schedule date range is STATIC or DYNAMIC.
-        """
+    def date_range_type(self) -> Optional[str]:
         return pulumi.get(self, "date_range_type")
 
     @property
     @pulumi.getter(name="dynamicDateRangeType")
-    def dynamic_date_range_type(self) -> str:
+    def dynamic_date_range_type(self) -> Optional[str]:
         return pulumi.get(self, "dynamic_date_range_type")
 
     @property
     @pulumi.getter(name="timeUsageEnded")
-    def time_usage_ended(self) -> str:
-        """
-        The usage end time.
-        """
+    def time_usage_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_usage_ended")
 
     @property
     @pulumi.getter(name="timeUsageStarted")
-    def time_usage_started(self) -> str:
-        """
-        The usage start time.
-        """
+    def time_usage_started(self) -> Optional[str]:
         return pulumi.get(self, "time_usage_started")
 
 
 @pulumi.output_type
 class GetScheduleQueryPropertyGroupByTagResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 namespace: str,
-                 value: str):
-        """
-        :param str key: The tag key.
-        :param str namespace: The namespace needed to determine the object storage bucket.
-        :param str value: The tag value.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "value", value)
+                 key: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 value: Optional[str] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The tag key.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace needed to determine the object storage bucket.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The tag value.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetScheduleResultLocationResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 location_type: str,
-                 namespace: str,
-                 region: str):
-        """
-        :param str bucket: The bucket name where usage or cost CSVs will be uploaded.
-        :param str location_type: Defines the type of location where the usage or cost CSVs will be stored.
-        :param str namespace: The namespace needed to determine the object storage bucket.
-        :param str region: The destination Object Store Region specified by the customer.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "location_type", location_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "region", region)
+                 bucket: Optional[str] = None,
+                 location_type: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 region: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if location_type is not None:
+            pulumi.set(__self__, "location_type", location_type)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The bucket name where usage or cost CSVs will be uploaded.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="locationType")
-    def location_type(self) -> str:
-        """
-        Defines the type of location where the usage or cost CSVs will be stored.
-        """
+    def location_type(self) -> Optional[str]:
         return pulumi.get(self, "location_type")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace needed to determine the object storage bucket.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def region(self) -> str:
-        """
-        The destination Object Store Region specified by the customer.
-        """
+    def region(self) -> Optional[str]:
         return pulumi.get(self, "region")
 
 
@@ -2785,85 +2065,66 @@ class GetScheduledRunsFilterResult(dict):
 @pulumi.output_type
 class GetScheduledRunsScheduledRunCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetScheduledRunsScheduledRunCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetScheduledRunsScheduledRunCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetScheduledRunsScheduledRunCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetScheduledRunsScheduledRunCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetScheduledRunsScheduledRunCollectionItemResult(dict):
     def __init__(__self__, *,
-                 id: str,
-                 lifecycle_details: str,
-                 schedule_id: str,
-                 state: str,
-                 time_created: str,
-                 time_finished: str):
-        """
-        :param str id: The ocid representing unique shedule run
-        :param str lifecycle_details: Additional details about scheduled run failure
-        :param str schedule_id: The unique ID of a schedule.
-        :param str state: Specifies if the schedule job was run successfully or not.
-        :param str time_created: The time when schedule started executing
-        :param str time_finished: The time when schedule finished executing
-        """
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        pulumi.set(__self__, "schedule_id", schedule_id)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_finished", time_finished)
+                 id: Optional[str] = None,
+                 lifecycle_details: Optional[str] = None,
+                 schedule_id: Optional[str] = None,
+                 state: Optional[str] = None,
+                 time_created: Optional[str] = None,
+                 time_finished: Optional[str] = None):
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if schedule_id is not None:
+            pulumi.set(__self__, "schedule_id", schedule_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_finished is not None:
+            pulumi.set(__self__, "time_finished", time_finished)
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The ocid representing unique shedule run
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> str:
-        """
-        Additional details about scheduled run failure
-        """
+    def lifecycle_details(self) -> Optional[str]:
         return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="scheduleId")
-    def schedule_id(self) -> str:
-        """
-        The unique ID of a schedule.
-        """
+    def schedule_id(self) -> Optional[str]:
         return pulumi.get(self, "schedule_id")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        Specifies if the schedule job was run successfully or not.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The time when schedule started executing
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeFinished")
-    def time_finished(self) -> str:
-        """
-        The time when schedule finished executing
-        """
+    def time_finished(self) -> Optional[str]:
         return pulumi.get(self, "time_finished")
 
 
@@ -2873,9 +2134,6 @@ class GetSchedulesFilterResult(dict):
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
-        """
-        :param str name: Query parameter for filtering by name
-        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -2884,9 +2142,6 @@ class GetSchedulesFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
-        """
-        Query parameter for filtering by name
-        """
         return pulumi.get(self, "name")
 
     @property
@@ -2903,428 +2158,318 @@ class GetSchedulesFilterResult(dict):
 @pulumi.output_type
 class GetSchedulesScheduleCollectionResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetSchedulesScheduleCollectionItemResult']):
-        pulumi.set(__self__, "items", items)
+                 items: Optional[Sequence['outputs.GetSchedulesScheduleCollectionItemResult']] = None):
+        if items is not None:
+            pulumi.set(__self__, "items", items)
 
     @property
     @pulumi.getter
-    def items(self) -> Sequence['outputs.GetSchedulesScheduleCollectionItemResult']:
+    def items(self) -> Optional[Sequence['outputs.GetSchedulesScheduleCollectionItemResult']]:
         return pulumi.get(self, "items")
 
 
 @pulumi.output_type
 class GetSchedulesScheduleCollectionItemResult(dict):
     def __init__(__self__, *,
-                 compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 description: str,
-                 freeform_tags: Mapping[str, Any],
-                 id: str,
-                 name: str,
-                 output_file_format: str,
-                 query_properties: Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyResult'],
-                 result_locations: Sequence['outputs.GetSchedulesScheduleCollectionItemResultLocationResult'],
-                 saved_report_id: str,
-                 schedule_recurrences: str,
-                 state: str,
-                 system_tags: Mapping[str, Any],
-                 time_created: str,
-                 time_next_run: str,
-                 time_scheduled: str):
-        """
-        :param str compartment_id: The compartment ID in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param str description: The description of the schedule.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param str id: The OCID representing a unique shedule.
-        :param str name: Query parameter for filtering by name
-        :param str output_file_format: Specifies supported output file format.
-        :param Sequence['GetSchedulesScheduleCollectionItemQueryPropertyArgs'] query_properties: The query properties.
-        :param Sequence['GetSchedulesScheduleCollectionItemResultLocationArgs'] result_locations: The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        :param str saved_report_id: The saved report id which can also be used to generate query.
-        :param str schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
-        :param str state: The schedule lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The date and time the schedule was created.
-        :param str time_next_run: The date and time of the next job execution.
-        :param str time_scheduled: The date and time of the first time job execution.
-        """
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "output_file_format", output_file_format)
-        pulumi.set(__self__, "query_properties", query_properties)
-        pulumi.set(__self__, "result_locations", result_locations)
-        pulumi.set(__self__, "saved_report_id", saved_report_id)
-        pulumi.set(__self__, "schedule_recurrences", schedule_recurrences)
-        pulumi.set(__self__, "state", state)
-        pulumi.set(__self__, "system_tags", system_tags)
-        pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_next_run", time_next_run)
-        pulumi.set(__self__, "time_scheduled", time_scheduled)
+                 compartment_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 description: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 id: Optional[str] = None,
+                 name: Optional[str] = None,
+                 output_file_format: Optional[str] = None,
+                 query_properties: Optional[Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyResult']] = None,
+                 result_locations: Optional[Sequence['outputs.GetSchedulesScheduleCollectionItemResultLocationResult']] = None,
+                 saved_report_id: Optional[str] = None,
+                 schedule_recurrences: Optional[str] = None,
+                 state: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None,
+                 time_created: Optional[str] = None,
+                 time_next_run: Optional[str] = None,
+                 time_scheduled: Optional[str] = None):
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if output_file_format is not None:
+            pulumi.set(__self__, "output_file_format", output_file_format)
+        if query_properties is not None:
+            pulumi.set(__self__, "query_properties", query_properties)
+        if result_locations is not None:
+            pulumi.set(__self__, "result_locations", result_locations)
+        if saved_report_id is not None:
+            pulumi.set(__self__, "saved_report_id", saved_report_id)
+        if schedule_recurrences is not None:
+            pulumi.set(__self__, "schedule_recurrences", schedule_recurrences)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_next_run is not None:
+            pulumi.set(__self__, "time_next_run", time_next_run)
+        if time_scheduled is not None:
+            pulumi.set(__self__, "time_scheduled", time_scheduled)
 
     @property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> str:
-        """
-        The compartment ID in which to list resources.
-        """
+    def compartment_id(self) -> Optional[str]:
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        """
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter
-    def description(self) -> str:
-        """
-        The description of the schedule.
-        """
+    def description(self) -> Optional[str]:
         return pulumi.get(self, "description")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        """
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def id(self) -> str:
-        """
-        The OCID representing a unique shedule.
-        """
+    def id(self) -> Optional[str]:
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
-    def name(self) -> str:
-        """
-        Query parameter for filtering by name
-        """
+    def name(self) -> Optional[str]:
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="outputFileFormat")
-    def output_file_format(self) -> str:
-        """
-        Specifies supported output file format.
-        """
+    def output_file_format(self) -> Optional[str]:
         return pulumi.get(self, "output_file_format")
 
     @property
     @pulumi.getter(name="queryProperties")
-    def query_properties(self) -> Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyResult']:
-        """
-        The query properties.
-        """
+    def query_properties(self) -> Optional[Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyResult']]:
         return pulumi.get(self, "query_properties")
 
     @property
     @pulumi.getter(name="resultLocations")
-    def result_locations(self) -> Sequence['outputs.GetSchedulesScheduleCollectionItemResultLocationResult']:
-        """
-        The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        """
+    def result_locations(self) -> Optional[Sequence['outputs.GetSchedulesScheduleCollectionItemResultLocationResult']]:
         return pulumi.get(self, "result_locations")
 
     @property
     @pulumi.getter(name="savedReportId")
-    def saved_report_id(self) -> str:
-        """
-        The saved report id which can also be used to generate query.
-        """
+    def saved_report_id(self) -> Optional[str]:
         return pulumi.get(self, "saved_report_id")
 
     @property
     @pulumi.getter(name="scheduleRecurrences")
-    def schedule_recurrences(self) -> str:
-        """
-        Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
-        """
+    def schedule_recurrences(self) -> Optional[str]:
         return pulumi.get(self, "schedule_recurrences")
 
     @property
     @pulumi.getter
-    def state(self) -> str:
-        """
-        The schedule lifecycle state.
-        """
+    def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
-        """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        """
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
         return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> str:
-        """
-        The date and time the schedule was created.
-        """
+    def time_created(self) -> Optional[str]:
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeNextRun")
-    def time_next_run(self) -> str:
-        """
-        The date and time of the next job execution.
-        """
+    def time_next_run(self) -> Optional[str]:
         return pulumi.get(self, "time_next_run")
 
     @property
     @pulumi.getter(name="timeScheduled")
-    def time_scheduled(self) -> str:
-        """
-        The date and time of the first time job execution.
-        """
+    def time_scheduled(self) -> Optional[str]:
         return pulumi.get(self, "time_scheduled")
 
 
 @pulumi.output_type
 class GetSchedulesScheduleCollectionItemQueryPropertyResult(dict):
     def __init__(__self__, *,
-                 compartment_depth: float,
-                 date_ranges: Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyDateRangeResult'],
-                 filter: str,
-                 granularity: str,
-                 group_bies: Sequence[str],
-                 group_by_tags: Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagResult'],
-                 is_aggregate_by_time: bool,
-                 query_type: str):
-        """
-        :param float compartment_depth: The depth level of the compartment.
-        :param Sequence['GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs'] date_ranges: Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
-        :param str filter: The filter object for query usage.
-        :param str granularity: The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-        :param Sequence[str] group_bies: Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
-        :param Sequence['GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs'] group_by_tags: GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-        :param bool is_aggregate_by_time: Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-        :param str query_type: The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-        """
-        pulumi.set(__self__, "compartment_depth", compartment_depth)
-        pulumi.set(__self__, "date_ranges", date_ranges)
-        pulumi.set(__self__, "filter", filter)
-        pulumi.set(__self__, "granularity", granularity)
-        pulumi.set(__self__, "group_bies", group_bies)
-        pulumi.set(__self__, "group_by_tags", group_by_tags)
-        pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
-        pulumi.set(__self__, "query_type", query_type)
+                 compartment_depth: Optional[float] = None,
+                 date_ranges: Optional[Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyDateRangeResult']] = None,
+                 filter: Optional[str] = None,
+                 granularity: Optional[str] = None,
+                 group_bies: Optional[Sequence[str]] = None,
+                 group_by_tags: Optional[Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagResult']] = None,
+                 is_aggregate_by_time: Optional[bool] = None,
+                 query_type: Optional[str] = None):
+        if compartment_depth is not None:
+            pulumi.set(__self__, "compartment_depth", compartment_depth)
+        if date_ranges is not None:
+            pulumi.set(__self__, "date_ranges", date_ranges)
+        if filter is not None:
+            pulumi.set(__self__, "filter", filter)
+        if granularity is not None:
+            pulumi.set(__self__, "granularity", granularity)
+        if group_bies is not None:
+            pulumi.set(__self__, "group_bies", group_bies)
+        if group_by_tags is not None:
+            pulumi.set(__self__, "group_by_tags", group_by_tags)
+        if is_aggregate_by_time is not None:
+            pulumi.set(__self__, "is_aggregate_by_time", is_aggregate_by_time)
+        if query_type is not None:
+            pulumi.set(__self__, "query_type", query_type)
 
     @property
     @pulumi.getter(name="compartmentDepth")
-    def compartment_depth(self) -> float:
-        """
-        The depth level of the compartment.
-        """
+    def compartment_depth(self) -> Optional[float]:
         return pulumi.get(self, "compartment_depth")
 
     @property
     @pulumi.getter(name="dateRanges")
-    def date_ranges(self) -> Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyDateRangeResult']:
-        """
-        Static or dynamic date range `dateRangeType`, which corresponds with type-specific characteristics.
-        """
+    def date_ranges(self) -> Optional[Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyDateRangeResult']]:
         return pulumi.get(self, "date_ranges")
 
     @property
     @pulumi.getter
-    def filter(self) -> str:
-        """
-        The filter object for query usage.
-        """
+    def filter(self) -> Optional[str]:
         return pulumi.get(self, "filter")
 
     @property
     @pulumi.getter
-    def granularity(self) -> str:
-        """
-        The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
-        """
+    def granularity(self) -> Optional[str]:
         return pulumi.get(self, "granularity")
 
     @property
     @pulumi.getter(name="groupBies")
-    def group_bies(self) -> Sequence[str]:
-        """
-        Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
-        """
+    def group_bies(self) -> Optional[Sequence[str]]:
         return pulumi.get(self, "group_bies")
 
     @property
     @pulumi.getter(name="groupByTags")
-    def group_by_tags(self) -> Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagResult']:
-        """
-        GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
-        """
+    def group_by_tags(self) -> Optional[Sequence['outputs.GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagResult']]:
         return pulumi.get(self, "group_by_tags")
 
     @property
     @pulumi.getter(name="isAggregateByTime")
-    def is_aggregate_by_time(self) -> bool:
-        """
-        Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
-        """
+    def is_aggregate_by_time(self) -> Optional[bool]:
         return pulumi.get(self, "is_aggregate_by_time")
 
     @property
     @pulumi.getter(name="queryType")
-    def query_type(self) -> str:
-        """
-        The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
-        """
+    def query_type(self) -> Optional[str]:
         return pulumi.get(self, "query_type")
 
 
 @pulumi.output_type
 class GetSchedulesScheduleCollectionItemQueryPropertyDateRangeResult(dict):
     def __init__(__self__, *,
-                 date_range_type: str,
-                 dynamic_date_range_type: str,
-                 time_usage_ended: str,
-                 time_usage_started: str):
-        """
-        :param str date_range_type: Defines whether the schedule date range is STATIC or DYNAMIC.
-        :param str time_usage_ended: The usage end time.
-        :param str time_usage_started: The usage start time.
-        """
-        pulumi.set(__self__, "date_range_type", date_range_type)
-        pulumi.set(__self__, "dynamic_date_range_type", dynamic_date_range_type)
-        pulumi.set(__self__, "time_usage_ended", time_usage_ended)
-        pulumi.set(__self__, "time_usage_started", time_usage_started)
+                 date_range_type: Optional[str] = None,
+                 dynamic_date_range_type: Optional[str] = None,
+                 time_usage_ended: Optional[str] = None,
+                 time_usage_started: Optional[str] = None):
+        if date_range_type is not None:
+            pulumi.set(__self__, "date_range_type", date_range_type)
+        if dynamic_date_range_type is not None:
+            pulumi.set(__self__, "dynamic_date_range_type", dynamic_date_range_type)
+        if time_usage_ended is not None:
+            pulumi.set(__self__, "time_usage_ended", time_usage_ended)
+        if time_usage_started is not None:
+            pulumi.set(__self__, "time_usage_started", time_usage_started)
 
     @property
     @pulumi.getter(name="dateRangeType")
-    def date_range_type(self) -> str:
-        """
-        Defines whether the schedule date range is STATIC or DYNAMIC.
-        """
+    def date_range_type(self) -> Optional[str]:
         return pulumi.get(self, "date_range_type")
 
     @property
     @pulumi.getter(name="dynamicDateRangeType")
-    def dynamic_date_range_type(self) -> str:
+    def dynamic_date_range_type(self) -> Optional[str]:
         return pulumi.get(self, "dynamic_date_range_type")
 
     @property
     @pulumi.getter(name="timeUsageEnded")
-    def time_usage_ended(self) -> str:
-        """
-        The usage end time.
-        """
+    def time_usage_ended(self) -> Optional[str]:
         return pulumi.get(self, "time_usage_ended")
 
     @property
     @pulumi.getter(name="timeUsageStarted")
-    def time_usage_started(self) -> str:
-        """
-        The usage start time.
-        """
+    def time_usage_started(self) -> Optional[str]:
         return pulumi.get(self, "time_usage_started")
 
 
 @pulumi.output_type
 class GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagResult(dict):
     def __init__(__self__, *,
-                 key: str,
-                 namespace: str,
-                 value: str):
-        """
-        :param str key: The tag key.
-        :param str namespace: The namespace needed to determine the object storage bucket.
-        :param str value: The tag value.
-        """
-        pulumi.set(__self__, "key", key)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "value", value)
+                 key: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 value: Optional[str] = None):
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        """
-        The tag key.
-        """
+    def key(self) -> Optional[str]:
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace needed to determine the object storage bucket.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def value(self) -> str:
-        """
-        The tag value.
-        """
+    def value(self) -> Optional[str]:
         return pulumi.get(self, "value")
 
 
 @pulumi.output_type
 class GetSchedulesScheduleCollectionItemResultLocationResult(dict):
     def __init__(__self__, *,
-                 bucket: str,
-                 location_type: str,
-                 namespace: str,
-                 region: str):
-        """
-        :param str bucket: The bucket name where usage or cost CSVs will be uploaded.
-        :param str location_type: Defines the type of location where the usage or cost CSVs will be stored.
-        :param str namespace: The namespace needed to determine the object storage bucket.
-        :param str region: The destination Object Store Region specified by the customer.
-        """
-        pulumi.set(__self__, "bucket", bucket)
-        pulumi.set(__self__, "location_type", location_type)
-        pulumi.set(__self__, "namespace", namespace)
-        pulumi.set(__self__, "region", region)
+                 bucket: Optional[str] = None,
+                 location_type: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 region: Optional[str] = None):
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if location_type is not None:
+            pulumi.set(__self__, "location_type", location_type)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
 
     @property
     @pulumi.getter
-    def bucket(self) -> str:
-        """
-        The bucket name where usage or cost CSVs will be uploaded.
-        """
+    def bucket(self) -> Optional[str]:
         return pulumi.get(self, "bucket")
 
     @property
     @pulumi.getter(name="locationType")
-    def location_type(self) -> str:
-        """
-        Defines the type of location where the usage or cost CSVs will be stored.
-        """
+    def location_type(self) -> Optional[str]:
         return pulumi.get(self, "location_type")
 
     @property
     @pulumi.getter
-    def namespace(self) -> str:
-        """
-        The namespace needed to determine the object storage bucket.
-        """
+    def namespace(self) -> Optional[str]:
         return pulumi.get(self, "namespace")
 
     @property
     @pulumi.getter
-    def region(self) -> str:
-        """
-        The destination Object Store Region specified by the customer.
-        """
+    def region(self) -> Optional[str]:
         return pulumi.get(self, "region")
 
 

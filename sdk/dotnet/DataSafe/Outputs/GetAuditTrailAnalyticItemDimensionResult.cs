@@ -16,29 +16,29 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// The location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
         /// </summary>
-        public readonly string Location;
+        public readonly string? Location;
         /// <summary>
         /// The current state of the audit trail.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// The current sub-state of the audit trail..
         /// </summary>
-        public readonly string Status;
+        public readonly string? Status;
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
-        public readonly string TargetId;
+        public readonly string? TargetId;
 
         [OutputConstructor]
         private GetAuditTrailAnalyticItemDimensionResult(
-            string location,
+            string? location,
 
-            string state,
+            string? state,
 
-            string status,
+            string? status,
 
-            string targetId)
+            string? targetId)
         {
             Location = location;
             State = state;

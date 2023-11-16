@@ -56,17 +56,11 @@ class GetDeploymentVersionsResult:
     @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> Optional[str]:
-        """
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
-        """
         return pulumi.get(self, "deployment_type")
 
     @property
     @pulumi.getter(name="deploymentVersionCollections")
-    def deployment_version_collections(self) -> Sequence['outputs.GetDeploymentVersionsDeploymentVersionCollectionResult']:
-        """
-        The list of deployment_version_collection.
-        """
+    def deployment_version_collections(self) -> Optional[Sequence['outputs.GetDeploymentVersionsDeploymentVersionCollectionResult']]:
         return pulumi.get(self, "deployment_version_collections")
 
     @property
@@ -76,7 +70,7 @@ class GetDeploymentVersionsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -103,25 +97,7 @@ def get_deployment_versions(compartment_id: Optional[str] = None,
                             filters: Optional[Sequence[pulumi.InputType['GetDeploymentVersionsFilterArgs']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentVersionsResult:
     """
-    This data source provides the list of Deployment Versions in Oracle Cloud Infrastructure Golden Gate service.
-
-    Returns the list of available deployment versions.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment_versions = oci.GoldenGate.get_deployment_versions(compartment_id=var["compartment_id"],
-        deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        deployment_type=var["deployment_version_deployment_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
-    :param str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -147,24 +123,6 @@ def get_deployment_versions_output(compartment_id: Optional[pulumi.Input[str]] =
                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDeploymentVersionsFilterArgs']]]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentVersionsResult]:
     """
-    This data source provides the list of Deployment Versions in Oracle Cloud Infrastructure Golden Gate service.
-
-    Returns the list of available deployment versions.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_deployment_versions = oci.GoldenGate.get_deployment_versions(compartment_id=var["compartment_id"],
-        deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        deployment_type=var["deployment_version_deployment_type"])
-    ```
-
-
-    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-    :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
-    :param str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
+    Use this data source to access information about an existing resource.
     """
     ...

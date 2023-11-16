@@ -82,17 +82,11 @@ class GetMaskingPoliciesMaskingColumnsResult:
     @property
     @pulumi.getter(name="columnNames")
     def column_names(self) -> Optional[Sequence[str]]:
-        """
-        The name of the substitution column.
-        """
         return pulumi.get(self, "column_names")
 
     @property
     @pulumi.getter(name="dataTypes")
     def data_types(self) -> Optional[Sequence[str]]:
-        """
-        The data type of the masking column.
-        """
         return pulumi.get(self, "data_types")
 
     @property
@@ -102,7 +96,7 @@ class GetMaskingPoliciesMaskingColumnsResult:
 
     @property
     @pulumi.getter
-    def id(self) -> str:
+    def id(self) -> Optional[str]:
         """
         The provider-assigned unique ID for this managed resource.
         """
@@ -111,9 +105,6 @@ class GetMaskingPoliciesMaskingColumnsResult:
     @property
     @pulumi.getter(name="isMaskingEnabled")
     def is_masking_enabled(self) -> Optional[bool]:
-        """
-        Indicates whether data masking is enabled for the masking column.
-        """
         return pulumi.get(self, "is_masking_enabled")
 
     @property
@@ -123,18 +114,12 @@ class GetMaskingPoliciesMaskingColumnsResult:
 
     @property
     @pulumi.getter(name="maskingColumnCollections")
-    def masking_column_collections(self) -> Sequence['outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionResult']:
-        """
-        The list of masking_column_collection.
-        """
+    def masking_column_collections(self) -> Optional[Sequence['outputs.GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionResult']]:
         return pulumi.get(self, "masking_column_collections")
 
     @property
     @pulumi.getter(name="maskingColumnGroups")
     def masking_column_groups(self) -> Optional[Sequence[str]]:
-        """
-        The group of the masking column. All the columns in a group are masked together to ensure  that the masked data across these columns continue to retain the same logical relationship.  For more details, check <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
-        """
         return pulumi.get(self, "masking_column_groups")
 
     @property
@@ -145,41 +130,26 @@ class GetMaskingPoliciesMaskingColumnsResult:
     @property
     @pulumi.getter(name="maskingPolicyId")
     def masking_policy_id(self) -> str:
-        """
-        The OCID of the masking policy that contains the masking column.
-        """
         return pulumi.get(self, "masking_policy_id")
 
     @property
     @pulumi.getter(name="objectTypes")
     def object_types(self) -> Optional[Sequence[str]]:
-        """
-        The type of the object that contains the database column.
-        """
         return pulumi.get(self, "object_types")
 
     @property
     @pulumi.getter
     def objects(self) -> Optional[Sequence[str]]:
-        """
-        The name of the object (table or editioning view) that contains the database column.
-        """
         return pulumi.get(self, "objects")
 
     @property
     @pulumi.getter(name="schemaNames")
     def schema_names(self) -> Optional[Sequence[str]]:
-        """
-        The name of the schema that contains the database column.
-        """
         return pulumi.get(self, "schema_names")
 
     @property
     @pulumi.getter(name="sensitiveTypeId")
     def sensitive_type_id(self) -> Optional[str]:
-        """
-        The OCID of the sensitive type associated with the masking column.
-        """
         return pulumi.get(self, "sensitive_type_id")
 
     @property
@@ -247,53 +217,7 @@ def get_masking_policies_masking_columns(column_names: Optional[Sequence[str]] =
                                          time_updated_less_than: Optional[str] = None,
                                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingPoliciesMaskingColumnsResult:
     """
-    This data source provides the list of Masking Policies Masking Columns in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        column_names=var["masking_policies_masking_column_column_name"],
-        data_types=var["masking_policies_masking_column_data_type"],
-        is_masking_enabled=var["masking_policies_masking_column_is_masking_enabled"],
-        is_seed_required=var["masking_policies_masking_column_is_seed_required"],
-        masking_column_groups=var["masking_policies_masking_column_masking_column_group"],
-        masking_column_lifecycle_state=var["masking_policies_masking_column_masking_column_lifecycle_state"],
-        objects=var["masking_policies_masking_column_object"],
-        object_types=var["masking_policies_masking_column_object_type"],
-        schema_names=var["masking_policies_masking_column_schema_name"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        time_created_greater_than_or_equal_to=var["masking_policies_masking_column_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["masking_policies_masking_column_time_created_less_than"],
-        time_updated_greater_than_or_equal_to=var["masking_policies_masking_column_time_updated_greater_than_or_equal_to"],
-        time_updated_less_than=var["masking_policies_masking_column_time_updated_less_than"])
-    ```
-
-
-    :param Sequence[str] column_names: A filter to return only a specific column based on column name.
-    :param Sequence[str] data_types: A filter to return only resources that match the specified data types.
-    :param bool is_masking_enabled: A filter to return the masking column resources based on the value of their isMaskingEnabled attribute. A value of true returns only those columns for which masking is enabled. A value of false returns only those columns for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
-    :param bool is_seed_required: A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using Deterministic Encryption or Deterministic Substitution masking format.
-    :param Sequence[str] masking_column_groups: A filter to return only the resources that match the specified masking column group.
-    :param str masking_column_lifecycle_state: A filter to return only the resources that match the specified lifecycle states.
-    :param str masking_policy_id: The OCID of the masking policy.
-    :param Sequence[str] object_types: A filter to return only items related to a specific object type.
-    :param Sequence[str] objects: A filter to return only items related to a specific object name.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_updated_greater_than_or_equal_to: Search for resources that were updated after a specific date. Specifying this parameter corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-    :param str time_updated_less_than: Search for resources that were updated before a specific date. Specifying this parameter corresponding `timeUpdatedLessThan` parameter will retrieve all resources updated before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+    Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['columnNames'] = column_names
@@ -355,52 +279,6 @@ def get_masking_policies_masking_columns_output(column_names: Optional[pulumi.In
                                                 time_updated_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                                                 opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMaskingPoliciesMaskingColumnsResult]:
     """
-    This data source provides the list of Masking Policies Masking Columns in Oracle Cloud Infrastructure Data Safe service.
-
-    Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_masking_policies_masking_columns = oci.DataSafe.get_masking_policies_masking_columns(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
-        column_names=var["masking_policies_masking_column_column_name"],
-        data_types=var["masking_policies_masking_column_data_type"],
-        is_masking_enabled=var["masking_policies_masking_column_is_masking_enabled"],
-        is_seed_required=var["masking_policies_masking_column_is_seed_required"],
-        masking_column_groups=var["masking_policies_masking_column_masking_column_group"],
-        masking_column_lifecycle_state=var["masking_policies_masking_column_masking_column_lifecycle_state"],
-        objects=var["masking_policies_masking_column_object"],
-        object_types=var["masking_policies_masking_column_object_type"],
-        schema_names=var["masking_policies_masking_column_schema_name"],
-        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
-        time_created_greater_than_or_equal_to=var["masking_policies_masking_column_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["masking_policies_masking_column_time_created_less_than"],
-        time_updated_greater_than_or_equal_to=var["masking_policies_masking_column_time_updated_greater_than_or_equal_to"],
-        time_updated_less_than=var["masking_policies_masking_column_time_updated_less_than"])
-    ```
-
-
-    :param Sequence[str] column_names: A filter to return only a specific column based on column name.
-    :param Sequence[str] data_types: A filter to return only resources that match the specified data types.
-    :param bool is_masking_enabled: A filter to return the masking column resources based on the value of their isMaskingEnabled attribute. A value of true returns only those columns for which masking is enabled. A value of false returns only those columns for which masking is disabled. Omitting this parameter returns all the masking columns in a masking policy.
-    :param bool is_seed_required: A filter to return masking columns based on whether the assigned masking formats need a seed value for masking. A value of true returns those masking columns that are using Deterministic Encryption or Deterministic Substitution masking format.
-    :param Sequence[str] masking_column_groups: A filter to return only the resources that match the specified masking column group.
-    :param str masking_column_lifecycle_state: A filter to return only the resources that match the specified lifecycle states.
-    :param str masking_policy_id: The OCID of the masking policy.
-    :param Sequence[str] object_types: A filter to return only items related to a specific object type.
-    :param Sequence[str] objects: A filter to return only items related to a specific object name.
-    :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
-    :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
-    :param str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-           
-           **Example:** 2016-12-19T16:39:57.600Z
-    :param str time_updated_greater_than_or_equal_to: Search for resources that were updated after a specific date. Specifying this parameter corresponding `timeUpdatedGreaterThanOrEqualTo` parameter will retrieve all resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
-    :param str time_updated_less_than: Search for resources that were updated before a specific date. Specifying this parameter corresponding `timeUpdatedLessThan` parameter will retrieve all resources updated before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+    Use this data source to access information about an existing resource.
     """
     ...

@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Log Analytics Unprocessed Data Bucket resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -60,17 +59,17 @@ type GetLogAnalyticsUnprocessedDataBucketArgs struct {
 // A collection of values returned by getLogAnalyticsUnprocessedDataBucket.
 type GetLogAnalyticsUnprocessedDataBucketResult struct {
 	// Name of the Object Storage bucket.
-	Bucket string `pulumi:"bucket"`
+	Bucket *string `pulumi:"bucket"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Flag that specifies if this configuration is enabled or not.
-	IsEnabled bool `pulumi:"isEnabled"`
+	IsEnabled *bool `pulumi:"isEnabled"`
 	// Object Storage namespace.
 	Namespace string `pulumi:"namespace"`
 	// The time when this record is created. An RFC3339 formatted datetime string.
-	TimeCreated string `pulumi:"timeCreated"`
+	TimeCreated *string `pulumi:"timeCreated"`
 	// The latest time when this record is updated. An RFC3339 formatted datetime string.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 func GetLogAnalyticsUnprocessedDataBucketOutput(ctx *pulumi.Context, args GetLogAnalyticsUnprocessedDataBucketOutputArgs, opts ...pulumi.InvokeOption) GetLogAnalyticsUnprocessedDataBucketResultOutput {
@@ -111,25 +110,19 @@ func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) ToGetLogAnalyticsUnpro
 	return o
 }
 
-func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetLogAnalyticsUnprocessedDataBucketResult] {
-	return pulumix.Output[GetLogAnalyticsUnprocessedDataBucketResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // Name of the Object Storage bucket.
-func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) Bucket() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsUnprocessedDataBucketResult) string { return v.Bucket }).(pulumi.StringOutput)
+func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsUnprocessedDataBucketResult) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsUnprocessedDataBucketResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsUnprocessedDataBucketResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Flag that specifies if this configuration is enabled or not.
-func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLogAnalyticsUnprocessedDataBucketResult) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsUnprocessedDataBucketResult) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
 // Object Storage namespace.
@@ -138,13 +131,13 @@ func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) Namespace() pulumi.Str
 }
 
 // The time when this record is created. An RFC3339 formatted datetime string.
-func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsUnprocessedDataBucketResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsUnprocessedDataBucketResult) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
 // The latest time when this record is updated. An RFC3339 formatted datetime string.
-func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLogAnalyticsUnprocessedDataBucketResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o GetLogAnalyticsUnprocessedDataBucketResultOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetLogAnalyticsUnprocessedDataBucketResult) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
 func init() {

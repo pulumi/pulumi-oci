@@ -35,25 +35,25 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A short description of the detect anomaly job.
         /// </summary>
         [Output("description")]
-        public Output<string> Description { get; private set; } = null!;
+        public Output<string?> Description { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Detect anomaly job display name.
         /// </summary>
         [Output("displayName")]
-        public Output<string> DisplayName { get; private set; } = null!;
+        public Output<string?> DisplayName { get; private set; } = null!;
 
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Detect anomaly asynchronous job details.
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// The current state details of the batch document job.
         /// </summary>
         [Output("lifecycleStateDetails")]
-        public Output<string> LifecycleStateDetails { get; private set; } = null!;
+        public Output<string?> LifecycleStateDetails { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the trained model.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// The OCID of the project.
         /// </summary>
         [Output("projectId")]
-        public Output<string> ProjectId { get; private set; } = null!;
+        public Output<string?> ProjectId { get; private set; } = null!;
 
         /// <summary>
         /// The value that customer can adjust to control the sensitivity of anomaly detection
@@ -93,37 +93,37 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("sensitivity")]
-        public Output<double> Sensitivity { get; private set; } = null!;
+        public Output<double?> Sensitivity { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the batch document job.
         /// </summary>
         [Output("state")]
-        public Output<string> State { get; private set; } = null!;
+        public Output<string?> State { get; private set; } = null!;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, object>?> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// Job accepted time
         /// </summary>
         [Output("timeAccepted")]
-        public Output<string> TimeAccepted { get; private set; } = null!;
+        public Output<string?> TimeAccepted { get; private set; } = null!;
 
         /// <summary>
         /// Job finished time
         /// </summary>
         [Output("timeFinished")]
-        public Output<string> TimeFinished { get; private set; } = null!;
+        public Output<string?> TimeFinished { get; private set; } = null!;
 
         /// <summary>
         /// Job started time
         /// </summary>
         [Output("timeStarted")]
-        public Output<string> TimeStarted { get; private set; } = null!;
+        public Output<string?> TimeStarted { get; private set; } = null!;
 
 
         /// <summary>

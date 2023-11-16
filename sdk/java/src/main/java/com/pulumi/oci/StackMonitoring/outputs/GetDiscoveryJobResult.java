@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDiscoveryJobResult {
@@ -18,103 +20,103 @@ public final class GetDiscoveryJobResult {
      * @return The OCID of the Compartment
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return Client who submits discovery job.
      * 
      */
-    private String discoveryClient;
+    private @Nullable String discoveryClient;
     /**
      * @return The request of DiscoveryJob Resource details.
      * 
      */
-    private List<GetDiscoveryJobDiscoveryDetail> discoveryDetails;
+    private @Nullable List<GetDiscoveryJobDiscoveryDetail> discoveryDetails;
     private String discoveryJobId;
     /**
      * @return Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
      * 
      */
-    private String discoveryType;
+    private @Nullable String discoveryType;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The OCID of Discovery job
      * 
      */
-    private String id;
-    private Boolean shouldPropagateTagsToDiscoveredResources;
+    private @Nullable String id;
+    private @Nullable Boolean shouldPropagateTagsToDiscoveredResources;
     /**
      * @return The current state of the DiscoveryJob Resource.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return Specifies the status of the discovery job
      * 
      */
-    private String status;
+    private @Nullable String status;
     /**
      * @return The short summary of the status of the discovery job
      * 
      */
-    private String statusMessage;
+    private @Nullable String statusMessage;
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private @Nullable Map<String,Object> systemTags;
     /**
      * @return The OCID of Tenant
      * 
      */
-    private String tenantId;
+    private @Nullable String tenantId;
     /**
      * @return The time the discovery Job was updated.
      * 
      */
-    private String timeUpdated;
+    private @Nullable String timeUpdated;
     /**
      * @return The OCID of user in which the job is submitted
      * 
      */
-    private String userId;
+    private @Nullable String userId;
 
     private GetDiscoveryJobResult() {}
     /**
      * @return The OCID of the Compartment
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return Client who submits discovery job.
      * 
      */
-    public String discoveryClient() {
-        return this.discoveryClient;
+    public Optional<String> discoveryClient() {
+        return Optional.ofNullable(this.discoveryClient);
     }
     /**
      * @return The request of DiscoveryJob Resource details.
      * 
      */
     public List<GetDiscoveryJobDiscoveryDetail> discoveryDetails() {
-        return this.discoveryDetails;
+        return this.discoveryDetails == null ? List.of() : this.discoveryDetails;
     }
     public String discoveryJobId() {
         return this.discoveryJobId;
@@ -123,74 +125,74 @@ public final class GetDiscoveryJobResult {
      * @return Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
      * 
      */
-    public String discoveryType() {
-        return this.discoveryType;
+    public Optional<String> discoveryType() {
+        return Optional.ofNullable(this.discoveryType);
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The OCID of Discovery job
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
-    public Boolean shouldPropagateTagsToDiscoveredResources() {
-        return this.shouldPropagateTagsToDiscoveredResources;
+    public Optional<Boolean> shouldPropagateTagsToDiscoveredResources() {
+        return Optional.ofNullable(this.shouldPropagateTagsToDiscoveredResources);
     }
     /**
      * @return The current state of the DiscoveryJob Resource.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return Specifies the status of the discovery job
      * 
      */
-    public String status() {
-        return this.status;
+    public Optional<String> status() {
+        return Optional.ofNullable(this.status);
     }
     /**
      * @return The short summary of the status of the discovery job
      * 
      */
-    public String statusMessage() {
-        return this.statusMessage;
+    public Optional<String> statusMessage() {
+        return Optional.ofNullable(this.statusMessage);
     }
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
     public Map<String,Object> systemTags() {
-        return this.systemTags;
+        return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
      * @return The OCID of Tenant
      * 
      */
-    public String tenantId() {
-        return this.tenantId;
+    public Optional<String> tenantId() {
+        return Optional.ofNullable(this.tenantId);
     }
     /**
      * @return The time the discovery Job was updated.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public Optional<String> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
     }
     /**
      * @return The OCID of user in which the job is submitted
      * 
      */
-    public String userId() {
-        return this.userId;
+    public Optional<String> userId() {
+        return Optional.ofNullable(this.userId);
     }
 
     public static Builder builder() {
@@ -202,22 +204,22 @@ public final class GetDiscoveryJobResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String discoveryClient;
-        private List<GetDiscoveryJobDiscoveryDetail> discoveryDetails;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String discoveryClient;
+        private @Nullable List<GetDiscoveryJobDiscoveryDetail> discoveryDetails;
         private String discoveryJobId;
-        private String discoveryType;
-        private Map<String,Object> freeformTags;
-        private String id;
-        private Boolean shouldPropagateTagsToDiscoveredResources;
-        private String state;
-        private String status;
-        private String statusMessage;
-        private Map<String,Object> systemTags;
-        private String tenantId;
-        private String timeUpdated;
-        private String userId;
+        private @Nullable String discoveryType;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String id;
+        private @Nullable Boolean shouldPropagateTagsToDiscoveredResources;
+        private @Nullable String state;
+        private @Nullable String status;
+        private @Nullable String statusMessage;
+        private @Nullable Map<String,Object> systemTags;
+        private @Nullable String tenantId;
+        private @Nullable String timeUpdated;
+        private @Nullable String userId;
         public Builder() {}
         public Builder(GetDiscoveryJobResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -240,23 +242,23 @@ public final class GetDiscoveryJobResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder discoveryClient(String discoveryClient) {
-            this.discoveryClient = Objects.requireNonNull(discoveryClient);
+        public Builder discoveryClient(@Nullable String discoveryClient) {
+            this.discoveryClient = discoveryClient;
             return this;
         }
         @CustomType.Setter
-        public Builder discoveryDetails(List<GetDiscoveryJobDiscoveryDetail> discoveryDetails) {
-            this.discoveryDetails = Objects.requireNonNull(discoveryDetails);
+        public Builder discoveryDetails(@Nullable List<GetDiscoveryJobDiscoveryDetail> discoveryDetails) {
+            this.discoveryDetails = discoveryDetails;
             return this;
         }
         public Builder discoveryDetails(GetDiscoveryJobDiscoveryDetail... discoveryDetails) {
@@ -268,58 +270,58 @@ public final class GetDiscoveryJobResult {
             return this;
         }
         @CustomType.Setter
-        public Builder discoveryType(String discoveryType) {
-            this.discoveryType = Objects.requireNonNull(discoveryType);
+        public Builder discoveryType(@Nullable String discoveryType) {
+            this.discoveryType = discoveryType;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder shouldPropagateTagsToDiscoveredResources(Boolean shouldPropagateTagsToDiscoveredResources) {
-            this.shouldPropagateTagsToDiscoveredResources = Objects.requireNonNull(shouldPropagateTagsToDiscoveredResources);
+        public Builder shouldPropagateTagsToDiscoveredResources(@Nullable Boolean shouldPropagateTagsToDiscoveredResources) {
+            this.shouldPropagateTagsToDiscoveredResources = shouldPropagateTagsToDiscoveredResources;
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder status(String status) {
-            this.status = Objects.requireNonNull(status);
+        public Builder status(@Nullable String status) {
+            this.status = status;
             return this;
         }
         @CustomType.Setter
-        public Builder statusMessage(String statusMessage) {
-            this.statusMessage = Objects.requireNonNull(statusMessage);
+        public Builder statusMessage(@Nullable String statusMessage) {
+            this.statusMessage = statusMessage;
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
-            this.systemTags = Objects.requireNonNull(systemTags);
+        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
-        public Builder tenantId(String tenantId) {
-            this.tenantId = Objects.requireNonNull(tenantId);
+        public Builder tenantId(@Nullable String tenantId) {
+            this.tenantId = tenantId;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            this.timeUpdated = Objects.requireNonNull(timeUpdated);
+        public Builder timeUpdated(@Nullable String timeUpdated) {
+            this.timeUpdated = timeUpdated;
             return this;
         }
         @CustomType.Setter
-        public Builder userId(String userId) {
-            this.userId = Objects.requireNonNull(userId);
+        public Builder userId(@Nullable String userId) {
+            this.userId = userId;
             return this;
         }
         public GetDiscoveryJobResult build() {

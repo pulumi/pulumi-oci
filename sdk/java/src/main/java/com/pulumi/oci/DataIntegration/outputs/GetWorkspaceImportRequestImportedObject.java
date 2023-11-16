@@ -6,6 +6,8 @@ package com.pulumi.oci.DataIntegration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetWorkspaceImportRequestImportedObject {
@@ -13,123 +15,123 @@ public final class GetWorkspaceImportRequestImportedObject {
      * @return Aggregator key
      * 
      */
-    private String aggregatorKey;
+    private @Nullable String aggregatorKey;
     /**
      * @return Object identifier
      * 
      */
-    private String identifier;
+    private @Nullable String identifier;
     /**
      * @return Name of the import request.
      * 
      */
-    private String name;
+    private @Nullable String name;
     /**
      * @return Object name path
      * 
      */
-    private String namePath;
+    private @Nullable String namePath;
     /**
      * @return New key of the object
      * 
      */
-    private String newKey;
+    private @Nullable String newKey;
     /**
      * @return Object type
      * 
      */
-    private String objectType;
+    private @Nullable String objectType;
     /**
      * @return Object version
      * 
      */
-    private String objectVersion;
+    private @Nullable String objectVersion;
     /**
      * @return Old key of the object
      * 
      */
-    private String oldKey;
+    private @Nullable String oldKey;
     /**
      * @return Object resolution action
      * 
      */
-    private String resolutionAction;
+    private @Nullable String resolutionAction;
     /**
      * @return time at which this object was last updated.
      * 
      */
-    private String timeUpdatedInMillis;
+    private @Nullable String timeUpdatedInMillis;
 
     private GetWorkspaceImportRequestImportedObject() {}
     /**
      * @return Aggregator key
      * 
      */
-    public String aggregatorKey() {
-        return this.aggregatorKey;
+    public Optional<String> aggregatorKey() {
+        return Optional.ofNullable(this.aggregatorKey);
     }
     /**
      * @return Object identifier
      * 
      */
-    public String identifier() {
-        return this.identifier;
+    public Optional<String> identifier() {
+        return Optional.ofNullable(this.identifier);
     }
     /**
      * @return Name of the import request.
      * 
      */
-    public String name() {
-        return this.name;
+    public Optional<String> name() {
+        return Optional.ofNullable(this.name);
     }
     /**
      * @return Object name path
      * 
      */
-    public String namePath() {
-        return this.namePath;
+    public Optional<String> namePath() {
+        return Optional.ofNullable(this.namePath);
     }
     /**
      * @return New key of the object
      * 
      */
-    public String newKey() {
-        return this.newKey;
+    public Optional<String> newKey() {
+        return Optional.ofNullable(this.newKey);
     }
     /**
      * @return Object type
      * 
      */
-    public String objectType() {
-        return this.objectType;
+    public Optional<String> objectType() {
+        return Optional.ofNullable(this.objectType);
     }
     /**
      * @return Object version
      * 
      */
-    public String objectVersion() {
-        return this.objectVersion;
+    public Optional<String> objectVersion() {
+        return Optional.ofNullable(this.objectVersion);
     }
     /**
      * @return Old key of the object
      * 
      */
-    public String oldKey() {
-        return this.oldKey;
+    public Optional<String> oldKey() {
+        return Optional.ofNullable(this.oldKey);
     }
     /**
      * @return Object resolution action
      * 
      */
-    public String resolutionAction() {
-        return this.resolutionAction;
+    public Optional<String> resolutionAction() {
+        return Optional.ofNullable(this.resolutionAction);
     }
     /**
      * @return time at which this object was last updated.
      * 
      */
-    public String timeUpdatedInMillis() {
-        return this.timeUpdatedInMillis;
+    public Optional<String> timeUpdatedInMillis() {
+        return Optional.ofNullable(this.timeUpdatedInMillis);
     }
 
     public static Builder builder() {
@@ -141,16 +143,16 @@ public final class GetWorkspaceImportRequestImportedObject {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String aggregatorKey;
-        private String identifier;
-        private String name;
-        private String namePath;
-        private String newKey;
-        private String objectType;
-        private String objectVersion;
-        private String oldKey;
-        private String resolutionAction;
-        private String timeUpdatedInMillis;
+        private @Nullable String aggregatorKey;
+        private @Nullable String identifier;
+        private @Nullable String name;
+        private @Nullable String namePath;
+        private @Nullable String newKey;
+        private @Nullable String objectType;
+        private @Nullable String objectVersion;
+        private @Nullable String oldKey;
+        private @Nullable String resolutionAction;
+        private @Nullable String timeUpdatedInMillis;
         public Builder() {}
         public Builder(GetWorkspaceImportRequestImportedObject defaults) {
     	      Objects.requireNonNull(defaults);
@@ -167,53 +169,53 @@ public final class GetWorkspaceImportRequestImportedObject {
         }
 
         @CustomType.Setter
-        public Builder aggregatorKey(String aggregatorKey) {
-            this.aggregatorKey = Objects.requireNonNull(aggregatorKey);
+        public Builder aggregatorKey(@Nullable String aggregatorKey) {
+            this.aggregatorKey = aggregatorKey;
             return this;
         }
         @CustomType.Setter
-        public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+        public Builder identifier(@Nullable String identifier) {
+            this.identifier = identifier;
             return this;
         }
         @CustomType.Setter
-        public Builder name(String name) {
-            this.name = Objects.requireNonNull(name);
+        public Builder name(@Nullable String name) {
+            this.name = name;
             return this;
         }
         @CustomType.Setter
-        public Builder namePath(String namePath) {
-            this.namePath = Objects.requireNonNull(namePath);
+        public Builder namePath(@Nullable String namePath) {
+            this.namePath = namePath;
             return this;
         }
         @CustomType.Setter
-        public Builder newKey(String newKey) {
-            this.newKey = Objects.requireNonNull(newKey);
+        public Builder newKey(@Nullable String newKey) {
+            this.newKey = newKey;
             return this;
         }
         @CustomType.Setter
-        public Builder objectType(String objectType) {
-            this.objectType = Objects.requireNonNull(objectType);
+        public Builder objectType(@Nullable String objectType) {
+            this.objectType = objectType;
             return this;
         }
         @CustomType.Setter
-        public Builder objectVersion(String objectVersion) {
-            this.objectVersion = Objects.requireNonNull(objectVersion);
+        public Builder objectVersion(@Nullable String objectVersion) {
+            this.objectVersion = objectVersion;
             return this;
         }
         @CustomType.Setter
-        public Builder oldKey(String oldKey) {
-            this.oldKey = Objects.requireNonNull(oldKey);
+        public Builder oldKey(@Nullable String oldKey) {
+            this.oldKey = oldKey;
             return this;
         }
         @CustomType.Setter
-        public Builder resolutionAction(String resolutionAction) {
-            this.resolutionAction = Objects.requireNonNull(resolutionAction);
+        public Builder resolutionAction(@Nullable String resolutionAction) {
+            this.resolutionAction = resolutionAction;
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdatedInMillis(String timeUpdatedInMillis) {
-            this.timeUpdatedInMillis = Objects.requireNonNull(timeUpdatedInMillis);
+        public Builder timeUpdatedInMillis(@Nullable String timeUpdatedInMillis) {
+            this.timeUpdatedInMillis = timeUpdatedInMillis;
             return this;
         }
         public GetWorkspaceImportRequestImportedObject build() {

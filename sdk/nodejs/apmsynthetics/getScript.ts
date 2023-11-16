@@ -54,56 +54,56 @@ export interface GetScriptResult {
     /**
      * The content of the script. It may contain custom-defined tags that can be used for setting dynamic parameters. The format to set dynamic parameters is: `<ORAP><ON>param name</ON><OV>param value</OV><OS>isParamValueSecret(true/false)</OS></ORAP>`. Param value and isParamValueSecret are optional, the default value for isParamValueSecret is false. Examples: With mandatory param name : `<ORAP><ON>param name</ON></ORAP>` With parameter name and value : `<ORAP><ON>param name</ON><OV>param value</OV></ORAP>` Note that the content is valid if it matches the given content type. For example, if the content type is SIDE, then the content should be in Side script format. If the content type is JS, then the content should be in JavaScript format.
      */
-    readonly content: string;
+    readonly content?: string;
     /**
      * File name of the uploaded script content.
      */
-    readonly contentFileName: string;
+    readonly contentFileName?: string;
     /**
      * Size of the script content.
      */
-    readonly contentSizeInBytes: number;
+    readonly contentSizeInBytes?: number;
     /**
      * Content type of the script.
      */
-    readonly contentType: string;
+    readonly contentType?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * Unique name that can be edited. The name should not contain any confidential information.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
      */
-    readonly monitorStatusCountMaps: outputs.ApmSynthetics.GetScriptMonitorStatusCountMap[];
+    readonly monitorStatusCountMaps?: outputs.ApmSynthetics.GetScriptMonitorStatusCountMap[];
     /**
      * List of script parameters. Example: `[{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]`
      */
-    readonly parameters: outputs.ApmSynthetics.GetScriptParameter[];
+    readonly parameters?: outputs.ApmSynthetics.GetScriptParameter[];
     readonly scriptId: string;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
      */
-    readonly timeUpdated: string;
+    readonly timeUpdated?: string;
     /**
      * The time the script was uploaded.
      */
-    readonly timeUploaded: string;
+    readonly timeUploaded?: string;
 }
 /**
  * This data source provides details about a specific Script resource in Oracle Cloud Infrastructure Apm Synthetics service.

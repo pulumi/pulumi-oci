@@ -29,7 +29,7 @@ public final class GetDiscoveryJobsResultsResult {
      * @return The list of discovery_job_result_collection.
      * 
      */
-    private List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections;
+    private @Nullable List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections;
     /**
      * @return The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
      * 
@@ -40,7 +40,7 @@ public final class GetDiscoveryJobsResultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
      * 
@@ -82,7 +82,7 @@ public final class GetDiscoveryJobsResultsResult {
      * 
      */
     public List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections() {
-        return this.discoveryJobResultCollections;
+        return this.discoveryJobResultCollections == null ? List.of() : this.discoveryJobResultCollections;
     }
     /**
      * @return The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
@@ -98,8 +98,8 @@ public final class GetDiscoveryJobsResultsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
@@ -141,10 +141,10 @@ public final class GetDiscoveryJobsResultsResult {
     public static final class Builder {
         private @Nullable List<String> columnNames;
         private String discoveryJobId;
-        private List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections;
+        private @Nullable List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections;
         private @Nullable String discoveryType;
         private @Nullable List<GetDiscoveryJobsResultsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable Boolean isResultApplied;
         private @Nullable List<String> objects;
         private @Nullable String plannedAction;
@@ -178,8 +178,8 @@ public final class GetDiscoveryJobsResultsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder discoveryJobResultCollections(List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections) {
-            this.discoveryJobResultCollections = Objects.requireNonNull(discoveryJobResultCollections);
+        public Builder discoveryJobResultCollections(@Nullable List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections) {
+            this.discoveryJobResultCollections = discoveryJobResultCollections;
             return this;
         }
         public Builder discoveryJobResultCollections(GetDiscoveryJobsResultsDiscoveryJobResultCollection... discoveryJobResultCollections) {
@@ -199,8 +199,8 @@ public final class GetDiscoveryJobsResultsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter

@@ -13,20 +13,20 @@ namespace Pulumi.Oci.BigDataService.Outputs
     [OutputType]
     public sealed class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigResult
     {
-        public readonly int TargetMemoryPerNode;
-        public readonly int TargetOcpusPerNode;
-        public readonly string TargetShape;
-        public readonly string TimeRecurrence;
+        public readonly int? TargetMemoryPerNode;
+        public readonly int? TargetOcpusPerNode;
+        public readonly string? TargetShape;
+        public readonly string? TimeRecurrence;
 
         [OutputConstructor]
         private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfigResult(
-            int targetMemoryPerNode,
+            int? targetMemoryPerNode,
 
-            int targetOcpusPerNode,
+            int? targetOcpusPerNode,
 
-            string targetShape,
+            string? targetShape,
 
-            string timeRecurrence)
+            string? timeRecurrence)
         {
             TargetMemoryPerNode = targetMemoryPerNode;
             TargetOcpusPerNode = targetOcpusPerNode;

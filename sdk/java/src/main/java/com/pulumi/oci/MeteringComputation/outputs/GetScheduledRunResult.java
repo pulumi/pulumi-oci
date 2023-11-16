@@ -6,6 +6,8 @@ package com.pulumi.oci.MeteringComputation.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetScheduledRunResult {
@@ -13,55 +15,55 @@ public final class GetScheduledRunResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Additional details about scheduled run failure
      * 
      */
-    private String lifecycleDetails;
+    private @Nullable String lifecycleDetails;
     /**
      * @return The ocid representing unique shedule
      * 
      */
-    private String scheduleId;
+    private @Nullable String scheduleId;
     private String scheduledRunId;
     /**
      * @return Specifies if the schedule job was run successfully or not.
      * 
      */
-    private String state;
+    private @Nullable String state;
     /**
      * @return The time when schedule started executing
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The time when schedule finished executing
      * 
      */
-    private String timeFinished;
+    private @Nullable String timeFinished;
 
     private GetScheduledRunResult() {}
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Additional details about scheduled run failure
      * 
      */
-    public String lifecycleDetails() {
-        return this.lifecycleDetails;
+    public Optional<String> lifecycleDetails() {
+        return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
      * @return The ocid representing unique shedule
      * 
      */
-    public String scheduleId() {
-        return this.scheduleId;
+    public Optional<String> scheduleId() {
+        return Optional.ofNullable(this.scheduleId);
     }
     public String scheduledRunId() {
         return this.scheduledRunId;
@@ -70,22 +72,22 @@ public final class GetScheduledRunResult {
      * @return Specifies if the schedule job was run successfully or not.
      * 
      */
-    public String state() {
-        return this.state;
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
     /**
      * @return The time when schedule started executing
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The time when schedule finished executing
      * 
      */
-    public String timeFinished() {
-        return this.timeFinished;
+    public Optional<String> timeFinished() {
+        return Optional.ofNullable(this.timeFinished);
     }
 
     public static Builder builder() {
@@ -97,13 +99,13 @@ public final class GetScheduledRunResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String id;
-        private String lifecycleDetails;
-        private String scheduleId;
+        private @Nullable String id;
+        private @Nullable String lifecycleDetails;
+        private @Nullable String scheduleId;
         private String scheduledRunId;
-        private String state;
-        private String timeCreated;
-        private String timeFinished;
+        private @Nullable String state;
+        private @Nullable String timeCreated;
+        private @Nullable String timeFinished;
         public Builder() {}
         public Builder(GetScheduledRunResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -117,18 +119,18 @@ public final class GetScheduledRunResult {
         }
 
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
+        public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
             return this;
         }
         @CustomType.Setter
-        public Builder scheduleId(String scheduleId) {
-            this.scheduleId = Objects.requireNonNull(scheduleId);
+        public Builder scheduleId(@Nullable String scheduleId) {
+            this.scheduleId = scheduleId;
             return this;
         }
         @CustomType.Setter
@@ -137,18 +139,18 @@ public final class GetScheduledRunResult {
             return this;
         }
         @CustomType.Setter
-        public Builder state(String state) {
-            this.state = Objects.requireNonNull(state);
+        public Builder state(@Nullable String state) {
+            this.state = state;
             return this;
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeFinished(String timeFinished) {
-            this.timeFinished = Objects.requireNonNull(timeFinished);
+        public Builder timeFinished(@Nullable String timeFinished) {
+            this.timeFinished = timeFinished;
             return this;
         }
         public GetScheduledRunResult build() {

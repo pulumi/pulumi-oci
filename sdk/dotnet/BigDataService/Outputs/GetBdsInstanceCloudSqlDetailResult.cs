@@ -16,15 +16,15 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         /// </summary>
-        public readonly string BlockVolumeSizeInGbs;
+        public readonly string? BlockVolumeSizeInGbs;
         /// <summary>
         /// IP address of the node.
         /// </summary>
-        public readonly string IpAddress;
+        public readonly string? IpAddress;
         /// <summary>
         /// Boolean flag specifying whether or not Kerberos principals are mapped to database users.
         /// </summary>
-        public readonly bool IsKerberosMappedToDatabaseUsers;
+        public readonly bool? IsKerberosMappedToDatabaseUsers;
         /// <summary>
         /// Details about the Kerberos principals.
         /// </summary>
@@ -32,37 +32,37 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The total amount of memory available to the node, in gigabytes.
         /// </summary>
-        public readonly int MemoryInGbs;
+        public readonly int? MemoryInGbs;
         /// <summary>
         /// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         /// </summary>
-        public readonly int Nvmes;
+        public readonly int? Nvmes;
         /// <summary>
         /// The total number of OCPUs available to the node.
         /// </summary>
-        public readonly int Ocpus;
+        public readonly int? Ocpus;
         /// <summary>
         /// Shape of the node.
         /// </summary>
-        public readonly string Shape;
+        public readonly string? Shape;
 
         [OutputConstructor]
         private GetBdsInstanceCloudSqlDetailResult(
-            string blockVolumeSizeInGbs,
+            string? blockVolumeSizeInGbs,
 
-            string ipAddress,
+            string? ipAddress,
 
-            bool isKerberosMappedToDatabaseUsers,
+            bool? isKerberosMappedToDatabaseUsers,
 
             ImmutableArray<Outputs.GetBdsInstanceCloudSqlDetailKerberosDetailResult> kerberosDetails,
 
-            int memoryInGbs,
+            int? memoryInGbs,
 
-            int nvmes,
+            int? nvmes,
 
-            int ocpus,
+            int? ocpus,
 
-            string shape)
+            string? shape)
         {
             BlockVolumeSizeInGbs = blockVolumeSizeInGbs;
             IpAddress = ipAddress;

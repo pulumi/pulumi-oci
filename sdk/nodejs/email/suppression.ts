@@ -75,27 +75,27 @@ export class Suppression extends pulumi.CustomResource {
     /**
      * The specific error message returned by a system that resulted in the suppression. This message is usually an SMTP error code with additional descriptive text. Not provided for all types of suppressions.
      */
-    public /*out*/ readonly errorDetail!: pulumi.Output<string>;
+    public /*out*/ readonly errorDetail!: pulumi.Output<string | undefined>;
     /**
      * DNS name of the source of the error that caused the suppression. Will be set to either the remote-mta or reporting-mta field from a delivery status notification (RFC 3464) when available. Not provided for all types of suppressions, and not always known.
      */
-    public /*out*/ readonly errorSource!: pulumi.Output<string>;
+    public /*out*/ readonly errorSource!: pulumi.Output<string | undefined>;
     /**
      * The value of the Message-ID header from the email that triggered a suppression. This value is as defined in RFC 5322 section 3.6.4, excluding angle-brackets. Not provided for all types of suppressions.
      */
-    public /*out*/ readonly messageId!: pulumi.Output<string>;
+    public /*out*/ readonly messageId!: pulumi.Output<string | undefined>;
     /**
      * The reason that the email address was suppressed. For more information on the types of bounces, see [Suppression List](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      */
-    public /*out*/ readonly reason!: pulumi.Output<string>;
+    public /*out*/ readonly reason!: pulumi.Output<string | undefined>;
     /**
      * The date and time a recipient's email address was added to the suppression list, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The last date and time the suppression prevented submission in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
      */
-    public /*out*/ readonly timeLastSuppressed!: pulumi.Output<string>;
+    public /*out*/ readonly timeLastSuppressed!: pulumi.Output<string | undefined>;
 
     /**
      * Create a Suppression resource with the given unique name, arguments, and options.

@@ -45,64 +45,64 @@ export interface GetPingMonitorResult {
     /**
      * The OCID of the compartment.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags?: {[key: string]: any};
     /**
      * A user-friendly and mutable name suitable for display in a user interface.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags?: {[key: string]: any};
     /**
      * The region where updates must be made and where results must be fetched from.
      */
-    readonly homeRegion: string;
+    readonly homeRegion?: string;
     /**
      * The OCID of the resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The monitor interval in seconds. Valid values: 10, 30, and 60.
      */
-    readonly intervalInSeconds: number;
+    readonly intervalInSeconds?: number;
     /**
      * Enables or disables the monitor. Set to 'true' to launch monitoring.
      */
-    readonly isEnabled: boolean;
+    readonly isEnabled?: boolean;
     readonly monitorId: string;
     /**
      * The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      */
-    readonly port: number;
+    readonly port?: number;
     /**
      * The protocols for ping probes.
      */
-    readonly protocol: string;
+    readonly protocol?: string;
     /**
      * A URL for fetching the probe results.
      */
-    readonly resultsUrl: string;
+    readonly resultsUrl?: string;
     /**
      * A list of targets (hostnames or IP addresses) of the probe.
      */
-    readonly targets: string[];
+    readonly targets?: string[];
     /**
      * The RFC 3339-formatted creation date and time of the probe.
      */
-    readonly timeCreated: string;
+    readonly timeCreated?: string;
     /**
      * The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      */
-    readonly timeoutInSeconds: number;
+    readonly timeoutInSeconds?: number;
     /**
      * A list of names of vantage points from which to execute the probe.
      */
-    readonly vantagePointNames: string[];
+    readonly vantagePointNames?: string[];
 }
 /**
  * This data source provides details about a specific Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.

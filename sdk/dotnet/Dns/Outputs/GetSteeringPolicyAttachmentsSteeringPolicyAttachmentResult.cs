@@ -16,19 +16,19 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// The OCID of the compartment the resource belongs to.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// The displayName of a resource.
         /// </summary>
-        public readonly string DisplayName;
+        public readonly string? DisplayName;
         /// <summary>
         /// The attached domain within the attached zone.
         /// </summary>
-        public readonly string DomainName;
+        public readonly string? DomainName;
         /// <summary>
         /// The OCID of a resource.
         /// </summary>
-        public readonly string Id;
+        public readonly string? Id;
         /// <summary>
         /// The record types covered by the attachment at the domain. The set of record types is determined by aggregating the record types from the answers defined in the steering policy.
         /// </summary>
@@ -36,45 +36,45 @@ namespace Pulumi.Oci.Dns.Outputs
         /// <summary>
         /// The canonical absolute URL of the resource.
         /// </summary>
-        public readonly string Self;
+        public readonly string? Self;
         /// <summary>
         /// The state of a resource.
         /// </summary>
-        public readonly string State;
+        public readonly string? State;
         /// <summary>
         /// Search by steering policy OCID. Will match any resource whose steering policy ID matches the provided value.
         /// </summary>
-        public readonly string SteeringPolicyId;
+        public readonly string? SteeringPolicyId;
         /// <summary>
         /// The date and time the resource was created, expressed in RFC 3339 timestamp format.
         /// </summary>
-        public readonly string TimeCreated;
+        public readonly string? TimeCreated;
         /// <summary>
         /// Search by zone OCID. Will match any resource whose zone ID matches the provided value.
         /// </summary>
-        public readonly string ZoneId;
+        public readonly string? ZoneId;
 
         [OutputConstructor]
         private GetSteeringPolicyAttachmentsSteeringPolicyAttachmentResult(
-            string compartmentId,
+            string? compartmentId,
 
-            string displayName,
+            string? displayName,
 
-            string domainName,
+            string? domainName,
 
-            string id,
+            string? id,
 
             ImmutableArray<string> rtypes,
 
-            string self,
+            string? self,
 
-            string state,
+            string? state,
 
-            string steeringPolicyId,
+            string? steeringPolicyId,
 
-            string timeCreated,
+            string? timeCreated,
 
-            string zoneId)
+            string? zoneId)
         {
             CompartmentId = compartmentId;
             DisplayName = displayName;

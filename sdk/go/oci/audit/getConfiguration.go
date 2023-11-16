@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Audit service.
@@ -59,10 +58,10 @@ type LookupConfigurationArgs struct {
 
 // A collection of values returned by getConfiguration.
 type LookupConfigurationResult struct {
-	CompartmentId string `pulumi:"compartmentId"`
-	Id            string `pulumi:"id"`
+	CompartmentId string  `pulumi:"compartmentId"`
+	Id            *string `pulumi:"id"`
 	// The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
-	RetentionPeriodDays int `pulumi:"retentionPeriodDays"`
+	RetentionPeriodDays *int `pulumi:"retentionPeriodDays"`
 }
 
 func LookupConfigurationOutput(ctx *pulumi.Context, args LookupConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupConfigurationResultOutput {
@@ -103,23 +102,17 @@ func (o LookupConfigurationResultOutput) ToLookupConfigurationResultOutputWithCo
 	return o
 }
 
-func (o LookupConfigurationResultOutput) ToOutput(ctx context.Context) pulumix.Output[LookupConfigurationResult] {
-	return pulumix.Output[LookupConfigurationResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 func (o LookupConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o LookupConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupConfigurationResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigurationResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`
-func (o LookupConfigurationResultOutput) RetentionPeriodDays() pulumi.IntOutput {
-	return o.ApplyT(func(v LookupConfigurationResult) int { return v.RetentionPeriodDays }).(pulumi.IntOutput)
+func (o LookupConfigurationResultOutput) RetentionPeriodDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LookupConfigurationResult) *int { return v.RetentionPeriodDays }).(pulumi.IntPtrOutput)
 }
 
 func init() {

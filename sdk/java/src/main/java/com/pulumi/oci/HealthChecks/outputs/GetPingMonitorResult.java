@@ -11,6 +11,8 @@ import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetPingMonitorResult {
@@ -18,135 +20,135 @@ public final class GetPingMonitorResult {
      * @return The OCID of the compartment.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private @Nullable Map<String,Object> definedTags;
     /**
      * @return A user-friendly and mutable name suitable for display in a user interface.
      * 
      */
-    private String displayName;
+    private @Nullable String displayName;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private @Nullable Map<String,Object> freeformTags;
     /**
      * @return The region where updates must be made and where results must be fetched from.
      * 
      */
-    private String homeRegion;
+    private @Nullable String homeRegion;
     /**
      * @return The OCID of the resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return The monitor interval in seconds. Valid values: 10, 30, and 60.
      * 
      */
-    private Integer intervalInSeconds;
+    private @Nullable Integer intervalInSeconds;
     /**
      * @return Enables or disables the monitor. Set to &#39;true&#39; to launch monitoring.
      * 
      */
-    private Boolean isEnabled;
+    private @Nullable Boolean isEnabled;
     private String monitorId;
     /**
      * @return The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      * 
      */
-    private Integer port;
+    private @Nullable Integer port;
     /**
      * @return The protocols for ping probes.
      * 
      */
-    private String protocol;
+    private @Nullable String protocol;
     /**
      * @return A URL for fetching the probe results.
      * 
      */
-    private String resultsUrl;
+    private @Nullable String resultsUrl;
     /**
      * @return A list of targets (hostnames or IP addresses) of the probe.
      * 
      */
-    private List<String> targets;
+    private @Nullable List<String> targets;
     /**
      * @return The RFC 3339-formatted creation date and time of the probe.
      * 
      */
-    private String timeCreated;
+    private @Nullable String timeCreated;
     /**
      * @return The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      * 
      */
-    private Integer timeoutInSeconds;
+    private @Nullable Integer timeoutInSeconds;
     /**
      * @return A list of names of vantage points from which to execute the probe.
      * 
      */
-    private List<String> vantagePointNames;
+    private @Nullable List<String> vantagePointNames;
 
     private GetPingMonitorResult() {}
     /**
      * @return The OCID of the compartment.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
-        return this.definedTags;
+        return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return A user-friendly and mutable name suitable for display in a user interface.
      * 
      */
-    public String displayName() {
-        return this.displayName;
+    public Optional<String> displayName() {
+        return Optional.ofNullable(this.displayName);
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
-        return this.freeformTags;
+        return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
      * @return The region where updates must be made and where results must be fetched from.
      * 
      */
-    public String homeRegion() {
-        return this.homeRegion;
+    public Optional<String> homeRegion() {
+        return Optional.ofNullable(this.homeRegion);
     }
     /**
      * @return The OCID of the resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return The monitor interval in seconds. Valid values: 10, 30, and 60.
      * 
      */
-    public Integer intervalInSeconds() {
-        return this.intervalInSeconds;
+    public Optional<Integer> intervalInSeconds() {
+        return Optional.ofNullable(this.intervalInSeconds);
     }
     /**
      * @return Enables or disables the monitor. Set to &#39;true&#39; to launch monitoring.
      * 
      */
-    public Boolean isEnabled() {
-        return this.isEnabled;
+    public Optional<Boolean> isEnabled() {
+        return Optional.ofNullable(this.isEnabled);
     }
     public String monitorId() {
         return this.monitorId;
@@ -155,50 +157,50 @@ public final class GetPingMonitorResult {
      * @return The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol.
      * 
      */
-    public Integer port() {
-        return this.port;
+    public Optional<Integer> port() {
+        return Optional.ofNullable(this.port);
     }
     /**
      * @return The protocols for ping probes.
      * 
      */
-    public String protocol() {
-        return this.protocol;
+    public Optional<String> protocol() {
+        return Optional.ofNullable(this.protocol);
     }
     /**
      * @return A URL for fetching the probe results.
      * 
      */
-    public String resultsUrl() {
-        return this.resultsUrl;
+    public Optional<String> resultsUrl() {
+        return Optional.ofNullable(this.resultsUrl);
     }
     /**
      * @return A list of targets (hostnames or IP addresses) of the probe.
      * 
      */
     public List<String> targets() {
-        return this.targets;
+        return this.targets == null ? List.of() : this.targets;
     }
     /**
      * @return The RFC 3339-formatted creation date and time of the probe.
      * 
      */
-    public String timeCreated() {
-        return this.timeCreated;
+    public Optional<String> timeCreated() {
+        return Optional.ofNullable(this.timeCreated);
     }
     /**
      * @return The probe timeout in seconds. Valid values: 10, 20, 30, and 60. The probe timeout must be less than or equal to `intervalInSeconds` for monitors.
      * 
      */
-    public Integer timeoutInSeconds() {
-        return this.timeoutInSeconds;
+    public Optional<Integer> timeoutInSeconds() {
+        return Optional.ofNullable(this.timeoutInSeconds);
     }
     /**
      * @return A list of names of vantage points from which to execute the probe.
      * 
      */
     public List<String> vantagePointNames() {
-        return this.vantagePointNames;
+        return this.vantagePointNames == null ? List.of() : this.vantagePointNames;
     }
 
     public static Builder builder() {
@@ -210,22 +212,22 @@ public final class GetPingMonitorResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
-        private Map<String,Object> definedTags;
-        private String displayName;
-        private Map<String,Object> freeformTags;
-        private String homeRegion;
-        private String id;
-        private Integer intervalInSeconds;
-        private Boolean isEnabled;
+        private @Nullable String compartmentId;
+        private @Nullable Map<String,Object> definedTags;
+        private @Nullable String displayName;
+        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable String homeRegion;
+        private @Nullable String id;
+        private @Nullable Integer intervalInSeconds;
+        private @Nullable Boolean isEnabled;
         private String monitorId;
-        private Integer port;
-        private String protocol;
-        private String resultsUrl;
-        private List<String> targets;
-        private String timeCreated;
-        private Integer timeoutInSeconds;
-        private List<String> vantagePointNames;
+        private @Nullable Integer port;
+        private @Nullable String protocol;
+        private @Nullable String resultsUrl;
+        private @Nullable List<String> targets;
+        private @Nullable String timeCreated;
+        private @Nullable Integer timeoutInSeconds;
+        private @Nullable List<String> vantagePointNames;
         public Builder() {}
         public Builder(GetPingMonitorResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -248,43 +250,43 @@ public final class GetPingMonitorResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = Objects.requireNonNull(compartmentId);
+        public Builder compartmentId(@Nullable String compartmentId) {
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
-            this.definedTags = Objects.requireNonNull(definedTags);
+        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+            this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder displayName(String displayName) {
-            this.displayName = Objects.requireNonNull(displayName);
+        public Builder displayName(@Nullable String displayName) {
+            this.displayName = displayName;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
-            this.freeformTags = Objects.requireNonNull(freeformTags);
+        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
-        public Builder homeRegion(String homeRegion) {
-            this.homeRegion = Objects.requireNonNull(homeRegion);
+        public Builder homeRegion(@Nullable String homeRegion) {
+            this.homeRegion = homeRegion;
             return this;
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
-        public Builder intervalInSeconds(Integer intervalInSeconds) {
-            this.intervalInSeconds = Objects.requireNonNull(intervalInSeconds);
+        public Builder intervalInSeconds(@Nullable Integer intervalInSeconds) {
+            this.intervalInSeconds = intervalInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder isEnabled(Boolean isEnabled) {
-            this.isEnabled = Objects.requireNonNull(isEnabled);
+        public Builder isEnabled(@Nullable Boolean isEnabled) {
+            this.isEnabled = isEnabled;
             return this;
         }
         @CustomType.Setter
@@ -293,41 +295,41 @@ public final class GetPingMonitorResult {
             return this;
         }
         @CustomType.Setter
-        public Builder port(Integer port) {
-            this.port = Objects.requireNonNull(port);
+        public Builder port(@Nullable Integer port) {
+            this.port = port;
             return this;
         }
         @CustomType.Setter
-        public Builder protocol(String protocol) {
-            this.protocol = Objects.requireNonNull(protocol);
+        public Builder protocol(@Nullable String protocol) {
+            this.protocol = protocol;
             return this;
         }
         @CustomType.Setter
-        public Builder resultsUrl(String resultsUrl) {
-            this.resultsUrl = Objects.requireNonNull(resultsUrl);
+        public Builder resultsUrl(@Nullable String resultsUrl) {
+            this.resultsUrl = resultsUrl;
             return this;
         }
         @CustomType.Setter
-        public Builder targets(List<String> targets) {
-            this.targets = Objects.requireNonNull(targets);
+        public Builder targets(@Nullable List<String> targets) {
+            this.targets = targets;
             return this;
         }
         public Builder targets(String... targets) {
             return targets(List.of(targets));
         }
         @CustomType.Setter
-        public Builder timeCreated(String timeCreated) {
-            this.timeCreated = Objects.requireNonNull(timeCreated);
+        public Builder timeCreated(@Nullable String timeCreated) {
+            this.timeCreated = timeCreated;
             return this;
         }
         @CustomType.Setter
-        public Builder timeoutInSeconds(Integer timeoutInSeconds) {
-            this.timeoutInSeconds = Objects.requireNonNull(timeoutInSeconds);
+        public Builder timeoutInSeconds(@Nullable Integer timeoutInSeconds) {
+            this.timeoutInSeconds = timeoutInSeconds;
             return this;
         }
         @CustomType.Setter
-        public Builder vantagePointNames(List<String> vantagePointNames) {
-            this.vantagePointNames = Objects.requireNonNull(vantagePointNames);
+        public Builder vantagePointNames(@Nullable List<String> vantagePointNames) {
+            this.vantagePointNames = vantagePointNames;
             return this;
         }
         public Builder vantagePointNames(String... vantagePointNames) {

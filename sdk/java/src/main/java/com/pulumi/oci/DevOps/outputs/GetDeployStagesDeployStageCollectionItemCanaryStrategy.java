@@ -6,6 +6,8 @@ package com.pulumi.oci.DevOps.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDeployStagesDeployStageCollectionItemCanaryStrategy {
@@ -13,39 +15,39 @@ public final class GetDeployStagesDeployStageCollectionItemCanaryStrategy {
      * @return Name of the Ingress resource.
      * 
      */
-    private String ingressName;
+    private @Nullable String ingressName;
     /**
      * @return Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
      * 
      */
-    private String namespace;
+    private @Nullable String namespace;
     /**
      * @return Canary strategy type.
      * 
      */
-    private String strategyType;
+    private @Nullable String strategyType;
 
     private GetDeployStagesDeployStageCollectionItemCanaryStrategy() {}
     /**
      * @return Name of the Ingress resource.
      * 
      */
-    public String ingressName() {
-        return this.ingressName;
+    public Optional<String> ingressName() {
+        return Optional.ofNullable(this.ingressName);
     }
     /**
      * @return Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
      * 
      */
-    public String namespace() {
-        return this.namespace;
+    public Optional<String> namespace() {
+        return Optional.ofNullable(this.namespace);
     }
     /**
      * @return Canary strategy type.
      * 
      */
-    public String strategyType() {
-        return this.strategyType;
+    public Optional<String> strategyType() {
+        return Optional.ofNullable(this.strategyType);
     }
 
     public static Builder builder() {
@@ -57,9 +59,9 @@ public final class GetDeployStagesDeployStageCollectionItemCanaryStrategy {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String ingressName;
-        private String namespace;
-        private String strategyType;
+        private @Nullable String ingressName;
+        private @Nullable String namespace;
+        private @Nullable String strategyType;
         public Builder() {}
         public Builder(GetDeployStagesDeployStageCollectionItemCanaryStrategy defaults) {
     	      Objects.requireNonNull(defaults);
@@ -69,18 +71,18 @@ public final class GetDeployStagesDeployStageCollectionItemCanaryStrategy {
         }
 
         @CustomType.Setter
-        public Builder ingressName(String ingressName) {
-            this.ingressName = Objects.requireNonNull(ingressName);
+        public Builder ingressName(@Nullable String ingressName) {
+            this.ingressName = ingressName;
             return this;
         }
         @CustomType.Setter
-        public Builder namespace(String namespace) {
-            this.namespace = Objects.requireNonNull(namespace);
+        public Builder namespace(@Nullable String namespace) {
+            this.namespace = namespace;
             return this;
         }
         @CustomType.Setter
-        public Builder strategyType(String strategyType) {
-            this.strategyType = Objects.requireNonNull(strategyType);
+        public Builder strategyType(@Nullable String strategyType) {
+            this.strategyType = strategyType;
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemCanaryStrategy build() {

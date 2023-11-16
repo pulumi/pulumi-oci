@@ -47,52 +47,52 @@ export interface GetProcessorJobResult {
     /**
      * The compartment identifier.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * The display name of the processor job.
      */
-    readonly displayName: string;
+    readonly displayName?: string;
     /**
      * The id of the processor job.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The location of the inputs.
      */
-    readonly inputLocations: outputs.AiDocument.GetProcessorJobInputLocation[];
+    readonly inputLocations?: outputs.AiDocument.GetProcessorJobInputLocation[];
     /**
      * The detailed status of FAILED state.
      */
-    readonly lifecycleDetails: string;
+    readonly lifecycleDetails?: string;
     /**
      * The object storage location where to store analysis results.
      */
-    readonly outputLocations: outputs.AiDocument.GetProcessorJobOutputLocation[];
+    readonly outputLocations?: outputs.AiDocument.GetProcessorJobOutputLocation[];
     /**
      * How much progress the operation has made, compared to the total amount of work to be performed.
      */
-    readonly percentComplete: number;
+    readonly percentComplete?: number;
     /**
      * The configuration of a processor.
      */
-    readonly processorConfigs: outputs.AiDocument.GetProcessorJobProcessorConfig[];
+    readonly processorConfigs?: outputs.AiDocument.GetProcessorJobProcessorConfig[];
     readonly processorJobId: string;
     /**
      * The current state of the processor job.
      */
-    readonly state: string;
+    readonly state?: string;
     /**
      * The job acceptance time.
      */
-    readonly timeAccepted: string;
+    readonly timeAccepted?: string;
     /**
      * The job finish time.
      */
-    readonly timeFinished: string;
+    readonly timeFinished?: string;
     /**
      * The job start time.
      */
-    readonly timeStarted: string;
+    readonly timeStarted?: string;
 }
 /**
  * This data source provides details about a specific Processor Job resource in Oracle Cloud Infrastructure Ai Document service.

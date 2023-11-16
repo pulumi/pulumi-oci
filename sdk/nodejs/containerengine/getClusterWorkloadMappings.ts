@@ -54,11 +54,11 @@ export interface GetClusterWorkloadMappingsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The list of workload_mappings.
      */
-    readonly workloadMappings: outputs.ContainerEngine.GetClusterWorkloadMappingsWorkloadMapping[];
+    readonly workloadMappings?: outputs.ContainerEngine.GetClusterWorkloadMappingsWorkloadMapping[];
 }
 /**
  * This data source provides the list of Cluster Workload Mappings in Oracle Cloud Infrastructure Container Engine service.

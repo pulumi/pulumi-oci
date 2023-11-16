@@ -106,7 +106,7 @@ export class VirtualNodePool extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Display name of the virtual node pool. This is a non-unique value.
      */
@@ -118,23 +118,23 @@ export class VirtualNodePool extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
      */
-    public readonly initialVirtualNodeLabels!: pulumi.Output<outputs.ContainerEngine.VirtualNodePoolInitialVirtualNodeLabel[]>;
+    public readonly initialVirtualNodeLabels!: pulumi.Output<outputs.ContainerEngine.VirtualNodePoolInitialVirtualNodeLabel[] | undefined>;
     /**
      * The version of Kubernetes running on the nodes in the node pool.
      */
-    public /*out*/ readonly kubernetesVersion!: pulumi.Output<string>;
+    public /*out*/ readonly kubernetesVersion!: pulumi.Output<string | undefined>;
     /**
      * Details about the state of the Virtual Node Pool.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) List of network security group IDs applied to the Pod VNIC.
      */
-    public readonly nsgIds!: pulumi.Output<string[]>;
+    public readonly nsgIds!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
      */
@@ -150,27 +150,27 @@ export class VirtualNodePool extends pulumi.CustomResource {
     /**
      * The state of the Virtual Node Pool.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any} | undefined>;
     /**
      * (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
      */
-    public readonly taints!: pulumi.Output<outputs.ContainerEngine.VirtualNodePoolTaint[]>;
+    public readonly taints!: pulumi.Output<outputs.ContainerEngine.VirtualNodePoolTaint[] | undefined>;
     /**
      * The time the virtual node pool was created.
      */
-    public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    public /*out*/ readonly timeCreated!: pulumi.Output<string | undefined>;
     /**
      * The time the virtual node pool was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public /*out*/ readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The tags associated to the virtual nodes in this virtual node pool.
      */
-    public readonly virtualNodeTags!: pulumi.Output<outputs.ContainerEngine.VirtualNodePoolVirtualNodeTags>;
+    public readonly virtualNodeTags!: pulumi.Output<outputs.ContainerEngine.VirtualNodePoolVirtualNodeTags | undefined>;
 
     /**
      * Create a VirtualNodePool resource with the given unique name, arguments, and options.

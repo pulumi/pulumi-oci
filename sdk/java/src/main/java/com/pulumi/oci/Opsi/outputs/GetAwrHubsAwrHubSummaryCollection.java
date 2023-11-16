@@ -7,14 +7,15 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubsAwrHubSummaryCollectionItem;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetAwrHubsAwrHubSummaryCollection {
-    private List<GetAwrHubsAwrHubSummaryCollectionItem> items;
+    private @Nullable List<GetAwrHubsAwrHubSummaryCollectionItem> items;
 
     private GetAwrHubsAwrHubSummaryCollection() {}
     public List<GetAwrHubsAwrHubSummaryCollectionItem> items() {
-        return this.items;
+        return this.items == null ? List.of() : this.items;
     }
 
     public static Builder builder() {
@@ -26,7 +27,7 @@ public final class GetAwrHubsAwrHubSummaryCollection {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAwrHubsAwrHubSummaryCollectionItem> items;
+        private @Nullable List<GetAwrHubsAwrHubSummaryCollectionItem> items;
         public Builder() {}
         public Builder(GetAwrHubsAwrHubSummaryCollection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -34,8 +35,8 @@ public final class GetAwrHubsAwrHubSummaryCollection {
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAwrHubsAwrHubSummaryCollectionItem> items) {
-            this.items = Objects.requireNonNull(items);
+        public Builder items(@Nullable List<GetAwrHubsAwrHubSummaryCollectionItem> items) {
+            this.items = items;
             return this;
         }
         public Builder items(GetAwrHubsAwrHubSummaryCollectionItem... items) {

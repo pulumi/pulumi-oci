@@ -68,11 +68,11 @@ export class Index extends pulumi.CustomResource {
     /**
      * The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
      */
-    public readonly compartmentId!: pulumi.Output<string>;
+    public readonly compartmentId!: pulumi.Output<string | undefined>;
     /**
      * If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
      */
-    public readonly isIfNotExists!: pulumi.Output<boolean>;
+    public readonly isIfNotExists!: pulumi.Output<boolean | undefined>;
     /**
      * A set of keys for a secondary index.
      */
@@ -80,7 +80,7 @@ export class Index extends pulumi.CustomResource {
     /**
      * A message describing the current state in more detail.
      */
-    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public /*out*/ readonly lifecycleDetails!: pulumi.Output<string | undefined>;
     /**
      * Index name.
      */
@@ -88,15 +88,15 @@ export class Index extends pulumi.CustomResource {
     /**
      * The state of an index.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly state!: pulumi.Output<string | undefined>;
     /**
      * the OCID of the table to which this index belongs.
      */
-    public /*out*/ readonly tableId!: pulumi.Output<string>;
+    public /*out*/ readonly tableId!: pulumi.Output<string | undefined>;
     /**
      * The name of the table to which this index belongs.
      */
-    public /*out*/ readonly tableName!: pulumi.Output<string>;
+    public /*out*/ readonly tableName!: pulumi.Output<string | undefined>;
     /**
      * A table name within the compartment, or a table OCID.
      *

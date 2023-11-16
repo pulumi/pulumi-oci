@@ -9,7 +9,6 @@ import (
 
 	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-	"github.com/pulumi/pulumi/sdk/v3/go/pulumix"
 )
 
 // This data source provides the list of Workspace Export Requests in Oracle Cloud Infrastructure Data Integration service.
@@ -80,7 +79,7 @@ type GetWorkspaceExportRequestsResult struct {
 	ExportStatus                    *string                                                    `pulumi:"exportStatus"`
 	Filters                         []GetWorkspaceExportRequestsFilter                         `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id *string `pulumi:"id"`
 	// Name of the export request.
 	Name       *string `pulumi:"name"`
 	Projection *string `pulumi:"projection"`
@@ -140,12 +139,6 @@ func (o GetWorkspaceExportRequestsResultOutput) ToGetWorkspaceExportRequestsResu
 	return o
 }
 
-func (o GetWorkspaceExportRequestsResultOutput) ToOutput(ctx context.Context) pulumix.Output[GetWorkspaceExportRequestsResult] {
-	return pulumix.Output[GetWorkspaceExportRequestsResult]{
-		OutputState: o.OutputState,
-	}
-}
-
 // The list of export_request_summary_collection.
 func (o GetWorkspaceExportRequestsResultOutput) ExportRequestSummaryCollections() GetWorkspaceExportRequestsExportRequestSummaryCollectionArrayOutput {
 	return o.ApplyT(func(v GetWorkspaceExportRequestsResult) []GetWorkspaceExportRequestsExportRequestSummaryCollection {
@@ -162,8 +155,8 @@ func (o GetWorkspaceExportRequestsResultOutput) Filters() GetWorkspaceExportRequ
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetWorkspaceExportRequestsResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsResult) string { return v.Id }).(pulumi.StringOutput)
+func (o GetWorkspaceExportRequestsResultOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
 // Name of the export request.

@@ -28,16 +28,6 @@ class PublicationArgs:
                  name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Publication resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
-        :param pulumi.Input[bool] is_agreement_acknowledged: Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
-        :param pulumi.Input[str] listing_type: The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
-        :param pulumi.Input['PublicationPackageDetailsArgs'] package_details: A base object for creating a publication package.
-        :param pulumi.Input[str] short_description: (Updatable) A short description of the publication to use in the listing.
-        :param pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] long_description: (Updatable) A long description of the publication to use in the listing.
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "is_agreement_acknowledged", is_agreement_acknowledged)
@@ -57,9 +47,6 @@ class PublicationArgs:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -69,9 +56,6 @@ class PublicationArgs:
     @property
     @pulumi.getter(name="isAgreementAcknowledged")
     def is_agreement_acknowledged(self) -> pulumi.Input[bool]:
-        """
-        Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
-        """
         return pulumi.get(self, "is_agreement_acknowledged")
 
     @is_agreement_acknowledged.setter
@@ -81,9 +65,6 @@ class PublicationArgs:
     @property
     @pulumi.getter(name="listingType")
     def listing_type(self) -> pulumi.Input[str]:
-        """
-        The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
-        """
         return pulumi.get(self, "listing_type")
 
     @listing_type.setter
@@ -93,9 +74,6 @@ class PublicationArgs:
     @property
     @pulumi.getter(name="packageDetails")
     def package_details(self) -> pulumi.Input['PublicationPackageDetailsArgs']:
-        """
-        A base object for creating a publication package.
-        """
         return pulumi.get(self, "package_details")
 
     @package_details.setter
@@ -105,9 +83,6 @@ class PublicationArgs:
     @property
     @pulumi.getter(name="shortDescription")
     def short_description(self) -> pulumi.Input[str]:
-        """
-        (Updatable) A short description of the publication to use in the listing.
-        """
         return pulumi.get(self, "short_description")
 
     @short_description.setter
@@ -117,9 +92,6 @@ class PublicationArgs:
     @property
     @pulumi.getter(name="supportContacts")
     def support_contacts(self) -> pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]]:
-        """
-        (Updatable) Contact information for getting support from the publisher for the listing.
-        """
         return pulumi.get(self, "support_contacts")
 
     @support_contacts.setter
@@ -129,9 +101,6 @@ class PublicationArgs:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -141,9 +110,6 @@ class PublicationArgs:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -153,9 +119,6 @@ class PublicationArgs:
     @property
     @pulumi.getter(name="longDescription")
     def long_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A long description of the publication to use in the listing.
-        """
         return pulumi.get(self, "long_description")
 
     @long_description.setter
@@ -165,9 +128,6 @@ class PublicationArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the contact.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -195,21 +155,6 @@ class _PublicationState:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Publication resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input['PublicationIconArgs']]] icons: The model for upload data for images and icons.
-        :param pulumi.Input[bool] is_agreement_acknowledged: Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
-        :param pulumi.Input[str] listing_type: The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
-        :param pulumi.Input[str] long_description: (Updatable) A long description of the publication to use in the listing.
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
-        :param pulumi.Input['PublicationPackageDetailsArgs'] package_details: A base object for creating a publication package.
-        :param pulumi.Input[str] package_type: The package's type.
-        :param pulumi.Input[str] short_description: (Updatable) A short description of the publication to use in the listing.
-        :param pulumi.Input[str] state: The lifecycle state of the publication.
-        :param pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
-        :param pulumi.Input[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]] supported_operating_systems: The list of operating systems supported by the listing.
-        :param pulumi.Input[str] time_created: The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -245,9 +190,6 @@ class _PublicationState:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
-        """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -257,9 +199,6 @@ class _PublicationState:
     @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
@@ -269,9 +208,6 @@ class _PublicationState:
     @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
@@ -281,9 +217,6 @@ class _PublicationState:
     @property
     @pulumi.getter
     def icons(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PublicationIconArgs']]]]:
-        """
-        The model for upload data for images and icons.
-        """
         return pulumi.get(self, "icons")
 
     @icons.setter
@@ -293,9 +226,6 @@ class _PublicationState:
     @property
     @pulumi.getter(name="isAgreementAcknowledged")
     def is_agreement_acknowledged(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
-        """
         return pulumi.get(self, "is_agreement_acknowledged")
 
     @is_agreement_acknowledged.setter
@@ -305,9 +235,6 @@ class _PublicationState:
     @property
     @pulumi.getter(name="listingType")
     def listing_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
-        """
         return pulumi.get(self, "listing_type")
 
     @listing_type.setter
@@ -317,9 +244,6 @@ class _PublicationState:
     @property
     @pulumi.getter(name="longDescription")
     def long_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A long description of the publication to use in the listing.
-        """
         return pulumi.get(self, "long_description")
 
     @long_description.setter
@@ -329,9 +253,6 @@ class _PublicationState:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) The name of the contact.
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -341,9 +262,6 @@ class _PublicationState:
     @property
     @pulumi.getter(name="packageDetails")
     def package_details(self) -> Optional[pulumi.Input['PublicationPackageDetailsArgs']]:
-        """
-        A base object for creating a publication package.
-        """
         return pulumi.get(self, "package_details")
 
     @package_details.setter
@@ -353,9 +271,6 @@ class _PublicationState:
     @property
     @pulumi.getter(name="packageType")
     def package_type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The package's type.
-        """
         return pulumi.get(self, "package_type")
 
     @package_type.setter
@@ -365,9 +280,6 @@ class _PublicationState:
     @property
     @pulumi.getter(name="shortDescription")
     def short_description(self) -> Optional[pulumi.Input[str]]:
-        """
-        (Updatable) A short description of the publication to use in the listing.
-        """
         return pulumi.get(self, "short_description")
 
     @short_description.setter
@@ -377,9 +289,6 @@ class _PublicationState:
     @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The lifecycle state of the publication.
-        """
         return pulumi.get(self, "state")
 
     @state.setter
@@ -389,9 +298,6 @@ class _PublicationState:
     @property
     @pulumi.getter(name="supportContacts")
     def support_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportContactArgs']]]]:
-        """
-        (Updatable) Contact information for getting support from the publisher for the listing.
-        """
         return pulumi.get(self, "support_contacts")
 
     @support_contacts.setter
@@ -401,9 +307,6 @@ class _PublicationState:
     @property
     @pulumi.getter(name="supportedOperatingSystems")
     def supported_operating_systems(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PublicationSupportedOperatingSystemArgs']]]]:
-        """
-        The list of operating systems supported by the listing.
-        """
         return pulumi.get(self, "supported_operating_systems")
 
     @supported_operating_systems.setter
@@ -413,9 +316,6 @@ class _PublicationState:
     @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
-        """
-        The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
         return pulumi.get(self, "time_created")
 
     @time_created.setter
@@ -440,68 +340,9 @@ class Publication(pulumi.CustomResource):
                  support_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportContactArgs']]]]] = None,
                  __props__=None):
         """
-        This resource provides the Publication resource in Oracle Cloud Infrastructure Marketplace service.
-
-        Creates a publication of the specified listing type with an optional default package.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_publication = oci.marketplace.Publication("testPublication",
-            compartment_id=var["compartment_id"],
-            is_agreement_acknowledged=var["publication_is_agreement_acknowledged"],
-            listing_type=var["publication_listing_type"],
-            package_details=oci.marketplace.PublicationPackageDetailsArgs(
-                eulas=[oci.marketplace.PublicationPackageDetailsEulaArgs(
-                    eula_type=var["publication_package_details_eula_eula_type"],
-                    license_text=var["publication_package_details_eula_license_text"],
-                )],
-                operating_system=oci.marketplace.PublicationPackageDetailsOperatingSystemArgs(
-                    name=var["publication_package_details_operating_system_name"],
-                ),
-                package_type=var["publication_package_details_package_type"],
-                package_version=var["publication_package_details_package_version"],
-                image_id=oci_core_image["test_image"]["id"],
-            ),
-            short_description=var["publication_short_description"],
-            support_contacts=[oci.marketplace.PublicationSupportContactArgs(
-                email=var["publication_support_contacts_email"],
-                name=var["publication_support_contacts_name"],
-                phone=var["publication_support_contacts_phone"],
-                subject=var["publication_support_contacts_subject"],
-            )],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            long_description=var["publication_long_description"])
-        ```
-
-        ## Import
-
-        Publications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Marketplace/publication:Publication test_publication "id"
-        ```
-
+        Create a Publication resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_agreement_acknowledged: Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
-        :param pulumi.Input[str] listing_type: The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
-        :param pulumi.Input[str] long_description: (Updatable) A long description of the publication to use in the listing.
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
-        :param pulumi.Input[pulumi.InputType['PublicationPackageDetailsArgs']] package_details: A base object for creating a publication package.
-        :param pulumi.Input[str] short_description: (Updatable) A short description of the publication to use in the listing.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportContactArgs']]]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
         """
         ...
     @overload
@@ -510,56 +351,7 @@ class Publication(pulumi.CustomResource):
                  args: PublicationArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Publication resource in Oracle Cloud Infrastructure Marketplace service.
-
-        Creates a publication of the specified listing type with an optional default package.
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_publication = oci.marketplace.Publication("testPublication",
-            compartment_id=var["compartment_id"],
-            is_agreement_acknowledged=var["publication_is_agreement_acknowledged"],
-            listing_type=var["publication_listing_type"],
-            package_details=oci.marketplace.PublicationPackageDetailsArgs(
-                eulas=[oci.marketplace.PublicationPackageDetailsEulaArgs(
-                    eula_type=var["publication_package_details_eula_eula_type"],
-                    license_text=var["publication_package_details_eula_license_text"],
-                )],
-                operating_system=oci.marketplace.PublicationPackageDetailsOperatingSystemArgs(
-                    name=var["publication_package_details_operating_system_name"],
-                ),
-                package_type=var["publication_package_details_package_type"],
-                package_version=var["publication_package_details_package_version"],
-                image_id=oci_core_image["test_image"]["id"],
-            ),
-            short_description=var["publication_short_description"],
-            support_contacts=[oci.marketplace.PublicationSupportContactArgs(
-                email=var["publication_support_contacts_email"],
-                name=var["publication_support_contacts_name"],
-                phone=var["publication_support_contacts_phone"],
-                subject=var["publication_support_contacts_subject"],
-            )],
-            defined_tags={
-                "Operations.CostCenter": "42",
-            },
-            freeform_tags={
-                "Department": "Finance",
-            },
-            long_description=var["publication_long_description"])
-        ```
-
-        ## Import
-
-        Publications can be imported using the `id`, e.g.
-
-        ```sh
-         $ pulumi import oci:Marketplace/publication:Publication test_publication "id"
-        ```
-
+        Create a Publication resource with the given unique name, props, and options.
         :param str resource_name: The name of the resource.
         :param PublicationArgs args: The arguments to use to populate this resource's properties.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -653,21 +445,6 @@ class Publication(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationIconArgs']]]] icons: The model for upload data for images and icons.
-        :param pulumi.Input[bool] is_agreement_acknowledged: Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
-        :param pulumi.Input[str] listing_type: The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
-        :param pulumi.Input[str] long_description: (Updatable) A long description of the publication to use in the listing.
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
-        :param pulumi.Input[pulumi.InputType['PublicationPackageDetailsArgs']] package_details: A base object for creating a publication package.
-        :param pulumi.Input[str] package_type: The package's type.
-        :param pulumi.Input[str] short_description: (Updatable) A short description of the publication to use in the listing.
-        :param pulumi.Input[str] state: The lifecycle state of the publication.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportContactArgs']]]] support_contacts: (Updatable) Contact information for getting support from the publisher for the listing.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PublicationSupportedOperatingSystemArgs']]]] supported_operating_systems: The list of operating systems supported by the listing.
-        :param pulumi.Input[str] time_created: The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -693,120 +470,75 @@ class Publication(pulumi.CustomResource):
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the publication.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        """
+    def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
-        """
-        (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        """
+    def freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
     @pulumi.getter
-    def icons(self) -> pulumi.Output[Sequence['outputs.PublicationIcon']]:
-        """
-        The model for upload data for images and icons.
-        """
+    def icons(self) -> pulumi.Output[Optional[Sequence['outputs.PublicationIcon']]]:
         return pulumi.get(self, "icons")
 
     @property
     @pulumi.getter(name="isAgreementAcknowledged")
     def is_agreement_acknowledged(self) -> pulumi.Output[bool]:
-        """
-        Whether the publisher acknowledged that they have the right and authority to share the contents of the publication and that they accepted the Oracle terms of use agreements required to create a publication.
-        """
         return pulumi.get(self, "is_agreement_acknowledged")
 
     @property
     @pulumi.getter(name="listingType")
     def listing_type(self) -> pulumi.Output[str]:
-        """
-        The publisher category to which the publication belongs. The publisher category informs where the listing appears for use.
-        """
         return pulumi.get(self, "listing_type")
 
     @property
     @pulumi.getter(name="longDescription")
-    def long_description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A long description of the publication to use in the listing.
-        """
+    def long_description(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "long_description")
 
     @property
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
-        """
-        (Updatable) The name of the contact.
-        """
         return pulumi.get(self, "name")
 
     @property
     @pulumi.getter(name="packageDetails")
     def package_details(self) -> pulumi.Output['outputs.PublicationPackageDetails']:
-        """
-        A base object for creating a publication package.
-        """
         return pulumi.get(self, "package_details")
 
     @property
     @pulumi.getter(name="packageType")
-    def package_type(self) -> pulumi.Output[str]:
-        """
-        The package's type.
-        """
+    def package_type(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "package_type")
 
     @property
     @pulumi.getter(name="shortDescription")
     def short_description(self) -> pulumi.Output[str]:
-        """
-        (Updatable) A short description of the publication to use in the listing.
-        """
         return pulumi.get(self, "short_description")
 
     @property
     @pulumi.getter
-    def state(self) -> pulumi.Output[str]:
-        """
-        The lifecycle state of the publication.
-        """
+    def state(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "state")
 
     @property
     @pulumi.getter(name="supportContacts")
     def support_contacts(self) -> pulumi.Output[Sequence['outputs.PublicationSupportContact']]:
-        """
-        (Updatable) Contact information for getting support from the publisher for the listing.
-        """
         return pulumi.get(self, "support_contacts")
 
     @property
     @pulumi.getter(name="supportedOperatingSystems")
-    def supported_operating_systems(self) -> pulumi.Output[Sequence['outputs.PublicationSupportedOperatingSystem']]:
-        """
-        The list of operating systems supported by the listing.
-        """
+    def supported_operating_systems(self) -> pulumi.Output[Optional[Sequence['outputs.PublicationSupportedOperatingSystem']]]:
         return pulumi.get(self, "supported_operating_systems")
 
     @property
     @pulumi.getter(name="timeCreated")
-    def time_created(self) -> pulumi.Output[str]:
-        """
-        The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-        """
+    def time_created(self) -> pulumi.Output[Optional[str]]:
         return pulumi.get(self, "time_created")
 

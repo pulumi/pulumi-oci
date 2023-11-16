@@ -81,7 +81,7 @@ export interface GetVolumeGroupsResult {
     /**
      * The provider-assigned unique ID for this managed resource.
      */
-    readonly id: string;
+    readonly id?: string;
     /**
      * The current state of a volume group.
      */
@@ -89,7 +89,7 @@ export interface GetVolumeGroupsResult {
     /**
      * The list of volume_groups.
      */
-    readonly volumeGroups: outputs.Core.GetVolumeGroupsVolumeGroup[];
+    readonly volumeGroups?: outputs.Core.GetVolumeGroupsVolumeGroup[];
 }
 /**
  * This data source provides the list of Volume Groups in Oracle Cloud Infrastructure Core service.

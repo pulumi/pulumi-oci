@@ -16,35 +16,35 @@ namespace Pulumi.Oci.Identity.Outputs
         /// <summary>
         /// Resource Type display name
         /// </summary>
-        public readonly string Display;
+        public readonly string? Display;
         /// <summary>
         /// The email address of this user
         /// </summary>
-        public readonly string Email;
+        public readonly string? Email;
         /// <summary>
         /// UserWalletArtifact URI
         /// </summary>
-        public readonly string Ref;
+        public readonly string? Ref;
         /// <summary>
         /// User name
         /// </summary>
-        public readonly string UserName;
+        public readonly string? UserName;
         /// <summary>
         /// UserWalletArtifact identifier
         /// </summary>
-        public readonly string Value;
+        public readonly string? Value;
 
         [OutputConstructor]
         private GetDomainsAccountMgmtInfoOwnerResult(
-            string display,
+            string? display,
 
-            string email,
+            string? email,
 
-            string @ref,
+            string? @ref,
 
-            string userName,
+            string? userName,
 
-            string value)
+            string? value)
         {
             Display = display;
             Email = email;

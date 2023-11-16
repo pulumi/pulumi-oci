@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail {
@@ -14,39 +16,39 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemInstanceDet
      * @return The name of the host machine.
      * 
      */
-    private String hostName;
+    private @Nullable String hostName;
     /**
      * @return The name of the database instance.
      * 
      */
-    private String instanceName;
+    private @Nullable String instanceName;
     /**
      * @return The instance number of the database instance.
      * 
      */
-    private Integer instanceNumber;
+    private @Nullable Integer instanceNumber;
 
     private GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail() {}
     /**
      * @return The name of the host machine.
      * 
      */
-    public String hostName() {
-        return this.hostName;
+    public Optional<String> hostName() {
+        return Optional.ofNullable(this.hostName);
     }
     /**
      * @return The name of the database instance.
      * 
      */
-    public String instanceName() {
-        return this.instanceName;
+    public Optional<String> instanceName() {
+        return Optional.ofNullable(this.instanceName);
     }
     /**
      * @return The instance number of the database instance.
      * 
      */
-    public Integer instanceNumber() {
-        return this.instanceNumber;
+    public Optional<Integer> instanceNumber() {
+        return Optional.ofNullable(this.instanceNumber);
     }
 
     public static Builder builder() {
@@ -58,9 +60,9 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemInstanceDet
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hostName;
-        private String instanceName;
-        private Integer instanceNumber;
+        private @Nullable String hostName;
+        private @Nullable String instanceName;
+        private @Nullable Integer instanceNumber;
         public Builder() {}
         public Builder(GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,18 +72,18 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemInstanceDet
         }
 
         @CustomType.Setter
-        public Builder hostName(String hostName) {
-            this.hostName = Objects.requireNonNull(hostName);
+        public Builder hostName(@Nullable String hostName) {
+            this.hostName = hostName;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceName(String instanceName) {
-            this.instanceName = Objects.requireNonNull(instanceName);
+        public Builder instanceName(@Nullable String instanceName) {
+            this.instanceName = instanceName;
             return this;
         }
         @CustomType.Setter
-        public Builder instanceNumber(Integer instanceNumber) {
-            this.instanceNumber = Objects.requireNonNull(instanceNumber);
+        public Builder instanceNumber(@Nullable Integer instanceNumber) {
+            this.instanceNumber = instanceNumber;
             return this;
         }
         public GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail build() {

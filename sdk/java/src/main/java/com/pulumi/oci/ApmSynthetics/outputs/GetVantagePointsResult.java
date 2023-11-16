@@ -25,7 +25,7 @@ public final class GetVantagePointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    private String id;
+    private @Nullable String id;
     /**
      * @return Unique permanent name of the vantage point.
      * 
@@ -35,7 +35,7 @@ public final class GetVantagePointsResult {
      * @return The list of public_vantage_point_collection.
      * 
      */
-    private List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections;
+    private @Nullable List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections;
 
     private GetVantagePointsResult() {}
     public String apmDomainId() {
@@ -55,8 +55,8 @@ public final class GetVantagePointsResult {
      * @return The provider-assigned unique ID for this managed resource.
      * 
      */
-    public String id() {
-        return this.id;
+    public Optional<String> id() {
+        return Optional.ofNullable(this.id);
     }
     /**
      * @return Unique permanent name of the vantage point.
@@ -70,7 +70,7 @@ public final class GetVantagePointsResult {
      * 
      */
     public List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections() {
-        return this.publicVantagePointCollections;
+        return this.publicVantagePointCollections == null ? List.of() : this.publicVantagePointCollections;
     }
 
     public static Builder builder() {
@@ -85,9 +85,9 @@ public final class GetVantagePointsResult {
         private String apmDomainId;
         private @Nullable String displayName;
         private @Nullable List<GetVantagePointsFilter> filters;
-        private String id;
+        private @Nullable String id;
         private @Nullable String name;
-        private List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections;
+        private @Nullable List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections;
         public Builder() {}
         public Builder(GetVantagePointsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -118,8 +118,8 @@ public final class GetVantagePointsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
-        public Builder id(String id) {
-            this.id = Objects.requireNonNull(id);
+        public Builder id(@Nullable String id) {
+            this.id = id;
             return this;
         }
         @CustomType.Setter
@@ -128,8 +128,8 @@ public final class GetVantagePointsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder publicVantagePointCollections(List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections) {
-            this.publicVantagePointCollections = Objects.requireNonNull(publicVantagePointCollections);
+        public Builder publicVantagePointCollections(@Nullable List<GetVantagePointsPublicVantagePointCollection> publicVantagePointCollections) {
+            this.publicVantagePointCollections = publicVantagePointCollections;
             return this;
         }
         public Builder publicVantagePointCollections(GetVantagePointsPublicVantagePointCollection... publicVantagePointCollections) {

@@ -1,6 +1,6 @@
 provider: oci
 major-version: 1
-lint: false
+lint: true
 providerDefaultBranch: main
 parallel: 1
 timeout: 90
@@ -19,7 +19,6 @@ plugins:
     version: "3.17.0"
   - name: random
     version: "4.4.1"
-team: ecosystem
 goBuildParallelism: 1
 runner:
   publish: pulumi-ubuntu-8core

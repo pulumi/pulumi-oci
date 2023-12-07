@@ -57,10 +57,17 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail 
      */
     private String negotiatedEncryptionAlgorithm;
     /**
+     * @deprecated
+     * The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead. */
+    private String remainingLifetime;
+    /**
      * @return The remaining lifetime before the key is refreshed.
      * 
      */
-    private String remainingLifetime;
+    private Integer remainingLifetimeInt;
     /**
      * @return The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -132,11 +139,20 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail 
         return this.negotiatedEncryptionAlgorithm;
     }
     /**
+     * @deprecated
+     * The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead. */
+    public String remainingLifetime() {
+        return this.remainingLifetime;
+    }
+    /**
      * @return The remaining lifetime before the key is refreshed.
      * 
      */
-    public String remainingLifetime() {
-        return this.remainingLifetime;
+    public Integer remainingLifetimeInt() {
+        return this.remainingLifetimeInt;
     }
     /**
      * @return The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -165,6 +181,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail 
         private String negotiatedDhGroup;
         private String negotiatedEncryptionAlgorithm;
         private String remainingLifetime;
+        private Integer remainingLifetimeInt;
         private String remainingLifetimeLastRetrieved;
         public Builder() {}
         public Builder(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail defaults) {
@@ -179,6 +196,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail 
     	      this.negotiatedDhGroup = defaults.negotiatedDhGroup;
     	      this.negotiatedEncryptionAlgorithm = defaults.negotiatedEncryptionAlgorithm;
     	      this.remainingLifetime = defaults.remainingLifetime;
+    	      this.remainingLifetimeInt = defaults.remainingLifetimeInt;
     	      this.remainingLifetimeLastRetrieved = defaults.remainingLifetimeLastRetrieved;
         }
 
@@ -233,6 +251,11 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail 
             return this;
         }
         @CustomType.Setter
+        public Builder remainingLifetimeInt(Integer remainingLifetimeInt) {
+            this.remainingLifetimeInt = Objects.requireNonNull(remainingLifetimeInt);
+            return this;
+        }
+        @CustomType.Setter
         public Builder remainingLifetimeLastRetrieved(String remainingLifetimeLastRetrieved) {
             this.remainingLifetimeLastRetrieved = Objects.requireNonNull(remainingLifetimeLastRetrieved);
             return this;
@@ -249,6 +272,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail 
             o.negotiatedDhGroup = negotiatedDhGroup;
             o.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
             o.remainingLifetime = remainingLifetime;
+            o.remainingLifetimeInt = remainingLifetimeInt;
             o.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
             return o;
         }

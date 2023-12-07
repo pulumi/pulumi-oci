@@ -18,6 +18,21 @@ public final class GetExsiHostsPlainArgs extends com.pulumi.resources.InvokeArgs
     public static final GetExsiHostsPlainArgs Empty = new GetExsiHostsPlainArgs();
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * 
+     */
+    @Import(name="clusterId")
+    private @Nullable String clusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * 
+     */
+    public Optional<String> clusterId() {
+        return Optional.ofNullable(this.clusterId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      * 
      */
@@ -132,6 +147,7 @@ public final class GetExsiHostsPlainArgs extends com.pulumi.resources.InvokeArgs
     private GetExsiHostsPlainArgs() {}
 
     private GetExsiHostsPlainArgs(GetExsiHostsPlainArgs $) {
+        this.clusterId = $.clusterId;
         this.compartmentId = $.compartmentId;
         this.computeInstanceId = $.computeInstanceId;
         this.displayName = $.displayName;
@@ -158,6 +174,17 @@ public final class GetExsiHostsPlainArgs extends com.pulumi.resources.InvokeArgs
 
         public Builder(GetExsiHostsPlainArgs defaults) {
             $ = new GetExsiHostsPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param clusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterId(@Nullable String clusterId) {
+            $.clusterId = clusterId;
+            return this;
         }
 
         /**

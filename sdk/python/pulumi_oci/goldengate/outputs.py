@@ -36,6 +36,9 @@ __all__ = [
     'GetDeploymentBackupsDeploymentBackupCollectionResult',
     'GetDeploymentBackupsDeploymentBackupCollectionItemResult',
     'GetDeploymentBackupsFilterResult',
+    'GetDeploymentCertificatesCertificateCollectionResult',
+    'GetDeploymentCertificatesCertificateCollectionItemResult',
+    'GetDeploymentCertificatesFilterResult',
     'GetDeploymentDeploymentDiagnosticDataResult',
     'GetDeploymentMaintenanceConfigurationResult',
     'GetDeploymentMaintenanceWindowResult',
@@ -126,7 +129,8 @@ class ConnectionBootstrapServer(dict):
                  port: Optional[int] = None,
                  private_ip: Optional[str] = None):
         """
-        :param str host: (Updatable) The name or address of a host.
+        :param str host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+               For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param int port: (Updatable) The port of an endpoint usually specified for a connection.
         :param str private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
@@ -141,7 +145,8 @@ class ConnectionBootstrapServer(dict):
     @pulumi.getter
     def host(self) -> Optional[str]:
         """
-        (Updatable) The name or address of a host.
+        (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+        For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         """
         return pulumi.get(self, "host")
 
@@ -756,6 +761,8 @@ class GetConnectionBootstrapServerResult(dict):
                  private_ip: str):
         """
         :param str host: The name or address of a host.
+               In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+               For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param int port: The port of an endpoint usually specified for a connection.
         :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
@@ -768,6 +775,8 @@ class GetConnectionBootstrapServerResult(dict):
     def host(self) -> str:
         """
         The name or address of a host.
+        In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+        For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         """
         return pulumi.get(self, "host")
 
@@ -845,6 +854,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  description: str,
                  display_name: str,
                  endpoint: str,
+                 fingerprint: str,
                  freeform_tags: Mapping[str, Any],
                  host: str,
                  id: str,
@@ -870,6 +880,8 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  sas_token: str,
                  secret_access_key: str,
                  security_protocol: str,
+                 servers: str,
+                 service_account_key_file: str,
                  session_mode: str,
                  should_use_jndi: bool,
                  should_validate_server_certificate: bool,
@@ -898,16 +910,22 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str access_key_id: Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
         :param str account_name: Sets the Azure storage account name.
         :param Sequence['GetConnectionsConnectionCollectionItemAdditionalAttributeArgs'] additional_attributes: An array of name-value pair attribute entries. Used as additional parameters in connection string.
-        :param str authentication_type: Used authentication mechanism to access Azure Data Lake Storage.
+        :param str authentication_type: Used authentication mechanism to be provided for the following connection types:
+               * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
+               * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         :param str azure_tenant_id: Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param Sequence['GetConnectionsConnectionCollectionItemBootstrapServerArgs'] bootstrap_servers: Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param str client_id: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         :param str connection_factory: The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-        :param str connection_string: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        :param str connection_string: * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+               * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+               * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         :param str connection_type: The array of connection types.
-        :param str connection_url: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-        :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
+        :param str connection_url: * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
+               * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+               * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
+        :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         :param str database_name: The name of the database.
         :param str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
         :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -917,6 +935,8 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str endpoint: Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
         :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str host: The name or address of a host.
+               In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+               For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
         :param Sequence['GetConnectionsConnectionCollectionItemIngressIpArgs'] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param str jndi_connection_factory: The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
@@ -929,12 +949,16 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param int port: The port of an endpoint usually specified for a connection.
         :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         :param str region: The name of the region. e.g.: us-ashburn-1
-        :param str security_protocol: Security protocol for PostgreSQL / Microsoft SQL Server..
+        :param str security_protocol: Security Protocol to be provided for the following connection types:
+               * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+               * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+        :param str servers: Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
+               If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
         :param str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param bool should_use_jndi: If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         :param bool should_validate_server_certificate: If set to true, the driver validates the certificate that is sent by the database server.
         :param str ssl_ca: Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-        :param str ssl_mode: SSL mode for PostgreSQL.
+        :param str ssl_mode: SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
         :param str state: A filter to return only connections having the 'lifecycleState' given.
         :param str stream_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
@@ -972,6 +996,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "fingerprint", fingerprint)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "host", host)
         pulumi.set(__self__, "id", id)
@@ -997,6 +1022,8 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "sas_token", sas_token)
         pulumi.set(__self__, "secret_access_key", secret_access_key)
         pulumi.set(__self__, "security_protocol", security_protocol)
+        pulumi.set(__self__, "servers", servers)
+        pulumi.set(__self__, "service_account_key_file", service_account_key_file)
         pulumi.set(__self__, "session_mode", session_mode)
         pulumi.set(__self__, "should_use_jndi", should_use_jndi)
         pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
@@ -1055,7 +1082,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="authenticationType")
     def authentication_type(self) -> str:
         """
-        Used authentication mechanism to access Azure Data Lake Storage.
+        Used authentication mechanism to be provided for the following connection types:
+        * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
+        * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         """
         return pulumi.get(self, "authentication_type")
 
@@ -1108,7 +1137,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> str:
         """
-        JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+        * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+        * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         """
         return pulumi.get(self, "connection_string")
 
@@ -1124,7 +1155,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="connectionUrl")
     def connection_url(self) -> str:
         """
-        JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
+        * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
         """
         return pulumi.get(self, "connection_url")
 
@@ -1142,7 +1175,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="databaseId")
     def database_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         """
         return pulumi.get(self, "database_id")
 
@@ -1203,6 +1236,11 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "endpoint")
 
     @property
+    @pulumi.getter
+    def fingerprint(self) -> str:
+        return pulumi.get(self, "fingerprint")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -1215,6 +1253,8 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     def host(self) -> str:
         """
         The name or address of a host.
+        In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+        For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         """
         return pulumi.get(self, "host")
 
@@ -1368,9 +1408,25 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="securityProtocol")
     def security_protocol(self) -> str:
         """
-        Security protocol for PostgreSQL / Microsoft SQL Server..
+        Security Protocol to be provided for the following connection types:
+        * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+        * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         """
         return pulumi.get(self, "security_protocol")
+
+    @property
+    @pulumi.getter
+    def servers(self) -> str:
+        """
+        Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
+        If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+        """
+        return pulumi.get(self, "servers")
+
+    @property
+    @pulumi.getter(name="serviceAccountKeyFile")
+    def service_account_key_file(self) -> str:
+        return pulumi.get(self, "service_account_key_file")
 
     @property
     @pulumi.getter(name="sessionMode")
@@ -1428,7 +1484,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sslMode")
     def ssl_mode(self) -> str:
         """
-        SSL mode for PostgreSQL.
+        SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
         """
         return pulumi.get(self, "ssl_mode")
 
@@ -1581,6 +1637,8 @@ class GetConnectionsConnectionCollectionItemBootstrapServerResult(dict):
                  private_ip: str):
         """
         :param str host: The name or address of a host.
+               In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+               For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param int port: The port of an endpoint usually specified for a connection.
         :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
@@ -1593,6 +1651,8 @@ class GetConnectionsConnectionCollectionItemBootstrapServerResult(dict):
     def host(self) -> str:
         """
         The name or address of a host.
+        In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+        For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         """
         return pulumi.get(self, "host")
 
@@ -2255,6 +2315,220 @@ class GetDeploymentBackupsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetDeploymentCertificatesCertificateCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDeploymentCertificatesCertificateCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDeploymentCertificatesCertificateCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDeploymentCertificatesCertificateCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 authority_key_id: str,
+                 certificate_content: str,
+                 deployment_id: str,
+                 is_ca: bool,
+                 is_self_signed: bool,
+                 issuer: str,
+                 key: str,
+                 md5hash: str,
+                 public_key: str,
+                 public_key_algorithm: str,
+                 public_key_size: str,
+                 serial: str,
+                 sha1hash: str,
+                 state: str,
+                 subject: str,
+                 subject_key_id: str,
+                 time_created: str,
+                 time_valid_from: str,
+                 time_valid_to: str,
+                 version: str):
+        """
+        :param str deployment_id: A unique Deployment identifier.
+        :param bool is_self_signed: Indicates if the certificate is self signed.
+        :param str key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        :param str state: A filter to return only connections having the 'lifecycleState' given.
+        :param str subject: The Certificate subject.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_valid_to: The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "authority_key_id", authority_key_id)
+        pulumi.set(__self__, "certificate_content", certificate_content)
+        pulumi.set(__self__, "deployment_id", deployment_id)
+        pulumi.set(__self__, "is_ca", is_ca)
+        pulumi.set(__self__, "is_self_signed", is_self_signed)
+        pulumi.set(__self__, "issuer", issuer)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "md5hash", md5hash)
+        pulumi.set(__self__, "public_key", public_key)
+        pulumi.set(__self__, "public_key_algorithm", public_key_algorithm)
+        pulumi.set(__self__, "public_key_size", public_key_size)
+        pulumi.set(__self__, "serial", serial)
+        pulumi.set(__self__, "sha1hash", sha1hash)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subject", subject)
+        pulumi.set(__self__, "subject_key_id", subject_key_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_valid_from", time_valid_from)
+        pulumi.set(__self__, "time_valid_to", time_valid_to)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="authorityKeyId")
+    def authority_key_id(self) -> str:
+        return pulumi.get(self, "authority_key_id")
+
+    @property
+    @pulumi.getter(name="certificateContent")
+    def certificate_content(self) -> str:
+        return pulumi.get(self, "certificate_content")
+
+    @property
+    @pulumi.getter(name="deploymentId")
+    def deployment_id(self) -> str:
+        """
+        A unique Deployment identifier.
+        """
+        return pulumi.get(self, "deployment_id")
+
+    @property
+    @pulumi.getter(name="isCa")
+    def is_ca(self) -> bool:
+        return pulumi.get(self, "is_ca")
+
+    @property
+    @pulumi.getter(name="isSelfSigned")
+    def is_self_signed(self) -> bool:
+        """
+        Indicates if the certificate is self signed.
+        """
+        return pulumi.get(self, "is_self_signed")
+
+    @property
+    @pulumi.getter
+    def issuer(self) -> str:
+        return pulumi.get(self, "issuer")
+
+    @property
+    @pulumi.getter
+    def key(self) -> str:
+        """
+        The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        """
+        return pulumi.get(self, "key")
+
+    @property
+    @pulumi.getter
+    def md5hash(self) -> str:
+        return pulumi.get(self, "md5hash")
+
+    @property
+    @pulumi.getter(name="publicKey")
+    def public_key(self) -> str:
+        return pulumi.get(self, "public_key")
+
+    @property
+    @pulumi.getter(name="publicKeyAlgorithm")
+    def public_key_algorithm(self) -> str:
+        return pulumi.get(self, "public_key_algorithm")
+
+    @property
+    @pulumi.getter(name="publicKeySize")
+    def public_key_size(self) -> str:
+        return pulumi.get(self, "public_key_size")
+
+    @property
+    @pulumi.getter
+    def serial(self) -> str:
+        return pulumi.get(self, "serial")
+
+    @property
+    @pulumi.getter
+    def sha1hash(self) -> str:
+        return pulumi.get(self, "sha1hash")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only connections having the 'lifecycleState' given.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def subject(self) -> str:
+        """
+        The Certificate subject.
+        """
+        return pulumi.get(self, "subject")
+
+    @property
+    @pulumi.getter(name="subjectKeyId")
+    def subject_key_id(self) -> str:
+        return pulumi.get(self, "subject_key_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeValidFrom")
+    def time_valid_from(self) -> str:
+        return pulumi.get(self, "time_valid_from")
+
+    @property
+    @pulumi.getter(name="timeValidTo")
+    def time_valid_to(self) -> str:
+        """
+        The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_valid_to")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetDeploymentCertificatesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetDeploymentDeploymentDiagnosticDataResult(dict):
     def __init__(__self__, *,
                  bucket: str,
@@ -2612,33 +2886,39 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
     def __init__(__self__, *,
                  category: str,
                  connection_types: Sequence[str],
+                 default_username: str,
                  deployment_type: str,
                  display_name: str,
                  ogg_version: str,
                  source_technologies: Sequence[str],
+                 supported_technologies_url: str,
                  target_technologies: Sequence[str]):
         """
-        :param str category: The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+        :param str category: The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         :param Sequence[str] connection_types: An array of connectionTypes.
+        :param str default_username: The default admin username used by deployment.
         :param str deployment_type: The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param str ogg_version: Allows to query by a specific GoldenGate version.
         :param Sequence[str] source_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+        :param str supported_technologies_url: The URL to the webpage listing the supported technologies.
         :param Sequence[str] target_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         """
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "connection_types", connection_types)
+        pulumi.set(__self__, "default_username", default_username)
         pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "ogg_version", ogg_version)
         pulumi.set(__self__, "source_technologies", source_technologies)
+        pulumi.set(__self__, "supported_technologies_url", supported_technologies_url)
         pulumi.set(__self__, "target_technologies", target_technologies)
 
     @property
     @pulumi.getter
     def category(self) -> str:
         """
-        The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+        The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         """
         return pulumi.get(self, "category")
 
@@ -2649,6 +2929,14 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
         An array of connectionTypes.
         """
         return pulumi.get(self, "connection_types")
+
+    @property
+    @pulumi.getter(name="defaultUsername")
+    def default_username(self) -> str:
+        """
+        The default admin username used by deployment.
+        """
+        return pulumi.get(self, "default_username")
 
     @property
     @pulumi.getter(name="deploymentType")
@@ -2681,6 +2969,14 @@ class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
         List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         """
         return pulumi.get(self, "source_technologies")
+
+    @property
+    @pulumi.getter(name="supportedTechnologiesUrl")
+    def supported_technologies_url(self) -> str:
+        """
+        The URL to the webpage listing the supported technologies.
+        """
+        return pulumi.get(self, "supported_technologies_url")
 
     @property
     @pulumi.getter(name="targetTechnologies")

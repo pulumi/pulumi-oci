@@ -147,6 +147,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int CpusEnabled;
         /// <summary>
+        /// The lowest value to which cpus can be scaled down.
+        /// </summary>
+        public readonly int CpusLowestScaledValue;
+        /// <summary>
         /// The total data storage allocated in GBs.
         /// </summary>
         public readonly double DataStorageSizeInGb;
@@ -174,6 +178,10 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         /// </summary>
         public readonly string ExadataInfrastructureId;
+        /// <summary>
+        /// The lowest value to which exadataStorage in TBs can be scaled down.
+        /// </summary>
+        public readonly double ExadataStorageInTbsLowestScaledValue;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
@@ -208,6 +216,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousVmClusterMaintenanceWindowResult> MaintenanceWindows;
         /// <summary>
+        /// The lowest value to which ACDs can be scaled down.
+        /// </summary>
+        public readonly int MaxAcdsLowestScaledValue;
+        /// <summary>
         /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
@@ -228,6 +240,7 @@ namespace Pulumi.Oci.Database
         /// The number of enabled OCPU cores.
         /// </summary>
         public readonly double OcpusEnabled;
+        public readonly int ProvisionableAutonomousContainerDatabases;
         public readonly int ProvisionedAutonomousContainerDatabases;
         public readonly double ProvisionedCpus;
         /// <summary>
@@ -301,6 +314,8 @@ namespace Pulumi.Oci.Database
 
             int cpusEnabled,
 
+            int cpusLowestScaledValue,
+
             double dataStorageSizeInGb,
 
             double dataStorageSizeInTbs,
@@ -314,6 +329,8 @@ namespace Pulumi.Oci.Database
             string displayName,
 
             string exadataInfrastructureId,
+
+            double exadataStorageInTbsLowestScaledValue,
 
             ImmutableDictionary<string, object> freeformTags,
 
@@ -333,6 +350,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetAutonomousVmClusterMaintenanceWindowResult> maintenanceWindows,
 
+            int maxAcdsLowestScaledValue,
+
             int memoryPerOracleComputeUnitInGbs,
 
             int memorySizeInGbs,
@@ -344,6 +363,8 @@ namespace Pulumi.Oci.Database
             int nonProvisionableAutonomousContainerDatabases,
 
             double ocpusEnabled,
+
+            int provisionableAutonomousContainerDatabases,
 
             int provisionedAutonomousContainerDatabases,
 
@@ -385,6 +406,7 @@ namespace Pulumi.Oci.Database
             CpuCoreCountPerNode = cpuCoreCountPerNode;
             CpuPercentage = cpuPercentage;
             CpusEnabled = cpusEnabled;
+            CpusLowestScaledValue = cpusLowestScaledValue;
             DataStorageSizeInGb = dataStorageSizeInGb;
             DataStorageSizeInTbs = dataStorageSizeInTbs;
             DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
@@ -392,6 +414,7 @@ namespace Pulumi.Oci.Database
             DefinedTags = definedTags;
             DisplayName = displayName;
             ExadataInfrastructureId = exadataInfrastructureId;
+            ExadataStorageInTbsLowestScaledValue = exadataStorageInTbsLowestScaledValue;
             FreeformTags = freeformTags;
             Id = id;
             IsLocalBackupEnabled = isLocalBackupEnabled;
@@ -401,12 +424,14 @@ namespace Pulumi.Oci.Database
             LifecycleDetails = lifecycleDetails;
             MaintenanceWindowDetails = maintenanceWindowDetails;
             MaintenanceWindows = maintenanceWindows;
+            MaxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             MemorySizeInGbs = memorySizeInGbs;
             NextMaintenanceRunId = nextMaintenanceRunId;
             NodeCount = nodeCount;
             NonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
             OcpusEnabled = ocpusEnabled;
+            ProvisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
             ProvisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
             ProvisionedCpus = provisionedCpus;
             ReclaimableCpus = reclaimableCpus;

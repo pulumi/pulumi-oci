@@ -14,6 +14,63 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a Request
     /// 
+    /// ** IMPORTANT **
+    /// In our latest release, the property `status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testMyRequest = new Oci.Identity.DomainsMyRequest("testMyRequest", new()
+    ///     {
+    ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+    ///         Justification = @var.My_request_justification,
+    ///         Requesting = new Oci.Identity.Inputs.DomainsMyRequestRequestingArgs
+    ///         {
+    ///             Type = @var.My_request_requesting_type,
+    ///             Value = oci_identity_domains_group.Group_to_request.Id,
+    ///             Description = @var.My_request_requesting_description,
+    ///         },
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:Request",
+    ///         },
+    ///         Action = @var.My_request_action,
+    ///         ApprovalDetails = new[]
+    ///         {
+    ///             null,
+    ///         },
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         Authorization = @var.My_request_authorization,
+    ///         Ocid = @var.My_request_ocid,
+    ///         Requestor = new Oci.Identity.Inputs.DomainsMyRequestRequestorArgs
+    ///         {
+    ///             Value = @var.My_request_requestor_value,
+    ///         },
+    ///         ResourceTypeSchemaVersion = @var.My_request_resource_type_schema_version,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsMyRequestTagArgs
+    ///             {
+    ///                 Key = @var.My_request_tags_key,
+    ///                 Value = @var.My_request_tags_value,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Import is not supported for this resource.
@@ -21,6 +78,40 @@ namespace Pulumi.Oci.Identity
     [OciResourceType("oci:Identity/domainsMyRequest:DomainsMyRequest")]
     public partial class DomainsMyRequest : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+        /// 
+        /// **Added In:** 2307071836
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Output("action")]
+        public Output<string> Action { get; private set; } = null!;
+
+        /// <summary>
+        /// Approvals created for this request.
+        /// 
+        /// **Added In:** 2307071836
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
+        /// </summary>
+        [Output("approvalDetails")]
+        public Output<ImmutableArray<Outputs.DomainsMyRequestApprovalDetail>> ApprovalDetails { get; private set; } = null!;
+
         /// <summary>
         /// A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         /// </summary>
@@ -86,6 +177,23 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Output("domainOcid")]
         public Output<string> DomainOcid { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Time by when Request expires
+        /// 
+        /// **Added In:** 2307071836
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: dateTime
+        /// * uniqueness: none
+        /// </summary>
+        [Output("expires")]
+        public Output<string> Expires { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The User or App who created the Resource
@@ -253,13 +361,13 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<string>> Schemas { get; private set; } = null!;
 
         /// <summary>
-        /// status
+        /// (Updatable) status.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -350,6 +458,46 @@ namespace Pulumi.Oci.Identity
 
     public sealed class DomainsMyRequestArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+        /// 
+        /// **Added In:** 2307071836
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
+        [Input("approvalDetails")]
+        private InputList<Inputs.DomainsMyRequestApprovalDetailArgs>? _approvalDetails;
+
+        /// <summary>
+        /// Approvals created for this request.
+        /// 
+        /// **Added In:** 2307071836
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
+        /// </summary>
+        public InputList<Inputs.DomainsMyRequestApprovalDetailArgs> ApprovalDetails
+        {
+            get => _approvalDetails ?? (_approvalDetails = new InputList<Inputs.DomainsMyRequestApprovalDetailArgs>());
+            set => _approvalDetails = value;
+        }
+
         [Input("attributeSets")]
         private InputList<string>? _attributeSets;
 
@@ -470,22 +618,6 @@ namespace Pulumi.Oci.Identity
             set => _schemas = value;
         }
 
-        /// <summary>
-        /// status
-        /// 
-        /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: true
-        /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: false
-        /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
-        /// </summary>
-        [Input("status")]
-        public Input<string>? Status { get; set; }
-
         [Input("tags")]
         private InputList<Inputs.DomainsMyRequestTagArgs>? _tags;
 
@@ -516,6 +648,46 @@ namespace Pulumi.Oci.Identity
 
     public sealed class DomainsMyRequestState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+        /// 
+        /// **Added In:** 2307071836
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
+        [Input("approvalDetails")]
+        private InputList<Inputs.DomainsMyRequestApprovalDetailGetArgs>? _approvalDetails;
+
+        /// <summary>
+        /// Approvals created for this request.
+        /// 
+        /// **Added In:** 2307071836
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
+        /// * multiValued: true
+        /// * mutability: readOnly
+        /// * returned: request
+        /// * type: complex
+        /// * uniqueness: none
+        /// </summary>
+        public InputList<Inputs.DomainsMyRequestApprovalDetailGetArgs> ApprovalDetails
+        {
+            get => _approvalDetails ?? (_approvalDetails = new InputList<Inputs.DomainsMyRequestApprovalDetailGetArgs>());
+            set => _approvalDetails = value;
+        }
+
         [Input("attributeSets")]
         private InputList<string>? _attributeSets;
 
@@ -587,6 +759,23 @@ namespace Pulumi.Oci.Identity
         /// </summary>
         [Input("domainOcid")]
         public Input<string>? DomainOcid { get; set; }
+
+        /// <summary>
+        /// (Updatable) Time by when Request expires
+        /// 
+        /// **Added In:** 2307071836
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: dateTime
+        /// * uniqueness: none
+        /// </summary>
+        [Input("expires")]
+        public Input<string>? Expires { get; set; }
 
         [Input("idcsCreatedBies")]
         private InputList<Inputs.DomainsMyRequestIdcsCreatedByGetArgs>? _idcsCreatedBies;
@@ -784,13 +973,13 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// status
+        /// (Updatable) status.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: string

@@ -97,7 +97,7 @@ class GetUserAssessmentUsersResult:
     @pulumi.getter(name="accountStatus")
     def account_status(self) -> Optional[str]:
         """
-        The status of the user account.
+        The user account status.
         """
         return pulumi.get(self, "account_status")
 

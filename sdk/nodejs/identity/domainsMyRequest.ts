@@ -11,6 +11,41 @@ import * as utilities from "../utilities";
  *
  * Create a Request
  *
+ * ** IMPORTANT **
+ * In our latest release, the property `status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMyRequest = new oci.identity.DomainsMyRequest("testMyRequest", {
+ *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     justification: _var.my_request_justification,
+ *     requesting: {
+ *         type: _var.my_request_requesting_type,
+ *         value: oci_identity_domains_group.group_to_request.id,
+ *         description: _var.my_request_requesting_description,
+ *     },
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:Request"],
+ *     action: _var.my_request_action,
+ *     approvalDetails: [{}],
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     authorization: _var.my_request_authorization,
+ *     ocid: _var.my_request_ocid,
+ *     requestor: {
+ *         value: _var.my_request_requestor_value,
+ *     },
+ *     resourceTypeSchemaVersion: _var.my_request_resource_type_schema_version,
+ *     tags: [{
+ *         key: _var.my_request_tags_key,
+ *         value: _var.my_request_tags_value,
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * Import is not supported for this resource.
@@ -43,6 +78,36 @@ export class DomainsMyRequest extends pulumi.CustomResource {
         return obj['__pulumiType'] === DomainsMyRequest.__pulumiType;
     }
 
+    /**
+     * Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+     *
+     * **Added In:** 2307071836
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     */
+    public readonly action!: pulumi.Output<string>;
+    /**
+     * Approvals created for this request.
+     *
+     * **Added In:** 2307071836
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     */
+    public readonly approvalDetails!: pulumi.Output<outputs.Identity.DomainsMyRequestApprovalDetail[]>;
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
@@ -97,6 +162,21 @@ export class DomainsMyRequest extends pulumi.CustomResource {
      * * uniqueness: none
      */
     public /*out*/ readonly domainOcid!: pulumi.Output<string>;
+    /**
+     * (Updatable) Time by when Request expires
+     *
+     * **Added In:** 2307071836
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     */
+    public /*out*/ readonly expires!: pulumi.Output<string>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -239,19 +319,19 @@ export class DomainsMyRequest extends pulumi.CustomResource {
      */
     public readonly schemas!: pulumi.Output<string[]>;
     /**
-     * status
+     * (Updatable) status.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
      */
-    public readonly status!: pulumi.Output<string>;
+    public /*out*/ readonly status!: pulumi.Output<string>;
     /**
      * A list of tags on this resource.
      *
@@ -298,12 +378,15 @@ export class DomainsMyRequest extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as DomainsMyRequestState | undefined;
+            resourceInputs["action"] = state ? state.action : undefined;
+            resourceInputs["approvalDetails"] = state ? state.approvalDetails : undefined;
             resourceInputs["attributeSets"] = state ? state.attributeSets : undefined;
             resourceInputs["attributes"] = state ? state.attributes : undefined;
             resourceInputs["authorization"] = state ? state.authorization : undefined;
             resourceInputs["compartmentOcid"] = state ? state.compartmentOcid : undefined;
             resourceInputs["deleteInProgress"] = state ? state.deleteInProgress : undefined;
             resourceInputs["domainOcid"] = state ? state.domainOcid : undefined;
+            resourceInputs["expires"] = state ? state.expires : undefined;
             resourceInputs["idcsCreatedBies"] = state ? state.idcsCreatedBies : undefined;
             resourceInputs["idcsEndpoint"] = state ? state.idcsEndpoint : undefined;
             resourceInputs["idcsLastModifiedBies"] = state ? state.idcsLastModifiedBies : undefined;
@@ -333,6 +416,8 @@ export class DomainsMyRequest extends pulumi.CustomResource {
             if ((!args || args.schemas === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'schemas'");
             }
+            resourceInputs["action"] = args ? args.action : undefined;
+            resourceInputs["approvalDetails"] = args ? args.approvalDetails : undefined;
             resourceInputs["attributeSets"] = args ? args.attributeSets : undefined;
             resourceInputs["attributes"] = args ? args.attributes : undefined;
             resourceInputs["authorization"] = args ? args.authorization : undefined;
@@ -343,16 +428,17 @@ export class DomainsMyRequest extends pulumi.CustomResource {
             resourceInputs["requestor"] = args ? args.requestor : undefined;
             resourceInputs["resourceTypeSchemaVersion"] = args ? args.resourceTypeSchemaVersion : undefined;
             resourceInputs["schemas"] = args ? args.schemas : undefined;
-            resourceInputs["status"] = args ? args.status : undefined;
             resourceInputs["tags"] = args ? args.tags : undefined;
             resourceInputs["compartmentOcid"] = undefined /*out*/;
             resourceInputs["deleteInProgress"] = undefined /*out*/;
             resourceInputs["domainOcid"] = undefined /*out*/;
+            resourceInputs["expires"] = undefined /*out*/;
             resourceInputs["idcsCreatedBies"] = undefined /*out*/;
             resourceInputs["idcsLastModifiedBies"] = undefined /*out*/;
             resourceInputs["idcsLastUpgradedInRelease"] = undefined /*out*/;
             resourceInputs["idcsPreventedOperations"] = undefined /*out*/;
             resourceInputs["metas"] = undefined /*out*/;
+            resourceInputs["status"] = undefined /*out*/;
             resourceInputs["tenancyOcid"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -364,6 +450,36 @@ export class DomainsMyRequest extends pulumi.CustomResource {
  * Input properties used for looking up and filtering DomainsMyRequest resources.
  */
 export interface DomainsMyRequestState {
+    /**
+     * Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+     *
+     * **Added In:** 2307071836
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     */
+    action?: pulumi.Input<string>;
+    /**
+     * Approvals created for this request.
+     *
+     * **Added In:** 2307071836
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     */
+    approvalDetails?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyRequestApprovalDetail>[]>;
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
@@ -418,6 +534,21 @@ export interface DomainsMyRequestState {
      * * uniqueness: none
      */
     domainOcid?: pulumi.Input<string>;
+    /**
+     * (Updatable) Time by when Request expires
+     *
+     * **Added In:** 2307071836
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     */
+    expires?: pulumi.Input<string>;
     /**
      * (Updatable) The User or App who created the Resource
      *
@@ -560,13 +691,13 @@ export interface DomainsMyRequestState {
      */
     schemas?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * status
+     * (Updatable) status.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -611,6 +742,36 @@ export interface DomainsMyRequestState {
  * The set of arguments for constructing a DomainsMyRequest resource.
  */
 export interface DomainsMyRequestArgs {
+    /**
+     * Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+     *
+     * **Added In:** 2307071836
+     *
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     */
+    action?: pulumi.Input<string>;
+    /**
+     * Approvals created for this request.
+     *
+     * **Added In:** 2307071836
+     *
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     */
+    approvalDetails?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyRequestApprovalDetail>[]>;
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
@@ -699,20 +860,6 @@ export interface DomainsMyRequestArgs {
      * * uniqueness: none
      */
     schemas: pulumi.Input<pulumi.Input<string>[]>;
-    /**
-     * status
-     *
-     * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
-     * * required: false
-     * * returned: default
-     * * type: string
-     * * uniqueness: none
-     */
-    status?: pulumi.Input<string>;
     /**
      * A list of tags on this resource.
      *

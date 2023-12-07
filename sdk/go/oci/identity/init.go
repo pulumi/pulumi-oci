@@ -45,10 +45,24 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DomainsApp{}
 	case "oci:Identity/domainsAppRole:DomainsAppRole":
 		r = &DomainsAppRole{}
+	case "oci:Identity/domainsApprovalWorkflow:DomainsApprovalWorkflow":
+		r = &DomainsApprovalWorkflow{}
+	case "oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment":
+		r = &DomainsApprovalWorkflowAssignment{}
+	case "oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep":
+		r = &DomainsApprovalWorkflowStep{}
 	case "oci:Identity/domainsAuthToken:DomainsAuthToken":
 		r = &DomainsAuthToken{}
 	case "oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting":
 		r = &DomainsAuthenticationFactorSetting{}
+	case "oci:Identity/domainsCloudGate:DomainsCloudGate":
+		r = &DomainsCloudGate{}
+	case "oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping":
+		r = &DomainsCloudGateMapping{}
+	case "oci:Identity/domainsCloudGateServer:DomainsCloudGateServer":
+		r = &DomainsCloudGateServer{}
+	case "oci:Identity/domainsCondition:DomainsCondition":
+		r = &DomainsCondition{}
 	case "oci:Identity/domainsCustomerSecretKey:DomainsCustomerSecretKey":
 		r = &DomainsCustomerSecretKey{}
 	case "oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup":
@@ -79,14 +93,30 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DomainsMySupportAccount{}
 	case "oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential":
 		r = &DomainsMyUserDbCredential{}
+	case "oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter":
+		r = &DomainsNetworkPerimeter{}
+	case "oci:Identity/domainsNotificationSetting:DomainsNotificationSetting":
+		r = &DomainsNotificationSetting{}
 	case "oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential":
 		r = &DomainsOauth2clientCredential{}
+	case "oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate":
+		r = &DomainsOauthClientCertificate{}
+	case "oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate":
+		r = &DomainsOauthPartnerCertificate{}
 	case "oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy":
 		r = &DomainsPasswordPolicy{}
+	case "oci:Identity/domainsPolicy:DomainsPolicy":
+		r = &DomainsPolicy{}
+	case "oci:Identity/domainsRule:DomainsRule":
+		r = &DomainsRule{}
 	case "oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion":
 		r = &DomainsSecurityQuestion{}
 	case "oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting":
 		r = &DomainsSecurityQuestionSetting{}
+	case "oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile":
+		r = &DomainsSelfRegistrationProfile{}
+	case "oci:Identity/domainsSetting:DomainsSetting":
+		r = &DomainsSetting{}
 	case "oci:Identity/domainsSmtpCredential:DomainsSmtpCredential":
 		r = &DomainsSmtpCredential{}
 	case "oci:Identity/domainsUser:DomainsUser":
@@ -198,12 +228,47 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Identity/domainsApprovalWorkflow",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsApprovalWorkflowAssignment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsApprovalWorkflowStep",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Identity/domainsAuthToken",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Identity/domainsAuthenticationFactorSetting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsCloudGate",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsCloudGateMapping",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsCloudGateServer",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsCondition",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -283,12 +348,42 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Identity/domainsNetworkPerimeter",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsNotificationSetting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Identity/domainsOauth2clientCredential",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"Identity/domainsOauthClientCertificate",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsOauthPartnerCertificate",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"Identity/domainsPasswordPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsRule",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -299,6 +394,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Identity/domainsSecurityQuestionSetting",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsSelfRegistrationProfile",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Identity/domainsSetting",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

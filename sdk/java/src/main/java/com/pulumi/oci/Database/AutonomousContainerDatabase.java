@@ -209,14 +209,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.backupConfig;
     }
     /**
-     * The OCID of the Cloud Autonomous VM Cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      * 
      */
     @Export(name="cloudAutonomousVmClusterId", refs={String.class}, tree="[0]")
     private Output<String> cloudAutonomousVmClusterId;
 
     /**
-     * @return The OCID of the Cloud Autonomous VM Cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      * 
      */
     public Output<String> cloudAutonomousVmClusterId() {
@@ -827,6 +827,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+     * 
+     */
+    @Export(name="timeOfLastBackup", refs={String.class}, tree="[0]")
+    private Output<String> timeOfLastBackup;
+
+    /**
+     * @return The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+     * 
+     */
+    public Output<String> timeOfLastBackup() {
+        return this.timeOfLastBackup;
     }
     /**
      * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.

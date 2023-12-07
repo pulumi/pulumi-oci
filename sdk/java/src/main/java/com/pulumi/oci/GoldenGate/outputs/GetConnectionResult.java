@@ -34,7 +34,9 @@ public final class GetConnectionResult {
      */
     private List<GetConnectionAdditionalAttribute> additionalAttributes;
     /**
-     * @return Used authentication mechanism to access Azure Data Lake Storage.
+     * @return Used authentication mechanism to be provided for the following connection types:
+     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
+     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     private String authenticationType;
@@ -66,7 +68,9 @@ public final class GetConnectionResult {
     private String connectionFactory;
     private String connectionId;
     /**
-     * @return Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
+     * @return * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+     * * MONGODB: MongoDB connection string. e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;
+     * * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
      * 
      */
     private String connectionString;
@@ -76,7 +80,9 @@ public final class GetConnectionResult {
      */
     private String connectionType;
     /**
-     * @return JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * @return * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;
+     * * SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * * AMAZON_REDSHIFT: Connection URL. e.g.: &#39;jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb&#39;
      * 
      */
     private String connectionUrl;
@@ -122,6 +128,7 @@ public final class GetConnectionResult {
      * 
      */
     private String endpoint;
+    private String fingerprint;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -129,6 +136,8 @@ public final class GetConnectionResult {
     private Map<String,Object> freeformTags;
     /**
      * @return The name or address of a host.
+     * In case of Generic connection type it represents the Host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
     private String host;
@@ -203,10 +212,19 @@ public final class GetConnectionResult {
     private String sasToken;
     private String secretAccessKey;
     /**
-     * @return Security Protocol for Microsoft SQL Server/PostgreSQL.
+     * @return Security Protocol to be provided for the following connection types:
+     * * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     private String securityProtocol;
+    /**
+     * @return Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+     * If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+     * 
+     */
+    private String servers;
+    private String serviceAccountKeyFile;
     /**
      * @return The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      * 
@@ -232,7 +250,7 @@ public final class GetConnectionResult {
     private String sslKey;
     private String sslKeyPassword;
     /**
-     * @return SSL mode for PostgreSQL.
+     * @return SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
      * 
      */
     private String sslMode;
@@ -257,7 +275,7 @@ public final class GetConnectionResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The Kafka (e.g. Confluent) Schema Registry technology type.
+     * @return The technology type.
      * 
      */
     private String technologyType;
@@ -326,7 +344,9 @@ public final class GetConnectionResult {
         return this.additionalAttributes;
     }
     /**
-     * @return Used authentication mechanism to access Azure Data Lake Storage.
+     * @return Used authentication mechanism to be provided for the following connection types:
+     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
+     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     public String authenticationType() {
@@ -374,7 +394,9 @@ public final class GetConnectionResult {
         return this.connectionId;
     }
     /**
-     * @return Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;, MONGODB e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;.
+     * @return * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+     * * MONGODB: MongoDB connection string. e.g.: &#39;mongodb://mongodb0.example.com:27017/recordsrecords&#39;
+     * * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: &#39;jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;&#39;
      * 
      */
     public String connectionString() {
@@ -388,7 +410,9 @@ public final class GetConnectionResult {
         return this.connectionType;
     }
     /**
-     * @return JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * @return * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;
+     * * SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * * AMAZON_REDSHIFT: Connection URL. e.g.: &#39;jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb&#39;
      * 
      */
     public String connectionUrl() {
@@ -456,6 +480,9 @@ public final class GetConnectionResult {
     public String endpoint() {
         return this.endpoint;
     }
+    public String fingerprint() {
+        return this.fingerprint;
+    }
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -465,6 +492,8 @@ public final class GetConnectionResult {
     }
     /**
      * @return The name or address of a host.
+     * In case of Generic connection type it represents the Host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
     public String host() {
@@ -585,11 +614,24 @@ public final class GetConnectionResult {
         return this.secretAccessKey;
     }
     /**
-     * @return Security Protocol for Microsoft SQL Server/PostgreSQL.
+     * @return Security Protocol to be provided for the following connection types:
+     * * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     public String securityProtocol() {
         return this.securityProtocol;
+    }
+    /**
+     * @return Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+     * If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+     * 
+     */
+    public String servers() {
+        return this.servers;
+    }
+    public String serviceAccountKeyFile() {
+        return this.serviceAccountKeyFile;
     }
     /**
      * @return The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
@@ -632,7 +674,7 @@ public final class GetConnectionResult {
         return this.sslKeyPassword;
     }
     /**
-     * @return SSL mode for PostgreSQL.
+     * @return SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
      * 
      */
     public String sslMode() {
@@ -667,7 +709,7 @@ public final class GetConnectionResult {
         return this.systemTags;
     }
     /**
-     * @return The Kafka (e.g. Confluent) Schema Registry technology type.
+     * @return The technology type.
      * 
      */
     public String technologyType() {
@@ -766,6 +808,7 @@ public final class GetConnectionResult {
         private String description;
         private String displayName;
         private String endpoint;
+        private String fingerprint;
         private Map<String,Object> freeformTags;
         private String host;
         private String id;
@@ -791,6 +834,8 @@ public final class GetConnectionResult {
         private String sasToken;
         private String secretAccessKey;
         private String securityProtocol;
+        private String servers;
+        private String serviceAccountKeyFile;
         private String sessionMode;
         private Boolean shouldUseJndi;
         private Boolean shouldValidateServerCertificate;
@@ -843,6 +888,7 @@ public final class GetConnectionResult {
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.endpoint = defaults.endpoint;
+    	      this.fingerprint = defaults.fingerprint;
     	      this.freeformTags = defaults.freeformTags;
     	      this.host = defaults.host;
     	      this.id = defaults.id;
@@ -868,6 +914,8 @@ public final class GetConnectionResult {
     	      this.sasToken = defaults.sasToken;
     	      this.secretAccessKey = defaults.secretAccessKey;
     	      this.securityProtocol = defaults.securityProtocol;
+    	      this.servers = defaults.servers;
+    	      this.serviceAccountKeyFile = defaults.serviceAccountKeyFile;
     	      this.sessionMode = defaults.sessionMode;
     	      this.shouldUseJndi = defaults.shouldUseJndi;
     	      this.shouldValidateServerCertificate = defaults.shouldValidateServerCertificate;
@@ -1026,6 +1074,11 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder fingerprint(String fingerprint) {
+            this.fingerprint = Objects.requireNonNull(fingerprint);
+            return this;
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
@@ -1154,6 +1207,16 @@ public final class GetConnectionResult {
         @CustomType.Setter
         public Builder securityProtocol(String securityProtocol) {
             this.securityProtocol = Objects.requireNonNull(securityProtocol);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder servers(String servers) {
+            this.servers = Objects.requireNonNull(servers);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder serviceAccountKeyFile(String serviceAccountKeyFile) {
+            this.serviceAccountKeyFile = Objects.requireNonNull(serviceAccountKeyFile);
             return this;
         }
         @CustomType.Setter
@@ -1303,6 +1366,7 @@ public final class GetConnectionResult {
             o.description = description;
             o.displayName = displayName;
             o.endpoint = endpoint;
+            o.fingerprint = fingerprint;
             o.freeformTags = freeformTags;
             o.host = host;
             o.id = id;
@@ -1328,6 +1392,8 @@ public final class GetConnectionResult {
             o.sasToken = sasToken;
             o.secretAccessKey = secretAccessKey;
             o.securityProtocol = securityProtocol;
+            o.servers = servers;
+            o.serviceAccountKeyFile = serviceAccountKeyFile;
             o.sessionMode = sessionMode;
             o.shouldUseJndi = shouldUseJndi;
             o.shouldValidateServerCertificate = shouldValidateServerCertificate;

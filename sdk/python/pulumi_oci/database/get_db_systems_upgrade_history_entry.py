@@ -21,7 +21,7 @@ class GetDbSystemsUpgradeHistoryEntryResult:
     """
     A collection of values returned by getDbSystemsUpgradeHistoryEntry.
     """
-    def __init__(__self__, action=None, db_system_id=None, id=None, lifecycle_details=None, new_gi_version=None, old_gi_version=None, snapshot_retention_period_in_days=None, state=None, time_ended=None, time_started=None, upgrade_history_entry_id=None):
+    def __init__(__self__, action=None, db_system_id=None, id=None, lifecycle_details=None, new_gi_version=None, new_os_version=None, old_gi_version=None, old_os_version=None, snapshot_retention_period_in_days=None, state=None, time_ended=None, time_started=None, upgrade_history_entry_id=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
@@ -37,9 +37,15 @@ class GetDbSystemsUpgradeHistoryEntryResult:
         if new_gi_version and not isinstance(new_gi_version, str):
             raise TypeError("Expected argument 'new_gi_version' to be a str")
         pulumi.set(__self__, "new_gi_version", new_gi_version)
+        if new_os_version and not isinstance(new_os_version, str):
+            raise TypeError("Expected argument 'new_os_version' to be a str")
+        pulumi.set(__self__, "new_os_version", new_os_version)
         if old_gi_version and not isinstance(old_gi_version, str):
             raise TypeError("Expected argument 'old_gi_version' to be a str")
         pulumi.set(__self__, "old_gi_version", old_gi_version)
+        if old_os_version and not isinstance(old_os_version, str):
+            raise TypeError("Expected argument 'old_os_version' to be a str")
+        pulumi.set(__self__, "old_os_version", old_os_version)
         if snapshot_retention_period_in_days and not isinstance(snapshot_retention_period_in_days, int):
             raise TypeError("Expected argument 'snapshot_retention_period_in_days' to be a int")
         pulumi.set(__self__, "snapshot_retention_period_in_days", snapshot_retention_period_in_days)
@@ -94,12 +100,28 @@ class GetDbSystemsUpgradeHistoryEntryResult:
         return pulumi.get(self, "new_gi_version")
 
     @property
+    @pulumi.getter(name="newOsVersion")
+    def new_os_version(self) -> str:
+        """
+        A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+        """
+        return pulumi.get(self, "new_os_version")
+
+    @property
     @pulumi.getter(name="oldGiVersion")
     def old_gi_version(self) -> str:
         """
         A valid Oracle Grid Infrastructure (GI) software version.
         """
         return pulumi.get(self, "old_gi_version")
+
+    @property
+    @pulumi.getter(name="oldOsVersion")
+    def old_os_version(self) -> str:
+        """
+        A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+        """
+        return pulumi.get(self, "old_os_version")
 
     @property
     @pulumi.getter(name="snapshotRetentionPeriodInDays")
@@ -150,7 +172,9 @@ class AwaitableGetDbSystemsUpgradeHistoryEntryResult(GetDbSystemsUpgradeHistoryE
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             new_gi_version=self.new_gi_version,
+            new_os_version=self.new_os_version,
             old_gi_version=self.old_gi_version,
+            old_os_version=self.old_os_version,
             snapshot_retention_period_in_days=self.snapshot_retention_period_in_days,
             state=self.state,
             time_ended=self.time_ended,
@@ -192,7 +216,9 @@ def get_db_systems_upgrade_history_entry(db_system_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         new_gi_version=pulumi.get(__ret__, 'new_gi_version'),
+        new_os_version=pulumi.get(__ret__, 'new_os_version'),
         old_gi_version=pulumi.get(__ret__, 'old_gi_version'),
+        old_os_version=pulumi.get(__ret__, 'old_os_version'),
         snapshot_retention_period_in_days=pulumi.get(__ret__, 'snapshot_retention_period_in_days'),
         state=pulumi.get(__ret__, 'state'),
         time_ended=pulumi.get(__ret__, 'time_ended'),

@@ -15,6 +15,11 @@ public final class GetJavaReleaseArtifact {
      */
     private String approximateFileSizeInBytes;
     /**
+     * @return The target Operating System architecture for the artifact.
+     * 
+     */
+    private String architecture;
+    /**
      * @return Product content type of this artifact.
      * 
      */
@@ -25,10 +30,45 @@ public final class GetJavaReleaseArtifact {
      */
     private String artifactDescription;
     /**
+     * @return The file name of the artifact.
+     * 
+     */
+    private String artifactFileName;
+    /**
      * @return Unique identifier for the artifact.
      * 
      */
     private String artifactId;
+    /**
+     * @return The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+     * 
+     */
+    private String downloadUrl;
+    /**
+     * @return The target Operating System family for the artifact.
+     * 
+     */
+    private String osFamily;
+    /**
+     * @return The package type(typically the file extension) of the artifact.
+     * 
+     */
+    private String packageType;
+    /**
+     * @return Additional information about the package type.
+     * 
+     */
+    private String packageTypeDetail;
+    /**
+     * @return The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+     * 
+     */
+    private String scriptChecksumUrl;
+    /**
+     * @return The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+     * 
+     */
+    private String scriptDownloadUrl;
     /**
      * @return SHA256 checksum of the artifact.
      * 
@@ -42,6 +82,13 @@ public final class GetJavaReleaseArtifact {
      */
     public String approximateFileSizeInBytes() {
         return this.approximateFileSizeInBytes;
+    }
+    /**
+     * @return The target Operating System architecture for the artifact.
+     * 
+     */
+    public String architecture() {
+        return this.architecture;
     }
     /**
      * @return Product content type of this artifact.
@@ -58,11 +105,60 @@ public final class GetJavaReleaseArtifact {
         return this.artifactDescription;
     }
     /**
+     * @return The file name of the artifact.
+     * 
+     */
+    public String artifactFileName() {
+        return this.artifactFileName;
+    }
+    /**
      * @return Unique identifier for the artifact.
      * 
      */
     public String artifactId() {
         return this.artifactId;
+    }
+    /**
+     * @return The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+     * 
+     */
+    public String downloadUrl() {
+        return this.downloadUrl;
+    }
+    /**
+     * @return The target Operating System family for the artifact.
+     * 
+     */
+    public String osFamily() {
+        return this.osFamily;
+    }
+    /**
+     * @return The package type(typically the file extension) of the artifact.
+     * 
+     */
+    public String packageType() {
+        return this.packageType;
+    }
+    /**
+     * @return Additional information about the package type.
+     * 
+     */
+    public String packageTypeDetail() {
+        return this.packageTypeDetail;
+    }
+    /**
+     * @return The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+     * 
+     */
+    public String scriptChecksumUrl() {
+        return this.scriptChecksumUrl;
+    }
+    /**
+     * @return The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+     * 
+     */
+    public String scriptDownloadUrl() {
+        return this.scriptDownloadUrl;
     }
     /**
      * @return SHA256 checksum of the artifact.
@@ -82,23 +178,44 @@ public final class GetJavaReleaseArtifact {
     @CustomType.Builder
     public static final class Builder {
         private String approximateFileSizeInBytes;
+        private String architecture;
         private String artifactContentType;
         private String artifactDescription;
+        private String artifactFileName;
         private String artifactId;
+        private String downloadUrl;
+        private String osFamily;
+        private String packageType;
+        private String packageTypeDetail;
+        private String scriptChecksumUrl;
+        private String scriptDownloadUrl;
         private String sha256;
         public Builder() {}
         public Builder(GetJavaReleaseArtifact defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.approximateFileSizeInBytes = defaults.approximateFileSizeInBytes;
+    	      this.architecture = defaults.architecture;
     	      this.artifactContentType = defaults.artifactContentType;
     	      this.artifactDescription = defaults.artifactDescription;
+    	      this.artifactFileName = defaults.artifactFileName;
     	      this.artifactId = defaults.artifactId;
+    	      this.downloadUrl = defaults.downloadUrl;
+    	      this.osFamily = defaults.osFamily;
+    	      this.packageType = defaults.packageType;
+    	      this.packageTypeDetail = defaults.packageTypeDetail;
+    	      this.scriptChecksumUrl = defaults.scriptChecksumUrl;
+    	      this.scriptDownloadUrl = defaults.scriptDownloadUrl;
     	      this.sha256 = defaults.sha256;
         }
 
         @CustomType.Setter
         public Builder approximateFileSizeInBytes(String approximateFileSizeInBytes) {
             this.approximateFileSizeInBytes = Objects.requireNonNull(approximateFileSizeInBytes);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder architecture(String architecture) {
+            this.architecture = Objects.requireNonNull(architecture);
             return this;
         }
         @CustomType.Setter
@@ -112,8 +229,43 @@ public final class GetJavaReleaseArtifact {
             return this;
         }
         @CustomType.Setter
+        public Builder artifactFileName(String artifactFileName) {
+            this.artifactFileName = Objects.requireNonNull(artifactFileName);
+            return this;
+        }
+        @CustomType.Setter
         public Builder artifactId(String artifactId) {
             this.artifactId = Objects.requireNonNull(artifactId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder downloadUrl(String downloadUrl) {
+            this.downloadUrl = Objects.requireNonNull(downloadUrl);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder osFamily(String osFamily) {
+            this.osFamily = Objects.requireNonNull(osFamily);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder packageType(String packageType) {
+            this.packageType = Objects.requireNonNull(packageType);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder packageTypeDetail(String packageTypeDetail) {
+            this.packageTypeDetail = Objects.requireNonNull(packageTypeDetail);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scriptChecksumUrl(String scriptChecksumUrl) {
+            this.scriptChecksumUrl = Objects.requireNonNull(scriptChecksumUrl);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder scriptDownloadUrl(String scriptDownloadUrl) {
+            this.scriptDownloadUrl = Objects.requireNonNull(scriptDownloadUrl);
             return this;
         }
         @CustomType.Setter
@@ -124,9 +276,17 @@ public final class GetJavaReleaseArtifact {
         public GetJavaReleaseArtifact build() {
             final var o = new GetJavaReleaseArtifact();
             o.approximateFileSizeInBytes = approximateFileSizeInBytes;
+            o.architecture = architecture;
             o.artifactContentType = artifactContentType;
             o.artifactDescription = artifactDescription;
+            o.artifactFileName = artifactFileName;
             o.artifactId = artifactId;
+            o.downloadUrl = downloadUrl;
+            o.osFamily = osFamily;
+            o.packageType = packageType;
+            o.packageTypeDetail = packageTypeDetail;
+            o.scriptChecksumUrl = scriptChecksumUrl;
+            o.scriptDownloadUrl = scriptDownloadUrl;
             o.sha256 = sha256;
             return o;
         }

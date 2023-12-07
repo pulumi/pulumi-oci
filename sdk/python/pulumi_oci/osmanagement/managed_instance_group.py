@@ -21,6 +21,7 @@ class ManagedInstanceGroupArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  os_family: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ManagedInstanceGroup resource.
@@ -29,11 +30,12 @@ class ManagedInstanceGroupArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Information specified by the user about the managed instance group
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance OCIDs to be added to the managed instance group.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -43,6 +45,8 @@ class ManagedInstanceGroupArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
         if os_family is not None:
             pulumi.set(__self__, "os_family", os_family)
 
@@ -107,14 +111,26 @@ class ManagedInstanceGroupArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
-    @pulumi.getter(name="osFamily")
-    def os_family(self) -> Optional[pulumi.Input[str]]:
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+        The list of managed instance OCIDs to be added to the managed instance group.
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+    @managed_instance_ids.setter
+    def managed_instance_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "managed_instance_ids", value)
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
         """
         return pulumi.get(self, "os_family")
 
@@ -132,6 +148,7 @@ class _ManagedInstanceGroupState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  managed_instance_count: Optional[pulumi.Input[int]] = None,
+                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManagedInstanceArgs']]]] = None,
                  os_family: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None):
@@ -142,12 +159,13 @@ class _ManagedInstanceGroupState:
         :param pulumi.Input[str] description: (Updatable) Information specified by the user about the managed instance group
         :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManagedInstanceArgs']]] managed_instances: list of Managed Instances in the group
-        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance OCIDs to be added to the managed instance group.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManagedInstanceArgs']]] managed_instances: list of Managed Instances in the group
+        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
         :param pulumi.Input[str] state: The current state of the Software Source.
         """
         if compartment_id is not None:
@@ -162,6 +180,8 @@ class _ManagedInstanceGroupState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if managed_instance_count is not None:
             pulumi.set(__self__, "managed_instance_count", managed_instance_count)
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
         if managed_instances is not None:
             pulumi.set(__self__, "managed_instances", managed_instances)
         if os_family is not None:
@@ -239,6 +259,22 @@ class _ManagedInstanceGroupState:
         pulumi.set(self, "managed_instance_count", value)
 
     @property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of managed instance OCIDs to be added to the managed instance group.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+    @managed_instance_ids.setter
+    def managed_instance_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "managed_instance_ids", value)
+
+    @property
     @pulumi.getter(name="managedInstances")
     def managed_instances(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupManagedInstanceArgs']]]]:
         """
@@ -254,11 +290,7 @@ class _ManagedInstanceGroupState:
     @pulumi.getter(name="osFamily")
     def os_family(self) -> Optional[pulumi.Input[str]]:
         """
-        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
         """
         return pulumi.get(self, "os_family")
 
@@ -289,6 +321,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  os_family: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -314,7 +347,8 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            os_family=var["managed_instance_group_os_family"])
+            os_family=var["managed_instance_group_os_family"],
+            managed_instance_ids=var["managed_instance_group_managed_instance_ids"])
         ```
 
         ## Import
@@ -332,11 +366,12 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Information specified by the user about the managed instance group
         :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance OCIDs to be added to the managed instance group.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
         """
         ...
     @overload
@@ -367,7 +402,8 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            os_family=var["managed_instance_group_os_family"])
+            os_family=var["managed_instance_group_os_family"],
+            managed_instance_ids=var["managed_instance_group_managed_instance_ids"])
         ```
 
         ## Import
@@ -398,6 +434,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  os_family: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -417,6 +454,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["managed_instance_ids"] = managed_instance_ids
             __props__.__dict__["os_family"] = os_family
             __props__.__dict__["managed_instance_count"] = None
             __props__.__dict__["managed_instances"] = None
@@ -437,6 +475,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             managed_instance_count: Optional[pulumi.Input[int]] = None,
+            managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManagedInstanceArgs']]]]] = None,
             os_family: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None) -> 'ManagedInstanceGroup':
@@ -452,12 +491,13 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Information specified by the user about the managed instance group
         :param pulumi.Input[str] display_name: (Updatable) Managed Instance Group identifier
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManagedInstanceArgs']]]] managed_instances: list of Managed Instances in the group
-        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance OCIDs to be added to the managed instance group.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ManagedInstanceGroupManagedInstanceArgs']]]] managed_instances: list of Managed Instances in the group
+        :param pulumi.Input[str] os_family: The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
         :param pulumi.Input[str] state: The current state of the Software Source.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -470,6 +510,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["managed_instance_count"] = managed_instance_count
+        __props__.__dict__["managed_instance_ids"] = managed_instance_ids
         __props__.__dict__["managed_instances"] = managed_instances
         __props__.__dict__["os_family"] = os_family
         __props__.__dict__["state"] = state
@@ -521,6 +562,18 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         return pulumi.get(self, "managed_instance_count")
 
     @property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        The list of managed instance OCIDs to be added to the managed instance group.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+    @property
     @pulumi.getter(name="managedInstances")
     def managed_instances(self) -> pulumi.Output[Sequence['outputs.ManagedInstanceGroupManagedInstance']]:
         """
@@ -532,11 +585,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
     @pulumi.getter(name="osFamily")
     def os_family(self) -> pulumi.Output[str]:
         """
-        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
         """
         return pulumi.get(self, "os_family")
 

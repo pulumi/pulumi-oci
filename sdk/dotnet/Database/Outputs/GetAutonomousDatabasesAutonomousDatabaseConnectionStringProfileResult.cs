@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string HostFormat;
         /// <summary>
+        /// True for a regional connection string, applicable to cross-region DG only.
+        /// </summary>
+        public readonly bool IsRegional;
+        /// <summary>
         /// Protocol used by the connection.
         /// </summary>
         public readonly string Protocol;
@@ -34,7 +38,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string SessionMode;
         /// <summary>
-        /// Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Databases on shared Exadata infrastructure always use the long format.
+        /// Specifies whether the connection string is using the long (`LONG`), Easy Connect (`EZCONNECT`), or Easy Connect Plus (`EZCONNECTPLUS`) format. Autonomous Database Serverless instances always use the long format.
         /// </summary>
         public readonly string SyntaxFormat;
         /// <summary>
@@ -54,6 +58,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string hostFormat,
 
+            bool isRegional,
+
             string protocol,
 
             string sessionMode,
@@ -67,6 +73,7 @@ namespace Pulumi.Oci.Database.Outputs
             ConsumerGroup = consumerGroup;
             DisplayName = displayName;
             HostFormat = hostFormat;
+            IsRegional = isRegional;
             Protocol = protocol;
             SessionMode = sessionMode;
             SyntaxFormat = syntaxFormat;

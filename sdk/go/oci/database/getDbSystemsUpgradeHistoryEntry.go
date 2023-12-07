@@ -70,8 +70,12 @@ type GetDbSystemsUpgradeHistoryEntryResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	NewGiVersion string `pulumi:"newGiVersion"`
+	// A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+	NewOsVersion string `pulumi:"newOsVersion"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	OldGiVersion string `pulumi:"oldGiVersion"`
+	// A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+	OldOsVersion string `pulumi:"oldOsVersion"`
 	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
 	SnapshotRetentionPeriodInDays int `pulumi:"snapshotRetentionPeriodInDays"`
 	// The current state of the action.
@@ -147,9 +151,19 @@ func (o GetDbSystemsUpgradeHistoryEntryResultOutput) NewGiVersion() pulumi.Strin
 	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) string { return v.NewGiVersion }).(pulumi.StringOutput)
 }
 
+// A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+func (o GetDbSystemsUpgradeHistoryEntryResultOutput) NewOsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) string { return v.NewOsVersion }).(pulumi.StringOutput)
+}
+
 // A valid Oracle Grid Infrastructure (GI) software version.
 func (o GetDbSystemsUpgradeHistoryEntryResultOutput) OldGiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) string { return v.OldGiVersion }).(pulumi.StringOutput)
+}
+
+// A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+func (o GetDbSystemsUpgradeHistoryEntryResultOutput) OldOsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsUpgradeHistoryEntryResult) string { return v.OldOsVersion }).(pulumi.StringOutput)
 }
 
 // The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.

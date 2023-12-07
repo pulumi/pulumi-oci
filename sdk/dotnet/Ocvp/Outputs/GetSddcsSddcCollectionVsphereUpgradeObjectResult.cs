@@ -13,13 +13,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
     [OutputType]
     public sealed class GetSddcsSddcCollectionVsphereUpgradeObjectResult
     {
-        /// <summary>
-        /// Binary object download link.
-        /// </summary>
         public readonly string DownloadLink;
-        /// <summary>
-        /// Binary object description.
-        /// </summary>
         public readonly string LinkDescription;
 
         [OutputConstructor]

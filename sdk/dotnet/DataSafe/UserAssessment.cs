@@ -172,31 +172,31 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableArray<string>> TargetIds { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeLastAssessed")]
         public Output<string> TimeLastAssessed { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether the user assessment was created by the system or the user.
+        /// Indicates whether the user assessment was created by system or user.
         /// </summary>
         [Output("triggeredBy")]
         public Output<string> TriggeredBy { get; private set; } = null!;
 
         /// <summary>
-        /// The type of the user assessment. The possible types are:
+        /// Type of user assessment. Type can be:
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -466,31 +466,31 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Input("timeLastAssessed")]
         public Input<string>? TimeLastAssessed { get; set; }
 
         /// <summary>
-        /// The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// Indicates whether the user assessment was created by the system or the user.
+        /// Indicates whether the user assessment was created by system or user.
         /// </summary>
         [Input("triggeredBy")]
         public Input<string>? TriggeredBy { get; set; }
 
         /// <summary>
-        /// The type of the user assessment. The possible types are:
+        /// Type of user assessment. Type can be:
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

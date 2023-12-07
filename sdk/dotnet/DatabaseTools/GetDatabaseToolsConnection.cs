@@ -143,13 +143,25 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionLockResult> Locks;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         /// </summary>
         public readonly string PrivateEndpointId;
         /// <summary>
+        /// The proxy client information.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionProxyClientResult> ProxyClients;
+        /// <summary>
         /// A related resource
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionRelatedResourceResult> RelatedResources;
+        /// <summary>
+        /// Specifies whether this connection is supported by the Database Tools Runtime.
+        /// </summary>
+        public readonly string RuntimeSupport;
         /// <summary>
         /// The current state of the Database Tools connection.
         /// </summary>
@@ -170,6 +182,10 @@ namespace Pulumi.Oci.DatabaseTools
         /// The Database Tools connection type.
         /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// The JDBC URL used to connect to the Generic JDBC database system.
+        /// </summary>
+        public readonly string Url;
         /// <summary>
         /// The database user name.
         /// </summary>
@@ -201,9 +217,15 @@ namespace Pulumi.Oci.DatabaseTools
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetDatabaseToolsConnectionLockResult> locks,
+
             string privateEndpointId,
 
+            ImmutableArray<Outputs.GetDatabaseToolsConnectionProxyClientResult> proxyClients,
+
             ImmutableArray<Outputs.GetDatabaseToolsConnectionRelatedResourceResult> relatedResources,
+
+            string runtimeSupport,
 
             string state,
 
@@ -214,6 +236,8 @@ namespace Pulumi.Oci.DatabaseTools
             string timeUpdated,
 
             string type,
+
+            string url,
 
             string userName,
 
@@ -229,13 +253,17 @@ namespace Pulumi.Oci.DatabaseTools
             Id = id;
             KeyStores = keyStores;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             PrivateEndpointId = privateEndpointId;
+            ProxyClients = proxyClients;
             RelatedResources = relatedResources;
+            RuntimeSupport = runtimeSupport;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             Type = type;
+            Url = url;
             UserName = userName;
             UserPasswords = userPasswords;
         }

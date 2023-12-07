@@ -391,7 +391,7 @@ namespace Pulumi.Oci.DataSafe
     {
         public readonly string? AccessLevel;
         /// <summary>
-        /// The status of the user account.
+        /// The user account status.
         /// </summary>
         public readonly string? AccountStatus;
         /// <summary>

@@ -130,7 +130,7 @@ class GetConnectionsResult:
     @pulumi.getter(name="technologyTypes")
     def technology_types(self) -> Optional[Sequence[str]]:
         """
-        The Kafka (e.g. Confluent) Schema Registry technology type.
+        The technology type.
         """
         return pulumi.get(self, "technology_types")
 

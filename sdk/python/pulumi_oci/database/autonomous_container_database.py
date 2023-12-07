@@ -54,7 +54,7 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
-        :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
+        :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
@@ -207,7 +207,7 @@ class AutonomousContainerDatabaseArgs:
     @pulumi.getter(name="cloudAutonomousVmClusterId")
     def cloud_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the Cloud Autonomous VM Cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         """
         return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
 
@@ -564,6 +564,7 @@ class _AutonomousContainerDatabaseState:
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
+                 time_of_last_backup: Optional[pulumi.Input[str]] = None,
                  time_snapshot_standby_revert: Optional[pulumi.Input[str]] = None,
                  total_cpus: Optional[pulumi.Input[int]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None,
@@ -575,7 +576,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database
         :param pulumi.Input[float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
-        :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
+        :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster.
         :param pulumi.Input[str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
@@ -625,6 +626,7 @@ class _AutonomousContainerDatabaseState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[str] time_created: The date and time the Autonomous Container Database was created.
+        :param pulumi.Input[str] time_of_last_backup: The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
         :param pulumi.Input[str] time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         :param pulumi.Input[int] total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -730,6 +732,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_of_last_backup is not None:
+            pulumi.set(__self__, "time_of_last_backup", time_of_last_backup)
         if time_snapshot_standby_revert is not None:
             pulumi.set(__self__, "time_snapshot_standby_revert", time_snapshot_standby_revert)
         if total_cpus is not None:
@@ -803,7 +807,7 @@ class _AutonomousContainerDatabaseState:
     @pulumi.getter(name="cloudAutonomousVmClusterId")
     def cloud_autonomous_vm_cluster_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the Cloud Autonomous VM Cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         """
         return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
 
@@ -1339,6 +1343,18 @@ class _AutonomousContainerDatabaseState:
         pulumi.set(self, "time_created", value)
 
     @property
+    @pulumi.getter(name="timeOfLastBackup")
+    def time_of_last_backup(self) -> Optional[pulumi.Input[str]]:
+        """
+        The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+        """
+        return pulumi.get(self, "time_of_last_backup")
+
+    @time_of_last_backup.setter
+    def time_of_last_backup(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_of_last_backup", value)
+
+    @property
     @pulumi.getter(name="timeSnapshotStandbyRevert")
     def time_snapshot_standby_revert(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1442,7 +1458,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] autonomous_exadata_infrastructure_id: **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         :param pulumi.Input[str] autonomous_vm_cluster_id: The OCID of the Autonomous VM Cluster.
         :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
-        :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
+        :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[str] db_version: The base version for the Autonomous Container Database.
@@ -1602,6 +1618,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["role"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_of_last_backup"] = None
             __props__.__dict__["time_snapshot_standby_revert"] = None
             __props__.__dict__["total_cpus"] = None
         super(AutonomousContainerDatabase, __self__).__init__(
@@ -1664,6 +1681,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             standby_maintenance_buffer_in_days: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
+            time_of_last_backup: Optional[pulumi.Input[str]] = None,
             time_snapshot_standby_revert: Optional[pulumi.Input[str]] = None,
             total_cpus: Optional[pulumi.Input[int]] = None,
             vault_id: Optional[pulumi.Input[str]] = None,
@@ -1680,7 +1698,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: The availability domain of the Autonomous Container Database
         :param pulumi.Input[float] available_cpus: Sum of CPUs available on the Autonomous VM Cluster + Sum of reclaimable CPUs available in the Autonomous Container Database.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         :param pulumi.Input[pulumi.InputType['AutonomousContainerDatabaseBackupConfigArgs']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
-        :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The OCID of the Cloud Autonomous VM Cluster.
+        :param pulumi.Input[str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[str] compute_model: The compute model of the Autonomous VM Cluster.
         :param pulumi.Input[str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
@@ -1730,6 +1748,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[str] time_created: The date and time the Autonomous Container Database was created.
+        :param pulumi.Input[str] time_of_last_backup: The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
         :param pulumi.Input[str] time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         :param pulumi.Input[int] total_cpus: The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
@@ -1789,6 +1808,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["standby_maintenance_buffer_in_days"] = standby_maintenance_buffer_in_days
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_of_last_backup"] = time_of_last_backup
         __props__.__dict__["time_snapshot_standby_revert"] = time_snapshot_standby_revert
         __props__.__dict__["total_cpus"] = total_cpus
         __props__.__dict__["vault_id"] = vault_id
@@ -1839,7 +1859,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
     @pulumi.getter(name="cloudAutonomousVmClusterId")
     def cloud_autonomous_vm_cluster_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the Cloud Autonomous VM Cluster.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         """
         return pulumi.get(self, "cloud_autonomous_vm_cluster_id")
 
@@ -2193,6 +2213,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         The date and time the Autonomous Container Database was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeOfLastBackup")
+    def time_of_last_backup(self) -> pulumi.Output[str]:
+        """
+        The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+        """
+        return pulumi.get(self, "time_of_last_backup")
 
     @property
     @pulumi.getter(name="timeSnapshotStandbyRevert")

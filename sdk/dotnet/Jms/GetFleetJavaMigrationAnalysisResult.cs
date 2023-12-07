@@ -124,6 +124,10 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string ApplicationExecutionType;
         /// <summary>
+        /// The unique key that identifies the application.
+        /// </summary>
+        public readonly string ApplicationKey;
+        /// <summary>
         /// The name of the application for which the Java migration analysis was performed.
         /// </summary>
         public readonly string ApplicationName;
@@ -189,6 +193,8 @@ namespace Pulumi.Oci.Jms
         private GetFleetJavaMigrationAnalysisResultResult(
             string applicationExecutionType,
 
+            string applicationKey,
+
             string applicationName,
 
             string applicationPath,
@@ -222,6 +228,7 @@ namespace Pulumi.Oci.Jms
             string workRequestId)
         {
             ApplicationExecutionType = applicationExecutionType;
+            ApplicationKey = applicationKey;
             ApplicationName = applicationName;
             ApplicationPath = applicationPath;
             Bucket = bucket;

@@ -24,6 +24,10 @@ import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupPlainArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupsArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentBackupsPlainArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificateArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatePlainArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesArgs;
+import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesPlainArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentPlainArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypeArgs;
 import com.pulumi.oci.GoldenGate.inputs.GetDeploymentTypePlainArgs;
@@ -57,6 +61,8 @@ import com.pulumi.oci.GoldenGate.outputs.GetDatabaseRegistrationResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDatabaseRegistrationsResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentBackupResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentBackupsResult;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentCertificateResult;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentCertificatesResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentTypeResult;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentTypesResult;
@@ -1549,6 +1555,326 @@ public final class GoldenGateFunctions {
      */
     public static CompletableFuture<GetDeploymentBackupsResult> getDeploymentBackupsPlain(GetDeploymentBackupsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GoldenGate/getDeploymentBackups:getDeploymentBackups", TypeShape.of(GetDeploymentBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Certificate.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
+     *             .certificateKey(var_.deployment_certificate_certificate_key())
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDeploymentCertificateResult> getDeploymentCertificate(GetDeploymentCertificateArgs args) {
+        return getDeploymentCertificate(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Certificate.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
+     *             .certificateKey(var_.deployment_certificate_certificate_key())
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDeploymentCertificateResult> getDeploymentCertificatePlain(GetDeploymentCertificatePlainArgs args) {
+        return getDeploymentCertificatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Certificate.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
+     *             .certificateKey(var_.deployment_certificate_certificate_key())
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDeploymentCertificateResult> getDeploymentCertificate(GetDeploymentCertificateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentCertificate:getDeploymentCertificate", TypeShape.of(GetDeploymentCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Deployment Certificate resource in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Retrieves a Certificate.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentCertificate = GoldenGateFunctions.getDeploymentCertificate(GetDeploymentCertificateArgs.builder()
+     *             .certificateKey(var_.deployment_certificate_certificate_key())
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDeploymentCertificateResult> getDeploymentCertificatePlain(GetDeploymentCertificatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GoldenGate/getDeploymentCertificate:getDeploymentCertificate", TypeShape.of(GetDeploymentCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deployment Certificates in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns a list of certificates from truststore.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .state(var_.deployment_certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDeploymentCertificatesResult> getDeploymentCertificates(GetDeploymentCertificatesArgs args) {
+        return getDeploymentCertificates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Deployment Certificates in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns a list of certificates from truststore.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .state(var_.deployment_certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDeploymentCertificatesResult> getDeploymentCertificatesPlain(GetDeploymentCertificatesPlainArgs args) {
+        return getDeploymentCertificatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Deployment Certificates in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns a list of certificates from truststore.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .state(var_.deployment_certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDeploymentCertificatesResult> getDeploymentCertificates(GetDeploymentCertificatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GoldenGate/getDeploymentCertificates:getDeploymentCertificates", TypeShape.of(GetDeploymentCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Deployment Certificates in Oracle Cloud Infrastructure Golden Gate service.
+     * 
+     * Returns a list of certificates from truststore.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GoldenGate.GoldenGateFunctions;
+     * import com.pulumi.oci.GoldenGate.inputs.GetDeploymentCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDeploymentCertificates = GoldenGateFunctions.getDeploymentCertificates(GetDeploymentCertificatesArgs.builder()
+     *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
+     *             .state(var_.deployment_certificate_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDeploymentCertificatesResult> getDeploymentCertificatesPlain(GetDeploymentCertificatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GoldenGate/getDeploymentCertificates:getDeploymentCertificates", TypeShape.of(GetDeploymentCertificatesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Deployment Type resource in Oracle Cloud Infrastructure Golden Gate service.

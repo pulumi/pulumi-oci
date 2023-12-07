@@ -118,14 +118,14 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.autonomousDataStoragePercentage;
     }
     /**
-     * The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     @Export(name="autonomousDataStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> autonomousDataStorageSizeInTbs;
 
     /**
-     * @return The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * @return (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     public Output<Double> autonomousDataStorageSizeInTbs() {
@@ -258,14 +258,14 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.cpuCoreCount;
     }
     /**
-     * The number of CPU cores to be enabled per VM cluster node.
+     * (Updatable) The number of CPU cores to be enabled per VM cluster node.
      * 
      */
     @Export(name="cpuCoreCountPerNode", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCoreCountPerNode;
 
     /**
-     * @return The number of CPU cores to be enabled per VM cluster node.
+     * @return (Updatable) The number of CPU cores to be enabled per VM cluster node.
      * 
      */
     public Output<Integer> cpuCoreCountPerNode() {
@@ -397,6 +397,12 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
     public Output<String> domain() {
         return this.domain;
     }
+    @Export(name="exadataStorageInTbsLowestScaledValue", refs={Double.class}, tree="[0]")
+    private Output<Double> exadataStorageInTbsLowestScaledValue;
+
+    public Output<Double> exadataStorageInTbsLowestScaledValue() {
+        return this.exadataStorageInTbsLowestScaledValue;
+    }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -468,7 +474,7 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.lastUpdateHistoryEntryId;
     }
     /**
-     * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
      * 
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      * 
@@ -477,7 +483,7 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
     private Output<String> licenseModel;
 
     /**
-     * @return (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * @return (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
      * 
      * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
      * 
@@ -526,6 +532,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<List<CloudAutonomousVmClusterMaintenanceWindow>> maintenanceWindows() {
         return this.maintenanceWindows;
+    }
+    /**
+     * The lowest value to which ACDs can be scaled down.
+     * 
+     */
+    @Export(name="maxAcdsLowestScaledValue", refs={Integer.class}, tree="[0]")
+    private Output<Integer> maxAcdsLowestScaledValue;
+
+    /**
+     * @return The lowest value to which ACDs can be scaled down.
+     * 
+     */
+    public Output<Integer> maxAcdsLowestScaledValue() {
+        return this.maxAcdsLowestScaledValue;
     }
     /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
@@ -626,6 +646,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<Double> ocpuCount() {
         return this.ocpuCount;
+    }
+    /**
+     * The lowest value to which ocpus can be scaled down.
+     * 
+     */
+    @Export(name="ocpusLowestScaledValue", refs={Integer.class}, tree="[0]")
+    private Output<Integer> ocpusLowestScaledValue;
+
+    /**
+     * @return The lowest value to which ocpus can be scaled down.
+     * 
+     */
+    public Output<Integer> ocpusLowestScaledValue() {
+        return this.ocpusLowestScaledValue;
     }
     /**
      * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
@@ -814,7 +848,7 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.totalAutonomousDataStorageInTbs;
     }
     /**
-     * The total number of Autonomous Container Databases that can be created.
+     * (Updatable) The total number of Autonomous Container Databases that can be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -824,7 +858,7 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
     private Output<Integer> totalContainerDatabases;
 
     /**
-     * @return The total number of Autonomous Container Databases that can be created.
+     * @return (Updatable) The total number of Autonomous Container Databases that can be created.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

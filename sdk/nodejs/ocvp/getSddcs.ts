@@ -70,7 +70,7 @@ export interface GetSddcsResult {
      */
     readonly compartmentId: string;
     /**
-     * (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
+     * (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`.
      */
     readonly computeAvailabilityDomain?: string;
     /**

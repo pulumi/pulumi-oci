@@ -119,7 +119,7 @@ type MaskingPoliciesMaskingColumn struct {
 	ColumnName pulumi.StringOutput `pulumi:"columnName"`
 	// The data type of the masking column.
 	DataType pulumi.StringOutput `pulumi:"dataType"`
-	// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
+	// (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
 	IsMaskingEnabled pulumi.BoolOutput `pulumi:"isMaskingEnabled"`
 	// The unique key that identifies the masking column. It's numeric and unique within a masking policy.
 	Key pulumi.StringOutput `pulumi:"key"`
@@ -198,7 +198,7 @@ type maskingPoliciesMaskingColumnState struct {
 	ColumnName *string `pulumi:"columnName"`
 	// The data type of the masking column.
 	DataType *string `pulumi:"dataType"`
-	// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
+	// (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
 	IsMaskingEnabled *bool `pulumi:"isMaskingEnabled"`
 	// The unique key that identifies the masking column. It's numeric and unique within a masking policy.
 	Key *string `pulumi:"key"`
@@ -236,7 +236,7 @@ type MaskingPoliciesMaskingColumnState struct {
 	ColumnName pulumi.StringPtrInput
 	// The data type of the masking column.
 	DataType pulumi.StringPtrInput
-	// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
+	// (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
 	IsMaskingEnabled pulumi.BoolPtrInput
 	// The unique key that identifies the masking column. It's numeric and unique within a masking policy.
 	Key pulumi.StringPtrInput
@@ -274,7 +274,7 @@ func (MaskingPoliciesMaskingColumnState) ElementType() reflect.Type {
 type maskingPoliciesMaskingColumnArgs struct {
 	// (Updatable) The name of the substitution column.
 	ColumnName string `pulumi:"columnName"`
-	// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
+	// (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
 	IsMaskingEnabled *bool `pulumi:"isMaskingEnabled"`
 	// (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
 	MaskingColumnGroup *string `pulumi:"maskingColumnGroup"`
@@ -299,7 +299,7 @@ type maskingPoliciesMaskingColumnArgs struct {
 type MaskingPoliciesMaskingColumnArgs struct {
 	// (Updatable) The name of the substitution column.
 	ColumnName pulumi.StringInput
-	// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
+	// (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
 	IsMaskingEnabled pulumi.BoolPtrInput
 	// (Updatable) The group of the masking column. It's a masking group identifier and can be any string  of acceptable length. All the columns in a group are masked together to ensure that  the masked data across these columns continue to retain the same logical relationship.  For more details, check  <a href=https://docs.oracle.com/en/cloud/paas/data-safe/udscs/group-masking1.html#GUID-755056B9-9540-48C0-9491-262A44A85037>Group Masking in the Data Safe documentation.</a>
 	MaskingColumnGroup pulumi.StringPtrInput
@@ -422,7 +422,7 @@ func (o MaskingPoliciesMaskingColumnOutput) DataType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.StringOutput { return v.DataType }).(pulumi.StringOutput)
 }
 
-// (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
+// (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don't want to mask the column.
 func (o MaskingPoliciesMaskingColumnOutput) IsMaskingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *MaskingPoliciesMaskingColumn) pulumi.BoolOutput { return v.IsMaskingEnabled }).(pulumi.BoolOutput)
 }

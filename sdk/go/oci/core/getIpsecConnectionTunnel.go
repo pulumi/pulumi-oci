@@ -61,6 +61,7 @@ type GetIpsecConnectionTunnelArgs struct {
 
 // A collection of values returned by getIpsecConnectionTunnel.
 type GetIpsecConnectionTunnelResult struct {
+	AssociatedVirtualCircuits []string `pulumi:"associatedVirtualCircuits"`
 	// Information needed to establish a BGP Session on an interface.
 	BgpSessionInfos []GetIpsecConnectionTunnelBgpSessionInfo `pulumi:"bgpSessionInfos"`
 	// The OCID of the compartment containing the tunnel.
@@ -68,16 +69,30 @@ type GetIpsecConnectionTunnelResult struct {
 	// The IP address of Cpe headend.  Example: `129.146.17.50`
 	CpeIp string `pulumi:"cpeIp"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName string                              `pulumi:"displayName"`
+	DpdConfigs  []GetIpsecConnectionTunnelDpdConfig `pulumi:"dpdConfigs"`
+	// Dead peer detection (DPD) mode set on the Oracle side of the connection.
+	DpdMode string `pulumi:"dpdMode"`
+	// DPD timeout in seconds.
+	DpdTimeoutInSec int `pulumi:"dpdTimeoutInSec"`
 	// Configuration information used by the encryption domain policy.
 	EncryptionDomainConfigs []GetIpsecConnectionTunnelEncryptionDomainConfig `pulumi:"encryptionDomainConfigs"`
-	// The provider-assigned unique ID for this managed resource.
+	// The tunnel's Oracle ID (OCID).
 	Id string `pulumi:"id"`
 	// Internet Key Exchange protocol version.
 	IkeVersion string `pulumi:"ikeVersion"`
 	IpsecId    string `pulumi:"ipsecId"`
+	// By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+	NatTranslationEnabled string `pulumi:"natTranslationEnabled"`
+	// Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
+	OracleCanInitiate string `pulumi:"oracleCanInitiate"`
+	// IPSec tunnel details specific to ISAKMP phase one.
+	PhaseOneDetails []GetIpsecConnectionTunnelPhaseOneDetail `pulumi:"phaseOneDetails"`
+	// IPsec tunnel detail information specific to phase two.
+	PhaseTwoDetails []GetIpsecConnectionTunnelPhaseTwoDetail `pulumi:"phaseTwoDetails"`
 	// the routing strategy used for this tunnel, either static route or BGP dynamic routing
-	Routing string `pulumi:"routing"`
+	Routing      string `pulumi:"routing"`
+	SharedSecret string `pulumi:"sharedSecret"`
 	// The IPSec connection's tunnel's lifecycle state.
 	State string `pulumi:"state"`
 	// The tunnel's current state.
@@ -131,6 +146,10 @@ func (o GetIpsecConnectionTunnelResultOutput) ToGetIpsecConnectionTunnelResultOu
 	return o
 }
 
+func (o GetIpsecConnectionTunnelResultOutput) AssociatedVirtualCircuits() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) []string { return v.AssociatedVirtualCircuits }).(pulumi.StringArrayOutput)
+}
+
 // Information needed to establish a BGP Session on an interface.
 func (o GetIpsecConnectionTunnelResultOutput) BgpSessionInfos() GetIpsecConnectionTunnelBgpSessionInfoArrayOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) []GetIpsecConnectionTunnelBgpSessionInfo {
@@ -153,6 +172,20 @@ func (o GetIpsecConnectionTunnelResultOutput) DisplayName() pulumi.StringOutput 
 	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+func (o GetIpsecConnectionTunnelResultOutput) DpdConfigs() GetIpsecConnectionTunnelDpdConfigArrayOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) []GetIpsecConnectionTunnelDpdConfig { return v.DpdConfigs }).(GetIpsecConnectionTunnelDpdConfigArrayOutput)
+}
+
+// Dead peer detection (DPD) mode set on the Oracle side of the connection.
+func (o GetIpsecConnectionTunnelResultOutput) DpdMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.DpdMode }).(pulumi.StringOutput)
+}
+
+// DPD timeout in seconds.
+func (o GetIpsecConnectionTunnelResultOutput) DpdTimeoutInSec() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) int { return v.DpdTimeoutInSec }).(pulumi.IntOutput)
+}
+
 // Configuration information used by the encryption domain policy.
 func (o GetIpsecConnectionTunnelResultOutput) EncryptionDomainConfigs() GetIpsecConnectionTunnelEncryptionDomainConfigArrayOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) []GetIpsecConnectionTunnelEncryptionDomainConfig {
@@ -160,7 +193,7 @@ func (o GetIpsecConnectionTunnelResultOutput) EncryptionDomainConfigs() GetIpsec
 	}).(GetIpsecConnectionTunnelEncryptionDomainConfigArrayOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
+// The tunnel's Oracle ID (OCID).
 func (o GetIpsecConnectionTunnelResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -174,9 +207,37 @@ func (o GetIpsecConnectionTunnelResultOutput) IpsecId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.IpsecId }).(pulumi.StringOutput)
 }
 
+// By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+func (o GetIpsecConnectionTunnelResultOutput) NatTranslationEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.NatTranslationEnabled }).(pulumi.StringOutput)
+}
+
+// Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
+func (o GetIpsecConnectionTunnelResultOutput) OracleCanInitiate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.OracleCanInitiate }).(pulumi.StringOutput)
+}
+
+// IPSec tunnel details specific to ISAKMP phase one.
+func (o GetIpsecConnectionTunnelResultOutput) PhaseOneDetails() GetIpsecConnectionTunnelPhaseOneDetailArrayOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) []GetIpsecConnectionTunnelPhaseOneDetail {
+		return v.PhaseOneDetails
+	}).(GetIpsecConnectionTunnelPhaseOneDetailArrayOutput)
+}
+
+// IPsec tunnel detail information specific to phase two.
+func (o GetIpsecConnectionTunnelResultOutput) PhaseTwoDetails() GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) []GetIpsecConnectionTunnelPhaseTwoDetail {
+		return v.PhaseTwoDetails
+	}).(GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput)
+}
+
 // the routing strategy used for this tunnel, either static route or BGP dynamic routing
 func (o GetIpsecConnectionTunnelResultOutput) Routing() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.Routing }).(pulumi.StringOutput)
+}
+
+func (o GetIpsecConnectionTunnelResultOutput) SharedSecret() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelResult) string { return v.SharedSecret }).(pulumi.StringOutput)
 }
 
 // The IPSec connection's tunnel's lifecycle state.

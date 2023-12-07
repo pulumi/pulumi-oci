@@ -25,15 +25,30 @@ export type AuditPolicy = import("./auditPolicy").AuditPolicy;
 export const AuditPolicy: typeof import("./auditPolicy").AuditPolicy = null as any;
 utilities.lazyLoad(exports, ["AuditPolicy"], () => require("./auditPolicy"));
 
+export { AuditPolicyManagementArgs, AuditPolicyManagementState } from "./auditPolicyManagement";
+export type AuditPolicyManagement = import("./auditPolicyManagement").AuditPolicyManagement;
+export const AuditPolicyManagement: typeof import("./auditPolicyManagement").AuditPolicyManagement = null as any;
+utilities.lazyLoad(exports, ["AuditPolicyManagement"], () => require("./auditPolicyManagement"));
+
 export { AuditProfileArgs, AuditProfileState } from "./auditProfile";
 export type AuditProfile = import("./auditProfile").AuditProfile;
 export const AuditProfile: typeof import("./auditProfile").AuditProfile = null as any;
 utilities.lazyLoad(exports, ["AuditProfile"], () => require("./auditProfile"));
 
+export { AuditProfileManagementArgs, AuditProfileManagementState } from "./auditProfileManagement";
+export type AuditProfileManagement = import("./auditProfileManagement").AuditProfileManagement;
+export const AuditProfileManagement: typeof import("./auditProfileManagement").AuditProfileManagement = null as any;
+utilities.lazyLoad(exports, ["AuditProfileManagement"], () => require("./auditProfileManagement"));
+
 export { AuditTrailArgs, AuditTrailState } from "./auditTrail";
 export type AuditTrail = import("./auditTrail").AuditTrail;
 export const AuditTrail: typeof import("./auditTrail").AuditTrail = null as any;
 utilities.lazyLoad(exports, ["AuditTrail"], () => require("./auditTrail"));
+
+export { AuditTrailManagementArgs, AuditTrailManagementState } from "./auditTrailManagement";
+export type AuditTrailManagement = import("./auditTrailManagement").AuditTrailManagement;
+export const AuditTrailManagement: typeof import("./auditTrailManagement").AuditTrailManagement = null as any;
+utilities.lazyLoad(exports, ["AuditTrailManagement"], () => require("./auditTrailManagement"));
 
 export { CompareSecurityAssessmentArgs, CompareSecurityAssessmentState } from "./compareSecurityAssessment";
 export type CompareSecurityAssessment = import("./compareSecurityAssessment").CompareSecurityAssessment;
@@ -220,16 +235,6 @@ export const getDataSafePrivateEndpoints: typeof import("./getDataSafePrivateEnd
 export const getDataSafePrivateEndpointsOutput: typeof import("./getDataSafePrivateEndpoints").getDataSafePrivateEndpointsOutput = null as any;
 utilities.lazyLoad(exports, ["getDataSafePrivateEndpoints","getDataSafePrivateEndpointsOutput"], () => require("./getDataSafePrivateEndpoints"));
 
-export { GetDatabaseSecurityConfigArgs, GetDatabaseSecurityConfigResult, GetDatabaseSecurityConfigOutputArgs } from "./getDatabaseSecurityConfig";
-export const getDatabaseSecurityConfig: typeof import("./getDatabaseSecurityConfig").getDatabaseSecurityConfig = null as any;
-export const getDatabaseSecurityConfigOutput: typeof import("./getDatabaseSecurityConfig").getDatabaseSecurityConfigOutput = null as any;
-utilities.lazyLoad(exports, ["getDatabaseSecurityConfig","getDatabaseSecurityConfigOutput"], () => require("./getDatabaseSecurityConfig"));
-
-export { GetDatabaseSecurityConfigsArgs, GetDatabaseSecurityConfigsResult, GetDatabaseSecurityConfigsOutputArgs } from "./getDatabaseSecurityConfigs";
-export const getDatabaseSecurityConfigs: typeof import("./getDatabaseSecurityConfigs").getDatabaseSecurityConfigs = null as any;
-export const getDatabaseSecurityConfigsOutput: typeof import("./getDatabaseSecurityConfigs").getDatabaseSecurityConfigsOutput = null as any;
-utilities.lazyLoad(exports, ["getDatabaseSecurityConfigs","getDatabaseSecurityConfigsOutput"], () => require("./getDatabaseSecurityConfigs"));
-
 export { GetDiscoveryAnalyticArgs, GetDiscoveryAnalyticResult, GetDiscoveryAnalyticOutputArgs } from "./getDiscoveryAnalytic";
 export const getDiscoveryAnalytic: typeof import("./getDiscoveryAnalytic").getDiscoveryAnalytic = null as any;
 export const getDiscoveryAnalyticOutput: typeof import("./getDiscoveryAnalytic").getDiscoveryAnalyticOutput = null as any;
@@ -410,36 +415,6 @@ export const getSecurityAssessments: typeof import("./getSecurityAssessments").g
 export const getSecurityAssessmentsOutput: typeof import("./getSecurityAssessments").getSecurityAssessmentsOutput = null as any;
 utilities.lazyLoad(exports, ["getSecurityAssessments","getSecurityAssessmentsOutput"], () => require("./getSecurityAssessments"));
 
-export { GetSecurityPoliciesArgs, GetSecurityPoliciesResult, GetSecurityPoliciesOutputArgs } from "./getSecurityPolicies";
-export const getSecurityPolicies: typeof import("./getSecurityPolicies").getSecurityPolicies = null as any;
-export const getSecurityPoliciesOutput: typeof import("./getSecurityPolicies").getSecurityPoliciesOutput = null as any;
-utilities.lazyLoad(exports, ["getSecurityPolicies","getSecurityPoliciesOutput"], () => require("./getSecurityPolicies"));
-
-export { GetSecurityPolicyArgs, GetSecurityPolicyResult, GetSecurityPolicyOutputArgs } from "./getSecurityPolicy";
-export const getSecurityPolicy: typeof import("./getSecurityPolicy").getSecurityPolicy = null as any;
-export const getSecurityPolicyOutput: typeof import("./getSecurityPolicy").getSecurityPolicyOutput = null as any;
-utilities.lazyLoad(exports, ["getSecurityPolicy","getSecurityPolicyOutput"], () => require("./getSecurityPolicy"));
-
-export { GetSecurityPolicyDeploymentArgs, GetSecurityPolicyDeploymentResult, GetSecurityPolicyDeploymentOutputArgs } from "./getSecurityPolicyDeployment";
-export const getSecurityPolicyDeployment: typeof import("./getSecurityPolicyDeployment").getSecurityPolicyDeployment = null as any;
-export const getSecurityPolicyDeploymentOutput: typeof import("./getSecurityPolicyDeployment").getSecurityPolicyDeploymentOutput = null as any;
-utilities.lazyLoad(exports, ["getSecurityPolicyDeployment","getSecurityPolicyDeploymentOutput"], () => require("./getSecurityPolicyDeployment"));
-
-export { GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs, GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult, GetSecurityPolicyDeploymentSecurityPolicyEntryStateOutputArgs } from "./getSecurityPolicyDeploymentSecurityPolicyEntryState";
-export const getSecurityPolicyDeploymentSecurityPolicyEntryState: typeof import("./getSecurityPolicyDeploymentSecurityPolicyEntryState").getSecurityPolicyDeploymentSecurityPolicyEntryState = null as any;
-export const getSecurityPolicyDeploymentSecurityPolicyEntryStateOutput: typeof import("./getSecurityPolicyDeploymentSecurityPolicyEntryState").getSecurityPolicyDeploymentSecurityPolicyEntryStateOutput = null as any;
-utilities.lazyLoad(exports, ["getSecurityPolicyDeploymentSecurityPolicyEntryState","getSecurityPolicyDeploymentSecurityPolicyEntryStateOutput"], () => require("./getSecurityPolicyDeploymentSecurityPolicyEntryState"));
-
-export { GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs, GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult, GetSecurityPolicyDeploymentSecurityPolicyEntryStatesOutputArgs } from "./getSecurityPolicyDeploymentSecurityPolicyEntryStates";
-export const getSecurityPolicyDeploymentSecurityPolicyEntryStates: typeof import("./getSecurityPolicyDeploymentSecurityPolicyEntryStates").getSecurityPolicyDeploymentSecurityPolicyEntryStates = null as any;
-export const getSecurityPolicyDeploymentSecurityPolicyEntryStatesOutput: typeof import("./getSecurityPolicyDeploymentSecurityPolicyEntryStates").getSecurityPolicyDeploymentSecurityPolicyEntryStatesOutput = null as any;
-utilities.lazyLoad(exports, ["getSecurityPolicyDeploymentSecurityPolicyEntryStates","getSecurityPolicyDeploymentSecurityPolicyEntryStatesOutput"], () => require("./getSecurityPolicyDeploymentSecurityPolicyEntryStates"));
-
-export { GetSecurityPolicyDeploymentsArgs, GetSecurityPolicyDeploymentsResult, GetSecurityPolicyDeploymentsOutputArgs } from "./getSecurityPolicyDeployments";
-export const getSecurityPolicyDeployments: typeof import("./getSecurityPolicyDeployments").getSecurityPolicyDeployments = null as any;
-export const getSecurityPolicyDeploymentsOutput: typeof import("./getSecurityPolicyDeployments").getSecurityPolicyDeploymentsOutput = null as any;
-utilities.lazyLoad(exports, ["getSecurityPolicyDeployments","getSecurityPolicyDeploymentsOutput"], () => require("./getSecurityPolicyDeployments"));
-
 export { GetSensitiveDataModelArgs, GetSensitiveDataModelResult, GetSensitiveDataModelOutputArgs } from "./getSensitiveDataModel";
 export const getSensitiveDataModel: typeof import("./getSensitiveDataModel").getSensitiveDataModel = null as any;
 export const getSensitiveDataModelOutput: typeof import("./getSensitiveDataModel").getSensitiveDataModelOutput = null as any;
@@ -479,61 +454,6 @@ export { GetSensitiveTypesArgs, GetSensitiveTypesResult, GetSensitiveTypesOutput
 export const getSensitiveTypes: typeof import("./getSensitiveTypes").getSensitiveTypes = null as any;
 export const getSensitiveTypesOutput: typeof import("./getSensitiveTypes").getSensitiveTypesOutput = null as any;
 utilities.lazyLoad(exports, ["getSensitiveTypes","getSensitiveTypesOutput"], () => require("./getSensitiveTypes"));
-
-export { GetSqlCollectionArgs, GetSqlCollectionResult, GetSqlCollectionOutputArgs } from "./getSqlCollection";
-export const getSqlCollection: typeof import("./getSqlCollection").getSqlCollection = null as any;
-export const getSqlCollectionOutput: typeof import("./getSqlCollection").getSqlCollectionOutput = null as any;
-utilities.lazyLoad(exports, ["getSqlCollection","getSqlCollectionOutput"], () => require("./getSqlCollection"));
-
-export { GetSqlCollectionAnalyticsArgs, GetSqlCollectionAnalyticsResult, GetSqlCollectionAnalyticsOutputArgs } from "./getSqlCollectionAnalytics";
-export const getSqlCollectionAnalytics: typeof import("./getSqlCollectionAnalytics").getSqlCollectionAnalytics = null as any;
-export const getSqlCollectionAnalyticsOutput: typeof import("./getSqlCollectionAnalytics").getSqlCollectionAnalyticsOutput = null as any;
-utilities.lazyLoad(exports, ["getSqlCollectionAnalytics","getSqlCollectionAnalyticsOutput"], () => require("./getSqlCollectionAnalytics"));
-
-export { GetSqlCollectionLogInsightsArgs, GetSqlCollectionLogInsightsResult, GetSqlCollectionLogInsightsOutputArgs } from "./getSqlCollectionLogInsights";
-export const getSqlCollectionLogInsights: typeof import("./getSqlCollectionLogInsights").getSqlCollectionLogInsights = null as any;
-export const getSqlCollectionLogInsightsOutput: typeof import("./getSqlCollectionLogInsights").getSqlCollectionLogInsightsOutput = null as any;
-utilities.lazyLoad(exports, ["getSqlCollectionLogInsights","getSqlCollectionLogInsightsOutput"], () => require("./getSqlCollectionLogInsights"));
-
-export { GetSqlCollectionsArgs, GetSqlCollectionsResult, GetSqlCollectionsOutputArgs } from "./getSqlCollections";
-export const getSqlCollections: typeof import("./getSqlCollections").getSqlCollections = null as any;
-export const getSqlCollectionsOutput: typeof import("./getSqlCollections").getSqlCollectionsOutput = null as any;
-utilities.lazyLoad(exports, ["getSqlCollections","getSqlCollectionsOutput"], () => require("./getSqlCollections"));
-
-export { GetSqlFirewallAllowedSqlAnalyticsArgs, GetSqlFirewallAllowedSqlAnalyticsResult, GetSqlFirewallAllowedSqlAnalyticsOutputArgs } from "./getSqlFirewallAllowedSqlAnalytics";
-export const getSqlFirewallAllowedSqlAnalytics: typeof import("./getSqlFirewallAllowedSqlAnalytics").getSqlFirewallAllowedSqlAnalytics = null as any;
-export const getSqlFirewallAllowedSqlAnalyticsOutput: typeof import("./getSqlFirewallAllowedSqlAnalytics").getSqlFirewallAllowedSqlAnalyticsOutput = null as any;
-utilities.lazyLoad(exports, ["getSqlFirewallAllowedSqlAnalytics","getSqlFirewallAllowedSqlAnalyticsOutput"], () => require("./getSqlFirewallAllowedSqlAnalytics"));
-
-export { GetSqlFirewallAllowedSqlsArgs, GetSqlFirewallAllowedSqlsResult, GetSqlFirewallAllowedSqlsOutputArgs } from "./getSqlFirewallAllowedSqls";
-export const getSqlFirewallAllowedSqls: typeof import("./getSqlFirewallAllowedSqls").getSqlFirewallAllowedSqls = null as any;
-export const getSqlFirewallAllowedSqlsOutput: typeof import("./getSqlFirewallAllowedSqls").getSqlFirewallAllowedSqlsOutput = null as any;
-utilities.lazyLoad(exports, ["getSqlFirewallAllowedSqls","getSqlFirewallAllowedSqlsOutput"], () => require("./getSqlFirewallAllowedSqls"));
-
-export { GetSqlFirewallPoliciesArgs, GetSqlFirewallPoliciesResult, GetSqlFirewallPoliciesOutputArgs } from "./getSqlFirewallPolicies";
-export const getSqlFirewallPolicies: typeof import("./getSqlFirewallPolicies").getSqlFirewallPolicies = null as any;
-export const getSqlFirewallPoliciesOutput: typeof import("./getSqlFirewallPolicies").getSqlFirewallPoliciesOutput = null as any;
-utilities.lazyLoad(exports, ["getSqlFirewallPolicies","getSqlFirewallPoliciesOutput"], () => require("./getSqlFirewallPolicies"));
-
-export { GetSqlFirewallPolicyArgs, GetSqlFirewallPolicyResult, GetSqlFirewallPolicyOutputArgs } from "./getSqlFirewallPolicy";
-export const getSqlFirewallPolicy: typeof import("./getSqlFirewallPolicy").getSqlFirewallPolicy = null as any;
-export const getSqlFirewallPolicyOutput: typeof import("./getSqlFirewallPolicy").getSqlFirewallPolicyOutput = null as any;
-utilities.lazyLoad(exports, ["getSqlFirewallPolicy","getSqlFirewallPolicyOutput"], () => require("./getSqlFirewallPolicy"));
-
-export { GetSqlFirewallPolicyAnalyticsArgs, GetSqlFirewallPolicyAnalyticsResult, GetSqlFirewallPolicyAnalyticsOutputArgs } from "./getSqlFirewallPolicyAnalytics";
-export const getSqlFirewallPolicyAnalytics: typeof import("./getSqlFirewallPolicyAnalytics").getSqlFirewallPolicyAnalytics = null as any;
-export const getSqlFirewallPolicyAnalyticsOutput: typeof import("./getSqlFirewallPolicyAnalytics").getSqlFirewallPolicyAnalyticsOutput = null as any;
-utilities.lazyLoad(exports, ["getSqlFirewallPolicyAnalytics","getSqlFirewallPolicyAnalyticsOutput"], () => require("./getSqlFirewallPolicyAnalytics"));
-
-export { GetSqlFirewallViolationAnalyticsArgs, GetSqlFirewallViolationAnalyticsResult, GetSqlFirewallViolationAnalyticsOutputArgs } from "./getSqlFirewallViolationAnalytics";
-export const getSqlFirewallViolationAnalytics: typeof import("./getSqlFirewallViolationAnalytics").getSqlFirewallViolationAnalytics = null as any;
-export const getSqlFirewallViolationAnalyticsOutput: typeof import("./getSqlFirewallViolationAnalytics").getSqlFirewallViolationAnalyticsOutput = null as any;
-utilities.lazyLoad(exports, ["getSqlFirewallViolationAnalytics","getSqlFirewallViolationAnalyticsOutput"], () => require("./getSqlFirewallViolationAnalytics"));
-
-export { GetSqlFirewallViolationsArgs, GetSqlFirewallViolationsResult, GetSqlFirewallViolationsOutputArgs } from "./getSqlFirewallViolations";
-export const getSqlFirewallViolations: typeof import("./getSqlFirewallViolations").getSqlFirewallViolations = null as any;
-export const getSqlFirewallViolationsOutput: typeof import("./getSqlFirewallViolations").getSqlFirewallViolationsOutput = null as any;
-utilities.lazyLoad(exports, ["getSqlFirewallViolations","getSqlFirewallViolationsOutput"], () => require("./getSqlFirewallViolations"));
 
 export { GetTargetAlertPolicyAssociationArgs, GetTargetAlertPolicyAssociationResult, GetTargetAlertPolicyAssociationOutputArgs } from "./getTargetAlertPolicyAssociation";
 export const getTargetAlertPolicyAssociation: typeof import("./getTargetAlertPolicyAssociation").getTargetAlertPolicyAssociation = null as any;
@@ -763,10 +683,16 @@ const _module = {
                 return new AuditArchiveRetrieval(name, <any>undefined, { urn })
             case "oci:DataSafe/auditPolicy:AuditPolicy":
                 return new AuditPolicy(name, <any>undefined, { urn })
+            case "oci:DataSafe/auditPolicyManagement:AuditPolicyManagement":
+                return new AuditPolicyManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/auditProfile:AuditProfile":
                 return new AuditProfile(name, <any>undefined, { urn })
+            case "oci:DataSafe/auditProfileManagement:AuditProfileManagement":
+                return new AuditProfileManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/auditTrail:AuditTrail":
                 return new AuditTrail(name, <any>undefined, { urn })
+            case "oci:DataSafe/auditTrailManagement:AuditTrailManagement":
+                return new AuditTrailManagement(name, <any>undefined, { urn })
             case "oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment":
                 return new CompareSecurityAssessment(name, <any>undefined, { urn })
             case "oci:DataSafe/compareUserAssessment:CompareUserAssessment":
@@ -846,8 +772,11 @@ pulumi.runtime.registerResourceModule("oci", "DataSafe/addSdmColumns", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/alert", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditArchiveRetrieval", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditPolicy", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/auditPolicyManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditProfile", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/auditProfileManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/auditTrail", _module)
+pulumi.runtime.registerResourceModule("oci", "DataSafe/auditTrailManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/compareSecurityAssessment", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/compareUserAssessment", _module)
 pulumi.runtime.registerResourceModule("oci", "DataSafe/dataSafeConfiguration", _module)

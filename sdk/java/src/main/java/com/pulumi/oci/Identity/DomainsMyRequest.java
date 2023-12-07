@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Identity.DomainsMyRequestArgs;
 import com.pulumi.oci.Identity.inputs.DomainsMyRequestState;
+import com.pulumi.oci.Identity.outputs.DomainsMyRequestApprovalDetail;
 import com.pulumi.oci.Identity.outputs.DomainsMyRequestIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.DomainsMyRequestIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.DomainsMyRequestMeta;
@@ -27,8 +28,10 @@ import javax.annotation.Nullable;
  * 
  * Create a Request
  * 
- * ## Example Usage
+ * ** IMPORTANT **
+ * In our latest release, the property `status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
  * 
+ * ## Example Usage
  * ```java
  * package generated_program;
  * 
@@ -38,6 +41,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Identity.DomainsMyRequest;
  * import com.pulumi.oci.Identity.DomainsMyRequestArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsMyRequestRequestingArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsMyRequestApprovalDetailArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsMyRequestRequestorArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsMyRequestTagArgs;
  * import java.util.List;
@@ -59,17 +63,19 @@ import javax.annotation.Nullable;
  *             .requesting(DomainsMyRequestRequestingArgs.builder()
  *                 .type(var_.my_request_requesting_type())
  *                 .value(oci_identity_domains_group.group_to_request().id())
+ *                 .description(var_.my_request_requesting_description())
  *                 .build())
  *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:Request&#34;)
+ *             .action(var_.my_request_action())
+ *             .approvalDetails()
  *             .attributeSets(&#34;all&#34;)
  *             .attributes(&#34;&#34;)
  *             .authorization(var_.my_request_authorization())
- *             .id(var_.my_request_id())
+ *             .ocid(var_.my_request_ocid())
  *             .requestor(DomainsMyRequestRequestorArgs.builder()
  *                 .value(var_.my_request_requestor_value())
  *                 .build())
  *             .resourceTypeSchemaVersion(var_.my_request_resource_type_schema_version())
- *             .status(var_.my_request_status())
  *             .tags(DomainsMyRequestTagArgs.builder()
  *                 .key(var_.my_request_tags_key())
  *                 .value(var_.my_request_tags_value())
@@ -87,6 +93,78 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Identity/domainsMyRequest:DomainsMyRequest")
 public class DomainsMyRequest extends com.pulumi.resources.CustomResource {
+    /**
+     * Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can&#39;t escalate the request if canceling or escalation is in progress.
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Export(name="action", refs={String.class}, tree="[0]")
+    private Output<String> action;
+
+    /**
+     * @return Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can&#39;t escalate the request if canceling or escalation is in progress.
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Output<String> action() {
+        return this.action;
+    }
+    /**
+     * Approvals created for this request.
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    @Export(name="approvalDetails", refs={List.class,DomainsMyRequestApprovalDetail.class}, tree="[0,1]")
+    private Output<List<DomainsMyRequestApprovalDetail>> approvalDetails;
+
+    /**
+     * @return Approvals created for this request.
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    public Output<List<DomainsMyRequestApprovalDetail>> approvalDetails() {
+        return this.approvalDetails;
+    }
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      * 
@@ -230,6 +308,42 @@ public class DomainsMyRequest extends com.pulumi.resources.CustomResource {
      */
     public Output<String> domainOcid() {
         return this.domainOcid;
+    }
+    /**
+     * (Updatable) Time by when Request expires
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
+     */
+    @Export(name="expires", refs={String.class}, tree="[0]")
+    private Output<String> expires;
+
+    /**
+     * @return (Updatable) Time by when Request expires
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
+     */
+    public Output<String> expires() {
+        return this.expires;
     }
     /**
      * (Updatable) The User or App who created the Resource
@@ -586,13 +700,13 @@ public class DomainsMyRequest extends com.pulumi.resources.CustomResource {
         return this.schemas;
     }
     /**
-     * status
+     * (Updatable) status.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -603,13 +717,13 @@ public class DomainsMyRequest extends com.pulumi.resources.CustomResource {
     private Output<String> status;
 
     /**
-     * @return status
+     * @return (Updatable) status.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string

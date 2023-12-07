@@ -23,7 +23,7 @@ class SetUserAssessmentBaselineArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of user assessment OCIDs that need to be updated while setting the baseline.
         """
         pulumi.set(__self__, "user_assessment_id", user_assessment_id)
         if assessment_ids is not None:
@@ -49,7 +49,7 @@ class SetUserAssessmentBaselineArgs:
     @pulumi.getter(name="assessmentIds")
     def assessment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of OCIDs for the user assessments that need to be updated while setting the baseline.
+        The list of user assessment OCIDs that need to be updated while setting the baseline.
         """
         return pulumi.get(self, "assessment_ids")
 
@@ -65,7 +65,7 @@ class _SetUserAssessmentBaselineState:
                  user_assessment_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering SetUserAssessmentBaseline resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of user assessment OCIDs that need to be updated while setting the baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
                
                
@@ -81,7 +81,7 @@ class _SetUserAssessmentBaselineState:
     @pulumi.getter(name="assessmentIds")
     def assessment_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The list of OCIDs for the user assessments that need to be updated while setting the baseline.
+        The list of user assessment OCIDs that need to be updated while setting the baseline.
         """
         return pulumi.get(self, "assessment_ids")
 
@@ -140,7 +140,7 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of user assessment OCIDs that need to be updated while setting the baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
                
                
@@ -226,7 +226,7 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of OCIDs for the user assessments that need to be updated while setting the baseline.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] assessment_ids: The list of user assessment OCIDs that need to be updated while setting the baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
                
                
@@ -245,7 +245,7 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
     @pulumi.getter(name="assessmentIds")
     def assessment_ids(self) -> pulumi.Output[Sequence[str]]:
         """
-        The list of OCIDs for the user assessments that need to be updated while setting the baseline.
+        The list of user assessment OCIDs that need to be updated while setting the baseline.
         """
         return pulumi.get(self, "assessment_ids")
 

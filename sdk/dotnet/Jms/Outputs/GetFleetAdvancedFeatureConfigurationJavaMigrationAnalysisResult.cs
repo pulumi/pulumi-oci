@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Jms.Outputs
     public sealed class GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult
     {
         /// <summary>
-        /// PerformanceTuningAnalysis flag to store enabled or disabled status.
+        /// PerformanceTuningAnalysis flag to store enabled or disabled status
         /// </summary>
         public readonly bool IsEnabled;
 

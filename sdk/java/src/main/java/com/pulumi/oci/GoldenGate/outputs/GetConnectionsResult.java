@@ -49,7 +49,7 @@ public final class GetConnectionsResult {
      */
     private @Nullable String state;
     /**
-     * @return The Kafka (e.g. Confluent) Schema Registry technology type.
+     * @return The technology type.
      * 
      */
     private @Nullable List<String> technologyTypes;
@@ -110,7 +110,7 @@ public final class GetConnectionsResult {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return The Kafka (e.g. Confluent) Schema Registry technology type.
+     * @return The technology type.
      * 
      */
     public List<String> technologyTypes() {

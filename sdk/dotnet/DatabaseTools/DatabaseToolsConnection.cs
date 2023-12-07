@@ -14,65 +14,6 @@ namespace Pulumi.Oci.DatabaseTools
     /// 
     /// Creates a new Database Tools connection.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testDatabaseToolsConnection = new Oci.DatabaseTools.DatabaseToolsConnection("testDatabaseToolsConnection", new()
-    ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Database_tools_connection_display_name,
-    ///         Type = @var.Database_tools_connection_type,
-    ///         AdvancedProperties = @var.Database_tools_connection_advanced_properties,
-    ///         ConnectionString = @var.Database_tools_connection_connection_string,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "foo-namespace.bar-key", "value" },
-    ///         },
-    ///         FreeformTags = 
-    ///         {
-    ///             { "bar-key", "value" },
-    ///         },
-    ///         KeyStores = new[]
-    ///         {
-    ///             new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionKeyStoreArgs
-    ///             {
-    ///                 KeyStoreContent = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionKeyStoreKeyStoreContentArgs
-    ///                 {
-    ///                     ValueType = @var.Database_tools_connection_key_stores_key_store_content_value_type,
-    ///                     SecretId = oci_vault_secret.Test_secret.Id,
-    ///                 },
-    ///                 KeyStorePassword = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs
-    ///                 {
-    ///                     ValueType = @var.Database_tools_connection_key_stores_key_store_password_value_type,
-    ///                     SecretId = oci_vault_secret.Test_secret.Id,
-    ///                 },
-    ///                 KeyStoreType = @var.Database_tools_connection_key_stores_key_store_type,
-    ///             },
-    ///         },
-    ///         PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-    ///         RelatedResource = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionRelatedResourceArgs
-    ///         {
-    ///             EntityType = @var.Database_tools_connection_related_resource_entity_type,
-    ///             Identifier = @var.Database_tools_connection_related_resource_identifier,
-    ///         },
-    ///         UserName = oci_identity_user.Test_user.Name,
-    ///         UserPassword = new Oci.DatabaseTools.Inputs.DatabaseToolsConnectionUserPasswordArgs
-    ///         {
-    ///             SecretId = oci_vault_secret.Test_secret.Id,
-    ///             ValueType = @var.Database_tools_connection_user_password_value_type,
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// DatabaseToolsConnections can be imported using the `id`, e.g.
@@ -133,16 +74,34 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.DatabaseToolsConnectionLock>> Locks { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         /// </summary>
         [Output("privateEndpointId")]
         public Output<string> PrivateEndpointId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The proxy client information.
+        /// </summary>
+        [Output("proxyClient")]
+        public Output<Outputs.DatabaseToolsConnectionProxyClient> ProxyClient { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The related resource
         /// </summary>
         [Output("relatedResource")]
         public Output<Outputs.DatabaseToolsConnectionRelatedResource> RelatedResource { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies whether this connection is supported by the Database Tools Runtime.
+        /// </summary>
+        [Output("runtimeSupport")]
+        public Output<string> RuntimeSupport { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Database Tools connection.
@@ -157,7 +116,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+        /// When the lock was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -173,6 +132,12 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+        /// </summary>
+        [Output("url")]
+        public Output<string> Url { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The database user name.
@@ -298,11 +263,29 @@ namespace Pulumi.Oci.DatabaseTools
             set => _keyStores = value;
         }
 
+        [Input("locks")]
+        private InputList<Inputs.DatabaseToolsConnectionLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.DatabaseToolsConnectionLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.DatabaseToolsConnectionLockArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         /// </summary>
         [Input("privateEndpointId")]
         public Input<string>? PrivateEndpointId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The proxy client information.
+        /// </summary>
+        [Input("proxyClient")]
+        public Input<Inputs.DatabaseToolsConnectionProxyClientArgs>? ProxyClient { get; set; }
 
         /// <summary>
         /// (Updatable) The related resource
@@ -311,22 +294,34 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<Inputs.DatabaseToolsConnectionRelatedResourceArgs>? RelatedResource { get; set; }
 
         /// <summary>
+        /// Specifies whether this connection is supported by the Database Tools Runtime.
+        /// </summary>
+        [Input("runtimeSupport")]
+        public Input<string>? RuntimeSupport { get; set; }
+
+        /// <summary>
         /// (Updatable) The DatabaseToolsConnection type.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+        /// </summary>
+        [Input("url")]
+        public Input<string>? Url { get; set; }
+
+        /// <summary>
         /// (Updatable) The database user name.
         /// </summary>
-        [Input("userName")]
-        public Input<string>? UserName { get; set; }
+        [Input("userName", required: true)]
+        public Input<string> UserName { get; set; } = null!;
 
         /// <summary>
         /// (Updatable) The user password.
         /// </summary>
-        [Input("userPassword")]
-        public Input<Inputs.DatabaseToolsConnectionUserPasswordArgs>? UserPassword { get; set; }
+        [Input("userPassword", required: true)]
+        public Input<Inputs.DatabaseToolsConnectionUserPasswordArgs> UserPassword { get; set; } = null!;
 
         public DatabaseToolsConnectionArgs()
         {
@@ -408,6 +403,18 @@ namespace Pulumi.Oci.DatabaseTools
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        [Input("locks")]
+        private InputList<Inputs.DatabaseToolsConnectionLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.DatabaseToolsConnectionLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.DatabaseToolsConnectionLockGetArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         /// </summary>
@@ -415,10 +422,22 @@ namespace Pulumi.Oci.DatabaseTools
         public Input<string>? PrivateEndpointId { get; set; }
 
         /// <summary>
+        /// (Updatable) The proxy client information.
+        /// </summary>
+        [Input("proxyClient")]
+        public Input<Inputs.DatabaseToolsConnectionProxyClientGetArgs>? ProxyClient { get; set; }
+
+        /// <summary>
         /// (Updatable) The related resource
         /// </summary>
         [Input("relatedResource")]
         public Input<Inputs.DatabaseToolsConnectionRelatedResourceGetArgs>? RelatedResource { get; set; }
+
+        /// <summary>
+        /// Specifies whether this connection is supported by the Database Tools Runtime.
+        /// </summary>
+        [Input("runtimeSupport")]
+        public Input<string>? RuntimeSupport { get; set; }
 
         /// <summary>
         /// The current state of the Database Tools connection.
@@ -439,7 +458,7 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+        /// When the lock was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
@@ -455,6 +474,12 @@ namespace Pulumi.Oci.DatabaseTools
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
+
+        /// <summary>
+        /// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+        /// </summary>
+        [Input("url")]
+        public Input<string>? Url { get; set; }
 
         /// <summary>
         /// (Updatable) The database user name.

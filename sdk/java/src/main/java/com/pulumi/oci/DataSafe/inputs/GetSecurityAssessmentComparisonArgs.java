@@ -14,14 +14,14 @@ public final class GetSecurityAssessmentComparisonArgs extends com.pulumi.resour
     public static final GetSecurityAssessmentComparisonArgs Empty = new GetSecurityAssessmentComparisonArgs();
 
     /**
-     * The OCID of the security assessment baseline.
+     * The OCID of the baseline security assessment.
      * 
      */
     @Import(name="comparisonSecurityAssessmentId", required=true)
     private Output<String> comparisonSecurityAssessmentId;
 
     /**
-     * @return The OCID of the security assessment baseline.
+     * @return The OCID of the baseline security assessment.
      * 
      */
     public Output<String> comparisonSecurityAssessmentId() {
@@ -69,7 +69,7 @@ public final class GetSecurityAssessmentComparisonArgs extends com.pulumi.resour
         }
 
         /**
-         * @param comparisonSecurityAssessmentId The OCID of the security assessment baseline.
+         * @param comparisonSecurityAssessmentId The OCID of the baseline security assessment.
          * 
          * @return builder
          * 
@@ -80,7 +80,7 @@ public final class GetSecurityAssessmentComparisonArgs extends com.pulumi.resour
         }
 
         /**
-         * @param comparisonSecurityAssessmentId The OCID of the security assessment baseline.
+         * @param comparisonSecurityAssessmentId The OCID of the baseline security assessment.
          * 
          * @return builder
          * 

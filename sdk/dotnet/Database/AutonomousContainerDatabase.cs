@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Database
         public Output<Outputs.AutonomousContainerDatabaseBackupConfig> BackupConfig { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the Cloud Autonomous VM Cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         /// </summary>
         [Output("cloudAutonomousVmClusterId")]
         public Output<string> CloudAutonomousVmClusterId { get; private set; } = null!;
@@ -325,6 +325,12 @@ namespace Pulumi.Oci.Database
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
+        /// The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+        /// </summary>
+        [Output("timeOfLastBackup")]
+        public Output<string> TimeOfLastBackup { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         /// </summary>
         [Output("timeSnapshotStandbyRevert")]
@@ -413,7 +419,7 @@ namespace Pulumi.Oci.Database
         public Input<Inputs.AutonomousContainerDatabaseBackupConfigArgs>? BackupConfig { get; set; }
 
         /// <summary>
-        /// The OCID of the Cloud Autonomous VM Cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         /// </summary>
         [Input("cloudAutonomousVmClusterId")]
         public Input<string>? CloudAutonomousVmClusterId { get; set; }
@@ -626,7 +632,7 @@ namespace Pulumi.Oci.Database
         public Input<Inputs.AutonomousContainerDatabaseBackupConfigGetArgs>? BackupConfig { get; set; }
 
         /// <summary>
-        /// The OCID of the Cloud Autonomous VM Cluster.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         /// </summary>
         [Input("cloudAutonomousVmClusterId")]
         public Input<string>? CloudAutonomousVmClusterId { get; set; }
@@ -923,6 +929,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+        /// </summary>
+        [Input("timeOfLastBackup")]
+        public Input<string>? TimeOfLastBackup { get; set; }
 
         /// <summary>
         /// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.

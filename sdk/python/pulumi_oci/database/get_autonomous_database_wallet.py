@@ -107,18 +107,6 @@ def get_autonomous_database_wallet(autonomous_database_id: Optional[str] = None,
 
     Creates and downloads a wallet for the specified Autonomous Database.
 
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_wallet = oci.Database.get_autonomous_database_wallet(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-        password=var["autonomous_database_wallet_password"],
-        base64_encode_content=False,
-        generate_type=var["autonomous_database_wallet_generate_type"])
-    ```
-
 
     :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str generate_type: The type of wallet to generate.
@@ -155,18 +143,6 @@ def get_autonomous_database_wallet_output(autonomous_database_id: Optional[pulum
     This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
 
     Creates and downloads a wallet for the specified Autonomous Database.
-
-    ## Example Usage
-
-    ```python
-    import pulumi
-    import pulumi_oci as oci
-
-    test_autonomous_database_wallet = oci.Database.get_autonomous_database_wallet(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-        password=var["autonomous_database_wallet_password"],
-        base64_encode_content=False,
-        generate_type=var["autonomous_database_wallet_generate_type"])
-    ```
 
 
     :param str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

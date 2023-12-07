@@ -18,6 +18,7 @@ __all__ = [
     'VulnerabilityAuditApplicationDependencyArgs',
     'VulnerabilityAuditConfigurationArgs',
     'VulnerabilityAuditSourceArgs',
+    'VulnerabilityAuditUsageDataArgs',
     'VulnerabilityAuditVulnerabilityArgs',
     'GetKnowledgebasesFilterArgs',
     'GetRemediationRecipesFilterArgs',
@@ -654,10 +655,6 @@ class VulnerabilityAuditSourceArgs:
                  oci_resource_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: Source type of the vulnerability audit.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: Description of the external resource source.
         :param pulumi.Input[str] oci_resource_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
         """
@@ -672,10 +669,6 @@ class VulnerabilityAuditSourceArgs:
     def type(self) -> pulumi.Input[str]:
         """
         Source type of the vulnerability audit.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -709,16 +702,93 @@ class VulnerabilityAuditSourceArgs:
 
 
 @pulumi.input_type
+class VulnerabilityAuditUsageDataArgs:
+    def __init__(__self__, *,
+                 bucket: pulumi.Input[str],
+                 namespace: pulumi.Input[str],
+                 object: pulumi.Input[str],
+                 source_type: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] bucket: The Object Storage bucket to read the usage data from.
+        :param pulumi.Input[str] namespace: The Object Storage namespace to read the usage data from.
+        :param pulumi.Input[str] object: The Object Storage object name to read the usage data from.
+        :param pulumi.Input[str] source_type: The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> pulumi.Input[str]:
+        """
+        The Object Storage bucket to read the usage data from.
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: pulumi.Input[str]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[str]:
+        """
+        The Object Storage namespace to read the usage data from.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[str]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def object(self) -> pulumi.Input[str]:
+        """
+        The Object Storage object name to read the usage data from.
+        """
+        return pulumi.get(self, "object")
+
+    @object.setter
+    def object(self, value: pulumi.Input[str]):
+        pulumi.set(self, "object", value)
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Input[str]:
+        """
+        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "source_type", value)
+
+
+@pulumi.input_type
 class VulnerabilityAuditVulnerabilityArgs:
     def __init__(__self__, *,
                  cvss_v2score: Optional[pulumi.Input[float]] = None,
                  cvss_v3score: Optional[pulumi.Input[float]] = None,
                  id: Optional[pulumi.Input[str]] = None,
+                 is_false_positive: Optional[pulumi.Input[bool]] = None,
                  is_ignored: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[float] cvss_v2score: Common Vulnerability Scoring System (CVSS) Version 2.
         :param pulumi.Input[float] cvss_v3score: Common Vulnerability Scoring System (CVSS) Version 3.
         :param pulumi.Input[str] id: Unique vulnerability identifier, e.g. CVE-1999-0067.
+        :param pulumi.Input[bool] is_false_positive: Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
         :param pulumi.Input[bool] is_ignored: Indicates if the vulnerability was ignored according to the audit configuration.
         """
         if cvss_v2score is not None:
@@ -727,6 +797,8 @@ class VulnerabilityAuditVulnerabilityArgs:
             pulumi.set(__self__, "cvss_v3score", cvss_v3score)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_false_positive is not None:
+            pulumi.set(__self__, "is_false_positive", is_false_positive)
         if is_ignored is not None:
             pulumi.set(__self__, "is_ignored", is_ignored)
 
@@ -765,6 +837,18 @@ class VulnerabilityAuditVulnerabilityArgs:
     @id.setter
     def id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="isFalsePositive")
+    def is_false_positive(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+        """
+        return pulumi.get(self, "is_false_positive")
+
+    @is_false_positive.setter
+    def is_false_positive(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_false_positive", value)
 
     @property
     @pulumi.getter(name="isIgnored")

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Jms.Outputs
     public sealed class GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult
     {
         /// <summary>
-        /// Commonly used name for the license type.
+        /// Commonly used name for the MoS release.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>

@@ -20,7 +20,7 @@ public final class GetIpsecConnectionTunnelsResult {
      */
     private String id;
     /**
-     * @return The list of ip_sec_connection_tunnels.
+     * @return The list of two ip_sec_connection_tunnels.
      * 
      */
     private List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels;
@@ -38,7 +38,7 @@ public final class GetIpsecConnectionTunnelsResult {
         return this.id;
     }
     /**
-     * @return The list of ip_sec_connection_tunnels.
+     * @return The list of two ip_sec_connection_tunnels.
      * 
      */
     public List<GetIpsecConnectionTunnelsIpSecConnectionTunnel> ipSecConnectionTunnels() {

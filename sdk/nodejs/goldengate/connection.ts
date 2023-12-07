@@ -52,6 +52,7 @@ import * as utilities from "../utilities";
  *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
  *     description: _var.connection_description,
  *     endpoint: _var.connection_endpoint,
+ *     fingerprint: _var.connection_fingerprint,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
@@ -76,6 +77,8 @@ import * as utilities from "../utilities";
  *     sasToken: _var.connection_sas_token,
  *     secretAccessKey: _var.connection_secret_access_key,
  *     securityProtocol: _var.connection_security_protocol,
+ *     servers: _var.connection_servers,
+ *     serviceAccountKeyFile: _var.connection_service_account_key_file,
  *     sessionMode: _var.connection_session_mode,
  *     shouldUseJndi: _var.connection_should_use_jndi,
  *     shouldValidateServerCertificate: _var.connection_should_validate_server_certificate,
@@ -151,7 +154,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly additionalAttributes!: pulumi.Output<outputs.GoldenGate.ConnectionAdditionalAttribute[]>;
     /**
-     * (Updatable) Used authentication mechanism.
+     * (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      */
     public readonly authenticationType!: pulumi.Output<string>;
     /**
@@ -187,7 +190,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly connectionType!: pulumi.Output<string>;
     /**
-     * (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+     * (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
      */
     public readonly connectionUrl!: pulumi.Output<string>;
     /**
@@ -199,7 +202,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly coreSiteXml!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      */
     public readonly databaseId!: pulumi.Output<string>;
     /**
@@ -231,11 +234,16 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly endpoint!: pulumi.Output<string>;
     /**
+     * (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+     */
+    public readonly fingerprint!: pulumi.Output<string>;
+    /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) The name or address of a host.
+     * (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+     * For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
      */
     public readonly host!: pulumi.Output<string>;
     /**
@@ -323,9 +331,17 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly secretAccessKey!: pulumi.Output<string>;
     /**
-     * (Updatable) Security Protocol.
+     * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      */
     public readonly securityProtocol!: pulumi.Output<string>;
+    /**
+     * (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
+     */
+    public readonly servers!: pulumi.Output<string>;
+    /**
+     * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+     */
+    public readonly serviceAccountKeyFile!: pulumi.Output<string>;
     /**
      * (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      */
@@ -407,11 +423,11 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly url!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
      */
     public readonly userId!: pulumi.Output<string>;
     /**
-     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      */
     public readonly username!: pulumi.Output<string>;
     /**
@@ -419,7 +435,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly vaultId!: pulumi.Output<string>;
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -463,6 +479,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["endpoint"] = state ? state.endpoint : undefined;
+            resourceInputs["fingerprint"] = state ? state.fingerprint : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["host"] = state ? state.host : undefined;
             resourceInputs["ingressIps"] = state ? state.ingressIps : undefined;
@@ -487,6 +504,8 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["sasToken"] = state ? state.sasToken : undefined;
             resourceInputs["secretAccessKey"] = state ? state.secretAccessKey : undefined;
             resourceInputs["securityProtocol"] = state ? state.securityProtocol : undefined;
+            resourceInputs["servers"] = state ? state.servers : undefined;
+            resourceInputs["serviceAccountKeyFile"] = state ? state.serviceAccountKeyFile : undefined;
             resourceInputs["sessionMode"] = state ? state.sessionMode : undefined;
             resourceInputs["shouldUseJndi"] = state ? state.shouldUseJndi : undefined;
             resourceInputs["shouldValidateServerCertificate"] = state ? state.shouldValidateServerCertificate : undefined;
@@ -549,6 +568,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["endpoint"] = args ? args.endpoint : undefined;
+            resourceInputs["fingerprint"] = args ? args.fingerprint : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["host"] = args ? args.host : undefined;
             resourceInputs["jndiConnectionFactory"] = args ? args.jndiConnectionFactory : undefined;
@@ -571,6 +591,8 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["sasToken"] = args ? args.sasToken : undefined;
             resourceInputs["secretAccessKey"] = args ? args.secretAccessKey : undefined;
             resourceInputs["securityProtocol"] = args ? args.securityProtocol : undefined;
+            resourceInputs["servers"] = args ? args.servers : undefined;
+            resourceInputs["serviceAccountKeyFile"] = args ? args.serviceAccountKeyFile : undefined;
             resourceInputs["sessionMode"] = args ? args.sessionMode : undefined;
             resourceInputs["shouldUseJndi"] = args ? args.shouldUseJndi : undefined;
             resourceInputs["shouldValidateServerCertificate"] = args ? args.shouldValidateServerCertificate : undefined;
@@ -626,7 +648,7 @@ export interface ConnectionState {
      */
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.GoldenGate.ConnectionAdditionalAttribute>[]>;
     /**
-     * (Updatable) Used authentication mechanism.
+     * (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      */
     authenticationType?: pulumi.Input<string>;
     /**
@@ -662,7 +684,7 @@ export interface ConnectionState {
      */
     connectionType?: pulumi.Input<string>;
     /**
-     * (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+     * (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
      */
     connectionUrl?: pulumi.Input<string>;
     /**
@@ -674,7 +696,7 @@ export interface ConnectionState {
      */
     coreSiteXml?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      */
     databaseId?: pulumi.Input<string>;
     /**
@@ -706,11 +728,16 @@ export interface ConnectionState {
      */
     endpoint?: pulumi.Input<string>;
     /**
+     * (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+     */
+    fingerprint?: pulumi.Input<string>;
+    /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The name or address of a host.
+     * (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+     * For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
      */
     host?: pulumi.Input<string>;
     /**
@@ -798,9 +825,17 @@ export interface ConnectionState {
      */
     secretAccessKey?: pulumi.Input<string>;
     /**
-     * (Updatable) Security Protocol.
+     * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      */
     securityProtocol?: pulumi.Input<string>;
+    /**
+     * (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
+     */
+    servers?: pulumi.Input<string>;
+    /**
+     * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+     */
+    serviceAccountKeyFile?: pulumi.Input<string>;
     /**
      * (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      */
@@ -882,11 +917,11 @@ export interface ConnectionState {
      */
     url?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
      */
     userId?: pulumi.Input<string>;
     /**
-     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      */
     username?: pulumi.Input<string>;
     /**
@@ -894,7 +929,7 @@ export interface ConnectionState {
      */
     vaultId?: pulumi.Input<string>;
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -923,7 +958,7 @@ export interface ConnectionArgs {
      */
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.GoldenGate.ConnectionAdditionalAttribute>[]>;
     /**
-     * (Updatable) Used authentication mechanism.
+     * (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      */
     authenticationType?: pulumi.Input<string>;
     /**
@@ -959,7 +994,7 @@ export interface ConnectionArgs {
      */
     connectionType: pulumi.Input<string>;
     /**
-     * (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+     * (Updatable) JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
      */
     connectionUrl?: pulumi.Input<string>;
     /**
@@ -971,7 +1006,7 @@ export interface ConnectionArgs {
      */
     coreSiteXml?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      */
     databaseId?: pulumi.Input<string>;
     /**
@@ -1003,11 +1038,16 @@ export interface ConnectionArgs {
      */
     endpoint?: pulumi.Input<string>;
     /**
+     * (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+     */
+    fingerprint?: pulumi.Input<string>;
+    /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The name or address of a host.
+     * (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+     * For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
      */
     host?: pulumi.Input<string>;
     /**
@@ -1087,9 +1127,17 @@ export interface ConnectionArgs {
      */
     secretAccessKey?: pulumi.Input<string>;
     /**
-     * (Updatable) Security Protocol.
+     * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      */
     securityProtocol?: pulumi.Input<string>;
+    /**
+     * (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
+     */
+    servers?: pulumi.Input<string>;
+    /**
+     * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+     */
+    serviceAccountKeyFile?: pulumi.Input<string>;
     /**
      * (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      */
@@ -1155,11 +1203,11 @@ export interface ConnectionArgs {
      */
     url?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
      */
     userId?: pulumi.Input<string>;
     /**
-     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      */
     username?: pulumi.Input<string>;
     /**
@@ -1167,7 +1215,7 @@ export interface ConnectionArgs {
      */
     vaultId?: pulumi.Input<string>;
     /**
-     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded.
+     * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database.  This attribute is expected to be base64 encoded. 
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

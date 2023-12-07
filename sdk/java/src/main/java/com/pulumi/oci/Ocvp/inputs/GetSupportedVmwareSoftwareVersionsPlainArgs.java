@@ -38,11 +38,43 @@ public final class GetSupportedVmwareSoftwareVersionsPlainArgs extends com.pulum
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * A filter to return only resources that match or support the given ESXi host shape.
+     * 
+     */
+    @Import(name="hostShapeName")
+    private @Nullable String hostShapeName;
+
+    /**
+     * @return A filter to return only resources that match or support the given ESXi host shape.
+     * 
+     */
+    public Optional<String> hostShapeName() {
+        return Optional.ofNullable(this.hostShapeName);
+    }
+
+    /**
+     * A filter to return only resources that match the given VMware software version exactly.
+     * 
+     */
+    @Import(name="version")
+    private @Nullable String version;
+
+    /**
+     * @return A filter to return only resources that match the given VMware software version exactly.
+     * 
+     */
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
+    }
+
     private GetSupportedVmwareSoftwareVersionsPlainArgs() {}
 
     private GetSupportedVmwareSoftwareVersionsPlainArgs(GetSupportedVmwareSoftwareVersionsPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.hostShapeName = $.hostShapeName;
+        this.version = $.version;
     }
 
     public static Builder builder() {
@@ -81,6 +113,28 @@ public final class GetSupportedVmwareSoftwareVersionsPlainArgs extends com.pulum
 
         public Builder filters(GetSupportedVmwareSoftwareVersionsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param hostShapeName A filter to return only resources that match or support the given ESXi host shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostShapeName(@Nullable String hostShapeName) {
+            $.hostShapeName = hostShapeName;
+            return this;
+        }
+
+        /**
+         * @param version A filter to return only resources that match the given VMware software version exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder version(@Nullable String version) {
+            $.version = version;
+            return this;
         }
 
         public GetSupportedVmwareSoftwareVersionsPlainArgs build() {

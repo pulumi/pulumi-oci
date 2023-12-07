@@ -67,7 +67,7 @@ export interface GetTargetAlertPolicyAssociationResult {
      */
     readonly id: string;
     /**
-     * Indicates if the target-alert policy association is enabled or disabled by user.
+     * Indicates if the target-alert policy association is enabled or disabled.
      */
     readonly isEnabled: boolean;
     /**

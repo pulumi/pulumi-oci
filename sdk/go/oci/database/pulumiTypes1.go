@@ -13,6 +13,1606 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetPluggableDatabasePluggableDatabaseManagementConfig struct {
+	// The status of the Pluggable Database Management service.
+	ManagementStatus string `pulumi:"managementStatus"`
+}
+
+// GetPluggableDatabasePluggableDatabaseManagementConfigInput is an input type that accepts GetPluggableDatabasePluggableDatabaseManagementConfigArgs and GetPluggableDatabasePluggableDatabaseManagementConfigOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasePluggableDatabaseManagementConfigInput` via:
+//
+//	GetPluggableDatabasePluggableDatabaseManagementConfigArgs{...}
+type GetPluggableDatabasePluggableDatabaseManagementConfigInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasePluggableDatabaseManagementConfigOutput() GetPluggableDatabasePluggableDatabaseManagementConfigOutput
+	ToGetPluggableDatabasePluggableDatabaseManagementConfigOutputWithContext(context.Context) GetPluggableDatabasePluggableDatabaseManagementConfigOutput
+}
+
+type GetPluggableDatabasePluggableDatabaseManagementConfigArgs struct {
+	// The status of the Pluggable Database Management service.
+	ManagementStatus pulumi.StringInput `pulumi:"managementStatus"`
+}
+
+func (GetPluggableDatabasePluggableDatabaseManagementConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasePluggableDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasePluggableDatabaseManagementConfigArgs) ToGetPluggableDatabasePluggableDatabaseManagementConfigOutput() GetPluggableDatabasePluggableDatabaseManagementConfigOutput {
+	return i.ToGetPluggableDatabasePluggableDatabaseManagementConfigOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasePluggableDatabaseManagementConfigArgs) ToGetPluggableDatabasePluggableDatabaseManagementConfigOutputWithContext(ctx context.Context) GetPluggableDatabasePluggableDatabaseManagementConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasePluggableDatabaseManagementConfigOutput)
+}
+
+// GetPluggableDatabasePluggableDatabaseManagementConfigArrayInput is an input type that accepts GetPluggableDatabasePluggableDatabaseManagementConfigArray and GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasePluggableDatabaseManagementConfigArrayInput` via:
+//
+//	GetPluggableDatabasePluggableDatabaseManagementConfigArray{ GetPluggableDatabasePluggableDatabaseManagementConfigArgs{...} }
+type GetPluggableDatabasePluggableDatabaseManagementConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput() GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput
+	ToGetPluggableDatabasePluggableDatabaseManagementConfigArrayOutputWithContext(context.Context) GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput
+}
+
+type GetPluggableDatabasePluggableDatabaseManagementConfigArray []GetPluggableDatabasePluggableDatabaseManagementConfigInput
+
+func (GetPluggableDatabasePluggableDatabaseManagementConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasePluggableDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasePluggableDatabaseManagementConfigArray) ToGetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput() GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput {
+	return i.ToGetPluggableDatabasePluggableDatabaseManagementConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasePluggableDatabaseManagementConfigArray) ToGetPluggableDatabasePluggableDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput)
+}
+
+type GetPluggableDatabasePluggableDatabaseManagementConfigOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasePluggableDatabaseManagementConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasePluggableDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasePluggableDatabaseManagementConfigOutput) ToGetPluggableDatabasePluggableDatabaseManagementConfigOutput() GetPluggableDatabasePluggableDatabaseManagementConfigOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePluggableDatabaseManagementConfigOutput) ToGetPluggableDatabasePluggableDatabaseManagementConfigOutputWithContext(ctx context.Context) GetPluggableDatabasePluggableDatabaseManagementConfigOutput {
+	return o
+}
+
+// The status of the Pluggable Database Management service.
+func (o GetPluggableDatabasePluggableDatabaseManagementConfigOutput) ManagementStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasePluggableDatabaseManagementConfig) string { return v.ManagementStatus }).(pulumi.StringOutput)
+}
+
+type GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasePluggableDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput) ToGetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput() GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput) ToGetPluggableDatabasePluggableDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabasePluggableDatabaseManagementConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasePluggableDatabaseManagementConfig {
+		return vs[0].([]GetPluggableDatabasePluggableDatabaseManagementConfig)[vs[1].(int)]
+	}).(GetPluggableDatabasePluggableDatabaseManagementConfigOutput)
+}
+
+type GetPluggableDatabaseRefreshableCloneConfig struct {
+	// Indicates whether the Pluggable Database is a refreshable clone.
+	IsRefreshableClone bool `pulumi:"isRefreshableClone"`
+}
+
+// GetPluggableDatabaseRefreshableCloneConfigInput is an input type that accepts GetPluggableDatabaseRefreshableCloneConfigArgs and GetPluggableDatabaseRefreshableCloneConfigOutput values.
+// You can construct a concrete instance of `GetPluggableDatabaseRefreshableCloneConfigInput` via:
+//
+//	GetPluggableDatabaseRefreshableCloneConfigArgs{...}
+type GetPluggableDatabaseRefreshableCloneConfigInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabaseRefreshableCloneConfigOutput() GetPluggableDatabaseRefreshableCloneConfigOutput
+	ToGetPluggableDatabaseRefreshableCloneConfigOutputWithContext(context.Context) GetPluggableDatabaseRefreshableCloneConfigOutput
+}
+
+type GetPluggableDatabaseRefreshableCloneConfigArgs struct {
+	// Indicates whether the Pluggable Database is a refreshable clone.
+	IsRefreshableClone pulumi.BoolInput `pulumi:"isRefreshableClone"`
+}
+
+func (GetPluggableDatabaseRefreshableCloneConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabaseRefreshableCloneConfig)(nil)).Elem()
+}
+
+func (i GetPluggableDatabaseRefreshableCloneConfigArgs) ToGetPluggableDatabaseRefreshableCloneConfigOutput() GetPluggableDatabaseRefreshableCloneConfigOutput {
+	return i.ToGetPluggableDatabaseRefreshableCloneConfigOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabaseRefreshableCloneConfigArgs) ToGetPluggableDatabaseRefreshableCloneConfigOutputWithContext(ctx context.Context) GetPluggableDatabaseRefreshableCloneConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabaseRefreshableCloneConfigOutput)
+}
+
+// GetPluggableDatabaseRefreshableCloneConfigArrayInput is an input type that accepts GetPluggableDatabaseRefreshableCloneConfigArray and GetPluggableDatabaseRefreshableCloneConfigArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabaseRefreshableCloneConfigArrayInput` via:
+//
+//	GetPluggableDatabaseRefreshableCloneConfigArray{ GetPluggableDatabaseRefreshableCloneConfigArgs{...} }
+type GetPluggableDatabaseRefreshableCloneConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabaseRefreshableCloneConfigArrayOutput() GetPluggableDatabaseRefreshableCloneConfigArrayOutput
+	ToGetPluggableDatabaseRefreshableCloneConfigArrayOutputWithContext(context.Context) GetPluggableDatabaseRefreshableCloneConfigArrayOutput
+}
+
+type GetPluggableDatabaseRefreshableCloneConfigArray []GetPluggableDatabaseRefreshableCloneConfigInput
+
+func (GetPluggableDatabaseRefreshableCloneConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabaseRefreshableCloneConfig)(nil)).Elem()
+}
+
+func (i GetPluggableDatabaseRefreshableCloneConfigArray) ToGetPluggableDatabaseRefreshableCloneConfigArrayOutput() GetPluggableDatabaseRefreshableCloneConfigArrayOutput {
+	return i.ToGetPluggableDatabaseRefreshableCloneConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabaseRefreshableCloneConfigArray) ToGetPluggableDatabaseRefreshableCloneConfigArrayOutputWithContext(ctx context.Context) GetPluggableDatabaseRefreshableCloneConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabaseRefreshableCloneConfigArrayOutput)
+}
+
+type GetPluggableDatabaseRefreshableCloneConfigOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabaseRefreshableCloneConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabaseRefreshableCloneConfig)(nil)).Elem()
+}
+
+func (o GetPluggableDatabaseRefreshableCloneConfigOutput) ToGetPluggableDatabaseRefreshableCloneConfigOutput() GetPluggableDatabaseRefreshableCloneConfigOutput {
+	return o
+}
+
+func (o GetPluggableDatabaseRefreshableCloneConfigOutput) ToGetPluggableDatabaseRefreshableCloneConfigOutputWithContext(ctx context.Context) GetPluggableDatabaseRefreshableCloneConfigOutput {
+	return o
+}
+
+// Indicates whether the Pluggable Database is a refreshable clone.
+func (o GetPluggableDatabaseRefreshableCloneConfigOutput) IsRefreshableClone() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseRefreshableCloneConfig) bool { return v.IsRefreshableClone }).(pulumi.BoolOutput)
+}
+
+type GetPluggableDatabaseRefreshableCloneConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabaseRefreshableCloneConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabaseRefreshableCloneConfig)(nil)).Elem()
+}
+
+func (o GetPluggableDatabaseRefreshableCloneConfigArrayOutput) ToGetPluggableDatabaseRefreshableCloneConfigArrayOutput() GetPluggableDatabaseRefreshableCloneConfigArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabaseRefreshableCloneConfigArrayOutput) ToGetPluggableDatabaseRefreshableCloneConfigArrayOutputWithContext(ctx context.Context) GetPluggableDatabaseRefreshableCloneConfigArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabaseRefreshableCloneConfigArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabaseRefreshableCloneConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabaseRefreshableCloneConfig {
+		return vs[0].([]GetPluggableDatabaseRefreshableCloneConfig)[vs[1].(int)]
+	}).(GetPluggableDatabaseRefreshableCloneConfigOutput)
+}
+
+type GetPluggableDatabasesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPluggableDatabasesFilterInput is an input type that accepts GetPluggableDatabasesFilterArgs and GetPluggableDatabasesFilterOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesFilterInput` via:
+//
+//	GetPluggableDatabasesFilterArgs{...}
+type GetPluggableDatabasesFilterInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesFilterOutput() GetPluggableDatabasesFilterOutput
+	ToGetPluggableDatabasesFilterOutputWithContext(context.Context) GetPluggableDatabasesFilterOutput
+}
+
+type GetPluggableDatabasesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPluggableDatabasesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesFilterArgs) ToGetPluggableDatabasesFilterOutput() GetPluggableDatabasesFilterOutput {
+	return i.ToGetPluggableDatabasesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesFilterArgs) ToGetPluggableDatabasesFilterOutputWithContext(ctx context.Context) GetPluggableDatabasesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesFilterOutput)
+}
+
+// GetPluggableDatabasesFilterArrayInput is an input type that accepts GetPluggableDatabasesFilterArray and GetPluggableDatabasesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesFilterArrayInput` via:
+//
+//	GetPluggableDatabasesFilterArray{ GetPluggableDatabasesFilterArgs{...} }
+type GetPluggableDatabasesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesFilterArrayOutput() GetPluggableDatabasesFilterArrayOutput
+	ToGetPluggableDatabasesFilterArrayOutputWithContext(context.Context) GetPluggableDatabasesFilterArrayOutput
+}
+
+type GetPluggableDatabasesFilterArray []GetPluggableDatabasesFilterInput
+
+func (GetPluggableDatabasesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesFilterArray) ToGetPluggableDatabasesFilterArrayOutput() GetPluggableDatabasesFilterArrayOutput {
+	return i.ToGetPluggableDatabasesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesFilterArray) ToGetPluggableDatabasesFilterArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesFilterArrayOutput)
+}
+
+type GetPluggableDatabasesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesFilterOutput) ToGetPluggableDatabasesFilterOutput() GetPluggableDatabasesFilterOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesFilterOutput) ToGetPluggableDatabasesFilterOutputWithContext(ctx context.Context) GetPluggableDatabasesFilterOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPluggableDatabasesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPluggableDatabasesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesFilterArrayOutput) ToGetPluggableDatabasesFilterArrayOutput() GetPluggableDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesFilterArrayOutput) ToGetPluggableDatabasesFilterArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesFilterArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabasesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasesFilter {
+		return vs[0].([]GetPluggableDatabasesFilter)[vs[1].(int)]
+	}).(GetPluggableDatabasesFilterOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabase struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Connection strings to connect to an Oracle Pluggable Database.
+	ConnectionStrings              []GetPluggableDatabasesPluggableDatabaseConnectionString `pulumi:"connectionStrings"`
+	ContainerDatabaseAdminPassword string                                                   `pulumi:"containerDatabaseAdminPassword"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
+	ContainerDatabaseId     string `pulumi:"containerDatabaseId"`
+	ConvertToRegularTrigger int    `pulumi:"convertToRegularTrigger"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
+	Id string `pulumi:"id"`
+	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
+	IsRestricted bool `pulumi:"isRestricted"`
+	// Detailed message for the lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+	OpenMode               string                                                        `pulumi:"openMode"`
+	PdbAdminPassword       string                                                        `pulumi:"pdbAdminPassword"`
+	PdbCreationTypeDetails []GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail `pulumi:"pdbCreationTypeDetails"`
+	// A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.
+	PdbName string `pulumi:"pdbName"`
+	// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+	PdbNodeLevelDetails []GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail `pulumi:"pdbNodeLevelDetails"`
+	// The configuration of the Pluggable Database Management service.
+	PluggableDatabaseManagementConfigs []GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig `pulumi:"pluggableDatabaseManagementConfigs"`
+	RefreshTrigger                     int                                                                       `pulumi:"refreshTrigger"`
+	// Pluggable Database Refreshable Clone Configuration.
+	RefreshableCloneConfigs       []GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig `pulumi:"refreshableCloneConfigs"`
+	RotateKeyTrigger              int                                                            `pulumi:"rotateKeyTrigger"`
+	ShouldCreatePdbBackup         bool                                                           `pulumi:"shouldCreatePdbBackup"`
+	ShouldPdbAdminAccountBeLocked bool                                                           `pulumi:"shouldPdbAdminAccountBeLocked"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State             string `pulumi:"state"`
+	TdeWalletPassword string `pulumi:"tdeWalletPassword"`
+	// The date and time the pluggable database was created.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetPluggableDatabasesPluggableDatabaseInput is an input type that accepts GetPluggableDatabasesPluggableDatabaseArgs and GetPluggableDatabasesPluggableDatabaseOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabaseInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabaseArgs{...}
+type GetPluggableDatabasesPluggableDatabaseInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabaseOutput() GetPluggableDatabasesPluggableDatabaseOutput
+	ToGetPluggableDatabasesPluggableDatabaseOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabaseOutput
+}
+
+type GetPluggableDatabasesPluggableDatabaseArgs struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Connection strings to connect to an Oracle Pluggable Database.
+	ConnectionStrings              GetPluggableDatabasesPluggableDatabaseConnectionStringArrayInput `pulumi:"connectionStrings"`
+	ContainerDatabaseAdminPassword pulumi.StringInput                                               `pulumi:"containerDatabaseAdminPassword"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
+	ContainerDatabaseId     pulumi.StringInput `pulumi:"containerDatabaseId"`
+	ConvertToRegularTrigger pulumi.IntInput    `pulumi:"convertToRegularTrigger"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
+	IsRestricted pulumi.BoolInput `pulumi:"isRestricted"`
+	// Detailed message for the lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+	OpenMode               pulumi.StringInput                                                    `pulumi:"openMode"`
+	PdbAdminPassword       pulumi.StringInput                                                    `pulumi:"pdbAdminPassword"`
+	PdbCreationTypeDetails GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayInput `pulumi:"pdbCreationTypeDetails"`
+	// A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.
+	PdbName pulumi.StringInput `pulumi:"pdbName"`
+	// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+	PdbNodeLevelDetails GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayInput `pulumi:"pdbNodeLevelDetails"`
+	// The configuration of the Pluggable Database Management service.
+	PluggableDatabaseManagementConfigs GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayInput `pulumi:"pluggableDatabaseManagementConfigs"`
+	RefreshTrigger                     pulumi.IntInput                                                                   `pulumi:"refreshTrigger"`
+	// Pluggable Database Refreshable Clone Configuration.
+	RefreshableCloneConfigs       GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayInput `pulumi:"refreshableCloneConfigs"`
+	RotateKeyTrigger              pulumi.IntInput                                                        `pulumi:"rotateKeyTrigger"`
+	ShouldCreatePdbBackup         pulumi.BoolInput                                                       `pulumi:"shouldCreatePdbBackup"`
+	ShouldPdbAdminAccountBeLocked pulumi.BoolInput                                                       `pulumi:"shouldPdbAdminAccountBeLocked"`
+	// A filter to return only resources that match the given lifecycle state exactly.
+	State             pulumi.StringInput `pulumi:"state"`
+	TdeWalletPassword pulumi.StringInput `pulumi:"tdeWalletPassword"`
+	// The date and time the pluggable database was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetPluggableDatabasesPluggableDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabase)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabaseArgs) ToGetPluggableDatabasesPluggableDatabaseOutput() GetPluggableDatabasesPluggableDatabaseOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabaseArgs) ToGetPluggableDatabasesPluggableDatabaseOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabaseOutput)
+}
+
+// GetPluggableDatabasesPluggableDatabaseArrayInput is an input type that accepts GetPluggableDatabasesPluggableDatabaseArray and GetPluggableDatabasesPluggableDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabaseArrayInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabaseArray{ GetPluggableDatabasesPluggableDatabaseArgs{...} }
+type GetPluggableDatabasesPluggableDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabaseArrayOutput() GetPluggableDatabasesPluggableDatabaseArrayOutput
+	ToGetPluggableDatabasesPluggableDatabaseArrayOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabaseArrayOutput
+}
+
+type GetPluggableDatabasesPluggableDatabaseArray []GetPluggableDatabasesPluggableDatabaseInput
+
+func (GetPluggableDatabasesPluggableDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabase)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabaseArray) ToGetPluggableDatabasesPluggableDatabaseArrayOutput() GetPluggableDatabasesPluggableDatabaseArrayOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabaseArray) ToGetPluggableDatabasesPluggableDatabaseArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabaseArrayOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabase)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseOutput) ToGetPluggableDatabasesPluggableDatabaseOutput() GetPluggableDatabasesPluggableDatabaseOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseOutput) ToGetPluggableDatabasesPluggableDatabaseOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabaseOutput {
+	return o
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetPluggableDatabasesPluggableDatabaseOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Connection strings to connect to an Oracle Pluggable Database.
+func (o GetPluggableDatabasesPluggableDatabaseOutput) ConnectionStrings() GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) []GetPluggableDatabasesPluggableDatabaseConnectionString {
+		return v.ConnectionStrings
+	}).(GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseOutput) ContainerDatabaseAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.ContainerDatabaseAdminPassword }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
+func (o GetPluggableDatabasesPluggableDatabaseOutput) ContainerDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.ContainerDatabaseId }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseOutput) ConvertToRegularTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) int { return v.ConvertToRegularTrigger }).(pulumi.IntOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetPluggableDatabasesPluggableDatabaseOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetPluggableDatabasesPluggableDatabaseOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
+func (o GetPluggableDatabasesPluggableDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
+func (o GetPluggableDatabasesPluggableDatabaseOutput) IsRestricted() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) bool { return v.IsRestricted }).(pulumi.BoolOutput)
+}
+
+// Detailed message for the lifecycle state.
+func (o GetPluggableDatabasesPluggableDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+func (o GetPluggableDatabasesPluggableDatabaseOutput) OpenMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.OpenMode }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseOutput) PdbAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.PdbAdminPassword }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseOutput) PdbCreationTypeDetails() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) []GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail {
+		return v.PdbCreationTypeDetails
+	}).(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput)
+}
+
+// A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.
+func (o GetPluggableDatabasesPluggableDatabaseOutput) PdbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.PdbName }).(pulumi.StringOutput)
+}
+
+// Pluggable Database Node Level Details. Example: [{"nodeName" : "node1", "openMode" : "READ_WRITE"}, {"nodeName" : "node2", "openMode" : "READ_ONLY"}]
+func (o GetPluggableDatabasesPluggableDatabaseOutput) PdbNodeLevelDetails() GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) []GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail {
+		return v.PdbNodeLevelDetails
+	}).(GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput)
+}
+
+// The configuration of the Pluggable Database Management service.
+func (o GetPluggableDatabasesPluggableDatabaseOutput) PluggableDatabaseManagementConfigs() GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) []GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig {
+		return v.PluggableDatabaseManagementConfigs
+	}).(GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseOutput) RefreshTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) int { return v.RefreshTrigger }).(pulumi.IntOutput)
+}
+
+// Pluggable Database Refreshable Clone Configuration.
+func (o GetPluggableDatabasesPluggableDatabaseOutput) RefreshableCloneConfigs() GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) []GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig {
+		return v.RefreshableCloneConfigs
+	}).(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseOutput) RotateKeyTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) int { return v.RotateKeyTrigger }).(pulumi.IntOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseOutput) ShouldCreatePdbBackup() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) bool { return v.ShouldCreatePdbBackup }).(pulumi.BoolOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseOutput) ShouldPdbAdminAccountBeLocked() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) bool { return v.ShouldPdbAdminAccountBeLocked }).(pulumi.BoolOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state exactly.
+func (o GetPluggableDatabasesPluggableDatabaseOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseOutput) TdeWalletPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.TdeWalletPassword }).(pulumi.StringOutput)
+}
+
+// The date and time the pluggable database was created.
+func (o GetPluggableDatabasesPluggableDatabaseOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabase)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseArrayOutput) ToGetPluggableDatabasesPluggableDatabaseArrayOutput() GetPluggableDatabasesPluggableDatabaseArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseArrayOutput) ToGetPluggableDatabasesPluggableDatabaseArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabaseArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabasesPluggableDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasesPluggableDatabase {
+		return vs[0].([]GetPluggableDatabasesPluggableDatabase)[vs[1].(int)]
+	}).(GetPluggableDatabasesPluggableDatabaseOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabaseConnectionString struct {
+	// All connection strings to use to connect to the pluggable database.
+	AllConnectionStrings map[string]interface{} `pulumi:"allConnectionStrings"`
+	// A host name-based PDB connection string.
+	PdbDefault string `pulumi:"pdbDefault"`
+	// An IP-based PDB connection string.
+	PdbIpDefault string `pulumi:"pdbIpDefault"`
+}
+
+// GetPluggableDatabasesPluggableDatabaseConnectionStringInput is an input type that accepts GetPluggableDatabasesPluggableDatabaseConnectionStringArgs and GetPluggableDatabasesPluggableDatabaseConnectionStringOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabaseConnectionStringInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabaseConnectionStringArgs{...}
+type GetPluggableDatabasesPluggableDatabaseConnectionStringInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabaseConnectionStringOutput() GetPluggableDatabasesPluggableDatabaseConnectionStringOutput
+	ToGetPluggableDatabasesPluggableDatabaseConnectionStringOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabaseConnectionStringOutput
+}
+
+type GetPluggableDatabasesPluggableDatabaseConnectionStringArgs struct {
+	// All connection strings to use to connect to the pluggable database.
+	AllConnectionStrings pulumi.MapInput `pulumi:"allConnectionStrings"`
+	// A host name-based PDB connection string.
+	PdbDefault pulumi.StringInput `pulumi:"pdbDefault"`
+	// An IP-based PDB connection string.
+	PdbIpDefault pulumi.StringInput `pulumi:"pdbIpDefault"`
+}
+
+func (GetPluggableDatabasesPluggableDatabaseConnectionStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseConnectionString)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabaseConnectionStringArgs) ToGetPluggableDatabasesPluggableDatabaseConnectionStringOutput() GetPluggableDatabasesPluggableDatabaseConnectionStringOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabaseConnectionStringOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabaseConnectionStringArgs) ToGetPluggableDatabasesPluggableDatabaseConnectionStringOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabaseConnectionStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabaseConnectionStringOutput)
+}
+
+// GetPluggableDatabasesPluggableDatabaseConnectionStringArrayInput is an input type that accepts GetPluggableDatabasesPluggableDatabaseConnectionStringArray and GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabaseConnectionStringArrayInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabaseConnectionStringArray{ GetPluggableDatabasesPluggableDatabaseConnectionStringArgs{...} }
+type GetPluggableDatabasesPluggableDatabaseConnectionStringArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput() GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput
+	ToGetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput
+}
+
+type GetPluggableDatabasesPluggableDatabaseConnectionStringArray []GetPluggableDatabasesPluggableDatabaseConnectionStringInput
+
+func (GetPluggableDatabasesPluggableDatabaseConnectionStringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabaseConnectionString)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabaseConnectionStringArray) ToGetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput() GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabaseConnectionStringArray) ToGetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabaseConnectionStringOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabaseConnectionStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseConnectionString)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseConnectionStringOutput) ToGetPluggableDatabasesPluggableDatabaseConnectionStringOutput() GetPluggableDatabasesPluggableDatabaseConnectionStringOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseConnectionStringOutput) ToGetPluggableDatabasesPluggableDatabaseConnectionStringOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabaseConnectionStringOutput {
+	return o
+}
+
+// All connection strings to use to connect to the pluggable database.
+func (o GetPluggableDatabasesPluggableDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.MapOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabaseConnectionString) map[string]interface{} {
+		return v.AllConnectionStrings
+	}).(pulumi.MapOutput)
+}
+
+// A host name-based PDB connection string.
+func (o GetPluggableDatabasesPluggableDatabaseConnectionStringOutput) PdbDefault() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabaseConnectionString) string { return v.PdbDefault }).(pulumi.StringOutput)
+}
+
+// An IP-based PDB connection string.
+func (o GetPluggableDatabasesPluggableDatabaseConnectionStringOutput) PdbIpDefault() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabaseConnectionString) string { return v.PdbIpDefault }).(pulumi.StringOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabaseConnectionString)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput) ToGetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput() GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput) ToGetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabasesPluggableDatabaseConnectionStringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasesPluggableDatabaseConnectionString {
+		return vs[0].([]GetPluggableDatabasesPluggableDatabaseConnectionString)[vs[1].(int)]
+	}).(GetPluggableDatabasesPluggableDatabaseConnectionStringOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail struct {
+	CreationType                         string                                                                              `pulumi:"creationType"`
+	DblinkUserPassword                   string                                                                              `pulumi:"dblinkUserPassword"`
+	DblinkUsername                       string                                                                              `pulumi:"dblinkUsername"`
+	RefreshableCloneDetails              []GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail `pulumi:"refreshableCloneDetails"`
+	SourceContainerDatabaseAdminPassword string                                                                              `pulumi:"sourceContainerDatabaseAdminPassword"`
+	SourcePluggableDatabaseId            string                                                                              `pulumi:"sourcePluggableDatabaseId"`
+}
+
+// GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailInput is an input type that accepts GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArgs and GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArgs{...}
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput
+	ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArgs struct {
+	CreationType                         pulumi.StringInput                                                                          `pulumi:"creationType"`
+	DblinkUserPassword                   pulumi.StringInput                                                                          `pulumi:"dblinkUserPassword"`
+	DblinkUsername                       pulumi.StringInput                                                                          `pulumi:"dblinkUsername"`
+	RefreshableCloneDetails              GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput `pulumi:"refreshableCloneDetails"`
+	SourceContainerDatabaseAdminPassword pulumi.StringInput                                                                          `pulumi:"sourceContainerDatabaseAdminPassword"`
+	SourcePluggableDatabaseId            pulumi.StringInput                                                                          `pulumi:"sourcePluggableDatabaseId"`
+}
+
+func (GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArgs) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArgs) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput)
+}
+
+// GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayInput is an input type that accepts GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArray and GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArray{ GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArgs{...} }
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput
+	ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArray []GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailInput
+
+func (GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArray) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArray) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) CreationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail) string { return v.CreationType }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) DblinkUserPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail) string {
+		return v.DblinkUserPassword
+	}).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) DblinkUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail) string { return v.DblinkUsername }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) RefreshableCloneDetails() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail) []GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail {
+		return v.RefreshableCloneDetails
+	}).(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) SourceContainerDatabaseAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail) string {
+		return v.SourceContainerDatabaseAdminPassword
+	}).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) SourcePluggableDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail) string {
+		return v.SourcePluggableDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail {
+		return vs[0].([]GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail)[vs[1].(int)]
+	}).(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail struct {
+	// Indicates whether the Pluggable Database is a refreshable clone.
+	IsRefreshableClone bool `pulumi:"isRefreshableClone"`
+}
+
+// GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailInput is an input type that accepts GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs and GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs{...}
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput
+	ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs struct {
+	// Indicates whether the Pluggable Database is a refreshable clone.
+	IsRefreshableClone pulumi.BoolInput `pulumi:"isRefreshableClone"`
+}
+
+func (GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput)
+}
+
+// GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput is an input type that accepts GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray and GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray{ GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs{...} }
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput
+	ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray []GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailInput
+
+func (GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput {
+	return o
+}
+
+// Indicates whether the Pluggable Database is a refreshable clone.
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput) IsRefreshableClone() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail) bool {
+		return v.IsRefreshableClone
+	}).(pulumi.BoolOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput) ToGetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail {
+		return vs[0].([]GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail)[vs[1].(int)]
+	}).(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail struct {
+	// The Node name of the Database Instance.
+	NodeName string `pulumi:"nodeName"`
+	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+	OpenMode string `pulumi:"openMode"`
+}
+
+// GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailInput is an input type that accepts GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArgs and GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArgs{...}
+type GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput() GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput
+	ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArgs struct {
+	// The Node name of the Database Instance.
+	NodeName pulumi.StringInput `pulumi:"nodeName"`
+	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+	OpenMode pulumi.StringInput `pulumi:"openMode"`
+}
+
+func (GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArgs) ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput() GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArgs) ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput)
+}
+
+// GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayInput is an input type that accepts GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArray and GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArray{ GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArgs{...} }
+type GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput() GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput
+	ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArray []GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailInput
+
+func (GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArray) ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput() GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArray) ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput) ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput() GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput) ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput {
+	return o
+}
+
+// The Node name of the Database Instance.
+func (o GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput) NodeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail) string { return v.NodeName }).(pulumi.StringOutput)
+}
+
+// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+func (o GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput) OpenMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail) string { return v.OpenMode }).(pulumi.StringOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput) ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput() GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput) ToGetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail {
+		return vs[0].([]GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetail)[vs[1].(int)]
+	}).(GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig struct {
+	// The status of the Pluggable Database Management service.
+	ManagementStatus string `pulumi:"managementStatus"`
+}
+
+// GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigInput is an input type that accepts GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArgs and GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArgs{...}
+type GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput() GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput
+	ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput
+}
+
+type GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArgs struct {
+	// The status of the Pluggable Database Management service.
+	ManagementStatus pulumi.StringInput `pulumi:"managementStatus"`
+}
+
+func (GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArgs) ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput() GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArgs) ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput)
+}
+
+// GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayInput is an input type that accepts GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArray and GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArray{ GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArgs{...} }
+type GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput() GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput
+	ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput
+}
+
+type GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArray []GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigInput
+
+func (GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArray) ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput() GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArray) ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput) ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput() GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput) ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput {
+	return o
+}
+
+// The status of the Pluggable Database Management service.
+func (o GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput) ManagementStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig) string {
+		return v.ManagementStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput) ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput() GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput) ToGetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig {
+		return vs[0].([]GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig)[vs[1].(int)]
+	}).(GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig struct {
+	// Indicates whether the Pluggable Database is a refreshable clone.
+	IsRefreshableClone bool `pulumi:"isRefreshableClone"`
+}
+
+// GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigInput is an input type that accepts GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArgs and GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArgs{...}
+type GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput() GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput
+	ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput
+}
+
+type GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArgs struct {
+	// Indicates whether the Pluggable Database is a refreshable clone.
+	IsRefreshableClone pulumi.BoolInput `pulumi:"isRefreshableClone"`
+}
+
+func (GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArgs) ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput() GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArgs) ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput)
+}
+
+// GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayInput is an input type that accepts GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArray and GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayInput` via:
+//
+//	GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArray{ GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArgs{...} }
+type GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput() GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput
+	ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutputWithContext(context.Context) GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput
+}
+
+type GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArray []GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigInput
+
+func (GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArray) ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput() GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput {
+	return i.ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArray) ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput) ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput() GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput) ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput {
+	return o
+}
+
+// Indicates whether the Pluggable Database is a refreshable clone.
+func (o GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput) IsRefreshableClone() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig) bool { return v.IsRefreshableClone }).(pulumi.BoolOutput)
+}
+
+type GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput) ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput() GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput) ToGetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutputWithContext(ctx context.Context) GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig {
+		return vs[0].([]GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfig)[vs[1].(int)]
+	}).(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput)
+}
+
+type GetVmClusterDataCollectionOption struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled bool `pulumi:"isDiagnosticsEventsEnabled"`
+	// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+	IsHealthMonitoringEnabled bool `pulumi:"isHealthMonitoringEnabled"`
+	// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+	IsIncidentLogsEnabled bool `pulumi:"isIncidentLogsEnabled"`
+}
+
+// GetVmClusterDataCollectionOptionInput is an input type that accepts GetVmClusterDataCollectionOptionArgs and GetVmClusterDataCollectionOptionOutput values.
+// You can construct a concrete instance of `GetVmClusterDataCollectionOptionInput` via:
+//
+//	GetVmClusterDataCollectionOptionArgs{...}
+type GetVmClusterDataCollectionOptionInput interface {
+	pulumi.Input
+
+	ToGetVmClusterDataCollectionOptionOutput() GetVmClusterDataCollectionOptionOutput
+	ToGetVmClusterDataCollectionOptionOutputWithContext(context.Context) GetVmClusterDataCollectionOptionOutput
+}
+
+type GetVmClusterDataCollectionOptionArgs struct {
+	// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+	IsDiagnosticsEventsEnabled pulumi.BoolInput `pulumi:"isDiagnosticsEventsEnabled"`
+	// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+	IsHealthMonitoringEnabled pulumi.BoolInput `pulumi:"isHealthMonitoringEnabled"`
+	// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+	IsIncidentLogsEnabled pulumi.BoolInput `pulumi:"isIncidentLogsEnabled"`
+}
+
+func (GetVmClusterDataCollectionOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetVmClusterDataCollectionOptionArgs) ToGetVmClusterDataCollectionOptionOutput() GetVmClusterDataCollectionOptionOutput {
+	return i.ToGetVmClusterDataCollectionOptionOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterDataCollectionOptionArgs) ToGetVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetVmClusterDataCollectionOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterDataCollectionOptionOutput)
+}
+
+// GetVmClusterDataCollectionOptionArrayInput is an input type that accepts GetVmClusterDataCollectionOptionArray and GetVmClusterDataCollectionOptionArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterDataCollectionOptionArrayInput` via:
+//
+//	GetVmClusterDataCollectionOptionArray{ GetVmClusterDataCollectionOptionArgs{...} }
+type GetVmClusterDataCollectionOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterDataCollectionOptionArrayOutput() GetVmClusterDataCollectionOptionArrayOutput
+	ToGetVmClusterDataCollectionOptionArrayOutputWithContext(context.Context) GetVmClusterDataCollectionOptionArrayOutput
+}
+
+type GetVmClusterDataCollectionOptionArray []GetVmClusterDataCollectionOptionInput
+
+func (GetVmClusterDataCollectionOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (i GetVmClusterDataCollectionOptionArray) ToGetVmClusterDataCollectionOptionArrayOutput() GetVmClusterDataCollectionOptionArrayOutput {
+	return i.ToGetVmClusterDataCollectionOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterDataCollectionOptionArray) ToGetVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetVmClusterDataCollectionOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterDataCollectionOptionArrayOutput)
+}
+
+type GetVmClusterDataCollectionOptionOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterDataCollectionOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetVmClusterDataCollectionOptionOutput) ToGetVmClusterDataCollectionOptionOutput() GetVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+func (o GetVmClusterDataCollectionOptionOutput) ToGetVmClusterDataCollectionOptionOutputWithContext(ctx context.Context) GetVmClusterDataCollectionOptionOutput {
+	return o
+}
+
+// Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+func (o GetVmClusterDataCollectionOptionOutput) IsDiagnosticsEventsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClusterDataCollectionOption) bool { return v.IsDiagnosticsEventsEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+func (o GetVmClusterDataCollectionOptionOutput) IsHealthMonitoringEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClusterDataCollectionOption) bool { return v.IsHealthMonitoringEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+func (o GetVmClusterDataCollectionOptionOutput) IsIncidentLogsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVmClusterDataCollectionOption) bool { return v.IsIncidentLogsEnabled }).(pulumi.BoolOutput)
+}
+
+type GetVmClusterDataCollectionOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterDataCollectionOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterDataCollectionOption)(nil)).Elem()
+}
+
+func (o GetVmClusterDataCollectionOptionArrayOutput) ToGetVmClusterDataCollectionOptionArrayOutput() GetVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetVmClusterDataCollectionOptionArrayOutput) ToGetVmClusterDataCollectionOptionArrayOutputWithContext(ctx context.Context) GetVmClusterDataCollectionOptionArrayOutput {
+	return o
+}
+
+func (o GetVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.IntInput) GetVmClusterDataCollectionOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterDataCollectionOption {
+		return vs[0].([]GetVmClusterDataCollectionOption)[vs[1].(int)]
+	}).(GetVmClusterDataCollectionOptionOutput)
+}
+
+type GetVmClusterNetworkDrScan struct {
+	// The node host name.
+	Hostname string `pulumi:"hostname"`
+	// The list of SCAN IP addresses. Three addresses should be provided.
+	Ips []string `pulumi:"ips"`
+	// The SCAN TCPIP port. Default is 1521.
+	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+}
+
+// GetVmClusterNetworkDrScanInput is an input type that accepts GetVmClusterNetworkDrScanArgs and GetVmClusterNetworkDrScanOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworkDrScanInput` via:
+//
+//	GetVmClusterNetworkDrScanArgs{...}
+type GetVmClusterNetworkDrScanInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworkDrScanOutput() GetVmClusterNetworkDrScanOutput
+	ToGetVmClusterNetworkDrScanOutputWithContext(context.Context) GetVmClusterNetworkDrScanOutput
+}
+
+type GetVmClusterNetworkDrScanArgs struct {
+	// The node host name.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The list of SCAN IP addresses. Three addresses should be provided.
+	Ips pulumi.StringArrayInput `pulumi:"ips"`
+	// The SCAN TCPIP port. Default is 1521.
+	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+}
+
+func (GetVmClusterNetworkDrScanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworkDrScan)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworkDrScanArgs) ToGetVmClusterNetworkDrScanOutput() GetVmClusterNetworkDrScanOutput {
+	return i.ToGetVmClusterNetworkDrScanOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworkDrScanArgs) ToGetVmClusterNetworkDrScanOutputWithContext(ctx context.Context) GetVmClusterNetworkDrScanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkDrScanOutput)
+}
+
+// GetVmClusterNetworkDrScanArrayInput is an input type that accepts GetVmClusterNetworkDrScanArray and GetVmClusterNetworkDrScanArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworkDrScanArrayInput` via:
+//
+//	GetVmClusterNetworkDrScanArray{ GetVmClusterNetworkDrScanArgs{...} }
+type GetVmClusterNetworkDrScanArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworkDrScanArrayOutput() GetVmClusterNetworkDrScanArrayOutput
+	ToGetVmClusterNetworkDrScanArrayOutputWithContext(context.Context) GetVmClusterNetworkDrScanArrayOutput
+}
+
+type GetVmClusterNetworkDrScanArray []GetVmClusterNetworkDrScanInput
+
+func (GetVmClusterNetworkDrScanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworkDrScan)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworkDrScanArray) ToGetVmClusterNetworkDrScanArrayOutput() GetVmClusterNetworkDrScanArrayOutput {
+	return i.ToGetVmClusterNetworkDrScanArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworkDrScanArray) ToGetVmClusterNetworkDrScanArrayOutputWithContext(ctx context.Context) GetVmClusterNetworkDrScanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkDrScanArrayOutput)
+}
+
+type GetVmClusterNetworkDrScanOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworkDrScanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworkDrScan)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworkDrScanOutput) ToGetVmClusterNetworkDrScanOutput() GetVmClusterNetworkDrScanOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkDrScanOutput) ToGetVmClusterNetworkDrScanOutputWithContext(ctx context.Context) GetVmClusterNetworkDrScanOutput {
+	return o
+}
+
+// The node host name.
+func (o GetVmClusterNetworkDrScanOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkDrScan) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The list of SCAN IP addresses. Three addresses should be provided.
+func (o GetVmClusterNetworkDrScanOutput) Ips() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkDrScan) []string { return v.Ips }).(pulumi.StringArrayOutput)
+}
+
+// The SCAN TCPIP port. Default is 1521.
+func (o GetVmClusterNetworkDrScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkDrScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+}
+
+type GetVmClusterNetworkDrScanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworkDrScanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworkDrScan)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworkDrScanArrayOutput) ToGetVmClusterNetworkDrScanArrayOutput() GetVmClusterNetworkDrScanArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkDrScanArrayOutput) ToGetVmClusterNetworkDrScanArrayOutputWithContext(ctx context.Context) GetVmClusterNetworkDrScanArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkDrScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworkDrScanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworkDrScan {
+		return vs[0].([]GetVmClusterNetworkDrScan)[vs[1].(int)]
+	}).(GetVmClusterNetworkDrScanOutput)
+}
+
+type GetVmClusterNetworkScan struct {
+	// The node host name.
+	Hostname string `pulumi:"hostname"`
+	// The list of SCAN IP addresses. Three addresses should be provided.
+	Ips []string `pulumi:"ips"`
+	// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
+	Port int `pulumi:"port"`
+	// The SCAN TCPIP port. Default is 1521.
+	ScanListenerPortTcp int `pulumi:"scanListenerPortTcp"`
+	// The SCAN TCPIP SSL port. Default is 2484.
+	ScanListenerPortTcpSsl int `pulumi:"scanListenerPortTcpSsl"`
+}
+
+// GetVmClusterNetworkScanInput is an input type that accepts GetVmClusterNetworkScanArgs and GetVmClusterNetworkScanOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworkScanInput` via:
+//
+//	GetVmClusterNetworkScanArgs{...}
+type GetVmClusterNetworkScanInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworkScanOutput() GetVmClusterNetworkScanOutput
+	ToGetVmClusterNetworkScanOutputWithContext(context.Context) GetVmClusterNetworkScanOutput
+}
+
+type GetVmClusterNetworkScanArgs struct {
+	// The node host name.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The list of SCAN IP addresses. Three addresses should be provided.
+	Ips pulumi.StringArrayInput `pulumi:"ips"`
+	// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The SCAN TCPIP port. Default is 1521.
+	ScanListenerPortTcp pulumi.IntInput `pulumi:"scanListenerPortTcp"`
+	// The SCAN TCPIP SSL port. Default is 2484.
+	ScanListenerPortTcpSsl pulumi.IntInput `pulumi:"scanListenerPortTcpSsl"`
+}
+
+func (GetVmClusterNetworkScanArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworkScan)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworkScanArgs) ToGetVmClusterNetworkScanOutput() GetVmClusterNetworkScanOutput {
+	return i.ToGetVmClusterNetworkScanOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworkScanArgs) ToGetVmClusterNetworkScanOutputWithContext(ctx context.Context) GetVmClusterNetworkScanOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkScanOutput)
+}
+
+// GetVmClusterNetworkScanArrayInput is an input type that accepts GetVmClusterNetworkScanArray and GetVmClusterNetworkScanArrayOutput values.
+// You can construct a concrete instance of `GetVmClusterNetworkScanArrayInput` via:
+//
+//	GetVmClusterNetworkScanArray{ GetVmClusterNetworkScanArgs{...} }
+type GetVmClusterNetworkScanArrayInput interface {
+	pulumi.Input
+
+	ToGetVmClusterNetworkScanArrayOutput() GetVmClusterNetworkScanArrayOutput
+	ToGetVmClusterNetworkScanArrayOutputWithContext(context.Context) GetVmClusterNetworkScanArrayOutput
+}
+
+type GetVmClusterNetworkScanArray []GetVmClusterNetworkScanInput
+
+func (GetVmClusterNetworkScanArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworkScan)(nil)).Elem()
+}
+
+func (i GetVmClusterNetworkScanArray) ToGetVmClusterNetworkScanArrayOutput() GetVmClusterNetworkScanArrayOutput {
+	return i.ToGetVmClusterNetworkScanArrayOutputWithContext(context.Background())
+}
+
+func (i GetVmClusterNetworkScanArray) ToGetVmClusterNetworkScanArrayOutputWithContext(ctx context.Context) GetVmClusterNetworkScanArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVmClusterNetworkScanArrayOutput)
+}
+
+type GetVmClusterNetworkScanOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworkScanOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVmClusterNetworkScan)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworkScanOutput) ToGetVmClusterNetworkScanOutput() GetVmClusterNetworkScanOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkScanOutput) ToGetVmClusterNetworkScanOutputWithContext(ctx context.Context) GetVmClusterNetworkScanOutput {
+	return o
+}
+
+// The node host name.
+func (o GetVmClusterNetworkScanOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkScan) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The list of SCAN IP addresses. Three addresses should be provided.
+func (o GetVmClusterNetworkScanOutput) Ips() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkScan) []string { return v.Ips }).(pulumi.StringArrayOutput)
+}
+
+// **Deprecated.** This field is deprecated. You may use 'scanListenerPortTcp' to specify the port. The SCAN TCPIP port. Default is 1521.
+func (o GetVmClusterNetworkScanOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkScan) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The SCAN TCPIP port. Default is 1521.
+func (o GetVmClusterNetworkScanOutput) ScanListenerPortTcp() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkScan) int { return v.ScanListenerPortTcp }).(pulumi.IntOutput)
+}
+
+// The SCAN TCPIP SSL port. Default is 2484.
+func (o GetVmClusterNetworkScanOutput) ScanListenerPortTcpSsl() pulumi.IntOutput {
+	return o.ApplyT(func(v GetVmClusterNetworkScan) int { return v.ScanListenerPortTcpSsl }).(pulumi.IntOutput)
+}
+
+type GetVmClusterNetworkScanArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVmClusterNetworkScanArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVmClusterNetworkScan)(nil)).Elem()
+}
+
+func (o GetVmClusterNetworkScanArrayOutput) ToGetVmClusterNetworkScanArrayOutput() GetVmClusterNetworkScanArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkScanArrayOutput) ToGetVmClusterNetworkScanArrayOutputWithContext(ctx context.Context) GetVmClusterNetworkScanArrayOutput {
+	return o
+}
+
+func (o GetVmClusterNetworkScanArrayOutput) Index(i pulumi.IntInput) GetVmClusterNetworkScanOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVmClusterNetworkScan {
+		return vs[0].([]GetVmClusterNetworkScan)[vs[1].(int)]
+	}).(GetVmClusterNetworkScanOutput)
+}
+
 type GetVmClusterNetworkVmNetwork struct {
 	// The network domain name.
 	DomainName string `pulumi:"domainName"`
@@ -3500,6 +5100,32 @@ func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.In
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePluggableDatabaseManagementConfigInput)(nil)).Elem(), GetPluggableDatabasePluggableDatabaseManagementConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePluggableDatabaseManagementConfigArrayInput)(nil)).Elem(), GetPluggableDatabasePluggableDatabaseManagementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabaseRefreshableCloneConfigInput)(nil)).Elem(), GetPluggableDatabaseRefreshableCloneConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabaseRefreshableCloneConfigArrayInput)(nil)).Elem(), GetPluggableDatabaseRefreshableCloneConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesFilterInput)(nil)).Elem(), GetPluggableDatabasesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesFilterArrayInput)(nil)).Elem(), GetPluggableDatabasesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseConnectionStringInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseConnectionStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseConnectionStringArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayInput)(nil)).Elem(), GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterDataCollectionOptionInput)(nil)).Elem(), GetVmClusterDataCollectionOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClusterDataCollectionOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkDrScanInput)(nil)).Elem(), GetVmClusterNetworkDrScanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkDrScanArrayInput)(nil)).Elem(), GetVmClusterNetworkDrScanArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkScanInput)(nil)).Elem(), GetVmClusterNetworkScanArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkScanArrayInput)(nil)).Elem(), GetVmClusterNetworkScanArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkVmNetworkInput)(nil)).Elem(), GetVmClusterNetworkVmNetworkArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkVmNetworkArrayInput)(nil)).Elem(), GetVmClusterNetworkVmNetworkArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClusterNetworkVmNetworkNodeInput)(nil)).Elem(), GetVmClusterNetworkVmNetworkNodeArgs{})
@@ -3548,6 +5174,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterArrayInput)(nil)).Elem(), GetVmClustersVmClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
+	pulumi.RegisterOutputType(GetPluggableDatabasePluggableDatabaseManagementConfigOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabaseRefreshableCloneConfigOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabaseRefreshableCloneConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesFilterOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseConnectionStringOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabasePdbNodeLevelDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasesPluggableDatabaseRefreshableCloneConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterDataCollectionOptionOutput{})
+	pulumi.RegisterOutputType(GetVmClusterDataCollectionOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworkDrScanOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworkDrScanArrayOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworkScanOutput{})
+	pulumi.RegisterOutputType(GetVmClusterNetworkScanArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkVmNetworkOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkVmNetworkArrayOutput{})
 	pulumi.RegisterOutputType(GetVmClusterNetworkVmNetworkNodeOutput{})

@@ -46,6 +46,7 @@ public final class GetManagedInstanceGroupResult {
     private String id;
     private Integer managedInstanceCount;
     private String managedInstanceGroupId;
+    private List<String> managedInstanceIds;
     /**
      * @return list of Managed Instances in the group
      * 
@@ -111,6 +112,9 @@ public final class GetManagedInstanceGroupResult {
     public String managedInstanceGroupId() {
         return this.managedInstanceGroupId;
     }
+    public List<String> managedInstanceIds() {
+        return this.managedInstanceIds;
+    }
     /**
      * @return list of Managed Instances in the group
      * 
@@ -150,6 +154,7 @@ public final class GetManagedInstanceGroupResult {
         private String id;
         private Integer managedInstanceCount;
         private String managedInstanceGroupId;
+        private List<String> managedInstanceIds;
         private List<GetManagedInstanceGroupManagedInstance> managedInstances;
         private String osFamily;
         private String state;
@@ -164,6 +169,7 @@ public final class GetManagedInstanceGroupResult {
     	      this.id = defaults.id;
     	      this.managedInstanceCount = defaults.managedInstanceCount;
     	      this.managedInstanceGroupId = defaults.managedInstanceGroupId;
+    	      this.managedInstanceIds = defaults.managedInstanceIds;
     	      this.managedInstances = defaults.managedInstances;
     	      this.osFamily = defaults.osFamily;
     	      this.state = defaults.state;
@@ -210,6 +216,14 @@ public final class GetManagedInstanceGroupResult {
             return this;
         }
         @CustomType.Setter
+        public Builder managedInstanceIds(List<String> managedInstanceIds) {
+            this.managedInstanceIds = Objects.requireNonNull(managedInstanceIds);
+            return this;
+        }
+        public Builder managedInstanceIds(String... managedInstanceIds) {
+            return managedInstanceIds(List.of(managedInstanceIds));
+        }
+        @CustomType.Setter
         public Builder managedInstances(List<GetManagedInstanceGroupManagedInstance> managedInstances) {
             this.managedInstances = Objects.requireNonNull(managedInstances);
             return this;
@@ -237,6 +251,7 @@ public final class GetManagedInstanceGroupResult {
             o.id = id;
             o.managedInstanceCount = managedInstanceCount;
             o.managedInstanceGroupId = managedInstanceGroupId;
+            o.managedInstanceIds = managedInstanceIds;
             o.managedInstances = managedInstances;
             o.osFamily = osFamily;
             o.state = state;

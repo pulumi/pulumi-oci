@@ -14,6 +14,14 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsMyRequestsMyRequestResult
     {
         /// <summary>
+        /// Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+        /// </summary>
+        public readonly string Action;
+        /// <summary>
+        /// Approvals created for this request.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDomainsMyRequestsMyRequestApprovalDetailResult> ApprovalDetails;
+        /// <summary>
         /// Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
         /// </summary>
         public readonly string CompartmentOcid;
@@ -25,6 +33,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// Oracle Cloud Infrastructure Domain Id (ocid) in which the resource lives.
         /// </summary>
         public readonly string DomainOcid;
+        /// <summary>
+        /// Time by when Request expires
+        /// </summary>
+        public readonly string Expires;
         /// <summary>
         /// Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
         /// </summary>
@@ -84,11 +96,17 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetDomainsMyRequestsMyRequestResult(
+            string action,
+
+            ImmutableArray<Outputs.GetDomainsMyRequestsMyRequestApprovalDetailResult> approvalDetails,
+
             string compartmentOcid,
 
             bool deleteInProgress,
 
             string domainOcid,
+
+            string expires,
 
             string id,
 
@@ -118,9 +136,12 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string tenancyOcid)
         {
+            Action = action;
+            ApprovalDetails = approvalDetails;
             CompartmentOcid = compartmentOcid;
             DeleteInProgress = deleteInProgress;
             DomainOcid = domainOcid;
+            Expires = expires;
             Id = id;
             IdcsCreatedBies = idcsCreatedBies;
             IdcsLastModifiedBies = idcsLastModifiedBies;

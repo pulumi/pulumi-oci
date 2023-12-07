@@ -15,6 +15,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     {
         /// <summary>
         /// The name or address of a host.
+        /// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+        /// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         /// </summary>
         public readonly string Host;
         /// <summary>

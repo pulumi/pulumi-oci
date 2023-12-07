@@ -16,35 +16,6 @@ import (
 // This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
 //
 // Creates and downloads a wallet for the specified Autonomous Database.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.GetAutonomousDatabaseWallet(ctx, &database.GetAutonomousDatabaseWalletArgs{
-//				AutonomousDatabaseId: oci_database_autonomous_database.Test_autonomous_database.Id,
-//				Password:             _var.Autonomous_database_wallet_password,
-//				Base64EncodeContent:  pulumi.BoolRef(false),
-//				GenerateType:         pulumi.StringRef(_var.Autonomous_database_wallet_generate_type),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func LookupAutonomousDatabaseWallet(ctx *pulumi.Context, args *LookupAutonomousDatabaseWalletArgs, opts ...pulumi.InvokeOption) (*LookupAutonomousDatabaseWalletResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAutonomousDatabaseWalletResult

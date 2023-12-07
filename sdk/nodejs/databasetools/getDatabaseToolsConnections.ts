@@ -20,6 +20,8 @@ import * as utilities from "../utilities";
  * const testDatabaseToolsConnections = oci.DatabaseTools.getDatabaseToolsConnections({
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.database_tools_connection_display_name,
+ *     relatedResourceIdentifier: _var.database_tools_connection_related_resource_identifier,
+ *     runtimeSupports: _var.database_tools_connection_runtime_support,
  *     state: _var.database_tools_connection_state,
  *     types: _var.database_tools_connection_type,
  * });
@@ -32,6 +34,8 @@ export function getDatabaseToolsConnections(args: GetDatabaseToolsConnectionsArg
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "relatedResourceIdentifier": args.relatedResourceIdentifier,
+        "runtimeSupports": args.runtimeSupports,
         "state": args.state,
         "types": args.types,
     }, opts);
@@ -50,6 +54,14 @@ export interface GetDatabaseToolsConnectionsArgs {
      */
     displayName?: string;
     filters?: inputs.DatabaseTools.GetDatabaseToolsConnectionsFilter[];
+    /**
+     * A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+     */
+    relatedResourceIdentifier?: string;
+    /**
+     * A filter to return only resources with one of the specified runtimeSupport values.
+     */
+    runtimeSupports?: string[];
     /**
      * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      */
@@ -81,6 +93,11 @@ export interface GetDatabaseToolsConnectionsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly relatedResourceIdentifier?: string;
+    /**
+     * Specifies whether this connection is supported by the Database Tools Runtime.
+     */
+    readonly runtimeSupports?: string[];
     /**
      * The current state of the Database Tools connection.
      */
@@ -104,6 +121,8 @@ export interface GetDatabaseToolsConnectionsResult {
  * const testDatabaseToolsConnections = oci.DatabaseTools.getDatabaseToolsConnections({
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.database_tools_connection_display_name,
+ *     relatedResourceIdentifier: _var.database_tools_connection_related_resource_identifier,
+ *     runtimeSupports: _var.database_tools_connection_runtime_support,
  *     state: _var.database_tools_connection_state,
  *     types: _var.database_tools_connection_type,
  * });
@@ -126,6 +145,14 @@ export interface GetDatabaseToolsConnectionsOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.GetDatabaseToolsConnectionsFilterArgs>[]>;
+    /**
+     * A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+     */
+    relatedResourceIdentifier?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources with one of the specified runtimeSupport values.
+     */
+    runtimeSupports?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      */

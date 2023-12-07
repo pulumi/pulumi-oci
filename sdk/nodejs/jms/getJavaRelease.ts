@@ -53,6 +53,10 @@ export interface GetJavaReleaseResult {
      */
     readonly artifacts: outputs.Jms.GetJavaReleaseArtifact[];
     /**
+     * The number of days since this release has been under the security baseline.
+     */
+    readonly daysUnderSecurityBaseline: number;
+    /**
      * Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
      */
     readonly familyDetails: outputs.Jms.GetJavaReleaseFamilyDetail[];
@@ -72,6 +76,10 @@ export interface GetJavaReleaseResult {
      * License type for the Java version.
      */
     readonly licenseType: string;
+    /**
+     * List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
+     */
+    readonly mosPatches: outputs.Jms.GetJavaReleaseMosPatch[];
     /**
      * Parent Java release version identifier. This is applicable for BPR releases.
      */

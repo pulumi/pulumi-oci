@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:Ocvp/cluster:Cluster":
+		r = &Cluster{}
 	case "oci:Ocvp/esxiHost:EsxiHost":
 		r = &EsxiHost{}
 	case "oci:Ocvp/sddc:Sddc":
@@ -38,6 +40,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Ocvp/cluster",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Ocvp/esxiHost",

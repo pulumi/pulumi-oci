@@ -58,7 +58,7 @@ public final class GetDiscoveryJobsResultResult {
     private String estimatedDataValueCount;
     private String id;
     /**
-     * @return Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
+     * @return Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
      * 
      */
     private Boolean isResultApplied;
@@ -188,7 +188,7 @@ public final class GetDiscoveryJobsResultResult {
         return this.id;
     }
     /**
-     * @return Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
+     * @return Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
      * 
      */
     public Boolean isResultApplied() {

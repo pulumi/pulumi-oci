@@ -31,6 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousCharacterSets(ctx, &database.GetAutonomousCharacterSetsArgs{
 //				CharacterSetType: pulumi.StringRef(_var.Autonomous_database_character_set_character_set_type),
+//				IsDedicated:      pulumi.BoolRef(_var.Autonomous_database_character_set_is_dedicated),
 //				IsShared:         pulumi.BoolRef(_var.Autonomous_database_character_set_is_shared),
 //			}, nil)
 //			if err != nil {

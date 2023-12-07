@@ -16,6 +16,43 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
     public static final DomainsMyRequestRequestingArgs Empty = new DomainsMyRequestRequestingArgs();
 
     /**
+     * Resource description
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return Resource description
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
      * User display name
      * 
      * **SCIM++ Properties:**
@@ -158,6 +195,7 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
     private DomainsMyRequestRequestingArgs() {}
 
     private DomainsMyRequestRequestingArgs(DomainsMyRequestRequestingArgs $) {
+        this.description = $.description;
         this.display = $.display;
         this.ref = $.ref;
         this.type = $.type;
@@ -180,6 +218,49 @@ public final class DomainsMyRequestRequestingArgs extends com.pulumi.resources.R
 
         public Builder(DomainsMyRequestRequestingArgs defaults) {
             $ = new DomainsMyRequestRequestingArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param description Resource description
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description Resource description
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
         }
 
         /**

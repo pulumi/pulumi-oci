@@ -10,14 +10,14 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis {
     /**
-     * @return PerformanceTuningAnalysis flag to store enabled or disabled status.
+     * @return PerformanceTuningAnalysis flag to store enabled or disabled status
      * 
      */
     private Boolean isEnabled;
 
     private GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis() {}
     /**
-     * @return PerformanceTuningAnalysis flag to store enabled or disabled status.
+     * @return PerformanceTuningAnalysis flag to store enabled or disabled status
      * 
      */
     public Boolean isEnabled() {

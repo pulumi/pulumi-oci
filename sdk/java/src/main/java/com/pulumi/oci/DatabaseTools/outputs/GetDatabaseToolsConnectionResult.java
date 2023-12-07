@@ -5,6 +5,8 @@ package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionKeyStore;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionLock;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionProxyClient;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionRelatedResource;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionUserPassword;
 import java.lang.Object;
@@ -62,15 +64,30 @@ public final class GetDatabaseToolsConnectionResult {
      */
     private String lifecycleDetails;
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetDatabaseToolsConnectionLock> locks;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
     private String privateEndpointId;
     /**
+     * @return The proxy client information.
+     * 
+     */
+    private List<GetDatabaseToolsConnectionProxyClient> proxyClients;
+    /**
      * @return A related resource
      * 
      */
     private List<GetDatabaseToolsConnectionRelatedResource> relatedResources;
+    /**
+     * @return Specifies whether this connection is supported by the Database Tools Runtime.
+     * 
+     */
+    private String runtimeSupport;
     /**
      * @return The current state of the Database Tools connection.
      * 
@@ -96,6 +113,11 @@ public final class GetDatabaseToolsConnectionResult {
      * 
      */
     private String type;
+    /**
+     * @return The JDBC URL used to connect to the Generic JDBC database system.
+     * 
+     */
+    private String url;
     /**
      * @return The database user name.
      * 
@@ -175,6 +197,13 @@ public final class GetDatabaseToolsConnectionResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetDatabaseToolsConnectionLock> locks() {
+        return this.locks;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
@@ -182,11 +211,25 @@ public final class GetDatabaseToolsConnectionResult {
         return this.privateEndpointId;
     }
     /**
+     * @return The proxy client information.
+     * 
+     */
+    public List<GetDatabaseToolsConnectionProxyClient> proxyClients() {
+        return this.proxyClients;
+    }
+    /**
      * @return A related resource
      * 
      */
     public List<GetDatabaseToolsConnectionRelatedResource> relatedResources() {
         return this.relatedResources;
+    }
+    /**
+     * @return Specifies whether this connection is supported by the Database Tools Runtime.
+     * 
+     */
+    public String runtimeSupport() {
+        return this.runtimeSupport;
     }
     /**
      * @return The current state of the Database Tools connection.
@@ -224,6 +267,13 @@ public final class GetDatabaseToolsConnectionResult {
         return this.type;
     }
     /**
+     * @return The JDBC URL used to connect to the Generic JDBC database system.
+     * 
+     */
+    public String url() {
+        return this.url;
+    }
+    /**
      * @return The database user name.
      * 
      */
@@ -257,13 +307,17 @@ public final class GetDatabaseToolsConnectionResult {
         private String id;
         private List<GetDatabaseToolsConnectionKeyStore> keyStores;
         private String lifecycleDetails;
+        private List<GetDatabaseToolsConnectionLock> locks;
         private String privateEndpointId;
+        private List<GetDatabaseToolsConnectionProxyClient> proxyClients;
         private List<GetDatabaseToolsConnectionRelatedResource> relatedResources;
+        private String runtimeSupport;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private String type;
+        private String url;
         private String userName;
         private List<GetDatabaseToolsConnectionUserPassword> userPasswords;
         public Builder() {}
@@ -279,13 +333,17 @@ public final class GetDatabaseToolsConnectionResult {
     	      this.id = defaults.id;
     	      this.keyStores = defaults.keyStores;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.privateEndpointId = defaults.privateEndpointId;
+    	      this.proxyClients = defaults.proxyClients;
     	      this.relatedResources = defaults.relatedResources;
+    	      this.runtimeSupport = defaults.runtimeSupport;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.type = defaults.type;
+    	      this.url = defaults.url;
     	      this.userName = defaults.userName;
     	      this.userPasswords = defaults.userPasswords;
         }
@@ -344,9 +402,25 @@ public final class GetDatabaseToolsConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder locks(List<GetDatabaseToolsConnectionLock> locks) {
+            this.locks = Objects.requireNonNull(locks);
+            return this;
+        }
+        public Builder locks(GetDatabaseToolsConnectionLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
             return this;
+        }
+        @CustomType.Setter
+        public Builder proxyClients(List<GetDatabaseToolsConnectionProxyClient> proxyClients) {
+            this.proxyClients = Objects.requireNonNull(proxyClients);
+            return this;
+        }
+        public Builder proxyClients(GetDatabaseToolsConnectionProxyClient... proxyClients) {
+            return proxyClients(List.of(proxyClients));
         }
         @CustomType.Setter
         public Builder relatedResources(List<GetDatabaseToolsConnectionRelatedResource> relatedResources) {
@@ -355,6 +429,11 @@ public final class GetDatabaseToolsConnectionResult {
         }
         public Builder relatedResources(GetDatabaseToolsConnectionRelatedResource... relatedResources) {
             return relatedResources(List.of(relatedResources));
+        }
+        @CustomType.Setter
+        public Builder runtimeSupport(String runtimeSupport) {
+            this.runtimeSupport = Objects.requireNonNull(runtimeSupport);
+            return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
@@ -382,6 +461,11 @@ public final class GetDatabaseToolsConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder url(String url) {
+            this.url = Objects.requireNonNull(url);
+            return this;
+        }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
@@ -406,13 +490,17 @@ public final class GetDatabaseToolsConnectionResult {
             o.id = id;
             o.keyStores = keyStores;
             o.lifecycleDetails = lifecycleDetails;
+            o.locks = locks;
             o.privateEndpointId = privateEndpointId;
+            o.proxyClients = proxyClients;
             o.relatedResources = relatedResources;
+            o.runtimeSupport = runtimeSupport;
             o.state = state;
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;
             o.type = type;
+            o.url = url;
             o.userName = userName;
             o.userPasswords = userPasswords;
             return o;

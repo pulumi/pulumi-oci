@@ -162,7 +162,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// A filter to return only the security assessments that are set as a baseline.
+        /// A filter to return only security assessments that are set as baseline.
         /// </summary>
         [Input("isBaseline")]
         public bool? IsBaseline { get; set; }
@@ -260,7 +260,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// A filter to return only the security assessments that are set as a baseline.
+        /// A filter to return only security assessments that are set as baseline.
         /// </summary>
         [Input("isBaseline")]
         public Input<bool>? IsBaseline { get; set; }

@@ -129,7 +129,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The list of ip_sec_connection_tunnels.
+        /// The list of two ip_sec_connection_tunnels.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelResult> IpSecConnectionTunnels;
         public readonly string IpsecId;

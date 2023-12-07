@@ -19,16 +19,40 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? ApexUrl { get; set; }
 
         /// <summary>
+        /// The URL of the Database Transforms for the Autonomous Database.
+        /// </summary>
+        [Input("databaseTransformsUrl")]
+        public Input<string>? DatabaseTransformsUrl { get; set; }
+
+        /// <summary>
         /// The URL of the Graph Studio for the Autonomous Database.
         /// </summary>
         [Input("graphStudioUrl")]
         public Input<string>? GraphStudioUrl { get; set; }
 
         /// <summary>
+        /// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        /// </summary>
+        [Input("machineLearningNotebookUrl")]
+        public Input<string>? MachineLearningNotebookUrl { get; set; }
+
+        /// <summary>
         /// Oracle Machine Learning user management URL.
         /// </summary>
         [Input("machineLearningUserManagementUrl")]
         public Input<string>? MachineLearningUserManagementUrl { get; set; }
+
+        /// <summary>
+        /// The URL of the MongoDB API for the Autonomous Database.
+        /// </summary>
+        [Input("mongoDbUrl")]
+        public Input<string>? MongoDbUrl { get; set; }
+
+        /// <summary>
+        /// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        /// </summary>
+        [Input("ordsUrl")]
+        public Input<string>? OrdsUrl { get; set; }
 
         /// <summary>
         /// Oracle SQL Developer Web URL.

@@ -2302,7 +2302,7 @@ public final class AdmFunctions {
      * This data source provides the list of Vulnerability Audits in Oracle Cloud Infrastructure ADM service.
      * 
      * Returns a list of Vulnerability Audits based on the specified query parameters.
-     * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
+     * At least one of id, compartmentId query parameter must be provided.
      * 
      * ## Example Usage
      * ```java
@@ -2347,7 +2347,7 @@ public final class AdmFunctions {
      * This data source provides the list of Vulnerability Audits in Oracle Cloud Infrastructure ADM service.
      * 
      * Returns a list of Vulnerability Audits based on the specified query parameters.
-     * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
+     * At least one of id, compartmentId query parameter must be provided.
      * 
      * ## Example Usage
      * ```java
@@ -2392,7 +2392,7 @@ public final class AdmFunctions {
      * This data source provides the list of Vulnerability Audits in Oracle Cloud Infrastructure ADM service.
      * 
      * Returns a list of Vulnerability Audits based on the specified query parameters.
-     * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
+     * At least one of id, compartmentId query parameter must be provided.
      * 
      * ## Example Usage
      * ```java
@@ -2437,7 +2437,7 @@ public final class AdmFunctions {
      * This data source provides the list of Vulnerability Audits in Oracle Cloud Infrastructure ADM service.
      * 
      * Returns a list of Vulnerability Audits based on the specified query parameters.
-     * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
+     * At least one of id, compartmentId query parameter must be provided.
      * 
      * ## Example Usage
      * ```java
@@ -2482,7 +2482,7 @@ public final class AdmFunctions {
      * This data source provides the list of Vulnerability Audits in Oracle Cloud Infrastructure ADM service.
      * 
      * Returns a list of Vulnerability Audits based on the specified query parameters.
-     * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
+     * At least one of id, compartmentId query parameter must be provided.
      * 
      * ## Example Usage
      * ```java
@@ -2527,7 +2527,7 @@ public final class AdmFunctions {
      * This data source provides the list of Vulnerability Audits in Oracle Cloud Infrastructure ADM service.
      * 
      * Returns a list of Vulnerability Audits based on the specified query parameters.
-     * At least one of id, compartmentId or knowledgeBaseId query parameter must be provided.
+     * At least one of id, compartmentId query parameter must be provided.
      * 
      * ## Example Usage
      * ```java

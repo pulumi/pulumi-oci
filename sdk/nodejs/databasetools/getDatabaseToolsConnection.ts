@@ -82,13 +82,25 @@ export interface GetDatabaseToolsConnectionResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.DatabaseTools.GetDatabaseToolsConnectionLock[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      */
     readonly privateEndpointId: string;
     /**
+     * The proxy client information.
+     */
+    readonly proxyClients: outputs.DatabaseTools.GetDatabaseToolsConnectionProxyClient[];
+    /**
      * A related resource
      */
     readonly relatedResources: outputs.DatabaseTools.GetDatabaseToolsConnectionRelatedResource[];
+    /**
+     * Specifies whether this connection is supported by the Database Tools Runtime.
+     */
+    readonly runtimeSupport: string;
     /**
      * The current state of the Database Tools connection.
      */
@@ -109,6 +121,10 @@ export interface GetDatabaseToolsConnectionResult {
      * The Database Tools connection type.
      */
     readonly type: string;
+    /**
+     * The JDBC URL used to connect to the Generic JDBC database system.
+     */
+    readonly url: string;
     /**
      * The database user name.
      */

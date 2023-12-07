@@ -217,6 +217,9 @@ namespace Pulumi.Oci.Database
         [Output("newGiVersion")]
         public Output<string> NewGiVersion { get; private set; } = null!;
 
+        [Output("newOsVersion")]
+        public Output<string> NewOsVersion { get; private set; } = null!;
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
@@ -413,6 +416,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("newGiVersion")]
         public Input<string>? NewGiVersion { get; set; }
+
+        [Input("newOsVersion")]
+        public Input<string>? NewOsVersion { get; set; }
 
         /// <summary>
         /// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
@@ -647,6 +653,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("newGiVersion")]
         public Input<string>? NewGiVersion { get; set; }
+
+        [Input("newOsVersion")]
+        public Input<string>? NewOsVersion { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.

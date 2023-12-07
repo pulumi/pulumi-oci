@@ -31,14 +31,14 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     @Import(name="autonomousDataStorageSizeInTbs")
     private @Nullable Output<Double> autonomousDataStorageSizeInTbs;
 
     /**
-     * @return The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * @return (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     public Optional<Output<Double>> autonomousDataStorageSizeInTbs() {
@@ -136,14 +136,14 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The number of CPU cores to enable per VM cluster node.
+     * (Updatable) The number of CPU cores to enable per VM cluster node.
      * 
      */
     @Import(name="cpuCoreCountPerNode")
     private @Nullable Output<Integer> cpuCoreCountPerNode;
 
     /**
-     * @return The number of CPU cores to enable per VM cluster node.
+     * @return (Updatable) The number of CPU cores to enable per VM cluster node.
      * 
      */
     public Optional<Output<Integer>> cpuCoreCountPerNode() {
@@ -170,6 +170,13 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<Integer>> cpusEnabled() {
         return Optional.ofNullable(this.cpusEnabled);
+    }
+
+    @Import(name="cpusLowestScaledValue")
+    private @Nullable Output<Integer> cpusLowestScaledValue;
+
+    public Optional<Output<Integer>> cpusLowestScaledValue() {
+        return Optional.ofNullable(this.cpusLowestScaledValue);
     }
 
     @Import(name="dataStorageSizeInGb")
@@ -267,6 +274,21 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<String>> exadataInfrastructureId() {
         return Optional.ofNullable(this.exadataInfrastructureId);
+    }
+
+    /**
+     * The lowest value to which exadataStorage in TBs can be scaled down.
+     * 
+     */
+    @Import(name="exadataStorageInTbsLowestScaledValue")
+    private @Nullable Output<Double> exadataStorageInTbsLowestScaledValue;
+
+    /**
+     * @return The lowest value to which exadataStorage in TBs can be scaled down.
+     * 
+     */
+    public Optional<Output<Double>> exadataStorageInTbsLowestScaledValue() {
+        return Optional.ofNullable(this.exadataStorageInTbsLowestScaledValue);
     }
 
     /**
@@ -390,6 +412,21 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * The lowest value to which ACDs can be scaled down.
+     * 
+     */
+    @Import(name="maxAcdsLowestScaledValue")
+    private @Nullable Output<Integer> maxAcdsLowestScaledValue;
+
+    /**
+     * @return The lowest value to which ACDs can be scaled down.
+     * 
+     */
+    public Optional<Output<Integer>> maxAcdsLowestScaledValue() {
+        return Optional.ofNullable(this.maxAcdsLowestScaledValue);
+    }
+
+    /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
@@ -469,6 +506,13 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<Double>> ocpusEnabled() {
         return Optional.ofNullable(this.ocpusEnabled);
+    }
+
+    @Import(name="provisionableAutonomousContainerDatabases")
+    private @Nullable Output<Integer> provisionableAutonomousContainerDatabases;
+
+    public Optional<Output<Integer>> provisionableAutonomousContainerDatabases() {
+        return Optional.ofNullable(this.provisionableAutonomousContainerDatabases);
     }
 
     @Import(name="provisionedAutonomousContainerDatabases")
@@ -624,14 +668,14 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The total number of Autonomous Container Databases that can be created.
+     * (Updatable) The total number of Autonomous Container Databases that can be created.
      * 
      */
     @Import(name="totalContainerDatabases")
     private @Nullable Output<Integer> totalContainerDatabases;
 
     /**
-     * @return The total number of Autonomous Container Databases that can be created.
+     * @return (Updatable) The total number of Autonomous Container Databases that can be created.
      * 
      */
     public Optional<Output<Integer>> totalContainerDatabases() {
@@ -673,6 +717,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         this.cpuCoreCountPerNode = $.cpuCoreCountPerNode;
         this.cpuPercentage = $.cpuPercentage;
         this.cpusEnabled = $.cpusEnabled;
+        this.cpusLowestScaledValue = $.cpusLowestScaledValue;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
         this.dataStorageSizeInTbs = $.dataStorageSizeInTbs;
         this.dbNodeStorageSizeInGbs = $.dbNodeStorageSizeInGbs;
@@ -680,6 +725,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.exadataInfrastructureId = $.exadataInfrastructureId;
+        this.exadataStorageInTbsLowestScaledValue = $.exadataStorageInTbsLowestScaledValue;
         this.freeformTags = $.freeformTags;
         this.isLocalBackupEnabled = $.isLocalBackupEnabled;
         this.isMtlsEnabled = $.isMtlsEnabled;
@@ -688,12 +734,14 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         this.lifecycleDetails = $.lifecycleDetails;
         this.maintenanceWindowDetails = $.maintenanceWindowDetails;
         this.maintenanceWindows = $.maintenanceWindows;
+        this.maxAcdsLowestScaledValue = $.maxAcdsLowestScaledValue;
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
         this.memorySizeInGbs = $.memorySizeInGbs;
         this.nextMaintenanceRunId = $.nextMaintenanceRunId;
         this.nodeCount = $.nodeCount;
         this.nonProvisionableAutonomousContainerDatabases = $.nonProvisionableAutonomousContainerDatabases;
         this.ocpusEnabled = $.ocpusEnabled;
+        this.provisionableAutonomousContainerDatabases = $.provisionableAutonomousContainerDatabases;
         this.provisionedAutonomousContainerDatabases = $.provisionedAutonomousContainerDatabases;
         this.provisionedCpus = $.provisionedCpus;
         this.reclaimableCpus = $.reclaimableCpus;
@@ -738,7 +786,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param autonomousDataStorageSizeInTbs The data disk group size to be allocated for Autonomous Databases, in TBs.
+         * @param autonomousDataStorageSizeInTbs (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
          * 
          * @return builder
          * 
@@ -749,7 +797,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param autonomousDataStorageSizeInTbs The data disk group size to be allocated for Autonomous Databases, in TBs.
+         * @param autonomousDataStorageSizeInTbs (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
          * 
          * @return builder
          * 
@@ -885,7 +933,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param cpuCoreCountPerNode The number of CPU cores to enable per VM cluster node.
+         * @param cpuCoreCountPerNode (Updatable) The number of CPU cores to enable per VM cluster node.
          * 
          * @return builder
          * 
@@ -896,7 +944,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param cpuCoreCountPerNode The number of CPU cores to enable per VM cluster node.
+         * @param cpuCoreCountPerNode (Updatable) The number of CPU cores to enable per VM cluster node.
          * 
          * @return builder
          * 
@@ -933,6 +981,15 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
          */
         public Builder cpusEnabled(Integer cpusEnabled) {
             return cpusEnabled(Output.of(cpusEnabled));
+        }
+
+        public Builder cpusLowestScaledValue(@Nullable Output<Integer> cpusLowestScaledValue) {
+            $.cpusLowestScaledValue = cpusLowestScaledValue;
+            return this;
+        }
+
+        public Builder cpusLowestScaledValue(Integer cpusLowestScaledValue) {
+            return cpusLowestScaledValue(Output.of(cpusLowestScaledValue));
         }
 
         public Builder dataStorageSizeInGb(@Nullable Output<Double> dataStorageSizeInGb) {
@@ -1078,6 +1135,27 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
          */
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             return exadataInfrastructureId(Output.of(exadataInfrastructureId));
+        }
+
+        /**
+         * @param exadataStorageInTbsLowestScaledValue The lowest value to which exadataStorage in TBs can be scaled down.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exadataStorageInTbsLowestScaledValue(@Nullable Output<Double> exadataStorageInTbsLowestScaledValue) {
+            $.exadataStorageInTbsLowestScaledValue = exadataStorageInTbsLowestScaledValue;
+            return this;
+        }
+
+        /**
+         * @param exadataStorageInTbsLowestScaledValue The lowest value to which exadataStorage in TBs can be scaled down.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exadataStorageInTbsLowestScaledValue(Double exadataStorageInTbsLowestScaledValue) {
+            return exadataStorageInTbsLowestScaledValue(Output.of(exadataStorageInTbsLowestScaledValue));
         }
 
         /**
@@ -1269,6 +1347,27 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param maxAcdsLowestScaledValue The lowest value to which ACDs can be scaled down.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxAcdsLowestScaledValue(@Nullable Output<Integer> maxAcdsLowestScaledValue) {
+            $.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
+            return this;
+        }
+
+        /**
+         * @param maxAcdsLowestScaledValue The lowest value to which ACDs can be scaled down.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxAcdsLowestScaledValue(Integer maxAcdsLowestScaledValue) {
+            return maxAcdsLowestScaledValue(Output.of(maxAcdsLowestScaledValue));
+        }
+
+        /**
          * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per OCPU or ECPU.
          * 
          * @return builder
@@ -1380,6 +1479,15 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
          */
         public Builder ocpusEnabled(Double ocpusEnabled) {
             return ocpusEnabled(Output.of(ocpusEnabled));
+        }
+
+        public Builder provisionableAutonomousContainerDatabases(@Nullable Output<Integer> provisionableAutonomousContainerDatabases) {
+            $.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
+            return this;
+        }
+
+        public Builder provisionableAutonomousContainerDatabases(Integer provisionableAutonomousContainerDatabases) {
+            return provisionableAutonomousContainerDatabases(Output.of(provisionableAutonomousContainerDatabases));
         }
 
         public Builder provisionedAutonomousContainerDatabases(@Nullable Output<Integer> provisionedAutonomousContainerDatabases) {
@@ -1591,7 +1699,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param totalContainerDatabases The total number of Autonomous Container Databases that can be created.
+         * @param totalContainerDatabases (Updatable) The total number of Autonomous Container Databases that can be created.
          * 
          * @return builder
          * 
@@ -1602,7 +1710,7 @@ public final class AutonomousVmClusterState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param totalContainerDatabases The total number of Autonomous Container Databases that can be created.
+         * @param totalContainerDatabases (Updatable) The total number of Autonomous Container Databases that can be created.
          * 
          * @return builder
          * 

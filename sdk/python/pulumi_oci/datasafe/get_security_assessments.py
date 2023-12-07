@@ -262,7 +262,7 @@ def get_security_assessments(access_level: Optional[str] = None,
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param str display_name: A filter to return only resources that match the specified display name.
-    :param bool is_baseline: A filter to return only the security assessments that are set as a baseline.
+    :param bool is_baseline: A filter to return only security assessments that are set as baseline.
     :param bool is_schedule_assessment: A filter to return only security assessments of type save schedule.
     :param str schedule_assessment_id: The OCID of the security assessment of type SAVE_SCHEDULE.
     :param str state: A filter to return only resources that match the specified lifecycle state.
@@ -374,7 +374,7 @@ def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param str display_name: A filter to return only resources that match the specified display name.
-    :param bool is_baseline: A filter to return only the security assessments that are set as a baseline.
+    :param bool is_baseline: A filter to return only security assessments that are set as baseline.
     :param bool is_schedule_assessment: A filter to return only security assessments of type save schedule.
     :param str schedule_assessment_id: The OCID of the security assessment of type SAVE_SCHEDULE.
     :param str state: A filter to return only resources that match the specified lifecycle state.

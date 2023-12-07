@@ -62,14 +62,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline")
 public class SetUserAssessmentBaseline extends com.pulumi.resources.CustomResource {
     /**
-     * The list of OCIDs for the user assessments that need to be updated while setting the baseline.
+     * The list of user assessment OCIDs that need to be updated while setting the baseline.
      * 
      */
     @Export(name="assessmentIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> assessmentIds;
 
     /**
-     * @return The list of OCIDs for the user assessments that need to be updated while setting the baseline.
+     * @return The list of user assessment OCIDs that need to be updated while setting the baseline.
      * 
      */
     public Output<List<String>> assessmentIds() {

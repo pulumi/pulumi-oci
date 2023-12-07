@@ -101,6 +101,8 @@ type Fleet struct {
 	InventoryLog FleetInventoryLogOutput `pulumi:"inventoryLog"`
 	// (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 	IsAdvancedFeaturesEnabled pulumi.BoolOutput `pulumi:"isAdvancedFeaturesEnabled"`
+	// Whether or not export setting is enabled in this Fleet.
+	IsExportSettingEnabled pulumi.BoolOutput `pulumi:"isExportSettingEnabled"`
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog FleetOperationLogOutput `pulumi:"operationLog"`
 	// The lifecycle state of the Fleet.
@@ -174,6 +176,8 @@ type fleetState struct {
 	InventoryLog *FleetInventoryLog `pulumi:"inventoryLog"`
 	// (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 	IsAdvancedFeaturesEnabled *bool `pulumi:"isAdvancedFeaturesEnabled"`
+	// Whether or not export setting is enabled in this Fleet.
+	IsExportSettingEnabled *bool `pulumi:"isExportSettingEnabled"`
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog *FleetOperationLog `pulumi:"operationLog"`
 	// The lifecycle state of the Fleet.
@@ -209,6 +213,8 @@ type FleetState struct {
 	InventoryLog FleetInventoryLogPtrInput
 	// (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 	IsAdvancedFeaturesEnabled pulumi.BoolPtrInput
+	// Whether or not export setting is enabled in this Fleet.
+	IsExportSettingEnabled pulumi.BoolPtrInput
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog FleetOperationLogPtrInput
 	// The lifecycle state of the Fleet.
@@ -407,6 +413,11 @@ func (o FleetOutput) InventoryLog() FleetInventoryLogOutput {
 // (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 func (o FleetOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Fleet) pulumi.BoolOutput { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
+}
+
+// Whether or not export setting is enabled in this Fleet.
+func (o FleetOutput) IsExportSettingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.BoolOutput { return v.IsExportSettingEnabled }).(pulumi.BoolOutput)
 }
 
 // (Updatable) Custom Log for inventory or operation log.

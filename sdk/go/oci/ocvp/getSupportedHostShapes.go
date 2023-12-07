@@ -30,9 +30,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetSupportedHostShapes(ctx, &ocvp.GetSupportedHostShapesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Name:          pulumi.StringRef(_var.Supported_host_shape_name),
-//				SddcType:      pulumi.StringRef(_var.Supported_host_shape_sddc_type),
+//				CompartmentId:             _var.Compartment_id,
+//				InitialHostShapeName:      pulumi.StringRef(oci_core_shape.Test_shape.Name),
+//				IsSingleHostSddcSupported: pulumi.BoolRef(_var.Supported_host_shape_is_single_host_sddc_supported),
+//				Name:                      pulumi.StringRef(_var.Supported_host_shape_name),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -57,6 +58,10 @@ type GetSupportedHostShapesArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string                         `pulumi:"compartmentId"`
 	Filters       []GetSupportedHostShapesFilter `pulumi:"filters"`
+	// A filter to return only the shapes compatible with the initial host shape of the Cluster.
+	InitialHostShapeName *string `pulumi:"initialHostShapeName"`
+	// A filter to return only resources that support single host SDDC.
+	IsSingleHostSddcSupported *bool `pulumi:"isSingleHostSddcSupported"`
 	// A filter to return only resources that match the given name exactly.
 	Name *string `pulumi:"name"`
 	// (Optional) A filter to return only resources that match the given SDDC type exactly.
@@ -70,7 +75,10 @@ type GetSupportedHostShapesResult struct {
 	CompartmentId string                         `pulumi:"compartmentId"`
 	Filters       []GetSupportedHostShapesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                   string  `pulumi:"id"`
+	InitialHostShapeName *string `pulumi:"initialHostShapeName"`
+	// Indicates whether the shape supports single host SDDCs.
+	IsSingleHostSddcSupported *bool `pulumi:"isSingleHostSddcSupported"`
 	// A list of the supported compute shapes for ESXi hosts.
 	Items []GetSupportedHostShapesItem `pulumi:"items"`
 	// The name of the supported compute shape.
@@ -97,6 +105,10 @@ type GetSupportedHostShapesOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput                     `pulumi:"compartmentId"`
 	Filters       GetSupportedHostShapesFilterArrayInput `pulumi:"filters"`
+	// A filter to return only the shapes compatible with the initial host shape of the Cluster.
+	InitialHostShapeName pulumi.StringPtrInput `pulumi:"initialHostShapeName"`
+	// A filter to return only resources that support single host SDDC.
+	IsSingleHostSddcSupported pulumi.BoolPtrInput `pulumi:"isSingleHostSddcSupported"`
 	// A filter to return only resources that match the given name exactly.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Optional) A filter to return only resources that match the given SDDC type exactly.
@@ -135,6 +147,15 @@ func (o GetSupportedHostShapesResultOutput) Filters() GetSupportedHostShapesFilt
 // The provider-assigned unique ID for this managed resource.
 func (o GetSupportedHostShapesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSupportedHostShapesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetSupportedHostShapesResultOutput) InitialHostShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesResult) *string { return v.InitialHostShapeName }).(pulumi.StringPtrOutput)
+}
+
+// Indicates whether the shape supports single host SDDCs.
+func (o GetSupportedHostShapesResultOutput) IsSingleHostSddcSupported() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesResult) *bool { return v.IsSingleHostSddcSupported }).(pulumi.BoolPtrOutput)
 }
 
 // A list of the supported compute shapes for ESXi hosts.

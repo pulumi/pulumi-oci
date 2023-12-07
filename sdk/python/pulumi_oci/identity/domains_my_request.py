@@ -20,13 +20,14 @@ class DomainsMyRequestArgs:
                  justification: pulumi.Input[str],
                  requesting: pulumi.Input['DomainsMyRequestRequestingArgs'],
                  schemas: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 action: Optional[pulumi.Input[str]] = None,
+                 approval_details: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestApprovalDetailArgs']]]] = None,
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attributes: Optional[pulumi.Input[str]] = None,
                  authorization: Optional[pulumi.Input[str]] = None,
                  ocid: Optional[pulumi.Input[str]] = None,
                  requestor: Optional[pulumi.Input['DomainsMyRequestRequestorArgs']] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
-                 status: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestTagArgs']]]] = None):
         """
         The set of arguments for constructing a DomainsMyRequest resource.
@@ -63,6 +64,30 @@ class DomainsMyRequestArgs:
                * returned: default
                * type: string
                * uniqueness: none
+        :param pulumi.Input[str] action: Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+               
+               **Added In:** 2307071836
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestApprovalDetailArgs']]] approval_details: Approvals created for this request.
+               
+               **Added In:** 2307071836
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readOnly
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -88,17 +113,6 @@ class DomainsMyRequestArgs:
                * type: complex
                * uniqueness: none
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
-        :param pulumi.Input[str] status: status
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestTagArgs']]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
@@ -115,6 +129,10 @@ class DomainsMyRequestArgs:
         pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "requesting", requesting)
         pulumi.set(__self__, "schemas", schemas)
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if approval_details is not None:
+            pulumi.set(__self__, "approval_details", approval_details)
         if attribute_sets is not None:
             pulumi.set(__self__, "attribute_sets", attribute_sets)
         if attributes is not None:
@@ -127,8 +145,6 @@ class DomainsMyRequestArgs:
             pulumi.set(__self__, "requestor", requestor)
         if resource_type_schema_version is not None:
             pulumi.set(__self__, "resource_type_schema_version", resource_type_schema_version)
-        if status is not None:
-            pulumi.set(__self__, "status", status)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
 
@@ -208,6 +224,52 @@ class DomainsMyRequestArgs:
     @schemas.setter
     def schemas(self, value: pulumi.Input[Sequence[pulumi.Input[str]]]):
         pulumi.set(self, "schemas", value)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[str]]:
+        """
+        Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action", value)
+
+    @property
+    @pulumi.getter(name="approvalDetails")
+    def approval_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestApprovalDetailArgs']]]]:
+        """
+        Approvals created for this request.
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readOnly
+        * returned: request
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "approval_details")
+
+    @approval_details.setter
+    def approval_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestApprovalDetailArgs']]]]):
+        pulumi.set(self, "approval_details", value)
 
     @property
     @pulumi.getter(name="attributeSets")
@@ -302,28 +364,6 @@ class DomainsMyRequestArgs:
 
     @property
     @pulumi.getter
-    def status(self) -> Optional[pulumi.Input[str]]:
-        """
-        status
-
-        **SCIM++ Properties:**
-        * caseExact: true
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
-        * required: false
-        * returned: default
-        * type: string
-        * uniqueness: none
-        """
-        return pulumi.get(self, "status")
-
-    @status.setter
-    def status(self, value: Optional[pulumi.Input[str]]):
-        pulumi.set(self, "status", value)
-
-    @property
-    @pulumi.getter
     def tags(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestTagArgs']]]]:
         """
         A list of tags on this resource.
@@ -348,12 +388,15 @@ class DomainsMyRequestArgs:
 @pulumi.input_type
 class _DomainsMyRequestState:
     def __init__(__self__, *,
+                 action: Optional[pulumi.Input[str]] = None,
+                 approval_details: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestApprovalDetailArgs']]]] = None,
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attributes: Optional[pulumi.Input[str]] = None,
                  authorization: Optional[pulumi.Input[str]] = None,
                  compartment_ocid: Optional[pulumi.Input[str]] = None,
                  delete_in_progress: Optional[pulumi.Input[bool]] = None,
                  domain_ocid: Optional[pulumi.Input[str]] = None,
+                 expires: Optional[pulumi.Input[str]] = None,
                  idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestIdcsCreatedByArgs']]]] = None,
                  idcs_endpoint: Optional[pulumi.Input[str]] = None,
                  idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestIdcsLastModifiedByArgs']]]] = None,
@@ -371,6 +414,30 @@ class _DomainsMyRequestState:
                  tenancy_ocid: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DomainsMyRequest resources.
+        :param pulumi.Input[str] action: Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+               
+               **Added In:** 2307071836
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestApprovalDetailArgs']]] approval_details: Approvals created for this request.
+               
+               **Added In:** 2307071836
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readOnly
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -406,6 +473,18 @@ class _DomainsMyRequestState:
                * required: false
                * returned: default
                * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] expires: (Updatable) Time by when Request expires
+               
+               **Added In:** 2307071836
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
                * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestIdcsCreatedByArgs']]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
@@ -512,13 +591,13 @@ class _DomainsMyRequestState:
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] status: status
+        :param pulumi.Input[str] status: (Updatable) status.
                
                **SCIM++ Properties:**
                * caseExact: true
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readWrite
+               * mutability: readOnly
                * required: false
                * returned: default
                * type: string
@@ -550,6 +629,10 @@ class _DomainsMyRequestState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if action is not None:
+            pulumi.set(__self__, "action", action)
+        if approval_details is not None:
+            pulumi.set(__self__, "approval_details", approval_details)
         if attribute_sets is not None:
             pulumi.set(__self__, "attribute_sets", attribute_sets)
         if attributes is not None:
@@ -562,6 +645,8 @@ class _DomainsMyRequestState:
             pulumi.set(__self__, "delete_in_progress", delete_in_progress)
         if domain_ocid is not None:
             pulumi.set(__self__, "domain_ocid", domain_ocid)
+        if expires is not None:
+            pulumi.set(__self__, "expires", expires)
         if idcs_created_bies is not None:
             pulumi.set(__self__, "idcs_created_bies", idcs_created_bies)
         if idcs_endpoint is not None:
@@ -592,6 +677,52 @@ class _DomainsMyRequestState:
             pulumi.set(__self__, "tags", tags)
         if tenancy_ocid is not None:
             pulumi.set(__self__, "tenancy_ocid", tenancy_ocid)
+
+    @property
+    @pulumi.getter
+    def action(self) -> Optional[pulumi.Input[str]]:
+        """
+        Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "action", value)
+
+    @property
+    @pulumi.getter(name="approvalDetails")
+    def approval_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestApprovalDetailArgs']]]]:
+        """
+        Approvals created for this request.
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readOnly
+        * returned: request
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "approval_details")
+
+    @approval_details.setter
+    def approval_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DomainsMyRequestApprovalDetailArgs']]]]):
+        pulumi.set(self, "approval_details", value)
 
     @property
     @pulumi.getter(name="attributeSets")
@@ -694,6 +825,29 @@ class _DomainsMyRequestState:
     @domain_ocid.setter
     def domain_ocid(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "domain_ocid", value)
+
+    @property
+    @pulumi.getter
+    def expires(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Time by when Request expires
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "expires")
+
+    @expires.setter
+    def expires(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "expires", value)
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
@@ -936,13 +1090,13 @@ class _DomainsMyRequestState:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[str]]:
         """
-        status
+        (Updatable) status.
 
         **SCIM++ Properties:**
         * caseExact: true
         * idcsSearchable: true
         * multiValued: false
-        * mutability: readWrite
+        * mutability: readOnly
         * required: false
         * returned: default
         * type: string
@@ -1008,6 +1162,8 @@ class DomainsMyRequest(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 action: Optional[pulumi.Input[str]] = None,
+                 approval_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyRequestApprovalDetailArgs']]]]] = None,
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attributes: Optional[pulumi.Input[str]] = None,
                  authorization: Optional[pulumi.Input[str]] = None,
@@ -1018,7 +1174,6 @@ class DomainsMyRequest(pulumi.CustomResource):
                  requestor: Optional[pulumi.Input[pulumi.InputType['DomainsMyRequestRequestorArgs']]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 status: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyRequestTagArgs']]]]] = None,
                  __props__=None):
         """
@@ -1026,12 +1181,70 @@ class DomainsMyRequest(pulumi.CustomResource):
 
         Create a Request
 
+        ** IMPORTANT **
+        In our latest release, the property `status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_my_request = oci.identity.DomainsMyRequest("testMyRequest",
+            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+            justification=var["my_request_justification"],
+            requesting=oci.identity.DomainsMyRequestRequestingArgs(
+                type=var["my_request_requesting_type"],
+                value=oci_identity_domains_group["group_to_request"]["id"],
+                description=var["my_request_requesting_description"],
+            ),
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Request"],
+            action=var["my_request_action"],
+            approval_details=[oci.identity.DomainsMyRequestApprovalDetailArgs()],
+            attribute_sets=["all"],
+            attributes="",
+            authorization=var["my_request_authorization"],
+            ocid=var["my_request_ocid"],
+            requestor=oci.identity.DomainsMyRequestRequestorArgs(
+                value=var["my_request_requestor_value"],
+            ),
+            resource_type_schema_version=var["my_request_resource_type_schema_version"],
+            tags=[oci.identity.DomainsMyRequestTagArgs(
+                key=var["my_request_tags_key"],
+                value=var["my_request_tags_value"],
+            )])
+        ```
+
         ## Import
 
         Import is not supported for this resource.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] action: Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+               
+               **Added In:** 2307071836
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyRequestApprovalDetailArgs']]]] approval_details: Approvals created for this request.
+               
+               **Added In:** 2307071836
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readOnly
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1090,17 +1303,6 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] status: status
-               
-               **SCIM++ Properties:**
-               * caseExact: true
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
-               * required: false
-               * returned: default
-               * type: string
-               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyRequestTagArgs']]]] tags: A list of tags on this resource.
                
                **SCIM++ Properties:**
@@ -1124,6 +1326,40 @@ class DomainsMyRequest(pulumi.CustomResource):
 
         Create a Request
 
+        ** IMPORTANT **
+        In our latest release, the property `status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_my_request = oci.identity.DomainsMyRequest("testMyRequest",
+            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+            justification=var["my_request_justification"],
+            requesting=oci.identity.DomainsMyRequestRequestingArgs(
+                type=var["my_request_requesting_type"],
+                value=oci_identity_domains_group["group_to_request"]["id"],
+                description=var["my_request_requesting_description"],
+            ),
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Request"],
+            action=var["my_request_action"],
+            approval_details=[oci.identity.DomainsMyRequestApprovalDetailArgs()],
+            attribute_sets=["all"],
+            attributes="",
+            authorization=var["my_request_authorization"],
+            ocid=var["my_request_ocid"],
+            requestor=oci.identity.DomainsMyRequestRequestorArgs(
+                value=var["my_request_requestor_value"],
+            ),
+            resource_type_schema_version=var["my_request_resource_type_schema_version"],
+            tags=[oci.identity.DomainsMyRequestTagArgs(
+                key=var["my_request_tags_key"],
+                value=var["my_request_tags_value"],
+            )])
+        ```
+
         ## Import
 
         Import is not supported for this resource.
@@ -1143,6 +1379,8 @@ class DomainsMyRequest(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 action: Optional[pulumi.Input[str]] = None,
+                 approval_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyRequestApprovalDetailArgs']]]]] = None,
                  attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  attributes: Optional[pulumi.Input[str]] = None,
                  authorization: Optional[pulumi.Input[str]] = None,
@@ -1153,7 +1391,6 @@ class DomainsMyRequest(pulumi.CustomResource):
                  requestor: Optional[pulumi.Input[pulumi.InputType['DomainsMyRequestRequestorArgs']]] = None,
                  resource_type_schema_version: Optional[pulumi.Input[str]] = None,
                  schemas: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 status: Optional[pulumi.Input[str]] = None,
                  tags: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyRequestTagArgs']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1164,6 +1401,8 @@ class DomainsMyRequest(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DomainsMyRequestArgs.__new__(DomainsMyRequestArgs)
 
+            __props__.__dict__["action"] = action
+            __props__.__dict__["approval_details"] = approval_details
             __props__.__dict__["attribute_sets"] = attribute_sets
             __props__.__dict__["attributes"] = attributes
             __props__.__dict__["authorization"] = authorization
@@ -1182,16 +1421,17 @@ class DomainsMyRequest(pulumi.CustomResource):
             if schemas is None and not opts.urn:
                 raise TypeError("Missing required property 'schemas'")
             __props__.__dict__["schemas"] = schemas
-            __props__.__dict__["status"] = status
             __props__.__dict__["tags"] = tags
             __props__.__dict__["compartment_ocid"] = None
             __props__.__dict__["delete_in_progress"] = None
             __props__.__dict__["domain_ocid"] = None
+            __props__.__dict__["expires"] = None
             __props__.__dict__["idcs_created_bies"] = None
             __props__.__dict__["idcs_last_modified_bies"] = None
             __props__.__dict__["idcs_last_upgraded_in_release"] = None
             __props__.__dict__["idcs_prevented_operations"] = None
             __props__.__dict__["metas"] = None
+            __props__.__dict__["status"] = None
             __props__.__dict__["tenancy_ocid"] = None
         super(DomainsMyRequest, __self__).__init__(
             'oci:Identity/domainsMyRequest:DomainsMyRequest',
@@ -1203,12 +1443,15 @@ class DomainsMyRequest(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            action: Optional[pulumi.Input[str]] = None,
+            approval_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyRequestApprovalDetailArgs']]]]] = None,
             attribute_sets: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             attributes: Optional[pulumi.Input[str]] = None,
             authorization: Optional[pulumi.Input[str]] = None,
             compartment_ocid: Optional[pulumi.Input[str]] = None,
             delete_in_progress: Optional[pulumi.Input[bool]] = None,
             domain_ocid: Optional[pulumi.Input[str]] = None,
+            expires: Optional[pulumi.Input[str]] = None,
             idcs_created_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyRequestIdcsCreatedByArgs']]]]] = None,
             idcs_endpoint: Optional[pulumi.Input[str]] = None,
             idcs_last_modified_bies: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyRequestIdcsLastModifiedByArgs']]]]] = None,
@@ -1231,6 +1474,30 @@ class DomainsMyRequest(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] action: Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+               
+               **Added In:** 2307071836
+               
+               **SCIM++ Properties:**
+               * caseExact: true
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readWrite
+               * required: false
+               * returned: default
+               * type: string
+               * uniqueness: none
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyRequestApprovalDetailArgs']]]] approval_details: Approvals created for this request.
+               
+               **Added In:** 2307071836
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: false
+               * multiValued: true
+               * mutability: readOnly
+               * returned: request
+               * type: complex
+               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
         :param pulumi.Input[str] attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
         :param pulumi.Input[str] authorization: The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
@@ -1266,6 +1533,18 @@ class DomainsMyRequest(pulumi.CustomResource):
                * required: false
                * returned: default
                * type: string
+               * uniqueness: none
+        :param pulumi.Input[str] expires: (Updatable) Time by when Request expires
+               
+               **Added In:** 2307071836
+               
+               **SCIM++ Properties:**
+               * idcsSearchable: true
+               * multiValued: false
+               * mutability: readOnly
+               * required: false
+               * returned: default
+               * type: dateTime
                * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsMyRequestIdcsCreatedByArgs']]]] idcs_created_bies: (Updatable) The User or App who created the Resource
                
@@ -1372,13 +1651,13 @@ class DomainsMyRequest(pulumi.CustomResource):
                * returned: default
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] status: status
+        :param pulumi.Input[str] status: (Updatable) status.
                
                **SCIM++ Properties:**
                * caseExact: true
                * idcsSearchable: true
                * multiValued: false
-               * mutability: readWrite
+               * mutability: readOnly
                * required: false
                * returned: default
                * type: string
@@ -1414,12 +1693,15 @@ class DomainsMyRequest(pulumi.CustomResource):
 
         __props__ = _DomainsMyRequestState.__new__(_DomainsMyRequestState)
 
+        __props__.__dict__["action"] = action
+        __props__.__dict__["approval_details"] = approval_details
         __props__.__dict__["attribute_sets"] = attribute_sets
         __props__.__dict__["attributes"] = attributes
         __props__.__dict__["authorization"] = authorization
         __props__.__dict__["compartment_ocid"] = compartment_ocid
         __props__.__dict__["delete_in_progress"] = delete_in_progress
         __props__.__dict__["domain_ocid"] = domain_ocid
+        __props__.__dict__["expires"] = expires
         __props__.__dict__["idcs_created_bies"] = idcs_created_bies
         __props__.__dict__["idcs_endpoint"] = idcs_endpoint
         __props__.__dict__["idcs_last_modified_bies"] = idcs_last_modified_bies
@@ -1436,6 +1718,44 @@ class DomainsMyRequest(pulumi.CustomResource):
         __props__.__dict__["tags"] = tags
         __props__.__dict__["tenancy_ocid"] = tenancy_ocid
         return DomainsMyRequest(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter
+    def action(self) -> pulumi.Output[str]:
+        """
+        Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+        * caseExact: true
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readWrite
+        * required: false
+        * returned: default
+        * type: string
+        * uniqueness: none
+        """
+        return pulumi.get(self, "action")
+
+    @property
+    @pulumi.getter(name="approvalDetails")
+    def approval_details(self) -> pulumi.Output[Sequence['outputs.DomainsMyRequestApprovalDetail']]:
+        """
+        Approvals created for this request.
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+        * idcsSearchable: false
+        * multiValued: true
+        * mutability: readOnly
+        * returned: request
+        * type: complex
+        * uniqueness: none
+        """
+        return pulumi.get(self, "approval_details")
 
     @property
     @pulumi.getter(name="attributeSets")
@@ -1514,6 +1834,25 @@ class DomainsMyRequest(pulumi.CustomResource):
         * uniqueness: none
         """
         return pulumi.get(self, "domain_ocid")
+
+    @property
+    @pulumi.getter
+    def expires(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Time by when Request expires
+
+        **Added In:** 2307071836
+
+        **SCIM++ Properties:**
+        * idcsSearchable: true
+        * multiValued: false
+        * mutability: readOnly
+        * required: false
+        * returned: default
+        * type: dateTime
+        * uniqueness: none
+        """
+        return pulumi.get(self, "expires")
 
     @property
     @pulumi.getter(name="idcsCreatedBies")
@@ -1708,13 +2047,13 @@ class DomainsMyRequest(pulumi.CustomResource):
     @pulumi.getter
     def status(self) -> pulumi.Output[str]:
         """
-        status
+        (Updatable) status.
 
         **SCIM++ Properties:**
         * caseExact: true
         * idcsSearchable: true
         * multiValued: false
-        * mutability: readWrite
+        * mutability: readOnly
         * required: false
         * returned: default
         * type: string

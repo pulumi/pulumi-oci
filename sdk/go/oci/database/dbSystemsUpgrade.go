@@ -110,6 +110,7 @@ type DbSystemsUpgrade struct {
 	MaintenanceWindows DbSystemsUpgradeMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	NewGiVersion pulumi.StringOutput `pulumi:"newGiVersion"`
+	NewOsVersion pulumi.StringOutput `pulumi:"newOsVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
 	// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
@@ -252,6 +253,7 @@ type dbSystemsUpgradeState struct {
 	MaintenanceWindows []DbSystemsUpgradeMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	NewGiVersion *string `pulumi:"newGiVersion"`
+	NewOsVersion *string `pulumi:"newOsVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
 	// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
@@ -359,6 +361,7 @@ type DbSystemsUpgradeState struct {
 	MaintenanceWindows DbSystemsUpgradeMaintenanceWindowArrayInput
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	NewGiVersion pulumi.StringPtrInput
+	NewOsVersion pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringPtrInput
 	// The number of nodes in the DB system. For RAC DB systems, the value is greater than 1.
@@ -420,6 +423,7 @@ type dbSystemsUpgradeArgs struct {
 	IsSnapshotRetentionDaysForceUpdated *bool `pulumi:"isSnapshotRetentionDaysForceUpdated"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	NewGiVersion *string `pulumi:"newGiVersion"`
+	NewOsVersion *string `pulumi:"newOsVersion"`
 	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
 	//
 	// ** IMPORTANT **
@@ -437,6 +441,7 @@ type DbSystemsUpgradeArgs struct {
 	IsSnapshotRetentionDaysForceUpdated pulumi.BoolPtrInput
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	NewGiVersion pulumi.StringPtrInput
+	NewOsVersion pulumi.StringPtrInput
 	// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
 	//
 	// ** IMPORTANT **
@@ -674,6 +679,10 @@ func (o DbSystemsUpgradeOutput) MaintenanceWindows() DbSystemsUpgradeMaintenance
 // A valid Oracle Grid Infrastructure (GI) software version.
 func (o DbSystemsUpgradeOutput) NewGiVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.NewGiVersion }).(pulumi.StringOutput)
+}
+
+func (o DbSystemsUpgradeOutput) NewOsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringOutput { return v.NewOsVersion }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.

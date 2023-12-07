@@ -13,6 +13,23 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsMyRequestRequestingGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Resource description
+        /// 
+        /// **Added In:** 2307071836
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
+
+        /// <summary>
         /// User display name
         /// 
         /// **SCIM++ Properties:**

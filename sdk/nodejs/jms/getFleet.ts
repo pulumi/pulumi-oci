@@ -98,6 +98,10 @@ export interface GetFleetResult {
      */
     readonly isAdvancedFeaturesEnabled: boolean;
     /**
+     * Whether or not export setting is enabled in this Fleet.
+     */
+    readonly isExportSettingEnabled: boolean;
+    /**
      * Custom Log for inventory or operation log.
      */
     readonly operationLogs: outputs.Jms.GetFleetOperationLog[];

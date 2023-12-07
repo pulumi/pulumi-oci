@@ -10,6 +10,7 @@ from .connection_assignment import *
 from .database_registration import *
 from .deployment import *
 from .deployment_backup import *
+from .deployment_certificate import *
 from .get_connection import *
 from .get_connection_assignment import *
 from .get_connection_assignments import *
@@ -19,6 +20,8 @@ from .get_database_registrations import *
 from .get_deployment import *
 from .get_deployment_backup import *
 from .get_deployment_backups import *
+from .get_deployment_certificate import *
+from .get_deployment_certificates import *
 from .get_deployment_type import *
 from .get_deployment_types import *
 from .get_deployment_upgrade import *

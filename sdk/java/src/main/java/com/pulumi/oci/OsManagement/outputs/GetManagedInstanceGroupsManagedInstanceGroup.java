@@ -45,6 +45,7 @@ public final class GetManagedInstanceGroupsManagedInstanceGroup {
      */
     private String id;
     private Integer managedInstanceCount;
+    private List<String> managedInstanceIds;
     /**
      * @return list of Managed Instances in the group
      * 
@@ -107,6 +108,9 @@ public final class GetManagedInstanceGroupsManagedInstanceGroup {
     public Integer managedInstanceCount() {
         return this.managedInstanceCount;
     }
+    public List<String> managedInstanceIds() {
+        return this.managedInstanceIds;
+    }
     /**
      * @return list of Managed Instances in the group
      * 
@@ -145,6 +149,7 @@ public final class GetManagedInstanceGroupsManagedInstanceGroup {
         private Map<String,Object> freeformTags;
         private String id;
         private Integer managedInstanceCount;
+        private List<String> managedInstanceIds;
         private List<GetManagedInstanceGroupsManagedInstanceGroupManagedInstance> managedInstances;
         private String osFamily;
         private String state;
@@ -158,6 +163,7 @@ public final class GetManagedInstanceGroupsManagedInstanceGroup {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.managedInstanceCount = defaults.managedInstanceCount;
+    	      this.managedInstanceIds = defaults.managedInstanceIds;
     	      this.managedInstances = defaults.managedInstances;
     	      this.osFamily = defaults.osFamily;
     	      this.state = defaults.state;
@@ -199,6 +205,14 @@ public final class GetManagedInstanceGroupsManagedInstanceGroup {
             return this;
         }
         @CustomType.Setter
+        public Builder managedInstanceIds(List<String> managedInstanceIds) {
+            this.managedInstanceIds = Objects.requireNonNull(managedInstanceIds);
+            return this;
+        }
+        public Builder managedInstanceIds(String... managedInstanceIds) {
+            return managedInstanceIds(List.of(managedInstanceIds));
+        }
+        @CustomType.Setter
         public Builder managedInstances(List<GetManagedInstanceGroupsManagedInstanceGroupManagedInstance> managedInstances) {
             this.managedInstances = Objects.requireNonNull(managedInstances);
             return this;
@@ -225,6 +239,7 @@ public final class GetManagedInstanceGroupsManagedInstanceGroup {
             o.freeformTags = freeformTags;
             o.id = id;
             o.managedInstanceCount = managedInstanceCount;
+            o.managedInstanceIds = managedInstanceIds;
             o.managedInstances = managedInstances;
             o.osFamily = osFamily;
             o.state = state;

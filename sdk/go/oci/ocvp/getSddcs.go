@@ -71,7 +71,7 @@ type GetSddcsArgs struct {
 type GetSddcsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
+	// (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`.
 	ComputeAvailabilityDomain *string `pulumi:"computeAvailabilityDomain"`
 	// A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
 	DisplayName *string          `pulumi:"displayName"`
@@ -134,7 +134,7 @@ func (o GetSddcsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
+// (**Deprecated**) The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`.
 func (o GetSddcsResultOutput) ComputeAvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSddcsResult) *string { return v.ComputeAvailabilityDomain }).(pulumi.StringPtrOutput)
 }

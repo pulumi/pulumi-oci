@@ -58,7 +58,9 @@ export interface GetConnectionResult {
      */
     readonly additionalAttributes: outputs.GoldenGate.GetConnectionAdditionalAttribute[];
     /**
-     * Used authentication mechanism to access Azure Data Lake Storage.
+     * Used authentication mechanism to be provided for the following connection types:
+     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
+     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      */
     readonly authenticationType: string;
     /**
@@ -84,7 +86,9 @@ export interface GetConnectionResult {
     readonly connectionFactory: string;
     readonly connectionId: string;
     /**
-     * Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+     * * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+     * * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+     * * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
      */
     readonly connectionString: string;
     /**
@@ -92,7 +96,9 @@ export interface GetConnectionResult {
      */
     readonly connectionType: string;
     /**
-     * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+     * * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
+     * * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+     * * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
      */
     readonly connectionUrl: string;
     readonly consumerProperties: string;
@@ -129,12 +135,15 @@ export interface GetConnectionResult {
      * Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
      */
     readonly endpoint: string;
+    readonly fingerprint: string;
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
     readonly freeformTags: {[key: string]: any};
     /**
      * The name or address of a host.
+     * In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+     * For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
      */
     readonly host: string;
     /**
@@ -196,9 +205,17 @@ export interface GetConnectionResult {
     readonly sasToken: string;
     readonly secretAccessKey: string;
     /**
-     * Security Protocol for Microsoft SQL Server/PostgreSQL.
+     * Security Protocol to be provided for the following connection types:
+     * * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      */
     readonly securityProtocol: string;
+    /**
+     * Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
+     * If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+     */
+    readonly servers: string;
+    readonly serviceAccountKeyFile: string;
     /**
      * The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      */
@@ -220,7 +237,7 @@ export interface GetConnectionResult {
     readonly sslKey: string;
     readonly sslKeyPassword: string;
     /**
-     * SSL mode for PostgreSQL.
+     * SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
      */
     readonly sslMode: string;
     /**
@@ -240,7 +257,7 @@ export interface GetConnectionResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The Kafka (e.g. Confluent) Schema Registry technology type.
+     * The technology type.
      */
     readonly technologyType: string;
     /**

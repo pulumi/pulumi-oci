@@ -10,20 +10,6 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
  *
  * Creates and downloads a wallet for the specified Autonomous Database.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testAutonomousDatabaseWallet = oci.Database.getAutonomousDatabaseWallet({
- *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
- *     password: _var.autonomous_database_wallet_password,
- *     base64EncodeContent: false,
- *     generateType: _var.autonomous_database_wallet_generate_type,
- * });
- * ```
  */
 export function getAutonomousDatabaseWallet(args: GetAutonomousDatabaseWalletArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseWalletResult> {
 
@@ -85,20 +71,6 @@ export interface GetAutonomousDatabaseWalletResult {
  * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
  *
  * Creates and downloads a wallet for the specified Autonomous Database.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testAutonomousDatabaseWallet = oci.Database.getAutonomousDatabaseWallet({
- *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
- *     password: _var.autonomous_database_wallet_password,
- *     base64EncodeContent: false,
- *     generateType: _var.autonomous_database_wallet_generate_type,
- * });
- * ```
  */
 export function getAutonomousDatabaseWalletOutput(args: GetAutonomousDatabaseWalletOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseWalletResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousDatabaseWallet(a, opts))

@@ -16,7 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetExsiHostsResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the ESXi host belongs to.
+     * 
+     */
+    private @Nullable String clusterId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
      * 
      */
     private @Nullable String compartmentId;
@@ -44,7 +49,7 @@ public final class GetExsiHostsResult {
     private @Nullable Boolean isBillingDonorsOnly;
     private @Nullable Boolean isSwapBillingOnly;
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
      * 
      */
     private @Nullable String sddcId;
@@ -56,7 +61,14 @@ public final class GetExsiHostsResult {
 
     private GetExsiHostsResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the ESXi host belongs to.
+     * 
+     */
+    public Optional<String> clusterId() {
+        return Optional.ofNullable(this.clusterId);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
      * 
      */
     public Optional<String> compartmentId() {
@@ -100,7 +112,7 @@ public final class GetExsiHostsResult {
         return Optional.ofNullable(this.isSwapBillingOnly);
     }
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
      * 
      */
     public Optional<String> sddcId() {
@@ -123,6 +135,7 @@ public final class GetExsiHostsResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String clusterId;
         private @Nullable String compartmentId;
         private @Nullable String computeInstanceId;
         private @Nullable String displayName;
@@ -136,6 +149,7 @@ public final class GetExsiHostsResult {
         public Builder() {}
         public Builder(GetExsiHostsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.clusterId = defaults.clusterId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeInstanceId = defaults.computeInstanceId;
     	      this.displayName = defaults.displayName;
@@ -148,6 +162,11 @@ public final class GetExsiHostsResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
+        public Builder clusterId(@Nullable String clusterId) {
+            this.clusterId = clusterId;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(@Nullable String compartmentId) {
             this.compartmentId = compartmentId;
@@ -206,6 +225,7 @@ public final class GetExsiHostsResult {
         }
         public GetExsiHostsResult build() {
             final var o = new GetExsiHostsResult();
+            o.clusterId = clusterId;
             o.compartmentId = compartmentId;
             o.computeInstanceId = computeInstanceId;
             o.displayName = displayName;

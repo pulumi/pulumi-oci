@@ -10,6 +10,11 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsMyRequestsMyRequestRequesting {
     /**
+     * @return Resource description
+     * 
+     */
+    private String description;
+    /**
      * @return User display name
      * 
      */
@@ -31,6 +36,13 @@ public final class GetDomainsMyRequestsMyRequestRequesting {
     private String value;
 
     private GetDomainsMyRequestsMyRequestRequesting() {}
+    /**
+     * @return Resource description
+     * 
+     */
+    public String description() {
+        return this.description;
+    }
     /**
      * @return User display name
      * 
@@ -69,6 +81,7 @@ public final class GetDomainsMyRequestsMyRequestRequesting {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String description;
         private String display;
         private String ref;
         private String type;
@@ -76,12 +89,18 @@ public final class GetDomainsMyRequestsMyRequestRequesting {
         public Builder() {}
         public Builder(GetDomainsMyRequestsMyRequestRequesting defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.description = defaults.description;
     	      this.display = defaults.display;
     	      this.ref = defaults.ref;
     	      this.type = defaults.type;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
+        public Builder description(String description) {
+            this.description = Objects.requireNonNull(description);
+            return this;
+        }
         @CustomType.Setter
         public Builder display(String display) {
             this.display = Objects.requireNonNull(display);
@@ -104,6 +123,7 @@ public final class GetDomainsMyRequestsMyRequestRequesting {
         }
         public GetDomainsMyRequestsMyRequestRequesting build() {
             final var o = new GetDomainsMyRequestsMyRequestRequesting();
+            o.description = description;
             o.display = display;
             o.ref = ref;
             o.type = type;

@@ -106,7 +106,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<bool> IsAppDefinedRelationDiscoveryEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
+        /// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
         /// </summary>
         [Output("isIncludeAllSchemas")]
         public Output<bool> IsIncludeAllSchemas { get; private set; } = null!;
@@ -270,7 +270,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<bool>? IsAppDefinedRelationDiscoveryEnabled { get; set; }
 
         /// <summary>
-        /// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
+        /// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
         /// </summary>
         [Input("isIncludeAllSchemas")]
         public Input<bool>? IsIncludeAllSchemas { get; set; }
@@ -384,7 +384,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<bool>? IsAppDefinedRelationDiscoveryEnabled { get; set; }
 
         /// <summary>
-        /// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
+        /// Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
         /// </summary>
         [Input("isIncludeAllSchemas")]
         public Input<bool>? IsIncludeAllSchemas { get; set; }

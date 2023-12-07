@@ -14,13 +14,17 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     public sealed class GetDeploymentTypesDeploymentTypeCollectionItemResult
     {
         /// <summary>
-        /// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+        /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         /// </summary>
         public readonly string Category;
         /// <summary>
         /// An array of connectionTypes.
         /// </summary>
         public readonly ImmutableArray<string> ConnectionTypes;
+        /// <summary>
+        /// The default admin username used by deployment.
+        /// </summary>
+        public readonly string DefaultUsername;
         /// <summary>
         /// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
         /// </summary>
@@ -38,6 +42,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly ImmutableArray<string> SourceTechnologies;
         /// <summary>
+        /// The URL to the webpage listing the supported technologies.
+        /// </summary>
+        public readonly string SupportedTechnologiesUrl;
+        /// <summary>
         /// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
         /// </summary>
         public readonly ImmutableArray<string> TargetTechnologies;
@@ -48,6 +56,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             ImmutableArray<string> connectionTypes,
 
+            string defaultUsername,
+
             string deploymentType,
 
             string displayName,
@@ -56,14 +66,18 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             ImmutableArray<string> sourceTechnologies,
 
+            string supportedTechnologiesUrl,
+
             ImmutableArray<string> targetTechnologies)
         {
             Category = category;
             ConnectionTypes = connectionTypes;
+            DefaultUsername = defaultUsername;
             DeploymentType = deploymentType;
             DisplayName = displayName;
             OggVersion = oggVersion;
             SourceTechnologies = sourceTechnologies;
+            SupportedTechnologiesUrl = supportedTechnologiesUrl;
             TargetTechnologies = targetTechnologies;
         }
     }

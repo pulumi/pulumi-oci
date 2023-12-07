@@ -12,6 +12,22 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsMyRequestRequesting {
     /**
+     * @return Resource description
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable String description;
+    /**
      * @return User display name
      * 
      * **SCIM++ Properties:**
@@ -73,6 +89,24 @@ public final class DomainsMyRequestRequesting {
     private String value;
 
     private DomainsMyRequestRequesting() {}
+    /**
+     * @return Resource description
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
+    }
     /**
      * @return User display name
      * 
@@ -151,6 +185,7 @@ public final class DomainsMyRequestRequesting {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String description;
         private @Nullable String display;
         private @Nullable String ref;
         private String type;
@@ -158,12 +193,18 @@ public final class DomainsMyRequestRequesting {
         public Builder() {}
         public Builder(DomainsMyRequestRequesting defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.description = defaults.description;
     	      this.display = defaults.display;
     	      this.ref = defaults.ref;
     	      this.type = defaults.type;
     	      this.value = defaults.value;
         }
 
+        @CustomType.Setter
+        public Builder description(@Nullable String description) {
+            this.description = description;
+            return this;
+        }
         @CustomType.Setter
         public Builder display(@Nullable String display) {
             this.display = display;
@@ -186,6 +227,7 @@ public final class DomainsMyRequestRequesting {
         }
         public DomainsMyRequestRequesting build() {
             final var o = new DomainsMyRequestRequesting();
+            o.description = description;
             o.display = display;
             o.ref = ref;
             o.type = type;

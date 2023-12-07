@@ -22,7 +22,7 @@ class GetFleetResult:
     """
     A collection of values returned by getFleet.
     """
-    def __init__(__self__, approximate_application_count=None, approximate_installation_count=None, approximate_java_server_count=None, approximate_jre_count=None, approximate_managed_instance_count=None, compartment_id=None, defined_tags=None, description=None, display_name=None, fleet_id=None, freeform_tags=None, id=None, inventory_logs=None, is_advanced_features_enabled=None, operation_logs=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, approximate_application_count=None, approximate_installation_count=None, approximate_java_server_count=None, approximate_jre_count=None, approximate_managed_instance_count=None, compartment_id=None, defined_tags=None, description=None, display_name=None, fleet_id=None, freeform_tags=None, id=None, inventory_logs=None, is_advanced_features_enabled=None, is_export_setting_enabled=None, operation_logs=None, state=None, system_tags=None, time_created=None):
         if approximate_application_count and not isinstance(approximate_application_count, int):
             raise TypeError("Expected argument 'approximate_application_count' to be a int")
         pulumi.set(__self__, "approximate_application_count", approximate_application_count)
@@ -65,6 +65,9 @@ class GetFleetResult:
         if is_advanced_features_enabled and not isinstance(is_advanced_features_enabled, bool):
             raise TypeError("Expected argument 'is_advanced_features_enabled' to be a bool")
         pulumi.set(__self__, "is_advanced_features_enabled", is_advanced_features_enabled)
+        if is_export_setting_enabled and not isinstance(is_export_setting_enabled, bool):
+            raise TypeError("Expected argument 'is_export_setting_enabled' to be a bool")
+        pulumi.set(__self__, "is_export_setting_enabled", is_export_setting_enabled)
         if operation_logs and not isinstance(operation_logs, list):
             raise TypeError("Expected argument 'operation_logs' to be a list")
         pulumi.set(__self__, "operation_logs", operation_logs)
@@ -188,6 +191,14 @@ class GetFleetResult:
         return pulumi.get(self, "is_advanced_features_enabled")
 
     @property
+    @pulumi.getter(name="isExportSettingEnabled")
+    def is_export_setting_enabled(self) -> bool:
+        """
+        Whether or not export setting is enabled in this Fleet.
+        """
+        return pulumi.get(self, "is_export_setting_enabled")
+
+    @property
     @pulumi.getter(name="operationLogs")
     def operation_logs(self) -> Sequence['outputs.GetFleetOperationLogResult']:
         """
@@ -240,6 +251,7 @@ class AwaitableGetFleetResult(GetFleetResult):
             id=self.id,
             inventory_logs=self.inventory_logs,
             is_advanced_features_enabled=self.is_advanced_features_enabled,
+            is_export_setting_enabled=self.is_export_setting_enabled,
             operation_logs=self.operation_logs,
             state=self.state,
             system_tags=self.system_tags,
@@ -285,6 +297,7 @@ def get_fleet(fleet_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         inventory_logs=pulumi.get(__ret__, 'inventory_logs'),
         is_advanced_features_enabled=pulumi.get(__ret__, 'is_advanced_features_enabled'),
+        is_export_setting_enabled=pulumi.get(__ret__, 'is_export_setting_enabled'),
         operation_logs=pulumi.get(__ret__, 'operation_logs'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),

@@ -78,6 +78,8 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * returned: always
         /// * type: integer
         /// * uniqueness: none
+        /// * idcsMaxValue: 100
+        /// * idcsMinValue: 0
         /// </summary>
         [Input("score", required: true)]
         public Input<int> Score { get; set; } = null!;

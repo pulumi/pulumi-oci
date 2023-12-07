@@ -150,6 +150,8 @@ type LookupAutonomousContainerDatabaseResult struct {
 	State string `pulumi:"state"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+	TimeOfLastBackup string `pulumi:"timeOfLastBackup"`
 	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 	TimeSnapshotStandbyRevert string `pulumi:"timeSnapshotStandbyRevert"`
 	// The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
@@ -460,6 +462,11 @@ func (o LookupAutonomousContainerDatabaseResultOutput) State() pulumi.StringOutp
 // The date and time the Autonomous Container Database was created.
 func (o LookupAutonomousContainerDatabaseResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+func (o LookupAutonomousContainerDatabaseResultOutput) TimeOfLastBackup() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.TimeOfLastBackup }).(pulumi.StringOutput)
 }
 
 // The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.

@@ -22,7 +22,10 @@ class GetIpsecConnectionTunnelResult:
     """
     A collection of values returned by getIpsecConnectionTunnel.
     """
-    def __init__(__self__, bgp_session_infos=None, compartment_id=None, cpe_ip=None, display_name=None, encryption_domain_configs=None, id=None, ike_version=None, ipsec_id=None, routing=None, state=None, status=None, time_created=None, time_status_updated=None, tunnel_id=None, vpn_ip=None):
+    def __init__(__self__, associated_virtual_circuits=None, bgp_session_infos=None, compartment_id=None, cpe_ip=None, display_name=None, dpd_configs=None, dpd_mode=None, dpd_timeout_in_sec=None, encryption_domain_configs=None, id=None, ike_version=None, ipsec_id=None, nat_translation_enabled=None, oracle_can_initiate=None, phase_one_details=None, phase_two_details=None, routing=None, shared_secret=None, state=None, status=None, time_created=None, time_status_updated=None, tunnel_id=None, vpn_ip=None):
+        if associated_virtual_circuits and not isinstance(associated_virtual_circuits, list):
+            raise TypeError("Expected argument 'associated_virtual_circuits' to be a list")
+        pulumi.set(__self__, "associated_virtual_circuits", associated_virtual_circuits)
         if bgp_session_infos and not isinstance(bgp_session_infos, list):
             raise TypeError("Expected argument 'bgp_session_infos' to be a list")
         pulumi.set(__self__, "bgp_session_infos", bgp_session_infos)
@@ -35,6 +38,15 @@ class GetIpsecConnectionTunnelResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if dpd_configs and not isinstance(dpd_configs, list):
+            raise TypeError("Expected argument 'dpd_configs' to be a list")
+        pulumi.set(__self__, "dpd_configs", dpd_configs)
+        if dpd_mode and not isinstance(dpd_mode, str):
+            raise TypeError("Expected argument 'dpd_mode' to be a str")
+        pulumi.set(__self__, "dpd_mode", dpd_mode)
+        if dpd_timeout_in_sec and not isinstance(dpd_timeout_in_sec, int):
+            raise TypeError("Expected argument 'dpd_timeout_in_sec' to be a int")
+        pulumi.set(__self__, "dpd_timeout_in_sec", dpd_timeout_in_sec)
         if encryption_domain_configs and not isinstance(encryption_domain_configs, list):
             raise TypeError("Expected argument 'encryption_domain_configs' to be a list")
         pulumi.set(__self__, "encryption_domain_configs", encryption_domain_configs)
@@ -47,9 +59,24 @@ class GetIpsecConnectionTunnelResult:
         if ipsec_id and not isinstance(ipsec_id, str):
             raise TypeError("Expected argument 'ipsec_id' to be a str")
         pulumi.set(__self__, "ipsec_id", ipsec_id)
+        if nat_translation_enabled and not isinstance(nat_translation_enabled, str):
+            raise TypeError("Expected argument 'nat_translation_enabled' to be a str")
+        pulumi.set(__self__, "nat_translation_enabled", nat_translation_enabled)
+        if oracle_can_initiate and not isinstance(oracle_can_initiate, str):
+            raise TypeError("Expected argument 'oracle_can_initiate' to be a str")
+        pulumi.set(__self__, "oracle_can_initiate", oracle_can_initiate)
+        if phase_one_details and not isinstance(phase_one_details, list):
+            raise TypeError("Expected argument 'phase_one_details' to be a list")
+        pulumi.set(__self__, "phase_one_details", phase_one_details)
+        if phase_two_details and not isinstance(phase_two_details, list):
+            raise TypeError("Expected argument 'phase_two_details' to be a list")
+        pulumi.set(__self__, "phase_two_details", phase_two_details)
         if routing and not isinstance(routing, str):
             raise TypeError("Expected argument 'routing' to be a str")
         pulumi.set(__self__, "routing", routing)
+        if shared_secret and not isinstance(shared_secret, str):
+            raise TypeError("Expected argument 'shared_secret' to be a str")
+        pulumi.set(__self__, "shared_secret", shared_secret)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -68,6 +95,11 @@ class GetIpsecConnectionTunnelResult:
         if vpn_ip and not isinstance(vpn_ip, str):
             raise TypeError("Expected argument 'vpn_ip' to be a str")
         pulumi.set(__self__, "vpn_ip", vpn_ip)
+
+    @property
+    @pulumi.getter(name="associatedVirtualCircuits")
+    def associated_virtual_circuits(self) -> Sequence[str]:
+        return pulumi.get(self, "associated_virtual_circuits")
 
     @property
     @pulumi.getter(name="bgpSessionInfos")
@@ -102,6 +134,27 @@ class GetIpsecConnectionTunnelResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="dpdConfigs")
+    def dpd_configs(self) -> Sequence['outputs.GetIpsecConnectionTunnelDpdConfigResult']:
+        return pulumi.get(self, "dpd_configs")
+
+    @property
+    @pulumi.getter(name="dpdMode")
+    def dpd_mode(self) -> str:
+        """
+        Dead peer detection (DPD) mode set on the Oracle side of the connection.
+        """
+        return pulumi.get(self, "dpd_mode")
+
+    @property
+    @pulumi.getter(name="dpdTimeoutInSec")
+    def dpd_timeout_in_sec(self) -> int:
+        """
+        DPD timeout in seconds.
+        """
+        return pulumi.get(self, "dpd_timeout_in_sec")
+
+    @property
     @pulumi.getter(name="encryptionDomainConfigs")
     def encryption_domain_configs(self) -> Sequence['outputs.GetIpsecConnectionTunnelEncryptionDomainConfigResult']:
         """
@@ -113,7 +166,7 @@ class GetIpsecConnectionTunnelResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The provider-assigned unique ID for this managed resource.
+        The tunnel's Oracle ID (OCID).
         """
         return pulumi.get(self, "id")
 
@@ -131,12 +184,49 @@ class GetIpsecConnectionTunnelResult:
         return pulumi.get(self, "ipsec_id")
 
     @property
+    @pulumi.getter(name="natTranslationEnabled")
+    def nat_translation_enabled(self) -> str:
+        """
+        By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+        """
+        return pulumi.get(self, "nat_translation_enabled")
+
+    @property
+    @pulumi.getter(name="oracleCanInitiate")
+    def oracle_can_initiate(self) -> str:
+        """
+        Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
+        """
+        return pulumi.get(self, "oracle_can_initiate")
+
+    @property
+    @pulumi.getter(name="phaseOneDetails")
+    def phase_one_details(self) -> Sequence['outputs.GetIpsecConnectionTunnelPhaseOneDetailResult']:
+        """
+        IPSec tunnel details specific to ISAKMP phase one.
+        """
+        return pulumi.get(self, "phase_one_details")
+
+    @property
+    @pulumi.getter(name="phaseTwoDetails")
+    def phase_two_details(self) -> Sequence['outputs.GetIpsecConnectionTunnelPhaseTwoDetailResult']:
+        """
+        IPsec tunnel detail information specific to phase two.
+        """
+        return pulumi.get(self, "phase_two_details")
+
+    @property
     @pulumi.getter
     def routing(self) -> str:
         """
         the routing strategy used for this tunnel, either static route or BGP dynamic routing
         """
         return pulumi.get(self, "routing")
+
+    @property
+    @pulumi.getter(name="sharedSecret")
+    def shared_secret(self) -> str:
+        return pulumi.get(self, "shared_secret")
 
     @property
     @pulumi.getter
@@ -190,15 +280,24 @@ class AwaitableGetIpsecConnectionTunnelResult(GetIpsecConnectionTunnelResult):
         if False:
             yield self
         return GetIpsecConnectionTunnelResult(
+            associated_virtual_circuits=self.associated_virtual_circuits,
             bgp_session_infos=self.bgp_session_infos,
             compartment_id=self.compartment_id,
             cpe_ip=self.cpe_ip,
             display_name=self.display_name,
+            dpd_configs=self.dpd_configs,
+            dpd_mode=self.dpd_mode,
+            dpd_timeout_in_sec=self.dpd_timeout_in_sec,
             encryption_domain_configs=self.encryption_domain_configs,
             id=self.id,
             ike_version=self.ike_version,
             ipsec_id=self.ipsec_id,
+            nat_translation_enabled=self.nat_translation_enabled,
+            oracle_can_initiate=self.oracle_can_initiate,
+            phase_one_details=self.phase_one_details,
+            phase_two_details=self.phase_two_details,
             routing=self.routing,
+            shared_secret=self.shared_secret,
             state=self.state,
             status=self.status,
             time_created=self.time_created,
@@ -236,15 +335,24 @@ def get_ipsec_connection_tunnel(ipsec_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel', __args__, opts=opts, typ=GetIpsecConnectionTunnelResult).value
 
     return AwaitableGetIpsecConnectionTunnelResult(
+        associated_virtual_circuits=pulumi.get(__ret__, 'associated_virtual_circuits'),
         bgp_session_infos=pulumi.get(__ret__, 'bgp_session_infos'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         cpe_ip=pulumi.get(__ret__, 'cpe_ip'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        dpd_configs=pulumi.get(__ret__, 'dpd_configs'),
+        dpd_mode=pulumi.get(__ret__, 'dpd_mode'),
+        dpd_timeout_in_sec=pulumi.get(__ret__, 'dpd_timeout_in_sec'),
         encryption_domain_configs=pulumi.get(__ret__, 'encryption_domain_configs'),
         id=pulumi.get(__ret__, 'id'),
         ike_version=pulumi.get(__ret__, 'ike_version'),
         ipsec_id=pulumi.get(__ret__, 'ipsec_id'),
+        nat_translation_enabled=pulumi.get(__ret__, 'nat_translation_enabled'),
+        oracle_can_initiate=pulumi.get(__ret__, 'oracle_can_initiate'),
+        phase_one_details=pulumi.get(__ret__, 'phase_one_details'),
+        phase_two_details=pulumi.get(__ret__, 'phase_two_details'),
         routing=pulumi.get(__ret__, 'routing'),
+        shared_secret=pulumi.get(__ret__, 'shared_secret'),
         state=pulumi.get(__ret__, 'state'),
         status=pulumi.get(__ret__, 'status'),
         time_created=pulumi.get(__ret__, 'time_created'),

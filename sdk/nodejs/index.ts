@@ -102,6 +102,7 @@ import * as osubbillingschedule from "./osubbillingschedule";
 import * as osuborganizationsubscription from "./osuborganizationsubscription";
 import * as osubsubscription from "./osubsubscription";
 import * as osubusage from "./osubusage";
+import * as psql from "./psql";
 import * as queue from "./queue";
 import * as recoverymod from "./recoverymod";
 import * as redis from "./redis";
@@ -215,6 +216,7 @@ export {
     osuborganizationsubscription,
     osubsubscription,
     osubusage,
+    psql,
     queue,
     recoverymod,
     redis,

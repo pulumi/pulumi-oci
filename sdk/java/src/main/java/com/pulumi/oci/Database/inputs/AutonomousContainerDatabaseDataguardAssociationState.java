@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -47,18 +48,10 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
         return Optional.ofNullable(this.applyRate);
     }
 
-    /**
-     * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     * 
-     */
     @Import(name="autonomousContainerDatabaseDataguardAssociationId")
-    private @Nullable Output<String> autonomousContainerDatabaseDataguardAssociationId;
+    private @Nullable Output<Integer> autonomousContainerDatabaseDataguardAssociationId;
 
-    /**
-     * @return The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     * 
-     */
-    public Optional<Output<String>> autonomousContainerDatabaseDataguardAssociationId() {
+    public Optional<Output<Integer>> autonomousContainerDatabaseDataguardAssociationId() {
         return Optional.ofNullable(this.autonomousContainerDatabaseDataguardAssociationId);
     }
 
@@ -123,6 +116,36 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
     }
 
     /**
+     * Backup options for the standby Autonomous Container Database.
+     * 
+     */
+    @Import(name="peerAutonomousContainerDatabaseBackupConfig")
+    private @Nullable Output<AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs> peerAutonomousContainerDatabaseBackupConfig;
+
+    /**
+     * @return Backup options for the standby Autonomous Container Database.
+     * 
+     */
+    public Optional<Output<AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs>> peerAutonomousContainerDatabaseBackupConfig() {
+        return Optional.ofNullable(this.peerAutonomousContainerDatabaseBackupConfig);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
+     * 
+     */
+    @Import(name="peerAutonomousContainerDatabaseCompartmentId")
+    private @Nullable Output<String> peerAutonomousContainerDatabaseCompartmentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
+     * 
+     */
+    public Optional<Output<String>> peerAutonomousContainerDatabaseCompartmentId() {
+        return Optional.ofNullable(this.peerAutonomousContainerDatabaseCompartmentId);
+    }
+
+    /**
      * The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      * 
      */
@@ -138,6 +161,21 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
     }
 
     /**
+     * The display name for the peer Autonomous Container Database.
+     * 
+     */
+    @Import(name="peerAutonomousContainerDatabaseDisplayName")
+    private @Nullable Output<String> peerAutonomousContainerDatabaseDisplayName;
+
+    /**
+     * @return The display name for the peer Autonomous Container Database.
+     * 
+     */
+    public Optional<Output<String>> peerAutonomousContainerDatabaseDisplayName() {
+        return Optional.ofNullable(this.peerAutonomousContainerDatabaseDisplayName);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      * 
      */
@@ -150,6 +188,21 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
      */
     public Optional<Output<String>> peerAutonomousContainerDatabaseId() {
         return Optional.ofNullable(this.peerAutonomousContainerDatabaseId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+     * 
+     */
+    @Import(name="peerCloudAutonomousVmClusterId")
+    private @Nullable Output<String> peerCloudAutonomousVmClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+     * 
+     */
+    public Optional<Output<String>> peerCloudAutonomousVmClusterId() {
+        return Optional.ofNullable(this.peerCloudAutonomousVmClusterId);
     }
 
     /**
@@ -216,6 +269,21 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
      */
     public Optional<Output<String>> role() {
         return Optional.ofNullable(this.role);
+    }
+
+    /**
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
+     * 
+     */
+    @Import(name="standbyMaintenanceBufferInDays")
+    private @Nullable Output<Integer> standbyMaintenanceBufferInDays;
+
+    /**
+     * @return The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
+     * 
+     */
+    public Optional<Output<Integer>> standbyMaintenanceBufferInDays() {
+        return Optional.ofNullable(this.standbyMaintenanceBufferInDays);
     }
 
     /**
@@ -303,12 +371,17 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
         this.fastStartFailOverLagLimitInSeconds = $.fastStartFailOverLagLimitInSeconds;
         this.isAutomaticFailoverEnabled = $.isAutomaticFailoverEnabled;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.peerAutonomousContainerDatabaseBackupConfig = $.peerAutonomousContainerDatabaseBackupConfig;
+        this.peerAutonomousContainerDatabaseCompartmentId = $.peerAutonomousContainerDatabaseCompartmentId;
         this.peerAutonomousContainerDatabaseDataguardAssociationId = $.peerAutonomousContainerDatabaseDataguardAssociationId;
+        this.peerAutonomousContainerDatabaseDisplayName = $.peerAutonomousContainerDatabaseDisplayName;
         this.peerAutonomousContainerDatabaseId = $.peerAutonomousContainerDatabaseId;
+        this.peerCloudAutonomousVmClusterId = $.peerCloudAutonomousVmClusterId;
         this.peerLifecycleState = $.peerLifecycleState;
         this.peerRole = $.peerRole;
         this.protectionMode = $.protectionMode;
         this.role = $.role;
+        this.standbyMaintenanceBufferInDays = $.standbyMaintenanceBufferInDays;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeLastRoleChanged = $.timeLastRoleChanged;
@@ -376,24 +449,12 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
             return applyRate(Output.of(applyRate));
         }
 
-        /**
-         * @param autonomousContainerDatabaseDataguardAssociationId The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         * 
-         * @return builder
-         * 
-         */
-        public Builder autonomousContainerDatabaseDataguardAssociationId(@Nullable Output<String> autonomousContainerDatabaseDataguardAssociationId) {
+        public Builder autonomousContainerDatabaseDataguardAssociationId(@Nullable Output<Integer> autonomousContainerDatabaseDataguardAssociationId) {
             $.autonomousContainerDatabaseDataguardAssociationId = autonomousContainerDatabaseDataguardAssociationId;
             return this;
         }
 
-        /**
-         * @param autonomousContainerDatabaseDataguardAssociationId The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         * 
-         * @return builder
-         * 
-         */
-        public Builder autonomousContainerDatabaseDataguardAssociationId(String autonomousContainerDatabaseDataguardAssociationId) {
+        public Builder autonomousContainerDatabaseDataguardAssociationId(Integer autonomousContainerDatabaseDataguardAssociationId) {
             return autonomousContainerDatabaseDataguardAssociationId(Output.of(autonomousContainerDatabaseDataguardAssociationId));
         }
 
@@ -482,6 +543,48 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
         }
 
         /**
+         * @param peerAutonomousContainerDatabaseBackupConfig Backup options for the standby Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerAutonomousContainerDatabaseBackupConfig(@Nullable Output<AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs> peerAutonomousContainerDatabaseBackupConfig) {
+            $.peerAutonomousContainerDatabaseBackupConfig = peerAutonomousContainerDatabaseBackupConfig;
+            return this;
+        }
+
+        /**
+         * @param peerAutonomousContainerDatabaseBackupConfig Backup options for the standby Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerAutonomousContainerDatabaseBackupConfig(AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs peerAutonomousContainerDatabaseBackupConfig) {
+            return peerAutonomousContainerDatabaseBackupConfig(Output.of(peerAutonomousContainerDatabaseBackupConfig));
+        }
+
+        /**
+         * @param peerAutonomousContainerDatabaseCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerAutonomousContainerDatabaseCompartmentId(@Nullable Output<String> peerAutonomousContainerDatabaseCompartmentId) {
+            $.peerAutonomousContainerDatabaseCompartmentId = peerAutonomousContainerDatabaseCompartmentId;
+            return this;
+        }
+
+        /**
+         * @param peerAutonomousContainerDatabaseCompartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerAutonomousContainerDatabaseCompartmentId(String peerAutonomousContainerDatabaseCompartmentId) {
+            return peerAutonomousContainerDatabaseCompartmentId(Output.of(peerAutonomousContainerDatabaseCompartmentId));
+        }
+
+        /**
          * @param peerAutonomousContainerDatabaseDataguardAssociationId The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
          * 
          * @return builder
@@ -503,6 +606,27 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
         }
 
         /**
+         * @param peerAutonomousContainerDatabaseDisplayName The display name for the peer Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerAutonomousContainerDatabaseDisplayName(@Nullable Output<String> peerAutonomousContainerDatabaseDisplayName) {
+            $.peerAutonomousContainerDatabaseDisplayName = peerAutonomousContainerDatabaseDisplayName;
+            return this;
+        }
+
+        /**
+         * @param peerAutonomousContainerDatabaseDisplayName The display name for the peer Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerAutonomousContainerDatabaseDisplayName(String peerAutonomousContainerDatabaseDisplayName) {
+            return peerAutonomousContainerDatabaseDisplayName(Output.of(peerAutonomousContainerDatabaseDisplayName));
+        }
+
+        /**
          * @param peerAutonomousContainerDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
          * 
          * @return builder
@@ -521,6 +645,27 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
          */
         public Builder peerAutonomousContainerDatabaseId(String peerAutonomousContainerDatabaseId) {
             return peerAutonomousContainerDatabaseId(Output.of(peerAutonomousContainerDatabaseId));
+        }
+
+        /**
+         * @param peerCloudAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerCloudAutonomousVmClusterId(@Nullable Output<String> peerCloudAutonomousVmClusterId) {
+            $.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
+            return this;
+        }
+
+        /**
+         * @param peerCloudAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
+            return peerCloudAutonomousVmClusterId(Output.of(peerCloudAutonomousVmClusterId));
         }
 
         /**
@@ -611,6 +756,27 @@ public final class AutonomousContainerDatabaseDataguardAssociationState extends 
          */
         public Builder role(String role) {
             return role(Output.of(role));
+        }
+
+        /**
+         * @param standbyMaintenanceBufferInDays The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder standbyMaintenanceBufferInDays(@Nullable Output<Integer> standbyMaintenanceBufferInDays) {
+            $.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
+            return this;
+        }
+
+        /**
+         * @param standbyMaintenanceBufferInDays The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
+            return standbyMaintenanceBufferInDays(Output.of(standbyMaintenanceBufferInDays));
         }
 
         /**

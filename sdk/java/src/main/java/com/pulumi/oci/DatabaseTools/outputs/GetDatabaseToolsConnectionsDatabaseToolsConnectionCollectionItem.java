@@ -5,6 +5,8 @@ package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword;
 import java.lang.Object;
@@ -61,15 +63,30 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
      */
     private String lifecycleDetails;
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock> locks;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
     private String privateEndpointId;
     /**
+     * @return The proxy client information.
+     * 
+     */
+    private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient> proxyClients;
+    /**
      * @return A related resource
      * 
      */
     private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource> relatedResources;
+    /**
+     * @return A filter to return only resources with one of the specified runtimeSupport values.
+     * 
+     */
+    private String runtimeSupport;
     /**
      * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
@@ -95,6 +112,11 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
      * 
      */
     private String type;
+    /**
+     * @return The JDBC URL used to connect to the Generic JDBC database system.
+     * 
+     */
+    private String url;
     /**
      * @return The database user name.
      * 
@@ -171,6 +193,13 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         return this.lifecycleDetails;
     }
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock> locks() {
+        return this.locks;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
@@ -178,11 +207,25 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         return this.privateEndpointId;
     }
     /**
+     * @return The proxy client information.
+     * 
+     */
+    public List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient> proxyClients() {
+        return this.proxyClients;
+    }
+    /**
      * @return A related resource
      * 
      */
     public List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource> relatedResources() {
         return this.relatedResources;
+    }
+    /**
+     * @return A filter to return only resources with one of the specified runtimeSupport values.
+     * 
+     */
+    public String runtimeSupport() {
+        return this.runtimeSupport;
     }
     /**
      * @return A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
@@ -220,6 +263,13 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         return this.type;
     }
     /**
+     * @return The JDBC URL used to connect to the Generic JDBC database system.
+     * 
+     */
+    public String url() {
+        return this.url;
+    }
+    /**
      * @return The database user name.
      * 
      */
@@ -252,13 +302,17 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         private String id;
         private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore> keyStores;
         private String lifecycleDetails;
+        private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock> locks;
         private String privateEndpointId;
+        private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient> proxyClients;
         private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource> relatedResources;
+        private String runtimeSupport;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private String type;
+        private String url;
         private String userName;
         private List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPassword> userPasswords;
         public Builder() {}
@@ -273,13 +327,17 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
     	      this.id = defaults.id;
     	      this.keyStores = defaults.keyStores;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.privateEndpointId = defaults.privateEndpointId;
+    	      this.proxyClients = defaults.proxyClients;
     	      this.relatedResources = defaults.relatedResources;
+    	      this.runtimeSupport = defaults.runtimeSupport;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.type = defaults.type;
+    	      this.url = defaults.url;
     	      this.userName = defaults.userName;
     	      this.userPasswords = defaults.userPasswords;
         }
@@ -333,9 +391,25 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
             return this;
         }
         @CustomType.Setter
+        public Builder locks(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock> locks) {
+            this.locks = Objects.requireNonNull(locks);
+            return this;
+        }
+        public Builder locks(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = Objects.requireNonNull(privateEndpointId);
             return this;
+        }
+        @CustomType.Setter
+        public Builder proxyClients(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient> proxyClients) {
+            this.proxyClients = Objects.requireNonNull(proxyClients);
+            return this;
+        }
+        public Builder proxyClients(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient... proxyClients) {
+            return proxyClients(List.of(proxyClients));
         }
         @CustomType.Setter
         public Builder relatedResources(List<GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource> relatedResources) {
@@ -344,6 +418,11 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
         }
         public Builder relatedResources(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource... relatedResources) {
             return relatedResources(List.of(relatedResources));
+        }
+        @CustomType.Setter
+        public Builder runtimeSupport(String runtimeSupport) {
+            this.runtimeSupport = Objects.requireNonNull(runtimeSupport);
+            return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
@@ -371,6 +450,11 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
             return this;
         }
         @CustomType.Setter
+        public Builder url(String url) {
+            this.url = Objects.requireNonNull(url);
+            return this;
+        }
+        @CustomType.Setter
         public Builder userName(String userName) {
             this.userName = Objects.requireNonNull(userName);
             return this;
@@ -394,13 +478,17 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionI
             o.id = id;
             o.keyStores = keyStores;
             o.lifecycleDetails = lifecycleDetails;
+            o.locks = locks;
             o.privateEndpointId = privateEndpointId;
+            o.proxyClients = proxyClients;
             o.relatedResources = relatedResources;
+            o.runtimeSupport = runtimeSupport;
             o.state = state;
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;
             o.type = type;
+            o.url = url;
             o.userName = userName;
             o.userPasswords = userPasswords;
             return o;

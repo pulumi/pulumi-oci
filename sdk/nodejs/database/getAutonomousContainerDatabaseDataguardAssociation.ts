@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -77,14 +79,18 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
      * Additional information about the current lifecycleState, if available.
      */
     readonly lifecycleDetails: string;
+    readonly peerAutonomousContainerDatabaseBackupConfigs: outputs.Database.GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig[];
+    readonly peerAutonomousContainerDatabaseCompartmentId: string;
     /**
      * The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      */
     readonly peerAutonomousContainerDatabaseDataguardAssociationId: string;
+    readonly peerAutonomousContainerDatabaseDisplayName: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      */
     readonly peerAutonomousContainerDatabaseId: string;
+    readonly peerCloudAutonomousVmClusterId: string;
     /**
      * The current state of Autonomous Data Guard.
      */
@@ -101,6 +107,7 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
      * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
     readonly role: string;
+    readonly standbyMaintenanceBufferInDays: number;
     /**
      * The current state of Autonomous Data Guard.
      */

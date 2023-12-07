@@ -18,7 +18,11 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A short, unique string that identifies the version of bundled software.
+        /// A list of supported ESXi software versions.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionResult> EsxiSoftwareVersions;
+        /// <summary>
+        /// A filter to return only resources that match the given VMware software version exactly.
         /// </summary>
         public readonly string Version;
 
@@ -26,9 +30,12 @@ namespace Pulumi.Oci.Ocvp.Outputs
         private GetSupportedVmwareSoftwareVersionsItemResult(
             string description,
 
+            ImmutableArray<Outputs.GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionResult> esxiSoftwareVersions,
+
             string version)
         {
             Description = description;
+            EsxiSoftwareVersions = esxiSoftwareVersions;
             Version = version;
         }
     }

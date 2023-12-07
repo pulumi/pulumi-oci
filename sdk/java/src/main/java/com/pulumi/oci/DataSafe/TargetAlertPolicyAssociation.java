@@ -140,14 +140,14 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
         return this.freeformTags;
     }
     /**
-     * (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
+     * (Updatable) Indicates if the target-alert policy association is enabled or disabled.
      * 
      */
     @Export(name="isEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
+     * @return (Updatable) Indicates if the target-alert policy association is enabled or disabled.
      * 
      */
     public Output<Boolean> isEnabled() {

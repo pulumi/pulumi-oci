@@ -42,6 +42,14 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				Locks: databasetools.DatabaseToolsPrivateEndpointLockArray{
+//					&databasetools.DatabaseToolsPrivateEndpointLockArgs{
+//						Type:              pulumi.Any(_var.Database_tools_private_endpoint_locks_type),
+//						Message:           pulumi.Any(_var.Database_tools_private_endpoint_locks_message),
+//						RelatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
+//						TimeCreated:       pulumi.Any(_var.Database_tools_private_endpoint_locks_time_created),
+//					},
+//				},
 //				NsgIds:            pulumi.Any(_var.Database_tools_private_endpoint_nsg_ids),
 //				PrivateEndpointIp: pulumi.Any(_var.Database_tools_private_endpoint_private_endpoint_ip),
 //			})
@@ -84,6 +92,8 @@ type DatabaseToolsPrivateEndpoint struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks DatabaseToolsPrivateEndpointLockArrayOutput `pulumi:"locks"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The private IP address that represents the access point for the associated endpoint service.
@@ -101,7 +111,7 @@ type DatabaseToolsPrivateEndpoint struct {
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+	// When the lock was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -169,6 +179,8 @@ type databaseToolsPrivateEndpointState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []DatabaseToolsPrivateEndpointLock `pulumi:"locks"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address that represents the access point for the associated endpoint service.
@@ -186,7 +198,7 @@ type databaseToolsPrivateEndpointState struct {
 	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+	// When the lock was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -213,6 +225,8 @@ type DatabaseToolsPrivateEndpointState struct {
 	FreeformTags pulumi.MapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks DatabaseToolsPrivateEndpointLockArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayInput
 	// The private IP address that represents the access point for the associated endpoint service.
@@ -230,7 +244,7 @@ type DatabaseToolsPrivateEndpointState struct {
 	SubnetId pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+	// When the lock was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringPtrInput
@@ -255,6 +269,8 @@ type databaseToolsPrivateEndpointArgs struct {
 	EndpointServiceId string `pulumi:"endpointServiceId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Locks associated with this resource.
+	Locks []DatabaseToolsPrivateEndpointLock `pulumi:"locks"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address that represents the access point for the associated endpoint service.
@@ -280,6 +296,8 @@ type DatabaseToolsPrivateEndpointArgs struct {
 	EndpointServiceId pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// Locks associated with this resource.
+	Locks DatabaseToolsPrivateEndpointLockArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayInput
 	// The private IP address that represents the access point for the associated endpoint service.
@@ -423,6 +441,11 @@ func (o DatabaseToolsPrivateEndpointOutput) LifecycleDetails() pulumi.StringOutp
 	return o.ApplyT(func(v *DatabaseToolsPrivateEndpoint) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o DatabaseToolsPrivateEndpointOutput) Locks() DatabaseToolsPrivateEndpointLockArrayOutput {
+	return o.ApplyT(func(v *DatabaseToolsPrivateEndpoint) DatabaseToolsPrivateEndpointLockArrayOutput { return v.Locks }).(DatabaseToolsPrivateEndpointLockArrayOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 func (o DatabaseToolsPrivateEndpointOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DatabaseToolsPrivateEndpoint) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
@@ -463,7 +486,7 @@ func (o DatabaseToolsPrivateEndpointOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DatabaseToolsPrivateEndpoint) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+// When the lock was created.
 func (o DatabaseToolsPrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsPrivateEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

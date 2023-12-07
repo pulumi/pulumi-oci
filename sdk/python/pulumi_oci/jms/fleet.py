@@ -161,6 +161,7 @@ class _FleetState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  inventory_log: Optional[pulumi.Input['FleetInventoryLogArgs']] = None,
                  is_advanced_features_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_export_setting_enabled: Optional[pulumi.Input[bool]] = None,
                  operation_log: Optional[pulumi.Input['FleetOperationLogArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -179,6 +180,7 @@ class _FleetState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param pulumi.Input['FleetInventoryLogArgs'] inventory_log: (Updatable) Custom Log for inventory or operation log.
         :param pulumi.Input[bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
+        :param pulumi.Input[bool] is_export_setting_enabled: Whether or not export setting is enabled in this Fleet.
         :param pulumi.Input['FleetOperationLogArgs'] operation_log: (Updatable) Custom Log for inventory or operation log.
         :param pulumi.Input[str] state: The lifecycle state of the Fleet.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -208,6 +210,8 @@ class _FleetState:
             pulumi.set(__self__, "inventory_log", inventory_log)
         if is_advanced_features_enabled is not None:
             pulumi.set(__self__, "is_advanced_features_enabled", is_advanced_features_enabled)
+        if is_export_setting_enabled is not None:
+            pulumi.set(__self__, "is_export_setting_enabled", is_export_setting_enabled)
         if operation_log is not None:
             pulumi.set(__self__, "operation_log", operation_log)
         if state is not None:
@@ -360,6 +364,18 @@ class _FleetState:
     @is_advanced_features_enabled.setter
     def is_advanced_features_enabled(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_advanced_features_enabled", value)
+
+    @property
+    @pulumi.getter(name="isExportSettingEnabled")
+    def is_export_setting_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether or not export setting is enabled in this Fleet.
+        """
+        return pulumi.get(self, "is_export_setting_enabled")
+
+    @is_export_setting_enabled.setter
+    def is_export_setting_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_export_setting_enabled", value)
 
     @property
     @pulumi.getter(name="operationLog")
@@ -584,6 +600,7 @@ class Fleet(pulumi.CustomResource):
             __props__.__dict__["approximate_java_server_count"] = None
             __props__.__dict__["approximate_jre_count"] = None
             __props__.__dict__["approximate_managed_instance_count"] = None
+            __props__.__dict__["is_export_setting_enabled"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -609,6 +626,7 @@ class Fleet(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             inventory_log: Optional[pulumi.Input[pulumi.InputType['FleetInventoryLogArgs']]] = None,
             is_advanced_features_enabled: Optional[pulumi.Input[bool]] = None,
+            is_export_setting_enabled: Optional[pulumi.Input[bool]] = None,
             operation_log: Optional[pulumi.Input[pulumi.InputType['FleetOperationLogArgs']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -632,6 +650,7 @@ class Fleet(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param pulumi.Input[pulumi.InputType['FleetInventoryLogArgs']] inventory_log: (Updatable) Custom Log for inventory or operation log.
         :param pulumi.Input[bool] is_advanced_features_enabled: (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
+        :param pulumi.Input[bool] is_export_setting_enabled: Whether or not export setting is enabled in this Fleet.
         :param pulumi.Input[pulumi.InputType['FleetOperationLogArgs']] operation_log: (Updatable) Custom Log for inventory or operation log.
         :param pulumi.Input[str] state: The lifecycle state of the Fleet.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -653,6 +672,7 @@ class Fleet(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["inventory_log"] = inventory_log
         __props__.__dict__["is_advanced_features_enabled"] = is_advanced_features_enabled
+        __props__.__dict__["is_export_setting_enabled"] = is_export_setting_enabled
         __props__.__dict__["operation_log"] = operation_log
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -754,6 +774,14 @@ class Fleet(pulumi.CustomResource):
         (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         """
         return pulumi.get(self, "is_advanced_features_enabled")
+
+    @property
+    @pulumi.getter(name="isExportSettingEnabled")
+    def is_export_setting_enabled(self) -> pulumi.Output[bool]:
+        """
+        Whether or not export setting is enabled in this Fleet.
+        """
+        return pulumi.get(self, "is_export_setting_enabled")
 
     @property
     @pulumi.getter(name="operationLog")

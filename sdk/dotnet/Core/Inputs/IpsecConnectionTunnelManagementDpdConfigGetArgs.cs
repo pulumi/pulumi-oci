@@ -12,9 +12,15 @@ namespace Pulumi.Oci.Core.Inputs
 
     public sealed class IpsecConnectionTunnelManagementDpdConfigGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+        /// </summary>
         [Input("dpdMode")]
         public Input<string>? DpdMode { get; set; }
 
+        /// <summary>
+        /// DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+        /// </summary>
         [Input("dpdTimeoutInSec")]
         public Input<int>? DpdTimeoutInSec { get; set; }
 

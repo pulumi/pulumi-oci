@@ -58,7 +58,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        /// Compute used by database tools.
         /// </summary>
         public readonly double ComputeCount;
         /// <summary>
@@ -109,6 +109,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The database name.
         /// </summary>
         public readonly string DbName;
+        /// <summary>
+        /// The list of database tools details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetailResult> DbToolsDetails;
         /// <summary>
         /// A valid Oracle Database version for Autonomous Database.
         /// </summary>
@@ -230,7 +234,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string KmsKeyVersionId;
         /// <summary>
-        /// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+        /// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
         /// </summary>
         public readonly string LicenseModel;
         /// <summary>
@@ -283,7 +287,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string OpenMode;
         /// <summary>
-        /// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
+        /// The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
         /// </summary>
         public readonly ImmutableArray<string> PeerDbIds;
         /// <summary>
@@ -490,6 +494,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string dbName,
 
+            ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetailResult> dbToolsDetails,
+
             string dbVersion,
 
             string dbWorkload,
@@ -678,6 +684,7 @@ namespace Pulumi.Oci.Database.Outputs
             DatabaseManagementStatus = databaseManagementStatus;
             DataguardRegionType = dataguardRegionType;
             DbName = dbName;
+            DbToolsDetails = dbToolsDetails;
             DbVersion = dbVersion;
             DbWorkload = dbWorkload;
             DefinedTags = definedTags;

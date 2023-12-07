@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseTools;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionKeyStoreArgs;
+import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionLockArgs;
+import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionProxyClientArgs;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionRelatedResourceArgs;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionUserPasswordArgs;
 import java.lang.Object;
@@ -127,6 +129,21 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<DatabaseToolsConnectionLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<DatabaseToolsConnectionLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
@@ -139,6 +156,21 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
      */
     public Optional<Output<String>> privateEndpointId() {
         return Optional.ofNullable(this.privateEndpointId);
+    }
+
+    /**
+     * (Updatable) The proxy client information.
+     * 
+     */
+    @Import(name="proxyClient")
+    private @Nullable Output<DatabaseToolsConnectionProxyClientArgs> proxyClient;
+
+    /**
+     * @return (Updatable) The proxy client information.
+     * 
+     */
+    public Optional<Output<DatabaseToolsConnectionProxyClientArgs>> proxyClient() {
+        return Optional.ofNullable(this.proxyClient);
     }
 
     /**
@@ -157,6 +189,21 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * Specifies whether this connection is supported by the Database Tools Runtime.
+     * 
+     */
+    @Import(name="runtimeSupport")
+    private @Nullable Output<String> runtimeSupport;
+
+    /**
+     * @return Specifies whether this connection is supported by the Database Tools Runtime.
+     * 
+     */
+    public Optional<Output<String>> runtimeSupport() {
+        return Optional.ofNullable(this.runtimeSupport);
+    }
+
+    /**
      * (Updatable) The DatabaseToolsConnection type.
      * 
      */
@@ -172,33 +219,48 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+     * 
+     */
+    @Import(name="url")
+    private @Nullable Output<String> url;
+
+    /**
+     * @return (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+     * 
+     */
+    public Optional<Output<String>> url() {
+        return Optional.ofNullable(this.url);
+    }
+
+    /**
      * (Updatable) The database user name.
      * 
      */
-    @Import(name="userName")
-    private @Nullable Output<String> userName;
+    @Import(name="userName", required=true)
+    private Output<String> userName;
 
     /**
      * @return (Updatable) The database user name.
      * 
      */
-    public Optional<Output<String>> userName() {
-        return Optional.ofNullable(this.userName);
+    public Output<String> userName() {
+        return this.userName;
     }
 
     /**
      * (Updatable) The user password.
      * 
      */
-    @Import(name="userPassword")
-    private @Nullable Output<DatabaseToolsConnectionUserPasswordArgs> userPassword;
+    @Import(name="userPassword", required=true)
+    private Output<DatabaseToolsConnectionUserPasswordArgs> userPassword;
 
     /**
      * @return (Updatable) The user password.
      * 
      */
-    public Optional<Output<DatabaseToolsConnectionUserPasswordArgs>> userPassword() {
-        return Optional.ofNullable(this.userPassword);
+    public Output<DatabaseToolsConnectionUserPasswordArgs> userPassword() {
+        return this.userPassword;
     }
 
     private DatabaseToolsConnectionArgs() {}
@@ -211,9 +273,13 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.keyStores = $.keyStores;
+        this.locks = $.locks;
         this.privateEndpointId = $.privateEndpointId;
+        this.proxyClient = $.proxyClient;
         this.relatedResource = $.relatedResource;
+        this.runtimeSupport = $.runtimeSupport;
         this.type = $.type;
+        this.url = $.url;
         this.userName = $.userName;
         this.userPassword = $.userPassword;
     }
@@ -394,6 +460,37 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<DatabaseToolsConnectionLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<DatabaseToolsConnectionLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(DatabaseToolsConnectionLockArgs... locks) {
+            return locks(List.of(locks));
+        }
+
+        /**
          * @param privateEndpointId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
          * 
          * @return builder
@@ -412,6 +509,27 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
          */
         public Builder privateEndpointId(String privateEndpointId) {
             return privateEndpointId(Output.of(privateEndpointId));
+        }
+
+        /**
+         * @param proxyClient (Updatable) The proxy client information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyClient(@Nullable Output<DatabaseToolsConnectionProxyClientArgs> proxyClient) {
+            $.proxyClient = proxyClient;
+            return this;
+        }
+
+        /**
+         * @param proxyClient (Updatable) The proxy client information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyClient(DatabaseToolsConnectionProxyClientArgs proxyClient) {
+            return proxyClient(Output.of(proxyClient));
         }
 
         /**
@@ -436,6 +554,27 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param runtimeSupport Specifies whether this connection is supported by the Database Tools Runtime.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeSupport(@Nullable Output<String> runtimeSupport) {
+            $.runtimeSupport = runtimeSupport;
+            return this;
+        }
+
+        /**
+         * @param runtimeSupport Specifies whether this connection is supported by the Database Tools Runtime.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeSupport(String runtimeSupport) {
+            return runtimeSupport(Output.of(runtimeSupport));
+        }
+
+        /**
          * @param type (Updatable) The DatabaseToolsConnection type.
          * 
          * @return builder
@@ -457,12 +596,33 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param url (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder url(@Nullable Output<String> url) {
+            $.url = url;
+            return this;
+        }
+
+        /**
+         * @param url (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder url(String url) {
+            return url(Output.of(url));
+        }
+
+        /**
          * @param userName (Updatable) The database user name.
          * 
          * @return builder
          * 
          */
-        public Builder userName(@Nullable Output<String> userName) {
+        public Builder userName(Output<String> userName) {
             $.userName = userName;
             return this;
         }
@@ -483,7 +643,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder userPassword(@Nullable Output<DatabaseToolsConnectionUserPasswordArgs> userPassword) {
+        public Builder userPassword(Output<DatabaseToolsConnectionUserPasswordArgs> userPassword) {
             $.userPassword = userPassword;
             return this;
         }
@@ -502,6 +662,8 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
             $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            $.userName = Objects.requireNonNull($.userName, "expected parameter 'userName' to be non-null");
+            $.userPassword = Objects.requireNonNull($.userPassword, "expected parameter 'userPassword' to be non-null");
             return $;
         }
     }

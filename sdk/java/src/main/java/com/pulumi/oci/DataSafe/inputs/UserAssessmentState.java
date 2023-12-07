@@ -301,14 +301,14 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -316,14 +316,14 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Import(name="timeLastAssessed")
     private @Nullable Output<String> timeLastAssessed;
 
     /**
-     * @return The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public Optional<Output<String>> timeLastAssessed() {
@@ -331,14 +331,14 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -346,14 +346,14 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Indicates whether the user assessment was created by the system or the user.
+     * Indicates whether the user assessment was created by system or user.
      * 
      */
     @Import(name="triggeredBy")
     private @Nullable Output<String> triggeredBy;
 
     /**
-     * @return Indicates whether the user assessment was created by the system or the user.
+     * @return Indicates whether the user assessment was created by system or user.
      * 
      */
     public Optional<Output<String>> triggeredBy() {
@@ -361,14 +361,14 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The type of the user assessment. The possible types are:
+     * Type of user assessment. Type can be:
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return The type of the user assessment. The possible types are:
+     * @return Type of user assessment. Type can be:
      * 
      */
     public Optional<Output<String>> type() {
@@ -840,7 +840,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeCreated The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeCreated The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -851,7 +851,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeCreated The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeCreated The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -861,7 +861,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeLastAssessed The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeLastAssessed The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -872,7 +872,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeLastAssessed The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeLastAssessed The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -882,7 +882,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeUpdated The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeUpdated The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -893,7 +893,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param timeUpdated The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timeUpdated The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          * 
          * @return builder
          * 
@@ -903,7 +903,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param triggeredBy Indicates whether the user assessment was created by the system or the user.
+         * @param triggeredBy Indicates whether the user assessment was created by system or user.
          * 
          * @return builder
          * 
@@ -914,7 +914,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param triggeredBy Indicates whether the user assessment was created by the system or the user.
+         * @param triggeredBy Indicates whether the user assessment was created by system or user.
          * 
          * @return builder
          * 
@@ -924,7 +924,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param type The type of the user assessment. The possible types are:
+         * @param type Type of user assessment. Type can be:
          * 
          * @return builder
          * 
@@ -935,7 +935,7 @@ public final class UserAssessmentState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param type The type of the user assessment. The possible types are:
+         * @param type Type of user assessment. Type can be:
          * 
          * @return builder
          * 

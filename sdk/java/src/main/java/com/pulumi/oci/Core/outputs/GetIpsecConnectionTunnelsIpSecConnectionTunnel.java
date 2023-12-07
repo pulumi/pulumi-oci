@@ -5,6 +5,7 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo;
+import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail;
 import com.pulumi.oci.Core.outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail;
@@ -40,6 +41,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
      * 
      */
     private String displayName;
+    private List<GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig> dpdConfigs;
     /**
      * @return Dead peer detection (DPD) mode set on the Oracle side of the connection. This mode sets whether Oracle can only respond to a request from the CPE device to start DPD, or both respond to and initiate requests.
      * 
@@ -66,6 +68,11 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
      */
     private String ikeVersion;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+     * 
+     */
+    private String ipsecId;
+    /**
      * @return By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
      * 
      */
@@ -90,6 +97,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
      * 
      */
     private String routing;
+    private String sharedSecret;
     /**
      * @return The tunnel&#39;s lifecycle state.
      * 
@@ -110,6 +118,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
      * 
      */
     private String timeStatusUpdated;
+    private String tunnelId;
     /**
      * @return The IP address of the Oracle VPN headend for the connection.  Example: `203.0.113.21`
      * 
@@ -152,6 +161,9 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
     public String displayName() {
         return this.displayName;
     }
+    public List<GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig> dpdConfigs() {
+        return this.dpdConfigs;
+    }
     /**
      * @return Dead peer detection (DPD) mode set on the Oracle side of the connection. This mode sets whether Oracle can only respond to a request from the CPE device to start DPD, or both respond to and initiate requests.
      * 
@@ -188,6 +200,13 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
         return this.ikeVersion;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+     * 
+     */
+    public String ipsecId() {
+        return this.ipsecId;
+    }
+    /**
      * @return By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
      * 
      */
@@ -222,6 +241,9 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
     public String routing() {
         return this.routing;
     }
+    public String sharedSecret() {
+        return this.sharedSecret;
+    }
     /**
      * @return The tunnel&#39;s lifecycle state.
      * 
@@ -250,6 +272,9 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
     public String timeStatusUpdated() {
         return this.timeStatusUpdated;
     }
+    public String tunnelId() {
+        return this.tunnelId;
+    }
     /**
      * @return The IP address of the Oracle VPN headend for the connection.  Example: `203.0.113.21`
      * 
@@ -272,20 +297,24 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
         private String compartmentId;
         private String cpeIp;
         private String displayName;
+        private List<GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig> dpdConfigs;
         private String dpdMode;
         private Integer dpdTimeoutInSec;
         private List<GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig> encryptionDomainConfigs;
         private String id;
         private String ikeVersion;
+        private String ipsecId;
         private String natTranslationEnabled;
         private String oracleCanInitiate;
         private List<GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail> phaseOneDetails;
         private List<GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail> phaseTwoDetails;
         private String routing;
+        private String sharedSecret;
         private String state;
         private String status;
         private String timeCreated;
         private String timeStatusUpdated;
+        private String tunnelId;
         private String vpnIp;
         public Builder() {}
         public Builder(GetIpsecConnectionTunnelsIpSecConnectionTunnel defaults) {
@@ -295,20 +324,24 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpeIp = defaults.cpeIp;
     	      this.displayName = defaults.displayName;
+    	      this.dpdConfigs = defaults.dpdConfigs;
     	      this.dpdMode = defaults.dpdMode;
     	      this.dpdTimeoutInSec = defaults.dpdTimeoutInSec;
     	      this.encryptionDomainConfigs = defaults.encryptionDomainConfigs;
     	      this.id = defaults.id;
     	      this.ikeVersion = defaults.ikeVersion;
+    	      this.ipsecId = defaults.ipsecId;
     	      this.natTranslationEnabled = defaults.natTranslationEnabled;
     	      this.oracleCanInitiate = defaults.oracleCanInitiate;
     	      this.phaseOneDetails = defaults.phaseOneDetails;
     	      this.phaseTwoDetails = defaults.phaseTwoDetails;
     	      this.routing = defaults.routing;
+    	      this.sharedSecret = defaults.sharedSecret;
     	      this.state = defaults.state;
     	      this.status = defaults.status;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeStatusUpdated = defaults.timeStatusUpdated;
+    	      this.tunnelId = defaults.tunnelId;
     	      this.vpnIp = defaults.vpnIp;
         }
 
@@ -344,6 +377,14 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
             return this;
         }
         @CustomType.Setter
+        public Builder dpdConfigs(List<GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig> dpdConfigs) {
+            this.dpdConfigs = Objects.requireNonNull(dpdConfigs);
+            return this;
+        }
+        public Builder dpdConfigs(GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig... dpdConfigs) {
+            return dpdConfigs(List.of(dpdConfigs));
+        }
+        @CustomType.Setter
         public Builder dpdMode(String dpdMode) {
             this.dpdMode = Objects.requireNonNull(dpdMode);
             return this;
@@ -369,6 +410,11 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
         @CustomType.Setter
         public Builder ikeVersion(String ikeVersion) {
             this.ikeVersion = Objects.requireNonNull(ikeVersion);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ipsecId(String ipsecId) {
+            this.ipsecId = Objects.requireNonNull(ipsecId);
             return this;
         }
         @CustomType.Setter
@@ -403,6 +449,11 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
             return this;
         }
         @CustomType.Setter
+        public Builder sharedSecret(String sharedSecret) {
+            this.sharedSecret = Objects.requireNonNull(sharedSecret);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -423,6 +474,11 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
             return this;
         }
         @CustomType.Setter
+        public Builder tunnelId(String tunnelId) {
+            this.tunnelId = Objects.requireNonNull(tunnelId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder vpnIp(String vpnIp) {
             this.vpnIp = Objects.requireNonNull(vpnIp);
             return this;
@@ -434,20 +490,24 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
             o.compartmentId = compartmentId;
             o.cpeIp = cpeIp;
             o.displayName = displayName;
+            o.dpdConfigs = dpdConfigs;
             o.dpdMode = dpdMode;
             o.dpdTimeoutInSec = dpdTimeoutInSec;
             o.encryptionDomainConfigs = encryptionDomainConfigs;
             o.id = id;
             o.ikeVersion = ikeVersion;
+            o.ipsecId = ipsecId;
             o.natTranslationEnabled = natTranslationEnabled;
             o.oracleCanInitiate = oracleCanInitiate;
             o.phaseOneDetails = phaseOneDetails;
             o.phaseTwoDetails = phaseTwoDetails;
             o.routing = routing;
+            o.sharedSecret = sharedSecret;
             o.state = state;
             o.status = status;
             o.timeCreated = timeCreated;
             o.timeStatusUpdated = timeStatusUpdated;
+            o.tunnelId = tunnelId;
             o.vpnIp = vpnIp;
             return o;
         }

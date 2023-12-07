@@ -13,16 +13,50 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class IpsecConnectionTunnelManagementPhaseOneDetail
     {
+        /// <summary>
+        /// The authentication algorithm proposed during phase two tunnel negotiation.
+        /// </summary>
         public readonly string? CustomAuthenticationAlgorithm;
+        /// <summary>
+        /// The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
+        /// </summary>
         public readonly string? CustomDhGroup;
+        /// <summary>
+        /// The encryption algorithm proposed during phase two tunnel negotiation.
+        /// </summary>
         public readonly string? CustomEncryptionAlgorithm;
+        /// <summary>
+        /// Indicates whether custom configuration is enabled for phase one options.
+        /// </summary>
         public readonly bool? IsCustomPhaseOneConfig;
+        /// <summary>
+        /// Indicates whether IKE phase one is established.
+        /// </summary>
         public readonly bool? IsIkeEstablished;
+        /// <summary>
+        /// Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+        /// </summary>
         public readonly int? Lifetime;
+        /// <summary>
+        /// The negotiated phase two authentication algorithm.
+        /// </summary>
         public readonly string? NegotiatedAuthenticationAlgorithm;
+        /// <summary>
+        /// The negotiated Diffie-Hellman group.
+        /// </summary>
         public readonly string? NegotiatedDhGroup;
+        /// <summary>
+        /// The negotiated encryption algorithm.
+        /// </summary>
         public readonly string? NegotiatedEncryptionAlgorithm;
         public readonly string? RemainingLifetime;
+        /// <summary>
+        /// The remaining lifetime before the key is refreshed.
+        /// </summary>
+        public readonly int? RemainingLifetimeInt;
+        /// <summary>
+        /// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
         public readonly string? RemainingLifetimeLastRetrieved;
 
         [OutputConstructor]
@@ -47,6 +81,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? remainingLifetime,
 
+            int? remainingLifetimeInt,
+
             string? remainingLifetimeLastRetrieved)
         {
             CustomAuthenticationAlgorithm = customAuthenticationAlgorithm;
@@ -59,6 +95,7 @@ namespace Pulumi.Oci.Core.Outputs
             NegotiatedDhGroup = negotiatedDhGroup;
             NegotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
             RemainingLifetime = remainingLifetime;
+            RemainingLifetimeInt = remainingLifetimeInt;
             RemainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
         }
     }

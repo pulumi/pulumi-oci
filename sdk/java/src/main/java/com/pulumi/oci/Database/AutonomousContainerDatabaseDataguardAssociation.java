@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.AutonomousContainerDatabaseDataguardAssociationArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseDataguardAssociationState;
+import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -18,7 +19,63 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
  * 
- * Update Autonomous Data Guard association.
+ * Create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
+ * specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
+ * 
+ * All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
+ * called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
+ * You can also retrieve a resource&#39;s OCID by using a List API operation on that resource type, or by viewing the
+ * resource in the Console. For more information, see
+ * [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ * 
+ * ## Example Usage
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousContainerDatabaseDataguardAssociation;
+ * import com.pulumi.oci.Database.AutonomousContainerDatabaseDataguardAssociationArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousContainerDatabaseDataguardAssociation = new AutonomousContainerDatabaseDataguardAssociation(&#34;testAutonomousContainerDatabaseDataguardAssociation&#34;, AutonomousContainerDatabaseDataguardAssociationArgs.builder()        
+ *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+ *             .peerAutonomousContainerDatabaseDisplayName(var_.autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name())
+ *             .peerCloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+ *             .protectionMode(var_.autonomous_container_database_dataguard_association_protection_mode())
+ *             .fastStartFailOverLagLimitInSeconds(var_.autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds())
+ *             .isAutomaticFailoverEnabled(var_.autonomous_container_database_dataguard_association_is_automatic_failover_enabled())
+ *             .peerAutonomousContainerDatabaseBackupConfig(AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs.builder()
+ *                 .backupDestinationDetails(AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs.builder()
+ *                     .type(var_.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type())
+ *                     .dbrsPolicyId(oci_identity_policy.test_policy().id())
+ *                     .id(var_.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id())
+ *                     .internetProxy(var_.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy())
+ *                     .vpcPassword(var_.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password())
+ *                     .vpcUser(var_.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user())
+ *                     .build())
+ *                 .recoveryWindowInDays(var_.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days())
+ *                 .build())
+ *             .peerAutonomousContainerDatabaseCompartmentId(oci_identity_compartment.test_compartment().id())
+ *             .standbyMaintenanceBufferInDays(var_.autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
  * 
  * ## Import
  * 
@@ -59,18 +116,10 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
     public Output<String> applyRate() {
         return this.applyRate;
     }
-    /**
-     * The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     * 
-     */
-    @Export(name="autonomousContainerDatabaseDataguardAssociationId", refs={String.class}, tree="[0]")
-    private Output<String> autonomousContainerDatabaseDataguardAssociationId;
+    @Export(name="autonomousContainerDatabaseDataguardAssociationId", refs={Integer.class}, tree="[0]")
+    private Output<Integer> autonomousContainerDatabaseDataguardAssociationId;
 
-    /**
-     * @return The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     * 
-     */
-    public Output<String> autonomousContainerDatabaseDataguardAssociationId() {
+    public Output<Integer> autonomousContainerDatabaseDataguardAssociationId() {
         return this.autonomousContainerDatabaseDataguardAssociationId;
     }
     /**
@@ -130,6 +179,34 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
         return this.lifecycleDetails;
     }
     /**
+     * Backup options for the standby Autonomous Container Database.
+     * 
+     */
+    @Export(name="peerAutonomousContainerDatabaseBackupConfig", refs={AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig.class}, tree="[0]")
+    private Output<AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfig;
+
+    /**
+     * @return Backup options for the standby Autonomous Container Database.
+     * 
+     */
+    public Output<AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfig() {
+        return this.peerAutonomousContainerDatabaseBackupConfig;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
+     * 
+     */
+    @Export(name="peerAutonomousContainerDatabaseCompartmentId", refs={String.class}, tree="[0]")
+    private Output<String> peerAutonomousContainerDatabaseCompartmentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
+     * 
+     */
+    public Output<String> peerAutonomousContainerDatabaseCompartmentId() {
+        return this.peerAutonomousContainerDatabaseCompartmentId;
+    }
+    /**
      * The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      * 
      */
@@ -144,6 +221,20 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
         return this.peerAutonomousContainerDatabaseDataguardAssociationId;
     }
     /**
+     * The display name for the peer Autonomous Container Database.
+     * 
+     */
+    @Export(name="peerAutonomousContainerDatabaseDisplayName", refs={String.class}, tree="[0]")
+    private Output<String> peerAutonomousContainerDatabaseDisplayName;
+
+    /**
+     * @return The display name for the peer Autonomous Container Database.
+     * 
+     */
+    public Output<String> peerAutonomousContainerDatabaseDisplayName() {
+        return this.peerAutonomousContainerDatabaseDisplayName;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      * 
      */
@@ -156,6 +247,20 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      */
     public Output<String> peerAutonomousContainerDatabaseId() {
         return this.peerAutonomousContainerDatabaseId;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+     * 
+     */
+    @Export(name="peerCloudAutonomousVmClusterId", refs={String.class}, tree="[0]")
+    private Output<String> peerCloudAutonomousVmClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+     * 
+     */
+    public Output<String> peerCloudAutonomousVmClusterId() {
+        return this.peerCloudAutonomousVmClusterId;
     }
     /**
      * The current state of Autonomous Data Guard.
@@ -218,6 +323,20 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
      */
     public Output<String> role() {
         return this.role;
+    }
+    /**
+     * The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
+     * 
+     */
+    @Export(name="standbyMaintenanceBufferInDays", refs={Integer.class}, tree="[0]")
+    private Output<Integer> standbyMaintenanceBufferInDays;
+
+    /**
+     * @return The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
+     * 
+     */
+    public Output<Integer> standbyMaintenanceBufferInDays() {
+        return this.standbyMaintenanceBufferInDays;
     }
     /**
      * The current state of Autonomous Data Guard.

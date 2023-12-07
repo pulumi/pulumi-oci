@@ -38,7 +38,7 @@ type AutonomousContainerDatabase struct {
 	AvailableCpus pulumi.Float64Output `pulumi:"availableCpus"`
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig AutonomousContainerDatabaseBackupConfigOutput `pulumi:"backupConfig"`
-	// The OCID of the Cloud Autonomous VM Cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId pulumi.StringOutput `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -132,6 +132,8 @@ type AutonomousContainerDatabase struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+	TimeOfLastBackup pulumi.StringOutput `pulumi:"timeOfLastBackup"`
 	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 	TimeSnapshotStandbyRevert pulumi.StringOutput `pulumi:"timeSnapshotStandbyRevert"`
 	// The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
@@ -188,7 +190,7 @@ type autonomousContainerDatabaseState struct {
 	AvailableCpus *float64 `pulumi:"availableCpus"`
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig *AutonomousContainerDatabaseBackupConfig `pulumi:"backupConfig"`
-	// The OCID of the Cloud Autonomous VM Cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId *string `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -282,6 +284,8 @@ type autonomousContainerDatabaseState struct {
 	State *string `pulumi:"state"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+	TimeOfLastBackup *string `pulumi:"timeOfLastBackup"`
 	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 	TimeSnapshotStandbyRevert *string `pulumi:"timeSnapshotStandbyRevert"`
 	// The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
@@ -303,7 +307,7 @@ type AutonomousContainerDatabaseState struct {
 	AvailableCpus pulumi.Float64PtrInput
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig AutonomousContainerDatabaseBackupConfigPtrInput
-	// The OCID of the Cloud Autonomous VM Cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringPtrInput
@@ -397,6 +401,8 @@ type AutonomousContainerDatabaseState struct {
 	State pulumi.StringPtrInput
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated pulumi.StringPtrInput
+	// The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+	TimeOfLastBackup pulumi.StringPtrInput
 	// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
 	TimeSnapshotStandbyRevert pulumi.StringPtrInput
 	// The number of CPUs allocated to the Autonomous VM cluster.<br> For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
@@ -418,7 +424,7 @@ type autonomousContainerDatabaseArgs struct {
 	AutonomousVmClusterId *string `pulumi:"autonomousVmClusterId"`
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig *AutonomousContainerDatabaseBackupConfig `pulumi:"backupConfig"`
-	// The OCID of the Cloud Autonomous VM Cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId *string `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -484,7 +490,7 @@ type AutonomousContainerDatabaseArgs struct {
 	AutonomousVmClusterId pulumi.StringPtrInput
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig AutonomousContainerDatabaseBackupConfigPtrInput
-	// The OCID of the Cloud Autonomous VM Cluster.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 	CloudAutonomousVmClusterId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringPtrInput
@@ -656,7 +662,7 @@ func (o AutonomousContainerDatabaseOutput) BackupConfig() AutonomousContainerDat
 	}).(AutonomousContainerDatabaseBackupConfigOutput)
 }
 
-// The OCID of the Cloud Autonomous VM Cluster.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
 func (o AutonomousContainerDatabaseOutput) CloudAutonomousVmClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.CloudAutonomousVmClusterId }).(pulumi.StringOutput)
 }
@@ -899,6 +905,11 @@ func (o AutonomousContainerDatabaseOutput) State() pulumi.StringOutput {
 // The date and time the Autonomous Container Database was created.
 func (o AutonomousContainerDatabaseOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+func (o AutonomousContainerDatabaseOutput) TimeOfLastBackup() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.TimeOfLastBackup }).(pulumi.StringOutput)
 }
 
 // The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.

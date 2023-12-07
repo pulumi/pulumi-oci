@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetJavaReleaseArtifact;
 import com.pulumi.oci.Jms.outputs.GetJavaReleaseFamilyDetail;
 import com.pulumi.oci.Jms.outputs.GetJavaReleaseLicenseDetail;
+import com.pulumi.oci.Jms.outputs.GetJavaReleaseMosPatch;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -23,6 +25,11 @@ public final class GetJavaReleaseResult {
      * 
      */
     private List<GetJavaReleaseArtifact> artifacts;
+    /**
+     * @return The number of days since this release has been under the security baseline.
+     * 
+     */
+    private Integer daysUnderSecurityBaseline;
     /**
      * @return Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
      * 
@@ -48,6 +55,11 @@ public final class GetJavaReleaseResult {
      * 
      */
     private String licenseType;
+    /**
+     * @return List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
+     * 
+     */
+    private List<GetJavaReleaseMosPatch> mosPatches;
     /**
      * @return Parent Java release version identifier. This is applicable for BPR releases.
      * 
@@ -95,6 +107,13 @@ public final class GetJavaReleaseResult {
         return this.artifacts;
     }
     /**
+     * @return The number of days since this release has been under the security baseline.
+     * 
+     */
+    public Integer daysUnderSecurityBaseline() {
+        return this.daysUnderSecurityBaseline;
+    }
+    /**
      * @return Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
      * 
      */
@@ -128,6 +147,13 @@ public final class GetJavaReleaseResult {
      */
     public String licenseType() {
         return this.licenseType;
+    }
+    /**
+     * @return List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
+     * 
+     */
+    public List<GetJavaReleaseMosPatch> mosPatches() {
+        return this.mosPatches;
     }
     /**
      * @return Parent Java release version identifier. This is applicable for BPR releases.
@@ -183,11 +209,13 @@ public final class GetJavaReleaseResult {
     public static final class Builder {
         private List<String> artifactContentTypes;
         private List<GetJavaReleaseArtifact> artifacts;
+        private Integer daysUnderSecurityBaseline;
         private List<GetJavaReleaseFamilyDetail> familyDetails;
         private String familyVersion;
         private String id;
         private List<GetJavaReleaseLicenseDetail> licenseDetails;
         private String licenseType;
+        private List<GetJavaReleaseMosPatch> mosPatches;
         private String parentReleaseVersion;
         private String releaseDate;
         private String releaseNotesUrl;
@@ -199,11 +227,13 @@ public final class GetJavaReleaseResult {
     	      Objects.requireNonNull(defaults);
     	      this.artifactContentTypes = defaults.artifactContentTypes;
     	      this.artifacts = defaults.artifacts;
+    	      this.daysUnderSecurityBaseline = defaults.daysUnderSecurityBaseline;
     	      this.familyDetails = defaults.familyDetails;
     	      this.familyVersion = defaults.familyVersion;
     	      this.id = defaults.id;
     	      this.licenseDetails = defaults.licenseDetails;
     	      this.licenseType = defaults.licenseType;
+    	      this.mosPatches = defaults.mosPatches;
     	      this.parentReleaseVersion = defaults.parentReleaseVersion;
     	      this.releaseDate = defaults.releaseDate;
     	      this.releaseNotesUrl = defaults.releaseNotesUrl;
@@ -227,6 +257,11 @@ public final class GetJavaReleaseResult {
         }
         public Builder artifacts(GetJavaReleaseArtifact... artifacts) {
             return artifacts(List.of(artifacts));
+        }
+        @CustomType.Setter
+        public Builder daysUnderSecurityBaseline(Integer daysUnderSecurityBaseline) {
+            this.daysUnderSecurityBaseline = Objects.requireNonNull(daysUnderSecurityBaseline);
+            return this;
         }
         @CustomType.Setter
         public Builder familyDetails(List<GetJavaReleaseFamilyDetail> familyDetails) {
@@ -258,6 +293,14 @@ public final class GetJavaReleaseResult {
         public Builder licenseType(String licenseType) {
             this.licenseType = Objects.requireNonNull(licenseType);
             return this;
+        }
+        @CustomType.Setter
+        public Builder mosPatches(List<GetJavaReleaseMosPatch> mosPatches) {
+            this.mosPatches = Objects.requireNonNull(mosPatches);
+            return this;
+        }
+        public Builder mosPatches(GetJavaReleaseMosPatch... mosPatches) {
+            return mosPatches(List.of(mosPatches));
         }
         @CustomType.Setter
         public Builder parentReleaseVersion(String parentReleaseVersion) {
@@ -293,11 +336,13 @@ public final class GetJavaReleaseResult {
             final var o = new GetJavaReleaseResult();
             o.artifactContentTypes = artifactContentTypes;
             o.artifacts = artifacts;
+            o.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
             o.familyDetails = familyDetails;
             o.familyVersion = familyVersion;
             o.id = id;
             o.licenseDetails = licenseDetails;
             o.licenseType = licenseType;
+            o.mosPatches = mosPatches;
             o.parentReleaseVersion = parentReleaseVersion;
             o.releaseDate = releaseDate;
             o.releaseNotesUrl = releaseNotesUrl;

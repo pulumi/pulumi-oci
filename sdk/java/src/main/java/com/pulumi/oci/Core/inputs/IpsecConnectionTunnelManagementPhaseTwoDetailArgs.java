@@ -17,86 +17,201 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetailArgs extends com
 
     public static final IpsecConnectionTunnelManagementPhaseTwoDetailArgs Empty = new IpsecConnectionTunnelManagementPhaseTwoDetailArgs();
 
+    /**
+     * The authentication algorithm proposed during phase two tunnel negotiation.
+     * 
+     */
     @Import(name="customAuthenticationAlgorithm")
     private @Nullable Output<String> customAuthenticationAlgorithm;
 
+    /**
+     * @return The authentication algorithm proposed during phase two tunnel negotiation.
+     * 
+     */
     public Optional<Output<String>> customAuthenticationAlgorithm() {
         return Optional.ofNullable(this.customAuthenticationAlgorithm);
     }
 
+    /**
+     * The encryption algorithm proposed during phase two tunnel negotiation.
+     * 
+     */
     @Import(name="customEncryptionAlgorithm")
     private @Nullable Output<String> customEncryptionAlgorithm;
 
+    /**
+     * @return The encryption algorithm proposed during phase two tunnel negotiation.
+     * 
+     */
     public Optional<Output<String>> customEncryptionAlgorithm() {
         return Optional.ofNullable(this.customEncryptionAlgorithm);
     }
 
+    /**
+     * The Diffie-Hellman group used for PFS, if PFS is enabled.
+     * 
+     */
     @Import(name="dhGroup")
     private @Nullable Output<String> dhGroup;
 
+    /**
+     * @return The Diffie-Hellman group used for PFS, if PFS is enabled.
+     * 
+     */
     public Optional<Output<String>> dhGroup() {
         return Optional.ofNullable(this.dhGroup);
     }
 
+    /**
+     * Indicates whether custom configuration is enabled for phase two options.
+     * 
+     */
     @Import(name="isCustomPhaseTwoConfig")
     private @Nullable Output<Boolean> isCustomPhaseTwoConfig;
 
+    /**
+     * @return Indicates whether custom configuration is enabled for phase two options.
+     * 
+     */
     public Optional<Output<Boolean>> isCustomPhaseTwoConfig() {
         return Optional.ofNullable(this.isCustomPhaseTwoConfig);
     }
 
+    /**
+     * Indicates that ESP phase two is established.
+     * 
+     */
     @Import(name="isEspEstablished")
     private @Nullable Output<Boolean> isEspEstablished;
 
+    /**
+     * @return Indicates that ESP phase two is established.
+     * 
+     */
     public Optional<Output<Boolean>> isEspEstablished() {
         return Optional.ofNullable(this.isEspEstablished);
     }
 
+    /**
+     * Indicates whether perfect forward secrecy (PFS) is enabled.
+     * 
+     */
     @Import(name="isPfsEnabled")
     private @Nullable Output<Boolean> isPfsEnabled;
 
+    /**
+     * @return Indicates whether perfect forward secrecy (PFS) is enabled.
+     * 
+     */
     public Optional<Output<Boolean>> isPfsEnabled() {
         return Optional.ofNullable(this.isPfsEnabled);
     }
 
+    /**
+     * Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+     * 
+     */
     @Import(name="lifetime")
     private @Nullable Output<Integer> lifetime;
 
+    /**
+     * @return Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+     * 
+     */
     public Optional<Output<Integer>> lifetime() {
         return Optional.ofNullable(this.lifetime);
     }
 
+    /**
+     * The negotiated phase two authentication algorithm.
+     * 
+     */
     @Import(name="negotiatedAuthenticationAlgorithm")
     private @Nullable Output<String> negotiatedAuthenticationAlgorithm;
 
+    /**
+     * @return The negotiated phase two authentication algorithm.
+     * 
+     */
     public Optional<Output<String>> negotiatedAuthenticationAlgorithm() {
         return Optional.ofNullable(this.negotiatedAuthenticationAlgorithm);
     }
 
+    /**
+     * The negotiated Diffie-Hellman group.
+     * 
+     */
     @Import(name="negotiatedDhGroup")
     private @Nullable Output<String> negotiatedDhGroup;
 
+    /**
+     * @return The negotiated Diffie-Hellman group.
+     * 
+     */
     public Optional<Output<String>> negotiatedDhGroup() {
         return Optional.ofNullable(this.negotiatedDhGroup);
     }
 
+    /**
+     * The negotiated encryption algorithm.
+     * 
+     */
     @Import(name="negotiatedEncryptionAlgorithm")
     private @Nullable Output<String> negotiatedEncryptionAlgorithm;
 
+    /**
+     * @return The negotiated encryption algorithm.
+     * 
+     */
     public Optional<Output<String>> negotiatedEncryptionAlgorithm() {
         return Optional.ofNullable(this.negotiatedEncryptionAlgorithm);
     }
 
+    /**
+     * @deprecated
+     * The &#39;phase_two_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_two_details.0.remaining_lifetime_int&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead. */
     @Import(name="remainingLifetime")
     private @Nullable Output<String> remainingLifetime;
 
+    /**
+     * @deprecated
+     * The &#39;phase_two_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_two_details.0.remaining_lifetime_int&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead. */
     public Optional<Output<String>> remainingLifetime() {
         return Optional.ofNullable(this.remainingLifetime);
     }
 
+    /**
+     * The remaining lifetime before the key is refreshed.
+     * 
+     */
+    @Import(name="remainingLifetimeInt")
+    private @Nullable Output<Integer> remainingLifetimeInt;
+
+    /**
+     * @return The remaining lifetime before the key is refreshed.
+     * 
+     */
+    public Optional<Output<Integer>> remainingLifetimeInt() {
+        return Optional.ofNullable(this.remainingLifetimeInt);
+    }
+
+    /**
+     * The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
     @Import(name="remainingLifetimeLastRetrieved")
     private @Nullable Output<String> remainingLifetimeLastRetrieved;
 
+    /**
+     * @return The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
     public Optional<Output<String>> remainingLifetimeLastRetrieved() {
         return Optional.ofNullable(this.remainingLifetimeLastRetrieved);
     }
@@ -115,6 +230,7 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetailArgs extends com
         this.negotiatedDhGroup = $.negotiatedDhGroup;
         this.negotiatedEncryptionAlgorithm = $.negotiatedEncryptionAlgorithm;
         this.remainingLifetime = $.remainingLifetime;
+        this.remainingLifetimeInt = $.remainingLifetimeInt;
         this.remainingLifetimeLastRetrieved = $.remainingLifetimeLastRetrieved;
     }
 
@@ -136,110 +252,279 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetailArgs extends com
             $ = new IpsecConnectionTunnelManagementPhaseTwoDetailArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customAuthenticationAlgorithm The authentication algorithm proposed during phase two tunnel negotiation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customAuthenticationAlgorithm(@Nullable Output<String> customAuthenticationAlgorithm) {
             $.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
             return this;
         }
 
+        /**
+         * @param customAuthenticationAlgorithm The authentication algorithm proposed during phase two tunnel negotiation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customAuthenticationAlgorithm(String customAuthenticationAlgorithm) {
             return customAuthenticationAlgorithm(Output.of(customAuthenticationAlgorithm));
         }
 
+        /**
+         * @param customEncryptionAlgorithm The encryption algorithm proposed during phase two tunnel negotiation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customEncryptionAlgorithm(@Nullable Output<String> customEncryptionAlgorithm) {
             $.customEncryptionAlgorithm = customEncryptionAlgorithm;
             return this;
         }
 
+        /**
+         * @param customEncryptionAlgorithm The encryption algorithm proposed during phase two tunnel negotiation.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customEncryptionAlgorithm(String customEncryptionAlgorithm) {
             return customEncryptionAlgorithm(Output.of(customEncryptionAlgorithm));
         }
 
+        /**
+         * @param dhGroup The Diffie-Hellman group used for PFS, if PFS is enabled.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dhGroup(@Nullable Output<String> dhGroup) {
             $.dhGroup = dhGroup;
             return this;
         }
 
+        /**
+         * @param dhGroup The Diffie-Hellman group used for PFS, if PFS is enabled.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dhGroup(String dhGroup) {
             return dhGroup(Output.of(dhGroup));
         }
 
+        /**
+         * @param isCustomPhaseTwoConfig Indicates whether custom configuration is enabled for phase two options.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isCustomPhaseTwoConfig(@Nullable Output<Boolean> isCustomPhaseTwoConfig) {
             $.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
             return this;
         }
 
+        /**
+         * @param isCustomPhaseTwoConfig Indicates whether custom configuration is enabled for phase two options.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isCustomPhaseTwoConfig(Boolean isCustomPhaseTwoConfig) {
             return isCustomPhaseTwoConfig(Output.of(isCustomPhaseTwoConfig));
         }
 
+        /**
+         * @param isEspEstablished Indicates that ESP phase two is established.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isEspEstablished(@Nullable Output<Boolean> isEspEstablished) {
             $.isEspEstablished = isEspEstablished;
             return this;
         }
 
+        /**
+         * @param isEspEstablished Indicates that ESP phase two is established.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isEspEstablished(Boolean isEspEstablished) {
             return isEspEstablished(Output.of(isEspEstablished));
         }
 
+        /**
+         * @param isPfsEnabled Indicates whether perfect forward secrecy (PFS) is enabled.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isPfsEnabled(@Nullable Output<Boolean> isPfsEnabled) {
             $.isPfsEnabled = isPfsEnabled;
             return this;
         }
 
+        /**
+         * @param isPfsEnabled Indicates whether perfect forward secrecy (PFS) is enabled.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isPfsEnabled(Boolean isPfsEnabled) {
             return isPfsEnabled(Output.of(isPfsEnabled));
         }
 
+        /**
+         * @param lifetime Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+         * 
+         * @return builder
+         * 
+         */
         public Builder lifetime(@Nullable Output<Integer> lifetime) {
             $.lifetime = lifetime;
             return this;
         }
 
+        /**
+         * @param lifetime Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+         * 
+         * @return builder
+         * 
+         */
         public Builder lifetime(Integer lifetime) {
             return lifetime(Output.of(lifetime));
         }
 
+        /**
+         * @param negotiatedAuthenticationAlgorithm The negotiated phase two authentication algorithm.
+         * 
+         * @return builder
+         * 
+         */
         public Builder negotiatedAuthenticationAlgorithm(@Nullable Output<String> negotiatedAuthenticationAlgorithm) {
             $.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
             return this;
         }
 
+        /**
+         * @param negotiatedAuthenticationAlgorithm The negotiated phase two authentication algorithm.
+         * 
+         * @return builder
+         * 
+         */
         public Builder negotiatedAuthenticationAlgorithm(String negotiatedAuthenticationAlgorithm) {
             return negotiatedAuthenticationAlgorithm(Output.of(negotiatedAuthenticationAlgorithm));
         }
 
+        /**
+         * @param negotiatedDhGroup The negotiated Diffie-Hellman group.
+         * 
+         * @return builder
+         * 
+         */
         public Builder negotiatedDhGroup(@Nullable Output<String> negotiatedDhGroup) {
             $.negotiatedDhGroup = negotiatedDhGroup;
             return this;
         }
 
+        /**
+         * @param negotiatedDhGroup The negotiated Diffie-Hellman group.
+         * 
+         * @return builder
+         * 
+         */
         public Builder negotiatedDhGroup(String negotiatedDhGroup) {
             return negotiatedDhGroup(Output.of(negotiatedDhGroup));
         }
 
+        /**
+         * @param negotiatedEncryptionAlgorithm The negotiated encryption algorithm.
+         * 
+         * @return builder
+         * 
+         */
         public Builder negotiatedEncryptionAlgorithm(@Nullable Output<String> negotiatedEncryptionAlgorithm) {
             $.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
             return this;
         }
 
+        /**
+         * @param negotiatedEncryptionAlgorithm The negotiated encryption algorithm.
+         * 
+         * @return builder
+         * 
+         */
         public Builder negotiatedEncryptionAlgorithm(String negotiatedEncryptionAlgorithm) {
             return negotiatedEncryptionAlgorithm(Output.of(negotiatedEncryptionAlgorithm));
         }
 
+        /**
+         * @return builder
+         * 
+         * @deprecated
+         * The &#39;phase_two_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_two_details.0.remaining_lifetime_int&#39; instead.
+         * 
+         */
+        @Deprecated /* The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead. */
         public Builder remainingLifetime(@Nullable Output<String> remainingLifetime) {
             $.remainingLifetime = remainingLifetime;
             return this;
         }
 
+        /**
+         * @return builder
+         * 
+         * @deprecated
+         * The &#39;phase_two_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_two_details.0.remaining_lifetime_int&#39; instead.
+         * 
+         */
+        @Deprecated /* The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead. */
         public Builder remainingLifetime(String remainingLifetime) {
             return remainingLifetime(Output.of(remainingLifetime));
         }
 
+        /**
+         * @param remainingLifetimeInt The remaining lifetime before the key is refreshed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remainingLifetimeInt(@Nullable Output<Integer> remainingLifetimeInt) {
+            $.remainingLifetimeInt = remainingLifetimeInt;
+            return this;
+        }
+
+        /**
+         * @param remainingLifetimeInt The remaining lifetime before the key is refreshed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remainingLifetimeInt(Integer remainingLifetimeInt) {
+            return remainingLifetimeInt(Output.of(remainingLifetimeInt));
+        }
+
+        /**
+         * @param remainingLifetimeLastRetrieved The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         * 
+         * @return builder
+         * 
+         */
         public Builder remainingLifetimeLastRetrieved(@Nullable Output<String> remainingLifetimeLastRetrieved) {
             $.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
             return this;
         }
 
+        /**
+         * @param remainingLifetimeLastRetrieved The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         * 
+         * @return builder
+         * 
+         */
         public Builder remainingLifetimeLastRetrieved(String remainingLifetimeLastRetrieved) {
             return remainingLifetimeLastRetrieved(Output.of(remainingLifetimeLastRetrieved));
         }

@@ -21,7 +21,7 @@ class GetExsiHostResult:
     """
     A collection of values returned by getExsiHost.
     """
-    def __init__(__self__, billing_contract_end_date=None, billing_donor_host_id=None, capacity_reservation_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_sku=None, defined_tags=None, display_name=None, esxi_host_id=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, is_billing_continuation_in_progress=None, is_billing_swapping_in_progress=None, next_sku=None, non_upgraded_esxi_host_id=None, replacement_esxi_host_id=None, sddc_id=None, state=None, swap_billing_host_id=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vmware_software_version=None):
+    def __init__(__self__, billing_contract_end_date=None, billing_donor_host_id=None, capacity_reservation_id=None, cluster_id=None, compartment_id=None, compute_availability_domain=None, compute_instance_id=None, current_commitment=None, current_sku=None, defined_tags=None, display_name=None, esxi_host_id=None, esxi_software_version=None, failed_esxi_host_id=None, freeform_tags=None, grace_period_end_date=None, host_ocpu_count=None, host_shape_name=None, id=None, is_billing_continuation_in_progress=None, is_billing_swapping_in_progress=None, next_commitment=None, next_sku=None, non_upgraded_esxi_host_id=None, replacement_esxi_host_id=None, sddc_id=None, state=None, swap_billing_host_id=None, time_created=None, time_updated=None, upgraded_replacement_esxi_host_id=None, vmware_software_version=None):
         if billing_contract_end_date and not isinstance(billing_contract_end_date, str):
             raise TypeError("Expected argument 'billing_contract_end_date' to be a str")
         pulumi.set(__self__, "billing_contract_end_date", billing_contract_end_date)
@@ -31,6 +31,9 @@ class GetExsiHostResult:
         if capacity_reservation_id and not isinstance(capacity_reservation_id, str):
             raise TypeError("Expected argument 'capacity_reservation_id' to be a str")
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
+        if cluster_id and not isinstance(cluster_id, str):
+            raise TypeError("Expected argument 'cluster_id' to be a str")
+        pulumi.set(__self__, "cluster_id", cluster_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -40,6 +43,9 @@ class GetExsiHostResult:
         if compute_instance_id and not isinstance(compute_instance_id, str):
             raise TypeError("Expected argument 'compute_instance_id' to be a str")
         pulumi.set(__self__, "compute_instance_id", compute_instance_id)
+        if current_commitment and not isinstance(current_commitment, str):
+            raise TypeError("Expected argument 'current_commitment' to be a str")
+        pulumi.set(__self__, "current_commitment", current_commitment)
         if current_sku and not isinstance(current_sku, str):
             raise TypeError("Expected argument 'current_sku' to be a str")
         pulumi.set(__self__, "current_sku", current_sku)
@@ -52,6 +58,9 @@ class GetExsiHostResult:
         if esxi_host_id and not isinstance(esxi_host_id, str):
             raise TypeError("Expected argument 'esxi_host_id' to be a str")
         pulumi.set(__self__, "esxi_host_id", esxi_host_id)
+        if esxi_software_version and not isinstance(esxi_software_version, str):
+            raise TypeError("Expected argument 'esxi_software_version' to be a str")
+        pulumi.set(__self__, "esxi_software_version", esxi_software_version)
         if failed_esxi_host_id and not isinstance(failed_esxi_host_id, str):
             raise TypeError("Expected argument 'failed_esxi_host_id' to be a str")
         pulumi.set(__self__, "failed_esxi_host_id", failed_esxi_host_id)
@@ -76,6 +85,9 @@ class GetExsiHostResult:
         if is_billing_swapping_in_progress and not isinstance(is_billing_swapping_in_progress, bool):
             raise TypeError("Expected argument 'is_billing_swapping_in_progress' to be a bool")
         pulumi.set(__self__, "is_billing_swapping_in_progress", is_billing_swapping_in_progress)
+        if next_commitment and not isinstance(next_commitment, str):
+            raise TypeError("Expected argument 'next_commitment' to be a str")
+        pulumi.set(__self__, "next_commitment", next_commitment)
         if next_sku and not isinstance(next_sku, str):
             raise TypeError("Expected argument 'next_sku' to be a str")
         pulumi.set(__self__, "next_sku", next_sku)
@@ -111,7 +123,7 @@ class GetExsiHostResult:
     @pulumi.getter(name="billingContractEndDate")
     def billing_contract_end_date(self) -> str:
         """
-        Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+        Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "billing_contract_end_date")
 
@@ -135,10 +147,18 @@ class GetExsiHostResult:
         return pulumi.get(self, "capacity_reservation_id")
 
     @property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the ESXi host belongs to.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -159,10 +179,18 @@ class GetExsiHostResult:
         return pulumi.get(self, "compute_instance_id")
 
     @property
+    @pulumi.getter(name="currentCommitment")
+    def current_commitment(self) -> str:
+        """
+        The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+        """
+        return pulumi.get(self, "current_commitment")
+
+    @property
     @pulumi.getter(name="currentSku")
     def current_sku(self) -> str:
         """
-        (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `current_commitment` instead.
         """
         warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
         pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
@@ -189,6 +217,14 @@ class GetExsiHostResult:
     @pulumi.getter(name="esxiHostId")
     def esxi_host_id(self) -> str:
         return pulumi.get(self, "esxi_host_id")
+
+    @property
+    @pulumi.getter(name="esxiSoftwareVersion")
+    def esxi_software_version(self) -> str:
+        """
+        The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
+        """
+        return pulumi.get(self, "esxi_software_version")
 
     @property
     @pulumi.getter(name="failedEsxiHostId")
@@ -229,7 +265,7 @@ class GetExsiHostResult:
     @pulumi.getter(name="hostShapeName")
     def host_shape_name(self) -> str:
         """
-        The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
         """
         return pulumi.get(self, "host_shape_name")
 
@@ -258,10 +294,18 @@ class GetExsiHostResult:
         return pulumi.get(self, "is_billing_swapping_in_progress")
 
     @property
+    @pulumi.getter(name="nextCommitment")
+    def next_commitment(self) -> str:
+        """
+        The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+        """
+        return pulumi.get(self, "next_commitment")
+
+    @property
     @pulumi.getter(name="nextSku")
     def next_sku(self) -> str:
         """
-        (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
         """
         warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
         pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
@@ -291,7 +335,7 @@ class GetExsiHostResult:
     @pulumi.getter(name="sddcId")
     def sddc_id(self) -> str:
         """
-        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
         """
         warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
         pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
@@ -356,13 +400,16 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             billing_contract_end_date=self.billing_contract_end_date,
             billing_donor_host_id=self.billing_donor_host_id,
             capacity_reservation_id=self.capacity_reservation_id,
+            cluster_id=self.cluster_id,
             compartment_id=self.compartment_id,
             compute_availability_domain=self.compute_availability_domain,
             compute_instance_id=self.compute_instance_id,
+            current_commitment=self.current_commitment,
             current_sku=self.current_sku,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             esxi_host_id=self.esxi_host_id,
+            esxi_software_version=self.esxi_software_version,
             failed_esxi_host_id=self.failed_esxi_host_id,
             freeform_tags=self.freeform_tags,
             grace_period_end_date=self.grace_period_end_date,
@@ -371,6 +418,7 @@ class AwaitableGetExsiHostResult(GetExsiHostResult):
             id=self.id,
             is_billing_continuation_in_progress=self.is_billing_continuation_in_progress,
             is_billing_swapping_in_progress=self.is_billing_swapping_in_progress,
+            next_commitment=self.next_commitment,
             next_sku=self.next_sku,
             non_upgraded_esxi_host_id=self.non_upgraded_esxi_host_id,
             replacement_esxi_host_id=self.replacement_esxi_host_id,
@@ -411,13 +459,16 @@ def get_exsi_host(esxi_host_id: Optional[str] = None,
         billing_contract_end_date=pulumi.get(__ret__, 'billing_contract_end_date'),
         billing_donor_host_id=pulumi.get(__ret__, 'billing_donor_host_id'),
         capacity_reservation_id=pulumi.get(__ret__, 'capacity_reservation_id'),
+        cluster_id=pulumi.get(__ret__, 'cluster_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_availability_domain=pulumi.get(__ret__, 'compute_availability_domain'),
         compute_instance_id=pulumi.get(__ret__, 'compute_instance_id'),
+        current_commitment=pulumi.get(__ret__, 'current_commitment'),
         current_sku=pulumi.get(__ret__, 'current_sku'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         esxi_host_id=pulumi.get(__ret__, 'esxi_host_id'),
+        esxi_software_version=pulumi.get(__ret__, 'esxi_software_version'),
         failed_esxi_host_id=pulumi.get(__ret__, 'failed_esxi_host_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         grace_period_end_date=pulumi.get(__ret__, 'grace_period_end_date'),
@@ -426,6 +477,7 @@ def get_exsi_host(esxi_host_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_billing_continuation_in_progress=pulumi.get(__ret__, 'is_billing_continuation_in_progress'),
         is_billing_swapping_in_progress=pulumi.get(__ret__, 'is_billing_swapping_in_progress'),
+        next_commitment=pulumi.get(__ret__, 'next_commitment'),
         next_sku=pulumi.get(__ret__, 'next_sku'),
         non_upgraded_esxi_host_id=pulumi.get(__ret__, 'non_upgraded_esxi_host_id'),
         replacement_esxi_host_id=pulumi.get(__ret__, 'replacement_esxi_host_id'),

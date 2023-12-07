@@ -13,6 +13,10 @@ namespace Pulumi.Oci.Core.Outputs
     [OutputType]
     public sealed class GetIpsecConnectionTunnelBgpSessionInfoResult
     {
+        /// <summary>
+        /// The state of the BGP IPv6 session.
+        /// </summary>
+        public readonly string BgpIpv6State;
         public readonly string BgpIpv6state;
         /// <summary>
         /// the state of the BGP.
@@ -27,6 +31,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string CustomerInterfaceIp;
         /// <summary>
+        /// The IPv6 address for the CPE end of the inside tunnel interface.
+        /// </summary>
+        public readonly string CustomerInterfaceIpv6;
+        /// <summary>
         /// This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
         /// </summary>
         public readonly string OracleBgpAsn;
@@ -34,9 +42,15 @@ namespace Pulumi.Oci.Core.Outputs
         /// This is the IPv4 Address used in the BGP peering session for the Oracle router. Example: 10.0.0.1/31
         /// </summary>
         public readonly string OracleInterfaceIp;
+        /// <summary>
+        /// The IPv6 address for the Oracle end of the inside tunnel interface.
+        /// </summary>
+        public readonly string OracleInterfaceIpv6;
 
         [OutputConstructor]
         private GetIpsecConnectionTunnelBgpSessionInfoResult(
+            string bgpIpv6State,
+
             string bgpIpv6state,
 
             string bgpState,
@@ -45,16 +59,23 @@ namespace Pulumi.Oci.Core.Outputs
 
             string customerInterfaceIp,
 
+            string customerInterfaceIpv6,
+
             string oracleBgpAsn,
 
-            string oracleInterfaceIp)
+            string oracleInterfaceIp,
+
+            string oracleInterfaceIpv6)
         {
+            BgpIpv6State = bgpIpv6State;
             BgpIpv6state = bgpIpv6state;
             BgpState = bgpState;
             CustomerBgpAsn = customerBgpAsn;
             CustomerInterfaceIp = customerInterfaceIp;
+            CustomerInterfaceIpv6 = customerInterfaceIpv6;
             OracleBgpAsn = oracleBgpAsn;
             OracleInterfaceIp = oracleInterfaceIp;
+            OracleInterfaceIpv6 = oracleInterfaceIpv6;
         }
     }
 }

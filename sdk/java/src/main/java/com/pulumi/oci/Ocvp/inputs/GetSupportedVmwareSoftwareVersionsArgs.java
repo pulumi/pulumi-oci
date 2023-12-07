@@ -39,11 +39,43 @@ public final class GetSupportedVmwareSoftwareVersionsArgs extends com.pulumi.res
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * A filter to return only resources that match or support the given ESXi host shape.
+     * 
+     */
+    @Import(name="hostShapeName")
+    private @Nullable Output<String> hostShapeName;
+
+    /**
+     * @return A filter to return only resources that match or support the given ESXi host shape.
+     * 
+     */
+    public Optional<Output<String>> hostShapeName() {
+        return Optional.ofNullable(this.hostShapeName);
+    }
+
+    /**
+     * A filter to return only resources that match the given VMware software version exactly.
+     * 
+     */
+    @Import(name="version")
+    private @Nullable Output<String> version;
+
+    /**
+     * @return A filter to return only resources that match the given VMware software version exactly.
+     * 
+     */
+    public Optional<Output<String>> version() {
+        return Optional.ofNullable(this.version);
+    }
+
     private GetSupportedVmwareSoftwareVersionsArgs() {}
 
     private GetSupportedVmwareSoftwareVersionsArgs(GetSupportedVmwareSoftwareVersionsArgs $) {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.hostShapeName = $.hostShapeName;
+        this.version = $.version;
     }
 
     public static Builder builder() {
@@ -96,6 +128,48 @@ public final class GetSupportedVmwareSoftwareVersionsArgs extends com.pulumi.res
 
         public Builder filters(GetSupportedVmwareSoftwareVersionsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param hostShapeName A filter to return only resources that match or support the given ESXi host shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostShapeName(@Nullable Output<String> hostShapeName) {
+            $.hostShapeName = hostShapeName;
+            return this;
+        }
+
+        /**
+         * @param hostShapeName A filter to return only resources that match or support the given ESXi host shape.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hostShapeName(String hostShapeName) {
+            return hostShapeName(Output.of(hostShapeName));
+        }
+
+        /**
+         * @param version A filter to return only resources that match the given VMware software version exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder version(@Nullable Output<String> version) {
+            $.version = version;
+            return this;
+        }
+
+        /**
+         * @param version A filter to return only resources that match the given VMware software version exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder version(String version) {
+            return version(Output.of(version));
         }
 
         public GetSupportedVmwareSoftwareVersionsArgs build() {

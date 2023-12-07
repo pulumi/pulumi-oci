@@ -213,6 +213,10 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly timeCreated: string;
     /**
+     * The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+     */
+    readonly timeOfLastBackup: string;
+    /**
      * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      */
     readonly timeSnapshotStandbyRevert: string;

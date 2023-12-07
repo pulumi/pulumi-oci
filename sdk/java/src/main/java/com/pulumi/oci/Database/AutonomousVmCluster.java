@@ -105,14 +105,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.autonomousDataStoragePercentage;
     }
     /**
-     * The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     @Export(name="autonomousDataStorageSizeInTbs", refs={Double.class}, tree="[0]")
     private Output<Double> autonomousDataStorageSizeInTbs;
 
     /**
-     * @return The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * @return (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     public Output<Double> autonomousDataStorageSizeInTbs() {
@@ -203,14 +203,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.computeModel;
     }
     /**
-     * The number of CPU cores to enable per VM cluster node.
+     * (Updatable) The number of CPU cores to enable per VM cluster node.
      * 
      */
     @Export(name="cpuCoreCountPerNode", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuCoreCountPerNode;
 
     /**
-     * @return The number of CPU cores to enable per VM cluster node.
+     * @return (Updatable) The number of CPU cores to enable per VM cluster node.
      * 
      */
     public Output<Integer> cpuCoreCountPerNode() {
@@ -235,6 +235,12 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> cpusEnabled() {
         return this.cpusEnabled;
+    }
+    @Export(name="cpusLowestScaledValue", refs={Integer.class}, tree="[0]")
+    private Output<Integer> cpusLowestScaledValue;
+
+    public Output<Integer> cpusLowestScaledValue() {
+        return this.cpusLowestScaledValue;
     }
     @Export(name="dataStorageSizeInGb", refs={Double.class}, tree="[0]")
     private Output<Double> dataStorageSizeInGb;
@@ -325,6 +331,20 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> exadataInfrastructureId() {
         return this.exadataInfrastructureId;
+    }
+    /**
+     * The lowest value to which exadataStorage in TBs can be scaled down.
+     * 
+     */
+    @Export(name="exadataStorageInTbsLowestScaledValue", refs={Double.class}, tree="[0]")
+    private Output<Double> exadataStorageInTbsLowestScaledValue;
+
+    /**
+     * @return The lowest value to which exadataStorage in TBs can be scaled down.
+     * 
+     */
+    public Output<Double> exadataStorageInTbsLowestScaledValue() {
+        return this.exadataStorageInTbsLowestScaledValue;
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -439,6 +459,20 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.maintenanceWindows;
     }
     /**
+     * The lowest value to which ACDs can be scaled down.
+     * 
+     */
+    @Export(name="maxAcdsLowestScaledValue", refs={Integer.class}, tree="[0]")
+    private Output<Integer> maxAcdsLowestScaledValue;
+
+    /**
+     * @return The lowest value to which ACDs can be scaled down.
+     * 
+     */
+    public Output<Integer> maxAcdsLowestScaledValue() {
+        return this.maxAcdsLowestScaledValue;
+    }
+    /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
@@ -513,6 +547,12 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Double> ocpusEnabled() {
         return this.ocpusEnabled;
+    }
+    @Export(name="provisionableAutonomousContainerDatabases", refs={Integer.class}, tree="[0]")
+    private Output<Integer> provisionableAutonomousContainerDatabases;
+
+    public Output<Integer> provisionableAutonomousContainerDatabases() {
+        return this.provisionableAutonomousContainerDatabases;
     }
     @Export(name="provisionedAutonomousContainerDatabases", refs={Integer.class}, tree="[0]")
     private Output<Integer> provisionedAutonomousContainerDatabases;
@@ -655,14 +695,14 @@ public class AutonomousVmCluster extends com.pulumi.resources.CustomResource {
         return this.totalAutonomousDataStorageInTbs;
     }
     /**
-     * The total number of Autonomous Container Databases that can be created.
+     * (Updatable) The total number of Autonomous Container Databases that can be created.
      * 
      */
     @Export(name="totalContainerDatabases", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalContainerDatabases;
 
     /**
-     * @return The total number of Autonomous Container Databases that can be created.
+     * @return (Updatable) The total number of Autonomous Container Databases that can be created.
      * 
      */
     public Output<Integer> totalContainerDatabases() {

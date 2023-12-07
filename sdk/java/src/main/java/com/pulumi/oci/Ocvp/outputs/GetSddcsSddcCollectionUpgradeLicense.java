@@ -9,29 +9,13 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSddcsSddcCollectionUpgradeLicense {
-    /**
-     * @return vSphere license key value.
-     * 
-     */
     private String licenseKey;
-    /**
-     * @return vSphere license type.
-     * 
-     */
     private String licenseType;
 
     private GetSddcsSddcCollectionUpgradeLicense() {}
-    /**
-     * @return vSphere license key value.
-     * 
-     */
     public String licenseKey() {
         return this.licenseKey;
     }
-    /**
-     * @return vSphere license type.
-     * 
-     */
     public String licenseType() {
         return this.licenseType;
     }

@@ -61,6 +61,16 @@ import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationInstancesPlainArg
 import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsArgs;
 import com.pulumi.oci.Core.inputs.GetComputeCapacityReservationsPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologiesArgs;
+import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologiesPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyArgs;
+import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsArgs;
+import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsArgs;
+import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeNetworkBlocksArgs;
+import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeNetworkBlocksPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeClusterArgs;
 import com.pulumi.oci.Core.inputs.GetComputeClusterPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeClustersArgs;
@@ -318,6 +328,11 @@ import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationInstanceShapesRe
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationInstancesResult;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationResult;
 import com.pulumi.oci.Core.outputs.GetComputeCapacityReservationsResult;
+import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologiesResult;
+import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologyComputeBareMetalHostsResult;
+import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologyComputeHpcIslandsResult;
+import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologyComputeNetworkBlocksResult;
+import com.pulumi.oci.Core.outputs.GetComputeCapacityTopologyResult;
 import com.pulumi.oci.Core.outputs.GetComputeClusterResult;
 import com.pulumi.oci.Core.outputs.GetComputeClustersResult;
 import com.pulumi.oci.Core.outputs.GetComputeGlobalImageCapabilitySchemaResult;
@@ -5002,6 +5017,838 @@ public final class CoreFunctions {
      */
     public static CompletableFuture<GetComputeCapacityReservationsResult> getComputeCapacityReservationsPlain(GetComputeCapacityReservationsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", TypeShape.of(GetComputeCapacityReservationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topologies in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute capacity topologies in the specified compartment. You can filter the list by a compute
+     * capacity topology display name.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologies = CoreFunctions.getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_capacity_topology_availability_domain())
+     *             .displayName(var_.compute_capacity_topology_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeCapacityTopologiesResult> getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs args) {
+        return getComputeCapacityTopologies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topologies in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute capacity topologies in the specified compartment. You can filter the list by a compute
+     * capacity topology display name.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologies = CoreFunctions.getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_capacity_topology_availability_domain())
+     *             .displayName(var_.compute_capacity_topology_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeCapacityTopologiesResult> getComputeCapacityTopologiesPlain(GetComputeCapacityTopologiesPlainArgs args) {
+        return getComputeCapacityTopologiesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topologies in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute capacity topologies in the specified compartment. You can filter the list by a compute
+     * capacity topology display name.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologies = CoreFunctions.getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_capacity_topology_availability_domain())
+     *             .displayName(var_.compute_capacity_topology_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeCapacityTopologiesResult> getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityTopologies:getComputeCapacityTopologies", TypeShape.of(GetComputeCapacityTopologiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topologies in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute capacity topologies in the specified compartment. You can filter the list by a compute
+     * capacity topology display name.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologiesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologies = CoreFunctions.getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(var_.compute_capacity_topology_availability_domain())
+     *             .displayName(var_.compute_capacity_topology_display_name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeCapacityTopologiesResult> getComputeCapacityTopologiesPlain(GetComputeCapacityTopologiesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeCapacityTopologies:getComputeCapacityTopologies", TypeShape.of(GetComputeCapacityTopologiesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Capacity Topology resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeCapacityTopologyResult> getComputeCapacityTopology(GetComputeCapacityTopologyArgs args) {
+        return getComputeCapacityTopology(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Capacity Topology resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeCapacityTopologyResult> getComputeCapacityTopologyPlain(GetComputeCapacityTopologyPlainArgs args) {
+        return getComputeCapacityTopologyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Capacity Topology resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeCapacityTopologyResult> getComputeCapacityTopology(GetComputeCapacityTopologyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityTopology:getComputeCapacityTopology", TypeShape.of(GetComputeCapacityTopologyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Capacity Topology resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeCapacityTopologyResult> getComputeCapacityTopologyPlain(GetComputeCapacityTopologyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeCapacityTopology:getComputeCapacityTopology", TypeShape.of(GetComputeCapacityTopologyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Bare Metal Hosts in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute bare metal hosts in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .availabilityDomain(var_.compute_capacity_topology_compute_bare_metal_host_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
+     *             .computeLocalBlockId(oci_core_compute_local_block.test_compute_local_block().id())
+     *             .computeNetworkBlockId(oci_core_compute_network_block.test_compute_network_block().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeCapacityTopologyComputeBareMetalHostsResult> getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs args) {
+        return getComputeCapacityTopologyComputeBareMetalHosts(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Bare Metal Hosts in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute bare metal hosts in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .availabilityDomain(var_.compute_capacity_topology_compute_bare_metal_host_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
+     *             .computeLocalBlockId(oci_core_compute_local_block.test_compute_local_block().id())
+     *             .computeNetworkBlockId(oci_core_compute_network_block.test_compute_network_block().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeCapacityTopologyComputeBareMetalHostsResult> getComputeCapacityTopologyComputeBareMetalHostsPlain(GetComputeCapacityTopologyComputeBareMetalHostsPlainArgs args) {
+        return getComputeCapacityTopologyComputeBareMetalHostsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Bare Metal Hosts in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute bare metal hosts in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .availabilityDomain(var_.compute_capacity_topology_compute_bare_metal_host_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
+     *             .computeLocalBlockId(oci_core_compute_local_block.test_compute_local_block().id())
+     *             .computeNetworkBlockId(oci_core_compute_network_block.test_compute_network_block().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeCapacityTopologyComputeBareMetalHostsResult> getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts", TypeShape.of(GetComputeCapacityTopologyComputeBareMetalHostsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Bare Metal Hosts in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute bare metal hosts in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeBareMetalHostsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .availabilityDomain(var_.compute_capacity_topology_compute_bare_metal_host_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
+     *             .computeLocalBlockId(oci_core_compute_local_block.test_compute_local_block().id())
+     *             .computeNetworkBlockId(oci_core_compute_network_block.test_compute_network_block().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeCapacityTopologyComputeBareMetalHostsResult> getComputeCapacityTopologyComputeBareMetalHostsPlain(GetComputeCapacityTopologyComputeBareMetalHostsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeCapacityTopologyComputeBareMetalHosts:getComputeCapacityTopologyComputeBareMetalHosts", TypeShape.of(GetComputeCapacityTopologyComputeBareMetalHostsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Hpc Islands in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute HPC islands in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .availabilityDomain(var_.compute_capacity_topology_compute_hpc_island_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeCapacityTopologyComputeHpcIslandsResult> getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs args) {
+        return getComputeCapacityTopologyComputeHpcIslands(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Hpc Islands in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute HPC islands in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .availabilityDomain(var_.compute_capacity_topology_compute_hpc_island_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeCapacityTopologyComputeHpcIslandsResult> getComputeCapacityTopologyComputeHpcIslandsPlain(GetComputeCapacityTopologyComputeHpcIslandsPlainArgs args) {
+        return getComputeCapacityTopologyComputeHpcIslandsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Hpc Islands in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute HPC islands in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .availabilityDomain(var_.compute_capacity_topology_compute_hpc_island_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeCapacityTopologyComputeHpcIslandsResult> getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", TypeShape.of(GetComputeCapacityTopologyComputeHpcIslandsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Hpc Islands in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute HPC islands in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeHpcIslandsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .availabilityDomain(var_.compute_capacity_topology_compute_hpc_island_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeCapacityTopologyComputeHpcIslandsResult> getComputeCapacityTopologyComputeHpcIslandsPlain(GetComputeCapacityTopologyComputeHpcIslandsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeCapacityTopologyComputeHpcIslands:getComputeCapacityTopologyComputeHpcIslands", TypeShape.of(GetComputeCapacityTopologyComputeHpcIslandsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Network Blocks in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute network blocks in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeNetworkBlocksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .availabilityDomain(var_.compute_capacity_topology_compute_network_block_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeCapacityTopologyComputeNetworkBlocksResult> getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs args) {
+        return getComputeCapacityTopologyComputeNetworkBlocks(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Network Blocks in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute network blocks in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeNetworkBlocksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .availabilityDomain(var_.compute_capacity_topology_compute_network_block_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeCapacityTopologyComputeNetworkBlocksResult> getComputeCapacityTopologyComputeNetworkBlocksPlain(GetComputeCapacityTopologyComputeNetworkBlocksPlainArgs args) {
+        return getComputeCapacityTopologyComputeNetworkBlocksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Network Blocks in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute network blocks in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeNetworkBlocksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .availabilityDomain(var_.compute_capacity_topology_compute_network_block_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetComputeCapacityTopologyComputeNetworkBlocksResult> getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks", TypeShape.of(GetComputeCapacityTopologyComputeNetworkBlocksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Capacity Topology Compute Network Blocks in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists compute network blocks in the specified compute capacity topology.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeCapacityTopologyComputeNetworkBlocksArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
+     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .availabilityDomain(var_.compute_capacity_topology_compute_network_block_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetComputeCapacityTopologyComputeNetworkBlocksResult> getComputeCapacityTopologyComputeNetworkBlocksPlain(GetComputeCapacityTopologyComputeNetworkBlocksPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeCapacityTopologyComputeNetworkBlocks:getComputeCapacityTopologyComputeNetworkBlocks", TypeShape.of(GetComputeCapacityTopologyComputeNetworkBlocksResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Compute Cluster resource in Oracle Cloud Infrastructure Core service.

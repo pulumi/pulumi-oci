@@ -70,6 +70,7 @@ export interface GetManagedInstanceGroupResult {
     readonly id: string;
     readonly managedInstanceCount: number;
     readonly managedInstanceGroupId: string;
+    readonly managedInstanceIds: string[];
     /**
      * list of Managed Instances in the group
      */

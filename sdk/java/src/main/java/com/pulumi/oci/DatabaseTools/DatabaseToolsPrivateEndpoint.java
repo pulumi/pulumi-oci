@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DatabaseTools.DatabaseToolsPrivateEndpointArgs;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsPrivateEndpointState;
+import com.pulumi.oci.DatabaseTools.outputs.DatabaseToolsPrivateEndpointLock;
 import com.pulumi.oci.DatabaseTools.outputs.DatabaseToolsPrivateEndpointReverseConnectionConfiguration;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
@@ -31,6 +32,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.DatabaseTools.DatabaseToolsPrivateEndpoint;
  * import com.pulumi.oci.DatabaseTools.DatabaseToolsPrivateEndpointArgs;
+ * import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsPrivateEndpointLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -52,6 +54,12 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .description(var_.database_tools_private_endpoint_description())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .locks(DatabaseToolsPrivateEndpointLockArgs.builder()
+ *                 .type(var_.database_tools_private_endpoint_locks_type())
+ *                 .message(var_.database_tools_private_endpoint_locks_message())
+ *                 .relatedResourceId(oci_usage_proxy_resource.test_resource().id())
+ *                 .timeCreated(var_.database_tools_private_endpoint_locks_time_created())
+ *                 .build())
  *             .nsgIds(var_.database_tools_private_endpoint_nsg_ids())
  *             .privateEndpointIp(var_.database_tools_private_endpoint_private_endpoint_ip())
  *             .build());
@@ -198,6 +206,20 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
         return this.lifecycleDetails;
     }
     /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,DatabaseToolsPrivateEndpointLock.class}, tree="[0,1]")
+    private Output<List<DatabaseToolsPrivateEndpointLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<DatabaseToolsPrivateEndpointLock>> locks() {
+        return this.locks;
+    }
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint&#39;s VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
@@ -302,14 +324,14 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
         return this.systemTags;
     }
     /**
-     * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+     * When the lock was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+     * @return When the lock was created.
      * 
      */
     public Output<String> timeCreated() {

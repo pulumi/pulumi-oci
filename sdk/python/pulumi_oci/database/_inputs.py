@@ -12,6 +12,8 @@ from .. import _utilities
 __all__ = [
     'AutonomousContainerDatabaseBackupConfigArgs',
     'AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs',
+    'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs',
+    'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs',
     'AutonomousContainerDatabaseKeyHistoryEntryArgs',
     'AutonomousContainerDatabaseMaintenanceWindowArgs',
     'AutonomousContainerDatabaseMaintenanceWindowDaysOfWeekArgs',
@@ -28,6 +30,7 @@ __all__ = [
     'AutonomousDatabaseConnectionStringProfileArgs',
     'AutonomousDatabaseConnectionUrlArgs',
     'AutonomousDatabaseCustomerContactArgs',
+    'AutonomousDatabaseDbToolsDetailArgs',
     'AutonomousDatabaseKeyHistoryEntryArgs',
     'AutonomousDatabaseLocalStandbyDbArgs',
     'AutonomousDatabaseLongTermBackupScheduleArgs',
@@ -189,6 +192,7 @@ __all__ = [
     'GetDbHomePatchesFilterArgs',
     'GetDbHomesFilterArgs',
     'GetDbNodeConsoleConnectionsFilterArgs',
+    'GetDbNodeConsoleHistoriesFilterArgs',
     'GetDbNodesFilterArgs',
     'GetDbServersFilterArgs',
     'GetDbSystemComputePerformancesFilterArgs',
@@ -227,7 +231,7 @@ class AutonomousContainerDatabaseBackupConfigArgs:
                  recovery_window_in_days: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs'] backup_destination_details: Backup destination details.
-        :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
         """
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
@@ -250,7 +254,7 @@ class AutonomousContainerDatabaseBackupConfigArgs:
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> Optional[pulumi.Input[int]]:
         """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
 
@@ -295,6 +299,147 @@ class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs:
     @type.setter
     def type(self, value: pulumi.Input[str]):
         pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="internetProxy")
+    def internet_proxy(self) -> Optional[pulumi.Input[str]]:
+        """
+        Proxy URL to connect to object store.
+        """
+        return pulumi.get(self, "internet_proxy")
+
+    @internet_proxy.setter
+    def internet_proxy(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "internet_proxy", value)
+
+    @property
+    @pulumi.getter(name="vpcPassword")
+    def vpc_password(self) -> Optional[pulumi.Input[str]]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_password")
+
+    @vpc_password.setter
+    def vpc_password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vpc_password", value)
+
+    @property
+    @pulumi.getter(name="vpcUser")
+    def vpc_user(self) -> Optional[pulumi.Input[str]]:
+        """
+        For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        return pulumi.get(self, "vpc_user")
+
+    @vpc_user.setter
+    def vpc_user(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vpc_user", value)
+
+
+@pulumi.input_type
+class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs:
+    def __init__(__self__, *,
+                 backup_destination_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]]] = None,
+                 recovery_window_in_days: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
+        :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        """
+        if backup_destination_details is not None:
+            pulumi.set(__self__, "backup_destination_details", backup_destination_details)
+        if recovery_window_in_days is not None:
+            pulumi.set(__self__, "recovery_window_in_days", recovery_window_in_days)
+
+    @property
+    @pulumi.getter(name="backupDestinationDetails")
+    def backup_destination_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]]]:
+        """
+        Backup destination details.
+        """
+        return pulumi.get(self, "backup_destination_details")
+
+    @backup_destination_details.setter
+    def backup_destination_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]]]):
+        pulumi.set(self, "backup_destination_details", value)
+
+    @property
+    @pulumi.getter(name="recoveryWindowInDays")
+    def recovery_window_in_days(self) -> Optional[pulumi.Input[int]]:
+        """
+        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        """
+        return pulumi.get(self, "recovery_window_in_days")
+
+    @recovery_window_in_days.setter
+    def recovery_window_in_days(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "recovery_window_in_days", value)
+
+
+@pulumi.input_type
+class AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 dbrs_policy_id: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 internet_proxy: Optional[pulumi.Input[str]] = None,
+                 vpc_password: Optional[pulumi.Input[str]] = None,
+                 vpc_user: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the database backup destination.
+        :param pulumi.Input[str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        :param pulumi.Input[str] internet_proxy: Proxy URL to connect to object store.
+        :param pulumi.Input[str] vpc_password: For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        :param pulumi.Input[str] vpc_user: For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        """
+        pulumi.set(__self__, "type", type)
+        if dbrs_policy_id is not None:
+            pulumi.set(__self__, "dbrs_policy_id", dbrs_policy_id)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if internet_proxy is not None:
+            pulumi.set(__self__, "internet_proxy", internet_proxy)
+        if vpc_password is not None:
+            pulumi.set(__self__, "vpc_password", vpc_password)
+        if vpc_user is not None:
+            pulumi.set(__self__, "vpc_user", vpc_user)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the database backup destination.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="dbrsPolicyId")
+    def dbrs_policy_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+        """
+        return pulumi.get(self, "dbrs_policy_id")
+
+    @dbrs_policy_id.setter
+    def dbrs_policy_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dbrs_policy_id", value)
 
     @property
     @pulumi.getter
@@ -859,7 +1004,7 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs
                  recovery_window_in_days: Optional[pulumi.Input[int]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs']]] backup_destination_details: Backup destination details.
-        :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        :param pulumi.Input[int] recovery_window_in_days: Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
         """
         if backup_destination_details is not None:
             pulumi.set(__self__, "backup_destination_details", backup_destination_details)
@@ -882,7 +1027,7 @@ class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs
     @pulumi.getter(name="recoveryWindowInDays")
     def recovery_window_in_days(self) -> Optional[pulumi.Input[int]]:
         """
-        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+        Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups. If the number of specified days is 0 then there will be no backups.
         """
         return pulumi.get(self, "recovery_window_in_days")
 
@@ -1250,6 +1395,7 @@ class AutonomousDatabaseConnectionStringProfileArgs:
                  consumer_group: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  host_format: Optional[pulumi.Input[str]] = None,
+                 is_regional: Optional[pulumi.Input[bool]] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
                  session_mode: Optional[pulumi.Input[str]] = None,
                  syntax_format: Optional[pulumi.Input[str]] = None,
@@ -1271,6 +1417,8 @@ class AutonomousDatabaseConnectionStringProfileArgs:
             pulumi.set(__self__, "display_name", display_name)
         if host_format is not None:
             pulumi.set(__self__, "host_format", host_format)
+        if is_regional is not None:
+            pulumi.set(__self__, "is_regional", is_regional)
         if protocol is not None:
             pulumi.set(__self__, "protocol", protocol)
         if session_mode is not None:
@@ -1317,6 +1465,15 @@ class AutonomousDatabaseConnectionStringProfileArgs:
     @host_format.setter
     def host_format(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "host_format", value)
+
+    @property
+    @pulumi.getter(name="isRegional")
+    def is_regional(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_regional")
+
+    @is_regional.setter
+    def is_regional(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_regional", value)
 
     @property
     @pulumi.getter
@@ -1383,21 +1540,37 @@ class AutonomousDatabaseConnectionStringProfileArgs:
 class AutonomousDatabaseConnectionUrlArgs:
     def __init__(__self__, *,
                  apex_url: Optional[pulumi.Input[str]] = None,
+                 database_transforms_url: Optional[pulumi.Input[str]] = None,
                  graph_studio_url: Optional[pulumi.Input[str]] = None,
+                 machine_learning_notebook_url: Optional[pulumi.Input[str]] = None,
                  machine_learning_user_management_url: Optional[pulumi.Input[str]] = None,
+                 mongo_db_url: Optional[pulumi.Input[str]] = None,
+                 ords_url: Optional[pulumi.Input[str]] = None,
                  sql_dev_web_url: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] apex_url: Oracle Application Express (APEX) URL.
+        :param pulumi.Input[str] database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
         :param pulumi.Input[str] graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
+        :param pulumi.Input[str] machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param pulumi.Input[str] machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param pulumi.Input[str] mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
+        :param pulumi.Input[str] ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
         :param pulumi.Input[str] sql_dev_web_url: Oracle SQL Developer Web URL.
         """
         if apex_url is not None:
             pulumi.set(__self__, "apex_url", apex_url)
+        if database_transforms_url is not None:
+            pulumi.set(__self__, "database_transforms_url", database_transforms_url)
         if graph_studio_url is not None:
             pulumi.set(__self__, "graph_studio_url", graph_studio_url)
+        if machine_learning_notebook_url is not None:
+            pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         if machine_learning_user_management_url is not None:
             pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        if mongo_db_url is not None:
+            pulumi.set(__self__, "mongo_db_url", mongo_db_url)
+        if ords_url is not None:
+            pulumi.set(__self__, "ords_url", ords_url)
         if sql_dev_web_url is not None:
             pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
 
@@ -1414,6 +1587,18 @@ class AutonomousDatabaseConnectionUrlArgs:
         pulumi.set(self, "apex_url", value)
 
     @property
+    @pulumi.getter(name="databaseTransformsUrl")
+    def database_transforms_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URL of the Database Transforms for the Autonomous Database.
+        """
+        return pulumi.get(self, "database_transforms_url")
+
+    @database_transforms_url.setter
+    def database_transforms_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_transforms_url", value)
+
+    @property
     @pulumi.getter(name="graphStudioUrl")
     def graph_studio_url(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1426,6 +1611,18 @@ class AutonomousDatabaseConnectionUrlArgs:
         pulumi.set(self, "graph_studio_url", value)
 
     @property
+    @pulumi.getter(name="machineLearningNotebookUrl")
+    def machine_learning_notebook_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        """
+        return pulumi.get(self, "machine_learning_notebook_url")
+
+    @machine_learning_notebook_url.setter
+    def machine_learning_notebook_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "machine_learning_notebook_url", value)
+
+    @property
     @pulumi.getter(name="machineLearningUserManagementUrl")
     def machine_learning_user_management_url(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1436,6 +1633,30 @@ class AutonomousDatabaseConnectionUrlArgs:
     @machine_learning_user_management_url.setter
     def machine_learning_user_management_url(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "machine_learning_user_management_url", value)
+
+    @property
+    @pulumi.getter(name="mongoDbUrl")
+    def mongo_db_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URL of the MongoDB API for the Autonomous Database.
+        """
+        return pulumi.get(self, "mongo_db_url")
+
+    @mongo_db_url.setter
+    def mongo_db_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mongo_db_url", value)
+
+    @property
+    @pulumi.getter(name="ordsUrl")
+    def ords_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        """
+        return pulumi.get(self, "ords_url")
+
+    @ords_url.setter
+    def ords_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ords_url", value)
 
     @property
     @pulumi.getter(name="sqlDevWebUrl")
@@ -1471,6 +1692,76 @@ class AutonomousDatabaseCustomerContactArgs:
     @email.setter
     def email(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "email", value)
+
+
+@pulumi.input_type
+class AutonomousDatabaseDbToolsDetailArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str],
+                 compute_count: Optional[pulumi.Input[float]] = None,
+                 is_enabled: Optional[pulumi.Input[bool]] = None,
+                 max_idle_time_in_minutes: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) Name of the day of the week.
+        :param pulumi.Input[float] compute_count: (Updatable) Compute used by database tools.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Indicates whether tool is enabled.
+        :param pulumi.Input[int] max_idle_time_in_minutes: (Updatable) The max idle time, in minutes, after which the VM used by database tools will be terminated.
+        """
+        pulumi.set(__self__, "name", name)
+        if compute_count is not None:
+            pulumi.set(__self__, "compute_count", compute_count)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if max_idle_time_in_minutes is not None:
+            pulumi.set(__self__, "max_idle_time_in_minutes", max_idle_time_in_minutes)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of the day of the week.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) Compute used by database tools.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "compute_count", value)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether tool is enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter(name="maxIdleTimeInMinutes")
+    def max_idle_time_in_minutes(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The max idle time, in minutes, after which the VM used by database tools will be terminated.
+        """
+        return pulumi.get(self, "max_idle_time_in_minutes")
+
+    @max_idle_time_in_minutes.setter
+    def max_idle_time_in_minutes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_idle_time_in_minutes", value)
 
 
 @pulumi.input_type
@@ -11786,6 +12077,45 @@ class GetDbHomesFilterArgs:
 
 @pulumi.input_type
 class GetDbNodeConsoleConnectionsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetDbNodeConsoleHistoriesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

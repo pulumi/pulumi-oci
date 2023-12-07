@@ -202,6 +202,21 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Whether or not export setting is enabled in this Fleet.
+     * 
+     */
+    @Import(name="isExportSettingEnabled")
+    private @Nullable Output<Boolean> isExportSettingEnabled;
+
+    /**
+     * @return Whether or not export setting is enabled in this Fleet.
+     * 
+     */
+    public Optional<Output<Boolean>> isExportSettingEnabled() {
+        return Optional.ofNullable(this.isExportSettingEnabled);
+    }
+
+    /**
      * (Updatable) Custom Log for inventory or operation log.
      * 
      */
@@ -276,6 +291,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.inventoryLog = $.inventoryLog;
         this.isAdvancedFeaturesEnabled = $.isAdvancedFeaturesEnabled;
+        this.isExportSettingEnabled = $.isExportSettingEnabled;
         this.operationLog = $.operationLog;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -550,6 +566,27 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
             return isAdvancedFeaturesEnabled(Output.of(isAdvancedFeaturesEnabled));
+        }
+
+        /**
+         * @param isExportSettingEnabled Whether or not export setting is enabled in this Fleet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isExportSettingEnabled(@Nullable Output<Boolean> isExportSettingEnabled) {
+            $.isExportSettingEnabled = isExportSettingEnabled;
+            return this;
+        }
+
+        /**
+         * @param isExportSettingEnabled Whether or not export setting is enabled in this Fleet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isExportSettingEnabled(Boolean isExportSettingEnabled) {
+            return isExportSettingEnabled(Output.of(isExportSettingEnabled));
         }
 
         /**

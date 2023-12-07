@@ -49,10 +49,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// The negotiated encryption algorithm.
         /// </summary>
         public readonly string NegotiatedEncryptionAlgorithm;
+        public readonly string RemainingLifetime;
         /// <summary>
         /// The remaining lifetime before the key is refreshed.
         /// </summary>
-        public readonly string RemainingLifetime;
+        public readonly int RemainingLifetimeInt;
         /// <summary>
         /// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
@@ -80,6 +81,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string remainingLifetime,
 
+            int remainingLifetimeInt,
+
             string remainingLifetimeLastRetrieved)
         {
             CustomAuthenticationAlgorithm = customAuthenticationAlgorithm;
@@ -92,6 +95,7 @@ namespace Pulumi.Oci.Core.Outputs
             NegotiatedDhGroup = negotiatedDhGroup;
             NegotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
             RemainingLifetime = remainingLifetime;
+            RemainingLifetimeInt = remainingLifetimeInt;
             RemainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
         }
     }

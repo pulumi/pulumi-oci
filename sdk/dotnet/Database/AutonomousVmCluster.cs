@@ -92,7 +92,7 @@ namespace Pulumi.Oci.Database
         public Output<double> AutonomousDataStoragePercentage { get; private set; } = null!;
 
         /// <summary>
-        /// The data disk group size to be allocated for Autonomous Databases, in TBs.
+        /// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
         [Output("autonomousDataStorageSizeInTbs")]
         public Output<double> AutonomousDataStorageSizeInTbs { get; private set; } = null!;
@@ -134,7 +134,7 @@ namespace Pulumi.Oci.Database
         public Output<string> ComputeModel { get; private set; } = null!;
 
         /// <summary>
-        /// The number of CPU cores to enable per VM cluster node.
+        /// (Updatable) The number of CPU cores to enable per VM cluster node.
         /// </summary>
         [Output("cpuCoreCountPerNode")]
         public Output<int> CpuCoreCountPerNode { get; private set; } = null!;
@@ -147,6 +147,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("cpusEnabled")]
         public Output<int> CpusEnabled { get; private set; } = null!;
+
+        [Output("cpusLowestScaledValue")]
+        public Output<int> CpusLowestScaledValue { get; private set; } = null!;
 
         [Output("dataStorageSizeInGb")]
         public Output<double> DataStorageSizeInGb { get; private set; } = null!;
@@ -186,6 +189,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("exadataInfrastructureId")]
         public Output<string> ExadataInfrastructureId { get; private set; } = null!;
+
+        /// <summary>
+        /// The lowest value to which exadataStorage in TBs can be scaled down.
+        /// </summary>
+        [Output("exadataStorageInTbsLowestScaledValue")]
+        public Output<double> ExadataStorageInTbsLowestScaledValue { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -236,6 +245,12 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.AutonomousVmClusterMaintenanceWindow>> MaintenanceWindows { get; private set; } = null!;
 
         /// <summary>
+        /// The lowest value to which ACDs can be scaled down.
+        /// </summary>
+        [Output("maxAcdsLowestScaledValue")]
+        public Output<int> MaxAcdsLowestScaledValue { get; private set; } = null!;
+
+        /// <summary>
         /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         /// </summary>
         [Output("memoryPerOracleComputeUnitInGbs")]
@@ -267,6 +282,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("ocpusEnabled")]
         public Output<double> OcpusEnabled { get; private set; } = null!;
+
+        [Output("provisionableAutonomousContainerDatabases")]
+        public Output<int> ProvisionableAutonomousContainerDatabases { get; private set; } = null!;
 
         [Output("provisionedAutonomousContainerDatabases")]
         public Output<int> ProvisionedAutonomousContainerDatabases { get; private set; } = null!;
@@ -331,7 +349,7 @@ namespace Pulumi.Oci.Database
         public Output<double> TotalAutonomousDataStorageInTbs { get; private set; } = null!;
 
         /// <summary>
-        /// The total number of Autonomous Container Databases that can be created.
+        /// (Updatable) The total number of Autonomous Container Databases that can be created.
         /// </summary>
         [Output("totalContainerDatabases")]
         public Output<int> TotalContainerDatabases { get; private set; } = null!;
@@ -393,7 +411,7 @@ namespace Pulumi.Oci.Database
     public sealed class AutonomousVmClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The data disk group size to be allocated for Autonomous Databases, in TBs.
+        /// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
         [Input("autonomousDataStorageSizeInTbs")]
         public Input<double>? AutonomousDataStorageSizeInTbs { get; set; }
@@ -411,7 +429,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? ComputeModel { get; set; }
 
         /// <summary>
-        /// The number of CPU cores to enable per VM cluster node.
+        /// (Updatable) The number of CPU cores to enable per VM cluster node.
         /// </summary>
         [Input("cpuCoreCountPerNode")]
         public Input<int>? CpuCoreCountPerNode { get; set; }
@@ -519,7 +537,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? TimeZone { get; set; }
 
         /// <summary>
-        /// The total number of Autonomous Container Databases that can be created.
+        /// (Updatable) The total number of Autonomous Container Databases that can be created.
         /// </summary>
         [Input("totalContainerDatabases")]
         public Input<int>? TotalContainerDatabases { get; set; }
@@ -546,7 +564,7 @@ namespace Pulumi.Oci.Database
         public Input<double>? AutonomousDataStoragePercentage { get; set; }
 
         /// <summary>
-        /// The data disk group size to be allocated for Autonomous Databases, in TBs.
+        /// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
         [Input("autonomousDataStorageSizeInTbs")]
         public Input<double>? AutonomousDataStorageSizeInTbs { get; set; }
@@ -588,7 +606,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? ComputeModel { get; set; }
 
         /// <summary>
-        /// The number of CPU cores to enable per VM cluster node.
+        /// (Updatable) The number of CPU cores to enable per VM cluster node.
         /// </summary>
         [Input("cpuCoreCountPerNode")]
         public Input<int>? CpuCoreCountPerNode { get; set; }
@@ -601,6 +619,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("cpusEnabled")]
         public Input<int>? CpusEnabled { get; set; }
+
+        [Input("cpusLowestScaledValue")]
+        public Input<int>? CpusLowestScaledValue { get; set; }
 
         [Input("dataStorageSizeInGb")]
         public Input<double>? DataStorageSizeInGb { get; set; }
@@ -652,6 +673,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("exadataInfrastructureId")]
         public Input<string>? ExadataInfrastructureId { get; set; }
+
+        /// <summary>
+        /// The lowest value to which exadataStorage in TBs can be scaled down.
+        /// </summary>
+        [Input("exadataStorageInTbsLowestScaledValue")]
+        public Input<double>? ExadataStorageInTbsLowestScaledValue { get; set; }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
@@ -720,6 +747,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// The lowest value to which ACDs can be scaled down.
+        /// </summary>
+        [Input("maxAcdsLowestScaledValue")]
+        public Input<int>? MaxAcdsLowestScaledValue { get; set; }
+
+        /// <summary>
         /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         /// </summary>
         [Input("memoryPerOracleComputeUnitInGbs")]
@@ -751,6 +784,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("ocpusEnabled")]
         public Input<double>? OcpusEnabled { get; set; }
+
+        [Input("provisionableAutonomousContainerDatabases")]
+        public Input<int>? ProvisionableAutonomousContainerDatabases { get; set; }
 
         [Input("provisionedAutonomousContainerDatabases")]
         public Input<int>? ProvisionedAutonomousContainerDatabases { get; set; }
@@ -815,7 +851,7 @@ namespace Pulumi.Oci.Database
         public Input<double>? TotalAutonomousDataStorageInTbs { get; set; }
 
         /// <summary>
-        /// The total number of Autonomous Container Databases that can be created.
+        /// (Updatable) The total number of Autonomous Container Databases that can be created.
         /// </summary>
         [Input("totalContainerDatabases")]
         public Input<int>? TotalContainerDatabases { get; set; }

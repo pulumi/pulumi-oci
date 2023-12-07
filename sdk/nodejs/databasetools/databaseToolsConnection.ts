@@ -11,48 +11,6 @@ import * as utilities from "../utilities";
  *
  * Creates a new Database Tools connection.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDatabaseToolsConnection = new oci.databasetools.DatabaseToolsConnection("testDatabaseToolsConnection", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.database_tools_connection_display_name,
- *     type: _var.database_tools_connection_type,
- *     advancedProperties: _var.database_tools_connection_advanced_properties,
- *     connectionString: _var.database_tools_connection_connection_string,
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
- *     keyStores: [{
- *         keyStoreContent: {
- *             valueType: _var.database_tools_connection_key_stores_key_store_content_value_type,
- *             secretId: oci_vault_secret.test_secret.id,
- *         },
- *         keyStorePassword: {
- *             valueType: _var.database_tools_connection_key_stores_key_store_password_value_type,
- *             secretId: oci_vault_secret.test_secret.id,
- *         },
- *         keyStoreType: _var.database_tools_connection_key_stores_key_store_type,
- *     }],
- *     privateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
- *     relatedResource: {
- *         entityType: _var.database_tools_connection_related_resource_entity_type,
- *         identifier: _var.database_tools_connection_related_resource_identifier,
- *     },
- *     userName: oci_identity_user.test_user.name,
- *     userPassword: {
- *         secretId: oci_vault_secret.test_secret.id,
- *         valueType: _var.database_tools_connection_user_password_value_type,
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * DatabaseToolsConnections can be imported using the `id`, e.g.
@@ -122,13 +80,25 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionLock[]>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      */
     public readonly privateEndpointId!: pulumi.Output<string>;
     /**
+     * (Updatable) The proxy client information.
+     */
+    public readonly proxyClient!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionProxyClient>;
+    /**
      * (Updatable) The related resource
      */
     public readonly relatedResource!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsConnectionRelatedResource>;
+    /**
+     * Specifies whether this connection is supported by the Database Tools Runtime.
+     */
+    public readonly runtimeSupport!: pulumi.Output<string>;
     /**
      * The current state of the Database Tools connection.
      */
@@ -138,7 +108,7 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -149,6 +119,10 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
      * (Updatable) The DatabaseToolsConnection type.
      */
     public readonly type!: pulumi.Output<string>;
+    /**
+     * (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+     */
+    public readonly url!: pulumi.Output<string>;
     /**
      * (Updatable) The database user name.
      */
@@ -179,13 +153,17 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["keyStores"] = state ? state.keyStores : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["privateEndpointId"] = state ? state.privateEndpointId : undefined;
+            resourceInputs["proxyClient"] = state ? state.proxyClient : undefined;
             resourceInputs["relatedResource"] = state ? state.relatedResource : undefined;
+            resourceInputs["runtimeSupport"] = state ? state.runtimeSupport : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["url"] = state ? state.url : undefined;
             resourceInputs["userName"] = state ? state.userName : undefined;
             resourceInputs["userPassword"] = state ? state.userPassword : undefined;
         } else {
@@ -199,6 +177,12 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
             if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
+            if ((!args || args.userName === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'userName'");
+            }
+            if ((!args || args.userPassword === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'userPassword'");
+            }
             resourceInputs["advancedProperties"] = args ? args.advancedProperties : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["connectionString"] = args ? args.connectionString : undefined;
@@ -206,9 +190,13 @@ export class DatabaseToolsConnection extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["keyStores"] = args ? args.keyStores : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["privateEndpointId"] = args ? args.privateEndpointId : undefined;
+            resourceInputs["proxyClient"] = args ? args.proxyClient : undefined;
             resourceInputs["relatedResource"] = args ? args.relatedResource : undefined;
+            resourceInputs["runtimeSupport"] = args ? args.runtimeSupport : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["url"] = args ? args.url : undefined;
             resourceInputs["userName"] = args ? args.userName : undefined;
             resourceInputs["userPassword"] = args ? args.userPassword : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -259,13 +247,25 @@ export interface DatabaseToolsConnectionState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionLock>[]>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      */
     privateEndpointId?: pulumi.Input<string>;
     /**
+     * (Updatable) The proxy client information.
+     */
+    proxyClient?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionProxyClient>;
+    /**
      * (Updatable) The related resource
      */
     relatedResource?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionRelatedResource>;
+    /**
+     * Specifies whether this connection is supported by the Database Tools Runtime.
+     */
+    runtimeSupport?: pulumi.Input<string>;
     /**
      * The current state of the Database Tools connection.
      */
@@ -275,7 +275,7 @@ export interface DatabaseToolsConnectionState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -286,6 +286,10 @@ export interface DatabaseToolsConnectionState {
      * (Updatable) The DatabaseToolsConnection type.
      */
     type?: pulumi.Input<string>;
+    /**
+     * (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+     */
+    url?: pulumi.Input<string>;
     /**
      * (Updatable) The database user name.
      */
@@ -329,23 +333,39 @@ export interface DatabaseToolsConnectionArgs {
      */
     keyStores?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionKeyStore>[]>;
     /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionLock>[]>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      */
     privateEndpointId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The proxy client information.
+     */
+    proxyClient?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionProxyClient>;
     /**
      * (Updatable) The related resource
      */
     relatedResource?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionRelatedResource>;
     /**
+     * Specifies whether this connection is supported by the Database Tools Runtime.
+     */
+    runtimeSupport?: pulumi.Input<string>;
+    /**
      * (Updatable) The DatabaseToolsConnection type.
      */
     type: pulumi.Input<string>;
     /**
+     * (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+     */
+    url?: pulumi.Input<string>;
+    /**
      * (Updatable) The database user name.
      */
-    userName?: pulumi.Input<string>;
+    userName: pulumi.Input<string>;
     /**
      * (Updatable) The user password.
      */
-    userPassword?: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionUserPassword>;
+    userPassword: pulumi.Input<inputs.DatabaseTools.DatabaseToolsConnectionUserPassword>;
 }

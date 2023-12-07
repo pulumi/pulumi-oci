@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Identity.inputs.DomainsMyRequestApprovalDetailArgs;
 import com.pulumi.oci.Identity.inputs.DomainsMyRequestRequestingArgs;
 import com.pulumi.oci.Identity.inputs.DomainsMyRequestRequestorArgs;
 import com.pulumi.oci.Identity.inputs.DomainsMyRequestTagArgs;
@@ -18,6 +19,80 @@ import javax.annotation.Nullable;
 public final class DomainsMyRequestArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DomainsMyRequestArgs Empty = new DomainsMyRequestArgs();
+
+    /**
+     * Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can&#39;t escalate the request if canceling or escalation is in progress.
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="action")
+    private @Nullable Output<String> action;
+
+    /**
+     * @return Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can&#39;t escalate the request if canceling or escalation is in progress.
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<String>> action() {
+        return Optional.ofNullable(this.action);
+    }
+
+    /**
+     * Approvals created for this request.
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="approvalDetails")
+    private @Nullable Output<List<DomainsMyRequestApprovalDetailArgs>> approvalDetails;
+
+    /**
+     * @return Approvals created for this request.
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<List<DomainsMyRequestApprovalDetailArgs>>> approvalDetails() {
+        return Optional.ofNullable(this.approvalDetails);
+    }
 
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -266,41 +341,6 @@ public final class DomainsMyRequestArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * status
-     * 
-     * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
-     * * required: false
-     * * returned: default
-     * * type: string
-     * * uniqueness: none
-     * 
-     */
-    @Import(name="status")
-    private @Nullable Output<String> status;
-
-    /**
-     * @return status
-     * 
-     * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
-     * * required: false
-     * * returned: default
-     * * type: string
-     * * uniqueness: none
-     * 
-     */
-    public Optional<Output<String>> status() {
-        return Optional.ofNullable(this.status);
-    }
-
-    /**
      * A list of tags on this resource.
      * 
      * **SCIM++ Properties:**
@@ -338,6 +378,8 @@ public final class DomainsMyRequestArgs extends com.pulumi.resources.ResourceArg
     private DomainsMyRequestArgs() {}
 
     private DomainsMyRequestArgs(DomainsMyRequestArgs $) {
+        this.action = $.action;
+        this.approvalDetails = $.approvalDetails;
         this.attributeSets = $.attributeSets;
         this.attributes = $.attributes;
         this.authorization = $.authorization;
@@ -348,7 +390,6 @@ public final class DomainsMyRequestArgs extends com.pulumi.resources.ResourceArg
         this.requestor = $.requestor;
         this.resourceTypeSchemaVersion = $.resourceTypeSchemaVersion;
         this.schemas = $.schemas;
-        this.status = $.status;
         this.tags = $.tags;
     }
 
@@ -368,6 +409,112 @@ public final class DomainsMyRequestArgs extends com.pulumi.resources.ResourceArg
 
         public Builder(DomainsMyRequestArgs defaults) {
             $ = new DomainsMyRequestArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param action Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can&#39;t escalate the request if canceling or escalation is in progress.
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder action(@Nullable Output<String> action) {
+            $.action = action;
+            return this;
+        }
+
+        /**
+         * @param action Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can&#39;t escalate the request if canceling or escalation is in progress.
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder action(String action) {
+            return action(Output.of(action));
+        }
+
+        /**
+         * @param approvalDetails Approvals created for this request.
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approvalDetails(@Nullable Output<List<DomainsMyRequestApprovalDetailArgs>> approvalDetails) {
+            $.approvalDetails = approvalDetails;
+            return this;
+        }
+
+        /**
+         * @param approvalDetails Approvals created for this request.
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approvalDetails(List<DomainsMyRequestApprovalDetailArgs> approvalDetails) {
+            return approvalDetails(Output.of(approvalDetails));
+        }
+
+        /**
+         * @param approvalDetails Approvals created for this request.
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approvalDetails(DomainsMyRequestApprovalDetailArgs... approvalDetails) {
+            return approvalDetails(List.of(approvalDetails));
         }
 
         /**
@@ -704,47 +851,6 @@ public final class DomainsMyRequestArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder schemas(String... schemas) {
             return schemas(List.of(schemas));
-        }
-
-        /**
-         * @param status status
-         * 
-         * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
-         * * multiValued: false
-         * * mutability: readWrite
-         * * required: false
-         * * returned: default
-         * * type: string
-         * * uniqueness: none
-         * 
-         * @return builder
-         * 
-         */
-        public Builder status(@Nullable Output<String> status) {
-            $.status = status;
-            return this;
-        }
-
-        /**
-         * @param status status
-         * 
-         * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
-         * * multiValued: false
-         * * mutability: readWrite
-         * * required: false
-         * * returned: default
-         * * type: string
-         * * uniqueness: none
-         * 
-         * @return builder
-         * 
-         */
-        public Builder status(String status) {
-            return status(Output.of(status));
         }
 
         /**

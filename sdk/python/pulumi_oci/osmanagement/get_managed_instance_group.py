@@ -22,7 +22,7 @@ class GetManagedInstanceGroupResult:
     """
     A collection of values returned by getManagedInstanceGroup.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, managed_instance_count=None, managed_instance_group_id=None, managed_instances=None, os_family=None, state=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, managed_instance_count=None, managed_instance_group_id=None, managed_instance_ids=None, managed_instances=None, os_family=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetManagedInstanceGroupResult:
         if managed_instance_group_id and not isinstance(managed_instance_group_id, str):
             raise TypeError("Expected argument 'managed_instance_group_id' to be a str")
         pulumi.set(__self__, "managed_instance_group_id", managed_instance_group_id)
+        if managed_instance_ids and not isinstance(managed_instance_ids, list):
+            raise TypeError("Expected argument 'managed_instance_ids' to be a list")
+        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
         if managed_instances and not isinstance(managed_instances, list):
             raise TypeError("Expected argument 'managed_instances' to be a list")
         pulumi.set(__self__, "managed_instances", managed_instances)
@@ -116,6 +119,11 @@ class GetManagedInstanceGroupResult:
         return pulumi.get(self, "managed_instance_group_id")
 
     @property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Sequence[str]:
+        return pulumi.get(self, "managed_instance_ids")
+
+    @property
     @pulumi.getter(name="managedInstances")
     def managed_instances(self) -> Sequence['outputs.GetManagedInstanceGroupManagedInstanceResult']:
         """
@@ -154,6 +162,7 @@ class AwaitableGetManagedInstanceGroupResult(GetManagedInstanceGroupResult):
             id=self.id,
             managed_instance_count=self.managed_instance_count,
             managed_instance_group_id=self.managed_instance_group_id,
+            managed_instance_ids=self.managed_instance_ids,
             managed_instances=self.managed_instances,
             os_family=self.os_family,
             state=self.state)
@@ -192,6 +201,7 @@ def get_managed_instance_group(managed_instance_group_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         managed_instance_count=pulumi.get(__ret__, 'managed_instance_count'),
         managed_instance_group_id=pulumi.get(__ret__, 'managed_instance_group_id'),
+        managed_instance_ids=pulumi.get(__ret__, 'managed_instance_ids'),
         managed_instances=pulumi.get(__ret__, 'managed_instances'),
         os_family=pulumi.get(__ret__, 'os_family'),
         state=pulumi.get(__ret__, 'state'))

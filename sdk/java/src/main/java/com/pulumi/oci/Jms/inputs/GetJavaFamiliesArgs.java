@@ -6,6 +6,7 @@ package com.pulumi.oci.Jms.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Jms.inputs.GetJavaFamiliesFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -54,12 +55,28 @@ public final class GetJavaFamiliesArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * Filter the Java Release Family versions by support status.
+     * 
+     */
+    @Import(name="isSupportedVersion")
+    private @Nullable Output<Boolean> isSupportedVersion;
+
+    /**
+     * @return Filter the Java Release Family versions by support status.
+     * 
+     */
+    public Optional<Output<Boolean>> isSupportedVersion() {
+        return Optional.ofNullable(this.isSupportedVersion);
+    }
+
     private GetJavaFamiliesArgs() {}
 
     private GetJavaFamiliesArgs(GetJavaFamiliesArgs $) {
         this.displayName = $.displayName;
         this.familyVersion = $.familyVersion;
         this.filters = $.filters;
+        this.isSupportedVersion = $.isSupportedVersion;
     }
 
     public static Builder builder() {
@@ -133,6 +150,27 @@ public final class GetJavaFamiliesArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetJavaFamiliesFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isSupportedVersion Filter the Java Release Family versions by support status.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSupportedVersion(@Nullable Output<Boolean> isSupportedVersion) {
+            $.isSupportedVersion = isSupportedVersion;
+            return this;
+        }
+
+        /**
+         * @param isSupportedVersion Filter the Java Release Family versions by support status.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSupportedVersion(Boolean isSupportedVersion) {
+            return isSupportedVersion(Output.of(isSupportedVersion));
         }
 
         public GetJavaFamiliesArgs build() {

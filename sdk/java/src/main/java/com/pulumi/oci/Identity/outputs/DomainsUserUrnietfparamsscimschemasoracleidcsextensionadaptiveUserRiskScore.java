@@ -75,6 +75,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
      * * returned: always
      * * type: integer
      * * uniqueness: none
+     * * idcsMaxValue: 100
+     * * idcsMinValue: 0
      * 
      */
     private Integer score;
@@ -198,6 +200,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
      * * returned: always
      * * type: integer
      * * uniqueness: none
+     * * idcsMaxValue: 100
+     * * idcsMinValue: 0
      * 
      */
     public Integer score() {

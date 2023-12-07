@@ -32,6 +32,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetSupportedVmwareSoftwareVersions(ctx, &ocvp.GetSupportedVmwareSoftwareVersionsArgs{
 //				CompartmentId: _var.Compartment_id,
+//				HostShapeName: pulumi.StringRef(oci_core_shape.Test_shape.Name),
+//				Version:       pulumi.StringRef(_var.Supported_vmware_software_version_version),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -56,16 +58,23 @@ type GetSupportedVmwareSoftwareVersionsArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string                                     `pulumi:"compartmentId"`
 	Filters       []GetSupportedVmwareSoftwareVersionsFilter `pulumi:"filters"`
+	// A filter to return only resources that match or support the given ESXi host shape.
+	HostShapeName *string `pulumi:"hostShapeName"`
+	// A filter to return only resources that match the given VMware software version exactly.
+	Version *string `pulumi:"version"`
 }
 
 // A collection of values returned by getSupportedVmwareSoftwareVersions.
 type GetSupportedVmwareSoftwareVersionsResult struct {
 	CompartmentId string                                     `pulumi:"compartmentId"`
 	Filters       []GetSupportedVmwareSoftwareVersionsFilter `pulumi:"filters"`
+	HostShapeName *string                                    `pulumi:"hostShapeName"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// A list of the supported versions of bundled VMware software.
 	Items []GetSupportedVmwareSoftwareVersionsItem `pulumi:"items"`
+	// A short, unique string that identifies the version of bundled software.
+	Version *string `pulumi:"version"`
 }
 
 func GetSupportedVmwareSoftwareVersionsOutput(ctx *pulumi.Context, args GetSupportedVmwareSoftwareVersionsOutputArgs, opts ...pulumi.InvokeOption) GetSupportedVmwareSoftwareVersionsResultOutput {
@@ -86,6 +95,10 @@ type GetSupportedVmwareSoftwareVersionsOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput                                 `pulumi:"compartmentId"`
 	Filters       GetSupportedVmwareSoftwareVersionsFilterArrayInput `pulumi:"filters"`
+	// A filter to return only resources that match or support the given ESXi host shape.
+	HostShapeName pulumi.StringPtrInput `pulumi:"hostShapeName"`
+	// A filter to return only resources that match the given VMware software version exactly.
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetSupportedVmwareSoftwareVersionsOutputArgs) ElementType() reflect.Type {
@@ -117,6 +130,10 @@ func (o GetSupportedVmwareSoftwareVersionsResultOutput) Filters() GetSupportedVm
 	}).(GetSupportedVmwareSoftwareVersionsFilterArrayOutput)
 }
 
+func (o GetSupportedVmwareSoftwareVersionsResultOutput) HostShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsResult) *string { return v.HostShapeName }).(pulumi.StringPtrOutput)
+}
+
 // The provider-assigned unique ID for this managed resource.
 func (o GetSupportedVmwareSoftwareVersionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsResult) string { return v.Id }).(pulumi.StringOutput)
@@ -127,6 +144,11 @@ func (o GetSupportedVmwareSoftwareVersionsResultOutput) Items() GetSupportedVmwa
 	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsResult) []GetSupportedVmwareSoftwareVersionsItem {
 		return v.Items
 	}).(GetSupportedVmwareSoftwareVersionsItemArrayOutput)
+}
+
+// A short, unique string that identifies the version of bundled software.
+func (o GetSupportedVmwareSoftwareVersionsResultOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsResult) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 func init() {

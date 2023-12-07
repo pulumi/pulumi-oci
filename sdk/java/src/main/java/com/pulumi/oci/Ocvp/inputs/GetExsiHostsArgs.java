@@ -19,6 +19,21 @@ public final class GetExsiHostsArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetExsiHostsArgs Empty = new GetExsiHostsArgs();
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * 
+     */
+    @Import(name="clusterId")
+    private @Nullable Output<String> clusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * 
+     */
+    public Optional<Output<String>> clusterId() {
+        return Optional.ofNullable(this.clusterId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      * 
      */
@@ -133,6 +148,7 @@ public final class GetExsiHostsArgs extends com.pulumi.resources.InvokeArgs {
     private GetExsiHostsArgs() {}
 
     private GetExsiHostsArgs(GetExsiHostsArgs $) {
+        this.clusterId = $.clusterId;
         this.compartmentId = $.compartmentId;
         this.computeInstanceId = $.computeInstanceId;
         this.displayName = $.displayName;
@@ -159,6 +175,27 @@ public final class GetExsiHostsArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder(GetExsiHostsArgs defaults) {
             $ = new GetExsiHostsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param clusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterId(@Nullable Output<String> clusterId) {
+            $.clusterId = clusterId;
+            return this;
+        }
+
+        /**
+         * @param clusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterId(String clusterId) {
+            return clusterId(Output.of(clusterId));
         }
 
         /**

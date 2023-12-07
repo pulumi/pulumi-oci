@@ -31,10 +31,20 @@ public final class GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry 
      */
     private String newGiVersion;
     /**
+     * @return A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+     * 
+     */
+    private String newOsVersion;
+    /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
     private String oldGiVersion;
+    /**
+     * @return A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+     * 
+     */
+    private String oldOsVersion;
     /**
      * @return The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      * 
@@ -86,11 +96,25 @@ public final class GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry 
         return this.newGiVersion;
     }
     /**
+     * @return A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+     * 
+     */
+    public String newOsVersion() {
+        return this.newOsVersion;
+    }
+    /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
      */
     public String oldGiVersion() {
         return this.oldGiVersion;
+    }
+    /**
+     * @return A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+     * 
+     */
+    public String oldOsVersion() {
+        return this.oldOsVersion;
     }
     /**
      * @return The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
@@ -134,7 +158,9 @@ public final class GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry 
         private String id;
         private String lifecycleDetails;
         private String newGiVersion;
+        private String newOsVersion;
         private String oldGiVersion;
+        private String oldOsVersion;
         private Integer snapshotRetentionPeriodInDays;
         private String state;
         private String timeEnded;
@@ -146,7 +172,9 @@ public final class GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry 
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.newGiVersion = defaults.newGiVersion;
+    	      this.newOsVersion = defaults.newOsVersion;
     	      this.oldGiVersion = defaults.oldGiVersion;
+    	      this.oldOsVersion = defaults.oldOsVersion;
     	      this.snapshotRetentionPeriodInDays = defaults.snapshotRetentionPeriodInDays;
     	      this.state = defaults.state;
     	      this.timeEnded = defaults.timeEnded;
@@ -174,8 +202,18 @@ public final class GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry 
             return this;
         }
         @CustomType.Setter
+        public Builder newOsVersion(String newOsVersion) {
+            this.newOsVersion = Objects.requireNonNull(newOsVersion);
+            return this;
+        }
+        @CustomType.Setter
         public Builder oldGiVersion(String oldGiVersion) {
             this.oldGiVersion = Objects.requireNonNull(oldGiVersion);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder oldOsVersion(String oldOsVersion) {
+            this.oldOsVersion = Objects.requireNonNull(oldOsVersion);
             return this;
         }
         @CustomType.Setter
@@ -204,7 +242,9 @@ public final class GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry 
             o.id = id;
             o.lifecycleDetails = lifecycleDetails;
             o.newGiVersion = newGiVersion;
+            o.newOsVersion = newOsVersion;
             o.oldGiVersion = oldGiVersion;
+            o.oldOsVersion = oldOsVersion;
             o.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
             o.state = state;
             o.timeEnded = timeEnded;

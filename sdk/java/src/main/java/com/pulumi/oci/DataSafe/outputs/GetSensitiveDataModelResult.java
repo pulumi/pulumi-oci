@@ -54,7 +54,7 @@ public final class GetSensitiveDataModelResult {
      */
     private Boolean isAppDefinedRelationDiscoveryEnabled;
     /**
-     * @return Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
+     * @return Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
      * 
      */
     private Boolean isIncludeAllSchemas;
@@ -163,7 +163,7 @@ public final class GetSensitiveDataModelResult {
         return this.isAppDefinedRelationDiscoveryEnabled;
     }
     /**
-     * @return Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
+     * @return Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
      * 
      */
     public Boolean isIncludeAllSchemas() {

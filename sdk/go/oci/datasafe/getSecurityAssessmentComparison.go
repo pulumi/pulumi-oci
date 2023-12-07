@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
 //
-// Gets the details of the comparison report for the security assessments submitted for comparison.
+// Gets the details of the comparison report on the security assessments submitted for comparison.
 //
 // ## Example Usage
 //
@@ -53,7 +53,7 @@ func GetSecurityAssessmentComparison(ctx *pulumi.Context, args *GetSecurityAsses
 
 // A collection of arguments for invoking getSecurityAssessmentComparison.
 type GetSecurityAssessmentComparisonArgs struct {
-	// The OCID of the security assessment baseline.
+	// The OCID of the baseline security assessment.
 	ComparisonSecurityAssessmentId string `pulumi:"comparisonSecurityAssessmentId"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
@@ -90,7 +90,7 @@ func GetSecurityAssessmentComparisonOutput(ctx *pulumi.Context, args GetSecurity
 
 // A collection of arguments for invoking getSecurityAssessmentComparison.
 type GetSecurityAssessmentComparisonOutputArgs struct {
-	// The OCID of the security assessment baseline.
+	// The OCID of the baseline security assessment.
 	ComparisonSecurityAssessmentId pulumi.StringInput `pulumi:"comparisonSecurityAssessmentId"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId pulumi.StringInput `pulumi:"securityAssessmentId"`

@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -62,6 +64,18 @@ export interface GetJavaFamilyResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+     */
+    readonly isSupportedVersion: boolean;
+    /**
+     * List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+     */
+    readonly latestReleaseArtifacts: outputs.Jms.GetJavaFamilyLatestReleaseArtifact[];
+    /**
+     * Latest Java release version in the family.
+     */
+    readonly latestReleaseVersion: string;
     /**
      * This indicates the support category for the Java release family.
      */

@@ -15,6 +15,9 @@ namespace Pulumi.Oci.Core.Inputs
         /// <summary>
         /// The state of the BGP IPv6 session.
         /// </summary>
+        [Input("bgpIpv6State")]
+        public Input<string>? BgpIpv6State { get; set; }
+
         [Input("bgpIpv6state")]
         public Input<string>? BgpIpv6state { get; set; }
 
@@ -49,6 +52,20 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? CustomerInterfaceIp { get; set; }
 
         /// <summary>
+        /// The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+        /// 
+        /// If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel's BGP session.
+        /// 
+        /// If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+        /// 
+        /// Only subnet masks from /64 up to /127 are allowed.
+        /// 
+        /// Example: `2001:db8::1/64`
+        /// </summary>
+        [Input("customerInterfaceIpv6")]
+        public Input<string>? CustomerInterfaceIpv6 { get; set; }
+
+        /// <summary>
         /// The Oracle BGP ASN.
         /// </summary>
         [Input("oracleBgpAsn")]
@@ -67,6 +84,20 @@ namespace Pulumi.Oci.Core.Inputs
         /// </summary>
         [Input("oracleInterfaceIp")]
         public Input<string>? OracleInterfaceIp { get; set; }
+
+        /// <summary>
+        /// The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+        /// 
+        /// If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel's BGP session.
+        /// 
+        /// If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+        /// 
+        /// Only subnet masks from /64 up to /127 are allowed.
+        /// 
+        /// Example: `2001:db8::1/64`
+        /// </summary>
+        [Input("oracleInterfaceIpv6")]
+        public Input<string>? OracleInterfaceIpv6 { get; set; }
 
         public IpsecConnectionTunnelManagementBgpSessionInfoArgs()
         {

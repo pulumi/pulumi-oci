@@ -30,7 +30,7 @@ class IpsecArgs:
         :param pulumi.Input[str] drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] static_routes: (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
                
-               Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
+               Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
                
                Example: `10.0.1.0/24`
                
@@ -108,7 +108,7 @@ class IpsecArgs:
         """
         (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
 
-        Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
+        Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 
         Example: `10.0.1.0/24`
 
@@ -227,7 +227,7 @@ class _IpsecState:
         :param pulumi.Input[str] state: The IPSec connection's current state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] static_routes: (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
                
-               Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
+               Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
                
                Example: `10.0.1.0/24`
                
@@ -384,7 +384,7 @@ class _IpsecState:
         """
         (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
 
-        Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
+        Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 
         Example: `10.0.1.0/24`
 
@@ -441,14 +441,8 @@ class Ipsec(pulumi.CustomResource):
         """
         This resource provides the Ip Sec Connection resource in Oracle Cloud Infrastructure Core service.
 
-        Creates a new IPSec connection between the specified DRG and CPE. For more information, see
+        Creates a new IPSec connection between the specified DRG and CPE with two default static tunnels. For more information, see
         [Site-to-Site VPN Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
-
-        If you configure at least one tunnel to use static routing, then in the request you must provide
-        at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
-        If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for
-        the static routes. For more information, see the important note in
-        [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 
         For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the
         IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
@@ -465,6 +459,13 @@ class Ipsec(pulumi.CustomResource):
 
           * [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)
           * [IPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/)
+
+        To configure tunnel-specific information, use `Core.IpsecConnectionTunnelManagement` to update the tunnels. If
+        you configure at least one tunnel to use static routing, then in the Core.Ipsec request you must provide
+        at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
+        If you configure both tunnels to use BGP dynamic routing, the static routes will be ignored. However, you must provide a
+        static route in `Core.Ipsec` even if you plan to use BGP routing because it defaults to two static tunnels.  For more
+        information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 
         For each tunnel, you need the IP address of Oracle's VPN headend and the shared secret
         (that is, the pre-shared key). For more information, see
@@ -520,7 +521,7 @@ class Ipsec(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] static_routes: (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
                
-               Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
+               Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
                
                Example: `10.0.1.0/24`
                
@@ -537,14 +538,8 @@ class Ipsec(pulumi.CustomResource):
         """
         This resource provides the Ip Sec Connection resource in Oracle Cloud Infrastructure Core service.
 
-        Creates a new IPSec connection between the specified DRG and CPE. For more information, see
+        Creates a new IPSec connection between the specified DRG and CPE with two default static tunnels. For more information, see
         [Site-to-Site VPN Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
-
-        If you configure at least one tunnel to use static routing, then in the request you must provide
-        at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
-        If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for
-        the static routes. For more information, see the important note in
-        [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 
         For the purposes of access control, you must provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want the
         IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
@@ -561,6 +556,13 @@ class Ipsec(pulumi.CustomResource):
 
           * [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)
           * [IPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnelSharedSecret/)
+
+        To configure tunnel-specific information, use `Core.IpsecConnectionTunnelManagement` to update the tunnels. If
+        you configure at least one tunnel to use static routing, then in the Core.Ipsec request you must provide
+        at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
+        If you configure both tunnels to use BGP dynamic routing, the static routes will be ignored. However, you must provide a
+        static route in `Core.Ipsec` even if you plan to use BGP routing because it defaults to two static tunnels.  For more
+        information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 
         For each tunnel, you need the IP address of Oracle's VPN headend and the shared secret
         (that is, the pre-shared key). For more information, see
@@ -697,7 +699,7 @@ class Ipsec(pulumi.CustomResource):
         :param pulumi.Input[str] state: The IPSec connection's current state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] static_routes: (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
                
-               Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
+               Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
                
                Example: `10.0.1.0/24`
                
@@ -811,7 +813,7 @@ class Ipsec(pulumi.CustomResource):
         """
         (Updatable) Static routes to the CPE. A static route's CIDR must not be a multicast address or class E address.
 
-        Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
+        Used for routing a given IPSec tunnel's traffic only if the tunnel is using static routing. If you configure at least one tunnel to use static routing, then you must provide at least one valid static route. If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for the static routes on update. For more information, see the important note in [IPSecConnection](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/).
 
         Example: `10.0.1.0/24`
 

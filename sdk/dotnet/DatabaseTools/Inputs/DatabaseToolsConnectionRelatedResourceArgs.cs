@@ -15,14 +15,14 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
         /// <summary>
         /// (Updatable) The resource entity type.
         /// </summary>
-        [Input("entityType", required: true)]
-        public Input<string> EntityType { get; set; } = null!;
+        [Input("entityType")]
+        public Input<string>? EntityType { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
         /// </summary>
-        [Input("identifier", required: true)]
-        public Input<string> Identifier { get; set; } = null!;
+        [Input("identifier")]
+        public Input<string>? Identifier { get; set; }
 
         public DatabaseToolsConnectionRelatedResourceArgs()
         {

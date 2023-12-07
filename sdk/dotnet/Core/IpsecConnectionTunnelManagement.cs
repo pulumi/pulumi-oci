@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Core
     ///     static route.
     /// 
     /// ** IMPORTANT **
-    /// Destroying `the oci.Core.IpsecConnectionTunnelManagement` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
+    /// Destroying the `oci.Core.IpsecConnectionTunnelManagement` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
     /// 
     /// ## Example Usage
     /// 
@@ -103,9 +103,15 @@ namespace Pulumi.Oci.Core
         [Output("dpdConfigs")]
         public Output<ImmutableArray<Outputs.IpsecConnectionTunnelManagementDpdConfig>> DpdConfigs { get; private set; } = null!;
 
+        /// <summary>
+        /// This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+        /// </summary>
         [Output("dpdMode")]
         public Output<string> DpdMode { get; private set; } = null!;
 
+        /// <summary>
+        /// DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+        /// </summary>
         [Output("dpdTimeoutInSec")]
         public Output<int> DpdTimeoutInSec { get; private set; } = null!;
 
@@ -127,15 +133,35 @@ namespace Pulumi.Oci.Core
         [Output("ipsecId")]
         public Output<string> IpsecId { get; private set; } = null!;
 
+        /// <summary>
+        /// By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+        /// 
+        /// The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+        /// 
+        /// The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+        /// </summary>
         [Output("natTranslationEnabled")]
         public Output<string> NatTranslationEnabled { get; private set; } = null!;
 
+        /// <summary>
+        /// Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+        /// </summary>
         [Output("oracleCanInitiate")]
         public Output<string> OracleCanInitiate { get; private set; } = null!;
 
+        /// <summary>
+        /// Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        /// 
+        /// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+        /// </summary>
         [Output("phaseOneDetails")]
         public Output<ImmutableArray<Outputs.IpsecConnectionTunnelManagementPhaseOneDetail>> PhaseOneDetails { get; private set; } = null!;
 
+        /// <summary>
+        /// Configuration details for IPSec phase two configuration parameters.
+        /// 
+        /// See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+        /// </summary>
         [Output("phaseTwoDetails")]
         public Output<ImmutableArray<Outputs.IpsecConnectionTunnelManagementPhaseTwoDetail>> PhaseTwoDetails { get; private set; } = null!;
 
@@ -210,6 +236,10 @@ namespace Pulumi.Oci.Core
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "sharedSecret",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -280,16 +310,70 @@ namespace Pulumi.Oci.Core
         public Input<string> IpsecId { get; set; } = null!;
 
         /// <summary>
+        /// By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+        /// 
+        /// The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+        /// 
+        /// The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+        /// </summary>
+        [Input("natTranslationEnabled")]
+        public Input<string>? NatTranslationEnabled { get; set; }
+
+        /// <summary>
+        /// Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+        /// </summary>
+        [Input("oracleCanInitiate")]
+        public Input<string>? OracleCanInitiate { get; set; }
+
+        [Input("phaseOneDetails")]
+        private InputList<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailArgs>? _phaseOneDetails;
+
+        /// <summary>
+        /// Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        /// 
+        /// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+        /// </summary>
+        public InputList<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailArgs> PhaseOneDetails
+        {
+            get => _phaseOneDetails ?? (_phaseOneDetails = new InputList<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailArgs>());
+            set => _phaseOneDetails = value;
+        }
+
+        [Input("phaseTwoDetails")]
+        private InputList<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailArgs>? _phaseTwoDetails;
+
+        /// <summary>
+        /// Configuration details for IPSec phase two configuration parameters.
+        /// 
+        /// See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+        /// </summary>
+        public InputList<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailArgs> PhaseTwoDetails
+        {
+            get => _phaseTwoDetails ?? (_phaseTwoDetails = new InputList<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailArgs>());
+            set => _phaseTwoDetails = value;
+        }
+
+        /// <summary>
         /// The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
         /// </summary>
-        [Input("routing", required: true)]
-        public Input<string> Routing { get; set; } = null!;
+        [Input("routing")]
+        public Input<string>? Routing { get; set; }
+
+        [Input("sharedSecret")]
+        private Input<string>? _sharedSecret;
 
         /// <summary>
         /// The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
         /// </summary>
-        [Input("sharedSecret")]
-        public Input<string>? SharedSecret { get; set; }
+        public Input<string>? SharedSecret
+        {
+            get => _sharedSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _sharedSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The OCID of the IPSec connection's tunnel.
@@ -357,9 +441,15 @@ namespace Pulumi.Oci.Core
             set => _dpdConfigs = value;
         }
 
+        /// <summary>
+        /// This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+        /// </summary>
         [Input("dpdMode")]
         public Input<string>? DpdMode { get; set; }
 
+        /// <summary>
+        /// DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+        /// </summary>
         [Input("dpdTimeoutInSec")]
         public Input<int>? DpdTimeoutInSec { get; set; }
 
@@ -381,14 +471,30 @@ namespace Pulumi.Oci.Core
         [Input("ipsecId")]
         public Input<string>? IpsecId { get; set; }
 
+        /// <summary>
+        /// By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+        /// 
+        /// The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+        /// 
+        /// The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+        /// </summary>
         [Input("natTranslationEnabled")]
         public Input<string>? NatTranslationEnabled { get; set; }
 
+        /// <summary>
+        /// Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+        /// </summary>
         [Input("oracleCanInitiate")]
         public Input<string>? OracleCanInitiate { get; set; }
 
         [Input("phaseOneDetails")]
         private InputList<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailGetArgs>? _phaseOneDetails;
+
+        /// <summary>
+        /// Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+        /// 
+        /// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+        /// </summary>
         public InputList<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailGetArgs> PhaseOneDetails
         {
             get => _phaseOneDetails ?? (_phaseOneDetails = new InputList<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailGetArgs>());
@@ -397,6 +503,12 @@ namespace Pulumi.Oci.Core
 
         [Input("phaseTwoDetails")]
         private InputList<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailGetArgs>? _phaseTwoDetails;
+
+        /// <summary>
+        /// Configuration details for IPSec phase two configuration parameters.
+        /// 
+        /// See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+        /// </summary>
         public InputList<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailGetArgs> PhaseTwoDetails
         {
             get => _phaseTwoDetails ?? (_phaseTwoDetails = new InputList<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailGetArgs>());
@@ -409,11 +521,21 @@ namespace Pulumi.Oci.Core
         [Input("routing")]
         public Input<string>? Routing { get; set; }
 
+        [Input("sharedSecret")]
+        private Input<string>? _sharedSecret;
+
         /// <summary>
         /// The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
         /// </summary>
-        [Input("sharedSecret")]
-        public Input<string>? SharedSecret { get; set; }
+        public Input<string>? SharedSecret
+        {
+            get => _sharedSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _sharedSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The IPSec connection's tunnel's lifecycle state.

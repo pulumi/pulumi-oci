@@ -106,7 +106,7 @@ namespace Pulumi.Oci.Ocvp
     public sealed class GetExsiHostResult
     {
         /// <summary>
-        /// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+        /// Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string BillingContractEndDate;
         /// <summary>
@@ -118,7 +118,11 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string CapacityReservationId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the ESXi host belongs to.
+        /// </summary>
+        public readonly string ClusterId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -130,7 +134,11 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string ComputeInstanceId;
         /// <summary>
-        /// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        /// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+        /// </summary>
+        public readonly string CurrentCommitment;
+        /// <summary>
+        /// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `current_commitment` instead.
         /// </summary>
         public readonly string CurrentSku;
         /// <summary>
@@ -142,6 +150,10 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string DisplayName;
         public readonly string EsxiHostId;
+        /// <summary>
+        /// The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
+        /// </summary>
+        public readonly string EsxiSoftwareVersion;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
         /// </summary>
@@ -159,7 +171,7 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly double HostOcpuCount;
         /// <summary>
-        /// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+        /// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
         /// </summary>
         public readonly string HostShapeName;
         /// <summary>
@@ -175,7 +187,11 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly bool IsBillingSwappingInProgress;
         /// <summary>
-        /// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+        /// The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+        /// </summary>
+        public readonly string NextCommitment;
+        /// <summary>
+        /// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
         /// </summary>
         public readonly string NextSku;
         /// <summary>
@@ -187,7 +203,7 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string ReplacementEsxiHostId;
         /// <summary>
-        /// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
         /// </summary>
         public readonly string SddcId;
         /// <summary>
@@ -223,11 +239,15 @@ namespace Pulumi.Oci.Ocvp
 
             string capacityReservationId,
 
+            string clusterId,
+
             string compartmentId,
 
             string computeAvailabilityDomain,
 
             string computeInstanceId,
+
+            string currentCommitment,
 
             string currentSku,
 
@@ -236,6 +256,8 @@ namespace Pulumi.Oci.Ocvp
             string displayName,
 
             string esxiHostId,
+
+            string esxiSoftwareVersion,
 
             string failedEsxiHostId,
 
@@ -252,6 +274,8 @@ namespace Pulumi.Oci.Ocvp
             bool isBillingContinuationInProgress,
 
             bool isBillingSwappingInProgress,
+
+            string nextCommitment,
 
             string nextSku,
 
@@ -276,13 +300,16 @@ namespace Pulumi.Oci.Ocvp
             BillingContractEndDate = billingContractEndDate;
             BillingDonorHostId = billingDonorHostId;
             CapacityReservationId = capacityReservationId;
+            ClusterId = clusterId;
             CompartmentId = compartmentId;
             ComputeAvailabilityDomain = computeAvailabilityDomain;
             ComputeInstanceId = computeInstanceId;
+            CurrentCommitment = currentCommitment;
             CurrentSku = currentSku;
             DefinedTags = definedTags;
             DisplayName = displayName;
             EsxiHostId = esxiHostId;
+            EsxiSoftwareVersion = esxiSoftwareVersion;
             FailedEsxiHostId = failedEsxiHostId;
             FreeformTags = freeformTags;
             GracePeriodEndDate = gracePeriodEndDate;
@@ -291,6 +318,7 @@ namespace Pulumi.Oci.Ocvp
             Id = id;
             IsBillingContinuationInProgress = isBillingContinuationInProgress;
             IsBillingSwappingInProgress = isBillingSwappingInProgress;
+            NextCommitment = nextCommitment;
             NextSku = nextSku;
             NonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
             ReplacementEsxiHostId = replacementEsxiHostId;

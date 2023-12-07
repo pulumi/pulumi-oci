@@ -79,6 +79,8 @@ type LookupAutonomousVmClusterResult struct {
 	CpuPercentage       float64 `pulumi:"cpuPercentage"`
 	// The number of enabled CPU cores.
 	CpusEnabled int `pulumi:"cpusEnabled"`
+	// The lowest value to which cpus can be scaled down.
+	CpusLowestScaledValue int `pulumi:"cpusLowestScaledValue"`
 	// The total data storage allocated in GBs.
 	DataStorageSizeInGb float64 `pulumi:"dataStorageSizeInGb"`
 	// The total data storage allocated in TBs
@@ -93,6 +95,8 @@ type LookupAutonomousVmClusterResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
+	// The lowest value to which exadataStorage in TBs can be scaled down.
+	ExadataStorageInTbsLowestScaledValue float64 `pulumi:"exadataStorageInTbsLowestScaledValue"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM cluster.
@@ -110,6 +114,8 @@ type LookupAutonomousVmClusterResult struct {
 	MaintenanceWindowDetails []GetAutonomousVmClusterMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetAutonomousVmClusterMaintenanceWindow `pulumi:"maintenanceWindows"`
+	// The lowest value to which ACDs can be scaled down.
+	MaxAcdsLowestScaledValue int `pulumi:"maxAcdsLowestScaledValue"`
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
@@ -120,9 +126,10 @@ type LookupAutonomousVmClusterResult struct {
 	NodeCount                                    int `pulumi:"nodeCount"`
 	NonProvisionableAutonomousContainerDatabases int `pulumi:"nonProvisionableAutonomousContainerDatabases"`
 	// The number of enabled OCPU cores.
-	OcpusEnabled                            float64 `pulumi:"ocpusEnabled"`
-	ProvisionedAutonomousContainerDatabases int     `pulumi:"provisionedAutonomousContainerDatabases"`
-	ProvisionedCpus                         float64 `pulumi:"provisionedCpus"`
+	OcpusEnabled                              float64 `pulumi:"ocpusEnabled"`
+	ProvisionableAutonomousContainerDatabases int     `pulumi:"provisionableAutonomousContainerDatabases"`
+	ProvisionedAutonomousContainerDatabases   int     `pulumi:"provisionedAutonomousContainerDatabases"`
+	ProvisionedCpus                           float64 `pulumi:"provisionedCpus"`
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
@@ -244,6 +251,11 @@ func (o LookupAutonomousVmClusterResultOutput) CpusEnabled() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.CpusEnabled }).(pulumi.IntOutput)
 }
 
+// The lowest value to which cpus can be scaled down.
+func (o LookupAutonomousVmClusterResultOutput) CpusLowestScaledValue() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.CpusLowestScaledValue }).(pulumi.IntOutput)
+}
+
 // The total data storage allocated in GBs.
 func (o LookupAutonomousVmClusterResultOutput) DataStorageSizeInGb() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.DataStorageSizeInGb }).(pulumi.Float64Output)
@@ -277,6 +289,11 @@ func (o LookupAutonomousVmClusterResultOutput) DisplayName() pulumi.StringOutput
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 func (o LookupAutonomousVmClusterResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) string { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+}
+
+// The lowest value to which exadataStorage in TBs can be scaled down.
+func (o LookupAutonomousVmClusterResultOutput) ExadataStorageInTbsLowestScaledValue() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.ExadataStorageInTbsLowestScaledValue }).(pulumi.Float64Output)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -327,6 +344,11 @@ func (o LookupAutonomousVmClusterResultOutput) MaintenanceWindows() GetAutonomou
 	}).(GetAutonomousVmClusterMaintenanceWindowArrayOutput)
 }
 
+// The lowest value to which ACDs can be scaled down.
+func (o LookupAutonomousVmClusterResultOutput) MaxAcdsLowestScaledValue() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.MaxAcdsLowestScaledValue }).(pulumi.IntOutput)
+}
+
 // The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 func (o LookupAutonomousVmClusterResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
@@ -354,6 +376,10 @@ func (o LookupAutonomousVmClusterResultOutput) NonProvisionableAutonomousContain
 // The number of enabled OCPU cores.
 func (o LookupAutonomousVmClusterResultOutput) OcpusEnabled() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) float64 { return v.OcpusEnabled }).(pulumi.Float64Output)
+}
+
+func (o LookupAutonomousVmClusterResultOutput) ProvisionableAutonomousContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) int { return v.ProvisionableAutonomousContainerDatabases }).(pulumi.IntOutput)
 }
 
 func (o LookupAutonomousVmClusterResultOutput) ProvisionedAutonomousContainerDatabases() pulumi.IntOutput {

@@ -13,6 +13,11 @@ from . import outputs
 __all__ = [
     'FleetInventoryLog',
     'FleetOperationLog',
+    'JavaDownloadsJavaDownloadReportCreatedBy',
+    'JavaDownloadsJavaDownloadTokenCreatedBy',
+    'JavaDownloadsJavaDownloadTokenLastUpdatedBy',
+    'JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy',
+    'JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy',
     'GetAnnouncementsAnnouncementCollectionResult',
     'GetAnnouncementsAnnouncementCollectionItemResult',
     'GetAnnouncementsFilterResult',
@@ -38,6 +43,9 @@ __all__ = [
     'GetFleetDiagnosesFilterResult',
     'GetFleetDiagnosesFleetDiagnosisCollectionResult',
     'GetFleetDiagnosesFleetDiagnosisCollectionItemResult',
+    'GetFleetDrsFilesDrsFileCollectionResult',
+    'GetFleetDrsFilesDrsFileCollectionItemResult',
+    'GetFleetDrsFilesFilterResult',
     'GetFleetInventoryLogResult',
     'GetFleetJavaMigrationAnalysisResultsFilterResult',
     'GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionResult',
@@ -62,18 +70,49 @@ __all__ = [
     'GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult',
     'GetInstallationSitesInstallationSiteCollectionItemItemJreResult',
     'GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult',
+    'GetJavaDownloadsJavaDownloadRecordsFilterResult',
+    'GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionResult',
+    'GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemResult',
+    'GetJavaDownloadsJavaDownloadReportCreatedByResult',
+    'GetJavaDownloadsJavaDownloadReportsFilterResult',
+    'GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionResult',
+    'GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemResult',
+    'GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByResult',
+    'GetJavaDownloadsJavaDownloadTokenCreatedByResult',
+    'GetJavaDownloadsJavaDownloadTokenLastUpdatedByResult',
+    'GetJavaDownloadsJavaDownloadTokensFilterResult',
+    'GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionResult',
+    'GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemResult',
+    'GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByResult',
+    'GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByResult',
+    'GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByResult',
+    'GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByResult',
+    'GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterResult',
+    'GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionResult',
+    'GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemResult',
+    'GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByResult',
+    'GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByResult',
+    'GetJavaDownloadsJavaLicensesFilterResult',
+    'GetJavaDownloadsJavaLicensesJavaLicenseCollectionResult',
+    'GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemResult',
     'GetJavaFamiliesFilterResult',
     'GetJavaFamiliesJavaFamilyCollectionResult',
     'GetJavaFamiliesJavaFamilyCollectionItemResult',
+    'GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactResult',
+    'GetJavaFamilyLatestReleaseArtifactResult',
     'GetJavaReleaseArtifactResult',
     'GetJavaReleaseFamilyDetailResult',
+    'GetJavaReleaseFamilyDetailLatestReleaseArtifactResult',
     'GetJavaReleaseLicenseDetailResult',
+    'GetJavaReleaseMosPatchResult',
     'GetJavaReleasesFilterResult',
     'GetJavaReleasesJavaReleaseCollectionResult',
     'GetJavaReleasesJavaReleaseCollectionItemResult',
     'GetJavaReleasesJavaReleaseCollectionItemArtifactResult',
     'GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult',
+    'GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactResult',
     'GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult',
+    'GetJavaReleasesJavaReleaseCollectionItemMosPatchResult',
     'GetListJreUsageItemResult',
     'GetListJreUsageItemOperatingSystemResult',
 ]
@@ -191,6 +230,306 @@ class FleetOperationLog(dict):
 
 
 @pulumi.output_type
+class JavaDownloadsJavaDownloadReportCreatedBy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JavaDownloadsJavaDownloadReportCreatedBy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JavaDownloadsJavaDownloadReportCreatedBy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JavaDownloadsJavaDownloadReportCreatedBy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 email: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: Display name for the Java download report.
+        :param str email: The email of the principal.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        Display name for the Java download report.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[str]:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class JavaDownloadsJavaDownloadTokenCreatedBy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JavaDownloadsJavaDownloadTokenCreatedBy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JavaDownloadsJavaDownloadTokenCreatedBy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JavaDownloadsJavaDownloadTokenCreatedBy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 email: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) User provided display name of the JavaDownloadToken.
+        :param str email: The email of the principal.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) User provided display name of the JavaDownloadToken.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[str]:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class JavaDownloadsJavaDownloadTokenLastUpdatedBy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JavaDownloadsJavaDownloadTokenLastUpdatedBy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JavaDownloadsJavaDownloadTokenLastUpdatedBy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JavaDownloadsJavaDownloadTokenLastUpdatedBy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 email: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) User provided display name of the JavaDownloadToken.
+        :param str email: The email of the principal.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) User provided display name of the JavaDownloadToken.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[str]:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 email: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: The name of the principal.
+        :param str email: The email of the principal.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        The name of the principal.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[str]:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 email: Optional[str] = None,
+                 id: Optional[str] = None):
+        """
+        :param str display_name: The name of the principal.
+        :param str email: The email of the principal.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        The name of the principal.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[str]:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
 class GetAnnouncementsAnnouncementCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAnnouncementsAnnouncementCollectionItemResult']):
@@ -291,7 +630,7 @@ class GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult(dict):
     def __init__(__self__, *,
                  is_enabled: bool):
         """
-        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
+        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
 
@@ -299,7 +638,7 @@ class GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
+        PerformanceTuningAnalysis flag to store enabled or disabled status
         """
         return pulumi.get(self, "is_enabled")
 
@@ -310,7 +649,7 @@ class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult(dict):
                  is_enabled: bool,
                  summarized_events_logs: Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult']):
         """
-        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
+        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status
         :param Sequence['GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs'] summarized_events_logs: Summarized events log for advanced feature.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
@@ -320,7 +659,7 @@ class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
+        PerformanceTuningAnalysis flag to store enabled or disabled status
         """
         return pulumi.get(self, "is_enabled")
 
@@ -367,7 +706,7 @@ class GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult(dict):
     def __init__(__self__, *,
                  is_enabled: bool):
         """
-        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
+        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
 
@@ -375,7 +714,7 @@ class GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
+        PerformanceTuningAnalysis flag to store enabled or disabled status
         """
         return pulumi.get(self, "is_enabled")
 
@@ -385,7 +724,7 @@ class GetFleetAdvancedFeatureConfigurationJfrRecordingResult(dict):
     def __init__(__self__, *,
                  is_enabled: bool):
         """
-        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
+        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
 
@@ -393,7 +732,7 @@ class GetFleetAdvancedFeatureConfigurationJfrRecordingResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
+        PerformanceTuningAnalysis flag to store enabled or disabled status
         """
         return pulumi.get(self, "is_enabled")
 
@@ -404,7 +743,7 @@ class GetFleetAdvancedFeatureConfigurationLcmResult(dict):
                  is_enabled: bool,
                  post_installation_actions: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult']):
         """
-        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
+        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status
         :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs'] post_installation_actions: List of available post actions you can execute after the successful Java installation.
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
@@ -414,7 +753,7 @@ class GetFleetAdvancedFeatureConfigurationLcmResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
+        PerformanceTuningAnalysis flag to store enabled or disabled status
         """
         return pulumi.get(self, "is_enabled")
 
@@ -756,7 +1095,7 @@ class GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult(dict):
     def __init__(__self__, *,
                  is_enabled: bool):
         """
-        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status.
+        :param bool is_enabled: PerformanceTuningAnalysis flag to store enabled or disabled status
         """
         pulumi.set(__self__, "is_enabled", is_enabled)
 
@@ -764,7 +1103,7 @@ class GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisResult(dict):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        PerformanceTuningAnalysis flag to store enabled or disabled status.
+        PerformanceTuningAnalysis flag to store enabled or disabled status
         """
         return pulumi.get(self, "is_enabled")
 
@@ -1217,6 +1556,140 @@ class GetFleetDiagnosesFleetDiagnosisCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetFleetDrsFilesDrsFileCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetDrsFilesDrsFileCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetDrsFilesDrsFileCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetDrsFilesDrsFileCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 checksum_type: str,
+                 checksum_value: str,
+                 drs_file_key: str,
+                 drs_file_name: str,
+                 fleet_id: str,
+                 is_default: bool,
+                 namespace: str):
+        """
+        :param str bucket: The Object Storage bucket name where the DRS file is located.
+        :param str checksum_type: The checksum type for the DRS file in Object Storage.
+        :param str checksum_value: The checksum value for the DRS file in Object Storage.
+        :param str drs_file_key: The unique identifier of the DRS file in Object Storage.
+        :param str drs_file_name: The name of the DRS file in Object Store.
+        :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+        :param bool is_default: To check if the DRS file is the detfault ones.
+        :param str namespace: The namespace for Object Storage.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "checksum_type", checksum_type)
+        pulumi.set(__self__, "checksum_value", checksum_value)
+        pulumi.set(__self__, "drs_file_key", drs_file_key)
+        pulumi.set(__self__, "drs_file_name", drs_file_name)
+        pulumi.set(__self__, "fleet_id", fleet_id)
+        pulumi.set(__self__, "is_default", is_default)
+        pulumi.set(__self__, "namespace", namespace)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The Object Storage bucket name where the DRS file is located.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="checksumType")
+    def checksum_type(self) -> str:
+        """
+        The checksum type for the DRS file in Object Storage.
+        """
+        return pulumi.get(self, "checksum_type")
+
+    @property
+    @pulumi.getter(name="checksumValue")
+    def checksum_value(self) -> str:
+        """
+        The checksum value for the DRS file in Object Storage.
+        """
+        return pulumi.get(self, "checksum_value")
+
+    @property
+    @pulumi.getter(name="drsFileKey")
+    def drs_file_key(self) -> str:
+        """
+        The unique identifier of the DRS file in Object Storage.
+        """
+        return pulumi.get(self, "drs_file_key")
+
+    @property
+    @pulumi.getter(name="drsFileName")
+    def drs_file_name(self) -> str:
+        """
+        The name of the DRS file in Object Store.
+        """
+        return pulumi.get(self, "drs_file_name")
+
+    @property
+    @pulumi.getter(name="fleetId")
+    def fleet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+        """
+        return pulumi.get(self, "fleet_id")
+
+    @property
+    @pulumi.getter(name="isDefault")
+    def is_default(self) -> bool:
+        """
+        To check if the DRS file is the detfault ones.
+        """
+        return pulumi.get(self, "is_default")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The namespace for Object Storage.
+        """
+        return pulumi.get(self, "namespace")
+
+
+@pulumi.output_type
+class GetFleetDrsFilesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetFleetInventoryLogResult(dict):
     def __init__(__self__, *,
                  log_group_id: str,
@@ -1288,6 +1761,7 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionR
 class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult(dict):
     def __init__(__self__, *,
                  application_execution_type: str,
+                 application_key: str,
                  application_name: str,
                  application_path: str,
                  bucket: str,
@@ -1305,6 +1779,7 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionI
                  work_request_id: str):
         """
         :param str application_execution_type: Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
+        :param str application_key: The unique key that identifies the application.
         :param str application_name: The name of the application for which the Java migration analysis was performed.
         :param str application_path: The installation path of the application for which the Java migration analysis was performed.
         :param str bucket: The name of the object storage bucket that contains the results of the migration analysis.
@@ -1322,6 +1797,7 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionI
         :param str work_request_id: The OCID of the work request of this analysis.
         """
         pulumi.set(__self__, "application_execution_type", application_execution_type)
+        pulumi.set(__self__, "application_key", application_key)
         pulumi.set(__self__, "application_name", application_name)
         pulumi.set(__self__, "application_path", application_path)
         pulumi.set(__self__, "bucket", bucket)
@@ -1345,6 +1821,14 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionI
         Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
         """
         return pulumi.get(self, "application_execution_type")
+
+    @property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> str:
+        """
+        The unique key that identifies the application.
+        """
+        return pulumi.get(self, "application_key")
 
     @property
     @pulumi.getter(name="applicationName")
@@ -1784,6 +2268,7 @@ class GetFleetsFleetCollectionItemResult(dict):
                  id: str,
                  inventory_logs: Sequence['outputs.GetFleetsFleetCollectionItemInventoryLogResult'],
                  is_advanced_features_enabled: bool,
+                 is_export_setting_enabled: bool,
                  operation_logs: Sequence['outputs.GetFleetsFleetCollectionItemOperationLogResult'],
                  state: str,
                  system_tags: Mapping[str, Any],
@@ -1802,6 +2287,7 @@ class GetFleetsFleetCollectionItemResult(dict):
         :param str id: The ID of the Fleet.
         :param Sequence['GetFleetsFleetCollectionItemInventoryLogArgs'] inventory_logs: Custom Log for inventory or operation log.
         :param bool is_advanced_features_enabled: Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
+        :param bool is_export_setting_enabled: Whether or not export setting is enabled in this Fleet.
         :param Sequence['GetFleetsFleetCollectionItemOperationLogArgs'] operation_logs: Custom Log for inventory or operation log.
         :param str state: The state of the lifecycle.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1820,6 +2306,7 @@ class GetFleetsFleetCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "inventory_logs", inventory_logs)
         pulumi.set(__self__, "is_advanced_features_enabled", is_advanced_features_enabled)
+        pulumi.set(__self__, "is_export_setting_enabled", is_export_setting_enabled)
         pulumi.set(__self__, "operation_logs", operation_logs)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -1928,6 +2415,14 @@ class GetFleetsFleetCollectionItemResult(dict):
         Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
         """
         return pulumi.get(self, "is_advanced_features_enabled")
+
+    @property
+    @pulumi.getter(name="isExportSettingEnabled")
+    def is_export_setting_enabled(self) -> bool:
+        """
+        Whether or not export setting is enabled in this Fleet.
+        """
+        return pulumi.get(self, "is_export_setting_enabled")
 
     @property
     @pulumi.getter(name="operationLogs")
@@ -2608,6 +3103,1283 @@ class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResul
 
 
 @pulumi.output_type
+class GetJavaDownloadsJavaDownloadRecordsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemResult']):
+        """
+        :param Sequence['GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArgs'] items: A list of Java download records in a tenancy.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemResult']:
+        """
+        A list of Java download records in a tenancy.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 architecture: str,
+                 download_source_id: str,
+                 download_type: str,
+                 family_display_name: str,
+                 family_version: str,
+                 os_family: str,
+                 package_type: str,
+                 package_type_detail: str,
+                 release_version: str,
+                 time_downloaded: str):
+        """
+        :param str architecture: Target Operating System architecture of the artifact.
+        :param str download_source_id: Identifier of the source that downloaded the artifact.
+        :param str download_type: Type of download.
+        :param str family_display_name: The Java family display name.
+        :param str family_version: Unique Java family version identifier.
+        :param str os_family: Target Operating System family of the artifact.
+        :param str package_type: The package type(typically the file extension) of the artifact.
+        :param str package_type_detail: Packaging type detail of the artifact.
+        :param str release_version: Unique Java release version identifier.
+        :param str time_downloaded: Timestamp of download.
+        """
+        pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "download_source_id", download_source_id)
+        pulumi.set(__self__, "download_type", download_type)
+        pulumi.set(__self__, "family_display_name", family_display_name)
+        pulumi.set(__self__, "family_version", family_version)
+        pulumi.set(__self__, "os_family", os_family)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "package_type_detail", package_type_detail)
+        pulumi.set(__self__, "release_version", release_version)
+        pulumi.set(__self__, "time_downloaded", time_downloaded)
+
+    @property
+    @pulumi.getter
+    def architecture(self) -> str:
+        """
+        Target Operating System architecture of the artifact.
+        """
+        return pulumi.get(self, "architecture")
+
+    @property
+    @pulumi.getter(name="downloadSourceId")
+    def download_source_id(self) -> str:
+        """
+        Identifier of the source that downloaded the artifact.
+        """
+        return pulumi.get(self, "download_source_id")
+
+    @property
+    @pulumi.getter(name="downloadType")
+    def download_type(self) -> str:
+        """
+        Type of download.
+        """
+        return pulumi.get(self, "download_type")
+
+    @property
+    @pulumi.getter(name="familyDisplayName")
+    def family_display_name(self) -> str:
+        """
+        The Java family display name.
+        """
+        return pulumi.get(self, "family_display_name")
+
+    @property
+    @pulumi.getter(name="familyVersion")
+    def family_version(self) -> str:
+        """
+        Unique Java family version identifier.
+        """
+        return pulumi.get(self, "family_version")
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> str:
+        """
+        Target Operating System family of the artifact.
+        """
+        return pulumi.get(self, "os_family")
+
+    @property
+    @pulumi.getter(name="packageType")
+    def package_type(self) -> str:
+        """
+        The package type(typically the file extension) of the artifact.
+        """
+        return pulumi.get(self, "package_type")
+
+    @property
+    @pulumi.getter(name="packageTypeDetail")
+    def package_type_detail(self) -> str:
+        """
+        Packaging type detail of the artifact.
+        """
+        return pulumi.get(self, "package_type_detail")
+
+    @property
+    @pulumi.getter(name="releaseVersion")
+    def release_version(self) -> str:
+        """
+        Unique Java release version identifier.
+        """
+        return pulumi.get(self, "release_version")
+
+    @property
+    @pulumi.getter(name="timeDownloaded")
+    def time_downloaded(self) -> str:
+        """
+        Timestamp of download.
+        """
+        return pulumi.get(self, "time_downloaded")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadReportCreatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 email: str,
+                 id: str):
+        """
+        :param str display_name: Display name for the Java download report.
+        :param str email: The email of the principal.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Display name for the Java download report.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadReportsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 checksum_type: str,
+                 checksum_value: str,
+                 compartment_id: str,
+                 created_bies: Sequence['outputs.GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByResult'],
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 file_size_in_bytes: str,
+                 format: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_end: str,
+                 time_start: str):
+        """
+        :param str checksum_type: The algorithm used for calculating the checksum.
+        :param str checksum_value: The checksum value of the Java download report file.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+        :param Sequence['GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArgs'] created_bies: An authorized principal.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        :param str display_name: A filter to return only resources that match the display name.
+        :param str file_size_in_bytes: Approximate size of the Java download report file in bytes.
+        :param str format: The file format of the Java download report.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time the Java download report was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "checksum_type", checksum_type)
+        pulumi.set(__self__, "checksum_value", checksum_value)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_bies", created_bies)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "file_size_in_bytes", file_size_in_bytes)
+        pulumi.set(__self__, "format", format)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_end", time_end)
+        pulumi.set(__self__, "time_start", time_start)
+
+    @property
+    @pulumi.getter(name="checksumType")
+    def checksum_type(self) -> str:
+        """
+        The algorithm used for calculating the checksum.
+        """
+        return pulumi.get(self, "checksum_type")
+
+    @property
+    @pulumi.getter(name="checksumValue")
+    def checksum_value(self) -> str:
+        """
+        The checksum value of the Java download report file.
+        """
+        return pulumi.get(self, "checksum_value")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="createdBies")
+    def created_bies(self) -> Sequence['outputs.GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByResult']:
+        """
+        An authorized principal.
+        """
+        return pulumi.get(self, "created_bies")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="fileSizeInBytes")
+    def file_size_in_bytes(self) -> str:
+        """
+        Approximate size of the Java download report file in bytes.
+        """
+        return pulumi.get(self, "file_size_in_bytes")
+
+    @property
+    @pulumi.getter
+    def format(self) -> str:
+        """
+        The file format of the Java download report.
+        """
+        return pulumi.get(self, "format")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the Java download report was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeEnd")
+    def time_end(self) -> str:
+        return pulumi.get(self, "time_end")
+
+    @property
+    @pulumi.getter(name="timeStart")
+    def time_start(self) -> str:
+        return pulumi.get(self, "time_start")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 email: str,
+                 id: str):
+        """
+        :param str display_name: A filter to return only resources that match the display name.
+        :param str email: The email of the principal.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadTokenCreatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 email: str,
+                 id: str):
+        """
+        :param str display_name: The name of the principal.
+        :param str email: The email of the principal.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The name of the principal.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadTokenLastUpdatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 email: str,
+                 id: str):
+        """
+        :param str display_name: The name of the principal.
+        :param str email: The email of the principal.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The name of the principal.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadTokensFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 created_bies: Sequence['outputs.GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByResult'],
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 is_default: bool,
+                 java_version: str,
+                 last_updated_bies: Sequence['outputs.GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByResult'],
+                 license_types: Sequence[str],
+                 lifecycle_details: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_expires: str,
+                 time_last_used: str,
+                 time_updated: str,
+                 value: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+        :param Sequence['GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArgs'] created_bies: An authorized principal.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        :param str description: User provided description of the JavaDownloadToken.
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        :param str id: Unique JavaDownloadToken identifier.
+        :param bool is_default: A flag to indicate if the token is default.
+        :param str java_version: The associated Java version of the JavaDownloadToken.
+        :param Sequence['GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArgs'] last_updated_bies: An authorized principal.
+        :param Sequence[str] license_types: The license type(s) associated with the JavaDownloadToken.
+        :param str lifecycle_details: Possible lifecycle substates.
+        :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+        :param str time_expires: The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+        :param str time_last_used: The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+        :param str time_updated: The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+        :param str value: Unique JavaDownloadToken value.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_bies", created_bies)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_default", is_default)
+        pulumi.set(__self__, "java_version", java_version)
+        pulumi.set(__self__, "last_updated_bies", last_updated_bies)
+        pulumi.set(__self__, "license_types", license_types)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_expires", time_expires)
+        pulumi.set(__self__, "time_last_used", time_last_used)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="createdBies")
+    def created_bies(self) -> Sequence['outputs.GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByResult']:
+        """
+        An authorized principal.
+        """
+        return pulumi.get(self, "created_bies")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        User provided description of the JavaDownloadToken.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique JavaDownloadToken identifier.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isDefault")
+    def is_default(self) -> bool:
+        """
+        A flag to indicate if the token is default.
+        """
+        return pulumi.get(self, "is_default")
+
+    @property
+    @pulumi.getter(name="javaVersion")
+    def java_version(self) -> str:
+        """
+        The associated Java version of the JavaDownloadToken.
+        """
+        return pulumi.get(self, "java_version")
+
+    @property
+    @pulumi.getter(name="lastUpdatedBies")
+    def last_updated_bies(self) -> Sequence['outputs.GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByResult']:
+        """
+        An authorized principal.
+        """
+        return pulumi.get(self, "last_updated_bies")
+
+    @property
+    @pulumi.getter(name="licenseTypes")
+    def license_types(self) -> Sequence[str]:
+        """
+        The license type(s) associated with the JavaDownloadToken.
+        """
+        return pulumi.get(self, "license_types")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Possible lifecycle substates.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeExpires")
+    def time_expires(self) -> str:
+        """
+        The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_expires")
+
+    @property
+    @pulumi.getter(name="timeLastUsed")
+    def time_last_used(self) -> str:
+        """
+        The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_last_used")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        Unique JavaDownloadToken value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 email: str,
+                 id: str):
+        """
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str email: The email of the principal.
+        :param str id: Unique JavaDownloadToken identifier.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique JavaDownloadToken identifier.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 email: str,
+                 id: str):
+        """
+        :param str display_name: A filter to return only resources that match the entire display name given.
+        :param str email: The email of the principal.
+        :param str id: Unique JavaDownloadToken identifier.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique JavaDownloadToken identifier.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 email: str,
+                 id: str):
+        """
+        :param str display_name: The name of the principal.
+        :param str email: The email of the principal.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The name of the principal.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 email: str,
+                 id: str):
+        """
+        :param str display_name: The name of the principal.
+        :param str email: The email of the principal.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The name of the principal.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 created_bies: Sequence['outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByResult'],
+                 defined_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 last_updated_bies: Sequence['outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByResult'],
+                 license_acceptance_status: str,
+                 license_type: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_accepted: str,
+                 time_last_updated: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+        :param Sequence['GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArgs'] created_bies: An authorized principal.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        :param str id: Unique Java license acceptance record identifier.
+        :param Sequence['GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArgs'] last_updated_bies: An authorized principal.
+        :param str license_acceptance_status: Status of license acceptance.
+        :param str license_type: Unique Java license type.
+        :param str state: The current state of the JavaLicenseAcceptanceRecord.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_accepted: The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_last_updated: The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_bies", created_bies)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_updated_bies", last_updated_bies)
+        pulumi.set(__self__, "license_acceptance_status", license_acceptance_status)
+        pulumi.set(__self__, "license_type", license_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_accepted", time_accepted)
+        pulumi.set(__self__, "time_last_updated", time_last_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="createdBies")
+    def created_bies(self) -> Sequence['outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByResult']:
+        """
+        An authorized principal.
+        """
+        return pulumi.get(self, "created_bies")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique Java license acceptance record identifier.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastUpdatedBies")
+    def last_updated_bies(self) -> Sequence['outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByResult']:
+        """
+        An authorized principal.
+        """
+        return pulumi.get(self, "last_updated_bies")
+
+    @property
+    @pulumi.getter(name="licenseAcceptanceStatus")
+    def license_acceptance_status(self) -> str:
+        """
+        Status of license acceptance.
+        """
+        return pulumi.get(self, "license_acceptance_status")
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> str:
+        """
+        Unique Java license type.
+        """
+        return pulumi.get(self, "license_type")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the JavaLicenseAcceptanceRecord.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeAccepted")
+    def time_accepted(self) -> str:
+        """
+        The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_accepted")
+
+    @property
+    @pulumi.getter(name="timeLastUpdated")
+    def time_last_updated(self) -> str:
+        """
+        The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_last_updated")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 email: str,
+                 id: str):
+        """
+        :param str display_name: The name of the principal.
+        :param str email: The email of the principal.
+        :param str id: Unique Java license acceptance record identifier.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The name of the principal.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique Java license acceptance record identifier.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 email: str,
+                 id: str):
+        """
+        :param str display_name: The name of the principal.
+        :param str email: The email of the principal.
+        :param str id: Unique Java license acceptance record identifier.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        The name of the principal.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def email(self) -> str:
+        """
+        The email of the principal.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Unique Java license acceptance record identifier.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaLicensesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaLicensesJavaLicenseCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 license_type: str,
+                 license_url: str):
+        """
+        :param str display_name: A filter to return only resources that match the display name.
+        :param str license_type: Unique Java license type.
+        :param str license_url: Publicly accessible license URL containing the detailed terms and conditions.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "license_type", license_type)
+        pulumi.set(__self__, "license_url", license_url)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="licenseType")
+    def license_type(self) -> str:
+        """
+        Unique Java license type.
+        """
+        return pulumi.get(self, "license_type")
+
+    @property
+    @pulumi.getter(name="licenseUrl")
+    def license_url(self) -> str:
+        """
+        Publicly accessible license URL containing the detailed terms and conditions.
+        """
+        return pulumi.get(self, "license_url")
+
+
+@pulumi.output_type
 class GetJavaFamiliesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -2653,18 +4425,27 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
                  doc_url: str,
                  end_of_support_life_date: str,
                  family_version: str,
+                 is_supported_version: bool,
+                 latest_release_artifacts: Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactResult'],
+                 latest_release_version: str,
                  support_type: str):
         """
         :param str display_name: The display name for the Java family.
         :param str doc_url: Link to access the documentation for the release.
         :param str end_of_support_life_date: The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str family_version: The version identifier for the Java family.
+        :param bool is_supported_version: Filter the Java Release Family versions by support status.
+        :param Sequence['GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArgs'] latest_release_artifacts: List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+        :param str latest_release_version: Latest Java release version in the family.
         :param str support_type: This indicates the support category for the Java release family.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "doc_url", doc_url)
         pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
         pulumi.set(__self__, "family_version", family_version)
+        pulumi.set(__self__, "is_supported_version", is_supported_version)
+        pulumi.set(__self__, "latest_release_artifacts", latest_release_artifacts)
+        pulumi.set(__self__, "latest_release_version", latest_release_version)
         pulumi.set(__self__, "support_type", support_type)
 
     @property
@@ -2700,6 +4481,30 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
         return pulumi.get(self, "family_version")
 
     @property
+    @pulumi.getter(name="isSupportedVersion")
+    def is_supported_version(self) -> bool:
+        """
+        Filter the Java Release Family versions by support status.
+        """
+        return pulumi.get(self, "is_supported_version")
+
+    @property
+    @pulumi.getter(name="latestReleaseArtifacts")
+    def latest_release_artifacts(self) -> Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactResult']:
+        """
+        List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+        """
+        return pulumi.get(self, "latest_release_artifacts")
+
+    @property
+    @pulumi.getter(name="latestReleaseVersion")
+    def latest_release_version(self) -> str:
+        """
+        Latest Java release version in the family.
+        """
+        return pulumi.get(self, "latest_release_version")
+
+    @property
     @pulumi.getter(name="supportType")
     def support_type(self) -> str:
         """
@@ -2709,24 +4514,48 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
 
 
 @pulumi.output_type
-class GetJavaReleaseArtifactResult(dict):
+class GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactResult(dict):
     def __init__(__self__, *,
                  approximate_file_size_in_bytes: str,
+                 architecture: str,
                  artifact_content_type: str,
                  artifact_description: str,
+                 artifact_file_name: str,
                  artifact_id: str,
+                 download_url: str,
+                 os_family: str,
+                 package_type: str,
+                 package_type_detail: str,
+                 script_checksum_url: str,
+                 script_download_url: str,
                  sha256: str):
         """
         :param str approximate_file_size_in_bytes: Approximate compressed file size in bytes.
+        :param str architecture: The target Operating System architecture for the artifact.
         :param str artifact_content_type: Product content type of this artifact.
         :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        :param str artifact_file_name: The file name of the artifact.
         :param str artifact_id: Unique identifier for the artifact.
+        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        :param str os_family: The target Operating System family for the artifact.
+        :param str package_type: The package type(typically the file extension) of the artifact.
+        :param str package_type_detail: Additional information about the package type.
+        :param str script_checksum_url: The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+        :param str script_download_url: The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
         :param str sha256: SHA256 checksum of the artifact.
         """
         pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        pulumi.set(__self__, "architecture", architecture)
         pulumi.set(__self__, "artifact_content_type", artifact_content_type)
         pulumi.set(__self__, "artifact_description", artifact_description)
+        pulumi.set(__self__, "artifact_file_name", artifact_file_name)
         pulumi.set(__self__, "artifact_id", artifact_id)
+        pulumi.set(__self__, "download_url", download_url)
+        pulumi.set(__self__, "os_family", os_family)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "package_type_detail", package_type_detail)
+        pulumi.set(__self__, "script_checksum_url", script_checksum_url)
+        pulumi.set(__self__, "script_download_url", script_download_url)
         pulumi.set(__self__, "sha256", sha256)
 
     @property
@@ -2736,6 +4565,14 @@ class GetJavaReleaseArtifactResult(dict):
         Approximate compressed file size in bytes.
         """
         return pulumi.get(self, "approximate_file_size_in_bytes")
+
+    @property
+    @pulumi.getter
+    def architecture(self) -> str:
+        """
+        The target Operating System architecture for the artifact.
+        """
+        return pulumi.get(self, "architecture")
 
     @property
     @pulumi.getter(name="artifactContentType")
@@ -2754,12 +4591,368 @@ class GetJavaReleaseArtifactResult(dict):
         return pulumi.get(self, "artifact_description")
 
     @property
+    @pulumi.getter(name="artifactFileName")
+    def artifact_file_name(self) -> str:
+        """
+        The file name of the artifact.
+        """
+        return pulumi.get(self, "artifact_file_name")
+
+    @property
     @pulumi.getter(name="artifactId")
     def artifact_id(self) -> str:
         """
         Unique identifier for the artifact.
         """
         return pulumi.get(self, "artifact_id")
+
+    @property
+    @pulumi.getter(name="downloadUrl")
+    def download_url(self) -> str:
+        """
+        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        """
+        return pulumi.get(self, "download_url")
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> str:
+        """
+        The target Operating System family for the artifact.
+        """
+        return pulumi.get(self, "os_family")
+
+    @property
+    @pulumi.getter(name="packageType")
+    def package_type(self) -> str:
+        """
+        The package type(typically the file extension) of the artifact.
+        """
+        return pulumi.get(self, "package_type")
+
+    @property
+    @pulumi.getter(name="packageTypeDetail")
+    def package_type_detail(self) -> str:
+        """
+        Additional information about the package type.
+        """
+        return pulumi.get(self, "package_type_detail")
+
+    @property
+    @pulumi.getter(name="scriptChecksumUrl")
+    def script_checksum_url(self) -> str:
+        """
+        The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+        """
+        return pulumi.get(self, "script_checksum_url")
+
+    @property
+    @pulumi.getter(name="scriptDownloadUrl")
+    def script_download_url(self) -> str:
+        """
+        The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+        """
+        return pulumi.get(self, "script_download_url")
+
+    @property
+    @pulumi.getter
+    def sha256(self) -> str:
+        """
+        SHA256 checksum of the artifact.
+        """
+        return pulumi.get(self, "sha256")
+
+
+@pulumi.output_type
+class GetJavaFamilyLatestReleaseArtifactResult(dict):
+    def __init__(__self__, *,
+                 approximate_file_size_in_bytes: str,
+                 architecture: str,
+                 artifact_content_type: str,
+                 artifact_description: str,
+                 artifact_file_name: str,
+                 artifact_id: str,
+                 download_url: str,
+                 os_family: str,
+                 package_type: str,
+                 package_type_detail: str,
+                 script_checksum_url: str,
+                 script_download_url: str,
+                 sha256: str):
+        """
+        :param str approximate_file_size_in_bytes: Approximate compressed file size in bytes.
+        :param str architecture: The target Operating System architecture for the artifact.
+        :param str artifact_content_type: Product content type of this artifact.
+        :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        :param str artifact_file_name: The file name of the artifact.
+        :param str artifact_id: Unique identifier for the artifact.
+        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        :param str os_family: The target Operating System family for the artifact.
+        :param str package_type: The package type(typically the file extension) of the artifact.
+        :param str package_type_detail: Additional information about the package type.
+        :param str script_checksum_url: The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+        :param str script_download_url: The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+        :param str sha256: SHA256 checksum of the artifact.
+        """
+        pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "artifact_content_type", artifact_content_type)
+        pulumi.set(__self__, "artifact_description", artifact_description)
+        pulumi.set(__self__, "artifact_file_name", artifact_file_name)
+        pulumi.set(__self__, "artifact_id", artifact_id)
+        pulumi.set(__self__, "download_url", download_url)
+        pulumi.set(__self__, "os_family", os_family)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "package_type_detail", package_type_detail)
+        pulumi.set(__self__, "script_checksum_url", script_checksum_url)
+        pulumi.set(__self__, "script_download_url", script_download_url)
+        pulumi.set(__self__, "sha256", sha256)
+
+    @property
+    @pulumi.getter(name="approximateFileSizeInBytes")
+    def approximate_file_size_in_bytes(self) -> str:
+        """
+        Approximate compressed file size in bytes.
+        """
+        return pulumi.get(self, "approximate_file_size_in_bytes")
+
+    @property
+    @pulumi.getter
+    def architecture(self) -> str:
+        """
+        The target Operating System architecture for the artifact.
+        """
+        return pulumi.get(self, "architecture")
+
+    @property
+    @pulumi.getter(name="artifactContentType")
+    def artifact_content_type(self) -> str:
+        """
+        Product content type of this artifact.
+        """
+        return pulumi.get(self, "artifact_content_type")
+
+    @property
+    @pulumi.getter(name="artifactDescription")
+    def artifact_description(self) -> str:
+        """
+        Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        """
+        return pulumi.get(self, "artifact_description")
+
+    @property
+    @pulumi.getter(name="artifactFileName")
+    def artifact_file_name(self) -> str:
+        """
+        The file name of the artifact.
+        """
+        return pulumi.get(self, "artifact_file_name")
+
+    @property
+    @pulumi.getter(name="artifactId")
+    def artifact_id(self) -> str:
+        """
+        Unique identifier for the artifact.
+        """
+        return pulumi.get(self, "artifact_id")
+
+    @property
+    @pulumi.getter(name="downloadUrl")
+    def download_url(self) -> str:
+        """
+        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        """
+        return pulumi.get(self, "download_url")
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> str:
+        """
+        The target Operating System family for the artifact.
+        """
+        return pulumi.get(self, "os_family")
+
+    @property
+    @pulumi.getter(name="packageType")
+    def package_type(self) -> str:
+        """
+        The package type(typically the file extension) of the artifact.
+        """
+        return pulumi.get(self, "package_type")
+
+    @property
+    @pulumi.getter(name="packageTypeDetail")
+    def package_type_detail(self) -> str:
+        """
+        Additional information about the package type.
+        """
+        return pulumi.get(self, "package_type_detail")
+
+    @property
+    @pulumi.getter(name="scriptChecksumUrl")
+    def script_checksum_url(self) -> str:
+        """
+        The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+        """
+        return pulumi.get(self, "script_checksum_url")
+
+    @property
+    @pulumi.getter(name="scriptDownloadUrl")
+    def script_download_url(self) -> str:
+        """
+        The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+        """
+        return pulumi.get(self, "script_download_url")
+
+    @property
+    @pulumi.getter
+    def sha256(self) -> str:
+        """
+        SHA256 checksum of the artifact.
+        """
+        return pulumi.get(self, "sha256")
+
+
+@pulumi.output_type
+class GetJavaReleaseArtifactResult(dict):
+    def __init__(__self__, *,
+                 approximate_file_size_in_bytes: str,
+                 architecture: str,
+                 artifact_content_type: str,
+                 artifact_description: str,
+                 artifact_file_name: str,
+                 artifact_id: str,
+                 download_url: str,
+                 os_family: str,
+                 package_type: str,
+                 package_type_detail: str,
+                 script_checksum_url: str,
+                 script_download_url: str,
+                 sha256: str):
+        """
+        :param str approximate_file_size_in_bytes: Approximate compressed file size in bytes.
+        :param str architecture: The target Operating System architecture for the artifact.
+        :param str artifact_content_type: Product content type of this artifact.
+        :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        :param str artifact_file_name: The file name of the artifact.
+        :param str artifact_id: Unique identifier for the artifact.
+        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        :param str os_family: The target Operating System family for the artifact.
+        :param str package_type: The package type(typically the file extension) of the artifact.
+        :param str package_type_detail: Additional information about the package type.
+        :param str script_checksum_url: The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+        :param str script_download_url: The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+        :param str sha256: SHA256 checksum of the artifact.
+        """
+        pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "artifact_content_type", artifact_content_type)
+        pulumi.set(__self__, "artifact_description", artifact_description)
+        pulumi.set(__self__, "artifact_file_name", artifact_file_name)
+        pulumi.set(__self__, "artifact_id", artifact_id)
+        pulumi.set(__self__, "download_url", download_url)
+        pulumi.set(__self__, "os_family", os_family)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "package_type_detail", package_type_detail)
+        pulumi.set(__self__, "script_checksum_url", script_checksum_url)
+        pulumi.set(__self__, "script_download_url", script_download_url)
+        pulumi.set(__self__, "sha256", sha256)
+
+    @property
+    @pulumi.getter(name="approximateFileSizeInBytes")
+    def approximate_file_size_in_bytes(self) -> str:
+        """
+        Approximate compressed file size in bytes.
+        """
+        return pulumi.get(self, "approximate_file_size_in_bytes")
+
+    @property
+    @pulumi.getter
+    def architecture(self) -> str:
+        """
+        The target Operating System architecture for the artifact.
+        """
+        return pulumi.get(self, "architecture")
+
+    @property
+    @pulumi.getter(name="artifactContentType")
+    def artifact_content_type(self) -> str:
+        """
+        Product content type of this artifact.
+        """
+        return pulumi.get(self, "artifact_content_type")
+
+    @property
+    @pulumi.getter(name="artifactDescription")
+    def artifact_description(self) -> str:
+        """
+        Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        """
+        return pulumi.get(self, "artifact_description")
+
+    @property
+    @pulumi.getter(name="artifactFileName")
+    def artifact_file_name(self) -> str:
+        """
+        The file name of the artifact.
+        """
+        return pulumi.get(self, "artifact_file_name")
+
+    @property
+    @pulumi.getter(name="artifactId")
+    def artifact_id(self) -> str:
+        """
+        Unique identifier for the artifact.
+        """
+        return pulumi.get(self, "artifact_id")
+
+    @property
+    @pulumi.getter(name="downloadUrl")
+    def download_url(self) -> str:
+        """
+        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        """
+        return pulumi.get(self, "download_url")
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> str:
+        """
+        The target Operating System family for the artifact.
+        """
+        return pulumi.get(self, "os_family")
+
+    @property
+    @pulumi.getter(name="packageType")
+    def package_type(self) -> str:
+        """
+        The package type(typically the file extension) of the artifact.
+        """
+        return pulumi.get(self, "package_type")
+
+    @property
+    @pulumi.getter(name="packageTypeDetail")
+    def package_type_detail(self) -> str:
+        """
+        Additional information about the package type.
+        """
+        return pulumi.get(self, "package_type_detail")
+
+    @property
+    @pulumi.getter(name="scriptChecksumUrl")
+    def script_checksum_url(self) -> str:
+        """
+        The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+        """
+        return pulumi.get(self, "script_checksum_url")
+
+    @property
+    @pulumi.getter(name="scriptDownloadUrl")
+    def script_download_url(self) -> str:
+        """
+        The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+        """
+        return pulumi.get(self, "script_download_url")
 
     @property
     @pulumi.getter
@@ -2777,25 +4970,34 @@ class GetJavaReleaseFamilyDetailResult(dict):
                  doc_url: str,
                  end_of_support_life_date: str,
                  family_version: str,
+                 is_supported_version: bool,
+                 latest_release_artifacts: Sequence['outputs.GetJavaReleaseFamilyDetailLatestReleaseArtifactResult'],
+                 latest_release_version: str,
                  support_type: str):
         """
-        :param str display_name: Commonly used name for the license type.
+        :param str display_name: Commonly used name for the MoS release.
         :param str doc_url: Link to access the documentation for the release.
         :param str end_of_support_life_date: The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str family_version: Java release family identifier.
+        :param bool is_supported_version: Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+        :param Sequence['GetJavaReleaseFamilyDetailLatestReleaseArtifactArgs'] latest_release_artifacts: List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+        :param str latest_release_version: Latest Java release version in the family.
         :param str support_type: This indicates the support category for the Java release family.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "doc_url", doc_url)
         pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
         pulumi.set(__self__, "family_version", family_version)
+        pulumi.set(__self__, "is_supported_version", is_supported_version)
+        pulumi.set(__self__, "latest_release_artifacts", latest_release_artifacts)
+        pulumi.set(__self__, "latest_release_version", latest_release_version)
         pulumi.set(__self__, "support_type", support_type)
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Commonly used name for the license type.
+        Commonly used name for the MoS release.
         """
         return pulumi.get(self, "display_name")
 
@@ -2824,6 +5026,30 @@ class GetJavaReleaseFamilyDetailResult(dict):
         return pulumi.get(self, "family_version")
 
     @property
+    @pulumi.getter(name="isSupportedVersion")
+    def is_supported_version(self) -> bool:
+        """
+        Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+        """
+        return pulumi.get(self, "is_supported_version")
+
+    @property
+    @pulumi.getter(name="latestReleaseArtifacts")
+    def latest_release_artifacts(self) -> Sequence['outputs.GetJavaReleaseFamilyDetailLatestReleaseArtifactResult']:
+        """
+        List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+        """
+        return pulumi.get(self, "latest_release_artifacts")
+
+    @property
+    @pulumi.getter(name="latestReleaseVersion")
+    def latest_release_version(self) -> str:
+        """
+        Latest Java release version in the family.
+        """
+        return pulumi.get(self, "latest_release_version")
+
+    @property
     @pulumi.getter(name="supportType")
     def support_type(self) -> str:
         """
@@ -2833,13 +5059,163 @@ class GetJavaReleaseFamilyDetailResult(dict):
 
 
 @pulumi.output_type
+class GetJavaReleaseFamilyDetailLatestReleaseArtifactResult(dict):
+    def __init__(__self__, *,
+                 approximate_file_size_in_bytes: str,
+                 architecture: str,
+                 artifact_content_type: str,
+                 artifact_description: str,
+                 artifact_file_name: str,
+                 artifact_id: str,
+                 download_url: str,
+                 os_family: str,
+                 package_type: str,
+                 package_type_detail: str,
+                 script_checksum_url: str,
+                 script_download_url: str,
+                 sha256: str):
+        """
+        :param str approximate_file_size_in_bytes: Approximate compressed file size in bytes.
+        :param str architecture: The target Operating System architecture for the artifact.
+        :param str artifact_content_type: Product content type of this artifact.
+        :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        :param str artifact_file_name: The file name of the artifact.
+        :param str artifact_id: Unique identifier for the artifact.
+        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        :param str os_family: The target Operating System family for the artifact.
+        :param str package_type: The package type(typically the file extension) of the artifact.
+        :param str package_type_detail: Additional information about the package type.
+        :param str script_checksum_url: The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+        :param str script_download_url: The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+        :param str sha256: SHA256 checksum of the artifact.
+        """
+        pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "artifact_content_type", artifact_content_type)
+        pulumi.set(__self__, "artifact_description", artifact_description)
+        pulumi.set(__self__, "artifact_file_name", artifact_file_name)
+        pulumi.set(__self__, "artifact_id", artifact_id)
+        pulumi.set(__self__, "download_url", download_url)
+        pulumi.set(__self__, "os_family", os_family)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "package_type_detail", package_type_detail)
+        pulumi.set(__self__, "script_checksum_url", script_checksum_url)
+        pulumi.set(__self__, "script_download_url", script_download_url)
+        pulumi.set(__self__, "sha256", sha256)
+
+    @property
+    @pulumi.getter(name="approximateFileSizeInBytes")
+    def approximate_file_size_in_bytes(self) -> str:
+        """
+        Approximate compressed file size in bytes.
+        """
+        return pulumi.get(self, "approximate_file_size_in_bytes")
+
+    @property
+    @pulumi.getter
+    def architecture(self) -> str:
+        """
+        The target Operating System architecture for the artifact.
+        """
+        return pulumi.get(self, "architecture")
+
+    @property
+    @pulumi.getter(name="artifactContentType")
+    def artifact_content_type(self) -> str:
+        """
+        Product content type of this artifact.
+        """
+        return pulumi.get(self, "artifact_content_type")
+
+    @property
+    @pulumi.getter(name="artifactDescription")
+    def artifact_description(self) -> str:
+        """
+        Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        """
+        return pulumi.get(self, "artifact_description")
+
+    @property
+    @pulumi.getter(name="artifactFileName")
+    def artifact_file_name(self) -> str:
+        """
+        The file name of the artifact.
+        """
+        return pulumi.get(self, "artifact_file_name")
+
+    @property
+    @pulumi.getter(name="artifactId")
+    def artifact_id(self) -> str:
+        """
+        Unique identifier for the artifact.
+        """
+        return pulumi.get(self, "artifact_id")
+
+    @property
+    @pulumi.getter(name="downloadUrl")
+    def download_url(self) -> str:
+        """
+        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        """
+        return pulumi.get(self, "download_url")
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> str:
+        """
+        The target Operating System family for the artifact.
+        """
+        return pulumi.get(self, "os_family")
+
+    @property
+    @pulumi.getter(name="packageType")
+    def package_type(self) -> str:
+        """
+        The package type(typically the file extension) of the artifact.
+        """
+        return pulumi.get(self, "package_type")
+
+    @property
+    @pulumi.getter(name="packageTypeDetail")
+    def package_type_detail(self) -> str:
+        """
+        Additional information about the package type.
+        """
+        return pulumi.get(self, "package_type_detail")
+
+    @property
+    @pulumi.getter(name="scriptChecksumUrl")
+    def script_checksum_url(self) -> str:
+        """
+        The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+        """
+        return pulumi.get(self, "script_checksum_url")
+
+    @property
+    @pulumi.getter(name="scriptDownloadUrl")
+    def script_download_url(self) -> str:
+        """
+        The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+        """
+        return pulumi.get(self, "script_download_url")
+
+    @property
+    @pulumi.getter
+    def sha256(self) -> str:
+        """
+        SHA256 checksum of the artifact.
+        """
+        return pulumi.get(self, "sha256")
+
+
+@pulumi.output_type
 class GetJavaReleaseLicenseDetailResult(dict):
     def __init__(__self__, *,
                  display_name: str,
                  license_type: str,
                  license_url: str):
         """
-        :param str display_name: Commonly used name for the license type.
+        :param str display_name: Commonly used name for the MoS release.
         :param str license_type: License type for the Java version.
         :param str license_url: Publicly accessible license URL containing the detailed terms and conditions.
         """
@@ -2851,7 +5227,7 @@ class GetJavaReleaseLicenseDetailResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Commonly used name for the license type.
+        Commonly used name for the MoS release.
         """
         return pulumi.get(self, "display_name")
 
@@ -2870,6 +5246,35 @@ class GetJavaReleaseLicenseDetailResult(dict):
         Publicly accessible license URL containing the detailed terms and conditions.
         """
         return pulumi.get(self, "license_url")
+
+
+@pulumi.output_type
+class GetJavaReleaseMosPatchResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 patch_url: str):
+        """
+        :param str display_name: Commonly used name for the MoS release.
+        :param str patch_url: MoS URL to access the artifacts for the Java release.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "patch_url", patch_url)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Commonly used name for the MoS release.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="patchUrl")
+    def patch_url(self) -> str:
+        """
+        MoS URL to access the artifacts for the Java release.
+        """
+        return pulumi.get(self, "patch_url")
 
 
 @pulumi.output_type
@@ -2916,10 +5321,12 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
     def __init__(__self__, *,
                  artifact_content_types: Sequence[str],
                  artifacts: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult'],
+                 days_under_security_baseline: int,
                  family_details: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult'],
                  family_version: str,
                  license_details: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult'],
                  license_type: str,
+                 mos_patches: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemMosPatchResult'],
                  parent_release_version: str,
                  release_date: str,
                  release_notes_url: str,
@@ -2929,10 +5336,12 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
         """
         :param Sequence[str] artifact_content_types: Artifact content types for the Java version.
         :param Sequence['GetJavaReleasesJavaReleaseCollectionItemArtifactArgs'] artifacts: List of Java artifacts.
+        :param int days_under_security_baseline: The number of days since this release has been under the security baseline.
         :param Sequence['GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs'] family_details: Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
         :param str family_version: The version identifier for the Java family.
         :param Sequence['GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs'] license_details: Information about a license type for Java.
         :param str license_type: Java license type.
+        :param Sequence['GetJavaReleasesJavaReleaseCollectionItemMosPatchArgs'] mos_patches: List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
         :param str parent_release_version: Parent Java release version identifier. This is applicable for BPR releases.
         :param str release_date: The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str release_notes_url: Release notes associated with the Java version.
@@ -2942,10 +5351,12 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
         """
         pulumi.set(__self__, "artifact_content_types", artifact_content_types)
         pulumi.set(__self__, "artifacts", artifacts)
+        pulumi.set(__self__, "days_under_security_baseline", days_under_security_baseline)
         pulumi.set(__self__, "family_details", family_details)
         pulumi.set(__self__, "family_version", family_version)
         pulumi.set(__self__, "license_details", license_details)
         pulumi.set(__self__, "license_type", license_type)
+        pulumi.set(__self__, "mos_patches", mos_patches)
         pulumi.set(__self__, "parent_release_version", parent_release_version)
         pulumi.set(__self__, "release_date", release_date)
         pulumi.set(__self__, "release_notes_url", release_notes_url)
@@ -2968,6 +5379,14 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
         List of Java artifacts.
         """
         return pulumi.get(self, "artifacts")
+
+    @property
+    @pulumi.getter(name="daysUnderSecurityBaseline")
+    def days_under_security_baseline(self) -> int:
+        """
+        The number of days since this release has been under the security baseline.
+        """
+        return pulumi.get(self, "days_under_security_baseline")
 
     @property
     @pulumi.getter(name="familyDetails")
@@ -3000,6 +5419,14 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
         Java license type.
         """
         return pulumi.get(self, "license_type")
+
+    @property
+    @pulumi.getter(name="mosPatches")
+    def mos_patches(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemMosPatchResult']:
+        """
+        List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
+        """
+        return pulumi.get(self, "mos_patches")
 
     @property
     @pulumi.getter(name="parentReleaseVersion")
@@ -3054,21 +5481,45 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
 class GetJavaReleasesJavaReleaseCollectionItemArtifactResult(dict):
     def __init__(__self__, *,
                  approximate_file_size_in_bytes: str,
+                 architecture: str,
                  artifact_content_type: str,
                  artifact_description: str,
+                 artifact_file_name: str,
                  artifact_id: str,
+                 download_url: str,
+                 os_family: str,
+                 package_type: str,
+                 package_type_detail: str,
+                 script_checksum_url: str,
+                 script_download_url: str,
                  sha256: str):
         """
         :param str approximate_file_size_in_bytes: Approximate compressed file size in bytes.
+        :param str architecture: The target Operating System architecture for the artifact.
         :param str artifact_content_type: Product content type of this artifact.
         :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        :param str artifact_file_name: The file name of the artifact.
         :param str artifact_id: Unique identifier for the artifact.
+        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        :param str os_family: The target Operating System family for the artifact.
+        :param str package_type: The package type(typically the file extension) of the artifact.
+        :param str package_type_detail: Additional information about the package type.
+        :param str script_checksum_url: The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+        :param str script_download_url: The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
         :param str sha256: SHA256 checksum of the artifact.
         """
         pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        pulumi.set(__self__, "architecture", architecture)
         pulumi.set(__self__, "artifact_content_type", artifact_content_type)
         pulumi.set(__self__, "artifact_description", artifact_description)
+        pulumi.set(__self__, "artifact_file_name", artifact_file_name)
         pulumi.set(__self__, "artifact_id", artifact_id)
+        pulumi.set(__self__, "download_url", download_url)
+        pulumi.set(__self__, "os_family", os_family)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "package_type_detail", package_type_detail)
+        pulumi.set(__self__, "script_checksum_url", script_checksum_url)
+        pulumi.set(__self__, "script_download_url", script_download_url)
         pulumi.set(__self__, "sha256", sha256)
 
     @property
@@ -3078,6 +5529,14 @@ class GetJavaReleasesJavaReleaseCollectionItemArtifactResult(dict):
         Approximate compressed file size in bytes.
         """
         return pulumi.get(self, "approximate_file_size_in_bytes")
+
+    @property
+    @pulumi.getter
+    def architecture(self) -> str:
+        """
+        The target Operating System architecture for the artifact.
+        """
+        return pulumi.get(self, "architecture")
 
     @property
     @pulumi.getter(name="artifactContentType")
@@ -3096,12 +5555,68 @@ class GetJavaReleasesJavaReleaseCollectionItemArtifactResult(dict):
         return pulumi.get(self, "artifact_description")
 
     @property
+    @pulumi.getter(name="artifactFileName")
+    def artifact_file_name(self) -> str:
+        """
+        The file name of the artifact.
+        """
+        return pulumi.get(self, "artifact_file_name")
+
+    @property
     @pulumi.getter(name="artifactId")
     def artifact_id(self) -> str:
         """
         Unique identifier for the artifact.
         """
         return pulumi.get(self, "artifact_id")
+
+    @property
+    @pulumi.getter(name="downloadUrl")
+    def download_url(self) -> str:
+        """
+        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        """
+        return pulumi.get(self, "download_url")
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> str:
+        """
+        The target Operating System family for the artifact.
+        """
+        return pulumi.get(self, "os_family")
+
+    @property
+    @pulumi.getter(name="packageType")
+    def package_type(self) -> str:
+        """
+        The package type(typically the file extension) of the artifact.
+        """
+        return pulumi.get(self, "package_type")
+
+    @property
+    @pulumi.getter(name="packageTypeDetail")
+    def package_type_detail(self) -> str:
+        """
+        Additional information about the package type.
+        """
+        return pulumi.get(self, "package_type_detail")
+
+    @property
+    @pulumi.getter(name="scriptChecksumUrl")
+    def script_checksum_url(self) -> str:
+        """
+        The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+        """
+        return pulumi.get(self, "script_checksum_url")
+
+    @property
+    @pulumi.getter(name="scriptDownloadUrl")
+    def script_download_url(self) -> str:
+        """
+        The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+        """
+        return pulumi.get(self, "script_download_url")
 
     @property
     @pulumi.getter
@@ -3119,25 +5634,34 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
                  doc_url: str,
                  end_of_support_life_date: str,
                  family_version: str,
+                 is_supported_version: bool,
+                 latest_release_artifacts: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactResult'],
+                 latest_release_version: str,
                  support_type: str):
         """
-        :param str display_name: Commonly used name for the license type.
+        :param str display_name: Commonly used name for the MoS release.
         :param str doc_url: Link to access the documentation for the release.
         :param str end_of_support_life_date: The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str family_version: The version identifier for the Java family.
+        :param bool is_supported_version: Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+        :param Sequence['GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArgs'] latest_release_artifacts: List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+        :param str latest_release_version: Latest Java release version in the family.
         :param str support_type: This indicates the support category for the Java release family.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "doc_url", doc_url)
         pulumi.set(__self__, "end_of_support_life_date", end_of_support_life_date)
         pulumi.set(__self__, "family_version", family_version)
+        pulumi.set(__self__, "is_supported_version", is_supported_version)
+        pulumi.set(__self__, "latest_release_artifacts", latest_release_artifacts)
+        pulumi.set(__self__, "latest_release_version", latest_release_version)
         pulumi.set(__self__, "support_type", support_type)
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Commonly used name for the license type.
+        Commonly used name for the MoS release.
         """
         return pulumi.get(self, "display_name")
 
@@ -3166,6 +5690,30 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
         return pulumi.get(self, "family_version")
 
     @property
+    @pulumi.getter(name="isSupportedVersion")
+    def is_supported_version(self) -> bool:
+        """
+        Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+        """
+        return pulumi.get(self, "is_supported_version")
+
+    @property
+    @pulumi.getter(name="latestReleaseArtifacts")
+    def latest_release_artifacts(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactResult']:
+        """
+        List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+        """
+        return pulumi.get(self, "latest_release_artifacts")
+
+    @property
+    @pulumi.getter(name="latestReleaseVersion")
+    def latest_release_version(self) -> str:
+        """
+        Latest Java release version in the family.
+        """
+        return pulumi.get(self, "latest_release_version")
+
+    @property
     @pulumi.getter(name="supportType")
     def support_type(self) -> str:
         """
@@ -3175,13 +5723,163 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
 
 
 @pulumi.output_type
+class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactResult(dict):
+    def __init__(__self__, *,
+                 approximate_file_size_in_bytes: str,
+                 architecture: str,
+                 artifact_content_type: str,
+                 artifact_description: str,
+                 artifact_file_name: str,
+                 artifact_id: str,
+                 download_url: str,
+                 os_family: str,
+                 package_type: str,
+                 package_type_detail: str,
+                 script_checksum_url: str,
+                 script_download_url: str,
+                 sha256: str):
+        """
+        :param str approximate_file_size_in_bytes: Approximate compressed file size in bytes.
+        :param str architecture: The target Operating System architecture for the artifact.
+        :param str artifact_content_type: Product content type of this artifact.
+        :param str artifact_description: Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        :param str artifact_file_name: The file name of the artifact.
+        :param str artifact_id: Unique identifier for the artifact.
+        :param str download_url: The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        :param str os_family: The target Operating System family for the artifact.
+        :param str package_type: The package type(typically the file extension) of the artifact.
+        :param str package_type_detail: Additional information about the package type.
+        :param str script_checksum_url: The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+        :param str script_download_url: The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+        :param str sha256: SHA256 checksum of the artifact.
+        """
+        pulumi.set(__self__, "approximate_file_size_in_bytes", approximate_file_size_in_bytes)
+        pulumi.set(__self__, "architecture", architecture)
+        pulumi.set(__self__, "artifact_content_type", artifact_content_type)
+        pulumi.set(__self__, "artifact_description", artifact_description)
+        pulumi.set(__self__, "artifact_file_name", artifact_file_name)
+        pulumi.set(__self__, "artifact_id", artifact_id)
+        pulumi.set(__self__, "download_url", download_url)
+        pulumi.set(__self__, "os_family", os_family)
+        pulumi.set(__self__, "package_type", package_type)
+        pulumi.set(__self__, "package_type_detail", package_type_detail)
+        pulumi.set(__self__, "script_checksum_url", script_checksum_url)
+        pulumi.set(__self__, "script_download_url", script_download_url)
+        pulumi.set(__self__, "sha256", sha256)
+
+    @property
+    @pulumi.getter(name="approximateFileSizeInBytes")
+    def approximate_file_size_in_bytes(self) -> str:
+        """
+        Approximate compressed file size in bytes.
+        """
+        return pulumi.get(self, "approximate_file_size_in_bytes")
+
+    @property
+    @pulumi.getter
+    def architecture(self) -> str:
+        """
+        The target Operating System architecture for the artifact.
+        """
+        return pulumi.get(self, "architecture")
+
+    @property
+    @pulumi.getter(name="artifactContentType")
+    def artifact_content_type(self) -> str:
+        """
+        Product content type of this artifact.
+        """
+        return pulumi.get(self, "artifact_content_type")
+
+    @property
+    @pulumi.getter(name="artifactDescription")
+    def artifact_description(self) -> str:
+        """
+        Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+        """
+        return pulumi.get(self, "artifact_description")
+
+    @property
+    @pulumi.getter(name="artifactFileName")
+    def artifact_file_name(self) -> str:
+        """
+        The file name of the artifact.
+        """
+        return pulumi.get(self, "artifact_file_name")
+
+    @property
+    @pulumi.getter(name="artifactId")
+    def artifact_id(self) -> str:
+        """
+        Unique identifier for the artifact.
+        """
+        return pulumi.get(self, "artifact_id")
+
+    @property
+    @pulumi.getter(name="downloadUrl")
+    def download_url(self) -> str:
+        """
+        The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+        """
+        return pulumi.get(self, "download_url")
+
+    @property
+    @pulumi.getter(name="osFamily")
+    def os_family(self) -> str:
+        """
+        The target Operating System family for the artifact.
+        """
+        return pulumi.get(self, "os_family")
+
+    @property
+    @pulumi.getter(name="packageType")
+    def package_type(self) -> str:
+        """
+        The package type(typically the file extension) of the artifact.
+        """
+        return pulumi.get(self, "package_type")
+
+    @property
+    @pulumi.getter(name="packageTypeDetail")
+    def package_type_detail(self) -> str:
+        """
+        Additional information about the package type.
+        """
+        return pulumi.get(self, "package_type_detail")
+
+    @property
+    @pulumi.getter(name="scriptChecksumUrl")
+    def script_checksum_url(self) -> str:
+        """
+        The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+        """
+        return pulumi.get(self, "script_checksum_url")
+
+    @property
+    @pulumi.getter(name="scriptDownloadUrl")
+    def script_download_url(self) -> str:
+        """
+        The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+        """
+        return pulumi.get(self, "script_download_url")
+
+    @property
+    @pulumi.getter
+    def sha256(self) -> str:
+        """
+        SHA256 checksum of the artifact.
+        """
+        return pulumi.get(self, "sha256")
+
+
+@pulumi.output_type
 class GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult(dict):
     def __init__(__self__, *,
                  display_name: str,
                  license_type: str,
                  license_url: str):
         """
-        :param str display_name: Commonly used name for the license type.
+        :param str display_name: Commonly used name for the MoS release.
         :param str license_type: Java license type.
         :param str license_url: Publicly accessible license URL containing the detailed terms and conditions.
         """
@@ -3193,7 +5891,7 @@ class GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult(dict):
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Commonly used name for the license type.
+        Commonly used name for the MoS release.
         """
         return pulumi.get(self, "display_name")
 
@@ -3212,6 +5910,35 @@ class GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult(dict):
         Publicly accessible license URL containing the detailed terms and conditions.
         """
         return pulumi.get(self, "license_url")
+
+
+@pulumi.output_type
+class GetJavaReleasesJavaReleaseCollectionItemMosPatchResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 patch_url: str):
+        """
+        :param str display_name: Commonly used name for the MoS release.
+        :param str patch_url: MoS URL to access the artifacts for the Java release.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "patch_url", patch_url)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        Commonly used name for the MoS release.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="patchUrl")
+    def patch_url(self) -> str:
+        """
+        MoS URL to access the artifacts for the Java release.
+        """
+        return pulumi.get(self, "patch_url")
 
 
 @pulumi.output_type

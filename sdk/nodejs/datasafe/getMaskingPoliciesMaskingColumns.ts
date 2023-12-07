@@ -148,7 +148,7 @@ export interface GetMaskingPoliciesMaskingColumnsResult {
      */
     readonly id: string;
     /**
-     * Indicates whether data masking is enabled for the masking column.
+     * Indicates if data masking is enabled for the masking column.
      */
     readonly isMaskingEnabled?: boolean;
     readonly isSeedRequired?: boolean;

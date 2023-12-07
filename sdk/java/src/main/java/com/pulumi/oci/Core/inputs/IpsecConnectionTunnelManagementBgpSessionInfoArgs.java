@@ -19,13 +19,32 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
      * The state of the BGP IPv6 session.
      * 
      */
-    @Import(name="bgpIpv6state")
-    private @Nullable Output<String> bgpIpv6state;
+    @Import(name="bgpIpv6State")
+    private @Nullable Output<String> bgpIpv6State;
 
     /**
      * @return The state of the BGP IPv6 session.
      * 
      */
+    public Optional<Output<String>> bgpIpv6State() {
+        return Optional.ofNullable(this.bgpIpv6State);
+    }
+
+    /**
+     * @deprecated
+     * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
+    @Import(name="bgpIpv6state")
+    private @Nullable Output<String> bgpIpv6state;
+
+    /**
+     * @deprecated
+     * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
     public Optional<Output<String>> bgpIpv6state() {
         return Optional.ofNullable(this.bgpIpv6state);
     }
@@ -100,6 +119,37 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
     }
 
     /**
+     * The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+     * 
+     * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel&#39;s BGP session.
+     * 
+     * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+     * 
+     * Only subnet masks from /64 up to /127 are allowed.
+     * 
+     * Example: `2001:db8::1/64`
+     * 
+     */
+    @Import(name="customerInterfaceIpv6")
+    private @Nullable Output<String> customerInterfaceIpv6;
+
+    /**
+     * @return The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+     * 
+     * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel&#39;s BGP session.
+     * 
+     * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+     * 
+     * Only subnet masks from /64 up to /127 are allowed.
+     * 
+     * Example: `2001:db8::1/64`
+     * 
+     */
+    public Optional<Output<String>> customerInterfaceIpv6() {
+        return Optional.ofNullable(this.customerInterfaceIpv6);
+    }
+
+    /**
      * The Oracle BGP ASN.
      * 
      */
@@ -145,15 +195,49 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
         return Optional.ofNullable(this.oracleInterfaceIp);
     }
 
+    /**
+     * The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+     * 
+     * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel&#39;s BGP session.
+     * 
+     * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+     * 
+     * Only subnet masks from /64 up to /127 are allowed.
+     * 
+     * Example: `2001:db8::1/64`
+     * 
+     */
+    @Import(name="oracleInterfaceIpv6")
+    private @Nullable Output<String> oracleInterfaceIpv6;
+
+    /**
+     * @return The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+     * 
+     * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel&#39;s BGP session.
+     * 
+     * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+     * 
+     * Only subnet masks from /64 up to /127 are allowed.
+     * 
+     * Example: `2001:db8::1/64`
+     * 
+     */
+    public Optional<Output<String>> oracleInterfaceIpv6() {
+        return Optional.ofNullable(this.oracleInterfaceIpv6);
+    }
+
     private IpsecConnectionTunnelManagementBgpSessionInfoArgs() {}
 
     private IpsecConnectionTunnelManagementBgpSessionInfoArgs(IpsecConnectionTunnelManagementBgpSessionInfoArgs $) {
+        this.bgpIpv6State = $.bgpIpv6State;
         this.bgpIpv6state = $.bgpIpv6state;
         this.bgpState = $.bgpState;
         this.customerBgpAsn = $.customerBgpAsn;
         this.customerInterfaceIp = $.customerInterfaceIp;
+        this.customerInterfaceIpv6 = $.customerInterfaceIpv6;
         this.oracleBgpAsn = $.oracleBgpAsn;
         this.oracleInterfaceIp = $.oracleInterfaceIp;
+        this.oracleInterfaceIpv6 = $.oracleInterfaceIpv6;
     }
 
     public static Builder builder() {
@@ -175,22 +259,47 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
         }
 
         /**
-         * @param bgpIpv6state The state of the BGP IPv6 session.
+         * @param bgpIpv6State The state of the BGP IPv6 session.
          * 
          * @return builder
          * 
          */
+        public Builder bgpIpv6State(@Nullable Output<String> bgpIpv6State) {
+            $.bgpIpv6State = bgpIpv6State;
+            return this;
+        }
+
+        /**
+         * @param bgpIpv6State The state of the BGP IPv6 session.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder bgpIpv6State(String bgpIpv6State) {
+            return bgpIpv6State(Output.of(bgpIpv6State));
+        }
+
+        /**
+         * @return builder
+         * 
+         * @deprecated
+         * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+         * 
+         */
+        @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
         public Builder bgpIpv6state(@Nullable Output<String> bgpIpv6state) {
             $.bgpIpv6state = bgpIpv6state;
             return this;
         }
 
         /**
-         * @param bgpIpv6state The state of the BGP IPv6 session.
-         * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+         * 
          */
+        @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
         public Builder bgpIpv6state(String bgpIpv6state) {
             return bgpIpv6state(Output.of(bgpIpv6state));
         }
@@ -283,6 +392,43 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
         }
 
         /**
+         * @param customerInterfaceIpv6 The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+         * 
+         * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel&#39;s BGP session.
+         * 
+         * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+         * 
+         * Only subnet masks from /64 up to /127 are allowed.
+         * 
+         * Example: `2001:db8::1/64`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customerInterfaceIpv6(@Nullable Output<String> customerInterfaceIpv6) {
+            $.customerInterfaceIpv6 = customerInterfaceIpv6;
+            return this;
+        }
+
+        /**
+         * @param customerInterfaceIpv6 The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+         * 
+         * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel&#39;s BGP session.
+         * 
+         * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+         * 
+         * Only subnet masks from /64 up to /127 are allowed.
+         * 
+         * Example: `2001:db8::1/64`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customerInterfaceIpv6(String customerInterfaceIpv6) {
+            return customerInterfaceIpv6(Output.of(customerInterfaceIpv6));
+        }
+
+        /**
          * @param oracleBgpAsn The Oracle BGP ASN.
          * 
          * @return builder
@@ -338,6 +484,43 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
          */
         public Builder oracleInterfaceIp(String oracleInterfaceIp) {
             return oracleInterfaceIp(Output.of(oracleInterfaceIp));
+        }
+
+        /**
+         * @param oracleInterfaceIpv6 The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+         * 
+         * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel&#39;s BGP session.
+         * 
+         * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+         * 
+         * Only subnet masks from /64 up to /127 are allowed.
+         * 
+         * Example: `2001:db8::1/64`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleInterfaceIpv6(@Nullable Output<String> oracleInterfaceIpv6) {
+            $.oracleInterfaceIpv6 = oracleInterfaceIpv6;
+            return this;
+        }
+
+        /**
+         * @param oracleInterfaceIpv6 The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+         * 
+         * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel&#39;s BGP session.
+         * 
+         * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+         * 
+         * Only subnet masks from /64 up to /127 are allowed.
+         * 
+         * Example: `2001:db8::1/64`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleInterfaceIpv6(String oracleInterfaceIpv6) {
+            return oracleInterfaceIpv6(Output.of(oracleInterfaceIpv6));
         }
 
         public IpsecConnectionTunnelManagementBgpSessionInfoArgs build() {

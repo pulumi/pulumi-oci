@@ -54,6 +54,36 @@ public final class GetDatabaseToolsConnectionsPlainArgs extends com.pulumi.resou
     }
 
     /**
+     * A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+     * 
+     */
+    @Import(name="relatedResourceIdentifier")
+    private @Nullable String relatedResourceIdentifier;
+
+    /**
+     * @return A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+     * 
+     */
+    public Optional<String> relatedResourceIdentifier() {
+        return Optional.ofNullable(this.relatedResourceIdentifier);
+    }
+
+    /**
+     * A filter to return only resources with one of the specified runtimeSupport values.
+     * 
+     */
+    @Import(name="runtimeSupports")
+    private @Nullable List<String> runtimeSupports;
+
+    /**
+     * @return A filter to return only resources with one of the specified runtimeSupport values.
+     * 
+     */
+    public Optional<List<String>> runtimeSupports() {
+        return Optional.ofNullable(this.runtimeSupports);
+    }
+
+    /**
      * A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
      * 
      */
@@ -89,6 +119,8 @@ public final class GetDatabaseToolsConnectionsPlainArgs extends com.pulumi.resou
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.relatedResourceIdentifier = $.relatedResourceIdentifier;
+        this.runtimeSupports = $.runtimeSupports;
         this.state = $.state;
         this.types = $.types;
     }
@@ -140,6 +172,38 @@ public final class GetDatabaseToolsConnectionsPlainArgs extends com.pulumi.resou
 
         public Builder filters(GetDatabaseToolsConnectionsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param relatedResourceIdentifier A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder relatedResourceIdentifier(@Nullable String relatedResourceIdentifier) {
+            $.relatedResourceIdentifier = relatedResourceIdentifier;
+            return this;
+        }
+
+        /**
+         * @param runtimeSupports A filter to return only resources with one of the specified runtimeSupport values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeSupports(@Nullable List<String> runtimeSupports) {
+            $.runtimeSupports = runtimeSupports;
+            return this;
+        }
+
+        /**
+         * @param runtimeSupports A filter to return only resources with one of the specified runtimeSupport values.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeSupports(String... runtimeSupports) {
+            return runtimeSupports(List.of(runtimeSupports));
         }
 
         /**

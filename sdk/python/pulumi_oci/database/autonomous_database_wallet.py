@@ -17,7 +17,8 @@ class AutonomousDatabaseWalletArgs:
                  autonomous_database_id: pulumi.Input[str],
                  password: pulumi.Input[str],
                  base64_encode_content: Optional[pulumi.Input[bool]] = None,
-                 generate_type: Optional[pulumi.Input[str]] = None):
+                 generate_type: Optional[pulumi.Input[str]] = None,
+                 is_regional: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a AutonomousDatabaseWallet resource.
         :param pulumi.Input[str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -29,6 +30,7 @@ class AutonomousDatabaseWalletArgs:
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
                
                **Serverless instance usage:**
+        :param pulumi.Input[bool] is_regional: True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
         pulumi.set(__self__, "password", password)
@@ -36,6 +38,8 @@ class AutonomousDatabaseWalletArgs:
             pulumi.set(__self__, "base64_encode_content", base64_encode_content)
         if generate_type is not None:
             pulumi.set(__self__, "generate_type", generate_type)
+        if is_regional is not None:
+            pulumi.set(__self__, "is_regional", is_regional)
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
@@ -88,6 +92,18 @@ class AutonomousDatabaseWalletArgs:
     def generate_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "generate_type", value)
 
+    @property
+    @pulumi.getter(name="isRegional")
+    def is_regional(self) -> Optional[pulumi.Input[bool]]:
+        """
+        True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+        """
+        return pulumi.get(self, "is_regional")
+
+    @is_regional.setter
+    def is_regional(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_regional", value)
+
 
 @pulumi.input_type
 class _AutonomousDatabaseWalletState:
@@ -96,6 +112,7 @@ class _AutonomousDatabaseWalletState:
                  base64_encode_content: Optional[pulumi.Input[bool]] = None,
                  content: Optional[pulumi.Input[str]] = None,
                  generate_type: Optional[pulumi.Input[str]] = None,
+                 is_regional: Optional[pulumi.Input[bool]] = None,
                  password: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering AutonomousDatabaseWallet resources.
@@ -104,6 +121,7 @@ class _AutonomousDatabaseWalletState:
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
                
                **Serverless instance usage:**
+        :param pulumi.Input[bool] is_regional: True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
                
                
@@ -118,6 +136,8 @@ class _AutonomousDatabaseWalletState:
             pulumi.set(__self__, "content", content)
         if generate_type is not None:
             pulumi.set(__self__, "generate_type", generate_type)
+        if is_regional is not None:
+            pulumi.set(__self__, "is_regional", is_regional)
         if password is not None:
             pulumi.set(__self__, "password", password)
 
@@ -169,6 +189,18 @@ class _AutonomousDatabaseWalletState:
         pulumi.set(self, "generate_type", value)
 
     @property
+    @pulumi.getter(name="isRegional")
+    def is_regional(self) -> Optional[pulumi.Input[bool]]:
+        """
+        True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+        """
+        return pulumi.get(self, "is_regional")
+
+    @is_regional.setter
+    def is_regional(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_regional", value)
+
+    @property
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[str]]:
         """
@@ -193,6 +225,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
                  base64_encode_content: Optional[pulumi.Input[bool]] = None,
                  generate_type: Optional[pulumi.Input[str]] = None,
+                 is_regional: Optional[pulumi.Input[bool]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -206,7 +239,8 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
             autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
             password=var["autonomous_database_wallet_password"],
             base64_encode_content=False,
-            generate_type=var["autonomous_database_wallet_generate_type"])
+            generate_type=var["autonomous_database_wallet_generate_type"],
+            is_regional=var["autonomous_database_wallet_is_regional"])
         ```
 
         ## Import
@@ -219,6 +253,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
                
                **Serverless instance usage:**
+        :param pulumi.Input[bool] is_regional: True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
                
                
@@ -242,7 +277,8 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
             autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
             password=var["autonomous_database_wallet_password"],
             base64_encode_content=False,
-            generate_type=var["autonomous_database_wallet_generate_type"])
+            generate_type=var["autonomous_database_wallet_generate_type"],
+            is_regional=var["autonomous_database_wallet_is_regional"])
         ```
 
         ## Import
@@ -267,6 +303,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
                  base64_encode_content: Optional[pulumi.Input[bool]] = None,
                  generate_type: Optional[pulumi.Input[str]] = None,
+                 is_regional: Optional[pulumi.Input[bool]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -282,6 +319,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
             __props__.__dict__["autonomous_database_id"] = autonomous_database_id
             __props__.__dict__["base64_encode_content"] = base64_encode_content
             __props__.__dict__["generate_type"] = generate_type
+            __props__.__dict__["is_regional"] = is_regional
             if password is None and not opts.urn:
                 raise TypeError("Missing required property 'password'")
             __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
@@ -302,6 +340,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
             base64_encode_content: Optional[pulumi.Input[bool]] = None,
             content: Optional[pulumi.Input[str]] = None,
             generate_type: Optional[pulumi.Input[str]] = None,
+            is_regional: Optional[pulumi.Input[bool]] = None,
             password: Optional[pulumi.Input[str]] = None) -> 'AutonomousDatabaseWallet':
         """
         Get an existing AutonomousDatabaseWallet resource's state with the given name, id, and optional extra
@@ -315,6 +354,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         :param pulumi.Input[str] generate_type: The type of wallet to generate.
                
                **Serverless instance usage:**
+        :param pulumi.Input[bool] is_regional: True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
         :param pulumi.Input[str] password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
                
                
@@ -329,6 +369,7 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         __props__.__dict__["base64_encode_content"] = base64_encode_content
         __props__.__dict__["content"] = content
         __props__.__dict__["generate_type"] = generate_type
+        __props__.__dict__["is_regional"] = is_regional
         __props__.__dict__["password"] = password
         return AutonomousDatabaseWallet(resource_name, opts=opts, __props__=__props__)
 
@@ -362,6 +403,14 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         **Serverless instance usage:**
         """
         return pulumi.get(self, "generate_type")
+
+    @property
+    @pulumi.getter(name="isRegional")
+    def is_regional(self) -> pulumi.Output[bool]:
+        """
+        True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+        """
+        return pulumi.get(self, "is_regional")
 
     @property
     @pulumi.getter

@@ -13,7 +13,8 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConnectionBootstrapServer {
     /**
-     * @return (Updatable) The name or address of a host.
+     * @return (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
     private @Nullable String host;
@@ -30,7 +31,8 @@ public final class ConnectionBootstrapServer {
 
     private ConnectionBootstrapServer() {}
     /**
-     * @return (Updatable) The name or address of a host.
+     * @return (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
     public Optional<String> host() {

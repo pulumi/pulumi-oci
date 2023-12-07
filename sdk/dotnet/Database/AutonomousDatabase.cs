@@ -120,7 +120,7 @@ namespace Pulumi.Oci.Database
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        /// (Updatable) Compute used by database tools.
         /// </summary>
         [Output("computeCount")]
         public Output<double> ComputeCount { get; private set; } = null!;
@@ -204,10 +204,18 @@ namespace Pulumi.Oci.Database
         public Output<string> DataguardRegionType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
+        /// The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
         /// </summary>
         [Output("dbName")]
         public Output<string> DbName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The list of database tools details.
+        /// 
+        /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
+        /// </summary>
+        [Output("dbToolsDetails")]
+        public Output<ImmutableArray<Outputs.AutonomousDatabaseDbToolsDetail>> DbToolsDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD and APEX are only supported for `db_version` `19c` and above.
@@ -581,6 +589,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        /// 
+        /// This cannot be used in conjunction with adminPassword.
         /// </summary>
         [Output("secretId")]
         public Output<string> SecretId { get; private set; } = null!;
@@ -934,7 +944,7 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        /// (Updatable) Compute used by database tools.
         /// </summary>
         [Input("computeCount")]
         public Input<double>? ComputeCount { get; set; }
@@ -1006,10 +1016,24 @@ namespace Pulumi.Oci.Database
         public Input<string>? DatabaseManagementStatus { get; set; }
 
         /// <summary>
-        /// (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
+        /// The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
         /// </summary>
         [Input("dbName", required: true)]
         public Input<string> DbName { get; set; } = null!;
+
+        [Input("dbToolsDetails")]
+        private InputList<Inputs.AutonomousDatabaseDbToolsDetailArgs>? _dbToolsDetails;
+
+        /// <summary>
+        /// (Updatable) The list of database tools details.
+        /// 
+        /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
+        /// </summary>
+        public InputList<Inputs.AutonomousDatabaseDbToolsDetailArgs> DbToolsDetails
+        {
+            get => _dbToolsDetails ?? (_dbToolsDetails = new InputList<Inputs.AutonomousDatabaseDbToolsDetailArgs>());
+            set => _dbToolsDetails = value;
+        }
 
         /// <summary>
         /// (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD and APEX are only supported for `db_version` `19c` and above.
@@ -1263,6 +1287,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        /// 
+        /// This cannot be used in conjunction with adminPassword.
         /// </summary>
         [Input("secretId")]
         public Input<string>? SecretId { get; set; }
@@ -1505,7 +1531,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        /// (Updatable) Compute used by database tools.
         /// </summary>
         [Input("computeCount")]
         public Input<double>? ComputeCount { get; set; }
@@ -1607,10 +1633,24 @@ namespace Pulumi.Oci.Database
         public Input<string>? DataguardRegionType { get; set; }
 
         /// <summary>
-        /// (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
+        /// The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
         /// </summary>
         [Input("dbName")]
         public Input<string>? DbName { get; set; }
+
+        [Input("dbToolsDetails")]
+        private InputList<Inputs.AutonomousDatabaseDbToolsDetailGetArgs>? _dbToolsDetails;
+
+        /// <summary>
+        /// (Updatable) The list of database tools details.
+        /// 
+        /// This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
+        /// </summary>
+        public InputList<Inputs.AutonomousDatabaseDbToolsDetailGetArgs> DbToolsDetails
+        {
+            get => _dbToolsDetails ?? (_dbToolsDetails = new InputList<Inputs.AutonomousDatabaseDbToolsDetailGetArgs>());
+            set => _dbToolsDetails = value;
+        }
 
         /// <summary>
         /// (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD and APEX are only supported for `db_version` `19c` and above.
@@ -2044,6 +2084,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+        /// 
+        /// This cannot be used in conjunction with adminPassword.
         /// </summary>
         [Input("secretId")]
         public Input<string>? SecretId { get; set; }

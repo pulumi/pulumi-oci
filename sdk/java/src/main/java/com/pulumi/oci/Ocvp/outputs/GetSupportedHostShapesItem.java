@@ -23,9 +23,23 @@ public final class GetSupportedHostShapesItem {
      */
     private String description;
     /**
-     * @return Whether the shape supports &#34;MONTH&#34; SKU.
+     * @return A filter to return only resources that support single host SDDC.
      * 
      */
+    private Boolean isSingleHostSddcSupported;
+    /**
+     * @return Whether the shape supports &#34;MONTH&#34; Commitment.
+     * 
+     */
+    private Boolean isSupportMonthlyCommitment;
+    /**
+     * @return (**Deprecated**) Whether the shape supports &#34;MONTH&#34; SKU.
+     * 
+     * @deprecated
+     * The &#39;is_support_monthly_sku&#39; field has been deprecated. Please use &#39;is_support_monthly_commitment&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'is_support_monthly_sku' field has been deprecated. Please use 'is_support_monthly_commitment' instead. */
     private Boolean isSupportMonthlySku;
     /**
      * @return Indicates whether the shape supports shielded instances.
@@ -53,7 +67,7 @@ public final class GetSupportedHostShapesItem {
      */
     private List<String> supportedOperations;
     /**
-     * @return The supported SDDC types for the shape.
+     * @return (**Deprecated**) The supported SDDC types for the shape.
      * 
      * @deprecated
      * The &#39;supported_sddc_types&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
@@ -83,9 +97,27 @@ public final class GetSupportedHostShapesItem {
         return this.description;
     }
     /**
-     * @return Whether the shape supports &#34;MONTH&#34; SKU.
+     * @return A filter to return only resources that support single host SDDC.
      * 
      */
+    public Boolean isSingleHostSddcSupported() {
+        return this.isSingleHostSddcSupported;
+    }
+    /**
+     * @return Whether the shape supports &#34;MONTH&#34; Commitment.
+     * 
+     */
+    public Boolean isSupportMonthlyCommitment() {
+        return this.isSupportMonthlyCommitment;
+    }
+    /**
+     * @return (**Deprecated**) Whether the shape supports &#34;MONTH&#34; SKU.
+     * 
+     * @deprecated
+     * The &#39;is_support_monthly_sku&#39; field has been deprecated. Please use &#39;is_support_monthly_commitment&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'is_support_monthly_sku' field has been deprecated. Please use 'is_support_monthly_commitment' instead. */
     public Boolean isSupportMonthlySku() {
         return this.isSupportMonthlySku;
     }
@@ -125,7 +157,7 @@ public final class GetSupportedHostShapesItem {
         return this.supportedOperations;
     }
     /**
-     * @return The supported SDDC types for the shape.
+     * @return (**Deprecated**) The supported SDDC types for the shape.
      * 
      * @deprecated
      * The &#39;supported_sddc_types&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
@@ -154,6 +186,8 @@ public final class GetSupportedHostShapesItem {
     public static final class Builder {
         private Double defaultOcpuCount;
         private String description;
+        private Boolean isSingleHostSddcSupported;
+        private Boolean isSupportMonthlyCommitment;
         private Boolean isSupportMonthlySku;
         private Boolean isSupportShieldedInstances;
         private String name;
@@ -167,6 +201,8 @@ public final class GetSupportedHostShapesItem {
     	      Objects.requireNonNull(defaults);
     	      this.defaultOcpuCount = defaults.defaultOcpuCount;
     	      this.description = defaults.description;
+    	      this.isSingleHostSddcSupported = defaults.isSingleHostSddcSupported;
+    	      this.isSupportMonthlyCommitment = defaults.isSupportMonthlyCommitment;
     	      this.isSupportMonthlySku = defaults.isSupportMonthlySku;
     	      this.isSupportShieldedInstances = defaults.isSupportShieldedInstances;
     	      this.name = defaults.name;
@@ -185,6 +221,16 @@ public final class GetSupportedHostShapesItem {
         @CustomType.Setter
         public Builder description(String description) {
             this.description = Objects.requireNonNull(description);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSingleHostSddcSupported(Boolean isSingleHostSddcSupported) {
+            this.isSingleHostSddcSupported = Objects.requireNonNull(isSingleHostSddcSupported);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSupportMonthlyCommitment(Boolean isSupportMonthlyCommitment) {
+            this.isSupportMonthlyCommitment = Objects.requireNonNull(isSupportMonthlyCommitment);
             return this;
         }
         @CustomType.Setter
@@ -243,6 +289,8 @@ public final class GetSupportedHostShapesItem {
             final var o = new GetSupportedHostShapesItem();
             o.defaultOcpuCount = defaultOcpuCount;
             o.description = description;
+            o.isSingleHostSddcSupported = isSingleHostSddcSupported;
+            o.isSupportMonthlyCommitment = isSupportMonthlyCommitment;
             o.isSupportMonthlySku = isSupportMonthlySku;
             o.isSupportShieldedInstances = isSupportShieldedInstances;
             o.name = name;

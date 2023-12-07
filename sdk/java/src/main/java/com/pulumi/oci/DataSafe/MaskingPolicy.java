@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Masking Policy resource in Oracle Cloud Infrastructure Data Safe service.
  * 
- * Creates a new masking policy and associates it with a sensitive data model or a target database.
+ * Creates a new masking policy and associates it with a sensitive data model or a reference target database.
  * 
  * To use a sensitive data model as the source of masking columns, set the columnSource attribute to
  * SENSITIVE_DATA_MODEL and provide the sensitiveDataModelId attribute. After creating a masking policy,
@@ -288,14 +288,14 @@ public class MaskingPolicy extends com.pulumi.resources.CustomResource {
         return this.preMaskingScript;
     }
     /**
-     * (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
+     * (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
      * 
      */
     @Export(name="recompile", refs={String.class}, tree="[0]")
     private Output<String> recompile;
 
     /**
-     * @return (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used. Use the built-in UTL_RECOMP package to recompile any remaining invalid objects after masking completes.
+     * @return (Updatable) Specifies how to recompile invalid objects post data masking. Allowed values are &#39;SERIAL&#39; (recompile in serial),  &#39;PARALLEL&#39; (recompile in parallel), &#39;NONE&#39; (do not recompile). If it&#39;s set to PARALLEL, the value of parallelDegree attribute is used. Note that few objects may remain invalid even after recompiling once and you may have to further recompile manually using UTL_RECOMP package.
      * 
      */
     public Output<String> recompile() {

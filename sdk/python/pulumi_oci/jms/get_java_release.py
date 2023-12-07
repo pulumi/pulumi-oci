@@ -22,13 +22,16 @@ class GetJavaReleaseResult:
     """
     A collection of values returned by getJavaRelease.
     """
-    def __init__(__self__, artifact_content_types=None, artifacts=None, family_details=None, family_version=None, id=None, license_details=None, license_type=None, parent_release_version=None, release_date=None, release_notes_url=None, release_type=None, release_version=None, security_status=None):
+    def __init__(__self__, artifact_content_types=None, artifacts=None, days_under_security_baseline=None, family_details=None, family_version=None, id=None, license_details=None, license_type=None, mos_patches=None, parent_release_version=None, release_date=None, release_notes_url=None, release_type=None, release_version=None, security_status=None):
         if artifact_content_types and not isinstance(artifact_content_types, list):
             raise TypeError("Expected argument 'artifact_content_types' to be a list")
         pulumi.set(__self__, "artifact_content_types", artifact_content_types)
         if artifacts and not isinstance(artifacts, list):
             raise TypeError("Expected argument 'artifacts' to be a list")
         pulumi.set(__self__, "artifacts", artifacts)
+        if days_under_security_baseline and not isinstance(days_under_security_baseline, int):
+            raise TypeError("Expected argument 'days_under_security_baseline' to be a int")
+        pulumi.set(__self__, "days_under_security_baseline", days_under_security_baseline)
         if family_details and not isinstance(family_details, list):
             raise TypeError("Expected argument 'family_details' to be a list")
         pulumi.set(__self__, "family_details", family_details)
@@ -44,6 +47,9 @@ class GetJavaReleaseResult:
         if license_type and not isinstance(license_type, str):
             raise TypeError("Expected argument 'license_type' to be a str")
         pulumi.set(__self__, "license_type", license_type)
+        if mos_patches and not isinstance(mos_patches, list):
+            raise TypeError("Expected argument 'mos_patches' to be a list")
+        pulumi.set(__self__, "mos_patches", mos_patches)
         if parent_release_version and not isinstance(parent_release_version, str):
             raise TypeError("Expected argument 'parent_release_version' to be a str")
         pulumi.set(__self__, "parent_release_version", parent_release_version)
@@ -78,6 +84,14 @@ class GetJavaReleaseResult:
         List of Java artifacts.
         """
         return pulumi.get(self, "artifacts")
+
+    @property
+    @pulumi.getter(name="daysUnderSecurityBaseline")
+    def days_under_security_baseline(self) -> int:
+        """
+        The number of days since this release has been under the security baseline.
+        """
+        return pulumi.get(self, "days_under_security_baseline")
 
     @property
     @pulumi.getter(name="familyDetails")
@@ -118,6 +132,14 @@ class GetJavaReleaseResult:
         License type for the Java version.
         """
         return pulumi.get(self, "license_type")
+
+    @property
+    @pulumi.getter(name="mosPatches")
+    def mos_patches(self) -> Sequence['outputs.GetJavaReleaseMosPatchResult']:
+        """
+        List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
+        """
+        return pulumi.get(self, "mos_patches")
 
     @property
     @pulumi.getter(name="parentReleaseVersion")
@@ -176,11 +198,13 @@ class AwaitableGetJavaReleaseResult(GetJavaReleaseResult):
         return GetJavaReleaseResult(
             artifact_content_types=self.artifact_content_types,
             artifacts=self.artifacts,
+            days_under_security_baseline=self.days_under_security_baseline,
             family_details=self.family_details,
             family_version=self.family_version,
             id=self.id,
             license_details=self.license_details,
             license_type=self.license_type,
+            mos_patches=self.mos_patches,
             parent_release_version=self.parent_release_version,
             release_date=self.release_date,
             release_notes_url=self.release_notes_url,
@@ -216,11 +240,13 @@ def get_java_release(release_version: Optional[str] = None,
     return AwaitableGetJavaReleaseResult(
         artifact_content_types=pulumi.get(__ret__, 'artifact_content_types'),
         artifacts=pulumi.get(__ret__, 'artifacts'),
+        days_under_security_baseline=pulumi.get(__ret__, 'days_under_security_baseline'),
         family_details=pulumi.get(__ret__, 'family_details'),
         family_version=pulumi.get(__ret__, 'family_version'),
         id=pulumi.get(__ret__, 'id'),
         license_details=pulumi.get(__ret__, 'license_details'),
         license_type=pulumi.get(__ret__, 'license_type'),
+        mos_patches=pulumi.get(__ret__, 'mos_patches'),
         parent_release_version=pulumi.get(__ret__, 'parent_release_version'),
         release_date=pulumi.get(__ret__, 'release_date'),
         release_notes_url=pulumi.get(__ret__, 'release_notes_url'),

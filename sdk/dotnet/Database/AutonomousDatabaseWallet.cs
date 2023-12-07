@@ -26,6 +26,7 @@ namespace Pulumi.Oci.Database
     ///         Password = @var.Autonomous_database_wallet_password,
     ///         Base64EncodeContent = false,
     ///         GenerateType = @var.Autonomous_database_wallet_generate_type,
+    ///         IsRegional = @var.Autonomous_database_wallet_is_regional,
     ///     });
     /// 
     /// });
@@ -60,6 +61,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("generateType")]
         public Output<string?> GenerateType { get; private set; } = null!;
+
+        /// <summary>
+        /// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+        /// </summary>
+        [Output("isRegional")]
+        public Output<bool> IsRegional { get; private set; } = null!;
 
         /// <summary>
         /// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
@@ -138,6 +145,12 @@ namespace Pulumi.Oci.Database
         [Input("generateType")]
         public Input<string>? GenerateType { get; set; }
 
+        /// <summary>
+        /// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+        /// </summary>
+        [Input("isRegional")]
+        public Input<bool>? IsRegional { get; set; }
+
         [Input("password", required: true)]
         private Input<string>? _password;
 
@@ -188,6 +201,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("generateType")]
         public Input<string>? GenerateType { get; set; }
+
+        /// <summary>
+        /// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+        /// </summary>
+        [Input("isRegional")]
+        public Input<bool>? IsRegional { get; set; }
 
         [Input("password")]
         private Input<string>? _password;

@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
+        public readonly ImmutableArray<Outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigResult> DpdConfigs;
         /// <summary>
         /// Dead peer detection (DPD) mode set on the Oracle side of the connection. This mode sets whether Oracle can only respond to a request from the CPE device to start DPD, or both respond to and initiate requests.
         /// </summary>
@@ -54,6 +55,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string IkeVersion;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+        /// </summary>
+        public readonly string IpsecId;
+        /// <summary>
         /// By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
         /// </summary>
         public readonly string NatTranslationEnabled;
@@ -73,6 +78,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
         /// </summary>
         public readonly string Routing;
+        public readonly string SharedSecret;
         /// <summary>
         /// The tunnel's lifecycle state.
         /// </summary>
@@ -89,6 +95,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// When the status of the IPSec tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeStatusUpdated;
+        public readonly string TunnelId;
         /// <summary>
         /// The IP address of the Oracle VPN headend for the connection.  Example: `203.0.113.21`
         /// </summary>
@@ -106,6 +113,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string displayName,
 
+            ImmutableArray<Outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigResult> dpdConfigs,
+
             string dpdMode,
 
             int dpdTimeoutInSec,
@@ -115,6 +124,8 @@ namespace Pulumi.Oci.Core.Outputs
             string id,
 
             string ikeVersion,
+
+            string ipsecId,
 
             string natTranslationEnabled,
 
@@ -126,6 +137,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string routing,
 
+            string sharedSecret,
+
             string state,
 
             string status,
@@ -134,6 +147,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string timeStatusUpdated,
 
+            string tunnelId,
+
             string vpnIp)
         {
             AssociatedVirtualCircuits = associatedVirtualCircuits;
@@ -141,20 +156,24 @@ namespace Pulumi.Oci.Core.Outputs
             CompartmentId = compartmentId;
             CpeIp = cpeIp;
             DisplayName = displayName;
+            DpdConfigs = dpdConfigs;
             DpdMode = dpdMode;
             DpdTimeoutInSec = dpdTimeoutInSec;
             EncryptionDomainConfigs = encryptionDomainConfigs;
             Id = id;
             IkeVersion = ikeVersion;
+            IpsecId = ipsecId;
             NatTranslationEnabled = natTranslationEnabled;
             OracleCanInitiate = oracleCanInitiate;
             PhaseOneDetails = phaseOneDetails;
             PhaseTwoDetails = phaseTwoDetails;
             Routing = routing;
+            SharedSecret = sharedSecret;
             State = state;
             Status = status;
             TimeCreated = timeCreated;
             TimeStatusUpdated = timeStatusUpdated;
+            TunnelId = tunnelId;
             VpnIp = vpnIp;
         }
     }

@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseTools;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsPrivateEndpointLockArgs;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -109,6 +110,21 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
     }
 
     /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<DatabaseToolsPrivateEndpointLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<DatabaseToolsPrivateEndpointLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint&#39;s VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
@@ -168,6 +184,7 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
         this.displayName = $.displayName;
         this.endpointServiceId = $.endpointServiceId;
         this.freeformTags = $.freeformTags;
+        this.locks = $.locks;
         this.nsgIds = $.nsgIds;
         this.privateEndpointIp = $.privateEndpointIp;
         this.subnetId = $.subnetId;
@@ -315,6 +332,37 @@ public final class DatabaseToolsPrivateEndpointArgs extends com.pulumi.resources
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<DatabaseToolsPrivateEndpointLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<DatabaseToolsPrivateEndpointLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(DatabaseToolsPrivateEndpointLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

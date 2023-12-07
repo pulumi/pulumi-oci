@@ -50,6 +50,7 @@ export interface GetIpsecConnectionTunnelArgs {
  * A collection of values returned by getIpsecConnectionTunnel.
  */
 export interface GetIpsecConnectionTunnelResult {
+    readonly associatedVirtualCircuits: string[];
     /**
      * Information needed to establish a BGP Session on an interface.
      */
@@ -66,12 +67,21 @@ export interface GetIpsecConnectionTunnelResult {
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     readonly displayName: string;
+    readonly dpdConfigs: outputs.Core.GetIpsecConnectionTunnelDpdConfig[];
+    /**
+     * Dead peer detection (DPD) mode set on the Oracle side of the connection.
+     */
+    readonly dpdMode: string;
+    /**
+     * DPD timeout in seconds.
+     */
+    readonly dpdTimeoutInSec: number;
     /**
      * Configuration information used by the encryption domain policy.
      */
     readonly encryptionDomainConfigs: outputs.Core.GetIpsecConnectionTunnelEncryptionDomainConfig[];
     /**
-     * The provider-assigned unique ID for this managed resource.
+     * The tunnel's Oracle ID (OCID).
      */
     readonly id: string;
     /**
@@ -80,9 +90,26 @@ export interface GetIpsecConnectionTunnelResult {
     readonly ikeVersion: string;
     readonly ipsecId: string;
     /**
+     * By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     */
+    readonly natTranslationEnabled: string;
+    /**
+     * Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
+     */
+    readonly oracleCanInitiate: string;
+    /**
+     * IPSec tunnel details specific to ISAKMP phase one.
+     */
+    readonly phaseOneDetails: outputs.Core.GetIpsecConnectionTunnelPhaseOneDetail[];
+    /**
+     * IPsec tunnel detail information specific to phase two.
+     */
+    readonly phaseTwoDetails: outputs.Core.GetIpsecConnectionTunnelPhaseTwoDetail[];
+    /**
      * the routing strategy used for this tunnel, either static route or BGP dynamic routing
      */
     readonly routing: string;
+    readonly sharedSecret: string;
     /**
      * The IPSec connection's tunnel's lifecycle state.
      */

@@ -45,6 +45,11 @@ export type ComputeCapacityReservation = import("./computeCapacityReservation").
 export const ComputeCapacityReservation: typeof import("./computeCapacityReservation").ComputeCapacityReservation = null as any;
 utilities.lazyLoad(exports, ["ComputeCapacityReservation"], () => require("./computeCapacityReservation"));
 
+export { ComputeCapacityTopologyArgs, ComputeCapacityTopologyState } from "./computeCapacityTopology";
+export type ComputeCapacityTopology = import("./computeCapacityTopology").ComputeCapacityTopology;
+export const ComputeCapacityTopology: typeof import("./computeCapacityTopology").ComputeCapacityTopology = null as any;
+utilities.lazyLoad(exports, ["ComputeCapacityTopology"], () => require("./computeCapacityTopology"));
+
 export { ComputeClusterArgs, ComputeClusterState } from "./computeCluster";
 export type ComputeCluster = import("./computeCluster").ComputeCluster;
 export const ComputeCluster: typeof import("./computeCluster").ComputeCluster = null as any;
@@ -274,6 +279,31 @@ export { GetComputeCapacityReservationsArgs, GetComputeCapacityReservationsResul
 export const getComputeCapacityReservations: typeof import("./getComputeCapacityReservations").getComputeCapacityReservations = null as any;
 export const getComputeCapacityReservationsOutput: typeof import("./getComputeCapacityReservations").getComputeCapacityReservationsOutput = null as any;
 utilities.lazyLoad(exports, ["getComputeCapacityReservations","getComputeCapacityReservationsOutput"], () => require("./getComputeCapacityReservations"));
+
+export { GetComputeCapacityTopologiesArgs, GetComputeCapacityTopologiesResult, GetComputeCapacityTopologiesOutputArgs } from "./getComputeCapacityTopologies";
+export const getComputeCapacityTopologies: typeof import("./getComputeCapacityTopologies").getComputeCapacityTopologies = null as any;
+export const getComputeCapacityTopologiesOutput: typeof import("./getComputeCapacityTopologies").getComputeCapacityTopologiesOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeCapacityTopologies","getComputeCapacityTopologiesOutput"], () => require("./getComputeCapacityTopologies"));
+
+export { GetComputeCapacityTopologyArgs, GetComputeCapacityTopologyResult, GetComputeCapacityTopologyOutputArgs } from "./getComputeCapacityTopology";
+export const getComputeCapacityTopology: typeof import("./getComputeCapacityTopology").getComputeCapacityTopology = null as any;
+export const getComputeCapacityTopologyOutput: typeof import("./getComputeCapacityTopology").getComputeCapacityTopologyOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeCapacityTopology","getComputeCapacityTopologyOutput"], () => require("./getComputeCapacityTopology"));
+
+export { GetComputeCapacityTopologyComputeBareMetalHostsArgs, GetComputeCapacityTopologyComputeBareMetalHostsResult, GetComputeCapacityTopologyComputeBareMetalHostsOutputArgs } from "./getComputeCapacityTopologyComputeBareMetalHosts";
+export const getComputeCapacityTopologyComputeBareMetalHosts: typeof import("./getComputeCapacityTopologyComputeBareMetalHosts").getComputeCapacityTopologyComputeBareMetalHosts = null as any;
+export const getComputeCapacityTopologyComputeBareMetalHostsOutput: typeof import("./getComputeCapacityTopologyComputeBareMetalHosts").getComputeCapacityTopologyComputeBareMetalHostsOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeCapacityTopologyComputeBareMetalHosts","getComputeCapacityTopologyComputeBareMetalHostsOutput"], () => require("./getComputeCapacityTopologyComputeBareMetalHosts"));
+
+export { GetComputeCapacityTopologyComputeHpcIslandsArgs, GetComputeCapacityTopologyComputeHpcIslandsResult, GetComputeCapacityTopologyComputeHpcIslandsOutputArgs } from "./getComputeCapacityTopologyComputeHpcIslands";
+export const getComputeCapacityTopologyComputeHpcIslands: typeof import("./getComputeCapacityTopologyComputeHpcIslands").getComputeCapacityTopologyComputeHpcIslands = null as any;
+export const getComputeCapacityTopologyComputeHpcIslandsOutput: typeof import("./getComputeCapacityTopologyComputeHpcIslands").getComputeCapacityTopologyComputeHpcIslandsOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeCapacityTopologyComputeHpcIslands","getComputeCapacityTopologyComputeHpcIslandsOutput"], () => require("./getComputeCapacityTopologyComputeHpcIslands"));
+
+export { GetComputeCapacityTopologyComputeNetworkBlocksArgs, GetComputeCapacityTopologyComputeNetworkBlocksResult, GetComputeCapacityTopologyComputeNetworkBlocksOutputArgs } from "./getComputeCapacityTopologyComputeNetworkBlocks";
+export const getComputeCapacityTopologyComputeNetworkBlocks: typeof import("./getComputeCapacityTopologyComputeNetworkBlocks").getComputeCapacityTopologyComputeNetworkBlocks = null as any;
+export const getComputeCapacityTopologyComputeNetworkBlocksOutput: typeof import("./getComputeCapacityTopologyComputeNetworkBlocks").getComputeCapacityTopologyComputeNetworkBlocksOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeCapacityTopologyComputeNetworkBlocks","getComputeCapacityTopologyComputeNetworkBlocksOutput"], () => require("./getComputeCapacityTopologyComputeNetworkBlocks"));
 
 export { GetComputeClusterArgs, GetComputeClusterResult, GetComputeClusterOutputArgs } from "./getComputeCluster";
 export const getComputeCluster: typeof import("./getComputeCluster").getComputeCluster = null as any;
@@ -1071,6 +1101,8 @@ const _module = {
                 return new ComputeCapacityReport(name, <any>undefined, { urn })
             case "oci:Core/computeCapacityReservation:ComputeCapacityReservation":
                 return new ComputeCapacityReservation(name, <any>undefined, { urn })
+            case "oci:Core/computeCapacityTopology:ComputeCapacityTopology":
+                return new ComputeCapacityTopology(name, <any>undefined, { urn })
             case "oci:Core/computeCluster:ComputeCluster":
                 return new ComputeCluster(name, <any>undefined, { urn })
             case "oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema":
@@ -1200,6 +1232,7 @@ pulumi.runtime.registerResourceModule("oci", "Core/captureFilter", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/clusterNetwork", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeCapacityReport", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeCapacityReservation", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/computeCapacityTopology", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeImageCapabilitySchema", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/consoleHistory", _module)

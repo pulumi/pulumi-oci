@@ -16,12 +16,96 @@ import (
 //
 // # Create a Request
 //
+// ** IMPORTANT **
+// In our latest release, the property `status` is changed to readonly. It will now be automatically handled by the system. Please remove any manual assignment to this property to use the latest version.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := Identity.NewDomainsMyRequest(ctx, "testMyRequest", &Identity.DomainsMyRequestArgs{
+//				IdcsEndpoint:  pulumi.Any(data.Oci_identity_domain.Test_domain.Url),
+//				Justification: pulumi.Any(_var.My_request_justification),
+//				Requesting: &identity.DomainsMyRequestRequestingArgs{
+//					Type:        pulumi.Any(_var.My_request_requesting_type),
+//					Value:       pulumi.Any(oci_identity_domains_group.Group_to_request.Id),
+//					Description: pulumi.Any(_var.My_request_requesting_description),
+//				},
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:Request"),
+//				},
+//				Action: pulumi.Any(_var.My_request_action),
+//				ApprovalDetails: identity.DomainsMyRequestApprovalDetailArray{
+//					nil,
+//				},
+//				AttributeSets: pulumi.StringArray{
+//					pulumi.String("all"),
+//				},
+//				Attributes:    pulumi.String(""),
+//				Authorization: pulumi.Any(_var.My_request_authorization),
+//				Ocid:          pulumi.Any(_var.My_request_ocid),
+//				Requestor: &identity.DomainsMyRequestRequestorArgs{
+//					Value: pulumi.Any(_var.My_request_requestor_value),
+//				},
+//				ResourceTypeSchemaVersion: pulumi.Any(_var.My_request_resource_type_schema_version),
+//				Tags: identity.DomainsMyRequestTagArray{
+//					&identity.DomainsMyRequestTagArgs{
+//						Key:   pulumi.Any(_var.My_request_tags_key),
+//						Value: pulumi.Any(_var.My_request_tags_value),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Import is not supported for this resource.
 type DomainsMyRequest struct {
 	pulumi.CustomResourceState
 
+	// Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	Action pulumi.StringOutput `pulumi:"action"`
+	// Approvals created for this request.
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
+	ApprovalDetails DomainsMyRequestApprovalDetailArrayOutput `pulumi:"approvalDetails"`
 	// A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets pulumi.StringArrayOutput `pulumi:"attributeSets"`
 	// A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
@@ -64,6 +148,19 @@ type DomainsMyRequest struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid pulumi.StringOutput `pulumi:"domainOcid"`
+	// (Updatable) Time by when Request expires
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
+	Expires pulumi.StringOutput `pulumi:"expires"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -181,13 +278,13 @@ type DomainsMyRequest struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas pulumi.StringArrayOutput `pulumi:"schemas"`
-	// status
+	// (Updatable) status.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
 	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readWrite
+	// * mutability: readOnly
 	// * required: false
 	// * returned: default
 	// * type: string
@@ -264,6 +361,32 @@ func GetDomainsMyRequest(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DomainsMyRequest resources.
 type domainsMyRequestState struct {
+	// Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	Action *string `pulumi:"action"`
+	// Approvals created for this request.
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
+	ApprovalDetails []DomainsMyRequestApprovalDetail `pulumi:"approvalDetails"`
 	// A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets []string `pulumi:"attributeSets"`
 	// A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
@@ -306,6 +429,19 @@ type domainsMyRequestState struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid *string `pulumi:"domainOcid"`
+	// (Updatable) Time by when Request expires
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
+	Expires *string `pulumi:"expires"`
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -423,13 +559,13 @@ type domainsMyRequestState struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
-	// status
+	// (Updatable) status.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
 	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readWrite
+	// * mutability: readOnly
 	// * required: false
 	// * returned: default
 	// * type: string
@@ -465,6 +601,32 @@ type domainsMyRequestState struct {
 }
 
 type DomainsMyRequestState struct {
+	// Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	Action pulumi.StringPtrInput
+	// Approvals created for this request.
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
+	ApprovalDetails DomainsMyRequestApprovalDetailArrayInput
 	// A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets pulumi.StringArrayInput
 	// A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
@@ -507,6 +669,19 @@ type DomainsMyRequestState struct {
 	// * type: string
 	// * uniqueness: none
 	DomainOcid pulumi.StringPtrInput
+	// (Updatable) Time by when Request expires
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readOnly
+	// * required: false
+	// * returned: default
+	// * type: dateTime
+	// * uniqueness: none
+	Expires pulumi.StringPtrInput
 	// (Updatable) The User or App who created the Resource
 	//
 	// **SCIM++ Properties:**
@@ -624,13 +799,13 @@ type DomainsMyRequestState struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
-	// status
+	// (Updatable) status.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
 	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readWrite
+	// * mutability: readOnly
 	// * required: false
 	// * returned: default
 	// * type: string
@@ -670,6 +845,32 @@ func (DomainsMyRequestState) ElementType() reflect.Type {
 }
 
 type domainsMyRequestArgs struct {
+	// Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	Action *string `pulumi:"action"`
+	// Approvals created for this request.
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
+	ApprovalDetails []DomainsMyRequestApprovalDetail `pulumi:"approvalDetails"`
 	// A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets []string `pulumi:"attributeSets"`
 	// A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
@@ -738,18 +939,6 @@ type domainsMyRequestArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas []string `pulumi:"schemas"`
-	// status
-	//
-	// **SCIM++ Properties:**
-	// * caseExact: true
-	// * idcsSearchable: true
-	// * multiValued: false
-	// * mutability: readWrite
-	// * required: false
-	// * returned: default
-	// * type: string
-	// * uniqueness: none
-	Status *string `pulumi:"status"`
 	// A list of tags on this resource.
 	//
 	// **SCIM++ Properties:**
@@ -766,6 +955,32 @@ type domainsMyRequestArgs struct {
 
 // The set of arguments for constructing a DomainsMyRequest resource.
 type DomainsMyRequestArgs struct {
+	// Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * caseExact: true
+	// * idcsSearchable: true
+	// * multiValued: false
+	// * mutability: readWrite
+	// * required: false
+	// * returned: default
+	// * type: string
+	// * uniqueness: none
+	Action pulumi.StringPtrInput
+	// Approvals created for this request.
+	//
+	// **Added In:** 2307071836
+	//
+	// **SCIM++ Properties:**
+	// * idcsSearchable: false
+	// * multiValued: true
+	// * mutability: readOnly
+	// * returned: request
+	// * type: complex
+	// * uniqueness: none
+	ApprovalDetails DomainsMyRequestApprovalDetailArrayInput
 	// A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets pulumi.StringArrayInput
 	// A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
@@ -834,18 +1049,6 @@ type DomainsMyRequestArgs struct {
 	// * type: string
 	// * uniqueness: none
 	Schemas pulumi.StringArrayInput
-	// status
-	//
-	// **SCIM++ Properties:**
-	// * caseExact: true
-	// * idcsSearchable: true
-	// * multiValued: false
-	// * mutability: readWrite
-	// * required: false
-	// * returned: default
-	// * type: string
-	// * uniqueness: none
-	Status pulumi.StringPtrInput
 	// A list of tags on this resource.
 	//
 	// **SCIM++ Properties:**
@@ -947,6 +1150,38 @@ func (o DomainsMyRequestOutput) ToDomainsMyRequestOutputWithContext(ctx context.
 	return o
 }
 
+// Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
+//
+// **Added In:** 2307071836
+//
+// **SCIM++ Properties:**
+// * caseExact: true
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readWrite
+// * required: false
+// * returned: default
+// * type: string
+// * uniqueness: none
+func (o DomainsMyRequestOutput) Action() pulumi.StringOutput {
+	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringOutput { return v.Action }).(pulumi.StringOutput)
+}
+
+// Approvals created for this request.
+//
+// **Added In:** 2307071836
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: false
+// * multiValued: true
+// * mutability: readOnly
+// * returned: request
+// * type: complex
+// * uniqueness: none
+func (o DomainsMyRequestOutput) ApprovalDetails() DomainsMyRequestApprovalDetailArrayOutput {
+	return o.ApplyT(func(v *DomainsMyRequest) DomainsMyRequestApprovalDetailArrayOutput { return v.ApprovalDetails }).(DomainsMyRequestApprovalDetailArrayOutput)
+}
+
 // A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 func (o DomainsMyRequestOutput) AttributeSets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringArrayOutput { return v.AttributeSets }).(pulumi.StringArrayOutput)
@@ -1005,6 +1240,22 @@ func (o DomainsMyRequestOutput) DeleteInProgress() pulumi.BoolOutput {
 // * uniqueness: none
 func (o DomainsMyRequestOutput) DomainOcid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringOutput { return v.DomainOcid }).(pulumi.StringOutput)
+}
+
+// (Updatable) Time by when Request expires
+//
+// **Added In:** 2307071836
+//
+// **SCIM++ Properties:**
+// * idcsSearchable: true
+// * multiValued: false
+// * mutability: readOnly
+// * required: false
+// * returned: default
+// * type: dateTime
+// * uniqueness: none
+func (o DomainsMyRequestOutput) Expires() pulumi.StringOutput {
+	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringOutput { return v.Expires }).(pulumi.StringOutput)
 }
 
 // (Updatable) The User or App who created the Resource
@@ -1160,13 +1411,13 @@ func (o DomainsMyRequestOutput) Schemas() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DomainsMyRequest) pulumi.StringArrayOutput { return v.Schemas }).(pulumi.StringArrayOutput)
 }
 
-// status
+// (Updatable) status.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
 // * idcsSearchable: true
 // * multiValued: false
-// * mutability: readWrite
+// * mutability: readOnly
 // * required: false
 // * returned: default
 // * type: string

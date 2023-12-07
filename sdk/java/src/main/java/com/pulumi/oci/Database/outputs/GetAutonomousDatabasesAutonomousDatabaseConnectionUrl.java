@@ -15,15 +15,35 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
      */
     private String apexUrl;
     /**
+     * @return The URL of the Database Transforms for the Autonomous Database.
+     * 
+     */
+    private String databaseTransformsUrl;
+    /**
      * @return The URL of the Graph Studio for the Autonomous Database.
      * 
      */
     private String graphStudioUrl;
     /**
+     * @return The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+     * 
+     */
+    private String machineLearningNotebookUrl;
+    /**
      * @return Oracle Machine Learning user management URL.
      * 
      */
     private String machineLearningUserManagementUrl;
+    /**
+     * @return The URL of the MongoDB API for the Autonomous Database.
+     * 
+     */
+    private String mongoDbUrl;
+    /**
+     * @return The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+     * 
+     */
+    private String ordsUrl;
     /**
      * @return Oracle SQL Developer Web URL.
      * 
@@ -39,6 +59,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
         return this.apexUrl;
     }
     /**
+     * @return The URL of the Database Transforms for the Autonomous Database.
+     * 
+     */
+    public String databaseTransformsUrl() {
+        return this.databaseTransformsUrl;
+    }
+    /**
      * @return The URL of the Graph Studio for the Autonomous Database.
      * 
      */
@@ -46,11 +73,32 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
         return this.graphStudioUrl;
     }
     /**
+     * @return The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+     * 
+     */
+    public String machineLearningNotebookUrl() {
+        return this.machineLearningNotebookUrl;
+    }
+    /**
      * @return Oracle Machine Learning user management URL.
      * 
      */
     public String machineLearningUserManagementUrl() {
         return this.machineLearningUserManagementUrl;
+    }
+    /**
+     * @return The URL of the MongoDB API for the Autonomous Database.
+     * 
+     */
+    public String mongoDbUrl() {
+        return this.mongoDbUrl;
+    }
+    /**
+     * @return The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+     * 
+     */
+    public String ordsUrl() {
+        return this.ordsUrl;
     }
     /**
      * @return Oracle SQL Developer Web URL.
@@ -70,15 +118,23 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
     @CustomType.Builder
     public static final class Builder {
         private String apexUrl;
+        private String databaseTransformsUrl;
         private String graphStudioUrl;
+        private String machineLearningNotebookUrl;
         private String machineLearningUserManagementUrl;
+        private String mongoDbUrl;
+        private String ordsUrl;
         private String sqlDevWebUrl;
         public Builder() {}
         public Builder(GetAutonomousDatabasesAutonomousDatabaseConnectionUrl defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apexUrl = defaults.apexUrl;
+    	      this.databaseTransformsUrl = defaults.databaseTransformsUrl;
     	      this.graphStudioUrl = defaults.graphStudioUrl;
+    	      this.machineLearningNotebookUrl = defaults.machineLearningNotebookUrl;
     	      this.machineLearningUserManagementUrl = defaults.machineLearningUserManagementUrl;
+    	      this.mongoDbUrl = defaults.mongoDbUrl;
+    	      this.ordsUrl = defaults.ordsUrl;
     	      this.sqlDevWebUrl = defaults.sqlDevWebUrl;
         }
 
@@ -88,13 +144,33 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
             return this;
         }
         @CustomType.Setter
+        public Builder databaseTransformsUrl(String databaseTransformsUrl) {
+            this.databaseTransformsUrl = Objects.requireNonNull(databaseTransformsUrl);
+            return this;
+        }
+        @CustomType.Setter
         public Builder graphStudioUrl(String graphStudioUrl) {
             this.graphStudioUrl = Objects.requireNonNull(graphStudioUrl);
             return this;
         }
         @CustomType.Setter
+        public Builder machineLearningNotebookUrl(String machineLearningNotebookUrl) {
+            this.machineLearningNotebookUrl = Objects.requireNonNull(machineLearningNotebookUrl);
+            return this;
+        }
+        @CustomType.Setter
         public Builder machineLearningUserManagementUrl(String machineLearningUserManagementUrl) {
             this.machineLearningUserManagementUrl = Objects.requireNonNull(machineLearningUserManagementUrl);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder mongoDbUrl(String mongoDbUrl) {
+            this.mongoDbUrl = Objects.requireNonNull(mongoDbUrl);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ordsUrl(String ordsUrl) {
+            this.ordsUrl = Objects.requireNonNull(ordsUrl);
             return this;
         }
         @CustomType.Setter
@@ -105,8 +181,12 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionUrl {
         public GetAutonomousDatabasesAutonomousDatabaseConnectionUrl build() {
             final var o = new GetAutonomousDatabasesAutonomousDatabaseConnectionUrl();
             o.apexUrl = apexUrl;
+            o.databaseTransformsUrl = databaseTransformsUrl;
             o.graphStudioUrl = graphStudioUrl;
+            o.machineLearningNotebookUrl = machineLearningNotebookUrl;
             o.machineLearningUserManagementUrl = machineLearningUserManagementUrl;
+            o.mongoDbUrl = mongoDbUrl;
+            o.ordsUrl = ordsUrl;
             o.sqlDevWebUrl = sqlDevWebUrl;
             return o;
         }

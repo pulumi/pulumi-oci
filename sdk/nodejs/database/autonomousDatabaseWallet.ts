@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  *     password: _var.autonomous_database_wallet_password,
  *     base64EncodeContent: false,
  *     generateType: _var.autonomous_database_wallet_generate_type,
+ *     isRegional: _var.autonomous_database_wallet_is_regional,
  * });
  * ```
  *
@@ -67,6 +68,10 @@ export class AutonomousDatabaseWallet extends pulumi.CustomResource {
      */
     public readonly generateType!: pulumi.Output<string | undefined>;
     /**
+     * True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+     */
+    public readonly isRegional!: pulumi.Output<boolean>;
+    /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
      *
      *
@@ -92,6 +97,7 @@ export class AutonomousDatabaseWallet extends pulumi.CustomResource {
             resourceInputs["base64EncodeContent"] = state ? state.base64EncodeContent : undefined;
             resourceInputs["content"] = state ? state.content : undefined;
             resourceInputs["generateType"] = state ? state.generateType : undefined;
+            resourceInputs["isRegional"] = state ? state.isRegional : undefined;
             resourceInputs["password"] = state ? state.password : undefined;
         } else {
             const args = argsOrState as AutonomousDatabaseWalletArgs | undefined;
@@ -104,6 +110,7 @@ export class AutonomousDatabaseWallet extends pulumi.CustomResource {
             resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
             resourceInputs["base64EncodeContent"] = args ? args.base64EncodeContent : undefined;
             resourceInputs["generateType"] = args ? args.generateType : undefined;
+            resourceInputs["isRegional"] = args ? args.isRegional : undefined;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["content"] = undefined /*out*/;
         }
@@ -134,6 +141,10 @@ export interface AutonomousDatabaseWalletState {
      */
     generateType?: pulumi.Input<string>;
     /**
+     * True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+     */
+    isRegional?: pulumi.Input<boolean>;
+    /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
      *
      *
@@ -158,6 +169,10 @@ export interface AutonomousDatabaseWalletArgs {
      * **Serverless instance usage:**
      */
     generateType?: pulumi.Input<string>;
+    /**
+     * True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+     */
+    isRegional?: pulumi.Input<boolean>;
     /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
      *

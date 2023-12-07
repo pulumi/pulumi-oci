@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDeploymentTypesDeploymentTypeCollectionItem {
     /**
-     * @return The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is &#39;DATA_REPLICATION&#39; and &#39;STREAM_ANALYTICS&#39;.
+     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
      */
     private String category;
@@ -20,6 +20,11 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
      * 
      */
     private List<String> connectionTypes;
+    /**
+     * @return The default admin username used by deployment.
+     * 
+     */
+    private String defaultUsername;
     /**
      * @return The type of deployment, the value determines the exact &#39;type&#39; of the service executed in the deployment. Default value is DATABASE_ORACLE.
      * 
@@ -41,6 +46,11 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
      */
     private List<String> sourceTechnologies;
     /**
+     * @return The URL to the webpage listing the supported technologies.
+     * 
+     */
+    private String supportedTechnologiesUrl;
+    /**
      * @return List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ &#34;Oracle Database 19c&#34;, &#34;Oracle Exadata&#34;, &#34;OCI Streaming&#34; ]
      * 
      */
@@ -48,7 +58,7 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
 
     private GetDeploymentTypesDeploymentTypeCollectionItem() {}
     /**
-     * @return The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is &#39;DATA_REPLICATION&#39; and &#39;STREAM_ANALYTICS&#39;.
+     * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
      */
     public String category() {
@@ -60,6 +70,13 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
      */
     public List<String> connectionTypes() {
         return this.connectionTypes;
+    }
+    /**
+     * @return The default admin username used by deployment.
+     * 
+     */
+    public String defaultUsername() {
+        return this.defaultUsername;
     }
     /**
      * @return The type of deployment, the value determines the exact &#39;type&#39; of the service executed in the deployment. Default value is DATABASE_ORACLE.
@@ -90,6 +107,13 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
         return this.sourceTechnologies;
     }
     /**
+     * @return The URL to the webpage listing the supported technologies.
+     * 
+     */
+    public String supportedTechnologiesUrl() {
+        return this.supportedTechnologiesUrl;
+    }
+    /**
      * @return List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ &#34;Oracle Database 19c&#34;, &#34;Oracle Exadata&#34;, &#34;OCI Streaming&#34; ]
      * 
      */
@@ -108,20 +132,24 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
     public static final class Builder {
         private String category;
         private List<String> connectionTypes;
+        private String defaultUsername;
         private String deploymentType;
         private String displayName;
         private String oggVersion;
         private List<String> sourceTechnologies;
+        private String supportedTechnologiesUrl;
         private List<String> targetTechnologies;
         public Builder() {}
         public Builder(GetDeploymentTypesDeploymentTypeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
     	      this.connectionTypes = defaults.connectionTypes;
+    	      this.defaultUsername = defaults.defaultUsername;
     	      this.deploymentType = defaults.deploymentType;
     	      this.displayName = defaults.displayName;
     	      this.oggVersion = defaults.oggVersion;
     	      this.sourceTechnologies = defaults.sourceTechnologies;
+    	      this.supportedTechnologiesUrl = defaults.supportedTechnologiesUrl;
     	      this.targetTechnologies = defaults.targetTechnologies;
         }
 
@@ -137,6 +165,11 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
         }
         public Builder connectionTypes(String... connectionTypes) {
             return connectionTypes(List.of(connectionTypes));
+        }
+        @CustomType.Setter
+        public Builder defaultUsername(String defaultUsername) {
+            this.defaultUsername = Objects.requireNonNull(defaultUsername);
+            return this;
         }
         @CustomType.Setter
         public Builder deploymentType(String deploymentType) {
@@ -162,6 +195,11 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
             return sourceTechnologies(List.of(sourceTechnologies));
         }
         @CustomType.Setter
+        public Builder supportedTechnologiesUrl(String supportedTechnologiesUrl) {
+            this.supportedTechnologiesUrl = Objects.requireNonNull(supportedTechnologiesUrl);
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetTechnologies(List<String> targetTechnologies) {
             this.targetTechnologies = Objects.requireNonNull(targetTechnologies);
             return this;
@@ -173,10 +211,12 @@ public final class GetDeploymentTypesDeploymentTypeCollectionItem {
             final var o = new GetDeploymentTypesDeploymentTypeCollectionItem();
             o.category = category;
             o.connectionTypes = connectionTypes;
+            o.defaultUsername = defaultUsername;
             o.deploymentType = deploymentType;
             o.displayName = displayName;
             o.oggVersion = oggVersion;
             o.sourceTechnologies = sourceTechnologies;
+            o.supportedTechnologiesUrl = supportedTechnologiesUrl;
             o.targetTechnologies = targetTechnologies;
             return o;
         }

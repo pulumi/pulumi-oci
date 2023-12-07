@@ -20,6 +20,7 @@ class DbSystemsUpgradeArgs:
                  db_system_id: pulumi.Input[str],
                  is_snapshot_retention_days_force_updated: Optional[pulumi.Input[bool]] = None,
                  new_gi_version: Optional[pulumi.Input[str]] = None,
+                 new_os_version: Optional[pulumi.Input[str]] = None,
                  snapshot_retention_period_in_days: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a DbSystemsUpgrade resource.
@@ -39,6 +40,8 @@ class DbSystemsUpgradeArgs:
             pulumi.set(__self__, "is_snapshot_retention_days_force_updated", is_snapshot_retention_days_force_updated)
         if new_gi_version is not None:
             pulumi.set(__self__, "new_gi_version", new_gi_version)
+        if new_os_version is not None:
+            pulumi.set(__self__, "new_os_version", new_os_version)
         if snapshot_retention_period_in_days is not None:
             pulumi.set(__self__, "snapshot_retention_period_in_days", snapshot_retention_period_in_days)
 
@@ -91,6 +94,15 @@ class DbSystemsUpgradeArgs:
         pulumi.set(self, "new_gi_version", value)
 
     @property
+    @pulumi.getter(name="newOsVersion")
+    def new_os_version(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "new_os_version")
+
+    @new_os_version.setter
+    def new_os_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "new_os_version", value)
+
+    @property
     @pulumi.getter(name="snapshotRetentionPeriodInDays")
     def snapshot_retention_period_in_days(self) -> Optional[pulumi.Input[int]]:
         """
@@ -139,6 +151,7 @@ class _DbSystemsUpgradeState:
                  listener_port: Optional[pulumi.Input[int]] = None,
                  maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input['DbSystemsUpgradeMaintenanceWindowArgs']]]] = None,
                  new_gi_version: Optional[pulumi.Input[str]] = None,
+                 new_os_version: Optional[pulumi.Input[str]] = None,
                  next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -276,6 +289,8 @@ class _DbSystemsUpgradeState:
             pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         if new_gi_version is not None:
             pulumi.set(__self__, "new_gi_version", new_gi_version)
+        if new_os_version is not None:
+            pulumi.set(__self__, "new_os_version", new_os_version)
         if next_maintenance_run_id is not None:
             pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         if node_count is not None:
@@ -666,6 +681,15 @@ class _DbSystemsUpgradeState:
         pulumi.set(self, "new_gi_version", value)
 
     @property
+    @pulumi.getter(name="newOsVersion")
+    def new_os_version(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "new_os_version")
+
+    @new_os_version.setter
+    def new_os_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "new_os_version", value)
+
+    @property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -922,6 +946,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
                  db_system_id: Optional[pulumi.Input[str]] = None,
                  is_snapshot_retention_days_force_updated: Optional[pulumi.Input[bool]] = None,
                  new_gi_version: Optional[pulumi.Input[str]] = None,
+                 new_os_version: Optional[pulumi.Input[str]] = None,
                  snapshot_retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         """
@@ -1007,6 +1032,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
                  db_system_id: Optional[pulumi.Input[str]] = None,
                  is_snapshot_retention_days_force_updated: Optional[pulumi.Input[bool]] = None,
                  new_gi_version: Optional[pulumi.Input[str]] = None,
+                 new_os_version: Optional[pulumi.Input[str]] = None,
                  snapshot_retention_period_in_days: Optional[pulumi.Input[int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -1025,6 +1051,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
             __props__.__dict__["db_system_id"] = db_system_id
             __props__.__dict__["is_snapshot_retention_days_force_updated"] = is_snapshot_retention_days_force_updated
             __props__.__dict__["new_gi_version"] = new_gi_version
+            __props__.__dict__["new_os_version"] = new_os_version
             __props__.__dict__["snapshot_retention_period_in_days"] = snapshot_retention_period_in_days
             __props__.__dict__["availability_domain"] = None
             __props__.__dict__["backup_network_nsg_ids"] = None
@@ -1109,6 +1136,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
             listener_port: Optional[pulumi.Input[int]] = None,
             maintenance_windows: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DbSystemsUpgradeMaintenanceWindowArgs']]]]] = None,
             new_gi_version: Optional[pulumi.Input[str]] = None,
+            new_os_version: Optional[pulumi.Input[str]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             node_count: Optional[pulumi.Input[int]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1226,6 +1254,7 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         __props__.__dict__["listener_port"] = listener_port
         __props__.__dict__["maintenance_windows"] = maintenance_windows
         __props__.__dict__["new_gi_version"] = new_gi_version
+        __props__.__dict__["new_os_version"] = new_os_version
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
         __props__.__dict__["node_count"] = node_count
         __props__.__dict__["nsg_ids"] = nsg_ids
@@ -1479,6 +1508,11 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         A valid Oracle Grid Infrastructure (GI) software version.
         """
         return pulumi.get(self, "new_gi_version")
+
+    @property
+    @pulumi.getter(name="newOsVersion")
+    def new_os_version(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "new_os_version")
 
     @property
     @pulumi.getter(name="nextMaintenanceRunId")

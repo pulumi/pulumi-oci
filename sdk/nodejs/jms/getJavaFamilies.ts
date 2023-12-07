@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  * const testJavaFamilies = oci.Jms.getJavaFamilies({
  *     displayName: _var.java_family_display_name,
  *     familyVersion: _var.java_family_family_version,
+ *     isSupportedVersion: _var.java_family_is_supported_version,
  * });
  * ```
  */
@@ -32,6 +33,7 @@ export function getJavaFamilies(args?: GetJavaFamiliesArgs, opts?: pulumi.Invoke
         "displayName": args.displayName,
         "familyVersion": args.familyVersion,
         "filters": args.filters,
+        "isSupportedVersion": args.isSupportedVersion,
     }, opts);
 }
 
@@ -48,6 +50,10 @@ export interface GetJavaFamiliesArgs {
      */
     familyVersion?: string;
     filters?: inputs.Jms.GetJavaFamiliesFilter[];
+    /**
+     * Filter the Java Release Family versions by support status.
+     */
+    isSupportedVersion?: boolean;
 }
 
 /**
@@ -68,6 +74,10 @@ export interface GetJavaFamiliesResult {
      */
     readonly id: string;
     /**
+     * Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+     */
+    readonly isSupportedVersion?: boolean;
+    /**
      * The list of java_family_collection.
      */
     readonly javaFamilyCollections: outputs.Jms.GetJavaFamiliesJavaFamilyCollection[];
@@ -87,6 +97,7 @@ export interface GetJavaFamiliesResult {
  * const testJavaFamilies = oci.Jms.getJavaFamilies({
  *     displayName: _var.java_family_display_name,
  *     familyVersion: _var.java_family_family_version,
+ *     isSupportedVersion: _var.java_family_is_supported_version,
  * });
  * ```
  */
@@ -107,4 +118,8 @@ export interface GetJavaFamiliesOutputArgs {
      */
     familyVersion?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Jms.GetJavaFamiliesFilterArgs>[]>;
+    /**
+     * Filter the Java Release Family versions by support status.
+     */
+    isSupportedVersion?: pulumi.Input<boolean>;
 }

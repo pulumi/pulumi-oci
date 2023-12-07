@@ -18,13 +18,29 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ApexUrl;
         /// <summary>
+        /// The URL of the Database Transforms for the Autonomous Database.
+        /// </summary>
+        public readonly string DatabaseTransformsUrl;
+        /// <summary>
         /// The URL of the Graph Studio for the Autonomous Database.
         /// </summary>
         public readonly string GraphStudioUrl;
         /// <summary>
+        /// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        /// </summary>
+        public readonly string MachineLearningNotebookUrl;
+        /// <summary>
         /// Oracle Machine Learning user management URL.
         /// </summary>
         public readonly string MachineLearningUserManagementUrl;
+        /// <summary>
+        /// The URL of the MongoDB API for the Autonomous Database.
+        /// </summary>
+        public readonly string MongoDbUrl;
+        /// <summary>
+        /// The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        /// </summary>
+        public readonly string OrdsUrl;
         /// <summary>
         /// Oracle SQL Developer Web URL.
         /// </summary>
@@ -34,15 +50,27 @@ namespace Pulumi.Oci.Database.Outputs
         private GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult(
             string apexUrl,
 
+            string databaseTransformsUrl,
+
             string graphStudioUrl,
 
+            string machineLearningNotebookUrl,
+
             string machineLearningUserManagementUrl,
+
+            string mongoDbUrl,
+
+            string ordsUrl,
 
             string sqlDevWebUrl)
         {
             ApexUrl = apexUrl;
+            DatabaseTransformsUrl = databaseTransformsUrl;
             GraphStudioUrl = graphStudioUrl;
+            MachineLearningNotebookUrl = machineLearningNotebookUrl;
             MachineLearningUserManagementUrl = machineLearningUserManagementUrl;
+            MongoDbUrl = mongoDbUrl;
+            OrdsUrl = ordsUrl;
             SqlDevWebUrl = sqlDevWebUrl;
         }
     }

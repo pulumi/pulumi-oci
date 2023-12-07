@@ -22,7 +22,7 @@ class GetAutonomousVmClusterResult:
     """
     A collection of values returned by getAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpu_percentage=None, cpus_enabled=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, ocpus_enabled=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_zone=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, vm_cluster_network_id=None):
+    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpu_percentage=None, cpus_enabled=None, cpus_lowest_scaled_value=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, ocpus_enabled=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_zone=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, vm_cluster_network_id=None):
         if autonomous_data_storage_percentage and not isinstance(autonomous_data_storage_percentage, float):
             raise TypeError("Expected argument 'autonomous_data_storage_percentage' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_percentage", autonomous_data_storage_percentage)
@@ -59,6 +59,9 @@ class GetAutonomousVmClusterResult:
         if cpus_enabled and not isinstance(cpus_enabled, int):
             raise TypeError("Expected argument 'cpus_enabled' to be a int")
         pulumi.set(__self__, "cpus_enabled", cpus_enabled)
+        if cpus_lowest_scaled_value and not isinstance(cpus_lowest_scaled_value, int):
+            raise TypeError("Expected argument 'cpus_lowest_scaled_value' to be a int")
+        pulumi.set(__self__, "cpus_lowest_scaled_value", cpus_lowest_scaled_value)
         if data_storage_size_in_gb and not isinstance(data_storage_size_in_gb, float):
             raise TypeError("Expected argument 'data_storage_size_in_gb' to be a float")
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
@@ -80,6 +83,9 @@ class GetAutonomousVmClusterResult:
         if exadata_infrastructure_id and not isinstance(exadata_infrastructure_id, str):
             raise TypeError("Expected argument 'exadata_infrastructure_id' to be a str")
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
+        if exadata_storage_in_tbs_lowest_scaled_value and not isinstance(exadata_storage_in_tbs_lowest_scaled_value, float):
+            raise TypeError("Expected argument 'exadata_storage_in_tbs_lowest_scaled_value' to be a float")
+        pulumi.set(__self__, "exadata_storage_in_tbs_lowest_scaled_value", exadata_storage_in_tbs_lowest_scaled_value)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -107,6 +113,9 @@ class GetAutonomousVmClusterResult:
         if maintenance_windows and not isinstance(maintenance_windows, list):
             raise TypeError("Expected argument 'maintenance_windows' to be a list")
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        if max_acds_lowest_scaled_value and not isinstance(max_acds_lowest_scaled_value, int):
+            raise TypeError("Expected argument 'max_acds_lowest_scaled_value' to be a int")
+        pulumi.set(__self__, "max_acds_lowest_scaled_value", max_acds_lowest_scaled_value)
         if memory_per_oracle_compute_unit_in_gbs and not isinstance(memory_per_oracle_compute_unit_in_gbs, int):
             raise TypeError("Expected argument 'memory_per_oracle_compute_unit_in_gbs' to be a int")
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
@@ -125,6 +134,9 @@ class GetAutonomousVmClusterResult:
         if ocpus_enabled and not isinstance(ocpus_enabled, float):
             raise TypeError("Expected argument 'ocpus_enabled' to be a float")
         pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
+        if provisionable_autonomous_container_databases and not isinstance(provisionable_autonomous_container_databases, int):
+            raise TypeError("Expected argument 'provisionable_autonomous_container_databases' to be a int")
+        pulumi.set(__self__, "provisionable_autonomous_container_databases", provisionable_autonomous_container_databases)
         if provisioned_autonomous_container_databases and not isinstance(provisioned_autonomous_container_databases, int):
             raise TypeError("Expected argument 'provisioned_autonomous_container_databases' to be a int")
         pulumi.set(__self__, "provisioned_autonomous_container_databases", provisioned_autonomous_container_databases)
@@ -256,6 +268,14 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "cpus_enabled")
 
     @property
+    @pulumi.getter(name="cpusLowestScaledValue")
+    def cpus_lowest_scaled_value(self) -> int:
+        """
+        The lowest value to which cpus can be scaled down.
+        """
+        return pulumi.get(self, "cpus_lowest_scaled_value")
+
+    @property
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> float:
         """
@@ -310,6 +330,14 @@ class GetAutonomousVmClusterResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         """
         return pulumi.get(self, "exadata_infrastructure_id")
+
+    @property
+    @pulumi.getter(name="exadataStorageInTbsLowestScaledValue")
+    def exadata_storage_in_tbs_lowest_scaled_value(self) -> float:
+        """
+        The lowest value to which exadataStorage in TBs can be scaled down.
+        """
+        return pulumi.get(self, "exadata_storage_in_tbs_lowest_scaled_value")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -381,6 +409,14 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "maintenance_windows")
 
     @property
+    @pulumi.getter(name="maxAcdsLowestScaledValue")
+    def max_acds_lowest_scaled_value(self) -> int:
+        """
+        The lowest value to which ACDs can be scaled down.
+        """
+        return pulumi.get(self, "max_acds_lowest_scaled_value")
+
+    @property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
@@ -424,6 +460,11 @@ class GetAutonomousVmClusterResult:
         The number of enabled OCPU cores.
         """
         return pulumi.get(self, "ocpus_enabled")
+
+    @property
+    @pulumi.getter(name="provisionableAutonomousContainerDatabases")
+    def provisionable_autonomous_container_databases(self) -> int:
+        return pulumi.get(self, "provisionable_autonomous_container_databases")
 
     @property
     @pulumi.getter(name="provisionedAutonomousContainerDatabases")
@@ -546,6 +587,7 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             cpu_core_count_per_node=self.cpu_core_count_per_node,
             cpu_percentage=self.cpu_percentage,
             cpus_enabled=self.cpus_enabled,
+            cpus_lowest_scaled_value=self.cpus_lowest_scaled_value,
             data_storage_size_in_gb=self.data_storage_size_in_gb,
             data_storage_size_in_tbs=self.data_storage_size_in_tbs,
             db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
@@ -553,6 +595,7 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             exadata_infrastructure_id=self.exadata_infrastructure_id,
+            exadata_storage_in_tbs_lowest_scaled_value=self.exadata_storage_in_tbs_lowest_scaled_value,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_local_backup_enabled=self.is_local_backup_enabled,
@@ -562,12 +605,14 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             lifecycle_details=self.lifecycle_details,
             maintenance_window_details=self.maintenance_window_details,
             maintenance_windows=self.maintenance_windows,
+            max_acds_lowest_scaled_value=self.max_acds_lowest_scaled_value,
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             memory_size_in_gbs=self.memory_size_in_gbs,
             next_maintenance_run_id=self.next_maintenance_run_id,
             node_count=self.node_count,
             non_provisionable_autonomous_container_databases=self.non_provisionable_autonomous_container_databases,
             ocpus_enabled=self.ocpus_enabled,
+            provisionable_autonomous_container_databases=self.provisionable_autonomous_container_databases,
             provisioned_autonomous_container_databases=self.provisioned_autonomous_container_databases,
             provisioned_cpus=self.provisioned_cpus,
             reclaimable_cpus=self.reclaimable_cpus,
@@ -621,6 +666,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
         cpu_core_count_per_node=pulumi.get(__ret__, 'cpu_core_count_per_node'),
         cpu_percentage=pulumi.get(__ret__, 'cpu_percentage'),
         cpus_enabled=pulumi.get(__ret__, 'cpus_enabled'),
+        cpus_lowest_scaled_value=pulumi.get(__ret__, 'cpus_lowest_scaled_value'),
         data_storage_size_in_gb=pulumi.get(__ret__, 'data_storage_size_in_gb'),
         data_storage_size_in_tbs=pulumi.get(__ret__, 'data_storage_size_in_tbs'),
         db_node_storage_size_in_gbs=pulumi.get(__ret__, 'db_node_storage_size_in_gbs'),
@@ -628,6 +674,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         exadata_infrastructure_id=pulumi.get(__ret__, 'exadata_infrastructure_id'),
+        exadata_storage_in_tbs_lowest_scaled_value=pulumi.get(__ret__, 'exadata_storage_in_tbs_lowest_scaled_value'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_local_backup_enabled=pulumi.get(__ret__, 'is_local_backup_enabled'),
@@ -637,12 +684,14 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         maintenance_window_details=pulumi.get(__ret__, 'maintenance_window_details'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
+        max_acds_lowest_scaled_value=pulumi.get(__ret__, 'max_acds_lowest_scaled_value'),
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_oracle_compute_unit_in_gbs'),
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
         next_maintenance_run_id=pulumi.get(__ret__, 'next_maintenance_run_id'),
         node_count=pulumi.get(__ret__, 'node_count'),
         non_provisionable_autonomous_container_databases=pulumi.get(__ret__, 'non_provisionable_autonomous_container_databases'),
         ocpus_enabled=pulumi.get(__ret__, 'ocpus_enabled'),
+        provisionable_autonomous_container_databases=pulumi.get(__ret__, 'provisionable_autonomous_container_databases'),
         provisioned_autonomous_container_databases=pulumi.get(__ret__, 'provisioned_autonomous_container_databases'),
         provisioned_cpus=pulumi.get(__ret__, 'provisioned_cpus'),
         reclaimable_cpus=pulumi.get(__ret__, 'reclaimable_cpus'),

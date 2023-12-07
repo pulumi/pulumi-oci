@@ -174,6 +174,7 @@ export class DbSystemsUpgrade extends pulumi.CustomResource {
      * A valid Oracle Grid Infrastructure (GI) software version.
      */
     public readonly newGiVersion!: pulumi.Output<string>;
+    public readonly newOsVersion!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
@@ -304,6 +305,7 @@ export class DbSystemsUpgrade extends pulumi.CustomResource {
             resourceInputs["listenerPort"] = state ? state.listenerPort : undefined;
             resourceInputs["maintenanceWindows"] = state ? state.maintenanceWindows : undefined;
             resourceInputs["newGiVersion"] = state ? state.newGiVersion : undefined;
+            resourceInputs["newOsVersion"] = state ? state.newOsVersion : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
@@ -336,6 +338,7 @@ export class DbSystemsUpgrade extends pulumi.CustomResource {
             resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
             resourceInputs["isSnapshotRetentionDaysForceUpdated"] = args ? args.isSnapshotRetentionDaysForceUpdated : undefined;
             resourceInputs["newGiVersion"] = args ? args.newGiVersion : undefined;
+            resourceInputs["newOsVersion"] = args ? args.newOsVersion : undefined;
             resourceInputs["snapshotRetentionPeriodInDays"] = args ? args.snapshotRetentionPeriodInDays : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["backupNetworkNsgIds"] = undefined /*out*/;
@@ -507,6 +510,7 @@ export interface DbSystemsUpgradeState {
      * A valid Oracle Grid Infrastructure (GI) software version.
      */
     newGiVersion?: pulumi.Input<string>;
+    newOsVersion?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
@@ -616,6 +620,7 @@ export interface DbSystemsUpgradeArgs {
      * A valid Oracle Grid Infrastructure (GI) software version.
      */
     newGiVersion?: pulumi.Input<string>;
+    newOsVersion?: pulumi.Input<string>;
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      *

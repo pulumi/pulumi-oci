@@ -93,7 +93,7 @@ type AutonomousVmCluster struct {
 	pulumi.CustomResourceState
 
 	AutonomousDataStoragePercentage pulumi.Float64Output `pulumi:"autonomousDataStoragePercentage"`
-	// The data disk group size to be allocated for Autonomous Databases, in TBs.
+	// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs pulumi.Float64Output `pulumi:"autonomousDataStorageSizeInTbs"`
 	// The data disk group size available for Autonomous Databases, in TBs.
 	AvailableAutonomousDataStorageSizeInTbs pulumi.Float64Output `pulumi:"availableAutonomousDataStorageSizeInTbs"`
@@ -107,12 +107,13 @@ type AutonomousVmCluster struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The compute model of the Autonomous VM Cluster.
 	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
-	// The number of CPU cores to enable per VM cluster node.
+	// (Updatable) The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntOutput     `pulumi:"cpuCoreCountPerNode"`
 	CpuPercentage       pulumi.Float64Output `pulumi:"cpuPercentage"`
 	// The number of enabled CPU cores.
-	CpusEnabled         pulumi.IntOutput     `pulumi:"cpusEnabled"`
-	DataStorageSizeInGb pulumi.Float64Output `pulumi:"dataStorageSizeInGb"`
+	CpusEnabled           pulumi.IntOutput     `pulumi:"cpusEnabled"`
+	CpusLowestScaledValue pulumi.IntOutput     `pulumi:"cpusLowestScaledValue"`
+	DataStorageSizeInGb   pulumi.Float64Output `pulumi:"dataStorageSizeInGb"`
 	// The total data storage allocated in TBs
 	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
@@ -125,6 +126,8 @@ type AutonomousVmCluster struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId pulumi.StringOutput `pulumi:"exadataInfrastructureId"`
+	// The lowest value to which exadataStorage in TBs can be scaled down.
+	ExadataStorageInTbsLowestScaledValue pulumi.Float64Output `pulumi:"exadataStorageInTbsLowestScaledValue"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
@@ -141,6 +144,8 @@ type AutonomousVmCluster struct {
 	MaintenanceWindowDetails AutonomousVmClusterMaintenanceWindowDetailArrayOutput `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows AutonomousVmClusterMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
+	// The lowest value to which ACDs can be scaled down.
+	MaxAcdsLowestScaledValue pulumi.IntOutput `pulumi:"maxAcdsLowestScaledValue"`
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntOutput `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
@@ -151,9 +156,10 @@ type AutonomousVmCluster struct {
 	NodeCount                                    pulumi.IntOutput `pulumi:"nodeCount"`
 	NonProvisionableAutonomousContainerDatabases pulumi.IntOutput `pulumi:"nonProvisionableAutonomousContainerDatabases"`
 	// The number of enabled OCPU cores.
-	OcpusEnabled                            pulumi.Float64Output `pulumi:"ocpusEnabled"`
-	ProvisionedAutonomousContainerDatabases pulumi.IntOutput     `pulumi:"provisionedAutonomousContainerDatabases"`
-	ProvisionedCpus                         pulumi.Float64Output `pulumi:"provisionedCpus"`
+	OcpusEnabled                              pulumi.Float64Output `pulumi:"ocpusEnabled"`
+	ProvisionableAutonomousContainerDatabases pulumi.IntOutput     `pulumi:"provisionableAutonomousContainerDatabases"`
+	ProvisionedAutonomousContainerDatabases   pulumi.IntOutput     `pulumi:"provisionedAutonomousContainerDatabases"`
+	ProvisionedCpus                           pulumi.Float64Output `pulumi:"provisionedCpus"`
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
@@ -174,7 +180,7 @@ type AutonomousVmCluster struct {
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone                        pulumi.StringOutput  `pulumi:"timeZone"`
 	TotalAutonomousDataStorageInTbs pulumi.Float64Output `pulumi:"totalAutonomousDataStorageInTbs"`
-	// The total number of Autonomous Container Databases that can be created.
+	// (Updatable) The total number of Autonomous Container Databases that can be created.
 	TotalContainerDatabases pulumi.IntOutput `pulumi:"totalContainerDatabases"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	//
@@ -226,7 +232,7 @@ func GetAutonomousVmCluster(ctx *pulumi.Context,
 // Input properties used for looking up and filtering AutonomousVmCluster resources.
 type autonomousVmClusterState struct {
 	AutonomousDataStoragePercentage *float64 `pulumi:"autonomousDataStoragePercentage"`
-	// The data disk group size to be allocated for Autonomous Databases, in TBs.
+	// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs *float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	// The data disk group size available for Autonomous Databases, in TBs.
 	AvailableAutonomousDataStorageSizeInTbs *float64 `pulumi:"availableAutonomousDataStorageSizeInTbs"`
@@ -240,12 +246,13 @@ type autonomousVmClusterState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The compute model of the Autonomous VM Cluster.
 	ComputeModel *string `pulumi:"computeModel"`
-	// The number of CPU cores to enable per VM cluster node.
+	// (Updatable) The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode *int     `pulumi:"cpuCoreCountPerNode"`
 	CpuPercentage       *float64 `pulumi:"cpuPercentage"`
 	// The number of enabled CPU cores.
-	CpusEnabled         *int     `pulumi:"cpusEnabled"`
-	DataStorageSizeInGb *float64 `pulumi:"dataStorageSizeInGb"`
+	CpusEnabled           *int     `pulumi:"cpusEnabled"`
+	CpusLowestScaledValue *int     `pulumi:"cpusLowestScaledValue"`
+	DataStorageSizeInGb   *float64 `pulumi:"dataStorageSizeInGb"`
 	// The total data storage allocated in TBs
 	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
@@ -258,6 +265,8 @@ type autonomousVmClusterState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId *string `pulumi:"exadataInfrastructureId"`
+	// The lowest value to which exadataStorage in TBs can be scaled down.
+	ExadataStorageInTbsLowestScaledValue *float64 `pulumi:"exadataStorageInTbsLowestScaledValue"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
@@ -274,6 +283,8 @@ type autonomousVmClusterState struct {
 	MaintenanceWindowDetails []AutonomousVmClusterMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []AutonomousVmClusterMaintenanceWindow `pulumi:"maintenanceWindows"`
+	// The lowest value to which ACDs can be scaled down.
+	MaxAcdsLowestScaledValue *int `pulumi:"maxAcdsLowestScaledValue"`
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
@@ -284,9 +295,10 @@ type autonomousVmClusterState struct {
 	NodeCount                                    *int `pulumi:"nodeCount"`
 	NonProvisionableAutonomousContainerDatabases *int `pulumi:"nonProvisionableAutonomousContainerDatabases"`
 	// The number of enabled OCPU cores.
-	OcpusEnabled                            *float64 `pulumi:"ocpusEnabled"`
-	ProvisionedAutonomousContainerDatabases *int     `pulumi:"provisionedAutonomousContainerDatabases"`
-	ProvisionedCpus                         *float64 `pulumi:"provisionedCpus"`
+	OcpusEnabled                              *float64 `pulumi:"ocpusEnabled"`
+	ProvisionableAutonomousContainerDatabases *int     `pulumi:"provisionableAutonomousContainerDatabases"`
+	ProvisionedAutonomousContainerDatabases   *int     `pulumi:"provisionedAutonomousContainerDatabases"`
+	ProvisionedCpus                           *float64 `pulumi:"provisionedCpus"`
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
@@ -307,7 +319,7 @@ type autonomousVmClusterState struct {
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone                        *string  `pulumi:"timeZone"`
 	TotalAutonomousDataStorageInTbs *float64 `pulumi:"totalAutonomousDataStorageInTbs"`
-	// The total number of Autonomous Container Databases that can be created.
+	// (Updatable) The total number of Autonomous Container Databases that can be created.
 	TotalContainerDatabases *int `pulumi:"totalContainerDatabases"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	//
@@ -318,7 +330,7 @@ type autonomousVmClusterState struct {
 
 type AutonomousVmClusterState struct {
 	AutonomousDataStoragePercentage pulumi.Float64PtrInput
-	// The data disk group size to be allocated for Autonomous Databases, in TBs.
+	// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs pulumi.Float64PtrInput
 	// The data disk group size available for Autonomous Databases, in TBs.
 	AvailableAutonomousDataStorageSizeInTbs pulumi.Float64PtrInput
@@ -332,12 +344,13 @@ type AutonomousVmClusterState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The compute model of the Autonomous VM Cluster.
 	ComputeModel pulumi.StringPtrInput
-	// The number of CPU cores to enable per VM cluster node.
+	// (Updatable) The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntPtrInput
 	CpuPercentage       pulumi.Float64PtrInput
 	// The number of enabled CPU cores.
-	CpusEnabled         pulumi.IntPtrInput
-	DataStorageSizeInGb pulumi.Float64PtrInput
+	CpusEnabled           pulumi.IntPtrInput
+	CpusLowestScaledValue pulumi.IntPtrInput
+	DataStorageSizeInGb   pulumi.Float64PtrInput
 	// The total data storage allocated in TBs
 	DataStorageSizeInTbs pulumi.Float64PtrInput
 	// The local node storage allocated in GBs.
@@ -350,6 +363,8 @@ type AutonomousVmClusterState struct {
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId pulumi.StringPtrInput
+	// The lowest value to which exadataStorage in TBs can be scaled down.
+	ExadataStorageInTbsLowestScaledValue pulumi.Float64PtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
@@ -366,6 +381,8 @@ type AutonomousVmClusterState struct {
 	MaintenanceWindowDetails AutonomousVmClusterMaintenanceWindowDetailArrayInput
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows AutonomousVmClusterMaintenanceWindowArrayInput
+	// The lowest value to which ACDs can be scaled down.
+	MaxAcdsLowestScaledValue pulumi.IntPtrInput
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
 	// The memory allocated in GBs.
@@ -376,9 +393,10 @@ type AutonomousVmClusterState struct {
 	NodeCount                                    pulumi.IntPtrInput
 	NonProvisionableAutonomousContainerDatabases pulumi.IntPtrInput
 	// The number of enabled OCPU cores.
-	OcpusEnabled                            pulumi.Float64PtrInput
-	ProvisionedAutonomousContainerDatabases pulumi.IntPtrInput
-	ProvisionedCpus                         pulumi.Float64PtrInput
+	OcpusEnabled                              pulumi.Float64PtrInput
+	ProvisionableAutonomousContainerDatabases pulumi.IntPtrInput
+	ProvisionedAutonomousContainerDatabases   pulumi.IntPtrInput
+	ProvisionedCpus                           pulumi.Float64PtrInput
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
@@ -399,7 +417,7 @@ type AutonomousVmClusterState struct {
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone                        pulumi.StringPtrInput
 	TotalAutonomousDataStorageInTbs pulumi.Float64PtrInput
-	// The total number of Autonomous Container Databases that can be created.
+	// (Updatable) The total number of Autonomous Container Databases that can be created.
 	TotalContainerDatabases pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	//
@@ -413,13 +431,13 @@ func (AutonomousVmClusterState) ElementType() reflect.Type {
 }
 
 type autonomousVmClusterArgs struct {
-	// The data disk group size to be allocated for Autonomous Databases, in TBs.
+	// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs *float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The compute model of the Autonomous VM Cluster.
 	ComputeModel *string `pulumi:"computeModel"`
-	// The number of CPU cores to enable per VM cluster node.
+	// (Updatable) The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode *int `pulumi:"cpuCoreCountPerNode"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
 	DbServers []string `pulumi:"dbServers"`
@@ -447,7 +465,7 @@ type autonomousVmClusterArgs struct {
 	ScanListenerPortTls *int `pulumi:"scanListenerPortTls"`
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
-	// The total number of Autonomous Container Databases that can be created.
+	// (Updatable) The total number of Autonomous Container Databases that can be created.
 	TotalContainerDatabases *int `pulumi:"totalContainerDatabases"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	//
@@ -458,13 +476,13 @@ type autonomousVmClusterArgs struct {
 
 // The set of arguments for constructing a AutonomousVmCluster resource.
 type AutonomousVmClusterArgs struct {
-	// The data disk group size to be allocated for Autonomous Databases, in TBs.
+	// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs pulumi.Float64PtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
 	// The compute model of the Autonomous VM Cluster.
 	ComputeModel pulumi.StringPtrInput
-	// The number of CPU cores to enable per VM cluster node.
+	// (Updatable) The number of CPU cores to enable per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntPtrInput
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
 	DbServers pulumi.StringArrayInput
@@ -492,7 +510,7 @@ type AutonomousVmClusterArgs struct {
 	ScanListenerPortTls pulumi.IntPtrInput
 	// The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
-	// The total number of Autonomous Container Databases that can be created.
+	// (Updatable) The total number of Autonomous Container Databases that can be created.
 	TotalContainerDatabases pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	//
@@ -592,7 +610,7 @@ func (o AutonomousVmClusterOutput) AutonomousDataStoragePercentage() pulumi.Floa
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.AutonomousDataStoragePercentage }).(pulumi.Float64Output)
 }
 
-// The data disk group size to be allocated for Autonomous Databases, in TBs.
+// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 func (o AutonomousVmClusterOutput) AutonomousDataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.AutonomousDataStorageSizeInTbs }).(pulumi.Float64Output)
 }
@@ -627,7 +645,7 @@ func (o AutonomousVmClusterOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
-// The number of CPU cores to enable per VM cluster node.
+// (Updatable) The number of CPU cores to enable per VM cluster node.
 func (o AutonomousVmClusterOutput) CpuCoreCountPerNode() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.CpuCoreCountPerNode }).(pulumi.IntOutput)
 }
@@ -639,6 +657,10 @@ func (o AutonomousVmClusterOutput) CpuPercentage() pulumi.Float64Output {
 // The number of enabled CPU cores.
 func (o AutonomousVmClusterOutput) CpusEnabled() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.CpusEnabled }).(pulumi.IntOutput)
+}
+
+func (o AutonomousVmClusterOutput) CpusLowestScaledValue() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.CpusLowestScaledValue }).(pulumi.IntOutput)
 }
 
 func (o AutonomousVmClusterOutput) DataStorageSizeInGb() pulumi.Float64Output {
@@ -673,6 +695,11 @@ func (o AutonomousVmClusterOutput) DisplayName() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 func (o AutonomousVmClusterOutput) ExadataInfrastructureId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.ExadataInfrastructureId }).(pulumi.StringOutput)
+}
+
+// The lowest value to which exadataStorage in TBs can be scaled down.
+func (o AutonomousVmClusterOutput) ExadataStorageInTbsLowestScaledValue() pulumi.Float64Output {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.ExadataStorageInTbsLowestScaledValue }).(pulumi.Float64Output)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -719,6 +746,11 @@ func (o AutonomousVmClusterOutput) MaintenanceWindows() AutonomousVmClusterMaint
 	}).(AutonomousVmClusterMaintenanceWindowArrayOutput)
 }
 
+// The lowest value to which ACDs can be scaled down.
+func (o AutonomousVmClusterOutput) MaxAcdsLowestScaledValue() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.MaxAcdsLowestScaledValue }).(pulumi.IntOutput)
+}
+
 // The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 func (o AutonomousVmClusterOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
@@ -746,6 +778,10 @@ func (o AutonomousVmClusterOutput) NonProvisionableAutonomousContainerDatabases(
 // The number of enabled OCPU cores.
 func (o AutonomousVmClusterOutput) OcpusEnabled() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.OcpusEnabled }).(pulumi.Float64Output)
+}
+
+func (o AutonomousVmClusterOutput) ProvisionableAutonomousContainerDatabases() pulumi.IntOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.ProvisionableAutonomousContainerDatabases }).(pulumi.IntOutput)
 }
 
 func (o AutonomousVmClusterOutput) ProvisionedAutonomousContainerDatabases() pulumi.IntOutput {
@@ -806,7 +842,7 @@ func (o AutonomousVmClusterOutput) TotalAutonomousDataStorageInTbs() pulumi.Floa
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.TotalAutonomousDataStorageInTbs }).(pulumi.Float64Output)
 }
 
-// The total number of Autonomous Container Databases that can be created.
+// (Updatable) The total number of Autonomous Container Databases that can be created.
 func (o AutonomousVmClusterOutput) TotalContainerDatabases() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.TotalContainerDatabases }).(pulumi.IntOutput)
 }

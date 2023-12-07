@@ -35,6 +35,12 @@ public final class GetDatabaseToolsConnectionsResult {
      * 
      */
     private String id;
+    private @Nullable String relatedResourceIdentifier;
+    /**
+     * @return Specifies whether this connection is supported by the Database Tools Runtime.
+     * 
+     */
+    private @Nullable List<String> runtimeSupports;
     /**
      * @return The current state of the Database Tools connection.
      * 
@@ -78,6 +84,16 @@ public final class GetDatabaseToolsConnectionsResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> relatedResourceIdentifier() {
+        return Optional.ofNullable(this.relatedResourceIdentifier);
+    }
+    /**
+     * @return Specifies whether this connection is supported by the Database Tools Runtime.
+     * 
+     */
+    public List<String> runtimeSupports() {
+        return this.runtimeSupports == null ? List.of() : this.runtimeSupports;
+    }
     /**
      * @return The current state of the Database Tools connection.
      * 
@@ -107,6 +123,8 @@ public final class GetDatabaseToolsConnectionsResult {
         private @Nullable String displayName;
         private @Nullable List<GetDatabaseToolsConnectionsFilter> filters;
         private String id;
+        private @Nullable String relatedResourceIdentifier;
+        private @Nullable List<String> runtimeSupports;
         private @Nullable String state;
         private @Nullable List<String> types;
         public Builder() {}
@@ -117,6 +135,8 @@ public final class GetDatabaseToolsConnectionsResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.relatedResourceIdentifier = defaults.relatedResourceIdentifier;
+    	      this.runtimeSupports = defaults.runtimeSupports;
     	      this.state = defaults.state;
     	      this.types = defaults.types;
         }
@@ -153,6 +173,19 @@ public final class GetDatabaseToolsConnectionsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder relatedResourceIdentifier(@Nullable String relatedResourceIdentifier) {
+            this.relatedResourceIdentifier = relatedResourceIdentifier;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder runtimeSupports(@Nullable List<String> runtimeSupports) {
+            this.runtimeSupports = runtimeSupports;
+            return this;
+        }
+        public Builder runtimeSupports(String... runtimeSupports) {
+            return runtimeSupports(List.of(runtimeSupports));
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
             this.state = state;
             return this;
@@ -172,6 +205,8 @@ public final class GetDatabaseToolsConnectionsResult {
             o.displayName = displayName;
             o.filters = filters;
             o.id = id;
+            o.relatedResourceIdentifier = relatedResourceIdentifier;
+            o.runtimeSupports = runtimeSupports;
             o.state = state;
             o.types = types;
             return o;

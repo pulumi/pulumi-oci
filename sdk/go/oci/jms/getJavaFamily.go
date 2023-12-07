@@ -68,6 +68,12 @@ type GetJavaFamilyResult struct {
 	FamilyVersion string `pulumi:"familyVersion"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+	IsSupportedVersion bool `pulumi:"isSupportedVersion"`
+	// List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+	LatestReleaseArtifacts []GetJavaFamilyLatestReleaseArtifact `pulumi:"latestReleaseArtifacts"`
+	// Latest Java release version in the family.
+	LatestReleaseVersion string `pulumi:"latestReleaseVersion"`
 	// This indicates the support category for the Java release family.
 	SupportType string `pulumi:"supportType"`
 }
@@ -133,6 +139,21 @@ func (o GetJavaFamilyResultOutput) FamilyVersion() pulumi.StringOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetJavaFamilyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaFamilyResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+func (o GetJavaFamilyResultOutput) IsSupportedVersion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetJavaFamilyResult) bool { return v.IsSupportedVersion }).(pulumi.BoolOutput)
+}
+
+// List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+func (o GetJavaFamilyResultOutput) LatestReleaseArtifacts() GetJavaFamilyLatestReleaseArtifactArrayOutput {
+	return o.ApplyT(func(v GetJavaFamilyResult) []GetJavaFamilyLatestReleaseArtifact { return v.LatestReleaseArtifacts }).(GetJavaFamilyLatestReleaseArtifactArrayOutput)
+}
+
+// Latest Java release version in the family.
+func (o GetJavaFamilyResultOutput) LatestReleaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyResult) string { return v.LatestReleaseVersion }).(pulumi.StringOutput)
 }
 
 // This indicates the support category for the Java release family.

@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseTools.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class DatabaseToolsConnectionRelatedResource {
@@ -13,27 +15,27 @@ public final class DatabaseToolsConnectionRelatedResource {
      * @return (Updatable) The resource entity type.
      * 
      */
-    private String entityType;
+    private @Nullable String entityType;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
      * 
      */
-    private String identifier;
+    private @Nullable String identifier;
 
     private DatabaseToolsConnectionRelatedResource() {}
     /**
      * @return (Updatable) The resource entity type.
      * 
      */
-    public String entityType() {
-        return this.entityType;
+    public Optional<String> entityType() {
+        return Optional.ofNullable(this.entityType);
     }
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
      * 
      */
-    public String identifier() {
-        return this.identifier;
+    public Optional<String> identifier() {
+        return Optional.ofNullable(this.identifier);
     }
 
     public static Builder builder() {
@@ -45,8 +47,8 @@ public final class DatabaseToolsConnectionRelatedResource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String entityType;
-        private String identifier;
+        private @Nullable String entityType;
+        private @Nullable String identifier;
         public Builder() {}
         public Builder(DatabaseToolsConnectionRelatedResource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -55,13 +57,13 @@ public final class DatabaseToolsConnectionRelatedResource {
         }
 
         @CustomType.Setter
-        public Builder entityType(String entityType) {
-            this.entityType = Objects.requireNonNull(entityType);
+        public Builder entityType(@Nullable String entityType) {
+            this.entityType = entityType;
             return this;
         }
         @CustomType.Setter
-        public Builder identifier(String identifier) {
-            this.identifier = Objects.requireNonNull(identifier);
+        public Builder identifier(@Nullable String identifier) {
+            this.identifier = identifier;
             return this;
         }
         public DatabaseToolsConnectionRelatedResource build() {

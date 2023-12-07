@@ -91,7 +91,7 @@ export interface GetSecurityAssessmentsArgs {
     displayName?: string;
     filters?: inputs.DataSafe.GetSecurityAssessmentsFilter[];
     /**
-     * A filter to return only the security assessments that are set as a baseline.
+     * A filter to return only security assessments that are set as baseline.
      */
     isBaseline?: boolean;
     /**
@@ -245,7 +245,7 @@ export interface GetSecurityAssessmentsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DataSafe.GetSecurityAssessmentsFilterArgs>[]>;
     /**
-     * A filter to return only the security assessments that are set as a baseline.
+     * A filter to return only security assessments that are set as baseline.
      */
     isBaseline?: pulumi.Input<boolean>;
     /**

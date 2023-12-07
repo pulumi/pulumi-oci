@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementDpdConfigArgs;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs;
+import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementPhaseOneDetailArgs;
+import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementPhaseTwoDetailArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -106,18 +108,94 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
     }
 
     /**
+     * By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * 
+     * The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * 
+     * The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+     * 
+     */
+    @Import(name="natTranslationEnabled")
+    private @Nullable Output<String> natTranslationEnabled;
+
+    /**
+     * @return By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * 
+     * The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * 
+     * The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+     * 
+     */
+    public Optional<Output<String>> natTranslationEnabled() {
+        return Optional.ofNullable(this.natTranslationEnabled);
+    }
+
+    /**
+     * Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+     * 
+     */
+    @Import(name="oracleCanInitiate")
+    private @Nullable Output<String> oracleCanInitiate;
+
+    /**
+     * @return Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+     * 
+     */
+    public Optional<Output<String>> oracleCanInitiate() {
+        return Optional.ofNullable(this.oracleCanInitiate);
+    }
+
+    /**
+     * Configuration details for IKE phase one (ISAKMP) configuration parameters.
+     * 
+     * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+     * 
+     */
+    @Import(name="phaseOneDetails")
+    private @Nullable Output<List<IpsecConnectionTunnelManagementPhaseOneDetailArgs>> phaseOneDetails;
+
+    /**
+     * @return Configuration details for IKE phase one (ISAKMP) configuration parameters.
+     * 
+     * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+     * 
+     */
+    public Optional<Output<List<IpsecConnectionTunnelManagementPhaseOneDetailArgs>>> phaseOneDetails() {
+        return Optional.ofNullable(this.phaseOneDetails);
+    }
+
+    /**
+     * Configuration details for IPSec phase two configuration parameters.
+     * 
+     * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+     * 
+     */
+    @Import(name="phaseTwoDetails")
+    private @Nullable Output<List<IpsecConnectionTunnelManagementPhaseTwoDetailArgs>> phaseTwoDetails;
+
+    /**
+     * @return Configuration details for IPSec phase two configuration parameters.
+     * 
+     * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+     * 
+     */
+    public Optional<Output<List<IpsecConnectionTunnelManagementPhaseTwoDetailArgs>>> phaseTwoDetails() {
+        return Optional.ofNullable(this.phaseTwoDetails);
+    }
+
+    /**
      * The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
      * 
      */
-    @Import(name="routing", required=true)
-    private Output<String> routing;
+    @Import(name="routing")
+    private @Nullable Output<String> routing;
 
     /**
      * @return The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
      * 
      */
-    public Output<String> routing() {
-        return this.routing;
+    public Optional<Output<String>> routing() {
+        return Optional.ofNullable(this.routing);
     }
 
     /**
@@ -159,6 +237,10 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
         this.encryptionDomainConfig = $.encryptionDomainConfig;
         this.ikeVersion = $.ikeVersion;
         this.ipsecId = $.ipsecId;
+        this.natTranslationEnabled = $.natTranslationEnabled;
+        this.oracleCanInitiate = $.oracleCanInitiate;
+        this.phaseOneDetails = $.phaseOneDetails;
+        this.phaseTwoDetails = $.phaseTwoDetails;
         this.routing = $.routing;
         this.sharedSecret = $.sharedSecret;
         this.tunnelId = $.tunnelId;
@@ -317,12 +399,136 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
         }
 
         /**
+         * @param natTranslationEnabled By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+         * 
+         * The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+         * 
+         * The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder natTranslationEnabled(@Nullable Output<String> natTranslationEnabled) {
+            $.natTranslationEnabled = natTranslationEnabled;
+            return this;
+        }
+
+        /**
+         * @param natTranslationEnabled By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+         * 
+         * The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+         * 
+         * The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder natTranslationEnabled(String natTranslationEnabled) {
+            return natTranslationEnabled(Output.of(natTranslationEnabled));
+        }
+
+        /**
+         * @param oracleCanInitiate Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleCanInitiate(@Nullable Output<String> oracleCanInitiate) {
+            $.oracleCanInitiate = oracleCanInitiate;
+            return this;
+        }
+
+        /**
+         * @param oracleCanInitiate Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleCanInitiate(String oracleCanInitiate) {
+            return oracleCanInitiate(Output.of(oracleCanInitiate));
+        }
+
+        /**
+         * @param phaseOneDetails Configuration details for IKE phase one (ISAKMP) configuration parameters.
+         * 
+         * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder phaseOneDetails(@Nullable Output<List<IpsecConnectionTunnelManagementPhaseOneDetailArgs>> phaseOneDetails) {
+            $.phaseOneDetails = phaseOneDetails;
+            return this;
+        }
+
+        /**
+         * @param phaseOneDetails Configuration details for IKE phase one (ISAKMP) configuration parameters.
+         * 
+         * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder phaseOneDetails(List<IpsecConnectionTunnelManagementPhaseOneDetailArgs> phaseOneDetails) {
+            return phaseOneDetails(Output.of(phaseOneDetails));
+        }
+
+        /**
+         * @param phaseOneDetails Configuration details for IKE phase one (ISAKMP) configuration parameters.
+         * 
+         * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder phaseOneDetails(IpsecConnectionTunnelManagementPhaseOneDetailArgs... phaseOneDetails) {
+            return phaseOneDetails(List.of(phaseOneDetails));
+        }
+
+        /**
+         * @param phaseTwoDetails Configuration details for IPSec phase two configuration parameters.
+         * 
+         * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder phaseTwoDetails(@Nullable Output<List<IpsecConnectionTunnelManagementPhaseTwoDetailArgs>> phaseTwoDetails) {
+            $.phaseTwoDetails = phaseTwoDetails;
+            return this;
+        }
+
+        /**
+         * @param phaseTwoDetails Configuration details for IPSec phase two configuration parameters.
+         * 
+         * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder phaseTwoDetails(List<IpsecConnectionTunnelManagementPhaseTwoDetailArgs> phaseTwoDetails) {
+            return phaseTwoDetails(Output.of(phaseTwoDetails));
+        }
+
+        /**
+         * @param phaseTwoDetails Configuration details for IPSec phase two configuration parameters.
+         * 
+         * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder phaseTwoDetails(IpsecConnectionTunnelManagementPhaseTwoDetailArgs... phaseTwoDetails) {
+            return phaseTwoDetails(List.of(phaseTwoDetails));
+        }
+
+        /**
          * @param routing The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
          * 
          * @return builder
          * 
          */
-        public Builder routing(Output<String> routing) {
+        public Builder routing(@Nullable Output<String> routing) {
             $.routing = routing;
             return this;
         }
@@ -381,7 +587,6 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
 
         public IpsecConnectionTunnelManagementArgs build() {
             $.ipsecId = Objects.requireNonNull($.ipsecId, "expected parameter 'ipsecId' to be non-null");
-            $.routing = Objects.requireNonNull($.routing, "expected parameter 'routing' to be non-null");
             $.tunnelId = Objects.requireNonNull($.tunnelId, "expected parameter 'tunnelId' to be non-null");
             return $;
         }

@@ -38,7 +38,7 @@ import javax.annotation.Nullable;
  *     static route.
  * 
  * ** IMPORTANT **
- * Destroying `the oci.Core.IpsecConnectionTunnelManagement` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
+ * Destroying the `oci.Core.IpsecConnectionTunnelManagement` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
  * 
  * ## Example Usage
  * ```java
@@ -169,15 +169,31 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
     public Output<Optional<List<IpsecConnectionTunnelManagementDpdConfig>>> dpdConfigs() {
         return Codegen.optional(this.dpdConfigs);
     }
+    /**
+     * This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+     * 
+     */
     @Export(name="dpdMode", refs={String.class}, tree="[0]")
     private Output<String> dpdMode;
 
+    /**
+     * @return This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+     * 
+     */
     public Output<String> dpdMode() {
         return this.dpdMode;
     }
+    /**
+     * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     * 
+     */
     @Export(name="dpdTimeoutInSec", refs={Integer.class}, tree="[0]")
     private Output<Integer> dpdTimeoutInSec;
 
+    /**
+     * @return DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     * 
+     */
     public Output<Integer> dpdTimeoutInSec() {
         return this.dpdTimeoutInSec;
     }
@@ -223,27 +239,75 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
     public Output<String> ipsecId() {
         return this.ipsecId;
     }
+    /**
+     * By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * 
+     * The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * 
+     * The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+     * 
+     */
     @Export(name="natTranslationEnabled", refs={String.class}, tree="[0]")
     private Output<String> natTranslationEnabled;
 
+    /**
+     * @return By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * 
+     * The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * 
+     * The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+     * 
+     */
     public Output<String> natTranslationEnabled() {
         return this.natTranslationEnabled;
     }
+    /**
+     * Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+     * 
+     */
     @Export(name="oracleCanInitiate", refs={String.class}, tree="[0]")
     private Output<String> oracleCanInitiate;
 
+    /**
+     * @return Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+     * 
+     */
     public Output<String> oracleCanInitiate() {
         return this.oracleCanInitiate;
     }
+    /**
+     * Configuration details for IKE phase one (ISAKMP) configuration parameters.
+     * 
+     * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+     * 
+     */
     @Export(name="phaseOneDetails", refs={List.class,IpsecConnectionTunnelManagementPhaseOneDetail.class}, tree="[0,1]")
     private Output<List<IpsecConnectionTunnelManagementPhaseOneDetail>> phaseOneDetails;
 
+    /**
+     * @return Configuration details for IKE phase one (ISAKMP) configuration parameters.
+     * 
+     * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+     * 
+     */
     public Output<List<IpsecConnectionTunnelManagementPhaseOneDetail>> phaseOneDetails() {
         return this.phaseOneDetails;
     }
+    /**
+     * Configuration details for IPSec phase two configuration parameters.
+     * 
+     * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+     * 
+     */
     @Export(name="phaseTwoDetails", refs={List.class,IpsecConnectionTunnelManagementPhaseTwoDetail.class}, tree="[0,1]")
     private Output<List<IpsecConnectionTunnelManagementPhaseTwoDetail>> phaseTwoDetails;
 
+    /**
+     * @return Configuration details for IPSec phase two configuration parameters.
+     * 
+     * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+     * 
+     */
     public Output<List<IpsecConnectionTunnelManagementPhaseTwoDetail>> phaseTwoDetails() {
         return this.phaseTwoDetails;
     }
@@ -392,6 +456,9 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "sharedSecret"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

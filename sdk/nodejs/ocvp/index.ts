@@ -5,10 +5,25 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { ClusterArgs, ClusterState } from "./cluster";
+export type Cluster = import("./cluster").Cluster;
+export const Cluster: typeof import("./cluster").Cluster = null as any;
+utilities.lazyLoad(exports, ["Cluster"], () => require("./cluster"));
+
 export { EsxiHostArgs, EsxiHostState } from "./esxiHost";
 export type EsxiHost = import("./esxiHost").EsxiHost;
 export const EsxiHost: typeof import("./esxiHost").EsxiHost = null as any;
 utilities.lazyLoad(exports, ["EsxiHost"], () => require("./esxiHost"));
+
+export { GetClusterArgs, GetClusterResult, GetClusterOutputArgs } from "./getCluster";
+export const getCluster: typeof import("./getCluster").getCluster = null as any;
+export const getClusterOutput: typeof import("./getCluster").getClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getCluster","getClusterOutput"], () => require("./getCluster"));
+
+export { GetClustersArgs, GetClustersResult, GetClustersOutputArgs } from "./getClusters";
+export const getClusters: typeof import("./getClusters").getClusters = null as any;
+export const getClustersOutput: typeof import("./getClusters").getClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getClusters","getClustersOutput"], () => require("./getClusters"));
 
 export { GetExsiHostArgs, GetExsiHostResult, GetExsiHostOutputArgs } from "./getExsiHost";
 export const getExsiHost: typeof import("./getExsiHost").getExsiHost = null as any;
@@ -20,6 +35,11 @@ export const getExsiHosts: typeof import("./getExsiHosts").getExsiHosts = null a
 export const getExsiHostsOutput: typeof import("./getExsiHosts").getExsiHostsOutput = null as any;
 utilities.lazyLoad(exports, ["getExsiHosts","getExsiHostsOutput"], () => require("./getExsiHosts"));
 
+export { GetRetrievePasswordArgs, GetRetrievePasswordResult, GetRetrievePasswordOutputArgs } from "./getRetrievePassword";
+export const getRetrievePassword: typeof import("./getRetrievePassword").getRetrievePassword = null as any;
+export const getRetrievePasswordOutput: typeof import("./getRetrievePassword").getRetrievePasswordOutput = null as any;
+utilities.lazyLoad(exports, ["getRetrievePassword","getRetrievePasswordOutput"], () => require("./getRetrievePassword"));
+
 export { GetSddcArgs, GetSddcResult, GetSddcOutputArgs } from "./getSddc";
 export const getSddc: typeof import("./getSddc").getSddc = null as any;
 export const getSddcOutput: typeof import("./getSddc").getSddcOutput = null as any;
@@ -29,6 +49,11 @@ export { GetSddcsArgs, GetSddcsResult, GetSddcsOutputArgs } from "./getSddcs";
 export const getSddcs: typeof import("./getSddcs").getSddcs = null as any;
 export const getSddcsOutput: typeof import("./getSddcs").getSddcsOutput = null as any;
 utilities.lazyLoad(exports, ["getSddcs","getSddcsOutput"], () => require("./getSddcs"));
+
+export { GetSupportedCommitmentsArgs, GetSupportedCommitmentsResult, GetSupportedCommitmentsOutputArgs } from "./getSupportedCommitments";
+export const getSupportedCommitments: typeof import("./getSupportedCommitments").getSupportedCommitments = null as any;
+export const getSupportedCommitmentsOutput: typeof import("./getSupportedCommitments").getSupportedCommitmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getSupportedCommitments","getSupportedCommitmentsOutput"], () => require("./getSupportedCommitments"));
 
 export { GetSupportedHostShapesArgs, GetSupportedHostShapesResult, GetSupportedHostShapesOutputArgs } from "./getSupportedHostShapes";
 export const getSupportedHostShapes: typeof import("./getSupportedHostShapes").getSupportedHostShapes = null as any;
@@ -55,6 +80,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:Ocvp/cluster:Cluster":
+                return new Cluster(name, <any>undefined, { urn })
             case "oci:Ocvp/esxiHost:EsxiHost":
                 return new EsxiHost(name, <any>undefined, { urn })
             case "oci:Ocvp/sddc:Sddc":
@@ -64,5 +91,6 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "Ocvp/cluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Ocvp/esxiHost", _module)
 pulumi.runtime.registerResourceModule("oci", "Ocvp/sddc", _module)

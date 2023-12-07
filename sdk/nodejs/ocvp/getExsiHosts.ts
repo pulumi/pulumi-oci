@@ -26,6 +26,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEsxiHosts = oci.Ocvp.getExsiHosts({
+ *     clusterId: oci_ocvp_cluster.test_cluster.id,
  *     compartmentId: _var.compartment_id,
  *     computeInstanceId: oci_core_instance.test_instance.id,
  *     displayName: _var.esxi_host_display_name,
@@ -41,6 +42,7 @@ export function getExsiHosts(args?: GetExsiHostsArgs, opts?: pulumi.InvokeOption
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getExsiHosts:getExsiHosts", {
+        "clusterId": args.clusterId,
         "compartmentId": args.compartmentId,
         "computeInstanceId": args.computeInstanceId,
         "displayName": args.displayName,
@@ -56,6 +58,10 @@ export function getExsiHosts(args?: GetExsiHostsArgs, opts?: pulumi.InvokeOption
  * A collection of arguments for invoking getExsiHosts.
  */
 export interface GetExsiHostsArgs {
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     */
+    clusterId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      */
@@ -92,7 +98,11 @@ export interface GetExsiHostsArgs {
  */
 export interface GetExsiHostsResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the ESXi host belongs to.
+     */
+    readonly clusterId?: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
      */
     readonly compartmentId?: string;
     /**
@@ -115,7 +125,7 @@ export interface GetExsiHostsResult {
     readonly isBillingDonorsOnly?: boolean;
     readonly isSwapBillingOnly?: boolean;
     /**
-     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
      */
     readonly sddcId?: string;
     /**
@@ -143,6 +153,7 @@ export interface GetExsiHostsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEsxiHosts = oci.Ocvp.getExsiHosts({
+ *     clusterId: oci_ocvp_cluster.test_cluster.id,
  *     compartmentId: _var.compartment_id,
  *     computeInstanceId: oci_core_instance.test_instance.id,
  *     displayName: _var.esxi_host_display_name,
@@ -161,6 +172,10 @@ export function getExsiHostsOutput(args?: GetExsiHostsOutputArgs, opts?: pulumi.
  * A collection of arguments for invoking getExsiHosts.
  */
 export interface GetExsiHostsOutputArgs {
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     */
+    clusterId?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      */

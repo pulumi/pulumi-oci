@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class DatabaseToolsConnectionRelatedResourceArgs extends com.pulumi.resources.ResourceArgs {
@@ -17,30 +19,30 @@ public final class DatabaseToolsConnectionRelatedResourceArgs extends com.pulumi
      * (Updatable) The resource entity type.
      * 
      */
-    @Import(name="entityType", required=true)
-    private Output<String> entityType;
+    @Import(name="entityType")
+    private @Nullable Output<String> entityType;
 
     /**
      * @return (Updatable) The resource entity type.
      * 
      */
-    public Output<String> entityType() {
-        return this.entityType;
+    public Optional<Output<String>> entityType() {
+        return Optional.ofNullable(this.entityType);
     }
 
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
      * 
      */
-    @Import(name="identifier", required=true)
-    private Output<String> identifier;
+    @Import(name="identifier")
+    private @Nullable Output<String> identifier;
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
      * 
      */
-    public Output<String> identifier() {
-        return this.identifier;
+    public Optional<Output<String>> identifier() {
+        return Optional.ofNullable(this.identifier);
     }
 
     private DatabaseToolsConnectionRelatedResourceArgs() {}
@@ -74,7 +76,7 @@ public final class DatabaseToolsConnectionRelatedResourceArgs extends com.pulumi
          * @return builder
          * 
          */
-        public Builder entityType(Output<String> entityType) {
+        public Builder entityType(@Nullable Output<String> entityType) {
             $.entityType = entityType;
             return this;
         }
@@ -95,7 +97,7 @@ public final class DatabaseToolsConnectionRelatedResourceArgs extends com.pulumi
          * @return builder
          * 
          */
-        public Builder identifier(Output<String> identifier) {
+        public Builder identifier(@Nullable Output<String> identifier) {
             $.identifier = identifier;
             return this;
         }
@@ -111,8 +113,6 @@ public final class DatabaseToolsConnectionRelatedResourceArgs extends com.pulumi
         }
 
         public DatabaseToolsConnectionRelatedResourceArgs build() {
-            $.entityType = Objects.requireNonNull($.entityType, "expected parameter 'entityType' to be non-null");
-            $.identifier = Objects.requireNonNull($.identifier, "expected parameter 'identifier' to be non-null");
             return $;
         }
     }

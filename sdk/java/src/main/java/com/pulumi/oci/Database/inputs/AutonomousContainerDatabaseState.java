@@ -102,14 +102,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * The OCID of the Cloud Autonomous VM Cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      * 
      */
     @Import(name="cloudAutonomousVmClusterId")
     private @Nullable Output<String> cloudAutonomousVmClusterId;
 
     /**
-     * @return The OCID of the Cloud Autonomous VM Cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      * 
      */
     public Optional<Output<String>> cloudAutonomousVmClusterId() {
@@ -767,6 +767,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
+     * The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+     * 
+     */
+    @Import(name="timeOfLastBackup")
+    private @Nullable Output<String> timeOfLastBackup;
+
+    /**
+     * @return The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+     * 
+     */
+    public Optional<Output<String>> timeOfLastBackup() {
+        return Optional.ofNullable(this.timeOfLastBackup);
+    }
+
+    /**
      * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      * 
      */
@@ -879,6 +894,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.standbyMaintenanceBufferInDays = $.standbyMaintenanceBufferInDays;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
+        this.timeOfLastBackup = $.timeOfLastBackup;
         this.timeSnapshotStandbyRevert = $.timeSnapshotStandbyRevert;
         this.totalCpus = $.totalCpus;
         this.vaultId = $.vaultId;
@@ -1009,7 +1025,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param cloudAutonomousVmClusterId The OCID of the Cloud Autonomous VM Cluster.
+         * @param cloudAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
          * 
          * @return builder
          * 
@@ -1020,7 +1036,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param cloudAutonomousVmClusterId The OCID of the Cloud Autonomous VM Cluster.
+         * @param cloudAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
          * 
          * @return builder
          * 
@@ -1959,6 +1975,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder timeCreated(String timeCreated) {
             return timeCreated(Output.of(timeCreated));
+        }
+
+        /**
+         * @param timeOfLastBackup The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeOfLastBackup(@Nullable Output<String> timeOfLastBackup) {
+            $.timeOfLastBackup = timeOfLastBackup;
+            return this;
+        }
+
+        /**
+         * @param timeOfLastBackup The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeOfLastBackup(String timeOfLastBackup) {
+            return timeOfLastBackup(Output.of(timeOfLastBackup));
         }
 
         /**

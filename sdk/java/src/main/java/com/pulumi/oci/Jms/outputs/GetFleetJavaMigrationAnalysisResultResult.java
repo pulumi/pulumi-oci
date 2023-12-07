@@ -16,6 +16,11 @@ public final class GetFleetJavaMigrationAnalysisResultResult {
      */
     private String applicationExecutionType;
     /**
+     * @return The unique key that identifies the application.
+     * 
+     */
+    private String applicationKey;
+    /**
      * @return The name of the application for which the Java migration analysis was performed.
      * 
      */
@@ -99,6 +104,13 @@ public final class GetFleetJavaMigrationAnalysisResultResult {
      */
     public String applicationExecutionType() {
         return this.applicationExecutionType;
+    }
+    /**
+     * @return The unique key that identifies the application.
+     * 
+     */
+    public String applicationKey() {
+        return this.applicationKey;
     }
     /**
      * @return The name of the application for which the Java migration analysis was performed.
@@ -219,6 +231,7 @@ public final class GetFleetJavaMigrationAnalysisResultResult {
     @CustomType.Builder
     public static final class Builder {
         private String applicationExecutionType;
+        private String applicationKey;
         private String applicationName;
         private String applicationPath;
         private String bucket;
@@ -239,6 +252,7 @@ public final class GetFleetJavaMigrationAnalysisResultResult {
         public Builder(GetFleetJavaMigrationAnalysisResultResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.applicationExecutionType = defaults.applicationExecutionType;
+    	      this.applicationKey = defaults.applicationKey;
     	      this.applicationName = defaults.applicationName;
     	      this.applicationPath = defaults.applicationPath;
     	      this.bucket = defaults.bucket;
@@ -260,6 +274,11 @@ public final class GetFleetJavaMigrationAnalysisResultResult {
         @CustomType.Setter
         public Builder applicationExecutionType(String applicationExecutionType) {
             this.applicationExecutionType = Objects.requireNonNull(applicationExecutionType);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder applicationKey(String applicationKey) {
+            this.applicationKey = Objects.requireNonNull(applicationKey);
             return this;
         }
         @CustomType.Setter
@@ -348,6 +367,7 @@ public final class GetFleetJavaMigrationAnalysisResultResult {
         public GetFleetJavaMigrationAnalysisResultResult build() {
             final var o = new GetFleetJavaMigrationAnalysisResultResult();
             o.applicationExecutionType = applicationExecutionType;
+            o.applicationKey = applicationKey;
             o.applicationName = applicationName;
             o.applicationPath = applicationPath;
             o.bucket = bucket;

@@ -87,7 +87,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
+        /// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
         /// </summary>
         [Output("isEnabled")]
         public Output<bool> IsEnabled { get; private set; } = null!;
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
+        /// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
         /// </summary>
         [Input("isEnabled", required: true)]
         public Input<bool> IsEnabled { get; set; } = null!;
@@ -293,7 +293,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) Indicates if the target-alert policy association is enabled or disabled by user.
+        /// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

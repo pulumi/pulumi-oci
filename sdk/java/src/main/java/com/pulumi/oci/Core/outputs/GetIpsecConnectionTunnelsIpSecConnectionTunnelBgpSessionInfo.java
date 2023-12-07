@@ -13,6 +13,13 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
      * @return The state of the BGP IPv6 session.
      * 
      */
+    private String bgpIpv6State;
+    /**
+     * @deprecated
+     * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
     private String bgpIpv6state;
     /**
      * @return The state of the BGP session.
@@ -55,6 +62,15 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
      * @return The state of the BGP IPv6 session.
      * 
      */
+    public String bgpIpv6State() {
+        return this.bgpIpv6State;
+    }
+    /**
+     * @deprecated
+     * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
     public String bgpIpv6state() {
         return this.bgpIpv6state;
     }
@@ -117,6 +133,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
     }
     @CustomType.Builder
     public static final class Builder {
+        private String bgpIpv6State;
         private String bgpIpv6state;
         private String bgpState;
         private String customerBgpAsn;
@@ -128,6 +145,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
         public Builder() {}
         public Builder(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.bgpIpv6State = defaults.bgpIpv6State;
     	      this.bgpIpv6state = defaults.bgpIpv6state;
     	      this.bgpState = defaults.bgpState;
     	      this.customerBgpAsn = defaults.customerBgpAsn;
@@ -138,6 +156,11 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
     	      this.oracleInterfaceIpv6 = defaults.oracleInterfaceIpv6;
         }
 
+        @CustomType.Setter
+        public Builder bgpIpv6State(String bgpIpv6State) {
+            this.bgpIpv6State = Objects.requireNonNull(bgpIpv6State);
+            return this;
+        }
         @CustomType.Setter
         public Builder bgpIpv6state(String bgpIpv6state) {
             this.bgpIpv6state = Objects.requireNonNull(bgpIpv6state);
@@ -180,6 +203,7 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
         }
         public GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo build() {
             final var o = new GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo();
+            o.bgpIpv6State = bgpIpv6State;
             o.bgpIpv6state = bgpIpv6state;
             o.bgpState = bgpState;
             o.customerBgpAsn = customerBgpAsn;

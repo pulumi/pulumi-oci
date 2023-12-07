@@ -124,6 +124,11 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String domain;
     /**
+     * @return The lowest value to which exadataStorage in TBs can be scaled down.
+     * 
+     */
+    private Double exadataStorageInTbsLowestScaledValue;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -154,7 +159,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String lastUpdateHistoryEntryId;
     /**
-     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
      * 
      */
     private String licenseModel;
@@ -169,6 +174,11 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     private List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
+    /**
+     * @return The lowest value to which ACDs can be scaled down.
+     * 
+     */
+    private Integer maxAcdsLowestScaledValue;
     /**
      * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
      * 
@@ -205,6 +215,11 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     private Double ocpuCount;
+    /**
+     * @return The lowest value to which ocpus can be scaled down.
+     * 
+     */
+    private Integer ocpusLowestScaledValue;
     /**
      * @return The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
@@ -435,6 +450,13 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.domain;
     }
     /**
+     * @return The lowest value to which exadataStorage in TBs can be scaled down.
+     * 
+     */
+    public Double exadataStorageInTbsLowestScaledValue() {
+        return this.exadataStorageInTbsLowestScaledValue;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -477,7 +499,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.lastUpdateHistoryEntryId;
     }
     /**
-     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
      * 
      */
     public String licenseModel() {
@@ -499,6 +521,13 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     public List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows() {
         return this.maintenanceWindows;
+    }
+    /**
+     * @return The lowest value to which ACDs can be scaled down.
+     * 
+     */
+    public Integer maxAcdsLowestScaledValue() {
+        return this.maxAcdsLowestScaledValue;
     }
     /**
      * @return The amount of memory (in GBs) enabled per OCPU or ECPU.
@@ -549,6 +578,13 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     public Double ocpuCount() {
         return this.ocpuCount;
+    }
+    /**
+     * @return The lowest value to which ocpus can be scaled down.
+     * 
+     */
+    public Integer ocpusLowestScaledValue() {
+        return this.ocpusLowestScaledValue;
     }
     /**
      * @return The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
@@ -689,6 +725,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private String description;
         private String displayName;
         private String domain;
+        private Double exadataStorageInTbsLowestScaledValue;
         private Map<String,Object> freeformTags;
         private String hostname;
         private String id;
@@ -699,6 +736,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private String lifecycleDetails;
         private List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails;
         private List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
+        private Integer maxAcdsLowestScaledValue;
         private Integer memoryPerOracleComputeUnitInGbs;
         private Integer memorySizeInGbs;
         private String nextMaintenanceRunId;
@@ -706,6 +744,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private Integer nonProvisionableAutonomousContainerDatabases;
         private List<String> nsgIds;
         private Double ocpuCount;
+        private Integer ocpusLowestScaledValue;
         private Integer provisionableAutonomousContainerDatabases;
         private Integer provisionedAutonomousContainerDatabases;
         private Double provisionedCpus;
@@ -746,6 +785,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.domain = defaults.domain;
+    	      this.exadataStorageInTbsLowestScaledValue = defaults.exadataStorageInTbsLowestScaledValue;
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
@@ -756,6 +796,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceWindowDetails = defaults.maintenanceWindowDetails;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
+    	      this.maxAcdsLowestScaledValue = defaults.maxAcdsLowestScaledValue;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
@@ -763,6 +804,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.nonProvisionableAutonomousContainerDatabases = defaults.nonProvisionableAutonomousContainerDatabases;
     	      this.nsgIds = defaults.nsgIds;
     	      this.ocpuCount = defaults.ocpuCount;
+    	      this.ocpusLowestScaledValue = defaults.ocpusLowestScaledValue;
     	      this.provisionableAutonomousContainerDatabases = defaults.provisionableAutonomousContainerDatabases;
     	      this.provisionedAutonomousContainerDatabases = defaults.provisionedAutonomousContainerDatabases;
     	      this.provisionedCpus = defaults.provisionedCpus;
@@ -894,6 +936,11 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder exadataStorageInTbsLowestScaledValue(Double exadataStorageInTbsLowestScaledValue) {
+            this.exadataStorageInTbsLowestScaledValue = Objects.requireNonNull(exadataStorageInTbsLowestScaledValue);
+            return this;
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
@@ -950,6 +997,11 @@ public final class GetCloudAutonomousVmClusterResult {
             return maintenanceWindows(List.of(maintenanceWindows));
         }
         @CustomType.Setter
+        public Builder maxAcdsLowestScaledValue(Integer maxAcdsLowestScaledValue) {
+            this.maxAcdsLowestScaledValue = Objects.requireNonNull(maxAcdsLowestScaledValue);
+            return this;
+        }
+        @CustomType.Setter
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
             this.memoryPerOracleComputeUnitInGbs = Objects.requireNonNull(memoryPerOracleComputeUnitInGbs);
             return this;
@@ -985,6 +1037,11 @@ public final class GetCloudAutonomousVmClusterResult {
         @CustomType.Setter
         public Builder ocpuCount(Double ocpuCount) {
             this.ocpuCount = Objects.requireNonNull(ocpuCount);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ocpusLowestScaledValue(Integer ocpusLowestScaledValue) {
+            this.ocpusLowestScaledValue = Objects.requireNonNull(ocpusLowestScaledValue);
             return this;
         }
         @CustomType.Setter
@@ -1086,6 +1143,7 @@ public final class GetCloudAutonomousVmClusterResult {
             o.description = description;
             o.displayName = displayName;
             o.domain = domain;
+            o.exadataStorageInTbsLowestScaledValue = exadataStorageInTbsLowestScaledValue;
             o.freeformTags = freeformTags;
             o.hostname = hostname;
             o.id = id;
@@ -1096,6 +1154,7 @@ public final class GetCloudAutonomousVmClusterResult {
             o.lifecycleDetails = lifecycleDetails;
             o.maintenanceWindowDetails = maintenanceWindowDetails;
             o.maintenanceWindows = maintenanceWindows;
+            o.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
             o.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             o.memorySizeInGbs = memorySizeInGbs;
             o.nextMaintenanceRunId = nextMaintenanceRunId;
@@ -1103,6 +1162,7 @@ public final class GetCloudAutonomousVmClusterResult {
             o.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
             o.nsgIds = nsgIds;
             o.ocpuCount = ocpuCount;
+            o.ocpusLowestScaledValue = ocpusLowestScaledValue;
             o.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
             o.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
             o.provisionedCpus = provisionedCpus;

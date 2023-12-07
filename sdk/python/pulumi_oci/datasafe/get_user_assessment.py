@@ -252,7 +252,7 @@ class GetUserAssessmentResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
@@ -260,7 +260,7 @@ class GetUserAssessmentResult:
     @pulumi.getter(name="timeLastAssessed")
     def time_last_assessed(self) -> str:
         """
-        The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_last_assessed")
 
@@ -268,7 +268,7 @@ class GetUserAssessmentResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
@@ -276,7 +276,7 @@ class GetUserAssessmentResult:
     @pulumi.getter(name="triggeredBy")
     def triggered_by(self) -> str:
         """
-        Indicates whether the user assessment was created by the system or the user.
+        Indicates whether the user assessment was created by system or user.
         """
         return pulumi.get(self, "triggered_by")
 
@@ -284,7 +284,7 @@ class GetUserAssessmentResult:
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of the user assessment. The possible types are:
+        Type of user assessment. Type can be:
         """
         return pulumi.get(self, "type")
 

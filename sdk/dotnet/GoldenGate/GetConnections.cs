@@ -274,7 +274,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string? State;
         /// <summary>
-        /// The Kafka (e.g. Confluent) Schema Registry technology type.
+        /// The technology type.
         /// </summary>
         public readonly ImmutableArray<string> TechnologyTypes;
 

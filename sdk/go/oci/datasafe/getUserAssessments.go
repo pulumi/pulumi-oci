@@ -133,9 +133,9 @@ type GetUserAssessmentsResult struct {
 	TargetId                        *string `pulumi:"targetId"`
 	TimeCreatedGreaterThanOrEqualTo *string `pulumi:"timeCreatedGreaterThanOrEqualTo"`
 	TimeCreatedLessThan             *string `pulumi:"timeCreatedLessThan"`
-	// Indicates whether the user assessment was created by the system or the user.
+	// Indicates whether the user assessment was created by system or user.
 	TriggeredBy *string `pulumi:"triggeredBy"`
-	// The type of the user assessment. The possible types are:
+	// Type of user assessment. Type can be:
 	Type *string `pulumi:"type"`
 	// The list of user_assessments.
 	UserAssessments []GetUserAssessmentsUserAssessment `pulumi:"userAssessments"`
@@ -270,12 +270,12 @@ func (o GetUserAssessmentsResultOutput) TimeCreatedLessThan() pulumi.StringPtrOu
 	return o.ApplyT(func(v GetUserAssessmentsResult) *string { return v.TimeCreatedLessThan }).(pulumi.StringPtrOutput)
 }
 
-// Indicates whether the user assessment was created by the system or the user.
+// Indicates whether the user assessment was created by system or user.
 func (o GetUserAssessmentsResultOutput) TriggeredBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentsResult) *string { return v.TriggeredBy }).(pulumi.StringPtrOutput)
 }
 
-// The type of the user assessment. The possible types are:
+// Type of user assessment. Type can be:
 func (o GetUserAssessmentsResultOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentsResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }

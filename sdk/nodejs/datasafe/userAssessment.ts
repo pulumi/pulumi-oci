@@ -149,23 +149,23 @@ export class UserAssessment extends pulumi.CustomResource {
      */
     public /*out*/ readonly targetIds!: pulumi.Output<string[]>;
     /**
-     * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     public /*out*/ readonly timeLastAssessed!: pulumi.Output<string>;
     /**
-     * The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * Indicates whether the user assessment was created by the system or the user.
+     * Indicates whether the user assessment was created by system or user.
      */
     public /*out*/ readonly triggeredBy!: pulumi.Output<string>;
     /**
-     * The type of the user assessment. The possible types are:
+     * Type of user assessment. Type can be:
      */
     public /*out*/ readonly type!: pulumi.Output<string>;
 
@@ -325,23 +325,23 @@ export interface UserAssessmentState {
      */
     targetIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     timeLastAssessed?: pulumi.Input<string>;
     /**
-     * The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * Indicates whether the user assessment was created by the system or the user.
+     * Indicates whether the user assessment was created by system or user.
      */
     triggeredBy?: pulumi.Input<string>;
     /**
-     * The type of the user assessment. The possible types are:
+     * Type of user assessment. Type can be:
      */
     type?: pulumi.Input<string>;
 }

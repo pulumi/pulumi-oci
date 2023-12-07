@@ -6,6 +6,7 @@ package com.pulumi.oci.Ocvp.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Ocvp.outputs.GetSupportedHostShapesFilter;
 import com.pulumi.oci.Ocvp.outputs.GetSupportedHostShapesItem;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -21,6 +22,12 @@ public final class GetSupportedHostShapesResult {
      * 
      */
     private String id;
+    private @Nullable String initialHostShapeName;
+    /**
+     * @return Indicates whether the shape supports single host SDDCs.
+     * 
+     */
+    private @Nullable Boolean isSingleHostSddcSupported;
     /**
      * @return A list of the supported compute shapes for ESXi hosts.
      * 
@@ -52,6 +59,16 @@ public final class GetSupportedHostShapesResult {
      */
     public String id() {
         return this.id;
+    }
+    public Optional<String> initialHostShapeName() {
+        return Optional.ofNullable(this.initialHostShapeName);
+    }
+    /**
+     * @return Indicates whether the shape supports single host SDDCs.
+     * 
+     */
+    public Optional<Boolean> isSingleHostSddcSupported() {
+        return Optional.ofNullable(this.isSingleHostSddcSupported);
     }
     /**
      * @return A list of the supported compute shapes for ESXi hosts.
@@ -89,6 +106,8 @@ public final class GetSupportedHostShapesResult {
         private String compartmentId;
         private @Nullable List<GetSupportedHostShapesFilter> filters;
         private String id;
+        private @Nullable String initialHostShapeName;
+        private @Nullable Boolean isSingleHostSddcSupported;
         private List<GetSupportedHostShapesItem> items;
         private @Nullable String name;
         private @Nullable String sddcType;
@@ -98,6 +117,8 @@ public final class GetSupportedHostShapesResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.initialHostShapeName = defaults.initialHostShapeName;
+    	      this.isSingleHostSddcSupported = defaults.isSingleHostSddcSupported;
     	      this.items = defaults.items;
     	      this.name = defaults.name;
     	      this.sddcType = defaults.sddcType;
@@ -119,6 +140,16 @@ public final class GetSupportedHostShapesResult {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder initialHostShapeName(@Nullable String initialHostShapeName) {
+            this.initialHostShapeName = initialHostShapeName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isSingleHostSddcSupported(@Nullable Boolean isSingleHostSddcSupported) {
+            this.isSingleHostSddcSupported = isSingleHostSddcSupported;
             return this;
         }
         @CustomType.Setter
@@ -144,6 +175,8 @@ public final class GetSupportedHostShapesResult {
             o.compartmentId = compartmentId;
             o.filters = filters;
             o.id = id;
+            o.initialHostShapeName = initialHostShapeName;
+            o.isSingleHostSddcSupported = isSingleHostSddcSupported;
             o.items = items;
             o.name = name;
             o.sddcType = sddcType;

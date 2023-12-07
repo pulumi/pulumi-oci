@@ -96,7 +96,7 @@ type GetConnectionsResult struct {
 	Id string `pulumi:"id"`
 	// Possible lifecycle states for connection.
 	State *string `pulumi:"state"`
-	// The Kafka (e.g. Confluent) Schema Registry technology type.
+	// The technology type.
 	TechnologyTypes []string `pulumi:"technologyTypes"`
 }
 
@@ -199,7 +199,7 @@ func (o GetConnectionsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConnectionsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// The Kafka (e.g. Confluent) Schema Registry technology type.
+// The technology type.
 func (o GetConnectionsResultOutput) TechnologyTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetConnectionsResult) []string { return v.TechnologyTypes }).(pulumi.StringArrayOutput)
 }

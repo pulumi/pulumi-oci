@@ -13,8 +13,12 @@ __all__ = [
     'DatabaseToolsConnectionKeyStoreArgs',
     'DatabaseToolsConnectionKeyStoreKeyStoreContentArgs',
     'DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs',
+    'DatabaseToolsConnectionLockArgs',
+    'DatabaseToolsConnectionProxyClientArgs',
+    'DatabaseToolsConnectionProxyClientUserPasswordArgs',
     'DatabaseToolsConnectionRelatedResourceArgs',
     'DatabaseToolsConnectionUserPasswordArgs',
+    'DatabaseToolsPrivateEndpointLockArgs',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs',
     'GetDatabaseToolsConnectionsFilterArgs',
@@ -170,39 +174,226 @@ class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs:
 
 
 @pulumi.input_type
+class DatabaseToolsConnectionLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None,
+                 related_resource_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: (Updatable) The DatabaseToolsConnection type.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The DatabaseToolsConnection type.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+
+@pulumi.input_type
+class DatabaseToolsConnectionProxyClientArgs:
+    def __init__(__self__, *,
+                 proxy_authentication_type: pulumi.Input[str],
+                 roles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 user_name: Optional[pulumi.Input[str]] = None,
+                 user_password: Optional[pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgs']] = None):
+        """
+        :param pulumi.Input[str] proxy_authentication_type: (Updatable) The proxy authentication type.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] roles: (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+        :param pulumi.Input[str] user_name: (Updatable) The database user name.
+        :param pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgs'] user_password: (Updatable) The user password.
+        """
+        pulumi.set(__self__, "proxy_authentication_type", proxy_authentication_type)
+        if roles is not None:
+            pulumi.set(__self__, "roles", roles)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if user_password is not None:
+            pulumi.set(__self__, "user_password", user_password)
+
+    @property
+    @pulumi.getter(name="proxyAuthenticationType")
+    def proxy_authentication_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The proxy authentication type.
+        """
+        return pulumi.get(self, "proxy_authentication_type")
+
+    @proxy_authentication_type.setter
+    def proxy_authentication_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "proxy_authentication_type", value)
+
+    @property
+    @pulumi.getter
+    def roles(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+        """
+        return pulumi.get(self, "roles")
+
+    @roles.setter
+    def roles(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "roles", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The database user name.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name", value)
+
+    @property
+    @pulumi.getter(name="userPassword")
+    def user_password(self) -> Optional[pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgs']]:
+        """
+        (Updatable) The user password.
+        """
+        return pulumi.get(self, "user_password")
+
+    @user_password.setter
+    def user_password(self, value: Optional[pulumi.Input['DatabaseToolsConnectionProxyClientUserPasswordArgs']]):
+        pulumi.set(self, "user_password", value)
+
+
+@pulumi.input_type
+class DatabaseToolsConnectionProxyClientUserPasswordArgs:
+    def __init__(__self__, *,
+                 secret_id: pulumi.Input[str],
+                 value_type: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param pulumi.Input[str] value_type: (Updatable) The value type of the user password.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @secret_id.setter
+    def secret_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "secret_id", value)
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The value type of the user password.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value_type")
+
+    @value_type.setter
+    def value_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "value_type", value)
+
+
+@pulumi.input_type
 class DatabaseToolsConnectionRelatedResourceArgs:
     def __init__(__self__, *,
-                 entity_type: pulumi.Input[str],
-                 identifier: pulumi.Input[str]):
+                 entity_type: Optional[pulumi.Input[str]] = None,
+                 identifier: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] entity_type: (Updatable) The resource entity type.
         :param pulumi.Input[str] identifier: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
         """
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "identifier", identifier)
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
 
     @property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> pulumi.Input[str]:
+    def entity_type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The resource entity type.
         """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
-    def entity_type(self, value: pulumi.Input[str]):
+    def entity_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "entity_type", value)
 
     @property
     @pulumi.getter
-    def identifier(self) -> pulumi.Input[str]:
+    def identifier(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
         """
         return pulumi.get(self, "identifier")
 
     @identifier.setter
-    def identifier(self, value: pulumi.Input[str]):
+    def identifier(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "identifier", value)
 
 
@@ -249,6 +440,76 @@ class DatabaseToolsConnectionUserPasswordArgs:
     @value_type.setter
     def value_type(self, value: pulumi.Input[str]):
         pulumi.set(self, "value_type", value)
+
+
+@pulumi.input_type
+class DatabaseToolsPrivateEndpointLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None,
+                 related_resource_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the lock.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[str] time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
 
 
 @pulumi.input_type

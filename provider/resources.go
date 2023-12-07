@@ -36,7 +36,6 @@ const (
 	// registries for nodejs and python:
 	mainPkg = "oci"
 	// modules:
-	mainMod                         = "index"                        // the oci module
 	admMod                          = "Adm"                          // ADM
 	aiAnomalyDetectionMod           = "AiAnomalyDetection"           // AI Anomaly Detection
 	aiDocumentMod                   = "AiDocument"                   // AI Document
@@ -331,203 +330,36 @@ func Provider() tfbridge.ProviderInfo {
 				Tok: tfbridge.MakeResource(mainPkg, cloudGuardMod, "CloudGuardDataSource"),
 			},
 
-			"oci_cloud_migrations_migration_plan":       {Tok: tfbridge.MakeResource(mainPkg, cloudMigrationsMod, "MigrationPlan")},
-			"oci_cloud_migrations_replication_schedule": {Tok: tfbridge.MakeResource(mainPkg, cloudMigrationsMod, "ReplicationSchedule")},
-			"oci_cloud_migrations_target_asset":         {Tok: tfbridge.MakeResource(mainPkg, cloudMigrationsMod, "TargetAsset")},
-
-			"oci_containerengine_cluster":   {Tok: tfbridge.MakeResource(mainPkg, containerEngineMod, "Cluster")},
-			"oci_containerengine_node_pool": {Tok: tfbridge.MakeResource(mainPkg, containerEngineMod, "NodePool")},
-
-			"oci_container_instances_container_instance": {Tok: tfbridge.MakeResource(mainPkg, containerEngineMod, "ContainerInstance")},
+			"oci_container_instances_container_instance": {
+				Tok: tfbridge.MakeResource(mainPkg, containerEngineMod, "ContainerInstance"),
+			},
 
 			"oci_core_app_catalog_listing_resource_version_agreement": {
 				Tok: tfbridge.MakeResource(mainPkg, coreMod, "AppCatalogListingResourceVersionAgreement"),
 			},
-			"oci_core_compute_capacity_reservation":       {Tok: tfbridge.MakeResource(mainPkg, coreMod, "ComputeCapacityReservation")},
-			"oci_core_compute_image_capability_schema":    {Tok: tfbridge.MakeResource(mainPkg, coreMod, "ComputeImageCapabilitySchema")},
-			"oci_core_console_history":                    {Tok: tfbridge.MakeResource(mainPkg, coreMod, "ConsoleHistory")},
-			"oci_core_cpe":                                {Tok: tfbridge.MakeResource(mainPkg, coreMod, "Cpe")},
-			"oci_core_cross_connect":                      {Tok: tfbridge.MakeResource(mainPkg, coreMod, "CrossConnect")},
-			"oci_core_cross_connect_group":                {Tok: tfbridge.MakeResource(mainPkg, coreMod, "CrossConnectGroup")},
-			"oci_core_dedicated_vm_host":                  {Tok: tfbridge.MakeResource(mainPkg, coreMod, "DedicatedVmHost")},
-			"oci_core_default_dhcp_options":               {Tok: tfbridge.MakeResource(mainPkg, coreMod, "DefaultDhcpOptions")},
-			"oci_core_default_route_table":                {Tok: tfbridge.MakeResource(mainPkg, coreMod, "DefaultRouteTable")},
-			"oci_core_default_security_list":              {Tok: tfbridge.MakeResource(mainPkg, coreMod, "DefaultSecurityList")},
-			"oci_core_dhcp_options":                       {Tok: tfbridge.MakeResource(mainPkg, coreMod, "DhcpOptions")},
-			"oci_core_drg":                                {Tok: tfbridge.MakeResource(mainPkg, coreMod, "Drg")},
-			"oci_core_drg_attachment":                     {Tok: tfbridge.MakeResource(mainPkg, coreMod, "DrgAttachment")},
-			"oci_core_drg_attachment_management":          {Tok: tfbridge.MakeResource(mainPkg, coreMod, "DrgAttachmentManagement")},
-			"oci_core_drg_attachments_list":               {Tok: tfbridge.MakeResource(mainPkg, coreMod, "DrgAttachmentsList")},
-			"oci_core_drg_route_distribution":             {Tok: tfbridge.MakeResource(mainPkg, coreMod, "DrgRouteDistribution")},
-			"oci_core_drg_route_distribution_statement":   {Tok: tfbridge.MakeResource(mainPkg, coreMod, "DrgRouteDistributionStatement")},
-			"oci_core_drg_route_table":                    {Tok: tfbridge.MakeResource(mainPkg, coreMod, "DrgRouteTable")},
-			"oci_core_drg_route_table_route_rule":         {Tok: tfbridge.MakeResource(mainPkg, coreMod, "DrgRouteTableRouteRule")},
-			"oci_core_image":                              {Tok: tfbridge.MakeResource(mainPkg, coreMod, "Image")},
-			"oci_core_instance":                           {Tok: tfbridge.MakeResource(mainPkg, coreMod, "Instance")},
-			"oci_core_instance_configuration":             {Tok: tfbridge.MakeResource(mainPkg, coreMod, "InstanceConfiguration")},
-			"oci_core_instance_console_connection":        {Tok: tfbridge.MakeResource(mainPkg, coreMod, "InstanceConsoleConnection")},
-			"oci_core_instance_pool":                      {Tok: tfbridge.MakeResource(mainPkg, coreMod, "InstancePool")},
-			"oci_core_instance_pool_instance":             {Tok: tfbridge.MakeResource(mainPkg, coreMod, "InstancePoolInstance")},
-			"oci_core_internet_gateway":                   {Tok: tfbridge.MakeResource(mainPkg, coreMod, "InternetGateway")},
-			"oci_core_ipsec":                              {Tok: tfbridge.MakeResource(mainPkg, coreMod, "Ipsec")},
-			"oci_core_ipsec_connection_tunnel_management": {Tok: tfbridge.MakeResource(mainPkg, coreMod, "IpsecConnectionTunnelManagement")},
-			"oci_core_ipv6":                               {Tok: tfbridge.MakeResource(mainPkg, coreMod, "Ipv6")},
+
 			"oci_core_listing_resource_version_agreement": {
-				Tok:  tfbridge.MakeResource(mainPkg, coreMod, "ListingResourceVersionAgreement"),
 				Docs: &tfbridge.DocInfo{Source: "core_app_catalog_listing_resource_version_agreement.html.markdown"},
 			},
-			"oci_core_local_peering_gateway":                {Tok: tfbridge.MakeResource(mainPkg, coreMod, "LocalPeeringGateway")},
-			"oci_core_nat_gateway":                          {Tok: tfbridge.MakeResource(mainPkg, coreMod, "NatGateway")},
-			"oci_core_network_security_group":               {Tok: tfbridge.MakeResource(mainPkg, coreMod, "NetworkSecurityGroup")},
-			"oci_core_network_security_group_security_rule": {Tok: tfbridge.MakeResource(mainPkg, coreMod, "NetworkSecurityGroupSecurityRule")},
 
-			"oci_data_safe_add_sdm_columns":                 {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "AddSdmColumns")},
-			"oci_data_safe_alert":                           {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "Alert")},
-			"oci_data_safe_audit_archive_retrieval":         {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "AuditArchiveRetrieval")},
-			"oci_data_safe_audit_policy":                    {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "AuditPolicy")},
-			"oci_data_safe_audit_profile":                   {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "AuditProfile")},
-			"oci_data_safe_audit_trail":                     {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "AuditTrail")},
-			"oci_data_safe_compare_security_assessment":     {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "CompareSecurityAssessment")},
-			"oci_data_safe_compare_user_assessment":         {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "CompareUserAssessment")},
-			"oci_data_safe_data_safe_configuration":         {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "DataSafeConfiguration")},
-			"oci_data_safe_data_safe_private_endpoint":      {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "DataSafePrivateEndpoint")},
-			"oci_data_safe_discovery_job":                   {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "DiscoveryMod")},
-			"oci_data_safe_discovery_jobs_result":           {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "DiscoveryJobsResult")},
-			"oci_data_safe_library_masking_format":          {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "LibraryMasingFormat")},
-			"oci_data_safe_mask_data":                       {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "MaskData")},
-			"oci_data_safe_masking_policies_masking_column": {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "MaskingPoliciesMaskingColumn")},
-			"oci_data_safe_masking_policy":                  {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "MaskingPolicy")},
-			"oci_data_safe_on_prem_connector":               {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "OnPremConnector")},
-			"oci_data_safe_report_definition":               {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "ReportDefinition")},
-			"oci_data_safe_security_assessment":             {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "SecurityAssessment")},
-			"oci_data_safe_sensitive_data_model":            {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "SensitiveDataModel")},
-			"oci_data_safe_masking_policies_apply_difference_to_masking_columns": {
-				Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "MaskingPoliciesApplyDifferenceToMaskingColumns"),
-			},
+			"oci_data_safe_discovery_job": {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "DiscoveryMod")},
 
-			"oci_data_safe_sensitive_data_models_apply_discovery_job_results": {
-				Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "SensitiveDataModelsApplyDiscoveryJobResults"),
-			},
-			"oci_data_safe_sensitive_data_models_sensitive_column": {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "SensitiveDataModelsSensitiveColumn")},
-			"oci_data_safe_sensitive_type":                         {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "SensitiveType")},
-			"oci_data_safe_set_security_assessment_baseline":       {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "SetSecurityAssessmentBaseline")},
-			"oci_data_safe_set_user_assessment_baseline":           {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "SetUserAssessmentBaseline")},
-			"oci_data_safe_target_alert_policy_association":        {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "TargetAlertPolicyAssociation")},
-			"oci_data_safe_target_database":                        {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "TargetDatabase")},
-			"oci_data_safe_unset_security_assessment_baseline":     {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "UnsetSecurityAssessmentBaseline")},
-			"oci_data_safe_unset_user_assessment_baseline":         {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "UnsetUserAssessmentBaseline")},
-			"oci_data_safe_user_assessment":                        {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "UserAssessment")},
+			// Typo: masking -> Masing
+			"oci_data_safe_library_masking_format": {Tok: tfbridge.MakeResource(mainPkg, dataSafeMod, "LibraryMasingFormat")},
 
-			"oci_database_autonomous_container_database":                                 {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "AutonomousContainerDatabase")},
-			"oci_database_autonomous_container_database_dataguard_association":           {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "AutonomousContainerDatabaseDataguardAssociation")},
-			"oci_database_autonomous_container_database_dataguard_association_operation": {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "AutonomousContainerDatabaseDataguardAssociationOperation")},
-			"oci_database_autonomous_database":                                           {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "AutonomousDatabase")},
-			"oci_database_autonomous_database_backup":                                    {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "AutonomousDatabaseBackup")},
-			"oci_database_autonomous_database_instance_wallet_management":                {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "AutonomousDatabaseInstanceWalletManagement")},
-			"oci_database_autonomous_database_regional_wallet_management":                {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "AutonomousDatabaseRegionalWalletManagement")},
-			"oci_database_autonomous_database_wallet":                                    {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "AutonomousDatabaseWallet")},
-			"oci_database_autonomous_exadata_infrastructure":                             {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "AutonomousExadataInfrastructure")},
-			"oci_database_autonomous_vm_cluster":                                         {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "AutonomousVmCluster")},
-			"oci_database_backup":                                                        {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "Backup")},
-			"oci_database_backup_destination":                                            {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "BackupDestination")},
-			"oci_database_cloud_autonomous_vm_cluster":                                   {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "CloudAutonomousVmCluster")},
-			"oci_database_cloud_database_management":                                     {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "CloudDatabaseManagement")},
-			"oci_database_cloud_exadata_infrastructure":                                  {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "CloudExadataInfrastructure")},
-			"oci_database_cloud_vm_cluster":                                              {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "CloudVmCluster")},
-			"oci_database_cloud_vm_cluster_iorm_config":                                  {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "CloudVmClusterIormConfig")},
-			"oci_database_data_guard_association":                                        {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DataGuardAssociation")},
 			"oci_database_database": {
-				Tok: tfbridge.MakeResource(mainPkg, databaseMod, "Database"),
 				Fields: map[string]*tfbridge.SchemaInfo{
 					"database": {
 						CSharpName: "DatabaseName",
 					},
 				},
 			},
-			"oci_database_database_software_image":                    {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DatabaseSoftwareImage")},
-			"oci_database_database_upgrade":                           {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DatabaseUpgrade")},
-			"oci_database_db_home":                                    {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DbHome")},
-			"oci_database_db_node_console_connection":                 {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DbNodeConsoleConnection")},
-			"oci_database_db_system":                                  {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DbSystem")},
-			"oci_database_exadata_infrastructure":                     {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExadataInfrastructure")},
-			"oci_database_exadata_infrastructure_compute":             {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExadataInfrastructureCompute")},
-			"oci_database_exadata_infrastructure_storage":             {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExadataInfrastructureStorage")},
-			"oci_database_exadata_iorm_config":                        {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExadataIormConfig")},
-			"oci_database_external_container_database":                {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalContainerDatabase")},
-			"oci_database_external_container_database_management":     {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalContainerDatabaseManagement")},
-			"oci_database_external_database_connector":                {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalDatabaseConnector")},
-			"oci_database_external_non_container_database":            {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalNonContainerDatabase")},
-			"oci_database_external_non_container_database_management": {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalNonContainerDatabaseManagement")},
-			"oci_database_external_non_container_database_operations_insights_management": {
-				Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalNonContainerDatabaseOperationsInsightsManagement"),
-			},
-			"oci_database_external_pluggable_database":            {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalPluggableDatabase")},
-			"oci_database_external_pluggable_database_management": {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalPluggableDatabaseManagement")},
-			"oci_database_external_pluggable_database_operations_insights_management": {
-				Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalPluggableDatabaseOperationsInsightsManagement"),
-			},
-			"oci_database_key_store":                        {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "KeyStore")},
-			"oci_database_maintenance_run":                  {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "MaintenanceRun")},
-			"oci_database_pluggable_database":               {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "PluggableDatabase")},
-			"oci_database_pluggable_databases_local_clone":  {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "PluggableDatabasesLocalClone")},
-			"oci_database_pluggable_databases_remote_clone": {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "PluggableDatabasesRemoteClone")},
+
 			"oci_database_pluggable_database_pluggabledatabasemanagements_management": {
 				Tok: tfbridge.MakeResource(mainPkg, databaseMod, "PluggableDatabaseManagementsManagement"),
 			},
-			"oci_database_vm_cluster":                                     {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "VmCluster")},
-			"oci_database_vm_cluster_add_virtual_machine":                 {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "VmClusterAddVirtualNetwork")},
-			"oci_database_vm_cluster_network":                             {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "VmClusterNetwork")},
-			"oci_database_vm_cluster_remove_virtual_machine":              {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "VmClusterRemoveVirtualMachine")},
-			"oci_database_db_systems_upgrade":                             {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "DbSystemsUpgrade")},
-			"oci_database_externalcontainerdatabases_stack_monitoring":    {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalContainerDatabasesStackMonitoring")},
-			"oci_database_externalnoncontainerdatabases_stack_monitoring": {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalNonContainerDatabasesStackMonitoring")},
-			"oci_database_externalpluggabledatabases_stack_monitoring":    {Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalPluggableDatabasesStackMonitoring")},
-
-			"oci_database_management_db_management_private_endpoint":              {Tok: tfbridge.MakeResource(mainPkg, databaseManagementMod, "DbManagementPrivateEndpoint")},
-			"oci_database_management_managed_database_group":                      {Tok: tfbridge.MakeResource(mainPkg, databaseManagementMod, "ManagedDatabaseGroup")},
-			"oci_database_management_managed_databases_change_database_parameter": {Tok: tfbridge.MakeResource(mainPkg, databaseManagementMod, "ManagedDatabasesChangeDatabaseParameter")},
-			"oci_database_management_managed_databases_reset_database_parameter":  {Tok: tfbridge.MakeResource(mainPkg, databaseManagementMod, "ManagedDatabasesResetDatabaseParameter")},
-
-			"oci_database_migration_agent":      {Tok: tfbridge.MakeResource(mainPkg, databaseMigrationMod, "Agent")},
-			"oci_database_migration_connection": {Tok: tfbridge.MakeResource(mainPkg, databaseMigrationMod, "Connection")},
-			"oci_database_migration_job":        {Tok: tfbridge.MakeResource(mainPkg, databaseMigrationMod, "Job")},
-			"oci_database_migration_migration":  {Tok: tfbridge.MakeResource(mainPkg, databaseMigrationMod, "Migration")},
-
-			"oci_database_tools_database_tools_connection":       {Tok: tfbridge.MakeResource(mainPkg, databaseToolsMod, "DatabaseToolsConnection")},
-			"oci_database_tools_database_tools_private_endpoint": {Tok: tfbridge.MakeResource(mainPkg, databaseToolsMod, "DatabaseToolsPrivateEndpoint")},
-
-			"oci_devops_build_pipeline":       {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "BuildPipeline")},
-			"oci_devops_build_pipeline_stage": {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "BuildPipelineStage")},
-			"oci_devops_build_run":            {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "BuildRun")},
-			"oci_devops_connection":           {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "Connection")},
-			"oci_devops_deploy_artifact":      {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "DeployArtifact")},
-			"oci_devops_deploy_environment":   {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "DeployEnvironment")},
-			"oci_devops_deploy_pipeline":      {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "DeployPipeline")},
-			"oci_devops_deploy_stage":         {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "DeployStage")},
-			"oci_devops_deployment":           {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "Deployment")},
-			"oci_devops_project":              {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "Project")},
-			"oci_devops_repository":           {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "Repository")},
-			"oci_devops_repository_mirror":    {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "RepositoryMirror")},
-			"oci_devops_repository_ref":       {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "RepositoryRef")},
-			"oci_devops_trigger":              {Tok: tfbridge.MakeResource(mainPkg, devopsMod, "Trigger")},
-
-			"oci_datacatalog_catalog":                  {Tok: tfbridge.MakeResource(mainPkg, dataCatalogMod, "Catalog")},
-			"oci_datacatalog_catalog_private_endpoint": {Tok: tfbridge.MakeResource(mainPkg, dataCatalogMod, "CatalogPrivateEndpoint")},
-			"oci_datacatalog_connection":               {Tok: tfbridge.MakeResource(mainPkg, dataCatalogMod, "Connection")},
-			"oci_datacatalog_data_asset":               {Tok: tfbridge.MakeResource(mainPkg, dataCatalogMod, "DataAsset")},
-			"oci_datacatalog_metastore":                {Tok: tfbridge.MakeResource(mainPkg, dataCatalogMod, "Metastore")},
-
-			"oci_dataflow_application":      {Tok: tfbridge.MakeResource(mainPkg, dataFlowMod, "Application")},
-			"oci_dataflow_invoke_run":       {Tok: tfbridge.MakeResource(mainPkg, dataFlowMod, "InvokeRun")},
-			"oci_dataflow_private_endpoint": {Tok: tfbridge.MakeResource(mainPkg, dataFlowMod, "PrivateEndpoint")},
-			"oci_dataflow_run_statement":    {Tok: tfbridge.MakeResource(mainPkg, dataFlowMod, "RunStatement")},
-
-			"oci_dataintegration_workspace":         {Tok: tfbridge.MakeResource(mainPkg, dataIntegrationMod, "Workspace")},
-			"oci_dataintegration_workspace_folder":  {Tok: tfbridge.MakeResource(mainPkg, dataIntegrationMod, "WorkspaceFolder")},
-			"oci_dataintegration_workspace_project": {Tok: tfbridge.MakeResource(mainPkg, dataIntegrationMod, "WorkspaceProject")},
 
 			"oci_datascience_pipeline": {
-				Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Pipeline"),
 				Fields: map[string]*tfbridge.SchemaInfo{
 					"step_artifact": {
 						Elem: &tfbridge.SchemaInfo{
@@ -540,316 +372,73 @@ func Provider() tfbridge.ProviderInfo {
 					},
 				},
 			},
-			"oci_datascience_job":                   {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Job")},
-			"oci_datascience_job_run":               {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "JobRun")},
-			"oci_datascience_model":                 {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Model")},
-			"oci_datascience_model_artifact_export": {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "ModelArtifactExport")},
-			"oci_datascience_model_artifact_import": {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "ModelArtifactImport")},
-			"oci_datascience_model_version_set":     {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "ModelVersionSet")},
-			"oci_datascience_model_deployment":      {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "ModelDeployment")},
-			"oci_datascience_model_provenance":      {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "ModelProvenance")},
-			"oci_datascience_notebook_session":      {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "NotebookSession")},
-			"oci_datascience_project":               {Tok: tfbridge.MakeResource(mainPkg, dataScienceMod, "Project")},
 
-			"oci_disaster_recovery_dr_plan":             {Tok: tfbridge.MakeResource(mainPkg, disasterRecoveryMod, "DrPlan")},
-			"oci_disaster_recovery_dr_plan_execution":   {Tok: tfbridge.MakeResource(mainPkg, disasterRecoveryMod, "DrPlanExecution")},
-			"oci_disaster_recovery_dr_protection_group": {Tok: tfbridge.MakeResource(mainPkg, disasterRecoveryMod, "DrProtectionGroup")},
+			"oci_database_migration_job": {Tok: tfbridge.MakeResource(mainPkg, databaseMigrationMod, "Job")},
 
-			"oci_dns_record":                     {Tok: tfbridge.MakeResource(mainPkg, dnsMod, "Record")},
-			"oci_dns_resolver":                   {Tok: tfbridge.MakeResource(mainPkg, dnsMod, "Resolver")},
-			"oci_dns_resolver_endpoint":          {Tok: tfbridge.MakeResource(mainPkg, dnsMod, "ResolverEndpoint")},
-			"oci_dns_rrset":                      {Tok: tfbridge.MakeResource(mainPkg, dnsMod, "Rrset")},
-			"oci_dns_steering_policy":            {Tok: tfbridge.MakeResource(mainPkg, dnsMod, "SteeringPolicy")},
-			"oci_dns_steering_policy_attachment": {Tok: tfbridge.MakeResource(mainPkg, dnsMod, "SteeringPolicyAttachment")},
-			"oci_dns_tsig_key":                   {Tok: tfbridge.MakeResource(mainPkg, dnsMod, "TsigKey")},
-			"oci_dns_view":                       {Tok: tfbridge.MakeResource(mainPkg, dnsMod, "View")},
-			"oci_dns_zone":                       {Tok: tfbridge.MakeResource(mainPkg, dnsMod, "Zone")},
+			"oci_database_vm_cluster_add_virtual_machine": {
+				Tok: tfbridge.MakeResource(mainPkg, databaseMod, "VmClusterAddVirtualNetwork"),
+			},
 
-			"oci_email_dkim":         {Tok: tfbridge.MakeResource(mainPkg, emailMod, "Dkim")},
-			"oci_email_email_domain": {Tok: tfbridge.MakeResource(mainPkg, emailMod, "EmailDomain")},
-			"oci_email_sender":       {Tok: tfbridge.MakeResource(mainPkg, emailMod, "Sender")},
-			"oci_email_suppression":  {Tok: tfbridge.MakeResource(mainPkg, emailMod, "Suppression")},
+			"oci_database_externalcontainerdatabases_stack_monitoring": {
+				Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalContainerDatabasesStackMonitoring"),
+			},
+			"oci_database_externalnoncontainerdatabases_stack_monitoring": {
+				Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalNonContainerDatabasesStackMonitoring"),
+			},
+			"oci_database_externalpluggabledatabases_stack_monitoring": {
+				Tok: tfbridge.MakeResource(mainPkg, databaseMod, "ExternalPluggableDatabasesStackMonitoring"),
+			},
 
-			"oci_em_warehouse_em_warehouse": {Tok: tfbridge.MakeResource(mainPkg, emWarehouseMod, "EmWarehouse")},
-
-			"oci_events_rule": {Tok: tfbridge.MakeResource(mainPkg, eventsMod, "Rule")},
-
-			"oci_file_storage_export":       {Tok: tfbridge.MakeResource(mainPkg, fileStorageMod, "Export")},
-			"oci_file_storage_export_set":   {Tok: tfbridge.MakeResource(mainPkg, fileStorageMod, "ExportSet")},
-			"oci_file_storage_file_system":  {Tok: tfbridge.MakeResource(mainPkg, fileStorageMod, "FileSystem")},
-			"oci_file_storage_mount_target": {Tok: tfbridge.MakeResource(mainPkg, fileStorageMod, "MountTarget")},
-			"oci_file_storage_replication":  {Tok: tfbridge.MakeResource(mainPkg, fileStorageMod, "Replication")},
-			"oci_file_storage_snapshot":     {Tok: tfbridge.MakeResource(mainPkg, fileStorageMod, "Snapshot")},
-
-			"oci_functions_application":     {Tok: tfbridge.MakeResource(mainPkg, functionsMod, "Application")},
-			"oci_functions_function":        {Tok: tfbridge.MakeResource(mainPkg, functionsMod, "Function")},
-			"oci_functions_invoke_function": {Tok: tfbridge.MakeResource(mainPkg, functionsMod, "InvokeFunction")},
-
-			"oci_fusion_apps_fusion_environment":                       {Tok: tfbridge.MakeResource(mainPkg, fusionAppsMod, "FusionEnvironment")},
-			"oci_fusion_apps_fusion_environment_admin_user":            {Tok: tfbridge.MakeResource(mainPkg, fusionAppsMod, "FusionEnvironmentAdminUser")},
-			"oci_fusion_apps_fusion_environment_data_masking_activity": {Tok: tfbridge.MakeResource(mainPkg, fusionAppsMod, "FusionEnvironmentDataMaskingActivity")},
-			"oci_fusion_apps_fusion_environment_family":                {Tok: tfbridge.MakeResource(mainPkg, fusionAppsMod, "FusionEnvironmentFamily")},
-			"oci_fusion_apps_fusion_environment_refresh_activity":      {Tok: tfbridge.MakeResource(mainPkg, fusionAppsMod, "FusionEnvironmentRefreshActivity")},
-
-			"oci_generic_artifacts_content_artifact_by_path": {Tok: tfbridge.MakeResource(mainPkg, genericArtifactsContentMod, "ArtifactByPath")},
-
-			"oci_golden_gate_database_registration": {Tok: tfbridge.MakeResource(mainPkg, goldenGateMod, "DatabaseRegistration")},
-			"oci_golden_gate_deployment":            {Tok: tfbridge.MakeResource(mainPkg, goldenGateMod, "Deployment")},
-			"oci_golden_gate_deployment_backup":     {Tok: tfbridge.MakeResource(mainPkg, goldenGateMod, "DeploymentBackup")},
-			"oci_golden_gate_connection":            {Tok: tfbridge.MakeResource(mainPkg, goldenGateMod, "Connection")},
-			"oci_golden_gate_connection_assignment": {Tok: tfbridge.MakeResource(mainPkg, goldenGateMod, "ConnectionAssignment")},
-
-			"oci_health_checks_http_monitor": {Tok: tfbridge.MakeResource(mainPkg, healthChecksMod, "HttpMonitor")},
-			"oci_health_checks_http_probe":   {Tok: tfbridge.MakeResource(mainPkg, healthChecksMod, "HttpProbe")},
-			"oci_health_checks_ping_monitor": {Tok: tfbridge.MakeResource(mainPkg, healthChecksMod, "PingMonitor")},
-			"oci_health_checks_ping_probe":   {Tok: tfbridge.MakeResource(mainPkg, healthChecksMod, "PingProbe")},
-
-			"oci_identity_api_key":                         {Tok: tfbridge.MakeResource(mainPkg, identityMod, "ApiKey")},
-			"oci_identity_auth_token":                      {Tok: tfbridge.MakeResource(mainPkg, identityMod, "AuthToken")},
-			"oci_identity_authentication_policy":           {Tok: tfbridge.MakeResource(mainPkg, identityMod, "AuthenticationPolicy")},
-			"oci_identity_compartment":                     {Tok: tfbridge.MakeResource(mainPkg, identityMod, "Compartment")},
-			"oci_identity_customer_secret_key":             {Tok: tfbridge.MakeResource(mainPkg, identityMod, "CustomerSecretKey")},
-			"oci_identity_db_credential":                   {Tok: tfbridge.MakeResource(mainPkg, identityMod, "DbCredential")},
-			"oci_identity_domain":                          {Tok: tfbridge.MakeResource(mainPkg, identityMod, "Domain")},
-			"oci_identity_domain_replication_to_region":    {Tok: tfbridge.MakeResource(mainPkg, identityMod, "DomainReplicationToRegion")},
-			"oci_identity_dynamic_group":                   {Tok: tfbridge.MakeResource(mainPkg, identityMod, "DynamicGroup")},
-			"oci_identity_group":                           {Tok: tfbridge.MakeResource(mainPkg, identityMod, "Group")},
-			"oci_identity_identity_provider":               {Tok: tfbridge.MakeResource(mainPkg, identityMod, "IdentityProvider")},
-			"oci_identity_idp_group_mapping":               {Tok: tfbridge.MakeResource(mainPkg, identityMod, "IdpGroupMapping")},
-			"oci_identity_import_standard_tags_management": {Tok: tfbridge.MakeResource(mainPkg, identityMod, "ImportStandardTagsManagement")},
-			"oci_identity_network_source":                  {Tok: tfbridge.MakeResource(mainPkg, identityMod, "NetworkSource")},
-			"oci_identity_policy":                          {Tok: tfbridge.MakeResource(mainPkg, identityMod, "Policy")},
-			"oci_identity_smtp_credential":                 {Tok: tfbridge.MakeResource(mainPkg, identityMod, "SmtpCredential")},
-			"oci_identity_tag":                             {Tok: tfbridge.MakeResource(mainPkg, identityMod, "Tag")},
-			"oci_identity_tag_default":                     {Tok: tfbridge.MakeResource(mainPkg, identityMod, "TagDefault")},
-			"oci_identity_tag_namespace":                   {Tok: tfbridge.MakeResource(mainPkg, identityMod, "TagNamespace")},
-			"oci_identity_ui_password":                     {Tok: tfbridge.MakeResource(mainPkg, identityMod, "UiPassword")},
-			"oci_identity_user":                            {Tok: tfbridge.MakeResource(mainPkg, identityMod, "User")},
-			"oci_identity_user_capabilities_management":    {Tok: tfbridge.MakeResource(mainPkg, identityMod, "UserCapabilitiesManagement")},
-			"oci_identity_user_group_membership":           {Tok: tfbridge.MakeResource(mainPkg, identityMod, "UserGroupMembership")},
-
-			"oci_identity_data_plane_generate_scoped_access_token": {Tok: tfbridge.MakeResource(mainPkg, identityDataPlaneMod, "GeneratedScopedAccessToken")},
-
-			"oci_integration_integration_instance": {Tok: tfbridge.MakeResource(mainPkg, integrationMod, "IntegrationInstance")},
-
-			"oci_jms_fleet": {Tok: tfbridge.MakeResource(mainPkg, jmsMod, "Fleet")},
-
-			"oci_kms_encrypted_data":    {Tok: tfbridge.MakeResource(mainPkg, kmsMod, "EncryptedData")},
-			"oci_kms_generated_key":     {Tok: tfbridge.MakeResource(mainPkg, kmsMod, "GeneratedKey")},
-			"oci_kms_key":               {Tok: tfbridge.MakeResource(mainPkg, kmsMod, "Key")},
-			"oci_kms_key_version":       {Tok: tfbridge.MakeResource(mainPkg, kmsMod, "KeyVersion")},
-			"oci_kms_sign":              {Tok: tfbridge.MakeResource(mainPkg, kmsMod, "Sign")},
-			"oci_kms_vault":             {Tok: tfbridge.MakeResource(mainPkg, kmsMod, "Vault")},
-			"oci_kms_vault_replication": {Tok: tfbridge.MakeResource(mainPkg, kmsMod, "VaultVerification")},
-			"oci_kms_verify":            {Tok: tfbridge.MakeResource(mainPkg, kmsMod, "Verify")},
-
-			"oci_license_manager_configuration":   {Tok: tfbridge.MakeResource(mainPkg, licenseManagerMod, "Configuration")},
-			"oci_license_manager_license_record":  {Tok: tfbridge.MakeResource(mainPkg, licenseManagerMod, "LicenseRecord")},
-			"oci_license_manager_product_license": {Tok: tfbridge.MakeResource(mainPkg, licenseManagerMod, "ProductLicense")},
-
-			"oci_limits_quota": {Tok: tfbridge.MakeResource(mainPkg, limitsMod, "Quota")},
-
-			"oci_load_balancer_backend":     {Tok: tfbridge.MakeResource(mainPkg, loadBalancerMod, "Backend")},
-			"oci_load_balancer_backend_set": {Tok: tfbridge.MakeResource(mainPkg, loadBalancerMod, "BackendSet")},
-			"oci_load_balancer_certificate": {Tok: tfbridge.MakeResource(mainPkg, loadBalancerMod, "Certificate")},
 			"oci_load_balancer_hostname": {
-				Tok: tfbridge.MakeResource(mainPkg, loadBalancerMod, "Hostname"),
 				Fields: map[string]*tfbridge.SchemaInfo{
 					"hostname": {
 						CSharpName: "VirtualHostname",
 					},
 				},
 			},
-			"oci_load_balancer_listener":                     {Tok: tfbridge.MakeResource(mainPkg, loadBalancerMod, "Listener")},
-			"oci_load_balancer_load_balancer":                {Tok: tfbridge.MakeResource(mainPkg, loadBalancerMod, "LoadBalancer")},
-			"oci_load_balancer_load_balancer_routing_policy": {Tok: tfbridge.MakeResource(mainPkg, loadBalancerMod, "LoadBalancerRoutingPolicy")},
-			"oci_load_balancer_path_route_set":               {Tok: tfbridge.MakeResource(mainPkg, loadBalancerMod, "PathRouteSet")},
-			"oci_load_balancer_rule_set":                     {Tok: tfbridge.MakeResource(mainPkg, loadBalancerMod, "RuleSet")},
-			"oci_load_balancer_ssl_cipher_suite":             {Tok: tfbridge.MakeResource(mainPkg, loadBalancerMod, "SslCipherSuite")},
-
-			"oci_log_analytics_log_analytics_entity":                             {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "LogAnalyticsEntity")},
-			"oci_log_analytics_log_analytics_import_custom_content":              {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "LogAnalyticsImportCustomContent")},
-			"oci_log_analytics_log_analytics_log_group":                          {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "LogAnalyticsLogGroup")},
-			"oci_log_analytics_log_analytics_object_collection_rule":             {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "LogAnalyticsObjectCollectionRule")},
-			"oci_log_analytics_log_analytics_preferences_management":             {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "LogAnalyticsPreferencesManagement")},
-			"oci_log_analytics_log_analytics_resource_categories_management":     {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "LogAnalyticsResourceCategoriesManagement")},
-			"oci_log_analytics_log_analytics_unprocessed_data_bucket_management": {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "LogAnalyticsUnprocessedDataBucketManagement")},
 			"oci_log_analytics_namespace": {
-				Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "Namespace"),
 				Fields: map[string]*tfbridge.SchemaInfo{
 					"namespace": {
 						CSharpName: "NamespaceName",
 					},
 				},
 			},
-			"oci_log_analytics_namespace_ingest_time_rule":             {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "NamespaceIngestTimeRule")},
-			"oci_log_analytics_namespace_ingest_time_rules_management": {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "NamespaceIngestTimeRulesManagement")},
 
-			"oci_log_analytics_namespace_scheduled_task": {Tok: tfbridge.MakeResource(mainPkg, logAnalyticsMod, "NamespaceScheduledTask")},
-
-			"oci_logging_log":                         {Tok: tfbridge.MakeResource(mainPkg, loggingMod, "Log")},
-			"oci_logging_log_group":                   {Tok: tfbridge.MakeResource(mainPkg, loggingMod, "LogGroup")},
-			"oci_logging_log_saved_search":            {Tok: tfbridge.MakeResource(mainPkg, loggingMod, "LogSavedSearch")},
-			"oci_logging_unified_agent_configuration": {Tok: tfbridge.MakeResource(mainPkg, loggingMod, "UnifiedAgentConfiguration")},
-
-			"oci_management_agent_management_agent":             {Tok: tfbridge.MakeResource(mainPkg, managementAgentMod, "ManagementAgent")},
-			"oci_management_agent_management_agent_install_key": {Tok: tfbridge.MakeResource(mainPkg, managementAgentMod, "ManagementAgentInstallKey")},
-
-			"oci_management_dashboard_management_dashboards_import": {Tok: tfbridge.MakeResource(mainPkg, managementDashboardMod, "ManagementDashboardsImport")},
-
-			"oci_marketplace_accepted_agreement":        {Tok: tfbridge.MakeResource(mainPkg, marketplaceMod, "AcceptedAgreement")},
-			"oci_marketplace_listing_package_agreement": {Tok: tfbridge.MakeResource(mainPkg, marketplaceMod, "ListingPackageAgreement")},
-			"oci_marketplace_publication":               {Tok: tfbridge.MakeResource(mainPkg, marketplaceMod, "Publication")},
-
-			"oci_media_services_media_asset":                  {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "MediaAsset")},
-			"oci_media_services_media_workflow":               {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "MediaWorkflow")},
-			"oci_media_services_media_workflow_configuration": {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "MediaWorkflowConfiguration")},
-			"oci_media_services_media_workflow_job":           {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "MediaWorkflowJob")},
-			"oci_media_services_stream_cdn_config":            {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "StreamCdnConfig")},
-			"oci_media_services_stream_distribution_channel":  {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "StreamDistributionChannel")},
-			"oci_media_services_stream_packaging_config":      {Tok: tfbridge.MakeResource(mainPkg, mediaServicesMod, "StreamPackagingConfig")},
-
-			"oci_metering_computation_custom_table": {Tok: tfbridge.MakeResource(mainPkg, meteringComputationMod, "CustomTable")},
-			"oci_metering_computation_query":        {Tok: tfbridge.MakeResource(mainPkg, meteringComputationMod, "Query")},
-			"oci_metering_computation_usage":        {Tok: tfbridge.MakeResource(mainPkg, meteringComputationMod, "Usage")},
-			"oci_metering_computation_schedule":     {Tok: tfbridge.MakeResource(mainPkg, meteringComputationMod, "Schedule")},
-
-			"oci_monitoring_alarm": {Tok: tfbridge.MakeResource(mainPkg, monitoringMod, "Alarm")},
-
-			"oci_mysql_mysql_configuration": {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "MysqlConfiguration")},
-			"oci_mysql_channel":             {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "Channel")},
-			"oci_mysql_heat_wave_cluster":   {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "HeatWaveCluster")},
-			"oci_mysql_mysql_backup":        {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "MysqlBackup")},
-			"oci_mysql_mysql_db_system":     {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "MysqlDbSystem")},
-			"oci_mysql_replica":             {Tok: tfbridge.MakeResource(mainPkg, mysqlMod, "Replica")},
-
-			"oci_network_load_balancer_backend":               {Tok: tfbridge.MakeResource(mainPkg, networkLoadBalancerMod, "Backend")},
-			"oci_network_load_balancer_backend_set":           {Tok: tfbridge.MakeResource(mainPkg, networkLoadBalancerMod, "BackendSet")},
-			"oci_network_load_balancer_listener":              {Tok: tfbridge.MakeResource(mainPkg, networkLoadBalancerMod, "Listener")},
-			"oci_network_load_balancer_network_load_balancer": {Tok: tfbridge.MakeResource(mainPkg, networkLoadBalancerMod, "NetworkLoadBalancer")},
-			"oci_network_load_balancer_network_load_balancers_backend_sets_unified": {
-				Tok: tfbridge.MakeResource(mainPkg, networkLoadBalancerMod, "NetworkLoadBalancersBackendSetsUnified"),
+			"oci_identity_data_plane_generate_scoped_access_token": {
+				Tok: tfbridge.MakeResource(mainPkg, identityDataPlaneMod, "GeneratedScopedAccessToken"),
 			},
 
-			"oci_network_firewall_network_firewall":        {Tok: tfbridge.MakeResource(mainPkg, networkFirewallMod, "NetworkFirewall")},
-			"oci_network_firewall_network_firewall_policy": {Tok: tfbridge.MakeResource(mainPkg, networkFirewallMod, "NetworkFirewallPolicy")},
+			"oci_kms_vault_replication": {Tok: tfbridge.MakeResource(mainPkg, kmsMod, "VaultVerification")},
 
-			"oci_nosql_index": {Tok: tfbridge.MakeResource(mainPkg, nosqlMod, "Index")},
-			"oci_nosql_table": {Tok: tfbridge.MakeResource(mainPkg, nosqlMod, "Table")},
-
-			"oci_objectstorage_bucket": {Tok: tfbridge.MakeResource(mainPkg, objectStorageMod, "Bucket")},
-			"oci_objectstorage_namespace_metadata": {
-				Tok: tfbridge.MakeResource(mainPkg, objectStorageMod, "NamespaceMetadata"),
-			},
-			"oci_objectstorage_object":                  {Tok: tfbridge.MakeResource(mainPkg, objectStorageMod, "StorageObject")},
-			"oci_objectstorage_object_lifecycle_policy": {Tok: tfbridge.MakeResource(mainPkg, objectStorageMod, "ObjectLifecyclePolicy")},
-			"oci_objectstorage_preauthrequest":          {Tok: tfbridge.MakeResource(mainPkg, objectStorageMod, "Preauthrequest")},
-			"oci_objectstorage_replication_policy":      {Tok: tfbridge.MakeResource(mainPkg, objectStorageMod, "ReplicationPolicy")},
-
-			"oci_osmanagement_managed_instance":            {Tok: tfbridge.MakeResource(mainPkg, osManagementMod, "ManagedInstance")},
-			"oci_osmanagement_managed_instance_group":      {Tok: tfbridge.MakeResource(mainPkg, osManagementMod, "ManagedInstanceGroup")},
-			"oci_osmanagement_managed_instance_management": {Tok: tfbridge.MakeResource(mainPkg, osManagementMod, "ManagedInstanceManagement")},
-			"oci_osmanagement_software_source":             {Tok: tfbridge.MakeResource(mainPkg, osManagementMod, "SoftwareSource")},
-
-			"oci_ons_notification_topic": {Tok: tfbridge.MakeResource(mainPkg, onsMod, "NotificationTopic")},
-			"oci_ons_subscription":       {Tok: tfbridge.MakeResource(mainPkg, onsMod, "Subscription")},
-
-			"oci_opa_opa_instance": {Tok: tfbridge.MakeResource(mainPkg, opaMod, "OpaInstance")},
+			"oci_objectstorage_object": {Tok: tfbridge.MakeResource(mainPkg, objectStorageMod, "StorageObject")},
 
 			"oci_opensearch_opensearch_cluster": {Tok: tfbridge.MakeResource(mainPkg, opensearchMod, "Cluster")},
 
-			"oci_operator_access_control_operator_control":            {Tok: tfbridge.MakeResource(mainPkg, operatorAccessControlMod, "OperatorControl")},
-			"oci_operator_access_control_operator_control_assignment": {Tok: tfbridge.MakeResource(mainPkg, operatorAccessControlMod, "OperatorControlAssignment")},
+			"oci_service_catalog_service_catalog_association": {
+				Tok: tfbridge.MakeResource(mainPkg, serviceCatalogMod, "CatalogAssociation"),
+			},
 
-			"oci_opsi_awr_hub":                                                 {Tok: tfbridge.MakeResource(mainPkg, opsiMod, "AwrHub")},
-			"oci_opsi_database_insight":                                        {Tok: tfbridge.MakeResource(mainPkg, opsiMod, "DatabaseInsight")},
-			"oci_opsi_enterprise_manager_bridge":                               {Tok: tfbridge.MakeResource(mainPkg, opsiMod, "EnterpriseManagerBridge")},
-			"oci_opsi_exadata_insight":                                         {Tok: tfbridge.MakeResource(mainPkg, opsiMod, "ExadataInsight")},
-			"oci_opsi_host_insight":                                            {Tok: tfbridge.MakeResource(mainPkg, opsiMod, "HostInsight")},
-			"oci_opsi_operations_insights_private_endpoint":                    {Tok: tfbridge.MakeResource(mainPkg, opsiMod, "OperationsInsightsPrivateEndpoint")},
-			"oci_opsi_operations_insights_warehouse":                           {Tok: tfbridge.MakeResource(mainPkg, opsiMod, "OperationsInsightsWarehouse")},
-			"oci_opsi_operations_insights_warehouse_download_warehouse_wallet": {Tok: tfbridge.MakeResource(mainPkg, opsiMod, "OperationsInsightsWarehouseDownloadWarehouseWallet")},
-			"oci_opsi_operations_insights_warehouse_rotate_warehouse_wallet":   {Tok: tfbridge.MakeResource(mainPkg, opsiMod, "OperationsInsightsWarehouseRotateWarehouseWallet")},
-			"oci_opsi_operations_insights_warehouse_user":                      {Tok: tfbridge.MakeResource(mainPkg, opsiMod, "OperationsInsightsWarehouseUser")},
+			"oci_sch_service_connector": {Tok: tfbridge.MakeResource(mainPkg, schMod, "Connector")},
 
-			"oci_optimizer_enrollment_status": {Tok: tfbridge.MakeResource(mainPkg, optimizerMod, "EnrollmentStatus")},
-			"oci_optimizer_profile":           {Tok: tfbridge.MakeResource(mainPkg, optimizerMod, "Profile")},
-			"oci_optimizer_recommendation":    {Tok: tfbridge.MakeResource(mainPkg, optimizerMod, "Recommendation")},
-			"oci_optimizer_resource_action":   {Tok: tfbridge.MakeResource(mainPkg, optimizerMod, "ResourceAction")},
-
-			"oci_queue_queue": {Tok: tfbridge.MakeResource(mainPkg, queueMod, "Queue")},
-
-			"oci_service_catalog_private_application":         {Tok: tfbridge.MakeResource(mainPkg, serviceCatalogMod, "PrivateApplication")},
-			"oci_service_catalog_service_catalog":             {Tok: tfbridge.MakeResource(mainPkg, serviceCatalogMod, "Catalog")},
-			"oci_service_catalog_service_catalog_association": {Tok: tfbridge.MakeResource(mainPkg, serviceCatalogMod, "CatalogAssociation")},
-
-			"oci_service_mesh_access_policy":               {Tok: tfbridge.MakeResource(mainPkg, serviceMeshMod, "AccessPolicy")},
-			"oci_service_mesh_ingress_gateway":             {Tok: tfbridge.MakeResource(mainPkg, serviceMeshMod, "IngressGateway")},
-			"oci_service_mesh_ingress_gateway_route_table": {Tok: tfbridge.MakeResource(mainPkg, serviceMeshMod, "IngressGatewayRouteTable")},
-			"oci_service_mesh_mesh":                        {Tok: tfbridge.MakeResource(mainPkg, serviceMeshMod, "Mesh")},
-			"oci_service_mesh_virtual_deployment":          {Tok: tfbridge.MakeResource(mainPkg, serviceMeshMod, "VirtualDeployment")},
-			"oci_service_mesh_virtual_service":             {Tok: tfbridge.MakeResource(mainPkg, serviceMeshMod, "VirtualService")},
-			"oci_service_mesh_virtual_service_route_table": {Tok: tfbridge.MakeResource(mainPkg, serviceMeshMod, "VirtualServiceRouteTable")},
-
-			"oci_stack_monitoring_discovery_job":                                    {Tok: tfbridge.MakeResource(mainPkg, stackMonitoringMod, "DiscoveryJob")},
-			"oci_stack_monitoring_monitored_resource":                               {Tok: tfbridge.MakeResource(mainPkg, stackMonitoringMod, "MonitoredResource")},
-			"oci_stack_monitoring_monitored_resources_associate_monitored_resource": {Tok: tfbridge.MakeResource(mainPkg, stackMonitoringMod, "MonitoredResourcesAssociateMonitoredResource")},
-			"oci_stack_monitoring_monitored_resources_list_member":                  {Tok: tfbridge.MakeResource(mainPkg, stackMonitoringMod, "MonitoredResourcesListMember")},
-			"oci_stack_monitoring_monitored_resources_search":                       {Tok: tfbridge.MakeResource(mainPkg, stackMonitoringMod, "MonitoredResourcesSearch")},
-			"oci_stack_monitoring_monitored_resources_search_association":           {Tok: tfbridge.MakeResource(mainPkg, stackMonitoringMod, "MonitoredResourcesSearchAssociation")},
-
-			"oci_streaming_connect_harness": {Tok: tfbridge.MakeResource(mainPkg, streamingMod, "ConnectHarness")},
-			"oci_streaming_stream":          {Tok: tfbridge.MakeResource(mainPkg, streamingMod, "Stream")},
-			"oci_streaming_stream_pool":     {Tok: tfbridge.MakeResource(mainPkg, streamingMod, "StreamPool")},
-
-			"oci_vn_monitoring_path_analysi":       {Tok: tfbridge.MakeResource(mainPkg, vnMonitoringMod, "PathAnalysi")},
-			"oci_vn_monitoring_path_analyzer_test": {Tok: tfbridge.MakeResource(mainPkg, vnMonitoringMod, "PathAnalyzerTest")},
-
-			"oci_vulnerability_scanning_container_scan_recipe": {Tok: tfbridge.MakeResource(mainPkg, vulnerabilityScanningMod, "ContainerScanRecipe")},
-			"oci_vulnerability_scanning_container_scan_target": {Tok: tfbridge.MakeResource(mainPkg, vulnerabilityScanningMod, "ContainerScanTarget")},
-			"oci_vulnerability_scanning_host_scan_recipe":      {Tok: tfbridge.MakeResource(mainPkg, vulnerabilityScanningMod, "HostScanRecipe")},
-			"oci_vulnerability_scanning_host_scan_target":      {Tok: tfbridge.MakeResource(mainPkg, vulnerabilityScanningMod, "HostScanTarget")},
+			"oci_service_catalog_service_catalog": {Tok: tfbridge.MakeResource(mainPkg, serviceCatalogMod, "Catalog")},
 
 			"oci_waa_web_app_acceleration":        {Tok: tfbridge.MakeResource(mainPkg, waaMod, "AppAcceleration")},
 			"oci_waa_web_app_acceleration_policy": {Tok: tfbridge.MakeResource(mainPkg, waaMod, "AppAccelerationPolicy")},
 
-			"oci_waas_address_list":           {Tok: tfbridge.MakeResource(mainPkg, waasMod, "AddressList")},
-			"oci_waas_certificate":            {Tok: tfbridge.MakeResource(mainPkg, waasMod, "Certificate")},
-			"oci_waas_custom_protection_rule": {Tok: tfbridge.MakeResource(mainPkg, waasMod, "CustomProtectionRule")},
-			"oci_waas_http_redirect":          {Tok: tfbridge.MakeResource(mainPkg, waasMod, "HttpRedirect")},
-			"oci_waas_protection_rule":        {Tok: tfbridge.MakeResource(mainPkg, waasMod, "ProtectionRule")},
-			"oci_waas_purge_cache":            {Tok: tfbridge.MakeResource(mainPkg, waasMod, "PurgeCache")},
-			"oci_waas_waas_policy":            {Tok: tfbridge.MakeResource(mainPkg, waasMod, "Policy")},
+			"oci_waas_waas_policy": {Tok: tfbridge.MakeResource(mainPkg, waasMod, "Policy")},
 
-			"oci_waf_network_address_list":    {Tok: tfbridge.MakeResource(mainPkg, wafMod, "NetworkAddressList")},
 			"oci_waf_web_app_firewall":        {Tok: tfbridge.MakeResource(mainPkg, wafMod, "AppFirewall")},
 			"oci_waf_web_app_firewall_policy": {Tok: tfbridge.MakeResource(mainPkg, wafMod, "AppFirewallPolicy")},
 
-			"oci_oda_oda_instance": {Tok: tfbridge.MakeResource(mainPkg, odaMod, "OdaInstance")},
+			"oci_oce_oce_instance": {Tok: tfbridge.MakeResource(mainPkg, oceMod, "Instance")},
 
 			"oci_osp_gateway_subscription": {
-				Tok: tfbridge.MakeResource(mainPkg, ospGatewayMod, "Subscription"),
 				Fields: map[string]*tfbridge.SchemaInfo{
 					"subscription": {
 						CSharpName: "SubscriptionDetails",
 					},
 				},
 			},
-
-			"oci_resourcemanager_private_endpoint": {Tok: tfbridge.MakeResource(mainPkg, resourceManagerMod, "PrivateEndpoint")},
-
-			"oci_sch_service_connector": {Tok: tfbridge.MakeResource(mainPkg, schMod, "Connector")},
-
-			"oci_usage_proxy_subscription_redeemable_user": {Tok: tfbridge.MakeResource(mainPkg, usageProxyMod, "SubscriptionRedeemableUser")},
-
-			"oci_vault_secret": {Tok: tfbridge.MakeResource(mainPkg, vaultMod, "Secret")},
-
-			"oci_visual_builder_vb_instance": {Tok: tfbridge.MakeResource(mainPkg, visualBuilderMod, "VbInstance")},
-
-			"oci_oce_oce_instance": {Tok: tfbridge.MakeResource(mainPkg, oceMod, "Instance")},
-
-			"oci_ocvp_esxi_host": {Tok: tfbridge.MakeResource(mainPkg, ocvpMod, "EsxiHost")},
-			"oci_ocvp_sddc":      {Tok: tfbridge.MakeResource(mainPkg, ocvpMod, "Sddc")},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			"oci_ai_anomaly_detection_ai_private_endpoint":  {Tok: tfbridge.MakeDataSource(mainPkg, aiAnomalyDetectionMod, "getAiPrivateEndpoint")},

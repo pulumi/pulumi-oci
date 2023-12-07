@@ -119,13 +119,14 @@ const (
 	operatorAccessControlMod        = "OperatorAccessControl"        // Operator Access Control
 	opsiMod                         = "Opsi"                         // Opsi
 	optimizerMod                    = "Optimizer"                    // Optimizer
-	osManagementMod                 = "OsManagement"                 // Os Management
 	osManagementHubMod              = "OsManagementHub"              // Os Management Hub
+	osManagementMod                 = "OsManagement"                 // Os Management
 	ospGatewayMod                   = "OspGateway"                   // Osp Gateway
 	osubBillingScheduleMod          = "OsubBillingSchedule"          // Osub Billing Schedule
 	osubOrganizationSubscriptionMod = "OsubOrganizationSubscription" // Osub Organization Subscription
 	osubSubscriptionMod             = "OsubSubscription"             // Osub Subscription
 	osubUsageMod                    = "OsubUsage"                    // Osub Usage
+	psqlMod                         = "Psql"                         // PSQL
 	queueMod                        = "Queue"                        // Queue
 	recoveryMod                     = "RecoveryMod"                  // Recovery
 	redisMod                        = "Redis"                        // Redis
@@ -234,13 +235,14 @@ var mappedMods = map[string]string{
 	"operator_access_control":        operatorAccessControlMod,
 	"opsi":                           opsiMod,
 	"optimizer":                      optimizerMod,
-	"osmanagement":                   osManagementMod,
 	"os_management_hub":              osManagementHubMod,
+	"osmanagement":                   osManagementMod,
 	"osp_gateway":                    ospGatewayMod,
 	"osub_billing_schedule":          osubBillingScheduleMod,
 	"osub_organization_subscription": osubOrganizationSubscriptionMod,
 	"osub_subscription":              osubSubscriptionMod,
 	"osub_usage":                     osubUsageMod,
+	"psql":                           psqlMod,
 	"queue":                          queueMod,
 	"recovery":                       recoveryMod,
 	"redis":                          redisMod,

@@ -1389,9 +1389,6 @@ type VulnerabilityAuditSource struct {
 	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 	OciResourceId *string `pulumi:"ociResourceId"`
 	// Source type of the vulnerability audit.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type string `pulumi:"type"`
 }
 
@@ -1412,9 +1409,6 @@ type VulnerabilityAuditSourceArgs struct {
 	// The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
 	OciResourceId pulumi.StringPtrInput `pulumi:"ociResourceId"`
 	// Source type of the vulnerability audit.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -1506,9 +1500,6 @@ func (o VulnerabilityAuditSourceOutput) OciResourceId() pulumi.StringPtrOutput {
 }
 
 // Source type of the vulnerability audit.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VulnerabilityAuditSourceOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v VulnerabilityAuditSource) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -1558,15 +1549,218 @@ func (o VulnerabilityAuditSourcePtrOutput) OciResourceId() pulumi.StringPtrOutpu
 }
 
 // Source type of the vulnerability audit.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VulnerabilityAuditSourcePtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *VulnerabilityAuditSource) *string {
 		if v == nil {
 			return nil
 		}
 		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type VulnerabilityAuditUsageData struct {
+	// The Object Storage bucket to read the usage data from.
+	Bucket string `pulumi:"bucket"`
+	// The Object Storage namespace to read the usage data from.
+	Namespace string `pulumi:"namespace"`
+	// The Object Storage object name to read the usage data from.
+	Object string `pulumi:"object"`
+	// The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SourceType string `pulumi:"sourceType"`
+}
+
+// VulnerabilityAuditUsageDataInput is an input type that accepts VulnerabilityAuditUsageDataArgs and VulnerabilityAuditUsageDataOutput values.
+// You can construct a concrete instance of `VulnerabilityAuditUsageDataInput` via:
+//
+//	VulnerabilityAuditUsageDataArgs{...}
+type VulnerabilityAuditUsageDataInput interface {
+	pulumi.Input
+
+	ToVulnerabilityAuditUsageDataOutput() VulnerabilityAuditUsageDataOutput
+	ToVulnerabilityAuditUsageDataOutputWithContext(context.Context) VulnerabilityAuditUsageDataOutput
+}
+
+type VulnerabilityAuditUsageDataArgs struct {
+	// The Object Storage bucket to read the usage data from.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage namespace to read the usage data from.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The Object Storage object name to read the usage data from.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+}
+
+func (VulnerabilityAuditUsageDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityAuditUsageData)(nil)).Elem()
+}
+
+func (i VulnerabilityAuditUsageDataArgs) ToVulnerabilityAuditUsageDataOutput() VulnerabilityAuditUsageDataOutput {
+	return i.ToVulnerabilityAuditUsageDataOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityAuditUsageDataArgs) ToVulnerabilityAuditUsageDataOutputWithContext(ctx context.Context) VulnerabilityAuditUsageDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditUsageDataOutput)
+}
+
+func (i VulnerabilityAuditUsageDataArgs) ToVulnerabilityAuditUsageDataPtrOutput() VulnerabilityAuditUsageDataPtrOutput {
+	return i.ToVulnerabilityAuditUsageDataPtrOutputWithContext(context.Background())
+}
+
+func (i VulnerabilityAuditUsageDataArgs) ToVulnerabilityAuditUsageDataPtrOutputWithContext(ctx context.Context) VulnerabilityAuditUsageDataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditUsageDataOutput).ToVulnerabilityAuditUsageDataPtrOutputWithContext(ctx)
+}
+
+// VulnerabilityAuditUsageDataPtrInput is an input type that accepts VulnerabilityAuditUsageDataArgs, VulnerabilityAuditUsageDataPtr and VulnerabilityAuditUsageDataPtrOutput values.
+// You can construct a concrete instance of `VulnerabilityAuditUsageDataPtrInput` via:
+//
+//	        VulnerabilityAuditUsageDataArgs{...}
+//
+//	or:
+//
+//	        nil
+type VulnerabilityAuditUsageDataPtrInput interface {
+	pulumi.Input
+
+	ToVulnerabilityAuditUsageDataPtrOutput() VulnerabilityAuditUsageDataPtrOutput
+	ToVulnerabilityAuditUsageDataPtrOutputWithContext(context.Context) VulnerabilityAuditUsageDataPtrOutput
+}
+
+type vulnerabilityAuditUsageDataPtrType VulnerabilityAuditUsageDataArgs
+
+func VulnerabilityAuditUsageDataPtr(v *VulnerabilityAuditUsageDataArgs) VulnerabilityAuditUsageDataPtrInput {
+	return (*vulnerabilityAuditUsageDataPtrType)(v)
+}
+
+func (*vulnerabilityAuditUsageDataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityAuditUsageData)(nil)).Elem()
+}
+
+func (i *vulnerabilityAuditUsageDataPtrType) ToVulnerabilityAuditUsageDataPtrOutput() VulnerabilityAuditUsageDataPtrOutput {
+	return i.ToVulnerabilityAuditUsageDataPtrOutputWithContext(context.Background())
+}
+
+func (i *vulnerabilityAuditUsageDataPtrType) ToVulnerabilityAuditUsageDataPtrOutputWithContext(ctx context.Context) VulnerabilityAuditUsageDataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(VulnerabilityAuditUsageDataPtrOutput)
+}
+
+type VulnerabilityAuditUsageDataOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityAuditUsageDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*VulnerabilityAuditUsageData)(nil)).Elem()
+}
+
+func (o VulnerabilityAuditUsageDataOutput) ToVulnerabilityAuditUsageDataOutput() VulnerabilityAuditUsageDataOutput {
+	return o
+}
+
+func (o VulnerabilityAuditUsageDataOutput) ToVulnerabilityAuditUsageDataOutputWithContext(ctx context.Context) VulnerabilityAuditUsageDataOutput {
+	return o
+}
+
+func (o VulnerabilityAuditUsageDataOutput) ToVulnerabilityAuditUsageDataPtrOutput() VulnerabilityAuditUsageDataPtrOutput {
+	return o.ToVulnerabilityAuditUsageDataPtrOutputWithContext(context.Background())
+}
+
+func (o VulnerabilityAuditUsageDataOutput) ToVulnerabilityAuditUsageDataPtrOutputWithContext(ctx context.Context) VulnerabilityAuditUsageDataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v VulnerabilityAuditUsageData) *VulnerabilityAuditUsageData {
+		return &v
+	}).(VulnerabilityAuditUsageDataPtrOutput)
+}
+
+// The Object Storage bucket to read the usage data from.
+func (o VulnerabilityAuditUsageDataOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityAuditUsageData) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace to read the usage data from.
+func (o VulnerabilityAuditUsageDataOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityAuditUsageData) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The Object Storage object name to read the usage data from.
+func (o VulnerabilityAuditUsageDataOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityAuditUsageData) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o VulnerabilityAuditUsageDataOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v VulnerabilityAuditUsageData) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+type VulnerabilityAuditUsageDataPtrOutput struct{ *pulumi.OutputState }
+
+func (VulnerabilityAuditUsageDataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**VulnerabilityAuditUsageData)(nil)).Elem()
+}
+
+func (o VulnerabilityAuditUsageDataPtrOutput) ToVulnerabilityAuditUsageDataPtrOutput() VulnerabilityAuditUsageDataPtrOutput {
+	return o
+}
+
+func (o VulnerabilityAuditUsageDataPtrOutput) ToVulnerabilityAuditUsageDataPtrOutputWithContext(ctx context.Context) VulnerabilityAuditUsageDataPtrOutput {
+	return o
+}
+
+func (o VulnerabilityAuditUsageDataPtrOutput) Elem() VulnerabilityAuditUsageDataOutput {
+	return o.ApplyT(func(v *VulnerabilityAuditUsageData) VulnerabilityAuditUsageData {
+		if v != nil {
+			return *v
+		}
+		var ret VulnerabilityAuditUsageData
+		return ret
+	}).(VulnerabilityAuditUsageDataOutput)
+}
+
+// The Object Storage bucket to read the usage data from.
+func (o VulnerabilityAuditUsageDataPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityAuditUsageData) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// The Object Storage namespace to read the usage data from.
+func (o VulnerabilityAuditUsageDataPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityAuditUsageData) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// The Object Storage object name to read the usage data from.
+func (o VulnerabilityAuditUsageDataPtrOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityAuditUsageData) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Object
+	}).(pulumi.StringPtrOutput)
+}
+
+// The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o VulnerabilityAuditUsageDataPtrOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *VulnerabilityAuditUsageData) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceType
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -1577,6 +1771,8 @@ type VulnerabilityAuditVulnerability struct {
 	CvssV3score *float64 `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
 	Id *string `pulumi:"id"`
+	// Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+	IsFalsePositive *bool `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored *bool `pulumi:"isIgnored"`
 }
@@ -1599,6 +1795,8 @@ type VulnerabilityAuditVulnerabilityArgs struct {
 	CvssV3score pulumi.Float64PtrInput `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
 	Id pulumi.StringPtrInput `pulumi:"id"`
+	// Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+	IsFalsePositive pulumi.BoolPtrInput `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored pulumi.BoolPtrInput `pulumi:"isIgnored"`
 }
@@ -1667,6 +1865,11 @@ func (o VulnerabilityAuditVulnerabilityOutput) CvssV3score() pulumi.Float64PtrOu
 // Unique vulnerability identifier, e.g. CVE-1999-0067.
 func (o VulnerabilityAuditVulnerabilityOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VulnerabilityAuditVulnerability) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+func (o VulnerabilityAuditVulnerabilityOutput) IsFalsePositive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v VulnerabilityAuditVulnerability) *bool { return v.IsFalsePositive }).(pulumi.BoolPtrOutput)
 }
 
 // Indicates if the vulnerability was ignored according to the audit configuration.
@@ -5930,6 +6133,8 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 	CvssV3score float64 `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
 	Id string `pulumi:"id"`
+	// Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+	IsFalsePositive bool `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored bool `pulumi:"isIgnored"`
 }
@@ -5952,6 +6157,8 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepende
 	CvssV3score pulumi.Float64Input `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+	IsFalsePositive pulumi.BoolInput `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored pulumi.BoolInput `pulumi:"isIgnored"`
 }
@@ -6026,6 +6233,13 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepe
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability) string {
 		return v.Id
 	}).(pulumi.StringOutput)
+}
+
+// Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerabilityOutput) IsFalsePositive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDependencyVulnerabilityCollectionItemVulnerability) bool {
+		return v.IsFalsePositive
+	}).(pulumi.BoolOutput)
 }
 
 // Indicates if the vulnerability was ignored according to the audit configuration.
@@ -6306,7 +6520,8 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability st
 	// Common Vulnerability Scoring System (CVSS) Version 3.
 	CvssV3score float64 `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
-	Id string `pulumi:"id"`
+	Id              string `pulumi:"id"`
+	IsFalsePositive bool   `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored bool `pulumi:"isIgnored"`
 }
@@ -6328,7 +6543,8 @@ type GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityArg
 	// Common Vulnerability Scoring System (CVSS) Version 3.
 	CvssV3score pulumi.Float64Input `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id              pulumi.StringInput `pulumi:"id"`
+	IsFalsePositive pulumi.BoolInput   `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored pulumi.BoolInput `pulumi:"isIgnored"`
 }
@@ -6401,6 +6617,12 @@ func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability
 // Unique vulnerability identifier, e.g. CVE-1999-0067.
 func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityOutput) IsFalsePositive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerability) bool {
+		return v.IsFalsePositive
+	}).(pulumi.BoolOutput)
 }
 
 // Indicates if the vulnerability was ignored according to the audit configuration.
@@ -6660,6 +6882,130 @@ func (o GetVulnerabilityAuditSourceArrayOutput) Index(i pulumi.IntInput) GetVuln
 	}).(GetVulnerabilityAuditSourceOutput)
 }
 
+type GetVulnerabilityAuditUsageData struct {
+	// The Object Storage bucket to read the usage data from.
+	Bucket string `pulumi:"bucket"`
+	// The Object Storage namespace to read the usage data from.
+	Namespace string `pulumi:"namespace"`
+	// The Object Storage object name to read the usage data from.
+	Object string `pulumi:"object"`
+	// The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+	SourceType string `pulumi:"sourceType"`
+}
+
+// GetVulnerabilityAuditUsageDataInput is an input type that accepts GetVulnerabilityAuditUsageDataArgs and GetVulnerabilityAuditUsageDataOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditUsageDataInput` via:
+//
+//	GetVulnerabilityAuditUsageDataArgs{...}
+type GetVulnerabilityAuditUsageDataInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditUsageDataOutput() GetVulnerabilityAuditUsageDataOutput
+	ToGetVulnerabilityAuditUsageDataOutputWithContext(context.Context) GetVulnerabilityAuditUsageDataOutput
+}
+
+type GetVulnerabilityAuditUsageDataArgs struct {
+	// The Object Storage bucket to read the usage data from.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage namespace to read the usage data from.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The Object Storage object name to read the usage data from.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+}
+
+func (GetVulnerabilityAuditUsageDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditUsageData)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditUsageDataArgs) ToGetVulnerabilityAuditUsageDataOutput() GetVulnerabilityAuditUsageDataOutput {
+	return i.ToGetVulnerabilityAuditUsageDataOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditUsageDataArgs) ToGetVulnerabilityAuditUsageDataOutputWithContext(ctx context.Context) GetVulnerabilityAuditUsageDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditUsageDataOutput)
+}
+
+// GetVulnerabilityAuditUsageDataArrayInput is an input type that accepts GetVulnerabilityAuditUsageDataArray and GetVulnerabilityAuditUsageDataArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditUsageDataArrayInput` via:
+//
+//	GetVulnerabilityAuditUsageDataArray{ GetVulnerabilityAuditUsageDataArgs{...} }
+type GetVulnerabilityAuditUsageDataArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditUsageDataArrayOutput() GetVulnerabilityAuditUsageDataArrayOutput
+	ToGetVulnerabilityAuditUsageDataArrayOutputWithContext(context.Context) GetVulnerabilityAuditUsageDataArrayOutput
+}
+
+type GetVulnerabilityAuditUsageDataArray []GetVulnerabilityAuditUsageDataInput
+
+func (GetVulnerabilityAuditUsageDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditUsageData)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditUsageDataArray) ToGetVulnerabilityAuditUsageDataArrayOutput() GetVulnerabilityAuditUsageDataArrayOutput {
+	return i.ToGetVulnerabilityAuditUsageDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditUsageDataArray) ToGetVulnerabilityAuditUsageDataArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditUsageDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditUsageDataArrayOutput)
+}
+
+type GetVulnerabilityAuditUsageDataOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditUsageDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditUsageData)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditUsageDataOutput) ToGetVulnerabilityAuditUsageDataOutput() GetVulnerabilityAuditUsageDataOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditUsageDataOutput) ToGetVulnerabilityAuditUsageDataOutputWithContext(ctx context.Context) GetVulnerabilityAuditUsageDataOutput {
+	return o
+}
+
+// The Object Storage bucket to read the usage data from.
+func (o GetVulnerabilityAuditUsageDataOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditUsageData) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace to read the usage data from.
+func (o GetVulnerabilityAuditUsageDataOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditUsageData) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The Object Storage object name to read the usage data from.
+func (o GetVulnerabilityAuditUsageDataOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditUsageData) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+func (o GetVulnerabilityAuditUsageDataOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditUsageData) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditUsageDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditUsageDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditUsageData)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditUsageDataArrayOutput) ToGetVulnerabilityAuditUsageDataArrayOutput() GetVulnerabilityAuditUsageDataArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditUsageDataArrayOutput) ToGetVulnerabilityAuditUsageDataArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditUsageDataArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditUsageDataArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditUsageDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditUsageData {
+		return vs[0].([]GetVulnerabilityAuditUsageData)[vs[1].(int)]
+	}).(GetVulnerabilityAuditUsageDataOutput)
+}
+
 type GetVulnerabilityAuditVulnerability struct {
 	// Common Vulnerability Scoring System (CVSS) Version 2.
 	CvssV2score float64 `pulumi:"cvssV2score"`
@@ -6667,6 +7013,8 @@ type GetVulnerabilityAuditVulnerability struct {
 	CvssV3score float64 `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
 	Id string `pulumi:"id"`
+	// Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+	IsFalsePositive bool `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored bool `pulumi:"isIgnored"`
 }
@@ -6689,6 +7037,8 @@ type GetVulnerabilityAuditVulnerabilityArgs struct {
 	CvssV3score pulumi.Float64Input `pulumi:"cvssV3score"`
 	// Unique vulnerability identifier, e.g. CVE-1999-0067.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+	IsFalsePositive pulumi.BoolInput `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored pulumi.BoolInput `pulumi:"isIgnored"`
 }
@@ -6757,6 +7107,11 @@ func (o GetVulnerabilityAuditVulnerabilityOutput) CvssV3score() pulumi.Float64Ou
 // Unique vulnerability identifier, e.g. CVE-1999-0067.
 func (o GetVulnerabilityAuditVulnerabilityOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditVulnerability) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+func (o GetVulnerabilityAuditVulnerabilityOutput) IsFalsePositive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditVulnerability) bool { return v.IsFalsePositive }).(pulumi.BoolOutput)
 }
 
 // Indicates if the vulnerability was ignored according to the audit configuration.
@@ -7006,6 +7361,8 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItem struct {
 	IsSuccess bool `pulumi:"isSuccess"`
 	// A filter to return only Vulnerability Audits that were created against the specified knowledge base.
 	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
+	// Details on the lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable application dependencies.
 	MaxObservedCvssV2score float64 `pulumi:"maxObservedCvssV2score"`
 	// Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable application dependencies including ignored ones.
@@ -7024,6 +7381,8 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The source details of the usage data on Object Storage. Set `sourceType` to `objectStorageTuple` and use [UsageDataViaObjectStorageTupleDetails](https://docs.cloud.oracle.com/iaas/api/#/en/adm/latest/requests/UsageDataViaObjectStorageTupleDetails) when specifying the namespace, bucket name, and object name.
+	UsageDatas []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData `pulumi:"usageDatas"`
 	// List of vulnerabilities found in the vulnerability audit.
 	Vulnerabilities []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability `pulumi:"vulnerabilities"`
 	// Count of non-ignored vulnerable application dependencies.
@@ -7063,6 +7422,8 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs struct {
 	IsSuccess pulumi.BoolInput `pulumi:"isSuccess"`
 	// A filter to return only Vulnerability Audits that were created against the specified knowledge base.
 	KnowledgeBaseId pulumi.StringInput `pulumi:"knowledgeBaseId"`
+	// Details on the lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable application dependencies.
 	MaxObservedCvssV2score pulumi.Float64Input `pulumi:"maxObservedCvssV2score"`
 	// Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable application dependencies including ignored ones.
@@ -7081,6 +7442,8 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The source details of the usage data on Object Storage. Set `sourceType` to `objectStorageTuple` and use [UsageDataViaObjectStorageTupleDetails](https://docs.cloud.oracle.com/iaas/api/#/en/adm/latest/requests/UsageDataViaObjectStorageTupleDetails) when specifying the namespace, bucket name, and object name.
+	UsageDatas GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayInput `pulumi:"usageDatas"`
 	// List of vulnerabilities found in the vulnerability audit.
 	Vulnerabilities GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayInput `pulumi:"vulnerabilities"`
 	// Count of non-ignored vulnerable application dependencies.
@@ -7197,6 +7560,11 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) KnowledgeB
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
 }
 
+// Details on the lifecycle state.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
 // Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable application dependencies.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) MaxObservedCvssV2score() pulumi.Float64Output {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) float64 {
@@ -7252,6 +7620,13 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) TimeCreate
 // The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The source details of the usage data on Object Storage. Set `sourceType` to `objectStorageTuple` and use [UsageDataViaObjectStorageTupleDetails](https://docs.cloud.oracle.com/iaas/api/#/en/adm/latest/requests/UsageDataViaObjectStorageTupleDetails) when specifying the namespace, bucket name, and object name.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) UsageDatas() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData {
+		return v.UsageDatas
+	}).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput)
 }
 
 // List of vulnerabilities found in the vulnerability audit.
@@ -7641,6 +8016,130 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput)
 	}).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput)
 }
 
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData struct {
+	// The Object Storage bucket to read the usage data from.
+	Bucket string `pulumi:"bucket"`
+	// The Object Storage namespace to read the usage data from.
+	Namespace string `pulumi:"namespace"`
+	// The Object Storage object name to read the usage data from.
+	Object string `pulumi:"object"`
+	// The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+	SourceType string `pulumi:"sourceType"`
+}
+
+// GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArgs and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataInput` via:
+//
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArgs{...}
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput
+	ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutputWithContext(context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArgs struct {
+	// The Object Storage bucket to read the usage data from.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage namespace to read the usage data from.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The Object Storage object name to read the usage data from.
+	Object pulumi.StringInput `pulumi:"object"`
+	// The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+}
+
+func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArgs) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput {
+	return i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArgs) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput)
+}
+
+// GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayInput is an input type that accepts GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArray and GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput values.
+// You can construct a concrete instance of `GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayInput` via:
+//
+//	GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArray{ GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArgs{...} }
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayInput interface {
+	pulumi.Input
+
+	ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput
+	ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutputWithContext(context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArray []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataInput
+
+func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData)(nil)).Elem()
+}
+
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArray) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput {
+	return i.ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArray) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput)
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput {
+	return o
+}
+
+// The Object Storage bucket to read the usage data from.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace to read the usage data from.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The Object Storage object name to read the usage data from.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData)(nil)).Elem()
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput() GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput) ToGetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutputWithContext(ctx context.Context) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput {
+	return o
+}
+
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput) Index(i pulumi.IntInput) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData {
+		return vs[0].([]GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageData)[vs[1].(int)]
+	}).(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput)
+}
+
 type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability struct {
 	// Common Vulnerability Scoring System (CVSS) Version 2.
 	CvssV2score float64 `pulumi:"cvssV2score"`
@@ -7648,6 +8147,8 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability struct 
 	CvssV3score float64 `pulumi:"cvssV3score"`
 	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id string `pulumi:"id"`
+	// Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+	IsFalsePositive bool `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored bool `pulumi:"isIgnored"`
 }
@@ -7670,6 +8171,8 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs str
 	CvssV3score pulumi.Float64Input `pulumi:"cvssV3score"`
 	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+	IsFalsePositive pulumi.BoolInput `pulumi:"isFalsePositive"`
 	// Indicates if the vulnerability was ignored according to the audit configuration.
 	IsIgnored pulumi.BoolInput `pulumi:"isIgnored"`
 }
@@ -7744,6 +8247,13 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutpu
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) IsFalsePositive() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability) bool {
+		return v.IsFalsePositive
+	}).(pulumi.BoolOutput)
+}
+
 // Indicates if the vulnerability was ignored according to the audit configuration.
 func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput) IsIgnored() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerability) bool { return v.IsIgnored }).(pulumi.BoolOutput)
@@ -7786,6 +8296,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditConfigurationPtrInput)(nil)).Elem(), VulnerabilityAuditConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditSourceInput)(nil)).Elem(), VulnerabilityAuditSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditSourcePtrInput)(nil)).Elem(), VulnerabilityAuditSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditUsageDataInput)(nil)).Elem(), VulnerabilityAuditUsageDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditUsageDataPtrInput)(nil)).Elem(), VulnerabilityAuditUsageDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditVulnerabilityInput)(nil)).Elem(), VulnerabilityAuditVulnerabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VulnerabilityAuditVulnerabilityArrayInput)(nil)).Elem(), VulnerabilityAuditVulnerabilityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKnowledgebasesFilterInput)(nil)).Elem(), GetKnowledgebasesFilterArgs{})
@@ -7864,6 +8376,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditConfigurationArrayInput)(nil)).Elem(), GetVulnerabilityAuditConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditSourceInput)(nil)).Elem(), GetVulnerabilityAuditSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditSourceArrayInput)(nil)).Elem(), GetVulnerabilityAuditSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditUsageDataInput)(nil)).Elem(), GetVulnerabilityAuditUsageDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditUsageDataArrayInput)(nil)).Elem(), GetVulnerabilityAuditUsageDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditVulnerabilityArrayInput)(nil)).Elem(), GetVulnerabilityAuditVulnerabilityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsFilterInput)(nil)).Elem(), GetVulnerabilityAuditsFilterArgs{})
@@ -7878,6 +8392,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayInput)(nil)).Elem(), GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArray{})
 	pulumi.RegisterOutputType(RemediationRecipeDetectConfigurationOutput{})
@@ -7896,6 +8412,8 @@ func init() {
 	pulumi.RegisterOutputType(VulnerabilityAuditConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(VulnerabilityAuditSourceOutput{})
 	pulumi.RegisterOutputType(VulnerabilityAuditSourcePtrOutput{})
+	pulumi.RegisterOutputType(VulnerabilityAuditUsageDataOutput{})
+	pulumi.RegisterOutputType(VulnerabilityAuditUsageDataPtrOutput{})
 	pulumi.RegisterOutputType(VulnerabilityAuditVulnerabilityOutput{})
 	pulumi.RegisterOutputType(VulnerabilityAuditVulnerabilityArrayOutput{})
 	pulumi.RegisterOutputType(GetKnowledgebasesFilterOutput{})
@@ -7974,6 +8492,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVulnerabilityAuditConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditSourceOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditUsageDataOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditUsageDataArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditVulnerabilityArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditsFilterOutput{})
@@ -7988,6 +8508,8 @@ func init() {
 	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataOutput{})
+	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArrayOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityOutput{})
 	pulumi.RegisterOutputType(GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArrayOutput{})
 }

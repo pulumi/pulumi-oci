@@ -349,6 +349,581 @@ func (o FleetOperationLogPtrOutput) LogId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type JavaDownloadsJavaDownloadReportCreatedBy struct {
+	// Display name for the Java download report.
+	DisplayName *string `pulumi:"displayName"`
+	// The email of the principal.
+	Email *string `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+	Id *string `pulumi:"id"`
+}
+
+// JavaDownloadsJavaDownloadReportCreatedByInput is an input type that accepts JavaDownloadsJavaDownloadReportCreatedByArgs and JavaDownloadsJavaDownloadReportCreatedByOutput values.
+// You can construct a concrete instance of `JavaDownloadsJavaDownloadReportCreatedByInput` via:
+//
+//	JavaDownloadsJavaDownloadReportCreatedByArgs{...}
+type JavaDownloadsJavaDownloadReportCreatedByInput interface {
+	pulumi.Input
+
+	ToJavaDownloadsJavaDownloadReportCreatedByOutput() JavaDownloadsJavaDownloadReportCreatedByOutput
+	ToJavaDownloadsJavaDownloadReportCreatedByOutputWithContext(context.Context) JavaDownloadsJavaDownloadReportCreatedByOutput
+}
+
+type JavaDownloadsJavaDownloadReportCreatedByArgs struct {
+	// Display name for the Java download report.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringPtrInput `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+}
+
+func (JavaDownloadsJavaDownloadReportCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JavaDownloadsJavaDownloadReportCreatedBy)(nil)).Elem()
+}
+
+func (i JavaDownloadsJavaDownloadReportCreatedByArgs) ToJavaDownloadsJavaDownloadReportCreatedByOutput() JavaDownloadsJavaDownloadReportCreatedByOutput {
+	return i.ToJavaDownloadsJavaDownloadReportCreatedByOutputWithContext(context.Background())
+}
+
+func (i JavaDownloadsJavaDownloadReportCreatedByArgs) ToJavaDownloadsJavaDownloadReportCreatedByOutputWithContext(ctx context.Context) JavaDownloadsJavaDownloadReportCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JavaDownloadsJavaDownloadReportCreatedByOutput)
+}
+
+// JavaDownloadsJavaDownloadReportCreatedByArrayInput is an input type that accepts JavaDownloadsJavaDownloadReportCreatedByArray and JavaDownloadsJavaDownloadReportCreatedByArrayOutput values.
+// You can construct a concrete instance of `JavaDownloadsJavaDownloadReportCreatedByArrayInput` via:
+//
+//	JavaDownloadsJavaDownloadReportCreatedByArray{ JavaDownloadsJavaDownloadReportCreatedByArgs{...} }
+type JavaDownloadsJavaDownloadReportCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToJavaDownloadsJavaDownloadReportCreatedByArrayOutput() JavaDownloadsJavaDownloadReportCreatedByArrayOutput
+	ToJavaDownloadsJavaDownloadReportCreatedByArrayOutputWithContext(context.Context) JavaDownloadsJavaDownloadReportCreatedByArrayOutput
+}
+
+type JavaDownloadsJavaDownloadReportCreatedByArray []JavaDownloadsJavaDownloadReportCreatedByInput
+
+func (JavaDownloadsJavaDownloadReportCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JavaDownloadsJavaDownloadReportCreatedBy)(nil)).Elem()
+}
+
+func (i JavaDownloadsJavaDownloadReportCreatedByArray) ToJavaDownloadsJavaDownloadReportCreatedByArrayOutput() JavaDownloadsJavaDownloadReportCreatedByArrayOutput {
+	return i.ToJavaDownloadsJavaDownloadReportCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i JavaDownloadsJavaDownloadReportCreatedByArray) ToJavaDownloadsJavaDownloadReportCreatedByArrayOutputWithContext(ctx context.Context) JavaDownloadsJavaDownloadReportCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JavaDownloadsJavaDownloadReportCreatedByArrayOutput)
+}
+
+type JavaDownloadsJavaDownloadReportCreatedByOutput struct{ *pulumi.OutputState }
+
+func (JavaDownloadsJavaDownloadReportCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JavaDownloadsJavaDownloadReportCreatedBy)(nil)).Elem()
+}
+
+func (o JavaDownloadsJavaDownloadReportCreatedByOutput) ToJavaDownloadsJavaDownloadReportCreatedByOutput() JavaDownloadsJavaDownloadReportCreatedByOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaDownloadReportCreatedByOutput) ToJavaDownloadsJavaDownloadReportCreatedByOutputWithContext(ctx context.Context) JavaDownloadsJavaDownloadReportCreatedByOutput {
+	return o
+}
+
+// Display name for the Java download report.
+func (o JavaDownloadsJavaDownloadReportCreatedByOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaDownloadReportCreatedBy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The email of the principal.
+func (o JavaDownloadsJavaDownloadReportCreatedByOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaDownloadReportCreatedBy) *string { return v.Email }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+func (o JavaDownloadsJavaDownloadReportCreatedByOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaDownloadReportCreatedBy) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+type JavaDownloadsJavaDownloadReportCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (JavaDownloadsJavaDownloadReportCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JavaDownloadsJavaDownloadReportCreatedBy)(nil)).Elem()
+}
+
+func (o JavaDownloadsJavaDownloadReportCreatedByArrayOutput) ToJavaDownloadsJavaDownloadReportCreatedByArrayOutput() JavaDownloadsJavaDownloadReportCreatedByArrayOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaDownloadReportCreatedByArrayOutput) ToJavaDownloadsJavaDownloadReportCreatedByArrayOutputWithContext(ctx context.Context) JavaDownloadsJavaDownloadReportCreatedByArrayOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaDownloadReportCreatedByArrayOutput) Index(i pulumi.IntInput) JavaDownloadsJavaDownloadReportCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JavaDownloadsJavaDownloadReportCreatedBy {
+		return vs[0].([]JavaDownloadsJavaDownloadReportCreatedBy)[vs[1].(int)]
+	}).(JavaDownloadsJavaDownloadReportCreatedByOutput)
+}
+
+type JavaDownloadsJavaDownloadTokenCreatedBy struct {
+	// (Updatable) User provided display name of the JavaDownloadToken.
+	DisplayName *string `pulumi:"displayName"`
+	// The email of the principal.
+	Email *string `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id *string `pulumi:"id"`
+}
+
+// JavaDownloadsJavaDownloadTokenCreatedByInput is an input type that accepts JavaDownloadsJavaDownloadTokenCreatedByArgs and JavaDownloadsJavaDownloadTokenCreatedByOutput values.
+// You can construct a concrete instance of `JavaDownloadsJavaDownloadTokenCreatedByInput` via:
+//
+//	JavaDownloadsJavaDownloadTokenCreatedByArgs{...}
+type JavaDownloadsJavaDownloadTokenCreatedByInput interface {
+	pulumi.Input
+
+	ToJavaDownloadsJavaDownloadTokenCreatedByOutput() JavaDownloadsJavaDownloadTokenCreatedByOutput
+	ToJavaDownloadsJavaDownloadTokenCreatedByOutputWithContext(context.Context) JavaDownloadsJavaDownloadTokenCreatedByOutput
+}
+
+type JavaDownloadsJavaDownloadTokenCreatedByArgs struct {
+	// (Updatable) User provided display name of the JavaDownloadToken.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringPtrInput `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+}
+
+func (JavaDownloadsJavaDownloadTokenCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JavaDownloadsJavaDownloadTokenCreatedBy)(nil)).Elem()
+}
+
+func (i JavaDownloadsJavaDownloadTokenCreatedByArgs) ToJavaDownloadsJavaDownloadTokenCreatedByOutput() JavaDownloadsJavaDownloadTokenCreatedByOutput {
+	return i.ToJavaDownloadsJavaDownloadTokenCreatedByOutputWithContext(context.Background())
+}
+
+func (i JavaDownloadsJavaDownloadTokenCreatedByArgs) ToJavaDownloadsJavaDownloadTokenCreatedByOutputWithContext(ctx context.Context) JavaDownloadsJavaDownloadTokenCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JavaDownloadsJavaDownloadTokenCreatedByOutput)
+}
+
+// JavaDownloadsJavaDownloadTokenCreatedByArrayInput is an input type that accepts JavaDownloadsJavaDownloadTokenCreatedByArray and JavaDownloadsJavaDownloadTokenCreatedByArrayOutput values.
+// You can construct a concrete instance of `JavaDownloadsJavaDownloadTokenCreatedByArrayInput` via:
+//
+//	JavaDownloadsJavaDownloadTokenCreatedByArray{ JavaDownloadsJavaDownloadTokenCreatedByArgs{...} }
+type JavaDownloadsJavaDownloadTokenCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToJavaDownloadsJavaDownloadTokenCreatedByArrayOutput() JavaDownloadsJavaDownloadTokenCreatedByArrayOutput
+	ToJavaDownloadsJavaDownloadTokenCreatedByArrayOutputWithContext(context.Context) JavaDownloadsJavaDownloadTokenCreatedByArrayOutput
+}
+
+type JavaDownloadsJavaDownloadTokenCreatedByArray []JavaDownloadsJavaDownloadTokenCreatedByInput
+
+func (JavaDownloadsJavaDownloadTokenCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JavaDownloadsJavaDownloadTokenCreatedBy)(nil)).Elem()
+}
+
+func (i JavaDownloadsJavaDownloadTokenCreatedByArray) ToJavaDownloadsJavaDownloadTokenCreatedByArrayOutput() JavaDownloadsJavaDownloadTokenCreatedByArrayOutput {
+	return i.ToJavaDownloadsJavaDownloadTokenCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i JavaDownloadsJavaDownloadTokenCreatedByArray) ToJavaDownloadsJavaDownloadTokenCreatedByArrayOutputWithContext(ctx context.Context) JavaDownloadsJavaDownloadTokenCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JavaDownloadsJavaDownloadTokenCreatedByArrayOutput)
+}
+
+type JavaDownloadsJavaDownloadTokenCreatedByOutput struct{ *pulumi.OutputState }
+
+func (JavaDownloadsJavaDownloadTokenCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JavaDownloadsJavaDownloadTokenCreatedBy)(nil)).Elem()
+}
+
+func (o JavaDownloadsJavaDownloadTokenCreatedByOutput) ToJavaDownloadsJavaDownloadTokenCreatedByOutput() JavaDownloadsJavaDownloadTokenCreatedByOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaDownloadTokenCreatedByOutput) ToJavaDownloadsJavaDownloadTokenCreatedByOutputWithContext(ctx context.Context) JavaDownloadsJavaDownloadTokenCreatedByOutput {
+	return o
+}
+
+// (Updatable) User provided display name of the JavaDownloadToken.
+func (o JavaDownloadsJavaDownloadTokenCreatedByOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaDownloadTokenCreatedBy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The email of the principal.
+func (o JavaDownloadsJavaDownloadTokenCreatedByOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaDownloadTokenCreatedBy) *string { return v.Email }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+func (o JavaDownloadsJavaDownloadTokenCreatedByOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaDownloadTokenCreatedBy) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+type JavaDownloadsJavaDownloadTokenCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (JavaDownloadsJavaDownloadTokenCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JavaDownloadsJavaDownloadTokenCreatedBy)(nil)).Elem()
+}
+
+func (o JavaDownloadsJavaDownloadTokenCreatedByArrayOutput) ToJavaDownloadsJavaDownloadTokenCreatedByArrayOutput() JavaDownloadsJavaDownloadTokenCreatedByArrayOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaDownloadTokenCreatedByArrayOutput) ToJavaDownloadsJavaDownloadTokenCreatedByArrayOutputWithContext(ctx context.Context) JavaDownloadsJavaDownloadTokenCreatedByArrayOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaDownloadTokenCreatedByArrayOutput) Index(i pulumi.IntInput) JavaDownloadsJavaDownloadTokenCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JavaDownloadsJavaDownloadTokenCreatedBy {
+		return vs[0].([]JavaDownloadsJavaDownloadTokenCreatedBy)[vs[1].(int)]
+	}).(JavaDownloadsJavaDownloadTokenCreatedByOutput)
+}
+
+type JavaDownloadsJavaDownloadTokenLastUpdatedBy struct {
+	// (Updatable) User provided display name of the JavaDownloadToken.
+	DisplayName *string `pulumi:"displayName"`
+	// The email of the principal.
+	Email *string `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id *string `pulumi:"id"`
+}
+
+// JavaDownloadsJavaDownloadTokenLastUpdatedByInput is an input type that accepts JavaDownloadsJavaDownloadTokenLastUpdatedByArgs and JavaDownloadsJavaDownloadTokenLastUpdatedByOutput values.
+// You can construct a concrete instance of `JavaDownloadsJavaDownloadTokenLastUpdatedByInput` via:
+//
+//	JavaDownloadsJavaDownloadTokenLastUpdatedByArgs{...}
+type JavaDownloadsJavaDownloadTokenLastUpdatedByInput interface {
+	pulumi.Input
+
+	ToJavaDownloadsJavaDownloadTokenLastUpdatedByOutput() JavaDownloadsJavaDownloadTokenLastUpdatedByOutput
+	ToJavaDownloadsJavaDownloadTokenLastUpdatedByOutputWithContext(context.Context) JavaDownloadsJavaDownloadTokenLastUpdatedByOutput
+}
+
+type JavaDownloadsJavaDownloadTokenLastUpdatedByArgs struct {
+	// (Updatable) User provided display name of the JavaDownloadToken.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringPtrInput `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+}
+
+func (JavaDownloadsJavaDownloadTokenLastUpdatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JavaDownloadsJavaDownloadTokenLastUpdatedBy)(nil)).Elem()
+}
+
+func (i JavaDownloadsJavaDownloadTokenLastUpdatedByArgs) ToJavaDownloadsJavaDownloadTokenLastUpdatedByOutput() JavaDownloadsJavaDownloadTokenLastUpdatedByOutput {
+	return i.ToJavaDownloadsJavaDownloadTokenLastUpdatedByOutputWithContext(context.Background())
+}
+
+func (i JavaDownloadsJavaDownloadTokenLastUpdatedByArgs) ToJavaDownloadsJavaDownloadTokenLastUpdatedByOutputWithContext(ctx context.Context) JavaDownloadsJavaDownloadTokenLastUpdatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JavaDownloadsJavaDownloadTokenLastUpdatedByOutput)
+}
+
+// JavaDownloadsJavaDownloadTokenLastUpdatedByArrayInput is an input type that accepts JavaDownloadsJavaDownloadTokenLastUpdatedByArray and JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput values.
+// You can construct a concrete instance of `JavaDownloadsJavaDownloadTokenLastUpdatedByArrayInput` via:
+//
+//	JavaDownloadsJavaDownloadTokenLastUpdatedByArray{ JavaDownloadsJavaDownloadTokenLastUpdatedByArgs{...} }
+type JavaDownloadsJavaDownloadTokenLastUpdatedByArrayInput interface {
+	pulumi.Input
+
+	ToJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput() JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput
+	ToJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutputWithContext(context.Context) JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput
+}
+
+type JavaDownloadsJavaDownloadTokenLastUpdatedByArray []JavaDownloadsJavaDownloadTokenLastUpdatedByInput
+
+func (JavaDownloadsJavaDownloadTokenLastUpdatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JavaDownloadsJavaDownloadTokenLastUpdatedBy)(nil)).Elem()
+}
+
+func (i JavaDownloadsJavaDownloadTokenLastUpdatedByArray) ToJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput() JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput {
+	return i.ToJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutputWithContext(context.Background())
+}
+
+func (i JavaDownloadsJavaDownloadTokenLastUpdatedByArray) ToJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutputWithContext(ctx context.Context) JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput)
+}
+
+type JavaDownloadsJavaDownloadTokenLastUpdatedByOutput struct{ *pulumi.OutputState }
+
+func (JavaDownloadsJavaDownloadTokenLastUpdatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JavaDownloadsJavaDownloadTokenLastUpdatedBy)(nil)).Elem()
+}
+
+func (o JavaDownloadsJavaDownloadTokenLastUpdatedByOutput) ToJavaDownloadsJavaDownloadTokenLastUpdatedByOutput() JavaDownloadsJavaDownloadTokenLastUpdatedByOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaDownloadTokenLastUpdatedByOutput) ToJavaDownloadsJavaDownloadTokenLastUpdatedByOutputWithContext(ctx context.Context) JavaDownloadsJavaDownloadTokenLastUpdatedByOutput {
+	return o
+}
+
+// (Updatable) User provided display name of the JavaDownloadToken.
+func (o JavaDownloadsJavaDownloadTokenLastUpdatedByOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaDownloadTokenLastUpdatedBy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The email of the principal.
+func (o JavaDownloadsJavaDownloadTokenLastUpdatedByOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaDownloadTokenLastUpdatedBy) *string { return v.Email }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+func (o JavaDownloadsJavaDownloadTokenLastUpdatedByOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaDownloadTokenLastUpdatedBy) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+type JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JavaDownloadsJavaDownloadTokenLastUpdatedBy)(nil)).Elem()
+}
+
+func (o JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput) ToJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput() JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput) ToJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutputWithContext(ctx context.Context) JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput) Index(i pulumi.IntInput) JavaDownloadsJavaDownloadTokenLastUpdatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JavaDownloadsJavaDownloadTokenLastUpdatedBy {
+		return vs[0].([]JavaDownloadsJavaDownloadTokenLastUpdatedBy)[vs[1].(int)]
+	}).(JavaDownloadsJavaDownloadTokenLastUpdatedByOutput)
+}
+
+type JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy struct {
+	// The name of the principal.
+	DisplayName *string `pulumi:"displayName"`
+	// The email of the principal.
+	Email *string `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id *string `pulumi:"id"`
+}
+
+// JavaDownloadsJavaLicenseAcceptanceRecordCreatedByInput is an input type that accepts JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs and JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput values.
+// You can construct a concrete instance of `JavaDownloadsJavaLicenseAcceptanceRecordCreatedByInput` via:
+//
+//	JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs{...}
+type JavaDownloadsJavaLicenseAcceptanceRecordCreatedByInput interface {
+	pulumi.Input
+
+	ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput() JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput
+	ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutputWithContext(context.Context) JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput
+}
+
+type JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs struct {
+	// The name of the principal.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringPtrInput `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+}
+
+func (JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy)(nil)).Elem()
+}
+
+func (i JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs) ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput() JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput {
+	return i.ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutputWithContext(context.Background())
+}
+
+func (i JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs) ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutputWithContext(ctx context.Context) JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput)
+}
+
+// JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayInput is an input type that accepts JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray and JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput values.
+// You can construct a concrete instance of `JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayInput` via:
+//
+//	JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray{ JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs{...} }
+type JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput() JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput
+	ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutputWithContext(context.Context) JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput
+}
+
+type JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray []JavaDownloadsJavaLicenseAcceptanceRecordCreatedByInput
+
+func (JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy)(nil)).Elem()
+}
+
+func (i JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray) ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput() JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput {
+	return i.ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray) ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutputWithContext(ctx context.Context) JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput)
+}
+
+type JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput struct{ *pulumi.OutputState }
+
+func (JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy)(nil)).Elem()
+}
+
+func (o JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput) ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput() JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput) ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutputWithContext(ctx context.Context) JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput {
+	return o
+}
+
+// The name of the principal.
+func (o JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The email of the principal.
+func (o JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy) *string { return v.Email }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+func (o JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+type JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy)(nil)).Elem()
+}
+
+func (o JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput) ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput() JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput) ToJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutputWithContext(ctx context.Context) JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput) Index(i pulumi.IntInput) JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy {
+		return vs[0].([]JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy)[vs[1].(int)]
+	}).(JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput)
+}
+
+type JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy struct {
+	// The name of the principal.
+	DisplayName *string `pulumi:"displayName"`
+	// The email of the principal.
+	Email *string `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id *string `pulumi:"id"`
+}
+
+// JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByInput is an input type that accepts JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs and JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput values.
+// You can construct a concrete instance of `JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByInput` via:
+//
+//	JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs{...}
+type JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByInput interface {
+	pulumi.Input
+
+	ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput() JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput
+	ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutputWithContext(context.Context) JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput
+}
+
+type JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs struct {
+	// The name of the principal.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringPtrInput `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+}
+
+func (JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy)(nil)).Elem()
+}
+
+func (i JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs) ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput() JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput {
+	return i.ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutputWithContext(context.Background())
+}
+
+func (i JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs) ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutputWithContext(ctx context.Context) JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput)
+}
+
+// JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayInput is an input type that accepts JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray and JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput values.
+// You can construct a concrete instance of `JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayInput` via:
+//
+//	JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray{ JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs{...} }
+type JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayInput interface {
+	pulumi.Input
+
+	ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput() JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput
+	ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutputWithContext(context.Context) JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput
+}
+
+type JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray []JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByInput
+
+func (JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy)(nil)).Elem()
+}
+
+func (i JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray) ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput() JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput {
+	return i.ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutputWithContext(context.Background())
+}
+
+func (i JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray) ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutputWithContext(ctx context.Context) JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput)
+}
+
+type JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput struct{ *pulumi.OutputState }
+
+func (JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy)(nil)).Elem()
+}
+
+func (o JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput) ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput() JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput) ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutputWithContext(ctx context.Context) JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput {
+	return o
+}
+
+// The name of the principal.
+func (o JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The email of the principal.
+func (o JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy) *string { return v.Email }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+func (o JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+type JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy)(nil)).Elem()
+}
+
+func (o JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput) ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput() JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput) ToJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutputWithContext(ctx context.Context) JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput {
+	return o
+}
+
+func (o JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput) Index(i pulumi.IntInput) JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy {
+		return vs[0].([]JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy)[vs[1].(int)]
+	}).(JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput)
+}
+
 type GetAnnouncementsAnnouncementCollection struct {
 	// List of AnnouncementSummary items
 	Items []GetAnnouncementsAnnouncementCollectionItem `pulumi:"items"`
@@ -679,7 +1254,7 @@ func (o GetAnnouncementsFilterArrayOutput) Index(i pulumi.IntInput) GetAnnouncem
 }
 
 type GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking struct {
-	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	// PerformanceTuningAnalysis flag to store enabled or disabled status
 	IsEnabled bool `pulumi:"isEnabled"`
 }
 
@@ -695,7 +1270,7 @@ type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput interface {
 }
 
 type GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs struct {
-	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	// PerformanceTuningAnalysis flag to store enabled or disabled status
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 }
 
@@ -750,7 +1325,7 @@ func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToGetFl
 	return o
 }
 
-// PerformanceTuningAnalysis flag to store enabled or disabled status.
+// PerformanceTuningAnalysis flag to store enabled or disabled status
 func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -776,7 +1351,7 @@ func (o GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput) In
 }
 
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis struct {
-	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	// PerformanceTuningAnalysis flag to store enabled or disabled status
 	IsEnabled bool `pulumi:"isEnabled"`
 	// Summarized events log for advanced feature.
 	SummarizedEventsLogs []GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog `pulumi:"summarizedEventsLogs"`
@@ -794,7 +1369,7 @@ type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisInput interface {
 }
 
 type GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs struct {
-	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	// PerformanceTuningAnalysis flag to store enabled or disabled status
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// Summarized events log for advanced feature.
 	SummarizedEventsLogs GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArrayInput `pulumi:"summarizedEventsLogs"`
@@ -851,7 +1426,7 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToGetFlee
 	return o
 }
 
-// PerformanceTuningAnalysis flag to store enabled or disabled status.
+// PerformanceTuningAnalysis flag to store enabled or disabled status
 func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -994,7 +1569,7 @@ func (o GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsL
 }
 
 type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis struct {
-	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	// PerformanceTuningAnalysis flag to store enabled or disabled status
 	IsEnabled bool `pulumi:"isEnabled"`
 }
 
@@ -1010,7 +1585,7 @@ type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisInput interface {
 }
 
 type GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs struct {
-	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	// PerformanceTuningAnalysis flag to store enabled or disabled status
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 }
 
@@ -1065,7 +1640,7 @@ func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ToGetFl
 	return o
 }
 
-// PerformanceTuningAnalysis flag to store enabled or disabled status.
+// PerformanceTuningAnalysis flag to store enabled or disabled status
 func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -1091,7 +1666,7 @@ func (o GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput) In
 }
 
 type GetFleetAdvancedFeatureConfigurationJfrRecording struct {
-	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	// PerformanceTuningAnalysis flag to store enabled or disabled status
 	IsEnabled bool `pulumi:"isEnabled"`
 }
 
@@ -1107,7 +1682,7 @@ type GetFleetAdvancedFeatureConfigurationJfrRecordingInput interface {
 }
 
 type GetFleetAdvancedFeatureConfigurationJfrRecordingArgs struct {
-	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	// PerformanceTuningAnalysis flag to store enabled or disabled status
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 }
 
@@ -1162,7 +1737,7 @@ func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) ToGetFleetAdvanc
 	return o
 }
 
-// PerformanceTuningAnalysis flag to store enabled or disabled status.
+// PerformanceTuningAnalysis flag to store enabled or disabled status
 func (o GetFleetAdvancedFeatureConfigurationJfrRecordingOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationJfrRecording) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -1188,7 +1763,7 @@ func (o GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput) Index(i pul
 }
 
 type GetFleetAdvancedFeatureConfigurationLcm struct {
-	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	// PerformanceTuningAnalysis flag to store enabled or disabled status
 	IsEnabled bool `pulumi:"isEnabled"`
 	// List of available post actions you can execute after the successful Java installation.
 	PostInstallationActions []GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction `pulumi:"postInstallationActions"`
@@ -1206,7 +1781,7 @@ type GetFleetAdvancedFeatureConfigurationLcmInput interface {
 }
 
 type GetFleetAdvancedFeatureConfigurationLcmArgs struct {
-	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	// PerformanceTuningAnalysis flag to store enabled or disabled status
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// List of available post actions you can execute after the successful Java installation.
 	PostInstallationActions GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArrayInput `pulumi:"postInstallationActions"`
@@ -1263,7 +1838,7 @@ func (o GetFleetAdvancedFeatureConfigurationLcmOutput) ToGetFleetAdvancedFeature
 	return o
 }
 
-// PerformanceTuningAnalysis flag to store enabled or disabled status.
+// PerformanceTuningAnalysis flag to store enabled or disabled status
 func (o GetFleetAdvancedFeatureConfigurationLcmOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationLcm) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -2109,7 +2684,7 @@ func (o GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionProxyArrayO
 }
 
 type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis struct {
-	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	// PerformanceTuningAnalysis flag to store enabled or disabled status
 	IsEnabled bool `pulumi:"isEnabled"`
 }
 
@@ -2125,7 +2700,7 @@ type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput interfac
 }
 
 type GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs struct {
-	// PerformanceTuningAnalysis flag to store enabled or disabled status.
+	// PerformanceTuningAnalysis flag to store enabled or disabled status
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 }
 
@@ -2180,7 +2755,7 @@ func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ToG
 	return o
 }
 
-// PerformanceTuningAnalysis flag to store enabled or disabled status.
+// PerformanceTuningAnalysis flag to store enabled or disabled status
 func (o GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -3334,6 +3909,366 @@ func (o GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput) Index(i pulumi
 	}).(GetFleetDiagnosesFleetDiagnosisCollectionItemOutput)
 }
 
+type GetFleetDrsFilesDrsFileCollection struct {
+	Items []GetFleetDrsFilesDrsFileCollectionItem `pulumi:"items"`
+}
+
+// GetFleetDrsFilesDrsFileCollectionInput is an input type that accepts GetFleetDrsFilesDrsFileCollectionArgs and GetFleetDrsFilesDrsFileCollectionOutput values.
+// You can construct a concrete instance of `GetFleetDrsFilesDrsFileCollectionInput` via:
+//
+//	GetFleetDrsFilesDrsFileCollectionArgs{...}
+type GetFleetDrsFilesDrsFileCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetDrsFilesDrsFileCollectionOutput() GetFleetDrsFilesDrsFileCollectionOutput
+	ToGetFleetDrsFilesDrsFileCollectionOutputWithContext(context.Context) GetFleetDrsFilesDrsFileCollectionOutput
+}
+
+type GetFleetDrsFilesDrsFileCollectionArgs struct {
+	Items GetFleetDrsFilesDrsFileCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetDrsFilesDrsFileCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetDrsFilesDrsFileCollection)(nil)).Elem()
+}
+
+func (i GetFleetDrsFilesDrsFileCollectionArgs) ToGetFleetDrsFilesDrsFileCollectionOutput() GetFleetDrsFilesDrsFileCollectionOutput {
+	return i.ToGetFleetDrsFilesDrsFileCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetDrsFilesDrsFileCollectionArgs) ToGetFleetDrsFilesDrsFileCollectionOutputWithContext(ctx context.Context) GetFleetDrsFilesDrsFileCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDrsFilesDrsFileCollectionOutput)
+}
+
+// GetFleetDrsFilesDrsFileCollectionArrayInput is an input type that accepts GetFleetDrsFilesDrsFileCollectionArray and GetFleetDrsFilesDrsFileCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetDrsFilesDrsFileCollectionArrayInput` via:
+//
+//	GetFleetDrsFilesDrsFileCollectionArray{ GetFleetDrsFilesDrsFileCollectionArgs{...} }
+type GetFleetDrsFilesDrsFileCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetDrsFilesDrsFileCollectionArrayOutput() GetFleetDrsFilesDrsFileCollectionArrayOutput
+	ToGetFleetDrsFilesDrsFileCollectionArrayOutputWithContext(context.Context) GetFleetDrsFilesDrsFileCollectionArrayOutput
+}
+
+type GetFleetDrsFilesDrsFileCollectionArray []GetFleetDrsFilesDrsFileCollectionInput
+
+func (GetFleetDrsFilesDrsFileCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetDrsFilesDrsFileCollection)(nil)).Elem()
+}
+
+func (i GetFleetDrsFilesDrsFileCollectionArray) ToGetFleetDrsFilesDrsFileCollectionArrayOutput() GetFleetDrsFilesDrsFileCollectionArrayOutput {
+	return i.ToGetFleetDrsFilesDrsFileCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetDrsFilesDrsFileCollectionArray) ToGetFleetDrsFilesDrsFileCollectionArrayOutputWithContext(ctx context.Context) GetFleetDrsFilesDrsFileCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDrsFilesDrsFileCollectionArrayOutput)
+}
+
+type GetFleetDrsFilesDrsFileCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetDrsFilesDrsFileCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetDrsFilesDrsFileCollection)(nil)).Elem()
+}
+
+func (o GetFleetDrsFilesDrsFileCollectionOutput) ToGetFleetDrsFilesDrsFileCollectionOutput() GetFleetDrsFilesDrsFileCollectionOutput {
+	return o
+}
+
+func (o GetFleetDrsFilesDrsFileCollectionOutput) ToGetFleetDrsFilesDrsFileCollectionOutputWithContext(ctx context.Context) GetFleetDrsFilesDrsFileCollectionOutput {
+	return o
+}
+
+func (o GetFleetDrsFilesDrsFileCollectionOutput) Items() GetFleetDrsFilesDrsFileCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetDrsFilesDrsFileCollection) []GetFleetDrsFilesDrsFileCollectionItem { return v.Items }).(GetFleetDrsFilesDrsFileCollectionItemArrayOutput)
+}
+
+type GetFleetDrsFilesDrsFileCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetDrsFilesDrsFileCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetDrsFilesDrsFileCollection)(nil)).Elem()
+}
+
+func (o GetFleetDrsFilesDrsFileCollectionArrayOutput) ToGetFleetDrsFilesDrsFileCollectionArrayOutput() GetFleetDrsFilesDrsFileCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetDrsFilesDrsFileCollectionArrayOutput) ToGetFleetDrsFilesDrsFileCollectionArrayOutputWithContext(ctx context.Context) GetFleetDrsFilesDrsFileCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetDrsFilesDrsFileCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetDrsFilesDrsFileCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetDrsFilesDrsFileCollection {
+		return vs[0].([]GetFleetDrsFilesDrsFileCollection)[vs[1].(int)]
+	}).(GetFleetDrsFilesDrsFileCollectionOutput)
+}
+
+type GetFleetDrsFilesDrsFileCollectionItem struct {
+	// The Object Storage bucket name where the DRS file is located.
+	Bucket string `pulumi:"bucket"`
+	// The checksum type for the DRS file in Object Storage.
+	ChecksumType string `pulumi:"checksumType"`
+	// The checksum value for the DRS file in Object Storage.
+	ChecksumValue string `pulumi:"checksumValue"`
+	// The unique identifier of the DRS file in Object Storage.
+	DrsFileKey string `pulumi:"drsFileKey"`
+	// The name of the DRS file in Object Store.
+	DrsFileName string `pulumi:"drsFileName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+	FleetId string `pulumi:"fleetId"`
+	// To check if the DRS file is the detfault ones.
+	IsDefault bool `pulumi:"isDefault"`
+	// The namespace for Object Storage.
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetFleetDrsFilesDrsFileCollectionItemInput is an input type that accepts GetFleetDrsFilesDrsFileCollectionItemArgs and GetFleetDrsFilesDrsFileCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetDrsFilesDrsFileCollectionItemInput` via:
+//
+//	GetFleetDrsFilesDrsFileCollectionItemArgs{...}
+type GetFleetDrsFilesDrsFileCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetDrsFilesDrsFileCollectionItemOutput() GetFleetDrsFilesDrsFileCollectionItemOutput
+	ToGetFleetDrsFilesDrsFileCollectionItemOutputWithContext(context.Context) GetFleetDrsFilesDrsFileCollectionItemOutput
+}
+
+type GetFleetDrsFilesDrsFileCollectionItemArgs struct {
+	// The Object Storage bucket name where the DRS file is located.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The checksum type for the DRS file in Object Storage.
+	ChecksumType pulumi.StringInput `pulumi:"checksumType"`
+	// The checksum value for the DRS file in Object Storage.
+	ChecksumValue pulumi.StringInput `pulumi:"checksumValue"`
+	// The unique identifier of the DRS file in Object Storage.
+	DrsFileKey pulumi.StringInput `pulumi:"drsFileKey"`
+	// The name of the DRS file in Object Store.
+	DrsFileName pulumi.StringInput `pulumi:"drsFileName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	// To check if the DRS file is the detfault ones.
+	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
+	// The namespace for Object Storage.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetFleetDrsFilesDrsFileCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetDrsFilesDrsFileCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetDrsFilesDrsFileCollectionItemArgs) ToGetFleetDrsFilesDrsFileCollectionItemOutput() GetFleetDrsFilesDrsFileCollectionItemOutput {
+	return i.ToGetFleetDrsFilesDrsFileCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetDrsFilesDrsFileCollectionItemArgs) ToGetFleetDrsFilesDrsFileCollectionItemOutputWithContext(ctx context.Context) GetFleetDrsFilesDrsFileCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDrsFilesDrsFileCollectionItemOutput)
+}
+
+// GetFleetDrsFilesDrsFileCollectionItemArrayInput is an input type that accepts GetFleetDrsFilesDrsFileCollectionItemArray and GetFleetDrsFilesDrsFileCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetDrsFilesDrsFileCollectionItemArrayInput` via:
+//
+//	GetFleetDrsFilesDrsFileCollectionItemArray{ GetFleetDrsFilesDrsFileCollectionItemArgs{...} }
+type GetFleetDrsFilesDrsFileCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetDrsFilesDrsFileCollectionItemArrayOutput() GetFleetDrsFilesDrsFileCollectionItemArrayOutput
+	ToGetFleetDrsFilesDrsFileCollectionItemArrayOutputWithContext(context.Context) GetFleetDrsFilesDrsFileCollectionItemArrayOutput
+}
+
+type GetFleetDrsFilesDrsFileCollectionItemArray []GetFleetDrsFilesDrsFileCollectionItemInput
+
+func (GetFleetDrsFilesDrsFileCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetDrsFilesDrsFileCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetDrsFilesDrsFileCollectionItemArray) ToGetFleetDrsFilesDrsFileCollectionItemArrayOutput() GetFleetDrsFilesDrsFileCollectionItemArrayOutput {
+	return i.ToGetFleetDrsFilesDrsFileCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetDrsFilesDrsFileCollectionItemArray) ToGetFleetDrsFilesDrsFileCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetDrsFilesDrsFileCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDrsFilesDrsFileCollectionItemArrayOutput)
+}
+
+type GetFleetDrsFilesDrsFileCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetDrsFilesDrsFileCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetDrsFilesDrsFileCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetDrsFilesDrsFileCollectionItemOutput) ToGetFleetDrsFilesDrsFileCollectionItemOutput() GetFleetDrsFilesDrsFileCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetDrsFilesDrsFileCollectionItemOutput) ToGetFleetDrsFilesDrsFileCollectionItemOutputWithContext(ctx context.Context) GetFleetDrsFilesDrsFileCollectionItemOutput {
+	return o
+}
+
+// The Object Storage bucket name where the DRS file is located.
+func (o GetFleetDrsFilesDrsFileCollectionItemOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDrsFilesDrsFileCollectionItem) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The checksum type for the DRS file in Object Storage.
+func (o GetFleetDrsFilesDrsFileCollectionItemOutput) ChecksumType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDrsFilesDrsFileCollectionItem) string { return v.ChecksumType }).(pulumi.StringOutput)
+}
+
+// The checksum value for the DRS file in Object Storage.
+func (o GetFleetDrsFilesDrsFileCollectionItemOutput) ChecksumValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDrsFilesDrsFileCollectionItem) string { return v.ChecksumValue }).(pulumi.StringOutput)
+}
+
+// The unique identifier of the DRS file in Object Storage.
+func (o GetFleetDrsFilesDrsFileCollectionItemOutput) DrsFileKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDrsFilesDrsFileCollectionItem) string { return v.DrsFileKey }).(pulumi.StringOutput)
+}
+
+// The name of the DRS file in Object Store.
+func (o GetFleetDrsFilesDrsFileCollectionItemOutput) DrsFileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDrsFilesDrsFileCollectionItem) string { return v.DrsFileName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+func (o GetFleetDrsFilesDrsFileCollectionItemOutput) FleetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDrsFilesDrsFileCollectionItem) string { return v.FleetId }).(pulumi.StringOutput)
+}
+
+// To check if the DRS file is the detfault ones.
+func (o GetFleetDrsFilesDrsFileCollectionItemOutput) IsDefault() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetDrsFilesDrsFileCollectionItem) bool { return v.IsDefault }).(pulumi.BoolOutput)
+}
+
+// The namespace for Object Storage.
+func (o GetFleetDrsFilesDrsFileCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDrsFilesDrsFileCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type GetFleetDrsFilesDrsFileCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetDrsFilesDrsFileCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetDrsFilesDrsFileCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetDrsFilesDrsFileCollectionItemArrayOutput) ToGetFleetDrsFilesDrsFileCollectionItemArrayOutput() GetFleetDrsFilesDrsFileCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetDrsFilesDrsFileCollectionItemArrayOutput) ToGetFleetDrsFilesDrsFileCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetDrsFilesDrsFileCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetDrsFilesDrsFileCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetDrsFilesDrsFileCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetDrsFilesDrsFileCollectionItem {
+		return vs[0].([]GetFleetDrsFilesDrsFileCollectionItem)[vs[1].(int)]
+	}).(GetFleetDrsFilesDrsFileCollectionItemOutput)
+}
+
+type GetFleetDrsFilesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetDrsFilesFilterInput is an input type that accepts GetFleetDrsFilesFilterArgs and GetFleetDrsFilesFilterOutput values.
+// You can construct a concrete instance of `GetFleetDrsFilesFilterInput` via:
+//
+//	GetFleetDrsFilesFilterArgs{...}
+type GetFleetDrsFilesFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetDrsFilesFilterOutput() GetFleetDrsFilesFilterOutput
+	ToGetFleetDrsFilesFilterOutputWithContext(context.Context) GetFleetDrsFilesFilterOutput
+}
+
+type GetFleetDrsFilesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetDrsFilesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetDrsFilesFilter)(nil)).Elem()
+}
+
+func (i GetFleetDrsFilesFilterArgs) ToGetFleetDrsFilesFilterOutput() GetFleetDrsFilesFilterOutput {
+	return i.ToGetFleetDrsFilesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetDrsFilesFilterArgs) ToGetFleetDrsFilesFilterOutputWithContext(ctx context.Context) GetFleetDrsFilesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDrsFilesFilterOutput)
+}
+
+// GetFleetDrsFilesFilterArrayInput is an input type that accepts GetFleetDrsFilesFilterArray and GetFleetDrsFilesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetDrsFilesFilterArrayInput` via:
+//
+//	GetFleetDrsFilesFilterArray{ GetFleetDrsFilesFilterArgs{...} }
+type GetFleetDrsFilesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetDrsFilesFilterArrayOutput() GetFleetDrsFilesFilterArrayOutput
+	ToGetFleetDrsFilesFilterArrayOutputWithContext(context.Context) GetFleetDrsFilesFilterArrayOutput
+}
+
+type GetFleetDrsFilesFilterArray []GetFleetDrsFilesFilterInput
+
+func (GetFleetDrsFilesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetDrsFilesFilter)(nil)).Elem()
+}
+
+func (i GetFleetDrsFilesFilterArray) ToGetFleetDrsFilesFilterArrayOutput() GetFleetDrsFilesFilterArrayOutput {
+	return i.ToGetFleetDrsFilesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetDrsFilesFilterArray) ToGetFleetDrsFilesFilterArrayOutputWithContext(ctx context.Context) GetFleetDrsFilesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetDrsFilesFilterArrayOutput)
+}
+
+type GetFleetDrsFilesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetDrsFilesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetDrsFilesFilter)(nil)).Elem()
+}
+
+func (o GetFleetDrsFilesFilterOutput) ToGetFleetDrsFilesFilterOutput() GetFleetDrsFilesFilterOutput {
+	return o
+}
+
+func (o GetFleetDrsFilesFilterOutput) ToGetFleetDrsFilesFilterOutputWithContext(ctx context.Context) GetFleetDrsFilesFilterOutput {
+	return o
+}
+
+func (o GetFleetDrsFilesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetDrsFilesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetDrsFilesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetDrsFilesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetDrsFilesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetDrsFilesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetDrsFilesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetDrsFilesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetDrsFilesFilter)(nil)).Elem()
+}
+
+func (o GetFleetDrsFilesFilterArrayOutput) ToGetFleetDrsFilesFilterArrayOutput() GetFleetDrsFilesFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetDrsFilesFilterArrayOutput) ToGetFleetDrsFilesFilterArrayOutputWithContext(ctx context.Context) GetFleetDrsFilesFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetDrsFilesFilterArrayOutput) Index(i pulumi.IntInput) GetFleetDrsFilesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetDrsFilesFilter {
+		return vs[0].([]GetFleetDrsFilesFilter)[vs[1].(int)]
+	}).(GetFleetDrsFilesFilterOutput)
+}
+
 type GetFleetInventoryLog struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -3645,6 +4580,8 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem struct {
 	// Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
 	ApplicationExecutionType string `pulumi:"applicationExecutionType"`
+	// The unique key that identifies the application.
+	ApplicationKey string `pulumi:"applicationKey"`
 	// The name of the application for which the Java migration analysis was performed.
 	ApplicationName string `pulumi:"applicationName"`
 	// The installation path of the application for which the Java migration analysis was performed.
@@ -3691,6 +4628,8 @@ type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionIt
 type GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs struct {
 	// Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
 	ApplicationExecutionType pulumi.StringInput `pulumi:"applicationExecutionType"`
+	// The unique key that identifies the application.
+	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
 	// The name of the application for which the Java migration analysis was performed.
 	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
 	// The installation path of the application for which the Java migration analysis was performed.
@@ -3778,6 +4717,13 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ApplicationExecutionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
 		return v.ApplicationExecutionType
+	}).(pulumi.StringOutput)
+}
+
+// The unique key that identifies the application.
+func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem) string {
+		return v.ApplicationKey
 	}).(pulumi.StringOutput)
 }
 
@@ -4716,6 +5662,8 @@ type GetFleetsFleetCollectionItem struct {
 	InventoryLogs []GetFleetsFleetCollectionItemInventoryLog `pulumi:"inventoryLogs"`
 	// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 	IsAdvancedFeaturesEnabled bool `pulumi:"isAdvancedFeaturesEnabled"`
+	// Whether or not export setting is enabled in this Fleet.
+	IsExportSettingEnabled bool `pulumi:"isExportSettingEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs []GetFleetsFleetCollectionItemOperationLog `pulumi:"operationLogs"`
 	// The state of the lifecycle.
@@ -4764,6 +5712,8 @@ type GetFleetsFleetCollectionItemArgs struct {
 	InventoryLogs GetFleetsFleetCollectionItemInventoryLogArrayInput `pulumi:"inventoryLogs"`
 	// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 	IsAdvancedFeaturesEnabled pulumi.BoolInput `pulumi:"isAdvancedFeaturesEnabled"`
+	// Whether or not export setting is enabled in this Fleet.
+	IsExportSettingEnabled pulumi.BoolInput `pulumi:"isExportSettingEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs GetFleetsFleetCollectionItemOperationLogArrayInput `pulumi:"operationLogs"`
 	// The state of the lifecycle.
@@ -4890,6 +5840,11 @@ func (o GetFleetsFleetCollectionItemOutput) InventoryLogs() GetFleetsFleetCollec
 // Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 func (o GetFleetsFleetCollectionItemOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
+}
+
+// Whether or not export setting is enabled in this Fleet.
+func (o GetFleetsFleetCollectionItemOutput) IsExportSettingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) bool { return v.IsExportSettingEnabled }).(pulumi.BoolOutput)
 }
 
 // Custom Log for inventory or operation log.
@@ -6547,6 +7502,3242 @@ func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArr
 	}).(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput)
 }
 
+type GetJavaDownloadsJavaDownloadRecordsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetJavaDownloadsJavaDownloadRecordsFilterInput is an input type that accepts GetJavaDownloadsJavaDownloadRecordsFilterArgs and GetJavaDownloadsJavaDownloadRecordsFilterOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadRecordsFilterInput` via:
+//
+//	GetJavaDownloadsJavaDownloadRecordsFilterArgs{...}
+type GetJavaDownloadsJavaDownloadRecordsFilterInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadRecordsFilterOutput() GetJavaDownloadsJavaDownloadRecordsFilterOutput
+	ToGetJavaDownloadsJavaDownloadRecordsFilterOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadRecordsFilterOutput
+}
+
+type GetJavaDownloadsJavaDownloadRecordsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetJavaDownloadsJavaDownloadRecordsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsFilter)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadRecordsFilterArgs) ToGetJavaDownloadsJavaDownloadRecordsFilterOutput() GetJavaDownloadsJavaDownloadRecordsFilterOutput {
+	return i.ToGetJavaDownloadsJavaDownloadRecordsFilterOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadRecordsFilterArgs) ToGetJavaDownloadsJavaDownloadRecordsFilterOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadRecordsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadRecordsFilterOutput)
+}
+
+// GetJavaDownloadsJavaDownloadRecordsFilterArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadRecordsFilterArray and GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadRecordsFilterArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadRecordsFilterArray{ GetJavaDownloadsJavaDownloadRecordsFilterArgs{...} }
+type GetJavaDownloadsJavaDownloadRecordsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadRecordsFilterArrayOutput() GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput
+	ToGetJavaDownloadsJavaDownloadRecordsFilterArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadRecordsFilterArray []GetJavaDownloadsJavaDownloadRecordsFilterInput
+
+func (GetJavaDownloadsJavaDownloadRecordsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadRecordsFilter)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadRecordsFilterArray) ToGetJavaDownloadsJavaDownloadRecordsFilterArrayOutput() GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadRecordsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadRecordsFilterArray) ToGetJavaDownloadsJavaDownloadRecordsFilterArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadRecordsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadRecordsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsFilter)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsFilterOutput) ToGetJavaDownloadsJavaDownloadRecordsFilterOutput() GetJavaDownloadsJavaDownloadRecordsFilterOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsFilterOutput) ToGetJavaDownloadsJavaDownloadRecordsFilterOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadRecordsFilterOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadRecordsFilter)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput) ToGetJavaDownloadsJavaDownloadRecordsFilterArrayOutput() GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput) ToGetJavaDownloadsJavaDownloadRecordsFilterArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadRecordsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadRecordsFilter {
+		return vs[0].([]GetJavaDownloadsJavaDownloadRecordsFilter)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadRecordsFilterOutput)
+}
+
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollection struct {
+	// A list of Java download records in a tenancy.
+	Items []GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem `pulumi:"items"`
+}
+
+// GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionInput is an input type that accepts GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArgs and GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionInput` via:
+//
+//	GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArgs{...}
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput
+	ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput
+}
+
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArgs struct {
+	// A list of Java download records in a tenancy.
+	Items GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollection)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArgs) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput {
+	return i.ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArgs) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput)
+}
+
+// GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArray and GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArray{ GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArgs{...} }
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput
+	ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArray []GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionInput
+
+func (GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollection)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArray) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArray) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollection)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput {
+	return o
+}
+
+// A list of Java download records in a tenancy.
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput) Items() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollection) []GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem {
+		return v.Items
+	}).(GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollection)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollection {
+		return vs[0].([]GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollection)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput)
+}
+
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem struct {
+	// Target Operating System architecture of the artifact.
+	Architecture string `pulumi:"architecture"`
+	// Identifier of the source that downloaded the artifact.
+	DownloadSourceId string `pulumi:"downloadSourceId"`
+	// Type of download.
+	DownloadType string `pulumi:"downloadType"`
+	// The Java family display name.
+	FamilyDisplayName string `pulumi:"familyDisplayName"`
+	// Unique Java family version identifier.
+	FamilyVersion string `pulumi:"familyVersion"`
+	// Target Operating System family of the artifact.
+	OsFamily string `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType string `pulumi:"packageType"`
+	// Packaging type detail of the artifact.
+	PackageTypeDetail string `pulumi:"packageTypeDetail"`
+	// Unique Java release version identifier.
+	ReleaseVersion string `pulumi:"releaseVersion"`
+	// Timestamp of download.
+	TimeDownloaded string `pulumi:"timeDownloaded"`
+}
+
+// GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemInput is an input type that accepts GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArgs and GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemInput` via:
+//
+//	GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArgs{...}
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput
+	ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput
+}
+
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArgs struct {
+	// Target Operating System architecture of the artifact.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// Identifier of the source that downloaded the artifact.
+	DownloadSourceId pulumi.StringInput `pulumi:"downloadSourceId"`
+	// Type of download.
+	DownloadType pulumi.StringInput `pulumi:"downloadType"`
+	// The Java family display name.
+	FamilyDisplayName pulumi.StringInput `pulumi:"familyDisplayName"`
+	// Unique Java family version identifier.
+	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
+	// Target Operating System family of the artifact.
+	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType pulumi.StringInput `pulumi:"packageType"`
+	// Packaging type detail of the artifact.
+	PackageTypeDetail pulumi.StringInput `pulumi:"packageTypeDetail"`
+	// Unique Java release version identifier.
+	ReleaseVersion pulumi.StringInput `pulumi:"releaseVersion"`
+	// Timestamp of download.
+	TimeDownloaded pulumi.StringInput `pulumi:"timeDownloaded"`
+}
+
+func (GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArgs) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput {
+	return i.ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArgs) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput)
+}
+
+// GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArray and GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArray{ GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArgs{...} }
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput
+	ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArray []GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemInput
+
+func (GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArray) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArray) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput {
+	return o
+}
+
+// Target Operating System architecture of the artifact.
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem) string {
+		return v.Architecture
+	}).(pulumi.StringOutput)
+}
+
+// Identifier of the source that downloaded the artifact.
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) DownloadSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem) string {
+		return v.DownloadSourceId
+	}).(pulumi.StringOutput)
+}
+
+// Type of download.
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) DownloadType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem) string {
+		return v.DownloadType
+	}).(pulumi.StringOutput)
+}
+
+// The Java family display name.
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) FamilyDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem) string {
+		return v.FamilyDisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Unique Java family version identifier.
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) FamilyVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem) string {
+		return v.FamilyVersion
+	}).(pulumi.StringOutput)
+}
+
+// Target Operating System family of the artifact.
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem) string { return v.OsFamily }).(pulumi.StringOutput)
+}
+
+// The package type(typically the file extension) of the artifact.
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) PackageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem) string {
+		return v.PackageType
+	}).(pulumi.StringOutput)
+}
+
+// Packaging type detail of the artifact.
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) PackageTypeDetail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem) string {
+		return v.PackageTypeDetail
+	}).(pulumi.StringOutput)
+}
+
+// Unique Java release version identifier.
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) ReleaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem) string {
+		return v.ReleaseVersion
+	}).(pulumi.StringOutput)
+}
+
+// Timestamp of download.
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput) TimeDownloaded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem) string {
+		return v.TimeDownloaded
+	}).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput() GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput) ToGetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem {
+		return vs[0].([]GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItem)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportCreatedBy struct {
+	// Display name for the Java download report.
+	DisplayName string `pulumi:"displayName"`
+	// The email of the principal.
+	Email string `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+	Id string `pulumi:"id"`
+}
+
+// GetJavaDownloadsJavaDownloadReportCreatedByInput is an input type that accepts GetJavaDownloadsJavaDownloadReportCreatedByArgs and GetJavaDownloadsJavaDownloadReportCreatedByOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadReportCreatedByInput` via:
+//
+//	GetJavaDownloadsJavaDownloadReportCreatedByArgs{...}
+type GetJavaDownloadsJavaDownloadReportCreatedByInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadReportCreatedByOutput() GetJavaDownloadsJavaDownloadReportCreatedByOutput
+	ToGetJavaDownloadsJavaDownloadReportCreatedByOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadReportCreatedByOutput
+}
+
+type GetJavaDownloadsJavaDownloadReportCreatedByArgs struct {
+	// Display name for the Java download report.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringInput `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetJavaDownloadsJavaDownloadReportCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportCreatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadReportCreatedByArgs) ToGetJavaDownloadsJavaDownloadReportCreatedByOutput() GetJavaDownloadsJavaDownloadReportCreatedByOutput {
+	return i.ToGetJavaDownloadsJavaDownloadReportCreatedByOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadReportCreatedByArgs) ToGetJavaDownloadsJavaDownloadReportCreatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadReportCreatedByOutput)
+}
+
+// GetJavaDownloadsJavaDownloadReportCreatedByArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadReportCreatedByArray and GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadReportCreatedByArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadReportCreatedByArray{ GetJavaDownloadsJavaDownloadReportCreatedByArgs{...} }
+type GetJavaDownloadsJavaDownloadReportCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadReportCreatedByArrayOutput() GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput
+	ToGetJavaDownloadsJavaDownloadReportCreatedByArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadReportCreatedByArray []GetJavaDownloadsJavaDownloadReportCreatedByInput
+
+func (GetJavaDownloadsJavaDownloadReportCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadReportCreatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadReportCreatedByArray) ToGetJavaDownloadsJavaDownloadReportCreatedByArrayOutput() GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadReportCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadReportCreatedByArray) ToGetJavaDownloadsJavaDownloadReportCreatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportCreatedByOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadReportCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportCreatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadReportCreatedByOutput) ToGetJavaDownloadsJavaDownloadReportCreatedByOutput() GetJavaDownloadsJavaDownloadReportCreatedByOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportCreatedByOutput) ToGetJavaDownloadsJavaDownloadReportCreatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportCreatedByOutput {
+	return o
+}
+
+// Display name for the Java download report.
+func (o GetJavaDownloadsJavaDownloadReportCreatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportCreatedBy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The email of the principal.
+func (o GetJavaDownloadsJavaDownloadReportCreatedByOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportCreatedBy) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+func (o GetJavaDownloadsJavaDownloadReportCreatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportCreatedBy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadReportCreatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput) ToGetJavaDownloadsJavaDownloadReportCreatedByArrayOutput() GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput) ToGetJavaDownloadsJavaDownloadReportCreatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadReportCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadReportCreatedBy {
+		return vs[0].([]GetJavaDownloadsJavaDownloadReportCreatedBy)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadReportCreatedByOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetJavaDownloadsJavaDownloadReportsFilterInput is an input type that accepts GetJavaDownloadsJavaDownloadReportsFilterArgs and GetJavaDownloadsJavaDownloadReportsFilterOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadReportsFilterInput` via:
+//
+//	GetJavaDownloadsJavaDownloadReportsFilterArgs{...}
+type GetJavaDownloadsJavaDownloadReportsFilterInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadReportsFilterOutput() GetJavaDownloadsJavaDownloadReportsFilterOutput
+	ToGetJavaDownloadsJavaDownloadReportsFilterOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadReportsFilterOutput
+}
+
+type GetJavaDownloadsJavaDownloadReportsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetJavaDownloadsJavaDownloadReportsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsFilter)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsFilterArgs) ToGetJavaDownloadsJavaDownloadReportsFilterOutput() GetJavaDownloadsJavaDownloadReportsFilterOutput {
+	return i.ToGetJavaDownloadsJavaDownloadReportsFilterOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsFilterArgs) ToGetJavaDownloadsJavaDownloadReportsFilterOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadReportsFilterOutput)
+}
+
+// GetJavaDownloadsJavaDownloadReportsFilterArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadReportsFilterArray and GetJavaDownloadsJavaDownloadReportsFilterArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadReportsFilterArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadReportsFilterArray{ GetJavaDownloadsJavaDownloadReportsFilterArgs{...} }
+type GetJavaDownloadsJavaDownloadReportsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadReportsFilterArrayOutput() GetJavaDownloadsJavaDownloadReportsFilterArrayOutput
+	ToGetJavaDownloadsJavaDownloadReportsFilterArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadReportsFilterArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadReportsFilterArray []GetJavaDownloadsJavaDownloadReportsFilterInput
+
+func (GetJavaDownloadsJavaDownloadReportsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadReportsFilter)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsFilterArray) ToGetJavaDownloadsJavaDownloadReportsFilterArrayOutput() GetJavaDownloadsJavaDownloadReportsFilterArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadReportsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsFilterArray) ToGetJavaDownloadsJavaDownloadReportsFilterArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadReportsFilterArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadReportsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsFilter)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsFilterOutput) ToGetJavaDownloadsJavaDownloadReportsFilterOutput() GetJavaDownloadsJavaDownloadReportsFilterOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsFilterOutput) ToGetJavaDownloadsJavaDownloadReportsFilterOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsFilterOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadReportsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadReportsFilter)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsFilterArrayOutput) ToGetJavaDownloadsJavaDownloadReportsFilterArrayOutput() GetJavaDownloadsJavaDownloadReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsFilterArrayOutput) ToGetJavaDownloadsJavaDownloadReportsFilterArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsFilterArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadReportsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadReportsFilter {
+		return vs[0].([]GetJavaDownloadsJavaDownloadReportsFilter)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadReportsFilterOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollection struct {
+	Items []GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem `pulumi:"items"`
+}
+
+// GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionInput is an input type that accepts GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArgs and GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionInput` via:
+//
+//	GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArgs{...}
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput
+	ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArgs struct {
+	Items GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollection)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArgs) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput {
+	return i.ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArgs) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput)
+}
+
+// GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArray and GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArray{ GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArgs{...} }
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput
+	ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArray []GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionInput
+
+func (GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollection)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArray) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArray) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollection)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput) Items() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollection) []GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem {
+		return v.Items
+	}).(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollection)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollection {
+		return vs[0].([]GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollection)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem struct {
+	// The algorithm used for calculating the checksum.
+	ChecksumType string `pulumi:"checksumType"`
+	// The checksum value of the Java download report file.
+	ChecksumValue string `pulumi:"checksumValue"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+	CompartmentId string `pulumi:"compartmentId"`
+	// An authorized principal.
+	CreatedBies []GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedBy `pulumi:"createdBies"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the display name.
+	DisplayName string `pulumi:"displayName"`
+	// Approximate size of the Java download report file in bytes.
+	FileSizeInBytes string `pulumi:"fileSizeInBytes"`
+	// The file format of the Java download report.
+	Format string `pulumi:"format"`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+	Id string `pulumi:"id"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the Java download report was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	TimeEnd     string `pulumi:"timeEnd"`
+	TimeStart   string `pulumi:"timeStart"`
+}
+
+// GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemInput is an input type that accepts GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArgs and GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemInput` via:
+//
+//	GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArgs{...}
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput
+	ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArgs struct {
+	// The algorithm used for calculating the checksum.
+	ChecksumType pulumi.StringInput `pulumi:"checksumType"`
+	// The checksum value of the Java download report file.
+	ChecksumValue pulumi.StringInput `pulumi:"checksumValue"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// An authorized principal.
+	CreatedBies GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayInput `pulumi:"createdBies"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Approximate size of the Java download report file in bytes.
+	FileSizeInBytes pulumi.StringInput `pulumi:"fileSizeInBytes"`
+	// The file format of the Java download report.
+	Format pulumi.StringInput `pulumi:"format"`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the Java download report was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	TimeEnd     pulumi.StringInput `pulumi:"timeEnd"`
+	TimeStart   pulumi.StringInput `pulumi:"timeStart"`
+}
+
+func (GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArgs) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput {
+	return i.ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArgs) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput)
+}
+
+// GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArray and GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArray{ GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArgs{...} }
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput
+	ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArray []GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemInput
+
+func (GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArray) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArray) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput {
+	return o
+}
+
+// The algorithm used for calculating the checksum.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) ChecksumType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) string {
+		return v.ChecksumType
+	}).(pulumi.StringOutput)
+}
+
+// The checksum value of the Java download report file.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) ChecksumValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) string {
+		return v.ChecksumValue
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// An authorized principal.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) CreatedBies() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) []GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedBy {
+		return v.CreatedBies
+	}).(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the display name.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Approximate size of the Java download report file in bytes.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) FileSizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) string {
+		return v.FileSizeInBytes
+	}).(pulumi.StringOutput)
+}
+
+// The file format of the Java download report.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) Format() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) string { return v.Format }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources their lifecycleState matches the given lifecycleState.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// The time the Java download report was created. An RFC3339 formatted datetime string.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) TimeEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) string { return v.TimeEnd }).(pulumi.StringOutput)
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput) TimeStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem) string { return v.TimeStart }).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem {
+		return vs[0].([]GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItem)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedBy struct {
+	// A filter to return only resources that match the display name.
+	DisplayName string `pulumi:"displayName"`
+	// The email of the principal.
+	Email string `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+	Id string `pulumi:"id"`
+}
+
+// GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByInput is an input type that accepts GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArgs and GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByInput` via:
+//
+//	GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArgs{...}
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput
+	ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArgs struct {
+	// A filter to return only resources that match the display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringInput `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArgs) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput {
+	return i.ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArgs) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput)
+}
+
+// GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArray and GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArray{ GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArgs{...} }
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput
+	ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArray []GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByInput
+
+func (GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArray) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArray) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput {
+	return o
+}
+
+// A filter to return only resources that match the display name.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedBy) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The email of the principal.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedBy) string {
+		return v.Email
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedBy) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput() GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput) ToGetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedBy {
+		return vs[0].([]GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedBy)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokenCreatedBy struct {
+	// The name of the principal.
+	DisplayName string `pulumi:"displayName"`
+	// The email of the principal.
+	Email string `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id string `pulumi:"id"`
+}
+
+// GetJavaDownloadsJavaDownloadTokenCreatedByInput is an input type that accepts GetJavaDownloadsJavaDownloadTokenCreatedByArgs and GetJavaDownloadsJavaDownloadTokenCreatedByOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokenCreatedByInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokenCreatedByArgs{...}
+type GetJavaDownloadsJavaDownloadTokenCreatedByInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokenCreatedByOutput() GetJavaDownloadsJavaDownloadTokenCreatedByOutput
+	ToGetJavaDownloadsJavaDownloadTokenCreatedByOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokenCreatedByOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokenCreatedByArgs struct {
+	// The name of the principal.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringInput `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetJavaDownloadsJavaDownloadTokenCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokenCreatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokenCreatedByArgs) ToGetJavaDownloadsJavaDownloadTokenCreatedByOutput() GetJavaDownloadsJavaDownloadTokenCreatedByOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokenCreatedByOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokenCreatedByArgs) ToGetJavaDownloadsJavaDownloadTokenCreatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokenCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokenCreatedByOutput)
+}
+
+// GetJavaDownloadsJavaDownloadTokenCreatedByArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadTokenCreatedByArray and GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokenCreatedByArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokenCreatedByArray{ GetJavaDownloadsJavaDownloadTokenCreatedByArgs{...} }
+type GetJavaDownloadsJavaDownloadTokenCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput() GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput
+	ToGetJavaDownloadsJavaDownloadTokenCreatedByArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokenCreatedByArray []GetJavaDownloadsJavaDownloadTokenCreatedByInput
+
+func (GetJavaDownloadsJavaDownloadTokenCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokenCreatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokenCreatedByArray) ToGetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput() GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokenCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokenCreatedByArray) ToGetJavaDownloadsJavaDownloadTokenCreatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokenCreatedByOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokenCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokenCreatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokenCreatedByOutput) ToGetJavaDownloadsJavaDownloadTokenCreatedByOutput() GetJavaDownloadsJavaDownloadTokenCreatedByOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokenCreatedByOutput) ToGetJavaDownloadsJavaDownloadTokenCreatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokenCreatedByOutput {
+	return o
+}
+
+// The name of the principal.
+func (o GetJavaDownloadsJavaDownloadTokenCreatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokenCreatedBy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The email of the principal.
+func (o GetJavaDownloadsJavaDownloadTokenCreatedByOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokenCreatedBy) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+func (o GetJavaDownloadsJavaDownloadTokenCreatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokenCreatedBy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokenCreatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput) ToGetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput() GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput) ToGetJavaDownloadsJavaDownloadTokenCreatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadTokenCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadTokenCreatedBy {
+		return vs[0].([]GetJavaDownloadsJavaDownloadTokenCreatedBy)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadTokenCreatedByOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokenLastUpdatedBy struct {
+	// The name of the principal.
+	DisplayName string `pulumi:"displayName"`
+	// The email of the principal.
+	Email string `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id string `pulumi:"id"`
+}
+
+// GetJavaDownloadsJavaDownloadTokenLastUpdatedByInput is an input type that accepts GetJavaDownloadsJavaDownloadTokenLastUpdatedByArgs and GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokenLastUpdatedByInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokenLastUpdatedByArgs{...}
+type GetJavaDownloadsJavaDownloadTokenLastUpdatedByInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput() GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput
+	ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokenLastUpdatedByArgs struct {
+	// The name of the principal.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringInput `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetJavaDownloadsJavaDownloadTokenLastUpdatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokenLastUpdatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokenLastUpdatedByArgs) ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput() GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokenLastUpdatedByArgs) ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput)
+}
+
+// GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadTokenLastUpdatedByArray and GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokenLastUpdatedByArray{ GetJavaDownloadsJavaDownloadTokenLastUpdatedByArgs{...} }
+type GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput() GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput
+	ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokenLastUpdatedByArray []GetJavaDownloadsJavaDownloadTokenLastUpdatedByInput
+
+func (GetJavaDownloadsJavaDownloadTokenLastUpdatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokenLastUpdatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokenLastUpdatedByArray) ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput() GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokenLastUpdatedByArray) ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokenLastUpdatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput) ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput() GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput) ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput {
+	return o
+}
+
+// The name of the principal.
+func (o GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokenLastUpdatedBy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The email of the principal.
+func (o GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokenLastUpdatedBy) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+func (o GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokenLastUpdatedBy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokenLastUpdatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput) ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput() GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput) ToGetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadTokenLastUpdatedBy {
+		return vs[0].([]GetJavaDownloadsJavaDownloadTokenLastUpdatedBy)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetJavaDownloadsJavaDownloadTokensFilterInput is an input type that accepts GetJavaDownloadsJavaDownloadTokensFilterArgs and GetJavaDownloadsJavaDownloadTokensFilterOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokensFilterInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokensFilterArgs{...}
+type GetJavaDownloadsJavaDownloadTokensFilterInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokensFilterOutput() GetJavaDownloadsJavaDownloadTokensFilterOutput
+	ToGetJavaDownloadsJavaDownloadTokensFilterOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokensFilterOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokensFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetJavaDownloadsJavaDownloadTokensFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensFilter)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensFilterArgs) ToGetJavaDownloadsJavaDownloadTokensFilterOutput() GetJavaDownloadsJavaDownloadTokensFilterOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokensFilterOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensFilterArgs) ToGetJavaDownloadsJavaDownloadTokensFilterOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokensFilterOutput)
+}
+
+// GetJavaDownloadsJavaDownloadTokensFilterArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadTokensFilterArray and GetJavaDownloadsJavaDownloadTokensFilterArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokensFilterArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokensFilterArray{ GetJavaDownloadsJavaDownloadTokensFilterArgs{...} }
+type GetJavaDownloadsJavaDownloadTokensFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokensFilterArrayOutput() GetJavaDownloadsJavaDownloadTokensFilterArrayOutput
+	ToGetJavaDownloadsJavaDownloadTokensFilterArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokensFilterArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokensFilterArray []GetJavaDownloadsJavaDownloadTokensFilterInput
+
+func (GetJavaDownloadsJavaDownloadTokensFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokensFilter)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensFilterArray) ToGetJavaDownloadsJavaDownloadTokensFilterArrayOutput() GetJavaDownloadsJavaDownloadTokensFilterArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokensFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensFilterArray) ToGetJavaDownloadsJavaDownloadTokensFilterArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokensFilterArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensFilterOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokensFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensFilter)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensFilterOutput) ToGetJavaDownloadsJavaDownloadTokensFilterOutput() GetJavaDownloadsJavaDownloadTokensFilterOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensFilterOutput) ToGetJavaDownloadsJavaDownloadTokensFilterOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensFilterOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokensFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokensFilter)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensFilterArrayOutput) ToGetJavaDownloadsJavaDownloadTokensFilterArrayOutput() GetJavaDownloadsJavaDownloadTokensFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensFilterArrayOutput) ToGetJavaDownloadsJavaDownloadTokensFilterArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensFilterArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadTokensFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadTokensFilter {
+		return vs[0].([]GetJavaDownloadsJavaDownloadTokensFilter)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadTokensFilterOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection struct {
+	Items []GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem `pulumi:"items"`
+}
+
+// GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionInput is an input type that accepts GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArgs and GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArgs{...}
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArgs struct {
+	Items GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArgs) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArgs) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput)
+}
+
+// GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArray and GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArray{ GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArgs{...} }
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArray []GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionInput
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArray) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArray) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput) Items() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection) []GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem {
+		return v.Items
+	}).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection {
+		return vs[0].([]GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+	CompartmentId string `pulumi:"compartmentId"`
+	// An authorized principal.
+	CreatedBies []GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedBy `pulumi:"createdBies"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// User provided description of the JavaDownloadToken.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Unique JavaDownloadToken identifier.
+	Id string `pulumi:"id"`
+	// A flag to indicate if the token is default.
+	IsDefault bool `pulumi:"isDefault"`
+	// The associated Java version of the JavaDownloadToken.
+	JavaVersion string `pulumi:"javaVersion"`
+	// An authorized principal.
+	LastUpdatedBies []GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy `pulumi:"lastUpdatedBies"`
+	// The license type(s) associated with the JavaDownloadToken.
+	LicenseTypes []string `pulumi:"licenseTypes"`
+	// Possible lifecycle substates.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+	TimeExpires string `pulumi:"timeExpires"`
+	// The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+	TimeLastUsed string `pulumi:"timeLastUsed"`
+	// The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Unique JavaDownloadToken value.
+	Value string `pulumi:"value"`
+}
+
+// GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemInput is an input type that accepts GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArgs and GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArgs{...}
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// An authorized principal.
+	CreatedBies GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayInput `pulumi:"createdBies"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// User provided description of the JavaDownloadToken.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Unique JavaDownloadToken identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A flag to indicate if the token is default.
+	IsDefault pulumi.BoolInput `pulumi:"isDefault"`
+	// The associated Java version of the JavaDownloadToken.
+	JavaVersion pulumi.StringInput `pulumi:"javaVersion"`
+	// An authorized principal.
+	LastUpdatedBies GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayInput `pulumi:"lastUpdatedBies"`
+	// The license type(s) associated with the JavaDownloadToken.
+	LicenseTypes pulumi.StringArrayInput `pulumi:"licenseTypes"`
+	// Possible lifecycle substates.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+	TimeExpires pulumi.StringInput `pulumi:"timeExpires"`
+	// The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+	TimeLastUsed pulumi.StringInput `pulumi:"timeLastUsed"`
+	// The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Unique JavaDownloadToken value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArgs) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArgs) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput)
+}
+
+// GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArray and GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArray{ GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArgs{...} }
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArray []GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemInput
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArray) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArray) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// An authorized principal.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) CreatedBies() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) []GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedBy {
+		return v.CreatedBies
+	}).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// User provided description of the JavaDownloadToken.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Unique JavaDownloadToken identifier.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A flag to indicate if the token is default.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) IsDefault() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) bool { return v.IsDefault }).(pulumi.BoolOutput)
+}
+
+// The associated Java version of the JavaDownloadToken.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) JavaVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) string { return v.JavaVersion }).(pulumi.StringOutput)
+}
+
+// An authorized principal.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) LastUpdatedBies() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) []GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy {
+		return v.LastUpdatedBies
+	}).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput)
+}
+
+// The license type(s) associated with the JavaDownloadToken.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) LicenseTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) []string {
+		return v.LicenseTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Possible lifecycle substates.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources their lifecycleState matches the given lifecycleState.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) TimeExpires() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) string { return v.TimeExpires }).(pulumi.StringOutput)
+}
+
+// The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) TimeLastUsed() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) string {
+		return v.TimeLastUsed
+	}).(pulumi.StringOutput)
+}
+
+// The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Unique JavaDownloadToken value.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem {
+		return vs[0].([]GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItem)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedBy struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The email of the principal.
+	Email string `pulumi:"email"`
+	// Unique JavaDownloadToken identifier.
+	Id string `pulumi:"id"`
+}
+
+// GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByInput is an input type that accepts GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArgs and GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArgs{...}
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArgs struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringInput `pulumi:"email"`
+	// Unique JavaDownloadToken identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArgs) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArgs) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput)
+}
+
+// GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArray and GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArray{ GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArgs{...} }
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArray []GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByInput
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArray) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArray) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedBy) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The email of the principal.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedBy) string {
+		return v.Email
+	}).(pulumi.StringOutput)
+}
+
+// Unique JavaDownloadToken identifier.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedBy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedBy {
+		return vs[0].([]GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedBy)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The email of the principal.
+	Email string `pulumi:"email"`
+	// Unique JavaDownloadToken identifier.
+	Id string `pulumi:"id"`
+}
+
+// GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByInput is an input type that accepts GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArgs and GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArgs{...}
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArgs struct {
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringInput `pulumi:"email"`
+	// Unique JavaDownloadToken identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArgs) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArgs) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput)
+}
+
+// GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayInput is an input type that accepts GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArray and GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayInput` via:
+//
+//	GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArray{ GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArgs{...} }
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput
+	ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutputWithContext(context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArray []GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByInput
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArray) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput {
+	return i.ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArray) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The email of the principal.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy) string {
+		return v.Email
+	}).(pulumi.StringOutput)
+}
+
+// Unique JavaDownloadToken identifier.
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput() GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput) ToGetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy {
+		return vs[0].([]GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedBy)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy struct {
+	// The name of the principal.
+	DisplayName string `pulumi:"displayName"`
+	// The email of the principal.
+	Email string `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id string `pulumi:"id"`
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs and GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs{...}
+type GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs struct {
+	// The name of the principal.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringInput `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput)
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray and GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray{ GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs{...} }
+type GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray []GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByInput
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput {
+	return o
+}
+
+// The name of the principal.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The email of the principal.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy {
+		return vs[0].([]GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedBy)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy struct {
+	// The name of the principal.
+	DisplayName string `pulumi:"displayName"`
+	// The email of the principal.
+	Email string `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id string `pulumi:"id"`
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs and GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs{...}
+type GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs struct {
+	// The name of the principal.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringInput `pulumi:"email"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput)
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray and GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray{ GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs{...} }
+type GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray []GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByInput
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput {
+	return o
+}
+
+// The name of the principal.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The email of the principal.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy {
+		return vs[0].([]GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs and GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs{...}
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsFilter)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput)
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArray and GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArray{ GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs{...} }
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArray []GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterInput
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordsFilter)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsFilter)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordsFilter)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaLicenseAcceptanceRecordsFilter {
+		return vs[0].([]GetJavaDownloadsJavaLicenseAcceptanceRecordsFilter)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollection struct {
+	Items []GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem `pulumi:"items"`
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArgs and GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArgs{...}
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArgs struct {
+	Items GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollection)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput)
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArray and GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArray{ GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArgs{...} }
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArray []GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionInput
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollection)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollection)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput) Items() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollection) []GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem {
+		return v.Items
+	}).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollection)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollection {
+		return vs[0].([]GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollection)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+	CompartmentId string `pulumi:"compartmentId"`
+	// An authorized principal.
+	CreatedBies []GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedBy `pulumi:"createdBies"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Unique Java license acceptance record identifier.
+	Id string `pulumi:"id"`
+	// An authorized principal.
+	LastUpdatedBies []GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedBy `pulumi:"lastUpdatedBies"`
+	// Status of license acceptance.
+	LicenseAcceptanceStatus string `pulumi:"licenseAcceptanceStatus"`
+	// Unique Java license type.
+	LicenseType string `pulumi:"licenseType"`
+	// The current state of the JavaLicenseAcceptanceRecord.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeAccepted string `pulumi:"timeAccepted"`
+	// The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeLastUpdated string `pulumi:"timeLastUpdated"`
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArgs and GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArgs{...}
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// An authorized principal.
+	CreatedBies GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayInput `pulumi:"createdBies"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Unique Java license acceptance record identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+	// An authorized principal.
+	LastUpdatedBies GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayInput `pulumi:"lastUpdatedBies"`
+	// Status of license acceptance.
+	LicenseAcceptanceStatus pulumi.StringInput `pulumi:"licenseAcceptanceStatus"`
+	// Unique Java license type.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	// The current state of the JavaLicenseAcceptanceRecord.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeAccepted pulumi.StringInput `pulumi:"timeAccepted"`
+	// The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeLastUpdated pulumi.StringInput `pulumi:"timeLastUpdated"`
+}
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput)
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArray and GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArray{ GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArgs{...} }
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArray []GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemInput
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// An authorized principal.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) CreatedBies() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem) []GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedBy {
+		return v.CreatedBies
+	}).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// Unique Java license acceptance record identifier.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// An authorized principal.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) LastUpdatedBies() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem) []GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedBy {
+		return v.LastUpdatedBies
+	}).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput)
+}
+
+// Status of license acceptance.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) LicenseAcceptanceStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem) string {
+		return v.LicenseAcceptanceStatus
+	}).(pulumi.StringOutput)
+}
+
+// Unique Java license type.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem) string {
+		return v.LicenseType
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the JavaLicenseAcceptanceRecord.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+// The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) TimeAccepted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem) string {
+		return v.TimeAccepted
+	}).(pulumi.StringOutput)
+}
+
+// The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput) TimeLastUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem) string {
+		return v.TimeLastUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem {
+		return vs[0].([]GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItem)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedBy struct {
+	// The name of the principal.
+	DisplayName string `pulumi:"displayName"`
+	// The email of the principal.
+	Email string `pulumi:"email"`
+	// Unique Java license acceptance record identifier.
+	Id string `pulumi:"id"`
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArgs and GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArgs{...}
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArgs struct {
+	// The name of the principal.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringInput `pulumi:"email"`
+	// Unique Java license acceptance record identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput)
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArray and GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArray{ GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArgs{...} }
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArray []GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByInput
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput {
+	return o
+}
+
+// The name of the principal.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedBy) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The email of the principal.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedBy) string {
+		return v.Email
+	}).(pulumi.StringOutput)
+}
+
+// Unique Java license acceptance record identifier.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedBy) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedBy {
+		return vs[0].([]GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedBy)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedBy struct {
+	// The name of the principal.
+	DisplayName string `pulumi:"displayName"`
+	// The email of the principal.
+	Email string `pulumi:"email"`
+	// Unique Java license acceptance record identifier.
+	Id string `pulumi:"id"`
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArgs and GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArgs{...}
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArgs struct {
+	// The name of the principal.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The email of the principal.
+	Email pulumi.StringInput `pulumi:"email"`
+	// Unique Java license acceptance record identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArgs) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput)
+}
+
+// GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayInput is an input type that accepts GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArray and GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayInput` via:
+//
+//	GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArray{ GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArgs{...} }
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput
+	ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutputWithContext(context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArray []GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByInput
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedBy)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput {
+	return i.ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArray) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput {
+	return o
+}
+
+// The name of the principal.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedBy) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The email of the principal.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedBy) string {
+		return v.Email
+	}).(pulumi.StringOutput)
+}
+
+// Unique Java license acceptance record identifier.
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedBy) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedBy)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput() GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput) ToGetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedBy {
+		return vs[0].([]GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedBy)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput)
+}
+
+type GetJavaDownloadsJavaLicensesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetJavaDownloadsJavaLicensesFilterInput is an input type that accepts GetJavaDownloadsJavaLicensesFilterArgs and GetJavaDownloadsJavaLicensesFilterOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicensesFilterInput` via:
+//
+//	GetJavaDownloadsJavaLicensesFilterArgs{...}
+type GetJavaDownloadsJavaLicensesFilterInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicensesFilterOutput() GetJavaDownloadsJavaLicensesFilterOutput
+	ToGetJavaDownloadsJavaLicensesFilterOutputWithContext(context.Context) GetJavaDownloadsJavaLicensesFilterOutput
+}
+
+type GetJavaDownloadsJavaLicensesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetJavaDownloadsJavaLicensesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicensesFilter)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicensesFilterArgs) ToGetJavaDownloadsJavaLicensesFilterOutput() GetJavaDownloadsJavaLicensesFilterOutput {
+	return i.ToGetJavaDownloadsJavaLicensesFilterOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicensesFilterArgs) ToGetJavaDownloadsJavaLicensesFilterOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicensesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicensesFilterOutput)
+}
+
+// GetJavaDownloadsJavaLicensesFilterArrayInput is an input type that accepts GetJavaDownloadsJavaLicensesFilterArray and GetJavaDownloadsJavaLicensesFilterArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicensesFilterArrayInput` via:
+//
+//	GetJavaDownloadsJavaLicensesFilterArray{ GetJavaDownloadsJavaLicensesFilterArgs{...} }
+type GetJavaDownloadsJavaLicensesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicensesFilterArrayOutput() GetJavaDownloadsJavaLicensesFilterArrayOutput
+	ToGetJavaDownloadsJavaLicensesFilterArrayOutputWithContext(context.Context) GetJavaDownloadsJavaLicensesFilterArrayOutput
+}
+
+type GetJavaDownloadsJavaLicensesFilterArray []GetJavaDownloadsJavaLicensesFilterInput
+
+func (GetJavaDownloadsJavaLicensesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicensesFilter)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicensesFilterArray) ToGetJavaDownloadsJavaLicensesFilterArrayOutput() GetJavaDownloadsJavaLicensesFilterArrayOutput {
+	return i.ToGetJavaDownloadsJavaLicensesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicensesFilterArray) ToGetJavaDownloadsJavaLicensesFilterArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicensesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicensesFilterArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicensesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicensesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicensesFilter)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicensesFilterOutput) ToGetJavaDownloadsJavaLicensesFilterOutput() GetJavaDownloadsJavaLicensesFilterOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicensesFilterOutput) ToGetJavaDownloadsJavaLicensesFilterOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicensesFilterOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicensesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicensesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetJavaDownloadsJavaLicensesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicensesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetJavaDownloadsJavaLicensesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicensesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicensesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicensesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicensesFilter)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicensesFilterArrayOutput) ToGetJavaDownloadsJavaLicensesFilterArrayOutput() GetJavaDownloadsJavaLicensesFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicensesFilterArrayOutput) ToGetJavaDownloadsJavaLicensesFilterArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicensesFilterArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicensesFilterArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaLicensesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaLicensesFilter {
+		return vs[0].([]GetJavaDownloadsJavaLicensesFilter)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaLicensesFilterOutput)
+}
+
+type GetJavaDownloadsJavaLicensesJavaLicenseCollection struct {
+	Items []GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem `pulumi:"items"`
+}
+
+// GetJavaDownloadsJavaLicensesJavaLicenseCollectionInput is an input type that accepts GetJavaDownloadsJavaLicensesJavaLicenseCollectionArgs and GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicensesJavaLicenseCollectionInput` via:
+//
+//	GetJavaDownloadsJavaLicensesJavaLicenseCollectionArgs{...}
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput() GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput
+	ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionOutputWithContext(context.Context) GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput
+}
+
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionArgs struct {
+	Items GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetJavaDownloadsJavaLicensesJavaLicenseCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicensesJavaLicenseCollection)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicensesJavaLicenseCollectionArgs) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput() GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput {
+	return i.ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicensesJavaLicenseCollectionArgs) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput)
+}
+
+// GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayInput is an input type that accepts GetJavaDownloadsJavaLicensesJavaLicenseCollectionArray and GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayInput` via:
+//
+//	GetJavaDownloadsJavaLicensesJavaLicenseCollectionArray{ GetJavaDownloadsJavaLicensesJavaLicenseCollectionArgs{...} }
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput() GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput
+	ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutputWithContext(context.Context) GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput
+}
+
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionArray []GetJavaDownloadsJavaLicensesJavaLicenseCollectionInput
+
+func (GetJavaDownloadsJavaLicensesJavaLicenseCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicensesJavaLicenseCollection)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicensesJavaLicenseCollectionArray) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput() GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput {
+	return i.ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicensesJavaLicenseCollectionArray) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicensesJavaLicenseCollection)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput() GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput) Items() GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicensesJavaLicenseCollection) []GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem {
+		return v.Items
+	}).(GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicensesJavaLicenseCollection)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput() GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaLicensesJavaLicenseCollection {
+		return vs[0].([]GetJavaDownloadsJavaLicensesJavaLicenseCollection)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput)
+}
+
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem struct {
+	// A filter to return only resources that match the display name.
+	DisplayName string `pulumi:"displayName"`
+	// Unique Java license type.
+	LicenseType string `pulumi:"licenseType"`
+	// Publicly accessible license URL containing the detailed terms and conditions.
+	LicenseUrl string `pulumi:"licenseUrl"`
+}
+
+// GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemInput is an input type that accepts GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArgs and GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemInput` via:
+//
+//	GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArgs{...}
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput() GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput
+	ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutputWithContext(context.Context) GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput
+}
+
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArgs struct {
+	// A filter to return only resources that match the display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Unique Java license type.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	// Publicly accessible license URL containing the detailed terms and conditions.
+	LicenseUrl pulumi.StringInput `pulumi:"licenseUrl"`
+}
+
+func (GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArgs) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput() GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput {
+	return i.ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArgs) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput)
+}
+
+// GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayInput is an input type that accepts GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArray and GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayInput` via:
+//
+//	GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArray{ GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArgs{...} }
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput() GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput
+	ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutputWithContext(context.Context) GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput
+}
+
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArray []GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemInput
+
+func (GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem)(nil)).Elem()
+}
+
+func (i GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArray) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput() GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput {
+	return i.ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArray) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput)
+}
+
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput() GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the display name.
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Unique Java license type.
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem) string { return v.LicenseType }).(pulumi.StringOutput)
+}
+
+// Publicly accessible license URL containing the detailed terms and conditions.
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput) LicenseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem) string { return v.LicenseUrl }).(pulumi.StringOutput)
+}
+
+type GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem)(nil)).Elem()
+}
+
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput() GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput) ToGetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutputWithContext(ctx context.Context) GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput) Index(i pulumi.IntInput) GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem {
+		return vs[0].([]GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem)[vs[1].(int)]
+	}).(GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput)
+}
+
 type GetJavaFamiliesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -6756,6 +10947,12 @@ type GetJavaFamiliesJavaFamilyCollectionItem struct {
 	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
 	// The version identifier for the Java family.
 	FamilyVersion string `pulumi:"familyVersion"`
+	// Filter the Java Release Family versions by support status.
+	IsSupportedVersion bool `pulumi:"isSupportedVersion"`
+	// List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+	LatestReleaseArtifacts []GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact `pulumi:"latestReleaseArtifacts"`
+	// Latest Java release version in the family.
+	LatestReleaseVersion string `pulumi:"latestReleaseVersion"`
 	// This indicates the support category for the Java release family.
 	SupportType string `pulumi:"supportType"`
 }
@@ -6780,6 +10977,12 @@ type GetJavaFamiliesJavaFamilyCollectionItemArgs struct {
 	EndOfSupportLifeDate pulumi.StringInput `pulumi:"endOfSupportLifeDate"`
 	// The version identifier for the Java family.
 	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
+	// Filter the Java Release Family versions by support status.
+	IsSupportedVersion pulumi.BoolInput `pulumi:"isSupportedVersion"`
+	// List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+	LatestReleaseArtifacts GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayInput `pulumi:"latestReleaseArtifacts"`
+	// Latest Java release version in the family.
+	LatestReleaseVersion pulumi.StringInput `pulumi:"latestReleaseVersion"`
 	// This indicates the support category for the Java release family.
 	SupportType pulumi.StringInput `pulumi:"supportType"`
 }
@@ -6855,6 +11058,23 @@ func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) FamilyVersion() pulumi.St
 	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.FamilyVersion }).(pulumi.StringOutput)
 }
 
+// Filter the Java Release Family versions by support status.
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) IsSupportedVersion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) bool { return v.IsSupportedVersion }).(pulumi.BoolOutput)
+}
+
+// List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) LatestReleaseArtifacts() GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) []GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact {
+		return v.LatestReleaseArtifacts
+	}).(GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput)
+}
+
+// Latest Java release version in the family.
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) LatestReleaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.LatestReleaseVersion }).(pulumi.StringOutput)
+}
+
 // This indicates the support category for the Java release family.
 func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) SupportType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.SupportType }).(pulumi.StringOutput)
@@ -6880,15 +11100,453 @@ func (o GetJavaFamiliesJavaFamilyCollectionItemArrayOutput) Index(i pulumi.IntIn
 	}).(GetJavaFamiliesJavaFamilyCollectionItemOutput)
 }
 
-type GetJavaReleaseArtifact struct {
+type GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact struct {
 	// Approximate compressed file size in bytes.
 	ApproximateFileSizeInBytes string `pulumi:"approximateFileSizeInBytes"`
+	// The target Operating System architecture for the artifact.
+	Architecture string `pulumi:"architecture"`
 	// Product content type of this artifact.
 	ArtifactContentType string `pulumi:"artifactContentType"`
 	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
 	ArtifactDescription string `pulumi:"artifactDescription"`
+	// The file name of the artifact.
+	ArtifactFileName string `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId string `pulumi:"artifactId"`
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	DownloadUrl string `pulumi:"downloadUrl"`
+	// The target Operating System family for the artifact.
+	OsFamily string `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType string `pulumi:"packageType"`
+	// Additional information about the package type.
+	PackageTypeDetail string `pulumi:"packageTypeDetail"`
+	// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+	ScriptChecksumUrl string `pulumi:"scriptChecksumUrl"`
+	// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+	ScriptDownloadUrl string `pulumi:"scriptDownloadUrl"`
+	// SHA256 checksum of the artifact.
+	Sha256 string `pulumi:"sha256"`
+}
+
+// GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactInput is an input type that accepts GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArgs and GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput values.
+// You can construct a concrete instance of `GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactInput` via:
+//
+//	GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArgs{...}
+type GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactInput interface {
+	pulumi.Input
+
+	ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput() GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput
+	ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutputWithContext(context.Context) GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput
+}
+
+type GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArgs struct {
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes pulumi.StringInput `pulumi:"approximateFileSizeInBytes"`
+	// The target Operating System architecture for the artifact.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// Product content type of this artifact.
+	ArtifactContentType pulumi.StringInput `pulumi:"artifactContentType"`
+	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+	ArtifactDescription pulumi.StringInput `pulumi:"artifactDescription"`
+	// The file name of the artifact.
+	ArtifactFileName pulumi.StringInput `pulumi:"artifactFileName"`
+	// Unique identifier for the artifact.
+	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
+	// The target Operating System family for the artifact.
+	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType pulumi.StringInput `pulumi:"packageType"`
+	// Additional information about the package type.
+	PackageTypeDetail pulumi.StringInput `pulumi:"packageTypeDetail"`
+	// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+	ScriptChecksumUrl pulumi.StringInput `pulumi:"scriptChecksumUrl"`
+	// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+	ScriptDownloadUrl pulumi.StringInput `pulumi:"scriptDownloadUrl"`
+	// SHA256 checksum of the artifact.
+	Sha256 pulumi.StringInput `pulumi:"sha256"`
+}
+
+func (GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (i GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArgs) ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput() GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput {
+	return i.ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutputWithContext(context.Background())
+}
+
+func (i GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArgs) ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput)
+}
+
+// GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayInput is an input type that accepts GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArray and GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput values.
+// You can construct a concrete instance of `GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayInput` via:
+//
+//	GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArray{ GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArgs{...} }
+type GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput() GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput
+	ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutputWithContext(context.Context) GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput
+}
+
+type GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArray []GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactInput
+
+func (GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (i GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArray) ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput() GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput {
+	return i.ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArray) ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput)
+}
+
+type GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput struct{ *pulumi.OutputState }
+
+func (GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput() GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput {
+	return o
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput {
+	return o
+}
+
+// Approximate compressed file size in bytes.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) ApproximateFileSizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string {
+		return v.ApproximateFileSizeInBytes
+	}).(pulumi.StringOutput)
+}
+
+// The target Operating System architecture for the artifact.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
+// Product content type of this artifact.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) ArtifactContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string {
+		return v.ArtifactContentType
+	}).(pulumi.StringOutput)
+}
+
+// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) ArtifactDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string {
+		return v.ArtifactDescription
+	}).(pulumi.StringOutput)
+}
+
+// The file name of the artifact.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) ArtifactFileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string { return v.ArtifactFileName }).(pulumi.StringOutput)
+}
+
+// Unique identifier for the artifact.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) ArtifactId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
+}
+
+// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) DownloadUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string { return v.DownloadUrl }).(pulumi.StringOutput)
+}
+
+// The target Operating System family for the artifact.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string { return v.OsFamily }).(pulumi.StringOutput)
+}
+
+// The package type(typically the file extension) of the artifact.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) PackageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string { return v.PackageType }).(pulumi.StringOutput)
+}
+
+// Additional information about the package type.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) PackageTypeDetail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string {
+		return v.PackageTypeDetail
+	}).(pulumi.StringOutput)
+}
+
+// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) ScriptChecksumUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string {
+		return v.ScriptChecksumUrl
+	}).(pulumi.StringOutput)
+}
+
+// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) ScriptDownloadUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string {
+		return v.ScriptDownloadUrl
+	}).(pulumi.StringOutput)
+}
+
+// SHA256 checksum of the artifact.
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput) Sha256() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact) string { return v.Sha256 }).(pulumi.StringOutput)
+}
+
+type GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput) ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput() GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput {
+	return o
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput) ToGetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutputWithContext(ctx context.Context) GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput {
+	return o
+}
+
+func (o GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput) Index(i pulumi.IntInput) GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact {
+		return vs[0].([]GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact)[vs[1].(int)]
+	}).(GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput)
+}
+
+type GetJavaFamilyLatestReleaseArtifact struct {
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes string `pulumi:"approximateFileSizeInBytes"`
+	// The target Operating System architecture for the artifact.
+	Architecture string `pulumi:"architecture"`
+	// Product content type of this artifact.
+	ArtifactContentType string `pulumi:"artifactContentType"`
+	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+	ArtifactDescription string `pulumi:"artifactDescription"`
+	// The file name of the artifact.
+	ArtifactFileName string `pulumi:"artifactFileName"`
+	// Unique identifier for the artifact.
+	ArtifactId string `pulumi:"artifactId"`
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	DownloadUrl string `pulumi:"downloadUrl"`
+	// The target Operating System family for the artifact.
+	OsFamily string `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType string `pulumi:"packageType"`
+	// Additional information about the package type.
+	PackageTypeDetail string `pulumi:"packageTypeDetail"`
+	// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+	ScriptChecksumUrl string `pulumi:"scriptChecksumUrl"`
+	// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+	ScriptDownloadUrl string `pulumi:"scriptDownloadUrl"`
+	// SHA256 checksum of the artifact.
+	Sha256 string `pulumi:"sha256"`
+}
+
+// GetJavaFamilyLatestReleaseArtifactInput is an input type that accepts GetJavaFamilyLatestReleaseArtifactArgs and GetJavaFamilyLatestReleaseArtifactOutput values.
+// You can construct a concrete instance of `GetJavaFamilyLatestReleaseArtifactInput` via:
+//
+//	GetJavaFamilyLatestReleaseArtifactArgs{...}
+type GetJavaFamilyLatestReleaseArtifactInput interface {
+	pulumi.Input
+
+	ToGetJavaFamilyLatestReleaseArtifactOutput() GetJavaFamilyLatestReleaseArtifactOutput
+	ToGetJavaFamilyLatestReleaseArtifactOutputWithContext(context.Context) GetJavaFamilyLatestReleaseArtifactOutput
+}
+
+type GetJavaFamilyLatestReleaseArtifactArgs struct {
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes pulumi.StringInput `pulumi:"approximateFileSizeInBytes"`
+	// The target Operating System architecture for the artifact.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// Product content type of this artifact.
+	ArtifactContentType pulumi.StringInput `pulumi:"artifactContentType"`
+	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+	ArtifactDescription pulumi.StringInput `pulumi:"artifactDescription"`
+	// The file name of the artifact.
+	ArtifactFileName pulumi.StringInput `pulumi:"artifactFileName"`
+	// Unique identifier for the artifact.
+	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
+	// The target Operating System family for the artifact.
+	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType pulumi.StringInput `pulumi:"packageType"`
+	// Additional information about the package type.
+	PackageTypeDetail pulumi.StringInput `pulumi:"packageTypeDetail"`
+	// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+	ScriptChecksumUrl pulumi.StringInput `pulumi:"scriptChecksumUrl"`
+	// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+	ScriptDownloadUrl pulumi.StringInput `pulumi:"scriptDownloadUrl"`
+	// SHA256 checksum of the artifact.
+	Sha256 pulumi.StringInput `pulumi:"sha256"`
+}
+
+func (GetJavaFamilyLatestReleaseArtifactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaFamilyLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (i GetJavaFamilyLatestReleaseArtifactArgs) ToGetJavaFamilyLatestReleaseArtifactOutput() GetJavaFamilyLatestReleaseArtifactOutput {
+	return i.ToGetJavaFamilyLatestReleaseArtifactOutputWithContext(context.Background())
+}
+
+func (i GetJavaFamilyLatestReleaseArtifactArgs) ToGetJavaFamilyLatestReleaseArtifactOutputWithContext(ctx context.Context) GetJavaFamilyLatestReleaseArtifactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamilyLatestReleaseArtifactOutput)
+}
+
+// GetJavaFamilyLatestReleaseArtifactArrayInput is an input type that accepts GetJavaFamilyLatestReleaseArtifactArray and GetJavaFamilyLatestReleaseArtifactArrayOutput values.
+// You can construct a concrete instance of `GetJavaFamilyLatestReleaseArtifactArrayInput` via:
+//
+//	GetJavaFamilyLatestReleaseArtifactArray{ GetJavaFamilyLatestReleaseArtifactArgs{...} }
+type GetJavaFamilyLatestReleaseArtifactArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaFamilyLatestReleaseArtifactArrayOutput() GetJavaFamilyLatestReleaseArtifactArrayOutput
+	ToGetJavaFamilyLatestReleaseArtifactArrayOutputWithContext(context.Context) GetJavaFamilyLatestReleaseArtifactArrayOutput
+}
+
+type GetJavaFamilyLatestReleaseArtifactArray []GetJavaFamilyLatestReleaseArtifactInput
+
+func (GetJavaFamilyLatestReleaseArtifactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaFamilyLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (i GetJavaFamilyLatestReleaseArtifactArray) ToGetJavaFamilyLatestReleaseArtifactArrayOutput() GetJavaFamilyLatestReleaseArtifactArrayOutput {
+	return i.ToGetJavaFamilyLatestReleaseArtifactArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaFamilyLatestReleaseArtifactArray) ToGetJavaFamilyLatestReleaseArtifactArrayOutputWithContext(ctx context.Context) GetJavaFamilyLatestReleaseArtifactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaFamilyLatestReleaseArtifactArrayOutput)
+}
+
+type GetJavaFamilyLatestReleaseArtifactOutput struct{ *pulumi.OutputState }
+
+func (GetJavaFamilyLatestReleaseArtifactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaFamilyLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (o GetJavaFamilyLatestReleaseArtifactOutput) ToGetJavaFamilyLatestReleaseArtifactOutput() GetJavaFamilyLatestReleaseArtifactOutput {
+	return o
+}
+
+func (o GetJavaFamilyLatestReleaseArtifactOutput) ToGetJavaFamilyLatestReleaseArtifactOutputWithContext(ctx context.Context) GetJavaFamilyLatestReleaseArtifactOutput {
+	return o
+}
+
+// Approximate compressed file size in bytes.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) ApproximateFileSizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.ApproximateFileSizeInBytes }).(pulumi.StringOutput)
+}
+
+// The target Operating System architecture for the artifact.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
+// Product content type of this artifact.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) ArtifactContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.ArtifactContentType }).(pulumi.StringOutput)
+}
+
+// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) ArtifactDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.ArtifactDescription }).(pulumi.StringOutput)
+}
+
+// The file name of the artifact.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) ArtifactFileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.ArtifactFileName }).(pulumi.StringOutput)
+}
+
+// Unique identifier for the artifact.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) ArtifactId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
+}
+
+// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) DownloadUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.DownloadUrl }).(pulumi.StringOutput)
+}
+
+// The target Operating System family for the artifact.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.OsFamily }).(pulumi.StringOutput)
+}
+
+// The package type(typically the file extension) of the artifact.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) PackageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.PackageType }).(pulumi.StringOutput)
+}
+
+// Additional information about the package type.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) PackageTypeDetail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.PackageTypeDetail }).(pulumi.StringOutput)
+}
+
+// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) ScriptChecksumUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.ScriptChecksumUrl }).(pulumi.StringOutput)
+}
+
+// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) ScriptDownloadUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.ScriptDownloadUrl }).(pulumi.StringOutput)
+}
+
+// SHA256 checksum of the artifact.
+func (o GetJavaFamilyLatestReleaseArtifactOutput) Sha256() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaFamilyLatestReleaseArtifact) string { return v.Sha256 }).(pulumi.StringOutput)
+}
+
+type GetJavaFamilyLatestReleaseArtifactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaFamilyLatestReleaseArtifactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaFamilyLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (o GetJavaFamilyLatestReleaseArtifactArrayOutput) ToGetJavaFamilyLatestReleaseArtifactArrayOutput() GetJavaFamilyLatestReleaseArtifactArrayOutput {
+	return o
+}
+
+func (o GetJavaFamilyLatestReleaseArtifactArrayOutput) ToGetJavaFamilyLatestReleaseArtifactArrayOutputWithContext(ctx context.Context) GetJavaFamilyLatestReleaseArtifactArrayOutput {
+	return o
+}
+
+func (o GetJavaFamilyLatestReleaseArtifactArrayOutput) Index(i pulumi.IntInput) GetJavaFamilyLatestReleaseArtifactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaFamilyLatestReleaseArtifact {
+		return vs[0].([]GetJavaFamilyLatestReleaseArtifact)[vs[1].(int)]
+	}).(GetJavaFamilyLatestReleaseArtifactOutput)
+}
+
+type GetJavaReleaseArtifact struct {
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes string `pulumi:"approximateFileSizeInBytes"`
+	// The target Operating System architecture for the artifact.
+	Architecture string `pulumi:"architecture"`
+	// Product content type of this artifact.
+	ArtifactContentType string `pulumi:"artifactContentType"`
+	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+	ArtifactDescription string `pulumi:"artifactDescription"`
+	// The file name of the artifact.
+	ArtifactFileName string `pulumi:"artifactFileName"`
+	// Unique identifier for the artifact.
+	ArtifactId string `pulumi:"artifactId"`
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	DownloadUrl string `pulumi:"downloadUrl"`
+	// The target Operating System family for the artifact.
+	OsFamily string `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType string `pulumi:"packageType"`
+	// Additional information about the package type.
+	PackageTypeDetail string `pulumi:"packageTypeDetail"`
+	// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+	ScriptChecksumUrl string `pulumi:"scriptChecksumUrl"`
+	// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+	ScriptDownloadUrl string `pulumi:"scriptDownloadUrl"`
 	// SHA256 checksum of the artifact.
 	Sha256 string `pulumi:"sha256"`
 }
@@ -6907,12 +11565,28 @@ type GetJavaReleaseArtifactInput interface {
 type GetJavaReleaseArtifactArgs struct {
 	// Approximate compressed file size in bytes.
 	ApproximateFileSizeInBytes pulumi.StringInput `pulumi:"approximateFileSizeInBytes"`
+	// The target Operating System architecture for the artifact.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
 	// Product content type of this artifact.
 	ArtifactContentType pulumi.StringInput `pulumi:"artifactContentType"`
 	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
 	ArtifactDescription pulumi.StringInput `pulumi:"artifactDescription"`
+	// The file name of the artifact.
+	ArtifactFileName pulumi.StringInput `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
+	// The target Operating System family for the artifact.
+	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType pulumi.StringInput `pulumi:"packageType"`
+	// Additional information about the package type.
+	PackageTypeDetail pulumi.StringInput `pulumi:"packageTypeDetail"`
+	// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+	ScriptChecksumUrl pulumi.StringInput `pulumi:"scriptChecksumUrl"`
+	// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+	ScriptDownloadUrl pulumi.StringInput `pulumi:"scriptDownloadUrl"`
 	// SHA256 checksum of the artifact.
 	Sha256 pulumi.StringInput `pulumi:"sha256"`
 }
@@ -6973,6 +11647,11 @@ func (o GetJavaReleaseArtifactOutput) ApproximateFileSizeInBytes() pulumi.String
 	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ApproximateFileSizeInBytes }).(pulumi.StringOutput)
 }
 
+// The target Operating System architecture for the artifact.
+func (o GetJavaReleaseArtifactOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
 // Product content type of this artifact.
 func (o GetJavaReleaseArtifactOutput) ArtifactContentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ArtifactContentType }).(pulumi.StringOutput)
@@ -6983,9 +11662,44 @@ func (o GetJavaReleaseArtifactOutput) ArtifactDescription() pulumi.StringOutput 
 	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ArtifactDescription }).(pulumi.StringOutput)
 }
 
+// The file name of the artifact.
+func (o GetJavaReleaseArtifactOutput) ArtifactFileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ArtifactFileName }).(pulumi.StringOutput)
+}
+
 // Unique identifier for the artifact.
 func (o GetJavaReleaseArtifactOutput) ArtifactId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
+}
+
+// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+func (o GetJavaReleaseArtifactOutput) DownloadUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.DownloadUrl }).(pulumi.StringOutput)
+}
+
+// The target Operating System family for the artifact.
+func (o GetJavaReleaseArtifactOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.OsFamily }).(pulumi.StringOutput)
+}
+
+// The package type(typically the file extension) of the artifact.
+func (o GetJavaReleaseArtifactOutput) PackageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.PackageType }).(pulumi.StringOutput)
+}
+
+// Additional information about the package type.
+func (o GetJavaReleaseArtifactOutput) PackageTypeDetail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.PackageTypeDetail }).(pulumi.StringOutput)
+}
+
+// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+func (o GetJavaReleaseArtifactOutput) ScriptChecksumUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ScriptChecksumUrl }).(pulumi.StringOutput)
+}
+
+// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+func (o GetJavaReleaseArtifactOutput) ScriptDownloadUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseArtifact) string { return v.ScriptDownloadUrl }).(pulumi.StringOutput)
 }
 
 // SHA256 checksum of the artifact.
@@ -7014,7 +11728,7 @@ func (o GetJavaReleaseArtifactArrayOutput) Index(i pulumi.IntInput) GetJavaRelea
 }
 
 type GetJavaReleaseFamilyDetail struct {
-	// Commonly used name for the license type.
+	// Commonly used name for the MoS release.
 	DisplayName string `pulumi:"displayName"`
 	// Link to access the documentation for the release.
 	DocUrl string `pulumi:"docUrl"`
@@ -7022,6 +11736,12 @@ type GetJavaReleaseFamilyDetail struct {
 	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
 	// Java release family identifier.
 	FamilyVersion string `pulumi:"familyVersion"`
+	// Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+	IsSupportedVersion bool `pulumi:"isSupportedVersion"`
+	// List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+	LatestReleaseArtifacts []GetJavaReleaseFamilyDetailLatestReleaseArtifact `pulumi:"latestReleaseArtifacts"`
+	// Latest Java release version in the family.
+	LatestReleaseVersion string `pulumi:"latestReleaseVersion"`
 	// This indicates the support category for the Java release family.
 	SupportType string `pulumi:"supportType"`
 }
@@ -7038,7 +11758,7 @@ type GetJavaReleaseFamilyDetailInput interface {
 }
 
 type GetJavaReleaseFamilyDetailArgs struct {
-	// Commonly used name for the license type.
+	// Commonly used name for the MoS release.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Link to access the documentation for the release.
 	DocUrl pulumi.StringInput `pulumi:"docUrl"`
@@ -7046,6 +11766,12 @@ type GetJavaReleaseFamilyDetailArgs struct {
 	EndOfSupportLifeDate pulumi.StringInput `pulumi:"endOfSupportLifeDate"`
 	// Java release family identifier.
 	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
+	// Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+	IsSupportedVersion pulumi.BoolInput `pulumi:"isSupportedVersion"`
+	// List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+	LatestReleaseArtifacts GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayInput `pulumi:"latestReleaseArtifacts"`
+	// Latest Java release version in the family.
+	LatestReleaseVersion pulumi.StringInput `pulumi:"latestReleaseVersion"`
 	// This indicates the support category for the Java release family.
 	SupportType pulumi.StringInput `pulumi:"supportType"`
 }
@@ -7101,7 +11827,7 @@ func (o GetJavaReleaseFamilyDetailOutput) ToGetJavaReleaseFamilyDetailOutputWith
 	return o
 }
 
-// Commonly used name for the license type.
+// Commonly used name for the MoS release.
 func (o GetJavaReleaseFamilyDetailOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -7119,6 +11845,23 @@ func (o GetJavaReleaseFamilyDetailOutput) EndOfSupportLifeDate() pulumi.StringOu
 // Java release family identifier.
 func (o GetJavaReleaseFamilyDetailOutput) FamilyVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.FamilyVersion }).(pulumi.StringOutput)
+}
+
+// Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+func (o GetJavaReleaseFamilyDetailOutput) IsSupportedVersion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) bool { return v.IsSupportedVersion }).(pulumi.BoolOutput)
+}
+
+// List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+func (o GetJavaReleaseFamilyDetailOutput) LatestReleaseArtifacts() GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) []GetJavaReleaseFamilyDetailLatestReleaseArtifact {
+		return v.LatestReleaseArtifacts
+	}).(GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput)
+}
+
+// Latest Java release version in the family.
+func (o GetJavaReleaseFamilyDetailOutput) LatestReleaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.LatestReleaseVersion }).(pulumi.StringOutput)
 }
 
 // This indicates the support category for the Java release family.
@@ -7146,8 +11889,213 @@ func (o GetJavaReleaseFamilyDetailArrayOutput) Index(i pulumi.IntInput) GetJavaR
 	}).(GetJavaReleaseFamilyDetailOutput)
 }
 
+type GetJavaReleaseFamilyDetailLatestReleaseArtifact struct {
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes string `pulumi:"approximateFileSizeInBytes"`
+	// The target Operating System architecture for the artifact.
+	Architecture string `pulumi:"architecture"`
+	// Product content type of this artifact.
+	ArtifactContentType string `pulumi:"artifactContentType"`
+	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+	ArtifactDescription string `pulumi:"artifactDescription"`
+	// The file name of the artifact.
+	ArtifactFileName string `pulumi:"artifactFileName"`
+	// Unique identifier for the artifact.
+	ArtifactId string `pulumi:"artifactId"`
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	DownloadUrl string `pulumi:"downloadUrl"`
+	// The target Operating System family for the artifact.
+	OsFamily string `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType string `pulumi:"packageType"`
+	// Additional information about the package type.
+	PackageTypeDetail string `pulumi:"packageTypeDetail"`
+	// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+	ScriptChecksumUrl string `pulumi:"scriptChecksumUrl"`
+	// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+	ScriptDownloadUrl string `pulumi:"scriptDownloadUrl"`
+	// SHA256 checksum of the artifact.
+	Sha256 string `pulumi:"sha256"`
+}
+
+// GetJavaReleaseFamilyDetailLatestReleaseArtifactInput is an input type that accepts GetJavaReleaseFamilyDetailLatestReleaseArtifactArgs and GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput values.
+// You can construct a concrete instance of `GetJavaReleaseFamilyDetailLatestReleaseArtifactInput` via:
+//
+//	GetJavaReleaseFamilyDetailLatestReleaseArtifactArgs{...}
+type GetJavaReleaseFamilyDetailLatestReleaseArtifactInput interface {
+	pulumi.Input
+
+	ToGetJavaReleaseFamilyDetailLatestReleaseArtifactOutput() GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput
+	ToGetJavaReleaseFamilyDetailLatestReleaseArtifactOutputWithContext(context.Context) GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput
+}
+
+type GetJavaReleaseFamilyDetailLatestReleaseArtifactArgs struct {
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes pulumi.StringInput `pulumi:"approximateFileSizeInBytes"`
+	// The target Operating System architecture for the artifact.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// Product content type of this artifact.
+	ArtifactContentType pulumi.StringInput `pulumi:"artifactContentType"`
+	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+	ArtifactDescription pulumi.StringInput `pulumi:"artifactDescription"`
+	// The file name of the artifact.
+	ArtifactFileName pulumi.StringInput `pulumi:"artifactFileName"`
+	// Unique identifier for the artifact.
+	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
+	// The target Operating System family for the artifact.
+	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType pulumi.StringInput `pulumi:"packageType"`
+	// Additional information about the package type.
+	PackageTypeDetail pulumi.StringInput `pulumi:"packageTypeDetail"`
+	// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+	ScriptChecksumUrl pulumi.StringInput `pulumi:"scriptChecksumUrl"`
+	// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+	ScriptDownloadUrl pulumi.StringInput `pulumi:"scriptDownloadUrl"`
+	// SHA256 checksum of the artifact.
+	Sha256 pulumi.StringInput `pulumi:"sha256"`
+}
+
+func (GetJavaReleaseFamilyDetailLatestReleaseArtifactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleaseFamilyDetailLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (i GetJavaReleaseFamilyDetailLatestReleaseArtifactArgs) ToGetJavaReleaseFamilyDetailLatestReleaseArtifactOutput() GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput {
+	return i.ToGetJavaReleaseFamilyDetailLatestReleaseArtifactOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleaseFamilyDetailLatestReleaseArtifactArgs) ToGetJavaReleaseFamilyDetailLatestReleaseArtifactOutputWithContext(ctx context.Context) GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput)
+}
+
+// GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayInput is an input type that accepts GetJavaReleaseFamilyDetailLatestReleaseArtifactArray and GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayInput` via:
+//
+//	GetJavaReleaseFamilyDetailLatestReleaseArtifactArray{ GetJavaReleaseFamilyDetailLatestReleaseArtifactArgs{...} }
+type GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput() GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput
+	ToGetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutputWithContext(context.Context) GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput
+}
+
+type GetJavaReleaseFamilyDetailLatestReleaseArtifactArray []GetJavaReleaseFamilyDetailLatestReleaseArtifactInput
+
+func (GetJavaReleaseFamilyDetailLatestReleaseArtifactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleaseFamilyDetailLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (i GetJavaReleaseFamilyDetailLatestReleaseArtifactArray) ToGetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput() GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput {
+	return i.ToGetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleaseFamilyDetailLatestReleaseArtifactArray) ToGetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutputWithContext(ctx context.Context) GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput)
+}
+
+type GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleaseFamilyDetailLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) ToGetJavaReleaseFamilyDetailLatestReleaseArtifactOutput() GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput {
+	return o
+}
+
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) ToGetJavaReleaseFamilyDetailLatestReleaseArtifactOutputWithContext(ctx context.Context) GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput {
+	return o
+}
+
+// Approximate compressed file size in bytes.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) ApproximateFileSizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.ApproximateFileSizeInBytes }).(pulumi.StringOutput)
+}
+
+// The target Operating System architecture for the artifact.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
+// Product content type of this artifact.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) ArtifactContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.ArtifactContentType }).(pulumi.StringOutput)
+}
+
+// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) ArtifactDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.ArtifactDescription }).(pulumi.StringOutput)
+}
+
+// The file name of the artifact.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) ArtifactFileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.ArtifactFileName }).(pulumi.StringOutput)
+}
+
+// Unique identifier for the artifact.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) ArtifactId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
+}
+
+// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) DownloadUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.DownloadUrl }).(pulumi.StringOutput)
+}
+
+// The target Operating System family for the artifact.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.OsFamily }).(pulumi.StringOutput)
+}
+
+// The package type(typically the file extension) of the artifact.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) PackageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.PackageType }).(pulumi.StringOutput)
+}
+
+// Additional information about the package type.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) PackageTypeDetail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.PackageTypeDetail }).(pulumi.StringOutput)
+}
+
+// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) ScriptChecksumUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.ScriptChecksumUrl }).(pulumi.StringOutput)
+}
+
+// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) ScriptDownloadUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.ScriptDownloadUrl }).(pulumi.StringOutput)
+}
+
+// SHA256 checksum of the artifact.
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput) Sha256() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetailLatestReleaseArtifact) string { return v.Sha256 }).(pulumi.StringOutput)
+}
+
+type GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleaseFamilyDetailLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput) ToGetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput() GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput {
+	return o
+}
+
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput) ToGetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutputWithContext(ctx context.Context) GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput {
+	return o
+}
+
+func (o GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput) Index(i pulumi.IntInput) GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleaseFamilyDetailLatestReleaseArtifact {
+		return vs[0].([]GetJavaReleaseFamilyDetailLatestReleaseArtifact)[vs[1].(int)]
+	}).(GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput)
+}
+
 type GetJavaReleaseLicenseDetail struct {
-	// Commonly used name for the license type.
+	// Commonly used name for the MoS release.
 	DisplayName string `pulumi:"displayName"`
 	// License type for the Java version.
 	LicenseType string `pulumi:"licenseType"`
@@ -7167,7 +12115,7 @@ type GetJavaReleaseLicenseDetailInput interface {
 }
 
 type GetJavaReleaseLicenseDetailArgs struct {
-	// Commonly used name for the license type.
+	// Commonly used name for the MoS release.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// License type for the Java version.
 	LicenseType pulumi.StringInput `pulumi:"licenseType"`
@@ -7226,7 +12174,7 @@ func (o GetJavaReleaseLicenseDetailOutput) ToGetJavaReleaseLicenseDetailOutputWi
 	return o
 }
 
-// Commonly used name for the license type.
+// Commonly used name for the MoS release.
 func (o GetJavaReleaseLicenseDetailOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleaseLicenseDetail) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -7259,6 +12207,112 @@ func (o GetJavaReleaseLicenseDetailArrayOutput) Index(i pulumi.IntInput) GetJava
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleaseLicenseDetail {
 		return vs[0].([]GetJavaReleaseLicenseDetail)[vs[1].(int)]
 	}).(GetJavaReleaseLicenseDetailOutput)
+}
+
+type GetJavaReleaseMosPatch struct {
+	// Commonly used name for the MoS release.
+	DisplayName string `pulumi:"displayName"`
+	// MoS URL to access the artifacts for the Java release.
+	PatchUrl string `pulumi:"patchUrl"`
+}
+
+// GetJavaReleaseMosPatchInput is an input type that accepts GetJavaReleaseMosPatchArgs and GetJavaReleaseMosPatchOutput values.
+// You can construct a concrete instance of `GetJavaReleaseMosPatchInput` via:
+//
+//	GetJavaReleaseMosPatchArgs{...}
+type GetJavaReleaseMosPatchInput interface {
+	pulumi.Input
+
+	ToGetJavaReleaseMosPatchOutput() GetJavaReleaseMosPatchOutput
+	ToGetJavaReleaseMosPatchOutputWithContext(context.Context) GetJavaReleaseMosPatchOutput
+}
+
+type GetJavaReleaseMosPatchArgs struct {
+	// Commonly used name for the MoS release.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// MoS URL to access the artifacts for the Java release.
+	PatchUrl pulumi.StringInput `pulumi:"patchUrl"`
+}
+
+func (GetJavaReleaseMosPatchArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleaseMosPatch)(nil)).Elem()
+}
+
+func (i GetJavaReleaseMosPatchArgs) ToGetJavaReleaseMosPatchOutput() GetJavaReleaseMosPatchOutput {
+	return i.ToGetJavaReleaseMosPatchOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleaseMosPatchArgs) ToGetJavaReleaseMosPatchOutputWithContext(ctx context.Context) GetJavaReleaseMosPatchOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseMosPatchOutput)
+}
+
+// GetJavaReleaseMosPatchArrayInput is an input type that accepts GetJavaReleaseMosPatchArray and GetJavaReleaseMosPatchArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleaseMosPatchArrayInput` via:
+//
+//	GetJavaReleaseMosPatchArray{ GetJavaReleaseMosPatchArgs{...} }
+type GetJavaReleaseMosPatchArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleaseMosPatchArrayOutput() GetJavaReleaseMosPatchArrayOutput
+	ToGetJavaReleaseMosPatchArrayOutputWithContext(context.Context) GetJavaReleaseMosPatchArrayOutput
+}
+
+type GetJavaReleaseMosPatchArray []GetJavaReleaseMosPatchInput
+
+func (GetJavaReleaseMosPatchArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleaseMosPatch)(nil)).Elem()
+}
+
+func (i GetJavaReleaseMosPatchArray) ToGetJavaReleaseMosPatchArrayOutput() GetJavaReleaseMosPatchArrayOutput {
+	return i.ToGetJavaReleaseMosPatchArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleaseMosPatchArray) ToGetJavaReleaseMosPatchArrayOutputWithContext(ctx context.Context) GetJavaReleaseMosPatchArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleaseMosPatchArrayOutput)
+}
+
+type GetJavaReleaseMosPatchOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleaseMosPatchOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleaseMosPatch)(nil)).Elem()
+}
+
+func (o GetJavaReleaseMosPatchOutput) ToGetJavaReleaseMosPatchOutput() GetJavaReleaseMosPatchOutput {
+	return o
+}
+
+func (o GetJavaReleaseMosPatchOutput) ToGetJavaReleaseMosPatchOutputWithContext(ctx context.Context) GetJavaReleaseMosPatchOutput {
+	return o
+}
+
+// Commonly used name for the MoS release.
+func (o GetJavaReleaseMosPatchOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseMosPatch) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// MoS URL to access the artifacts for the Java release.
+func (o GetJavaReleaseMosPatchOutput) PatchUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleaseMosPatch) string { return v.PatchUrl }).(pulumi.StringOutput)
+}
+
+type GetJavaReleaseMosPatchArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleaseMosPatchArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleaseMosPatch)(nil)).Elem()
+}
+
+func (o GetJavaReleaseMosPatchArrayOutput) ToGetJavaReleaseMosPatchArrayOutput() GetJavaReleaseMosPatchArrayOutput {
+	return o
+}
+
+func (o GetJavaReleaseMosPatchArrayOutput) ToGetJavaReleaseMosPatchArrayOutputWithContext(ctx context.Context) GetJavaReleaseMosPatchArrayOutput {
+	return o
+}
+
+func (o GetJavaReleaseMosPatchArrayOutput) Index(i pulumi.IntInput) GetJavaReleaseMosPatchOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleaseMosPatch {
+		return vs[0].([]GetJavaReleaseMosPatch)[vs[1].(int)]
+	}).(GetJavaReleaseMosPatchOutput)
 }
 
 type GetJavaReleasesFilter struct {
@@ -7468,6 +12522,8 @@ type GetJavaReleasesJavaReleaseCollectionItem struct {
 	ArtifactContentTypes []string `pulumi:"artifactContentTypes"`
 	// List of Java artifacts.
 	Artifacts []GetJavaReleasesJavaReleaseCollectionItemArtifact `pulumi:"artifacts"`
+	// The number of days since this release has been under the security baseline.
+	DaysUnderSecurityBaseline int `pulumi:"daysUnderSecurityBaseline"`
 	// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 	FamilyDetails []GetJavaReleasesJavaReleaseCollectionItemFamilyDetail `pulumi:"familyDetails"`
 	// The version identifier for the Java family.
@@ -7476,6 +12532,8 @@ type GetJavaReleasesJavaReleaseCollectionItem struct {
 	LicenseDetails []GetJavaReleasesJavaReleaseCollectionItemLicenseDetail `pulumi:"licenseDetails"`
 	// Java license type.
 	LicenseType string `pulumi:"licenseType"`
+	// List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
+	MosPatches []GetJavaReleasesJavaReleaseCollectionItemMosPatch `pulumi:"mosPatches"`
 	// Parent Java release version identifier. This is applicable for BPR releases.
 	ParentReleaseVersion string `pulumi:"parentReleaseVersion"`
 	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -7506,6 +12564,8 @@ type GetJavaReleasesJavaReleaseCollectionItemArgs struct {
 	ArtifactContentTypes pulumi.StringArrayInput `pulumi:"artifactContentTypes"`
 	// List of Java artifacts.
 	Artifacts GetJavaReleasesJavaReleaseCollectionItemArtifactArrayInput `pulumi:"artifacts"`
+	// The number of days since this release has been under the security baseline.
+	DaysUnderSecurityBaseline pulumi.IntInput `pulumi:"daysUnderSecurityBaseline"`
 	// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 	FamilyDetails GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayInput `pulumi:"familyDetails"`
 	// The version identifier for the Java family.
@@ -7514,6 +12574,8 @@ type GetJavaReleasesJavaReleaseCollectionItemArgs struct {
 	LicenseDetails GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayInput `pulumi:"licenseDetails"`
 	// Java license type.
 	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	// List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
+	MosPatches GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayInput `pulumi:"mosPatches"`
 	// Parent Java release version identifier. This is applicable for BPR releases.
 	ParentReleaseVersion pulumi.StringInput `pulumi:"parentReleaseVersion"`
 	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -7591,6 +12653,11 @@ func (o GetJavaReleasesJavaReleaseCollectionItemOutput) Artifacts() GetJavaRelea
 	}).(GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput)
 }
 
+// The number of days since this release has been under the security baseline.
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) DaysUnderSecurityBaseline() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) int { return v.DaysUnderSecurityBaseline }).(pulumi.IntOutput)
+}
+
 // Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 func (o GetJavaReleasesJavaReleaseCollectionItemOutput) FamilyDetails() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) []GetJavaReleasesJavaReleaseCollectionItemFamilyDetail {
@@ -7613,6 +12680,13 @@ func (o GetJavaReleasesJavaReleaseCollectionItemOutput) LicenseDetails() GetJava
 // Java license type.
 func (o GetJavaReleasesJavaReleaseCollectionItemOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) string { return v.LicenseType }).(pulumi.StringOutput)
+}
+
+// List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
+func (o GetJavaReleasesJavaReleaseCollectionItemOutput) MosPatches() GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItem) []GetJavaReleasesJavaReleaseCollectionItemMosPatch {
+		return v.MosPatches
+	}).(GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput)
 }
 
 // Parent Java release version identifier. This is applicable for BPR releases.
@@ -7668,12 +12742,28 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArrayOutput) Index(i pulumi.IntI
 type GetJavaReleasesJavaReleaseCollectionItemArtifact struct {
 	// Approximate compressed file size in bytes.
 	ApproximateFileSizeInBytes string `pulumi:"approximateFileSizeInBytes"`
+	// The target Operating System architecture for the artifact.
+	Architecture string `pulumi:"architecture"`
 	// Product content type of this artifact.
 	ArtifactContentType string `pulumi:"artifactContentType"`
 	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
 	ArtifactDescription string `pulumi:"artifactDescription"`
+	// The file name of the artifact.
+	ArtifactFileName string `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId string `pulumi:"artifactId"`
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	DownloadUrl string `pulumi:"downloadUrl"`
+	// The target Operating System family for the artifact.
+	OsFamily string `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType string `pulumi:"packageType"`
+	// Additional information about the package type.
+	PackageTypeDetail string `pulumi:"packageTypeDetail"`
+	// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+	ScriptChecksumUrl string `pulumi:"scriptChecksumUrl"`
+	// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+	ScriptDownloadUrl string `pulumi:"scriptDownloadUrl"`
 	// SHA256 checksum of the artifact.
 	Sha256 string `pulumi:"sha256"`
 }
@@ -7692,12 +12782,28 @@ type GetJavaReleasesJavaReleaseCollectionItemArtifactInput interface {
 type GetJavaReleasesJavaReleaseCollectionItemArtifactArgs struct {
 	// Approximate compressed file size in bytes.
 	ApproximateFileSizeInBytes pulumi.StringInput `pulumi:"approximateFileSizeInBytes"`
+	// The target Operating System architecture for the artifact.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
 	// Product content type of this artifact.
 	ArtifactContentType pulumi.StringInput `pulumi:"artifactContentType"`
 	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
 	ArtifactDescription pulumi.StringInput `pulumi:"artifactDescription"`
+	// The file name of the artifact.
+	ArtifactFileName pulumi.StringInput `pulumi:"artifactFileName"`
 	// Unique identifier for the artifact.
 	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
+	// The target Operating System family for the artifact.
+	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType pulumi.StringInput `pulumi:"packageType"`
+	// Additional information about the package type.
+	PackageTypeDetail pulumi.StringInput `pulumi:"packageTypeDetail"`
+	// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+	ScriptChecksumUrl pulumi.StringInput `pulumi:"scriptChecksumUrl"`
+	// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+	ScriptDownloadUrl pulumi.StringInput `pulumi:"scriptDownloadUrl"`
 	// SHA256 checksum of the artifact.
 	Sha256 pulumi.StringInput `pulumi:"sha256"`
 }
@@ -7758,6 +12864,11 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ApproximateFileS
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ApproximateFileSizeInBytes }).(pulumi.StringOutput)
 }
 
+// The target Operating System architecture for the artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.Architecture }).(pulumi.StringOutput)
+}
+
 // Product content type of this artifact.
 func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactContentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ArtifactContentType }).(pulumi.StringOutput)
@@ -7768,9 +12879,44 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactDescript
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ArtifactDescription }).(pulumi.StringOutput)
 }
 
+// The file name of the artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactFileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ArtifactFileName }).(pulumi.StringOutput)
+}
+
 // Unique identifier for the artifact.
 func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ArtifactId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ArtifactId }).(pulumi.StringOutput)
+}
+
+// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) DownloadUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.DownloadUrl }).(pulumi.StringOutput)
+}
+
+// The target Operating System family for the artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.OsFamily }).(pulumi.StringOutput)
+}
+
+// The package type(typically the file extension) of the artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) PackageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.PackageType }).(pulumi.StringOutput)
+}
+
+// Additional information about the package type.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) PackageTypeDetail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.PackageTypeDetail }).(pulumi.StringOutput)
+}
+
+// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ScriptChecksumUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ScriptChecksumUrl }).(pulumi.StringOutput)
+}
+
+// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+func (o GetJavaReleasesJavaReleaseCollectionItemArtifactOutput) ScriptDownloadUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemArtifact) string { return v.ScriptDownloadUrl }).(pulumi.StringOutput)
 }
 
 // SHA256 checksum of the artifact.
@@ -7799,7 +12945,7 @@ func (o GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput) Index(i pul
 }
 
 type GetJavaReleasesJavaReleaseCollectionItemFamilyDetail struct {
-	// Commonly used name for the license type.
+	// Commonly used name for the MoS release.
 	DisplayName string `pulumi:"displayName"`
 	// Link to access the documentation for the release.
 	DocUrl string `pulumi:"docUrl"`
@@ -7807,6 +12953,12 @@ type GetJavaReleasesJavaReleaseCollectionItemFamilyDetail struct {
 	EndOfSupportLifeDate string `pulumi:"endOfSupportLifeDate"`
 	// The version identifier for the Java family.
 	FamilyVersion string `pulumi:"familyVersion"`
+	// Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+	IsSupportedVersion bool `pulumi:"isSupportedVersion"`
+	// List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+	LatestReleaseArtifacts []GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact `pulumi:"latestReleaseArtifacts"`
+	// Latest Java release version in the family.
+	LatestReleaseVersion string `pulumi:"latestReleaseVersion"`
 	// This indicates the support category for the Java release family.
 	SupportType string `pulumi:"supportType"`
 }
@@ -7823,7 +12975,7 @@ type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailInput interface {
 }
 
 type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs struct {
-	// Commonly used name for the license type.
+	// Commonly used name for the MoS release.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Link to access the documentation for the release.
 	DocUrl pulumi.StringInput `pulumi:"docUrl"`
@@ -7831,6 +12983,12 @@ type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs struct {
 	EndOfSupportLifeDate pulumi.StringInput `pulumi:"endOfSupportLifeDate"`
 	// The version identifier for the Java family.
 	FamilyVersion pulumi.StringInput `pulumi:"familyVersion"`
+	// Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+	IsSupportedVersion pulumi.BoolInput `pulumi:"isSupportedVersion"`
+	// List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+	LatestReleaseArtifacts GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayInput `pulumi:"latestReleaseArtifacts"`
+	// Latest Java release version in the family.
+	LatestReleaseVersion pulumi.StringInput `pulumi:"latestReleaseVersion"`
 	// This indicates the support category for the Java release family.
 	SupportType pulumi.StringInput `pulumi:"supportType"`
 }
@@ -7886,7 +13044,7 @@ func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) ToGetJavaRel
 	return o
 }
 
-// Commonly used name for the license type.
+// Commonly used name for the MoS release.
 func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -7904,6 +13062,23 @@ func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) EndOfSupport
 // The version identifier for the Java family.
 func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) FamilyVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.FamilyVersion }).(pulumi.StringOutput)
+}
+
+// Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) IsSupportedVersion() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) bool { return v.IsSupportedVersion }).(pulumi.BoolOutput)
+}
+
+// List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) LatestReleaseArtifacts() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) []GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact {
+		return v.LatestReleaseArtifacts
+	}).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput)
+}
+
+// Latest Java release version in the family.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) LatestReleaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.LatestReleaseVersion }).(pulumi.StringOutput)
 }
 
 // This indicates the support category for the Java release family.
@@ -7931,8 +13106,239 @@ func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput) Index(i
 	}).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput)
 }
 
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact struct {
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes string `pulumi:"approximateFileSizeInBytes"`
+	// The target Operating System architecture for the artifact.
+	Architecture string `pulumi:"architecture"`
+	// Product content type of this artifact.
+	ArtifactContentType string `pulumi:"artifactContentType"`
+	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+	ArtifactDescription string `pulumi:"artifactDescription"`
+	// The file name of the artifact.
+	ArtifactFileName string `pulumi:"artifactFileName"`
+	// Unique identifier for the artifact.
+	ArtifactId string `pulumi:"artifactId"`
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	DownloadUrl string `pulumi:"downloadUrl"`
+	// The target Operating System family for the artifact.
+	OsFamily string `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType string `pulumi:"packageType"`
+	// Additional information about the package type.
+	PackageTypeDetail string `pulumi:"packageTypeDetail"`
+	// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+	ScriptChecksumUrl string `pulumi:"scriptChecksumUrl"`
+	// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+	ScriptDownloadUrl string `pulumi:"scriptDownloadUrl"`
+	// SHA256 checksum of the artifact.
+	Sha256 string `pulumi:"sha256"`
+}
+
+// GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArgs and GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArgs{...}
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput
+	ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArgs struct {
+	// Approximate compressed file size in bytes.
+	ApproximateFileSizeInBytes pulumi.StringInput `pulumi:"approximateFileSizeInBytes"`
+	// The target Operating System architecture for the artifact.
+	Architecture pulumi.StringInput `pulumi:"architecture"`
+	// Product content type of this artifact.
+	ArtifactContentType pulumi.StringInput `pulumi:"artifactContentType"`
+	// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+	ArtifactDescription pulumi.StringInput `pulumi:"artifactDescription"`
+	// The file name of the artifact.
+	ArtifactFileName pulumi.StringInput `pulumi:"artifactFileName"`
+	// Unique identifier for the artifact.
+	ArtifactId pulumi.StringInput `pulumi:"artifactId"`
+	// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+	DownloadUrl pulumi.StringInput `pulumi:"downloadUrl"`
+	// The target Operating System family for the artifact.
+	OsFamily pulumi.StringInput `pulumi:"osFamily"`
+	// The package type(typically the file extension) of the artifact.
+	PackageType pulumi.StringInput `pulumi:"packageType"`
+	// Additional information about the package type.
+	PackageTypeDetail pulumi.StringInput `pulumi:"packageTypeDetail"`
+	// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+	ScriptChecksumUrl pulumi.StringInput `pulumi:"scriptChecksumUrl"`
+	// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+	ScriptDownloadUrl pulumi.StringInput `pulumi:"scriptDownloadUrl"`
+	// SHA256 checksum of the artifact.
+	Sha256 pulumi.StringInput `pulumi:"sha256"`
+}
+
+func (GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArgs) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArgs) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput)
+}
+
+// GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArray and GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArray{ GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArgs{...} }
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput
+	ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArray []GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactInput
+
+func (GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArray) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArray) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput {
+	return o
+}
+
+// Approximate compressed file size in bytes.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) ApproximateFileSizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.ApproximateFileSizeInBytes
+	}).(pulumi.StringOutput)
+}
+
+// The target Operating System architecture for the artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.Architecture
+	}).(pulumi.StringOutput)
+}
+
+// Product content type of this artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) ArtifactContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.ArtifactContentType
+	}).(pulumi.StringOutput)
+}
+
+// Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) ArtifactDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.ArtifactDescription
+	}).(pulumi.StringOutput)
+}
+
+// The file name of the artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) ArtifactFileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.ArtifactFileName
+	}).(pulumi.StringOutput)
+}
+
+// Unique identifier for the artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) ArtifactId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.ArtifactId
+	}).(pulumi.StringOutput)
+}
+
+// The endpoint that returns a short-lived artifact download URL in the response payload. This download url can then be used for downloading the artifact. See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) DownloadUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.DownloadUrl
+	}).(pulumi.StringOutput)
+}
+
+// The target Operating System family for the artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) OsFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.OsFamily
+	}).(pulumi.StringOutput)
+}
+
+// The package type(typically the file extension) of the artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) PackageType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.PackageType
+	}).(pulumi.StringOutput)
+}
+
+// Additional information about the package type.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) PackageTypeDetail() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.PackageTypeDetail
+	}).(pulumi.StringOutput)
+}
+
+// The URL for retrieving the checksum for the artifact. Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) ScriptChecksumUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.ScriptChecksumUrl
+	}).(pulumi.StringOutput)
+}
+
+// The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles. Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) ScriptDownloadUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.ScriptDownloadUrl
+	}).(pulumi.StringOutput)
+}
+
+// SHA256 checksum of the artifact.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput) Sha256() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact) string {
+		return v.Sha256
+	}).(pulumi.StringOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput() GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact {
+		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact)[vs[1].(int)]
+	}).(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput)
+}
+
 type GetJavaReleasesJavaReleaseCollectionItemLicenseDetail struct {
-	// Commonly used name for the license type.
+	// Commonly used name for the MoS release.
 	DisplayName string `pulumi:"displayName"`
 	// Java license type.
 	LicenseType string `pulumi:"licenseType"`
@@ -7952,7 +13358,7 @@ type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailInput interface {
 }
 
 type GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs struct {
-	// Commonly used name for the license type.
+	// Commonly used name for the MoS release.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Java license type.
 	LicenseType pulumi.StringInput `pulumi:"licenseType"`
@@ -8011,7 +13417,7 @@ func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) ToGetJavaRe
 	return o
 }
 
-// Commonly used name for the license type.
+// Commonly used name for the MoS release.
 func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemLicenseDetail) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -8044,6 +13450,112 @@ func (o GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput) Index(
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItemLicenseDetail {
 		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItemLicenseDetail)[vs[1].(int)]
 	}).(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemMosPatch struct {
+	// Commonly used name for the MoS release.
+	DisplayName string `pulumi:"displayName"`
+	// MoS URL to access the artifacts for the Java release.
+	PatchUrl string `pulumi:"patchUrl"`
+}
+
+// GetJavaReleasesJavaReleaseCollectionItemMosPatchInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemMosPatchArgs and GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemMosPatchInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionItemMosPatchArgs{...}
+type GetJavaReleasesJavaReleaseCollectionItemMosPatchInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionItemMosPatchOutput() GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput
+	ToGetJavaReleasesJavaReleaseCollectionItemMosPatchOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemMosPatchArgs struct {
+	// Commonly used name for the MoS release.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// MoS URL to access the artifacts for the Java release.
+	PatchUrl pulumi.StringInput `pulumi:"patchUrl"`
+}
+
+func (GetJavaReleasesJavaReleaseCollectionItemMosPatchArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemMosPatch)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemMosPatchArgs) ToGetJavaReleasesJavaReleaseCollectionItemMosPatchOutput() GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionItemMosPatchOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemMosPatchArgs) ToGetJavaReleasesJavaReleaseCollectionItemMosPatchOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput)
+}
+
+// GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayInput is an input type that accepts GetJavaReleasesJavaReleaseCollectionItemMosPatchArray and GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput values.
+// You can construct a concrete instance of `GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayInput` via:
+//
+//	GetJavaReleasesJavaReleaseCollectionItemMosPatchArray{ GetJavaReleasesJavaReleaseCollectionItemMosPatchArgs{...} }
+type GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayInput interface {
+	pulumi.Input
+
+	ToGetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput() GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput
+	ToGetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutputWithContext(context.Context) GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemMosPatchArray []GetJavaReleasesJavaReleaseCollectionItemMosPatchInput
+
+func (GetJavaReleasesJavaReleaseCollectionItemMosPatchArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollectionItemMosPatch)(nil)).Elem()
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemMosPatchArray) ToGetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput() GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput {
+	return i.ToGetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutputWithContext(context.Background())
+}
+
+func (i GetJavaReleasesJavaReleaseCollectionItemMosPatchArray) ToGetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemMosPatch)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput) ToGetJavaReleasesJavaReleaseCollectionItemMosPatchOutput() GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput) ToGetJavaReleasesJavaReleaseCollectionItemMosPatchOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput {
+	return o
+}
+
+// Commonly used name for the MoS release.
+func (o GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemMosPatch) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// MoS URL to access the artifacts for the Java release.
+func (o GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput) PatchUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemMosPatch) string { return v.PatchUrl }).(pulumi.StringOutput)
+}
+
+type GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput struct{ *pulumi.OutputState }
+
+func (GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetJavaReleasesJavaReleaseCollectionItemMosPatch)(nil)).Elem()
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput() GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput) ToGetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutputWithContext(ctx context.Context) GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput {
+	return o
+}
+
+func (o GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput) Index(i pulumi.IntInput) GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJavaReleasesJavaReleaseCollectionItemMosPatch {
+		return vs[0].([]GetJavaReleasesJavaReleaseCollectionItemMosPatch)[vs[1].(int)]
+	}).(GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput)
 }
 
 type GetListJreUsageItem struct {
@@ -8443,6 +13955,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetInventoryLogPtrInput)(nil)).Elem(), FleetInventoryLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetOperationLogInput)(nil)).Elem(), FleetOperationLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetOperationLogPtrInput)(nil)).Elem(), FleetOperationLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaDownloadReportCreatedByInput)(nil)).Elem(), JavaDownloadsJavaDownloadReportCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaDownloadReportCreatedByArrayInput)(nil)).Elem(), JavaDownloadsJavaDownloadReportCreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaDownloadTokenCreatedByInput)(nil)).Elem(), JavaDownloadsJavaDownloadTokenCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaDownloadTokenCreatedByArrayInput)(nil)).Elem(), JavaDownloadsJavaDownloadTokenCreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaDownloadTokenLastUpdatedByInput)(nil)).Elem(), JavaDownloadsJavaDownloadTokenLastUpdatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaDownloadTokenLastUpdatedByArrayInput)(nil)).Elem(), JavaDownloadsJavaDownloadTokenLastUpdatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordCreatedByInput)(nil)).Elem(), JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayInput)(nil)).Elem(), JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByInput)(nil)).Elem(), JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayInput)(nil)).Elem(), JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementsAnnouncementCollectionInput)(nil)).Elem(), GetAnnouncementsAnnouncementCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementsAnnouncementCollectionArrayInput)(nil)).Elem(), GetAnnouncementsAnnouncementCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnnouncementsAnnouncementCollectionItemInput)(nil)).Elem(), GetAnnouncementsAnnouncementCollectionItemArgs{})
@@ -8493,6 +14015,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDiagnosesFleetDiagnosisCollectionArrayInput)(nil)).Elem(), GetFleetDiagnosesFleetDiagnosisCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDiagnosesFleetDiagnosisCollectionItemInput)(nil)).Elem(), GetFleetDiagnosesFleetDiagnosisCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDiagnosesFleetDiagnosisCollectionItemArrayInput)(nil)).Elem(), GetFleetDiagnosesFleetDiagnosisCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDrsFilesDrsFileCollectionInput)(nil)).Elem(), GetFleetDrsFilesDrsFileCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDrsFilesDrsFileCollectionArrayInput)(nil)).Elem(), GetFleetDrsFilesDrsFileCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDrsFilesDrsFileCollectionItemInput)(nil)).Elem(), GetFleetDrsFilesDrsFileCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDrsFilesDrsFileCollectionItemArrayInput)(nil)).Elem(), GetFleetDrsFilesDrsFileCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDrsFilesFilterInput)(nil)).Elem(), GetFleetDrsFilesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetDrsFilesFilterArrayInput)(nil)).Elem(), GetFleetDrsFilesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetInventoryLogInput)(nil)).Elem(), GetFleetInventoryLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetInventoryLogArrayInput)(nil)).Elem(), GetFleetInventoryLogArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsFilterInput)(nil)).Elem(), GetFleetJavaMigrationAnalysisResultsFilterArgs{})
@@ -8541,18 +14069,76 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemJreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsFilterInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadRecordsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsFilterArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadRecordsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportCreatedByInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadReportCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportCreatedByArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadReportCreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsFilterInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadReportsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsFilterArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadReportsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokenCreatedByInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokenCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokenCreatedByArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokenCreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokenLastUpdatedByInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokenLastUpdatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokenLastUpdatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensFilterInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokensFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensFilterArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokensFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayInput)(nil)).Elem(), GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicensesFilterInput)(nil)).Elem(), GetJavaDownloadsJavaLicensesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicensesFilterArrayInput)(nil)).Elem(), GetJavaDownloadsJavaLicensesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicensesJavaLicenseCollectionInput)(nil)).Elem(), GetJavaDownloadsJavaLicensesJavaLicenseCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayInput)(nil)).Elem(), GetJavaDownloadsJavaLicensesJavaLicenseCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemInput)(nil)).Elem(), GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayInput)(nil)).Elem(), GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesFilterInput)(nil)).Elem(), GetJavaFamiliesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesFilterArrayInput)(nil)).Elem(), GetJavaFamiliesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionInput)(nil)).Elem(), GetJavaFamiliesJavaFamilyCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionArrayInput)(nil)).Elem(), GetJavaFamiliesJavaFamilyCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionItemInput)(nil)).Elem(), GetJavaFamiliesJavaFamilyCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionItemArrayInput)(nil)).Elem(), GetJavaFamiliesJavaFamilyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactInput)(nil)).Elem(), GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayInput)(nil)).Elem(), GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamilyLatestReleaseArtifactInput)(nil)).Elem(), GetJavaFamilyLatestReleaseArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaFamilyLatestReleaseArtifactArrayInput)(nil)).Elem(), GetJavaFamilyLatestReleaseArtifactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseArtifactInput)(nil)).Elem(), GetJavaReleaseArtifactArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseArtifactArrayInput)(nil)).Elem(), GetJavaReleaseArtifactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseFamilyDetailInput)(nil)).Elem(), GetJavaReleaseFamilyDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseFamilyDetailArrayInput)(nil)).Elem(), GetJavaReleaseFamilyDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseFamilyDetailLatestReleaseArtifactInput)(nil)).Elem(), GetJavaReleaseFamilyDetailLatestReleaseArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayInput)(nil)).Elem(), GetJavaReleaseFamilyDetailLatestReleaseArtifactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseLicenseDetailInput)(nil)).Elem(), GetJavaReleaseLicenseDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseLicenseDetailArrayInput)(nil)).Elem(), GetJavaReleaseLicenseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseMosPatchInput)(nil)).Elem(), GetJavaReleaseMosPatchArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleaseMosPatchArrayInput)(nil)).Elem(), GetJavaReleaseMosPatchArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesFilterInput)(nil)).Elem(), GetJavaReleasesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesFilterArrayInput)(nil)).Elem(), GetJavaReleasesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionArgs{})
@@ -8563,8 +14149,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemArtifactArrayInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemArtifactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemFamilyDetailInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemLicenseDetailInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemMosPatchInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemMosPatchArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayInput)(nil)).Elem(), GetJavaReleasesJavaReleaseCollectionItemMosPatchArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemInput)(nil)).Elem(), GetListJreUsageItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemArrayInput)(nil)).Elem(), GetListJreUsageItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemOperatingSystemInput)(nil)).Elem(), GetListJreUsageItemOperatingSystemArgs{})
@@ -8573,6 +14163,16 @@ func init() {
 	pulumi.RegisterOutputType(FleetInventoryLogPtrOutput{})
 	pulumi.RegisterOutputType(FleetOperationLogOutput{})
 	pulumi.RegisterOutputType(FleetOperationLogPtrOutput{})
+	pulumi.RegisterOutputType(JavaDownloadsJavaDownloadReportCreatedByOutput{})
+	pulumi.RegisterOutputType(JavaDownloadsJavaDownloadReportCreatedByArrayOutput{})
+	pulumi.RegisterOutputType(JavaDownloadsJavaDownloadTokenCreatedByOutput{})
+	pulumi.RegisterOutputType(JavaDownloadsJavaDownloadTokenCreatedByArrayOutput{})
+	pulumi.RegisterOutputType(JavaDownloadsJavaDownloadTokenLastUpdatedByOutput{})
+	pulumi.RegisterOutputType(JavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput{})
+	pulumi.RegisterOutputType(JavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput{})
+	pulumi.RegisterOutputType(JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput{})
+	pulumi.RegisterOutputType(JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput{})
+	pulumi.RegisterOutputType(JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput{})
 	pulumi.RegisterOutputType(GetAnnouncementsAnnouncementCollectionOutput{})
 	pulumi.RegisterOutputType(GetAnnouncementsAnnouncementCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAnnouncementsAnnouncementCollectionItemOutput{})
@@ -8623,6 +14223,12 @@ func init() {
 	pulumi.RegisterOutputType(GetFleetDiagnosesFleetDiagnosisCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetDiagnosesFleetDiagnosisCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetFleetDiagnosesFleetDiagnosisCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetDrsFilesDrsFileCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetDrsFilesDrsFileCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetDrsFilesDrsFileCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetDrsFilesDrsFileCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetDrsFilesFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetDrsFilesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetInventoryLogOutput{})
 	pulumi.RegisterOutputType(GetFleetInventoryLogArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetJavaMigrationAnalysisResultsFilterOutput{})
@@ -8671,18 +14277,76 @@ func init() {
 	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput{})
 	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput{})
 	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadRecordsFilterOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadReportCreatedByOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadReportCreatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadReportsFilterOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadReportsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemCreatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokenCreatedByOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokenCreatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokenLastUpdatedByOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokenLastUpdatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokensFilterOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokensFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemCreatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemLastUpdatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemCreatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemLastUpdatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicensesFilterOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicensesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicensesJavaLicenseCollectionOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicensesJavaLicenseCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetJavaDownloadsJavaLicensesJavaLicenseCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaFamiliesFilterOutput{})
 	pulumi.RegisterOutputType(GetJavaFamiliesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaFamiliesJavaFamilyCollectionOutput{})
 	pulumi.RegisterOutputType(GetJavaFamiliesJavaFamilyCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaFamiliesJavaFamilyCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetJavaFamiliesJavaFamilyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactOutput{})
+	pulumi.RegisterOutputType(GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaFamilyLatestReleaseArtifactOutput{})
+	pulumi.RegisterOutputType(GetJavaFamilyLatestReleaseArtifactArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaReleaseArtifactOutput{})
 	pulumi.RegisterOutputType(GetJavaReleaseArtifactArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaReleaseFamilyDetailOutput{})
 	pulumi.RegisterOutputType(GetJavaReleaseFamilyDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleaseFamilyDetailLatestReleaseArtifactOutput{})
+	pulumi.RegisterOutputType(GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaReleaseLicenseDetailOutput{})
 	pulumi.RegisterOutputType(GetJavaReleaseLicenseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleaseMosPatchOutput{})
+	pulumi.RegisterOutputType(GetJavaReleaseMosPatchArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaReleasesFilterOutput{})
 	pulumi.RegisterOutputType(GetJavaReleasesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionOutput{})
@@ -8693,8 +14357,12 @@ func init() {
 	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemArtifactArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput{})
 	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailOutput{})
 	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemMosPatchOutput{})
+	pulumi.RegisterOutputType(GetJavaReleasesJavaReleaseCollectionItemMosPatchArrayOutput{})
 	pulumi.RegisterOutputType(GetListJreUsageItemOutput{})
 	pulumi.RegisterOutputType(GetListJreUsageItemArrayOutput{})
 	pulumi.RegisterOutputType(GetListJreUsageItemOperatingSystemOutput{})

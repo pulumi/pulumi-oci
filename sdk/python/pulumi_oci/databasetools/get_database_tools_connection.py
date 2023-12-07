@@ -22,7 +22,7 @@ class GetDatabaseToolsConnectionResult:
     """
     A collection of values returned by getDatabaseToolsConnection.
     """
-    def __init__(__self__, advanced_properties=None, compartment_id=None, connection_string=None, database_tools_connection_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_stores=None, lifecycle_details=None, private_endpoint_id=None, related_resources=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, user_name=None, user_passwords=None):
+    def __init__(__self__, advanced_properties=None, compartment_id=None, connection_string=None, database_tools_connection_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_stores=None, lifecycle_details=None, locks=None, private_endpoint_id=None, proxy_clients=None, related_resources=None, runtime_support=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, url=None, user_name=None, user_passwords=None):
         if advanced_properties and not isinstance(advanced_properties, dict):
             raise TypeError("Expected argument 'advanced_properties' to be a dict")
         pulumi.set(__self__, "advanced_properties", advanced_properties)
@@ -53,12 +53,21 @@ class GetDatabaseToolsConnectionResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if private_endpoint_id and not isinstance(private_endpoint_id, str):
             raise TypeError("Expected argument 'private_endpoint_id' to be a str")
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if proxy_clients and not isinstance(proxy_clients, list):
+            raise TypeError("Expected argument 'proxy_clients' to be a list")
+        pulumi.set(__self__, "proxy_clients", proxy_clients)
         if related_resources and not isinstance(related_resources, list):
             raise TypeError("Expected argument 'related_resources' to be a list")
         pulumi.set(__self__, "related_resources", related_resources)
+        if runtime_support and not isinstance(runtime_support, str):
+            raise TypeError("Expected argument 'runtime_support' to be a str")
+        pulumi.set(__self__, "runtime_support", runtime_support)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -74,6 +83,9 @@ class GetDatabaseToolsConnectionResult:
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
+        if url and not isinstance(url, str):
+            raise TypeError("Expected argument 'url' to be a str")
+        pulumi.set(__self__, "url", url)
         if user_name and not isinstance(user_name, str):
             raise TypeError("Expected argument 'user_name' to be a str")
         pulumi.set(__self__, "user_name", user_name)
@@ -159,6 +171,14 @@ class GetDatabaseToolsConnectionResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDatabaseToolsConnectionLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> str:
         """
@@ -167,12 +187,28 @@ class GetDatabaseToolsConnectionResult:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
+    @pulumi.getter(name="proxyClients")
+    def proxy_clients(self) -> Sequence['outputs.GetDatabaseToolsConnectionProxyClientResult']:
+        """
+        The proxy client information.
+        """
+        return pulumi.get(self, "proxy_clients")
+
+    @property
     @pulumi.getter(name="relatedResources")
     def related_resources(self) -> Sequence['outputs.GetDatabaseToolsConnectionRelatedResourceResult']:
         """
         A related resource
         """
         return pulumi.get(self, "related_resources")
+
+    @property
+    @pulumi.getter(name="runtimeSupport")
+    def runtime_support(self) -> str:
+        """
+        Specifies whether this connection is supported by the Database Tools Runtime.
+        """
+        return pulumi.get(self, "runtime_support")
 
     @property
     @pulumi.getter
@@ -215,6 +251,14 @@ class GetDatabaseToolsConnectionResult:
         return pulumi.get(self, "type")
 
     @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        The JDBC URL used to connect to the Generic JDBC database system.
+        """
+        return pulumi.get(self, "url")
+
+    @property
     @pulumi.getter(name="userName")
     def user_name(self) -> str:
         """
@@ -247,13 +291,17 @@ class AwaitableGetDatabaseToolsConnectionResult(GetDatabaseToolsConnectionResult
             id=self.id,
             key_stores=self.key_stores,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             private_endpoint_id=self.private_endpoint_id,
+            proxy_clients=self.proxy_clients,
             related_resources=self.related_resources,
+            runtime_support=self.runtime_support,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
             type=self.type,
+            url=self.url,
             user_name=self.user_name,
             user_passwords=self.user_passwords)
 
@@ -293,13 +341,17 @@ def get_database_tools_connection(database_tools_connection_id: Optional[str] = 
         id=pulumi.get(__ret__, 'id'),
         key_stores=pulumi.get(__ret__, 'key_stores'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         private_endpoint_id=pulumi.get(__ret__, 'private_endpoint_id'),
+        proxy_clients=pulumi.get(__ret__, 'proxy_clients'),
         related_resources=pulumi.get(__ret__, 'related_resources'),
+        runtime_support=pulumi.get(__ret__, 'runtime_support'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'),
+        url=pulumi.get(__ret__, 'url'),
         user_name=pulumi.get(__ret__, 'user_name'),
         user_passwords=pulumi.get(__ret__, 'user_passwords'))
 

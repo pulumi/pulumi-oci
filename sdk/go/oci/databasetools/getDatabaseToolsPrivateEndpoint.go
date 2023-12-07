@@ -79,6 +79,8 @@ type LookupDatabaseToolsPrivateEndpointResult struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetDatabaseToolsPrivateEndpointLock `pulumi:"locks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address that represents the access point for the associated endpoint service.
@@ -191,6 +193,11 @@ func (o LookupDatabaseToolsPrivateEndpointResultOutput) Id() pulumi.StringOutput
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o LookupDatabaseToolsPrivateEndpointResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupDatabaseToolsPrivateEndpointResultOutput) Locks() GetDatabaseToolsPrivateEndpointLockArrayOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsPrivateEndpointResult) []GetDatabaseToolsPrivateEndpointLock { return v.Locks }).(GetDatabaseToolsPrivateEndpointLockArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).

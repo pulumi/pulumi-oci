@@ -143,6 +143,12 @@ namespace Pulumi.Oci.Jms
         public Output<bool> IsAdvancedFeaturesEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// Whether or not export setting is enabled in this Fleet.
+        /// </summary>
+        [Output("isExportSettingEnabled")]
+        public Output<bool> IsExportSettingEnabled { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Custom Log for inventory or operation log.
         /// </summary>
         [Output("operationLog")]
@@ -363,6 +369,12 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         [Input("isAdvancedFeaturesEnabled")]
         public Input<bool>? IsAdvancedFeaturesEnabled { get; set; }
+
+        /// <summary>
+        /// Whether or not export setting is enabled in this Fleet.
+        /// </summary>
+        [Input("isExportSettingEnabled")]
+        public Input<bool>? IsExportSettingEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) Custom Log for inventory or operation log.

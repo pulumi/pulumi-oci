@@ -13,6 +13,788 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ClusterDatastore struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
+	// Size of the Block Storage Volume in GB.
+	Capacity *float64 `pulumi:"capacity"`
+	// Type of the datastore.
+	DatastoreType string `pulumi:"datastoreType"`
+}
+
+// ClusterDatastoreInput is an input type that accepts ClusterDatastoreArgs and ClusterDatastoreOutput values.
+// You can construct a concrete instance of `ClusterDatastoreInput` via:
+//
+//	ClusterDatastoreArgs{...}
+type ClusterDatastoreInput interface {
+	pulumi.Input
+
+	ToClusterDatastoreOutput() ClusterDatastoreOutput
+	ToClusterDatastoreOutputWithContext(context.Context) ClusterDatastoreOutput
+}
+
+type ClusterDatastoreArgs struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
+	// Size of the Block Storage Volume in GB.
+	Capacity pulumi.Float64PtrInput `pulumi:"capacity"`
+	// Type of the datastore.
+	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
+}
+
+func (ClusterDatastoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterDatastore)(nil)).Elem()
+}
+
+func (i ClusterDatastoreArgs) ToClusterDatastoreOutput() ClusterDatastoreOutput {
+	return i.ToClusterDatastoreOutputWithContext(context.Background())
+}
+
+func (i ClusterDatastoreArgs) ToClusterDatastoreOutputWithContext(ctx context.Context) ClusterDatastoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterDatastoreOutput)
+}
+
+// ClusterDatastoreArrayInput is an input type that accepts ClusterDatastoreArray and ClusterDatastoreArrayOutput values.
+// You can construct a concrete instance of `ClusterDatastoreArrayInput` via:
+//
+//	ClusterDatastoreArray{ ClusterDatastoreArgs{...} }
+type ClusterDatastoreArrayInput interface {
+	pulumi.Input
+
+	ToClusterDatastoreArrayOutput() ClusterDatastoreArrayOutput
+	ToClusterDatastoreArrayOutputWithContext(context.Context) ClusterDatastoreArrayOutput
+}
+
+type ClusterDatastoreArray []ClusterDatastoreInput
+
+func (ClusterDatastoreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterDatastore)(nil)).Elem()
+}
+
+func (i ClusterDatastoreArray) ToClusterDatastoreArrayOutput() ClusterDatastoreArrayOutput {
+	return i.ToClusterDatastoreArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterDatastoreArray) ToClusterDatastoreArrayOutputWithContext(ctx context.Context) ClusterDatastoreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterDatastoreArrayOutput)
+}
+
+type ClusterDatastoreOutput struct{ *pulumi.OutputState }
+
+func (ClusterDatastoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterDatastore)(nil)).Elem()
+}
+
+func (o ClusterDatastoreOutput) ToClusterDatastoreOutput() ClusterDatastoreOutput {
+	return o
+}
+
+func (o ClusterDatastoreOutput) ToClusterDatastoreOutputWithContext(ctx context.Context) ClusterDatastoreOutput {
+	return o
+}
+
+// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+func (o ClusterDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ClusterDatastore) []string { return v.BlockVolumeIds }).(pulumi.StringArrayOutput)
+}
+
+// Size of the Block Storage Volume in GB.
+func (o ClusterDatastoreOutput) Capacity() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v ClusterDatastore) *float64 { return v.Capacity }).(pulumi.Float64PtrOutput)
+}
+
+// Type of the datastore.
+func (o ClusterDatastoreOutput) DatastoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterDatastore) string { return v.DatastoreType }).(pulumi.StringOutput)
+}
+
+type ClusterDatastoreArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterDatastoreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterDatastore)(nil)).Elem()
+}
+
+func (o ClusterDatastoreArrayOutput) ToClusterDatastoreArrayOutput() ClusterDatastoreArrayOutput {
+	return o
+}
+
+func (o ClusterDatastoreArrayOutput) ToClusterDatastoreArrayOutputWithContext(ctx context.Context) ClusterDatastoreArrayOutput {
+	return o
+}
+
+func (o ClusterDatastoreArrayOutput) Index(i pulumi.IntInput) ClusterDatastoreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterDatastore {
+		return vs[0].([]ClusterDatastore)[vs[1].(int)]
+	}).(ClusterDatastoreOutput)
+}
+
+type ClusterNetworkConfiguration struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	//
+	// This attribute is not guaranteed to reflect the HCX VLAN currently used by the ESXi hosts in the SDDC. The purpose of this attribute is to show the HCX VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this SDDC in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN for the HCX component of the VMware environment, you should use [UpdateSddc](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc) to update the SDDC's `hcxVlanId` with that new VLAN's OCID.
+	HcxVlanId *string `pulumi:"hcxVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	//
+	// This attribute is not guaranteed to reflect the NSX Edge Uplink 1 VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge Uplink 1 VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 1 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink1VlanId` with that new VLAN's OCID.
+	NsxEdgeUplink1vlanId *string `pulumi:"nsxEdgeUplink1vlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	//
+	// This attribute is not guaranteed to reflect the NSX Edge Uplink 2 VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge Uplink 2 VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 2 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink2VlanId` with that new VLAN's OCID.
+	NsxEdgeUplink2vlanId *string `pulumi:"nsxEdgeUplink2vlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+	//
+	// This attribute is not guaranteed to reflect the NSX Edge VTEP VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge VTEP VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge VTEP component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeVTepVlanId` with that new VLAN's OCID.
+	NsxEdgeVtepVlanId string `pulumi:"nsxEdgeVtepVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+	//
+	// This attribute is not guaranteed to reflect the NSX VTEP VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX VTEP VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX VTEP component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxVTepVlanId` with that new VLAN's OCID.
+	NsxVtepVlanId string `pulumi:"nsxVtepVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+	ProvisioningSubnetId string `pulumi:"provisioningSubnetId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+	ProvisioningVlanId *string `pulumi:"provisioningVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+	ReplicationVlanId *string `pulumi:"replicationVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+	//
+	// This attribute is not guaranteed to reflect the vMotion VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vMotion VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vMotion component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateCluster) to update the Cluster's `vmotionVlanId` with that new VLAN's OCID.
+	VmotionVlanId string `pulumi:"vmotionVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+	//
+	// This attribute is not guaranteed to reflect the vSAN VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vSAN VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSAN component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `vsanVlanId` with that new VLAN's OCID.
+	VsanVlanId string `pulumi:"vsanVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	//
+	// This attribute is not guaranteed to reflect the vSphere VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vSphere VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSphere component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc) to update the Cluster's `vsphereVlanId` with that new VLAN's OCID.
+	VsphereVlanId *string `pulumi:"vsphereVlanId"`
+}
+
+// ClusterNetworkConfigurationInput is an input type that accepts ClusterNetworkConfigurationArgs and ClusterNetworkConfigurationOutput values.
+// You can construct a concrete instance of `ClusterNetworkConfigurationInput` via:
+//
+//	ClusterNetworkConfigurationArgs{...}
+type ClusterNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToClusterNetworkConfigurationOutput() ClusterNetworkConfigurationOutput
+	ToClusterNetworkConfigurationOutputWithContext(context.Context) ClusterNetworkConfigurationOutput
+}
+
+type ClusterNetworkConfigurationArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	//
+	// This attribute is not guaranteed to reflect the HCX VLAN currently used by the ESXi hosts in the SDDC. The purpose of this attribute is to show the HCX VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this SDDC in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN for the HCX component of the VMware environment, you should use [UpdateSddc](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc) to update the SDDC's `hcxVlanId` with that new VLAN's OCID.
+	HcxVlanId pulumi.StringPtrInput `pulumi:"hcxVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	//
+	// This attribute is not guaranteed to reflect the NSX Edge Uplink 1 VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge Uplink 1 VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 1 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink1VlanId` with that new VLAN's OCID.
+	NsxEdgeUplink1vlanId pulumi.StringPtrInput `pulumi:"nsxEdgeUplink1vlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	//
+	// This attribute is not guaranteed to reflect the NSX Edge Uplink 2 VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge Uplink 2 VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 2 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink2VlanId` with that new VLAN's OCID.
+	NsxEdgeUplink2vlanId pulumi.StringPtrInput `pulumi:"nsxEdgeUplink2vlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+	//
+	// This attribute is not guaranteed to reflect the NSX Edge VTEP VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge VTEP VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge VTEP component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeVTepVlanId` with that new VLAN's OCID.
+	NsxEdgeVtepVlanId pulumi.StringInput `pulumi:"nsxEdgeVtepVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+	//
+	// This attribute is not guaranteed to reflect the NSX VTEP VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX VTEP VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX VTEP component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxVTepVlanId` with that new VLAN's OCID.
+	NsxVtepVlanId pulumi.StringInput `pulumi:"nsxVtepVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+	ProvisioningSubnetId pulumi.StringInput `pulumi:"provisioningSubnetId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+	ProvisioningVlanId pulumi.StringPtrInput `pulumi:"provisioningVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+	ReplicationVlanId pulumi.StringPtrInput `pulumi:"replicationVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+	//
+	// This attribute is not guaranteed to reflect the vMotion VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vMotion VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vMotion component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateCluster) to update the Cluster's `vmotionVlanId` with that new VLAN's OCID.
+	VmotionVlanId pulumi.StringInput `pulumi:"vmotionVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+	//
+	// This attribute is not guaranteed to reflect the vSAN VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vSAN VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSAN component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `vsanVlanId` with that new VLAN's OCID.
+	VsanVlanId pulumi.StringInput `pulumi:"vsanVlanId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	//
+	// This attribute is not guaranteed to reflect the vSphere VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vSphere VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSphere component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc) to update the Cluster's `vsphereVlanId` with that new VLAN's OCID.
+	VsphereVlanId pulumi.StringPtrInput `pulumi:"vsphereVlanId"`
+}
+
+func (ClusterNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkConfiguration)(nil)).Elem()
+}
+
+func (i ClusterNetworkConfigurationArgs) ToClusterNetworkConfigurationOutput() ClusterNetworkConfigurationOutput {
+	return i.ToClusterNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkConfigurationArgs) ToClusterNetworkConfigurationOutputWithContext(ctx context.Context) ClusterNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkConfigurationOutput)
+}
+
+func (i ClusterNetworkConfigurationArgs) ToClusterNetworkConfigurationPtrOutput() ClusterNetworkConfigurationPtrOutput {
+	return i.ToClusterNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterNetworkConfigurationArgs) ToClusterNetworkConfigurationPtrOutputWithContext(ctx context.Context) ClusterNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkConfigurationOutput).ToClusterNetworkConfigurationPtrOutputWithContext(ctx)
+}
+
+// ClusterNetworkConfigurationPtrInput is an input type that accepts ClusterNetworkConfigurationArgs, ClusterNetworkConfigurationPtr and ClusterNetworkConfigurationPtrOutput values.
+// You can construct a concrete instance of `ClusterNetworkConfigurationPtrInput` via:
+//
+//	        ClusterNetworkConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterNetworkConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToClusterNetworkConfigurationPtrOutput() ClusterNetworkConfigurationPtrOutput
+	ToClusterNetworkConfigurationPtrOutputWithContext(context.Context) ClusterNetworkConfigurationPtrOutput
+}
+
+type clusterNetworkConfigurationPtrType ClusterNetworkConfigurationArgs
+
+func ClusterNetworkConfigurationPtr(v *ClusterNetworkConfigurationArgs) ClusterNetworkConfigurationPtrInput {
+	return (*clusterNetworkConfigurationPtrType)(v)
+}
+
+func (*clusterNetworkConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterNetworkConfiguration)(nil)).Elem()
+}
+
+func (i *clusterNetworkConfigurationPtrType) ToClusterNetworkConfigurationPtrOutput() ClusterNetworkConfigurationPtrOutput {
+	return i.ToClusterNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterNetworkConfigurationPtrType) ToClusterNetworkConfigurationPtrOutputWithContext(ctx context.Context) ClusterNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterNetworkConfigurationPtrOutput)
+}
+
+type ClusterNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterNetworkConfiguration)(nil)).Elem()
+}
+
+func (o ClusterNetworkConfigurationOutput) ToClusterNetworkConfigurationOutput() ClusterNetworkConfigurationOutput {
+	return o
+}
+
+func (o ClusterNetworkConfigurationOutput) ToClusterNetworkConfigurationOutputWithContext(ctx context.Context) ClusterNetworkConfigurationOutput {
+	return o
+}
+
+func (o ClusterNetworkConfigurationOutput) ToClusterNetworkConfigurationPtrOutput() ClusterNetworkConfigurationPtrOutput {
+	return o.ToClusterNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterNetworkConfigurationOutput) ToClusterNetworkConfigurationPtrOutputWithContext(ctx context.Context) ClusterNetworkConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterNetworkConfiguration) *ClusterNetworkConfiguration {
+		return &v
+	}).(ClusterNetworkConfigurationPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+//
+// This attribute is not guaranteed to reflect the HCX VLAN currently used by the ESXi hosts in the SDDC. The purpose of this attribute is to show the HCX VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this SDDC in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN for the HCX component of the VMware environment, you should use [UpdateSddc](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc) to update the SDDC's `hcxVlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationOutput) HcxVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkConfiguration) *string { return v.HcxVlanId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+//
+// This attribute is not guaranteed to reflect the NSX Edge Uplink 1 VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge Uplink 1 VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 1 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink1VlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationOutput) NsxEdgeUplink1vlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkConfiguration) *string { return v.NsxEdgeUplink1vlanId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+//
+// This attribute is not guaranteed to reflect the NSX Edge Uplink 2 VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge Uplink 2 VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 2 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink2VlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationOutput) NsxEdgeUplink2vlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkConfiguration) *string { return v.NsxEdgeUplink2vlanId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+//
+// This attribute is not guaranteed to reflect the NSX Edge VTEP VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge VTEP VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge VTEP component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeVTepVlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationOutput) NsxEdgeVtepVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterNetworkConfiguration) string { return v.NsxEdgeVtepVlanId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+//
+// This attribute is not guaranteed to reflect the NSX VTEP VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX VTEP VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX VTEP component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxVTepVlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationOutput) NsxVtepVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterNetworkConfiguration) string { return v.NsxVtepVlanId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+func (o ClusterNetworkConfigurationOutput) ProvisioningSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterNetworkConfiguration) string { return v.ProvisioningSubnetId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+func (o ClusterNetworkConfigurationOutput) ProvisioningVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkConfiguration) *string { return v.ProvisioningVlanId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+func (o ClusterNetworkConfigurationOutput) ReplicationVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkConfiguration) *string { return v.ReplicationVlanId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+//
+// This attribute is not guaranteed to reflect the vMotion VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vMotion VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vMotion component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateCluster) to update the Cluster's `vmotionVlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationOutput) VmotionVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterNetworkConfiguration) string { return v.VmotionVlanId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+//
+// This attribute is not guaranteed to reflect the vSAN VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vSAN VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSAN component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `vsanVlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationOutput) VsanVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterNetworkConfiguration) string { return v.VsanVlanId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+//
+// This attribute is not guaranteed to reflect the vSphere VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vSphere VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSphere component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc) to update the Cluster's `vsphereVlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationOutput) VsphereVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterNetworkConfiguration) *string { return v.VsphereVlanId }).(pulumi.StringPtrOutput)
+}
+
+type ClusterNetworkConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterNetworkConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterNetworkConfiguration)(nil)).Elem()
+}
+
+func (o ClusterNetworkConfigurationPtrOutput) ToClusterNetworkConfigurationPtrOutput() ClusterNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o ClusterNetworkConfigurationPtrOutput) ToClusterNetworkConfigurationPtrOutputWithContext(ctx context.Context) ClusterNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o ClusterNetworkConfigurationPtrOutput) Elem() ClusterNetworkConfigurationOutput {
+	return o.ApplyT(func(v *ClusterNetworkConfiguration) ClusterNetworkConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterNetworkConfiguration
+		return ret
+	}).(ClusterNetworkConfigurationOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+//
+// This attribute is not guaranteed to reflect the HCX VLAN currently used by the ESXi hosts in the SDDC. The purpose of this attribute is to show the HCX VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this SDDC in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN for the HCX component of the VMware environment, you should use [UpdateSddc](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc) to update the SDDC's `hcxVlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationPtrOutput) HcxVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HcxVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+//
+// This attribute is not guaranteed to reflect the NSX Edge Uplink 1 VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge Uplink 1 VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 1 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink1VlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationPtrOutput) NsxEdgeUplink1vlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NsxEdgeUplink1vlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+//
+// This attribute is not guaranteed to reflect the NSX Edge Uplink 2 VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge Uplink 2 VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge Uplink 2 component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeUplink2VlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationPtrOutput) NsxEdgeUplink2vlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NsxEdgeUplink2vlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+//
+// This attribute is not guaranteed to reflect the NSX Edge VTEP VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX Edge VTEP VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX Edge VTEP component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxEdgeVTepVlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationPtrOutput) NsxEdgeVtepVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NsxEdgeVtepVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+//
+// This attribute is not guaranteed to reflect the NSX VTEP VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the NSX VTEP VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the NSX VTEP component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `nsxVTepVlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationPtrOutput) NsxVtepVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NsxVtepVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+func (o ClusterNetworkConfigurationPtrOutput) ProvisioningSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ProvisioningSubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+func (o ClusterNetworkConfigurationPtrOutput) ProvisioningVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProvisioningVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+func (o ClusterNetworkConfigurationPtrOutput) ReplicationVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ReplicationVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+//
+// This attribute is not guaranteed to reflect the vMotion VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vMotion VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vMotion component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateCluster) to update the Cluster's `vmotionVlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationPtrOutput) VmotionVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.VmotionVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+//
+// This attribute is not guaranteed to reflect the vSAN VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vSAN VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSAN component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Cluster/UpdateCluster) to update the Cluster's `vsanVlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationPtrOutput) VsanVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.VsanVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+//
+// This attribute is not guaranteed to reflect the vSphere VLAN currently used by the ESXi hosts in the Cluster. The purpose of this attribute is to show the vSphere VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this Cluster in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the Cluster to use a different VLAN for the vSphere component of the VMware environment, you should use [UpdateCluster](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/Sddc/UpdateSddc) to update the Cluster's `vsphereVlanId` with that new VLAN's OCID.
+func (o ClusterNetworkConfigurationPtrOutput) VsphereVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VsphereVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ClusterUpgradeLicense struct {
+	// vSphere license key value.
+	LicenseKey *string `pulumi:"licenseKey"`
+	// vSphere license type.
+	LicenseType *string `pulumi:"licenseType"`
+}
+
+// ClusterUpgradeLicenseInput is an input type that accepts ClusterUpgradeLicenseArgs and ClusterUpgradeLicenseOutput values.
+// You can construct a concrete instance of `ClusterUpgradeLicenseInput` via:
+//
+//	ClusterUpgradeLicenseArgs{...}
+type ClusterUpgradeLicenseInput interface {
+	pulumi.Input
+
+	ToClusterUpgradeLicenseOutput() ClusterUpgradeLicenseOutput
+	ToClusterUpgradeLicenseOutputWithContext(context.Context) ClusterUpgradeLicenseOutput
+}
+
+type ClusterUpgradeLicenseArgs struct {
+	// vSphere license key value.
+	LicenseKey pulumi.StringPtrInput `pulumi:"licenseKey"`
+	// vSphere license type.
+	LicenseType pulumi.StringPtrInput `pulumi:"licenseType"`
+}
+
+func (ClusterUpgradeLicenseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterUpgradeLicense)(nil)).Elem()
+}
+
+func (i ClusterUpgradeLicenseArgs) ToClusterUpgradeLicenseOutput() ClusterUpgradeLicenseOutput {
+	return i.ToClusterUpgradeLicenseOutputWithContext(context.Background())
+}
+
+func (i ClusterUpgradeLicenseArgs) ToClusterUpgradeLicenseOutputWithContext(ctx context.Context) ClusterUpgradeLicenseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterUpgradeLicenseOutput)
+}
+
+// ClusterUpgradeLicenseArrayInput is an input type that accepts ClusterUpgradeLicenseArray and ClusterUpgradeLicenseArrayOutput values.
+// You can construct a concrete instance of `ClusterUpgradeLicenseArrayInput` via:
+//
+//	ClusterUpgradeLicenseArray{ ClusterUpgradeLicenseArgs{...} }
+type ClusterUpgradeLicenseArrayInput interface {
+	pulumi.Input
+
+	ToClusterUpgradeLicenseArrayOutput() ClusterUpgradeLicenseArrayOutput
+	ToClusterUpgradeLicenseArrayOutputWithContext(context.Context) ClusterUpgradeLicenseArrayOutput
+}
+
+type ClusterUpgradeLicenseArray []ClusterUpgradeLicenseInput
+
+func (ClusterUpgradeLicenseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterUpgradeLicense)(nil)).Elem()
+}
+
+func (i ClusterUpgradeLicenseArray) ToClusterUpgradeLicenseArrayOutput() ClusterUpgradeLicenseArrayOutput {
+	return i.ToClusterUpgradeLicenseArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterUpgradeLicenseArray) ToClusterUpgradeLicenseArrayOutputWithContext(ctx context.Context) ClusterUpgradeLicenseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterUpgradeLicenseArrayOutput)
+}
+
+type ClusterUpgradeLicenseOutput struct{ *pulumi.OutputState }
+
+func (ClusterUpgradeLicenseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterUpgradeLicense)(nil)).Elem()
+}
+
+func (o ClusterUpgradeLicenseOutput) ToClusterUpgradeLicenseOutput() ClusterUpgradeLicenseOutput {
+	return o
+}
+
+func (o ClusterUpgradeLicenseOutput) ToClusterUpgradeLicenseOutputWithContext(ctx context.Context) ClusterUpgradeLicenseOutput {
+	return o
+}
+
+// vSphere license key value.
+func (o ClusterUpgradeLicenseOutput) LicenseKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterUpgradeLicense) *string { return v.LicenseKey }).(pulumi.StringPtrOutput)
+}
+
+// vSphere license type.
+func (o ClusterUpgradeLicenseOutput) LicenseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterUpgradeLicense) *string { return v.LicenseType }).(pulumi.StringPtrOutput)
+}
+
+type ClusterUpgradeLicenseArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterUpgradeLicenseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterUpgradeLicense)(nil)).Elem()
+}
+
+func (o ClusterUpgradeLicenseArrayOutput) ToClusterUpgradeLicenseArrayOutput() ClusterUpgradeLicenseArrayOutput {
+	return o
+}
+
+func (o ClusterUpgradeLicenseArrayOutput) ToClusterUpgradeLicenseArrayOutputWithContext(ctx context.Context) ClusterUpgradeLicenseArrayOutput {
+	return o
+}
+
+func (o ClusterUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) ClusterUpgradeLicenseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterUpgradeLicense {
+		return vs[0].([]ClusterUpgradeLicense)[vs[1].(int)]
+	}).(ClusterUpgradeLicenseOutput)
+}
+
+type ClusterVsphereUpgradeObject struct {
+	// Binary object download link.
+	DownloadLink *string `pulumi:"downloadLink"`
+	// Binary object description.
+	LinkDescription *string `pulumi:"linkDescription"`
+}
+
+// ClusterVsphereUpgradeObjectInput is an input type that accepts ClusterVsphereUpgradeObjectArgs and ClusterVsphereUpgradeObjectOutput values.
+// You can construct a concrete instance of `ClusterVsphereUpgradeObjectInput` via:
+//
+//	ClusterVsphereUpgradeObjectArgs{...}
+type ClusterVsphereUpgradeObjectInput interface {
+	pulumi.Input
+
+	ToClusterVsphereUpgradeObjectOutput() ClusterVsphereUpgradeObjectOutput
+	ToClusterVsphereUpgradeObjectOutputWithContext(context.Context) ClusterVsphereUpgradeObjectOutput
+}
+
+type ClusterVsphereUpgradeObjectArgs struct {
+	// Binary object download link.
+	DownloadLink pulumi.StringPtrInput `pulumi:"downloadLink"`
+	// Binary object description.
+	LinkDescription pulumi.StringPtrInput `pulumi:"linkDescription"`
+}
+
+func (ClusterVsphereUpgradeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (i ClusterVsphereUpgradeObjectArgs) ToClusterVsphereUpgradeObjectOutput() ClusterVsphereUpgradeObjectOutput {
+	return i.ToClusterVsphereUpgradeObjectOutputWithContext(context.Background())
+}
+
+func (i ClusterVsphereUpgradeObjectArgs) ToClusterVsphereUpgradeObjectOutputWithContext(ctx context.Context) ClusterVsphereUpgradeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterVsphereUpgradeObjectOutput)
+}
+
+// ClusterVsphereUpgradeObjectArrayInput is an input type that accepts ClusterVsphereUpgradeObjectArray and ClusterVsphereUpgradeObjectArrayOutput values.
+// You can construct a concrete instance of `ClusterVsphereUpgradeObjectArrayInput` via:
+//
+//	ClusterVsphereUpgradeObjectArray{ ClusterVsphereUpgradeObjectArgs{...} }
+type ClusterVsphereUpgradeObjectArrayInput interface {
+	pulumi.Input
+
+	ToClusterVsphereUpgradeObjectArrayOutput() ClusterVsphereUpgradeObjectArrayOutput
+	ToClusterVsphereUpgradeObjectArrayOutputWithContext(context.Context) ClusterVsphereUpgradeObjectArrayOutput
+}
+
+type ClusterVsphereUpgradeObjectArray []ClusterVsphereUpgradeObjectInput
+
+func (ClusterVsphereUpgradeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (i ClusterVsphereUpgradeObjectArray) ToClusterVsphereUpgradeObjectArrayOutput() ClusterVsphereUpgradeObjectArrayOutput {
+	return i.ToClusterVsphereUpgradeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterVsphereUpgradeObjectArray) ToClusterVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) ClusterVsphereUpgradeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterVsphereUpgradeObjectArrayOutput)
+}
+
+type ClusterVsphereUpgradeObjectOutput struct{ *pulumi.OutputState }
+
+func (ClusterVsphereUpgradeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (o ClusterVsphereUpgradeObjectOutput) ToClusterVsphereUpgradeObjectOutput() ClusterVsphereUpgradeObjectOutput {
+	return o
+}
+
+func (o ClusterVsphereUpgradeObjectOutput) ToClusterVsphereUpgradeObjectOutputWithContext(ctx context.Context) ClusterVsphereUpgradeObjectOutput {
+	return o
+}
+
+// Binary object download link.
+func (o ClusterVsphereUpgradeObjectOutput) DownloadLink() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterVsphereUpgradeObject) *string { return v.DownloadLink }).(pulumi.StringPtrOutput)
+}
+
+// Binary object description.
+func (o ClusterVsphereUpgradeObjectOutput) LinkDescription() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterVsphereUpgradeObject) *string { return v.LinkDescription }).(pulumi.StringPtrOutput)
+}
+
+type ClusterVsphereUpgradeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterVsphereUpgradeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (o ClusterVsphereUpgradeObjectArrayOutput) ToClusterVsphereUpgradeObjectArrayOutput() ClusterVsphereUpgradeObjectArrayOutput {
+	return o
+}
+
+func (o ClusterVsphereUpgradeObjectArrayOutput) ToClusterVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) ClusterVsphereUpgradeObjectArrayOutput {
+	return o
+}
+
+func (o ClusterVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) ClusterVsphereUpgradeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterVsphereUpgradeObject {
+		return vs[0].([]ClusterVsphereUpgradeObject)[vs[1].(int)]
+	}).(ClusterVsphereUpgradeObjectOutput)
+}
+
 type SddcDatastore struct {
 	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
@@ -243,6 +1025,825 @@ func (o SddcHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInput) SddcHcxOnPremL
 	}).(SddcHcxOnPremLicenseOutput)
 }
 
+type SddcInitialConfiguration struct {
+	// The configurations for Clusters initially created in the SDDC.
+	InitialClusterConfigurations []SddcInitialConfigurationInitialClusterConfiguration `pulumi:"initialClusterConfigurations"`
+}
+
+// SddcInitialConfigurationInput is an input type that accepts SddcInitialConfigurationArgs and SddcInitialConfigurationOutput values.
+// You can construct a concrete instance of `SddcInitialConfigurationInput` via:
+//
+//	SddcInitialConfigurationArgs{...}
+type SddcInitialConfigurationInput interface {
+	pulumi.Input
+
+	ToSddcInitialConfigurationOutput() SddcInitialConfigurationOutput
+	ToSddcInitialConfigurationOutputWithContext(context.Context) SddcInitialConfigurationOutput
+}
+
+type SddcInitialConfigurationArgs struct {
+	// The configurations for Clusters initially created in the SDDC.
+	InitialClusterConfigurations SddcInitialConfigurationInitialClusterConfigurationArrayInput `pulumi:"initialClusterConfigurations"`
+}
+
+func (SddcInitialConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcInitialConfiguration)(nil)).Elem()
+}
+
+func (i SddcInitialConfigurationArgs) ToSddcInitialConfigurationOutput() SddcInitialConfigurationOutput {
+	return i.ToSddcInitialConfigurationOutputWithContext(context.Background())
+}
+
+func (i SddcInitialConfigurationArgs) ToSddcInitialConfigurationOutputWithContext(ctx context.Context) SddcInitialConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcInitialConfigurationOutput)
+}
+
+// SddcInitialConfigurationArrayInput is an input type that accepts SddcInitialConfigurationArray and SddcInitialConfigurationArrayOutput values.
+// You can construct a concrete instance of `SddcInitialConfigurationArrayInput` via:
+//
+//	SddcInitialConfigurationArray{ SddcInitialConfigurationArgs{...} }
+type SddcInitialConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToSddcInitialConfigurationArrayOutput() SddcInitialConfigurationArrayOutput
+	ToSddcInitialConfigurationArrayOutputWithContext(context.Context) SddcInitialConfigurationArrayOutput
+}
+
+type SddcInitialConfigurationArray []SddcInitialConfigurationInput
+
+func (SddcInitialConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SddcInitialConfiguration)(nil)).Elem()
+}
+
+func (i SddcInitialConfigurationArray) ToSddcInitialConfigurationArrayOutput() SddcInitialConfigurationArrayOutput {
+	return i.ToSddcInitialConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i SddcInitialConfigurationArray) ToSddcInitialConfigurationArrayOutputWithContext(ctx context.Context) SddcInitialConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcInitialConfigurationArrayOutput)
+}
+
+type SddcInitialConfigurationOutput struct{ *pulumi.OutputState }
+
+func (SddcInitialConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcInitialConfiguration)(nil)).Elem()
+}
+
+func (o SddcInitialConfigurationOutput) ToSddcInitialConfigurationOutput() SddcInitialConfigurationOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationOutput) ToSddcInitialConfigurationOutputWithContext(ctx context.Context) SddcInitialConfigurationOutput {
+	return o
+}
+
+// The configurations for Clusters initially created in the SDDC.
+func (o SddcInitialConfigurationOutput) InitialClusterConfigurations() SddcInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return o.ApplyT(func(v SddcInitialConfiguration) []SddcInitialConfigurationInitialClusterConfiguration {
+		return v.InitialClusterConfigurations
+	}).(SddcInitialConfigurationInitialClusterConfigurationArrayOutput)
+}
+
+type SddcInitialConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (SddcInitialConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SddcInitialConfiguration)(nil)).Elem()
+}
+
+func (o SddcInitialConfigurationArrayOutput) ToSddcInitialConfigurationArrayOutput() SddcInitialConfigurationArrayOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationArrayOutput) ToSddcInitialConfigurationArrayOutputWithContext(ctx context.Context) SddcInitialConfigurationArrayOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationArrayOutput) Index(i pulumi.IntInput) SddcInitialConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SddcInitialConfiguration {
+		return vs[0].([]SddcInitialConfiguration)[vs[1].(int)]
+	}).(SddcInitialConfigurationOutput)
+}
+
+type SddcInitialConfigurationInitialClusterConfiguration struct {
+	// The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**.
+	ActualEsxiHostsCount *int `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
+	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
+	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+	Datastores []SddcInitialConfigurationInitialClusterConfigurationDatastore `pulumi:"datastores"`
+	// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	DisplayName *string `pulumi:"displayName"`
+	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+	//
+	// **Note:** If you later delete EXSi hosts from a production Cluster to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until it again has at least 3 ESXi hosts.
+	EsxiHostsCount int `pulumi:"esxiHostsCount"`
+	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+	InitialCommitment *string `pulumi:"initialCommitment"`
+	// (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
+	InitialHostOcpuCount *float64 `pulumi:"initialHostOcpuCount"`
+	// (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
+	InitialHostShapeName *string `pulumi:"initialHostShapeName"`
+	// (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+	//
+	// For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instanceDisplayNamePrefix` of `initialClusterConfigurations` instead.
+	InstanceDisplayNamePrefix *string `pulumi:"instanceDisplayNamePrefix"`
+	// (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
+	IsShieldedInstanceEnabled *bool `pulumi:"isShieldedInstanceEnabled"`
+	// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+	NetworkConfiguration *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration `pulumi:"networkConfiguration"`
+	// vSphere Cluster types.
+	VsphereType string `pulumi:"vsphereType"`
+	// (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workloadNetworkCidr` of `initialClusterConfigurations` instead.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	WorkloadNetworkCidr *string `pulumi:"workloadNetworkCidr"`
+}
+
+// SddcInitialConfigurationInitialClusterConfigurationInput is an input type that accepts SddcInitialConfigurationInitialClusterConfigurationArgs and SddcInitialConfigurationInitialClusterConfigurationOutput values.
+// You can construct a concrete instance of `SddcInitialConfigurationInitialClusterConfigurationInput` via:
+//
+//	SddcInitialConfigurationInitialClusterConfigurationArgs{...}
+type SddcInitialConfigurationInitialClusterConfigurationInput interface {
+	pulumi.Input
+
+	ToSddcInitialConfigurationInitialClusterConfigurationOutput() SddcInitialConfigurationInitialClusterConfigurationOutput
+	ToSddcInitialConfigurationInitialClusterConfigurationOutputWithContext(context.Context) SddcInitialConfigurationInitialClusterConfigurationOutput
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationArgs struct {
+	// The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**.
+	ActualEsxiHostsCount pulumi.IntPtrInput `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
+	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
+	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+	Datastores SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput `pulumi:"datastores"`
+	// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+	//
+	// **Note:** If you later delete EXSi hosts from a production Cluster to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until it again has at least 3 ESXi hosts.
+	EsxiHostsCount pulumi.IntInput `pulumi:"esxiHostsCount"`
+	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+	InitialCommitment pulumi.StringPtrInput `pulumi:"initialCommitment"`
+	// (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
+	InitialHostOcpuCount pulumi.Float64PtrInput `pulumi:"initialHostOcpuCount"`
+	// (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
+	InitialHostShapeName pulumi.StringPtrInput `pulumi:"initialHostShapeName"`
+	// (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+	//
+	// For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instanceDisplayNamePrefix` of `initialClusterConfigurations` instead.
+	InstanceDisplayNamePrefix pulumi.StringPtrInput `pulumi:"instanceDisplayNamePrefix"`
+	// (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
+	IsShieldedInstanceEnabled pulumi.BoolPtrInput `pulumi:"isShieldedInstanceEnabled"`
+	// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+	NetworkConfiguration SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrInput `pulumi:"networkConfiguration"`
+	// vSphere Cluster types.
+	VsphereType pulumi.StringInput `pulumi:"vsphereType"`
+	// (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workloadNetworkCidr` of `initialClusterConfigurations` instead.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	WorkloadNetworkCidr pulumi.StringPtrInput `pulumi:"workloadNetworkCidr"`
+}
+
+func (SddcInitialConfigurationInitialClusterConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfiguration)(nil)).Elem()
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationArgs) ToSddcInitialConfigurationInitialClusterConfigurationOutput() SddcInitialConfigurationInitialClusterConfigurationOutput {
+	return i.ToSddcInitialConfigurationInitialClusterConfigurationOutputWithContext(context.Background())
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationArgs) ToSddcInitialConfigurationInitialClusterConfigurationOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcInitialConfigurationInitialClusterConfigurationOutput)
+}
+
+// SddcInitialConfigurationInitialClusterConfigurationArrayInput is an input type that accepts SddcInitialConfigurationInitialClusterConfigurationArray and SddcInitialConfigurationInitialClusterConfigurationArrayOutput values.
+// You can construct a concrete instance of `SddcInitialConfigurationInitialClusterConfigurationArrayInput` via:
+//
+//	SddcInitialConfigurationInitialClusterConfigurationArray{ SddcInitialConfigurationInitialClusterConfigurationArgs{...} }
+type SddcInitialConfigurationInitialClusterConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToSddcInitialConfigurationInitialClusterConfigurationArrayOutput() SddcInitialConfigurationInitialClusterConfigurationArrayOutput
+	ToSddcInitialConfigurationInitialClusterConfigurationArrayOutputWithContext(context.Context) SddcInitialConfigurationInitialClusterConfigurationArrayOutput
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationArray []SddcInitialConfigurationInitialClusterConfigurationInput
+
+func (SddcInitialConfigurationInitialClusterConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SddcInitialConfigurationInitialClusterConfiguration)(nil)).Elem()
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationArray) ToSddcInitialConfigurationInitialClusterConfigurationArrayOutput() SddcInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return i.ToSddcInitialConfigurationInitialClusterConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationArray) ToSddcInitialConfigurationInitialClusterConfigurationArrayOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcInitialConfigurationInitialClusterConfigurationArrayOutput)
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationOutput struct{ *pulumi.OutputState }
+
+func (SddcInitialConfigurationInitialClusterConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfiguration)(nil)).Elem()
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) ToSddcInitialConfigurationInitialClusterConfigurationOutput() SddcInitialConfigurationInitialClusterConfigurationOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) ToSddcInitialConfigurationInitialClusterConfigurationOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationOutput {
+	return o
+}
+
+// The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) ActualEsxiHostsCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *int { return v.ActualEsxiHostsCount }).(pulumi.IntPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
+}
+
+// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) Datastores() SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) []SddcInitialConfigurationInitialClusterConfigurationDatastore {
+		return v.Datastores
+	}).(SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput)
+}
+
+// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) DisplayName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+//
+// **Note:** If you later delete EXSi hosts from a production Cluster to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the Cluster until it again has at least 3 ESXi hosts.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) EsxiHostsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) int { return v.EsxiHostsCount }).(pulumi.IntOutput)
+}
+
+// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) InitialCommitment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *string { return v.InitialCommitment }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) InitialHostOcpuCount() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *float64 { return v.InitialHostOcpuCount }).(pulumi.Float64PtrOutput)
+}
+
+// (Optional) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) InitialHostShapeName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *string { return v.InitialHostShapeName }).(pulumi.StringPtrOutput)
+}
+
+// (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+//
+// For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instanceDisplayNamePrefix` of `initialClusterConfigurations` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) InstanceDisplayNamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *string {
+		return v.InstanceDisplayNamePrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) IsShieldedInstanceEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *bool { return v.IsShieldedInstanceEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) NetworkConfiguration() SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration {
+		return v.NetworkConfiguration
+	}).(SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput)
+}
+
+// vSphere Cluster types.
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) VsphereType() pulumi.StringOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) string { return v.VsphereType }).(pulumi.StringOutput)
+}
+
+// (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workloadNetworkCidr` of `initialClusterConfigurations` instead.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o SddcInitialConfigurationInitialClusterConfigurationOutput) WorkloadNetworkCidr() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfiguration) *string { return v.WorkloadNetworkCidr }).(pulumi.StringPtrOutput)
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (SddcInitialConfigurationInitialClusterConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SddcInitialConfigurationInitialClusterConfiguration)(nil)).Elem()
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationArrayOutput) ToSddcInitialConfigurationInitialClusterConfigurationArrayOutput() SddcInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationArrayOutput) ToSddcInitialConfigurationInitialClusterConfigurationArrayOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationArrayOutput) Index(i pulumi.IntInput) SddcInitialConfigurationInitialClusterConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SddcInitialConfigurationInitialClusterConfiguration {
+		return vs[0].([]SddcInitialConfigurationInitialClusterConfiguration)[vs[1].(int)]
+	}).(SddcInitialConfigurationInitialClusterConfigurationOutput)
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationDatastore struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
+	// Type of the datastore.
+	DatastoreType string `pulumi:"datastoreType"`
+}
+
+// SddcInitialConfigurationInitialClusterConfigurationDatastoreInput is an input type that accepts SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs and SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput values.
+// You can construct a concrete instance of `SddcInitialConfigurationInitialClusterConfigurationDatastoreInput` via:
+//
+//	SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs{...}
+type SddcInitialConfigurationInitialClusterConfigurationDatastoreInput interface {
+	pulumi.Input
+
+	ToSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput() SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput
+	ToSddcInitialConfigurationInitialClusterConfigurationDatastoreOutputWithContext(context.Context) SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
+	// Type of the datastore.
+	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
+}
+
+func (SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationDatastore)(nil)).Elem()
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs) ToSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput() SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return i.ToSddcInitialConfigurationInitialClusterConfigurationDatastoreOutputWithContext(context.Background())
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs) ToSddcInitialConfigurationInitialClusterConfigurationDatastoreOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput)
+}
+
+// SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput is an input type that accepts SddcInitialConfigurationInitialClusterConfigurationDatastoreArray and SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput values.
+// You can construct a concrete instance of `SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput` via:
+//
+//	SddcInitialConfigurationInitialClusterConfigurationDatastoreArray{ SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs{...} }
+type SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput interface {
+	pulumi.Input
+
+	ToSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput() SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput
+	ToSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutputWithContext(context.Context) SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationDatastoreArray []SddcInitialConfigurationInitialClusterConfigurationDatastoreInput
+
+func (SddcInitialConfigurationInitialClusterConfigurationDatastoreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SddcInitialConfigurationInitialClusterConfigurationDatastore)(nil)).Elem()
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationDatastoreArray) ToSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput() SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return i.ToSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutputWithContext(context.Background())
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationDatastoreArray) ToSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput)
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput struct{ *pulumi.OutputState }
+
+func (SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationDatastore)(nil)).Elem()
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput) ToSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput() SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput) ToSddcInitialConfigurationInitialClusterConfigurationDatastoreOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return o
+}
+
+// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+func (o SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationDatastore) []string { return v.BlockVolumeIds }).(pulumi.StringArrayOutput)
+}
+
+// Type of the datastore.
+func (o SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput) DatastoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationDatastore) string { return v.DatastoreType }).(pulumi.StringOutput)
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput struct{ *pulumi.OutputState }
+
+func (SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SddcInitialConfigurationInitialClusterConfigurationDatastore)(nil)).Elem()
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput) ToSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput() SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput) ToSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput) Index(i pulumi.IntInput) SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SddcInitialConfigurationInitialClusterConfigurationDatastore {
+		return vs[0].([]SddcInitialConfigurationInitialClusterConfigurationDatastore)[vs[1].(int)]
+	}).(SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput)
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	//
+	// This attribute is not guaranteed to reflect the HCX VLAN currently used by the ESXi hosts in the SDDC. The purpose of this attribute is to show the HCX VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this SDDC in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN for the HCX component of the VMware environment, you should use [UpdateSddc](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc) to update the SDDC's `hcxVlanId` with that new VLAN's OCID.
+	HcxVlanId *string `pulumi:"hcxVlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink1vlanId` of `networkConfiguration` instead.
+	NsxEdgeUplink1vlanId *string `pulumi:"nsxEdgeUplink1vlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink2vlanId` of `networkConfiguration` instead.
+	//
+	// **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+	NsxEdgeUplink2vlanId *string `pulumi:"nsxEdgeUplink2vlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment. **Deprecated**. Please use `nsxEdgeVtepVlanId` of `networkConfiguration` instead.
+	NsxEdgeVtepVlanId string `pulumi:"nsxEdgeVtepVlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment. **Deprecated**. Please use `nsxVtepVlanId` of `networkConfiguration` instead.
+	NsxVtepVlanId string `pulumi:"nsxVtepVlanId"`
+	// (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
+	ProvisioningSubnetId string `pulumi:"provisioningSubnetId"`
+	// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
+	ProvisioningVlanId *string `pulumi:"provisioningVlanId"`
+	// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
+	ReplicationVlanId *string `pulumi:"replicationVlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotionVlanId` of `networkConfiguration` instead.
+	VmotionVlanId string `pulumi:"vmotionVlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsanVlanId` of `networkConfiguration` instead.
+	VsanVlanId string `pulumi:"vsanVlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphereVlanId` of `networkConfiguration` instead.
+	VsphereVlanId *string `pulumi:"vsphereVlanId"`
+}
+
+// SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput is an input type that accepts SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs and SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput values.
+// You can construct a concrete instance of `SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput` via:
+//
+//	SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{...}
+type SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput() SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput
+	ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutputWithContext(context.Context) SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	//
+	// This attribute is not guaranteed to reflect the HCX VLAN currently used by the ESXi hosts in the SDDC. The purpose of this attribute is to show the HCX VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this SDDC in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/CreateEsxiHost).
+	//
+	// Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN for the HCX component of the VMware environment, you should use [UpdateSddc](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc) to update the SDDC's `hcxVlanId` with that new VLAN's OCID.
+	HcxVlanId pulumi.StringPtrInput `pulumi:"hcxVlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink1vlanId` of `networkConfiguration` instead.
+	NsxEdgeUplink1vlanId pulumi.StringPtrInput `pulumi:"nsxEdgeUplink1vlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink2vlanId` of `networkConfiguration` instead.
+	//
+	// **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+	NsxEdgeUplink2vlanId pulumi.StringPtrInput `pulumi:"nsxEdgeUplink2vlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment. **Deprecated**. Please use `nsxEdgeVtepVlanId` of `networkConfiguration` instead.
+	NsxEdgeVtepVlanId pulumi.StringInput `pulumi:"nsxEdgeVtepVlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment. **Deprecated**. Please use `nsxVtepVlanId` of `networkConfiguration` instead.
+	NsxVtepVlanId pulumi.StringInput `pulumi:"nsxVtepVlanId"`
+	// (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
+	ProvisioningSubnetId pulumi.StringInput `pulumi:"provisioningSubnetId"`
+	// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
+	ProvisioningVlanId pulumi.StringPtrInput `pulumi:"provisioningVlanId"`
+	// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
+	ReplicationVlanId pulumi.StringPtrInput `pulumi:"replicationVlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotionVlanId` of `networkConfiguration` instead.
+	VmotionVlanId pulumi.StringInput `pulumi:"vmotionVlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsanVlanId` of `networkConfiguration` instead.
+	VsanVlanId pulumi.StringInput `pulumi:"vsanVlanId"`
+	// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphereVlanId` of `networkConfiguration` instead.
+	VsphereVlanId pulumi.StringPtrInput `pulumi:"vsphereVlanId"`
+}
+
+func (SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration)(nil)).Elem()
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput() SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return i.ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput)
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput() SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput {
+	return i.ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput).ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutputWithContext(ctx)
+}
+
+// SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrInput is an input type that accepts SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs, SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtr and SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput values.
+// You can construct a concrete instance of `SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrInput` via:
+//
+//	        SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput() SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput
+	ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutputWithContext(context.Context) SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput
+}
+
+type sddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrType SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs
+
+func SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtr(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrInput {
+	return (*sddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrType)(v)
+}
+
+func (*sddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration)(nil)).Elem()
+}
+
+func (i *sddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrType) ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput() SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput {
+	return i.ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *sddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrType) ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput)
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration)(nil)).Elem()
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput() SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput() SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput {
+	return o.ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration {
+		return &v
+	}).(SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+//
+// This attribute is not guaranteed to reflect the HCX VLAN currently used by the ESXi hosts in the SDDC. The purpose of this attribute is to show the HCX VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this SDDC in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN for the HCX component of the VMware environment, you should use [UpdateSddc](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc) to update the SDDC's `hcxVlanId` with that new VLAN's OCID.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) HcxVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		return v.HcxVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink1vlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxEdgeUplink1vlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		return v.NsxEdgeUplink1vlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink2vlanId` of `networkConfiguration` instead.
+//
+// **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxEdgeUplink2vlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		return v.NsxEdgeUplink2vlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment. **Deprecated**. Please use `nsxEdgeVtepVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxEdgeVtepVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.NsxEdgeVtepVlanId
+	}).(pulumi.StringOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment. **Deprecated**. Please use `nsxVtepVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxVtepVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.NsxVtepVlanId
+	}).(pulumi.StringOutput)
+}
+
+// (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ProvisioningSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.ProvisioningSubnetId
+	}).(pulumi.StringOutput)
+}
+
+// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ProvisioningVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		return v.ProvisioningVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ReplicationVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		return v.ReplicationVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotionVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) VmotionVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.VmotionVlanId
+	}).(pulumi.StringOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsanVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) VsanVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.VsanVlanId
+	}).(pulumi.StringOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphereVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) VsphereVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		return v.VsphereVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+type SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration)(nil)).Elem()
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput() SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) ToSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutputWithContext(ctx context.Context) SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput {
+	return o
+}
+
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) Elem() SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration
+		return ret
+	}).(SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+//
+// This attribute is not guaranteed to reflect the HCX VLAN currently used by the ESXi hosts in the SDDC. The purpose of this attribute is to show the HCX VLAN that the Oracle Cloud VMware Solution will use for any new ESXi hosts that you *add to this SDDC in the future* with [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/EsxiHost/CreateEsxiHost).
+//
+// Therefore, if you change the existing ESXi hosts in the SDDC to use a different VLAN for the HCX component of the VMware environment, you should use [UpdateSddc](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc) to update the SDDC's `hcxVlanId` with that new VLAN's OCID.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) HcxVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HcxVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink1vlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) NsxEdgeUplink1vlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NsxEdgeUplink1vlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 2 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink2vlanId` of `networkConfiguration` instead.
+//
+// **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) NsxEdgeUplink2vlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NsxEdgeUplink2vlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment. **Deprecated**. Please use `nsxEdgeVtepVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) NsxEdgeVtepVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NsxEdgeVtepVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment. **Deprecated**. Please use `nsxVtepVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) NsxVtepVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.NsxVtepVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) ProvisioningSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ProvisioningSubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) ProvisioningVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProvisioningVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) ReplicationVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ReplicationVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotionVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) VmotionVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.VmotionVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsanVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) VsanVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.VsanVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphereVlanId` of `networkConfiguration` instead.
+func (o SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput) VsphereVlanId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VsphereVlanId
+	}).(pulumi.StringPtrOutput)
+}
+
 type SddcUpgradeLicense struct {
 	// vSphere license key value.
 	LicenseKey *string `pulumi:"licenseKey"`
@@ -455,8 +2056,1563 @@ func (o SddcVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) SddcVspher
 	}).(SddcVsphereUpgradeObjectOutput)
 }
 
+type GetClusterDatastore struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
+	// Size of the Block Storage Volume in GB.
+	Capacity float64 `pulumi:"capacity"`
+	// Type of the datastore.
+	DatastoreType string `pulumi:"datastoreType"`
+}
+
+// GetClusterDatastoreInput is an input type that accepts GetClusterDatastoreArgs and GetClusterDatastoreOutput values.
+// You can construct a concrete instance of `GetClusterDatastoreInput` via:
+//
+//	GetClusterDatastoreArgs{...}
+type GetClusterDatastoreInput interface {
+	pulumi.Input
+
+	ToGetClusterDatastoreOutput() GetClusterDatastoreOutput
+	ToGetClusterDatastoreOutputWithContext(context.Context) GetClusterDatastoreOutput
+}
+
+type GetClusterDatastoreArgs struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
+	// Size of the Block Storage Volume in GB.
+	Capacity pulumi.Float64Input `pulumi:"capacity"`
+	// Type of the datastore.
+	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
+}
+
+func (GetClusterDatastoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterDatastore)(nil)).Elem()
+}
+
+func (i GetClusterDatastoreArgs) ToGetClusterDatastoreOutput() GetClusterDatastoreOutput {
+	return i.ToGetClusterDatastoreOutputWithContext(context.Background())
+}
+
+func (i GetClusterDatastoreArgs) ToGetClusterDatastoreOutputWithContext(ctx context.Context) GetClusterDatastoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterDatastoreOutput)
+}
+
+// GetClusterDatastoreArrayInput is an input type that accepts GetClusterDatastoreArray and GetClusterDatastoreArrayOutput values.
+// You can construct a concrete instance of `GetClusterDatastoreArrayInput` via:
+//
+//	GetClusterDatastoreArray{ GetClusterDatastoreArgs{...} }
+type GetClusterDatastoreArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterDatastoreArrayOutput() GetClusterDatastoreArrayOutput
+	ToGetClusterDatastoreArrayOutputWithContext(context.Context) GetClusterDatastoreArrayOutput
+}
+
+type GetClusterDatastoreArray []GetClusterDatastoreInput
+
+func (GetClusterDatastoreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterDatastore)(nil)).Elem()
+}
+
+func (i GetClusterDatastoreArray) ToGetClusterDatastoreArrayOutput() GetClusterDatastoreArrayOutput {
+	return i.ToGetClusterDatastoreArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterDatastoreArray) ToGetClusterDatastoreArrayOutputWithContext(ctx context.Context) GetClusterDatastoreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterDatastoreArrayOutput)
+}
+
+type GetClusterDatastoreOutput struct{ *pulumi.OutputState }
+
+func (GetClusterDatastoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterDatastore)(nil)).Elem()
+}
+
+func (o GetClusterDatastoreOutput) ToGetClusterDatastoreOutput() GetClusterDatastoreOutput {
+	return o
+}
+
+func (o GetClusterDatastoreOutput) ToGetClusterDatastoreOutputWithContext(ctx context.Context) GetClusterDatastoreOutput {
+	return o
+}
+
+// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+func (o GetClusterDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClusterDatastore) []string { return v.BlockVolumeIds }).(pulumi.StringArrayOutput)
+}
+
+// Size of the Block Storage Volume in GB.
+func (o GetClusterDatastoreOutput) Capacity() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClusterDatastore) float64 { return v.Capacity }).(pulumi.Float64Output)
+}
+
+// Type of the datastore.
+func (o GetClusterDatastoreOutput) DatastoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterDatastore) string { return v.DatastoreType }).(pulumi.StringOutput)
+}
+
+type GetClusterDatastoreArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterDatastoreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterDatastore)(nil)).Elem()
+}
+
+func (o GetClusterDatastoreArrayOutput) ToGetClusterDatastoreArrayOutput() GetClusterDatastoreArrayOutput {
+	return o
+}
+
+func (o GetClusterDatastoreArrayOutput) ToGetClusterDatastoreArrayOutputWithContext(ctx context.Context) GetClusterDatastoreArrayOutput {
+	return o
+}
+
+func (o GetClusterDatastoreArrayOutput) Index(i pulumi.IntInput) GetClusterDatastoreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterDatastore {
+		return vs[0].([]GetClusterDatastore)[vs[1].(int)]
+	}).(GetClusterDatastoreOutput)
+}
+
+type GetClusterNetworkConfiguration struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	HcxVlanId string `pulumi:"hcxVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	NsxEdgeUplink1vlanId string `pulumi:"nsxEdgeUplink1vlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	NsxEdgeUplink2vlanId string `pulumi:"nsxEdgeUplink2vlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+	NsxEdgeVtepVlanId string `pulumi:"nsxEdgeVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+	NsxVtepVlanId string `pulumi:"nsxVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+	ProvisioningSubnetId string `pulumi:"provisioningSubnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+	ProvisioningVlanId string `pulumi:"provisioningVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+	ReplicationVlanId string `pulumi:"replicationVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+	VmotionVlanId string `pulumi:"vmotionVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+	VsanVlanId string `pulumi:"vsanVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	VsphereVlanId string `pulumi:"vsphereVlanId"`
+}
+
+// GetClusterNetworkConfigurationInput is an input type that accepts GetClusterNetworkConfigurationArgs and GetClusterNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetClusterNetworkConfigurationInput` via:
+//
+//	GetClusterNetworkConfigurationArgs{...}
+type GetClusterNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkConfigurationOutput() GetClusterNetworkConfigurationOutput
+	ToGetClusterNetworkConfigurationOutputWithContext(context.Context) GetClusterNetworkConfigurationOutput
+}
+
+type GetClusterNetworkConfigurationArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	HcxVlanId pulumi.StringInput `pulumi:"hcxVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	NsxEdgeUplink1vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink1vlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	NsxEdgeUplink2vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink2vlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+	NsxEdgeVtepVlanId pulumi.StringInput `pulumi:"nsxEdgeVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+	NsxVtepVlanId pulumi.StringInput `pulumi:"nsxVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+	ProvisioningSubnetId pulumi.StringInput `pulumi:"provisioningSubnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+	ProvisioningVlanId pulumi.StringInput `pulumi:"provisioningVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+	ReplicationVlanId pulumi.StringInput `pulumi:"replicationVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+	VmotionVlanId pulumi.StringInput `pulumi:"vmotionVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+	VsanVlanId pulumi.StringInput `pulumi:"vsanVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	VsphereVlanId pulumi.StringInput `pulumi:"vsphereVlanId"`
+}
+
+func (GetClusterNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetClusterNetworkConfigurationArgs) ToGetClusterNetworkConfigurationOutput() GetClusterNetworkConfigurationOutput {
+	return i.ToGetClusterNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkConfigurationArgs) ToGetClusterNetworkConfigurationOutputWithContext(ctx context.Context) GetClusterNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkConfigurationOutput)
+}
+
+// GetClusterNetworkConfigurationArrayInput is an input type that accepts GetClusterNetworkConfigurationArray and GetClusterNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetClusterNetworkConfigurationArrayInput` via:
+//
+//	GetClusterNetworkConfigurationArray{ GetClusterNetworkConfigurationArgs{...} }
+type GetClusterNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterNetworkConfigurationArrayOutput() GetClusterNetworkConfigurationArrayOutput
+	ToGetClusterNetworkConfigurationArrayOutputWithContext(context.Context) GetClusterNetworkConfigurationArrayOutput
+}
+
+type GetClusterNetworkConfigurationArray []GetClusterNetworkConfigurationInput
+
+func (GetClusterNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetClusterNetworkConfigurationArray) ToGetClusterNetworkConfigurationArrayOutput() GetClusterNetworkConfigurationArrayOutput {
+	return i.ToGetClusterNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterNetworkConfigurationArray) ToGetClusterNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetClusterNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterNetworkConfigurationArrayOutput)
+}
+
+type GetClusterNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetClusterNetworkConfigurationOutput) ToGetClusterNetworkConfigurationOutput() GetClusterNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetClusterNetworkConfigurationOutput) ToGetClusterNetworkConfigurationOutputWithContext(ctx context.Context) GetClusterNetworkConfigurationOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+func (o GetClusterNetworkConfigurationOutput) HcxVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkConfiguration) string { return v.HcxVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+func (o GetClusterNetworkConfigurationOutput) NsxEdgeUplink1vlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkConfiguration) string { return v.NsxEdgeUplink1vlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+func (o GetClusterNetworkConfigurationOutput) NsxEdgeUplink2vlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkConfiguration) string { return v.NsxEdgeUplink2vlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+func (o GetClusterNetworkConfigurationOutput) NsxEdgeVtepVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkConfiguration) string { return v.NsxEdgeVtepVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+func (o GetClusterNetworkConfigurationOutput) NsxVtepVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkConfiguration) string { return v.NsxVtepVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+func (o GetClusterNetworkConfigurationOutput) ProvisioningSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkConfiguration) string { return v.ProvisioningSubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+func (o GetClusterNetworkConfigurationOutput) ProvisioningVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkConfiguration) string { return v.ProvisioningVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+func (o GetClusterNetworkConfigurationOutput) ReplicationVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkConfiguration) string { return v.ReplicationVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+func (o GetClusterNetworkConfigurationOutput) VmotionVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkConfiguration) string { return v.VmotionVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+func (o GetClusterNetworkConfigurationOutput) VsanVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkConfiguration) string { return v.VsanVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+func (o GetClusterNetworkConfigurationOutput) VsphereVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterNetworkConfiguration) string { return v.VsphereVlanId }).(pulumi.StringOutput)
+}
+
+type GetClusterNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetClusterNetworkConfigurationArrayOutput) ToGetClusterNetworkConfigurationArrayOutput() GetClusterNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkConfigurationArrayOutput) ToGetClusterNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetClusterNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetClusterNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetClusterNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterNetworkConfiguration {
+		return vs[0].([]GetClusterNetworkConfiguration)[vs[1].(int)]
+	}).(GetClusterNetworkConfigurationOutput)
+}
+
+type GetClusterUpgradeLicense struct {
+	// vSphere license key value.
+	LicenseKey string `pulumi:"licenseKey"`
+	// vSphere license type.
+	LicenseType string `pulumi:"licenseType"`
+}
+
+// GetClusterUpgradeLicenseInput is an input type that accepts GetClusterUpgradeLicenseArgs and GetClusterUpgradeLicenseOutput values.
+// You can construct a concrete instance of `GetClusterUpgradeLicenseInput` via:
+//
+//	GetClusterUpgradeLicenseArgs{...}
+type GetClusterUpgradeLicenseInput interface {
+	pulumi.Input
+
+	ToGetClusterUpgradeLicenseOutput() GetClusterUpgradeLicenseOutput
+	ToGetClusterUpgradeLicenseOutputWithContext(context.Context) GetClusterUpgradeLicenseOutput
+}
+
+type GetClusterUpgradeLicenseArgs struct {
+	// vSphere license key value.
+	LicenseKey pulumi.StringInput `pulumi:"licenseKey"`
+	// vSphere license type.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+}
+
+func (GetClusterUpgradeLicenseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterUpgradeLicense)(nil)).Elem()
+}
+
+func (i GetClusterUpgradeLicenseArgs) ToGetClusterUpgradeLicenseOutput() GetClusterUpgradeLicenseOutput {
+	return i.ToGetClusterUpgradeLicenseOutputWithContext(context.Background())
+}
+
+func (i GetClusterUpgradeLicenseArgs) ToGetClusterUpgradeLicenseOutputWithContext(ctx context.Context) GetClusterUpgradeLicenseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterUpgradeLicenseOutput)
+}
+
+// GetClusterUpgradeLicenseArrayInput is an input type that accepts GetClusterUpgradeLicenseArray and GetClusterUpgradeLicenseArrayOutput values.
+// You can construct a concrete instance of `GetClusterUpgradeLicenseArrayInput` via:
+//
+//	GetClusterUpgradeLicenseArray{ GetClusterUpgradeLicenseArgs{...} }
+type GetClusterUpgradeLicenseArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterUpgradeLicenseArrayOutput() GetClusterUpgradeLicenseArrayOutput
+	ToGetClusterUpgradeLicenseArrayOutputWithContext(context.Context) GetClusterUpgradeLicenseArrayOutput
+}
+
+type GetClusterUpgradeLicenseArray []GetClusterUpgradeLicenseInput
+
+func (GetClusterUpgradeLicenseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterUpgradeLicense)(nil)).Elem()
+}
+
+func (i GetClusterUpgradeLicenseArray) ToGetClusterUpgradeLicenseArrayOutput() GetClusterUpgradeLicenseArrayOutput {
+	return i.ToGetClusterUpgradeLicenseArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterUpgradeLicenseArray) ToGetClusterUpgradeLicenseArrayOutputWithContext(ctx context.Context) GetClusterUpgradeLicenseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterUpgradeLicenseArrayOutput)
+}
+
+type GetClusterUpgradeLicenseOutput struct{ *pulumi.OutputState }
+
+func (GetClusterUpgradeLicenseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterUpgradeLicense)(nil)).Elem()
+}
+
+func (o GetClusterUpgradeLicenseOutput) ToGetClusterUpgradeLicenseOutput() GetClusterUpgradeLicenseOutput {
+	return o
+}
+
+func (o GetClusterUpgradeLicenseOutput) ToGetClusterUpgradeLicenseOutputWithContext(ctx context.Context) GetClusterUpgradeLicenseOutput {
+	return o
+}
+
+// vSphere license key value.
+func (o GetClusterUpgradeLicenseOutput) LicenseKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterUpgradeLicense) string { return v.LicenseKey }).(pulumi.StringOutput)
+}
+
+// vSphere license type.
+func (o GetClusterUpgradeLicenseOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterUpgradeLicense) string { return v.LicenseType }).(pulumi.StringOutput)
+}
+
+type GetClusterUpgradeLicenseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterUpgradeLicenseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterUpgradeLicense)(nil)).Elem()
+}
+
+func (o GetClusterUpgradeLicenseArrayOutput) ToGetClusterUpgradeLicenseArrayOutput() GetClusterUpgradeLicenseArrayOutput {
+	return o
+}
+
+func (o GetClusterUpgradeLicenseArrayOutput) ToGetClusterUpgradeLicenseArrayOutputWithContext(ctx context.Context) GetClusterUpgradeLicenseArrayOutput {
+	return o
+}
+
+func (o GetClusterUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) GetClusterUpgradeLicenseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterUpgradeLicense {
+		return vs[0].([]GetClusterUpgradeLicense)[vs[1].(int)]
+	}).(GetClusterUpgradeLicenseOutput)
+}
+
+type GetClusterVsphereUpgradeObject struct {
+	// Binary object download link.
+	DownloadLink string `pulumi:"downloadLink"`
+	// Binary object description.
+	LinkDescription string `pulumi:"linkDescription"`
+}
+
+// GetClusterVsphereUpgradeObjectInput is an input type that accepts GetClusterVsphereUpgradeObjectArgs and GetClusterVsphereUpgradeObjectOutput values.
+// You can construct a concrete instance of `GetClusterVsphereUpgradeObjectInput` via:
+//
+//	GetClusterVsphereUpgradeObjectArgs{...}
+type GetClusterVsphereUpgradeObjectInput interface {
+	pulumi.Input
+
+	ToGetClusterVsphereUpgradeObjectOutput() GetClusterVsphereUpgradeObjectOutput
+	ToGetClusterVsphereUpgradeObjectOutputWithContext(context.Context) GetClusterVsphereUpgradeObjectOutput
+}
+
+type GetClusterVsphereUpgradeObjectArgs struct {
+	// Binary object download link.
+	DownloadLink pulumi.StringInput `pulumi:"downloadLink"`
+	// Binary object description.
+	LinkDescription pulumi.StringInput `pulumi:"linkDescription"`
+}
+
+func (GetClusterVsphereUpgradeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (i GetClusterVsphereUpgradeObjectArgs) ToGetClusterVsphereUpgradeObjectOutput() GetClusterVsphereUpgradeObjectOutput {
+	return i.ToGetClusterVsphereUpgradeObjectOutputWithContext(context.Background())
+}
+
+func (i GetClusterVsphereUpgradeObjectArgs) ToGetClusterVsphereUpgradeObjectOutputWithContext(ctx context.Context) GetClusterVsphereUpgradeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterVsphereUpgradeObjectOutput)
+}
+
+// GetClusterVsphereUpgradeObjectArrayInput is an input type that accepts GetClusterVsphereUpgradeObjectArray and GetClusterVsphereUpgradeObjectArrayOutput values.
+// You can construct a concrete instance of `GetClusterVsphereUpgradeObjectArrayInput` via:
+//
+//	GetClusterVsphereUpgradeObjectArray{ GetClusterVsphereUpgradeObjectArgs{...} }
+type GetClusterVsphereUpgradeObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetClusterVsphereUpgradeObjectArrayOutput() GetClusterVsphereUpgradeObjectArrayOutput
+	ToGetClusterVsphereUpgradeObjectArrayOutputWithContext(context.Context) GetClusterVsphereUpgradeObjectArrayOutput
+}
+
+type GetClusterVsphereUpgradeObjectArray []GetClusterVsphereUpgradeObjectInput
+
+func (GetClusterVsphereUpgradeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (i GetClusterVsphereUpgradeObjectArray) ToGetClusterVsphereUpgradeObjectArrayOutput() GetClusterVsphereUpgradeObjectArrayOutput {
+	return i.ToGetClusterVsphereUpgradeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetClusterVsphereUpgradeObjectArray) ToGetClusterVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) GetClusterVsphereUpgradeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClusterVsphereUpgradeObjectArrayOutput)
+}
+
+type GetClusterVsphereUpgradeObjectOutput struct{ *pulumi.OutputState }
+
+func (GetClusterVsphereUpgradeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClusterVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (o GetClusterVsphereUpgradeObjectOutput) ToGetClusterVsphereUpgradeObjectOutput() GetClusterVsphereUpgradeObjectOutput {
+	return o
+}
+
+func (o GetClusterVsphereUpgradeObjectOutput) ToGetClusterVsphereUpgradeObjectOutputWithContext(ctx context.Context) GetClusterVsphereUpgradeObjectOutput {
+	return o
+}
+
+// Binary object download link.
+func (o GetClusterVsphereUpgradeObjectOutput) DownloadLink() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterVsphereUpgradeObject) string { return v.DownloadLink }).(pulumi.StringOutput)
+}
+
+// Binary object description.
+func (o GetClusterVsphereUpgradeObjectOutput) LinkDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClusterVsphereUpgradeObject) string { return v.LinkDescription }).(pulumi.StringOutput)
+}
+
+type GetClusterVsphereUpgradeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClusterVsphereUpgradeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClusterVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (o GetClusterVsphereUpgradeObjectArrayOutput) ToGetClusterVsphereUpgradeObjectArrayOutput() GetClusterVsphereUpgradeObjectArrayOutput {
+	return o
+}
+
+func (o GetClusterVsphereUpgradeObjectArrayOutput) ToGetClusterVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) GetClusterVsphereUpgradeObjectArrayOutput {
+	return o
+}
+
+func (o GetClusterVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) GetClusterVsphereUpgradeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClusterVsphereUpgradeObject {
+		return vs[0].([]GetClusterVsphereUpgradeObject)[vs[1].(int)]
+	}).(GetClusterVsphereUpgradeObjectOutput)
+}
+
+type GetClustersClusterCollection struct {
+	Items []GetClustersClusterCollectionItem `pulumi:"items"`
+}
+
+// GetClustersClusterCollectionInput is an input type that accepts GetClustersClusterCollectionArgs and GetClustersClusterCollectionOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionInput` via:
+//
+//	GetClustersClusterCollectionArgs{...}
+type GetClustersClusterCollectionInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionOutput() GetClustersClusterCollectionOutput
+	ToGetClustersClusterCollectionOutputWithContext(context.Context) GetClustersClusterCollectionOutput
+}
+
+type GetClustersClusterCollectionArgs struct {
+	Items GetClustersClusterCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetClustersClusterCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollection)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionArgs) ToGetClustersClusterCollectionOutput() GetClustersClusterCollectionOutput {
+	return i.ToGetClustersClusterCollectionOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionArgs) ToGetClustersClusterCollectionOutputWithContext(ctx context.Context) GetClustersClusterCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionOutput)
+}
+
+// GetClustersClusterCollectionArrayInput is an input type that accepts GetClustersClusterCollectionArray and GetClustersClusterCollectionArrayOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionArrayInput` via:
+//
+//	GetClustersClusterCollectionArray{ GetClustersClusterCollectionArgs{...} }
+type GetClustersClusterCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionArrayOutput() GetClustersClusterCollectionArrayOutput
+	ToGetClustersClusterCollectionArrayOutputWithContext(context.Context) GetClustersClusterCollectionArrayOutput
+}
+
+type GetClustersClusterCollectionArray []GetClustersClusterCollectionInput
+
+func (GetClustersClusterCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollection)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionArray) ToGetClustersClusterCollectionArrayOutput() GetClustersClusterCollectionArrayOutput {
+	return i.ToGetClustersClusterCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionArray) ToGetClustersClusterCollectionArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionArrayOutput)
+}
+
+type GetClustersClusterCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollection)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionOutput) ToGetClustersClusterCollectionOutput() GetClustersClusterCollectionOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionOutput) ToGetClustersClusterCollectionOutputWithContext(ctx context.Context) GetClustersClusterCollectionOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionOutput) Items() GetClustersClusterCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterCollection) []GetClustersClusterCollectionItem { return v.Items }).(GetClustersClusterCollectionItemArrayOutput)
+}
+
+type GetClustersClusterCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollection)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionArrayOutput) ToGetClustersClusterCollectionArrayOutput() GetClustersClusterCollectionArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionArrayOutput) ToGetClustersClusterCollectionArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionArrayOutput) Index(i pulumi.IntInput) GetClustersClusterCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterCollection {
+		return vs[0].([]GetClustersClusterCollection)[vs[1].(int)]
+	}).(GetClustersClusterCollectionOutput)
+}
+
+type GetClustersClusterCollectionItem struct {
+	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The availability domain the ESXi hosts are running in. For Multi-AD Cluster, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
+	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// Datastores used for the Cluster.
+	Datastores []GetClustersClusterCollectionItemDatastore `pulumi:"datastores"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// The number of ESXi hosts in the Cluster.
+	EsxiHostsCount int `pulumi:"esxiHostsCount"`
+	// In general, this is a specific version of bundled ESXi software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+	EsxiSoftwareVersion string `pulumi:"esxiSoftwareVersion"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+	Id string `pulumi:"id"`
+	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+	InitialCommitment string `pulumi:"initialCommitment"`
+	// The initial OCPU count of the Cluster's ESXi hosts.
+	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
+	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	InitialHostShapeName string `pulumi:"initialHostShapeName"`
+	// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
+	InstanceDisplayNamePrefix string `pulumi:"instanceDisplayNamePrefix"`
+	// Indicates whether shielded instance is enabled at the Cluster level.
+	IsShieldedInstanceEnabled bool `pulumi:"isShieldedInstanceEnabled"`
+	// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+	NetworkConfigurations []GetClustersClusterCollectionItemNetworkConfiguration `pulumi:"networkConfigurations"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+	SddcId string `pulumi:"sddcId"`
+	// The lifecycle state of the resource.
+	State string `pulumi:"state"`
+	// The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The vSphere licenses to use when upgrading the Cluster.
+	UpgradeLicenses []GetClustersClusterCollectionItemUpgradeLicense `pulumi:"upgradeLicenses"`
+	// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
+	// vSphere Cluster types.
+	VsphereType string `pulumi:"vsphereType"`
+	// The links to binary objects needed to upgrade vSphere.
+	VsphereUpgradeObjects []GetClustersClusterCollectionItemVsphereUpgradeObject `pulumi:"vsphereUpgradeObjects"`
+	// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+	WorkloadNetworkCidr string `pulumi:"workloadNetworkCidr"`
+}
+
+// GetClustersClusterCollectionItemInput is an input type that accepts GetClustersClusterCollectionItemArgs and GetClustersClusterCollectionItemOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionItemInput` via:
+//
+//	GetClustersClusterCollectionItemArgs{...}
+type GetClustersClusterCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionItemOutput() GetClustersClusterCollectionItemOutput
+	ToGetClustersClusterCollectionItemOutputWithContext(context.Context) GetClustersClusterCollectionItemOutput
+}
+
+type GetClustersClusterCollectionItemArgs struct {
+	ActualEsxiHostsCount pulumi.IntInput `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The availability domain the ESXi hosts are running in. For Multi-AD Cluster, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
+	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
+	// Datastores used for the Cluster.
+	Datastores GetClustersClusterCollectionItemDatastoreArrayInput `pulumi:"datastores"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The number of ESXi hosts in the Cluster.
+	EsxiHostsCount pulumi.IntInput `pulumi:"esxiHostsCount"`
+	// In general, this is a specific version of bundled ESXi software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+	EsxiSoftwareVersion pulumi.StringInput `pulumi:"esxiSoftwareVersion"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+	InitialCommitment pulumi.StringInput `pulumi:"initialCommitment"`
+	// The initial OCPU count of the Cluster's ESXi hosts.
+	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
+	// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	InitialHostShapeName pulumi.StringInput `pulumi:"initialHostShapeName"`
+	// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
+	InstanceDisplayNamePrefix pulumi.StringInput `pulumi:"instanceDisplayNamePrefix"`
+	// Indicates whether shielded instance is enabled at the Cluster level.
+	IsShieldedInstanceEnabled pulumi.BoolInput `pulumi:"isShieldedInstanceEnabled"`
+	// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+	NetworkConfigurations GetClustersClusterCollectionItemNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+	SddcId pulumi.StringInput `pulumi:"sddcId"`
+	// The lifecycle state of the resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The vSphere licenses to use when upgrading the Cluster.
+	UpgradeLicenses GetClustersClusterCollectionItemUpgradeLicenseArrayInput `pulumi:"upgradeLicenses"`
+	// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+	VmwareSoftwareVersion pulumi.StringInput `pulumi:"vmwareSoftwareVersion"`
+	// vSphere Cluster types.
+	VsphereType pulumi.StringInput `pulumi:"vsphereType"`
+	// The links to binary objects needed to upgrade vSphere.
+	VsphereUpgradeObjects GetClustersClusterCollectionItemVsphereUpgradeObjectArrayInput `pulumi:"vsphereUpgradeObjects"`
+	// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+	WorkloadNetworkCidr pulumi.StringInput `pulumi:"workloadNetworkCidr"`
+}
+
+func (GetClustersClusterCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollectionItem)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionItemArgs) ToGetClustersClusterCollectionItemOutput() GetClustersClusterCollectionItemOutput {
+	return i.ToGetClustersClusterCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionItemArgs) ToGetClustersClusterCollectionItemOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionItemOutput)
+}
+
+// GetClustersClusterCollectionItemArrayInput is an input type that accepts GetClustersClusterCollectionItemArray and GetClustersClusterCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionItemArrayInput` via:
+//
+//	GetClustersClusterCollectionItemArray{ GetClustersClusterCollectionItemArgs{...} }
+type GetClustersClusterCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionItemArrayOutput() GetClustersClusterCollectionItemArrayOutput
+	ToGetClustersClusterCollectionItemArrayOutputWithContext(context.Context) GetClustersClusterCollectionItemArrayOutput
+}
+
+type GetClustersClusterCollectionItemArray []GetClustersClusterCollectionItemInput
+
+func (GetClustersClusterCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollectionItem)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionItemArray) ToGetClustersClusterCollectionItemArrayOutput() GetClustersClusterCollectionItemArrayOutput {
+	return i.ToGetClustersClusterCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionItemArray) ToGetClustersClusterCollectionItemArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionItemArrayOutput)
+}
+
+type GetClustersClusterCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollectionItem)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionItemOutput) ToGetClustersClusterCollectionItemOutput() GetClustersClusterCollectionItemOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemOutput) ToGetClustersClusterCollectionItemOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemOutput) ActualEsxiHostsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) int { return v.ActualEsxiHostsCount }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+func (o GetClustersClusterCollectionItemOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
+func (o GetClustersClusterCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The availability domain the ESXi hosts are running in. For Multi-AD Cluster, it is `multi-AD`.  Example: `Uocm:PHX-AD-1`, `multi-AD`
+func (o GetClustersClusterCollectionItemOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// Datastores used for the Cluster.
+func (o GetClustersClusterCollectionItemOutput) Datastores() GetClustersClusterCollectionItemDatastoreArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) []GetClustersClusterCollectionItemDatastore {
+		return v.Datastores
+	}).(GetClustersClusterCollectionItemDatastoreArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetClustersClusterCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetClustersClusterCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The number of ESXi hosts in the Cluster.
+func (o GetClustersClusterCollectionItemOutput) EsxiHostsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) int { return v.EsxiHostsCount }).(pulumi.IntOutput)
+}
+
+// In general, this is a specific version of bundled ESXi software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+func (o GetClustersClusterCollectionItemOutput) EsxiSoftwareVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.EsxiSoftwareVersion }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetClustersClusterCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+func (o GetClustersClusterCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+func (o GetClustersClusterCollectionItemOutput) InitialCommitment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.InitialCommitment }).(pulumi.StringOutput)
+}
+
+// The initial OCPU count of the Cluster's ESXi hosts.
+func (o GetClustersClusterCollectionItemOutput) InitialHostOcpuCount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) float64 { return v.InitialHostOcpuCount }).(pulumi.Float64Output)
+}
+
+// The initial compute shape of the Cluster's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+func (o GetClustersClusterCollectionItemOutput) InitialHostShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.InitialHostShapeName }).(pulumi.StringOutput)
+}
+
+// A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn't set, the Cluster's `displayName` is used as the prefix.
+func (o GetClustersClusterCollectionItemOutput) InstanceDisplayNamePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.InstanceDisplayNamePrefix }).(pulumi.StringOutput)
+}
+
+// Indicates whether shielded instance is enabled at the Cluster level.
+func (o GetClustersClusterCollectionItemOutput) IsShieldedInstanceEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) bool { return v.IsShieldedInstanceEnabled }).(pulumi.BoolOutput)
+}
+
+// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+func (o GetClustersClusterCollectionItemOutput) NetworkConfigurations() GetClustersClusterCollectionItemNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) []GetClustersClusterCollectionItemNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetClustersClusterCollectionItemNetworkConfigurationArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
+func (o GetClustersClusterCollectionItemOutput) SddcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.SddcId }).(pulumi.StringOutput)
+}
+
+// The lifecycle state of the resource.
+func (o GetClustersClusterCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the Cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetClustersClusterCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Cluster was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+func (o GetClustersClusterCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The vSphere licenses to use when upgrading the Cluster.
+func (o GetClustersClusterCollectionItemOutput) UpgradeLicenses() GetClustersClusterCollectionItemUpgradeLicenseArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) []GetClustersClusterCollectionItemUpgradeLicense {
+		return v.UpgradeLicenses
+	}).(GetClustersClusterCollectionItemUpgradeLicenseArrayOutput)
+}
+
+// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+func (o GetClustersClusterCollectionItemOutput) VmwareSoftwareVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.VmwareSoftwareVersion }).(pulumi.StringOutput)
+}
+
+// vSphere Cluster types.
+func (o GetClustersClusterCollectionItemOutput) VsphereType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.VsphereType }).(pulumi.StringOutput)
+}
+
+// The links to binary objects needed to upgrade vSphere.
+func (o GetClustersClusterCollectionItemOutput) VsphereUpgradeObjects() GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) []GetClustersClusterCollectionItemVsphereUpgradeObject {
+		return v.VsphereUpgradeObjects
+	}).(GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput)
+}
+
+// The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
+func (o GetClustersClusterCollectionItemOutput) WorkloadNetworkCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) string { return v.WorkloadNetworkCidr }).(pulumi.StringOutput)
+}
+
+type GetClustersClusterCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollectionItem)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionItemArrayOutput) ToGetClustersClusterCollectionItemArrayOutput() GetClustersClusterCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemArrayOutput) ToGetClustersClusterCollectionItemArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemArrayOutput) Index(i pulumi.IntInput) GetClustersClusterCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterCollectionItem {
+		return vs[0].([]GetClustersClusterCollectionItem)[vs[1].(int)]
+	}).(GetClustersClusterCollectionItemOutput)
+}
+
+type GetClustersClusterCollectionItemDatastore struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
+	// Size of the Block Storage Volume in GB.
+	Capacity float64 `pulumi:"capacity"`
+	// Type of the datastore.
+	DatastoreType string `pulumi:"datastoreType"`
+}
+
+// GetClustersClusterCollectionItemDatastoreInput is an input type that accepts GetClustersClusterCollectionItemDatastoreArgs and GetClustersClusterCollectionItemDatastoreOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionItemDatastoreInput` via:
+//
+//	GetClustersClusterCollectionItemDatastoreArgs{...}
+type GetClustersClusterCollectionItemDatastoreInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionItemDatastoreOutput() GetClustersClusterCollectionItemDatastoreOutput
+	ToGetClustersClusterCollectionItemDatastoreOutputWithContext(context.Context) GetClustersClusterCollectionItemDatastoreOutput
+}
+
+type GetClustersClusterCollectionItemDatastoreArgs struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
+	// Size of the Block Storage Volume in GB.
+	Capacity pulumi.Float64Input `pulumi:"capacity"`
+	// Type of the datastore.
+	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
+}
+
+func (GetClustersClusterCollectionItemDatastoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollectionItemDatastore)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionItemDatastoreArgs) ToGetClustersClusterCollectionItemDatastoreOutput() GetClustersClusterCollectionItemDatastoreOutput {
+	return i.ToGetClustersClusterCollectionItemDatastoreOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionItemDatastoreArgs) ToGetClustersClusterCollectionItemDatastoreOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemDatastoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionItemDatastoreOutput)
+}
+
+// GetClustersClusterCollectionItemDatastoreArrayInput is an input type that accepts GetClustersClusterCollectionItemDatastoreArray and GetClustersClusterCollectionItemDatastoreArrayOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionItemDatastoreArrayInput` via:
+//
+//	GetClustersClusterCollectionItemDatastoreArray{ GetClustersClusterCollectionItemDatastoreArgs{...} }
+type GetClustersClusterCollectionItemDatastoreArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionItemDatastoreArrayOutput() GetClustersClusterCollectionItemDatastoreArrayOutput
+	ToGetClustersClusterCollectionItemDatastoreArrayOutputWithContext(context.Context) GetClustersClusterCollectionItemDatastoreArrayOutput
+}
+
+type GetClustersClusterCollectionItemDatastoreArray []GetClustersClusterCollectionItemDatastoreInput
+
+func (GetClustersClusterCollectionItemDatastoreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollectionItemDatastore)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionItemDatastoreArray) ToGetClustersClusterCollectionItemDatastoreArrayOutput() GetClustersClusterCollectionItemDatastoreArrayOutput {
+	return i.ToGetClustersClusterCollectionItemDatastoreArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionItemDatastoreArray) ToGetClustersClusterCollectionItemDatastoreArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemDatastoreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionItemDatastoreArrayOutput)
+}
+
+type GetClustersClusterCollectionItemDatastoreOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionItemDatastoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollectionItemDatastore)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionItemDatastoreOutput) ToGetClustersClusterCollectionItemDatastoreOutput() GetClustersClusterCollectionItemDatastoreOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemDatastoreOutput) ToGetClustersClusterCollectionItemDatastoreOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemDatastoreOutput {
+	return o
+}
+
+// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+func (o GetClustersClusterCollectionItemDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemDatastore) []string { return v.BlockVolumeIds }).(pulumi.StringArrayOutput)
+}
+
+// Size of the Block Storage Volume in GB.
+func (o GetClustersClusterCollectionItemDatastoreOutput) Capacity() pulumi.Float64Output {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemDatastore) float64 { return v.Capacity }).(pulumi.Float64Output)
+}
+
+// Type of the datastore.
+func (o GetClustersClusterCollectionItemDatastoreOutput) DatastoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemDatastore) string { return v.DatastoreType }).(pulumi.StringOutput)
+}
+
+type GetClustersClusterCollectionItemDatastoreArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionItemDatastoreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollectionItemDatastore)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionItemDatastoreArrayOutput) ToGetClustersClusterCollectionItemDatastoreArrayOutput() GetClustersClusterCollectionItemDatastoreArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemDatastoreArrayOutput) ToGetClustersClusterCollectionItemDatastoreArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemDatastoreArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemDatastoreArrayOutput) Index(i pulumi.IntInput) GetClustersClusterCollectionItemDatastoreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterCollectionItemDatastore {
+		return vs[0].([]GetClustersClusterCollectionItemDatastore)[vs[1].(int)]
+	}).(GetClustersClusterCollectionItemDatastoreOutput)
+}
+
+type GetClustersClusterCollectionItemNetworkConfiguration struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	HcxVlanId string `pulumi:"hcxVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	NsxEdgeUplink1vlanId string `pulumi:"nsxEdgeUplink1vlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	NsxEdgeUplink2vlanId string `pulumi:"nsxEdgeUplink2vlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+	NsxEdgeVtepVlanId string `pulumi:"nsxEdgeVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+	NsxVtepVlanId string `pulumi:"nsxVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+	ProvisioningSubnetId string `pulumi:"provisioningSubnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+	ProvisioningVlanId string `pulumi:"provisioningVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+	ReplicationVlanId string `pulumi:"replicationVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+	VmotionVlanId string `pulumi:"vmotionVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+	VsanVlanId string `pulumi:"vsanVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	VsphereVlanId string `pulumi:"vsphereVlanId"`
+}
+
+// GetClustersClusterCollectionItemNetworkConfigurationInput is an input type that accepts GetClustersClusterCollectionItemNetworkConfigurationArgs and GetClustersClusterCollectionItemNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionItemNetworkConfigurationInput` via:
+//
+//	GetClustersClusterCollectionItemNetworkConfigurationArgs{...}
+type GetClustersClusterCollectionItemNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionItemNetworkConfigurationOutput() GetClustersClusterCollectionItemNetworkConfigurationOutput
+	ToGetClustersClusterCollectionItemNetworkConfigurationOutputWithContext(context.Context) GetClustersClusterCollectionItemNetworkConfigurationOutput
+}
+
+type GetClustersClusterCollectionItemNetworkConfigurationArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	HcxVlanId pulumi.StringInput `pulumi:"hcxVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	NsxEdgeUplink1vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink1vlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	NsxEdgeUplink2vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink2vlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+	NsxEdgeVtepVlanId pulumi.StringInput `pulumi:"nsxEdgeVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+	NsxVtepVlanId pulumi.StringInput `pulumi:"nsxVtepVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+	ProvisioningSubnetId pulumi.StringInput `pulumi:"provisioningSubnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+	ProvisioningVlanId pulumi.StringInput `pulumi:"provisioningVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+	ReplicationVlanId pulumi.StringInput `pulumi:"replicationVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+	VmotionVlanId pulumi.StringInput `pulumi:"vmotionVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+	VsanVlanId pulumi.StringInput `pulumi:"vsanVlanId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+	VsphereVlanId pulumi.StringInput `pulumi:"vsphereVlanId"`
+}
+
+func (GetClustersClusterCollectionItemNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollectionItemNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionItemNetworkConfigurationArgs) ToGetClustersClusterCollectionItemNetworkConfigurationOutput() GetClustersClusterCollectionItemNetworkConfigurationOutput {
+	return i.ToGetClustersClusterCollectionItemNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionItemNetworkConfigurationArgs) ToGetClustersClusterCollectionItemNetworkConfigurationOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionItemNetworkConfigurationOutput)
+}
+
+// GetClustersClusterCollectionItemNetworkConfigurationArrayInput is an input type that accepts GetClustersClusterCollectionItemNetworkConfigurationArray and GetClustersClusterCollectionItemNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionItemNetworkConfigurationArrayInput` via:
+//
+//	GetClustersClusterCollectionItemNetworkConfigurationArray{ GetClustersClusterCollectionItemNetworkConfigurationArgs{...} }
+type GetClustersClusterCollectionItemNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionItemNetworkConfigurationArrayOutput() GetClustersClusterCollectionItemNetworkConfigurationArrayOutput
+	ToGetClustersClusterCollectionItemNetworkConfigurationArrayOutputWithContext(context.Context) GetClustersClusterCollectionItemNetworkConfigurationArrayOutput
+}
+
+type GetClustersClusterCollectionItemNetworkConfigurationArray []GetClustersClusterCollectionItemNetworkConfigurationInput
+
+func (GetClustersClusterCollectionItemNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollectionItemNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionItemNetworkConfigurationArray) ToGetClustersClusterCollectionItemNetworkConfigurationArrayOutput() GetClustersClusterCollectionItemNetworkConfigurationArrayOutput {
+	return i.ToGetClustersClusterCollectionItemNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionItemNetworkConfigurationArray) ToGetClustersClusterCollectionItemNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionItemNetworkConfigurationArrayOutput)
+}
+
+type GetClustersClusterCollectionItemNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionItemNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollectionItemNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) ToGetClustersClusterCollectionItemNetworkConfigurationOutput() GetClustersClusterCollectionItemNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) ToGetClustersClusterCollectionItemNetworkConfigurationOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemNetworkConfigurationOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) HcxVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemNetworkConfiguration) string { return v.HcxVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) NsxEdgeUplink1vlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemNetworkConfiguration) string { return v.NsxEdgeUplink1vlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC  for the NSX Edge Uplink 2 component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) NsxEdgeUplink2vlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemNetworkConfiguration) string { return v.NsxEdgeUplink2vlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX Edge VTEP component of the VMware environment.
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) NsxEdgeVtepVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemNetworkConfiguration) string { return v.NsxEdgeVtepVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the NSX VTEP component of the VMware environment.
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) NsxVtepVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemNetworkConfiguration) string { return v.NsxVtepVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the Cluster.
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) ProvisioningSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemNetworkConfiguration) string { return v.ProvisioningSubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the Provisioning component of the VMware environment.
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) ProvisioningVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemNetworkConfiguration) string { return v.ProvisioningVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSphere Replication component of the VMware environment.
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) ReplicationVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemNetworkConfiguration) string { return v.ReplicationVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vMotion component of the VMware environment.
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) VmotionVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemNetworkConfiguration) string { return v.VmotionVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the Cluster for the vSAN component of the VMware environment.
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) VsanVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemNetworkConfiguration) string { return v.VsanVlanId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment. This VLAN is a mandatory attribute for Management Cluster.
+func (o GetClustersClusterCollectionItemNetworkConfigurationOutput) VsphereVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemNetworkConfiguration) string { return v.VsphereVlanId }).(pulumi.StringOutput)
+}
+
+type GetClustersClusterCollectionItemNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionItemNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollectionItemNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionItemNetworkConfigurationArrayOutput) ToGetClustersClusterCollectionItemNetworkConfigurationArrayOutput() GetClustersClusterCollectionItemNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemNetworkConfigurationArrayOutput) ToGetClustersClusterCollectionItemNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetClustersClusterCollectionItemNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterCollectionItemNetworkConfiguration {
+		return vs[0].([]GetClustersClusterCollectionItemNetworkConfiguration)[vs[1].(int)]
+	}).(GetClustersClusterCollectionItemNetworkConfigurationOutput)
+}
+
+type GetClustersClusterCollectionItemUpgradeLicense struct {
+	// vSphere license key value.
+	LicenseKey string `pulumi:"licenseKey"`
+	// vSphere license type.
+	LicenseType string `pulumi:"licenseType"`
+}
+
+// GetClustersClusterCollectionItemUpgradeLicenseInput is an input type that accepts GetClustersClusterCollectionItemUpgradeLicenseArgs and GetClustersClusterCollectionItemUpgradeLicenseOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionItemUpgradeLicenseInput` via:
+//
+//	GetClustersClusterCollectionItemUpgradeLicenseArgs{...}
+type GetClustersClusterCollectionItemUpgradeLicenseInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionItemUpgradeLicenseOutput() GetClustersClusterCollectionItemUpgradeLicenseOutput
+	ToGetClustersClusterCollectionItemUpgradeLicenseOutputWithContext(context.Context) GetClustersClusterCollectionItemUpgradeLicenseOutput
+}
+
+type GetClustersClusterCollectionItemUpgradeLicenseArgs struct {
+	// vSphere license key value.
+	LicenseKey pulumi.StringInput `pulumi:"licenseKey"`
+	// vSphere license type.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+}
+
+func (GetClustersClusterCollectionItemUpgradeLicenseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollectionItemUpgradeLicense)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionItemUpgradeLicenseArgs) ToGetClustersClusterCollectionItemUpgradeLicenseOutput() GetClustersClusterCollectionItemUpgradeLicenseOutput {
+	return i.ToGetClustersClusterCollectionItemUpgradeLicenseOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionItemUpgradeLicenseArgs) ToGetClustersClusterCollectionItemUpgradeLicenseOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemUpgradeLicenseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionItemUpgradeLicenseOutput)
+}
+
+// GetClustersClusterCollectionItemUpgradeLicenseArrayInput is an input type that accepts GetClustersClusterCollectionItemUpgradeLicenseArray and GetClustersClusterCollectionItemUpgradeLicenseArrayOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionItemUpgradeLicenseArrayInput` via:
+//
+//	GetClustersClusterCollectionItemUpgradeLicenseArray{ GetClustersClusterCollectionItemUpgradeLicenseArgs{...} }
+type GetClustersClusterCollectionItemUpgradeLicenseArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionItemUpgradeLicenseArrayOutput() GetClustersClusterCollectionItemUpgradeLicenseArrayOutput
+	ToGetClustersClusterCollectionItemUpgradeLicenseArrayOutputWithContext(context.Context) GetClustersClusterCollectionItemUpgradeLicenseArrayOutput
+}
+
+type GetClustersClusterCollectionItemUpgradeLicenseArray []GetClustersClusterCollectionItemUpgradeLicenseInput
+
+func (GetClustersClusterCollectionItemUpgradeLicenseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollectionItemUpgradeLicense)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionItemUpgradeLicenseArray) ToGetClustersClusterCollectionItemUpgradeLicenseArrayOutput() GetClustersClusterCollectionItemUpgradeLicenseArrayOutput {
+	return i.ToGetClustersClusterCollectionItemUpgradeLicenseArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionItemUpgradeLicenseArray) ToGetClustersClusterCollectionItemUpgradeLicenseArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemUpgradeLicenseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionItemUpgradeLicenseArrayOutput)
+}
+
+type GetClustersClusterCollectionItemUpgradeLicenseOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionItemUpgradeLicenseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollectionItemUpgradeLicense)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionItemUpgradeLicenseOutput) ToGetClustersClusterCollectionItemUpgradeLicenseOutput() GetClustersClusterCollectionItemUpgradeLicenseOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemUpgradeLicenseOutput) ToGetClustersClusterCollectionItemUpgradeLicenseOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemUpgradeLicenseOutput {
+	return o
+}
+
+// vSphere license key value.
+func (o GetClustersClusterCollectionItemUpgradeLicenseOutput) LicenseKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemUpgradeLicense) string { return v.LicenseKey }).(pulumi.StringOutput)
+}
+
+// vSphere license type.
+func (o GetClustersClusterCollectionItemUpgradeLicenseOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemUpgradeLicense) string { return v.LicenseType }).(pulumi.StringOutput)
+}
+
+type GetClustersClusterCollectionItemUpgradeLicenseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionItemUpgradeLicenseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollectionItemUpgradeLicense)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionItemUpgradeLicenseArrayOutput) ToGetClustersClusterCollectionItemUpgradeLicenseArrayOutput() GetClustersClusterCollectionItemUpgradeLicenseArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemUpgradeLicenseArrayOutput) ToGetClustersClusterCollectionItemUpgradeLicenseArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemUpgradeLicenseArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemUpgradeLicenseArrayOutput) Index(i pulumi.IntInput) GetClustersClusterCollectionItemUpgradeLicenseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterCollectionItemUpgradeLicense {
+		return vs[0].([]GetClustersClusterCollectionItemUpgradeLicense)[vs[1].(int)]
+	}).(GetClustersClusterCollectionItemUpgradeLicenseOutput)
+}
+
+type GetClustersClusterCollectionItemVsphereUpgradeObject struct {
+	// Binary object download link.
+	DownloadLink string `pulumi:"downloadLink"`
+	// Binary object description.
+	LinkDescription string `pulumi:"linkDescription"`
+}
+
+// GetClustersClusterCollectionItemVsphereUpgradeObjectInput is an input type that accepts GetClustersClusterCollectionItemVsphereUpgradeObjectArgs and GetClustersClusterCollectionItemVsphereUpgradeObjectOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionItemVsphereUpgradeObjectInput` via:
+//
+//	GetClustersClusterCollectionItemVsphereUpgradeObjectArgs{...}
+type GetClustersClusterCollectionItemVsphereUpgradeObjectInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionItemVsphereUpgradeObjectOutput() GetClustersClusterCollectionItemVsphereUpgradeObjectOutput
+	ToGetClustersClusterCollectionItemVsphereUpgradeObjectOutputWithContext(context.Context) GetClustersClusterCollectionItemVsphereUpgradeObjectOutput
+}
+
+type GetClustersClusterCollectionItemVsphereUpgradeObjectArgs struct {
+	// Binary object download link.
+	DownloadLink pulumi.StringInput `pulumi:"downloadLink"`
+	// Binary object description.
+	LinkDescription pulumi.StringInput `pulumi:"linkDescription"`
+}
+
+func (GetClustersClusterCollectionItemVsphereUpgradeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollectionItemVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionItemVsphereUpgradeObjectArgs) ToGetClustersClusterCollectionItemVsphereUpgradeObjectOutput() GetClustersClusterCollectionItemVsphereUpgradeObjectOutput {
+	return i.ToGetClustersClusterCollectionItemVsphereUpgradeObjectOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionItemVsphereUpgradeObjectArgs) ToGetClustersClusterCollectionItemVsphereUpgradeObjectOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemVsphereUpgradeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionItemVsphereUpgradeObjectOutput)
+}
+
+// GetClustersClusterCollectionItemVsphereUpgradeObjectArrayInput is an input type that accepts GetClustersClusterCollectionItemVsphereUpgradeObjectArray and GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput values.
+// You can construct a concrete instance of `GetClustersClusterCollectionItemVsphereUpgradeObjectArrayInput` via:
+//
+//	GetClustersClusterCollectionItemVsphereUpgradeObjectArray{ GetClustersClusterCollectionItemVsphereUpgradeObjectArgs{...} }
+type GetClustersClusterCollectionItemVsphereUpgradeObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput() GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput
+	ToGetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutputWithContext(context.Context) GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput
+}
+
+type GetClustersClusterCollectionItemVsphereUpgradeObjectArray []GetClustersClusterCollectionItemVsphereUpgradeObjectInput
+
+func (GetClustersClusterCollectionItemVsphereUpgradeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollectionItemVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (i GetClustersClusterCollectionItemVsphereUpgradeObjectArray) ToGetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput() GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput {
+	return i.ToGetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersClusterCollectionItemVsphereUpgradeObjectArray) ToGetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput)
+}
+
+type GetClustersClusterCollectionItemVsphereUpgradeObjectOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionItemVsphereUpgradeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersClusterCollectionItemVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionItemVsphereUpgradeObjectOutput) ToGetClustersClusterCollectionItemVsphereUpgradeObjectOutput() GetClustersClusterCollectionItemVsphereUpgradeObjectOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemVsphereUpgradeObjectOutput) ToGetClustersClusterCollectionItemVsphereUpgradeObjectOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemVsphereUpgradeObjectOutput {
+	return o
+}
+
+// Binary object download link.
+func (o GetClustersClusterCollectionItemVsphereUpgradeObjectOutput) DownloadLink() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemVsphereUpgradeObject) string { return v.DownloadLink }).(pulumi.StringOutput)
+}
+
+// Binary object description.
+func (o GetClustersClusterCollectionItemVsphereUpgradeObjectOutput) LinkDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItemVsphereUpgradeObject) string { return v.LinkDescription }).(pulumi.StringOutput)
+}
+
+type GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersClusterCollectionItemVsphereUpgradeObject)(nil)).Elem()
+}
+
+func (o GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput) ToGetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput() GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput) ToGetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutputWithContext(ctx context.Context) GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput {
+	return o
+}
+
+func (o GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput) Index(i pulumi.IntInput) GetClustersClusterCollectionItemVsphereUpgradeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersClusterCollectionItemVsphereUpgradeObject {
+		return vs[0].([]GetClustersClusterCollectionItemVsphereUpgradeObject)[vs[1].(int)]
+	}).(GetClustersClusterCollectionItemVsphereUpgradeObjectOutput)
+}
+
+type GetClustersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetClustersFilterInput is an input type that accepts GetClustersFilterArgs and GetClustersFilterOutput values.
+// You can construct a concrete instance of `GetClustersFilterInput` via:
+//
+//	GetClustersFilterArgs{...}
+type GetClustersFilterInput interface {
+	pulumi.Input
+
+	ToGetClustersFilterOutput() GetClustersFilterOutput
+	ToGetClustersFilterOutputWithContext(context.Context) GetClustersFilterOutput
+}
+
+type GetClustersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetClustersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersFilter)(nil)).Elem()
+}
+
+func (i GetClustersFilterArgs) ToGetClustersFilterOutput() GetClustersFilterOutput {
+	return i.ToGetClustersFilterOutputWithContext(context.Background())
+}
+
+func (i GetClustersFilterArgs) ToGetClustersFilterOutputWithContext(ctx context.Context) GetClustersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersFilterOutput)
+}
+
+// GetClustersFilterArrayInput is an input type that accepts GetClustersFilterArray and GetClustersFilterArrayOutput values.
+// You can construct a concrete instance of `GetClustersFilterArrayInput` via:
+//
+//	GetClustersFilterArray{ GetClustersFilterArgs{...} }
+type GetClustersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersFilterArrayOutput() GetClustersFilterArrayOutput
+	ToGetClustersFilterArrayOutputWithContext(context.Context) GetClustersFilterArrayOutput
+}
+
+type GetClustersFilterArray []GetClustersFilterInput
+
+func (GetClustersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersFilter)(nil)).Elem()
+}
+
+func (i GetClustersFilterArray) ToGetClustersFilterArrayOutput() GetClustersFilterArrayOutput {
+	return i.ToGetClustersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersFilterArray) ToGetClustersFilterArrayOutputWithContext(ctx context.Context) GetClustersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersFilterArrayOutput)
+}
+
+type GetClustersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetClustersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersFilter)(nil)).Elem()
+}
+
+func (o GetClustersFilterOutput) ToGetClustersFilterOutput() GetClustersFilterOutput {
+	return o
+}
+
+func (o GetClustersFilterOutput) ToGetClustersFilterOutputWithContext(ctx context.Context) GetClustersFilterOutput {
+	return o
+}
+
+func (o GetClustersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetClustersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetClustersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetClustersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClustersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetClustersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersFilter)(nil)).Elem()
+}
+
+func (o GetClustersFilterArrayOutput) ToGetClustersFilterArrayOutput() GetClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetClustersFilterArrayOutput) ToGetClustersFilterArrayOutputWithContext(ctx context.Context) GetClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetClustersFilterArrayOutput) Index(i pulumi.IntInput) GetClustersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersFilter {
+		return vs[0].([]GetClustersFilter)[vs[1].(int)]
+	}).(GetClustersFilterOutput)
+}
+
 type GetExsiHostsEsxiHostCollection struct {
-	// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+	// Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 	BillingContractEndDate string `pulumi:"billingContractEndDate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
 	//
@@ -464,13 +3620,17 @@ type GetExsiHostsEsxiHostCollection struct {
 	BillingDonorHostId string `pulumi:"billingDonorHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+	ClusterId string `pulumi:"clusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
 	ComputeInstanceId string `pulumi:"computeInstanceId"`
-	// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+	// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+	CurrentCommitment string `pulumi:"currentCommitment"`
+	// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `currentCommitment` instead.
 	//
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
 	CurrentSku string `pulumi:"currentSku"`
@@ -478,6 +3638,8 @@ type GetExsiHostsEsxiHostCollection struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
+	// The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
+	EsxiSoftwareVersion string `pulumi:"esxiSoftwareVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
 	//
 	// Deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
@@ -488,7 +3650,7 @@ type GetExsiHostsEsxiHostCollection struct {
 	GracePeriodEndDate string `pulumi:"gracePeriodEndDate"`
 	// The OCPU count of the ESXi host.
 	HostOcpuCount float64 `pulumi:"hostOcpuCount"`
-	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
 	HostShapeName string `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 	Id string `pulumi:"id"`
@@ -496,7 +3658,9 @@ type GetExsiHostsEsxiHostCollection struct {
 	IsBillingContinuationInProgress bool `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
 	IsBillingSwappingInProgress bool `pulumi:"isBillingSwappingInProgress"`
-	// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+	// The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+	NextCommitment string `pulumi:"nextCommitment"`
+	// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
 	//
 	// Deprecated: The 'next_sku' field has been deprecated. It is no longer supported.
 	NextSku string `pulumi:"nextSku"`
@@ -536,7 +3700,7 @@ type GetExsiHostsEsxiHostCollectionInput interface {
 }
 
 type GetExsiHostsEsxiHostCollectionArgs struct {
-	// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+	// Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 	BillingContractEndDate pulumi.StringInput `pulumi:"billingContractEndDate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
 	//
@@ -544,13 +3708,17 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	BillingDonorHostId pulumi.StringInput `pulumi:"billingDonorHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
 	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
 	ComputeInstanceId pulumi.StringInput `pulumi:"computeInstanceId"`
-	// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+	// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+	CurrentCommitment pulumi.StringInput `pulumi:"currentCommitment"`
+	// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `currentCommitment` instead.
 	//
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
 	CurrentSku pulumi.StringInput `pulumi:"currentSku"`
@@ -558,6 +3726,8 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
+	EsxiSoftwareVersion pulumi.StringInput `pulumi:"esxiSoftwareVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
 	//
 	// Deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
@@ -568,7 +3738,7 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	GracePeriodEndDate pulumi.StringInput `pulumi:"gracePeriodEndDate"`
 	// The OCPU count of the ESXi host.
 	HostOcpuCount pulumi.Float64Input `pulumi:"hostOcpuCount"`
-	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
 	HostShapeName pulumi.StringInput `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -576,7 +3746,9 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	IsBillingContinuationInProgress pulumi.BoolInput `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
 	IsBillingSwappingInProgress pulumi.BoolInput `pulumi:"isBillingSwappingInProgress"`
-	// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+	// The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+	NextCommitment pulumi.StringInput `pulumi:"nextCommitment"`
+	// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
 	//
 	// Deprecated: The 'next_sku' field has been deprecated. It is no longer supported.
 	NextSku pulumi.StringInput `pulumi:"nextSku"`
@@ -655,7 +3827,7 @@ func (o GetExsiHostsEsxiHostCollectionOutput) ToGetExsiHostsEsxiHostCollectionOu
 	return o
 }
 
-// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+// Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 func (o GetExsiHostsEsxiHostCollectionOutput) BillingContractEndDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.BillingContractEndDate }).(pulumi.StringOutput)
 }
@@ -670,6 +3842,11 @@ func (o GetExsiHostsEsxiHostCollectionOutput) BillingDonorHostId() pulumi.String
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 func (o GetExsiHostsEsxiHostCollectionOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+func (o GetExsiHostsEsxiHostCollectionOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
@@ -687,7 +3864,12 @@ func (o GetExsiHostsEsxiHostCollectionOutput) ComputeInstanceId() pulumi.StringO
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.ComputeInstanceId }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+func (o GetExsiHostsEsxiHostCollectionOutput) CurrentCommitment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.CurrentCommitment }).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `currentCommitment` instead.
 //
 // Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
 func (o GetExsiHostsEsxiHostCollectionOutput) CurrentSku() pulumi.StringOutput {
@@ -702,6 +3884,11 @@ func (o GetExsiHostsEsxiHostCollectionOutput) DefinedTags() pulumi.MapOutput {
 // A filter to return only resources that match the given display name exactly.
 func (o GetExsiHostsEsxiHostCollectionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
+func (o GetExsiHostsEsxiHostCollectionOutput) EsxiSoftwareVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.EsxiSoftwareVersion }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
@@ -726,7 +3913,7 @@ func (o GetExsiHostsEsxiHostCollectionOutput) HostOcpuCount() pulumi.Float64Outp
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) float64 { return v.HostOcpuCount }).(pulumi.Float64Output)
 }
 
-// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
 func (o GetExsiHostsEsxiHostCollectionOutput) HostShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.HostShapeName }).(pulumi.StringOutput)
 }
@@ -746,7 +3933,12 @@ func (o GetExsiHostsEsxiHostCollectionOutput) IsBillingSwappingInProgress() pulu
 	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) bool { return v.IsBillingSwappingInProgress }).(pulumi.BoolOutput)
 }
 
-// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+// The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+func (o GetExsiHostsEsxiHostCollectionOutput) NextCommitment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) string { return v.NextCommitment }).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
 //
 // Deprecated: The 'next_sku' field has been deprecated. It is no longer supported.
 func (o GetExsiHostsEsxiHostCollectionOutput) NextSku() pulumi.StringOutput {
@@ -1158,6 +4350,646 @@ func (o GetSddcHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInput) GetSddcHcxO
 	}).(GetSddcHcxOnPremLicenseOutput)
 }
 
+type GetSddcInitialConfiguration struct {
+	// The configurations for Clusters initially created in the SDDC.
+	InitialClusterConfigurations []GetSddcInitialConfigurationInitialClusterConfiguration `pulumi:"initialClusterConfigurations"`
+}
+
+// GetSddcInitialConfigurationInput is an input type that accepts GetSddcInitialConfigurationArgs and GetSddcInitialConfigurationOutput values.
+// You can construct a concrete instance of `GetSddcInitialConfigurationInput` via:
+//
+//	GetSddcInitialConfigurationArgs{...}
+type GetSddcInitialConfigurationInput interface {
+	pulumi.Input
+
+	ToGetSddcInitialConfigurationOutput() GetSddcInitialConfigurationOutput
+	ToGetSddcInitialConfigurationOutputWithContext(context.Context) GetSddcInitialConfigurationOutput
+}
+
+type GetSddcInitialConfigurationArgs struct {
+	// The configurations for Clusters initially created in the SDDC.
+	InitialClusterConfigurations GetSddcInitialConfigurationInitialClusterConfigurationArrayInput `pulumi:"initialClusterConfigurations"`
+}
+
+func (GetSddcInitialConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcInitialConfiguration)(nil)).Elem()
+}
+
+func (i GetSddcInitialConfigurationArgs) ToGetSddcInitialConfigurationOutput() GetSddcInitialConfigurationOutput {
+	return i.ToGetSddcInitialConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetSddcInitialConfigurationArgs) ToGetSddcInitialConfigurationOutputWithContext(ctx context.Context) GetSddcInitialConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcInitialConfigurationOutput)
+}
+
+// GetSddcInitialConfigurationArrayInput is an input type that accepts GetSddcInitialConfigurationArray and GetSddcInitialConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetSddcInitialConfigurationArrayInput` via:
+//
+//	GetSddcInitialConfigurationArray{ GetSddcInitialConfigurationArgs{...} }
+type GetSddcInitialConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcInitialConfigurationArrayOutput() GetSddcInitialConfigurationArrayOutput
+	ToGetSddcInitialConfigurationArrayOutputWithContext(context.Context) GetSddcInitialConfigurationArrayOutput
+}
+
+type GetSddcInitialConfigurationArray []GetSddcInitialConfigurationInput
+
+func (GetSddcInitialConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcInitialConfiguration)(nil)).Elem()
+}
+
+func (i GetSddcInitialConfigurationArray) ToGetSddcInitialConfigurationArrayOutput() GetSddcInitialConfigurationArrayOutput {
+	return i.ToGetSddcInitialConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcInitialConfigurationArray) ToGetSddcInitialConfigurationArrayOutputWithContext(ctx context.Context) GetSddcInitialConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcInitialConfigurationArrayOutput)
+}
+
+type GetSddcInitialConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetSddcInitialConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcInitialConfiguration)(nil)).Elem()
+}
+
+func (o GetSddcInitialConfigurationOutput) ToGetSddcInitialConfigurationOutput() GetSddcInitialConfigurationOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationOutput) ToGetSddcInitialConfigurationOutputWithContext(ctx context.Context) GetSddcInitialConfigurationOutput {
+	return o
+}
+
+// The configurations for Clusters initially created in the SDDC.
+func (o GetSddcInitialConfigurationOutput) InitialClusterConfigurations() GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return o.ApplyT(func(v GetSddcInitialConfiguration) []GetSddcInitialConfigurationInitialClusterConfiguration {
+		return v.InitialClusterConfigurations
+	}).(GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput)
+}
+
+type GetSddcInitialConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcInitialConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcInitialConfiguration)(nil)).Elem()
+}
+
+func (o GetSddcInitialConfigurationArrayOutput) ToGetSddcInitialConfigurationArrayOutput() GetSddcInitialConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationArrayOutput) ToGetSddcInitialConfigurationArrayOutputWithContext(ctx context.Context) GetSddcInitialConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationArrayOutput) Index(i pulumi.IntInput) GetSddcInitialConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcInitialConfiguration {
+		return vs[0].([]GetSddcInitialConfiguration)[vs[1].(int)]
+	}).(GetSddcInitialConfigurationOutput)
+}
+
+type GetSddcInitialConfigurationInitialClusterConfiguration struct {
+	// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actualEsxiHostsCount` of `initialClusterConfigurations` instead.
+	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
+	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+	Datastores []GetSddcInitialConfigurationInitialClusterConfigurationDatastore `pulumi:"datastores"`
+	// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+	EsxiHostsCount int `pulumi:"esxiHostsCount"`
+	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+	InitialCommitment string `pulumi:"initialCommitment"`
+	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
+	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
+	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
+	InitialHostShapeName string `pulumi:"initialHostShapeName"`
+	// (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+	InstanceDisplayNamePrefix string `pulumi:"instanceDisplayNamePrefix"`
+	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
+	IsShieldedInstanceEnabled bool `pulumi:"isShieldedInstanceEnabled"`
+	// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+	NetworkConfigurations []GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration `pulumi:"networkConfigurations"`
+	// vSphere Cluster types.
+	VsphereType string `pulumi:"vsphereType"`
+	// (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workloadNetworkCidr` of `initialClusterConfigurations` instead.
+	WorkloadNetworkCidr string `pulumi:"workloadNetworkCidr"`
+}
+
+// GetSddcInitialConfigurationInitialClusterConfigurationInput is an input type that accepts GetSddcInitialConfigurationInitialClusterConfigurationArgs and GetSddcInitialConfigurationInitialClusterConfigurationOutput values.
+// You can construct a concrete instance of `GetSddcInitialConfigurationInitialClusterConfigurationInput` via:
+//
+//	GetSddcInitialConfigurationInitialClusterConfigurationArgs{...}
+type GetSddcInitialConfigurationInitialClusterConfigurationInput interface {
+	pulumi.Input
+
+	ToGetSddcInitialConfigurationInitialClusterConfigurationOutput() GetSddcInitialConfigurationInitialClusterConfigurationOutput
+	ToGetSddcInitialConfigurationInitialClusterConfigurationOutputWithContext(context.Context) GetSddcInitialConfigurationInitialClusterConfigurationOutput
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationArgs struct {
+	// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actualEsxiHostsCount` of `initialClusterConfigurations` instead.
+	ActualEsxiHostsCount pulumi.IntInput `pulumi:"actualEsxiHostsCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
+	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
+	// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+	Datastores GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput `pulumi:"datastores"`
+	// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+	EsxiHostsCount pulumi.IntInput `pulumi:"esxiHostsCount"`
+	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+	InitialCommitment pulumi.StringInput `pulumi:"initialCommitment"`
+	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
+	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
+	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
+	InitialHostShapeName pulumi.StringInput `pulumi:"initialHostShapeName"`
+	// (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+	InstanceDisplayNamePrefix pulumi.StringInput `pulumi:"instanceDisplayNamePrefix"`
+	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
+	IsShieldedInstanceEnabled pulumi.BoolInput `pulumi:"isShieldedInstanceEnabled"`
+	// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+	NetworkConfigurations GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
+	// vSphere Cluster types.
+	VsphereType pulumi.StringInput `pulumi:"vsphereType"`
+	// (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workloadNetworkCidr` of `initialClusterConfigurations` instead.
+	WorkloadNetworkCidr pulumi.StringInput `pulumi:"workloadNetworkCidr"`
+}
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfiguration)(nil)).Elem()
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationArgs) ToGetSddcInitialConfigurationInitialClusterConfigurationOutput() GetSddcInitialConfigurationInitialClusterConfigurationOutput {
+	return i.ToGetSddcInitialConfigurationInitialClusterConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationArgs) ToGetSddcInitialConfigurationInitialClusterConfigurationOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcInitialConfigurationInitialClusterConfigurationOutput)
+}
+
+// GetSddcInitialConfigurationInitialClusterConfigurationArrayInput is an input type that accepts GetSddcInitialConfigurationInitialClusterConfigurationArray and GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetSddcInitialConfigurationInitialClusterConfigurationArrayInput` via:
+//
+//	GetSddcInitialConfigurationInitialClusterConfigurationArray{ GetSddcInitialConfigurationInitialClusterConfigurationArgs{...} }
+type GetSddcInitialConfigurationInitialClusterConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcInitialConfigurationInitialClusterConfigurationArrayOutput() GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput
+	ToGetSddcInitialConfigurationInitialClusterConfigurationArrayOutputWithContext(context.Context) GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationArray []GetSddcInitialConfigurationInitialClusterConfigurationInput
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcInitialConfigurationInitialClusterConfiguration)(nil)).Elem()
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationArray) ToGetSddcInitialConfigurationInitialClusterConfigurationArrayOutput() GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return i.ToGetSddcInitialConfigurationInitialClusterConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationArray) ToGetSddcInitialConfigurationInitialClusterConfigurationArrayOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput)
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfiguration)(nil)).Elem()
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationOutput() GetSddcInitialConfigurationInitialClusterConfigurationOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationOutput {
+	return o
+}
+
+// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actualEsxiHostsCount` of `initialClusterConfigurations` instead.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) ActualEsxiHostsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) int { return v.ActualEsxiHostsCount }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
+// The availability domain to create the Cluster's ESXi hosts in. For multi-AD Cluster deployment, set to `multi-AD`.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string {
+		return v.ComputeAvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// A list of datastore info for the Cluster. This value is required only when `initialHostShapeName` is a standard shape.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) Datastores() GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) []GetSddcInitialConfigurationInitialClusterConfigurationDatastore {
+		return v.Datastores
+	}).(GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput)
+}
+
+// A descriptive name for the Cluster. Cluster name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region. Avoid entering confidential information.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The number of ESXi hosts to create in the Cluster. You can add more hosts later (see [CreateEsxiHost](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost)). Creating a Cluster with a ESXi host count of 1 will be considered a single ESXi host Cluster.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) EsxiHostsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) int { return v.EsxiHostsCount }).(pulumi.IntOutput)
+}
+
+// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) InitialCommitment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string { return v.InitialCommitment }).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) InitialHostOcpuCount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) float64 { return v.InitialHostOcpuCount }).(pulumi.Float64Output)
+}
+
+// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) InitialHostShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string { return v.InitialHostShapeName }).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) InstanceDisplayNamePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string {
+		return v.InstanceDisplayNamePrefix
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) IsShieldedInstanceEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) bool {
+		return v.IsShieldedInstanceEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// The network configurations used by Cluster, including [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet and VLANs.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) NetworkConfigurations() GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) []GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput)
+}
+
+// vSphere Cluster types.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) VsphereType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string { return v.VsphereType }).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workloadNetworkCidr` of `initialClusterConfigurations` instead.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationOutput) WorkloadNetworkCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfiguration) string { return v.WorkloadNetworkCidr }).(pulumi.StringOutput)
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcInitialConfigurationInitialClusterConfiguration)(nil)).Elem()
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationArrayOutput() GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationArrayOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput) Index(i pulumi.IntInput) GetSddcInitialConfigurationInitialClusterConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcInitialConfigurationInitialClusterConfiguration {
+		return vs[0].([]GetSddcInitialConfigurationInitialClusterConfiguration)[vs[1].(int)]
+	}).(GetSddcInitialConfigurationInitialClusterConfigurationOutput)
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationDatastore struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
+	// Type of the datastore.
+	DatastoreType string `pulumi:"datastoreType"`
+}
+
+// GetSddcInitialConfigurationInitialClusterConfigurationDatastoreInput is an input type that accepts GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArgs and GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput values.
+// You can construct a concrete instance of `GetSddcInitialConfigurationInitialClusterConfigurationDatastoreInput` via:
+//
+//	GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArgs{...}
+type GetSddcInitialConfigurationInitialClusterConfigurationDatastoreInput interface {
+	pulumi.Input
+
+	ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput() GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput
+	ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutputWithContext(context.Context) GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArgs struct {
+	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
+	// Type of the datastore.
+	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
+}
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationDatastore)(nil)).Elem()
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArgs) ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput() GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return i.ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutputWithContext(context.Background())
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArgs) ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput)
+}
+
+// GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput is an input type that accepts GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArray and GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput values.
+// You can construct a concrete instance of `GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput` via:
+//
+//	GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArray{ GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArgs{...} }
+type GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput() GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput
+	ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutputWithContext(context.Context) GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArray []GetSddcInitialConfigurationInitialClusterConfigurationDatastoreInput
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcInitialConfigurationInitialClusterConfigurationDatastore)(nil)).Elem()
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArray) ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput() GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return i.ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArray) ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput)
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput struct{ *pulumi.OutputState }
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationDatastore)(nil)).Elem()
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput() GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return o
+}
+
+// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationDatastore) []string {
+		return v.BlockVolumeIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// Type of the datastore.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput) DatastoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationDatastore) string { return v.DatastoreType }).(pulumi.StringOutput)
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcInitialConfigurationInitialClusterConfigurationDatastore)(nil)).Elem()
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput() GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput) Index(i pulumi.IntInput) GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcInitialConfigurationInitialClusterConfigurationDatastore {
+		return vs[0].([]GetSddcInitialConfigurationInitialClusterConfigurationDatastore)[vs[1].(int)]
+	}).(GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput)
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	HcxVlanId string `pulumi:"hcxVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
+	NsxEdgeUplink1vlanId string `pulumi:"nsxEdgeUplink1vlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
+	NsxEdgeUplink2vlanId string `pulumi:"nsxEdgeUplink2vlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
+	NsxEdgeVtepVlanId string `pulumi:"nsxEdgeVtepVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
+	NsxVtepVlanId string `pulumi:"nsxVtepVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
+	ProvisioningSubnetId string `pulumi:"provisioningSubnetId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
+	ProvisioningVlanId string `pulumi:"provisioningVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
+	ReplicationVlanId string `pulumi:"replicationVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
+	VmotionVlanId string `pulumi:"vmotionVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
+	VsanVlanId string `pulumi:"vsanVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
+	VsphereVlanId string `pulumi:"vsphereVlanId"`
+}
+
+// GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput is an input type that accepts GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs and GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput` via:
+//
+//	GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{...}
+type GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput() GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput
+	ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutputWithContext(context.Context) GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+	HcxVlanId pulumi.StringInput `pulumi:"hcxVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
+	NsxEdgeUplink1vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink1vlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
+	NsxEdgeUplink2vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink2vlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
+	NsxEdgeVtepVlanId pulumi.StringInput `pulumi:"nsxEdgeVtepVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
+	NsxVtepVlanId pulumi.StringInput `pulumi:"nsxVtepVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
+	ProvisioningSubnetId pulumi.StringInput `pulumi:"provisioningSubnetId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
+	ProvisioningVlanId pulumi.StringInput `pulumi:"provisioningVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
+	ReplicationVlanId pulumi.StringInput `pulumi:"replicationVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
+	VmotionVlanId pulumi.StringInput `pulumi:"vmotionVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
+	VsanVlanId pulumi.StringInput `pulumi:"vsanVlanId"`
+	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
+	VsphereVlanId pulumi.StringInput `pulumi:"vsphereVlanId"`
+}
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput() GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return i.ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput)
+}
+
+// GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput is an input type that accepts GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray and GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput` via:
+//
+//	GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray{ GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{...} }
+type GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput() GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput
+	ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutputWithContext(context.Context) GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray []GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray) ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput() GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput {
+	return i.ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray) ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput)
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput() GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment. This VLAN is a mandatory attribute  for Management Cluster when HCX is enabled.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) HcxVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.HcxVlanId
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxEdgeUplink1vlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.NsxEdgeUplink1vlanId
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxEdgeUplink2vlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.NsxEdgeUplink2vlanId
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxEdgeVtepVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.NsxEdgeVtepVlanId
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxVtepVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.NsxVtepVlanId
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ProvisioningSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.ProvisioningSubnetId
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ProvisioningVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.ProvisioningVlanId
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ReplicationVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.ReplicationVlanId
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) VmotionVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.VmotionVlanId
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) VsanVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.VsanVlanId
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) VsphereVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.VsphereVlanId
+	}).(pulumi.StringOutput)
+}
+
+type GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput() GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput) ToGetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration {
+		return vs[0].([]GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfiguration)[vs[1].(int)]
+	}).(GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput)
+}
+
 type GetSddcUpgradeLicense struct {
 	// vSphere license key value.
 	LicenseKey string `pulumi:"licenseKey"`
@@ -1481,18 +5313,16 @@ type GetSddcsSddcCollection struct {
 	//
 	// Deprecated: The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
 	ActualEsxiHostsCount int `pulumi:"actualEsxiHostsCount"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
-	//
 	// Deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The number of Clusters in the SDDC.
+	ClustersCount int `pulumi:"clustersCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
 	//
 	// Deprecated: The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
-	// (**Deprecated**) Datastores used for the Sddc.
-	//
 	// Deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
 	Datastores []GetSddcsSddcCollectionDatastore `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1503,29 +5333,27 @@ type GetSddcsSddcCollection struct {
 	//
 	// Deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
 	EsxiHostsCount int `pulumi:"esxiHostsCount"`
+	// In general, this is a specific version of bundled ESXi software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+	EsxiSoftwareVersion string `pulumi:"esxiSoftwareVersion"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	HcxAction    string                 `pulumi:"hcxAction"`
 	// The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	HcxFqdn string `pulumi:"hcxFqdn"`
-	// (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
-	//
-	// Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
+	// Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
 	HcxInitialPassword string `pulumi:"hcxInitialPassword"`
-	// (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
-	//
+	// HCX configuration of the SDDC.
+	HcxMode string `pulumi:"hcxMode"`
 	// Deprecated: The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
 	HcxOnPremKey string `pulumi:"hcxOnPremKey"`
 	// The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
 	HcxOnPremLicenses []GetSddcsSddcCollectionHcxOnPremLicense `pulumi:"hcxOnPremLicenses"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
-	HcxPrivateIpId string `pulumi:"hcxPrivateIpId"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
-	//
+	HcxPrivateIpId    string                                   `pulumi:"hcxPrivateIpId"`
 	// Deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	HcxVlanId string `pulumi:"hcxVlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
-	Id string `pulumi:"id"`
+	Id                    string                                       `pulumi:"id"`
+	InitialConfigurations []GetSddcsSddcCollectionInitialConfiguration `pulumi:"initialConfigurations"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 	//
 	// Deprecated: The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
@@ -1534,21 +5362,15 @@ type GetSddcsSddcCollection struct {
 	//
 	// Deprecated: The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
 	InitialHostShapeName string `pulumi:"initialHostShapeName"`
-	// (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-	//
 	// Deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
 	InitialSku string `pulumi:"initialSku"`
-	// (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
-	//
 	// Deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
 	InstanceDisplayNamePrefix string `pulumi:"instanceDisplayNamePrefix"`
-	// (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
-	//
-	// Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
+	// (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcxMode` instead.
 	IsHcxEnabled bool `pulumi:"isHcxEnabled"`
-	// (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
+	// (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcxMode` instead.
 	//
-	// Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.
+	// Deprecated: The 'is_hcx_enterprise_enabled' field has been deprecated and may be removed in a future version. Do not use this field.
 	IsHcxEnterpriseEnabled bool `pulumi:"isHcxEnterpriseEnabled"`
 	// Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
 	IsHcxPendingDowngrade bool `pulumi:"isHcxPendingDowngrade"`
@@ -1558,102 +5380,61 @@ type GetSddcsSddcCollection struct {
 	IsShieldedInstanceEnabled bool `pulumi:"isShieldedInstanceEnabled"`
 	// Indicates whether this SDDC is designated for only single ESXi host.
 	IsSingleHostSddc bool `pulumi:"isSingleHostSddc"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
-	//
 	// Deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxEdgeUplink1vlanId string `pulumi:"nsxEdgeUplink1vlanId"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
-	//
 	// Deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxEdgeUplink2vlanId string `pulumi:"nsxEdgeUplink2vlanId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
-	NsxEdgeUplinkIpId string `pulumi:"nsxEdgeUplinkIpId"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
-	//
+	NsxEdgeUplinkIpId    string `pulumi:"nsxEdgeUplinkIpId"`
 	// Deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxEdgeVtepVlanId string `pulumi:"nsxEdgeVtepVlanId"`
 	// The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	NsxManagerFqdn string `pulumi:"nsxManagerFqdn"`
-	// (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
-	//
-	// Deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
+	// Deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
 	NsxManagerInitialPassword string `pulumi:"nsxManagerInitialPassword"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
-	NsxManagerPrivateIpId string `pulumi:"nsxManagerPrivateIpId"`
+	NsxManagerPrivateIpId     string `pulumi:"nsxManagerPrivateIpId"`
 	// The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
 	NsxManagerUsername string `pulumi:"nsxManagerUsername"`
-	// (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
-	//
 	// Deprecated: The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
 	NsxOverlaySegmentName string `pulumi:"nsxOverlaySegmentName"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
-	//
 	// Deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxVtepVlanId string `pulumi:"nsxVtepVlanId"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
-	//
 	// Deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ProvisioningSubnetId string `pulumi:"provisioningSubnetId"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
-	//
 	// Deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ProvisioningVlanId      string `pulumi:"provisioningVlanId"`
 	RefreshHcxLicenseStatus bool   `pulumi:"refreshHcxLicenseStatus"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
-	//
 	// Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ReplicationVlanId                string   `pulumi:"replicationVlanId"`
 	ReservingHcxOnPremiseLicenseKeys []string `pulumi:"reservingHcxOnPremiseLicenseKeys"`
-	// One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
-	SshAuthorizedKeys string `pulumi:"sshAuthorizedKeys"`
+	SshAuthorizedKeys                string   `pulumi:"sshAuthorizedKeys"`
 	// The lifecycle state of the resource.
 	State string `pulumi:"state"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeHcxBillingCycleEnd string `pulumi:"timeHcxBillingCycleEnd"`
-	// The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated                 string `pulumi:"timeCreated"`
+	TimeHcxBillingCycleEnd      string `pulumi:"timeHcxBillingCycleEnd"`
 	TimeHcxLicenseStatusUpdated string `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
-	//
 	// Deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
 	UpgradeLicenses []GetSddcsSddcCollectionUpgradeLicense `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn string `pulumi:"vcenterFqdn"`
-	// (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
-	//
-	// Deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
+	// Deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
 	VcenterInitialPassword string `pulumi:"vcenterInitialPassword"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
-	VcenterPrivateIpId string `pulumi:"vcenterPrivateIpId"`
-	// The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
-	VcenterUsername string `pulumi:"vcenterUsername"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
-	//
+	VcenterPrivateIpId     string `pulumi:"vcenterPrivateIpId"`
+	VcenterUsername        string `pulumi:"vcenterUsername"`
 	// Deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	VmotionVlanId string `pulumi:"vmotionVlanId"`
-	// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+	// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
 	VmwareSoftwareVersion string `pulumi:"vmwareSoftwareVersion"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
-	//
 	// Deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	VsanVlanId string `pulumi:"vsanVlanId"`
-	// (**Deprecated**) The link to guidance for upgrading vSphere.
-	//
 	// Deprecated: The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
 	VsphereUpgradeGuide string `pulumi:"vsphereUpgradeGuide"`
-	// (**Deprecated**) The links to binary objects needed to upgrade vSphere.
-	//
-	// Deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
+	// Deprecated: The 'vsphere_upgrade_objects' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
 	VsphereUpgradeObjects []GetSddcsSddcCollectionVsphereUpgradeObject `pulumi:"vsphereUpgradeObjects"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
-	//
 	// Deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	VsphereVlanId string `pulumi:"vsphereVlanId"`
-	// (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
-	//
 	// Deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
 	WorkloadNetworkCidr string `pulumi:"workloadNetworkCidr"`
 }
@@ -1674,18 +5455,16 @@ type GetSddcsSddcCollectionArgs struct {
 	//
 	// Deprecated: The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
 	ActualEsxiHostsCount pulumi.IntInput `pulumi:"actualEsxiHostsCount"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
-	//
 	// Deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
 	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The number of Clusters in the SDDC.
+	ClustersCount pulumi.IntInput `pulumi:"clustersCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
 	//
 	// Deprecated: The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead.
 	ComputeAvailabilityDomain pulumi.StringInput `pulumi:"computeAvailabilityDomain"`
-	// (**Deprecated**) Datastores used for the Sddc.
-	//
 	// Deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
 	Datastores GetSddcsSddcCollectionDatastoreArrayInput `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -1696,29 +5475,27 @@ type GetSddcsSddcCollectionArgs struct {
 	//
 	// Deprecated: The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead.
 	EsxiHostsCount pulumi.IntInput `pulumi:"esxiHostsCount"`
+	// In general, this is a specific version of bundled ESXi software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+	EsxiSoftwareVersion pulumi.StringInput `pulumi:"esxiSoftwareVersion"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput    `pulumi:"freeformTags"`
 	HcxAction    pulumi.StringInput `pulumi:"hcxAction"`
 	// The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	HcxFqdn pulumi.StringInput `pulumi:"hcxFqdn"`
-	// (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
-	//
-	// Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
+	// Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
 	HcxInitialPassword pulumi.StringInput `pulumi:"hcxInitialPassword"`
-	// (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
-	//
+	// HCX configuration of the SDDC.
+	HcxMode pulumi.StringInput `pulumi:"hcxMode"`
 	// Deprecated: The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
 	HcxOnPremKey pulumi.StringInput `pulumi:"hcxOnPremKey"`
 	// The activation licenses to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
 	HcxOnPremLicenses GetSddcsSddcCollectionHcxOnPremLicenseArrayInput `pulumi:"hcxOnPremLicenses"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
-	HcxPrivateIpId pulumi.StringInput `pulumi:"hcxPrivateIpId"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
-	//
+	HcxPrivateIpId    pulumi.StringInput                               `pulumi:"hcxPrivateIpId"`
 	// Deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	HcxVlanId pulumi.StringInput `pulumi:"hcxVlanId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id                    pulumi.StringInput                                   `pulumi:"id"`
+	InitialConfigurations GetSddcsSddcCollectionInitialConfigurationArrayInput `pulumi:"initialConfigurations"`
 	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
 	//
 	// Deprecated: The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead.
@@ -1727,21 +5504,15 @@ type GetSddcsSddcCollectionArgs struct {
 	//
 	// Deprecated: The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead.
 	InitialHostShapeName pulumi.StringInput `pulumi:"initialHostShapeName"`
-	// (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-	//
 	// Deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
 	InitialSku pulumi.StringInput `pulumi:"initialSku"`
-	// (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
-	//
 	// Deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
 	InstanceDisplayNamePrefix pulumi.StringInput `pulumi:"instanceDisplayNamePrefix"`
-	// (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
-	//
-	// Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
+	// (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcxMode` instead.
 	IsHcxEnabled pulumi.BoolInput `pulumi:"isHcxEnabled"`
-	// (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
+	// (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcxMode` instead.
 	//
-	// Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.
+	// Deprecated: The 'is_hcx_enterprise_enabled' field has been deprecated and may be removed in a future version. Do not use this field.
 	IsHcxEnterpriseEnabled pulumi.BoolInput `pulumi:"isHcxEnterpriseEnabled"`
 	// Indicates whether SDDC is pending downgrade from HCX Enterprise to HCX Advanced.
 	IsHcxPendingDowngrade pulumi.BoolInput `pulumi:"isHcxPendingDowngrade"`
@@ -1751,102 +5522,61 @@ type GetSddcsSddcCollectionArgs struct {
 	IsShieldedInstanceEnabled pulumi.BoolInput `pulumi:"isShieldedInstanceEnabled"`
 	// Indicates whether this SDDC is designated for only single ESXi host.
 	IsSingleHostSddc pulumi.BoolInput `pulumi:"isSingleHostSddc"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
-	//
 	// Deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxEdgeUplink1vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink1vlanId"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
-	//
 	// Deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxEdgeUplink2vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink2vlanId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
-	NsxEdgeUplinkIpId pulumi.StringInput `pulumi:"nsxEdgeUplinkIpId"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
-	//
+	NsxEdgeUplinkIpId    pulumi.StringInput `pulumi:"nsxEdgeUplinkIpId"`
 	// Deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxEdgeVtepVlanId pulumi.StringInput `pulumi:"nsxEdgeVtepVlanId"`
 	// The FQDN for NSX Manager.  Example: `nsx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	NsxManagerFqdn pulumi.StringInput `pulumi:"nsxManagerFqdn"`
-	// (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
-	//
-	// Deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
+	// Deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
 	NsxManagerInitialPassword pulumi.StringInput `pulumi:"nsxManagerInitialPassword"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
-	NsxManagerPrivateIpId pulumi.StringInput `pulumi:"nsxManagerPrivateIpId"`
+	NsxManagerPrivateIpId     pulumi.StringInput `pulumi:"nsxManagerPrivateIpId"`
 	// The SDDC includes an administrator username and initial password for NSX Manager. You can change this initial username to a different value in NSX Manager.
 	NsxManagerUsername pulumi.StringInput `pulumi:"nsxManagerUsername"`
-	// (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
-	//
 	// Deprecated: The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
 	NsxOverlaySegmentName pulumi.StringInput `pulumi:"nsxOverlaySegmentName"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
-	//
 	// Deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	NsxVtepVlanId pulumi.StringInput `pulumi:"nsxVtepVlanId"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
-	//
 	// Deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ProvisioningSubnetId pulumi.StringInput `pulumi:"provisioningSubnetId"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
-	//
 	// Deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ProvisioningVlanId      pulumi.StringInput `pulumi:"provisioningVlanId"`
 	RefreshHcxLicenseStatus pulumi.BoolInput   `pulumi:"refreshHcxLicenseStatus"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
-	//
 	// Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	ReplicationVlanId                pulumi.StringInput      `pulumi:"replicationVlanId"`
 	ReservingHcxOnPremiseLicenseKeys pulumi.StringArrayInput `pulumi:"reservingHcxOnPremiseLicenseKeys"`
-	// One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
-	SshAuthorizedKeys pulumi.StringInput `pulumi:"sshAuthorizedKeys"`
+	SshAuthorizedKeys                pulumi.StringInput      `pulumi:"sshAuthorizedKeys"`
 	// The lifecycle state of the resource.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the SDDC was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeHcxBillingCycleEnd pulumi.StringInput `pulumi:"timeHcxBillingCycleEnd"`
-	// The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated                 pulumi.StringInput `pulumi:"timeCreated"`
+	TimeHcxBillingCycleEnd      pulumi.StringInput `pulumi:"timeHcxBillingCycleEnd"`
 	TimeHcxLicenseStatusUpdated pulumi.StringInput `pulumi:"timeHcxLicenseStatusUpdated"`
 	// The date and time the SDDC was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
-	//
 	// Deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
 	UpgradeLicenses GetSddcsSddcCollectionUpgradeLicenseArrayInput `pulumi:"upgradeLicenses"`
 	// The FQDN for vCenter.  Example: `vcenter-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	VcenterFqdn pulumi.StringInput `pulumi:"vcenterFqdn"`
-	// (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
-	//
-	// Deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
+	// Deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
 	VcenterInitialPassword pulumi.StringInput `pulumi:"vcenterInitialPassword"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
-	VcenterPrivateIpId pulumi.StringInput `pulumi:"vcenterPrivateIpId"`
-	// The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
-	VcenterUsername pulumi.StringInput `pulumi:"vcenterUsername"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
-	//
+	VcenterPrivateIpId     pulumi.StringInput `pulumi:"vcenterPrivateIpId"`
+	VcenterUsername        pulumi.StringInput `pulumi:"vcenterUsername"`
 	// Deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	VmotionVlanId pulumi.StringInput `pulumi:"vmotionVlanId"`
-	// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+	// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
 	VmwareSoftwareVersion pulumi.StringInput `pulumi:"vmwareSoftwareVersion"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
-	//
 	// Deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	VsanVlanId pulumi.StringInput `pulumi:"vsanVlanId"`
-	// (**Deprecated**) The link to guidance for upgrading vSphere.
-	//
 	// Deprecated: The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
 	VsphereUpgradeGuide pulumi.StringInput `pulumi:"vsphereUpgradeGuide"`
-	// (**Deprecated**) The links to binary objects needed to upgrade vSphere.
-	//
-	// Deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
+	// Deprecated: The 'vsphere_upgrade_objects' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
 	VsphereUpgradeObjects GetSddcsSddcCollectionVsphereUpgradeObjectArrayInput `pulumi:"vsphereUpgradeObjects"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
-	//
 	// Deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 	VsphereVlanId pulumi.StringInput `pulumi:"vsphereVlanId"`
-	// (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
-	//
 	// Deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
 	WorkloadNetworkCidr pulumi.StringInput `pulumi:"workloadNetworkCidr"`
 }
@@ -1909,11 +5639,14 @@ func (o GetSddcsSddcCollectionOutput) ActualEsxiHostsCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) int { return v.ActualEsxiHostsCount }).(pulumi.IntOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
-//
 // Deprecated: The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
+// The number of Clusters in the SDDC.
+func (o GetSddcsSddcCollectionOutput) ClustersCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) int { return v.ClustersCount }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -1928,8 +5661,6 @@ func (o GetSddcsSddcCollectionOutput) ComputeAvailabilityDomain() pulumi.StringO
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ComputeAvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) Datastores used for the Sddc.
-//
 // Deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) Datastores() GetSddcsSddcCollectionDatastoreArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionDatastore { return v.Datastores }).(GetSddcsSddcCollectionDatastoreArrayOutput)
@@ -1952,6 +5683,11 @@ func (o GetSddcsSddcCollectionOutput) EsxiHostsCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) int { return v.EsxiHostsCount }).(pulumi.IntOutput)
 }
 
+// In general, this is a specific version of bundled ESXi software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+func (o GetSddcsSddcCollectionOutput) EsxiSoftwareVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.EsxiSoftwareVersion }).(pulumi.StringOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o GetSddcsSddcCollectionOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -1966,15 +5702,16 @@ func (o GetSddcsSddcCollectionOutput) HcxFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxFqdn }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value.
-//
-// Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
+// Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
 func (o GetSddcsSddcCollectionOutput) HcxInitialPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxInitialPassword }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys.
-//
+// HCX configuration of the SDDC.
+func (o GetSddcsSddcCollectionOutput) HcxMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxMode }).(pulumi.StringOutput)
+}
+
 // Deprecated: The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetSddcsSddcCollectionOutput) HcxOnPremKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxOnPremKey }).(pulumi.StringOutput)
@@ -1985,13 +5722,10 @@ func (o GetSddcsSddcCollectionOutput) HcxOnPremLicenses() GetSddcsSddcCollection
 	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionHcxOnPremLicense { return v.HcxOnPremLicenses }).(GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for HCX Manager. For information about `PrivateIp` objects, see the Core Services API.
 func (o GetSddcsSddcCollectionOutput) HcxPrivateIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxPrivateIpId }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the HCX component of the VMware environment.
-//
 // Deprecated: The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) HcxVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.HcxVlanId }).(pulumi.StringOutput)
@@ -2000,6 +5734,12 @@ func (o GetSddcsSddcCollectionOutput) HcxVlanId() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
 func (o GetSddcsSddcCollectionOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionOutput) InitialConfigurations() GetSddcsSddcCollectionInitialConfigurationArrayOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionInitialConfiguration {
+		return v.InitialConfigurations
+	}).(GetSddcsSddcCollectionInitialConfigurationArrayOutput)
 }
 
 // (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
@@ -2016,30 +5756,24 @@ func (o GetSddcsSddcCollectionOutput) InitialHostShapeName() pulumi.StringOutput
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.InitialHostShapeName }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
-//
 // Deprecated: The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) InitialSku() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.InitialSku }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn't set, the SDDC's `displayName` is used as the prefix.
-//
 // Deprecated: The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) InstanceDisplayNamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.InstanceDisplayNamePrefix }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) Indicates whether HCX is enabled for this SDDC.
-//
-// Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'hcx_mode' instead.
+// (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcxMode` instead.
 func (o GetSddcsSddcCollectionOutput) IsHcxEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) bool { return v.IsHcxEnabled }).(pulumi.BoolOutput)
 }
 
-// (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
+// (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcxMode` instead.
 //
-// Deprecated: The 'is_hcx_enabled' field has been deprecated. Please use 'actual_hcx_mode' instead.
+// Deprecated: The 'is_hcx_enterprise_enabled' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetSddcsSddcCollectionOutput) IsHcxEnterpriseEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) bool { return v.IsHcxEnterpriseEnabled }).(pulumi.BoolOutput)
 }
@@ -2061,27 +5795,20 @@ func (o GetSddcsSddcCollectionOutput) IsSingleHostSddc() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) bool { return v.IsSingleHostSddc }).(pulumi.BoolOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 1 component of the VMware environment.
-//
 // Deprecated: The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) NsxEdgeUplink1vlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxEdgeUplink1vlanId }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge Uplink 2 component of the VMware environment.
-//
 // Deprecated: The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) NsxEdgeUplink2vlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxEdgeUplink2vlanId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for the NSX Edge Uplink. Use this OCID as the route target for route table rules when setting up connectivity between the SDDC and other networks. For information about `PrivateIp` objects, see the Core Services API.
 func (o GetSddcsSddcCollectionOutput) NsxEdgeUplinkIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxEdgeUplinkIpId }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX Edge VTEP component of the VMware environment.
-//
 // Deprecated: The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) NsxEdgeVtepVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxEdgeVtepVlanId }).(pulumi.StringOutput)
@@ -2092,14 +5819,11 @@ func (o GetSddcsSddcCollectionOutput) NsxManagerFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxManagerFqdn }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value.
-//
-// Deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
+// Deprecated: The 'nsx_manager_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
 func (o GetSddcsSddcCollectionOutput) NsxManagerInitialPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxManagerInitialPassword }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for NSX Manager. For information about `PrivateIp` objects, see the Core Services API.
 func (o GetSddcsSddcCollectionOutput) NsxManagerPrivateIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxManagerPrivateIpId }).(pulumi.StringOutput)
 }
@@ -2109,29 +5833,21 @@ func (o GetSddcsSddcCollectionOutput) NsxManagerUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxManagerUsername }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
-//
 // Deprecated: The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetSddcsSddcCollectionOutput) NsxOverlaySegmentName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxOverlaySegmentName }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the NSX VTEP component of the VMware environment.
-//
 // Deprecated: The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) NsxVtepVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.NsxVtepVlanId }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC.
-//
 // Deprecated: The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) ProvisioningSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ProvisioningSubnetId }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment.
-//
 // Deprecated: The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) ProvisioningVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ProvisioningVlanId }).(pulumi.StringOutput)
@@ -2141,8 +5857,6 @@ func (o GetSddcsSddcCollectionOutput) RefreshHcxLicenseStatus() pulumi.BoolOutpu
 	return o.ApplyT(func(v GetSddcsSddcCollection) bool { return v.RefreshHcxLicenseStatus }).(pulumi.BoolOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment.
-//
 // Deprecated: The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) ReplicationVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.ReplicationVlanId }).(pulumi.StringOutput)
@@ -2152,7 +5866,6 @@ func (o GetSddcsSddcCollectionOutput) ReservingHcxOnPremiseLicenseKeys() pulumi.
 	return o.ApplyT(func(v GetSddcsSddcCollection) []string { return v.ReservingHcxOnPremiseLicenseKeys }).(pulumi.StringArrayOutput)
 }
 
-// One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
 func (o GetSddcsSddcCollectionOutput) SshAuthorizedKeys() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.SshAuthorizedKeys }).(pulumi.StringOutput)
 }
@@ -2167,12 +5880,10 @@ func (o GetSddcsSddcCollectionOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time current HCX Enterprise billing cycle ends, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o GetSddcsSddcCollectionOutput) TimeHcxBillingCycleEnd() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.TimeHcxBillingCycleEnd }).(pulumi.StringOutput)
 }
 
-// The date and time the SDDC's HCX on-premise license status was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o GetSddcsSddcCollectionOutput) TimeHcxLicenseStatusUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.TimeHcxLicenseStatusUpdated }).(pulumi.StringOutput)
 }
@@ -2182,8 +5893,6 @@ func (o GetSddcsSddcCollectionOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
-//
 // Deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
 func (o GetSddcsSddcCollectionOutput) UpgradeLicenses() GetSddcsSddcCollectionUpgradeLicenseArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionUpgradeLicense { return v.UpgradeLicenses }).(GetSddcsSddcCollectionUpgradeLicenseArrayOutput)
@@ -2194,67 +5903,51 @@ func (o GetSddcsSddcCollectionOutput) VcenterFqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VcenterFqdn }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value.
-//
-// Deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'ocvp_sddc_password' data source instead.
+// Deprecated: The 'vcenter_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
 func (o GetSddcsSddcCollectionOutput) VcenterInitialPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VcenterInitialPassword }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PrivateIp` object that is the virtual IP (VIP) for vCenter. For information about `PrivateIp` objects, see the Core Services API.
 func (o GetSddcsSddcCollectionOutput) VcenterPrivateIpId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VcenterPrivateIpId }).(pulumi.StringOutput)
 }
 
-// The SDDC includes an administrator username and initial password for vCenter. You can change this initial username to a different value in vCenter.
 func (o GetSddcsSddcCollectionOutput) VcenterUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VcenterUsername }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vMotion component of the VMware environment.
-//
 // Deprecated: The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) VmotionVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VmotionVlanId }).(pulumi.StringOutput)
 }
 
-// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
+// In general, this is a specific version of bundled VMware software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
 func (o GetSddcsSddcCollectionOutput) VmwareSoftwareVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VmwareSoftwareVersion }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSAN component of the VMware environment.
-//
 // Deprecated: The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) VsanVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VsanVlanId }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The link to guidance for upgrading vSphere.
-//
 // Deprecated: The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field.
 func (o GetSddcsSddcCollectionOutput) VsphereUpgradeGuide() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VsphereUpgradeGuide }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The links to binary objects needed to upgrade vSphere.
-//
-// Deprecated: The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
+// Deprecated: The 'vsphere_upgrade_objects' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead.
 func (o GetSddcsSddcCollectionOutput) VsphereUpgradeObjects() GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) []GetSddcsSddcCollectionVsphereUpgradeObject {
 		return v.VsphereUpgradeObjects
 	}).(GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere component of the VMware environment.
-//
 // Deprecated: The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) VsphereVlanId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.VsphereVlanId }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.
-//
 // Deprecated: The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead.
 func (o GetSddcsSddcCollectionOutput) WorkloadNetworkCidr() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollection) string { return v.WorkloadNetworkCidr }).(pulumi.StringOutput)
@@ -2281,12 +5974,9 @@ func (o GetSddcsSddcCollectionArrayOutput) Index(i pulumi.IntInput) GetSddcsSddc
 }
 
 type GetSddcsSddcCollectionDatastore struct {
-	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
-	// Size of the Block Storage Volume in GB.
-	Capacity float64 `pulumi:"capacity"`
-	// Type of the datastore.
-	DatastoreType string `pulumi:"datastoreType"`
+	Capacity       float64  `pulumi:"capacity"`
+	DatastoreType  string   `pulumi:"datastoreType"`
 }
 
 // GetSddcsSddcCollectionDatastoreInput is an input type that accepts GetSddcsSddcCollectionDatastoreArgs and GetSddcsSddcCollectionDatastoreOutput values.
@@ -2301,12 +5991,9 @@ type GetSddcsSddcCollectionDatastoreInput interface {
 }
 
 type GetSddcsSddcCollectionDatastoreArgs struct {
-	// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
-	// Size of the Block Storage Volume in GB.
-	Capacity pulumi.Float64Input `pulumi:"capacity"`
-	// Type of the datastore.
-	DatastoreType pulumi.StringInput `pulumi:"datastoreType"`
+	Capacity       pulumi.Float64Input     `pulumi:"capacity"`
+	DatastoreType  pulumi.StringInput      `pulumi:"datastoreType"`
 }
 
 func (GetSddcsSddcCollectionDatastoreArgs) ElementType() reflect.Type {
@@ -2360,17 +6047,14 @@ func (o GetSddcsSddcCollectionDatastoreOutput) ToGetSddcsSddcCollectionDatastore
 	return o
 }
 
-// A list of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of Block Storage Volumes.
 func (o GetSddcsSddcCollectionDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) []string { return v.BlockVolumeIds }).(pulumi.StringArrayOutput)
 }
 
-// Size of the Block Storage Volume in GB.
 func (o GetSddcsSddcCollectionDatastoreOutput) Capacity() pulumi.Float64Output {
 	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) float64 { return v.Capacity }).(pulumi.Float64Output)
 }
 
-// Type of the datastore.
 func (o GetSddcsSddcCollectionDatastoreOutput) DatastoreType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionDatastore) string { return v.DatastoreType }).(pulumi.StringOutput)
 }
@@ -2510,10 +6194,605 @@ func (o GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput) Index(i pulumi.IntInp
 	}).(GetSddcsSddcCollectionHcxOnPremLicenseOutput)
 }
 
+type GetSddcsSddcCollectionInitialConfiguration struct {
+	InitialClusterConfigurations []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration `pulumi:"initialClusterConfigurations"`
+}
+
+// GetSddcsSddcCollectionInitialConfigurationInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationArgs and GetSddcsSddcCollectionInitialConfigurationOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionInitialConfigurationInput` via:
+//
+//	GetSddcsSddcCollectionInitialConfigurationArgs{...}
+type GetSddcsSddcCollectionInitialConfigurationInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionInitialConfigurationOutput() GetSddcsSddcCollectionInitialConfigurationOutput
+	ToGetSddcsSddcCollectionInitialConfigurationOutputWithContext(context.Context) GetSddcsSddcCollectionInitialConfigurationOutput
+}
+
+type GetSddcsSddcCollectionInitialConfigurationArgs struct {
+	InitialClusterConfigurations GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayInput `pulumi:"initialClusterConfigurations"`
+}
+
+func (GetSddcsSddcCollectionInitialConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionInitialConfiguration)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationArgs) ToGetSddcsSddcCollectionInitialConfigurationOutput() GetSddcsSddcCollectionInitialConfigurationOutput {
+	return i.ToGetSddcsSddcCollectionInitialConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationArgs) ToGetSddcsSddcCollectionInitialConfigurationOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionInitialConfigurationOutput)
+}
+
+// GetSddcsSddcCollectionInitialConfigurationArrayInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationArray and GetSddcsSddcCollectionInitialConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionInitialConfigurationArrayInput` via:
+//
+//	GetSddcsSddcCollectionInitialConfigurationArray{ GetSddcsSddcCollectionInitialConfigurationArgs{...} }
+type GetSddcsSddcCollectionInitialConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionInitialConfigurationArrayOutput() GetSddcsSddcCollectionInitialConfigurationArrayOutput
+	ToGetSddcsSddcCollectionInitialConfigurationArrayOutputWithContext(context.Context) GetSddcsSddcCollectionInitialConfigurationArrayOutput
+}
+
+type GetSddcsSddcCollectionInitialConfigurationArray []GetSddcsSddcCollectionInitialConfigurationInput
+
+func (GetSddcsSddcCollectionInitialConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionInitialConfiguration)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationArray) ToGetSddcsSddcCollectionInitialConfigurationArrayOutput() GetSddcsSddcCollectionInitialConfigurationArrayOutput {
+	return i.ToGetSddcsSddcCollectionInitialConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationArray) ToGetSddcsSddcCollectionInitialConfigurationArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionInitialConfigurationArrayOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionInitialConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionInitialConfiguration)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationOutput) ToGetSddcsSddcCollectionInitialConfigurationOutput() GetSddcsSddcCollectionInitialConfigurationOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationOutput) ToGetSddcsSddcCollectionInitialConfigurationOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationOutput) InitialClusterConfigurations() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfiguration) []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration {
+		return v.InitialClusterConfigurations
+	}).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionInitialConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionInitialConfiguration)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationArrayOutput) ToGetSddcsSddcCollectionInitialConfigurationArrayOutput() GetSddcsSddcCollectionInitialConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationArrayOutput) ToGetSddcsSddcCollectionInitialConfigurationArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionInitialConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionInitialConfiguration {
+		return vs[0].([]GetSddcsSddcCollectionInitialConfiguration)[vs[1].(int)]
+	}).(GetSddcsSddcCollectionInitialConfigurationOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration struct {
+	// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+	ActualEsxiHostsCount  int    `pulumi:"actualEsxiHostsCount"`
+	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
+	ComputeAvailabilityDomain string                                                                           `pulumi:"computeAvailabilityDomain"`
+	Datastores                []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore `pulumi:"datastores"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// (**Deprecated**) The number of ESXi hosts in the SDDC.
+	EsxiHostsCount    int    `pulumi:"esxiHostsCount"`
+	InitialCommitment string `pulumi:"initialCommitment"`
+	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
+	InitialHostOcpuCount float64 `pulumi:"initialHostOcpuCount"`
+	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	InitialHostShapeName      string `pulumi:"initialHostShapeName"`
+	InstanceDisplayNamePrefix string `pulumi:"instanceDisplayNamePrefix"`
+	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
+	IsShieldedInstanceEnabled bool                                                                                        `pulumi:"isShieldedInstanceEnabled"`
+	NetworkConfigurations     []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration `pulumi:"networkConfigurations"`
+	VsphereType               string                                                                                      `pulumi:"vsphereType"`
+	WorkloadNetworkCidr       string                                                                                      `pulumi:"workloadNetworkCidr"`
+}
+
+// GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs and GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationInput` via:
+//
+//	GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs{...}
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutputWithContext(context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs struct {
+	// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+	ActualEsxiHostsCount  pulumi.IntInput    `pulumi:"actualEsxiHostsCount"`
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
+	ComputeAvailabilityDomain pulumi.StringInput                                                                       `pulumi:"computeAvailabilityDomain"`
+	Datastores                GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayInput `pulumi:"datastores"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// (**Deprecated**) The number of ESXi hosts in the SDDC.
+	EsxiHostsCount    pulumi.IntInput    `pulumi:"esxiHostsCount"`
+	InitialCommitment pulumi.StringInput `pulumi:"initialCommitment"`
+	// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
+	InitialHostOcpuCount pulumi.Float64Input `pulumi:"initialHostOcpuCount"`
+	// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	InitialHostShapeName      pulumi.StringInput `pulumi:"initialHostShapeName"`
+	InstanceDisplayNamePrefix pulumi.StringInput `pulumi:"instanceDisplayNamePrefix"`
+	// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
+	IsShieldedInstanceEnabled pulumi.BoolInput                                                                                    `pulumi:"isShieldedInstanceEnabled"`
+	NetworkConfigurations     GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
+	VsphereType               pulumi.StringInput                                                                                  `pulumi:"vsphereType"`
+	WorkloadNetworkCidr       pulumi.StringInput                                                                                  `pulumi:"workloadNetworkCidr"`
+}
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput {
+	return i.ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput)
+}
+
+// GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArray and GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayInput` via:
+//
+//	GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArray{ GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs{...} }
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutputWithContext(context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArray []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationInput
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArray) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return i.ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArray) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput {
+	return o
+}
+
+// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC.
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) ActualEsxiHostsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) int {
+		return v.ActualEsxiHostsCount
+	}).(pulumi.IntOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
+// The name of the availability domain that the Compute instances are running in.  Example: `Uocm:PHX-AD-1`
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) ComputeAvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
+		return v.ComputeAvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) Datastores() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore {
+		return v.Datastores
+	}).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The number of ESXi hosts in the SDDC.
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) EsxiHostsCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) int {
+		return v.EsxiHostsCount
+	}).(pulumi.IntOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) InitialCommitment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
+		return v.InitialCommitment
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts.
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) InitialHostOcpuCount() pulumi.Float64Output {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) float64 {
+		return v.InitialHostOcpuCount
+	}).(pulumi.Float64Output)
+}
+
+// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) InitialHostShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
+		return v.InitialHostShapeName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) InstanceDisplayNamePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
+		return v.InstanceDisplayNamePrefix
+	}).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level.
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) IsShieldedInstanceEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) bool {
+		return v.IsShieldedInstanceEnabled
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) NetworkConfigurations() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration {
+		return v.NetworkConfigurations
+	}).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) VsphereType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
+		return v.VsphereType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput) WorkloadNetworkCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration) string {
+		return v.WorkloadNetworkCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration {
+		return vs[0].([]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfiguration)[vs[1].(int)]
+	}).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore struct {
+	BlockVolumeIds []string `pulumi:"blockVolumeIds"`
+	DatastoreType  string   `pulumi:"datastoreType"`
+}
+
+// GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs and GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreInput` via:
+//
+//	GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs{...}
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutputWithContext(context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs struct {
+	BlockVolumeIds pulumi.StringArrayInput `pulumi:"blockVolumeIds"`
+	DatastoreType  pulumi.StringInput      `pulumi:"datastoreType"`
+}
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return i.ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput)
+}
+
+// GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArray and GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayInput` via:
+//
+//	GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArray{ GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs{...} }
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutputWithContext(context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArray []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreInput
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArray) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return i.ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArray) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput) BlockVolumeIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore) []string {
+		return v.BlockVolumeIds
+	}).(pulumi.StringArrayOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput) DatastoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore) string {
+		return v.DatastoreType
+	}).(pulumi.StringOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore {
+		return vs[0].([]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore)[vs[1].(int)]
+	}).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration struct {
+	HcxVlanId            string `pulumi:"hcxVlanId"`
+	NsxEdgeUplink1vlanId string `pulumi:"nsxEdgeUplink1vlanId"`
+	NsxEdgeUplink2vlanId string `pulumi:"nsxEdgeUplink2vlanId"`
+	NsxEdgeVtepVlanId    string `pulumi:"nsxEdgeVtepVlanId"`
+	NsxVtepVlanId        string `pulumi:"nsxVtepVlanId"`
+	ProvisioningSubnetId string `pulumi:"provisioningSubnetId"`
+	ProvisioningVlanId   string `pulumi:"provisioningVlanId"`
+	ReplicationVlanId    string `pulumi:"replicationVlanId"`
+	VmotionVlanId        string `pulumi:"vmotionVlanId"`
+	VsanVlanId           string `pulumi:"vsanVlanId"`
+	VsphereVlanId        string `pulumi:"vsphereVlanId"`
+}
+
+// GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs and GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput` via:
+//
+//	GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{...}
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutputWithContext(context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs struct {
+	HcxVlanId            pulumi.StringInput `pulumi:"hcxVlanId"`
+	NsxEdgeUplink1vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink1vlanId"`
+	NsxEdgeUplink2vlanId pulumi.StringInput `pulumi:"nsxEdgeUplink2vlanId"`
+	NsxEdgeVtepVlanId    pulumi.StringInput `pulumi:"nsxEdgeVtepVlanId"`
+	NsxVtepVlanId        pulumi.StringInput `pulumi:"nsxVtepVlanId"`
+	ProvisioningSubnetId pulumi.StringInput `pulumi:"provisioningSubnetId"`
+	ProvisioningVlanId   pulumi.StringInput `pulumi:"provisioningVlanId"`
+	ReplicationVlanId    pulumi.StringInput `pulumi:"replicationVlanId"`
+	VmotionVlanId        pulumi.StringInput `pulumi:"vmotionVlanId"`
+	VsanVlanId           pulumi.StringInput `pulumi:"vsanVlanId"`
+	VsphereVlanId        pulumi.StringInput `pulumi:"vsphereVlanId"`
+}
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return i.ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput)
+}
+
+// GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput is an input type that accepts GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray and GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput` via:
+//
+//	GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray{ GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{...} }
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput
+	ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutputWithContext(context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray []GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration)(nil)).Elem()
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput {
+	return i.ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) HcxVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.HcxVlanId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxEdgeUplink1vlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.NsxEdgeUplink1vlanId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxEdgeUplink2vlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.NsxEdgeUplink2vlanId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxEdgeVtepVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.NsxEdgeVtepVlanId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) NsxVtepVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.NsxVtepVlanId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ProvisioningSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.ProvisioningSubnetId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ProvisioningVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.ProvisioningVlanId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) ReplicationVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.ReplicationVlanId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) VmotionVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.VmotionVlanId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) VsanVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.VsanVlanId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput) VsphereVlanId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration) string {
+		return v.VsphereVlanId
+	}).(pulumi.StringOutput)
+}
+
+type GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration)(nil)).Elem()
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput() GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput) ToGetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutputWithContext(ctx context.Context) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput {
+	return o
+}
+
+func (o GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput) Index(i pulumi.IntInput) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration {
+		return vs[0].([]GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfiguration)[vs[1].(int)]
+	}).(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput)
+}
+
 type GetSddcsSddcCollectionUpgradeLicense struct {
-	// vSphere license key value.
-	LicenseKey string `pulumi:"licenseKey"`
-	// vSphere license type.
+	LicenseKey  string `pulumi:"licenseKey"`
 	LicenseType string `pulumi:"licenseType"`
 }
 
@@ -2529,9 +6808,7 @@ type GetSddcsSddcCollectionUpgradeLicenseInput interface {
 }
 
 type GetSddcsSddcCollectionUpgradeLicenseArgs struct {
-	// vSphere license key value.
-	LicenseKey pulumi.StringInput `pulumi:"licenseKey"`
-	// vSphere license type.
+	LicenseKey  pulumi.StringInput `pulumi:"licenseKey"`
 	LicenseType pulumi.StringInput `pulumi:"licenseType"`
 }
 
@@ -2586,12 +6863,10 @@ func (o GetSddcsSddcCollectionUpgradeLicenseOutput) ToGetSddcsSddcCollectionUpgr
 	return o
 }
 
-// vSphere license key value.
 func (o GetSddcsSddcCollectionUpgradeLicenseOutput) LicenseKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionUpgradeLicense) string { return v.LicenseKey }).(pulumi.StringOutput)
 }
 
-// vSphere license type.
 func (o GetSddcsSddcCollectionUpgradeLicenseOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionUpgradeLicense) string { return v.LicenseType }).(pulumi.StringOutput)
 }
@@ -2617,9 +6892,7 @@ func (o GetSddcsSddcCollectionUpgradeLicenseArrayOutput) Index(i pulumi.IntInput
 }
 
 type GetSddcsSddcCollectionVsphereUpgradeObject struct {
-	// Binary object download link.
-	DownloadLink string `pulumi:"downloadLink"`
-	// Binary object description.
+	DownloadLink    string `pulumi:"downloadLink"`
 	LinkDescription string `pulumi:"linkDescription"`
 }
 
@@ -2635,9 +6908,7 @@ type GetSddcsSddcCollectionVsphereUpgradeObjectInput interface {
 }
 
 type GetSddcsSddcCollectionVsphereUpgradeObjectArgs struct {
-	// Binary object download link.
-	DownloadLink pulumi.StringInput `pulumi:"downloadLink"`
-	// Binary object description.
+	DownloadLink    pulumi.StringInput `pulumi:"downloadLink"`
 	LinkDescription pulumi.StringInput `pulumi:"linkDescription"`
 }
 
@@ -2692,12 +6963,10 @@ func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) ToGetSddcsSddcCollecti
 	return o
 }
 
-// Binary object download link.
 func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) DownloadLink() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionVsphereUpgradeObject) string { return v.DownloadLink }).(pulumi.StringOutput)
 }
 
-// Binary object description.
 func (o GetSddcsSddcCollectionVsphereUpgradeObjectOutput) LinkDescription() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSddcsSddcCollectionVsphereUpgradeObject) string { return v.LinkDescription }).(pulumi.StringOutput)
 }
@@ -2720,6 +6989,212 @@ func (o GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSddcsSddcCollectionVsphereUpgradeObject {
 		return vs[0].([]GetSddcsSddcCollectionVsphereUpgradeObject)[vs[1].(int)]
 	}).(GetSddcsSddcCollectionVsphereUpgradeObjectOutput)
+}
+
+type GetSupportedCommitmentsFilter struct {
+	// name of Commitment
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetSupportedCommitmentsFilterInput is an input type that accepts GetSupportedCommitmentsFilterArgs and GetSupportedCommitmentsFilterOutput values.
+// You can construct a concrete instance of `GetSupportedCommitmentsFilterInput` via:
+//
+//	GetSupportedCommitmentsFilterArgs{...}
+type GetSupportedCommitmentsFilterInput interface {
+	pulumi.Input
+
+	ToGetSupportedCommitmentsFilterOutput() GetSupportedCommitmentsFilterOutput
+	ToGetSupportedCommitmentsFilterOutputWithContext(context.Context) GetSupportedCommitmentsFilterOutput
+}
+
+type GetSupportedCommitmentsFilterArgs struct {
+	// name of Commitment
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetSupportedCommitmentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSupportedCommitmentsFilter)(nil)).Elem()
+}
+
+func (i GetSupportedCommitmentsFilterArgs) ToGetSupportedCommitmentsFilterOutput() GetSupportedCommitmentsFilterOutput {
+	return i.ToGetSupportedCommitmentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetSupportedCommitmentsFilterArgs) ToGetSupportedCommitmentsFilterOutputWithContext(ctx context.Context) GetSupportedCommitmentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedCommitmentsFilterOutput)
+}
+
+// GetSupportedCommitmentsFilterArrayInput is an input type that accepts GetSupportedCommitmentsFilterArray and GetSupportedCommitmentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetSupportedCommitmentsFilterArrayInput` via:
+//
+//	GetSupportedCommitmentsFilterArray{ GetSupportedCommitmentsFilterArgs{...} }
+type GetSupportedCommitmentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetSupportedCommitmentsFilterArrayOutput() GetSupportedCommitmentsFilterArrayOutput
+	ToGetSupportedCommitmentsFilterArrayOutputWithContext(context.Context) GetSupportedCommitmentsFilterArrayOutput
+}
+
+type GetSupportedCommitmentsFilterArray []GetSupportedCommitmentsFilterInput
+
+func (GetSupportedCommitmentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSupportedCommitmentsFilter)(nil)).Elem()
+}
+
+func (i GetSupportedCommitmentsFilterArray) ToGetSupportedCommitmentsFilterArrayOutput() GetSupportedCommitmentsFilterArrayOutput {
+	return i.ToGetSupportedCommitmentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetSupportedCommitmentsFilterArray) ToGetSupportedCommitmentsFilterArrayOutputWithContext(ctx context.Context) GetSupportedCommitmentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedCommitmentsFilterArrayOutput)
+}
+
+type GetSupportedCommitmentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetSupportedCommitmentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSupportedCommitmentsFilter)(nil)).Elem()
+}
+
+func (o GetSupportedCommitmentsFilterOutput) ToGetSupportedCommitmentsFilterOutput() GetSupportedCommitmentsFilterOutput {
+	return o
+}
+
+func (o GetSupportedCommitmentsFilterOutput) ToGetSupportedCommitmentsFilterOutputWithContext(ctx context.Context) GetSupportedCommitmentsFilterOutput {
+	return o
+}
+
+// name of Commitment
+func (o GetSupportedCommitmentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSupportedCommitmentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetSupportedCommitmentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSupportedCommitmentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSupportedCommitmentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSupportedCommitmentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetSupportedCommitmentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSupportedCommitmentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSupportedCommitmentsFilter)(nil)).Elem()
+}
+
+func (o GetSupportedCommitmentsFilterArrayOutput) ToGetSupportedCommitmentsFilterArrayOutput() GetSupportedCommitmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetSupportedCommitmentsFilterArrayOutput) ToGetSupportedCommitmentsFilterArrayOutputWithContext(ctx context.Context) GetSupportedCommitmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetSupportedCommitmentsFilterArrayOutput) Index(i pulumi.IntInput) GetSupportedCommitmentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSupportedCommitmentsFilter {
+		return vs[0].([]GetSupportedCommitmentsFilter)[vs[1].(int)]
+	}).(GetSupportedCommitmentsFilterOutput)
+}
+
+type GetSupportedCommitmentsItem struct {
+	// name of Commitment
+	Name string `pulumi:"name"`
+}
+
+// GetSupportedCommitmentsItemInput is an input type that accepts GetSupportedCommitmentsItemArgs and GetSupportedCommitmentsItemOutput values.
+// You can construct a concrete instance of `GetSupportedCommitmentsItemInput` via:
+//
+//	GetSupportedCommitmentsItemArgs{...}
+type GetSupportedCommitmentsItemInput interface {
+	pulumi.Input
+
+	ToGetSupportedCommitmentsItemOutput() GetSupportedCommitmentsItemOutput
+	ToGetSupportedCommitmentsItemOutputWithContext(context.Context) GetSupportedCommitmentsItemOutput
+}
+
+type GetSupportedCommitmentsItemArgs struct {
+	// name of Commitment
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetSupportedCommitmentsItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSupportedCommitmentsItem)(nil)).Elem()
+}
+
+func (i GetSupportedCommitmentsItemArgs) ToGetSupportedCommitmentsItemOutput() GetSupportedCommitmentsItemOutput {
+	return i.ToGetSupportedCommitmentsItemOutputWithContext(context.Background())
+}
+
+func (i GetSupportedCommitmentsItemArgs) ToGetSupportedCommitmentsItemOutputWithContext(ctx context.Context) GetSupportedCommitmentsItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedCommitmentsItemOutput)
+}
+
+// GetSupportedCommitmentsItemArrayInput is an input type that accepts GetSupportedCommitmentsItemArray and GetSupportedCommitmentsItemArrayOutput values.
+// You can construct a concrete instance of `GetSupportedCommitmentsItemArrayInput` via:
+//
+//	GetSupportedCommitmentsItemArray{ GetSupportedCommitmentsItemArgs{...} }
+type GetSupportedCommitmentsItemArrayInput interface {
+	pulumi.Input
+
+	ToGetSupportedCommitmentsItemArrayOutput() GetSupportedCommitmentsItemArrayOutput
+	ToGetSupportedCommitmentsItemArrayOutputWithContext(context.Context) GetSupportedCommitmentsItemArrayOutput
+}
+
+type GetSupportedCommitmentsItemArray []GetSupportedCommitmentsItemInput
+
+func (GetSupportedCommitmentsItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSupportedCommitmentsItem)(nil)).Elem()
+}
+
+func (i GetSupportedCommitmentsItemArray) ToGetSupportedCommitmentsItemArrayOutput() GetSupportedCommitmentsItemArrayOutput {
+	return i.ToGetSupportedCommitmentsItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetSupportedCommitmentsItemArray) ToGetSupportedCommitmentsItemArrayOutputWithContext(ctx context.Context) GetSupportedCommitmentsItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedCommitmentsItemArrayOutput)
+}
+
+type GetSupportedCommitmentsItemOutput struct{ *pulumi.OutputState }
+
+func (GetSupportedCommitmentsItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSupportedCommitmentsItem)(nil)).Elem()
+}
+
+func (o GetSupportedCommitmentsItemOutput) ToGetSupportedCommitmentsItemOutput() GetSupportedCommitmentsItemOutput {
+	return o
+}
+
+func (o GetSupportedCommitmentsItemOutput) ToGetSupportedCommitmentsItemOutputWithContext(ctx context.Context) GetSupportedCommitmentsItemOutput {
+	return o
+}
+
+// name of Commitment
+func (o GetSupportedCommitmentsItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSupportedCommitmentsItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetSupportedCommitmentsItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSupportedCommitmentsItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSupportedCommitmentsItem)(nil)).Elem()
+}
+
+func (o GetSupportedCommitmentsItemArrayOutput) ToGetSupportedCommitmentsItemArrayOutput() GetSupportedCommitmentsItemArrayOutput {
+	return o
+}
+
+func (o GetSupportedCommitmentsItemArrayOutput) ToGetSupportedCommitmentsItemArrayOutputWithContext(ctx context.Context) GetSupportedCommitmentsItemArrayOutput {
+	return o
+}
+
+func (o GetSupportedCommitmentsItemArrayOutput) Index(i pulumi.IntInput) GetSupportedCommitmentsItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSupportedCommitmentsItem {
+		return vs[0].([]GetSupportedCommitmentsItem)[vs[1].(int)]
+	}).(GetSupportedCommitmentsItemOutput)
 }
 
 type GetSupportedHostShapesFilter struct {
@@ -2836,7 +7311,13 @@ type GetSupportedHostShapesItem struct {
 	DefaultOcpuCount float64 `pulumi:"defaultOcpuCount"`
 	// Description of the shape.
 	Description string `pulumi:"description"`
-	// Whether the shape supports "MONTH" SKU.
+	// A filter to return only resources that support single host SDDC.
+	IsSingleHostSddcSupported bool `pulumi:"isSingleHostSddcSupported"`
+	// Whether the shape supports "MONTH" Commitment.
+	IsSupportMonthlyCommitment bool `pulumi:"isSupportMonthlyCommitment"`
+	// (**Deprecated**) Whether the shape supports "MONTH" SKU.
+	//
+	// Deprecated: The 'is_support_monthly_sku' field has been deprecated. Please use 'is_support_monthly_commitment' instead.
 	IsSupportMonthlySku bool `pulumi:"isSupportMonthlySku"`
 	// Indicates whether the shape supports shielded instances.
 	IsSupportShieldedInstances bool `pulumi:"isSupportShieldedInstances"`
@@ -2848,7 +7329,7 @@ type GetSupportedHostShapesItem struct {
 	SupportedOcpuCounts []float64 `pulumi:"supportedOcpuCounts"`
 	// The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
 	SupportedOperations []string `pulumi:"supportedOperations"`
-	// The supported SDDC types for the shape.
+	// (**Deprecated**) The supported SDDC types for the shape.
 	//
 	// Deprecated: The 'supported_sddc_types' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.
 	SupportedSddcTypes []string `pulumi:"supportedSddcTypes"`
@@ -2872,7 +7353,13 @@ type GetSupportedHostShapesItemArgs struct {
 	DefaultOcpuCount pulumi.Float64Input `pulumi:"defaultOcpuCount"`
 	// Description of the shape.
 	Description pulumi.StringInput `pulumi:"description"`
-	// Whether the shape supports "MONTH" SKU.
+	// A filter to return only resources that support single host SDDC.
+	IsSingleHostSddcSupported pulumi.BoolInput `pulumi:"isSingleHostSddcSupported"`
+	// Whether the shape supports "MONTH" Commitment.
+	IsSupportMonthlyCommitment pulumi.BoolInput `pulumi:"isSupportMonthlyCommitment"`
+	// (**Deprecated**) Whether the shape supports "MONTH" SKU.
+	//
+	// Deprecated: The 'is_support_monthly_sku' field has been deprecated. Please use 'is_support_monthly_commitment' instead.
 	IsSupportMonthlySku pulumi.BoolInput `pulumi:"isSupportMonthlySku"`
 	// Indicates whether the shape supports shielded instances.
 	IsSupportShieldedInstances pulumi.BoolInput `pulumi:"isSupportShieldedInstances"`
@@ -2884,7 +7371,7 @@ type GetSupportedHostShapesItemArgs struct {
 	SupportedOcpuCounts pulumi.Float64ArrayInput `pulumi:"supportedOcpuCounts"`
 	// The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
 	SupportedOperations pulumi.StringArrayInput `pulumi:"supportedOperations"`
-	// The supported SDDC types for the shape.
+	// (**Deprecated**) The supported SDDC types for the shape.
 	//
 	// Deprecated: The 'supported_sddc_types' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.
 	SupportedSddcTypes pulumi.StringArrayInput `pulumi:"supportedSddcTypes"`
@@ -2953,7 +7440,19 @@ func (o GetSupportedHostShapesItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSupportedHostShapesItem) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Whether the shape supports "MONTH" SKU.
+// A filter to return only resources that support single host SDDC.
+func (o GetSupportedHostShapesItemOutput) IsSingleHostSddcSupported() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesItem) bool { return v.IsSingleHostSddcSupported }).(pulumi.BoolOutput)
+}
+
+// Whether the shape supports "MONTH" Commitment.
+func (o GetSupportedHostShapesItemOutput) IsSupportMonthlyCommitment() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSupportedHostShapesItem) bool { return v.IsSupportMonthlyCommitment }).(pulumi.BoolOutput)
+}
+
+// (**Deprecated**) Whether the shape supports "MONTH" SKU.
+//
+// Deprecated: The 'is_support_monthly_sku' field has been deprecated. Please use 'is_support_monthly_commitment' instead.
 func (o GetSupportedHostShapesItemOutput) IsSupportMonthlySku() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSupportedHostShapesItem) bool { return v.IsSupportMonthlySku }).(pulumi.BoolOutput)
 }
@@ -2983,7 +7482,7 @@ func (o GetSupportedHostShapesItemOutput) SupportedOperations() pulumi.StringArr
 	return o.ApplyT(func(v GetSupportedHostShapesItem) []string { return v.SupportedOperations }).(pulumi.StringArrayOutput)
 }
 
-// The supported SDDC types for the shape.
+// (**Deprecated**) The supported SDDC types for the shape.
 //
 // Deprecated: The 'supported_sddc_types' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.
 func (o GetSupportedHostShapesItemOutput) SupportedSddcTypes() pulumi.StringArrayOutput {
@@ -3330,7 +7829,9 @@ func (o GetSupportedVmwareSoftwareVersionsFilterArrayOutput) Index(i pulumi.IntI
 type GetSupportedVmwareSoftwareVersionsItem struct {
 	// A description of the software in the bundle.
 	Description string `pulumi:"description"`
-	// A short, unique string that identifies the version of bundled software.
+	// A list of supported ESXi software versions.
+	EsxiSoftwareVersions []GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion `pulumi:"esxiSoftwareVersions"`
+	// A filter to return only resources that match the given VMware software version exactly.
 	Version string `pulumi:"version"`
 }
 
@@ -3348,7 +7849,9 @@ type GetSupportedVmwareSoftwareVersionsItemInput interface {
 type GetSupportedVmwareSoftwareVersionsItemArgs struct {
 	// A description of the software in the bundle.
 	Description pulumi.StringInput `pulumi:"description"`
-	// A short, unique string that identifies the version of bundled software.
+	// A list of supported ESXi software versions.
+	EsxiSoftwareVersions GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayInput `pulumi:"esxiSoftwareVersions"`
+	// A filter to return only resources that match the given VMware software version exactly.
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
@@ -3408,7 +7911,14 @@ func (o GetSupportedVmwareSoftwareVersionsItemOutput) Description() pulumi.Strin
 	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsItem) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// A short, unique string that identifies the version of bundled software.
+// A list of supported ESXi software versions.
+func (o GetSupportedVmwareSoftwareVersionsItemOutput) EsxiSoftwareVersions() GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput {
+	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsItem) []GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion {
+		return v.EsxiSoftwareVersions
+	}).(GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput)
+}
+
+// A filter to return only resources that match the given VMware software version exactly.
 func (o GetSupportedVmwareSoftwareVersionsItemOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsItem) string { return v.Version }).(pulumi.StringOutput)
 }
@@ -3433,15 +7943,170 @@ func (o GetSupportedVmwareSoftwareVersionsItemArrayOutput) Index(i pulumi.IntInp
 	}).(GetSupportedVmwareSoftwareVersionsItemOutput)
 }
 
+type GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion struct {
+	// A description of the software in the bundle.
+	Description string `pulumi:"description"`
+	// A list of ESXi host shapes supported by the version of bundled software.
+	SupportedHostShapeNames []string `pulumi:"supportedHostShapeNames"`
+	// A filter to return only resources that match the given VMware software version exactly.
+	Version string `pulumi:"version"`
+}
+
+// GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionInput is an input type that accepts GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArgs and GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput values.
+// You can construct a concrete instance of `GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionInput` via:
+//
+//	GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArgs{...}
+type GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionInput interface {
+	pulumi.Input
+
+	ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput() GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput
+	ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutputWithContext(context.Context) GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput
+}
+
+type GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArgs struct {
+	// A description of the software in the bundle.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A list of ESXi host shapes supported by the version of bundled software.
+	SupportedHostShapeNames pulumi.StringArrayInput `pulumi:"supportedHostShapeNames"`
+	// A filter to return only resources that match the given VMware software version exactly.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion)(nil)).Elem()
+}
+
+func (i GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArgs) ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput() GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput {
+	return i.ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutputWithContext(context.Background())
+}
+
+func (i GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArgs) ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutputWithContext(ctx context.Context) GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput)
+}
+
+// GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayInput is an input type that accepts GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArray and GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput values.
+// You can construct a concrete instance of `GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayInput` via:
+//
+//	GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArray{ GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArgs{...} }
+type GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput() GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput
+	ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutputWithContext(context.Context) GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput
+}
+
+type GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArray []GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionInput
+
+func (GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion)(nil)).Elem()
+}
+
+func (i GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArray) ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput() GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput {
+	return i.ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArray) ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutputWithContext(ctx context.Context) GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput)
+}
+
+type GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput struct{ *pulumi.OutputState }
+
+func (GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion)(nil)).Elem()
+}
+
+func (o GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput) ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput() GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput {
+	return o
+}
+
+func (o GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput) ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutputWithContext(ctx context.Context) GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput {
+	return o
+}
+
+// A description of the software in the bundle.
+func (o GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A list of ESXi host shapes supported by the version of bundled software.
+func (o GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput) SupportedHostShapeNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion) []string {
+		return v.SupportedHostShapeNames
+	}).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only resources that match the given VMware software version exactly.
+func (o GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion)(nil)).Elem()
+}
+
+func (o GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput) ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput() GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput {
+	return o
+}
+
+func (o GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput) ToGetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutputWithContext(ctx context.Context) GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput {
+	return o
+}
+
+func (o GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput) Index(i pulumi.IntInput) GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion {
+		return vs[0].([]GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion)[vs[1].(int)]
+	}).(GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterDatastoreInput)(nil)).Elem(), ClusterDatastoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterDatastoreArrayInput)(nil)).Elem(), ClusterDatastoreArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkConfigurationInput)(nil)).Elem(), ClusterNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterNetworkConfigurationPtrInput)(nil)).Elem(), ClusterNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterUpgradeLicenseInput)(nil)).Elem(), ClusterUpgradeLicenseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterUpgradeLicenseArrayInput)(nil)).Elem(), ClusterUpgradeLicenseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterVsphereUpgradeObjectInput)(nil)).Elem(), ClusterVsphereUpgradeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterVsphereUpgradeObjectArrayInput)(nil)).Elem(), ClusterVsphereUpgradeObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcDatastoreInput)(nil)).Elem(), SddcDatastoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcDatastoreArrayInput)(nil)).Elem(), SddcDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcHcxOnPremLicenseInput)(nil)).Elem(), SddcHcxOnPremLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcHcxOnPremLicenseArrayInput)(nil)).Elem(), SddcHcxOnPremLicenseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInput)(nil)).Elem(), SddcInitialConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationArrayInput)(nil)).Elem(), SddcInitialConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationArrayInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationDatastoreInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationDatastoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationDatastoreArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrInput)(nil)).Elem(), SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcUpgradeLicenseInput)(nil)).Elem(), SddcUpgradeLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcUpgradeLicenseArrayInput)(nil)).Elem(), SddcUpgradeLicenseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcVsphereUpgradeObjectInput)(nil)).Elem(), SddcVsphereUpgradeObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SddcVsphereUpgradeObjectArrayInput)(nil)).Elem(), SddcVsphereUpgradeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterDatastoreInput)(nil)).Elem(), GetClusterDatastoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterDatastoreArrayInput)(nil)).Elem(), GetClusterDatastoreArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkConfigurationInput)(nil)).Elem(), GetClusterNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterNetworkConfigurationArrayInput)(nil)).Elem(), GetClusterNetworkConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterUpgradeLicenseInput)(nil)).Elem(), GetClusterUpgradeLicenseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterUpgradeLicenseArrayInput)(nil)).Elem(), GetClusterUpgradeLicenseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterVsphereUpgradeObjectInput)(nil)).Elem(), GetClusterVsphereUpgradeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClusterVsphereUpgradeObjectArrayInput)(nil)).Elem(), GetClusterVsphereUpgradeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionInput)(nil)).Elem(), GetClustersClusterCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionArrayInput)(nil)).Elem(), GetClustersClusterCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemInput)(nil)).Elem(), GetClustersClusterCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemArrayInput)(nil)).Elem(), GetClustersClusterCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemDatastoreInput)(nil)).Elem(), GetClustersClusterCollectionItemDatastoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemDatastoreArrayInput)(nil)).Elem(), GetClustersClusterCollectionItemDatastoreArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemNetworkConfigurationInput)(nil)).Elem(), GetClustersClusterCollectionItemNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemNetworkConfigurationArrayInput)(nil)).Elem(), GetClustersClusterCollectionItemNetworkConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemUpgradeLicenseInput)(nil)).Elem(), GetClustersClusterCollectionItemUpgradeLicenseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemUpgradeLicenseArrayInput)(nil)).Elem(), GetClustersClusterCollectionItemUpgradeLicenseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemVsphereUpgradeObjectInput)(nil)).Elem(), GetClustersClusterCollectionItemVsphereUpgradeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersClusterCollectionItemVsphereUpgradeObjectArrayInput)(nil)).Elem(), GetClustersClusterCollectionItemVsphereUpgradeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersFilterInput)(nil)).Elem(), GetClustersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersFilterArrayInput)(nil)).Elem(), GetClustersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsEsxiHostCollectionInput)(nil)).Elem(), GetExsiHostsEsxiHostCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsEsxiHostCollectionArrayInput)(nil)).Elem(), GetExsiHostsEsxiHostCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExsiHostsFilterInput)(nil)).Elem(), GetExsiHostsFilterArgs{})
@@ -3450,6 +8115,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcDatastoreArrayInput)(nil)).Elem(), GetSddcDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcHcxOnPremLicenseInput)(nil)).Elem(), GetSddcHcxOnPremLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcHcxOnPremLicenseArrayInput)(nil)).Elem(), GetSddcHcxOnPremLicenseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInput)(nil)).Elem(), GetSddcInitialConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationArrayInput)(nil)).Elem(), GetSddcInitialConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationArrayInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationDatastoreInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput)(nil)).Elem(), GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcUpgradeLicenseInput)(nil)).Elem(), GetSddcUpgradeLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcUpgradeLicenseArrayInput)(nil)).Elem(), GetSddcUpgradeLicenseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcVsphereUpgradeObjectInput)(nil)).Elem(), GetSddcVsphereUpgradeObjectArgs{})
@@ -3462,10 +8135,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionDatastoreArrayInput)(nil)).Elem(), GetSddcsSddcCollectionDatastoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionHcxOnPremLicenseInput)(nil)).Elem(), GetSddcsSddcCollectionHcxOnPremLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionHcxOnPremLicenseArrayInput)(nil)).Elem(), GetSddcsSddcCollectionHcxOnPremLicenseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationArrayInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayInput)(nil)).Elem(), GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionUpgradeLicenseInput)(nil)).Elem(), GetSddcsSddcCollectionUpgradeLicenseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionUpgradeLicenseArrayInput)(nil)).Elem(), GetSddcsSddcCollectionUpgradeLicenseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionVsphereUpgradeObjectInput)(nil)).Elem(), GetSddcsSddcCollectionVsphereUpgradeObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSddcsSddcCollectionVsphereUpgradeObjectArrayInput)(nil)).Elem(), GetSddcsSddcCollectionVsphereUpgradeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedCommitmentsFilterInput)(nil)).Elem(), GetSupportedCommitmentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedCommitmentsFilterArrayInput)(nil)).Elem(), GetSupportedCommitmentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedCommitmentsItemInput)(nil)).Elem(), GetSupportedCommitmentsItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedCommitmentsItemArrayInput)(nil)).Elem(), GetSupportedCommitmentsItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedHostShapesFilterInput)(nil)).Elem(), GetSupportedHostShapesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedHostShapesFilterArrayInput)(nil)).Elem(), GetSupportedHostShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedHostShapesItemInput)(nil)).Elem(), GetSupportedHostShapesItemArgs{})
@@ -3478,14 +8163,54 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsFilterArrayInput)(nil)).Elem(), GetSupportedVmwareSoftwareVersionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsItemInput)(nil)).Elem(), GetSupportedVmwareSoftwareVersionsItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsItemArrayInput)(nil)).Elem(), GetSupportedVmwareSoftwareVersionsItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionInput)(nil)).Elem(), GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayInput)(nil)).Elem(), GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArray{})
+	pulumi.RegisterOutputType(ClusterDatastoreOutput{})
+	pulumi.RegisterOutputType(ClusterDatastoreArrayOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(ClusterNetworkConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(ClusterUpgradeLicenseOutput{})
+	pulumi.RegisterOutputType(ClusterUpgradeLicenseArrayOutput{})
+	pulumi.RegisterOutputType(ClusterVsphereUpgradeObjectOutput{})
+	pulumi.RegisterOutputType(ClusterVsphereUpgradeObjectArrayOutput{})
 	pulumi.RegisterOutputType(SddcDatastoreOutput{})
 	pulumi.RegisterOutputType(SddcDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(SddcHcxOnPremLicenseOutput{})
 	pulumi.RegisterOutputType(SddcHcxOnPremLicenseArrayOutput{})
+	pulumi.RegisterOutputType(SddcInitialConfigurationOutput{})
+	pulumi.RegisterOutputType(SddcInitialConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationOutput{})
+	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationDatastoreOutput{})
+	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput{})
+	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(SddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(SddcUpgradeLicenseOutput{})
 	pulumi.RegisterOutputType(SddcUpgradeLicenseArrayOutput{})
 	pulumi.RegisterOutputType(SddcVsphereUpgradeObjectOutput{})
 	pulumi.RegisterOutputType(SddcVsphereUpgradeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterDatastoreOutput{})
+	pulumi.RegisterOutputType(GetClusterDatastoreArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetClusterNetworkConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterUpgradeLicenseOutput{})
+	pulumi.RegisterOutputType(GetClusterUpgradeLicenseArrayOutput{})
+	pulumi.RegisterOutputType(GetClusterVsphereUpgradeObjectOutput{})
+	pulumi.RegisterOutputType(GetClusterVsphereUpgradeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionItemDatastoreOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionItemDatastoreArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionItemNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionItemNetworkConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionItemUpgradeLicenseOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionItemUpgradeLicenseArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionItemVsphereUpgradeObjectOutput{})
+	pulumi.RegisterOutputType(GetClustersClusterCollectionItemVsphereUpgradeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersFilterOutput{})
+	pulumi.RegisterOutputType(GetClustersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsEsxiHostCollectionOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsEsxiHostCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetExsiHostsFilterOutput{})
@@ -3494,6 +8219,14 @@ func init() {
 	pulumi.RegisterOutputType(GetSddcDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcHcxOnPremLicenseOutput{})
 	pulumi.RegisterOutputType(GetSddcHcxOnPremLicenseArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcInitialConfigurationOutput{})
+	pulumi.RegisterOutputType(GetSddcInitialConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationOutput{})
+	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationDatastoreOutput{})
+	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetSddcInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcUpgradeLicenseOutput{})
 	pulumi.RegisterOutputType(GetSddcUpgradeLicenseArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcVsphereUpgradeObjectOutput{})
@@ -3506,10 +8239,22 @@ func init() {
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionDatastoreArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionHcxOnPremLicenseOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionHcxOnPremLicenseArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastoreArrayOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationOutput{})
+	pulumi.RegisterOutputType(GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionUpgradeLicenseOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionUpgradeLicenseArrayOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionVsphereUpgradeObjectOutput{})
 	pulumi.RegisterOutputType(GetSddcsSddcCollectionVsphereUpgradeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetSupportedCommitmentsFilterOutput{})
+	pulumi.RegisterOutputType(GetSupportedCommitmentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSupportedCommitmentsItemOutput{})
+	pulumi.RegisterOutputType(GetSupportedCommitmentsItemArrayOutput{})
 	pulumi.RegisterOutputType(GetSupportedHostShapesFilterOutput{})
 	pulumi.RegisterOutputType(GetSupportedHostShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSupportedHostShapesItemOutput{})
@@ -3522,4 +8267,6 @@ func init() {
 	pulumi.RegisterOutputType(GetSupportedVmwareSoftwareVersionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSupportedVmwareSoftwareVersionsItemOutput{})
 	pulumi.RegisterOutputType(GetSupportedVmwareSoftwareVersionsItemArrayOutput{})
+	pulumi.RegisterOutputType(GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionOutput{})
+	pulumi.RegisterOutputType(GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersionArrayOutput{})
 }

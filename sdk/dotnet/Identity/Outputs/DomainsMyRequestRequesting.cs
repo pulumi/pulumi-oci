@@ -14,6 +14,21 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsMyRequestRequesting
     {
         /// <summary>
+        /// Resource description
+        /// 
+        /// **Added In:** 2307071836
+        /// 
+        /// **SCIM++ Properties:**
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        public readonly string? Description;
+        /// <summary>
         /// User display name
         /// 
         /// **SCIM++ Properties:**
@@ -72,6 +87,8 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private DomainsMyRequestRequesting(
+            string? description,
+
             string? display,
 
             string? @ref,
@@ -80,6 +97,7 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string value)
         {
+            Description = description;
             Display = display;
             Ref = @ref;
             Type = type;

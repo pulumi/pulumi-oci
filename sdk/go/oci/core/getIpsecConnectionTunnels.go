@@ -62,7 +62,7 @@ type GetIpsecConnectionTunnelsResult struct {
 	Filters []GetIpsecConnectionTunnelsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The list of ip_sec_connection_tunnels.
+	// The list of two ip_sec_connection_tunnels.
 	IpSecConnectionTunnels []GetIpsecConnectionTunnelsIpSecConnectionTunnel `pulumi:"ipSecConnectionTunnels"`
 	IpsecId                string                                           `pulumi:"ipsecId"`
 }
@@ -115,7 +115,7 @@ func (o GetIpsecConnectionTunnelsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The list of ip_sec_connection_tunnels.
+// The list of two ip_sec_connection_tunnels.
 func (o GetIpsecConnectionTunnelsResultOutput) IpSecConnectionTunnels() GetIpsecConnectionTunnelsIpSecConnectionTunnelArrayOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelsResult) []GetIpsecConnectionTunnelsIpSecConnectionTunnel {
 		return v.IpSecConnectionTunnels

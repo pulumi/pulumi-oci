@@ -23,7 +23,7 @@ class GetDatabaseToolsConnectionsResult:
     """
     A collection of values returned by getDatabaseToolsConnections.
     """
-    def __init__(__self__, compartment_id=None, database_tools_connection_collections=None, display_name=None, filters=None, id=None, state=None, types=None):
+    def __init__(__self__, compartment_id=None, database_tools_connection_collections=None, display_name=None, filters=None, id=None, related_resource_identifier=None, runtime_supports=None, state=None, types=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -39,6 +39,12 @@ class GetDatabaseToolsConnectionsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if related_resource_identifier and not isinstance(related_resource_identifier, str):
+            raise TypeError("Expected argument 'related_resource_identifier' to be a str")
+        pulumi.set(__self__, "related_resource_identifier", related_resource_identifier)
+        if runtime_supports and not isinstance(runtime_supports, list):
+            raise TypeError("Expected argument 'runtime_supports' to be a list")
+        pulumi.set(__self__, "runtime_supports", runtime_supports)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -84,6 +90,19 @@ class GetDatabaseToolsConnectionsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="relatedResourceIdentifier")
+    def related_resource_identifier(self) -> Optional[str]:
+        return pulumi.get(self, "related_resource_identifier")
+
+    @property
+    @pulumi.getter(name="runtimeSupports")
+    def runtime_supports(self) -> Optional[Sequence[str]]:
+        """
+        Specifies whether this connection is supported by the Database Tools Runtime.
+        """
+        return pulumi.get(self, "runtime_supports")
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
@@ -111,6 +130,8 @@ class AwaitableGetDatabaseToolsConnectionsResult(GetDatabaseToolsConnectionsResu
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            related_resource_identifier=self.related_resource_identifier,
+            runtime_supports=self.runtime_supports,
             state=self.state,
             types=self.types)
 
@@ -118,6 +139,8 @@ class AwaitableGetDatabaseToolsConnectionsResult(GetDatabaseToolsConnectionsResu
 def get_database_tools_connections(compartment_id: Optional[str] = None,
                                    display_name: Optional[str] = None,
                                    filters: Optional[Sequence[pulumi.InputType['GetDatabaseToolsConnectionsFilterArgs']]] = None,
+                                   related_resource_identifier: Optional[str] = None,
+                                   runtime_supports: Optional[Sequence[str]] = None,
                                    state: Optional[str] = None,
                                    types: Optional[Sequence[str]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDatabaseToolsConnectionsResult:
@@ -134,6 +157,8 @@ def get_database_tools_connections(compartment_id: Optional[str] = None,
 
     test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=var["compartment_id"],
         display_name=var["database_tools_connection_display_name"],
+        related_resource_identifier=var["database_tools_connection_related_resource_identifier"],
+        runtime_supports=var["database_tools_connection_runtime_support"],
         state=var["database_tools_connection_state"],
         types=var["database_tools_connection_type"])
     ```
@@ -141,6 +166,8 @@ def get_database_tools_connections(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire specified display name.
+    :param str related_resource_identifier: A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+    :param Sequence[str] runtime_supports: A filter to return only resources with one of the specified runtimeSupport values.
     :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
     :param Sequence[str] types: A filter to return only resources their type matches the specified type.
     """
@@ -148,6 +175,8 @@ def get_database_tools_connections(compartment_id: Optional[str] = None,
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['relatedResourceIdentifier'] = related_resource_identifier
+    __args__['runtimeSupports'] = runtime_supports
     __args__['state'] = state
     __args__['types'] = types
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -159,6 +188,8 @@ def get_database_tools_connections(compartment_id: Optional[str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        related_resource_identifier=pulumi.get(__ret__, 'related_resource_identifier'),
+        runtime_supports=pulumi.get(__ret__, 'runtime_supports'),
         state=pulumi.get(__ret__, 'state'),
         types=pulumi.get(__ret__, 'types'))
 
@@ -167,6 +198,8 @@ def get_database_tools_connections(compartment_id: Optional[str] = None,
 def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
                                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDatabaseToolsConnectionsFilterArgs']]]]] = None,
+                                          related_resource_identifier: Optional[pulumi.Input[Optional[str]]] = None,
+                                          runtime_supports: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                           state: Optional[pulumi.Input[Optional[str]]] = None,
                                           types: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                           opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDatabaseToolsConnectionsResult]:
@@ -183,6 +216,8 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
 
     test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=var["compartment_id"],
         display_name=var["database_tools_connection_display_name"],
+        related_resource_identifier=var["database_tools_connection_related_resource_identifier"],
+        runtime_supports=var["database_tools_connection_runtime_support"],
         state=var["database_tools_connection_state"],
         types=var["database_tools_connection_type"])
     ```
@@ -190,6 +225,8 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
 
     :param str compartment_id: The ID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire specified display name.
+    :param str related_resource_identifier: A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+    :param Sequence[str] runtime_supports: A filter to return only resources with one of the specified runtimeSupport values.
     :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
     :param Sequence[str] types: A filter to return only resources their type matches the specified type.
     """

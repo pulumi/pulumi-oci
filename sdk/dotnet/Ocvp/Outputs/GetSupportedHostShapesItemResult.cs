@@ -22,7 +22,15 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Whether the shape supports "MONTH" SKU.
+        /// A filter to return only resources that support single host SDDC.
+        /// </summary>
+        public readonly bool IsSingleHostSddcSupported;
+        /// <summary>
+        /// Whether the shape supports "MONTH" Commitment.
+        /// </summary>
+        public readonly bool IsSupportMonthlyCommitment;
+        /// <summary>
+        /// (**Deprecated**) Whether the shape supports "MONTH" SKU.
         /// </summary>
         public readonly bool IsSupportMonthlySku;
         /// <summary>
@@ -46,7 +54,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly ImmutableArray<string> SupportedOperations;
         /// <summary>
-        /// The supported SDDC types for the shape.
+        /// (**Deprecated**) The supported SDDC types for the shape.
         /// </summary>
         public readonly ImmutableArray<string> SupportedSddcTypes;
         /// <summary>
@@ -59,6 +67,10 @@ namespace Pulumi.Oci.Ocvp.Outputs
             double defaultOcpuCount,
 
             string description,
+
+            bool isSingleHostSddcSupported,
+
+            bool isSupportMonthlyCommitment,
 
             bool isSupportMonthlySku,
 
@@ -78,6 +90,8 @@ namespace Pulumi.Oci.Ocvp.Outputs
         {
             DefaultOcpuCount = defaultOcpuCount;
             Description = description;
+            IsSingleHostSddcSupported = isSingleHostSddcSupported;
+            IsSupportMonthlyCommitment = isSupportMonthlyCommitment;
             IsSupportMonthlySku = isSupportMonthlySku;
             IsSupportShieldedInstances = isSupportShieldedInstances;
             Name = name;

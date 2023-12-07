@@ -13,6 +13,2163 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetInstancePoolsInstancePoolPlacementConfiguration struct {
+	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The fault domains to place instances.
+	FaultDomains []string `pulumi:"faultDomains"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+	PrimarySubnetId string `pulumi:"primarySubnetId"`
+	// Details about the IPv6 primary subnet.
+	PrimaryVnicSubnets []GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet `pulumi:"primaryVnicSubnets"`
+	// The set of secondary VNIC data for instances in the pool.
+	SecondaryVnicSubnets []GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet `pulumi:"secondaryVnicSubnets"`
+}
+
+// GetInstancePoolsInstancePoolPlacementConfigurationInput is an input type that accepts GetInstancePoolsInstancePoolPlacementConfigurationArgs and GetInstancePoolsInstancePoolPlacementConfigurationOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolPlacementConfigurationInput` via:
+//
+//	GetInstancePoolsInstancePoolPlacementConfigurationArgs{...}
+type GetInstancePoolsInstancePoolPlacementConfigurationInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolPlacementConfigurationOutput() GetInstancePoolsInstancePoolPlacementConfigurationOutput
+	ToGetInstancePoolsInstancePoolPlacementConfigurationOutputWithContext(context.Context) GetInstancePoolsInstancePoolPlacementConfigurationOutput
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationArgs struct {
+	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The fault domains to place instances.
+	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+	PrimarySubnetId pulumi.StringInput `pulumi:"primarySubnetId"`
+	// Details about the IPv6 primary subnet.
+	PrimaryVnicSubnets GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayInput `pulumi:"primaryVnicSubnets"`
+	// The set of secondary VNIC data for instances in the pool.
+	SecondaryVnicSubnets GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayInput `pulumi:"secondaryVnicSubnets"`
+}
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationArgs) ToGetInstancePoolsInstancePoolPlacementConfigurationOutput() GetInstancePoolsInstancePoolPlacementConfigurationOutput {
+	return i.ToGetInstancePoolsInstancePoolPlacementConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationArgs) ToGetInstancePoolsInstancePoolPlacementConfigurationOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolPlacementConfigurationOutput)
+}
+
+// GetInstancePoolsInstancePoolPlacementConfigurationArrayInput is an input type that accepts GetInstancePoolsInstancePoolPlacementConfigurationArray and GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolPlacementConfigurationArrayInput` via:
+//
+//	GetInstancePoolsInstancePoolPlacementConfigurationArray{ GetInstancePoolsInstancePoolPlacementConfigurationArgs{...} }
+type GetInstancePoolsInstancePoolPlacementConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolPlacementConfigurationArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput
+	ToGetInstancePoolsInstancePoolPlacementConfigurationArrayOutputWithContext(context.Context) GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationArray []GetInstancePoolsInstancePoolPlacementConfigurationInput
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationArray) ToGetInstancePoolsInstancePoolPlacementConfigurationArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput {
+	return i.ToGetInstancePoolsInstancePoolPlacementConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationArray) ToGetInstancePoolsInstancePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationOutput() GetInstancePoolsInstancePoolPlacementConfigurationOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationOutput {
+	return o
+}
+
+// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
+func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfiguration) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The fault domains to place instances.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) FaultDomains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfiguration) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) PrimarySubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfiguration) string { return v.PrimarySubnetId }).(pulumi.StringOutput)
+}
+
+// Details about the IPv6 primary subnet.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) PrimaryVnicSubnets() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfiguration) []GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet {
+		return v.PrimaryVnicSubnets
+	}).(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput)
+}
+
+// The set of secondary VNIC data for instances in the pool.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) SecondaryVnicSubnets() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfiguration) []GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet {
+		return v.SecondaryVnicSubnets
+	}).(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolPlacementConfiguration)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput) Index(i pulumi.IntInput) GetInstancePoolsInstancePoolPlacementConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsInstancePoolPlacementConfiguration {
+		return vs[0].([]GetInstancePoolsInstancePoolPlacementConfiguration)[vs[1].(int)]
+	}).(GetInstancePoolsInstancePoolPlacementConfigurationOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet struct {
+	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails []GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+	IsAssignIpv6ip bool `pulumi:"isAssignIpv6ip"`
+	// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetInput is an input type that accepts GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs and GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetInput` via:
+//
+//	GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs{...}
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput
+	ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutputWithContext(context.Context) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs struct {
+	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+	IsAssignIpv6ip pulumi.BoolInput `pulumi:"isAssignIpv6ip"`
+	// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput {
+	return i.ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput)
+}
+
+// GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayInput is an input type that accepts GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArray and GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayInput` via:
+//
+//	GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArray{ GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs{...} }
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput
+	ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutputWithContext(context.Context) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArray []GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetInput
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArray) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput {
+	return i.ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArray) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput {
+	return o
+}
+
+// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput) Ipv6addressIpv6subnetCidrPairDetails() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet) []GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail {
+		return v.Ipv6addressIpv6subnetCidrPairDetails
+	}).(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput) IsAssignIpv6ip() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet) bool {
+		return v.IsAssignIpv6ip
+	}).(pulumi.BoolOutput)
+}
+
+// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput) Index(i pulumi.IntInput) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet {
+		return vs[0].([]GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet)[vs[1].(int)]
+	}).(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail struct {
+	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs and GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray and GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{ GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray []GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet struct {
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails []GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+	IsAssignIpv6ip bool `pulumi:"isAssignIpv6ip"`
+	// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetInput is an input type that accepts GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs and GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetInput` via:
+//
+//	GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs{...}
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput
+	ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutputWithContext(context.Context) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs struct {
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+	IsAssignIpv6ip pulumi.BoolInput `pulumi:"isAssignIpv6ip"`
+	// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput {
+	return i.ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput)
+}
+
+// GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayInput is an input type that accepts GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArray and GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayInput` via:
+//
+//	GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArray{ GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs{...} }
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput
+	ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutputWithContext(context.Context) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArray []GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetInput
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArray) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput {
+	return i.ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArray) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput {
+	return o
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) Ipv6addressIpv6subnetCidrPairDetails() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet) []GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail {
+		return v.Ipv6addressIpv6subnetCidrPairDetails
+	}).(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) IsAssignIpv6ip() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet) bool {
+		return v.IsAssignIpv6ip
+	}).(pulumi.BoolOutput)
+}
+
+// The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput) Index(i pulumi.IntInput) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet {
+		return vs[0].([]GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnet)[vs[1].(int)]
+	}).(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail struct {
+	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs and GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray and GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{ GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray []GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+type GetInstancePreemptibleInstanceConfig struct {
+	// (Required) The action to run when the preemptible instance is interrupted for eviction.
+	PreemptionActions []GetInstancePreemptibleInstanceConfigPreemptionAction `pulumi:"preemptionActions"`
+}
+
+// GetInstancePreemptibleInstanceConfigInput is an input type that accepts GetInstancePreemptibleInstanceConfigArgs and GetInstancePreemptibleInstanceConfigOutput values.
+// You can construct a concrete instance of `GetInstancePreemptibleInstanceConfigInput` via:
+//
+//	GetInstancePreemptibleInstanceConfigArgs{...}
+type GetInstancePreemptibleInstanceConfigInput interface {
+	pulumi.Input
+
+	ToGetInstancePreemptibleInstanceConfigOutput() GetInstancePreemptibleInstanceConfigOutput
+	ToGetInstancePreemptibleInstanceConfigOutputWithContext(context.Context) GetInstancePreemptibleInstanceConfigOutput
+}
+
+type GetInstancePreemptibleInstanceConfigArgs struct {
+	// (Required) The action to run when the preemptible instance is interrupted for eviction.
+	PreemptionActions GetInstancePreemptibleInstanceConfigPreemptionActionArrayInput `pulumi:"preemptionActions"`
+}
+
+func (GetInstancePreemptibleInstanceConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePreemptibleInstanceConfig)(nil)).Elem()
+}
+
+func (i GetInstancePreemptibleInstanceConfigArgs) ToGetInstancePreemptibleInstanceConfigOutput() GetInstancePreemptibleInstanceConfigOutput {
+	return i.ToGetInstancePreemptibleInstanceConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstancePreemptibleInstanceConfigArgs) ToGetInstancePreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetInstancePreemptibleInstanceConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePreemptibleInstanceConfigOutput)
+}
+
+// GetInstancePreemptibleInstanceConfigArrayInput is an input type that accepts GetInstancePreemptibleInstanceConfigArray and GetInstancePreemptibleInstanceConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstancePreemptibleInstanceConfigArrayInput` via:
+//
+//	GetInstancePreemptibleInstanceConfigArray{ GetInstancePreemptibleInstanceConfigArgs{...} }
+type GetInstancePreemptibleInstanceConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePreemptibleInstanceConfigArrayOutput() GetInstancePreemptibleInstanceConfigArrayOutput
+	ToGetInstancePreemptibleInstanceConfigArrayOutputWithContext(context.Context) GetInstancePreemptibleInstanceConfigArrayOutput
+}
+
+type GetInstancePreemptibleInstanceConfigArray []GetInstancePreemptibleInstanceConfigInput
+
+func (GetInstancePreemptibleInstanceConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePreemptibleInstanceConfig)(nil)).Elem()
+}
+
+func (i GetInstancePreemptibleInstanceConfigArray) ToGetInstancePreemptibleInstanceConfigArrayOutput() GetInstancePreemptibleInstanceConfigArrayOutput {
+	return i.ToGetInstancePreemptibleInstanceConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePreemptibleInstanceConfigArray) ToGetInstancePreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetInstancePreemptibleInstanceConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePreemptibleInstanceConfigArrayOutput)
+}
+
+type GetInstancePreemptibleInstanceConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePreemptibleInstanceConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePreemptibleInstanceConfig)(nil)).Elem()
+}
+
+func (o GetInstancePreemptibleInstanceConfigOutput) ToGetInstancePreemptibleInstanceConfigOutput() GetInstancePreemptibleInstanceConfigOutput {
+	return o
+}
+
+func (o GetInstancePreemptibleInstanceConfigOutput) ToGetInstancePreemptibleInstanceConfigOutputWithContext(ctx context.Context) GetInstancePreemptibleInstanceConfigOutput {
+	return o
+}
+
+// (Required) The action to run when the preemptible instance is interrupted for eviction.
+func (o GetInstancePreemptibleInstanceConfigOutput) PreemptionActions() GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return o.ApplyT(func(v GetInstancePreemptibleInstanceConfig) []GetInstancePreemptibleInstanceConfigPreemptionAction {
+		return v.PreemptionActions
+	}).(GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput)
+}
+
+type GetInstancePreemptibleInstanceConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePreemptibleInstanceConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePreemptibleInstanceConfig)(nil)).Elem()
+}
+
+func (o GetInstancePreemptibleInstanceConfigArrayOutput) ToGetInstancePreemptibleInstanceConfigArrayOutput() GetInstancePreemptibleInstanceConfigArrayOutput {
+	return o
+}
+
+func (o GetInstancePreemptibleInstanceConfigArrayOutput) ToGetInstancePreemptibleInstanceConfigArrayOutputWithContext(ctx context.Context) GetInstancePreemptibleInstanceConfigArrayOutput {
+	return o
+}
+
+func (o GetInstancePreemptibleInstanceConfigArrayOutput) Index(i pulumi.IntInput) GetInstancePreemptibleInstanceConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePreemptibleInstanceConfig {
+		return vs[0].([]GetInstancePreemptibleInstanceConfig)[vs[1].(int)]
+	}).(GetInstancePreemptibleInstanceConfigOutput)
+}
+
+type GetInstancePreemptibleInstanceConfigPreemptionAction struct {
+	// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	PreserveBootVolume bool `pulumi:"preserveBootVolume"`
+	// (Required) The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// GetInstancePreemptibleInstanceConfigPreemptionActionInput is an input type that accepts GetInstancePreemptibleInstanceConfigPreemptionActionArgs and GetInstancePreemptibleInstanceConfigPreemptionActionOutput values.
+// You can construct a concrete instance of `GetInstancePreemptibleInstanceConfigPreemptionActionInput` via:
+//
+//	GetInstancePreemptibleInstanceConfigPreemptionActionArgs{...}
+type GetInstancePreemptibleInstanceConfigPreemptionActionInput interface {
+	pulumi.Input
+
+	ToGetInstancePreemptibleInstanceConfigPreemptionActionOutput() GetInstancePreemptibleInstanceConfigPreemptionActionOutput
+	ToGetInstancePreemptibleInstanceConfigPreemptionActionOutputWithContext(context.Context) GetInstancePreemptibleInstanceConfigPreemptionActionOutput
+}
+
+type GetInstancePreemptibleInstanceConfigPreemptionActionArgs struct {
+	// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	PreserveBootVolume pulumi.BoolInput `pulumi:"preserveBootVolume"`
+	// (Required) The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInstancePreemptibleInstanceConfigPreemptionActionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
+}
+
+func (i GetInstancePreemptibleInstanceConfigPreemptionActionArgs) ToGetInstancePreemptibleInstanceConfigPreemptionActionOutput() GetInstancePreemptibleInstanceConfigPreemptionActionOutput {
+	return i.ToGetInstancePreemptibleInstanceConfigPreemptionActionOutputWithContext(context.Background())
+}
+
+func (i GetInstancePreemptibleInstanceConfigPreemptionActionArgs) ToGetInstancePreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetInstancePreemptibleInstanceConfigPreemptionActionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePreemptibleInstanceConfigPreemptionActionOutput)
+}
+
+// GetInstancePreemptibleInstanceConfigPreemptionActionArrayInput is an input type that accepts GetInstancePreemptibleInstanceConfigPreemptionActionArray and GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput values.
+// You can construct a concrete instance of `GetInstancePreemptibleInstanceConfigPreemptionActionArrayInput` via:
+//
+//	GetInstancePreemptibleInstanceConfigPreemptionActionArray{ GetInstancePreemptibleInstanceConfigPreemptionActionArgs{...} }
+type GetInstancePreemptibleInstanceConfigPreemptionActionArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput
+	ToGetInstancePreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(context.Context) GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput
+}
+
+type GetInstancePreemptibleInstanceConfigPreemptionActionArray []GetInstancePreemptibleInstanceConfigPreemptionActionInput
+
+func (GetInstancePreemptibleInstanceConfigPreemptionActionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
+}
+
+func (i GetInstancePreemptibleInstanceConfigPreemptionActionArray) ToGetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return i.ToGetInstancePreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancePreemptibleInstanceConfigPreemptionActionArray) ToGetInstancePreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput)
+}
+
+type GetInstancePreemptibleInstanceConfigPreemptionActionOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePreemptibleInstanceConfigPreemptionActionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancePreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
+}
+
+func (o GetInstancePreemptibleInstanceConfigPreemptionActionOutput) ToGetInstancePreemptibleInstanceConfigPreemptionActionOutput() GetInstancePreemptibleInstanceConfigPreemptionActionOutput {
+	return o
+}
+
+func (o GetInstancePreemptibleInstanceConfigPreemptionActionOutput) ToGetInstancePreemptibleInstanceConfigPreemptionActionOutputWithContext(ctx context.Context) GetInstancePreemptibleInstanceConfigPreemptionActionOutput {
+	return o
+}
+
+// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+func (o GetInstancePreemptibleInstanceConfigPreemptionActionOutput) PreserveBootVolume() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancePreemptibleInstanceConfigPreemptionAction) bool { return v.PreserveBootVolume }).(pulumi.BoolOutput)
+}
+
+// (Required) The type of action to run when the instance is interrupted for eviction.
+func (o GetInstancePreemptibleInstanceConfigPreemptionActionOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancePreemptibleInstanceConfigPreemptionAction) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancePreemptibleInstanceConfigPreemptionAction)(nil)).Elem()
+}
+
+func (o GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput() GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return o
+}
+
+func (o GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput) ToGetInstancePreemptibleInstanceConfigPreemptionActionArrayOutputWithContext(ctx context.Context) GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput {
+	return o
+}
+
+func (o GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput) Index(i pulumi.IntInput) GetInstancePreemptibleInstanceConfigPreemptionActionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancePreemptibleInstanceConfigPreemptionAction {
+		return vs[0].([]GetInstancePreemptibleInstanceConfigPreemptionAction)[vs[1].(int)]
+	}).(GetInstancePreemptibleInstanceConfigPreemptionActionOutput)
+}
+
+type GetInstanceShapeConfig struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+	BaselineOcpuUtilization string `pulumi:"baselineOcpuUtilization"`
+	// A short description of the instance's graphics processing unit (GPU).
+	GpuDescription string `pulumi:"gpuDescription"`
+	// The number of GPUs available to the instance.
+	Gpus int `pulumi:"gpus"`
+	// A short description of the local disks available to this instance.
+	LocalDiskDescription string `pulumi:"localDiskDescription"`
+	// The number of local disks available to the instance.
+	LocalDisks int `pulumi:"localDisks"`
+	// The aggregate size of all local disks, in gigabytes.
+	LocalDisksTotalSizeInGbs float64 `pulumi:"localDisksTotalSizeInGbs"`
+	// The maximum number of VNIC attachments for the instance.
+	MaxVnicAttachments int `pulumi:"maxVnicAttachments"`
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The networking bandwidth available to the instance, in gigabits per second.
+	NetworkingBandwidthInGbps float64 `pulumi:"networkingBandwidthInGbps"`
+	Nvmes                     int     `pulumi:"nvmes"`
+	// The total number of OCPUs available to the instance.
+	Ocpus float64 `pulumi:"ocpus"`
+	// A short description of the instance's processor (CPU).
+	ProcessorDescription string `pulumi:"processorDescription"`
+	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+	Vcpus int `pulumi:"vcpus"`
+}
+
+// GetInstanceShapeConfigInput is an input type that accepts GetInstanceShapeConfigArgs and GetInstanceShapeConfigOutput values.
+// You can construct a concrete instance of `GetInstanceShapeConfigInput` via:
+//
+//	GetInstanceShapeConfigArgs{...}
+type GetInstanceShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceShapeConfigOutput() GetInstanceShapeConfigOutput
+	ToGetInstanceShapeConfigOutputWithContext(context.Context) GetInstanceShapeConfigOutput
+}
+
+type GetInstanceShapeConfigArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+	BaselineOcpuUtilization pulumi.StringInput `pulumi:"baselineOcpuUtilization"`
+	// A short description of the instance's graphics processing unit (GPU).
+	GpuDescription pulumi.StringInput `pulumi:"gpuDescription"`
+	// The number of GPUs available to the instance.
+	Gpus pulumi.IntInput `pulumi:"gpus"`
+	// A short description of the local disks available to this instance.
+	LocalDiskDescription pulumi.StringInput `pulumi:"localDiskDescription"`
+	// The number of local disks available to the instance.
+	LocalDisks pulumi.IntInput `pulumi:"localDisks"`
+	// The aggregate size of all local disks, in gigabytes.
+	LocalDisksTotalSizeInGbs pulumi.Float64Input `pulumi:"localDisksTotalSizeInGbs"`
+	// The maximum number of VNIC attachments for the instance.
+	MaxVnicAttachments pulumi.IntInput `pulumi:"maxVnicAttachments"`
+	// The total amount of memory available to the instance, in gigabytes.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The networking bandwidth available to the instance, in gigabits per second.
+	NetworkingBandwidthInGbps pulumi.Float64Input `pulumi:"networkingBandwidthInGbps"`
+	Nvmes                     pulumi.IntInput     `pulumi:"nvmes"`
+	// The total number of OCPUs available to the instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// A short description of the instance's processor (CPU).
+	ProcessorDescription pulumi.StringInput `pulumi:"processorDescription"`
+	// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+	Vcpus pulumi.IntInput `pulumi:"vcpus"`
+}
+
+func (GetInstanceShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceShapeConfig)(nil)).Elem()
+}
+
+func (i GetInstanceShapeConfigArgs) ToGetInstanceShapeConfigOutput() GetInstanceShapeConfigOutput {
+	return i.ToGetInstanceShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceShapeConfigArgs) ToGetInstanceShapeConfigOutputWithContext(ctx context.Context) GetInstanceShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceShapeConfigOutput)
+}
+
+// GetInstanceShapeConfigArrayInput is an input type that accepts GetInstanceShapeConfigArray and GetInstanceShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceShapeConfigArrayInput` via:
+//
+//	GetInstanceShapeConfigArray{ GetInstanceShapeConfigArgs{...} }
+type GetInstanceShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceShapeConfigArrayOutput() GetInstanceShapeConfigArrayOutput
+	ToGetInstanceShapeConfigArrayOutputWithContext(context.Context) GetInstanceShapeConfigArrayOutput
+}
+
+type GetInstanceShapeConfigArray []GetInstanceShapeConfigInput
+
+func (GetInstanceShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceShapeConfig)(nil)).Elem()
+}
+
+func (i GetInstanceShapeConfigArray) ToGetInstanceShapeConfigArrayOutput() GetInstanceShapeConfigArrayOutput {
+	return i.ToGetInstanceShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceShapeConfigArray) ToGetInstanceShapeConfigArrayOutputWithContext(ctx context.Context) GetInstanceShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceShapeConfigArrayOutput)
+}
+
+type GetInstanceShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceShapeConfig)(nil)).Elem()
+}
+
+func (o GetInstanceShapeConfigOutput) ToGetInstanceShapeConfigOutput() GetInstanceShapeConfigOutput {
+	return o
+}
+
+func (o GetInstanceShapeConfigOutput) ToGetInstanceShapeConfigOutputWithContext(ctx context.Context) GetInstanceShapeConfigOutput {
+	return o
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
+func (o GetInstanceShapeConfigOutput) BaselineOcpuUtilization() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceShapeConfig) string { return v.BaselineOcpuUtilization }).(pulumi.StringOutput)
+}
+
+// A short description of the instance's graphics processing unit (GPU).
+func (o GetInstanceShapeConfigOutput) GpuDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceShapeConfig) string { return v.GpuDescription }).(pulumi.StringOutput)
+}
+
+// The number of GPUs available to the instance.
+func (o GetInstanceShapeConfigOutput) Gpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceShapeConfig) int { return v.Gpus }).(pulumi.IntOutput)
+}
+
+// A short description of the local disks available to this instance.
+func (o GetInstanceShapeConfigOutput) LocalDiskDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceShapeConfig) string { return v.LocalDiskDescription }).(pulumi.StringOutput)
+}
+
+// The number of local disks available to the instance.
+func (o GetInstanceShapeConfigOutput) LocalDisks() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceShapeConfig) int { return v.LocalDisks }).(pulumi.IntOutput)
+}
+
+// The aggregate size of all local disks, in gigabytes.
+func (o GetInstanceShapeConfigOutput) LocalDisksTotalSizeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInstanceShapeConfig) float64 { return v.LocalDisksTotalSizeInGbs }).(pulumi.Float64Output)
+}
+
+// The maximum number of VNIC attachments for the instance.
+func (o GetInstanceShapeConfigOutput) MaxVnicAttachments() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceShapeConfig) int { return v.MaxVnicAttachments }).(pulumi.IntOutput)
+}
+
+// The total amount of memory available to the instance, in gigabytes.
+func (o GetInstanceShapeConfigOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInstanceShapeConfig) float64 { return v.MemoryInGbs }).(pulumi.Float64Output)
+}
+
+// The networking bandwidth available to the instance, in gigabits per second.
+func (o GetInstanceShapeConfigOutput) NetworkingBandwidthInGbps() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInstanceShapeConfig) float64 { return v.NetworkingBandwidthInGbps }).(pulumi.Float64Output)
+}
+
+func (o GetInstanceShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the instance.
+func (o GetInstanceShapeConfigOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetInstanceShapeConfig) float64 { return v.Ocpus }).(pulumi.Float64Output)
+}
+
+// A short description of the instance's processor (CPU).
+func (o GetInstanceShapeConfigOutput) ProcessorDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceShapeConfig) string { return v.ProcessorDescription }).(pulumi.StringOutput)
+}
+
+// The total number of VCPUs available to the instance. This can be used instead of OCPUs, in which case the actual number of OCPUs will be calculated based on this value and the actual hardware. This must be a multiple of 2.
+func (o GetInstanceShapeConfigOutput) Vcpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceShapeConfig) int { return v.Vcpus }).(pulumi.IntOutput)
+}
+
+type GetInstanceShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceShapeConfig)(nil)).Elem()
+}
+
+func (o GetInstanceShapeConfigArrayOutput) ToGetInstanceShapeConfigArrayOutput() GetInstanceShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceShapeConfigArrayOutput) ToGetInstanceShapeConfigArrayOutputWithContext(ctx context.Context) GetInstanceShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceShapeConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceShapeConfig {
+		return vs[0].([]GetInstanceShapeConfig)[vs[1].(int)]
+	}).(GetInstanceShapeConfigOutput)
+}
+
+type GetInstanceSourceDetail struct {
+	// The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
+	BootVolumeSizeInGbs string `pulumi:"bootVolumeSizeInGbs"`
+	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	BootVolumeVpusPerGb string `pulumi:"bootVolumeVpusPerGb"`
+	// These are the criteria for selecting an image. This is required if imageId is not specified.
+	InstanceSourceImageFilterDetails []GetInstanceSourceDetailInstanceSourceImageFilterDetail `pulumi:"instanceSourceImageFilterDetails"`
+	// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+	KmsKeyId string `pulumi:"kmsKeyId"`
+	// The OCID of the boot volume used to boot the instance.
+	SourceId string `pulumi:"sourceId"`
+	// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+	SourceType string `pulumi:"sourceType"`
+}
+
+// GetInstanceSourceDetailInput is an input type that accepts GetInstanceSourceDetailArgs and GetInstanceSourceDetailOutput values.
+// You can construct a concrete instance of `GetInstanceSourceDetailInput` via:
+//
+//	GetInstanceSourceDetailArgs{...}
+type GetInstanceSourceDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceSourceDetailOutput() GetInstanceSourceDetailOutput
+	ToGetInstanceSourceDetailOutputWithContext(context.Context) GetInstanceSourceDetailOutput
+}
+
+type GetInstanceSourceDetailArgs struct {
+	// The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
+	BootVolumeSizeInGbs pulumi.StringInput `pulumi:"bootVolumeSizeInGbs"`
+	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	BootVolumeVpusPerGb pulumi.StringInput `pulumi:"bootVolumeVpusPerGb"`
+	// These are the criteria for selecting an image. This is required if imageId is not specified.
+	InstanceSourceImageFilterDetails GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayInput `pulumi:"instanceSourceImageFilterDetails"`
+	// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	// The OCID of the boot volume used to boot the instance.
+	SourceId pulumi.StringInput `pulumi:"sourceId"`
+	// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+}
+
+func (GetInstanceSourceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceSourceDetail)(nil)).Elem()
+}
+
+func (i GetInstanceSourceDetailArgs) ToGetInstanceSourceDetailOutput() GetInstanceSourceDetailOutput {
+	return i.ToGetInstanceSourceDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceSourceDetailArgs) ToGetInstanceSourceDetailOutputWithContext(ctx context.Context) GetInstanceSourceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceSourceDetailOutput)
+}
+
+// GetInstanceSourceDetailArrayInput is an input type that accepts GetInstanceSourceDetailArray and GetInstanceSourceDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceSourceDetailArrayInput` via:
+//
+//	GetInstanceSourceDetailArray{ GetInstanceSourceDetailArgs{...} }
+type GetInstanceSourceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceSourceDetailArrayOutput() GetInstanceSourceDetailArrayOutput
+	ToGetInstanceSourceDetailArrayOutputWithContext(context.Context) GetInstanceSourceDetailArrayOutput
+}
+
+type GetInstanceSourceDetailArray []GetInstanceSourceDetailInput
+
+func (GetInstanceSourceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceSourceDetail)(nil)).Elem()
+}
+
+func (i GetInstanceSourceDetailArray) ToGetInstanceSourceDetailArrayOutput() GetInstanceSourceDetailArrayOutput {
+	return i.ToGetInstanceSourceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceSourceDetailArray) ToGetInstanceSourceDetailArrayOutputWithContext(ctx context.Context) GetInstanceSourceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceSourceDetailArrayOutput)
+}
+
+type GetInstanceSourceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceSourceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceSourceDetail)(nil)).Elem()
+}
+
+func (o GetInstanceSourceDetailOutput) ToGetInstanceSourceDetailOutput() GetInstanceSourceDetailOutput {
+	return o
+}
+
+func (o GetInstanceSourceDetailOutput) ToGetInstanceSourceDetailOutputWithContext(ctx context.Context) GetInstanceSourceDetailOutput {
+	return o
+}
+
+// The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 32,768 GB (32 TB).
+func (o GetInstanceSourceDetailOutput) BootVolumeSizeInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSourceDetail) string { return v.BootVolumeSizeInGbs }).(pulumi.StringOutput)
+}
+
+// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+func (o GetInstanceSourceDetailOutput) BootVolumeVpusPerGb() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSourceDetail) string { return v.BootVolumeVpusPerGb }).(pulumi.StringOutput)
+}
+
+// These are the criteria for selecting an image. This is required if imageId is not specified.
+func (o GetInstanceSourceDetailOutput) InstanceSourceImageFilterDetails() GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput {
+	return o.ApplyT(func(v GetInstanceSourceDetail) []GetInstanceSourceDetailInstanceSourceImageFilterDetail {
+		return v.InstanceSourceImageFilterDetails
+	}).(GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput)
+}
+
+// The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+func (o GetInstanceSourceDetailOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSourceDetail) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+// The OCID of the boot volume used to boot the instance.
+func (o GetInstanceSourceDetailOutput) SourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSourceDetail) string { return v.SourceId }).(pulumi.StringOutput)
+}
+
+// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+func (o GetInstanceSourceDetailOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+type GetInstanceSourceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceSourceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceSourceDetail)(nil)).Elem()
+}
+
+func (o GetInstanceSourceDetailArrayOutput) ToGetInstanceSourceDetailArrayOutput() GetInstanceSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceSourceDetailArrayOutput) ToGetInstanceSourceDetailArrayOutputWithContext(ctx context.Context) GetInstanceSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceSourceDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceSourceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceSourceDetail {
+		return vs[0].([]GetInstanceSourceDetail)[vs[1].(int)]
+	}).(GetInstanceSourceDetailOutput)
+}
+
+type GetInstanceSourceDetailInstanceSourceImageFilterDetail struct {
+	// The OCID of the compartment containing images to search
+	CompartmentId string `pulumi:"compartmentId"`
+	// Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTagsFilter map[string]interface{} `pulumi:"definedTagsFilter"`
+	// The image's operating system.  Example: `Oracle Linux`
+	OperatingSystem string `pulumi:"operatingSystem"`
+	// The image's operating system version.  Example: `7.2`
+	OperatingSystemVersion string `pulumi:"operatingSystemVersion"`
+}
+
+// GetInstanceSourceDetailInstanceSourceImageFilterDetailInput is an input type that accepts GetInstanceSourceDetailInstanceSourceImageFilterDetailArgs and GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput values.
+// You can construct a concrete instance of `GetInstanceSourceDetailInstanceSourceImageFilterDetailInput` via:
+//
+//	GetInstanceSourceDetailInstanceSourceImageFilterDetailArgs{...}
+type GetInstanceSourceDetailInstanceSourceImageFilterDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceSourceDetailInstanceSourceImageFilterDetailOutput() GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput
+	ToGetInstanceSourceDetailInstanceSourceImageFilterDetailOutputWithContext(context.Context) GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput
+}
+
+type GetInstanceSourceDetailInstanceSourceImageFilterDetailArgs struct {
+	// The OCID of the compartment containing images to search
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTagsFilter pulumi.MapInput `pulumi:"definedTagsFilter"`
+	// The image's operating system.  Example: `Oracle Linux`
+	OperatingSystem pulumi.StringInput `pulumi:"operatingSystem"`
+	// The image's operating system version.  Example: `7.2`
+	OperatingSystemVersion pulumi.StringInput `pulumi:"operatingSystemVersion"`
+}
+
+func (GetInstanceSourceDetailInstanceSourceImageFilterDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceSourceDetailInstanceSourceImageFilterDetail)(nil)).Elem()
+}
+
+func (i GetInstanceSourceDetailInstanceSourceImageFilterDetailArgs) ToGetInstanceSourceDetailInstanceSourceImageFilterDetailOutput() GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput {
+	return i.ToGetInstanceSourceDetailInstanceSourceImageFilterDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceSourceDetailInstanceSourceImageFilterDetailArgs) ToGetInstanceSourceDetailInstanceSourceImageFilterDetailOutputWithContext(ctx context.Context) GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput)
+}
+
+// GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayInput is an input type that accepts GetInstanceSourceDetailInstanceSourceImageFilterDetailArray and GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayInput` via:
+//
+//	GetInstanceSourceDetailInstanceSourceImageFilterDetailArray{ GetInstanceSourceDetailInstanceSourceImageFilterDetailArgs{...} }
+type GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput() GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput
+	ToGetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutputWithContext(context.Context) GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput
+}
+
+type GetInstanceSourceDetailInstanceSourceImageFilterDetailArray []GetInstanceSourceDetailInstanceSourceImageFilterDetailInput
+
+func (GetInstanceSourceDetailInstanceSourceImageFilterDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceSourceDetailInstanceSourceImageFilterDetail)(nil)).Elem()
+}
+
+func (i GetInstanceSourceDetailInstanceSourceImageFilterDetailArray) ToGetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput() GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput {
+	return i.ToGetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceSourceDetailInstanceSourceImageFilterDetailArray) ToGetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutputWithContext(ctx context.Context) GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput)
+}
+
+type GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceSourceDetailInstanceSourceImageFilterDetail)(nil)).Elem()
+}
+
+func (o GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput) ToGetInstanceSourceDetailInstanceSourceImageFilterDetailOutput() GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput {
+	return o
+}
+
+func (o GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput) ToGetInstanceSourceDetailInstanceSourceImageFilterDetailOutputWithContext(ctx context.Context) GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput {
+	return o
+}
+
+// The OCID of the compartment containing images to search
+func (o GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSourceDetailInstanceSourceImageFilterDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput) DefinedTagsFilter() pulumi.MapOutput {
+	return o.ApplyT(func(v GetInstanceSourceDetailInstanceSourceImageFilterDetail) map[string]interface{} {
+		return v.DefinedTagsFilter
+	}).(pulumi.MapOutput)
+}
+
+// The image's operating system.  Example: `Oracle Linux`
+func (o GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput) OperatingSystem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSourceDetailInstanceSourceImageFilterDetail) string { return v.OperatingSystem }).(pulumi.StringOutput)
+}
+
+// The image's operating system version.  Example: `7.2`
+func (o GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput) OperatingSystemVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceSourceDetailInstanceSourceImageFilterDetail) string { return v.OperatingSystemVersion }).(pulumi.StringOutput)
+}
+
+type GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceSourceDetailInstanceSourceImageFilterDetail)(nil)).Elem()
+}
+
+func (o GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput) ToGetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput() GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput) ToGetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutputWithContext(ctx context.Context) GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceSourceDetailInstanceSourceImageFilterDetail {
+		return vs[0].([]GetInstanceSourceDetailInstanceSourceImageFilterDetail)[vs[1].(int)]
+	}).(GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput)
+}
+
+type GetInstancesFilter struct {
+	// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInstancesFilterInput is an input type that accepts GetInstancesFilterArgs and GetInstancesFilterOutput values.
+// You can construct a concrete instance of `GetInstancesFilterInput` via:
+//
+//	GetInstancesFilterArgs{...}
+type GetInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetInstancesFilterOutput() GetInstancesFilterOutput
+	ToGetInstancesFilterOutputWithContext(context.Context) GetInstancesFilterOutput
+}
+
+type GetInstancesFilterArgs struct {
+	// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesFilter)(nil)).Elem()
+}
+
+func (i GetInstancesFilterArgs) ToGetInstancesFilterOutput() GetInstancesFilterOutput {
+	return i.ToGetInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetInstancesFilterArgs) ToGetInstancesFilterOutputWithContext(ctx context.Context) GetInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesFilterOutput)
+}
+
+// GetInstancesFilterArrayInput is an input type that accepts GetInstancesFilterArray and GetInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetInstancesFilterArrayInput` via:
+//
+//	GetInstancesFilterArray{ GetInstancesFilterArgs{...} }
+type GetInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancesFilterArrayOutput() GetInstancesFilterArrayOutput
+	ToGetInstancesFilterArrayOutputWithContext(context.Context) GetInstancesFilterArrayOutput
+}
+
+type GetInstancesFilterArray []GetInstancesFilterInput
+
+func (GetInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesFilter)(nil)).Elem()
+}
+
+func (i GetInstancesFilterArray) ToGetInstancesFilterArrayOutput() GetInstancesFilterArrayOutput {
+	return i.ToGetInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancesFilterArray) ToGetInstancesFilterArrayOutputWithContext(ctx context.Context) GetInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesFilterArrayOutput)
+}
+
+type GetInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesFilter)(nil)).Elem()
+}
+
+func (o GetInstancesFilterOutput) ToGetInstancesFilterOutput() GetInstancesFilterOutput {
+	return o
+}
+
+func (o GetInstancesFilterOutput) ToGetInstancesFilterOutputWithContext(ctx context.Context) GetInstancesFilterOutput {
+	return o
+}
+
+// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+func (o GetInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesFilter)(nil)).Elem()
+}
+
+func (o GetInstancesFilterArrayOutput) ToGetInstancesFilterArrayOutput() GetInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetInstancesFilterArrayOutput) ToGetInstancesFilterArrayOutputWithContext(ctx context.Context) GetInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancesFilter {
+		return vs[0].([]GetInstancesFilter)[vs[1].(int)]
+	}).(GetInstancesFilterOutput)
+}
+
+type GetInstancesInstance struct {
+	// Configuration options for the Oracle Cloud Agent software running on the instance.
+	AgentConfigs []GetInstancesInstanceAgentConfig `pulumi:"agentConfigs"`
+	Async        bool                              `pulumi:"async"`
+	// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
+	AvailabilityConfigs []GetInstancesInstanceAvailabilityConfig `pulumi:"availabilityConfigs"`
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
+	BootVolumeId string `pulumi:"bootVolumeId"`
+	// The OCID of the compute capacity reservation.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+	ComputeClusterId  string                                 `pulumi:"computeClusterId"`
+	CreateVnicDetails []GetInstancesInstanceCreateVnicDetail `pulumi:"createVnicDetails"`
+	// The OCID of the dedicated virtual machine host that the instance is placed on.
+	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
+	// The name of the fault domain the instance is running in.
+	FaultDomain string `pulumi:"faultDomain"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.
+	HostnameLabel string `pulumi:"hostnameLabel"`
+	// The OCID of the instance.
+	Id string `pulumi:"id"`
+	// Deprecated. Use `sourceDetails` instead.
+	//
+	// Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
+	Image string `pulumi:"image"`
+	// The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+	InstanceConfigurationId string `pulumi:"instanceConfigurationId"`
+	// Optional mutable instance options
+	InstanceOptions []GetInstancesInstanceInstanceOption `pulumi:"instanceOptions"`
+	// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+	IpxeScript string `pulumi:"ipxeScript"`
+	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+	IsCrossNumaNode bool `pulumi:"isCrossNumaNode"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+	LaunchMode string `pulumi:"launchMode"`
+	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+	LaunchOptions []GetInstancesInstanceLaunchOption `pulumi:"launchOptions"`
+	// Custom metadata that you provide.
+	Metadata map[string]interface{} `pulumi:"metadata"`
+	// The platform configuration for the instance.
+	PlatformConfigs []GetInstancesInstancePlatformConfig `pulumi:"platformConfigs"`
+	// (Optional) Configuration options for preemptible instances.
+	PreemptibleInstanceConfigs []GetInstancesInstancePreemptibleInstanceConfig `pulumi:"preemptibleInstanceConfigs"`
+	// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	PreserveBootVolume bool   `pulumi:"preserveBootVolume"`
+	PrivateIp          string `pulumi:"privateIp"`
+	PublicIp           string `pulumi:"publicIp"`
+	// The region that contains the availability domain the instance is running in.
+	Region string `pulumi:"region"`
+	// The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+	Shape string `pulumi:"shape"`
+	// The shape configuration for an instance. The shape configuration determines the resources allocated to an instance.
+	ShapeConfigs  []GetInstancesInstanceShapeConfig  `pulumi:"shapeConfigs"`
+	SourceDetails []GetInstancesInstanceSourceDetail `pulumi:"sourceDetails"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
+	SubnetId string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
+	TimeMaintenanceRebootDue  string `pulumi:"timeMaintenanceRebootDue"`
+	UpdateOperationConstraint string `pulumi:"updateOperationConstraint"`
+}
+
+// GetInstancesInstanceInput is an input type that accepts GetInstancesInstanceArgs and GetInstancesInstanceOutput values.
+// You can construct a concrete instance of `GetInstancesInstanceInput` via:
+//
+//	GetInstancesInstanceArgs{...}
+type GetInstancesInstanceInput interface {
+	pulumi.Input
+
+	ToGetInstancesInstanceOutput() GetInstancesInstanceOutput
+	ToGetInstancesInstanceOutputWithContext(context.Context) GetInstancesInstanceOutput
+}
+
+type GetInstancesInstanceArgs struct {
+	// Configuration options for the Oracle Cloud Agent software running on the instance.
+	AgentConfigs GetInstancesInstanceAgentConfigArrayInput `pulumi:"agentConfigs"`
+	Async        pulumi.BoolInput                          `pulumi:"async"`
+	// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
+	AvailabilityConfigs GetInstancesInstanceAvailabilityConfigArrayInput `pulumi:"availabilityConfigs"`
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
+	BootVolumeId pulumi.StringInput `pulumi:"bootVolumeId"`
+	// The OCID of the compute capacity reservation.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+	ComputeClusterId  pulumi.StringInput                             `pulumi:"computeClusterId"`
+	CreateVnicDetails GetInstancesInstanceCreateVnicDetailArrayInput `pulumi:"createVnicDetails"`
+	// The OCID of the dedicated virtual machine host that the instance is placed on.
+	DedicatedVmHostId pulumi.StringInput `pulumi:"dedicatedVmHostId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+	ExtendedMetadata pulumi.MapInput `pulumi:"extendedMetadata"`
+	// The name of the fault domain the instance is running in.
+	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.
+	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
+	// The OCID of the instance.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Deprecated. Use `sourceDetails` instead.
+	//
+	// Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
+	Image pulumi.StringInput `pulumi:"image"`
+	// The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+	InstanceConfigurationId pulumi.StringInput `pulumi:"instanceConfigurationId"`
+	// Optional mutable instance options
+	InstanceOptions GetInstancesInstanceInstanceOptionArrayInput `pulumi:"instanceOptions"`
+	// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+	IpxeScript pulumi.StringInput `pulumi:"ipxeScript"`
+	// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+	IsCrossNumaNode pulumi.BoolInput `pulumi:"isCrossNumaNode"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+	LaunchMode pulumi.StringInput `pulumi:"launchMode"`
+	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+	LaunchOptions GetInstancesInstanceLaunchOptionArrayInput `pulumi:"launchOptions"`
+	// Custom metadata that you provide.
+	Metadata pulumi.MapInput `pulumi:"metadata"`
+	// The platform configuration for the instance.
+	PlatformConfigs GetInstancesInstancePlatformConfigArrayInput `pulumi:"platformConfigs"`
+	// (Optional) Configuration options for preemptible instances.
+	PreemptibleInstanceConfigs GetInstancesInstancePreemptibleInstanceConfigArrayInput `pulumi:"preemptibleInstanceConfigs"`
+	// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+	PreserveBootVolume pulumi.BoolInput   `pulumi:"preserveBootVolume"`
+	PrivateIp          pulumi.StringInput `pulumi:"privateIp"`
+	PublicIp           pulumi.StringInput `pulumi:"publicIp"`
+	// The region that contains the availability domain the instance is running in.
+	Region pulumi.StringInput `pulumi:"region"`
+	// The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The shape configuration for an instance. The shape configuration determines the resources allocated to an instance.
+	ShapeConfigs  GetInstancesInstanceShapeConfigArrayInput  `pulumi:"shapeConfigs"`
+	SourceDetails GetInstancesInstanceSourceDetailArrayInput `pulumi:"sourceDetails"`
+	// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
+	TimeMaintenanceRebootDue  pulumi.StringInput `pulumi:"timeMaintenanceRebootDue"`
+	UpdateOperationConstraint pulumi.StringInput `pulumi:"updateOperationConstraint"`
+}
+
+func (GetInstancesInstanceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesInstance)(nil)).Elem()
+}
+
+func (i GetInstancesInstanceArgs) ToGetInstancesInstanceOutput() GetInstancesInstanceOutput {
+	return i.ToGetInstancesInstanceOutputWithContext(context.Background())
+}
+
+func (i GetInstancesInstanceArgs) ToGetInstancesInstanceOutputWithContext(ctx context.Context) GetInstancesInstanceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesInstanceOutput)
+}
+
+// GetInstancesInstanceArrayInput is an input type that accepts GetInstancesInstanceArray and GetInstancesInstanceArrayOutput values.
+// You can construct a concrete instance of `GetInstancesInstanceArrayInput` via:
+//
+//	GetInstancesInstanceArray{ GetInstancesInstanceArgs{...} }
+type GetInstancesInstanceArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancesInstanceArrayOutput() GetInstancesInstanceArrayOutput
+	ToGetInstancesInstanceArrayOutputWithContext(context.Context) GetInstancesInstanceArrayOutput
+}
+
+type GetInstancesInstanceArray []GetInstancesInstanceInput
+
+func (GetInstancesInstanceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesInstance)(nil)).Elem()
+}
+
+func (i GetInstancesInstanceArray) ToGetInstancesInstanceArrayOutput() GetInstancesInstanceArrayOutput {
+	return i.ToGetInstancesInstanceArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancesInstanceArray) ToGetInstancesInstanceArrayOutputWithContext(ctx context.Context) GetInstancesInstanceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesInstanceArrayOutput)
+}
+
+type GetInstancesInstanceOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesInstanceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesInstance)(nil)).Elem()
+}
+
+func (o GetInstancesInstanceOutput) ToGetInstancesInstanceOutput() GetInstancesInstanceOutput {
+	return o
+}
+
+func (o GetInstancesInstanceOutput) ToGetInstancesInstanceOutputWithContext(ctx context.Context) GetInstancesInstanceOutput {
+	return o
+}
+
+// Configuration options for the Oracle Cloud Agent software running on the instance.
+func (o GetInstancesInstanceOutput) AgentConfigs() GetInstancesInstanceAgentConfigArrayOutput {
+	return o.ApplyT(func(v GetInstancesInstance) []GetInstancesInstanceAgentConfig { return v.AgentConfigs }).(GetInstancesInstanceAgentConfigArrayOutput)
+}
+
+func (o GetInstancesInstanceOutput) Async() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstance) bool { return v.Async }).(pulumi.BoolOutput)
+}
+
+// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
+func (o GetInstancesInstanceOutput) AvailabilityConfigs() GetInstancesInstanceAvailabilityConfigArrayOutput {
+	return o.ApplyT(func(v GetInstancesInstance) []GetInstancesInstanceAvailabilityConfig { return v.AvailabilityConfigs }).(GetInstancesInstanceAvailabilityConfigArrayOutput)
+}
+
+// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+func (o GetInstancesInstanceOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
+func (o GetInstancesInstanceOutput) BootVolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.BootVolumeId }).(pulumi.StringOutput)
+}
+
+// The OCID of the compute capacity reservation.
+func (o GetInstancesInstanceOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetInstancesInstanceOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+func (o GetInstancesInstanceOutput) ComputeClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.ComputeClusterId }).(pulumi.StringOutput)
+}
+
+func (o GetInstancesInstanceOutput) CreateVnicDetails() GetInstancesInstanceCreateVnicDetailArrayOutput {
+	return o.ApplyT(func(v GetInstancesInstance) []GetInstancesInstanceCreateVnicDetail { return v.CreateVnicDetails }).(GetInstancesInstanceCreateVnicDetailArrayOutput)
+}
+
+// The OCID of the dedicated virtual machine host that the instance is placed on.
+func (o GetInstancesInstanceOutput) DedicatedVmHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.DedicatedVmHostId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetInstancesInstanceOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetInstancesInstance) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetInstancesInstanceOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+func (o GetInstancesInstanceOutput) ExtendedMetadata() pulumi.MapOutput {
+	return o.ApplyT(func(v GetInstancesInstance) map[string]interface{} { return v.ExtendedMetadata }).(pulumi.MapOutput)
+}
+
+// The name of the fault domain the instance is running in.
+func (o GetInstancesInstanceOutput) FaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.FaultDomain }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetInstancesInstanceOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetInstancesInstance) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.
+func (o GetInstancesInstanceOutput) HostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.HostnameLabel }).(pulumi.StringOutput)
+}
+
+// The OCID of the instance.
+func (o GetInstancesInstanceOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Deprecated. Use `sourceDetails` instead.
+//
+// Deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.
+func (o GetInstancesInstanceOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
+func (o GetInstancesInstanceOutput) InstanceConfigurationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.InstanceConfigurationId }).(pulumi.StringOutput)
+}
+
+// Optional mutable instance options
+func (o GetInstancesInstanceOutput) InstanceOptions() GetInstancesInstanceInstanceOptionArrayOutput {
+	return o.ApplyT(func(v GetInstancesInstance) []GetInstancesInstanceInstanceOption { return v.InstanceOptions }).(GetInstancesInstanceInstanceOptionArrayOutput)
+}
+
+// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
+func (o GetInstancesInstanceOutput) IpxeScript() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.IpxeScript }).(pulumi.StringOutput)
+}
+
+// Whether the instance’s OCPUs and memory are distributed across multiple NUMA nodes.
+func (o GetInstancesInstanceOutput) IsCrossNumaNode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstance) bool { return v.IsCrossNumaNode }).(pulumi.BoolOutput)
+}
+
+// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
+func (o GetInstancesInstanceOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstance) bool { return v.IsPvEncryptionInTransitEnabled }).(pulumi.BoolOutput)
+}
+
+// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+func (o GetInstancesInstanceOutput) LaunchMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.LaunchMode }).(pulumi.StringOutput)
+}
+
+// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+func (o GetInstancesInstanceOutput) LaunchOptions() GetInstancesInstanceLaunchOptionArrayOutput {
+	return o.ApplyT(func(v GetInstancesInstance) []GetInstancesInstanceLaunchOption { return v.LaunchOptions }).(GetInstancesInstanceLaunchOptionArrayOutput)
+}
+
+// Custom metadata that you provide.
+func (o GetInstancesInstanceOutput) Metadata() pulumi.MapOutput {
+	return o.ApplyT(func(v GetInstancesInstance) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+}
+
+// The platform configuration for the instance.
+func (o GetInstancesInstanceOutput) PlatformConfigs() GetInstancesInstancePlatformConfigArrayOutput {
+	return o.ApplyT(func(v GetInstancesInstance) []GetInstancesInstancePlatformConfig { return v.PlatformConfigs }).(GetInstancesInstancePlatformConfigArrayOutput)
+}
+
+// (Optional) Configuration options for preemptible instances.
+func (o GetInstancesInstanceOutput) PreemptibleInstanceConfigs() GetInstancesInstancePreemptibleInstanceConfigArrayOutput {
+	return o.ApplyT(func(v GetInstancesInstance) []GetInstancesInstancePreemptibleInstanceConfig {
+		return v.PreemptibleInstanceConfigs
+	}).(GetInstancesInstancePreemptibleInstanceConfigArrayOutput)
+}
+
+// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+func (o GetInstancesInstanceOutput) PreserveBootVolume() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstance) bool { return v.PreserveBootVolume }).(pulumi.BoolOutput)
+}
+
+func (o GetInstancesInstanceOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+func (o GetInstancesInstanceOutput) PublicIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.PublicIp }).(pulumi.StringOutput)
+}
+
+// The region that contains the availability domain the instance is running in.
+func (o GetInstancesInstanceOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+func (o GetInstancesInstanceOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The shape configuration for an instance. The shape configuration determines the resources allocated to an instance.
+func (o GetInstancesInstanceOutput) ShapeConfigs() GetInstancesInstanceShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetInstancesInstance) []GetInstancesInstanceShapeConfig { return v.ShapeConfigs }).(GetInstancesInstanceShapeConfigArrayOutput)
+}
+
+func (o GetInstancesInstanceOutput) SourceDetails() GetInstancesInstanceSourceDetailArrayOutput {
+	return o.ApplyT(func(v GetInstancesInstance) []GetInstancesInstanceSourceDetail { return v.SourceDetails }).(GetInstancesInstanceSourceDetailArrayOutput)
+}
+
+// A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetInstancesInstanceOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
+func (o GetInstancesInstanceOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetInstancesInstanceOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetInstancesInstance) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetInstancesInstanceOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
+func (o GetInstancesInstanceOutput) TimeMaintenanceRebootDue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.TimeMaintenanceRebootDue }).(pulumi.StringOutput)
+}
+
+func (o GetInstancesInstanceOutput) UpdateOperationConstraint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstance) string { return v.UpdateOperationConstraint }).(pulumi.StringOutput)
+}
+
+type GetInstancesInstanceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesInstanceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesInstance)(nil)).Elem()
+}
+
+func (o GetInstancesInstanceArrayOutput) ToGetInstancesInstanceArrayOutput() GetInstancesInstanceArrayOutput {
+	return o
+}
+
+func (o GetInstancesInstanceArrayOutput) ToGetInstancesInstanceArrayOutputWithContext(ctx context.Context) GetInstancesInstanceArrayOutput {
+	return o
+}
+
+func (o GetInstancesInstanceArrayOutput) Index(i pulumi.IntInput) GetInstancesInstanceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancesInstance {
+		return vs[0].([]GetInstancesInstance)[vs[1].(int)]
+	}).(GetInstancesInstanceOutput)
+}
+
+type GetInstancesInstanceAgentConfig struct {
+	// Whether Oracle Cloud Agent can run all of the available plugins. This includes the management and monitoring plugins.
+	AreAllPluginsDisabled bool `pulumi:"areAllPluginsDisabled"`
+	// Whether Oracle Cloud Agent can run all the available management plugins.
+	IsManagementDisabled bool `pulumi:"isManagementDisabled"`
+	// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins.
+	IsMonitoringDisabled bool `pulumi:"isMonitoringDisabled"`
+	// The configuration of plugins associated with this instance.
+	PluginsConfigs []GetInstancesInstanceAgentConfigPluginsConfig `pulumi:"pluginsConfigs"`
+}
+
+// GetInstancesInstanceAgentConfigInput is an input type that accepts GetInstancesInstanceAgentConfigArgs and GetInstancesInstanceAgentConfigOutput values.
+// You can construct a concrete instance of `GetInstancesInstanceAgentConfigInput` via:
+//
+//	GetInstancesInstanceAgentConfigArgs{...}
+type GetInstancesInstanceAgentConfigInput interface {
+	pulumi.Input
+
+	ToGetInstancesInstanceAgentConfigOutput() GetInstancesInstanceAgentConfigOutput
+	ToGetInstancesInstanceAgentConfigOutputWithContext(context.Context) GetInstancesInstanceAgentConfigOutput
+}
+
+type GetInstancesInstanceAgentConfigArgs struct {
+	// Whether Oracle Cloud Agent can run all of the available plugins. This includes the management and monitoring plugins.
+	AreAllPluginsDisabled pulumi.BoolInput `pulumi:"areAllPluginsDisabled"`
+	// Whether Oracle Cloud Agent can run all the available management plugins.
+	IsManagementDisabled pulumi.BoolInput `pulumi:"isManagementDisabled"`
+	// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins.
+	IsMonitoringDisabled pulumi.BoolInput `pulumi:"isMonitoringDisabled"`
+	// The configuration of plugins associated with this instance.
+	PluginsConfigs GetInstancesInstanceAgentConfigPluginsConfigArrayInput `pulumi:"pluginsConfigs"`
+}
+
+func (GetInstancesInstanceAgentConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesInstanceAgentConfig)(nil)).Elem()
+}
+
+func (i GetInstancesInstanceAgentConfigArgs) ToGetInstancesInstanceAgentConfigOutput() GetInstancesInstanceAgentConfigOutput {
+	return i.ToGetInstancesInstanceAgentConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstancesInstanceAgentConfigArgs) ToGetInstancesInstanceAgentConfigOutputWithContext(ctx context.Context) GetInstancesInstanceAgentConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesInstanceAgentConfigOutput)
+}
+
+// GetInstancesInstanceAgentConfigArrayInput is an input type that accepts GetInstancesInstanceAgentConfigArray and GetInstancesInstanceAgentConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstancesInstanceAgentConfigArrayInput` via:
+//
+//	GetInstancesInstanceAgentConfigArray{ GetInstancesInstanceAgentConfigArgs{...} }
+type GetInstancesInstanceAgentConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancesInstanceAgentConfigArrayOutput() GetInstancesInstanceAgentConfigArrayOutput
+	ToGetInstancesInstanceAgentConfigArrayOutputWithContext(context.Context) GetInstancesInstanceAgentConfigArrayOutput
+}
+
+type GetInstancesInstanceAgentConfigArray []GetInstancesInstanceAgentConfigInput
+
+func (GetInstancesInstanceAgentConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesInstanceAgentConfig)(nil)).Elem()
+}
+
+func (i GetInstancesInstanceAgentConfigArray) ToGetInstancesInstanceAgentConfigArrayOutput() GetInstancesInstanceAgentConfigArrayOutput {
+	return i.ToGetInstancesInstanceAgentConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancesInstanceAgentConfigArray) ToGetInstancesInstanceAgentConfigArrayOutputWithContext(ctx context.Context) GetInstancesInstanceAgentConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesInstanceAgentConfigArrayOutput)
+}
+
+type GetInstancesInstanceAgentConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesInstanceAgentConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesInstanceAgentConfig)(nil)).Elem()
+}
+
+func (o GetInstancesInstanceAgentConfigOutput) ToGetInstancesInstanceAgentConfigOutput() GetInstancesInstanceAgentConfigOutput {
+	return o
+}
+
+func (o GetInstancesInstanceAgentConfigOutput) ToGetInstancesInstanceAgentConfigOutputWithContext(ctx context.Context) GetInstancesInstanceAgentConfigOutput {
+	return o
+}
+
+// Whether Oracle Cloud Agent can run all of the available plugins. This includes the management and monitoring plugins.
+func (o GetInstancesInstanceAgentConfigOutput) AreAllPluginsDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstanceAgentConfig) bool { return v.AreAllPluginsDisabled }).(pulumi.BoolOutput)
+}
+
+// Whether Oracle Cloud Agent can run all the available management plugins.
+func (o GetInstancesInstanceAgentConfigOutput) IsManagementDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstanceAgentConfig) bool { return v.IsManagementDisabled }).(pulumi.BoolOutput)
+}
+
+// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins.
+func (o GetInstancesInstanceAgentConfigOutput) IsMonitoringDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstanceAgentConfig) bool { return v.IsMonitoringDisabled }).(pulumi.BoolOutput)
+}
+
+// The configuration of plugins associated with this instance.
+func (o GetInstancesInstanceAgentConfigOutput) PluginsConfigs() GetInstancesInstanceAgentConfigPluginsConfigArrayOutput {
+	return o.ApplyT(func(v GetInstancesInstanceAgentConfig) []GetInstancesInstanceAgentConfigPluginsConfig {
+		return v.PluginsConfigs
+	}).(GetInstancesInstanceAgentConfigPluginsConfigArrayOutput)
+}
+
+type GetInstancesInstanceAgentConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesInstanceAgentConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesInstanceAgentConfig)(nil)).Elem()
+}
+
+func (o GetInstancesInstanceAgentConfigArrayOutput) ToGetInstancesInstanceAgentConfigArrayOutput() GetInstancesInstanceAgentConfigArrayOutput {
+	return o
+}
+
+func (o GetInstancesInstanceAgentConfigArrayOutput) ToGetInstancesInstanceAgentConfigArrayOutputWithContext(ctx context.Context) GetInstancesInstanceAgentConfigArrayOutput {
+	return o
+}
+
+func (o GetInstancesInstanceAgentConfigArrayOutput) Index(i pulumi.IntInput) GetInstancesInstanceAgentConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancesInstanceAgentConfig {
+		return vs[0].([]GetInstancesInstanceAgentConfig)[vs[1].(int)]
+	}).(GetInstancesInstanceAgentConfigOutput)
+}
+
+type GetInstancesInstanceAgentConfigPluginsConfig struct {
+	// Whether the plugin should be enabled or disabled.
+	DesiredState string `pulumi:"desiredState"`
+	// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+	Name string `pulumi:"name"`
+}
+
+// GetInstancesInstanceAgentConfigPluginsConfigInput is an input type that accepts GetInstancesInstanceAgentConfigPluginsConfigArgs and GetInstancesInstanceAgentConfigPluginsConfigOutput values.
+// You can construct a concrete instance of `GetInstancesInstanceAgentConfigPluginsConfigInput` via:
+//
+//	GetInstancesInstanceAgentConfigPluginsConfigArgs{...}
+type GetInstancesInstanceAgentConfigPluginsConfigInput interface {
+	pulumi.Input
+
+	ToGetInstancesInstanceAgentConfigPluginsConfigOutput() GetInstancesInstanceAgentConfigPluginsConfigOutput
+	ToGetInstancesInstanceAgentConfigPluginsConfigOutputWithContext(context.Context) GetInstancesInstanceAgentConfigPluginsConfigOutput
+}
+
+type GetInstancesInstanceAgentConfigPluginsConfigArgs struct {
+	// Whether the plugin should be enabled or disabled.
+	DesiredState pulumi.StringInput `pulumi:"desiredState"`
+	// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetInstancesInstanceAgentConfigPluginsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesInstanceAgentConfigPluginsConfig)(nil)).Elem()
+}
+
+func (i GetInstancesInstanceAgentConfigPluginsConfigArgs) ToGetInstancesInstanceAgentConfigPluginsConfigOutput() GetInstancesInstanceAgentConfigPluginsConfigOutput {
+	return i.ToGetInstancesInstanceAgentConfigPluginsConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstancesInstanceAgentConfigPluginsConfigArgs) ToGetInstancesInstanceAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetInstancesInstanceAgentConfigPluginsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesInstanceAgentConfigPluginsConfigOutput)
+}
+
+// GetInstancesInstanceAgentConfigPluginsConfigArrayInput is an input type that accepts GetInstancesInstanceAgentConfigPluginsConfigArray and GetInstancesInstanceAgentConfigPluginsConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstancesInstanceAgentConfigPluginsConfigArrayInput` via:
+//
+//	GetInstancesInstanceAgentConfigPluginsConfigArray{ GetInstancesInstanceAgentConfigPluginsConfigArgs{...} }
+type GetInstancesInstanceAgentConfigPluginsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancesInstanceAgentConfigPluginsConfigArrayOutput() GetInstancesInstanceAgentConfigPluginsConfigArrayOutput
+	ToGetInstancesInstanceAgentConfigPluginsConfigArrayOutputWithContext(context.Context) GetInstancesInstanceAgentConfigPluginsConfigArrayOutput
+}
+
+type GetInstancesInstanceAgentConfigPluginsConfigArray []GetInstancesInstanceAgentConfigPluginsConfigInput
+
+func (GetInstancesInstanceAgentConfigPluginsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesInstanceAgentConfigPluginsConfig)(nil)).Elem()
+}
+
+func (i GetInstancesInstanceAgentConfigPluginsConfigArray) ToGetInstancesInstanceAgentConfigPluginsConfigArrayOutput() GetInstancesInstanceAgentConfigPluginsConfigArrayOutput {
+	return i.ToGetInstancesInstanceAgentConfigPluginsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancesInstanceAgentConfigPluginsConfigArray) ToGetInstancesInstanceAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetInstancesInstanceAgentConfigPluginsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesInstanceAgentConfigPluginsConfigArrayOutput)
+}
+
+type GetInstancesInstanceAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesInstanceAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesInstanceAgentConfigPluginsConfig)(nil)).Elem()
+}
+
+func (o GetInstancesInstanceAgentConfigPluginsConfigOutput) ToGetInstancesInstanceAgentConfigPluginsConfigOutput() GetInstancesInstanceAgentConfigPluginsConfigOutput {
+	return o
+}
+
+func (o GetInstancesInstanceAgentConfigPluginsConfigOutput) ToGetInstancesInstanceAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetInstancesInstanceAgentConfigPluginsConfigOutput {
+	return o
+}
+
+// Whether the plugin should be enabled or disabled.
+func (o GetInstancesInstanceAgentConfigPluginsConfigOutput) DesiredState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceAgentConfigPluginsConfig) string { return v.DesiredState }).(pulumi.StringOutput)
+}
+
+// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+func (o GetInstancesInstanceAgentConfigPluginsConfigOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceAgentConfigPluginsConfig) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetInstancesInstanceAgentConfigPluginsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesInstanceAgentConfigPluginsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesInstanceAgentConfigPluginsConfig)(nil)).Elem()
+}
+
+func (o GetInstancesInstanceAgentConfigPluginsConfigArrayOutput) ToGetInstancesInstanceAgentConfigPluginsConfigArrayOutput() GetInstancesInstanceAgentConfigPluginsConfigArrayOutput {
+	return o
+}
+
+func (o GetInstancesInstanceAgentConfigPluginsConfigArrayOutput) ToGetInstancesInstanceAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetInstancesInstanceAgentConfigPluginsConfigArrayOutput {
+	return o
+}
+
+func (o GetInstancesInstanceAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) GetInstancesInstanceAgentConfigPluginsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancesInstanceAgentConfigPluginsConfig {
+		return vs[0].([]GetInstancesInstanceAgentConfigPluginsConfig)[vs[1].(int)]
+	}).(GetInstancesInstanceAgentConfigPluginsConfigOutput)
+}
+
+type GetInstancesInstanceAvailabilityConfig struct {
+	// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+	IsLiveMigrationPreferred bool `pulumi:"isLiveMigrationPreferred"`
+	// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+	RecoveryAction string `pulumi:"recoveryAction"`
+}
+
+// GetInstancesInstanceAvailabilityConfigInput is an input type that accepts GetInstancesInstanceAvailabilityConfigArgs and GetInstancesInstanceAvailabilityConfigOutput values.
+// You can construct a concrete instance of `GetInstancesInstanceAvailabilityConfigInput` via:
+//
+//	GetInstancesInstanceAvailabilityConfigArgs{...}
+type GetInstancesInstanceAvailabilityConfigInput interface {
+	pulumi.Input
+
+	ToGetInstancesInstanceAvailabilityConfigOutput() GetInstancesInstanceAvailabilityConfigOutput
+	ToGetInstancesInstanceAvailabilityConfigOutputWithContext(context.Context) GetInstancesInstanceAvailabilityConfigOutput
+}
+
+type GetInstancesInstanceAvailabilityConfigArgs struct {
+	// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+	IsLiveMigrationPreferred pulumi.BoolInput `pulumi:"isLiveMigrationPreferred"`
+	// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+	RecoveryAction pulumi.StringInput `pulumi:"recoveryAction"`
+}
+
+func (GetInstancesInstanceAvailabilityConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesInstanceAvailabilityConfig)(nil)).Elem()
+}
+
+func (i GetInstancesInstanceAvailabilityConfigArgs) ToGetInstancesInstanceAvailabilityConfigOutput() GetInstancesInstanceAvailabilityConfigOutput {
+	return i.ToGetInstancesInstanceAvailabilityConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstancesInstanceAvailabilityConfigArgs) ToGetInstancesInstanceAvailabilityConfigOutputWithContext(ctx context.Context) GetInstancesInstanceAvailabilityConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesInstanceAvailabilityConfigOutput)
+}
+
+// GetInstancesInstanceAvailabilityConfigArrayInput is an input type that accepts GetInstancesInstanceAvailabilityConfigArray and GetInstancesInstanceAvailabilityConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstancesInstanceAvailabilityConfigArrayInput` via:
+//
+//	GetInstancesInstanceAvailabilityConfigArray{ GetInstancesInstanceAvailabilityConfigArgs{...} }
+type GetInstancesInstanceAvailabilityConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstancesInstanceAvailabilityConfigArrayOutput() GetInstancesInstanceAvailabilityConfigArrayOutput
+	ToGetInstancesInstanceAvailabilityConfigArrayOutputWithContext(context.Context) GetInstancesInstanceAvailabilityConfigArrayOutput
+}
+
+type GetInstancesInstanceAvailabilityConfigArray []GetInstancesInstanceAvailabilityConfigInput
+
+func (GetInstancesInstanceAvailabilityConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesInstanceAvailabilityConfig)(nil)).Elem()
+}
+
+func (i GetInstancesInstanceAvailabilityConfigArray) ToGetInstancesInstanceAvailabilityConfigArrayOutput() GetInstancesInstanceAvailabilityConfigArrayOutput {
+	return i.ToGetInstancesInstanceAvailabilityConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstancesInstanceAvailabilityConfigArray) ToGetInstancesInstanceAvailabilityConfigArrayOutputWithContext(ctx context.Context) GetInstancesInstanceAvailabilityConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstancesInstanceAvailabilityConfigArrayOutput)
+}
+
+type GetInstancesInstanceAvailabilityConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesInstanceAvailabilityConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstancesInstanceAvailabilityConfig)(nil)).Elem()
+}
+
+func (o GetInstancesInstanceAvailabilityConfigOutput) ToGetInstancesInstanceAvailabilityConfigOutput() GetInstancesInstanceAvailabilityConfigOutput {
+	return o
+}
+
+func (o GetInstancesInstanceAvailabilityConfigOutput) ToGetInstancesInstanceAvailabilityConfigOutputWithContext(ctx context.Context) GetInstancesInstanceAvailabilityConfigOutput {
+	return o
+}
+
+// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+func (o GetInstancesInstanceAvailabilityConfigOutput) IsLiveMigrationPreferred() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstancesInstanceAvailabilityConfig) bool { return v.IsLiveMigrationPreferred }).(pulumi.BoolOutput)
+}
+
+// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+func (o GetInstancesInstanceAvailabilityConfigOutput) RecoveryAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstancesInstanceAvailabilityConfig) string { return v.RecoveryAction }).(pulumi.StringOutput)
+}
+
+type GetInstancesInstanceAvailabilityConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstancesInstanceAvailabilityConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstancesInstanceAvailabilityConfig)(nil)).Elem()
+}
+
+func (o GetInstancesInstanceAvailabilityConfigArrayOutput) ToGetInstancesInstanceAvailabilityConfigArrayOutput() GetInstancesInstanceAvailabilityConfigArrayOutput {
+	return o
+}
+
+func (o GetInstancesInstanceAvailabilityConfigArrayOutput) ToGetInstancesInstanceAvailabilityConfigArrayOutputWithContext(ctx context.Context) GetInstancesInstanceAvailabilityConfigArrayOutput {
+	return o
+}
+
+func (o GetInstancesInstanceAvailabilityConfigArrayOutput) Index(i pulumi.IntInput) GetInstancesInstanceAvailabilityConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstancesInstanceAvailabilityConfig {
+		return vs[0].([]GetInstancesInstanceAvailabilityConfig)[vs[1].(int)]
+	}).(GetInstancesInstanceAvailabilityConfigOutput)
+}
+
 type GetInstancesInstanceCreateVnicDetail struct {
 	AssignIpv6ip           bool   `pulumi:"assignIpv6ip"`
 	AssignPrivateDnsRecord bool   `pulumi:"assignPrivateDnsRecord"`
@@ -2378,6 +4535,9 @@ func (o GetIpsecConfigTunnelArrayOutput) Index(i pulumi.IntInput) GetIpsecConfig
 }
 
 type GetIpsecConnectionTunnelBgpSessionInfo struct {
+	// The state of the BGP IPv6 session.
+	BgpIpv6State string `pulumi:"bgpIpv6State"`
+	// Deprecated: The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.
 	BgpIpv6state string `pulumi:"bgpIpv6state"`
 	// the state of the BGP.
 	BgpState string `pulumi:"bgpState"`
@@ -2385,10 +4545,14 @@ type GetIpsecConnectionTunnelBgpSessionInfo struct {
 	CustomerBgpAsn string `pulumi:"customerBgpAsn"`
 	// This is the IPv4 Address used in the BGP peering session for the non-Oracle router. Example: 10.0.0.2/31
 	CustomerInterfaceIp string `pulumi:"customerInterfaceIp"`
+	// The IPv6 address for the CPE end of the inside tunnel interface.
+	CustomerInterfaceIpv6 string `pulumi:"customerInterfaceIpv6"`
 	// This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
 	OracleBgpAsn string `pulumi:"oracleBgpAsn"`
 	// This is the IPv4 Address used in the BGP peering session for the Oracle router. Example: 10.0.0.1/31
 	OracleInterfaceIp string `pulumi:"oracleInterfaceIp"`
+	// The IPv6 address for the Oracle end of the inside tunnel interface.
+	OracleInterfaceIpv6 string `pulumi:"oracleInterfaceIpv6"`
 }
 
 // GetIpsecConnectionTunnelBgpSessionInfoInput is an input type that accepts GetIpsecConnectionTunnelBgpSessionInfoArgs and GetIpsecConnectionTunnelBgpSessionInfoOutput values.
@@ -2403,6 +4567,9 @@ type GetIpsecConnectionTunnelBgpSessionInfoInput interface {
 }
 
 type GetIpsecConnectionTunnelBgpSessionInfoArgs struct {
+	// The state of the BGP IPv6 session.
+	BgpIpv6State pulumi.StringInput `pulumi:"bgpIpv6State"`
+	// Deprecated: The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.
 	BgpIpv6state pulumi.StringInput `pulumi:"bgpIpv6state"`
 	// the state of the BGP.
 	BgpState pulumi.StringInput `pulumi:"bgpState"`
@@ -2410,10 +4577,14 @@ type GetIpsecConnectionTunnelBgpSessionInfoArgs struct {
 	CustomerBgpAsn pulumi.StringInput `pulumi:"customerBgpAsn"`
 	// This is the IPv4 Address used in the BGP peering session for the non-Oracle router. Example: 10.0.0.2/31
 	CustomerInterfaceIp pulumi.StringInput `pulumi:"customerInterfaceIp"`
+	// The IPv6 address for the CPE end of the inside tunnel interface.
+	CustomerInterfaceIpv6 pulumi.StringInput `pulumi:"customerInterfaceIpv6"`
 	// This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
 	OracleBgpAsn pulumi.StringInput `pulumi:"oracleBgpAsn"`
 	// This is the IPv4 Address used in the BGP peering session for the Oracle router. Example: 10.0.0.1/31
 	OracleInterfaceIp pulumi.StringInput `pulumi:"oracleInterfaceIp"`
+	// The IPv6 address for the Oracle end of the inside tunnel interface.
+	OracleInterfaceIpv6 pulumi.StringInput `pulumi:"oracleInterfaceIpv6"`
 }
 
 func (GetIpsecConnectionTunnelBgpSessionInfoArgs) ElementType() reflect.Type {
@@ -2467,6 +4638,12 @@ func (o GetIpsecConnectionTunnelBgpSessionInfoOutput) ToGetIpsecConnectionTunnel
 	return o
 }
 
+// The state of the BGP IPv6 session.
+func (o GetIpsecConnectionTunnelBgpSessionInfoOutput) BgpIpv6State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelBgpSessionInfo) string { return v.BgpIpv6State }).(pulumi.StringOutput)
+}
+
+// Deprecated: The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.
 func (o GetIpsecConnectionTunnelBgpSessionInfoOutput) BgpIpv6state() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelBgpSessionInfo) string { return v.BgpIpv6state }).(pulumi.StringOutput)
 }
@@ -2486,6 +4663,11 @@ func (o GetIpsecConnectionTunnelBgpSessionInfoOutput) CustomerInterfaceIp() pulu
 	return o.ApplyT(func(v GetIpsecConnectionTunnelBgpSessionInfo) string { return v.CustomerInterfaceIp }).(pulumi.StringOutput)
 }
 
+// The IPv6 address for the CPE end of the inside tunnel interface.
+func (o GetIpsecConnectionTunnelBgpSessionInfoOutput) CustomerInterfaceIpv6() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelBgpSessionInfo) string { return v.CustomerInterfaceIpv6 }).(pulumi.StringOutput)
+}
+
 // This is the value of the Oracle Bgp ASN in asplain format, as a string. Example: 1587232876 (4 byte ASN) or 12345 (2 byte ASN)
 func (o GetIpsecConnectionTunnelBgpSessionInfoOutput) OracleBgpAsn() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelBgpSessionInfo) string { return v.OracleBgpAsn }).(pulumi.StringOutput)
@@ -2494,6 +4676,11 @@ func (o GetIpsecConnectionTunnelBgpSessionInfoOutput) OracleBgpAsn() pulumi.Stri
 // This is the IPv4 Address used in the BGP peering session for the Oracle router. Example: 10.0.0.1/31
 func (o GetIpsecConnectionTunnelBgpSessionInfoOutput) OracleInterfaceIp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelBgpSessionInfo) string { return v.OracleInterfaceIp }).(pulumi.StringOutput)
+}
+
+// The IPv6 address for the Oracle end of the inside tunnel interface.
+func (o GetIpsecConnectionTunnelBgpSessionInfoOutput) OracleInterfaceIpv6() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelBgpSessionInfo) string { return v.OracleInterfaceIpv6 }).(pulumi.StringOutput)
 }
 
 type GetIpsecConnectionTunnelBgpSessionInfoArrayOutput struct{ *pulumi.OutputState }
@@ -2514,6 +4701,112 @@ func (o GetIpsecConnectionTunnelBgpSessionInfoArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelBgpSessionInfo {
 		return vs[0].([]GetIpsecConnectionTunnelBgpSessionInfo)[vs[1].(int)]
 	}).(GetIpsecConnectionTunnelBgpSessionInfoOutput)
+}
+
+type GetIpsecConnectionTunnelDpdConfig struct {
+	// Dead peer detection (DPD) mode set on the Oracle side of the connection.
+	DpdMode string `pulumi:"dpdMode"`
+	// DPD timeout in seconds.
+	DpdTimeoutInSec int `pulumi:"dpdTimeoutInSec"`
+}
+
+// GetIpsecConnectionTunnelDpdConfigInput is an input type that accepts GetIpsecConnectionTunnelDpdConfigArgs and GetIpsecConnectionTunnelDpdConfigOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelDpdConfigInput` via:
+//
+//	GetIpsecConnectionTunnelDpdConfigArgs{...}
+type GetIpsecConnectionTunnelDpdConfigInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelDpdConfigOutput() GetIpsecConnectionTunnelDpdConfigOutput
+	ToGetIpsecConnectionTunnelDpdConfigOutputWithContext(context.Context) GetIpsecConnectionTunnelDpdConfigOutput
+}
+
+type GetIpsecConnectionTunnelDpdConfigArgs struct {
+	// Dead peer detection (DPD) mode set on the Oracle side of the connection.
+	DpdMode pulumi.StringInput `pulumi:"dpdMode"`
+	// DPD timeout in seconds.
+	DpdTimeoutInSec pulumi.IntInput `pulumi:"dpdTimeoutInSec"`
+}
+
+func (GetIpsecConnectionTunnelDpdConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelDpdConfig)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelDpdConfigArgs) ToGetIpsecConnectionTunnelDpdConfigOutput() GetIpsecConnectionTunnelDpdConfigOutput {
+	return i.ToGetIpsecConnectionTunnelDpdConfigOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelDpdConfigArgs) ToGetIpsecConnectionTunnelDpdConfigOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelDpdConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelDpdConfigOutput)
+}
+
+// GetIpsecConnectionTunnelDpdConfigArrayInput is an input type that accepts GetIpsecConnectionTunnelDpdConfigArray and GetIpsecConnectionTunnelDpdConfigArrayOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelDpdConfigArrayInput` via:
+//
+//	GetIpsecConnectionTunnelDpdConfigArray{ GetIpsecConnectionTunnelDpdConfigArgs{...} }
+type GetIpsecConnectionTunnelDpdConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelDpdConfigArrayOutput() GetIpsecConnectionTunnelDpdConfigArrayOutput
+	ToGetIpsecConnectionTunnelDpdConfigArrayOutputWithContext(context.Context) GetIpsecConnectionTunnelDpdConfigArrayOutput
+}
+
+type GetIpsecConnectionTunnelDpdConfigArray []GetIpsecConnectionTunnelDpdConfigInput
+
+func (GetIpsecConnectionTunnelDpdConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelDpdConfig)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelDpdConfigArray) ToGetIpsecConnectionTunnelDpdConfigArrayOutput() GetIpsecConnectionTunnelDpdConfigArrayOutput {
+	return i.ToGetIpsecConnectionTunnelDpdConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelDpdConfigArray) ToGetIpsecConnectionTunnelDpdConfigArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelDpdConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelDpdConfigArrayOutput)
+}
+
+type GetIpsecConnectionTunnelDpdConfigOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelDpdConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelDpdConfig)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelDpdConfigOutput) ToGetIpsecConnectionTunnelDpdConfigOutput() GetIpsecConnectionTunnelDpdConfigOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelDpdConfigOutput) ToGetIpsecConnectionTunnelDpdConfigOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelDpdConfigOutput {
+	return o
+}
+
+// Dead peer detection (DPD) mode set on the Oracle side of the connection.
+func (o GetIpsecConnectionTunnelDpdConfigOutput) DpdMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelDpdConfig) string { return v.DpdMode }).(pulumi.StringOutput)
+}
+
+// DPD timeout in seconds.
+func (o GetIpsecConnectionTunnelDpdConfigOutput) DpdTimeoutInSec() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelDpdConfig) int { return v.DpdTimeoutInSec }).(pulumi.IntOutput)
+}
+
+type GetIpsecConnectionTunnelDpdConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelDpdConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelDpdConfig)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelDpdConfigArrayOutput) ToGetIpsecConnectionTunnelDpdConfigArrayOutput() GetIpsecConnectionTunnelDpdConfigArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelDpdConfigArrayOutput) ToGetIpsecConnectionTunnelDpdConfigArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelDpdConfigArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelDpdConfigArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionTunnelDpdConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelDpdConfig {
+		return vs[0].([]GetIpsecConnectionTunnelDpdConfig)[vs[1].(int)]
+	}).(GetIpsecConnectionTunnelDpdConfigOutput)
 }
 
 type GetIpsecConnectionTunnelEncryptionDomainConfig struct {
@@ -2620,6 +4913,407 @@ func (o GetIpsecConnectionTunnelEncryptionDomainConfigArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelEncryptionDomainConfig {
 		return vs[0].([]GetIpsecConnectionTunnelEncryptionDomainConfig)[vs[1].(int)]
 	}).(GetIpsecConnectionTunnelEncryptionDomainConfigOutput)
+}
+
+type GetIpsecConnectionTunnelPhaseOneDetail struct {
+	// Phase two authentication algorithm proposed during tunnel negotiation.
+	CustomAuthenticationAlgorithm string `pulumi:"customAuthenticationAlgorithm"`
+	// The proposed custom Diffie-Hellman group.
+	CustomDhGroup string `pulumi:"customDhGroup"`
+	// The proposed custom phase two encryption algorithm.
+	CustomEncryptionAlgorithm string `pulumi:"customEncryptionAlgorithm"`
+	// Indicates whether custom phase one configuration is enabled. If this option is not enabled, default settings are proposed.
+	IsCustomPhaseOneConfig bool `pulumi:"isCustomPhaseOneConfig"`
+	// Indicates whether IKE phase one is established.
+	IsIkeEstablished bool `pulumi:"isIkeEstablished"`
+	// The total configured lifetime of the IKE security association.
+	Lifetime int `pulumi:"lifetime"`
+	// The negotiated phase two authentication algorithm.
+	NegotiatedAuthenticationAlgorithm string `pulumi:"negotiatedAuthenticationAlgorithm"`
+	// The negotiated Diffie-Hellman group.
+	NegotiatedDhGroup string `pulumi:"negotiatedDhGroup"`
+	// The negotiated encryption algorithm.
+	NegotiatedEncryptionAlgorithm string `pulumi:"negotiatedEncryptionAlgorithm"`
+	// Deprecated: The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.
+	RemainingLifetime string `pulumi:"remainingLifetime"`
+	// The remaining lifetime before the key is refreshed.
+	RemainingLifetimeInt int `pulumi:"remainingLifetimeInt"`
+	// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	RemainingLifetimeLastRetrieved string `pulumi:"remainingLifetimeLastRetrieved"`
+}
+
+// GetIpsecConnectionTunnelPhaseOneDetailInput is an input type that accepts GetIpsecConnectionTunnelPhaseOneDetailArgs and GetIpsecConnectionTunnelPhaseOneDetailOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelPhaseOneDetailInput` via:
+//
+//	GetIpsecConnectionTunnelPhaseOneDetailArgs{...}
+type GetIpsecConnectionTunnelPhaseOneDetailInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelPhaseOneDetailOutput() GetIpsecConnectionTunnelPhaseOneDetailOutput
+	ToGetIpsecConnectionTunnelPhaseOneDetailOutputWithContext(context.Context) GetIpsecConnectionTunnelPhaseOneDetailOutput
+}
+
+type GetIpsecConnectionTunnelPhaseOneDetailArgs struct {
+	// Phase two authentication algorithm proposed during tunnel negotiation.
+	CustomAuthenticationAlgorithm pulumi.StringInput `pulumi:"customAuthenticationAlgorithm"`
+	// The proposed custom Diffie-Hellman group.
+	CustomDhGroup pulumi.StringInput `pulumi:"customDhGroup"`
+	// The proposed custom phase two encryption algorithm.
+	CustomEncryptionAlgorithm pulumi.StringInput `pulumi:"customEncryptionAlgorithm"`
+	// Indicates whether custom phase one configuration is enabled. If this option is not enabled, default settings are proposed.
+	IsCustomPhaseOneConfig pulumi.BoolInput `pulumi:"isCustomPhaseOneConfig"`
+	// Indicates whether IKE phase one is established.
+	IsIkeEstablished pulumi.BoolInput `pulumi:"isIkeEstablished"`
+	// The total configured lifetime of the IKE security association.
+	Lifetime pulumi.IntInput `pulumi:"lifetime"`
+	// The negotiated phase two authentication algorithm.
+	NegotiatedAuthenticationAlgorithm pulumi.StringInput `pulumi:"negotiatedAuthenticationAlgorithm"`
+	// The negotiated Diffie-Hellman group.
+	NegotiatedDhGroup pulumi.StringInput `pulumi:"negotiatedDhGroup"`
+	// The negotiated encryption algorithm.
+	NegotiatedEncryptionAlgorithm pulumi.StringInput `pulumi:"negotiatedEncryptionAlgorithm"`
+	// Deprecated: The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.
+	RemainingLifetime pulumi.StringInput `pulumi:"remainingLifetime"`
+	// The remaining lifetime before the key is refreshed.
+	RemainingLifetimeInt pulumi.IntInput `pulumi:"remainingLifetimeInt"`
+	// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	RemainingLifetimeLastRetrieved pulumi.StringInput `pulumi:"remainingLifetimeLastRetrieved"`
+}
+
+func (GetIpsecConnectionTunnelPhaseOneDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelPhaseOneDetail)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelPhaseOneDetailArgs) ToGetIpsecConnectionTunnelPhaseOneDetailOutput() GetIpsecConnectionTunnelPhaseOneDetailOutput {
+	return i.ToGetIpsecConnectionTunnelPhaseOneDetailOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelPhaseOneDetailArgs) ToGetIpsecConnectionTunnelPhaseOneDetailOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelPhaseOneDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelPhaseOneDetailOutput)
+}
+
+// GetIpsecConnectionTunnelPhaseOneDetailArrayInput is an input type that accepts GetIpsecConnectionTunnelPhaseOneDetailArray and GetIpsecConnectionTunnelPhaseOneDetailArrayOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelPhaseOneDetailArrayInput` via:
+//
+//	GetIpsecConnectionTunnelPhaseOneDetailArray{ GetIpsecConnectionTunnelPhaseOneDetailArgs{...} }
+type GetIpsecConnectionTunnelPhaseOneDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelPhaseOneDetailArrayOutput() GetIpsecConnectionTunnelPhaseOneDetailArrayOutput
+	ToGetIpsecConnectionTunnelPhaseOneDetailArrayOutputWithContext(context.Context) GetIpsecConnectionTunnelPhaseOneDetailArrayOutput
+}
+
+type GetIpsecConnectionTunnelPhaseOneDetailArray []GetIpsecConnectionTunnelPhaseOneDetailInput
+
+func (GetIpsecConnectionTunnelPhaseOneDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelPhaseOneDetail)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelPhaseOneDetailArray) ToGetIpsecConnectionTunnelPhaseOneDetailArrayOutput() GetIpsecConnectionTunnelPhaseOneDetailArrayOutput {
+	return i.ToGetIpsecConnectionTunnelPhaseOneDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelPhaseOneDetailArray) ToGetIpsecConnectionTunnelPhaseOneDetailArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelPhaseOneDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelPhaseOneDetailArrayOutput)
+}
+
+type GetIpsecConnectionTunnelPhaseOneDetailOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelPhaseOneDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelPhaseOneDetail)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) ToGetIpsecConnectionTunnelPhaseOneDetailOutput() GetIpsecConnectionTunnelPhaseOneDetailOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) ToGetIpsecConnectionTunnelPhaseOneDetailOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelPhaseOneDetailOutput {
+	return o
+}
+
+// Phase two authentication algorithm proposed during tunnel negotiation.
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) CustomAuthenticationAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseOneDetail) string { return v.CustomAuthenticationAlgorithm }).(pulumi.StringOutput)
+}
+
+// The proposed custom Diffie-Hellman group.
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) CustomDhGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseOneDetail) string { return v.CustomDhGroup }).(pulumi.StringOutput)
+}
+
+// The proposed custom phase two encryption algorithm.
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) CustomEncryptionAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseOneDetail) string { return v.CustomEncryptionAlgorithm }).(pulumi.StringOutput)
+}
+
+// Indicates whether custom phase one configuration is enabled. If this option is not enabled, default settings are proposed.
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) IsCustomPhaseOneConfig() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseOneDetail) bool { return v.IsCustomPhaseOneConfig }).(pulumi.BoolOutput)
+}
+
+// Indicates whether IKE phase one is established.
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) IsIkeEstablished() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseOneDetail) bool { return v.IsIkeEstablished }).(pulumi.BoolOutput)
+}
+
+// The total configured lifetime of the IKE security association.
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) Lifetime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseOneDetail) int { return v.Lifetime }).(pulumi.IntOutput)
+}
+
+// The negotiated phase two authentication algorithm.
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) NegotiatedAuthenticationAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseOneDetail) string { return v.NegotiatedAuthenticationAlgorithm }).(pulumi.StringOutput)
+}
+
+// The negotiated Diffie-Hellman group.
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) NegotiatedDhGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseOneDetail) string { return v.NegotiatedDhGroup }).(pulumi.StringOutput)
+}
+
+// The negotiated encryption algorithm.
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) NegotiatedEncryptionAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseOneDetail) string { return v.NegotiatedEncryptionAlgorithm }).(pulumi.StringOutput)
+}
+
+// Deprecated: The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) RemainingLifetime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseOneDetail) string { return v.RemainingLifetime }).(pulumi.StringOutput)
+}
+
+// The remaining lifetime before the key is refreshed.
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) RemainingLifetimeInt() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseOneDetail) int { return v.RemainingLifetimeInt }).(pulumi.IntOutput)
+}
+
+// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetIpsecConnectionTunnelPhaseOneDetailOutput) RemainingLifetimeLastRetrieved() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseOneDetail) string { return v.RemainingLifetimeLastRetrieved }).(pulumi.StringOutput)
+}
+
+type GetIpsecConnectionTunnelPhaseOneDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelPhaseOneDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelPhaseOneDetail)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelPhaseOneDetailArrayOutput) ToGetIpsecConnectionTunnelPhaseOneDetailArrayOutput() GetIpsecConnectionTunnelPhaseOneDetailArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelPhaseOneDetailArrayOutput) ToGetIpsecConnectionTunnelPhaseOneDetailArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelPhaseOneDetailArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelPhaseOneDetailArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionTunnelPhaseOneDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelPhaseOneDetail {
+		return vs[0].([]GetIpsecConnectionTunnelPhaseOneDetail)[vs[1].(int)]
+	}).(GetIpsecConnectionTunnelPhaseOneDetailOutput)
+}
+
+type GetIpsecConnectionTunnelPhaseTwoDetail struct {
+	// Phase two authentication algorithm proposed during tunnel negotiation.
+	CustomAuthenticationAlgorithm string `pulumi:"customAuthenticationAlgorithm"`
+	// The proposed custom phase two encryption algorithm.
+	CustomEncryptionAlgorithm string `pulumi:"customEncryptionAlgorithm"`
+	// The proposed Diffie-Hellman group.
+	DhGroup string `pulumi:"dhGroup"`
+	// Indicates whether custom phase two configuration is enabled. If this option is not enabled, default settings are proposed.
+	IsCustomPhaseTwoConfig bool `pulumi:"isCustomPhaseTwoConfig"`
+	// Indicates that ESP phase two is established.
+	IsEspEstablished bool `pulumi:"isEspEstablished"`
+	// Indicates that PFS (perfect forward secrecy) is enabled.
+	IsPfsEnabled bool `pulumi:"isPfsEnabled"`
+	// The total configured lifetime of the IKE security association.
+	Lifetime int `pulumi:"lifetime"`
+	// The negotiated phase two authentication algorithm.
+	NegotiatedAuthenticationAlgorithm string `pulumi:"negotiatedAuthenticationAlgorithm"`
+	// The negotiated Diffie-Hellman group.
+	NegotiatedDhGroup string `pulumi:"negotiatedDhGroup"`
+	// The negotiated encryption algorithm.
+	NegotiatedEncryptionAlgorithm string `pulumi:"negotiatedEncryptionAlgorithm"`
+	// Deprecated: The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.
+	RemainingLifetime string `pulumi:"remainingLifetime"`
+	// The remaining lifetime before the key is refreshed.
+	RemainingLifetimeInt int `pulumi:"remainingLifetimeInt"`
+	// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	RemainingLifetimeLastRetrieved string `pulumi:"remainingLifetimeLastRetrieved"`
+}
+
+// GetIpsecConnectionTunnelPhaseTwoDetailInput is an input type that accepts GetIpsecConnectionTunnelPhaseTwoDetailArgs and GetIpsecConnectionTunnelPhaseTwoDetailOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelPhaseTwoDetailInput` via:
+//
+//	GetIpsecConnectionTunnelPhaseTwoDetailArgs{...}
+type GetIpsecConnectionTunnelPhaseTwoDetailInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelPhaseTwoDetailOutput() GetIpsecConnectionTunnelPhaseTwoDetailOutput
+	ToGetIpsecConnectionTunnelPhaseTwoDetailOutputWithContext(context.Context) GetIpsecConnectionTunnelPhaseTwoDetailOutput
+}
+
+type GetIpsecConnectionTunnelPhaseTwoDetailArgs struct {
+	// Phase two authentication algorithm proposed during tunnel negotiation.
+	CustomAuthenticationAlgorithm pulumi.StringInput `pulumi:"customAuthenticationAlgorithm"`
+	// The proposed custom phase two encryption algorithm.
+	CustomEncryptionAlgorithm pulumi.StringInput `pulumi:"customEncryptionAlgorithm"`
+	// The proposed Diffie-Hellman group.
+	DhGroup pulumi.StringInput `pulumi:"dhGroup"`
+	// Indicates whether custom phase two configuration is enabled. If this option is not enabled, default settings are proposed.
+	IsCustomPhaseTwoConfig pulumi.BoolInput `pulumi:"isCustomPhaseTwoConfig"`
+	// Indicates that ESP phase two is established.
+	IsEspEstablished pulumi.BoolInput `pulumi:"isEspEstablished"`
+	// Indicates that PFS (perfect forward secrecy) is enabled.
+	IsPfsEnabled pulumi.BoolInput `pulumi:"isPfsEnabled"`
+	// The total configured lifetime of the IKE security association.
+	Lifetime pulumi.IntInput `pulumi:"lifetime"`
+	// The negotiated phase two authentication algorithm.
+	NegotiatedAuthenticationAlgorithm pulumi.StringInput `pulumi:"negotiatedAuthenticationAlgorithm"`
+	// The negotiated Diffie-Hellman group.
+	NegotiatedDhGroup pulumi.StringInput `pulumi:"negotiatedDhGroup"`
+	// The negotiated encryption algorithm.
+	NegotiatedEncryptionAlgorithm pulumi.StringInput `pulumi:"negotiatedEncryptionAlgorithm"`
+	// Deprecated: The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.
+	RemainingLifetime pulumi.StringInput `pulumi:"remainingLifetime"`
+	// The remaining lifetime before the key is refreshed.
+	RemainingLifetimeInt pulumi.IntInput `pulumi:"remainingLifetimeInt"`
+	// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	RemainingLifetimeLastRetrieved pulumi.StringInput `pulumi:"remainingLifetimeLastRetrieved"`
+}
+
+func (GetIpsecConnectionTunnelPhaseTwoDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelPhaseTwoDetail)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelPhaseTwoDetailArgs) ToGetIpsecConnectionTunnelPhaseTwoDetailOutput() GetIpsecConnectionTunnelPhaseTwoDetailOutput {
+	return i.ToGetIpsecConnectionTunnelPhaseTwoDetailOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelPhaseTwoDetailArgs) ToGetIpsecConnectionTunnelPhaseTwoDetailOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelPhaseTwoDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelPhaseTwoDetailOutput)
+}
+
+// GetIpsecConnectionTunnelPhaseTwoDetailArrayInput is an input type that accepts GetIpsecConnectionTunnelPhaseTwoDetailArray and GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelPhaseTwoDetailArrayInput` via:
+//
+//	GetIpsecConnectionTunnelPhaseTwoDetailArray{ GetIpsecConnectionTunnelPhaseTwoDetailArgs{...} }
+type GetIpsecConnectionTunnelPhaseTwoDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelPhaseTwoDetailArrayOutput() GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput
+	ToGetIpsecConnectionTunnelPhaseTwoDetailArrayOutputWithContext(context.Context) GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput
+}
+
+type GetIpsecConnectionTunnelPhaseTwoDetailArray []GetIpsecConnectionTunnelPhaseTwoDetailInput
+
+func (GetIpsecConnectionTunnelPhaseTwoDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelPhaseTwoDetail)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelPhaseTwoDetailArray) ToGetIpsecConnectionTunnelPhaseTwoDetailArrayOutput() GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput {
+	return i.ToGetIpsecConnectionTunnelPhaseTwoDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelPhaseTwoDetailArray) ToGetIpsecConnectionTunnelPhaseTwoDetailArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput)
+}
+
+type GetIpsecConnectionTunnelPhaseTwoDetailOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelPhaseTwoDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelPhaseTwoDetail)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) ToGetIpsecConnectionTunnelPhaseTwoDetailOutput() GetIpsecConnectionTunnelPhaseTwoDetailOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) ToGetIpsecConnectionTunnelPhaseTwoDetailOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelPhaseTwoDetailOutput {
+	return o
+}
+
+// Phase two authentication algorithm proposed during tunnel negotiation.
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) CustomAuthenticationAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) string { return v.CustomAuthenticationAlgorithm }).(pulumi.StringOutput)
+}
+
+// The proposed custom phase two encryption algorithm.
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) CustomEncryptionAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) string { return v.CustomEncryptionAlgorithm }).(pulumi.StringOutput)
+}
+
+// The proposed Diffie-Hellman group.
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) DhGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) string { return v.DhGroup }).(pulumi.StringOutput)
+}
+
+// Indicates whether custom phase two configuration is enabled. If this option is not enabled, default settings are proposed.
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) IsCustomPhaseTwoConfig() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) bool { return v.IsCustomPhaseTwoConfig }).(pulumi.BoolOutput)
+}
+
+// Indicates that ESP phase two is established.
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) IsEspEstablished() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) bool { return v.IsEspEstablished }).(pulumi.BoolOutput)
+}
+
+// Indicates that PFS (perfect forward secrecy) is enabled.
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) IsPfsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) bool { return v.IsPfsEnabled }).(pulumi.BoolOutput)
+}
+
+// The total configured lifetime of the IKE security association.
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) Lifetime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) int { return v.Lifetime }).(pulumi.IntOutput)
+}
+
+// The negotiated phase two authentication algorithm.
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) NegotiatedAuthenticationAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) string { return v.NegotiatedAuthenticationAlgorithm }).(pulumi.StringOutput)
+}
+
+// The negotiated Diffie-Hellman group.
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) NegotiatedDhGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) string { return v.NegotiatedDhGroup }).(pulumi.StringOutput)
+}
+
+// The negotiated encryption algorithm.
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) NegotiatedEncryptionAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) string { return v.NegotiatedEncryptionAlgorithm }).(pulumi.StringOutput)
+}
+
+// Deprecated: The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) RemainingLifetime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) string { return v.RemainingLifetime }).(pulumi.StringOutput)
+}
+
+// The remaining lifetime before the key is refreshed.
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) RemainingLifetimeInt() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) int { return v.RemainingLifetimeInt }).(pulumi.IntOutput)
+}
+
+// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetIpsecConnectionTunnelPhaseTwoDetailOutput) RemainingLifetimeLastRetrieved() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelPhaseTwoDetail) string { return v.RemainingLifetimeLastRetrieved }).(pulumi.StringOutput)
+}
+
+type GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelPhaseTwoDetail)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput) ToGetIpsecConnectionTunnelPhaseTwoDetailArrayOutput() GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput) ToGetIpsecConnectionTunnelPhaseTwoDetailArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionTunnelPhaseTwoDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelPhaseTwoDetail {
+		return vs[0].([]GetIpsecConnectionTunnelPhaseTwoDetail)[vs[1].(int)]
+	}).(GetIpsecConnectionTunnelPhaseTwoDetailOutput)
 }
 
 type GetIpsecConnectionTunnelRoutesFilter struct {
@@ -2977,7 +5671,8 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnel struct {
 	// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
 	CpeIp string `pulumi:"cpeIp"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName string                                                    `pulumi:"displayName"`
+	DpdConfigs  []GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig `pulumi:"dpdConfigs"`
 	// Dead peer detection (DPD) mode set on the Oracle side of the connection. This mode sets whether Oracle can only respond to a request from the CPE device to start DPD, or both respond to and initiate requests.
 	DpdMode string `pulumi:"dpdMode"`
 	// DPD timeout in seconds.
@@ -2988,6 +5683,8 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnel struct {
 	Id string `pulumi:"id"`
 	// Internet Key Exchange protocol version.
 	IkeVersion string `pulumi:"ikeVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+	IpsecId string `pulumi:"ipsecId"`
 	// By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
 	NatTranslationEnabled string `pulumi:"natTranslationEnabled"`
 	// Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
@@ -2997,7 +5694,8 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnel struct {
 	// IPsec tunnel detail information specific to phase two.
 	PhaseTwoDetails []GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail `pulumi:"phaseTwoDetails"`
 	// The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
-	Routing string `pulumi:"routing"`
+	Routing      string `pulumi:"routing"`
+	SharedSecret string `pulumi:"sharedSecret"`
 	// The tunnel's lifecycle state.
 	State string `pulumi:"state"`
 	// The status of the tunnel based on IPSec protocol characteristics.
@@ -3006,6 +5704,7 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnel struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// When the status of the IPSec tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeStatusUpdated string `pulumi:"timeStatusUpdated"`
+	TunnelId          string `pulumi:"tunnelId"`
 	// The IP address of the Oracle VPN headend for the connection.  Example: `203.0.113.21`
 	VpnIp string `pulumi:"vpnIp"`
 }
@@ -3031,7 +5730,8 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnelArgs struct {
 	// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
 	CpeIp pulumi.StringInput `pulumi:"cpeIp"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringInput                                                `pulumi:"displayName"`
+	DpdConfigs  GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayInput `pulumi:"dpdConfigs"`
 	// Dead peer detection (DPD) mode set on the Oracle side of the connection. This mode sets whether Oracle can only respond to a request from the CPE device to start DPD, or both respond to and initiate requests.
 	DpdMode pulumi.StringInput `pulumi:"dpdMode"`
 	// DPD timeout in seconds.
@@ -3042,6 +5742,8 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnelArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Internet Key Exchange protocol version.
 	IkeVersion pulumi.StringInput `pulumi:"ikeVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+	IpsecId pulumi.StringInput `pulumi:"ipsecId"`
 	// By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
 	NatTranslationEnabled pulumi.StringInput `pulumi:"natTranslationEnabled"`
 	// Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
@@ -3051,7 +5753,8 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnelArgs struct {
 	// IPsec tunnel detail information specific to phase two.
 	PhaseTwoDetails GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArrayInput `pulumi:"phaseTwoDetails"`
 	// The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
-	Routing pulumi.StringInput `pulumi:"routing"`
+	Routing      pulumi.StringInput `pulumi:"routing"`
+	SharedSecret pulumi.StringInput `pulumi:"sharedSecret"`
 	// The tunnel's lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// The status of the tunnel based on IPSec protocol characteristics.
@@ -3060,6 +5763,7 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnelArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// When the status of the IPSec tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeStatusUpdated pulumi.StringInput `pulumi:"timeStatusUpdated"`
+	TunnelId          pulumi.StringInput `pulumi:"tunnelId"`
 	// The IP address of the Oracle VPN headend for the connection.  Example: `203.0.113.21`
 	VpnIp pulumi.StringInput `pulumi:"vpnIp"`
 }
@@ -3142,6 +5846,12 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelOutput) DisplayName() pulu
 	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnel) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelOutput) DpdConfigs() GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnel) []GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig {
+		return v.DpdConfigs
+	}).(GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput)
+}
+
 // Dead peer detection (DPD) mode set on the Oracle side of the connection. This mode sets whether Oracle can only respond to a request from the CPE device to start DPD, or both respond to and initiate requests.
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelOutput) DpdMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnel) string { return v.DpdMode }).(pulumi.StringOutput)
@@ -3167,6 +5877,11 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelOutput) Id() pulumi.String
 // Internet Key Exchange protocol version.
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelOutput) IkeVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnel) string { return v.IkeVersion }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec connection.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelOutput) IpsecId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnel) string { return v.IpsecId }).(pulumi.StringOutput)
 }
 
 // By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
@@ -3198,6 +5913,10 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelOutput) Routing() pulumi.S
 	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnel) string { return v.Routing }).(pulumi.StringOutput)
 }
 
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelOutput) SharedSecret() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnel) string { return v.SharedSecret }).(pulumi.StringOutput)
+}
+
 // The tunnel's lifecycle state.
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnel) string { return v.State }).(pulumi.StringOutput)
@@ -3216,6 +5935,10 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelOutput) TimeCreated() pulu
 // When the status of the IPSec tunnel last changed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelOutput) TimeStatusUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnel) string { return v.TimeStatusUpdated }).(pulumi.StringOutput)
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelOutput) TunnelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnel) string { return v.TunnelId }).(pulumi.StringOutput)
 }
 
 // The IP address of the Oracle VPN headend for the connection.  Example: `203.0.113.21`
@@ -3245,6 +5968,8 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelArrayOutput) Index(i pulum
 
 type GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo struct {
 	// The state of the BGP IPv6 session.
+	BgpIpv6State string `pulumi:"bgpIpv6State"`
+	// Deprecated: The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.
 	BgpIpv6state string `pulumi:"bgpIpv6state"`
 	// The state of the BGP session.
 	BgpState string `pulumi:"bgpState"`
@@ -3275,6 +6000,8 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoInput interface
 
 type GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArgs struct {
 	// The state of the BGP IPv6 session.
+	BgpIpv6State pulumi.StringInput `pulumi:"bgpIpv6State"`
+	// Deprecated: The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.
 	BgpIpv6state pulumi.StringInput `pulumi:"bgpIpv6state"`
 	// The state of the BGP session.
 	BgpState pulumi.StringInput `pulumi:"bgpState"`
@@ -3344,6 +6071,11 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) ToGe
 }
 
 // The state of the BGP IPv6 session.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) BgpIpv6State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo) string { return v.BgpIpv6State }).(pulumi.StringOutput)
+}
+
+// Deprecated: The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput) BgpIpv6state() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo) string { return v.BgpIpv6state }).(pulumi.StringOutput)
 }
@@ -3409,6 +6141,112 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput)
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo {
 		return vs[0].([]GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo)[vs[1].(int)]
 	}).(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig struct {
+	// Dead peer detection (DPD) mode set on the Oracle side of the connection. This mode sets whether Oracle can only respond to a request from the CPE device to start DPD, or both respond to and initiate requests.
+	DpdMode string `pulumi:"dpdMode"`
+	// DPD timeout in seconds.
+	DpdTimeoutInSec int `pulumi:"dpdTimeoutInSec"`
+}
+
+// GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArgs and GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigInput` via:
+//
+//	GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArgs{...}
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutputWithContext(context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArgs struct {
+	// Dead peer detection (DPD) mode set on the Oracle side of the connection. This mode sets whether Oracle can only respond to a request from the CPE device to start DPD, or both respond to and initiate requests.
+	DpdMode pulumi.StringInput `pulumi:"dpdMode"`
+	// DPD timeout in seconds.
+	DpdTimeoutInSec pulumi.IntInput `pulumi:"dpdTimeoutInSec"`
+}
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArgs) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput {
+	return i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArgs) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput)
+}
+
+// GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayInput is an input type that accepts GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArray and GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput values.
+// You can construct a concrete instance of `GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayInput` via:
+//
+//	GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArray{ GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArgs{...} }
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput
+	ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutputWithContext(context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArray []GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigInput
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig)(nil)).Elem()
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArray) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput {
+	return i.ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArray) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput {
+	return o
+}
+
+// Dead peer detection (DPD) mode set on the Oracle side of the connection. This mode sets whether Oracle can only respond to a request from the CPE device to start DPD, or both respond to and initiate requests.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput) DpdMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig) string { return v.DpdMode }).(pulumi.StringOutput)
+}
+
+// DPD timeout in seconds.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput) DpdTimeoutInSec() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig) int { return v.DpdTimeoutInSec }).(pulumi.IntOutput)
+}
+
+type GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig)(nil)).Elem()
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput() GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput) ToGetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutputWithContext(ctx context.Context) GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput {
+	return o
+}
+
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput) Index(i pulumi.IntInput) GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig {
+		return vs[0].([]GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig)[vs[1].(int)]
+	}).(GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput)
 }
 
 type GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfig struct {
@@ -3540,8 +6378,10 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail struct {
 	NegotiatedDhGroup string `pulumi:"negotiatedDhGroup"`
 	// The negotiated encryption algorithm.
 	NegotiatedEncryptionAlgorithm string `pulumi:"negotiatedEncryptionAlgorithm"`
-	// The remaining lifetime before the key is refreshed.
+	// Deprecated: The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.
 	RemainingLifetime string `pulumi:"remainingLifetime"`
+	// The remaining lifetime before the key is refreshed.
+	RemainingLifetimeInt int `pulumi:"remainingLifetimeInt"`
 	// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	RemainingLifetimeLastRetrieved string `pulumi:"remainingLifetimeLastRetrieved"`
 }
@@ -3576,8 +6416,10 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArgs struct {
 	NegotiatedDhGroup pulumi.StringInput `pulumi:"negotiatedDhGroup"`
 	// The negotiated encryption algorithm.
 	NegotiatedEncryptionAlgorithm pulumi.StringInput `pulumi:"negotiatedEncryptionAlgorithm"`
-	// The remaining lifetime before the key is refreshed.
+	// Deprecated: The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.
 	RemainingLifetime pulumi.StringInput `pulumi:"remainingLifetime"`
+	// The remaining lifetime before the key is refreshed.
+	RemainingLifetimeInt pulumi.IntInput `pulumi:"remainingLifetimeInt"`
 	// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	RemainingLifetimeLastRetrieved pulumi.StringInput `pulumi:"remainingLifetimeLastRetrieved"`
 }
@@ -3690,11 +6532,18 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) Nego
 	}).(pulumi.StringOutput)
 }
 
-// The remaining lifetime before the key is refreshed.
+// Deprecated: The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) RemainingLifetime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) string {
 		return v.RemainingLifetime
 	}).(pulumi.StringOutput)
+}
+
+// The remaining lifetime before the key is refreshed.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput) RemainingLifetimeInt() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail) int {
+		return v.RemainingLifetimeInt
+	}).(pulumi.IntOutput)
 }
 
 // The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -3745,8 +6594,10 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail struct {
 	NegotiatedDhGroup string `pulumi:"negotiatedDhGroup"`
 	// The negotiated encryption algorithm.
 	NegotiatedEncryptionAlgorithm string `pulumi:"negotiatedEncryptionAlgorithm"`
-	// The remaining lifetime before the key is refreshed.
+	// Deprecated: The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.
 	RemainingLifetime string `pulumi:"remainingLifetime"`
+	// The remaining lifetime before the key is refreshed.
+	RemainingLifetimeInt int `pulumi:"remainingLifetimeInt"`
 	// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	RemainingLifetimeLastRetrieved string `pulumi:"remainingLifetimeLastRetrieved"`
 }
@@ -3783,8 +6634,10 @@ type GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailArgs struct {
 	NegotiatedDhGroup pulumi.StringInput `pulumi:"negotiatedDhGroup"`
 	// The negotiated encryption algorithm.
 	NegotiatedEncryptionAlgorithm pulumi.StringInput `pulumi:"negotiatedEncryptionAlgorithm"`
-	// The remaining lifetime before the key is refreshed.
+	// Deprecated: The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.
 	RemainingLifetime pulumi.StringInput `pulumi:"remainingLifetime"`
+	// The remaining lifetime before the key is refreshed.
+	RemainingLifetimeInt pulumi.IntInput `pulumi:"remainingLifetimeInt"`
 	// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	RemainingLifetimeLastRetrieved pulumi.StringInput `pulumi:"remainingLifetimeLastRetrieved"`
 }
@@ -3902,11 +6755,18 @@ func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) Nego
 	}).(pulumi.StringOutput)
 }
 
-// The remaining lifetime before the key is refreshed.
+// Deprecated: The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.
 func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) RemainingLifetime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) string {
 		return v.RemainingLifetime
 	}).(pulumi.StringOutput)
+}
+
+// The remaining lifetime before the key is refreshed.
+func (o GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailOutput) RemainingLifetimeInt() pulumi.IntOutput {
+	return o.ApplyT(func(v GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetail) int {
+		return v.RemainingLifetimeInt
+	}).(pulumi.IntOutput)
 }
 
 // The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -24815,6 +27675,36 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePreemptibleInstanceConfigInput)(nil)).Elem(), GetInstancePreemptibleInstanceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePreemptibleInstanceConfigArrayInput)(nil)).Elem(), GetInstancePreemptibleInstanceConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePreemptibleInstanceConfigPreemptionActionInput)(nil)).Elem(), GetInstancePreemptibleInstanceConfigPreemptionActionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancePreemptibleInstanceConfigPreemptionActionArrayInput)(nil)).Elem(), GetInstancePreemptibleInstanceConfigPreemptionActionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceShapeConfigInput)(nil)).Elem(), GetInstanceShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceShapeConfigArrayInput)(nil)).Elem(), GetInstanceShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceSourceDetailInput)(nil)).Elem(), GetInstanceSourceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceSourceDetailArrayInput)(nil)).Elem(), GetInstanceSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceSourceDetailInstanceSourceImageFilterDetailInput)(nil)).Elem(), GetInstanceSourceDetailInstanceSourceImageFilterDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayInput)(nil)).Elem(), GetInstanceSourceDetailInstanceSourceImageFilterDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesFilterInput)(nil)).Elem(), GetInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesFilterArrayInput)(nil)).Elem(), GetInstancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceInput)(nil)).Elem(), GetInstancesInstanceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceArrayInput)(nil)).Elem(), GetInstancesInstanceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceAgentConfigInput)(nil)).Elem(), GetInstancesInstanceAgentConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceAgentConfigArrayInput)(nil)).Elem(), GetInstancesInstanceAgentConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceAgentConfigPluginsConfigInput)(nil)).Elem(), GetInstancesInstanceAgentConfigPluginsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceAgentConfigPluginsConfigArrayInput)(nil)).Elem(), GetInstancesInstanceAgentConfigPluginsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceAvailabilityConfigInput)(nil)).Elem(), GetInstancesInstanceAvailabilityConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceAvailabilityConfigArrayInput)(nil)).Elem(), GetInstancesInstanceAvailabilityConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceCreateVnicDetailInput)(nil)).Elem(), GetInstancesInstanceCreateVnicDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceCreateVnicDetailArrayInput)(nil)).Elem(), GetInstancesInstanceCreateVnicDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{})
@@ -24853,8 +27743,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConfigTunnelArrayInput)(nil)).Elem(), GetIpsecConfigTunnelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelBgpSessionInfoInput)(nil)).Elem(), GetIpsecConnectionTunnelBgpSessionInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelBgpSessionInfoArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelBgpSessionInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelDpdConfigInput)(nil)).Elem(), GetIpsecConnectionTunnelDpdConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelDpdConfigArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelDpdConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelEncryptionDomainConfigInput)(nil)).Elem(), GetIpsecConnectionTunnelEncryptionDomainConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelEncryptionDomainConfigArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelEncryptionDomainConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelPhaseOneDetailInput)(nil)).Elem(), GetIpsecConnectionTunnelPhaseOneDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelPhaseOneDetailArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelPhaseOneDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelPhaseTwoDetailInput)(nil)).Elem(), GetIpsecConnectionTunnelPhaseTwoDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelPhaseTwoDetailArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelPhaseTwoDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelRoutesFilterInput)(nil)).Elem(), GetIpsecConnectionTunnelRoutesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelRoutesFilterArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelRoutesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelRoutesTunnelRouteInput)(nil)).Elem(), GetIpsecConnectionTunnelRoutesTunnelRouteArgs{})
@@ -24865,6 +27761,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailInput)(nil)).Elem(), GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailArgs{})
@@ -25181,6 +28079,36 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePreemptibleInstanceConfigOutput{})
+	pulumi.RegisterOutputType(GetInstancePreemptibleInstanceConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancePreemptibleInstanceConfigPreemptionActionOutput{})
+	pulumi.RegisterOutputType(GetInstancePreemptibleInstanceConfigPreemptionActionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceSourceDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceSourceDetailInstanceSourceImageFilterDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceSourceDetailInstanceSourceImageFilterDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetInstancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancesInstanceOutput{})
+	pulumi.RegisterOutputType(GetInstancesInstanceArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancesInstanceAgentConfigOutput{})
+	pulumi.RegisterOutputType(GetInstancesInstanceAgentConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancesInstanceAgentConfigPluginsConfigOutput{})
+	pulumi.RegisterOutputType(GetInstancesInstanceAgentConfigPluginsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstancesInstanceAvailabilityConfigOutput{})
+	pulumi.RegisterOutputType(GetInstancesInstanceAvailabilityConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancesInstanceCreateVnicDetailOutput{})
 	pulumi.RegisterOutputType(GetInstancesInstanceCreateVnicDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput{})
@@ -25219,8 +28147,14 @@ func init() {
 	pulumi.RegisterOutputType(GetIpsecConfigTunnelArrayOutput{})
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelBgpSessionInfoOutput{})
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelBgpSessionInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelDpdConfigOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelDpdConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelEncryptionDomainConfigOutput{})
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelEncryptionDomainConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelPhaseOneDetailOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelPhaseOneDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelPhaseTwoDetailOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelPhaseTwoDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelRoutesFilterOutput{})
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelRoutesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelRoutesTunnelRouteOutput{})
@@ -25231,6 +28165,8 @@ func init() {
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelArrayOutput{})
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoOutput{})
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigOutput{})
+	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigOutput{})
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelEncryptionDomainConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailOutput{})

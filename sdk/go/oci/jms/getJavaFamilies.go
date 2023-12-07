@@ -31,8 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetJavaFamilies(ctx, &jms.GetJavaFamiliesArgs{
-//				DisplayName:   pulumi.StringRef(_var.Java_family_display_name),
-//				FamilyVersion: pulumi.StringRef(_var.Java_family_family_version),
+//				DisplayName:        pulumi.StringRef(_var.Java_family_display_name),
+//				FamilyVersion:      pulumi.StringRef(_var.Java_family_family_version),
+//				IsSupportedVersion: pulumi.BoolRef(_var.Java_family_is_supported_version),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -59,6 +60,8 @@ type GetJavaFamiliesArgs struct {
 	// The version identifier for the Java family.
 	FamilyVersion *string                 `pulumi:"familyVersion"`
 	Filters       []GetJavaFamiliesFilter `pulumi:"filters"`
+	// Filter the Java Release Family versions by support status.
+	IsSupportedVersion *bool `pulumi:"isSupportedVersion"`
 }
 
 // A collection of values returned by getJavaFamilies.
@@ -70,6 +73,8 @@ type GetJavaFamiliesResult struct {
 	Filters       []GetJavaFamiliesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+	IsSupportedVersion *bool `pulumi:"isSupportedVersion"`
 	// The list of java_family_collection.
 	JavaFamilyCollections []GetJavaFamiliesJavaFamilyCollection `pulumi:"javaFamilyCollections"`
 }
@@ -94,6 +99,8 @@ type GetJavaFamiliesOutputArgs struct {
 	// The version identifier for the Java family.
 	FamilyVersion pulumi.StringPtrInput           `pulumi:"familyVersion"`
 	Filters       GetJavaFamiliesFilterArrayInput `pulumi:"filters"`
+	// Filter the Java Release Family versions by support status.
+	IsSupportedVersion pulumi.BoolPtrInput `pulumi:"isSupportedVersion"`
 }
 
 func (GetJavaFamiliesOutputArgs) ElementType() reflect.Type {
@@ -132,6 +139,11 @@ func (o GetJavaFamiliesResultOutput) Filters() GetJavaFamiliesFilterArrayOutput 
 // The provider-assigned unique ID for this managed resource.
 func (o GetJavaFamiliesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaFamiliesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+func (o GetJavaFamiliesResultOutput) IsSupportedVersion() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetJavaFamiliesResult) *bool { return v.IsSupportedVersion }).(pulumi.BoolPtrOutput)
 }
 
 // The list of java_family_collection.

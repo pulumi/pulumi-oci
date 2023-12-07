@@ -9,12 +9,14 @@ import com.pulumi.oci.Ocvp.outputs.GetSupportedVmwareSoftwareVersionsItem;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSupportedVmwareSoftwareVersionsResult {
     private String compartmentId;
     private @Nullable List<GetSupportedVmwareSoftwareVersionsFilter> filters;
+    private @Nullable String hostShapeName;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -25,6 +27,11 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
      * 
      */
     private List<GetSupportedVmwareSoftwareVersionsItem> items;
+    /**
+     * @return A short, unique string that identifies the version of bundled software.
+     * 
+     */
+    private @Nullable String version;
 
     private GetSupportedVmwareSoftwareVersionsResult() {}
     public String compartmentId() {
@@ -32,6 +39,9 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
     }
     public List<GetSupportedVmwareSoftwareVersionsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
+    }
+    public Optional<String> hostShapeName() {
+        return Optional.ofNullable(this.hostShapeName);
     }
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -47,6 +57,13 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
     public List<GetSupportedVmwareSoftwareVersionsItem> items() {
         return this.items;
     }
+    /**
+     * @return A short, unique string that identifies the version of bundled software.
+     * 
+     */
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -59,15 +76,19 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<GetSupportedVmwareSoftwareVersionsFilter> filters;
+        private @Nullable String hostShapeName;
         private String id;
         private List<GetSupportedVmwareSoftwareVersionsItem> items;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetSupportedVmwareSoftwareVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.filters = defaults.filters;
+    	      this.hostShapeName = defaults.hostShapeName;
     	      this.id = defaults.id;
     	      this.items = defaults.items;
+    	      this.version = defaults.version;
         }
 
         @CustomType.Setter
@@ -84,6 +105,11 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
             return filters(List.of(filters));
         }
         @CustomType.Setter
+        public Builder hostShapeName(@Nullable String hostShapeName) {
+            this.hostShapeName = hostShapeName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
             return this;
@@ -96,12 +122,19 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
         public Builder items(GetSupportedVmwareSoftwareVersionsItem... items) {
             return items(List.of(items));
         }
+        @CustomType.Setter
+        public Builder version(@Nullable String version) {
+            this.version = version;
+            return this;
+        }
         public GetSupportedVmwareSoftwareVersionsResult build() {
             final var o = new GetSupportedVmwareSoftwareVersionsResult();
             o.compartmentId = compartmentId;
             o.filters = filters;
+            o.hostShapeName = hostShapeName;
             o.id = id;
             o.items = items;
+            o.version = version;
             return o;
         }
     }

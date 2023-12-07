@@ -10,7 +10,7 @@ import java.util.Objects;
 @CustomType
 public final class GetJavaReleaseLicenseDetail {
     /**
-     * @return Commonly used name for the license type.
+     * @return Commonly used name for the MoS release.
      * 
      */
     private String displayName;
@@ -27,7 +27,7 @@ public final class GetJavaReleaseLicenseDetail {
 
     private GetJavaReleaseLicenseDetail() {}
     /**
-     * @return Commonly used name for the license type.
+     * @return Commonly used name for the MoS release.
      * 
      */
     public String displayName() {

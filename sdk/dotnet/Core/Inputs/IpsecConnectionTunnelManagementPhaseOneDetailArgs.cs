@@ -12,36 +12,72 @@ namespace Pulumi.Oci.Core.Inputs
 
     public sealed class IpsecConnectionTunnelManagementPhaseOneDetailArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The authentication algorithm proposed during phase two tunnel negotiation.
+        /// </summary>
         [Input("customAuthenticationAlgorithm")]
         public Input<string>? CustomAuthenticationAlgorithm { get; set; }
 
+        /// <summary>
+        /// The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
+        /// </summary>
         [Input("customDhGroup")]
         public Input<string>? CustomDhGroup { get; set; }
 
+        /// <summary>
+        /// The encryption algorithm proposed during phase two tunnel negotiation.
+        /// </summary>
         [Input("customEncryptionAlgorithm")]
         public Input<string>? CustomEncryptionAlgorithm { get; set; }
 
+        /// <summary>
+        /// Indicates whether custom configuration is enabled for phase one options.
+        /// </summary>
         [Input("isCustomPhaseOneConfig")]
         public Input<bool>? IsCustomPhaseOneConfig { get; set; }
 
+        /// <summary>
+        /// Indicates whether IKE phase one is established.
+        /// </summary>
         [Input("isIkeEstablished")]
         public Input<bool>? IsIkeEstablished { get; set; }
 
+        /// <summary>
+        /// Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+        /// </summary>
         [Input("lifetime")]
         public Input<int>? Lifetime { get; set; }
 
+        /// <summary>
+        /// The negotiated phase two authentication algorithm.
+        /// </summary>
         [Input("negotiatedAuthenticationAlgorithm")]
         public Input<string>? NegotiatedAuthenticationAlgorithm { get; set; }
 
+        /// <summary>
+        /// The negotiated Diffie-Hellman group.
+        /// </summary>
         [Input("negotiatedDhGroup")]
         public Input<string>? NegotiatedDhGroup { get; set; }
 
+        /// <summary>
+        /// The negotiated encryption algorithm.
+        /// </summary>
         [Input("negotiatedEncryptionAlgorithm")]
         public Input<string>? NegotiatedEncryptionAlgorithm { get; set; }
 
         [Input("remainingLifetime")]
         public Input<string>? RemainingLifetime { get; set; }
 
+        /// <summary>
+        /// The remaining lifetime before the key is refreshed.
+        /// </summary>
+        [Input("remainingLifetimeInt")]
+        public Input<int>? RemainingLifetimeInt { get; set; }
+
+        /// <summary>
+        /// The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
         [Input("remainingLifetimeLastRetrieved")]
         public Input<string>? RemainingLifetimeLastRetrieved { get; set; }
 

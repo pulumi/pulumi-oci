@@ -77,6 +77,13 @@ public final class DbSystemsUpgradeArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.newGiVersion);
     }
 
+    @Import(name="newOsVersion")
+    private @Nullable Output<String> newOsVersion;
+
+    public Optional<Output<String>> newOsVersion() {
+        return Optional.ofNullable(this.newOsVersion);
+    }
+
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      * 
@@ -105,6 +112,7 @@ public final class DbSystemsUpgradeArgs extends com.pulumi.resources.ResourceArg
         this.dbSystemId = $.dbSystemId;
         this.isSnapshotRetentionDaysForceUpdated = $.isSnapshotRetentionDaysForceUpdated;
         this.newGiVersion = $.newGiVersion;
+        this.newOsVersion = $.newOsVersion;
         this.snapshotRetentionPeriodInDays = $.snapshotRetentionPeriodInDays;
     }
 
@@ -208,6 +216,15 @@ public final class DbSystemsUpgradeArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder newGiVersion(String newGiVersion) {
             return newGiVersion(Output.of(newGiVersion));
+        }
+
+        public Builder newOsVersion(@Nullable Output<String> newOsVersion) {
+            $.newOsVersion = newOsVersion;
+            return this;
+        }
+
+        public Builder newOsVersion(String newOsVersion) {
+            return newOsVersion(Output.of(newOsVersion));
         }
 
         /**

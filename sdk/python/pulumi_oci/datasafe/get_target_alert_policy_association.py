@@ -117,7 +117,7 @@ class GetTargetAlertPolicyAssociationResult:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> bool:
         """
-        Indicates if the target-alert policy association is enabled or disabled by user.
+        Indicates if the target-alert policy association is enabled or disabled.
         """
         return pulumi.get(self, "is_enabled")
 

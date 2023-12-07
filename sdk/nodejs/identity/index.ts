@@ -65,6 +65,21 @@ export type DomainsAppRole = import("./domainsAppRole").DomainsAppRole;
 export const DomainsAppRole: typeof import("./domainsAppRole").DomainsAppRole = null as any;
 utilities.lazyLoad(exports, ["DomainsAppRole"], () => require("./domainsAppRole"));
 
+export { DomainsApprovalWorkflowArgs, DomainsApprovalWorkflowState } from "./domainsApprovalWorkflow";
+export type DomainsApprovalWorkflow = import("./domainsApprovalWorkflow").DomainsApprovalWorkflow;
+export const DomainsApprovalWorkflow: typeof import("./domainsApprovalWorkflow").DomainsApprovalWorkflow = null as any;
+utilities.lazyLoad(exports, ["DomainsApprovalWorkflow"], () => require("./domainsApprovalWorkflow"));
+
+export { DomainsApprovalWorkflowAssignmentArgs, DomainsApprovalWorkflowAssignmentState } from "./domainsApprovalWorkflowAssignment";
+export type DomainsApprovalWorkflowAssignment = import("./domainsApprovalWorkflowAssignment").DomainsApprovalWorkflowAssignment;
+export const DomainsApprovalWorkflowAssignment: typeof import("./domainsApprovalWorkflowAssignment").DomainsApprovalWorkflowAssignment = null as any;
+utilities.lazyLoad(exports, ["DomainsApprovalWorkflowAssignment"], () => require("./domainsApprovalWorkflowAssignment"));
+
+export { DomainsApprovalWorkflowStepArgs, DomainsApprovalWorkflowStepState } from "./domainsApprovalWorkflowStep";
+export type DomainsApprovalWorkflowStep = import("./domainsApprovalWorkflowStep").DomainsApprovalWorkflowStep;
+export const DomainsApprovalWorkflowStep: typeof import("./domainsApprovalWorkflowStep").DomainsApprovalWorkflowStep = null as any;
+utilities.lazyLoad(exports, ["DomainsApprovalWorkflowStep"], () => require("./domainsApprovalWorkflowStep"));
+
 export { DomainsAuthTokenArgs, DomainsAuthTokenState } from "./domainsAuthToken";
 export type DomainsAuthToken = import("./domainsAuthToken").DomainsAuthToken;
 export const DomainsAuthToken: typeof import("./domainsAuthToken").DomainsAuthToken = null as any;
@@ -74,6 +89,26 @@ export { DomainsAuthenticationFactorSettingArgs, DomainsAuthenticationFactorSett
 export type DomainsAuthenticationFactorSetting = import("./domainsAuthenticationFactorSetting").DomainsAuthenticationFactorSetting;
 export const DomainsAuthenticationFactorSetting: typeof import("./domainsAuthenticationFactorSetting").DomainsAuthenticationFactorSetting = null as any;
 utilities.lazyLoad(exports, ["DomainsAuthenticationFactorSetting"], () => require("./domainsAuthenticationFactorSetting"));
+
+export { DomainsCloudGateArgs, DomainsCloudGateState } from "./domainsCloudGate";
+export type DomainsCloudGate = import("./domainsCloudGate").DomainsCloudGate;
+export const DomainsCloudGate: typeof import("./domainsCloudGate").DomainsCloudGate = null as any;
+utilities.lazyLoad(exports, ["DomainsCloudGate"], () => require("./domainsCloudGate"));
+
+export { DomainsCloudGateMappingArgs, DomainsCloudGateMappingState } from "./domainsCloudGateMapping";
+export type DomainsCloudGateMapping = import("./domainsCloudGateMapping").DomainsCloudGateMapping;
+export const DomainsCloudGateMapping: typeof import("./domainsCloudGateMapping").DomainsCloudGateMapping = null as any;
+utilities.lazyLoad(exports, ["DomainsCloudGateMapping"], () => require("./domainsCloudGateMapping"));
+
+export { DomainsCloudGateServerArgs, DomainsCloudGateServerState } from "./domainsCloudGateServer";
+export type DomainsCloudGateServer = import("./domainsCloudGateServer").DomainsCloudGateServer;
+export const DomainsCloudGateServer: typeof import("./domainsCloudGateServer").DomainsCloudGateServer = null as any;
+utilities.lazyLoad(exports, ["DomainsCloudGateServer"], () => require("./domainsCloudGateServer"));
+
+export { DomainsConditionArgs, DomainsConditionState } from "./domainsCondition";
+export type DomainsCondition = import("./domainsCondition").DomainsCondition;
+export const DomainsCondition: typeof import("./domainsCondition").DomainsCondition = null as any;
+utilities.lazyLoad(exports, ["DomainsCondition"], () => require("./domainsCondition"));
 
 export { DomainsCustomerSecretKeyArgs, DomainsCustomerSecretKeyState } from "./domainsCustomerSecretKey";
 export type DomainsCustomerSecretKey = import("./domainsCustomerSecretKey").DomainsCustomerSecretKey;
@@ -150,15 +185,45 @@ export type DomainsMyUserDbCredential = import("./domainsMyUserDbCredential").Do
 export const DomainsMyUserDbCredential: typeof import("./domainsMyUserDbCredential").DomainsMyUserDbCredential = null as any;
 utilities.lazyLoad(exports, ["DomainsMyUserDbCredential"], () => require("./domainsMyUserDbCredential"));
 
+export { DomainsNetworkPerimeterArgs, DomainsNetworkPerimeterState } from "./domainsNetworkPerimeter";
+export type DomainsNetworkPerimeter = import("./domainsNetworkPerimeter").DomainsNetworkPerimeter;
+export const DomainsNetworkPerimeter: typeof import("./domainsNetworkPerimeter").DomainsNetworkPerimeter = null as any;
+utilities.lazyLoad(exports, ["DomainsNetworkPerimeter"], () => require("./domainsNetworkPerimeter"));
+
+export { DomainsNotificationSettingArgs, DomainsNotificationSettingState } from "./domainsNotificationSetting";
+export type DomainsNotificationSetting = import("./domainsNotificationSetting").DomainsNotificationSetting;
+export const DomainsNotificationSetting: typeof import("./domainsNotificationSetting").DomainsNotificationSetting = null as any;
+utilities.lazyLoad(exports, ["DomainsNotificationSetting"], () => require("./domainsNotificationSetting"));
+
 export { DomainsOauth2clientCredentialArgs, DomainsOauth2clientCredentialState } from "./domainsOauth2clientCredential";
 export type DomainsOauth2clientCredential = import("./domainsOauth2clientCredential").DomainsOauth2clientCredential;
 export const DomainsOauth2clientCredential: typeof import("./domainsOauth2clientCredential").DomainsOauth2clientCredential = null as any;
 utilities.lazyLoad(exports, ["DomainsOauth2clientCredential"], () => require("./domainsOauth2clientCredential"));
 
+export { DomainsOauthClientCertificateArgs, DomainsOauthClientCertificateState } from "./domainsOauthClientCertificate";
+export type DomainsOauthClientCertificate = import("./domainsOauthClientCertificate").DomainsOauthClientCertificate;
+export const DomainsOauthClientCertificate: typeof import("./domainsOauthClientCertificate").DomainsOauthClientCertificate = null as any;
+utilities.lazyLoad(exports, ["DomainsOauthClientCertificate"], () => require("./domainsOauthClientCertificate"));
+
+export { DomainsOauthPartnerCertificateArgs, DomainsOauthPartnerCertificateState } from "./domainsOauthPartnerCertificate";
+export type DomainsOauthPartnerCertificate = import("./domainsOauthPartnerCertificate").DomainsOauthPartnerCertificate;
+export const DomainsOauthPartnerCertificate: typeof import("./domainsOauthPartnerCertificate").DomainsOauthPartnerCertificate = null as any;
+utilities.lazyLoad(exports, ["DomainsOauthPartnerCertificate"], () => require("./domainsOauthPartnerCertificate"));
+
 export { DomainsPasswordPolicyArgs, DomainsPasswordPolicyState } from "./domainsPasswordPolicy";
 export type DomainsPasswordPolicy = import("./domainsPasswordPolicy").DomainsPasswordPolicy;
 export const DomainsPasswordPolicy: typeof import("./domainsPasswordPolicy").DomainsPasswordPolicy = null as any;
 utilities.lazyLoad(exports, ["DomainsPasswordPolicy"], () => require("./domainsPasswordPolicy"));
+
+export { DomainsPolicyArgs, DomainsPolicyState } from "./domainsPolicy";
+export type DomainsPolicy = import("./domainsPolicy").DomainsPolicy;
+export const DomainsPolicy: typeof import("./domainsPolicy").DomainsPolicy = null as any;
+utilities.lazyLoad(exports, ["DomainsPolicy"], () => require("./domainsPolicy"));
+
+export { DomainsRuleArgs, DomainsRuleState } from "./domainsRule";
+export type DomainsRule = import("./domainsRule").DomainsRule;
+export const DomainsRule: typeof import("./domainsRule").DomainsRule = null as any;
+utilities.lazyLoad(exports, ["DomainsRule"], () => require("./domainsRule"));
 
 export { DomainsSecurityQuestionArgs, DomainsSecurityQuestionState } from "./domainsSecurityQuestion";
 export type DomainsSecurityQuestion = import("./domainsSecurityQuestion").DomainsSecurityQuestion;
@@ -169,6 +234,16 @@ export { DomainsSecurityQuestionSettingArgs, DomainsSecurityQuestionSettingState
 export type DomainsSecurityQuestionSetting = import("./domainsSecurityQuestionSetting").DomainsSecurityQuestionSetting;
 export const DomainsSecurityQuestionSetting: typeof import("./domainsSecurityQuestionSetting").DomainsSecurityQuestionSetting = null as any;
 utilities.lazyLoad(exports, ["DomainsSecurityQuestionSetting"], () => require("./domainsSecurityQuestionSetting"));
+
+export { DomainsSelfRegistrationProfileArgs, DomainsSelfRegistrationProfileState } from "./domainsSelfRegistrationProfile";
+export type DomainsSelfRegistrationProfile = import("./domainsSelfRegistrationProfile").DomainsSelfRegistrationProfile;
+export const DomainsSelfRegistrationProfile: typeof import("./domainsSelfRegistrationProfile").DomainsSelfRegistrationProfile = null as any;
+utilities.lazyLoad(exports, ["DomainsSelfRegistrationProfile"], () => require("./domainsSelfRegistrationProfile"));
+
+export { DomainsSettingArgs, DomainsSettingState } from "./domainsSetting";
+export type DomainsSetting = import("./domainsSetting").DomainsSetting;
+export const DomainsSetting: typeof import("./domainsSetting").DomainsSetting = null as any;
+utilities.lazyLoad(exports, ["DomainsSetting"], () => require("./domainsSetting"));
 
 export { DomainsSmtpCredentialArgs, DomainsSmtpCredentialState } from "./domainsSmtpCredential";
 export type DomainsSmtpCredential = import("./domainsSmtpCredential").DomainsSmtpCredential;
@@ -300,6 +375,36 @@ export const getDomainsAppRoles: typeof import("./getDomainsAppRoles").getDomain
 export const getDomainsAppRolesOutput: typeof import("./getDomainsAppRoles").getDomainsAppRolesOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsAppRoles","getDomainsAppRolesOutput"], () => require("./getDomainsAppRoles"));
 
+export { GetDomainsApprovalWorkflowArgs, GetDomainsApprovalWorkflowResult, GetDomainsApprovalWorkflowOutputArgs } from "./getDomainsApprovalWorkflow";
+export const getDomainsApprovalWorkflow: typeof import("./getDomainsApprovalWorkflow").getDomainsApprovalWorkflow = null as any;
+export const getDomainsApprovalWorkflowOutput: typeof import("./getDomainsApprovalWorkflow").getDomainsApprovalWorkflowOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsApprovalWorkflow","getDomainsApprovalWorkflowOutput"], () => require("./getDomainsApprovalWorkflow"));
+
+export { GetDomainsApprovalWorkflowAssignmentArgs, GetDomainsApprovalWorkflowAssignmentResult, GetDomainsApprovalWorkflowAssignmentOutputArgs } from "./getDomainsApprovalWorkflowAssignment";
+export const getDomainsApprovalWorkflowAssignment: typeof import("./getDomainsApprovalWorkflowAssignment").getDomainsApprovalWorkflowAssignment = null as any;
+export const getDomainsApprovalWorkflowAssignmentOutput: typeof import("./getDomainsApprovalWorkflowAssignment").getDomainsApprovalWorkflowAssignmentOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsApprovalWorkflowAssignment","getDomainsApprovalWorkflowAssignmentOutput"], () => require("./getDomainsApprovalWorkflowAssignment"));
+
+export { GetDomainsApprovalWorkflowAssignmentsArgs, GetDomainsApprovalWorkflowAssignmentsResult, GetDomainsApprovalWorkflowAssignmentsOutputArgs } from "./getDomainsApprovalWorkflowAssignments";
+export const getDomainsApprovalWorkflowAssignments: typeof import("./getDomainsApprovalWorkflowAssignments").getDomainsApprovalWorkflowAssignments = null as any;
+export const getDomainsApprovalWorkflowAssignmentsOutput: typeof import("./getDomainsApprovalWorkflowAssignments").getDomainsApprovalWorkflowAssignmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsApprovalWorkflowAssignments","getDomainsApprovalWorkflowAssignmentsOutput"], () => require("./getDomainsApprovalWorkflowAssignments"));
+
+export { GetDomainsApprovalWorkflowStepArgs, GetDomainsApprovalWorkflowStepResult, GetDomainsApprovalWorkflowStepOutputArgs } from "./getDomainsApprovalWorkflowStep";
+export const getDomainsApprovalWorkflowStep: typeof import("./getDomainsApprovalWorkflowStep").getDomainsApprovalWorkflowStep = null as any;
+export const getDomainsApprovalWorkflowStepOutput: typeof import("./getDomainsApprovalWorkflowStep").getDomainsApprovalWorkflowStepOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsApprovalWorkflowStep","getDomainsApprovalWorkflowStepOutput"], () => require("./getDomainsApprovalWorkflowStep"));
+
+export { GetDomainsApprovalWorkflowStepsArgs, GetDomainsApprovalWorkflowStepsResult, GetDomainsApprovalWorkflowStepsOutputArgs } from "./getDomainsApprovalWorkflowSteps";
+export const getDomainsApprovalWorkflowSteps: typeof import("./getDomainsApprovalWorkflowSteps").getDomainsApprovalWorkflowSteps = null as any;
+export const getDomainsApprovalWorkflowStepsOutput: typeof import("./getDomainsApprovalWorkflowSteps").getDomainsApprovalWorkflowStepsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsApprovalWorkflowSteps","getDomainsApprovalWorkflowStepsOutput"], () => require("./getDomainsApprovalWorkflowSteps"));
+
+export { GetDomainsApprovalWorkflowsArgs, GetDomainsApprovalWorkflowsResult, GetDomainsApprovalWorkflowsOutputArgs } from "./getDomainsApprovalWorkflows";
+export const getDomainsApprovalWorkflows: typeof import("./getDomainsApprovalWorkflows").getDomainsApprovalWorkflows = null as any;
+export const getDomainsApprovalWorkflowsOutput: typeof import("./getDomainsApprovalWorkflows").getDomainsApprovalWorkflowsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsApprovalWorkflows","getDomainsApprovalWorkflowsOutput"], () => require("./getDomainsApprovalWorkflows"));
+
 export { GetDomainsAppsArgs, GetDomainsAppsResult, GetDomainsAppsOutputArgs } from "./getDomainsApps";
 export const getDomainsApps: typeof import("./getDomainsApps").getDomainsApps = null as any;
 export const getDomainsAppsOutput: typeof import("./getDomainsApps").getDomainsAppsOutput = null as any;
@@ -324,6 +429,56 @@ export { GetDomainsAuthenticationFactorSettingsArgs, GetDomainsAuthenticationFac
 export const getDomainsAuthenticationFactorSettings: typeof import("./getDomainsAuthenticationFactorSettings").getDomainsAuthenticationFactorSettings = null as any;
 export const getDomainsAuthenticationFactorSettingsOutput: typeof import("./getDomainsAuthenticationFactorSettings").getDomainsAuthenticationFactorSettingsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsAuthenticationFactorSettings","getDomainsAuthenticationFactorSettingsOutput"], () => require("./getDomainsAuthenticationFactorSettings"));
+
+export { GetDomainsBrandingSettingArgs, GetDomainsBrandingSettingResult, GetDomainsBrandingSettingOutputArgs } from "./getDomainsBrandingSetting";
+export const getDomainsBrandingSetting: typeof import("./getDomainsBrandingSetting").getDomainsBrandingSetting = null as any;
+export const getDomainsBrandingSettingOutput: typeof import("./getDomainsBrandingSetting").getDomainsBrandingSettingOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsBrandingSetting","getDomainsBrandingSettingOutput"], () => require("./getDomainsBrandingSetting"));
+
+export { GetDomainsBrandingSettingsArgs, GetDomainsBrandingSettingsResult, GetDomainsBrandingSettingsOutputArgs } from "./getDomainsBrandingSettings";
+export const getDomainsBrandingSettings: typeof import("./getDomainsBrandingSettings").getDomainsBrandingSettings = null as any;
+export const getDomainsBrandingSettingsOutput: typeof import("./getDomainsBrandingSettings").getDomainsBrandingSettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsBrandingSettings","getDomainsBrandingSettingsOutput"], () => require("./getDomainsBrandingSettings"));
+
+export { GetDomainsCloudGateArgs, GetDomainsCloudGateResult, GetDomainsCloudGateOutputArgs } from "./getDomainsCloudGate";
+export const getDomainsCloudGate: typeof import("./getDomainsCloudGate").getDomainsCloudGate = null as any;
+export const getDomainsCloudGateOutput: typeof import("./getDomainsCloudGate").getDomainsCloudGateOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsCloudGate","getDomainsCloudGateOutput"], () => require("./getDomainsCloudGate"));
+
+export { GetDomainsCloudGateMappingArgs, GetDomainsCloudGateMappingResult, GetDomainsCloudGateMappingOutputArgs } from "./getDomainsCloudGateMapping";
+export const getDomainsCloudGateMapping: typeof import("./getDomainsCloudGateMapping").getDomainsCloudGateMapping = null as any;
+export const getDomainsCloudGateMappingOutput: typeof import("./getDomainsCloudGateMapping").getDomainsCloudGateMappingOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsCloudGateMapping","getDomainsCloudGateMappingOutput"], () => require("./getDomainsCloudGateMapping"));
+
+export { GetDomainsCloudGateMappingsArgs, GetDomainsCloudGateMappingsResult, GetDomainsCloudGateMappingsOutputArgs } from "./getDomainsCloudGateMappings";
+export const getDomainsCloudGateMappings: typeof import("./getDomainsCloudGateMappings").getDomainsCloudGateMappings = null as any;
+export const getDomainsCloudGateMappingsOutput: typeof import("./getDomainsCloudGateMappings").getDomainsCloudGateMappingsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsCloudGateMappings","getDomainsCloudGateMappingsOutput"], () => require("./getDomainsCloudGateMappings"));
+
+export { GetDomainsCloudGateServerArgs, GetDomainsCloudGateServerResult, GetDomainsCloudGateServerOutputArgs } from "./getDomainsCloudGateServer";
+export const getDomainsCloudGateServer: typeof import("./getDomainsCloudGateServer").getDomainsCloudGateServer = null as any;
+export const getDomainsCloudGateServerOutput: typeof import("./getDomainsCloudGateServer").getDomainsCloudGateServerOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsCloudGateServer","getDomainsCloudGateServerOutput"], () => require("./getDomainsCloudGateServer"));
+
+export { GetDomainsCloudGateServersArgs, GetDomainsCloudGateServersResult, GetDomainsCloudGateServersOutputArgs } from "./getDomainsCloudGateServers";
+export const getDomainsCloudGateServers: typeof import("./getDomainsCloudGateServers").getDomainsCloudGateServers = null as any;
+export const getDomainsCloudGateServersOutput: typeof import("./getDomainsCloudGateServers").getDomainsCloudGateServersOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsCloudGateServers","getDomainsCloudGateServersOutput"], () => require("./getDomainsCloudGateServers"));
+
+export { GetDomainsCloudGatesArgs, GetDomainsCloudGatesResult, GetDomainsCloudGatesOutputArgs } from "./getDomainsCloudGates";
+export const getDomainsCloudGates: typeof import("./getDomainsCloudGates").getDomainsCloudGates = null as any;
+export const getDomainsCloudGatesOutput: typeof import("./getDomainsCloudGates").getDomainsCloudGatesOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsCloudGates","getDomainsCloudGatesOutput"], () => require("./getDomainsCloudGates"));
+
+export { GetDomainsConditionArgs, GetDomainsConditionResult, GetDomainsConditionOutputArgs } from "./getDomainsCondition";
+export const getDomainsCondition: typeof import("./getDomainsCondition").getDomainsCondition = null as any;
+export const getDomainsConditionOutput: typeof import("./getDomainsCondition").getDomainsConditionOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsCondition","getDomainsConditionOutput"], () => require("./getDomainsCondition"));
+
+export { GetDomainsConditionsArgs, GetDomainsConditionsResult, GetDomainsConditionsOutputArgs } from "./getDomainsConditions";
+export const getDomainsConditions: typeof import("./getDomainsConditions").getDomainsConditions = null as any;
+export const getDomainsConditionsOutput: typeof import("./getDomainsConditions").getDomainsConditionsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsConditions","getDomainsConditionsOutput"], () => require("./getDomainsConditions"));
 
 export { GetDomainsCustomerSecretKeyArgs, GetDomainsCustomerSecretKeyResult, GetDomainsCustomerSecretKeyOutputArgs } from "./getDomainsCustomerSecretKey";
 export const getDomainsCustomerSecretKey: typeof import("./getDomainsCustomerSecretKey").getDomainsCustomerSecretKey = null as any;
@@ -420,6 +575,16 @@ export const getDomainsMyAuthTokens: typeof import("./getDomainsMyAuthTokens").g
 export const getDomainsMyAuthTokensOutput: typeof import("./getDomainsMyAuthTokens").getDomainsMyAuthTokensOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsMyAuthTokens","getDomainsMyAuthTokensOutput"], () => require("./getDomainsMyAuthTokens"));
 
+export { GetDomainsMyCompletedApprovalArgs, GetDomainsMyCompletedApprovalResult, GetDomainsMyCompletedApprovalOutputArgs } from "./getDomainsMyCompletedApproval";
+export const getDomainsMyCompletedApproval: typeof import("./getDomainsMyCompletedApproval").getDomainsMyCompletedApproval = null as any;
+export const getDomainsMyCompletedApprovalOutput: typeof import("./getDomainsMyCompletedApproval").getDomainsMyCompletedApprovalOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsMyCompletedApproval","getDomainsMyCompletedApprovalOutput"], () => require("./getDomainsMyCompletedApproval"));
+
+export { GetDomainsMyCompletedApprovalsArgs, GetDomainsMyCompletedApprovalsResult, GetDomainsMyCompletedApprovalsOutputArgs } from "./getDomainsMyCompletedApprovals";
+export const getDomainsMyCompletedApprovals: typeof import("./getDomainsMyCompletedApprovals").getDomainsMyCompletedApprovals = null as any;
+export const getDomainsMyCompletedApprovalsOutput: typeof import("./getDomainsMyCompletedApprovals").getDomainsMyCompletedApprovalsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsMyCompletedApprovals","getDomainsMyCompletedApprovalsOutput"], () => require("./getDomainsMyCompletedApprovals"));
+
 export { GetDomainsMyCustomerSecretKeyArgs, GetDomainsMyCustomerSecretKeyResult, GetDomainsMyCustomerSecretKeyOutputArgs } from "./getDomainsMyCustomerSecretKey";
 export const getDomainsMyCustomerSecretKey: typeof import("./getDomainsMyCustomerSecretKey").getDomainsMyCustomerSecretKey = null as any;
 export const getDomainsMyCustomerSecretKeyOutput: typeof import("./getDomainsMyCustomerSecretKey").getDomainsMyCustomerSecretKeyOutput = null as any;
@@ -454,6 +619,16 @@ export { GetDomainsMyOauth2clientCredentialsArgs, GetDomainsMyOauth2clientCreden
 export const getDomainsMyOauth2clientCredentials: typeof import("./getDomainsMyOauth2clientCredentials").getDomainsMyOauth2clientCredentials = null as any;
 export const getDomainsMyOauth2clientCredentialsOutput: typeof import("./getDomainsMyOauth2clientCredentials").getDomainsMyOauth2clientCredentialsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsMyOauth2clientCredentials","getDomainsMyOauth2clientCredentialsOutput"], () => require("./getDomainsMyOauth2clientCredentials"));
+
+export { GetDomainsMyPendingApprovalArgs, GetDomainsMyPendingApprovalResult, GetDomainsMyPendingApprovalOutputArgs } from "./getDomainsMyPendingApproval";
+export const getDomainsMyPendingApproval: typeof import("./getDomainsMyPendingApproval").getDomainsMyPendingApproval = null as any;
+export const getDomainsMyPendingApprovalOutput: typeof import("./getDomainsMyPendingApproval").getDomainsMyPendingApprovalOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsMyPendingApproval","getDomainsMyPendingApprovalOutput"], () => require("./getDomainsMyPendingApproval"));
+
+export { GetDomainsMyPendingApprovalsArgs, GetDomainsMyPendingApprovalsResult, GetDomainsMyPendingApprovalsOutputArgs } from "./getDomainsMyPendingApprovals";
+export const getDomainsMyPendingApprovals: typeof import("./getDomainsMyPendingApprovals").getDomainsMyPendingApprovals = null as any;
+export const getDomainsMyPendingApprovalsOutput: typeof import("./getDomainsMyPendingApprovals").getDomainsMyPendingApprovalsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsMyPendingApprovals","getDomainsMyPendingApprovalsOutput"], () => require("./getDomainsMyPendingApprovals"));
 
 export { GetDomainsMyRequestableGroupsArgs, GetDomainsMyRequestableGroupsResult, GetDomainsMyRequestableGroupsOutputArgs } from "./getDomainsMyRequestableGroups";
 export const getDomainsMyRequestableGroups: typeof import("./getDomainsMyRequestableGroups").getDomainsMyRequestableGroups = null as any;
@@ -505,6 +680,26 @@ export const getDomainsMyUserDbCredentials: typeof import("./getDomainsMyUserDbC
 export const getDomainsMyUserDbCredentialsOutput: typeof import("./getDomainsMyUserDbCredentials").getDomainsMyUserDbCredentialsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsMyUserDbCredentials","getDomainsMyUserDbCredentialsOutput"], () => require("./getDomainsMyUserDbCredentials"));
 
+export { GetDomainsNetworkPerimeterArgs, GetDomainsNetworkPerimeterResult, GetDomainsNetworkPerimeterOutputArgs } from "./getDomainsNetworkPerimeter";
+export const getDomainsNetworkPerimeter: typeof import("./getDomainsNetworkPerimeter").getDomainsNetworkPerimeter = null as any;
+export const getDomainsNetworkPerimeterOutput: typeof import("./getDomainsNetworkPerimeter").getDomainsNetworkPerimeterOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsNetworkPerimeter","getDomainsNetworkPerimeterOutput"], () => require("./getDomainsNetworkPerimeter"));
+
+export { GetDomainsNetworkPerimetersArgs, GetDomainsNetworkPerimetersResult, GetDomainsNetworkPerimetersOutputArgs } from "./getDomainsNetworkPerimeters";
+export const getDomainsNetworkPerimeters: typeof import("./getDomainsNetworkPerimeters").getDomainsNetworkPerimeters = null as any;
+export const getDomainsNetworkPerimetersOutput: typeof import("./getDomainsNetworkPerimeters").getDomainsNetworkPerimetersOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsNetworkPerimeters","getDomainsNetworkPerimetersOutput"], () => require("./getDomainsNetworkPerimeters"));
+
+export { GetDomainsNotificationSettingArgs, GetDomainsNotificationSettingResult, GetDomainsNotificationSettingOutputArgs } from "./getDomainsNotificationSetting";
+export const getDomainsNotificationSetting: typeof import("./getDomainsNotificationSetting").getDomainsNotificationSetting = null as any;
+export const getDomainsNotificationSettingOutput: typeof import("./getDomainsNotificationSetting").getDomainsNotificationSettingOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsNotificationSetting","getDomainsNotificationSettingOutput"], () => require("./getDomainsNotificationSetting"));
+
+export { GetDomainsNotificationSettingsArgs, GetDomainsNotificationSettingsResult, GetDomainsNotificationSettingsOutputArgs } from "./getDomainsNotificationSettings";
+export const getDomainsNotificationSettings: typeof import("./getDomainsNotificationSettings").getDomainsNotificationSettings = null as any;
+export const getDomainsNotificationSettingsOutput: typeof import("./getDomainsNotificationSettings").getDomainsNotificationSettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsNotificationSettings","getDomainsNotificationSettingsOutput"], () => require("./getDomainsNotificationSettings"));
+
 export { GetDomainsOauth2clientCredentialArgs, GetDomainsOauth2clientCredentialResult, GetDomainsOauth2clientCredentialOutputArgs } from "./getDomainsOauth2clientCredential";
 export const getDomainsOauth2clientCredential: typeof import("./getDomainsOauth2clientCredential").getDomainsOauth2clientCredential = null as any;
 export const getDomainsOauth2clientCredentialOutput: typeof import("./getDomainsOauth2clientCredential").getDomainsOauth2clientCredentialOutput = null as any;
@@ -514,6 +709,26 @@ export { GetDomainsOauth2clientCredentialsArgs, GetDomainsOauth2clientCredential
 export const getDomainsOauth2clientCredentials: typeof import("./getDomainsOauth2clientCredentials").getDomainsOauth2clientCredentials = null as any;
 export const getDomainsOauth2clientCredentialsOutput: typeof import("./getDomainsOauth2clientCredentials").getDomainsOauth2clientCredentialsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsOauth2clientCredentials","getDomainsOauth2clientCredentialsOutput"], () => require("./getDomainsOauth2clientCredentials"));
+
+export { GetDomainsOauthClientCertificateArgs, GetDomainsOauthClientCertificateResult, GetDomainsOauthClientCertificateOutputArgs } from "./getDomainsOauthClientCertificate";
+export const getDomainsOauthClientCertificate: typeof import("./getDomainsOauthClientCertificate").getDomainsOauthClientCertificate = null as any;
+export const getDomainsOauthClientCertificateOutput: typeof import("./getDomainsOauthClientCertificate").getDomainsOauthClientCertificateOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsOauthClientCertificate","getDomainsOauthClientCertificateOutput"], () => require("./getDomainsOauthClientCertificate"));
+
+export { GetDomainsOauthClientCertificatesArgs, GetDomainsOauthClientCertificatesResult, GetDomainsOauthClientCertificatesOutputArgs } from "./getDomainsOauthClientCertificates";
+export const getDomainsOauthClientCertificates: typeof import("./getDomainsOauthClientCertificates").getDomainsOauthClientCertificates = null as any;
+export const getDomainsOauthClientCertificatesOutput: typeof import("./getDomainsOauthClientCertificates").getDomainsOauthClientCertificatesOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsOauthClientCertificates","getDomainsOauthClientCertificatesOutput"], () => require("./getDomainsOauthClientCertificates"));
+
+export { GetDomainsOauthPartnerCertificateArgs, GetDomainsOauthPartnerCertificateResult, GetDomainsOauthPartnerCertificateOutputArgs } from "./getDomainsOauthPartnerCertificate";
+export const getDomainsOauthPartnerCertificate: typeof import("./getDomainsOauthPartnerCertificate").getDomainsOauthPartnerCertificate = null as any;
+export const getDomainsOauthPartnerCertificateOutput: typeof import("./getDomainsOauthPartnerCertificate").getDomainsOauthPartnerCertificateOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsOauthPartnerCertificate","getDomainsOauthPartnerCertificateOutput"], () => require("./getDomainsOauthPartnerCertificate"));
+
+export { GetDomainsOauthPartnerCertificatesArgs, GetDomainsOauthPartnerCertificatesResult, GetDomainsOauthPartnerCertificatesOutputArgs } from "./getDomainsOauthPartnerCertificates";
+export const getDomainsOauthPartnerCertificates: typeof import("./getDomainsOauthPartnerCertificates").getDomainsOauthPartnerCertificates = null as any;
+export const getDomainsOauthPartnerCertificatesOutput: typeof import("./getDomainsOauthPartnerCertificates").getDomainsOauthPartnerCertificatesOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsOauthPartnerCertificates","getDomainsOauthPartnerCertificatesOutput"], () => require("./getDomainsOauthPartnerCertificates"));
 
 export { GetDomainsPasswordPoliciesArgs, GetDomainsPasswordPoliciesResult, GetDomainsPasswordPoliciesOutputArgs } from "./getDomainsPasswordPolicies";
 export const getDomainsPasswordPolicies: typeof import("./getDomainsPasswordPolicies").getDomainsPasswordPolicies = null as any;
@@ -525,10 +740,30 @@ export const getDomainsPasswordPolicy: typeof import("./getDomainsPasswordPolicy
 export const getDomainsPasswordPolicyOutput: typeof import("./getDomainsPasswordPolicy").getDomainsPasswordPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsPasswordPolicy","getDomainsPasswordPolicyOutput"], () => require("./getDomainsPasswordPolicy"));
 
+export { GetDomainsPoliciesArgs, GetDomainsPoliciesResult, GetDomainsPoliciesOutputArgs } from "./getDomainsPolicies";
+export const getDomainsPolicies: typeof import("./getDomainsPolicies").getDomainsPolicies = null as any;
+export const getDomainsPoliciesOutput: typeof import("./getDomainsPolicies").getDomainsPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsPolicies","getDomainsPoliciesOutput"], () => require("./getDomainsPolicies"));
+
+export { GetDomainsPolicyArgs, GetDomainsPolicyResult, GetDomainsPolicyOutputArgs } from "./getDomainsPolicy";
+export const getDomainsPolicy: typeof import("./getDomainsPolicy").getDomainsPolicy = null as any;
+export const getDomainsPolicyOutput: typeof import("./getDomainsPolicy").getDomainsPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsPolicy","getDomainsPolicyOutput"], () => require("./getDomainsPolicy"));
+
 export { GetDomainsResourceTypeSchemaAttributesArgs, GetDomainsResourceTypeSchemaAttributesResult, GetDomainsResourceTypeSchemaAttributesOutputArgs } from "./getDomainsResourceTypeSchemaAttributes";
 export const getDomainsResourceTypeSchemaAttributes: typeof import("./getDomainsResourceTypeSchemaAttributes").getDomainsResourceTypeSchemaAttributes = null as any;
 export const getDomainsResourceTypeSchemaAttributesOutput: typeof import("./getDomainsResourceTypeSchemaAttributes").getDomainsResourceTypeSchemaAttributesOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsResourceTypeSchemaAttributes","getDomainsResourceTypeSchemaAttributesOutput"], () => require("./getDomainsResourceTypeSchemaAttributes"));
+
+export { GetDomainsRuleArgs, GetDomainsRuleResult, GetDomainsRuleOutputArgs } from "./getDomainsRule";
+export const getDomainsRule: typeof import("./getDomainsRule").getDomainsRule = null as any;
+export const getDomainsRuleOutput: typeof import("./getDomainsRule").getDomainsRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsRule","getDomainsRuleOutput"], () => require("./getDomainsRule"));
+
+export { GetDomainsRulesArgs, GetDomainsRulesResult, GetDomainsRulesOutputArgs } from "./getDomainsRules";
+export const getDomainsRules: typeof import("./getDomainsRules").getDomainsRules = null as any;
+export const getDomainsRulesOutput: typeof import("./getDomainsRules").getDomainsRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsRules","getDomainsRulesOutput"], () => require("./getDomainsRules"));
 
 export { GetDomainsSecurityQuestionArgs, GetDomainsSecurityQuestionResult, GetDomainsSecurityQuestionOutputArgs } from "./getDomainsSecurityQuestion";
 export const getDomainsSecurityQuestion: typeof import("./getDomainsSecurityQuestion").getDomainsSecurityQuestion = null as any;
@@ -549,6 +784,26 @@ export { GetDomainsSecurityQuestionsArgs, GetDomainsSecurityQuestionsResult, Get
 export const getDomainsSecurityQuestions: typeof import("./getDomainsSecurityQuestions").getDomainsSecurityQuestions = null as any;
 export const getDomainsSecurityQuestionsOutput: typeof import("./getDomainsSecurityQuestions").getDomainsSecurityQuestionsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsSecurityQuestions","getDomainsSecurityQuestionsOutput"], () => require("./getDomainsSecurityQuestions"));
+
+export { GetDomainsSelfRegistrationProfileArgs, GetDomainsSelfRegistrationProfileResult, GetDomainsSelfRegistrationProfileOutputArgs } from "./getDomainsSelfRegistrationProfile";
+export const getDomainsSelfRegistrationProfile: typeof import("./getDomainsSelfRegistrationProfile").getDomainsSelfRegistrationProfile = null as any;
+export const getDomainsSelfRegistrationProfileOutput: typeof import("./getDomainsSelfRegistrationProfile").getDomainsSelfRegistrationProfileOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsSelfRegistrationProfile","getDomainsSelfRegistrationProfileOutput"], () => require("./getDomainsSelfRegistrationProfile"));
+
+export { GetDomainsSelfRegistrationProfilesArgs, GetDomainsSelfRegistrationProfilesResult, GetDomainsSelfRegistrationProfilesOutputArgs } from "./getDomainsSelfRegistrationProfiles";
+export const getDomainsSelfRegistrationProfiles: typeof import("./getDomainsSelfRegistrationProfiles").getDomainsSelfRegistrationProfiles = null as any;
+export const getDomainsSelfRegistrationProfilesOutput: typeof import("./getDomainsSelfRegistrationProfiles").getDomainsSelfRegistrationProfilesOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsSelfRegistrationProfiles","getDomainsSelfRegistrationProfilesOutput"], () => require("./getDomainsSelfRegistrationProfiles"));
+
+export { GetDomainsSettingArgs, GetDomainsSettingResult, GetDomainsSettingOutputArgs } from "./getDomainsSetting";
+export const getDomainsSetting: typeof import("./getDomainsSetting").getDomainsSetting = null as any;
+export const getDomainsSettingOutput: typeof import("./getDomainsSetting").getDomainsSettingOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsSetting","getDomainsSettingOutput"], () => require("./getDomainsSetting"));
+
+export { GetDomainsSettingsArgs, GetDomainsSettingsResult, GetDomainsSettingsOutputArgs } from "./getDomainsSettings";
+export const getDomainsSettings: typeof import("./getDomainsSettings").getDomainsSettings = null as any;
+export const getDomainsSettingsOutput: typeof import("./getDomainsSettings").getDomainsSettingsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsSettings","getDomainsSettingsOutput"], () => require("./getDomainsSettings"));
 
 export { GetDomainsSmtpCredentialArgs, GetDomainsSmtpCredentialResult, GetDomainsSmtpCredentialOutputArgs } from "./getDomainsSmtpCredential";
 export const getDomainsSmtpCredential: typeof import("./getDomainsSmtpCredential").getDomainsSmtpCredential = null as any;
@@ -834,10 +1089,24 @@ const _module = {
                 return new DomainsApp(name, <any>undefined, { urn })
             case "oci:Identity/domainsAppRole:DomainsAppRole":
                 return new DomainsAppRole(name, <any>undefined, { urn })
+            case "oci:Identity/domainsApprovalWorkflow:DomainsApprovalWorkflow":
+                return new DomainsApprovalWorkflow(name, <any>undefined, { urn })
+            case "oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment":
+                return new DomainsApprovalWorkflowAssignment(name, <any>undefined, { urn })
+            case "oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep":
+                return new DomainsApprovalWorkflowStep(name, <any>undefined, { urn })
             case "oci:Identity/domainsAuthToken:DomainsAuthToken":
                 return new DomainsAuthToken(name, <any>undefined, { urn })
             case "oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting":
                 return new DomainsAuthenticationFactorSetting(name, <any>undefined, { urn })
+            case "oci:Identity/domainsCloudGate:DomainsCloudGate":
+                return new DomainsCloudGate(name, <any>undefined, { urn })
+            case "oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping":
+                return new DomainsCloudGateMapping(name, <any>undefined, { urn })
+            case "oci:Identity/domainsCloudGateServer:DomainsCloudGateServer":
+                return new DomainsCloudGateServer(name, <any>undefined, { urn })
+            case "oci:Identity/domainsCondition:DomainsCondition":
+                return new DomainsCondition(name, <any>undefined, { urn })
             case "oci:Identity/domainsCustomerSecretKey:DomainsCustomerSecretKey":
                 return new DomainsCustomerSecretKey(name, <any>undefined, { urn })
             case "oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup":
@@ -868,14 +1137,30 @@ const _module = {
                 return new DomainsMySupportAccount(name, <any>undefined, { urn })
             case "oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential":
                 return new DomainsMyUserDbCredential(name, <any>undefined, { urn })
+            case "oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter":
+                return new DomainsNetworkPerimeter(name, <any>undefined, { urn })
+            case "oci:Identity/domainsNotificationSetting:DomainsNotificationSetting":
+                return new DomainsNotificationSetting(name, <any>undefined, { urn })
             case "oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential":
                 return new DomainsOauth2clientCredential(name, <any>undefined, { urn })
+            case "oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate":
+                return new DomainsOauthClientCertificate(name, <any>undefined, { urn })
+            case "oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate":
+                return new DomainsOauthPartnerCertificate(name, <any>undefined, { urn })
             case "oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy":
                 return new DomainsPasswordPolicy(name, <any>undefined, { urn })
+            case "oci:Identity/domainsPolicy:DomainsPolicy":
+                return new DomainsPolicy(name, <any>undefined, { urn })
+            case "oci:Identity/domainsRule:DomainsRule":
+                return new DomainsRule(name, <any>undefined, { urn })
             case "oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion":
                 return new DomainsSecurityQuestion(name, <any>undefined, { urn })
             case "oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting":
                 return new DomainsSecurityQuestionSetting(name, <any>undefined, { urn })
+            case "oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile":
+                return new DomainsSelfRegistrationProfile(name, <any>undefined, { urn })
+            case "oci:Identity/domainsSetting:DomainsSetting":
+                return new DomainsSetting(name, <any>undefined, { urn })
             case "oci:Identity/domainsSmtpCredential:DomainsSmtpCredential":
                 return new DomainsSmtpCredential(name, <any>undefined, { urn })
             case "oci:Identity/domainsUser:DomainsUser":
@@ -929,8 +1214,15 @@ pulumi.runtime.registerResourceModule("oci", "Identity/domainsAccountRecoverySet
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsApiKey", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsApp", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsAppRole", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsApprovalWorkflow", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsApprovalWorkflowAssignment", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsApprovalWorkflowStep", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsAuthToken", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsAuthenticationFactorSetting", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsCloudGate", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsCloudGateMapping", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsCloudGateServer", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsCondition", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsCustomerSecretKey", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsDynamicResourceGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsGrant", _module)
@@ -946,10 +1238,18 @@ pulumi.runtime.registerResourceModule("oci", "Identity/domainsMyRequest", _modul
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMySmtpCredential", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMySupportAccount", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsMyUserDbCredential", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsNetworkPerimeter", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsNotificationSetting", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsOauth2clientCredential", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsOauthClientCertificate", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsOauthPartnerCertificate", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsPasswordPolicy", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsPolicy", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsRule", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsSecurityQuestion", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsSecurityQuestionSetting", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsSelfRegistrationProfile", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsSetting", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsSmtpCredential", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsUser", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsUserDbCredential", _module)

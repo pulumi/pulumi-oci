@@ -54,6 +54,10 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockResult> Locks;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
@@ -116,6 +120,8 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockResult> locks,
+
             ImmutableArray<string> nsgIds,
 
             string privateEndpointIp,
@@ -146,6 +152,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             NsgIds = nsgIds;
             PrivateEndpointIp = privateEndpointIp;
             PrivateEndpointVnicId = privateEndpointVnicId;

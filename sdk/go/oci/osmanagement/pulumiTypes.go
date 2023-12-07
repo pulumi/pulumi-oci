@@ -1456,8 +1456,9 @@ type GetManagedInstanceGroupsManagedInstanceGroup struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique identifier that is immutable on creation
-	Id                   string `pulumi:"id"`
-	ManagedInstanceCount int    `pulumi:"managedInstanceCount"`
+	Id                   string   `pulumi:"id"`
+	ManagedInstanceCount int      `pulumi:"managedInstanceCount"`
+	ManagedInstanceIds   []string `pulumi:"managedInstanceIds"`
 	// list of Managed Instances in the group
 	ManagedInstances []GetManagedInstanceGroupsManagedInstanceGroupManagedInstance `pulumi:"managedInstances"`
 	// The OS family for which to list resources.
@@ -1489,8 +1490,9 @@ type GetManagedInstanceGroupsManagedInstanceGroupArgs struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// unique identifier that is immutable on creation
-	Id                   pulumi.StringInput `pulumi:"id"`
-	ManagedInstanceCount pulumi.IntInput    `pulumi:"managedInstanceCount"`
+	Id                   pulumi.StringInput      `pulumi:"id"`
+	ManagedInstanceCount pulumi.IntInput         `pulumi:"managedInstanceCount"`
+	ManagedInstanceIds   pulumi.StringArrayInput `pulumi:"managedInstanceIds"`
 	// list of Managed Instances in the group
 	ManagedInstances GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArrayInput `pulumi:"managedInstances"`
 	// The OS family for which to list resources.
@@ -1582,6 +1584,10 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) Id() pulumi.StringOu
 
 func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) ManagedInstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) int { return v.ManagedInstanceCount }).(pulumi.IntOutput)
+}
+
+func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) []string { return v.ManagedInstanceIds }).(pulumi.StringArrayOutput)
 }
 
 // list of Managed Instances in the group

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// The state of the BGP IPv6 session.
         /// </summary>
+        public readonly string? BgpIpv6State;
         public readonly string? BgpIpv6state;
         /// <summary>
         /// The state of the BGP session.
@@ -42,6 +43,18 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? CustomerInterfaceIp;
         /// <summary>
+        /// The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+        /// 
+        /// If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel's BGP session.
+        /// 
+        /// If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+        /// 
+        /// Only subnet masks from /64 up to /127 are allowed.
+        /// 
+        /// Example: `2001:db8::1/64`
+        /// </summary>
+        public readonly string? CustomerInterfaceIpv6;
+        /// <summary>
         /// The Oracle BGP ASN.
         /// </summary>
         public readonly string? OracleBgpAsn;
@@ -57,9 +70,23 @@ namespace Pulumi.Oci.Core.Outputs
         /// Example: `10.0.0.4/31`
         /// </summary>
         public readonly string? OracleInterfaceIp;
+        /// <summary>
+        /// The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+        /// 
+        /// If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel's BGP session.
+        /// 
+        /// If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+        /// 
+        /// Only subnet masks from /64 up to /127 are allowed.
+        /// 
+        /// Example: `2001:db8::1/64`
+        /// </summary>
+        public readonly string? OracleInterfaceIpv6;
 
         [OutputConstructor]
         private IpsecConnectionTunnelManagementBgpSessionInfo(
+            string? bgpIpv6State,
+
             string? bgpIpv6state,
 
             string? bgpState,
@@ -68,16 +95,23 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? customerInterfaceIp,
 
+            string? customerInterfaceIpv6,
+
             string? oracleBgpAsn,
 
-            string? oracleInterfaceIp)
+            string? oracleInterfaceIp,
+
+            string? oracleInterfaceIpv6)
         {
+            BgpIpv6State = bgpIpv6State;
             BgpIpv6state = bgpIpv6state;
             BgpState = bgpState;
             CustomerBgpAsn = customerBgpAsn;
             CustomerInterfaceIp = customerInterfaceIp;
+            CustomerInterfaceIpv6 = customerInterfaceIpv6;
             OracleBgpAsn = oracleBgpAsn;
             OracleInterfaceIp = oracleInterfaceIp;
+            OracleInterfaceIpv6 = oracleInterfaceIpv6;
         }
     }
 }

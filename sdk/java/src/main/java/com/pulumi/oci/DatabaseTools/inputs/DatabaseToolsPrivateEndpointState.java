@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseTools.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsPrivateEndpointLockArgs;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs;
 import java.lang.Object;
 import java.lang.String;
@@ -155,6 +156,21 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
     }
 
     /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<DatabaseToolsPrivateEndpointLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<DatabaseToolsPrivateEndpointLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint&#39;s VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
@@ -266,14 +282,14 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
     }
 
     /**
-     * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+     * When the lock was created.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+     * @return When the lock was created.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -322,6 +338,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         this.endpointServiceId = $.endpointServiceId;
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.nsgIds = $.nsgIds;
         this.privateEndpointIp = $.privateEndpointIp;
         this.privateEndpointVnicId = $.privateEndpointVnicId;
@@ -552,6 +569,37 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<DatabaseToolsPrivateEndpointLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<DatabaseToolsPrivateEndpointLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(DatabaseToolsPrivateEndpointLockArgs... locks) {
+            return locks(List.of(locks));
+        }
+
+        /**
          * @param nsgIds (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint&#39;s VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
          * 
          * @return builder
@@ -725,7 +773,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param timeCreated The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 
@@ -736,7 +784,7 @@ public final class DatabaseToolsPrivateEndpointState extends com.pulumi.resource
         }
 
         /**
-         * @param timeCreated The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 

@@ -50,13 +50,25 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockResult> Locks;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
         /// </summary>
         public readonly string PrivateEndpointId;
         /// <summary>
+        /// The proxy client information.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientResult> ProxyClients;
+        /// <summary>
         /// A related resource
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult> RelatedResources;
+        /// <summary>
+        /// A filter to return only resources with one of the specified runtimeSupport values.
+        /// </summary>
+        public readonly string RuntimeSupport;
         /// <summary>
         /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
@@ -77,6 +89,10 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// A filter to return only resources their type matches the specified type.
         /// </summary>
         public readonly string Type;
+        /// <summary>
+        /// The JDBC URL used to connect to the Generic JDBC database system.
+        /// </summary>
+        public readonly string Url;
         /// <summary>
         /// The database user name.
         /// </summary>
@@ -106,9 +122,15 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockResult> locks,
+
             string privateEndpointId,
 
+            ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientResult> proxyClients,
+
             ImmutableArray<Outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult> relatedResources,
+
+            string runtimeSupport,
 
             string state,
 
@@ -119,6 +141,8 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
             string timeUpdated,
 
             string type,
+
+            string url,
 
             string userName,
 
@@ -133,13 +157,17 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
             Id = id;
             KeyStores = keyStores;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             PrivateEndpointId = privateEndpointId;
+            ProxyClients = proxyClients;
             RelatedResources = relatedResources;
+            RuntimeSupport = runtimeSupport;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             Type = type;
+            Url = url;
             UserName = userName;
             UserPasswords = userPasswords;
         }

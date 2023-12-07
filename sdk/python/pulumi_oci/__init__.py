@@ -189,6 +189,8 @@ if typing.TYPE_CHECKING:
     osubsubscription = __osubsubscription
     import pulumi_oci.osubusage as __osubusage
     osubusage = __osubusage
+    import pulumi_oci.psql as __psql
+    psql = __psql
     import pulumi_oci.queue as __queue
     queue = __queue
     import pulumi_oci.recoverymod as __recoverymod
@@ -320,6 +322,7 @@ else:
     osuborganizationsubscription = _utilities.lazy_import('pulumi_oci.osuborganizationsubscription')
     osubsubscription = _utilities.lazy_import('pulumi_oci.osubsubscription')
     osubusage = _utilities.lazy_import('pulumi_oci.osubusage')
+    psql = _utilities.lazy_import('pulumi_oci.psql')
     queue = _utilities.lazy_import('pulumi_oci.queue')
     recoverymod = _utilities.lazy_import('pulumi_oci.recoverymod')
     redis = _utilities.lazy_import('pulumi_oci.redis')
@@ -730,6 +733,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "BigDataService/bdsInstanceOperationCertificateManagementsManagement",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsInstanceOperationCertificateManagementsManagement:BdsInstanceOperationCertificateManagementsManagement": "BdsInstanceOperationCertificateManagementsManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "BigDataService/bdsInstancePatchAction",
   "fqn": "pulumi_oci.bigdataservice",
   "classes": {
@@ -1118,6 +1129,14 @@ _utilities.register(
   "fqn": "pulumi_oci.core",
   "classes": {
    "oci:Core/computeCapacityReservation:ComputeCapacityReservation": "ComputeCapacityReservation"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Core/computeCapacityTopology",
+  "fqn": "pulumi_oci.core",
+  "classes": {
+   "oci:Core/computeCapacityTopology:ComputeCapacityTopology": "ComputeCapacityTopology"
   }
  },
  {
@@ -1762,6 +1781,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/auditPolicyManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/auditPolicyManagement:AuditPolicyManagement": "AuditPolicyManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/auditProfile",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
@@ -1770,10 +1797,26 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/auditProfileManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/auditProfileManagement:AuditProfileManagement": "AuditProfileManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/auditTrail",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/auditTrail:AuditTrail": "AuditTrail"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/auditTrailManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/auditTrailManagement:AuditTrailManagement": "AuditTrailManagement"
   }
  },
  {
@@ -2390,6 +2433,14 @@ _utilities.register(
   "fqn": "pulumi_oci.database",
   "classes": {
    "oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection": "DbNodeConsoleConnection"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/dbNodeConsoleHistory",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory": "DbNodeConsoleHistory"
   }
  },
  {
@@ -3258,6 +3309,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "GoldenGate/deploymentCertificate",
+  "fqn": "pulumi_oci.goldengate",
+  "classes": {
+   "oci:GoldenGate/deploymentCertificate:DeploymentCertificate": "DeploymentCertificate"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "HealthChecks/httpMonitor",
   "fqn": "pulumi_oci.healthchecks",
   "classes": {
@@ -3386,6 +3445,30 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Identity/domainsApprovalWorkflow",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsApprovalWorkflow:DomainsApprovalWorkflow": "DomainsApprovalWorkflow"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsApprovalWorkflowAssignment",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment": "DomainsApprovalWorkflowAssignment"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsApprovalWorkflowStep",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep": "DomainsApprovalWorkflowStep"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Identity/domainsAuthToken",
   "fqn": "pulumi_oci.identity",
   "classes": {
@@ -3398,6 +3481,38 @@ _utilities.register(
   "fqn": "pulumi_oci.identity",
   "classes": {
    "oci:Identity/domainsAuthenticationFactorSetting:DomainsAuthenticationFactorSetting": "DomainsAuthenticationFactorSetting"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsCloudGate",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsCloudGate:DomainsCloudGate": "DomainsCloudGate"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsCloudGateMapping",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping": "DomainsCloudGateMapping"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsCloudGateServer",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsCloudGateServer:DomainsCloudGateServer": "DomainsCloudGateServer"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsCondition",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsCondition:DomainsCondition": "DomainsCondition"
   }
  },
  {
@@ -3522,6 +3637,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Identity/domainsNetworkPerimeter",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsNetworkPerimeter:DomainsNetworkPerimeter": "DomainsNetworkPerimeter"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsNotificationSetting",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsNotificationSetting:DomainsNotificationSetting": "DomainsNotificationSetting"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Identity/domainsOauth2clientCredential",
   "fqn": "pulumi_oci.identity",
   "classes": {
@@ -3530,10 +3661,42 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Identity/domainsOauthClientCertificate",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate": "DomainsOauthClientCertificate"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsOauthPartnerCertificate",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsOauthPartnerCertificate:DomainsOauthPartnerCertificate": "DomainsOauthPartnerCertificate"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Identity/domainsPasswordPolicy",
   "fqn": "pulumi_oci.identity",
   "classes": {
    "oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy": "DomainsPasswordPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsPolicy",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsPolicy:DomainsPolicy": "DomainsPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsRule",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsRule:DomainsRule": "DomainsRule"
   }
  },
  {
@@ -3550,6 +3713,22 @@ _utilities.register(
   "fqn": "pulumi_oci.identity",
   "classes": {
    "oci:Identity/domainsSecurityQuestionSetting:DomainsSecurityQuestionSetting": "DomainsSecurityQuestionSetting"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsSelfRegistrationProfile",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile": "DomainsSelfRegistrationProfile"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Identity/domainsSetting",
+  "fqn": "pulumi_oci.identity",
+  "classes": {
+   "oci:Identity/domainsSetting:DomainsSetting": "DomainsSetting"
   }
  },
  {
@@ -3718,6 +3897,30 @@ _utilities.register(
   "fqn": "pulumi_oci.jms",
   "classes": {
    "oci:Jms/fleet:Fleet": "Fleet"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Jms/javaDownloadsJavaDownloadReport",
+  "fqn": "pulumi_oci.jms",
+  "classes": {
+   "oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport": "JavaDownloadsJavaDownloadReport"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Jms/javaDownloadsJavaDownloadToken",
+  "fqn": "pulumi_oci.jms",
+  "classes": {
+   "oci:Jms/javaDownloadsJavaDownloadToken:JavaDownloadsJavaDownloadToken": "JavaDownloadsJavaDownloadToken"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Jms/javaDownloadsJavaLicenseAcceptanceRecord",
+  "fqn": "pulumi_oci.jms",
+  "classes": {
+   "oci:Jms/javaDownloadsJavaLicenseAcceptanceRecord:JavaDownloadsJavaLicenseAcceptanceRecord": "JavaDownloadsJavaLicenseAcceptanceRecord"
   }
  },
  {
@@ -4434,6 +4637,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Ocvp/cluster",
+  "fqn": "pulumi_oci.ocvp",
+  "classes": {
+   "oci:Ocvp/cluster:Cluster": "Cluster"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Ocvp/esxiHost",
   "fqn": "pulumi_oci.ocvp",
   "classes": {
@@ -4742,6 +4953,30 @@ _utilities.register(
   "fqn": "pulumi_oci.ospgateway",
   "classes": {
    "oci:OspGateway/subscription:Subscription": "Subscription"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Psql/backup",
+  "fqn": "pulumi_oci.psql",
+  "classes": {
+   "oci:Psql/backup:Backup": "Backup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Psql/configuration",
+  "fqn": "pulumi_oci.psql",
+  "classes": {
+   "oci:Psql/configuration:Configuration": "Configuration"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Psql/dbSystem",
+  "fqn": "pulumi_oci.psql",
+  "classes": {
+   "oci:Psql/dbSystem:DbSystem": "DbSystem"
   }
  },
  {

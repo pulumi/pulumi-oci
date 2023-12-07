@@ -121,6 +121,7 @@ namespace Pulumi.Oci.Core
     [OutputType]
     public sealed class GetIpsecConnectionTunnelResult
     {
+        public readonly ImmutableArray<string> AssociatedVirtualCircuits;
         /// <summary>
         /// Information needed to establish a BGP Session on an interface.
         /// </summary>
@@ -137,12 +138,21 @@ namespace Pulumi.Oci.Core
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
+        public readonly ImmutableArray<Outputs.GetIpsecConnectionTunnelDpdConfigResult> DpdConfigs;
+        /// <summary>
+        /// Dead peer detection (DPD) mode set on the Oracle side of the connection.
+        /// </summary>
+        public readonly string DpdMode;
+        /// <summary>
+        /// DPD timeout in seconds.
+        /// </summary>
+        public readonly int DpdTimeoutInSec;
         /// <summary>
         /// Configuration information used by the encryption domain policy.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetIpsecConnectionTunnelEncryptionDomainConfigResult> EncryptionDomainConfigs;
         /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
+        /// The tunnel's Oracle ID (OCID).
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -151,9 +161,26 @@ namespace Pulumi.Oci.Core
         public readonly string IkeVersion;
         public readonly string IpsecId;
         /// <summary>
+        /// By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+        /// </summary>
+        public readonly string NatTranslationEnabled;
+        /// <summary>
+        /// Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
+        /// </summary>
+        public readonly string OracleCanInitiate;
+        /// <summary>
+        /// IPSec tunnel details specific to ISAKMP phase one.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetIpsecConnectionTunnelPhaseOneDetailResult> PhaseOneDetails;
+        /// <summary>
+        /// IPsec tunnel detail information specific to phase two.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetIpsecConnectionTunnelPhaseTwoDetailResult> PhaseTwoDetails;
+        /// <summary>
         /// the routing strategy used for this tunnel, either static route or BGP dynamic routing
         /// </summary>
         public readonly string Routing;
+        public readonly string SharedSecret;
         /// <summary>
         /// The IPSec connection's tunnel's lifecycle state.
         /// </summary>
@@ -178,6 +205,8 @@ namespace Pulumi.Oci.Core
 
         [OutputConstructor]
         private GetIpsecConnectionTunnelResult(
+            ImmutableArray<string> associatedVirtualCircuits,
+
             ImmutableArray<Outputs.GetIpsecConnectionTunnelBgpSessionInfoResult> bgpSessionInfos,
 
             string compartmentId,
@@ -185,6 +214,12 @@ namespace Pulumi.Oci.Core
             string cpeIp,
 
             string displayName,
+
+            ImmutableArray<Outputs.GetIpsecConnectionTunnelDpdConfigResult> dpdConfigs,
+
+            string dpdMode,
+
+            int dpdTimeoutInSec,
 
             ImmutableArray<Outputs.GetIpsecConnectionTunnelEncryptionDomainConfigResult> encryptionDomainConfigs,
 
@@ -194,7 +229,17 @@ namespace Pulumi.Oci.Core
 
             string ipsecId,
 
+            string natTranslationEnabled,
+
+            string oracleCanInitiate,
+
+            ImmutableArray<Outputs.GetIpsecConnectionTunnelPhaseOneDetailResult> phaseOneDetails,
+
+            ImmutableArray<Outputs.GetIpsecConnectionTunnelPhaseTwoDetailResult> phaseTwoDetails,
+
             string routing,
+
+            string sharedSecret,
 
             string state,
 
@@ -208,15 +253,24 @@ namespace Pulumi.Oci.Core
 
             string vpnIp)
         {
+            AssociatedVirtualCircuits = associatedVirtualCircuits;
             BgpSessionInfos = bgpSessionInfos;
             CompartmentId = compartmentId;
             CpeIp = cpeIp;
             DisplayName = displayName;
+            DpdConfigs = dpdConfigs;
+            DpdMode = dpdMode;
+            DpdTimeoutInSec = dpdTimeoutInSec;
             EncryptionDomainConfigs = encryptionDomainConfigs;
             Id = id;
             IkeVersion = ikeVersion;
             IpsecId = ipsecId;
+            NatTranslationEnabled = natTranslationEnabled;
+            OracleCanInitiate = oracleCanInitiate;
+            PhaseOneDetails = phaseOneDetails;
+            PhaseTwoDetails = phaseTwoDetails;
             Routing = routing;
+            SharedSecret = sharedSecret;
             State = state;
             Status = status;
             TimeCreated = timeCreated;

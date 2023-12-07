@@ -468,11 +468,499 @@ func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput) ValueType() pu
 	}).(pulumi.StringPtrOutput)
 }
 
+type DatabaseToolsConnectionLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// (Updatable) The DatabaseToolsConnection type.
+	Type string `pulumi:"type"`
+}
+
+// DatabaseToolsConnectionLockInput is an input type that accepts DatabaseToolsConnectionLockArgs and DatabaseToolsConnectionLockOutput values.
+// You can construct a concrete instance of `DatabaseToolsConnectionLockInput` via:
+//
+//	DatabaseToolsConnectionLockArgs{...}
+type DatabaseToolsConnectionLockInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsConnectionLockOutput() DatabaseToolsConnectionLockOutput
+	ToDatabaseToolsConnectionLockOutputWithContext(context.Context) DatabaseToolsConnectionLockOutput
+}
+
+type DatabaseToolsConnectionLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// (Updatable) The DatabaseToolsConnection type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (DatabaseToolsConnectionLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsConnectionLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsConnectionLockArgs) ToDatabaseToolsConnectionLockOutput() DatabaseToolsConnectionLockOutput {
+	return i.ToDatabaseToolsConnectionLockOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsConnectionLockArgs) ToDatabaseToolsConnectionLockOutputWithContext(ctx context.Context) DatabaseToolsConnectionLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionLockOutput)
+}
+
+// DatabaseToolsConnectionLockArrayInput is an input type that accepts DatabaseToolsConnectionLockArray and DatabaseToolsConnectionLockArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsConnectionLockArrayInput` via:
+//
+//	DatabaseToolsConnectionLockArray{ DatabaseToolsConnectionLockArgs{...} }
+type DatabaseToolsConnectionLockArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsConnectionLockArrayOutput() DatabaseToolsConnectionLockArrayOutput
+	ToDatabaseToolsConnectionLockArrayOutputWithContext(context.Context) DatabaseToolsConnectionLockArrayOutput
+}
+
+type DatabaseToolsConnectionLockArray []DatabaseToolsConnectionLockInput
+
+func (DatabaseToolsConnectionLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsConnectionLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsConnectionLockArray) ToDatabaseToolsConnectionLockArrayOutput() DatabaseToolsConnectionLockArrayOutput {
+	return i.ToDatabaseToolsConnectionLockArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsConnectionLockArray) ToDatabaseToolsConnectionLockArrayOutputWithContext(ctx context.Context) DatabaseToolsConnectionLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionLockArrayOutput)
+}
+
+type DatabaseToolsConnectionLockOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsConnectionLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsConnectionLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsConnectionLockOutput) ToDatabaseToolsConnectionLockOutput() DatabaseToolsConnectionLockOutput {
+	return o
+}
+
+func (o DatabaseToolsConnectionLockOutput) ToDatabaseToolsConnectionLockOutputWithContext(ctx context.Context) DatabaseToolsConnectionLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o DatabaseToolsConnectionLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o DatabaseToolsConnectionLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o DatabaseToolsConnectionLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The DatabaseToolsConnection type.
+func (o DatabaseToolsConnectionLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type DatabaseToolsConnectionLockArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsConnectionLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsConnectionLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsConnectionLockArrayOutput) ToDatabaseToolsConnectionLockArrayOutput() DatabaseToolsConnectionLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsConnectionLockArrayOutput) ToDatabaseToolsConnectionLockArrayOutputWithContext(ctx context.Context) DatabaseToolsConnectionLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsConnectionLockArrayOutput) Index(i pulumi.IntInput) DatabaseToolsConnectionLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsConnectionLock {
+		return vs[0].([]DatabaseToolsConnectionLock)[vs[1].(int)]
+	}).(DatabaseToolsConnectionLockOutput)
+}
+
+type DatabaseToolsConnectionProxyClient struct {
+	// (Updatable) The proxy authentication type.
+	ProxyAuthenticationType string `pulumi:"proxyAuthenticationType"`
+	// (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+	Roles []string `pulumi:"roles"`
+	// (Updatable) The database user name.
+	UserName *string `pulumi:"userName"`
+	// (Updatable) The user password.
+	UserPassword *DatabaseToolsConnectionProxyClientUserPassword `pulumi:"userPassword"`
+}
+
+// DatabaseToolsConnectionProxyClientInput is an input type that accepts DatabaseToolsConnectionProxyClientArgs and DatabaseToolsConnectionProxyClientOutput values.
+// You can construct a concrete instance of `DatabaseToolsConnectionProxyClientInput` via:
+//
+//	DatabaseToolsConnectionProxyClientArgs{...}
+type DatabaseToolsConnectionProxyClientInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsConnectionProxyClientOutput() DatabaseToolsConnectionProxyClientOutput
+	ToDatabaseToolsConnectionProxyClientOutputWithContext(context.Context) DatabaseToolsConnectionProxyClientOutput
+}
+
+type DatabaseToolsConnectionProxyClientArgs struct {
+	// (Updatable) The proxy authentication type.
+	ProxyAuthenticationType pulumi.StringInput `pulumi:"proxyAuthenticationType"`
+	// (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+	Roles pulumi.StringArrayInput `pulumi:"roles"`
+	// (Updatable) The database user name.
+	UserName pulumi.StringPtrInput `pulumi:"userName"`
+	// (Updatable) The user password.
+	UserPassword DatabaseToolsConnectionProxyClientUserPasswordPtrInput `pulumi:"userPassword"`
+}
+
+func (DatabaseToolsConnectionProxyClientArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsConnectionProxyClient)(nil)).Elem()
+}
+
+func (i DatabaseToolsConnectionProxyClientArgs) ToDatabaseToolsConnectionProxyClientOutput() DatabaseToolsConnectionProxyClientOutput {
+	return i.ToDatabaseToolsConnectionProxyClientOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsConnectionProxyClientArgs) ToDatabaseToolsConnectionProxyClientOutputWithContext(ctx context.Context) DatabaseToolsConnectionProxyClientOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionProxyClientOutput)
+}
+
+func (i DatabaseToolsConnectionProxyClientArgs) ToDatabaseToolsConnectionProxyClientPtrOutput() DatabaseToolsConnectionProxyClientPtrOutput {
+	return i.ToDatabaseToolsConnectionProxyClientPtrOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsConnectionProxyClientArgs) ToDatabaseToolsConnectionProxyClientPtrOutputWithContext(ctx context.Context) DatabaseToolsConnectionProxyClientPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionProxyClientOutput).ToDatabaseToolsConnectionProxyClientPtrOutputWithContext(ctx)
+}
+
+// DatabaseToolsConnectionProxyClientPtrInput is an input type that accepts DatabaseToolsConnectionProxyClientArgs, DatabaseToolsConnectionProxyClientPtr and DatabaseToolsConnectionProxyClientPtrOutput values.
+// You can construct a concrete instance of `DatabaseToolsConnectionProxyClientPtrInput` via:
+//
+//	        DatabaseToolsConnectionProxyClientArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatabaseToolsConnectionProxyClientPtrInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsConnectionProxyClientPtrOutput() DatabaseToolsConnectionProxyClientPtrOutput
+	ToDatabaseToolsConnectionProxyClientPtrOutputWithContext(context.Context) DatabaseToolsConnectionProxyClientPtrOutput
+}
+
+type databaseToolsConnectionProxyClientPtrType DatabaseToolsConnectionProxyClientArgs
+
+func DatabaseToolsConnectionProxyClientPtr(v *DatabaseToolsConnectionProxyClientArgs) DatabaseToolsConnectionProxyClientPtrInput {
+	return (*databaseToolsConnectionProxyClientPtrType)(v)
+}
+
+func (*databaseToolsConnectionProxyClientPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseToolsConnectionProxyClient)(nil)).Elem()
+}
+
+func (i *databaseToolsConnectionProxyClientPtrType) ToDatabaseToolsConnectionProxyClientPtrOutput() DatabaseToolsConnectionProxyClientPtrOutput {
+	return i.ToDatabaseToolsConnectionProxyClientPtrOutputWithContext(context.Background())
+}
+
+func (i *databaseToolsConnectionProxyClientPtrType) ToDatabaseToolsConnectionProxyClientPtrOutputWithContext(ctx context.Context) DatabaseToolsConnectionProxyClientPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionProxyClientPtrOutput)
+}
+
+type DatabaseToolsConnectionProxyClientOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsConnectionProxyClientOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsConnectionProxyClient)(nil)).Elem()
+}
+
+func (o DatabaseToolsConnectionProxyClientOutput) ToDatabaseToolsConnectionProxyClientOutput() DatabaseToolsConnectionProxyClientOutput {
+	return o
+}
+
+func (o DatabaseToolsConnectionProxyClientOutput) ToDatabaseToolsConnectionProxyClientOutputWithContext(ctx context.Context) DatabaseToolsConnectionProxyClientOutput {
+	return o
+}
+
+func (o DatabaseToolsConnectionProxyClientOutput) ToDatabaseToolsConnectionProxyClientPtrOutput() DatabaseToolsConnectionProxyClientPtrOutput {
+	return o.ToDatabaseToolsConnectionProxyClientPtrOutputWithContext(context.Background())
+}
+
+func (o DatabaseToolsConnectionProxyClientOutput) ToDatabaseToolsConnectionProxyClientPtrOutputWithContext(ctx context.Context) DatabaseToolsConnectionProxyClientPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseToolsConnectionProxyClient) *DatabaseToolsConnectionProxyClient {
+		return &v
+	}).(DatabaseToolsConnectionProxyClientPtrOutput)
+}
+
+// (Updatable) The proxy authentication type.
+func (o DatabaseToolsConnectionProxyClientOutput) ProxyAuthenticationType() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionProxyClient) string { return v.ProxyAuthenticationType }).(pulumi.StringOutput)
+}
+
+// (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+func (o DatabaseToolsConnectionProxyClientOutput) Roles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionProxyClient) []string { return v.Roles }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The database user name.
+func (o DatabaseToolsConnectionProxyClientOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionProxyClient) *string { return v.UserName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The user password.
+func (o DatabaseToolsConnectionProxyClientOutput) UserPassword() DatabaseToolsConnectionProxyClientUserPasswordPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionProxyClient) *DatabaseToolsConnectionProxyClientUserPassword {
+		return v.UserPassword
+	}).(DatabaseToolsConnectionProxyClientUserPasswordPtrOutput)
+}
+
+type DatabaseToolsConnectionProxyClientPtrOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsConnectionProxyClientPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseToolsConnectionProxyClient)(nil)).Elem()
+}
+
+func (o DatabaseToolsConnectionProxyClientPtrOutput) ToDatabaseToolsConnectionProxyClientPtrOutput() DatabaseToolsConnectionProxyClientPtrOutput {
+	return o
+}
+
+func (o DatabaseToolsConnectionProxyClientPtrOutput) ToDatabaseToolsConnectionProxyClientPtrOutputWithContext(ctx context.Context) DatabaseToolsConnectionProxyClientPtrOutput {
+	return o
+}
+
+func (o DatabaseToolsConnectionProxyClientPtrOutput) Elem() DatabaseToolsConnectionProxyClientOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnectionProxyClient) DatabaseToolsConnectionProxyClient {
+		if v != nil {
+			return *v
+		}
+		var ret DatabaseToolsConnectionProxyClient
+		return ret
+	}).(DatabaseToolsConnectionProxyClientOutput)
+}
+
+// (Updatable) The proxy authentication type.
+func (o DatabaseToolsConnectionProxyClientPtrOutput) ProxyAuthenticationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnectionProxyClient) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ProxyAuthenticationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+func (o DatabaseToolsConnectionProxyClientPtrOutput) Roles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnectionProxyClient) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Roles
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The database user name.
+func (o DatabaseToolsConnectionProxyClientPtrOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnectionProxyClient) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UserName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The user password.
+func (o DatabaseToolsConnectionProxyClientPtrOutput) UserPassword() DatabaseToolsConnectionProxyClientUserPasswordPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnectionProxyClient) *DatabaseToolsConnectionProxyClientUserPassword {
+		if v == nil {
+			return nil
+		}
+		return v.UserPassword
+	}).(DatabaseToolsConnectionProxyClientUserPasswordPtrOutput)
+}
+
+type DatabaseToolsConnectionProxyClientUserPassword struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	SecretId string `pulumi:"secretId"`
+	// (Updatable) The value type of the user password.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ValueType string `pulumi:"valueType"`
+}
+
+// DatabaseToolsConnectionProxyClientUserPasswordInput is an input type that accepts DatabaseToolsConnectionProxyClientUserPasswordArgs and DatabaseToolsConnectionProxyClientUserPasswordOutput values.
+// You can construct a concrete instance of `DatabaseToolsConnectionProxyClientUserPasswordInput` via:
+//
+//	DatabaseToolsConnectionProxyClientUserPasswordArgs{...}
+type DatabaseToolsConnectionProxyClientUserPasswordInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsConnectionProxyClientUserPasswordOutput() DatabaseToolsConnectionProxyClientUserPasswordOutput
+	ToDatabaseToolsConnectionProxyClientUserPasswordOutputWithContext(context.Context) DatabaseToolsConnectionProxyClientUserPasswordOutput
+}
+
+type DatabaseToolsConnectionProxyClientUserPasswordArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// (Updatable) The value type of the user password.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ValueType pulumi.StringInput `pulumi:"valueType"`
+}
+
+func (DatabaseToolsConnectionProxyClientUserPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsConnectionProxyClientUserPassword)(nil)).Elem()
+}
+
+func (i DatabaseToolsConnectionProxyClientUserPasswordArgs) ToDatabaseToolsConnectionProxyClientUserPasswordOutput() DatabaseToolsConnectionProxyClientUserPasswordOutput {
+	return i.ToDatabaseToolsConnectionProxyClientUserPasswordOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsConnectionProxyClientUserPasswordArgs) ToDatabaseToolsConnectionProxyClientUserPasswordOutputWithContext(ctx context.Context) DatabaseToolsConnectionProxyClientUserPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionProxyClientUserPasswordOutput)
+}
+
+func (i DatabaseToolsConnectionProxyClientUserPasswordArgs) ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutput() DatabaseToolsConnectionProxyClientUserPasswordPtrOutput {
+	return i.ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsConnectionProxyClientUserPasswordArgs) ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutputWithContext(ctx context.Context) DatabaseToolsConnectionProxyClientUserPasswordPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionProxyClientUserPasswordOutput).ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutputWithContext(ctx)
+}
+
+// DatabaseToolsConnectionProxyClientUserPasswordPtrInput is an input type that accepts DatabaseToolsConnectionProxyClientUserPasswordArgs, DatabaseToolsConnectionProxyClientUserPasswordPtr and DatabaseToolsConnectionProxyClientUserPasswordPtrOutput values.
+// You can construct a concrete instance of `DatabaseToolsConnectionProxyClientUserPasswordPtrInput` via:
+//
+//	        DatabaseToolsConnectionProxyClientUserPasswordArgs{...}
+//
+//	or:
+//
+//	        nil
+type DatabaseToolsConnectionProxyClientUserPasswordPtrInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutput() DatabaseToolsConnectionProxyClientUserPasswordPtrOutput
+	ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutputWithContext(context.Context) DatabaseToolsConnectionProxyClientUserPasswordPtrOutput
+}
+
+type databaseToolsConnectionProxyClientUserPasswordPtrType DatabaseToolsConnectionProxyClientUserPasswordArgs
+
+func DatabaseToolsConnectionProxyClientUserPasswordPtr(v *DatabaseToolsConnectionProxyClientUserPasswordArgs) DatabaseToolsConnectionProxyClientUserPasswordPtrInput {
+	return (*databaseToolsConnectionProxyClientUserPasswordPtrType)(v)
+}
+
+func (*databaseToolsConnectionProxyClientUserPasswordPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseToolsConnectionProxyClientUserPassword)(nil)).Elem()
+}
+
+func (i *databaseToolsConnectionProxyClientUserPasswordPtrType) ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutput() DatabaseToolsConnectionProxyClientUserPasswordPtrOutput {
+	return i.ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutputWithContext(context.Background())
+}
+
+func (i *databaseToolsConnectionProxyClientUserPasswordPtrType) ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutputWithContext(ctx context.Context) DatabaseToolsConnectionProxyClientUserPasswordPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsConnectionProxyClientUserPasswordPtrOutput)
+}
+
+type DatabaseToolsConnectionProxyClientUserPasswordOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsConnectionProxyClientUserPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsConnectionProxyClientUserPassword)(nil)).Elem()
+}
+
+func (o DatabaseToolsConnectionProxyClientUserPasswordOutput) ToDatabaseToolsConnectionProxyClientUserPasswordOutput() DatabaseToolsConnectionProxyClientUserPasswordOutput {
+	return o
+}
+
+func (o DatabaseToolsConnectionProxyClientUserPasswordOutput) ToDatabaseToolsConnectionProxyClientUserPasswordOutputWithContext(ctx context.Context) DatabaseToolsConnectionProxyClientUserPasswordOutput {
+	return o
+}
+
+func (o DatabaseToolsConnectionProxyClientUserPasswordOutput) ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutput() DatabaseToolsConnectionProxyClientUserPasswordPtrOutput {
+	return o.ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutputWithContext(context.Background())
+}
+
+func (o DatabaseToolsConnectionProxyClientUserPasswordOutput) ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutputWithContext(ctx context.Context) DatabaseToolsConnectionProxyClientUserPasswordPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DatabaseToolsConnectionProxyClientUserPassword) *DatabaseToolsConnectionProxyClientUserPassword {
+		return &v
+	}).(DatabaseToolsConnectionProxyClientUserPasswordPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+func (o DatabaseToolsConnectionProxyClientUserPasswordOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionProxyClientUserPassword) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The value type of the user password.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DatabaseToolsConnectionProxyClientUserPasswordOutput) ValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionProxyClientUserPassword) string { return v.ValueType }).(pulumi.StringOutput)
+}
+
+type DatabaseToolsConnectionProxyClientUserPasswordPtrOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsConnectionProxyClientUserPasswordPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DatabaseToolsConnectionProxyClientUserPassword)(nil)).Elem()
+}
+
+func (o DatabaseToolsConnectionProxyClientUserPasswordPtrOutput) ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutput() DatabaseToolsConnectionProxyClientUserPasswordPtrOutput {
+	return o
+}
+
+func (o DatabaseToolsConnectionProxyClientUserPasswordPtrOutput) ToDatabaseToolsConnectionProxyClientUserPasswordPtrOutputWithContext(ctx context.Context) DatabaseToolsConnectionProxyClientUserPasswordPtrOutput {
+	return o
+}
+
+func (o DatabaseToolsConnectionProxyClientUserPasswordPtrOutput) Elem() DatabaseToolsConnectionProxyClientUserPasswordOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnectionProxyClientUserPassword) DatabaseToolsConnectionProxyClientUserPassword {
+		if v != nil {
+			return *v
+		}
+		var ret DatabaseToolsConnectionProxyClientUserPassword
+		return ret
+	}).(DatabaseToolsConnectionProxyClientUserPasswordOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+func (o DatabaseToolsConnectionProxyClientUserPasswordPtrOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnectionProxyClientUserPassword) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The value type of the user password.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DatabaseToolsConnectionProxyClientUserPasswordPtrOutput) ValueType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnectionProxyClientUserPassword) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ValueType
+	}).(pulumi.StringPtrOutput)
+}
+
 type DatabaseToolsConnectionRelatedResource struct {
 	// (Updatable) The resource entity type.
-	EntityType string `pulumi:"entityType"`
+	EntityType *string `pulumi:"entityType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
-	Identifier string `pulumi:"identifier"`
+	Identifier *string `pulumi:"identifier"`
 }
 
 // DatabaseToolsConnectionRelatedResourceInput is an input type that accepts DatabaseToolsConnectionRelatedResourceArgs and DatabaseToolsConnectionRelatedResourceOutput values.
@@ -488,9 +976,9 @@ type DatabaseToolsConnectionRelatedResourceInput interface {
 
 type DatabaseToolsConnectionRelatedResourceArgs struct {
 	// (Updatable) The resource entity type.
-	EntityType pulumi.StringInput `pulumi:"entityType"`
+	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
-	Identifier pulumi.StringInput `pulumi:"identifier"`
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
 }
 
 func (DatabaseToolsConnectionRelatedResourceArgs) ElementType() reflect.Type {
@@ -571,13 +1059,13 @@ func (o DatabaseToolsConnectionRelatedResourceOutput) ToDatabaseToolsConnectionR
 }
 
 // (Updatable) The resource entity type.
-func (o DatabaseToolsConnectionRelatedResourceOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v DatabaseToolsConnectionRelatedResource) string { return v.EntityType }).(pulumi.StringOutput)
+func (o DatabaseToolsConnectionRelatedResourceOutput) EntityType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionRelatedResource) *string { return v.EntityType }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
-func (o DatabaseToolsConnectionRelatedResourceOutput) Identifier() pulumi.StringOutput {
-	return o.ApplyT(func(v DatabaseToolsConnectionRelatedResource) string { return v.Identifier }).(pulumi.StringOutput)
+func (o DatabaseToolsConnectionRelatedResourceOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsConnectionRelatedResource) *string { return v.Identifier }).(pulumi.StringPtrOutput)
 }
 
 type DatabaseToolsConnectionRelatedResourcePtrOutput struct{ *pulumi.OutputState }
@@ -610,7 +1098,7 @@ func (o DatabaseToolsConnectionRelatedResourcePtrOutput) EntityType() pulumi.Str
 		if v == nil {
 			return nil
 		}
-		return &v.EntityType
+		return v.EntityType
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -620,7 +1108,7 @@ func (o DatabaseToolsConnectionRelatedResourcePtrOutput) Identifier() pulumi.Str
 		if v == nil {
 			return nil
 		}
-		return &v.Identifier
+		return v.Identifier
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -790,6 +1278,130 @@ func (o DatabaseToolsConnectionUserPasswordPtrOutput) ValueType() pulumi.StringP
 		}
 		return &v.ValueType
 	}).(pulumi.StringPtrOutput)
+}
+
+type DatabaseToolsPrivateEndpointLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// DatabaseToolsPrivateEndpointLockInput is an input type that accepts DatabaseToolsPrivateEndpointLockArgs and DatabaseToolsPrivateEndpointLockOutput values.
+// You can construct a concrete instance of `DatabaseToolsPrivateEndpointLockInput` via:
+//
+//	DatabaseToolsPrivateEndpointLockArgs{...}
+type DatabaseToolsPrivateEndpointLockInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsPrivateEndpointLockOutput() DatabaseToolsPrivateEndpointLockOutput
+	ToDatabaseToolsPrivateEndpointLockOutputWithContext(context.Context) DatabaseToolsPrivateEndpointLockOutput
+}
+
+type DatabaseToolsPrivateEndpointLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the lock was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (DatabaseToolsPrivateEndpointLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsPrivateEndpointLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsPrivateEndpointLockArgs) ToDatabaseToolsPrivateEndpointLockOutput() DatabaseToolsPrivateEndpointLockOutput {
+	return i.ToDatabaseToolsPrivateEndpointLockOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsPrivateEndpointLockArgs) ToDatabaseToolsPrivateEndpointLockOutputWithContext(ctx context.Context) DatabaseToolsPrivateEndpointLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsPrivateEndpointLockOutput)
+}
+
+// DatabaseToolsPrivateEndpointLockArrayInput is an input type that accepts DatabaseToolsPrivateEndpointLockArray and DatabaseToolsPrivateEndpointLockArrayOutput values.
+// You can construct a concrete instance of `DatabaseToolsPrivateEndpointLockArrayInput` via:
+//
+//	DatabaseToolsPrivateEndpointLockArray{ DatabaseToolsPrivateEndpointLockArgs{...} }
+type DatabaseToolsPrivateEndpointLockArrayInput interface {
+	pulumi.Input
+
+	ToDatabaseToolsPrivateEndpointLockArrayOutput() DatabaseToolsPrivateEndpointLockArrayOutput
+	ToDatabaseToolsPrivateEndpointLockArrayOutputWithContext(context.Context) DatabaseToolsPrivateEndpointLockArrayOutput
+}
+
+type DatabaseToolsPrivateEndpointLockArray []DatabaseToolsPrivateEndpointLockInput
+
+func (DatabaseToolsPrivateEndpointLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsPrivateEndpointLock)(nil)).Elem()
+}
+
+func (i DatabaseToolsPrivateEndpointLockArray) ToDatabaseToolsPrivateEndpointLockArrayOutput() DatabaseToolsPrivateEndpointLockArrayOutput {
+	return i.ToDatabaseToolsPrivateEndpointLockArrayOutputWithContext(context.Background())
+}
+
+func (i DatabaseToolsPrivateEndpointLockArray) ToDatabaseToolsPrivateEndpointLockArrayOutputWithContext(ctx context.Context) DatabaseToolsPrivateEndpointLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DatabaseToolsPrivateEndpointLockArrayOutput)
+}
+
+type DatabaseToolsPrivateEndpointLockOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsPrivateEndpointLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DatabaseToolsPrivateEndpointLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsPrivateEndpointLockOutput) ToDatabaseToolsPrivateEndpointLockOutput() DatabaseToolsPrivateEndpointLockOutput {
+	return o
+}
+
+func (o DatabaseToolsPrivateEndpointLockOutput) ToDatabaseToolsPrivateEndpointLockOutputWithContext(ctx context.Context) DatabaseToolsPrivateEndpointLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o DatabaseToolsPrivateEndpointLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsPrivateEndpointLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o DatabaseToolsPrivateEndpointLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsPrivateEndpointLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the lock was created.
+func (o DatabaseToolsPrivateEndpointLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseToolsPrivateEndpointLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o DatabaseToolsPrivateEndpointLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DatabaseToolsPrivateEndpointLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type DatabaseToolsPrivateEndpointLockArrayOutput struct{ *pulumi.OutputState }
+
+func (DatabaseToolsPrivateEndpointLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DatabaseToolsPrivateEndpointLock)(nil)).Elem()
+}
+
+func (o DatabaseToolsPrivateEndpointLockArrayOutput) ToDatabaseToolsPrivateEndpointLockArrayOutput() DatabaseToolsPrivateEndpointLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsPrivateEndpointLockArrayOutput) ToDatabaseToolsPrivateEndpointLockArrayOutputWithContext(ctx context.Context) DatabaseToolsPrivateEndpointLockArrayOutput {
+	return o
+}
+
+func (o DatabaseToolsPrivateEndpointLockArrayOutput) Index(i pulumi.IntInput) DatabaseToolsPrivateEndpointLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DatabaseToolsPrivateEndpointLock {
+		return vs[0].([]DatabaseToolsPrivateEndpointLock)[vs[1].(int)]
+	}).(DatabaseToolsPrivateEndpointLockOutput)
 }
 
 type DatabaseToolsPrivateEndpointReverseConnectionConfiguration struct {
@@ -1321,6 +1933,362 @@ func (o GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayOutput) Index(i p
 	}).(GetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutput)
 }
 
+type GetDatabaseToolsConnectionLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The Database Tools connection type.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsConnectionLockInput is an input type that accepts GetDatabaseToolsConnectionLockArgs and GetDatabaseToolsConnectionLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsConnectionLockInput` via:
+//
+//	GetDatabaseToolsConnectionLockArgs{...}
+type GetDatabaseToolsConnectionLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsConnectionLockOutput() GetDatabaseToolsConnectionLockOutput
+	ToGetDatabaseToolsConnectionLockOutputWithContext(context.Context) GetDatabaseToolsConnectionLockOutput
+}
+
+type GetDatabaseToolsConnectionLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The Database Tools connection type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsConnectionLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsConnectionLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsConnectionLockArgs) ToGetDatabaseToolsConnectionLockOutput() GetDatabaseToolsConnectionLockOutput {
+	return i.ToGetDatabaseToolsConnectionLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsConnectionLockArgs) ToGetDatabaseToolsConnectionLockOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionLockOutput)
+}
+
+// GetDatabaseToolsConnectionLockArrayInput is an input type that accepts GetDatabaseToolsConnectionLockArray and GetDatabaseToolsConnectionLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsConnectionLockArrayInput` via:
+//
+//	GetDatabaseToolsConnectionLockArray{ GetDatabaseToolsConnectionLockArgs{...} }
+type GetDatabaseToolsConnectionLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsConnectionLockArrayOutput() GetDatabaseToolsConnectionLockArrayOutput
+	ToGetDatabaseToolsConnectionLockArrayOutputWithContext(context.Context) GetDatabaseToolsConnectionLockArrayOutput
+}
+
+type GetDatabaseToolsConnectionLockArray []GetDatabaseToolsConnectionLockInput
+
+func (GetDatabaseToolsConnectionLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsConnectionLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsConnectionLockArray) ToGetDatabaseToolsConnectionLockArrayOutput() GetDatabaseToolsConnectionLockArrayOutput {
+	return i.ToGetDatabaseToolsConnectionLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsConnectionLockArray) ToGetDatabaseToolsConnectionLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionLockArrayOutput)
+}
+
+type GetDatabaseToolsConnectionLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsConnectionLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsConnectionLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsConnectionLockOutput) ToGetDatabaseToolsConnectionLockOutput() GetDatabaseToolsConnectionLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionLockOutput) ToGetDatabaseToolsConnectionLockOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsConnectionLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsConnectionLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsConnectionLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The Database Tools connection type.
+func (o GetDatabaseToolsConnectionLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsConnectionLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsConnectionLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsConnectionLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsConnectionLockArrayOutput) ToGetDatabaseToolsConnectionLockArrayOutput() GetDatabaseToolsConnectionLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionLockArrayOutput) ToGetDatabaseToolsConnectionLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsConnectionLock {
+		return vs[0].([]GetDatabaseToolsConnectionLock)[vs[1].(int)]
+	}).(GetDatabaseToolsConnectionLockOutput)
+}
+
+type GetDatabaseToolsConnectionProxyClient struct {
+	// The proxy authentication type.
+	ProxyAuthenticationType string `pulumi:"proxyAuthenticationType"`
+	// A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+	Roles []string `pulumi:"roles"`
+	// The database user name.
+	UserName string `pulumi:"userName"`
+	// The user password.
+	UserPasswords []GetDatabaseToolsConnectionProxyClientUserPassword `pulumi:"userPasswords"`
+}
+
+// GetDatabaseToolsConnectionProxyClientInput is an input type that accepts GetDatabaseToolsConnectionProxyClientArgs and GetDatabaseToolsConnectionProxyClientOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsConnectionProxyClientInput` via:
+//
+//	GetDatabaseToolsConnectionProxyClientArgs{...}
+type GetDatabaseToolsConnectionProxyClientInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsConnectionProxyClientOutput() GetDatabaseToolsConnectionProxyClientOutput
+	ToGetDatabaseToolsConnectionProxyClientOutputWithContext(context.Context) GetDatabaseToolsConnectionProxyClientOutput
+}
+
+type GetDatabaseToolsConnectionProxyClientArgs struct {
+	// The proxy authentication type.
+	ProxyAuthenticationType pulumi.StringInput `pulumi:"proxyAuthenticationType"`
+	// A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+	Roles pulumi.StringArrayInput `pulumi:"roles"`
+	// The database user name.
+	UserName pulumi.StringInput `pulumi:"userName"`
+	// The user password.
+	UserPasswords GetDatabaseToolsConnectionProxyClientUserPasswordArrayInput `pulumi:"userPasswords"`
+}
+
+func (GetDatabaseToolsConnectionProxyClientArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsConnectionProxyClient)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsConnectionProxyClientArgs) ToGetDatabaseToolsConnectionProxyClientOutput() GetDatabaseToolsConnectionProxyClientOutput {
+	return i.ToGetDatabaseToolsConnectionProxyClientOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsConnectionProxyClientArgs) ToGetDatabaseToolsConnectionProxyClientOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionProxyClientOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionProxyClientOutput)
+}
+
+// GetDatabaseToolsConnectionProxyClientArrayInput is an input type that accepts GetDatabaseToolsConnectionProxyClientArray and GetDatabaseToolsConnectionProxyClientArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsConnectionProxyClientArrayInput` via:
+//
+//	GetDatabaseToolsConnectionProxyClientArray{ GetDatabaseToolsConnectionProxyClientArgs{...} }
+type GetDatabaseToolsConnectionProxyClientArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsConnectionProxyClientArrayOutput() GetDatabaseToolsConnectionProxyClientArrayOutput
+	ToGetDatabaseToolsConnectionProxyClientArrayOutputWithContext(context.Context) GetDatabaseToolsConnectionProxyClientArrayOutput
+}
+
+type GetDatabaseToolsConnectionProxyClientArray []GetDatabaseToolsConnectionProxyClientInput
+
+func (GetDatabaseToolsConnectionProxyClientArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsConnectionProxyClient)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsConnectionProxyClientArray) ToGetDatabaseToolsConnectionProxyClientArrayOutput() GetDatabaseToolsConnectionProxyClientArrayOutput {
+	return i.ToGetDatabaseToolsConnectionProxyClientArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsConnectionProxyClientArray) ToGetDatabaseToolsConnectionProxyClientArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionProxyClientArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionProxyClientArrayOutput)
+}
+
+type GetDatabaseToolsConnectionProxyClientOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsConnectionProxyClientOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsConnectionProxyClient)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsConnectionProxyClientOutput) ToGetDatabaseToolsConnectionProxyClientOutput() GetDatabaseToolsConnectionProxyClientOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionProxyClientOutput) ToGetDatabaseToolsConnectionProxyClientOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionProxyClientOutput {
+	return o
+}
+
+// The proxy authentication type.
+func (o GetDatabaseToolsConnectionProxyClientOutput) ProxyAuthenticationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionProxyClient) string { return v.ProxyAuthenticationType }).(pulumi.StringOutput)
+}
+
+// A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+func (o GetDatabaseToolsConnectionProxyClientOutput) Roles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionProxyClient) []string { return v.Roles }).(pulumi.StringArrayOutput)
+}
+
+// The database user name.
+func (o GetDatabaseToolsConnectionProxyClientOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionProxyClient) string { return v.UserName }).(pulumi.StringOutput)
+}
+
+// The user password.
+func (o GetDatabaseToolsConnectionProxyClientOutput) UserPasswords() GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionProxyClient) []GetDatabaseToolsConnectionProxyClientUserPassword {
+		return v.UserPasswords
+	}).(GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput)
+}
+
+type GetDatabaseToolsConnectionProxyClientArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsConnectionProxyClientArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsConnectionProxyClient)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsConnectionProxyClientArrayOutput) ToGetDatabaseToolsConnectionProxyClientArrayOutput() GetDatabaseToolsConnectionProxyClientArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionProxyClientArrayOutput) ToGetDatabaseToolsConnectionProxyClientArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionProxyClientArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionProxyClientArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionProxyClientOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsConnectionProxyClient {
+		return vs[0].([]GetDatabaseToolsConnectionProxyClient)[vs[1].(int)]
+	}).(GetDatabaseToolsConnectionProxyClientOutput)
+}
+
+type GetDatabaseToolsConnectionProxyClientUserPassword struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	SecretId string `pulumi:"secretId"`
+	// The value type of the user password.
+	ValueType string `pulumi:"valueType"`
+}
+
+// GetDatabaseToolsConnectionProxyClientUserPasswordInput is an input type that accepts GetDatabaseToolsConnectionProxyClientUserPasswordArgs and GetDatabaseToolsConnectionProxyClientUserPasswordOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsConnectionProxyClientUserPasswordInput` via:
+//
+//	GetDatabaseToolsConnectionProxyClientUserPasswordArgs{...}
+type GetDatabaseToolsConnectionProxyClientUserPasswordInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsConnectionProxyClientUserPasswordOutput() GetDatabaseToolsConnectionProxyClientUserPasswordOutput
+	ToGetDatabaseToolsConnectionProxyClientUserPasswordOutputWithContext(context.Context) GetDatabaseToolsConnectionProxyClientUserPasswordOutput
+}
+
+type GetDatabaseToolsConnectionProxyClientUserPasswordArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// The value type of the user password.
+	ValueType pulumi.StringInput `pulumi:"valueType"`
+}
+
+func (GetDatabaseToolsConnectionProxyClientUserPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsConnectionProxyClientUserPassword)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsConnectionProxyClientUserPasswordArgs) ToGetDatabaseToolsConnectionProxyClientUserPasswordOutput() GetDatabaseToolsConnectionProxyClientUserPasswordOutput {
+	return i.ToGetDatabaseToolsConnectionProxyClientUserPasswordOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsConnectionProxyClientUserPasswordArgs) ToGetDatabaseToolsConnectionProxyClientUserPasswordOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionProxyClientUserPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionProxyClientUserPasswordOutput)
+}
+
+// GetDatabaseToolsConnectionProxyClientUserPasswordArrayInput is an input type that accepts GetDatabaseToolsConnectionProxyClientUserPasswordArray and GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsConnectionProxyClientUserPasswordArrayInput` via:
+//
+//	GetDatabaseToolsConnectionProxyClientUserPasswordArray{ GetDatabaseToolsConnectionProxyClientUserPasswordArgs{...} }
+type GetDatabaseToolsConnectionProxyClientUserPasswordArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput() GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput
+	ToGetDatabaseToolsConnectionProxyClientUserPasswordArrayOutputWithContext(context.Context) GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput
+}
+
+type GetDatabaseToolsConnectionProxyClientUserPasswordArray []GetDatabaseToolsConnectionProxyClientUserPasswordInput
+
+func (GetDatabaseToolsConnectionProxyClientUserPasswordArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsConnectionProxyClientUserPassword)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsConnectionProxyClientUserPasswordArray) ToGetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput() GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput {
+	return i.ToGetDatabaseToolsConnectionProxyClientUserPasswordArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsConnectionProxyClientUserPasswordArray) ToGetDatabaseToolsConnectionProxyClientUserPasswordArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput)
+}
+
+type GetDatabaseToolsConnectionProxyClientUserPasswordOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsConnectionProxyClientUserPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsConnectionProxyClientUserPassword)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsConnectionProxyClientUserPasswordOutput) ToGetDatabaseToolsConnectionProxyClientUserPasswordOutput() GetDatabaseToolsConnectionProxyClientUserPasswordOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionProxyClientUserPasswordOutput) ToGetDatabaseToolsConnectionProxyClientUserPasswordOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionProxyClientUserPasswordOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+func (o GetDatabaseToolsConnectionProxyClientUserPasswordOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionProxyClientUserPassword) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+// The value type of the user password.
+func (o GetDatabaseToolsConnectionProxyClientUserPasswordOutput) ValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionProxyClientUserPassword) string { return v.ValueType }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsConnectionProxyClientUserPassword)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput) ToGetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput() GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput) ToGetDatabaseToolsConnectionProxyClientUserPasswordArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionProxyClientUserPasswordOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsConnectionProxyClientUserPassword {
+		return vs[0].([]GetDatabaseToolsConnectionProxyClientUserPassword)[vs[1].(int)]
+	}).(GetDatabaseToolsConnectionProxyClientUserPasswordOutput)
+}
+
 type GetDatabaseToolsConnectionRelatedResource struct {
 	// The resource entity type.
 	EntityType string `pulumi:"entityType"`
@@ -1648,10 +2616,16 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem struct {
 	KeyStores []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore `pulumi:"keyStores"`
 	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock `pulumi:"locks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// The proxy client information.
+	ProxyClients []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient `pulumi:"proxyClients"`
 	// A related resource
 	RelatedResources []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource `pulumi:"relatedResources"`
+	// A filter to return only resources with one of the specified runtimeSupport values.
+	RuntimeSupport string `pulumi:"runtimeSupport"`
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1662,6 +2636,8 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// A filter to return only resources their type matches the specified type.
 	Type string `pulumi:"type"`
+	// The JDBC URL used to connect to the Generic JDBC database system.
+	Url string `pulumi:"url"`
 	// The database user name.
 	UserName string `pulumi:"userName"`
 	// The user password.
@@ -1698,10 +2674,16 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs struct
 	KeyStores GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArrayInput `pulumi:"keyStores"`
 	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayInput `pulumi:"locks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	// The proxy client information.
+	ProxyClients GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayInput `pulumi:"proxyClients"`
 	// A related resource
 	RelatedResources GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayInput `pulumi:"relatedResources"`
+	// A filter to return only resources with one of the specified runtimeSupport values.
+	RuntimeSupport pulumi.StringInput `pulumi:"runtimeSupport"`
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1712,6 +2694,8 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs struct
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 	// A filter to return only resources their type matches the specified type.
 	Type pulumi.StringInput `pulumi:"type"`
+	// The JDBC URL used to connect to the Generic JDBC database system.
+	Url pulumi.StringInput `pulumi:"url"`
 	// The database user name.
 	UserName pulumi.StringInput `pulumi:"userName"`
 	// The user password.
@@ -1828,6 +2812,13 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	}).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) Locks() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock {
+		return v.Locks
+	}).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) PrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string {
@@ -1835,11 +2826,25 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 	}).(pulumi.StringOutput)
 }
 
+// The proxy client information.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) ProxyClients() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient {
+		return v.ProxyClients
+	}).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput)
+}
+
 // A related resource
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) RelatedResources() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource {
 		return v.RelatedResources
 	}).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutput)
+}
+
+// A filter to return only resources with one of the specified runtimeSupport values.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) RuntimeSupport() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string {
+		return v.RuntimeSupport
+	}).(pulumi.StringOutput)
 }
 
 // A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
@@ -1867,6 +2872,11 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 // A filter to return only resources their type matches the specified type.
 func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The JDBC URL used to connect to the Generic JDBC database system.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) string { return v.Url }).(pulumi.StringOutput)
 }
 
 // The database user name.
@@ -2240,6 +3250,376 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStore
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword {
 		return vs[0].([]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePassword)[vs[1].(int)]
 	}).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordOutput)
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// A filter to return only resources their type matches the specified type.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArgs and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockInput` via:
+//
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArgs{...}
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput
+	ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutputWithContext(context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// A filter to return only resources their type matches the specified type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArgs) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput {
+	return i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArgs) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput)
+}
+
+// GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayInput` via:
+//
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArgs{...} }
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput
+	ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutputWithContext(context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArray []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockInput
+
+func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArray) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput {
+	return i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArray) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput)
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock) string {
+		return v.RelatedResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources their type matches the specified type.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock {
+		return vs[0].([]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLock)[vs[1].(int)]
+	}).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput)
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient struct {
+	// The proxy authentication type.
+	ProxyAuthenticationType string `pulumi:"proxyAuthenticationType"`
+	// A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+	Roles []string `pulumi:"roles"`
+	// The database user name.
+	UserName string `pulumi:"userName"`
+	// The user password.
+	UserPasswords []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword `pulumi:"userPasswords"`
+}
+
+// GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArgs and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientInput` via:
+//
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArgs{...}
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput
+	ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutputWithContext(context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArgs struct {
+	// The proxy authentication type.
+	ProxyAuthenticationType pulumi.StringInput `pulumi:"proxyAuthenticationType"`
+	// A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+	Roles pulumi.StringArrayInput `pulumi:"roles"`
+	// The database user name.
+	UserName pulumi.StringInput `pulumi:"userName"`
+	// The user password.
+	UserPasswords GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayInput `pulumi:"userPasswords"`
+}
+
+func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArgs) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput {
+	return i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArgs) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput)
+}
+
+// GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayInput` via:
+//
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArgs{...} }
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput
+	ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutputWithContext(context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArray []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientInput
+
+func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArray) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput {
+	return i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArray) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput)
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput {
+	return o
+}
+
+// The proxy authentication type.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput) ProxyAuthenticationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient) string {
+		return v.ProxyAuthenticationType
+	}).(pulumi.StringOutput)
+}
+
+// A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput) Roles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient) []string {
+		return v.Roles
+	}).(pulumi.StringArrayOutput)
+}
+
+// The database user name.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient) string {
+		return v.UserName
+	}).(pulumi.StringOutput)
+}
+
+// The user password.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput) UserPasswords() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient) []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword {
+		return v.UserPasswords
+	}).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput)
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient {
+		return vs[0].([]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClient)[vs[1].(int)]
+	}).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput)
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	SecretId string `pulumi:"secretId"`
+	// The value type of the user password.
+	ValueType string `pulumi:"valueType"`
+}
+
+// GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArgs and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordInput` via:
+//
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArgs{...}
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput
+	ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutputWithContext(context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// The value type of the user password.
+	ValueType pulumi.StringInput `pulumi:"valueType"`
+}
+
+func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArgs) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput {
+	return i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArgs) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput)
+}
+
+// GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayInput is an input type that accepts GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArray and GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayInput` via:
+//
+//	GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArray{ GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArgs{...} }
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput
+	ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutputWithContext(context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArray []GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordInput
+
+func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArray) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput {
+	return i.ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArray) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput)
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword) string {
+		return v.SecretId
+	}).(pulumi.StringOutput)
+}
+
+// The value type of the user password.
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput) ValueType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword) string {
+		return v.ValueType
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput() GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput) ToGetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutputWithContext(ctx context.Context) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword {
+		return vs[0].([]GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPassword)[vs[1].(int)]
+	}).(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput)
 }
 
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResource struct {
@@ -2991,6 +4371,130 @@ func (o GetDatabaseToolsEndpointServicesFilterArrayOutput) Index(i pulumi.IntInp
 	}).(GetDatabaseToolsEndpointServicesFilterOutput)
 }
 
+type GetDatabaseToolsPrivateEndpointLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsPrivateEndpointLockInput is an input type that accepts GetDatabaseToolsPrivateEndpointLockArgs and GetDatabaseToolsPrivateEndpointLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointLockInput` via:
+//
+//	GetDatabaseToolsPrivateEndpointLockArgs{...}
+type GetDatabaseToolsPrivateEndpointLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsPrivateEndpointLockOutput() GetDatabaseToolsPrivateEndpointLockOutput
+	ToGetDatabaseToolsPrivateEndpointLockOutputWithContext(context.Context) GetDatabaseToolsPrivateEndpointLockOutput
+}
+
+type GetDatabaseToolsPrivateEndpointLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsPrivateEndpointLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsPrivateEndpointLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsPrivateEndpointLockArgs) ToGetDatabaseToolsPrivateEndpointLockOutput() GetDatabaseToolsPrivateEndpointLockOutput {
+	return i.ToGetDatabaseToolsPrivateEndpointLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsPrivateEndpointLockArgs) ToGetDatabaseToolsPrivateEndpointLockOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointLockOutput)
+}
+
+// GetDatabaseToolsPrivateEndpointLockArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointLockArray and GetDatabaseToolsPrivateEndpointLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointLockArrayInput` via:
+//
+//	GetDatabaseToolsPrivateEndpointLockArray{ GetDatabaseToolsPrivateEndpointLockArgs{...} }
+type GetDatabaseToolsPrivateEndpointLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsPrivateEndpointLockArrayOutput() GetDatabaseToolsPrivateEndpointLockArrayOutput
+	ToGetDatabaseToolsPrivateEndpointLockArrayOutputWithContext(context.Context) GetDatabaseToolsPrivateEndpointLockArrayOutput
+}
+
+type GetDatabaseToolsPrivateEndpointLockArray []GetDatabaseToolsPrivateEndpointLockInput
+
+func (GetDatabaseToolsPrivateEndpointLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsPrivateEndpointLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsPrivateEndpointLockArray) ToGetDatabaseToolsPrivateEndpointLockArrayOutput() GetDatabaseToolsPrivateEndpointLockArrayOutput {
+	return i.ToGetDatabaseToolsPrivateEndpointLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsPrivateEndpointLockArray) ToGetDatabaseToolsPrivateEndpointLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointLockArrayOutput)
+}
+
+type GetDatabaseToolsPrivateEndpointLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsPrivateEndpointLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsPrivateEndpointLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsPrivateEndpointLockOutput) ToGetDatabaseToolsPrivateEndpointLockOutput() GetDatabaseToolsPrivateEndpointLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsPrivateEndpointLockOutput) ToGetDatabaseToolsPrivateEndpointLockOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsPrivateEndpointLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsPrivateEndpointLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+func (o GetDatabaseToolsPrivateEndpointLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetDatabaseToolsPrivateEndpointLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsPrivateEndpointLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsPrivateEndpointLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsPrivateEndpointLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsPrivateEndpointLockArrayOutput) ToGetDatabaseToolsPrivateEndpointLockArrayOutput() GetDatabaseToolsPrivateEndpointLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsPrivateEndpointLockArrayOutput) ToGetDatabaseToolsPrivateEndpointLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsPrivateEndpointLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsPrivateEndpointLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsPrivateEndpointLock {
+		return vs[0].([]GetDatabaseToolsPrivateEndpointLock)[vs[1].(int)]
+	}).(GetDatabaseToolsPrivateEndpointLockOutput)
+}
+
 type GetDatabaseToolsPrivateEndpointReverseConnectionConfiguration struct {
 	// A list of IP addresses in the customer VCN to be used as the source IPs for reverse connection packets traveling from the service's VCN to the customer's VCN.
 	ReverseConnectionsSourceIps []GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp `pulumi:"reverseConnectionsSourceIps"`
@@ -3306,6 +4810,8 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem 
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock `pulumi:"locks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address that represents the access point for the associated endpoint service.
@@ -3360,6 +4866,8 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemA
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayInput `pulumi:"locks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// The private IP address that represents the access point for the associated endpoint service.
@@ -3501,6 +5009,13 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	}).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) Locks() GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) []GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock {
+		return v.Locks
+	}).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
 func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) []string {
@@ -3589,6 +5104,138 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem {
 		return vs[0].([]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem)[vs[1].(int)]
 	}).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput)
+}
+
+type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArgs and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockInput` via:
+//
+//	GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArgs{...}
+type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput() GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput
+	ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutputWithContext(context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput
+}
+
+type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArgs) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput() GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput {
+	return i.ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArgs) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput)
+}
+
+// GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayInput is an input type that accepts GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArray and GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayInput` via:
+//
+//	GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArray{ GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArgs{...} }
+type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput() GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput
+	ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutputWithContext(context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput
+}
+
+type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArray []GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockInput
+
+func (GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArray) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput() GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput {
+	return i.ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArray) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput)
+}
+
+type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput() GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput {
+	return o
+}
+
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock) string {
+		return v.Message
+	}).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock) string {
+		return v.RelatedResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput() GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput) ToGetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock {
+		return vs[0].([]GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock)[vs[1].(int)]
+	}).(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput)
 }
 
 type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration struct {
@@ -3902,10 +5549,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionKeyStoreKeyStoreContentPtrInput)(nil)).Elem(), DatabaseToolsConnectionKeyStoreKeyStoreContentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionKeyStoreKeyStorePasswordInput)(nil)).Elem(), DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrInput)(nil)).Elem(), DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionLockInput)(nil)).Elem(), DatabaseToolsConnectionLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionLockArrayInput)(nil)).Elem(), DatabaseToolsConnectionLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionProxyClientInput)(nil)).Elem(), DatabaseToolsConnectionProxyClientArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionProxyClientPtrInput)(nil)).Elem(), DatabaseToolsConnectionProxyClientArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionProxyClientUserPasswordInput)(nil)).Elem(), DatabaseToolsConnectionProxyClientUserPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionProxyClientUserPasswordPtrInput)(nil)).Elem(), DatabaseToolsConnectionProxyClientUserPasswordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionRelatedResourceInput)(nil)).Elem(), DatabaseToolsConnectionRelatedResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionRelatedResourcePtrInput)(nil)).Elem(), DatabaseToolsConnectionRelatedResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionUserPasswordInput)(nil)).Elem(), DatabaseToolsConnectionUserPasswordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsConnectionUserPasswordPtrInput)(nil)).Elem(), DatabaseToolsConnectionUserPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointLockInput)(nil)).Elem(), DatabaseToolsPrivateEndpointLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointLockArrayInput)(nil)).Elem(), DatabaseToolsPrivateEndpointLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointReverseConnectionConfigurationInput)(nil)).Elem(), DatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput)(nil)).Elem(), DatabaseToolsPrivateEndpointReverseConnectionConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpInput)(nil)).Elem(), DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs{})
@@ -3916,6 +5571,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionKeyStoreKeyStoreContentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionKeyStoreKeyStorePasswordInput)(nil)).Elem(), GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionLockInput)(nil)).Elem(), GetDatabaseToolsConnectionLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionLockArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionProxyClientInput)(nil)).Elem(), GetDatabaseToolsConnectionProxyClientArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionProxyClientArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionProxyClientArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionProxyClientUserPasswordInput)(nil)).Elem(), GetDatabaseToolsConnectionProxyClientUserPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionProxyClientUserPasswordArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionProxyClientUserPasswordArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionRelatedResourceInput)(nil)).Elem(), GetDatabaseToolsConnectionRelatedResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionRelatedResourceArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionRelatedResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionUserPasswordInput)(nil)).Elem(), GetDatabaseToolsConnectionUserPasswordArgs{})
@@ -3930,6 +5591,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordInput)(nil)).Elem(), GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs{})
@@ -3942,6 +5609,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayInput)(nil)).Elem(), GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsEndpointServicesFilterInput)(nil)).Elem(), GetDatabaseToolsEndpointServicesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsEndpointServicesFilterArrayInput)(nil)).Elem(), GetDatabaseToolsEndpointServicesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointLockInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointLockArrayInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpArgs{})
@@ -3950,6 +5619,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpInput)(nil)).Elem(), GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpArgs{})
@@ -3962,10 +5633,18 @@ func init() {
 	pulumi.RegisterOutputType(DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsConnectionLockOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsConnectionLockArrayOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsConnectionProxyClientOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsConnectionProxyClientPtrOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsConnectionProxyClientUserPasswordOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsConnectionProxyClientUserPasswordPtrOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionRelatedResourceOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionRelatedResourcePtrOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionUserPasswordOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsConnectionUserPasswordPtrOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointLockOutput{})
+	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointLockArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput{})
@@ -3976,6 +5655,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionKeyStoreKeyStoreContentArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionKeyStoreKeyStorePasswordOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionKeyStoreKeyStorePasswordArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsConnectionLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsConnectionLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsConnectionProxyClientOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsConnectionProxyClientArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsConnectionProxyClientUserPasswordOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsConnectionProxyClientUserPasswordArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionRelatedResourceOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionRelatedResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionUserPasswordOutput{})
@@ -3990,6 +5675,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordOutput{})
@@ -4002,6 +5693,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsEndpointServicesFilterOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsEndpointServicesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointLockArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpOutput{})
@@ -4010,6 +5703,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpOutput{})

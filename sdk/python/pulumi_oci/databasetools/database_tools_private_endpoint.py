@@ -23,6 +23,7 @@ class DatabaseToolsPrivateEndpointArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointLockArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint_ip: Optional[pulumi.Input[str]] = None):
         """
@@ -38,6 +39,7 @@ class DatabaseToolsPrivateEndpointArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A description of the Database Tools private endpoint.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         """
@@ -51,6 +53,8 @@ class DatabaseToolsPrivateEndpointArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
@@ -145,6 +149,18 @@ class DatabaseToolsPrivateEndpointArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -181,6 +197,7 @@ class _DatabaseToolsPrivateEndpointState:
                  endpoint_service_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointLockArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  private_endpoint_vnic_id: Optional[pulumi.Input[str]] = None,
@@ -202,6 +219,7 @@ class _DatabaseToolsPrivateEndpointState:
         :param pulumi.Input[str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         :param pulumi.Input[str] private_endpoint_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
@@ -213,7 +231,7 @@ class _DatabaseToolsPrivateEndpointState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: When the lock was created.
         :param pulumi.Input[str] time_updated: The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
         """
@@ -235,6 +253,8 @@ class _DatabaseToolsPrivateEndpointState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
@@ -365,6 +385,18 @@ class _DatabaseToolsPrivateEndpointState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsPrivateEndpointLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -456,7 +488,7 @@ class _DatabaseToolsPrivateEndpointState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        When the lock was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -500,6 +532,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  endpoint_service_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseToolsPrivateEndpointLockArgs']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -527,6 +560,12 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            locks=[oci.database_tools.DatabaseToolsPrivateEndpointLockArgs(
+                type=var["database_tools_private_endpoint_locks_type"],
+                message=var["database_tools_private_endpoint_locks_message"],
+                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
+                time_created=var["database_tools_private_endpoint_locks_time_created"],
+            )],
             nsg_ids=var["database_tools_private_endpoint_nsg_ids"],
             private_endpoint_ip=var["database_tools_private_endpoint_private_endpoint_ip"])
         ```
@@ -547,6 +586,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseToolsPrivateEndpointLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that the private endpoint belongs to.
@@ -584,6 +624,12 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            locks=[oci.database_tools.DatabaseToolsPrivateEndpointLockArgs(
+                type=var["database_tools_private_endpoint_locks_type"],
+                message=var["database_tools_private_endpoint_locks_message"],
+                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
+                time_created=var["database_tools_private_endpoint_locks_time_created"],
+            )],
             nsg_ids=var["database_tools_private_endpoint_nsg_ids"],
             private_endpoint_ip=var["database_tools_private_endpoint_private_endpoint_ip"])
         ```
@@ -617,6 +663,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  endpoint_service_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseToolsPrivateEndpointLockArgs']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -641,6 +688,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                 raise TypeError("Missing required property 'endpoint_service_id'")
             __props__.__dict__["endpoint_service_id"] = endpoint_service_id
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["private_endpoint_ip"] = private_endpoint_ip
             if subnet_id is None and not opts.urn:
@@ -675,6 +723,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
             endpoint_service_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseToolsPrivateEndpointLockArgs']]]]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             private_endpoint_ip: Optional[pulumi.Input[str]] = None,
             private_endpoint_vnic_id: Optional[pulumi.Input[str]] = None,
@@ -701,6 +750,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] endpoint_service_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `DatabaseToolsEndpointService`.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DatabaseToolsPrivateEndpointLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param pulumi.Input[str] private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         :param pulumi.Input[str] private_endpoint_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
@@ -712,7 +762,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: When the lock was created.
         :param pulumi.Input[str] time_updated: The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
         """
@@ -729,6 +779,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         __props__.__dict__["endpoint_service_id"] = endpoint_service_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["private_endpoint_ip"] = private_endpoint_ip
         __props__.__dict__["private_endpoint_vnic_id"] = private_endpoint_vnic_id
@@ -814,6 +865,14 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.DatabaseToolsPrivateEndpointLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Output[Sequence[str]]:
         """
@@ -877,7 +936,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        When the lock was created.
         """
         return pulumi.get(self, "time_created")
 

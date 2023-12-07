@@ -66,6 +66,11 @@ public final class GetAutonomousVmClusterResult {
      */
     private Integer cpusEnabled;
     /**
+     * @return The lowest value to which cpus can be scaled down.
+     * 
+     */
+    private Integer cpusLowestScaledValue;
+    /**
      * @return The total data storage allocated in GBs.
      * 
      */
@@ -100,6 +105,11 @@ public final class GetAutonomousVmClusterResult {
      * 
      */
     private String exadataInfrastructureId;
+    /**
+     * @return The lowest value to which exadataStorage in TBs can be scaled down.
+     * 
+     */
+    private Double exadataStorageInTbsLowestScaledValue;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -142,6 +152,11 @@ public final class GetAutonomousVmClusterResult {
      */
     private List<GetAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
     /**
+     * @return The lowest value to which ACDs can be scaled down.
+     * 
+     */
+    private Integer maxAcdsLowestScaledValue;
+    /**
      * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
@@ -167,6 +182,7 @@ public final class GetAutonomousVmClusterResult {
      * 
      */
     private Double ocpusEnabled;
+    private Integer provisionableAutonomousContainerDatabases;
     private Integer provisionedAutonomousContainerDatabases;
     private Double provisionedCpus;
     /**
@@ -298,6 +314,13 @@ public final class GetAutonomousVmClusterResult {
         return this.cpusEnabled;
     }
     /**
+     * @return The lowest value to which cpus can be scaled down.
+     * 
+     */
+    public Integer cpusLowestScaledValue() {
+        return this.cpusLowestScaledValue;
+    }
+    /**
      * @return The total data storage allocated in GBs.
      * 
      */
@@ -345,6 +368,13 @@ public final class GetAutonomousVmClusterResult {
      */
     public String exadataInfrastructureId() {
         return this.exadataInfrastructureId;
+    }
+    /**
+     * @return The lowest value to which exadataStorage in TBs can be scaled down.
+     * 
+     */
+    public Double exadataStorageInTbsLowestScaledValue() {
+        return this.exadataStorageInTbsLowestScaledValue;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -406,6 +436,13 @@ public final class GetAutonomousVmClusterResult {
         return this.maintenanceWindows;
     }
     /**
+     * @return The lowest value to which ACDs can be scaled down.
+     * 
+     */
+    public Integer maxAcdsLowestScaledValue() {
+        return this.maxAcdsLowestScaledValue;
+    }
+    /**
      * @return The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      * 
      */
@@ -442,6 +479,9 @@ public final class GetAutonomousVmClusterResult {
      */
     public Double ocpusEnabled() {
         return this.ocpusEnabled;
+    }
+    public Integer provisionableAutonomousContainerDatabases() {
+        return this.provisionableAutonomousContainerDatabases;
     }
     public Integer provisionedAutonomousContainerDatabases() {
         return this.provisionedAutonomousContainerDatabases;
@@ -549,6 +589,7 @@ public final class GetAutonomousVmClusterResult {
         private Integer cpuCoreCountPerNode;
         private Double cpuPercentage;
         private Integer cpusEnabled;
+        private Integer cpusLowestScaledValue;
         private Double dataStorageSizeInGb;
         private Double dataStorageSizeInTbs;
         private Integer dbNodeStorageSizeInGbs;
@@ -556,6 +597,7 @@ public final class GetAutonomousVmClusterResult {
         private Map<String,Object> definedTags;
         private String displayName;
         private String exadataInfrastructureId;
+        private Double exadataStorageInTbsLowestScaledValue;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isLocalBackupEnabled;
@@ -565,12 +607,14 @@ public final class GetAutonomousVmClusterResult {
         private String lifecycleDetails;
         private List<GetAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails;
         private List<GetAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
+        private Integer maxAcdsLowestScaledValue;
         private Integer memoryPerOracleComputeUnitInGbs;
         private Integer memorySizeInGbs;
         private String nextMaintenanceRunId;
         private Integer nodeCount;
         private Integer nonProvisionableAutonomousContainerDatabases;
         private Double ocpusEnabled;
+        private Integer provisionableAutonomousContainerDatabases;
         private Integer provisionedAutonomousContainerDatabases;
         private Double provisionedCpus;
         private Integer reclaimableCpus;
@@ -600,6 +644,7 @@ public final class GetAutonomousVmClusterResult {
     	      this.cpuCoreCountPerNode = defaults.cpuCoreCountPerNode;
     	      this.cpuPercentage = defaults.cpuPercentage;
     	      this.cpusEnabled = defaults.cpusEnabled;
+    	      this.cpusLowestScaledValue = defaults.cpusLowestScaledValue;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
@@ -607,6 +652,7 @@ public final class GetAutonomousVmClusterResult {
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.exadataInfrastructureId = defaults.exadataInfrastructureId;
+    	      this.exadataStorageInTbsLowestScaledValue = defaults.exadataStorageInTbsLowestScaledValue;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isLocalBackupEnabled = defaults.isLocalBackupEnabled;
@@ -616,12 +662,14 @@ public final class GetAutonomousVmClusterResult {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceWindowDetails = defaults.maintenanceWindowDetails;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
+    	      this.maxAcdsLowestScaledValue = defaults.maxAcdsLowestScaledValue;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
     	      this.nodeCount = defaults.nodeCount;
     	      this.nonProvisionableAutonomousContainerDatabases = defaults.nonProvisionableAutonomousContainerDatabases;
     	      this.ocpusEnabled = defaults.ocpusEnabled;
+    	      this.provisionableAutonomousContainerDatabases = defaults.provisionableAutonomousContainerDatabases;
     	      this.provisionedAutonomousContainerDatabases = defaults.provisionedAutonomousContainerDatabases;
     	      this.provisionedCpus = defaults.provisionedCpus;
     	      this.reclaimableCpus = defaults.reclaimableCpus;
@@ -699,6 +747,11 @@ public final class GetAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder cpusLowestScaledValue(Integer cpusLowestScaledValue) {
+            this.cpusLowestScaledValue = Objects.requireNonNull(cpusLowestScaledValue);
+            return this;
+        }
+        @CustomType.Setter
         public Builder dataStorageSizeInGb(Double dataStorageSizeInGb) {
             this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
             return this;
@@ -734,6 +787,11 @@ public final class GetAutonomousVmClusterResult {
         @CustomType.Setter
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = Objects.requireNonNull(exadataInfrastructureId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder exadataStorageInTbsLowestScaledValue(Double exadataStorageInTbsLowestScaledValue) {
+            this.exadataStorageInTbsLowestScaledValue = Objects.requireNonNull(exadataStorageInTbsLowestScaledValue);
             return this;
         }
         @CustomType.Setter
@@ -788,6 +846,11 @@ public final class GetAutonomousVmClusterResult {
             return maintenanceWindows(List.of(maintenanceWindows));
         }
         @CustomType.Setter
+        public Builder maxAcdsLowestScaledValue(Integer maxAcdsLowestScaledValue) {
+            this.maxAcdsLowestScaledValue = Objects.requireNonNull(maxAcdsLowestScaledValue);
+            return this;
+        }
+        @CustomType.Setter
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
             this.memoryPerOracleComputeUnitInGbs = Objects.requireNonNull(memoryPerOracleComputeUnitInGbs);
             return this;
@@ -815,6 +878,11 @@ public final class GetAutonomousVmClusterResult {
         @CustomType.Setter
         public Builder ocpusEnabled(Double ocpusEnabled) {
             this.ocpusEnabled = Objects.requireNonNull(ocpusEnabled);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder provisionableAutonomousContainerDatabases(Integer provisionableAutonomousContainerDatabases) {
+            this.provisionableAutonomousContainerDatabases = Objects.requireNonNull(provisionableAutonomousContainerDatabases);
             return this;
         }
         @CustomType.Setter
@@ -901,6 +969,7 @@ public final class GetAutonomousVmClusterResult {
             o.cpuCoreCountPerNode = cpuCoreCountPerNode;
             o.cpuPercentage = cpuPercentage;
             o.cpusEnabled = cpusEnabled;
+            o.cpusLowestScaledValue = cpusLowestScaledValue;
             o.dataStorageSizeInGb = dataStorageSizeInGb;
             o.dataStorageSizeInTbs = dataStorageSizeInTbs;
             o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
@@ -908,6 +977,7 @@ public final class GetAutonomousVmClusterResult {
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.exadataInfrastructureId = exadataInfrastructureId;
+            o.exadataStorageInTbsLowestScaledValue = exadataStorageInTbsLowestScaledValue;
             o.freeformTags = freeformTags;
             o.id = id;
             o.isLocalBackupEnabled = isLocalBackupEnabled;
@@ -917,12 +987,14 @@ public final class GetAutonomousVmClusterResult {
             o.lifecycleDetails = lifecycleDetails;
             o.maintenanceWindowDetails = maintenanceWindowDetails;
             o.maintenanceWindows = maintenanceWindows;
+            o.maxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
             o.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             o.memorySizeInGbs = memorySizeInGbs;
             o.nextMaintenanceRunId = nextMaintenanceRunId;
             o.nodeCount = nodeCount;
             o.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
             o.ocpusEnabled = ocpusEnabled;
+            o.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
             o.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
             o.provisionedCpus = provisionedCpus;
             o.reclaimableCpus = reclaimableCpus;

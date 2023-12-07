@@ -83,6 +83,11 @@ public final class GetFleetResult {
      */
     private Boolean isAdvancedFeaturesEnabled;
     /**
+     * @return Whether or not export setting is enabled in this Fleet.
+     * 
+     */
+    private Boolean isExportSettingEnabled;
+    /**
      * @return Custom Log for inventory or operation log.
      * 
      */
@@ -199,6 +204,13 @@ public final class GetFleetResult {
         return this.isAdvancedFeaturesEnabled;
     }
     /**
+     * @return Whether or not export setting is enabled in this Fleet.
+     * 
+     */
+    public Boolean isExportSettingEnabled() {
+        return this.isExportSettingEnabled;
+    }
+    /**
      * @return Custom Log for inventory or operation log.
      * 
      */
@@ -250,6 +262,7 @@ public final class GetFleetResult {
         private String id;
         private List<GetFleetInventoryLog> inventoryLogs;
         private Boolean isAdvancedFeaturesEnabled;
+        private Boolean isExportSettingEnabled;
         private List<GetFleetOperationLog> operationLogs;
         private String state;
         private Map<String,Object> systemTags;
@@ -271,6 +284,7 @@ public final class GetFleetResult {
     	      this.id = defaults.id;
     	      this.inventoryLogs = defaults.inventoryLogs;
     	      this.isAdvancedFeaturesEnabled = defaults.isAdvancedFeaturesEnabled;
+    	      this.isExportSettingEnabled = defaults.isExportSettingEnabled;
     	      this.operationLogs = defaults.operationLogs;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -351,6 +365,11 @@ public final class GetFleetResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isExportSettingEnabled(Boolean isExportSettingEnabled) {
+            this.isExportSettingEnabled = Objects.requireNonNull(isExportSettingEnabled);
+            return this;
+        }
+        @CustomType.Setter
         public Builder operationLogs(List<GetFleetOperationLog> operationLogs) {
             this.operationLogs = Objects.requireNonNull(operationLogs);
             return this;
@@ -389,6 +408,7 @@ public final class GetFleetResult {
             o.id = id;
             o.inventoryLogs = inventoryLogs;
             o.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            o.isExportSettingEnabled = isExportSettingEnabled;
             o.operationLogs = operationLogs;
             o.state = state;
             o.systemTags = systemTags;

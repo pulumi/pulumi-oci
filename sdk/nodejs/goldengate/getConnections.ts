@@ -117,7 +117,7 @@ export interface GetConnectionsResult {
      */
     readonly state?: string;
     /**
-     * The Kafka (e.g. Confluent) Schema Registry technology type.
+     * The technology type.
      */
     readonly technologyTypes?: string[];
 }

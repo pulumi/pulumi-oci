@@ -150,6 +150,11 @@ export type DbNodeConsoleConnection = import("./dbNodeConsoleConnection").DbNode
 export const DbNodeConsoleConnection: typeof import("./dbNodeConsoleConnection").DbNodeConsoleConnection = null as any;
 utilities.lazyLoad(exports, ["DbNodeConsoleConnection"], () => require("./dbNodeConsoleConnection"));
 
+export { DbNodeConsoleHistoryArgs, DbNodeConsoleHistoryState } from "./dbNodeConsoleHistory";
+export type DbNodeConsoleHistory = import("./dbNodeConsoleHistory").DbNodeConsoleHistory;
+export const DbNodeConsoleHistory: typeof import("./dbNodeConsoleHistory").DbNodeConsoleHistory = null as any;
+utilities.lazyLoad(exports, ["DbNodeConsoleHistory"], () => require("./dbNodeConsoleHistory"));
+
 export { DbSystemArgs, DbSystemState } from "./dbSystem";
 export type DbSystem = import("./dbSystem").DbSystem;
 export const DbSystem: typeof import("./dbSystem").DbSystem = null as any;
@@ -570,6 +575,21 @@ export const getDbNodeConsoleConnections: typeof import("./getDbNodeConsoleConne
 export const getDbNodeConsoleConnectionsOutput: typeof import("./getDbNodeConsoleConnections").getDbNodeConsoleConnectionsOutput = null as any;
 utilities.lazyLoad(exports, ["getDbNodeConsoleConnections","getDbNodeConsoleConnectionsOutput"], () => require("./getDbNodeConsoleConnections"));
 
+export { GetDbNodeConsoleHistoriesArgs, GetDbNodeConsoleHistoriesResult, GetDbNodeConsoleHistoriesOutputArgs } from "./getDbNodeConsoleHistories";
+export const getDbNodeConsoleHistories: typeof import("./getDbNodeConsoleHistories").getDbNodeConsoleHistories = null as any;
+export const getDbNodeConsoleHistoriesOutput: typeof import("./getDbNodeConsoleHistories").getDbNodeConsoleHistoriesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbNodeConsoleHistories","getDbNodeConsoleHistoriesOutput"], () => require("./getDbNodeConsoleHistories"));
+
+export { GetDbNodeConsoleHistoryArgs, GetDbNodeConsoleHistoryResult, GetDbNodeConsoleHistoryOutputArgs } from "./getDbNodeConsoleHistory";
+export const getDbNodeConsoleHistory: typeof import("./getDbNodeConsoleHistory").getDbNodeConsoleHistory = null as any;
+export const getDbNodeConsoleHistoryOutput: typeof import("./getDbNodeConsoleHistory").getDbNodeConsoleHistoryOutput = null as any;
+utilities.lazyLoad(exports, ["getDbNodeConsoleHistory","getDbNodeConsoleHistoryOutput"], () => require("./getDbNodeConsoleHistory"));
+
+export { GetDbNodeConsoleHistoryContentArgs, GetDbNodeConsoleHistoryContentResult, GetDbNodeConsoleHistoryContentOutputArgs } from "./getDbNodeConsoleHistoryContent";
+export const getDbNodeConsoleHistoryContent: typeof import("./getDbNodeConsoleHistoryContent").getDbNodeConsoleHistoryContent = null as any;
+export const getDbNodeConsoleHistoryContentOutput: typeof import("./getDbNodeConsoleHistoryContent").getDbNodeConsoleHistoryContentOutput = null as any;
+utilities.lazyLoad(exports, ["getDbNodeConsoleHistoryContent","getDbNodeConsoleHistoryContentOutput"], () => require("./getDbNodeConsoleHistoryContent"));
+
 export { GetDbNodesArgs, GetDbNodesResult, GetDbNodesOutputArgs } from "./getDbNodes";
 export const getDbNodes: typeof import("./getDbNodes").getDbNodes = null as any;
 export const getDbNodesOutput: typeof import("./getDbNodes").getDbNodesOutput = null as any;
@@ -948,6 +968,8 @@ const _module = {
                 return new DbNode(name, <any>undefined, { urn })
             case "oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection":
                 return new DbNodeConsoleConnection(name, <any>undefined, { urn })
+            case "oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory":
+                return new DbNodeConsoleHistory(name, <any>undefined, { urn })
             case "oci:Database/dbSystem:DbSystem":
                 return new DbSystem(name, <any>undefined, { urn })
             case "oci:Database/dbSystemsUpgrade:DbSystemsUpgrade":
@@ -1040,6 +1062,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/databaseUpgrade", _module
 pulumi.runtime.registerResourceModule("oci", "Database/dbHome", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbNode", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbNodeConsoleConnection", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/dbNodeConsoleHistory", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbSystem", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbSystemsUpgrade", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructure", _module)

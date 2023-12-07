@@ -528,6 +528,7 @@ class GetManagedInstanceGroupsManagedInstanceGroupResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  managed_instance_count: int,
+                 managed_instance_ids: Sequence[str],
                  managed_instances: Sequence['outputs.GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceResult'],
                  os_family: str,
                  state: str):
@@ -549,6 +550,7 @@ class GetManagedInstanceGroupsManagedInstanceGroupResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "managed_instance_count", managed_instance_count)
+        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
         pulumi.set(__self__, "managed_instances", managed_instances)
         pulumi.set(__self__, "os_family", os_family)
         pulumi.set(__self__, "state", state)
@@ -605,6 +607,11 @@ class GetManagedInstanceGroupsManagedInstanceGroupResult(dict):
     @pulumi.getter(name="managedInstanceCount")
     def managed_instance_count(self) -> int:
         return pulumi.get(self, "managed_instance_count")
+
+    @property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Sequence[str]:
+        return pulumi.get(self, "managed_instance_ids")
 
     @property
     @pulumi.getter(name="managedInstances")

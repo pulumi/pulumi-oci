@@ -77,10 +77,16 @@ type LookupDatabaseToolsConnectionResult struct {
 	KeyStores []GetDatabaseToolsConnectionKeyStore `pulumi:"keyStores"`
 	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetDatabaseToolsConnectionLock `pulumi:"locks"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// The proxy client information.
+	ProxyClients []GetDatabaseToolsConnectionProxyClient `pulumi:"proxyClients"`
 	// A related resource
 	RelatedResources []GetDatabaseToolsConnectionRelatedResource `pulumi:"relatedResources"`
+	// Specifies whether this connection is supported by the Database Tools Runtime.
+	RuntimeSupport string `pulumi:"runtimeSupport"`
 	// The current state of the Database Tools connection.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -91,6 +97,8 @@ type LookupDatabaseToolsConnectionResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// The Database Tools connection type.
 	Type string `pulumi:"type"`
+	// The JDBC URL used to connect to the Generic JDBC database system.
+	Url string `pulumi:"url"`
 	// The database user name.
 	UserName string `pulumi:"userName"`
 	// The user password.
@@ -184,9 +192,21 @@ func (o LookupDatabaseToolsConnectionResultOutput) LifecycleDetails() pulumi.Str
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o LookupDatabaseToolsConnectionResultOutput) Locks() GetDatabaseToolsConnectionLockArrayOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) []GetDatabaseToolsConnectionLock { return v.Locks }).(GetDatabaseToolsConnectionLockArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 func (o LookupDatabaseToolsConnectionResultOutput) PrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+// The proxy client information.
+func (o LookupDatabaseToolsConnectionResultOutput) ProxyClients() GetDatabaseToolsConnectionProxyClientArrayOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) []GetDatabaseToolsConnectionProxyClient {
+		return v.ProxyClients
+	}).(GetDatabaseToolsConnectionProxyClientArrayOutput)
 }
 
 // A related resource
@@ -194,6 +214,11 @@ func (o LookupDatabaseToolsConnectionResultOutput) RelatedResources() GetDatabas
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) []GetDatabaseToolsConnectionRelatedResource {
 		return v.RelatedResources
 	}).(GetDatabaseToolsConnectionRelatedResourceArrayOutput)
+}
+
+// Specifies whether this connection is supported by the Database Tools Runtime.
+func (o LookupDatabaseToolsConnectionResultOutput) RuntimeSupport() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.RuntimeSupport }).(pulumi.StringOutput)
 }
 
 // The current state of the Database Tools connection.
@@ -219,6 +244,11 @@ func (o LookupDatabaseToolsConnectionResultOutput) TimeUpdated() pulumi.StringOu
 // The Database Tools connection type.
 func (o LookupDatabaseToolsConnectionResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The JDBC URL used to connect to the Generic JDBC database system.
+func (o LookupDatabaseToolsConnectionResultOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseToolsConnectionResult) string { return v.Url }).(pulumi.StringOutput)
 }
 
 // The database user name.

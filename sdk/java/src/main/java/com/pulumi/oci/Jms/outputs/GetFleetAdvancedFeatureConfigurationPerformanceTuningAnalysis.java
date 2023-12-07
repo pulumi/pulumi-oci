@@ -10,14 +10,14 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis {
     /**
-     * @return PerformanceTuningAnalysis flag to store enabled or disabled status.
+     * @return PerformanceTuningAnalysis flag to store enabled or disabled status
      * 
      */
     private Boolean isEnabled;
 
     private GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis() {}
     /**
-     * @return PerformanceTuningAnalysis flag to store enabled or disabled status.
+     * @return PerformanceTuningAnalysis flag to store enabled or disabled status
      * 
      */
     public Boolean isEnabled() {

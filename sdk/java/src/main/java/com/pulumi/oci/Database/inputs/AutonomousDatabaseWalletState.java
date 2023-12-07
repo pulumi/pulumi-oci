@@ -73,6 +73,21 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
     }
 
     /**
+     * True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+     * 
+     */
+    @Import(name="isRegional")
+    private @Nullable Output<Boolean> isRegional;
+
+    /**
+     * @return True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+     * 
+     */
+    public Optional<Output<Boolean>> isRegional() {
+        return Optional.ofNullable(this.isRegional);
+    }
+
+    /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
      * 
      * ** IMPORTANT **
@@ -100,6 +115,7 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
         this.base64EncodeContent = $.base64EncodeContent;
         this.content = $.content;
         this.generateType = $.generateType;
+        this.isRegional = $.isRegional;
         this.password = $.password;
     }
 
@@ -195,6 +211,27 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
          */
         public Builder generateType(String generateType) {
             return generateType(Output.of(generateType));
+        }
+
+        /**
+         * @param isRegional True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRegional(@Nullable Output<Boolean> isRegional) {
+            $.isRegional = isRegional;
+            return this;
+        }
+
+        /**
+         * @param isRegional True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRegional(Boolean isRegional) {
+            return isRegional(Output.of(isRegional));
         }
 
         /**

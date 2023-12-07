@@ -255,6 +255,20 @@ public class Fleet extends com.pulumi.resources.CustomResource {
         return this.isAdvancedFeaturesEnabled;
     }
     /**
+     * Whether or not export setting is enabled in this Fleet.
+     * 
+     */
+    @Export(name="isExportSettingEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isExportSettingEnabled;
+
+    /**
+     * @return Whether or not export setting is enabled in this Fleet.
+     * 
+     */
+    public Output<Boolean> isExportSettingEnabled() {
+        return this.isExportSettingEnabled;
+    }
+    /**
      * (Updatable) Custom Log for inventory or operation log.
      * 
      */

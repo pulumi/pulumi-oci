@@ -22,7 +22,7 @@ class GetAutonomousContainerDatabaseResult:
     """
     A collection of values returned by getAutonomousContainerDatabase.
     """
-    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, db_name=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, dst_file_version=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_dst_file_update_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None):
+    def __init__(__self__, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, db_name=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, dst_file_version=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_dst_file_update_enabled=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, kms_key_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None):
         if autonomous_container_database_id and not isinstance(autonomous_container_database_id, str):
             raise TypeError("Expected argument 'autonomous_container_database_id' to be a str")
         pulumi.set(__self__, "autonomous_container_database_id", autonomous_container_database_id)
@@ -179,6 +179,9 @@ class GetAutonomousContainerDatabaseResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_of_last_backup and not isinstance(time_of_last_backup, str):
+            raise TypeError("Expected argument 'time_of_last_backup' to be a str")
+        pulumi.set(__self__, "time_of_last_backup", time_of_last_backup)
         if time_snapshot_standby_revert and not isinstance(time_snapshot_standby_revert, str):
             raise TypeError("Expected argument 'time_snapshot_standby_revert' to be a str")
         pulumi.set(__self__, "time_snapshot_standby_revert", time_snapshot_standby_revert)
@@ -569,6 +572,14 @@ class GetAutonomousContainerDatabaseResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeOfLastBackup")
+    def time_of_last_backup(self) -> str:
+        """
+        The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+        """
+        return pulumi.get(self, "time_of_last_backup")
+
+    @property
     @pulumi.getter(name="timeSnapshotStandbyRevert")
     def time_snapshot_standby_revert(self) -> str:
         """
@@ -659,6 +670,7 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             standby_maintenance_buffer_in_days=self.standby_maintenance_buffer_in_days,
             state=self.state,
             time_created=self.time_created,
+            time_of_last_backup=self.time_of_last_backup,
             time_snapshot_standby_revert=self.time_snapshot_standby_revert,
             total_cpus=self.total_cpus,
             vault_id=self.vault_id,
@@ -742,6 +754,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         standby_maintenance_buffer_in_days=pulumi.get(__ret__, 'standby_maintenance_buffer_in_days'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        time_of_last_backup=pulumi.get(__ret__, 'time_of_last_backup'),
         time_snapshot_standby_revert=pulumi.get(__ret__, 'time_snapshot_standby_revert'),
         total_cpus=pulumi.get(__ret__, 'total_cpus'),
         vault_id=pulumi.get(__ret__, 'vault_id'),

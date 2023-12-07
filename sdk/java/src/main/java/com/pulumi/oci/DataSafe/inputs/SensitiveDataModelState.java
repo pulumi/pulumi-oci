@@ -125,14 +125,14 @@ public final class SensitiveDataModelState extends com.pulumi.resources.Resource
     }
 
     /**
-     * Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
+     * Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
      * 
      */
     @Import(name="isIncludeAllSchemas")
     private @Nullable Output<Boolean> isIncludeAllSchemas;
 
     /**
-     * @return Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
+     * @return Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
      * 
      */
     public Optional<Output<Boolean>> isIncludeAllSchemas() {
@@ -468,7 +468,7 @@ public final class SensitiveDataModelState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isIncludeAllSchemas Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
+         * @param isIncludeAllSchemas Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
          * 
          * @return builder
          * 
@@ -479,7 +479,7 @@ public final class SensitiveDataModelState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param isIncludeAllSchemas Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle).
+         * @param isIncludeAllSchemas Indicates if all the schemas in the associated target database should be scanned by data discovery jobs. If it&#39;s set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery.
          * 
          * @return builder
          * 

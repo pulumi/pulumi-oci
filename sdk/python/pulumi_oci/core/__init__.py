@@ -13,6 +13,7 @@ from .capture_filter import *
 from .cluster_network import *
 from .compute_capacity_report import *
 from .compute_capacity_reservation import *
+from .compute_capacity_topology import *
 from .compute_cluster import *
 from .compute_image_capability_schema import *
 from .console_history import *
@@ -59,6 +60,11 @@ from .get_compute_capacity_reservation import *
 from .get_compute_capacity_reservation_instance_shapes import *
 from .get_compute_capacity_reservation_instances import *
 from .get_compute_capacity_reservations import *
+from .get_compute_capacity_topologies import *
+from .get_compute_capacity_topology import *
+from .get_compute_capacity_topology_compute_bare_metal_hosts import *
+from .get_compute_capacity_topology_compute_hpc_islands import *
+from .get_compute_capacity_topology_compute_network_blocks import *
 from .get_compute_cluster import *
 from .get_compute_clusters import *
 from .get_compute_global_image_capability_schema import *

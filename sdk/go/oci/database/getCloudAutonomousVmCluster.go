@@ -101,6 +101,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// The domain name for the cloud Autonomous VM cluster.
 	Domain string `pulumi:"domain"`
+	// The lowest value to which exadataStorage in TBs can be scaled down.
+	ExadataStorageInTbsLowestScaledValue float64 `pulumi:"exadataStorageInTbsLowestScaledValue"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The hostname for the cloud Autonomous VM cluster.
@@ -113,13 +115,15 @@ type LookupCloudAutonomousVmClusterResult struct {
 	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId string `pulumi:"lastUpdateHistoryEntryId"`
-	// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+	// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails         string                                               `pulumi:"lifecycleDetails"`
 	MaintenanceWindowDetails []GetCloudAutonomousVmClusterMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetCloudAutonomousVmClusterMaintenanceWindow `pulumi:"maintenanceWindows"`
+	// The lowest value to which ACDs can be scaled down.
+	MaxAcdsLowestScaledValue int `pulumi:"maxAcdsLowestScaledValue"`
 	// The amount of memory (in GBs) enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
@@ -135,6 +139,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount float64 `pulumi:"ocpuCount"`
+	// The lowest value to which ocpus can be scaled down.
+	OcpusLowestScaledValue int `pulumi:"ocpusLowestScaledValue"`
 	// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
 	ProvisionableAutonomousContainerDatabases int `pulumi:"provisionableAutonomousContainerDatabases"`
 	// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
@@ -316,6 +322,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) Domain() pulumi.StringOutput
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.Domain }).(pulumi.StringOutput)
 }
 
+// The lowest value to which exadataStorage in TBs can be scaled down.
+func (o LookupCloudAutonomousVmClusterResultOutput) ExadataStorageInTbsLowestScaledValue() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.ExadataStorageInTbsLowestScaledValue }).(pulumi.Float64Output)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o LookupCloudAutonomousVmClusterResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -346,7 +357,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) LastUpdateHistoryEntryId() p
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.LastUpdateHistoryEntryId }).(pulumi.StringOutput)
 }
 
-// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
 func (o LookupCloudAutonomousVmClusterResultOutput) LicenseModel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.LicenseModel }).(pulumi.StringOutput)
 }
@@ -367,6 +378,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) MaintenanceWindows() GetClou
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) []GetCloudAutonomousVmClusterMaintenanceWindow {
 		return v.MaintenanceWindows
 	}).(GetCloudAutonomousVmClusterMaintenanceWindowArrayOutput)
+}
+
+// The lowest value to which ACDs can be scaled down.
+func (o LookupCloudAutonomousVmClusterResultOutput) MaxAcdsLowestScaledValue() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.MaxAcdsLowestScaledValue }).(pulumi.IntOutput)
 }
 
 // The amount of memory (in GBs) enabled per OCPU or ECPU.
@@ -405,6 +421,11 @@ func (o LookupCloudAutonomousVmClusterResultOutput) NsgIds() pulumi.StringArrayO
 // The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 func (o LookupCloudAutonomousVmClusterResultOutput) OcpuCount() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.OcpuCount }).(pulumi.Float64Output)
+}
+
+// The lowest value to which ocpus can be scaled down.
+func (o LookupCloudAutonomousVmClusterResultOutput) OcpusLowestScaledValue() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.OcpusLowestScaledValue }).(pulumi.IntOutput)
 }
 
 // The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.

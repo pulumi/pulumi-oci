@@ -14,13 +14,20 @@ __all__ = [
     'DatabaseToolsConnectionKeyStore',
     'DatabaseToolsConnectionKeyStoreKeyStoreContent',
     'DatabaseToolsConnectionKeyStoreKeyStorePassword',
+    'DatabaseToolsConnectionLock',
+    'DatabaseToolsConnectionProxyClient',
+    'DatabaseToolsConnectionProxyClientUserPassword',
     'DatabaseToolsConnectionRelatedResource',
     'DatabaseToolsConnectionUserPassword',
+    'DatabaseToolsPrivateEndpointLock',
     'DatabaseToolsPrivateEndpointReverseConnectionConfiguration',
     'DatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIp',
     'GetDatabaseToolsConnectionKeyStoreResult',
     'GetDatabaseToolsConnectionKeyStoreKeyStoreContentResult',
     'GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult',
+    'GetDatabaseToolsConnectionLockResult',
+    'GetDatabaseToolsConnectionProxyClientResult',
+    'GetDatabaseToolsConnectionProxyClientUserPasswordResult',
     'GetDatabaseToolsConnectionRelatedResourceResult',
     'GetDatabaseToolsConnectionUserPasswordResult',
     'GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionResult',
@@ -28,16 +35,21 @@ __all__ = [
     'GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult',
     'GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStoreContentResult',
     'GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordResult',
+    'GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockResult',
+    'GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientResult',
+    'GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordResult',
     'GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult',
     'GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult',
     'GetDatabaseToolsConnectionsFilterResult',
     'GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionResult',
     'GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult',
     'GetDatabaseToolsEndpointServicesFilterResult',
+    'GetDatabaseToolsPrivateEndpointLockResult',
     'GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult',
     'GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpResult',
     'GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionResult',
     'GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemResult',
+    'GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockResult',
     'GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult',
     'GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationReverseConnectionsSourceIpResult',
     'GetDatabaseToolsPrivateEndpointsFilterResult',
@@ -222,6 +234,210 @@ class DatabaseToolsConnectionKeyStoreKeyStorePassword(dict):
 
 
 @pulumi.output_type
+class DatabaseToolsConnectionLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsConnectionLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsConnectionLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsConnectionLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: (Updatable) The DatabaseToolsConnection type.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) The DatabaseToolsConnection type.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class DatabaseToolsConnectionProxyClient(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "proxyAuthenticationType":
+            suggest = "proxy_authentication_type"
+        elif key == "userName":
+            suggest = "user_name"
+        elif key == "userPassword":
+            suggest = "user_password"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsConnectionProxyClient. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsConnectionProxyClient.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsConnectionProxyClient.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 proxy_authentication_type: str,
+                 roles: Optional[Sequence[str]] = None,
+                 user_name: Optional[str] = None,
+                 user_password: Optional['outputs.DatabaseToolsConnectionProxyClientUserPassword'] = None):
+        """
+        :param str proxy_authentication_type: (Updatable) The proxy authentication type.
+        :param Sequence[str] roles: (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+        :param str user_name: (Updatable) The database user name.
+        :param 'DatabaseToolsConnectionProxyClientUserPasswordArgs' user_password: (Updatable) The user password.
+        """
+        pulumi.set(__self__, "proxy_authentication_type", proxy_authentication_type)
+        if roles is not None:
+            pulumi.set(__self__, "roles", roles)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if user_password is not None:
+            pulumi.set(__self__, "user_password", user_password)
+
+    @property
+    @pulumi.getter(name="proxyAuthenticationType")
+    def proxy_authentication_type(self) -> str:
+        """
+        (Updatable) The proxy authentication type.
+        """
+        return pulumi.get(self, "proxy_authentication_type")
+
+    @property
+    @pulumi.getter
+    def roles(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+        """
+        return pulumi.get(self, "roles")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[str]:
+        """
+        (Updatable) The database user name.
+        """
+        return pulumi.get(self, "user_name")
+
+    @property
+    @pulumi.getter(name="userPassword")
+    def user_password(self) -> Optional['outputs.DatabaseToolsConnectionProxyClientUserPassword']:
+        """
+        (Updatable) The user password.
+        """
+        return pulumi.get(self, "user_password")
+
+
+@pulumi.output_type
+class DatabaseToolsConnectionProxyClientUserPassword(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "secretId":
+            suggest = "secret_id"
+        elif key == "valueType":
+            suggest = "value_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsConnectionProxyClientUserPassword. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsConnectionProxyClientUserPassword.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsConnectionProxyClientUserPassword.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 secret_id: str,
+                 value_type: str):
+        """
+        :param str secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param str value_type: (Updatable) The value type of the user password.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> str:
+        """
+        (Updatable) The value type of the user password.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
 class DatabaseToolsConnectionRelatedResource(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -241,18 +457,20 @@ class DatabaseToolsConnectionRelatedResource(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 entity_type: str,
-                 identifier: str):
+                 entity_type: Optional[str] = None,
+                 identifier: Optional[str] = None):
         """
         :param str entity_type: (Updatable) The resource entity type.
         :param str identifier: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
         """
-        pulumi.set(__self__, "entity_type", entity_type)
-        pulumi.set(__self__, "identifier", identifier)
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if identifier is not None:
+            pulumi.set(__self__, "identifier", identifier)
 
     @property
     @pulumi.getter(name="entityType")
-    def entity_type(self) -> str:
+    def entity_type(self) -> Optional[str]:
         """
         (Updatable) The resource entity type.
         """
@@ -260,7 +478,7 @@ class DatabaseToolsConnectionRelatedResource(dict):
 
     @property
     @pulumi.getter
-    def identifier(self) -> str:
+    def identifier(self) -> Optional[str]:
         """
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
         """
@@ -321,6 +539,79 @@ class DatabaseToolsConnectionUserPassword(dict):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class DatabaseToolsPrivateEndpointLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseToolsPrivateEndpointLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseToolsPrivateEndpointLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseToolsPrivateEndpointLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: When the lock was created.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        When the lock was created.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -494,6 +785,137 @@ class GetDatabaseToolsConnectionKeyStoreKeyStorePasswordResult(dict):
 
 
 @pulumi.output_type
+class GetDatabaseToolsConnectionLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+        :param str type: The Database Tools connection type.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The Database Tools connection type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsConnectionProxyClientResult(dict):
+    def __init__(__self__, *,
+                 proxy_authentication_type: str,
+                 roles: Sequence[str],
+                 user_name: str,
+                 user_passwords: Sequence['outputs.GetDatabaseToolsConnectionProxyClientUserPasswordResult']):
+        """
+        :param str proxy_authentication_type: The proxy authentication type.
+        :param Sequence[str] roles: A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+        :param str user_name: The database user name.
+        :param Sequence['GetDatabaseToolsConnectionProxyClientUserPasswordArgs'] user_passwords: The user password.
+        """
+        pulumi.set(__self__, "proxy_authentication_type", proxy_authentication_type)
+        pulumi.set(__self__, "roles", roles)
+        pulumi.set(__self__, "user_name", user_name)
+        pulumi.set(__self__, "user_passwords", user_passwords)
+
+    @property
+    @pulumi.getter(name="proxyAuthenticationType")
+    def proxy_authentication_type(self) -> str:
+        """
+        The proxy authentication type.
+        """
+        return pulumi.get(self, "proxy_authentication_type")
+
+    @property
+    @pulumi.getter
+    def roles(self) -> Sequence[str]:
+        """
+        A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+        """
+        return pulumi.get(self, "roles")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> str:
+        """
+        The database user name.
+        """
+        return pulumi.get(self, "user_name")
+
+    @property
+    @pulumi.getter(name="userPasswords")
+    def user_passwords(self) -> Sequence['outputs.GetDatabaseToolsConnectionProxyClientUserPasswordResult']:
+        """
+        The user password.
+        """
+        return pulumi.get(self, "user_passwords")
+
+
+@pulumi.output_type
+class GetDatabaseToolsConnectionProxyClientUserPasswordResult(dict):
+    def __init__(__self__, *,
+                 secret_id: str,
+                 value_type: str):
+        """
+        :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param str value_type: The value type of the user password.
+        """
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> str:
+        """
+        The value type of the user password.
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
 class GetDatabaseToolsConnectionRelatedResourceResult(dict):
     def __init__(__self__, *,
                  entity_type: str,
@@ -575,13 +997,17 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
                  id: str,
                  key_stores: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult'],
                  lifecycle_details: str,
+                 locks: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockResult'],
                  private_endpoint_id: str,
+                 proxy_clients: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientResult'],
                  related_resources: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult'],
+                 runtime_support: str,
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str,
                  type: str,
+                 url: str,
                  user_name: str,
                  user_passwords: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult']):
         """
@@ -594,13 +1020,17 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
         :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArgs'] key_stores: The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
         :param str lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
+        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param str private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
+        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientArgs'] proxy_clients: The proxy client information.
         :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArgs'] related_resources: A related resource
+        :param str runtime_support: A filter to return only resources with one of the specified runtimeSupport values.
         :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         :param str type: A filter to return only resources their type matches the specified type.
+        :param str url: The JDBC URL used to connect to the Generic JDBC database system.
         :param str user_name: The database user name.
         :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordArgs'] user_passwords: The user password.
         """
@@ -613,13 +1043,17 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "key_stores", key_stores)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "proxy_clients", proxy_clients)
         pulumi.set(__self__, "related_resources", related_resources)
+        pulumi.set(__self__, "runtime_support", runtime_support)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "url", url)
         pulumi.set(__self__, "user_name", user_name)
         pulumi.set(__self__, "user_passwords", user_passwords)
 
@@ -696,6 +1130,14 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> str:
         """
@@ -704,12 +1146,28 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
         return pulumi.get(self, "private_endpoint_id")
 
     @property
+    @pulumi.getter(name="proxyClients")
+    def proxy_clients(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientResult']:
+        """
+        The proxy client information.
+        """
+        return pulumi.get(self, "proxy_clients")
+
+    @property
     @pulumi.getter(name="relatedResources")
     def related_resources(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult']:
         """
         A related resource
         """
         return pulumi.get(self, "related_resources")
+
+    @property
+    @pulumi.getter(name="runtimeSupport")
+    def runtime_support(self) -> str:
+        """
+        A filter to return only resources with one of the specified runtimeSupport values.
+        """
+        return pulumi.get(self, "runtime_support")
 
     @property
     @pulumi.getter
@@ -750,6 +1208,14 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
         A filter to return only resources their type matches the specified type.
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        The JDBC URL used to connect to the Generic JDBC database system.
+        """
+        return pulumi.get(self, "url")
 
     @property
     @pulumi.getter(name="userName")
@@ -839,6 +1305,137 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKe
 
 @pulumi.output_type
 class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreKeyStorePasswordResult(dict):
+    def __init__(__self__, *,
+                 secret_id: str,
+                 value_type: str):
+        """
+        :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param str value_type: The value type of the user password.
+        """
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "value_type", value_type)
+
+    @property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @property
+    @pulumi.getter(name="valueType")
+    def value_type(self) -> str:
+        """
+        The value type of the user password.
+        """
+        return pulumi.get(self, "value_type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+        :param str type: A filter to return only resources their type matches the specified type.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        A filter to return only resources their type matches the specified type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientResult(dict):
+    def __init__(__self__, *,
+                 proxy_authentication_type: str,
+                 roles: Sequence[str],
+                 user_name: str,
+                 user_passwords: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordResult']):
+        """
+        :param str proxy_authentication_type: The proxy authentication type.
+        :param Sequence[str] roles: A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+        :param str user_name: The database user name.
+        :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordArgs'] user_passwords: The user password.
+        """
+        pulumi.set(__self__, "proxy_authentication_type", proxy_authentication_type)
+        pulumi.set(__self__, "roles", roles)
+        pulumi.set(__self__, "user_name", user_name)
+        pulumi.set(__self__, "user_passwords", user_passwords)
+
+    @property
+    @pulumi.getter(name="proxyAuthenticationType")
+    def proxy_authentication_type(self) -> str:
+        """
+        The proxy authentication type.
+        """
+        return pulumi.get(self, "proxy_authentication_type")
+
+    @property
+    @pulumi.getter
+    def roles(self) -> Sequence[str]:
+        """
+        A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
+        """
+        return pulumi.get(self, "roles")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> str:
+        """
+        The database user name.
+        """
+        return pulumi.get(self, "user_name")
+
+    @property
+    @pulumi.getter(name="userPasswords")
+    def user_passwords(self) -> Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordResult']:
+        """
+        The user password.
+        """
+        return pulumi.get(self, "user_passwords")
+
+
+@pulumi.output_type
+class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemProxyClientUserPasswordResult(dict):
     def __init__(__self__, *,
                  secret_id: str,
                  value_type: str):
@@ -1136,6 +1733,57 @@ class GetDatabaseToolsEndpointServicesFilterResult(dict):
 
 
 @pulumi.output_type
+class GetDatabaseToolsPrivateEndpointLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationResult(dict):
     def __init__(__self__, *,
                  reverse_connections_source_ips: Sequence['outputs.GetDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpResult']):
@@ -1196,6 +1844,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  lifecycle_details: str,
+                 locks: Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockResult'],
                  nsg_ids: Sequence[str],
                  private_endpoint_ip: str,
                  private_endpoint_vnic_id: str,
@@ -1217,6 +1866,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param Sequence['GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param Sequence[str] nsg_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         :param str private_endpoint_ip: The private IP address that represents the access point for the associated endpoint service.
         :param str private_endpoint_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint's VNIC.
@@ -1238,6 +1888,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         pulumi.set(__self__, "private_endpoint_vnic_id", private_endpoint_vnic_id)
@@ -1330,6 +1981,14 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
@@ -1408,6 +2067,57 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
         """
         return pulumi.get(self, "vcn_id")
+
+
+@pulumi.output_type
+class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

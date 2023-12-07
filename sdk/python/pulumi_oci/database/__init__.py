@@ -34,6 +34,7 @@ from .database_upgrade import *
 from .db_home import *
 from .db_node import *
 from .db_node_console_connection import *
+from .db_node_console_history import *
 from .db_system import *
 from .db_systems_upgrade import *
 from .exadata_infrastructure import *
@@ -118,6 +119,9 @@ from .get_db_homes import *
 from .get_db_node import *
 from .get_db_node_console_connection import *
 from .get_db_node_console_connections import *
+from .get_db_node_console_histories import *
+from .get_db_node_console_history import *
+from .get_db_node_console_history_content import *
 from .get_db_nodes import *
 from .get_db_server import *
 from .get_db_servers import *

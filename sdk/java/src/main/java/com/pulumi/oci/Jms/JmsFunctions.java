@@ -20,6 +20,14 @@ import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetDiagnosesArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetDiagnosesPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetDrsFileArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetDrsFilePlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetExportSettingArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetExportSettingPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetExportStatusArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetExportStatusPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultsArgs;
@@ -35,6 +43,26 @@ import com.pulumi.oci.Jms.inputs.GetInstallationSiteArgs;
 import com.pulumi.oci.Jms.inputs.GetInstallationSitePlainArgs;
 import com.pulumi.oci.Jms.inputs.GetInstallationSitesArgs;
 import com.pulumi.oci.Jms.inputs.GetInstallationSitesPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadRecordsArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadRecordsPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportContentArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportContentPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportsArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportsPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokenArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokenPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokensArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokensPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensePlainArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
+import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetJavaFamiliesArgs;
 import com.pulumi.oci.Jms.inputs.GetJavaFamiliesPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetJavaFamilyArgs;
@@ -53,6 +81,10 @@ import com.pulumi.oci.Jms.outputs.GetFleetBlocklistsResult;
 import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultResult;
 import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultsResult;
 import com.pulumi.oci.Jms.outputs.GetFleetDiagnosesResult;
+import com.pulumi.oci.Jms.outputs.GetFleetDrsFileResult;
+import com.pulumi.oci.Jms.outputs.GetFleetDrsFilesResult;
+import com.pulumi.oci.Jms.outputs.GetFleetExportSettingResult;
+import com.pulumi.oci.Jms.outputs.GetFleetExportStatusResult;
 import com.pulumi.oci.Jms.outputs.GetFleetJavaMigrationAnalysisResultResult;
 import com.pulumi.oci.Jms.outputs.GetFleetJavaMigrationAnalysisResultsResult;
 import com.pulumi.oci.Jms.outputs.GetFleetPerformanceTuningAnalysisResultResult;
@@ -61,6 +93,16 @@ import com.pulumi.oci.Jms.outputs.GetFleetResult;
 import com.pulumi.oci.Jms.outputs.GetFleetsResult;
 import com.pulumi.oci.Jms.outputs.GetInstallationSiteResult;
 import com.pulumi.oci.Jms.outputs.GetInstallationSitesResult;
+import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaDownloadRecordsResult;
+import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaDownloadReportContentResult;
+import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaDownloadReportResult;
+import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaDownloadReportsResult;
+import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaDownloadTokenResult;
+import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaDownloadTokensResult;
+import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordResult;
+import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsResult;
+import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaLicenseResult;
+import com.pulumi.oci.Jms.outputs.GetJavaDownloadsJavaLicensesResult;
 import com.pulumi.oci.Jms.outputs.GetJavaFamiliesResult;
 import com.pulumi.oci.Jms.outputs.GetJavaFamilyResult;
 import com.pulumi.oci.Jms.outputs.GetJavaReleaseResult;
@@ -1280,6 +1322,634 @@ public final class JmsFunctions {
      */
     public static CompletableFuture<GetFleetDiagnosesResult> getFleetDiagnosesPlain(GetFleetDiagnosesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Jms/getFleetDiagnoses:getFleetDiagnoses", TypeShape.of(GetFleetDiagnosesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Drs File resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Get the detail about the created DRS file in the Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetDrsFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
+     *             .drsFileKey(var_.fleet_drs_file_drs_file_key())
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetDrsFileResult> getFleetDrsFile(GetFleetDrsFileArgs args) {
+        return getFleetDrsFile(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Drs File resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Get the detail about the created DRS file in the Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetDrsFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
+     *             .drsFileKey(var_.fleet_drs_file_drs_file_key())
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetDrsFileResult> getFleetDrsFilePlain(GetFleetDrsFilePlainArgs args) {
+        return getFleetDrsFilePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Drs File resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Get the detail about the created DRS file in the Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetDrsFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
+     *             .drsFileKey(var_.fleet_drs_file_drs_file_key())
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetDrsFileResult> getFleetDrsFile(GetFleetDrsFileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetDrsFile:getFleetDrsFile", TypeShape.of(GetFleetDrsFileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Drs File resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Get the detail about the created DRS file in the Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetDrsFileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
+     *             .drsFileKey(var_.fleet_drs_file_drs_file_key())
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetDrsFileResult> getFleetDrsFilePlain(GetFleetDrsFilePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetDrsFile:getFleetDrsFile", TypeShape.of(GetFleetDrsFileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Drs Files in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List the details about the created DRS files in the Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetDrsFilesResult> getFleetDrsFiles(GetFleetDrsFilesArgs args) {
+        return getFleetDrsFiles(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Drs Files in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List the details about the created DRS files in the Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetDrsFilesResult> getFleetDrsFilesPlain(GetFleetDrsFilesPlainArgs args) {
+        return getFleetDrsFilesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Drs Files in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List the details about the created DRS files in the Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetDrsFilesResult> getFleetDrsFiles(GetFleetDrsFilesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetDrsFiles:getFleetDrsFiles", TypeShape.of(GetFleetDrsFilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Drs Files in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List the details about the created DRS files in the Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetDrsFilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetDrsFilesResult> getFleetDrsFilesPlain(GetFleetDrsFilesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetDrsFiles:getFleetDrsFiles", TypeShape.of(GetFleetDrsFilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns export setting for the specified Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetExportSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetExportSettingResult> getFleetExportSetting(GetFleetExportSettingArgs args) {
+        return getFleetExportSetting(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns export setting for the specified Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetExportSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetExportSettingResult> getFleetExportSettingPlain(GetFleetExportSettingPlainArgs args) {
+        return getFleetExportSettingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns export setting for the specified Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetExportSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetExportSettingResult> getFleetExportSetting(GetFleetExportSettingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetExportSetting:getFleetExportSetting", TypeShape.of(GetFleetExportSettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Export Setting resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns export setting for the specified Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetExportSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetExportSettingResult> getFleetExportSettingPlain(GetFleetExportSettingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetExportSetting:getFleetExportSetting", TypeShape.of(GetFleetExportSettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns last export status for the specified Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetExportStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetExportStatusResult> getFleetExportStatus(GetFleetExportStatusArgs args) {
+        return getFleetExportStatus(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns last export status for the specified Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetExportStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetExportStatusResult> getFleetExportStatusPlain(GetFleetExportStatusPlainArgs args) {
+        return getFleetExportStatusPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns last export status for the specified Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetExportStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetFleetExportStatusResult> getFleetExportStatus(GetFleetExportStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetExportStatus:getFleetExportStatus", TypeShape.of(GetFleetExportStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Fleet Export Status resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns last export status for the specified Fleet.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetExportStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
+     *             .fleetId(oci_jms_fleet.test_fleet().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetFleetExportStatusResult> getFleetExportStatusPlain(GetFleetExportStatusPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetExportStatus:getFleetExportStatus", TypeShape.of(GetFleetExportStatusResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Fleet Java Migration Analysis Result resource in Oracle Cloud Infrastructure Jms service.
@@ -2606,6 +3276,1738 @@ public final class JmsFunctions {
         return Deployment.getInstance().invokeAsync("oci:Jms/getInstallationSites:getInstallationSites", TypeShape.of(GetInstallationSitesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Java Download Records in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of Java download records in a tenancy based on specified parameters.
+     * See [JavaReleases API](https://docs.cloud.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/ListJavaReleases)
+     * for possible values of `javaFamilyVersion` and `javaReleaseVersion` parameters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadRecords = JmsFunctions.getJavaDownloadsJavaDownloadRecords(GetJavaDownloadsJavaDownloadRecordsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .architecture(var_.java_download_record_architecture())
+     *             .familyVersion(var_.java_download_record_family_version())
+     *             .osFamily(var_.java_download_record_os_family())
+     *             .packageTypeDetail(var_.java_download_record_package_type_detail())
+     *             .releaseVersion(var_.java_download_record_release_version())
+     *             .timeEnd(var_.java_download_record_time_end())
+     *             .timeStart(var_.java_download_record_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaDownloadRecordsResult> getJavaDownloadsJavaDownloadRecords(GetJavaDownloadsJavaDownloadRecordsArgs args) {
+        return getJavaDownloadsJavaDownloadRecords(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Download Records in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of Java download records in a tenancy based on specified parameters.
+     * See [JavaReleases API](https://docs.cloud.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/ListJavaReleases)
+     * for possible values of `javaFamilyVersion` and `javaReleaseVersion` parameters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadRecords = JmsFunctions.getJavaDownloadsJavaDownloadRecords(GetJavaDownloadsJavaDownloadRecordsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .architecture(var_.java_download_record_architecture())
+     *             .familyVersion(var_.java_download_record_family_version())
+     *             .osFamily(var_.java_download_record_os_family())
+     *             .packageTypeDetail(var_.java_download_record_package_type_detail())
+     *             .releaseVersion(var_.java_download_record_release_version())
+     *             .timeEnd(var_.java_download_record_time_end())
+     *             .timeStart(var_.java_download_record_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaDownloadRecordsResult> getJavaDownloadsJavaDownloadRecordsPlain(GetJavaDownloadsJavaDownloadRecordsPlainArgs args) {
+        return getJavaDownloadsJavaDownloadRecordsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Download Records in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of Java download records in a tenancy based on specified parameters.
+     * See [JavaReleases API](https://docs.cloud.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/ListJavaReleases)
+     * for possible values of `javaFamilyVersion` and `javaReleaseVersion` parameters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadRecords = JmsFunctions.getJavaDownloadsJavaDownloadRecords(GetJavaDownloadsJavaDownloadRecordsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .architecture(var_.java_download_record_architecture())
+     *             .familyVersion(var_.java_download_record_family_version())
+     *             .osFamily(var_.java_download_record_os_family())
+     *             .packageTypeDetail(var_.java_download_record_package_type_detail())
+     *             .releaseVersion(var_.java_download_record_release_version())
+     *             .timeEnd(var_.java_download_record_time_end())
+     *             .timeStart(var_.java_download_record_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaDownloadRecordsResult> getJavaDownloadsJavaDownloadRecords(GetJavaDownloadsJavaDownloadRecordsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaDownloadsJavaDownloadRecords:getJavaDownloadsJavaDownloadRecords", TypeShape.of(GetJavaDownloadsJavaDownloadRecordsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Download Records in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of Java download records in a tenancy based on specified parameters.
+     * See [JavaReleases API](https://docs.cloud.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/ListJavaReleases)
+     * for possible values of `javaFamilyVersion` and `javaReleaseVersion` parameters.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadRecords = JmsFunctions.getJavaDownloadsJavaDownloadRecords(GetJavaDownloadsJavaDownloadRecordsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .architecture(var_.java_download_record_architecture())
+     *             .familyVersion(var_.java_download_record_family_version())
+     *             .osFamily(var_.java_download_record_os_family())
+     *             .packageTypeDetail(var_.java_download_record_package_type_detail())
+     *             .releaseVersion(var_.java_download_record_release_version())
+     *             .timeEnd(var_.java_download_record_time_end())
+     *             .timeStart(var_.java_download_record_time_start())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaDownloadRecordsResult> getJavaDownloadsJavaDownloadRecordsPlain(GetJavaDownloadsJavaDownloadRecordsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaDownloadsJavaDownloadRecords:getJavaDownloadsJavaDownloadRecords", TypeShape.of(GetJavaDownloadsJavaDownloadRecordsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Gets a JavaDownloadReport by the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
+     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaDownloadReportResult> getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs args) {
+        return getJavaDownloadsJavaDownloadReport(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Gets a JavaDownloadReport by the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
+     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaDownloadReportResult> getJavaDownloadsJavaDownloadReportPlain(GetJavaDownloadsJavaDownloadReportPlainArgs args) {
+        return getJavaDownloadsJavaDownloadReportPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Gets a JavaDownloadReport by the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
+     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaDownloadReportResult> getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaDownloadsJavaDownloadReport:getJavaDownloadsJavaDownloadReport", TypeShape.of(GetJavaDownloadsJavaDownloadReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Download Report resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Gets a JavaDownloadReport by the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
+     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaDownloadReportResult> getJavaDownloadsJavaDownloadReportPlain(GetJavaDownloadsJavaDownloadReportPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaDownloadsJavaDownloadReport:getJavaDownloadsJavaDownloadReport", TypeShape.of(GetJavaDownloadsJavaDownloadReportResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Download Report Content resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Retrieve a Java download report with the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
+     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaDownloadReportContentResult> getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs args) {
+        return getJavaDownloadsJavaDownloadReportContent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java Download Report Content resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Retrieve a Java download report with the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
+     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaDownloadReportContentResult> getJavaDownloadsJavaDownloadReportContentPlain(GetJavaDownloadsJavaDownloadReportContentPlainArgs args) {
+        return getJavaDownloadsJavaDownloadReportContentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java Download Report Content resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Retrieve a Java download report with the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
+     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaDownloadReportContentResult> getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaDownloadsJavaDownloadReportContent:getJavaDownloadsJavaDownloadReportContent", TypeShape.of(GetJavaDownloadsJavaDownloadReportContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Download Report Content resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Retrieve a Java download report with the specified identifier.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
+     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaDownloadReportContentResult> getJavaDownloadsJavaDownloadReportContentPlain(GetJavaDownloadsJavaDownloadReportContentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaDownloadsJavaDownloadReportContent:getJavaDownloadsJavaDownloadReportContent", TypeShape.of(GetJavaDownloadsJavaDownloadReportContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Download Reports in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of JavaDownloadReports.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .displayName(var_.java_download_report_display_name())
+     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .state(var_.java_download_report_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaDownloadReportsResult> getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs args) {
+        return getJavaDownloadsJavaDownloadReports(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Download Reports in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of JavaDownloadReports.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .displayName(var_.java_download_report_display_name())
+     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .state(var_.java_download_report_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaDownloadReportsResult> getJavaDownloadsJavaDownloadReportsPlain(GetJavaDownloadsJavaDownloadReportsPlainArgs args) {
+        return getJavaDownloadsJavaDownloadReportsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Download Reports in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of JavaDownloadReports.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .displayName(var_.java_download_report_display_name())
+     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .state(var_.java_download_report_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaDownloadReportsResult> getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaDownloadsJavaDownloadReports:getJavaDownloadsJavaDownloadReports", TypeShape.of(GetJavaDownloadsJavaDownloadReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Download Reports in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of JavaDownloadReports.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadReportsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .displayName(var_.java_download_report_display_name())
+     *             .javaDownloadReportId(oci_jms_java_downloads_java_download_report.test_java_download_report().id())
+     *             .state(var_.java_download_report_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaDownloadReportsResult> getJavaDownloadsJavaDownloadReportsPlain(GetJavaDownloadsJavaDownloadReportsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaDownloadsJavaDownloadReports:getJavaDownloadsJavaDownloadReports", TypeShape.of(GetJavaDownloadsJavaDownloadReportsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Download Token resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Gets a JavaDownloadToken by identifier
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokenArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
+     *             .javaDownloadTokenId(oci_jms_java_downloads_java_download_token.test_java_download_token().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaDownloadTokenResult> getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs args) {
+        return getJavaDownloadsJavaDownloadToken(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java Download Token resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Gets a JavaDownloadToken by identifier
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokenArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
+     *             .javaDownloadTokenId(oci_jms_java_downloads_java_download_token.test_java_download_token().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaDownloadTokenResult> getJavaDownloadsJavaDownloadTokenPlain(GetJavaDownloadsJavaDownloadTokenPlainArgs args) {
+        return getJavaDownloadsJavaDownloadTokenPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java Download Token resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Gets a JavaDownloadToken by identifier
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokenArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
+     *             .javaDownloadTokenId(oci_jms_java_downloads_java_download_token.test_java_download_token().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaDownloadTokenResult> getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken", TypeShape.of(GetJavaDownloadsJavaDownloadTokenResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Download Token resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Gets a JavaDownloadToken by identifier
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokenArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
+     *             .javaDownloadTokenId(oci_jms_java_downloads_java_download_token.test_java_download_token().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaDownloadTokenResult> getJavaDownloadsJavaDownloadTokenPlain(GetJavaDownloadsJavaDownloadTokenPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaDownloadsJavaDownloadToken:getJavaDownloadsJavaDownloadToken", TypeShape.of(GetJavaDownloadsJavaDownloadTokenResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Download Tokens in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of JavaDownloadTokens.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokensArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadTokens = JmsFunctions.getJavaDownloadsJavaDownloadTokens(GetJavaDownloadsJavaDownloadTokensArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .displayName(var_.java_download_token_display_name())
+     *             .familyVersion(var_.java_download_token_family_version())
+     *             .id(var_.java_download_token_id())
+     *             .searchByUser(var_.java_download_token_search_by_user())
+     *             .state(var_.java_download_token_state())
+     *             .value(var_.java_download_token_value())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaDownloadTokensResult> getJavaDownloadsJavaDownloadTokens(GetJavaDownloadsJavaDownloadTokensArgs args) {
+        return getJavaDownloadsJavaDownloadTokens(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Download Tokens in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of JavaDownloadTokens.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokensArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadTokens = JmsFunctions.getJavaDownloadsJavaDownloadTokens(GetJavaDownloadsJavaDownloadTokensArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .displayName(var_.java_download_token_display_name())
+     *             .familyVersion(var_.java_download_token_family_version())
+     *             .id(var_.java_download_token_id())
+     *             .searchByUser(var_.java_download_token_search_by_user())
+     *             .state(var_.java_download_token_state())
+     *             .value(var_.java_download_token_value())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaDownloadTokensResult> getJavaDownloadsJavaDownloadTokensPlain(GetJavaDownloadsJavaDownloadTokensPlainArgs args) {
+        return getJavaDownloadsJavaDownloadTokensPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Download Tokens in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of JavaDownloadTokens.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokensArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadTokens = JmsFunctions.getJavaDownloadsJavaDownloadTokens(GetJavaDownloadsJavaDownloadTokensArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .displayName(var_.java_download_token_display_name())
+     *             .familyVersion(var_.java_download_token_family_version())
+     *             .id(var_.java_download_token_id())
+     *             .searchByUser(var_.java_download_token_search_by_user())
+     *             .state(var_.java_download_token_state())
+     *             .value(var_.java_download_token_value())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaDownloadTokensResult> getJavaDownloadsJavaDownloadTokens(GetJavaDownloadsJavaDownloadTokensArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaDownloadsJavaDownloadTokens:getJavaDownloadsJavaDownloadTokens", TypeShape.of(GetJavaDownloadsJavaDownloadTokensResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Download Tokens in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of JavaDownloadTokens.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaDownloadTokensArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaDownloadTokens = JmsFunctions.getJavaDownloadsJavaDownloadTokens(GetJavaDownloadsJavaDownloadTokensArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .displayName(var_.java_download_token_display_name())
+     *             .familyVersion(var_.java_download_token_family_version())
+     *             .id(var_.java_download_token_id())
+     *             .searchByUser(var_.java_download_token_search_by_user())
+     *             .state(var_.java_download_token_state())
+     *             .value(var_.java_download_token_value())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaDownloadTokensResult> getJavaDownloadsJavaDownloadTokensPlain(GetJavaDownloadsJavaDownloadTokensPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaDownloadsJavaDownloadTokens:getJavaDownloadsJavaDownloadTokens", TypeShape.of(GetJavaDownloadsJavaDownloadTokensResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java License resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Return details of the specified Java license type.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicense = JmsFunctions.getJavaDownloadsJavaLicense(GetJavaDownloadsJavaLicenseArgs.builder()
+     *             .licenseType(var_.java_license_license_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaLicenseResult> getJavaDownloadsJavaLicense(GetJavaDownloadsJavaLicenseArgs args) {
+        return getJavaDownloadsJavaLicense(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java License resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Return details of the specified Java license type.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicense = JmsFunctions.getJavaDownloadsJavaLicense(GetJavaDownloadsJavaLicenseArgs.builder()
+     *             .licenseType(var_.java_license_license_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaLicenseResult> getJavaDownloadsJavaLicensePlain(GetJavaDownloadsJavaLicensePlainArgs args) {
+        return getJavaDownloadsJavaLicensePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java License resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Return details of the specified Java license type.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicense = JmsFunctions.getJavaDownloadsJavaLicense(GetJavaDownloadsJavaLicenseArgs.builder()
+     *             .licenseType(var_.java_license_license_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaLicenseResult> getJavaDownloadsJavaLicense(GetJavaDownloadsJavaLicenseArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaDownloadsJavaLicense:getJavaDownloadsJavaLicense", TypeShape.of(GetJavaDownloadsJavaLicenseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java License resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Return details of the specified Java license type.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicense = JmsFunctions.getJavaDownloadsJavaLicense(GetJavaDownloadsJavaLicenseArgs.builder()
+     *             .licenseType(var_.java_license_license_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaLicenseResult> getJavaDownloadsJavaLicensePlain(GetJavaDownloadsJavaLicensePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaDownloadsJavaLicense:getJavaDownloadsJavaLicense", TypeShape.of(GetJavaDownloadsJavaLicenseResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java License Acceptance Record resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a specific Java license acceptance record in a tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
+     *             .javaLicenseAcceptanceRecordId(oci_jms_java_downloads_java_license_acceptance_record.test_java_license_acceptance_record().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaLicenseAcceptanceRecordResult> getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs args) {
+        return getJavaDownloadsJavaLicenseAcceptanceRecord(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java License Acceptance Record resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a specific Java license acceptance record in a tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
+     *             .javaLicenseAcceptanceRecordId(oci_jms_java_downloads_java_license_acceptance_record.test_java_license_acceptance_record().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaLicenseAcceptanceRecordResult> getJavaDownloadsJavaLicenseAcceptanceRecordPlain(GetJavaDownloadsJavaLicenseAcceptanceRecordPlainArgs args) {
+        return getJavaDownloadsJavaLicenseAcceptanceRecordPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java License Acceptance Record resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a specific Java license acceptance record in a tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
+     *             .javaLicenseAcceptanceRecordId(oci_jms_java_downloads_java_license_acceptance_record.test_java_license_acceptance_record().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaLicenseAcceptanceRecordResult> getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecord:getJavaDownloadsJavaLicenseAcceptanceRecord", TypeShape.of(GetJavaDownloadsJavaLicenseAcceptanceRecordResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java License Acceptance Record resource in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a specific Java license acceptance record in a tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
+     *             .javaLicenseAcceptanceRecordId(oci_jms_java_downloads_java_license_acceptance_record.test_java_license_acceptance_record().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaLicenseAcceptanceRecordResult> getJavaDownloadsJavaLicenseAcceptanceRecordPlain(GetJavaDownloadsJavaLicenseAcceptanceRecordPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecord:getJavaDownloadsJavaLicenseAcceptanceRecord", TypeShape.of(GetJavaDownloadsJavaLicenseAcceptanceRecordResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java License Acceptance Records in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of all the Java license acceptance records in a tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenseAcceptanceRecords = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecords(GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .id(var_.java_license_acceptance_record_id())
+     *             .licenseType(var_.java_license_acceptance_record_license_type())
+     *             .searchByUser(var_.java_license_acceptance_record_search_by_user())
+     *             .status(var_.java_license_acceptance_record_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> getJavaDownloadsJavaLicenseAcceptanceRecords(GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs args) {
+        return getJavaDownloadsJavaLicenseAcceptanceRecords(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java License Acceptance Records in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of all the Java license acceptance records in a tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenseAcceptanceRecords = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecords(GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .id(var_.java_license_acceptance_record_id())
+     *             .licenseType(var_.java_license_acceptance_record_license_type())
+     *             .searchByUser(var_.java_license_acceptance_record_search_by_user())
+     *             .status(var_.java_license_acceptance_record_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> getJavaDownloadsJavaLicenseAcceptanceRecordsPlain(GetJavaDownloadsJavaLicenseAcceptanceRecordsPlainArgs args) {
+        return getJavaDownloadsJavaLicenseAcceptanceRecordsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java License Acceptance Records in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of all the Java license acceptance records in a tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenseAcceptanceRecords = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecords(GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .id(var_.java_license_acceptance_record_id())
+     *             .licenseType(var_.java_license_acceptance_record_license_type())
+     *             .searchByUser(var_.java_license_acceptance_record_search_by_user())
+     *             .status(var_.java_license_acceptance_record_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> getJavaDownloadsJavaLicenseAcceptanceRecords(GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecords:getJavaDownloadsJavaLicenseAcceptanceRecords", TypeShape.of(GetJavaDownloadsJavaLicenseAcceptanceRecordsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java License Acceptance Records in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Returns a list of all the Java license acceptance records in a tenancy.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenseAcceptanceRecords = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecords(GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs.builder()
+     *             .compartmentId(var_.tenancy_ocid())
+     *             .id(var_.java_license_acceptance_record_id())
+     *             .licenseType(var_.java_license_acceptance_record_license_type())
+     *             .searchByUser(var_.java_license_acceptance_record_search_by_user())
+     *             .status(var_.java_license_acceptance_record_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaLicenseAcceptanceRecordsResult> getJavaDownloadsJavaLicenseAcceptanceRecordsPlain(GetJavaDownloadsJavaLicenseAcceptanceRecordsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaDownloadsJavaLicenseAcceptanceRecords:getJavaDownloadsJavaLicenseAcceptanceRecords", TypeShape.of(GetJavaDownloadsJavaLicenseAcceptanceRecordsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Licenses in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Return a list with details of all Java licenses.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenses = JmsFunctions.getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.builder()
+     *             .displayName(var_.java_license_display_name())
+     *             .licenseType(var_.java_license_license_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaLicensesResult> getJavaDownloadsJavaLicenses() {
+        return getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Licenses in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Return a list with details of all Java licenses.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenses = JmsFunctions.getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.builder()
+     *             .displayName(var_.java_license_display_name())
+     *             .licenseType(var_.java_license_license_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaLicensesResult> getJavaDownloadsJavaLicensesPlain() {
+        return getJavaDownloadsJavaLicensesPlain(GetJavaDownloadsJavaLicensesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Licenses in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Return a list with details of all Java licenses.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenses = JmsFunctions.getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.builder()
+     *             .displayName(var_.java_license_display_name())
+     *             .licenseType(var_.java_license_license_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaLicensesResult> getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs args) {
+        return getJavaDownloadsJavaLicenses(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Licenses in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Return a list with details of all Java licenses.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenses = JmsFunctions.getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.builder()
+     *             .displayName(var_.java_license_display_name())
+     *             .licenseType(var_.java_license_license_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaLicensesResult> getJavaDownloadsJavaLicensesPlain(GetJavaDownloadsJavaLicensesPlainArgs args) {
+        return getJavaDownloadsJavaLicensesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Licenses in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Return a list with details of all Java licenses.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenses = JmsFunctions.getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.builder()
+     *             .displayName(var_.java_license_display_name())
+     *             .licenseType(var_.java_license_license_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetJavaDownloadsJavaLicensesResult> getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getJavaDownloadsJavaLicenses:getJavaDownloadsJavaLicenses", TypeShape.of(GetJavaDownloadsJavaLicensesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Licenses in Oracle Cloud Infrastructure Jms Java Downloads service.
+     * 
+     * Return a list with details of all Java licenses.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetJavaDownloadsJavaLicensesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaLicenses = JmsFunctions.getJavaDownloadsJavaLicenses(GetJavaDownloadsJavaLicensesArgs.builder()
+     *             .displayName(var_.java_license_display_name())
+     *             .licenseType(var_.java_license_license_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetJavaDownloadsJavaLicensesResult> getJavaDownloadsJavaLicensesPlain(GetJavaDownloadsJavaLicensesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getJavaDownloadsJavaLicenses:getJavaDownloadsJavaLicenses", TypeShape.of(GetJavaDownloadsJavaLicensesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
      * 
      * Returns a list of the Java release family information.
@@ -2636,6 +5038,7 @@ public final class JmsFunctions {
      *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
      *             .displayName(var_.java_family_display_name())
      *             .familyVersion(var_.java_family_family_version())
+     *             .isSupportedVersion(var_.java_family_is_supported_version())
      *             .build());
      * 
      *     }
@@ -2677,6 +5080,7 @@ public final class JmsFunctions {
      *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
      *             .displayName(var_.java_family_display_name())
      *             .familyVersion(var_.java_family_family_version())
+     *             .isSupportedVersion(var_.java_family_is_supported_version())
      *             .build());
      * 
      *     }
@@ -2718,6 +5122,7 @@ public final class JmsFunctions {
      *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
      *             .displayName(var_.java_family_display_name())
      *             .familyVersion(var_.java_family_family_version())
+     *             .isSupportedVersion(var_.java_family_is_supported_version())
      *             .build());
      * 
      *     }
@@ -2759,6 +5164,7 @@ public final class JmsFunctions {
      *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
      *             .displayName(var_.java_family_display_name())
      *             .familyVersion(var_.java_family_family_version())
+     *             .isSupportedVersion(var_.java_family_is_supported_version())
      *             .build());
      * 
      *     }
@@ -2800,6 +5206,7 @@ public final class JmsFunctions {
      *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
      *             .displayName(var_.java_family_display_name())
      *             .familyVersion(var_.java_family_family_version())
+     *             .isSupportedVersion(var_.java_family_is_supported_version())
      *             .build());
      * 
      *     }
@@ -2841,6 +5248,7 @@ public final class JmsFunctions {
      *         final var testJavaFamilies = JmsFunctions.getJavaFamilies(GetJavaFamiliesArgs.builder()
      *             .displayName(var_.java_family_display_name())
      *             .familyVersion(var_.java_family_family_version())
+     *             .isSupportedVersion(var_.java_family_is_supported_version())
      *             .build());
      * 
      *     }

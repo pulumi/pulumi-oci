@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -26,6 +27,7 @@ public final class AutonomousDatabaseConnectionStringProfile {
      * 
      */
     private @Nullable String hostFormat;
+    private @Nullable Boolean isRegional;
     /**
      * @return Protocol used by the connection.
      * 
@@ -73,6 +75,9 @@ public final class AutonomousDatabaseConnectionStringProfile {
      */
     public Optional<String> hostFormat() {
         return Optional.ofNullable(this.hostFormat);
+    }
+    public Optional<Boolean> isRegional() {
+        return Optional.ofNullable(this.isRegional);
     }
     /**
      * @return Protocol used by the connection.
@@ -122,6 +127,7 @@ public final class AutonomousDatabaseConnectionStringProfile {
         private @Nullable String consumerGroup;
         private @Nullable String displayName;
         private @Nullable String hostFormat;
+        private @Nullable Boolean isRegional;
         private @Nullable String protocol;
         private @Nullable String sessionMode;
         private @Nullable String syntaxFormat;
@@ -133,6 +139,7 @@ public final class AutonomousDatabaseConnectionStringProfile {
     	      this.consumerGroup = defaults.consumerGroup;
     	      this.displayName = defaults.displayName;
     	      this.hostFormat = defaults.hostFormat;
+    	      this.isRegional = defaults.isRegional;
     	      this.protocol = defaults.protocol;
     	      this.sessionMode = defaults.sessionMode;
     	      this.syntaxFormat = defaults.syntaxFormat;
@@ -153,6 +160,11 @@ public final class AutonomousDatabaseConnectionStringProfile {
         @CustomType.Setter
         public Builder hostFormat(@Nullable String hostFormat) {
             this.hostFormat = hostFormat;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRegional(@Nullable Boolean isRegional) {
+            this.isRegional = isRegional;
             return this;
         }
         @CustomType.Setter
@@ -185,6 +197,7 @@ public final class AutonomousDatabaseConnectionStringProfile {
             o.consumerGroup = consumerGroup;
             o.displayName = displayName;
             o.hostFormat = hostFormat;
+            o.isRegional = isRegional;
             o.protocol = protocol;
             o.sessionMode = sessionMode;
             o.syntaxFormat = syntaxFormat;

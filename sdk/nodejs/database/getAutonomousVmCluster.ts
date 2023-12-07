@@ -84,6 +84,10 @@ export interface GetAutonomousVmClusterResult {
      */
     readonly cpusEnabled: number;
     /**
+     * The lowest value to which cpus can be scaled down.
+     */
+    readonly cpusLowestScaledValue: number;
+    /**
      * The total data storage allocated in GBs.
      */
     readonly dataStorageSizeInGb: number;
@@ -111,6 +115,10 @@ export interface GetAutonomousVmClusterResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     readonly exadataInfrastructureId: string;
+    /**
+     * The lowest value to which exadataStorage in TBs can be scaled down.
+     */
+    readonly exadataStorageInTbsLowestScaledValue: number;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -145,6 +153,10 @@ export interface GetAutonomousVmClusterResult {
      */
     readonly maintenanceWindows: outputs.Database.GetAutonomousVmClusterMaintenanceWindow[];
     /**
+     * The lowest value to which ACDs can be scaled down.
+     */
+    readonly maxAcdsLowestScaledValue: number;
+    /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
     readonly memoryPerOracleComputeUnitInGbs: number;
@@ -165,6 +177,7 @@ export interface GetAutonomousVmClusterResult {
      * The number of enabled OCPU cores.
      */
     readonly ocpusEnabled: number;
+    readonly provisionableAutonomousContainerDatabases: number;
     readonly provisionedAutonomousContainerDatabases: number;
     readonly provisionedCpus: number;
     /**

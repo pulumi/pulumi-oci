@@ -20,6 +20,8 @@ import * as utilities from "../utilities";
  *
  * const testSupportedVmwareSoftwareVersions = oci.Ocvp.getSupportedVmwareSoftwareVersions({
  *     compartmentId: _var.compartment_id,
+ *     hostShapeName: oci_core_shape.test_shape.name,
+ *     version: _var.supported_vmware_software_version_version,
  * });
  * ```
  */
@@ -29,6 +31,8 @@ export function getSupportedVmwareSoftwareVersions(args: GetSupportedVmwareSoftw
     return pulumi.runtime.invoke("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "hostShapeName": args.hostShapeName,
+        "version": args.version,
     }, opts);
 }
 
@@ -41,6 +45,14 @@ export interface GetSupportedVmwareSoftwareVersionsArgs {
      */
     compartmentId: string;
     filters?: inputs.Ocvp.GetSupportedVmwareSoftwareVersionsFilter[];
+    /**
+     * A filter to return only resources that match or support the given ESXi host shape.
+     */
+    hostShapeName?: string;
+    /**
+     * A filter to return only resources that match the given VMware software version exactly.
+     */
+    version?: string;
 }
 
 /**
@@ -49,6 +61,7 @@ export interface GetSupportedVmwareSoftwareVersionsArgs {
 export interface GetSupportedVmwareSoftwareVersionsResult {
     readonly compartmentId: string;
     readonly filters?: outputs.Ocvp.GetSupportedVmwareSoftwareVersionsFilter[];
+    readonly hostShapeName?: string;
     /**
      * The provider-assigned unique ID for this managed resource.
      */
@@ -57,6 +70,10 @@ export interface GetSupportedVmwareSoftwareVersionsResult {
      * A list of the supported versions of bundled VMware software.
      */
     readonly items: outputs.Ocvp.GetSupportedVmwareSoftwareVersionsItem[];
+    /**
+     * A short, unique string that identifies the version of bundled software.
+     */
+    readonly version?: string;
 }
 /**
  * This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -72,6 +89,8 @@ export interface GetSupportedVmwareSoftwareVersionsResult {
  *
  * const testSupportedVmwareSoftwareVersions = oci.Ocvp.getSupportedVmwareSoftwareVersions({
  *     compartmentId: _var.compartment_id,
+ *     hostShapeName: oci_core_shape.test_shape.name,
+ *     version: _var.supported_vmware_software_version_version,
  * });
  * ```
  */
@@ -88,4 +107,12 @@ export interface GetSupportedVmwareSoftwareVersionsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetSupportedVmwareSoftwareVersionsFilterArgs>[]>;
+    /**
+     * A filter to return only resources that match or support the given ESXi host shape.
+     */
+    hostShapeName?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources that match the given VMware software version exactly.
+     */
+    version?: pulumi.Input<string>;
 }

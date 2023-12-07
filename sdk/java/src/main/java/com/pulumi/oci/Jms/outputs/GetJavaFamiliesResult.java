@@ -6,6 +6,7 @@ package com.pulumi.oci.Jms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Jms.outputs.GetJavaFamiliesFilter;
 import com.pulumi.oci.Jms.outputs.GetJavaFamiliesJavaFamilyCollection;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -30,6 +31,11 @@ public final class GetJavaFamiliesResult {
      * 
      */
     private String id;
+    /**
+     * @return Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+     * 
+     */
+    private @Nullable Boolean isSupportedVersion;
     /**
      * @return The list of java_family_collection.
      * 
@@ -62,6 +68,13 @@ public final class GetJavaFamiliesResult {
         return this.id;
     }
     /**
+     * @return Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+     * 
+     */
+    public Optional<Boolean> isSupportedVersion() {
+        return Optional.ofNullable(this.isSupportedVersion);
+    }
+    /**
      * @return The list of java_family_collection.
      * 
      */
@@ -82,6 +95,7 @@ public final class GetJavaFamiliesResult {
         private @Nullable String familyVersion;
         private @Nullable List<GetJavaFamiliesFilter> filters;
         private String id;
+        private @Nullable Boolean isSupportedVersion;
         private List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections;
         public Builder() {}
         public Builder(GetJavaFamiliesResult defaults) {
@@ -90,6 +104,7 @@ public final class GetJavaFamiliesResult {
     	      this.familyVersion = defaults.familyVersion;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isSupportedVersion = defaults.isSupportedVersion;
     	      this.javaFamilyCollections = defaults.javaFamilyCollections;
         }
 
@@ -117,6 +132,11 @@ public final class GetJavaFamiliesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isSupportedVersion(@Nullable Boolean isSupportedVersion) {
+            this.isSupportedVersion = isSupportedVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder javaFamilyCollections(List<GetJavaFamiliesJavaFamilyCollection> javaFamilyCollections) {
             this.javaFamilyCollections = Objects.requireNonNull(javaFamilyCollections);
             return this;
@@ -130,6 +150,7 @@ public final class GetJavaFamiliesResult {
             o.familyVersion = familyVersion;
             o.filters = filters;
             o.id = id;
+            o.isSupportedVersion = isSupportedVersion;
             o.javaFamilyCollections = javaFamilyCollections;
             return o;
         }

@@ -159,6 +159,10 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly bool IsAdvancedFeaturesEnabled;
         /// <summary>
+        /// Whether or not export setting is enabled in this Fleet.
+        /// </summary>
+        public readonly bool IsExportSettingEnabled;
+        /// <summary>
         /// Custom Log for inventory or operation log.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetOperationLogResult> OperationLogs;
@@ -205,6 +209,8 @@ namespace Pulumi.Oci.Jms
 
             bool isAdvancedFeaturesEnabled,
 
+            bool isExportSettingEnabled,
+
             ImmutableArray<Outputs.GetFleetOperationLogResult> operationLogs,
 
             string state,
@@ -227,6 +233,7 @@ namespace Pulumi.Oci.Jms
             Id = id;
             InventoryLogs = inventoryLogs;
             IsAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            IsExportSettingEnabled = isExportSettingEnabled;
             OperationLogs = operationLogs;
             State = state;
             SystemTags = systemTags;

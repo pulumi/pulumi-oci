@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class GetDomainsMyRequestsMyRequestRequestingResult
     {
         /// <summary>
+        /// Resource description
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
         /// User display name
         /// </summary>
         public readonly string Display;
@@ -32,6 +36,8 @@ namespace Pulumi.Oci.Identity.Outputs
 
         [OutputConstructor]
         private GetDomainsMyRequestsMyRequestRequestingResult(
+            string description,
+
             string display,
 
             string @ref,
@@ -40,6 +46,7 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string value)
         {
+            Description = description;
             Display = display;
             Ref = @ref;
             Type = type;

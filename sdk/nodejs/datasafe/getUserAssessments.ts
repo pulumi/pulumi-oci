@@ -169,11 +169,11 @@ export interface GetUserAssessmentsResult {
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
     /**
-     * Indicates whether the user assessment was created by the system or the user.
+     * Indicates whether the user assessment was created by system or user.
      */
     readonly triggeredBy?: string;
     /**
-     * The type of the user assessment. The possible types are:
+     * Type of user assessment. Type can be:
      */
     readonly type?: string;
     /**

@@ -55,12 +55,12 @@ public final class GetUserAssessmentsResult {
     private @Nullable String timeCreatedGreaterThanOrEqualTo;
     private @Nullable String timeCreatedLessThan;
     /**
-     * @return Indicates whether the user assessment was created by the system or the user.
+     * @return Indicates whether the user assessment was created by system or user.
      * 
      */
     private @Nullable String triggeredBy;
     /**
-     * @return The type of the user assessment. The possible types are:
+     * @return Type of user assessment. Type can be:
      * 
      */
     private @Nullable String type;
@@ -138,14 +138,14 @@ public final class GetUserAssessmentsResult {
         return Optional.ofNullable(this.timeCreatedLessThan);
     }
     /**
-     * @return Indicates whether the user assessment was created by the system or the user.
+     * @return Indicates whether the user assessment was created by system or user.
      * 
      */
     public Optional<String> triggeredBy() {
         return Optional.ofNullable(this.triggeredBy);
     }
     /**
-     * @return The type of the user assessment. The possible types are:
+     * @return Type of user assessment. Type can be:
      * 
      */
     public Optional<String> type() {

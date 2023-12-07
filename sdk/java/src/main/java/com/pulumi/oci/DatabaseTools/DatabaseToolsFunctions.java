@@ -215,6 +215,8 @@ public final class DatabaseToolsFunctions {
      *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.database_tools_connection_display_name())
+     *             .relatedResourceIdentifier(var_.database_tools_connection_related_resource_identifier())
+     *             .runtimeSupports(var_.database_tools_connection_runtime_support())
      *             .state(var_.database_tools_connection_state())
      *             .types(var_.database_tools_connection_type())
      *             .build());
@@ -257,6 +259,8 @@ public final class DatabaseToolsFunctions {
      *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.database_tools_connection_display_name())
+     *             .relatedResourceIdentifier(var_.database_tools_connection_related_resource_identifier())
+     *             .runtimeSupports(var_.database_tools_connection_runtime_support())
      *             .state(var_.database_tools_connection_state())
      *             .types(var_.database_tools_connection_type())
      *             .build());
@@ -299,6 +303,8 @@ public final class DatabaseToolsFunctions {
      *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.database_tools_connection_display_name())
+     *             .relatedResourceIdentifier(var_.database_tools_connection_related_resource_identifier())
+     *             .runtimeSupports(var_.database_tools_connection_runtime_support())
      *             .state(var_.database_tools_connection_state())
      *             .types(var_.database_tools_connection_type())
      *             .build());
@@ -341,6 +347,8 @@ public final class DatabaseToolsFunctions {
      *         final var testDatabaseToolsConnections = DatabaseToolsFunctions.getDatabaseToolsConnections(GetDatabaseToolsConnectionsArgs.builder()
      *             .compartmentId(var_.compartment_id())
      *             .displayName(var_.database_tools_connection_display_name())
+     *             .relatedResourceIdentifier(var_.database_tools_connection_related_resource_identifier())
+     *             .runtimeSupports(var_.database_tools_connection_runtime_support())
      *             .state(var_.database_tools_connection_state())
      *             .types(var_.database_tools_connection_type())
      *             .build());

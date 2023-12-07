@@ -69,9 +69,10 @@ type LookupManagedInstanceGroupResult struct {
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// unique identifier that is immutable on creation
-	Id                     string `pulumi:"id"`
-	ManagedInstanceCount   int    `pulumi:"managedInstanceCount"`
-	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`
+	Id                     string   `pulumi:"id"`
+	ManagedInstanceCount   int      `pulumi:"managedInstanceCount"`
+	ManagedInstanceGroupId string   `pulumi:"managedInstanceGroupId"`
+	ManagedInstanceIds     []string `pulumi:"managedInstanceIds"`
 	// list of Managed Instances in the group
 	ManagedInstances []GetManagedInstanceGroupManagedInstance `pulumi:"managedInstances"`
 	// The Operating System type of the managed instance.
@@ -154,6 +155,10 @@ func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceCount() pulumi.In
 
 func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagedInstanceGroupResult) string { return v.ManagedInstanceGroupId }).(pulumi.StringOutput)
+}
+
+func (o LookupManagedInstanceGroupResultOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) []string { return v.ManagedInstanceIds }).(pulumi.StringArrayOutput)
 }
 
 // list of Managed Instances in the group

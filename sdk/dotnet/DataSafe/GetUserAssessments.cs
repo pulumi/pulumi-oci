@@ -360,11 +360,11 @@ namespace Pulumi.Oci.DataSafe
         public readonly string? TimeCreatedGreaterThanOrEqualTo;
         public readonly string? TimeCreatedLessThan;
         /// <summary>
-        /// Indicates whether the user assessment was created by the system or the user.
+        /// Indicates whether the user assessment was created by system or user.
         /// </summary>
         public readonly string? TriggeredBy;
         /// <summary>
-        /// The type of the user assessment. The possible types are:
+        /// Type of user assessment. Type can be:
         /// </summary>
         public readonly string? Type;
         /// <summary>

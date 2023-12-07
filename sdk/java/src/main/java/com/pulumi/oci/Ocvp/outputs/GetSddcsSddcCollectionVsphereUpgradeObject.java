@@ -9,29 +9,13 @@ import java.util.Objects;
 
 @CustomType
 public final class GetSddcsSddcCollectionVsphereUpgradeObject {
-    /**
-     * @return Binary object download link.
-     * 
-     */
     private String downloadLink;
-    /**
-     * @return Binary object description.
-     * 
-     */
     private String linkDescription;
 
     private GetSddcsSddcCollectionVsphereUpgradeObject() {}
-    /**
-     * @return Binary object download link.
-     * 
-     */
     public String downloadLink() {
         return this.downloadLink;
     }
-    /**
-     * @return Binary object description.
-     * 
-     */
     public String linkDescription() {
         return this.linkDescription;
     }

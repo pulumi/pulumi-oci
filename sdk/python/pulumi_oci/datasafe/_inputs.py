@@ -13,6 +13,9 @@ __all__ = [
     'AuditPolicyAuditConditionArgs',
     'AuditPolicyAuditConditionEnableConditionArgs',
     'AuditPolicyAuditSpecificationArgs',
+    'AuditPolicyManagementAuditConditionArgs',
+    'AuditPolicyManagementAuditConditionEnableConditionArgs',
+    'AuditPolicyManagementAuditSpecificationArgs',
     'AuditProfileAuditTrailArgs',
     'DataSafeConfigurationGlobalSettingArgs',
     'DatabaseSecurityConfigManagementSqlFirewallConfigArgs',
@@ -49,7 +52,6 @@ __all__ = [
     'GetAuditProfilesFilterArgs',
     'GetAuditTrailsFilterArgs',
     'GetDataSafePrivateEndpointsFilterArgs',
-    'GetDatabaseSecurityConfigsFilterArgs',
     'GetDiscoveryAnalyticsFilterArgs',
     'GetDiscoveryJobsResultsFilterArgs',
     'GetLibraryMaskingFormatsFilterArgs',
@@ -69,23 +71,11 @@ __all__ = [
     'GetSecurityAssessmentFindingFilterArgs',
     'GetSecurityAssessmentFindingsFilterArgs',
     'GetSecurityAssessmentsFilterArgs',
-    'GetSecurityPoliciesFilterArgs',
-    'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs',
-    'GetSecurityPolicyDeploymentsFilterArgs',
     'GetSensitiveDataModelSensitiveObjectsFilterArgs',
     'GetSensitiveDataModelSensitiveSchemasFilterArgs',
     'GetSensitiveDataModelsFilterArgs',
     'GetSensitiveDataModelsSensitiveColumnsFilterArgs',
     'GetSensitiveTypesFilterArgs',
-    'GetSqlCollectionAnalyticsFilterArgs',
-    'GetSqlCollectionLogInsightsFilterArgs',
-    'GetSqlCollectionsFilterArgs',
-    'GetSqlFirewallAllowedSqlAnalyticsFilterArgs',
-    'GetSqlFirewallAllowedSqlsFilterArgs',
-    'GetSqlFirewallPoliciesFilterArgs',
-    'GetSqlFirewallPolicyAnalyticsFilterArgs',
-    'GetSqlFirewallViolationAnalyticsFilterArgs',
-    'GetSqlFirewallViolationsFilterArgs',
     'GetTargetAlertPolicyAssociationsFilterArgs',
     'GetTargetDatabaseRoleFilterArgs',
     'GetTargetDatabaseRolesFilterArgs',
@@ -244,6 +234,351 @@ class AuditPolicyAuditConditionEnableConditionArgs:
 
 @pulumi.input_type
 class AuditPolicyAuditSpecificationArgs:
+    def __init__(__self__, *,
+                 audit_policy_category: Optional[pulumi.Input[str]] = None,
+                 audit_policy_name: Optional[pulumi.Input[str]] = None,
+                 database_policy_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 enable_status: Optional[pulumi.Input[str]] = None,
+                 enabled_entities: Optional[pulumi.Input[str]] = None,
+                 is_created: Optional[pulumi.Input[bool]] = None,
+                 is_enabled_for_all_users: Optional[pulumi.Input[bool]] = None,
+                 is_seeded_in_data_safe: Optional[pulumi.Input[bool]] = None,
+                 is_seeded_in_target: Optional[pulumi.Input[bool]] = None,
+                 is_view_only: Optional[pulumi.Input[bool]] = None,
+                 partially_enabled_msg: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] audit_policy_category: The category to which the audit policy belongs.
+        :param pulumi.Input[str] audit_policy_name: Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] database_policy_names: Indicates the names of corresponding database policy ( or policies) in the target database.
+        :param pulumi.Input[str] enable_status: Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
+        :param pulumi.Input[str] enabled_entities: Indicates on whom the audit policy is enabled.
+        :param pulumi.Input[bool] is_created: Indicates whether the policy is already created on the target database.
+        :param pulumi.Input[bool] is_enabled_for_all_users: Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
+        :param pulumi.Input[bool] is_seeded_in_data_safe: Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
+        :param pulumi.Input[bool] is_seeded_in_target: Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
+        :param pulumi.Input[bool] is_view_only: Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
+        :param pulumi.Input[str] partially_enabled_msg: Provides information about the policy that has been only partially enabled.
+        """
+        if audit_policy_category is not None:
+            pulumi.set(__self__, "audit_policy_category", audit_policy_category)
+        if audit_policy_name is not None:
+            pulumi.set(__self__, "audit_policy_name", audit_policy_name)
+        if database_policy_names is not None:
+            pulumi.set(__self__, "database_policy_names", database_policy_names)
+        if enable_status is not None:
+            pulumi.set(__self__, "enable_status", enable_status)
+        if enabled_entities is not None:
+            pulumi.set(__self__, "enabled_entities", enabled_entities)
+        if is_created is not None:
+            pulumi.set(__self__, "is_created", is_created)
+        if is_enabled_for_all_users is not None:
+            pulumi.set(__self__, "is_enabled_for_all_users", is_enabled_for_all_users)
+        if is_seeded_in_data_safe is not None:
+            pulumi.set(__self__, "is_seeded_in_data_safe", is_seeded_in_data_safe)
+        if is_seeded_in_target is not None:
+            pulumi.set(__self__, "is_seeded_in_target", is_seeded_in_target)
+        if is_view_only is not None:
+            pulumi.set(__self__, "is_view_only", is_view_only)
+        if partially_enabled_msg is not None:
+            pulumi.set(__self__, "partially_enabled_msg", partially_enabled_msg)
+
+    @property
+    @pulumi.getter(name="auditPolicyCategory")
+    def audit_policy_category(self) -> Optional[pulumi.Input[str]]:
+        """
+        The category to which the audit policy belongs.
+        """
+        return pulumi.get(self, "audit_policy_category")
+
+    @audit_policy_category.setter
+    def audit_policy_category(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "audit_policy_category", value)
+
+    @property
+    @pulumi.getter(name="auditPolicyName")
+    def audit_policy_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+        """
+        return pulumi.get(self, "audit_policy_name")
+
+    @audit_policy_name.setter
+    def audit_policy_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "audit_policy_name", value)
+
+    @property
+    @pulumi.getter(name="databasePolicyNames")
+    def database_policy_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        Indicates the names of corresponding database policy ( or policies) in the target database.
+        """
+        return pulumi.get(self, "database_policy_names")
+
+    @database_policy_names.setter
+    def database_policy_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "database_policy_names", value)
+
+    @property
+    @pulumi.getter(name="enableStatus")
+    def enable_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates whether the policy has been enabled, disabled or partially enabled in the target database. The status is PARTIALLY_ENABLED if any of the constituent database audit policies is not enabled.
+        """
+        return pulumi.get(self, "enable_status")
+
+    @enable_status.setter
+    def enable_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "enable_status", value)
+
+    @property
+    @pulumi.getter(name="enabledEntities")
+    def enabled_entities(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates on whom the audit policy is enabled.
+        """
+        return pulumi.get(self, "enabled_entities")
+
+    @enabled_entities.setter
+    def enabled_entities(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "enabled_entities", value)
+
+    @property
+    @pulumi.getter(name="isCreated")
+    def is_created(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the policy is already created on the target database.
+        """
+        return pulumi.get(self, "is_created")
+
+    @is_created.setter
+    def is_created(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_created", value)
+
+    @property
+    @pulumi.getter(name="isEnabledForAllUsers")
+    def is_enabled_for_all_users(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the policy by default is enabled for all users with no flexibility to alter the enablement conditions.
+        """
+        return pulumi.get(self, "is_enabled_for_all_users")
+
+    @is_enabled_for_all_users.setter
+    def is_enabled_for_all_users(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled_for_all_users", value)
+
+    @property
+    @pulumi.getter(name="isSeededInDataSafe")
+    def is_seeded_in_data_safe(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the audit policy is one of the seeded policies provided by Oracle Data Safe.
+        """
+        return pulumi.get(self, "is_seeded_in_data_safe")
+
+    @is_seeded_in_data_safe.setter
+    def is_seeded_in_data_safe(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_seeded_in_data_safe", value)
+
+    @property
+    @pulumi.getter(name="isSeededInTarget")
+    def is_seeded_in_target(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the audit policy is one of the predefined policies provided by Oracle Database.
+        """
+        return pulumi.get(self, "is_seeded_in_target")
+
+    @is_seeded_in_target.setter
+    def is_seeded_in_target(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_seeded_in_target", value)
+
+    @property
+    @pulumi.getter(name="isViewOnly")
+    def is_view_only(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the audit policy is available for provisioning/ de-provisioning from Oracle Data Safe, or is only available for displaying the current provisioning status from the target.
+        """
+        return pulumi.get(self, "is_view_only")
+
+    @is_view_only.setter
+    def is_view_only(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_view_only", value)
+
+    @property
+    @pulumi.getter(name="partiallyEnabledMsg")
+    def partially_enabled_msg(self) -> Optional[pulumi.Input[str]]:
+        """
+        Provides information about the policy that has been only partially enabled.
+        """
+        return pulumi.get(self, "partially_enabled_msg")
+
+    @partially_enabled_msg.setter
+    def partially_enabled_msg(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "partially_enabled_msg", value)
+
+
+@pulumi.input_type
+class AuditPolicyManagementAuditConditionArgs:
+    def __init__(__self__, *,
+                 audit_policy_name: Optional[pulumi.Input[str]] = None,
+                 enable_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]]] = None,
+                 is_data_safe_service_account_audited: Optional[pulumi.Input[bool]] = None,
+                 is_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_priv_users_managed_by_data_safe: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] audit_policy_name: Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+        :param pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]] enable_conditions: Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
+        :param pulumi.Input[bool] is_data_safe_service_account_audited: Indicates whether the Data Safe user activity on the target database will be audited by the policy.
+        :param pulumi.Input[bool] is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if audit_policy_name is not None:
+            pulumi.set(__self__, "audit_policy_name", audit_policy_name)
+        if enable_conditions is not None:
+            pulumi.set(__self__, "enable_conditions", enable_conditions)
+        if is_data_safe_service_account_audited is not None:
+            pulumi.set(__self__, "is_data_safe_service_account_audited", is_data_safe_service_account_audited)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if is_priv_users_managed_by_data_safe is not None:
+            pulumi.set(__self__, "is_priv_users_managed_by_data_safe", is_priv_users_managed_by_data_safe)
+
+    @property
+    @pulumi.getter(name="auditPolicyName")
+    def audit_policy_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
+        """
+        return pulumi.get(self, "audit_policy_name")
+
+    @audit_policy_name.setter
+    def audit_policy_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "audit_policy_name", value)
+
+    @property
+    @pulumi.getter(name="enableConditions")
+    def enable_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]]]:
+        """
+        Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
+        """
+        return pulumi.get(self, "enable_conditions")
+
+    @enable_conditions.setter
+    def enable_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]]]):
+        pulumi.set(self, "enable_conditions", value)
+
+    @property
+    @pulumi.getter(name="isDataSafeServiceAccountAudited")
+    def is_data_safe_service_account_audited(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the Data Safe user activity on the target database will be audited by the policy.
+        """
+        return pulumi.get(self, "is_data_safe_service_account_audited")
+
+    @is_data_safe_service_account_audited.setter
+    def is_data_safe_service_account_audited(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_data_safe_service_account_audited", value)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter(name="isPrivUsersManagedByDataSafe")
+    def is_priv_users_managed_by_data_safe(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the privileged user list is managed by Data Safe.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "is_priv_users_managed_by_data_safe")
+
+    @is_priv_users_managed_by_data_safe.setter
+    def is_priv_users_managed_by_data_safe(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_priv_users_managed_by_data_safe", value)
+
+
+@pulumi.input_type
+class AuditPolicyManagementAuditConditionEnableConditionArgs:
+    def __init__(__self__, *,
+                 entity_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 entity_selection: Optional[pulumi.Input[str]] = None,
+                 entity_type: Optional[pulumi.Input[str]] = None,
+                 operation_status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] entity_names: List of users or roles that the policy must be enabled for.
+        :param pulumi.Input[str] entity_selection: The entity include or exclude selection.
+        :param pulumi.Input[str] entity_type: The entity type that the policy must be enabled for.
+        :param pulumi.Input[str] operation_status: The operation status that the policy must be enabled for.
+        """
+        if entity_names is not None:
+            pulumi.set(__self__, "entity_names", entity_names)
+        if entity_selection is not None:
+            pulumi.set(__self__, "entity_selection", entity_selection)
+        if entity_type is not None:
+            pulumi.set(__self__, "entity_type", entity_type)
+        if operation_status is not None:
+            pulumi.set(__self__, "operation_status", operation_status)
+
+    @property
+    @pulumi.getter(name="entityNames")
+    def entity_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of users or roles that the policy must be enabled for.
+        """
+        return pulumi.get(self, "entity_names")
+
+    @entity_names.setter
+    def entity_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "entity_names", value)
+
+    @property
+    @pulumi.getter(name="entitySelection")
+    def entity_selection(self) -> Optional[pulumi.Input[str]]:
+        """
+        The entity include or exclude selection.
+        """
+        return pulumi.get(self, "entity_selection")
+
+    @entity_selection.setter
+    def entity_selection(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_selection", value)
+
+    @property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The entity type that the policy must be enabled for.
+        """
+        return pulumi.get(self, "entity_type")
+
+    @entity_type.setter
+    def entity_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_type", value)
+
+    @property
+    @pulumi.getter(name="operationStatus")
+    def operation_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The operation status that the policy must be enabled for.
+        """
+        return pulumi.get(self, "operation_status")
+
+    @operation_status.setter
+    def operation_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "operation_status", value)
+
+
+@pulumi.input_type
+class AuditPolicyManagementAuditSpecificationArgs:
     def __init__(__self__, *,
                  audit_policy_category: Optional[pulumi.Input[str]] = None,
                  audit_policy_name: Optional[pulumi.Input[str]] = None,
@@ -3904,45 +4239,6 @@ class GetDataSafePrivateEndpointsFilterArgs:
 
 
 @pulumi.input_type
-class GetDatabaseSecurityConfigsFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
 class GetDiscoveryAnalyticsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -4690,123 +4986,6 @@ class GetSecurityAssessmentsFilterArgs:
 
 
 @pulumi.input_type
-class GetSecurityPoliciesFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
-class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
-class GetSecurityPolicyDeploymentsFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
 class GetSensitiveDataModelSensitiveObjectsFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -4964,357 +5143,6 @@ class GetSensitiveDataModelsSensitiveColumnsFilterArgs:
 
 @pulumi.input_type
 class GetSensitiveTypesFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
-class GetSqlCollectionAnalyticsFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
-class GetSqlCollectionLogInsightsFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
-class GetSqlCollectionsFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
-class GetSqlFirewallAllowedSqlAnalyticsFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
-class GetSqlFirewallAllowedSqlsFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
-class GetSqlFirewallPoliciesFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
-class GetSqlFirewallPolicyAnalyticsFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
-class GetSqlFirewallViolationAnalyticsFilterArgs:
-    def __init__(__self__, *,
-                 name: str,
-                 values: Sequence[str],
-                 regex: Optional[bool] = None):
-        pulumi.set(__self__, "name", name)
-        pulumi.set(__self__, "values", values)
-        if regex is not None:
-            pulumi.set(__self__, "regex", regex)
-
-    @property
-    @pulumi.getter
-    def name(self) -> str:
-        return pulumi.get(self, "name")
-
-    @name.setter
-    def name(self, value: str):
-        pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def values(self) -> Sequence[str]:
-        return pulumi.get(self, "values")
-
-    @values.setter
-    def values(self, value: Sequence[str]):
-        pulumi.set(self, "values", value)
-
-    @property
-    @pulumi.getter
-    def regex(self) -> Optional[bool]:
-        return pulumi.get(self, "regex")
-
-    @regex.setter
-    def regex(self, value: Optional[bool]):
-        pulumi.set(self, "regex", value)
-
-
-@pulumi.input_type
-class GetSqlFirewallViolationsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

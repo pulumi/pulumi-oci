@@ -6,6 +6,8 @@ package com.pulumi.oci.DatabaseTools.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionKeyStoreArgs;
+import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionLockArgs;
+import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionProxyClientArgs;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionRelatedResourceArgs;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionUserPasswordArgs;
 import java.lang.Object;
@@ -142,6 +144,21 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<DatabaseToolsConnectionLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<DatabaseToolsConnectionLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
      * 
      */
@@ -157,6 +174,21 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
+     * (Updatable) The proxy client information.
+     * 
+     */
+    @Import(name="proxyClient")
+    private @Nullable Output<DatabaseToolsConnectionProxyClientArgs> proxyClient;
+
+    /**
+     * @return (Updatable) The proxy client information.
+     * 
+     */
+    public Optional<Output<DatabaseToolsConnectionProxyClientArgs>> proxyClient() {
+        return Optional.ofNullable(this.proxyClient);
+    }
+
+    /**
      * (Updatable) The related resource
      * 
      */
@@ -169,6 +201,21 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
      */
     public Optional<Output<DatabaseToolsConnectionRelatedResourceArgs>> relatedResource() {
         return Optional.ofNullable(this.relatedResource);
+    }
+
+    /**
+     * Specifies whether this connection is supported by the Database Tools Runtime.
+     * 
+     */
+    @Import(name="runtimeSupport")
+    private @Nullable Output<String> runtimeSupport;
+
+    /**
+     * @return Specifies whether this connection is supported by the Database Tools Runtime.
+     * 
+     */
+    public Optional<Output<String>> runtimeSupport() {
+        return Optional.ofNullable(this.runtimeSupport);
     }
 
     /**
@@ -202,14 +249,14 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
     }
 
     /**
-     * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+     * When the lock was created.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+     * @return When the lock was created.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -244,6 +291,21 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
+    }
+
+    /**
+     * (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+     * 
+     */
+    @Import(name="url")
+    private @Nullable Output<String> url;
+
+    /**
+     * @return (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+     * 
+     */
+    public Optional<Output<String>> url() {
+        return Optional.ofNullable(this.url);
     }
 
     /**
@@ -287,13 +349,17 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         this.freeformTags = $.freeformTags;
         this.keyStores = $.keyStores;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.privateEndpointId = $.privateEndpointId;
+        this.proxyClient = $.proxyClient;
         this.relatedResource = $.relatedResource;
+        this.runtimeSupport = $.runtimeSupport;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
         this.type = $.type;
+        this.url = $.url;
         this.userName = $.userName;
         this.userPassword = $.userPassword;
     }
@@ -495,6 +561,37 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<DatabaseToolsConnectionLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<DatabaseToolsConnectionLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(DatabaseToolsConnectionLockArgs... locks) {
+            return locks(List.of(locks));
+        }
+
+        /**
          * @param privateEndpointId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
          * 
          * @return builder
@@ -516,6 +613,27 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
+         * @param proxyClient (Updatable) The proxy client information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyClient(@Nullable Output<DatabaseToolsConnectionProxyClientArgs> proxyClient) {
+            $.proxyClient = proxyClient;
+            return this;
+        }
+
+        /**
+         * @param proxyClient (Updatable) The proxy client information.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyClient(DatabaseToolsConnectionProxyClientArgs proxyClient) {
+            return proxyClient(Output.of(proxyClient));
+        }
+
+        /**
          * @param relatedResource (Updatable) The related resource
          * 
          * @return builder
@@ -534,6 +652,27 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
          */
         public Builder relatedResource(DatabaseToolsConnectionRelatedResourceArgs relatedResource) {
             return relatedResource(Output.of(relatedResource));
+        }
+
+        /**
+         * @param runtimeSupport Specifies whether this connection is supported by the Database Tools Runtime.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeSupport(@Nullable Output<String> runtimeSupport) {
+            $.runtimeSupport = runtimeSupport;
+            return this;
+        }
+
+        /**
+         * @param runtimeSupport Specifies whether this connection is supported by the Database Tools Runtime.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runtimeSupport(String runtimeSupport) {
+            return runtimeSupport(Output.of(runtimeSupport));
         }
 
         /**
@@ -579,7 +718,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeCreated The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 
@@ -590,7 +729,7 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeCreated The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+         * @param timeCreated When the lock was created.
          * 
          * @return builder
          * 
@@ -639,6 +778,27 @@ public final class DatabaseToolsConnectionState extends com.pulumi.resources.Res
          */
         public Builder type(String type) {
             return type(Output.of(type));
+        }
+
+        /**
+         * @param url (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder url(@Nullable Output<String> url) {
+            $.url = url;
+            return this;
+        }
+
+        /**
+         * @param url (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder url(String url) {
+            return url(Output.of(url));
         }
 
         /**

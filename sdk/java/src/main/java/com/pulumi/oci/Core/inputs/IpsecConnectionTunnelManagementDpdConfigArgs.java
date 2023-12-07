@@ -16,16 +16,32 @@ public final class IpsecConnectionTunnelManagementDpdConfigArgs extends com.pulu
 
     public static final IpsecConnectionTunnelManagementDpdConfigArgs Empty = new IpsecConnectionTunnelManagementDpdConfigArgs();
 
+    /**
+     * This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+     * 
+     */
     @Import(name="dpdMode")
     private @Nullable Output<String> dpdMode;
 
+    /**
+     * @return This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+     * 
+     */
     public Optional<Output<String>> dpdMode() {
         return Optional.ofNullable(this.dpdMode);
     }
 
+    /**
+     * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     * 
+     */
     @Import(name="dpdTimeoutInSec")
     private @Nullable Output<Integer> dpdTimeoutInSec;
 
+    /**
+     * @return DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     * 
+     */
     public Optional<Output<Integer>> dpdTimeoutInSec() {
         return Optional.ofNullable(this.dpdTimeoutInSec);
     }
@@ -55,20 +71,44 @@ public final class IpsecConnectionTunnelManagementDpdConfigArgs extends com.pulu
             $ = new IpsecConnectionTunnelManagementDpdConfigArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param dpdMode This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+         * 
+         * @return builder
+         * 
+         */
         public Builder dpdMode(@Nullable Output<String> dpdMode) {
             $.dpdMode = dpdMode;
             return this;
         }
 
+        /**
+         * @param dpdMode This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+         * 
+         * @return builder
+         * 
+         */
         public Builder dpdMode(String dpdMode) {
             return dpdMode(Output.of(dpdMode));
         }
 
+        /**
+         * @param dpdTimeoutInSec DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dpdTimeoutInSec(@Nullable Output<Integer> dpdTimeoutInSec) {
             $.dpdTimeoutInSec = dpdTimeoutInSec;
             return this;
         }
 
+        /**
+         * @param dpdTimeoutInSec DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dpdTimeoutInSec(Integer dpdTimeoutInSec) {
             return dpdTimeoutInSec(Output.of(dpdTimeoutInSec));
         }

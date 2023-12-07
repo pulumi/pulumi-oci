@@ -4,7 +4,9 @@
 package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Ocvp.outputs.GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -15,7 +17,12 @@ public final class GetSupportedVmwareSoftwareVersionsItem {
      */
     private String description;
     /**
-     * @return A short, unique string that identifies the version of bundled software.
+     * @return A list of supported ESXi software versions.
+     * 
+     */
+    private List<GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion> esxiSoftwareVersions;
+    /**
+     * @return A filter to return only resources that match the given VMware software version exactly.
      * 
      */
     private String version;
@@ -29,7 +36,14 @@ public final class GetSupportedVmwareSoftwareVersionsItem {
         return this.description;
     }
     /**
-     * @return A short, unique string that identifies the version of bundled software.
+     * @return A list of supported ESXi software versions.
+     * 
+     */
+    public List<GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion> esxiSoftwareVersions() {
+        return this.esxiSoftwareVersions;
+    }
+    /**
+     * @return A filter to return only resources that match the given VMware software version exactly.
      * 
      */
     public String version() {
@@ -46,11 +60,13 @@ public final class GetSupportedVmwareSoftwareVersionsItem {
     @CustomType.Builder
     public static final class Builder {
         private String description;
+        private List<GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion> esxiSoftwareVersions;
         private String version;
         public Builder() {}
         public Builder(GetSupportedVmwareSoftwareVersionsItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.description = defaults.description;
+    	      this.esxiSoftwareVersions = defaults.esxiSoftwareVersions;
     	      this.version = defaults.version;
         }
 
@@ -60,6 +76,14 @@ public final class GetSupportedVmwareSoftwareVersionsItem {
             return this;
         }
         @CustomType.Setter
+        public Builder esxiSoftwareVersions(List<GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion> esxiSoftwareVersions) {
+            this.esxiSoftwareVersions = Objects.requireNonNull(esxiSoftwareVersions);
+            return this;
+        }
+        public Builder esxiSoftwareVersions(GetSupportedVmwareSoftwareVersionsItemEsxiSoftwareVersion... esxiSoftwareVersions) {
+            return esxiSoftwareVersions(List.of(esxiSoftwareVersions));
+        }
+        @CustomType.Setter
         public Builder version(String version) {
             this.version = Objects.requireNonNull(version);
             return this;
@@ -67,6 +91,7 @@ public final class GetSupportedVmwareSoftwareVersionsItem {
         public GetSupportedVmwareSoftwareVersionsItem build() {
             final var o = new GetSupportedVmwareSoftwareVersionsItem();
             o.description = description;
+            o.esxiSoftwareVersions = esxiSoftwareVersions;
             o.version = version;
             return o;
         }

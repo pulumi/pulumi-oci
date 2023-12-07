@@ -112,7 +112,7 @@ type GetMaskingPoliciesMaskingColumnsResult struct {
 	Filters   []GetMaskingPoliciesMaskingColumnsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Indicates whether data masking is enabled for the masking column.
+	// Indicates if data masking is enabled for the masking column.
 	IsMaskingEnabled *bool `pulumi:"isMaskingEnabled"`
 	IsSeedRequired   *bool `pulumi:"isSeedRequired"`
 	// The list of masking_column_collection.
@@ -228,7 +228,7 @@ func (o GetMaskingPoliciesMaskingColumnsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Indicates whether data masking is enabled for the masking column.
+// Indicates if data masking is enabled for the masking column.
 func (o GetMaskingPoliciesMaskingColumnsResultOutput) IsMaskingEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnsResult) *bool { return v.IsMaskingEnabled }).(pulumi.BoolPtrOutput)
 }

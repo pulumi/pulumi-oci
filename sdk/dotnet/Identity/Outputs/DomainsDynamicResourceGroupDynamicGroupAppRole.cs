@@ -105,6 +105,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// **SCIM++ Properties:**
         /// * caseExact: false
         /// * required: true
+        /// * idcsReturnEmptyWhenNull: true
         /// * mutability: readWrite
         /// * returned: default
         /// * type: string

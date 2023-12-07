@@ -5,6 +5,7 @@ package com.pulumi.oci.Jms.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Jms.inputs.GetJavaFamiliesFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -53,12 +54,28 @@ public final class GetJavaFamiliesPlainArgs extends com.pulumi.resources.InvokeA
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * Filter the Java Release Family versions by support status.
+     * 
+     */
+    @Import(name="isSupportedVersion")
+    private @Nullable Boolean isSupportedVersion;
+
+    /**
+     * @return Filter the Java Release Family versions by support status.
+     * 
+     */
+    public Optional<Boolean> isSupportedVersion() {
+        return Optional.ofNullable(this.isSupportedVersion);
+    }
+
     private GetJavaFamiliesPlainArgs() {}
 
     private GetJavaFamiliesPlainArgs(GetJavaFamiliesPlainArgs $) {
         this.displayName = $.displayName;
         this.familyVersion = $.familyVersion;
         this.filters = $.filters;
+        this.isSupportedVersion = $.isSupportedVersion;
     }
 
     public static Builder builder() {
@@ -108,6 +125,17 @@ public final class GetJavaFamiliesPlainArgs extends com.pulumi.resources.InvokeA
 
         public Builder filters(GetJavaFamiliesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isSupportedVersion Filter the Java Release Family versions by support status.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSupportedVersion(@Nullable Boolean isSupportedVersion) {
+            $.isSupportedVersion = isSupportedVersion;
+            return this;
         }
 
         public GetJavaFamiliesPlainArgs build() {

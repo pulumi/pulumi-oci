@@ -19,8 +19,9 @@ import * as utilities from "../utilities";
  *
  * const testSupportedHostShapes = oci.Ocvp.getSupportedHostShapes({
  *     compartmentId: _var.compartment_id,
+ *     initialHostShapeName: oci_core_shape.test_shape.name,
+ *     isSingleHostSddcSupported: _var.supported_host_shape_is_single_host_sddc_supported,
  *     name: _var.supported_host_shape_name,
- *     sddcType: _var.supported_host_shape_sddc_type,
  * });
  * ```
  */
@@ -30,6 +31,8 @@ export function getSupportedHostShapes(args: GetSupportedHostShapesArgs, opts?: 
     return pulumi.runtime.invoke("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "initialHostShapeName": args.initialHostShapeName,
+        "isSingleHostSddcSupported": args.isSingleHostSddcSupported,
         "name": args.name,
         "sddcType": args.sddcType,
     }, opts);
@@ -44,6 +47,14 @@ export interface GetSupportedHostShapesArgs {
      */
     compartmentId: string;
     filters?: inputs.Ocvp.GetSupportedHostShapesFilter[];
+    /**
+     * A filter to return only the shapes compatible with the initial host shape of the Cluster.
+     */
+    initialHostShapeName?: string;
+    /**
+     * A filter to return only resources that support single host SDDC.
+     */
+    isSingleHostSddcSupported?: boolean;
     /**
      * A filter to return only resources that match the given name exactly.
      */
@@ -66,6 +77,11 @@ export interface GetSupportedHostShapesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly initialHostShapeName?: string;
+    /**
+     * Indicates whether the shape supports single host SDDCs.
+     */
+    readonly isSingleHostSddcSupported?: boolean;
     /**
      * A list of the supported compute shapes for ESXi hosts.
      */
@@ -92,8 +108,9 @@ export interface GetSupportedHostShapesResult {
  *
  * const testSupportedHostShapes = oci.Ocvp.getSupportedHostShapes({
  *     compartmentId: _var.compartment_id,
+ *     initialHostShapeName: oci_core_shape.test_shape.name,
+ *     isSingleHostSddcSupported: _var.supported_host_shape_is_single_host_sddc_supported,
  *     name: _var.supported_host_shape_name,
- *     sddcType: _var.supported_host_shape_sddc_type,
  * });
  * ```
  */
@@ -110,6 +127,14 @@ export interface GetSupportedHostShapesOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Ocvp.GetSupportedHostShapesFilterArgs>[]>;
+    /**
+     * A filter to return only the shapes compatible with the initial host shape of the Cluster.
+     */
+    initialHostShapeName?: pulumi.Input<string>;
+    /**
+     * A filter to return only resources that support single host SDDC.
+     */
+    isSingleHostSddcSupported?: pulumi.Input<boolean>;
     /**
      * A filter to return only resources that match the given name exactly.
      */

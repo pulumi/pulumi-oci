@@ -15,6 +15,13 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
      * @return The state of the BGP IPv6 session.
      * 
      */
+    private @Nullable String bgpIpv6State;
+    /**
+     * @deprecated
+     * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
     private @Nullable String bgpIpv6state;
     /**
      * @return The state of the BGP session.
@@ -44,6 +51,19 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
      */
     private @Nullable String customerInterfaceIp;
     /**
+     * @return The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+     * 
+     * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel&#39;s BGP session.
+     * 
+     * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+     * 
+     * Only subnet masks from /64 up to /127 are allowed.
+     * 
+     * Example: `2001:db8::1/64`
+     * 
+     */
+    private @Nullable String customerInterfaceIpv6;
+    /**
      * @return The Oracle BGP ASN.
      * 
      */
@@ -61,12 +81,34 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
      * 
      */
     private @Nullable String oracleInterfaceIp;
+    /**
+     * @return The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+     * 
+     * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel&#39;s BGP session.
+     * 
+     * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+     * 
+     * Only subnet masks from /64 up to /127 are allowed.
+     * 
+     * Example: `2001:db8::1/64`
+     * 
+     */
+    private @Nullable String oracleInterfaceIpv6;
 
     private IpsecConnectionTunnelManagementBgpSessionInfo() {}
     /**
      * @return The state of the BGP IPv6 session.
      * 
      */
+    public Optional<String> bgpIpv6State() {
+        return Optional.ofNullable(this.bgpIpv6State);
+    }
+    /**
+     * @deprecated
+     * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
     public Optional<String> bgpIpv6state() {
         return Optional.ofNullable(this.bgpIpv6state);
     }
@@ -104,6 +146,21 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
         return Optional.ofNullable(this.customerInterfaceIp);
     }
     /**
+     * @return The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+     * 
+     * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel&#39;s BGP session.
+     * 
+     * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+     * 
+     * Only subnet masks from /64 up to /127 are allowed.
+     * 
+     * Example: `2001:db8::1/64`
+     * 
+     */
+    public Optional<String> customerInterfaceIpv6() {
+        return Optional.ofNullable(this.customerInterfaceIpv6);
+    }
+    /**
      * @return The Oracle BGP ASN.
      * 
      */
@@ -125,6 +182,21 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
     public Optional<String> oracleInterfaceIp() {
         return Optional.ofNullable(this.oracleInterfaceIp);
     }
+    /**
+     * @return The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+     * 
+     * If the tunnel&#39;s `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel&#39;s BGP session.
+     * 
+     * If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+     * 
+     * Only subnet masks from /64 up to /127 are allowed.
+     * 
+     * Example: `2001:db8::1/64`
+     * 
+     */
+    public Optional<String> oracleInterfaceIpv6() {
+        return Optional.ofNullable(this.oracleInterfaceIpv6);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -135,23 +207,34 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String bgpIpv6State;
         private @Nullable String bgpIpv6state;
         private @Nullable String bgpState;
         private @Nullable String customerBgpAsn;
         private @Nullable String customerInterfaceIp;
+        private @Nullable String customerInterfaceIpv6;
         private @Nullable String oracleBgpAsn;
         private @Nullable String oracleInterfaceIp;
+        private @Nullable String oracleInterfaceIpv6;
         public Builder() {}
         public Builder(IpsecConnectionTunnelManagementBgpSessionInfo defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.bgpIpv6State = defaults.bgpIpv6State;
     	      this.bgpIpv6state = defaults.bgpIpv6state;
     	      this.bgpState = defaults.bgpState;
     	      this.customerBgpAsn = defaults.customerBgpAsn;
     	      this.customerInterfaceIp = defaults.customerInterfaceIp;
+    	      this.customerInterfaceIpv6 = defaults.customerInterfaceIpv6;
     	      this.oracleBgpAsn = defaults.oracleBgpAsn;
     	      this.oracleInterfaceIp = defaults.oracleInterfaceIp;
+    	      this.oracleInterfaceIpv6 = defaults.oracleInterfaceIpv6;
         }
 
+        @CustomType.Setter
+        public Builder bgpIpv6State(@Nullable String bgpIpv6State) {
+            this.bgpIpv6State = bgpIpv6State;
+            return this;
+        }
         @CustomType.Setter
         public Builder bgpIpv6state(@Nullable String bgpIpv6state) {
             this.bgpIpv6state = bgpIpv6state;
@@ -173,6 +256,11 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
             return this;
         }
         @CustomType.Setter
+        public Builder customerInterfaceIpv6(@Nullable String customerInterfaceIpv6) {
+            this.customerInterfaceIpv6 = customerInterfaceIpv6;
+            return this;
+        }
+        @CustomType.Setter
         public Builder oracleBgpAsn(@Nullable String oracleBgpAsn) {
             this.oracleBgpAsn = oracleBgpAsn;
             return this;
@@ -182,14 +270,22 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
             this.oracleInterfaceIp = oracleInterfaceIp;
             return this;
         }
+        @CustomType.Setter
+        public Builder oracleInterfaceIpv6(@Nullable String oracleInterfaceIpv6) {
+            this.oracleInterfaceIpv6 = oracleInterfaceIpv6;
+            return this;
+        }
         public IpsecConnectionTunnelManagementBgpSessionInfo build() {
             final var o = new IpsecConnectionTunnelManagementBgpSessionInfo();
+            o.bgpIpv6State = bgpIpv6State;
             o.bgpIpv6state = bgpIpv6state;
             o.bgpState = bgpState;
             o.customerBgpAsn = customerBgpAsn;
             o.customerInterfaceIp = customerInterfaceIp;
+            o.customerInterfaceIpv6 = customerInterfaceIpv6;
             o.oracleBgpAsn = oracleBgpAsn;
             o.oracleInterfaceIp = oracleInterfaceIp;
+            o.oracleInterfaceIpv6 = oracleInterfaceIpv6;
             return o;
         }
     }

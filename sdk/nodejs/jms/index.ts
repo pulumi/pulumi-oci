@@ -45,6 +45,26 @@ export const getFleetDiagnoses: typeof import("./getFleetDiagnoses").getFleetDia
 export const getFleetDiagnosesOutput: typeof import("./getFleetDiagnoses").getFleetDiagnosesOutput = null as any;
 utilities.lazyLoad(exports, ["getFleetDiagnoses","getFleetDiagnosesOutput"], () => require("./getFleetDiagnoses"));
 
+export { GetFleetDrsFileArgs, GetFleetDrsFileResult, GetFleetDrsFileOutputArgs } from "./getFleetDrsFile";
+export const getFleetDrsFile: typeof import("./getFleetDrsFile").getFleetDrsFile = null as any;
+export const getFleetDrsFileOutput: typeof import("./getFleetDrsFile").getFleetDrsFileOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetDrsFile","getFleetDrsFileOutput"], () => require("./getFleetDrsFile"));
+
+export { GetFleetDrsFilesArgs, GetFleetDrsFilesResult, GetFleetDrsFilesOutputArgs } from "./getFleetDrsFiles";
+export const getFleetDrsFiles: typeof import("./getFleetDrsFiles").getFleetDrsFiles = null as any;
+export const getFleetDrsFilesOutput: typeof import("./getFleetDrsFiles").getFleetDrsFilesOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetDrsFiles","getFleetDrsFilesOutput"], () => require("./getFleetDrsFiles"));
+
+export { GetFleetExportSettingArgs, GetFleetExportSettingResult, GetFleetExportSettingOutputArgs } from "./getFleetExportSetting";
+export const getFleetExportSetting: typeof import("./getFleetExportSetting").getFleetExportSetting = null as any;
+export const getFleetExportSettingOutput: typeof import("./getFleetExportSetting").getFleetExportSettingOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetExportSetting","getFleetExportSettingOutput"], () => require("./getFleetExportSetting"));
+
+export { GetFleetExportStatusArgs, GetFleetExportStatusResult, GetFleetExportStatusOutputArgs } from "./getFleetExportStatus";
+export const getFleetExportStatus: typeof import("./getFleetExportStatus").getFleetExportStatus = null as any;
+export const getFleetExportStatusOutput: typeof import("./getFleetExportStatus").getFleetExportStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetExportStatus","getFleetExportStatusOutput"], () => require("./getFleetExportStatus"));
+
 export { GetFleetJavaMigrationAnalysisResultArgs, GetFleetJavaMigrationAnalysisResultResult, GetFleetJavaMigrationAnalysisResultOutputArgs } from "./getFleetJavaMigrationAnalysisResult";
 export const getFleetJavaMigrationAnalysisResult: typeof import("./getFleetJavaMigrationAnalysisResult").getFleetJavaMigrationAnalysisResult = null as any;
 export const getFleetJavaMigrationAnalysisResultOutput: typeof import("./getFleetJavaMigrationAnalysisResult").getFleetJavaMigrationAnalysisResultOutput = null as any;
@@ -80,6 +100,56 @@ export const getInstallationSites: typeof import("./getInstallationSites").getIn
 export const getInstallationSitesOutput: typeof import("./getInstallationSites").getInstallationSitesOutput = null as any;
 utilities.lazyLoad(exports, ["getInstallationSites","getInstallationSitesOutput"], () => require("./getInstallationSites"));
 
+export { GetJavaDownloadsJavaDownloadRecordsArgs, GetJavaDownloadsJavaDownloadRecordsResult, GetJavaDownloadsJavaDownloadRecordsOutputArgs } from "./getJavaDownloadsJavaDownloadRecords";
+export const getJavaDownloadsJavaDownloadRecords: typeof import("./getJavaDownloadsJavaDownloadRecords").getJavaDownloadsJavaDownloadRecords = null as any;
+export const getJavaDownloadsJavaDownloadRecordsOutput: typeof import("./getJavaDownloadsJavaDownloadRecords").getJavaDownloadsJavaDownloadRecordsOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaDownloadsJavaDownloadRecords","getJavaDownloadsJavaDownloadRecordsOutput"], () => require("./getJavaDownloadsJavaDownloadRecords"));
+
+export { GetJavaDownloadsJavaDownloadReportArgs, GetJavaDownloadsJavaDownloadReportResult, GetJavaDownloadsJavaDownloadReportOutputArgs } from "./getJavaDownloadsJavaDownloadReport";
+export const getJavaDownloadsJavaDownloadReport: typeof import("./getJavaDownloadsJavaDownloadReport").getJavaDownloadsJavaDownloadReport = null as any;
+export const getJavaDownloadsJavaDownloadReportOutput: typeof import("./getJavaDownloadsJavaDownloadReport").getJavaDownloadsJavaDownloadReportOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaDownloadsJavaDownloadReport","getJavaDownloadsJavaDownloadReportOutput"], () => require("./getJavaDownloadsJavaDownloadReport"));
+
+export { GetJavaDownloadsJavaDownloadReportContentArgs, GetJavaDownloadsJavaDownloadReportContentResult, GetJavaDownloadsJavaDownloadReportContentOutputArgs } from "./getJavaDownloadsJavaDownloadReportContent";
+export const getJavaDownloadsJavaDownloadReportContent: typeof import("./getJavaDownloadsJavaDownloadReportContent").getJavaDownloadsJavaDownloadReportContent = null as any;
+export const getJavaDownloadsJavaDownloadReportContentOutput: typeof import("./getJavaDownloadsJavaDownloadReportContent").getJavaDownloadsJavaDownloadReportContentOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaDownloadsJavaDownloadReportContent","getJavaDownloadsJavaDownloadReportContentOutput"], () => require("./getJavaDownloadsJavaDownloadReportContent"));
+
+export { GetJavaDownloadsJavaDownloadReportsArgs, GetJavaDownloadsJavaDownloadReportsResult, GetJavaDownloadsJavaDownloadReportsOutputArgs } from "./getJavaDownloadsJavaDownloadReports";
+export const getJavaDownloadsJavaDownloadReports: typeof import("./getJavaDownloadsJavaDownloadReports").getJavaDownloadsJavaDownloadReports = null as any;
+export const getJavaDownloadsJavaDownloadReportsOutput: typeof import("./getJavaDownloadsJavaDownloadReports").getJavaDownloadsJavaDownloadReportsOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaDownloadsJavaDownloadReports","getJavaDownloadsJavaDownloadReportsOutput"], () => require("./getJavaDownloadsJavaDownloadReports"));
+
+export { GetJavaDownloadsJavaDownloadTokenArgs, GetJavaDownloadsJavaDownloadTokenResult, GetJavaDownloadsJavaDownloadTokenOutputArgs } from "./getJavaDownloadsJavaDownloadToken";
+export const getJavaDownloadsJavaDownloadToken: typeof import("./getJavaDownloadsJavaDownloadToken").getJavaDownloadsJavaDownloadToken = null as any;
+export const getJavaDownloadsJavaDownloadTokenOutput: typeof import("./getJavaDownloadsJavaDownloadToken").getJavaDownloadsJavaDownloadTokenOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaDownloadsJavaDownloadToken","getJavaDownloadsJavaDownloadTokenOutput"], () => require("./getJavaDownloadsJavaDownloadToken"));
+
+export { GetJavaDownloadsJavaDownloadTokensArgs, GetJavaDownloadsJavaDownloadTokensResult, GetJavaDownloadsJavaDownloadTokensOutputArgs } from "./getJavaDownloadsJavaDownloadTokens";
+export const getJavaDownloadsJavaDownloadTokens: typeof import("./getJavaDownloadsJavaDownloadTokens").getJavaDownloadsJavaDownloadTokens = null as any;
+export const getJavaDownloadsJavaDownloadTokensOutput: typeof import("./getJavaDownloadsJavaDownloadTokens").getJavaDownloadsJavaDownloadTokensOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaDownloadsJavaDownloadTokens","getJavaDownloadsJavaDownloadTokensOutput"], () => require("./getJavaDownloadsJavaDownloadTokens"));
+
+export { GetJavaDownloadsJavaLicenseArgs, GetJavaDownloadsJavaLicenseResult, GetJavaDownloadsJavaLicenseOutputArgs } from "./getJavaDownloadsJavaLicense";
+export const getJavaDownloadsJavaLicense: typeof import("./getJavaDownloadsJavaLicense").getJavaDownloadsJavaLicense = null as any;
+export const getJavaDownloadsJavaLicenseOutput: typeof import("./getJavaDownloadsJavaLicense").getJavaDownloadsJavaLicenseOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaDownloadsJavaLicense","getJavaDownloadsJavaLicenseOutput"], () => require("./getJavaDownloadsJavaLicense"));
+
+export { GetJavaDownloadsJavaLicenseAcceptanceRecordArgs, GetJavaDownloadsJavaLicenseAcceptanceRecordResult, GetJavaDownloadsJavaLicenseAcceptanceRecordOutputArgs } from "./getJavaDownloadsJavaLicenseAcceptanceRecord";
+export const getJavaDownloadsJavaLicenseAcceptanceRecord: typeof import("./getJavaDownloadsJavaLicenseAcceptanceRecord").getJavaDownloadsJavaLicenseAcceptanceRecord = null as any;
+export const getJavaDownloadsJavaLicenseAcceptanceRecordOutput: typeof import("./getJavaDownloadsJavaLicenseAcceptanceRecord").getJavaDownloadsJavaLicenseAcceptanceRecordOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaDownloadsJavaLicenseAcceptanceRecord","getJavaDownloadsJavaLicenseAcceptanceRecordOutput"], () => require("./getJavaDownloadsJavaLicenseAcceptanceRecord"));
+
+export { GetJavaDownloadsJavaLicenseAcceptanceRecordsArgs, GetJavaDownloadsJavaLicenseAcceptanceRecordsResult, GetJavaDownloadsJavaLicenseAcceptanceRecordsOutputArgs } from "./getJavaDownloadsJavaLicenseAcceptanceRecords";
+export const getJavaDownloadsJavaLicenseAcceptanceRecords: typeof import("./getJavaDownloadsJavaLicenseAcceptanceRecords").getJavaDownloadsJavaLicenseAcceptanceRecords = null as any;
+export const getJavaDownloadsJavaLicenseAcceptanceRecordsOutput: typeof import("./getJavaDownloadsJavaLicenseAcceptanceRecords").getJavaDownloadsJavaLicenseAcceptanceRecordsOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaDownloadsJavaLicenseAcceptanceRecords","getJavaDownloadsJavaLicenseAcceptanceRecordsOutput"], () => require("./getJavaDownloadsJavaLicenseAcceptanceRecords"));
+
+export { GetJavaDownloadsJavaLicensesArgs, GetJavaDownloadsJavaLicensesResult, GetJavaDownloadsJavaLicensesOutputArgs } from "./getJavaDownloadsJavaLicenses";
+export const getJavaDownloadsJavaLicenses: typeof import("./getJavaDownloadsJavaLicenses").getJavaDownloadsJavaLicenses = null as any;
+export const getJavaDownloadsJavaLicensesOutput: typeof import("./getJavaDownloadsJavaLicenses").getJavaDownloadsJavaLicensesOutput = null as any;
+utilities.lazyLoad(exports, ["getJavaDownloadsJavaLicenses","getJavaDownloadsJavaLicensesOutput"], () => require("./getJavaDownloadsJavaLicenses"));
+
 export { GetJavaFamiliesArgs, GetJavaFamiliesResult, GetJavaFamiliesOutputArgs } from "./getJavaFamilies";
 export const getJavaFamilies: typeof import("./getJavaFamilies").getJavaFamilies = null as any;
 export const getJavaFamiliesOutput: typeof import("./getJavaFamilies").getJavaFamiliesOutput = null as any;
@@ -110,6 +180,21 @@ export const getSummarizeResourceInventory: typeof import("./getSummarizeResourc
 export const getSummarizeResourceInventoryOutput: typeof import("./getSummarizeResourceInventory").getSummarizeResourceInventoryOutput = null as any;
 utilities.lazyLoad(exports, ["getSummarizeResourceInventory","getSummarizeResourceInventoryOutput"], () => require("./getSummarizeResourceInventory"));
 
+export { JavaDownloadsJavaDownloadReportArgs, JavaDownloadsJavaDownloadReportState } from "./javaDownloadsJavaDownloadReport";
+export type JavaDownloadsJavaDownloadReport = import("./javaDownloadsJavaDownloadReport").JavaDownloadsJavaDownloadReport;
+export const JavaDownloadsJavaDownloadReport: typeof import("./javaDownloadsJavaDownloadReport").JavaDownloadsJavaDownloadReport = null as any;
+utilities.lazyLoad(exports, ["JavaDownloadsJavaDownloadReport"], () => require("./javaDownloadsJavaDownloadReport"));
+
+export { JavaDownloadsJavaDownloadTokenArgs, JavaDownloadsJavaDownloadTokenState } from "./javaDownloadsJavaDownloadToken";
+export type JavaDownloadsJavaDownloadToken = import("./javaDownloadsJavaDownloadToken").JavaDownloadsJavaDownloadToken;
+export const JavaDownloadsJavaDownloadToken: typeof import("./javaDownloadsJavaDownloadToken").JavaDownloadsJavaDownloadToken = null as any;
+utilities.lazyLoad(exports, ["JavaDownloadsJavaDownloadToken"], () => require("./javaDownloadsJavaDownloadToken"));
+
+export { JavaDownloadsJavaLicenseAcceptanceRecordArgs, JavaDownloadsJavaLicenseAcceptanceRecordState } from "./javaDownloadsJavaLicenseAcceptanceRecord";
+export type JavaDownloadsJavaLicenseAcceptanceRecord = import("./javaDownloadsJavaLicenseAcceptanceRecord").JavaDownloadsJavaLicenseAcceptanceRecord;
+export const JavaDownloadsJavaLicenseAcceptanceRecord: typeof import("./javaDownloadsJavaLicenseAcceptanceRecord").JavaDownloadsJavaLicenseAcceptanceRecord = null as any;
+utilities.lazyLoad(exports, ["JavaDownloadsJavaLicenseAcceptanceRecord"], () => require("./javaDownloadsJavaLicenseAcceptanceRecord"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -117,9 +202,18 @@ const _module = {
         switch (type) {
             case "oci:Jms/fleet:Fleet":
                 return new Fleet(name, <any>undefined, { urn })
+            case "oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport":
+                return new JavaDownloadsJavaDownloadReport(name, <any>undefined, { urn })
+            case "oci:Jms/javaDownloadsJavaDownloadToken:JavaDownloadsJavaDownloadToken":
+                return new JavaDownloadsJavaDownloadToken(name, <any>undefined, { urn })
+            case "oci:Jms/javaDownloadsJavaLicenseAcceptanceRecord:JavaDownloadsJavaLicenseAcceptanceRecord":
+                return new JavaDownloadsJavaLicenseAcceptanceRecord(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("oci", "Jms/fleet", _module)
+pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaDownloadReport", _module)
+pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaDownloadToken", _module)
+pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaLicenseAcceptanceRecord", _module)

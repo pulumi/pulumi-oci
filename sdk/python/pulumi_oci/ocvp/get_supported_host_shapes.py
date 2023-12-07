@@ -23,7 +23,7 @@ class GetSupportedHostShapesResult:
     """
     A collection of values returned by getSupportedHostShapes.
     """
-    def __init__(__self__, compartment_id=None, filters=None, id=None, items=None, name=None, sddc_type=None):
+    def __init__(__self__, compartment_id=None, filters=None, id=None, initial_host_shape_name=None, is_single_host_sddc_supported=None, items=None, name=None, sddc_type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -33,6 +33,12 @@ class GetSupportedHostShapesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if initial_host_shape_name and not isinstance(initial_host_shape_name, str):
+            raise TypeError("Expected argument 'initial_host_shape_name' to be a str")
+        pulumi.set(__self__, "initial_host_shape_name", initial_host_shape_name)
+        if is_single_host_sddc_supported and not isinstance(is_single_host_sddc_supported, bool):
+            raise TypeError("Expected argument 'is_single_host_sddc_supported' to be a bool")
+        pulumi.set(__self__, "is_single_host_sddc_supported", is_single_host_sddc_supported)
         if items and not isinstance(items, list):
             raise TypeError("Expected argument 'items' to be a list")
         pulumi.set(__self__, "items", items)
@@ -60,6 +66,19 @@ class GetSupportedHostShapesResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="initialHostShapeName")
+    def initial_host_shape_name(self) -> Optional[str]:
+        return pulumi.get(self, "initial_host_shape_name")
+
+    @property
+    @pulumi.getter(name="isSingleHostSddcSupported")
+    def is_single_host_sddc_supported(self) -> Optional[bool]:
+        """
+        Indicates whether the shape supports single host SDDCs.
+        """
+        return pulumi.get(self, "is_single_host_sddc_supported")
 
     @property
     @pulumi.getter
@@ -95,6 +114,8 @@ class AwaitableGetSupportedHostShapesResult(GetSupportedHostShapesResult):
             compartment_id=self.compartment_id,
             filters=self.filters,
             id=self.id,
+            initial_host_shape_name=self.initial_host_shape_name,
+            is_single_host_sddc_supported=self.is_single_host_sddc_supported,
             items=self.items,
             name=self.name,
             sddc_type=self.sddc_type)
@@ -102,6 +123,8 @@ class AwaitableGetSupportedHostShapesResult(GetSupportedHostShapesResult):
 
 def get_supported_host_shapes(compartment_id: Optional[str] = None,
                               filters: Optional[Sequence[pulumi.InputType['GetSupportedHostShapesFilterArgs']]] = None,
+                              initial_host_shape_name: Optional[str] = None,
+                              is_single_host_sddc_supported: Optional[bool] = None,
                               name: Optional[str] = None,
                               sddc_type: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSupportedHostShapesResult:
@@ -117,18 +140,23 @@ def get_supported_host_shapes(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=var["compartment_id"],
-        name=var["supported_host_shape_name"],
-        sddc_type=var["supported_host_shape_sddc_type"])
+        initial_host_shape_name=oci_core_shape["test_shape"]["name"],
+        is_single_host_sddc_supported=var["supported_host_shape_is_single_host_sddc_supported"],
+        name=var["supported_host_shape_name"])
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param str initial_host_shape_name: A filter to return only the shapes compatible with the initial host shape of the Cluster.
+    :param bool is_single_host_sddc_supported: A filter to return only resources that support single host SDDC.
     :param str name: A filter to return only resources that match the given name exactly.
     :param str sddc_type: (Optional) A filter to return only resources that match the given SDDC type exactly.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['initialHostShapeName'] = initial_host_shape_name
+    __args__['isSingleHostSddcSupported'] = is_single_host_sddc_supported
     __args__['name'] = name
     __args__['sddcType'] = sddc_type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -138,6 +166,8 @@ def get_supported_host_shapes(compartment_id: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        initial_host_shape_name=pulumi.get(__ret__, 'initial_host_shape_name'),
+        is_single_host_sddc_supported=pulumi.get(__ret__, 'is_single_host_sddc_supported'),
         items=pulumi.get(__ret__, 'items'),
         name=pulumi.get(__ret__, 'name'),
         sddc_type=pulumi.get(__ret__, 'sddc_type'))
@@ -146,6 +176,8 @@ def get_supported_host_shapes(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_supported_host_shapes)
 def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetSupportedHostShapesFilterArgs']]]]] = None,
+                                     initial_host_shape_name: Optional[pulumi.Input[Optional[str]]] = None,
+                                     is_single_host_sddc_supported: Optional[pulumi.Input[Optional[bool]]] = None,
                                      name: Optional[pulumi.Input[Optional[str]]] = None,
                                      sddc_type: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSupportedHostShapesResult]:
@@ -161,12 +193,15 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]]
     import pulumi_oci as oci
 
     test_supported_host_shapes = oci.Ocvp.get_supported_host_shapes(compartment_id=var["compartment_id"],
-        name=var["supported_host_shape_name"],
-        sddc_type=var["supported_host_shape_sddc_type"])
+        initial_host_shape_name=oci_core_shape["test_shape"]["name"],
+        is_single_host_sddc_supported=var["supported_host_shape_is_single_host_sddc_supported"],
+        name=var["supported_host_shape_name"])
     ```
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param str initial_host_shape_name: A filter to return only the shapes compatible with the initial host shape of the Cluster.
+    :param bool is_single_host_sddc_supported: A filter to return only resources that support single host SDDC.
     :param str name: A filter to return only resources that match the given name exactly.
     :param str sddc_type: (Optional) A filter to return only resources that match the given SDDC type exactly.
     """

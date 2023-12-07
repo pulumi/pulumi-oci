@@ -39,6 +39,16 @@ namespace Pulumi.Oci.DatabaseTools
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.DatabaseTools.Inputs.DatabaseToolsPrivateEndpointLockArgs
+    ///             {
+    ///                 Type = @var.Database_tools_private_endpoint_locks_type,
+    ///                 Message = @var.Database_tools_private_endpoint_locks_message,
+    ///                 RelatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
+    ///                 TimeCreated = @var.Database_tools_private_endpoint_locks_time_created,
+    ///             },
+    ///         },
     ///         NsgIds = @var.Database_tools_private_endpoint_nsg_ids,
     ///         PrivateEndpointIp = @var.Database_tools_private_endpoint_private_endpoint_ip,
     ///     });
@@ -112,6 +122,12 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.DatabaseToolsPrivateEndpointLock>> Locks { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
         /// </summary>
         [Output("nsgIds")]
@@ -158,7 +174,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        /// When the lock was created.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -269,6 +285,18 @@ namespace Pulumi.Oci.DatabaseTools
             set => _freeformTags = value;
         }
 
+        [Input("locks")]
+        private InputList<Inputs.DatabaseToolsPrivateEndpointLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.DatabaseToolsPrivateEndpointLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.DatabaseToolsPrivateEndpointLockArgs>());
+            set => _locks = value;
+        }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
@@ -377,6 +405,18 @@ namespace Pulumi.Oci.DatabaseTools
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        [Input("locks")]
+        private InputList<Inputs.DatabaseToolsPrivateEndpointLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.DatabaseToolsPrivateEndpointLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.DatabaseToolsPrivateEndpointLockGetArgs>());
+            set => _locks = value;
+        }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
@@ -442,7 +482,7 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+        /// When the lock was created.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

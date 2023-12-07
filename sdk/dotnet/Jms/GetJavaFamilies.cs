@@ -34,6 +34,7 @@ namespace Pulumi.Oci.Jms
         ///     {
         ///         DisplayName = @var.Java_family_display_name,
         ///         FamilyVersion = @var.Java_family_family_version,
+        ///         IsSupportedVersion = @var.Java_family_is_supported_version,
         ///     });
         /// 
         /// });
@@ -67,6 +68,7 @@ namespace Pulumi.Oci.Jms
         ///     {
         ///         DisplayName = @var.Java_family_display_name,
         ///         FamilyVersion = @var.Java_family_family_version,
+        ///         IsSupportedVersion = @var.Java_family_is_supported_version,
         ///     });
         /// 
         /// });
@@ -101,6 +103,12 @@ namespace Pulumi.Oci.Jms
             set => _filters = value;
         }
 
+        /// <summary>
+        /// Filter the Java Release Family versions by support status.
+        /// </summary>
+        [Input("isSupportedVersion")]
+        public bool? IsSupportedVersion { get; set; }
+
         public GetJavaFamiliesArgs()
         {
         }
@@ -129,6 +137,12 @@ namespace Pulumi.Oci.Jms
             set => _filters = value;
         }
 
+        /// <summary>
+        /// Filter the Java Release Family versions by support status.
+        /// </summary>
+        [Input("isSupportedVersion")]
+        public Input<bool>? IsSupportedVersion { get; set; }
+
         public GetJavaFamiliesInvokeArgs()
         {
         }
@@ -153,6 +167,10 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+        /// </summary>
+        public readonly bool? IsSupportedVersion;
+        /// <summary>
         /// The list of java_family_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJavaFamiliesJavaFamilyCollectionResult> JavaFamilyCollections;
@@ -167,12 +185,15 @@ namespace Pulumi.Oci.Jms
 
             string id,
 
+            bool? isSupportedVersion,
+
             ImmutableArray<Outputs.GetJavaFamiliesJavaFamilyCollectionResult> javaFamilyCollections)
         {
             DisplayName = displayName;
             FamilyVersion = familyVersion;
             Filters = filters;
             Id = id;
+            IsSupportedVersion = isSupportedVersion;
             JavaFamilyCollections = javaFamilyCollections;
         }
     }

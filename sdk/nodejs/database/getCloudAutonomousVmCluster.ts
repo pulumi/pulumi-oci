@@ -130,6 +130,10 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly domain: string;
     /**
+     * The lowest value to which exadataStorage in TBs can be scaled down.
+     */
+    readonly exadataStorageInTbsLowestScaledValue: number;
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: any};
@@ -154,7 +158,7 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly lastUpdateHistoryEntryId: string;
     /**
-     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
      */
     readonly licenseModel: string;
     /**
@@ -166,6 +170,10 @@ export interface GetCloudAutonomousVmClusterResult {
      * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
     readonly maintenanceWindows: outputs.Database.GetCloudAutonomousVmClusterMaintenanceWindow[];
+    /**
+     * The lowest value to which ACDs can be scaled down.
+     */
+    readonly maxAcdsLowestScaledValue: number;
     /**
      * The amount of memory (in GBs) enabled per OCPU or ECPU.
      */
@@ -195,6 +203,10 @@ export interface GetCloudAutonomousVmClusterResult {
      * The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
     readonly ocpuCount: number;
+    /**
+     * The lowest value to which ocpus can be scaled down.
+     */
+    readonly ocpusLowestScaledValue: number;
     /**
      * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      */

@@ -29,6 +29,12 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     locks: [{
+ *         type: _var.database_tools_private_endpoint_locks_type,
+ *         message: _var.database_tools_private_endpoint_locks_message,
+ *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
+ *         timeCreated: _var.database_tools_private_endpoint_locks_time_created,
+ *     }],
  *     nsgIds: _var.database_tools_private_endpoint_nsg_ids,
  *     privateEndpointIp: _var.database_tools_private_endpoint_private_endpoint_ip,
  * });
@@ -107,6 +113,10 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.DatabaseTools.DatabaseToolsPrivateEndpointLock[]>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      */
     public readonly nsgIds!: pulumi.Output<string[]>;
@@ -139,7 +149,7 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+     * When the lock was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -173,6 +183,7 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["endpointServiceId"] = state ? state.endpointServiceId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["privateEndpointIp"] = state ? state.privateEndpointIp : undefined;
             resourceInputs["privateEndpointVnicId"] = state ? state.privateEndpointVnicId : undefined;
@@ -203,6 +214,7 @@ export class DatabaseToolsPrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["endpointServiceId"] = args ? args.endpointServiceId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["privateEndpointIp"] = args ? args.privateEndpointIp : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
@@ -263,6 +275,10 @@ export interface DatabaseToolsPrivateEndpointState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsPrivateEndpointLock>[]>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -295,7 +311,7 @@ export interface DatabaseToolsPrivateEndpointState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
+     * When the lock was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -336,6 +352,10 @@ export interface DatabaseToolsPrivateEndpointArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.DatabaseTools.DatabaseToolsPrivateEndpointLock>[]>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      */

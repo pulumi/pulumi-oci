@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult> Artifacts;
         /// <summary>
+        /// The number of days since this release has been under the security baseline.
+        /// </summary>
+        public readonly int DaysUnderSecurityBaseline;
+        /// <summary>
         /// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult> FamilyDetails;
@@ -37,6 +41,10 @@ namespace Pulumi.Oci.Jms.Outputs
         /// Java license type.
         /// </summary>
         public readonly string LicenseType;
+        /// <summary>
+        /// List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemMosPatchResult> MosPatches;
         /// <summary>
         /// Parent Java release version identifier. This is applicable for BPR releases.
         /// </summary>
@@ -68,6 +76,8 @@ namespace Pulumi.Oci.Jms.Outputs
 
             ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult> artifacts,
 
+            int daysUnderSecurityBaseline,
+
             ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult> familyDetails,
 
             string familyVersion,
@@ -75,6 +85,8 @@ namespace Pulumi.Oci.Jms.Outputs
             ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemLicenseDetailResult> licenseDetails,
 
             string licenseType,
+
+            ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemMosPatchResult> mosPatches,
 
             string parentReleaseVersion,
 
@@ -90,10 +102,12 @@ namespace Pulumi.Oci.Jms.Outputs
         {
             ArtifactContentTypes = artifactContentTypes;
             Artifacts = artifacts;
+            DaysUnderSecurityBaseline = daysUnderSecurityBaseline;
             FamilyDetails = familyDetails;
             FamilyVersion = familyVersion;
             LicenseDetails = licenseDetails;
             LicenseType = licenseType;
+            MosPatches = mosPatches;
             ParentReleaseVersion = parentReleaseVersion;
             ReleaseDate = releaseDate;
             ReleaseNotesUrl = releaseNotesUrl;

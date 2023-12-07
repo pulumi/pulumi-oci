@@ -30,6 +30,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     osFamily: _var.managed_instance_group_os_family,
+ *     managedInstanceIds: _var.managed_instance_group_managed_instance_ids,
  * });
  * ```
  *
@@ -91,15 +92,19 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     public /*out*/ readonly managedInstanceCount!: pulumi.Output<number>;
     /**
-     * list of Managed Instances in the group
-     */
-    public /*out*/ readonly managedInstances!: pulumi.Output<outputs.OsManagement.ManagedInstanceGroupManagedInstance[]>;
-    /**
-     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+     * The list of managed instance OCIDs to be added to the managed instance group.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly managedInstanceIds!: pulumi.Output<string[]>;
+    /**
+     * list of Managed Instances in the group
+     */
+    public /*out*/ readonly managedInstances!: pulumi.Output<outputs.OsManagement.ManagedInstanceGroupManagedInstance[]>;
+    /**
+     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
      */
     public readonly osFamily!: pulumi.Output<string>;
     /**
@@ -126,6 +131,7 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["managedInstanceCount"] = state ? state.managedInstanceCount : undefined;
+            resourceInputs["managedInstanceIds"] = state ? state.managedInstanceIds : undefined;
             resourceInputs["managedInstances"] = state ? state.managedInstances : undefined;
             resourceInputs["osFamily"] = state ? state.osFamily : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -142,6 +148,7 @@ export class ManagedInstanceGroup extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["managedInstanceIds"] = args ? args.managedInstanceIds : undefined;
             resourceInputs["osFamily"] = args ? args.osFamily : undefined;
             resourceInputs["managedInstanceCount"] = undefined /*out*/;
             resourceInputs["managedInstances"] = undefined /*out*/;
@@ -178,15 +185,19 @@ export interface ManagedInstanceGroupState {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     managedInstanceCount?: pulumi.Input<number>;
     /**
-     * list of Managed Instances in the group
-     */
-    managedInstances?: pulumi.Input<pulumi.Input<inputs.OsManagement.ManagedInstanceGroupManagedInstance>[]>;
-    /**
-     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+     * The list of managed instance OCIDs to be added to the managed instance group.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    managedInstanceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * list of Managed Instances in the group
+     */
+    managedInstances?: pulumi.Input<pulumi.Input<inputs.OsManagement.ManagedInstanceGroupManagedInstance>[]>;
+    /**
+     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
      */
     osFamily?: pulumi.Input<string>;
     /**
@@ -220,11 +231,15 @@ export interface ManagedInstanceGroupArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+     * The list of managed instance OCIDs to be added to the managed instance group.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    managedInstanceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
      */
     osFamily?: pulumi.Input<string>;
 }

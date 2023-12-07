@@ -23,6 +23,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:Jms/fleet:Fleet":
 		r = &Fleet{}
+	case "oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport":
+		r = &JavaDownloadsJavaDownloadReport{}
+	case "oci:Jms/javaDownloadsJavaDownloadToken:JavaDownloadsJavaDownloadToken":
+		r = &JavaDownloadsJavaDownloadToken{}
+	case "oci:Jms/javaDownloadsJavaLicenseAcceptanceRecord:JavaDownloadsJavaLicenseAcceptanceRecord":
+		r = &JavaDownloadsJavaLicenseAcceptanceRecord{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +45,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Jms/fleet",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Jms/javaDownloadsJavaDownloadReport",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Jms/javaDownloadsJavaDownloadToken",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Jms/javaDownloadsJavaLicenseAcceptanceRecord",
 		&module{version},
 	)
 }

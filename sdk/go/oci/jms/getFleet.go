@@ -85,6 +85,8 @@ type LookupFleetResult struct {
 	InventoryLogs []GetFleetInventoryLog `pulumi:"inventoryLogs"`
 	// Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 	IsAdvancedFeaturesEnabled bool `pulumi:"isAdvancedFeaturesEnabled"`
+	// Whether or not export setting is enabled in this Fleet.
+	IsExportSettingEnabled bool `pulumi:"isExportSettingEnabled"`
 	// Custom Log for inventory or operation log.
 	OperationLogs []GetFleetOperationLog `pulumi:"operationLogs"`
 	// The lifecycle state of the Fleet.
@@ -200,6 +202,11 @@ func (o LookupFleetResultOutput) InventoryLogs() GetFleetInventoryLogArrayOutput
 // Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
 func (o LookupFleetResultOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupFleetResult) bool { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
+}
+
+// Whether or not export setting is enabled in this Fleet.
+func (o LookupFleetResultOutput) IsExportSettingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupFleetResult) bool { return v.IsExportSettingEnabled }).(pulumi.BoolOutput)
 }
 
 // Custom Log for inventory or operation log.

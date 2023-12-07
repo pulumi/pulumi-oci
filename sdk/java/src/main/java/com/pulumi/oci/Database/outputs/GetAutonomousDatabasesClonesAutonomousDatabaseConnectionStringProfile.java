@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -24,6 +25,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
      * 
      */
     private String hostFormat;
+    /**
+     * @return True for a regional connection string, applicable to cross-region DG only.
+     * 
+     */
+    private Boolean isRegional;
     /**
      * @return Protocol used by the connection.
      * 
@@ -73,6 +79,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
         return this.hostFormat;
     }
     /**
+     * @return True for a regional connection string, applicable to cross-region DG only.
+     * 
+     */
+    public Boolean isRegional() {
+        return this.isRegional;
+    }
+    /**
      * @return Protocol used by the connection.
      * 
      */
@@ -120,6 +133,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
         private String consumerGroup;
         private String displayName;
         private String hostFormat;
+        private Boolean isRegional;
         private String protocol;
         private String sessionMode;
         private String syntaxFormat;
@@ -131,6 +145,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
     	      this.consumerGroup = defaults.consumerGroup;
     	      this.displayName = defaults.displayName;
     	      this.hostFormat = defaults.hostFormat;
+    	      this.isRegional = defaults.isRegional;
     	      this.protocol = defaults.protocol;
     	      this.sessionMode = defaults.sessionMode;
     	      this.syntaxFormat = defaults.syntaxFormat;
@@ -151,6 +166,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
         @CustomType.Setter
         public Builder hostFormat(String hostFormat) {
             this.hostFormat = Objects.requireNonNull(hostFormat);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRegional(Boolean isRegional) {
+            this.isRegional = Objects.requireNonNull(isRegional);
             return this;
         }
         @CustomType.Setter
@@ -183,6 +203,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStrin
             o.consumerGroup = consumerGroup;
             o.displayName = displayName;
             o.hostFormat = hostFormat;
+            o.isRegional = isRegional;
             o.protocol = protocol;
             o.sessionMode = sessionMode;
             o.syntaxFormat = syntaxFormat;

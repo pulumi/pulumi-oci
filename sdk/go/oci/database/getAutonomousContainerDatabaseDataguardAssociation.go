@@ -75,11 +75,15 @@ type LookupAutonomousContainerDatabaseDataguardAssociationResult struct {
 	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : isAutomaticFailoverEnabled = true.
 	IsAutomaticFailoverEnabled bool `pulumi:"isAutomaticFailoverEnabled"`
 	// Additional information about the current lifecycleState, if available.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails                             string                                                                                          `pulumi:"lifecycleDetails"`
+	PeerAutonomousContainerDatabaseBackupConfigs []GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig `pulumi:"peerAutonomousContainerDatabaseBackupConfigs"`
+	PeerAutonomousContainerDatabaseCompartmentId string                                                                                          `pulumi:"peerAutonomousContainerDatabaseCompartmentId"`
 	// The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
 	PeerAutonomousContainerDatabaseDataguardAssociationId string `pulumi:"peerAutonomousContainerDatabaseDataguardAssociationId"`
+	PeerAutonomousContainerDatabaseDisplayName            string `pulumi:"peerAutonomousContainerDatabaseDisplayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
 	PeerAutonomousContainerDatabaseId string `pulumi:"peerAutonomousContainerDatabaseId"`
+	PeerCloudAutonomousVmClusterId    string `pulumi:"peerCloudAutonomousVmClusterId"`
 	// The current state of Autonomous Data Guard.
 	PeerLifecycleState string `pulumi:"peerLifecycleState"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
@@ -87,7 +91,8 @@ type LookupAutonomousContainerDatabaseDataguardAssociationResult struct {
 	// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
 	ProtectionMode string `pulumi:"protectionMode"`
 	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-	Role string `pulumi:"role"`
+	Role                           string `pulumi:"role"`
+	StandbyMaintenanceBufferInDays int    `pulumi:"standbyMaintenanceBufferInDays"`
 	// The current state of Autonomous Data Guard.
 	State string `pulumi:"state"`
 	// The date and time the Autonomous DataGuard association was created.
@@ -187,6 +192,18 @@ func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) Lifec
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerAutonomousContainerDatabaseBackupConfigs() GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) []GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig {
+		return v.PeerAutonomousContainerDatabaseBackupConfigs
+	}).(GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArrayOutput)
+}
+
+func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerAutonomousContainerDatabaseCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string {
+		return v.PeerAutonomousContainerDatabaseCompartmentId
+	}).(pulumi.StringOutput)
+}
+
 // The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerAutonomousContainerDatabaseDataguardAssociationId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string {
@@ -194,10 +211,22 @@ func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerA
 	}).(pulumi.StringOutput)
 }
 
+func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerAutonomousContainerDatabaseDisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string {
+		return v.PeerAutonomousContainerDatabaseDisplayName
+	}).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerAutonomousContainerDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string {
 		return v.PeerAutonomousContainerDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) PeerCloudAutonomousVmClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string {
+		return v.PeerCloudAutonomousVmClusterId
 	}).(pulumi.StringOutput)
 }
 
@@ -221,6 +250,12 @@ func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) Prote
 // The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) string { return v.Role }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousContainerDatabaseDataguardAssociationResultOutput) StandbyMaintenanceBufferInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseDataguardAssociationResult) int {
+		return v.StandbyMaintenanceBufferInDays
+	}).(pulumi.IntOutput)
 }
 
 // The current state of Autonomous Data Guard.

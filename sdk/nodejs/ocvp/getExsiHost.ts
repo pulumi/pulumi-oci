@@ -43,7 +43,7 @@ export interface GetExsiHostArgs {
  */
 export interface GetExsiHostResult {
     /**
-     * Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+     * Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      */
     readonly billingContractEndDate: string;
     /**
@@ -57,7 +57,11 @@ export interface GetExsiHostResult {
      */
     readonly capacityReservationId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the ESXi host belongs to.
+     */
+    readonly clusterId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
      */
     readonly compartmentId: string;
     /**
@@ -69,7 +73,11 @@ export interface GetExsiHostResult {
      */
     readonly computeInstanceId: string;
     /**
-     * (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     */
+    readonly currentCommitment: string;
+    /**
+     * (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `currentCommitment` instead.
      *
      * @deprecated The 'current_sku' field has been deprecated. It is no longer supported.
      */
@@ -83,6 +91,10 @@ export interface GetExsiHostResult {
      */
     readonly displayName: string;
     readonly esxiHostId: string;
+    /**
+     * The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
+     */
+    readonly esxiSoftwareVersion: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
      *
@@ -102,7 +114,7 @@ export interface GetExsiHostResult {
      */
     readonly hostOcpuCount: number;
     /**
-     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
      */
     readonly hostShapeName: string;
     /**
@@ -118,7 +130,11 @@ export interface GetExsiHostResult {
      */
     readonly isBillingSwappingInProgress: boolean;
     /**
-     * (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     */
+    readonly nextCommitment: string;
+    /**
+     * (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
      *
      * @deprecated The 'next_sku' field has been deprecated. It is no longer supported.
      */
@@ -134,7 +150,7 @@ export interface GetExsiHostResult {
      */
     readonly replacementEsxiHostId: string;
     /**
-     * (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
      *
      * @deprecated The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.
      */

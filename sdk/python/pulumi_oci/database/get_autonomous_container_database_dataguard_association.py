@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetAutonomousContainerDatabaseDataguardAssociationResult',
@@ -21,7 +22,7 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
     """
     A collection of values returned by getAutonomousContainerDatabaseDataguardAssociation.
     """
-    def __init__(__self__, apply_lag=None, apply_rate=None, autonomous_container_database_dataguard_association_id=None, autonomous_container_database_id=None, fast_start_fail_over_lag_limit_in_seconds=None, id=None, is_automatic_failover_enabled=None, lifecycle_details=None, peer_autonomous_container_database_dataguard_association_id=None, peer_autonomous_container_database_id=None, peer_lifecycle_state=None, peer_role=None, protection_mode=None, role=None, state=None, time_created=None, time_last_role_changed=None, time_last_synced=None, transport_lag=None):
+    def __init__(__self__, apply_lag=None, apply_rate=None, autonomous_container_database_dataguard_association_id=None, autonomous_container_database_id=None, fast_start_fail_over_lag_limit_in_seconds=None, id=None, is_automatic_failover_enabled=None, lifecycle_details=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_dataguard_association_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_container_database_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_lifecycle_state=None, peer_role=None, protection_mode=None, role=None, standby_maintenance_buffer_in_days=None, state=None, time_created=None, time_last_role_changed=None, time_last_synced=None, transport_lag=None):
         if apply_lag and not isinstance(apply_lag, str):
             raise TypeError("Expected argument 'apply_lag' to be a str")
         pulumi.set(__self__, "apply_lag", apply_lag)
@@ -46,12 +47,24 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if peer_autonomous_container_database_backup_configs and not isinstance(peer_autonomous_container_database_backup_configs, list):
+            raise TypeError("Expected argument 'peer_autonomous_container_database_backup_configs' to be a list")
+        pulumi.set(__self__, "peer_autonomous_container_database_backup_configs", peer_autonomous_container_database_backup_configs)
+        if peer_autonomous_container_database_compartment_id and not isinstance(peer_autonomous_container_database_compartment_id, str):
+            raise TypeError("Expected argument 'peer_autonomous_container_database_compartment_id' to be a str")
+        pulumi.set(__self__, "peer_autonomous_container_database_compartment_id", peer_autonomous_container_database_compartment_id)
         if peer_autonomous_container_database_dataguard_association_id and not isinstance(peer_autonomous_container_database_dataguard_association_id, str):
             raise TypeError("Expected argument 'peer_autonomous_container_database_dataguard_association_id' to be a str")
         pulumi.set(__self__, "peer_autonomous_container_database_dataguard_association_id", peer_autonomous_container_database_dataguard_association_id)
+        if peer_autonomous_container_database_display_name and not isinstance(peer_autonomous_container_database_display_name, str):
+            raise TypeError("Expected argument 'peer_autonomous_container_database_display_name' to be a str")
+        pulumi.set(__self__, "peer_autonomous_container_database_display_name", peer_autonomous_container_database_display_name)
         if peer_autonomous_container_database_id and not isinstance(peer_autonomous_container_database_id, str):
             raise TypeError("Expected argument 'peer_autonomous_container_database_id' to be a str")
         pulumi.set(__self__, "peer_autonomous_container_database_id", peer_autonomous_container_database_id)
+        if peer_cloud_autonomous_vm_cluster_id and not isinstance(peer_cloud_autonomous_vm_cluster_id, str):
+            raise TypeError("Expected argument 'peer_cloud_autonomous_vm_cluster_id' to be a str")
+        pulumi.set(__self__, "peer_cloud_autonomous_vm_cluster_id", peer_cloud_autonomous_vm_cluster_id)
         if peer_lifecycle_state and not isinstance(peer_lifecycle_state, str):
             raise TypeError("Expected argument 'peer_lifecycle_state' to be a str")
         pulumi.set(__self__, "peer_lifecycle_state", peer_lifecycle_state)
@@ -64,6 +77,9 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
         if role and not isinstance(role, str):
             raise TypeError("Expected argument 'role' to be a str")
         pulumi.set(__self__, "role", role)
+        if standby_maintenance_buffer_in_days and not isinstance(standby_maintenance_buffer_in_days, int):
+            raise TypeError("Expected argument 'standby_maintenance_buffer_in_days' to be a int")
+        pulumi.set(__self__, "standby_maintenance_buffer_in_days", standby_maintenance_buffer_in_days)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -142,6 +158,16 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="peerAutonomousContainerDatabaseBackupConfigs")
+    def peer_autonomous_container_database_backup_configs(self) -> Sequence['outputs.GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigResult']:
+        return pulumi.get(self, "peer_autonomous_container_database_backup_configs")
+
+    @property
+    @pulumi.getter(name="peerAutonomousContainerDatabaseCompartmentId")
+    def peer_autonomous_container_database_compartment_id(self) -> str:
+        return pulumi.get(self, "peer_autonomous_container_database_compartment_id")
+
+    @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseDataguardAssociationId")
     def peer_autonomous_container_database_dataguard_association_id(self) -> str:
         """
@@ -150,12 +176,22 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
         return pulumi.get(self, "peer_autonomous_container_database_dataguard_association_id")
 
     @property
+    @pulumi.getter(name="peerAutonomousContainerDatabaseDisplayName")
+    def peer_autonomous_container_database_display_name(self) -> str:
+        return pulumi.get(self, "peer_autonomous_container_database_display_name")
+
+    @property
     @pulumi.getter(name="peerAutonomousContainerDatabaseId")
     def peer_autonomous_container_database_id(self) -> str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
         """
         return pulumi.get(self, "peer_autonomous_container_database_id")
+
+    @property
+    @pulumi.getter(name="peerCloudAutonomousVmClusterId")
+    def peer_cloud_autonomous_vm_cluster_id(self) -> str:
+        return pulumi.get(self, "peer_cloud_autonomous_vm_cluster_id")
 
     @property
     @pulumi.getter(name="peerLifecycleState")
@@ -188,6 +224,11 @@ class GetAutonomousContainerDatabaseDataguardAssociationResult:
         The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter(name="standbyMaintenanceBufferInDays")
+    def standby_maintenance_buffer_in_days(self) -> int:
+        return pulumi.get(self, "standby_maintenance_buffer_in_days")
 
     @property
     @pulumi.getter
@@ -244,12 +285,17 @@ class AwaitableGetAutonomousContainerDatabaseDataguardAssociationResult(GetAuton
             id=self.id,
             is_automatic_failover_enabled=self.is_automatic_failover_enabled,
             lifecycle_details=self.lifecycle_details,
+            peer_autonomous_container_database_backup_configs=self.peer_autonomous_container_database_backup_configs,
+            peer_autonomous_container_database_compartment_id=self.peer_autonomous_container_database_compartment_id,
             peer_autonomous_container_database_dataguard_association_id=self.peer_autonomous_container_database_dataguard_association_id,
+            peer_autonomous_container_database_display_name=self.peer_autonomous_container_database_display_name,
             peer_autonomous_container_database_id=self.peer_autonomous_container_database_id,
+            peer_cloud_autonomous_vm_cluster_id=self.peer_cloud_autonomous_vm_cluster_id,
             peer_lifecycle_state=self.peer_lifecycle_state,
             peer_role=self.peer_role,
             protection_mode=self.protection_mode,
             role=self.role,
+            standby_maintenance_buffer_in_days=self.standby_maintenance_buffer_in_days,
             state=self.state,
             time_created=self.time_created,
             time_last_role_changed=self.time_last_role_changed,
@@ -294,12 +340,17 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
         id=pulumi.get(__ret__, 'id'),
         is_automatic_failover_enabled=pulumi.get(__ret__, 'is_automatic_failover_enabled'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        peer_autonomous_container_database_backup_configs=pulumi.get(__ret__, 'peer_autonomous_container_database_backup_configs'),
+        peer_autonomous_container_database_compartment_id=pulumi.get(__ret__, 'peer_autonomous_container_database_compartment_id'),
         peer_autonomous_container_database_dataguard_association_id=pulumi.get(__ret__, 'peer_autonomous_container_database_dataguard_association_id'),
+        peer_autonomous_container_database_display_name=pulumi.get(__ret__, 'peer_autonomous_container_database_display_name'),
         peer_autonomous_container_database_id=pulumi.get(__ret__, 'peer_autonomous_container_database_id'),
+        peer_cloud_autonomous_vm_cluster_id=pulumi.get(__ret__, 'peer_cloud_autonomous_vm_cluster_id'),
         peer_lifecycle_state=pulumi.get(__ret__, 'peer_lifecycle_state'),
         peer_role=pulumi.get(__ret__, 'peer_role'),
         protection_mode=pulumi.get(__ret__, 'protection_mode'),
         role=pulumi.get(__ret__, 'role'),
+        standby_maintenance_buffer_in_days=pulumi.get(__ret__, 'standby_maintenance_buffer_in_days'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_role_changed=pulumi.get(__ret__, 'time_last_role_changed'),

@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetJavaFamilyResult',
@@ -21,7 +22,7 @@ class GetJavaFamilyResult:
     """
     A collection of values returned by getJavaFamily.
     """
-    def __init__(__self__, display_name=None, doc_url=None, end_of_support_life_date=None, family_version=None, id=None, support_type=None):
+    def __init__(__self__, display_name=None, doc_url=None, end_of_support_life_date=None, family_version=None, id=None, is_supported_version=None, latest_release_artifacts=None, latest_release_version=None, support_type=None):
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -37,6 +38,15 @@ class GetJavaFamilyResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_supported_version and not isinstance(is_supported_version, bool):
+            raise TypeError("Expected argument 'is_supported_version' to be a bool")
+        pulumi.set(__self__, "is_supported_version", is_supported_version)
+        if latest_release_artifacts and not isinstance(latest_release_artifacts, list):
+            raise TypeError("Expected argument 'latest_release_artifacts' to be a list")
+        pulumi.set(__self__, "latest_release_artifacts", latest_release_artifacts)
+        if latest_release_version and not isinstance(latest_release_version, str):
+            raise TypeError("Expected argument 'latest_release_version' to be a str")
+        pulumi.set(__self__, "latest_release_version", latest_release_version)
         if support_type and not isinstance(support_type, str):
             raise TypeError("Expected argument 'support_type' to be a str")
         pulumi.set(__self__, "support_type", support_type)
@@ -82,6 +92,30 @@ class GetJavaFamilyResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isSupportedVersion")
+    def is_supported_version(self) -> bool:
+        """
+        Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+        """
+        return pulumi.get(self, "is_supported_version")
+
+    @property
+    @pulumi.getter(name="latestReleaseArtifacts")
+    def latest_release_artifacts(self) -> Sequence['outputs.GetJavaFamilyLatestReleaseArtifactResult']:
+        """
+        List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+        """
+        return pulumi.get(self, "latest_release_artifacts")
+
+    @property
+    @pulumi.getter(name="latestReleaseVersion")
+    def latest_release_version(self) -> str:
+        """
+        Latest Java release version in the family.
+        """
+        return pulumi.get(self, "latest_release_version")
+
+    @property
     @pulumi.getter(name="supportType")
     def support_type(self) -> str:
         """
@@ -101,6 +135,9 @@ class AwaitableGetJavaFamilyResult(GetJavaFamilyResult):
             end_of_support_life_date=self.end_of_support_life_date,
             family_version=self.family_version,
             id=self.id,
+            is_supported_version=self.is_supported_version,
+            latest_release_artifacts=self.latest_release_artifacts,
+            latest_release_version=self.latest_release_version,
             support_type=self.support_type)
 
 
@@ -134,6 +171,9 @@ def get_java_family(family_version: Optional[str] = None,
         end_of_support_life_date=pulumi.get(__ret__, 'end_of_support_life_date'),
         family_version=pulumi.get(__ret__, 'family_version'),
         id=pulumi.get(__ret__, 'id'),
+        is_supported_version=pulumi.get(__ret__, 'is_supported_version'),
+        latest_release_artifacts=pulumi.get(__ret__, 'latest_release_artifacts'),
+        latest_release_version=pulumi.get(__ret__, 'latest_release_version'),
         support_type=pulumi.get(__ret__, 'support_type'))
 
 

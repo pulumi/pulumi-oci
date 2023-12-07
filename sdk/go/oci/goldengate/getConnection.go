@@ -65,7 +65,9 @@ type LookupConnectionResult struct {
 	AccountName string `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes []GetConnectionAdditionalAttribute `pulumi:"additionalAttributes"`
-	// Used authentication mechanism to access Azure Data Lake Storage.
+	// Used authentication mechanism to be provided for the following connection types:
+	// * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
+	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 	AuthenticationType string `pulumi:"authenticationType"`
 	// Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
 	AzureTenantId string `pulumi:"azureTenantId"`
@@ -79,11 +81,15 @@ type LookupConnectionResult struct {
 	// The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
 	ConnectionFactory string `pulumi:"connectionFactory"`
 	ConnectionId      string `pulumi:"connectionId"`
-	// Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+	// * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+	// * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+	// * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 	ConnectionString string `pulumi:"connectionString"`
 	// The connection type.
 	ConnectionType string `pulumi:"connectionType"`
-	// JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+	// * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
+	// * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+	// * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
 	ConnectionUrl      string `pulumi:"connectionUrl"`
 	ConsumerProperties string `pulumi:"consumerProperties"`
 	CoreSiteXml        string `pulumi:"coreSiteXml"`
@@ -102,10 +108,13 @@ type LookupConnectionResult struct {
 	// An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
 	// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
-	Endpoint string `pulumi:"endpoint"`
+	Endpoint    string `pulumi:"endpoint"`
+	Fingerprint string `pulumi:"fingerprint"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name or address of a host.
+	// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host string `pulumi:"host"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	Id string `pulumi:"id"`
@@ -141,8 +150,14 @@ type LookupConnectionResult struct {
 	Region          string `pulumi:"region"`
 	SasToken        string `pulumi:"sasToken"`
 	SecretAccessKey string `pulumi:"secretAccessKey"`
-	// Security Protocol for Microsoft SQL Server/PostgreSQL.
+	// Security Protocol to be provided for the following connection types:
+	// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 	SecurityProtocol string `pulumi:"securityProtocol"`
+	// Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
+	// If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+	Servers               string `pulumi:"servers"`
+	ServiceAccountKeyFile string `pulumi:"serviceAccountKeyFile"`
 	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode string `pulumi:"sessionMode"`
 	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
@@ -155,7 +170,7 @@ type LookupConnectionResult struct {
 	SslCrl         string `pulumi:"sslCrl"`
 	SslKey         string `pulumi:"sslKey"`
 	SslKeyPassword string `pulumi:"sslKeyPassword"`
-	// SSL mode for PostgreSQL.
+	// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
 	SslMode string `pulumi:"sslMode"`
 	// Possible lifecycle states for connection.
 	State string `pulumi:"state"`
@@ -165,7 +180,7 @@ type LookupConnectionResult struct {
 	SubnetId string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The Kafka (e.g. Confluent) Schema Registry technology type.
+	// The technology type.
 	TechnologyType string `pulumi:"technologyType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
 	TenancyId string `pulumi:"tenancyId"`
@@ -243,7 +258,9 @@ func (o LookupConnectionResultOutput) AdditionalAttributes() GetConnectionAdditi
 	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionAdditionalAttribute { return v.AdditionalAttributes }).(GetConnectionAdditionalAttributeArrayOutput)
 }
 
-// Used authentication mechanism to access Azure Data Lake Storage.
+// Used authentication mechanism to be provided for the following connection types:
+// * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
+// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 func (o LookupConnectionResultOutput) AuthenticationType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AuthenticationType }).(pulumi.StringOutput)
 }
@@ -281,7 +298,9 @@ func (o LookupConnectionResultOutput) ConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConnectionId }).(pulumi.StringOutput)
 }
 
-// Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+// * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+// * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+// * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 func (o LookupConnectionResultOutput) ConnectionString() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConnectionString }).(pulumi.StringOutput)
 }
@@ -291,7 +310,9 @@ func (o LookupConnectionResultOutput) ConnectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConnectionType }).(pulumi.StringOutput)
 }
 
-// JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+// * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
+// * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+// * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
 func (o LookupConnectionResultOutput) ConnectionUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ConnectionUrl }).(pulumi.StringOutput)
 }
@@ -344,12 +365,18 @@ func (o LookupConnectionResultOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Endpoint }).(pulumi.StringOutput)
 }
 
+func (o LookupConnectionResultOutput) Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.Fingerprint }).(pulumi.StringOutput)
+}
+
 // A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 func (o LookupConnectionResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupConnectionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The name or address of a host.
+// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 func (o LookupConnectionResultOutput) Host() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Host }).(pulumi.StringOutput)
 }
@@ -454,9 +481,21 @@ func (o LookupConnectionResultOutput) SecretAccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecretAccessKey }).(pulumi.StringOutput)
 }
 
-// Security Protocol for Microsoft SQL Server/PostgreSQL.
+// Security Protocol to be provided for the following connection types:
+// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 func (o LookupConnectionResultOutput) SecurityProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecurityProtocol }).(pulumi.StringOutput)
+}
+
+// Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
+// If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+func (o LookupConnectionResultOutput) Servers() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.Servers }).(pulumi.StringOutput)
+}
+
+func (o LookupConnectionResultOutput) ServiceAccountKeyFile() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.ServiceAccountKeyFile }).(pulumi.StringOutput)
 }
 
 // The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
@@ -495,7 +534,7 @@ func (o LookupConnectionResultOutput) SslKeyPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslKeyPassword }).(pulumi.StringOutput)
 }
 
-// SSL mode for PostgreSQL.
+// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
 func (o LookupConnectionResultOutput) SslMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslMode }).(pulumi.StringOutput)
 }
@@ -520,7 +559,7 @@ func (o LookupConnectionResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupConnectionResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The Kafka (e.g. Confluent) Schema Registry technology type.
+// The technology type.
 func (o LookupConnectionResultOutput) TechnologyType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TechnologyType }).(pulumi.StringOutput)
 }

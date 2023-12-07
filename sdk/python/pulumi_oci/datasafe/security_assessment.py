@@ -199,9 +199,9 @@ class _SecurityAssessmentState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: Array of database target OCIDs.
         :param pulumi.Input[str] target_version: The version of the target database.
-        :param pulumi.Input[str] time_created: The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_last_assessed: The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_updated: The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] time_created: The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] time_last_assessed: The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] time_updated: The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] triggered_by: Indicates whether the security assessment was created by system or by a user.
         :param pulumi.Input[str] type: The type of this security assessment. The possible types are:
         """
@@ -506,7 +506,7 @@ class _SecurityAssessmentState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
@@ -518,7 +518,7 @@ class _SecurityAssessmentState:
     @pulumi.getter(name="timeLastAssessed")
     def time_last_assessed(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_last_assessed")
 
@@ -530,7 +530,7 @@ class _SecurityAssessmentState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 
@@ -796,9 +796,9 @@ class SecurityAssessment(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: Array of database target OCIDs.
         :param pulumi.Input[str] target_version: The version of the target database.
-        :param pulumi.Input[str] time_created: The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_last_assessed: The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param pulumi.Input[str] time_updated: The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] time_created: The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] time_last_assessed: The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        :param pulumi.Input[str] time_updated: The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] triggered_by: Indicates whether the security assessment was created by system or by a user.
         :param pulumi.Input[str] type: The type of this security assessment. The possible types are:
         """
@@ -1003,7 +1003,7 @@ class SecurityAssessment(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time when the security assessment was created. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
 
@@ -1011,7 +1011,7 @@ class SecurityAssessment(pulumi.CustomResource):
     @pulumi.getter(name="timeLastAssessed")
     def time_last_assessed(self) -> pulumi.Output[str]:
         """
-        The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time when the security assessment was last run. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_last_assessed")
 
@@ -1019,7 +1019,7 @@ class SecurityAssessment(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        The date and time when the security assessment was last updated. Conforms to the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
 

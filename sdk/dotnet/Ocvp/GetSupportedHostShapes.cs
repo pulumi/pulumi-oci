@@ -32,8 +32,9 @@ namespace Pulumi.Oci.Ocvp
         ///     var testSupportedHostShapes = Oci.Ocvp.GetSupportedHostShapes.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         InitialHostShapeName = oci_core_shape.Test_shape.Name,
+        ///         IsSingleHostSddcSupported = @var.Supported_host_shape_is_single_host_sddc_supported,
         ///         Name = @var.Supported_host_shape_name,
-        ///         SddcType = @var.Supported_host_shape_sddc_type,
         ///     });
         /// 
         /// });
@@ -65,8 +66,9 @@ namespace Pulumi.Oci.Ocvp
         ///     var testSupportedHostShapes = Oci.Ocvp.GetSupportedHostShapes.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         InitialHostShapeName = oci_core_shape.Test_shape.Name,
+        ///         IsSingleHostSddcSupported = @var.Supported_host_shape_is_single_host_sddc_supported,
         ///         Name = @var.Supported_host_shape_name,
-        ///         SddcType = @var.Supported_host_shape_sddc_type,
         ///     });
         /// 
         /// });
@@ -94,6 +96,18 @@ namespace Pulumi.Oci.Ocvp
             get => _filters ?? (_filters = new List<Inputs.GetSupportedHostShapesFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return only the shapes compatible with the initial host shape of the Cluster.
+        /// </summary>
+        [Input("initialHostShapeName")]
+        public string? InitialHostShapeName { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that support single host SDDC.
+        /// </summary>
+        [Input("isSingleHostSddcSupported")]
+        public bool? IsSingleHostSddcSupported { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given name exactly.
@@ -130,6 +144,18 @@ namespace Pulumi.Oci.Ocvp
         }
 
         /// <summary>
+        /// A filter to return only the shapes compatible with the initial host shape of the Cluster.
+        /// </summary>
+        [Input("initialHostShapeName")]
+        public Input<string>? InitialHostShapeName { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that support single host SDDC.
+        /// </summary>
+        [Input("isSingleHostSddcSupported")]
+        public Input<bool>? IsSingleHostSddcSupported { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the given name exactly.
         /// </summary>
         [Input("name")]
@@ -157,6 +183,11 @@ namespace Pulumi.Oci.Ocvp
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? InitialHostShapeName;
+        /// <summary>
+        /// Indicates whether the shape supports single host SDDCs.
+        /// </summary>
+        public readonly bool? IsSingleHostSddcSupported;
         /// <summary>
         /// A list of the supported compute shapes for ESXi hosts.
         /// </summary>
@@ -175,6 +206,10 @@ namespace Pulumi.Oci.Ocvp
 
             string id,
 
+            string? initialHostShapeName,
+
+            bool? isSingleHostSddcSupported,
+
             ImmutableArray<Outputs.GetSupportedHostShapesItemResult> items,
 
             string? name,
@@ -184,6 +219,8 @@ namespace Pulumi.Oci.Ocvp
             CompartmentId = compartmentId;
             Filters = filters;
             Id = id;
+            InitialHostShapeName = initialHostShapeName;
+            IsSingleHostSddcSupported = isSingleHostSddcSupported;
             Items = items;
             Name = name;
             SddcType = sddcType;

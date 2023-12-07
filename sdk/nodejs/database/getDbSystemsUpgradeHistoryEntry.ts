@@ -66,9 +66,17 @@ export interface GetDbSystemsUpgradeHistoryEntryResult {
      */
     readonly newGiVersion: string;
     /**
+     * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+     */
+    readonly newOsVersion: string;
+    /**
      * A valid Oracle Grid Infrastructure (GI) software version.
      */
     readonly oldGiVersion: string;
+    /**
+     * A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+     */
+    readonly oldOsVersion: string;
     /**
      * The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
      */

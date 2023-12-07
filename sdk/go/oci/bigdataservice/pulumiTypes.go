@@ -5790,6 +5790,125 @@ func (o BdsInstanceNodeAttachedBlockVolumeArrayOutput) Index(i pulumi.IntInput) 
 	}).(BdsInstanceNodeAttachedBlockVolumeOutput)
 }
 
+type BdsInstanceOperationCertificateManagementsManagementHostCertDetail struct {
+	// Certificate value in string format
+	Certificate *string `pulumi:"certificate"`
+	// Fully qualified domain name (FQDN) of the host
+	HostName *string `pulumi:"hostName"`
+	// Private key of the provided certificate
+	PrivateKey *string `pulumi:"privateKey"`
+}
+
+// BdsInstanceOperationCertificateManagementsManagementHostCertDetailInput is an input type that accepts BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs and BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput values.
+// You can construct a concrete instance of `BdsInstanceOperationCertificateManagementsManagementHostCertDetailInput` via:
+//
+//	BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs{...}
+type BdsInstanceOperationCertificateManagementsManagementHostCertDetailInput interface {
+	pulumi.Input
+
+	ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput() BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput
+	ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailOutputWithContext(context.Context) BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput
+}
+
+type BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs struct {
+	// Certificate value in string format
+	Certificate pulumi.StringPtrInput `pulumi:"certificate"`
+	// Fully qualified domain name (FQDN) of the host
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
+	// Private key of the provided certificate
+	PrivateKey pulumi.StringPtrInput `pulumi:"privateKey"`
+}
+
+func (BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceOperationCertificateManagementsManagementHostCertDetail)(nil)).Elem()
+}
+
+func (i BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs) ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput() BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput {
+	return i.ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs) ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailOutputWithContext(ctx context.Context) BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput)
+}
+
+// BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayInput is an input type that accepts BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray and BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput values.
+// You can construct a concrete instance of `BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayInput` via:
+//
+//	BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray{ BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs{...} }
+type BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayInput interface {
+	pulumi.Input
+
+	ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput() BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput
+	ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutputWithContext(context.Context) BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput
+}
+
+type BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray []BdsInstanceOperationCertificateManagementsManagementHostCertDetailInput
+
+func (BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceOperationCertificateManagementsManagementHostCertDetail)(nil)).Elem()
+}
+
+func (i BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray) ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput() BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput {
+	return i.ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray) ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutputWithContext(ctx context.Context) BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput)
+}
+
+type BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceOperationCertificateManagementsManagementHostCertDetail)(nil)).Elem()
+}
+
+func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput) ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput() BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput {
+	return o
+}
+
+func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput) ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailOutputWithContext(ctx context.Context) BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput {
+	return o
+}
+
+// Certificate value in string format
+func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOperationCertificateManagementsManagementHostCertDetail) *string {
+		return v.Certificate
+	}).(pulumi.StringPtrOutput)
+}
+
+// Fully qualified domain name (FQDN) of the host
+func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOperationCertificateManagementsManagementHostCertDetail) *string { return v.HostName }).(pulumi.StringPtrOutput)
+}
+
+// Private key of the provided certificate
+func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput) PrivateKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOperationCertificateManagementsManagementHostCertDetail) *string {
+		return v.PrivateKey
+	}).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceOperationCertificateManagementsManagementHostCertDetail)(nil)).Elem()
+}
+
+func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput) ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput() BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput {
+	return o
+}
+
+func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput) ToBdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutputWithContext(ctx context.Context) BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput {
+	return o
+}
+
+func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput) Index(i pulumi.IntInput) BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceOperationCertificateManagementsManagementHostCertDetail {
+		return vs[0].([]BdsInstanceOperationCertificateManagementsManagementHostCertDetail)[vs[1].(int)]
+	}).(BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput)
+}
+
 type BdsInstanceUtilNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
 	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
@@ -18337,6 +18456,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeArrayInput)(nil)).Elem(), BdsInstanceNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeAttachedBlockVolumeInput)(nil)).Elem(), BdsInstanceNodeAttachedBlockVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeAttachedBlockVolumeArrayInput)(nil)).Elem(), BdsInstanceNodeAttachedBlockVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOperationCertificateManagementsManagementHostCertDetailInput)(nil)).Elem(), BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayInput)(nil)).Elem(), BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodeInput)(nil)).Elem(), BdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodePtrInput)(nil)).Elem(), BdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodeShapeConfigInput)(nil)).Elem(), BdsInstanceUtilNodeShapeConfigArgs{})
@@ -18595,6 +18716,8 @@ func init() {
 	pulumi.RegisterOutputType(BdsInstanceNodeArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceNodeAttachedBlockVolumeOutput{})
 	pulumi.RegisterOutputType(BdsInstanceNodeAttachedBlockVolumeArrayOutput{})
+	pulumi.RegisterOutputType(BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput{})
+	pulumi.RegisterOutputType(BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodeOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodePtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodeShapeConfigOutput{})

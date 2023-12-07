@@ -49,6 +49,18 @@ import com.pulumi.oci.Identity.inputs.GetDomainsAppRoleArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsAppRolePlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsAppRolesArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsAppRolesPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentsArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepsArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowsArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsAppsArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsAppsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsArgs;
@@ -60,6 +72,26 @@ import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingsArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsAuthenticationFactorSettingsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingsArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingsArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsCloudGatePlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServerArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServerPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServersArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServersPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsCloudGatesArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsCloudGatesPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsConditionArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsConditionPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsConditionsArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsConditionsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeyArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeyPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsCustomerSecretKeysArgs;
@@ -98,6 +130,10 @@ import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokenArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokenPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokensArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyAuthTokensPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalsArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeyArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeyPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyCustomerSecretKeysArgs;
@@ -112,6 +148,10 @@ import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialsArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyOauth2clientCredentialsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalsArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestableGroupsArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestableGroupsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyRequestsArgs;
@@ -132,17 +172,41 @@ import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialsArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsMyUserDbCredentialsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimeterArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimeterPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimetersArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimetersPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingsArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialsArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsOauth2clientCredentialsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificateArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificatePlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificatesArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificatesPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificateArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatePlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPoliciesArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPoliciesPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPolicyArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsPasswordPolicyPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsPoliciesArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsPoliciesPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsPolicyArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsPolicyPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsResourceTypeSchemaAttributesArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsResourceTypeSchemaAttributesPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsRuleArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsRulePlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsRulesArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsRulesPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingArgs;
@@ -151,6 +215,14 @@ import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingsArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionSettingsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionsArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsSecurityQuestionsPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfileArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfilePlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfilesArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfilesPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsSettingArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsSettingPlainArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsSettingsArgs;
+import com.pulumi.oci.Identity.inputs.GetDomainsSettingsPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialPlainArgs;
 import com.pulumi.oci.Identity.inputs.GetDomainsSmtpCredentialsArgs;
@@ -246,11 +318,27 @@ import com.pulumi.oci.Identity.outputs.GetDomainsApiKeysResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppRoleResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppRolesResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsApprovalWorkflowAssignmentResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsApprovalWorkflowAssignmentsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsApprovalWorkflowResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsApprovalWorkflowStepResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsApprovalWorkflowStepsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsApprovalWorkflowsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsAppsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsAuthTokenResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsAuthTokensResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsAuthenticationFactorSettingResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsAuthenticationFactorSettingsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsBrandingSettingResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsBrandingSettingsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsCloudGateMappingResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsCloudGateMappingsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsCloudGateResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsCloudGateServerResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsCloudGateServersResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsCloudGatesResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsConditionResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsConditionsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsCustomerSecretKeyResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsCustomerSecretKeysResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsDynamicResourceGroupResult;
@@ -270,6 +358,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsMyApiKeysResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyAppsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyAuthTokenResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyAuthTokensResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsMyCompletedApprovalResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsMyCompletedApprovalsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyCustomerSecretKeyResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyCustomerSecretKeysResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyDeviceResult;
@@ -277,6 +367,8 @@ import com.pulumi.oci.Identity.outputs.GetDomainsMyDevicesResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyGroupsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyOauth2clientCredentialResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyOauth2clientCredentialsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsMyPendingApprovalResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsMyPendingApprovalsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyRequestableGroupsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyRequestsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMySmtpCredentialResult;
@@ -287,16 +379,32 @@ import com.pulumi.oci.Identity.outputs.GetDomainsMyTrustedUserAgentResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyTrustedUserAgentsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyUserDbCredentialResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyUserDbCredentialsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsNetworkPerimeterResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsNetworkPerimetersResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsNotificationSettingResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsNotificationSettingsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsOauth2clientCredentialResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsOauth2clientCredentialsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsOauthClientCertificateResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsOauthClientCertificatesResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsOauthPartnerCertificateResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsOauthPartnerCertificatesResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsPasswordPoliciesResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsPasswordPolicyResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsPoliciesResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsPolicyResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsResourceTypeSchemaAttributesResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsRuleResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsRulesResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsSecurityQuestionResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsSecurityQuestionSettingResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsSecurityQuestionSettingsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsSecurityQuestionsResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsSelfRegistrationProfileResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsSelfRegistrationProfilesResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsSettingResult;
+import com.pulumi.oci.Identity.outputs.GetDomainsSettingsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsSmtpCredentialResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsSmtpCredentialsResult;
 import com.pulumi.oci.Identity.outputs.GetDomainsUserAttributesSettingResult;
@@ -4291,6 +4399,1086 @@ public final class IdentityFunctions {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsAppRoles:getDomainsAppRoles", TypeShape.of(GetDomainsAppRolesResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Approval Workflow resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get ApprovalWorkflow
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
+     *             .approvalWorkflowId(oci_identity_domains_approval_workflow.test_approval_workflow().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsApprovalWorkflowResult> getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs args) {
+        return getDomainsApprovalWorkflow(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Approval Workflow resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get ApprovalWorkflow
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
+     *             .approvalWorkflowId(oci_identity_domains_approval_workflow.test_approval_workflow().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsApprovalWorkflowResult> getDomainsApprovalWorkflowPlain(GetDomainsApprovalWorkflowPlainArgs args) {
+        return getDomainsApprovalWorkflowPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Approval Workflow resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get ApprovalWorkflow
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
+     *             .approvalWorkflowId(oci_identity_domains_approval_workflow.test_approval_workflow().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsApprovalWorkflowResult> getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsApprovalWorkflow:getDomainsApprovalWorkflow", TypeShape.of(GetDomainsApprovalWorkflowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Approval Workflow resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get ApprovalWorkflow
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflow = IdentityFunctions.getDomainsApprovalWorkflow(GetDomainsApprovalWorkflowArgs.builder()
+     *             .approvalWorkflowId(oci_identity_domains_approval_workflow.test_approval_workflow().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsApprovalWorkflowResult> getDomainsApprovalWorkflowPlain(GetDomainsApprovalWorkflowPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsApprovalWorkflow:getDomainsApprovalWorkflow", TypeShape.of(GetDomainsApprovalWorkflowResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an Approval Workflow Assignment
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
+     *             .approvalWorkflowAssignmentId(oci_identity_domains_approval_workflow_assignment.test_approval_workflow_assignment().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_assignment_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsApprovalWorkflowAssignmentResult> getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs args) {
+        return getDomainsApprovalWorkflowAssignment(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an Approval Workflow Assignment
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
+     *             .approvalWorkflowAssignmentId(oci_identity_domains_approval_workflow_assignment.test_approval_workflow_assignment().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_assignment_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsApprovalWorkflowAssignmentResult> getDomainsApprovalWorkflowAssignmentPlain(GetDomainsApprovalWorkflowAssignmentPlainArgs args) {
+        return getDomainsApprovalWorkflowAssignmentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an Approval Workflow Assignment
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
+     *             .approvalWorkflowAssignmentId(oci_identity_domains_approval_workflow_assignment.test_approval_workflow_assignment().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_assignment_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsApprovalWorkflowAssignmentResult> getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsApprovalWorkflowAssignment:getDomainsApprovalWorkflowAssignment", TypeShape.of(GetDomainsApprovalWorkflowAssignmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an Approval Workflow Assignment
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowAssignment = IdentityFunctions.getDomainsApprovalWorkflowAssignment(GetDomainsApprovalWorkflowAssignmentArgs.builder()
+     *             .approvalWorkflowAssignmentId(oci_identity_domains_approval_workflow_assignment.test_approval_workflow_assignment().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_assignment_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsApprovalWorkflowAssignmentResult> getDomainsApprovalWorkflowAssignmentPlain(GetDomainsApprovalWorkflowAssignmentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsApprovalWorkflowAssignment:getDomainsApprovalWorkflowAssignment", TypeShape.of(GetDomainsApprovalWorkflowAssignmentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Approval Workflow Assignments in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Approval Workflow Assignments
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowAssignmentCount(var_.approval_workflow_assignment_approval_workflow_assignment_count())
+     *             .approvalWorkflowAssignmentFilter(var_.approval_workflow_assignment_approval_workflow_assignment_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_assignment_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
+     *             .startIndex(var_.approval_workflow_assignment_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsApprovalWorkflowAssignmentsResult> getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs args) {
+        return getDomainsApprovalWorkflowAssignments(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Approval Workflow Assignments in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Approval Workflow Assignments
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowAssignmentCount(var_.approval_workflow_assignment_approval_workflow_assignment_count())
+     *             .approvalWorkflowAssignmentFilter(var_.approval_workflow_assignment_approval_workflow_assignment_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_assignment_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
+     *             .startIndex(var_.approval_workflow_assignment_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsApprovalWorkflowAssignmentsResult> getDomainsApprovalWorkflowAssignmentsPlain(GetDomainsApprovalWorkflowAssignmentsPlainArgs args) {
+        return getDomainsApprovalWorkflowAssignmentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Approval Workflow Assignments in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Approval Workflow Assignments
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowAssignmentCount(var_.approval_workflow_assignment_approval_workflow_assignment_count())
+     *             .approvalWorkflowAssignmentFilter(var_.approval_workflow_assignment_approval_workflow_assignment_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_assignment_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
+     *             .startIndex(var_.approval_workflow_assignment_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsApprovalWorkflowAssignmentsResult> getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsApprovalWorkflowAssignments:getDomainsApprovalWorkflowAssignments", TypeShape.of(GetDomainsApprovalWorkflowAssignmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Approval Workflow Assignments in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Approval Workflow Assignments
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowAssignmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowAssignments = IdentityFunctions.getDomainsApprovalWorkflowAssignments(GetDomainsApprovalWorkflowAssignmentsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowAssignmentCount(var_.approval_workflow_assignment_approval_workflow_assignment_count())
+     *             .approvalWorkflowAssignmentFilter(var_.approval_workflow_assignment_approval_workflow_assignment_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_assignment_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_assignment_resource_type_schema_version())
+     *             .startIndex(var_.approval_workflow_assignment_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsApprovalWorkflowAssignmentsResult> getDomainsApprovalWorkflowAssignmentsPlain(GetDomainsApprovalWorkflowAssignmentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsApprovalWorkflowAssignments:getDomainsApprovalWorkflowAssignments", TypeShape.of(GetDomainsApprovalWorkflowAssignmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Approval Workflow Step resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get ApprovalWorkflowStep
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
+     *             .approvalWorkflowStepId(oci_identity_domains_approval_workflow_step.test_approval_workflow_step().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_step_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsApprovalWorkflowStepResult> getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs args) {
+        return getDomainsApprovalWorkflowStep(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Approval Workflow Step resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get ApprovalWorkflowStep
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
+     *             .approvalWorkflowStepId(oci_identity_domains_approval_workflow_step.test_approval_workflow_step().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_step_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsApprovalWorkflowStepResult> getDomainsApprovalWorkflowStepPlain(GetDomainsApprovalWorkflowStepPlainArgs args) {
+        return getDomainsApprovalWorkflowStepPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Approval Workflow Step resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get ApprovalWorkflowStep
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
+     *             .approvalWorkflowStepId(oci_identity_domains_approval_workflow_step.test_approval_workflow_step().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_step_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsApprovalWorkflowStepResult> getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsApprovalWorkflowStep:getDomainsApprovalWorkflowStep", TypeShape.of(GetDomainsApprovalWorkflowStepResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Approval Workflow Step resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get ApprovalWorkflowStep
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowStep = IdentityFunctions.getDomainsApprovalWorkflowStep(GetDomainsApprovalWorkflowStepArgs.builder()
+     *             .approvalWorkflowStepId(oci_identity_domains_approval_workflow_step.test_approval_workflow_step().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_step_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsApprovalWorkflowStepResult> getDomainsApprovalWorkflowStepPlain(GetDomainsApprovalWorkflowStepPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsApprovalWorkflowStep:getDomainsApprovalWorkflowStep", TypeShape.of(GetDomainsApprovalWorkflowStepResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Approval Workflow Steps in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search ApprovalWorkflowStep
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowStepCount(var_.approval_workflow_step_approval_workflow_step_count())
+     *             .approvalWorkflowStepFilter(var_.approval_workflow_step_approval_workflow_step_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_step_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
+     *             .startIndex(var_.approval_workflow_step_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsApprovalWorkflowStepsResult> getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs args) {
+        return getDomainsApprovalWorkflowSteps(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Approval Workflow Steps in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search ApprovalWorkflowStep
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowStepCount(var_.approval_workflow_step_approval_workflow_step_count())
+     *             .approvalWorkflowStepFilter(var_.approval_workflow_step_approval_workflow_step_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_step_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
+     *             .startIndex(var_.approval_workflow_step_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsApprovalWorkflowStepsResult> getDomainsApprovalWorkflowStepsPlain(GetDomainsApprovalWorkflowStepsPlainArgs args) {
+        return getDomainsApprovalWorkflowStepsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Approval Workflow Steps in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search ApprovalWorkflowStep
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowStepCount(var_.approval_workflow_step_approval_workflow_step_count())
+     *             .approvalWorkflowStepFilter(var_.approval_workflow_step_approval_workflow_step_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_step_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
+     *             .startIndex(var_.approval_workflow_step_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsApprovalWorkflowStepsResult> getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsApprovalWorkflowSteps:getDomainsApprovalWorkflowSteps", TypeShape.of(GetDomainsApprovalWorkflowStepsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Approval Workflow Steps in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search ApprovalWorkflowStep
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowStepsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflowSteps = IdentityFunctions.getDomainsApprovalWorkflowSteps(GetDomainsApprovalWorkflowStepsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowStepCount(var_.approval_workflow_step_approval_workflow_step_count())
+     *             .approvalWorkflowStepFilter(var_.approval_workflow_step_approval_workflow_step_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_step_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_step_resource_type_schema_version())
+     *             .startIndex(var_.approval_workflow_step_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsApprovalWorkflowStepsResult> getDomainsApprovalWorkflowStepsPlain(GetDomainsApprovalWorkflowStepsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsApprovalWorkflowSteps:getDomainsApprovalWorkflowSteps", TypeShape.of(GetDomainsApprovalWorkflowStepsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Approval Workflows in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search ApprovalWorkflow
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowCount(var_.approval_workflow_approval_workflow_count())
+     *             .approvalWorkflowFilter(var_.approval_workflow_approval_workflow_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
+     *             .startIndex(var_.approval_workflow_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsApprovalWorkflowsResult> getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs args) {
+        return getDomainsApprovalWorkflows(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Approval Workflows in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search ApprovalWorkflow
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowCount(var_.approval_workflow_approval_workflow_count())
+     *             .approvalWorkflowFilter(var_.approval_workflow_approval_workflow_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
+     *             .startIndex(var_.approval_workflow_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsApprovalWorkflowsResult> getDomainsApprovalWorkflowsPlain(GetDomainsApprovalWorkflowsPlainArgs args) {
+        return getDomainsApprovalWorkflowsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Approval Workflows in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search ApprovalWorkflow
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowCount(var_.approval_workflow_approval_workflow_count())
+     *             .approvalWorkflowFilter(var_.approval_workflow_approval_workflow_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
+     *             .startIndex(var_.approval_workflow_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsApprovalWorkflowsResult> getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsApprovalWorkflows:getDomainsApprovalWorkflows", TypeShape.of(GetDomainsApprovalWorkflowsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Approval Workflows in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search ApprovalWorkflow
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsApprovalWorkflowsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApprovalWorkflows = IdentityFunctions.getDomainsApprovalWorkflows(GetDomainsApprovalWorkflowsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .approvalWorkflowCount(var_.approval_workflow_approval_workflow_count())
+     *             .approvalWorkflowFilter(var_.approval_workflow_approval_workflow_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.approval_workflow_authorization())
+     *             .resourceTypeSchemaVersion(var_.approval_workflow_resource_type_schema_version())
+     *             .startIndex(var_.approval_workflow_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsApprovalWorkflowsResult> getDomainsApprovalWorkflowsPlain(GetDomainsApprovalWorkflowsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsApprovalWorkflows:getDomainsApprovalWorkflows", TypeShape.of(GetDomainsApprovalWorkflowsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Apps in Oracle Cloud Infrastructure Identity Domains service.
      * 
      * Search Apps
@@ -5181,6 +6369,1794 @@ public final class IdentityFunctions {
      */
     public static CompletableFuture<GetDomainsAuthenticationFactorSettingsResult> getDomainsAuthenticationFactorSettingsPlain(GetDomainsAuthenticationFactorSettingsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsAuthenticationFactorSettings:getDomainsAuthenticationFactorSettings", TypeShape.of(GetDomainsAuthenticationFactorSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Branding Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Branding Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
+     *             .brandingSettingId(&#34;BrandingSettings&#34;)
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.branding_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsBrandingSettingResult> getDomainsBrandingSetting(GetDomainsBrandingSettingArgs args) {
+        return getDomainsBrandingSetting(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Branding Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Branding Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
+     *             .brandingSettingId(&#34;BrandingSettings&#34;)
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.branding_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsBrandingSettingResult> getDomainsBrandingSettingPlain(GetDomainsBrandingSettingPlainArgs args) {
+        return getDomainsBrandingSettingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Branding Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Branding Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
+     *             .brandingSettingId(&#34;BrandingSettings&#34;)
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.branding_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsBrandingSettingResult> getDomainsBrandingSetting(GetDomainsBrandingSettingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsBrandingSetting:getDomainsBrandingSetting", TypeShape.of(GetDomainsBrandingSettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Branding Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Branding Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBrandingSetting = IdentityFunctions.getDomainsBrandingSetting(GetDomainsBrandingSettingArgs.builder()
+     *             .brandingSettingId(&#34;BrandingSettings&#34;)
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.branding_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsBrandingSettingResult> getDomainsBrandingSettingPlain(GetDomainsBrandingSettingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsBrandingSetting:getDomainsBrandingSetting", TypeShape.of(GetDomainsBrandingSettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Branding Settings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Branding Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.branding_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsBrandingSettingsResult> getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs args) {
+        return getDomainsBrandingSettings(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Branding Settings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Branding Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.branding_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsBrandingSettingsResult> getDomainsBrandingSettingsPlain(GetDomainsBrandingSettingsPlainArgs args) {
+        return getDomainsBrandingSettingsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Branding Settings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Branding Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.branding_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsBrandingSettingsResult> getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsBrandingSettings:getDomainsBrandingSettings", TypeShape.of(GetDomainsBrandingSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Branding Settings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Branding Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsBrandingSettingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBrandingSettings = IdentityFunctions.getDomainsBrandingSettings(GetDomainsBrandingSettingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.branding_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.branding_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsBrandingSettingsResult> getDomainsBrandingSettingsPlain(GetDomainsBrandingSettingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsBrandingSettings:getDomainsBrandingSettings", TypeShape.of(GetDomainsBrandingSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Gate resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Cloud Gate
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
+     *             .cloudGateId(oci_identity_domains_cloud_gate.test_cloud_gate().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsCloudGateResult> getDomainsCloudGate(GetDomainsCloudGateArgs args) {
+        return getDomainsCloudGate(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Gate resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Cloud Gate
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
+     *             .cloudGateId(oci_identity_domains_cloud_gate.test_cloud_gate().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsCloudGateResult> getDomainsCloudGatePlain(GetDomainsCloudGatePlainArgs args) {
+        return getDomainsCloudGatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Gate resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Cloud Gate
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
+     *             .cloudGateId(oci_identity_domains_cloud_gate.test_cloud_gate().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsCloudGateResult> getDomainsCloudGate(GetDomainsCloudGateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsCloudGate:getDomainsCloudGate", TypeShape.of(GetDomainsCloudGateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Gate resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Cloud Gate
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGate = IdentityFunctions.getDomainsCloudGate(GetDomainsCloudGateArgs.builder()
+     *             .cloudGateId(oci_identity_domains_cloud_gate.test_cloud_gate().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsCloudGateResult> getDomainsCloudGatePlain(GetDomainsCloudGatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsCloudGate:getDomainsCloudGate", TypeShape.of(GetDomainsCloudGateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Cloud Gate mapping
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
+     *             .cloudGateMappingId(oci_identity_domains_cloud_gate_mapping.test_cloud_gate_mapping().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_mapping_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsCloudGateMappingResult> getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs args) {
+        return getDomainsCloudGateMapping(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Cloud Gate mapping
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
+     *             .cloudGateMappingId(oci_identity_domains_cloud_gate_mapping.test_cloud_gate_mapping().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_mapping_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsCloudGateMappingResult> getDomainsCloudGateMappingPlain(GetDomainsCloudGateMappingPlainArgs args) {
+        return getDomainsCloudGateMappingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Cloud Gate mapping
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
+     *             .cloudGateMappingId(oci_identity_domains_cloud_gate_mapping.test_cloud_gate_mapping().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_mapping_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsCloudGateMappingResult> getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsCloudGateMapping:getDomainsCloudGateMapping", TypeShape.of(GetDomainsCloudGateMappingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Cloud Gate mapping
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateMapping = IdentityFunctions.getDomainsCloudGateMapping(GetDomainsCloudGateMappingArgs.builder()
+     *             .cloudGateMappingId(oci_identity_domains_cloud_gate_mapping.test_cloud_gate_mapping().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_mapping_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsCloudGateMappingResult> getDomainsCloudGateMappingPlain(GetDomainsCloudGateMappingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsCloudGateMapping:getDomainsCloudGateMapping", TypeShape.of(GetDomainsCloudGateMappingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Gate Mappings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Cloud Gate mappings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateMappingCount(var_.cloud_gate_mapping_cloud_gate_mapping_count())
+     *             .cloudGateMappingFilter(var_.cloud_gate_mapping_cloud_gate_mapping_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_mapping_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
+     *             .startIndex(var_.cloud_gate_mapping_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsCloudGateMappingsResult> getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs args) {
+        return getDomainsCloudGateMappings(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Gate Mappings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Cloud Gate mappings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateMappingCount(var_.cloud_gate_mapping_cloud_gate_mapping_count())
+     *             .cloudGateMappingFilter(var_.cloud_gate_mapping_cloud_gate_mapping_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_mapping_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
+     *             .startIndex(var_.cloud_gate_mapping_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsCloudGateMappingsResult> getDomainsCloudGateMappingsPlain(GetDomainsCloudGateMappingsPlainArgs args) {
+        return getDomainsCloudGateMappingsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Gate Mappings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Cloud Gate mappings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateMappingCount(var_.cloud_gate_mapping_cloud_gate_mapping_count())
+     *             .cloudGateMappingFilter(var_.cloud_gate_mapping_cloud_gate_mapping_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_mapping_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
+     *             .startIndex(var_.cloud_gate_mapping_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsCloudGateMappingsResult> getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsCloudGateMappings:getDomainsCloudGateMappings", TypeShape.of(GetDomainsCloudGateMappingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Gate Mappings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Cloud Gate mappings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateMappingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateMappings = IdentityFunctions.getDomainsCloudGateMappings(GetDomainsCloudGateMappingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateMappingCount(var_.cloud_gate_mapping_cloud_gate_mapping_count())
+     *             .cloudGateMappingFilter(var_.cloud_gate_mapping_cloud_gate_mapping_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_mapping_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_mapping_resource_type_schema_version())
+     *             .startIndex(var_.cloud_gate_mapping_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsCloudGateMappingsResult> getDomainsCloudGateMappingsPlain(GetDomainsCloudGateMappingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsCloudGateMappings:getDomainsCloudGateMappings", TypeShape.of(GetDomainsCloudGateMappingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Gate Server resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Cloud Gate server
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
+     *             .cloudGateServerId(oci_identity_domains_cloud_gate_server.test_cloud_gate_server().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_server_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsCloudGateServerResult> getDomainsCloudGateServer(GetDomainsCloudGateServerArgs args) {
+        return getDomainsCloudGateServer(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Gate Server resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Cloud Gate server
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
+     *             .cloudGateServerId(oci_identity_domains_cloud_gate_server.test_cloud_gate_server().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_server_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsCloudGateServerResult> getDomainsCloudGateServerPlain(GetDomainsCloudGateServerPlainArgs args) {
+        return getDomainsCloudGateServerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Gate Server resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Cloud Gate server
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
+     *             .cloudGateServerId(oci_identity_domains_cloud_gate_server.test_cloud_gate_server().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_server_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsCloudGateServerResult> getDomainsCloudGateServer(GetDomainsCloudGateServerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsCloudGateServer:getDomainsCloudGateServer", TypeShape.of(GetDomainsCloudGateServerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Gate Server resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Cloud Gate server
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateServer = IdentityFunctions.getDomainsCloudGateServer(GetDomainsCloudGateServerArgs.builder()
+     *             .cloudGateServerId(oci_identity_domains_cloud_gate_server.test_cloud_gate_server().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_server_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsCloudGateServerResult> getDomainsCloudGateServerPlain(GetDomainsCloudGateServerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsCloudGateServer:getDomainsCloudGateServer", TypeShape.of(GetDomainsCloudGateServerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Gate Servers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Cloud Gate servers
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateServerCount(var_.cloud_gate_server_cloud_gate_server_count())
+     *             .cloudGateServerFilter(var_.cloud_gate_server_cloud_gate_server_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_server_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
+     *             .startIndex(var_.cloud_gate_server_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsCloudGateServersResult> getDomainsCloudGateServers(GetDomainsCloudGateServersArgs args) {
+        return getDomainsCloudGateServers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Gate Servers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Cloud Gate servers
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateServerCount(var_.cloud_gate_server_cloud_gate_server_count())
+     *             .cloudGateServerFilter(var_.cloud_gate_server_cloud_gate_server_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_server_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
+     *             .startIndex(var_.cloud_gate_server_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsCloudGateServersResult> getDomainsCloudGateServersPlain(GetDomainsCloudGateServersPlainArgs args) {
+        return getDomainsCloudGateServersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Gate Servers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Cloud Gate servers
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateServerCount(var_.cloud_gate_server_cloud_gate_server_count())
+     *             .cloudGateServerFilter(var_.cloud_gate_server_cloud_gate_server_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_server_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
+     *             .startIndex(var_.cloud_gate_server_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsCloudGateServersResult> getDomainsCloudGateServers(GetDomainsCloudGateServersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsCloudGateServers:getDomainsCloudGateServers", TypeShape.of(GetDomainsCloudGateServersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Gate Servers in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Cloud Gate servers
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGateServersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGateServers = IdentityFunctions.getDomainsCloudGateServers(GetDomainsCloudGateServersArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateServerCount(var_.cloud_gate_server_cloud_gate_server_count())
+     *             .cloudGateServerFilter(var_.cloud_gate_server_cloud_gate_server_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_server_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_server_resource_type_schema_version())
+     *             .startIndex(var_.cloud_gate_server_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsCloudGateServersResult> getDomainsCloudGateServersPlain(GetDomainsCloudGateServersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsCloudGateServers:getDomainsCloudGateServers", TypeShape.of(GetDomainsCloudGateServersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Gates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Cloud Gates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateCount(var_.cloud_gate_cloud_gate_count())
+     *             .cloudGateFilter(var_.cloud_gate_cloud_gate_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+     *             .startIndex(var_.cloud_gate_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsCloudGatesResult> getDomainsCloudGates(GetDomainsCloudGatesArgs args) {
+        return getDomainsCloudGates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Gates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Cloud Gates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateCount(var_.cloud_gate_cloud_gate_count())
+     *             .cloudGateFilter(var_.cloud_gate_cloud_gate_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+     *             .startIndex(var_.cloud_gate_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsCloudGatesResult> getDomainsCloudGatesPlain(GetDomainsCloudGatesPlainArgs args) {
+        return getDomainsCloudGatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Gates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Cloud Gates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateCount(var_.cloud_gate_cloud_gate_count())
+     *             .cloudGateFilter(var_.cloud_gate_cloud_gate_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+     *             .startIndex(var_.cloud_gate_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsCloudGatesResult> getDomainsCloudGates(GetDomainsCloudGatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsCloudGates:getDomainsCloudGates", TypeShape.of(GetDomainsCloudGatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Gates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Cloud Gates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsCloudGatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudGates = IdentityFunctions.getDomainsCloudGates(GetDomainsCloudGatesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .cloudGateCount(var_.cloud_gate_cloud_gate_count())
+     *             .cloudGateFilter(var_.cloud_gate_cloud_gate_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.cloud_gate_authorization())
+     *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+     *             .startIndex(var_.cloud_gate_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsCloudGatesResult> getDomainsCloudGatesPlain(GetDomainsCloudGatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsCloudGates:getDomainsCloudGates", TypeShape.of(GetDomainsCloudGatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Condition
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsConditionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
+     *             .conditionId(oci_identity_domains_condition.test_condition().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.condition_authorization())
+     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsConditionResult> getDomainsCondition(GetDomainsConditionArgs args) {
+        return getDomainsCondition(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Condition
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsConditionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
+     *             .conditionId(oci_identity_domains_condition.test_condition().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.condition_authorization())
+     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsConditionResult> getDomainsConditionPlain(GetDomainsConditionPlainArgs args) {
+        return getDomainsConditionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Condition
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsConditionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
+     *             .conditionId(oci_identity_domains_condition.test_condition().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.condition_authorization())
+     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsConditionResult> getDomainsCondition(GetDomainsConditionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsCondition:getDomainsCondition", TypeShape.of(GetDomainsConditionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Condition resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Condition
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsConditionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCondition = IdentityFunctions.getDomainsCondition(GetDomainsConditionArgs.builder()
+     *             .conditionId(oci_identity_domains_condition.test_condition().id())
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.condition_authorization())
+     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsConditionResult> getDomainsConditionPlain(GetDomainsConditionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsCondition:getDomainsCondition", TypeShape.of(GetDomainsConditionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Conditions
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsConditionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .conditionCount(var_.condition_condition_count())
+     *             .conditionFilter(var_.condition_condition_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.condition_authorization())
+     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
+     *             .startIndex(var_.condition_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsConditionsResult> getDomainsConditions(GetDomainsConditionsArgs args) {
+        return getDomainsConditions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Conditions
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsConditionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .conditionCount(var_.condition_condition_count())
+     *             .conditionFilter(var_.condition_condition_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.condition_authorization())
+     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
+     *             .startIndex(var_.condition_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsConditionsResult> getDomainsConditionsPlain(GetDomainsConditionsPlainArgs args) {
+        return getDomainsConditionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Conditions
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsConditionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .conditionCount(var_.condition_condition_count())
+     *             .conditionFilter(var_.condition_condition_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.condition_authorization())
+     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
+     *             .startIndex(var_.condition_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsConditionsResult> getDomainsConditions(GetDomainsConditionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsConditions:getDomainsConditions", TypeShape.of(GetDomainsConditionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Conditions in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Conditions
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsConditionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConditions = IdentityFunctions.getDomainsConditions(GetDomainsConditionsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .conditionCount(var_.condition_condition_count())
+     *             .conditionFilter(var_.condition_condition_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.condition_authorization())
+     *             .resourceTypeSchemaVersion(var_.condition_resource_type_schema_version())
+     *             .startIndex(var_.condition_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsConditionsResult> getDomainsConditionsPlain(GetDomainsConditionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsConditions:getDomainsConditions", TypeShape.of(GetDomainsConditionsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -8543,6 +11519,350 @@ public final class IdentityFunctions {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsMyAuthTokens:getDomainsMyAuthTokens", TypeShape.of(GetDomainsMyAuthTokensResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific My Completed Approval resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get My MyCompletedApproval
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myCompletedApprovalId(oci_identity_domains_my_completed_approval.test_my_completed_approval().id())
+     *             .authorization(var_.my_completed_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsMyCompletedApprovalResult> getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs args) {
+        return getDomainsMyCompletedApproval(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific My Completed Approval resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get My MyCompletedApproval
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myCompletedApprovalId(oci_identity_domains_my_completed_approval.test_my_completed_approval().id())
+     *             .authorization(var_.my_completed_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsMyCompletedApprovalResult> getDomainsMyCompletedApprovalPlain(GetDomainsMyCompletedApprovalPlainArgs args) {
+        return getDomainsMyCompletedApprovalPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific My Completed Approval resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get My MyCompletedApproval
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myCompletedApprovalId(oci_identity_domains_my_completed_approval.test_my_completed_approval().id())
+     *             .authorization(var_.my_completed_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsMyCompletedApprovalResult> getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsMyCompletedApproval:getDomainsMyCompletedApproval", TypeShape.of(GetDomainsMyCompletedApprovalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific My Completed Approval resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get My MyCompletedApproval
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyCompletedApproval = IdentityFunctions.getDomainsMyCompletedApproval(GetDomainsMyCompletedApprovalArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myCompletedApprovalId(oci_identity_domains_my_completed_approval.test_my_completed_approval().id())
+     *             .authorization(var_.my_completed_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsMyCompletedApprovalResult> getDomainsMyCompletedApprovalPlain(GetDomainsMyCompletedApprovalPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsMyCompletedApproval:getDomainsMyCompletedApproval", TypeShape.of(GetDomainsMyCompletedApprovalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of My Completed Approvals in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search My MyCompletedApproval
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myCompletedApprovalCount(var_.my_completed_approval_my_completed_approval_count())
+     *             .myCompletedApprovalFilter(var_.my_completed_approval_my_completed_approval_filter())
+     *             .authorization(var_.my_completed_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
+     *             .startIndex(var_.my_completed_approval_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsMyCompletedApprovalsResult> getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs args) {
+        return getDomainsMyCompletedApprovals(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of My Completed Approvals in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search My MyCompletedApproval
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myCompletedApprovalCount(var_.my_completed_approval_my_completed_approval_count())
+     *             .myCompletedApprovalFilter(var_.my_completed_approval_my_completed_approval_filter())
+     *             .authorization(var_.my_completed_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
+     *             .startIndex(var_.my_completed_approval_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsMyCompletedApprovalsResult> getDomainsMyCompletedApprovalsPlain(GetDomainsMyCompletedApprovalsPlainArgs args) {
+        return getDomainsMyCompletedApprovalsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of My Completed Approvals in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search My MyCompletedApproval
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myCompletedApprovalCount(var_.my_completed_approval_my_completed_approval_count())
+     *             .myCompletedApprovalFilter(var_.my_completed_approval_my_completed_approval_filter())
+     *             .authorization(var_.my_completed_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
+     *             .startIndex(var_.my_completed_approval_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsMyCompletedApprovalsResult> getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsMyCompletedApprovals:getDomainsMyCompletedApprovals", TypeShape.of(GetDomainsMyCompletedApprovalsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of My Completed Approvals in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search My MyCompletedApproval
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyCompletedApprovalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyCompletedApprovals = IdentityFunctions.getDomainsMyCompletedApprovals(GetDomainsMyCompletedApprovalsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myCompletedApprovalCount(var_.my_completed_approval_my_completed_approval_count())
+     *             .myCompletedApprovalFilter(var_.my_completed_approval_my_completed_approval_filter())
+     *             .authorization(var_.my_completed_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_completed_approval_resource_type_schema_version())
+     *             .startIndex(var_.my_completed_approval_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsMyCompletedApprovalsResult> getDomainsMyCompletedApprovalsPlain(GetDomainsMyCompletedApprovalsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsMyCompletedApprovals:getDomainsMyCompletedApprovals", TypeShape.of(GetDomainsMyCompletedApprovalsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
      * Get a user&#39;s own customer secret key.
@@ -9775,6 +13095,350 @@ public final class IdentityFunctions {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsMyOauth2clientCredentials:getDomainsMyOauth2clientCredentials", TypeShape.of(GetDomainsMyOauth2clientCredentialsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific My Pending Approval resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get My MyPendingApproval
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myPendingApprovalId(oci_identity_domains_my_pending_approval.test_my_pending_approval().id())
+     *             .authorization(var_.my_pending_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsMyPendingApprovalResult> getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs args) {
+        return getDomainsMyPendingApproval(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific My Pending Approval resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get My MyPendingApproval
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myPendingApprovalId(oci_identity_domains_my_pending_approval.test_my_pending_approval().id())
+     *             .authorization(var_.my_pending_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsMyPendingApprovalResult> getDomainsMyPendingApprovalPlain(GetDomainsMyPendingApprovalPlainArgs args) {
+        return getDomainsMyPendingApprovalPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific My Pending Approval resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get My MyPendingApproval
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myPendingApprovalId(oci_identity_domains_my_pending_approval.test_my_pending_approval().id())
+     *             .authorization(var_.my_pending_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsMyPendingApprovalResult> getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsMyPendingApproval:getDomainsMyPendingApproval", TypeShape.of(GetDomainsMyPendingApprovalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific My Pending Approval resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get My MyPendingApproval
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyPendingApproval = IdentityFunctions.getDomainsMyPendingApproval(GetDomainsMyPendingApprovalArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myPendingApprovalId(oci_identity_domains_my_pending_approval.test_my_pending_approval().id())
+     *             .authorization(var_.my_pending_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsMyPendingApprovalResult> getDomainsMyPendingApprovalPlain(GetDomainsMyPendingApprovalPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsMyPendingApproval:getDomainsMyPendingApproval", TypeShape.of(GetDomainsMyPendingApprovalResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of My Pending Approvals in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search My Approvals
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myPendingApprovalCount(var_.my_pending_approval_my_pending_approval_count())
+     *             .myPendingApprovalFilter(var_.my_pending_approval_my_pending_approval_filter())
+     *             .authorization(var_.my_pending_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
+     *             .startIndex(var_.my_pending_approval_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsMyPendingApprovalsResult> getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs args) {
+        return getDomainsMyPendingApprovals(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of My Pending Approvals in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search My Approvals
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myPendingApprovalCount(var_.my_pending_approval_my_pending_approval_count())
+     *             .myPendingApprovalFilter(var_.my_pending_approval_my_pending_approval_filter())
+     *             .authorization(var_.my_pending_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
+     *             .startIndex(var_.my_pending_approval_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsMyPendingApprovalsResult> getDomainsMyPendingApprovalsPlain(GetDomainsMyPendingApprovalsPlainArgs args) {
+        return getDomainsMyPendingApprovalsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of My Pending Approvals in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search My Approvals
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myPendingApprovalCount(var_.my_pending_approval_my_pending_approval_count())
+     *             .myPendingApprovalFilter(var_.my_pending_approval_my_pending_approval_filter())
+     *             .authorization(var_.my_pending_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
+     *             .startIndex(var_.my_pending_approval_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsMyPendingApprovalsResult> getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsMyPendingApprovals:getDomainsMyPendingApprovals", TypeShape.of(GetDomainsMyPendingApprovalsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of My Pending Approvals in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search My Approvals
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsMyPendingApprovalsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMyPendingApprovals = IdentityFunctions.getDomainsMyPendingApprovals(GetDomainsMyPendingApprovalsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .myPendingApprovalCount(var_.my_pending_approval_my_pending_approval_count())
+     *             .myPendingApprovalFilter(var_.my_pending_approval_my_pending_approval_filter())
+     *             .authorization(var_.my_pending_approval_authorization())
+     *             .resourceTypeSchemaVersion(var_.my_pending_approval_resource_type_schema_version())
+     *             .startIndex(var_.my_pending_approval_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsMyPendingApprovalsResult> getDomainsMyPendingApprovalsPlain(GetDomainsMyPendingApprovalsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsMyPendingApprovals:getDomainsMyPendingApprovals", TypeShape.of(GetDomainsMyPendingApprovalsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of My Requestable Groups in Oracle Cloud Infrastructure Identity Domains service.
      * 
      * Search My Requestable Groups
@@ -9981,7 +13645,7 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
      *             .myRequestCount(var_.my_request_my_request_count())
      *             .myRequestFilter(var_.my_request_my_request_filter())
-     *             .attributeSets(&#34;all&#34;)
+     *             .attributeSets()
      *             .attributes(&#34;&#34;)
      *             .authorization(var_.my_request_authorization())
      *             .resourceTypeSchemaVersion(var_.my_request_resource_type_schema_version())
@@ -10027,7 +13691,7 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
      *             .myRequestCount(var_.my_request_my_request_count())
      *             .myRequestFilter(var_.my_request_my_request_filter())
-     *             .attributeSets(&#34;all&#34;)
+     *             .attributeSets()
      *             .attributes(&#34;&#34;)
      *             .authorization(var_.my_request_authorization())
      *             .resourceTypeSchemaVersion(var_.my_request_resource_type_schema_version())
@@ -10073,7 +13737,7 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
      *             .myRequestCount(var_.my_request_my_request_count())
      *             .myRequestFilter(var_.my_request_my_request_filter())
-     *             .attributeSets(&#34;all&#34;)
+     *             .attributeSets()
      *             .attributes(&#34;&#34;)
      *             .authorization(var_.my_request_authorization())
      *             .resourceTypeSchemaVersion(var_.my_request_resource_type_schema_version())
@@ -10119,7 +13783,7 @@ public final class IdentityFunctions {
      *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
      *             .myRequestCount(var_.my_request_my_request_count())
      *             .myRequestFilter(var_.my_request_my_request_filter())
-     *             .attributeSets(&#34;all&#34;)
+     *             .attributeSets()
      *             .attributes(&#34;&#34;)
      *             .authorization(var_.my_request_authorization())
      *             .resourceTypeSchemaVersion(var_.my_request_resource_type_schema_version())
@@ -11527,6 +15191,714 @@ public final class IdentityFunctions {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsMyUserDbCredentials:getDomainsMyUserDbCredentials", TypeShape.of(GetDomainsMyUserDbCredentialsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a NetworkPerimeter
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimeterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .networkPerimeterId(oci_identity_domains_network_perimeter.test_network_perimeter().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.network_perimeter_authorization())
+     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsNetworkPerimeterResult> getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs args) {
+        return getDomainsNetworkPerimeter(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a NetworkPerimeter
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimeterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .networkPerimeterId(oci_identity_domains_network_perimeter.test_network_perimeter().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.network_perimeter_authorization())
+     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsNetworkPerimeterResult> getDomainsNetworkPerimeterPlain(GetDomainsNetworkPerimeterPlainArgs args) {
+        return getDomainsNetworkPerimeterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a NetworkPerimeter
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimeterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .networkPerimeterId(oci_identity_domains_network_perimeter.test_network_perimeter().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.network_perimeter_authorization())
+     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsNetworkPerimeterResult> getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsNetworkPerimeter:getDomainsNetworkPerimeter", TypeShape.of(GetDomainsNetworkPerimeterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a NetworkPerimeter
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimeterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkPerimeter = IdentityFunctions.getDomainsNetworkPerimeter(GetDomainsNetworkPerimeterArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .networkPerimeterId(oci_identity_domains_network_perimeter.test_network_perimeter().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.network_perimeter_authorization())
+     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsNetworkPerimeterResult> getDomainsNetworkPerimeterPlain(GetDomainsNetworkPerimeterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsNetworkPerimeter:getDomainsNetworkPerimeter", TypeShape.of(GetDomainsNetworkPerimeterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Perimeters in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search NetworkPerimeters
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimetersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .networkPerimeterCount(var_.network_perimeter_network_perimeter_count())
+     *             .networkPerimeterFilter(var_.network_perimeter_network_perimeter_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.network_perimeter_authorization())
+     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
+     *             .startIndex(var_.network_perimeter_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsNetworkPerimetersResult> getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs args) {
+        return getDomainsNetworkPerimeters(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Perimeters in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search NetworkPerimeters
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimetersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .networkPerimeterCount(var_.network_perimeter_network_perimeter_count())
+     *             .networkPerimeterFilter(var_.network_perimeter_network_perimeter_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.network_perimeter_authorization())
+     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
+     *             .startIndex(var_.network_perimeter_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsNetworkPerimetersResult> getDomainsNetworkPerimetersPlain(GetDomainsNetworkPerimetersPlainArgs args) {
+        return getDomainsNetworkPerimetersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Network Perimeters in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search NetworkPerimeters
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimetersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .networkPerimeterCount(var_.network_perimeter_network_perimeter_count())
+     *             .networkPerimeterFilter(var_.network_perimeter_network_perimeter_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.network_perimeter_authorization())
+     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
+     *             .startIndex(var_.network_perimeter_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsNetworkPerimetersResult> getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsNetworkPerimeters:getDomainsNetworkPerimeters", TypeShape.of(GetDomainsNetworkPerimetersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Network Perimeters in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search NetworkPerimeters
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNetworkPerimetersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkPerimeters = IdentityFunctions.getDomainsNetworkPerimeters(GetDomainsNetworkPerimetersArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .networkPerimeterCount(var_.network_perimeter_network_perimeter_count())
+     *             .networkPerimeterFilter(var_.network_perimeter_network_perimeter_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.network_perimeter_authorization())
+     *             .resourceTypeSchemaVersion(var_.network_perimeter_resource_type_schema_version())
+     *             .startIndex(var_.network_perimeter_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsNetworkPerimetersResult> getDomainsNetworkPerimetersPlain(GetDomainsNetworkPerimetersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsNetworkPerimeters:getDomainsNetworkPerimeters", TypeShape.of(GetDomainsNetworkPerimetersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Notification Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Notification Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .notificationSettingId(oci_identity_domains_notification_setting.test_notification_setting().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.notification_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsNotificationSettingResult> getDomainsNotificationSetting(GetDomainsNotificationSettingArgs args) {
+        return getDomainsNotificationSetting(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Notification Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Notification Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .notificationSettingId(oci_identity_domains_notification_setting.test_notification_setting().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.notification_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsNotificationSettingResult> getDomainsNotificationSettingPlain(GetDomainsNotificationSettingPlainArgs args) {
+        return getDomainsNotificationSettingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Notification Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Notification Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .notificationSettingId(oci_identity_domains_notification_setting.test_notification_setting().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.notification_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsNotificationSettingResult> getDomainsNotificationSetting(GetDomainsNotificationSettingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsNotificationSetting:getDomainsNotificationSetting", TypeShape.of(GetDomainsNotificationSettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Notification Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Notification Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationSetting = IdentityFunctions.getDomainsNotificationSetting(GetDomainsNotificationSettingArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .notificationSettingId(oci_identity_domains_notification_setting.test_notification_setting().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.notification_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsNotificationSettingResult> getDomainsNotificationSettingPlain(GetDomainsNotificationSettingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsNotificationSetting:getDomainsNotificationSetting", TypeShape.of(GetDomainsNotificationSettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Notification Settings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Notification Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.notification_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsNotificationSettingsResult> getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs args) {
+        return getDomainsNotificationSettings(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Notification Settings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Notification Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.notification_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsNotificationSettingsResult> getDomainsNotificationSettingsPlain(GetDomainsNotificationSettingsPlainArgs args) {
+        return getDomainsNotificationSettingsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Notification Settings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Notification Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.notification_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsNotificationSettingsResult> getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsNotificationSettings:getDomainsNotificationSettings", TypeShape.of(GetDomainsNotificationSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Notification Settings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Notification Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsNotificationSettingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNotificationSettings = IdentityFunctions.getDomainsNotificationSettings(GetDomainsNotificationSettingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.notification_setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.notification_setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsNotificationSettingsResult> getDomainsNotificationSettingsPlain(GetDomainsNotificationSettingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsNotificationSettings:getDomainsNotificationSettings", TypeShape.of(GetDomainsNotificationSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
      * 
      * Get a user&#39;s OAuth2 client credentials.
@@ -11885,6 +16257,694 @@ public final class IdentityFunctions {
      */
     public static CompletableFuture<GetDomainsOauth2clientCredentialsResult> getDomainsOauth2clientCredentialsPlain(GetDomainsOauth2clientCredentialsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsOauth2clientCredentials:getDomainsOauth2clientCredentials", TypeShape.of(GetDomainsOauth2clientCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific O Auth Client Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get OAuth Client Certificates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oAuthClientCertificateId(oci_apigateway_certificate.test_certificate().id())
+     *             .authorization(var_.oauth_client_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsOauthClientCertificateResult> getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs args) {
+        return getDomainsOauthClientCertificate(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific O Auth Client Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get OAuth Client Certificates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oAuthClientCertificateId(oci_apigateway_certificate.test_certificate().id())
+     *             .authorization(var_.oauth_client_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsOauthClientCertificateResult> getDomainsOauthClientCertificatePlain(GetDomainsOauthClientCertificatePlainArgs args) {
+        return getDomainsOauthClientCertificatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific O Auth Client Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get OAuth Client Certificates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oAuthClientCertificateId(oci_apigateway_certificate.test_certificate().id())
+     *             .authorization(var_.oauth_client_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsOauthClientCertificateResult> getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsOauthClientCertificate:getDomainsOauthClientCertificate", TypeShape.of(GetDomainsOauthClientCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific O Auth Client Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get OAuth Client Certificates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthClientCertificate = IdentityFunctions.getDomainsOauthClientCertificate(GetDomainsOauthClientCertificateArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oAuthClientCertificateId(oci_apigateway_certificate.test_certificate().id())
+     *             .authorization(var_.oauth_client_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsOauthClientCertificateResult> getDomainsOauthClientCertificatePlain(GetDomainsOauthClientCertificatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsOauthClientCertificate:getDomainsOauthClientCertificate", TypeShape.of(GetDomainsOauthClientCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of O Auth Client Certificates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search OAuth Client Certificates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oauthClientCertificateCount(var_.oauth_client_certificate_oauth_client_certificate_count())
+     *             .oauthClientCertificateFilter(var_.oauth_client_certificate_oauth_client_certificate_filter())
+     *             .authorization(var_.oauth_client_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+     *             .startIndex(var_.oauth_client_certificate_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsOauthClientCertificatesResult> getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs args) {
+        return getDomainsOauthClientCertificates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of O Auth Client Certificates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search OAuth Client Certificates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oauthClientCertificateCount(var_.oauth_client_certificate_oauth_client_certificate_count())
+     *             .oauthClientCertificateFilter(var_.oauth_client_certificate_oauth_client_certificate_filter())
+     *             .authorization(var_.oauth_client_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+     *             .startIndex(var_.oauth_client_certificate_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsOauthClientCertificatesResult> getDomainsOauthClientCertificatesPlain(GetDomainsOauthClientCertificatesPlainArgs args) {
+        return getDomainsOauthClientCertificatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of O Auth Client Certificates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search OAuth Client Certificates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oauthClientCertificateCount(var_.oauth_client_certificate_oauth_client_certificate_count())
+     *             .oauthClientCertificateFilter(var_.oauth_client_certificate_oauth_client_certificate_filter())
+     *             .authorization(var_.oauth_client_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+     *             .startIndex(var_.oauth_client_certificate_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsOauthClientCertificatesResult> getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsOauthClientCertificates:getDomainsOauthClientCertificates", TypeShape.of(GetDomainsOauthClientCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of O Auth Client Certificates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search OAuth Client Certificates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthClientCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthClientCertificates = IdentityFunctions.getDomainsOauthClientCertificates(GetDomainsOauthClientCertificatesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oauthClientCertificateCount(var_.oauth_client_certificate_oauth_client_certificate_count())
+     *             .oauthClientCertificateFilter(var_.oauth_client_certificate_oauth_client_certificate_filter())
+     *             .authorization(var_.oauth_client_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_client_certificate_resource_type_schema_version())
+     *             .startIndex(var_.oauth_client_certificate_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsOauthClientCertificatesResult> getDomainsOauthClientCertificatesPlain(GetDomainsOauthClientCertificatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsOauthClientCertificates:getDomainsOauthClientCertificates", TypeShape.of(GetDomainsOauthClientCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific O Auth Partner Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an OAuth Partner Certificate
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oAuthPartnerCertificateId(oci_identity_domains_oauth_partner_certificate.test_oauth_partner_certificate().id())
+     *             .authorization(var_.oauth_partner_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsOauthPartnerCertificateResult> getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs args) {
+        return getDomainsOauthPartnerCertificate(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific O Auth Partner Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an OAuth Partner Certificate
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oAuthPartnerCertificateId(oci_identity_domains_oauth_partner_certificate.test_oauth_partner_certificate().id())
+     *             .authorization(var_.oauth_partner_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsOauthPartnerCertificateResult> getDomainsOauthPartnerCertificatePlain(GetDomainsOauthPartnerCertificatePlainArgs args) {
+        return getDomainsOauthPartnerCertificatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific O Auth Partner Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an OAuth Partner Certificate
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oAuthPartnerCertificateId(oci_identity_domains_oauth_partner_certificate.test_oauth_partner_certificate().id())
+     *             .authorization(var_.oauth_partner_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsOauthPartnerCertificateResult> getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsOauthPartnerCertificate:getDomainsOauthPartnerCertificate", TypeShape.of(GetDomainsOauthPartnerCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific O Auth Partner Certificate resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get an OAuth Partner Certificate
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthPartnerCertificate = IdentityFunctions.getDomainsOauthPartnerCertificate(GetDomainsOauthPartnerCertificateArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oAuthPartnerCertificateId(oci_identity_domains_oauth_partner_certificate.test_oauth_partner_certificate().id())
+     *             .authorization(var_.oauth_partner_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsOauthPartnerCertificateResult> getDomainsOauthPartnerCertificatePlain(GetDomainsOauthPartnerCertificatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsOauthPartnerCertificate:getDomainsOauthPartnerCertificate", TypeShape.of(GetDomainsOauthPartnerCertificateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of O Auth Partner Certificates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search OAuth Partner Certificates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oauthPartnerCertificateCount(var_.oauth_partner_certificate_oauth_partner_certificate_count())
+     *             .oauthPartnerCertificateFilter(var_.oauth_partner_certificate_oauth_partner_certificate_filter())
+     *             .authorization(var_.oauth_partner_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
+     *             .startIndex(var_.oauth_partner_certificate_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsOauthPartnerCertificatesResult> getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs args) {
+        return getDomainsOauthPartnerCertificates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of O Auth Partner Certificates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search OAuth Partner Certificates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oauthPartnerCertificateCount(var_.oauth_partner_certificate_oauth_partner_certificate_count())
+     *             .oauthPartnerCertificateFilter(var_.oauth_partner_certificate_oauth_partner_certificate_filter())
+     *             .authorization(var_.oauth_partner_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
+     *             .startIndex(var_.oauth_partner_certificate_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsOauthPartnerCertificatesResult> getDomainsOauthPartnerCertificatesPlain(GetDomainsOauthPartnerCertificatesPlainArgs args) {
+        return getDomainsOauthPartnerCertificatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of O Auth Partner Certificates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search OAuth Partner Certificates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oauthPartnerCertificateCount(var_.oauth_partner_certificate_oauth_partner_certificate_count())
+     *             .oauthPartnerCertificateFilter(var_.oauth_partner_certificate_oauth_partner_certificate_filter())
+     *             .authorization(var_.oauth_partner_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
+     *             .startIndex(var_.oauth_partner_certificate_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsOauthPartnerCertificatesResult> getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsOauthPartnerCertificates:getDomainsOauthPartnerCertificates", TypeShape.of(GetDomainsOauthPartnerCertificatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of O Auth Partner Certificates in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search OAuth Partner Certificates
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsOauthPartnerCertificatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOauthPartnerCertificates = IdentityFunctions.getDomainsOauthPartnerCertificates(GetDomainsOauthPartnerCertificatesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .oauthPartnerCertificateCount(var_.oauth_partner_certificate_oauth_partner_certificate_count())
+     *             .oauthPartnerCertificateFilter(var_.oauth_partner_certificate_oauth_partner_certificate_filter())
+     *             .authorization(var_.oauth_partner_certificate_authorization())
+     *             .resourceTypeSchemaVersion(var_.oauth_partner_certificate_resource_type_schema_version())
+     *             .startIndex(var_.oauth_partner_certificate_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsOauthPartnerCertificatesResult> getDomainsOauthPartnerCertificatesPlain(GetDomainsOauthPartnerCertificatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsOauthPartnerCertificates:getDomainsOauthPartnerCertificates", TypeShape.of(GetDomainsOauthPartnerCertificatesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Password Policies in Oracle Cloud Infrastructure Identity Domains service.
@@ -12247,6 +17307,366 @@ public final class IdentityFunctions {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsPasswordPolicy:getDomainsPasswordPolicy", TypeShape.of(GetDomainsPasswordPolicyResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Policies
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .policyCount(var_.policy_policy_count())
+     *             .policyFilter(var_.policy_policy_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.policy_authorization())
+     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
+     *             .startIndex(var_.policy_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsPoliciesResult> getDomainsPolicies(GetDomainsPoliciesArgs args) {
+        return getDomainsPolicies(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Policies
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .policyCount(var_.policy_policy_count())
+     *             .policyFilter(var_.policy_policy_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.policy_authorization())
+     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
+     *             .startIndex(var_.policy_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsPoliciesResult> getDomainsPoliciesPlain(GetDomainsPoliciesPlainArgs args) {
+        return getDomainsPoliciesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Policies
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .policyCount(var_.policy_policy_count())
+     *             .policyFilter(var_.policy_policy_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.policy_authorization())
+     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
+     *             .startIndex(var_.policy_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsPoliciesResult> getDomainsPolicies(GetDomainsPoliciesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsPolicies:getDomainsPolicies", TypeShape.of(GetDomainsPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Policies in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Policies
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsPoliciesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPolicies = IdentityFunctions.getDomainsPolicies(GetDomainsPoliciesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .policyCount(var_.policy_policy_count())
+     *             .policyFilter(var_.policy_policy_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.policy_authorization())
+     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
+     *             .startIndex(var_.policy_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsPoliciesResult> getDomainsPoliciesPlain(GetDomainsPoliciesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsPolicies:getDomainsPolicies", TypeShape.of(GetDomainsPoliciesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Policy
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .policyId(oci_identity_policy.test_policy().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.policy_authorization())
+     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsPolicyResult> getDomainsPolicy(GetDomainsPolicyArgs args) {
+        return getDomainsPolicy(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Policy
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .policyId(oci_identity_policy.test_policy().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.policy_authorization())
+     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsPolicyResult> getDomainsPolicyPlain(GetDomainsPolicyPlainArgs args) {
+        return getDomainsPolicyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Policy
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .policyId(oci_identity_policy.test_policy().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.policy_authorization())
+     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsPolicyResult> getDomainsPolicy(GetDomainsPolicyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsPolicy:getDomainsPolicy", TypeShape.of(GetDomainsPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Policy resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Policy
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsPolicyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPolicy = IdentityFunctions.getDomainsPolicy(GetDomainsPolicyArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .policyId(oci_identity_policy.test_policy().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.policy_authorization())
+     *             .resourceTypeSchemaVersion(var_.policy_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsPolicyResult> getDomainsPolicyPlain(GetDomainsPolicyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsPolicy:getDomainsPolicy", TypeShape.of(GetDomainsPolicyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Resource Type Schema Attributes in Oracle Cloud Infrastructure Identity Domains service.
      * 
      * Search Resource Type Schema Attributes
@@ -12429,6 +17849,366 @@ public final class IdentityFunctions {
      */
     public static CompletableFuture<GetDomainsResourceTypeSchemaAttributesResult> getDomainsResourceTypeSchemaAttributesPlain(GetDomainsResourceTypeSchemaAttributesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsResourceTypeSchemaAttributes:getDomainsResourceTypeSchemaAttributes", TypeShape.of(GetDomainsResourceTypeSchemaAttributesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Rule
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .ruleId(oci_events_rule.test_rule().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.rule_authorization())
+     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsRuleResult> getDomainsRule(GetDomainsRuleArgs args) {
+        return getDomainsRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Rule
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .ruleId(oci_events_rule.test_rule().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.rule_authorization())
+     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsRuleResult> getDomainsRulePlain(GetDomainsRulePlainArgs args) {
+        return getDomainsRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Rule
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .ruleId(oci_events_rule.test_rule().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.rule_authorization())
+     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsRuleResult> getDomainsRule(GetDomainsRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsRule:getDomainsRule", TypeShape.of(GetDomainsRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Rule resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a Rule
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRule = IdentityFunctions.getDomainsRule(GetDomainsRuleArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .ruleId(oci_events_rule.test_rule().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.rule_authorization())
+     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsRuleResult> getDomainsRulePlain(GetDomainsRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsRule:getDomainsRule", TypeShape.of(GetDomainsRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Rules in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Rules
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .ruleCount(var_.rule_rule_count())
+     *             .ruleFilter(var_.rule_rule_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.rule_authorization())
+     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
+     *             .startIndex(var_.rule_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsRulesResult> getDomainsRules(GetDomainsRulesArgs args) {
+        return getDomainsRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Rules in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Rules
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .ruleCount(var_.rule_rule_count())
+     *             .ruleFilter(var_.rule_rule_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.rule_authorization())
+     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
+     *             .startIndex(var_.rule_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsRulesResult> getDomainsRulesPlain(GetDomainsRulesPlainArgs args) {
+        return getDomainsRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Rules in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Rules
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .ruleCount(var_.rule_rule_count())
+     *             .ruleFilter(var_.rule_rule_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.rule_authorization())
+     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
+     *             .startIndex(var_.rule_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsRulesResult> getDomainsRules(GetDomainsRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsRules:getDomainsRules", TypeShape.of(GetDomainsRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Rules in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Rules
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRules = IdentityFunctions.getDomainsRules(GetDomainsRulesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .ruleCount(var_.rule_rule_count())
+     *             .ruleFilter(var_.rule_rule_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.rule_authorization())
+     *             .resourceTypeSchemaVersion(var_.rule_resource_type_schema_version())
+     *             .startIndex(var_.rule_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsRulesResult> getDomainsRulesPlain(GetDomainsRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsRules:getDomainsRules", TypeShape.of(GetDomainsRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Security Question resource in Oracle Cloud Infrastructure Identity Domains service.
@@ -13137,6 +18917,714 @@ public final class IdentityFunctions {
      */
     public static CompletableFuture<GetDomainsSecurityQuestionsResult> getDomainsSecurityQuestionsPlain(GetDomainsSecurityQuestionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsSecurityQuestions:getDomainsSecurityQuestions", TypeShape.of(GetDomainsSecurityQuestionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a self-registration profile.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .selfRegistrationProfileId(oci_optimizer_profile.test_profile().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.self_registration_profile_authorization())
+     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsSelfRegistrationProfileResult> getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs args) {
+        return getDomainsSelfRegistrationProfile(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a self-registration profile.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .selfRegistrationProfileId(oci_optimizer_profile.test_profile().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.self_registration_profile_authorization())
+     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsSelfRegistrationProfileResult> getDomainsSelfRegistrationProfilePlain(GetDomainsSelfRegistrationProfilePlainArgs args) {
+        return getDomainsSelfRegistrationProfilePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a self-registration profile.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .selfRegistrationProfileId(oci_optimizer_profile.test_profile().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.self_registration_profile_authorization())
+     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsSelfRegistrationProfileResult> getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsSelfRegistrationProfile:getDomainsSelfRegistrationProfile", TypeShape.of(GetDomainsSelfRegistrationProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get a self-registration profile.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfileArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfRegistrationProfile = IdentityFunctions.getDomainsSelfRegistrationProfile(GetDomainsSelfRegistrationProfileArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .selfRegistrationProfileId(oci_optimizer_profile.test_profile().id())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.self_registration_profile_authorization())
+     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsSelfRegistrationProfileResult> getDomainsSelfRegistrationProfilePlain(GetDomainsSelfRegistrationProfilePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsSelfRegistrationProfile:getDomainsSelfRegistrationProfile", TypeShape.of(GetDomainsSelfRegistrationProfileResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Self Registration Profiles in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search for self-registration profiles.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .selfRegistrationProfileCount(var_.self_registration_profile_self_registration_profile_count())
+     *             .selfRegistrationProfileFilter(var_.self_registration_profile_self_registration_profile_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.self_registration_profile_authorization())
+     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
+     *             .startIndex(var_.self_registration_profile_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsSelfRegistrationProfilesResult> getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs args) {
+        return getDomainsSelfRegistrationProfiles(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Self Registration Profiles in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search for self-registration profiles.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .selfRegistrationProfileCount(var_.self_registration_profile_self_registration_profile_count())
+     *             .selfRegistrationProfileFilter(var_.self_registration_profile_self_registration_profile_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.self_registration_profile_authorization())
+     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
+     *             .startIndex(var_.self_registration_profile_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsSelfRegistrationProfilesResult> getDomainsSelfRegistrationProfilesPlain(GetDomainsSelfRegistrationProfilesPlainArgs args) {
+        return getDomainsSelfRegistrationProfilesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Self Registration Profiles in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search for self-registration profiles.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .selfRegistrationProfileCount(var_.self_registration_profile_self_registration_profile_count())
+     *             .selfRegistrationProfileFilter(var_.self_registration_profile_self_registration_profile_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.self_registration_profile_authorization())
+     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
+     *             .startIndex(var_.self_registration_profile_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsSelfRegistrationProfilesResult> getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsSelfRegistrationProfiles:getDomainsSelfRegistrationProfiles", TypeShape.of(GetDomainsSelfRegistrationProfilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Self Registration Profiles in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search for self-registration profiles.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSelfRegistrationProfilesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSelfRegistrationProfiles = IdentityFunctions.getDomainsSelfRegistrationProfiles(GetDomainsSelfRegistrationProfilesArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .selfRegistrationProfileCount(var_.self_registration_profile_self_registration_profile_count())
+     *             .selfRegistrationProfileFilter(var_.self_registration_profile_self_registration_profile_filter())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.self_registration_profile_authorization())
+     *             .resourceTypeSchemaVersion(var_.self_registration_profile_resource_type_schema_version())
+     *             .startIndex(var_.self_registration_profile_start_index())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsSelfRegistrationProfilesResult> getDomainsSelfRegistrationProfilesPlain(GetDomainsSelfRegistrationProfilesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsSelfRegistrationProfiles:getDomainsSelfRegistrationProfiles", TypeShape.of(GetDomainsSelfRegistrationProfilesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .settingId(&#34;Settings&#34;)
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsSettingResult> getDomainsSetting(GetDomainsSettingArgs args) {
+        return getDomainsSetting(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .settingId(&#34;Settings&#34;)
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsSettingResult> getDomainsSettingPlain(GetDomainsSettingPlainArgs args) {
+        return getDomainsSettingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .settingId(&#34;Settings&#34;)
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsSettingResult> getDomainsSetting(GetDomainsSettingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsSetting:getDomainsSetting", TypeShape.of(GetDomainsSettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Setting resource in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Get Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSettingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSetting = IdentityFunctions.getDomainsSetting(GetDomainsSettingArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .settingId(&#34;Settings&#34;)
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsSettingResult> getDomainsSettingPlain(GetDomainsSettingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsSetting:getDomainsSetting", TypeShape.of(GetDomainsSettingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Settings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSettingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsSettingsResult> getDomainsSettings(GetDomainsSettingsArgs args) {
+        return getDomainsSettings(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Settings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSettingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsSettingsResult> getDomainsSettingsPlain(GetDomainsSettingsPlainArgs args) {
+        return getDomainsSettingsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Settings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSettingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDomainsSettingsResult> getDomainsSettings(GetDomainsSettingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Identity/getDomainsSettings:getDomainsSettings", TypeShape.of(GetDomainsSettingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Settings in Oracle Cloud Infrastructure Identity Domains service.
+     * 
+     * Search Settings
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsSettingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSettings = IdentityFunctions.getDomainsSettings(GetDomainsSettingsArgs.builder()
+     *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+     *             .attributeSets(&#34;all&#34;)
+     *             .attributes(&#34;&#34;)
+     *             .authorization(var_.setting_authorization())
+     *             .resourceTypeSchemaVersion(var_.setting_resource_type_schema_version())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDomainsSettingsResult> getDomainsSettingsPlain(GetDomainsSettingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Identity/getDomainsSettings:getDomainsSettings", TypeShape.of(GetDomainsSettingsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.

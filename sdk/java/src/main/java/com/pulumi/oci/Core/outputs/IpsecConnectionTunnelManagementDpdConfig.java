@@ -12,13 +12,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class IpsecConnectionTunnelManagementDpdConfig {
+    /**
+     * @return This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+     * 
+     */
     private @Nullable String dpdMode;
+    /**
+     * @return DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     * 
+     */
     private @Nullable Integer dpdTimeoutInSec;
 
     private IpsecConnectionTunnelManagementDpdConfig() {}
+    /**
+     * @return This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+     * 
+     */
     public Optional<String> dpdMode() {
         return Optional.ofNullable(this.dpdMode);
     }
+    /**
+     * @return DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     * 
+     */
     public Optional<Integer> dpdTimeoutInSec() {
         return Optional.ofNullable(this.dpdTimeoutInSec);
     }

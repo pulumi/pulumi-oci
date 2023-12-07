@@ -16,17 +16,17 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// <summary>
         /// (Updatable) The resource entity type.
         /// </summary>
-        public readonly string EntityType;
+        public readonly string? EntityType;
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related resource.
         /// </summary>
-        public readonly string Identifier;
+        public readonly string? Identifier;
 
         [OutputConstructor]
         private DatabaseToolsConnectionRelatedResource(
-            string entityType,
+            string? entityType,
 
-            string identifier)
+            string? identifier)
         {
             EntityType = entityType;
             Identifier = identifier;

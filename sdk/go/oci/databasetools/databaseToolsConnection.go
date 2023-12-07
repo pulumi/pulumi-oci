@@ -16,65 +16,6 @@ import (
 //
 // Creates a new Database Tools connection.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DatabaseTools"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseTools.NewDatabaseToolsConnection(ctx, "testDatabaseToolsConnection", &DatabaseTools.DatabaseToolsConnectionArgs{
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				DisplayName:        pulumi.Any(_var.Database_tools_connection_display_name),
-//				Type:               pulumi.Any(_var.Database_tools_connection_type),
-//				AdvancedProperties: pulumi.Any(_var.Database_tools_connection_advanced_properties),
-//				ConnectionString:   pulumi.Any(_var.Database_tools_connection_connection_string),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
-//				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
-//				},
-//				KeyStores: databasetools.DatabaseToolsConnectionKeyStoreArray{
-//					&databasetools.DatabaseToolsConnectionKeyStoreArgs{
-//						KeyStoreContent: &databasetools.DatabaseToolsConnectionKeyStoreKeyStoreContentArgs{
-//							ValueType: pulumi.Any(_var.Database_tools_connection_key_stores_key_store_content_value_type),
-//							SecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
-//						},
-//						KeyStorePassword: &databasetools.DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs{
-//							ValueType: pulumi.Any(_var.Database_tools_connection_key_stores_key_store_password_value_type),
-//							SecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
-//						},
-//						KeyStoreType: pulumi.Any(_var.Database_tools_connection_key_stores_key_store_type),
-//					},
-//				},
-//				PrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
-//				RelatedResource: &databasetools.DatabaseToolsConnectionRelatedResourceArgs{
-//					EntityType: pulumi.Any(_var.Database_tools_connection_related_resource_entity_type),
-//					Identifier: pulumi.Any(_var.Database_tools_connection_related_resource_identifier),
-//				},
-//				UserName: pulumi.Any(oci_identity_user.Test_user.Name),
-//				UserPassword: &databasetools.DatabaseToolsConnectionUserPasswordArgs{
-//					SecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					ValueType: pulumi.Any(_var.Database_tools_connection_user_password_value_type),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // DatabaseToolsConnections can be imported using the `id`, e.g.
@@ -103,20 +44,28 @@ type DatabaseToolsConnection struct {
 	KeyStores DatabaseToolsConnectionKeyStoreArrayOutput `pulumi:"keyStores"`
 	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks DatabaseToolsConnectionLockArrayOutput `pulumi:"locks"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId pulumi.StringOutput `pulumi:"privateEndpointId"`
+	// (Updatable) The proxy client information.
+	ProxyClient DatabaseToolsConnectionProxyClientOutput `pulumi:"proxyClient"`
 	// (Updatable) The related resource
 	RelatedResource DatabaseToolsConnectionRelatedResourceOutput `pulumi:"relatedResource"`
+	// Specifies whether this connection is supported by the Database Tools Runtime.
+	RuntimeSupport pulumi.StringOutput `pulumi:"runtimeSupport"`
 	// The current state of the Database Tools connection.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// (Updatable) The DatabaseToolsConnection type.
 	Type pulumi.StringOutput `pulumi:"type"`
+	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+	Url pulumi.StringOutput `pulumi:"url"`
 	// (Updatable) The database user name.
 	UserName pulumi.StringOutput `pulumi:"userName"`
 	// (Updatable) The user password.
@@ -138,6 +87,12 @@ func NewDatabaseToolsConnection(ctx *pulumi.Context,
 	}
 	if args.Type == nil {
 		return nil, errors.New("invalid value for required argument 'Type'")
+	}
+	if args.UserName == nil {
+		return nil, errors.New("invalid value for required argument 'UserName'")
+	}
+	if args.UserPassword == nil {
+		return nil, errors.New("invalid value for required argument 'UserPassword'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource DatabaseToolsConnection
@@ -178,20 +133,28 @@ type databaseToolsConnectionState struct {
 	KeyStores []DatabaseToolsConnectionKeyStore `pulumi:"keyStores"`
 	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []DatabaseToolsConnectionLock `pulumi:"locks"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
+	// (Updatable) The proxy client information.
+	ProxyClient *DatabaseToolsConnectionProxyClient `pulumi:"proxyClient"`
 	// (Updatable) The related resource
 	RelatedResource *DatabaseToolsConnectionRelatedResource `pulumi:"relatedResource"`
+	// Specifies whether this connection is supported by the Database Tools Runtime.
+	RuntimeSupport *string `pulumi:"runtimeSupport"`
 	// The current state of the Database Tools connection.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) The DatabaseToolsConnection type.
 	Type *string `pulumi:"type"`
+	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+	Url *string `pulumi:"url"`
 	// (Updatable) The database user name.
 	UserName *string `pulumi:"userName"`
 	// (Updatable) The user password.
@@ -215,20 +178,28 @@ type DatabaseToolsConnectionState struct {
 	KeyStores DatabaseToolsConnectionKeyStoreArrayInput
 	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks DatabaseToolsConnectionLockArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId pulumi.StringPtrInput
+	// (Updatable) The proxy client information.
+	ProxyClient DatabaseToolsConnectionProxyClientPtrInput
 	// (Updatable) The related resource
 	RelatedResource DatabaseToolsConnectionRelatedResourcePtrInput
+	// Specifies whether this connection is supported by the Database Tools Runtime.
+	RuntimeSupport pulumi.StringPtrInput
 	// The current state of the Database Tools connection.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+	// When the lock was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) The DatabaseToolsConnection type.
 	Type pulumi.StringPtrInput
+	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+	Url pulumi.StringPtrInput
 	// (Updatable) The database user name.
 	UserName pulumi.StringPtrInput
 	// (Updatable) The user password.
@@ -254,16 +225,24 @@ type databaseToolsConnectionArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores []DatabaseToolsConnectionKeyStore `pulumi:"keyStores"`
+	// Locks associated with this resource.
+	Locks []DatabaseToolsConnectionLock `pulumi:"locks"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
+	// (Updatable) The proxy client information.
+	ProxyClient *DatabaseToolsConnectionProxyClient `pulumi:"proxyClient"`
 	// (Updatable) The related resource
 	RelatedResource *DatabaseToolsConnectionRelatedResource `pulumi:"relatedResource"`
+	// Specifies whether this connection is supported by the Database Tools Runtime.
+	RuntimeSupport *string `pulumi:"runtimeSupport"`
 	// (Updatable) The DatabaseToolsConnection type.
 	Type string `pulumi:"type"`
+	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+	Url *string `pulumi:"url"`
 	// (Updatable) The database user name.
-	UserName *string `pulumi:"userName"`
+	UserName string `pulumi:"userName"`
 	// (Updatable) The user password.
-	UserPassword *DatabaseToolsConnectionUserPassword `pulumi:"userPassword"`
+	UserPassword DatabaseToolsConnectionUserPassword `pulumi:"userPassword"`
 }
 
 // The set of arguments for constructing a DatabaseToolsConnection resource.
@@ -282,16 +261,24 @@ type DatabaseToolsConnectionArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores DatabaseToolsConnectionKeyStoreArrayInput
+	// Locks associated with this resource.
+	Locks DatabaseToolsConnectionLockArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 	PrivateEndpointId pulumi.StringPtrInput
+	// (Updatable) The proxy client information.
+	ProxyClient DatabaseToolsConnectionProxyClientPtrInput
 	// (Updatable) The related resource
 	RelatedResource DatabaseToolsConnectionRelatedResourcePtrInput
+	// Specifies whether this connection is supported by the Database Tools Runtime.
+	RuntimeSupport pulumi.StringPtrInput
 	// (Updatable) The DatabaseToolsConnection type.
 	Type pulumi.StringInput
+	// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+	Url pulumi.StringPtrInput
 	// (Updatable) The database user name.
-	UserName pulumi.StringPtrInput
+	UserName pulumi.StringInput
 	// (Updatable) The user password.
-	UserPassword DatabaseToolsConnectionUserPasswordPtrInput
+	UserPassword DatabaseToolsConnectionUserPasswordInput
 }
 
 func (DatabaseToolsConnectionArgs) ElementType() reflect.Type {
@@ -421,9 +408,19 @@ func (o DatabaseToolsConnectionOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o DatabaseToolsConnectionOutput) Locks() DatabaseToolsConnectionLockArrayOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) DatabaseToolsConnectionLockArrayOutput { return v.Locks }).(DatabaseToolsConnectionLockArrayOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
 func (o DatabaseToolsConnectionOutput) PrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The proxy client information.
+func (o DatabaseToolsConnectionOutput) ProxyClient() DatabaseToolsConnectionProxyClientOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) DatabaseToolsConnectionProxyClientOutput { return v.ProxyClient }).(DatabaseToolsConnectionProxyClientOutput)
 }
 
 // (Updatable) The related resource
@@ -431,6 +428,11 @@ func (o DatabaseToolsConnectionOutput) RelatedResource() DatabaseToolsConnection
 	return o.ApplyT(func(v *DatabaseToolsConnection) DatabaseToolsConnectionRelatedResourceOutput {
 		return v.RelatedResource
 	}).(DatabaseToolsConnectionRelatedResourceOutput)
+}
+
+// Specifies whether this connection is supported by the Database Tools Runtime.
+func (o DatabaseToolsConnectionOutput) RuntimeSupport() pulumi.StringOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.RuntimeSupport }).(pulumi.StringOutput)
 }
 
 // The current state of the Database Tools connection.
@@ -443,7 +445,7 @@ func (o DatabaseToolsConnectionOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
+// When the lock was created.
 func (o DatabaseToolsConnectionOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
@@ -456,6 +458,11 @@ func (o DatabaseToolsConnectionOutput) TimeUpdated() pulumi.StringOutput {
 // (Updatable) The DatabaseToolsConnection type.
 func (o DatabaseToolsConnectionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
+}
+
+// (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
+func (o DatabaseToolsConnectionOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringOutput { return v.Url }).(pulumi.StringOutput)
 }
 
 // (Updatable) The database user name.

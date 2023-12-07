@@ -13,53 +13,165 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
+    /**
+     * @return The authentication algorithm proposed during phase two tunnel negotiation.
+     * 
+     */
     private @Nullable String customAuthenticationAlgorithm;
+    /**
+     * @return The encryption algorithm proposed during phase two tunnel negotiation.
+     * 
+     */
     private @Nullable String customEncryptionAlgorithm;
+    /**
+     * @return The Diffie-Hellman group used for PFS, if PFS is enabled.
+     * 
+     */
     private @Nullable String dhGroup;
+    /**
+     * @return Indicates whether custom configuration is enabled for phase two options.
+     * 
+     */
     private @Nullable Boolean isCustomPhaseTwoConfig;
+    /**
+     * @return Indicates that ESP phase two is established.
+     * 
+     */
     private @Nullable Boolean isEspEstablished;
+    /**
+     * @return Indicates whether perfect forward secrecy (PFS) is enabled.
+     * 
+     */
     private @Nullable Boolean isPfsEnabled;
+    /**
+     * @return Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+     * 
+     */
     private @Nullable Integer lifetime;
+    /**
+     * @return The negotiated phase two authentication algorithm.
+     * 
+     */
     private @Nullable String negotiatedAuthenticationAlgorithm;
+    /**
+     * @return The negotiated Diffie-Hellman group.
+     * 
+     */
     private @Nullable String negotiatedDhGroup;
+    /**
+     * @return The negotiated encryption algorithm.
+     * 
+     */
     private @Nullable String negotiatedEncryptionAlgorithm;
+    /**
+     * @deprecated
+     * The &#39;phase_two_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_two_details.0.remaining_lifetime_int&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead. */
     private @Nullable String remainingLifetime;
+    /**
+     * @return The remaining lifetime before the key is refreshed.
+     * 
+     */
+    private @Nullable Integer remainingLifetimeInt;
+    /**
+     * @return The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
     private @Nullable String remainingLifetimeLastRetrieved;
 
     private IpsecConnectionTunnelManagementPhaseTwoDetail() {}
+    /**
+     * @return The authentication algorithm proposed during phase two tunnel negotiation.
+     * 
+     */
     public Optional<String> customAuthenticationAlgorithm() {
         return Optional.ofNullable(this.customAuthenticationAlgorithm);
     }
+    /**
+     * @return The encryption algorithm proposed during phase two tunnel negotiation.
+     * 
+     */
     public Optional<String> customEncryptionAlgorithm() {
         return Optional.ofNullable(this.customEncryptionAlgorithm);
     }
+    /**
+     * @return The Diffie-Hellman group used for PFS, if PFS is enabled.
+     * 
+     */
     public Optional<String> dhGroup() {
         return Optional.ofNullable(this.dhGroup);
     }
+    /**
+     * @return Indicates whether custom configuration is enabled for phase two options.
+     * 
+     */
     public Optional<Boolean> isCustomPhaseTwoConfig() {
         return Optional.ofNullable(this.isCustomPhaseTwoConfig);
     }
+    /**
+     * @return Indicates that ESP phase two is established.
+     * 
+     */
     public Optional<Boolean> isEspEstablished() {
         return Optional.ofNullable(this.isEspEstablished);
     }
+    /**
+     * @return Indicates whether perfect forward secrecy (PFS) is enabled.
+     * 
+     */
     public Optional<Boolean> isPfsEnabled() {
         return Optional.ofNullable(this.isPfsEnabled);
     }
+    /**
+     * @return Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+     * 
+     */
     public Optional<Integer> lifetime() {
         return Optional.ofNullable(this.lifetime);
     }
+    /**
+     * @return The negotiated phase two authentication algorithm.
+     * 
+     */
     public Optional<String> negotiatedAuthenticationAlgorithm() {
         return Optional.ofNullable(this.negotiatedAuthenticationAlgorithm);
     }
+    /**
+     * @return The negotiated Diffie-Hellman group.
+     * 
+     */
     public Optional<String> negotiatedDhGroup() {
         return Optional.ofNullable(this.negotiatedDhGroup);
     }
+    /**
+     * @return The negotiated encryption algorithm.
+     * 
+     */
     public Optional<String> negotiatedEncryptionAlgorithm() {
         return Optional.ofNullable(this.negotiatedEncryptionAlgorithm);
     }
+    /**
+     * @deprecated
+     * The &#39;phase_two_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_two_details.0.remaining_lifetime_int&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead. */
     public Optional<String> remainingLifetime() {
         return Optional.ofNullable(this.remainingLifetime);
     }
+    /**
+     * @return The remaining lifetime before the key is refreshed.
+     * 
+     */
+    public Optional<Integer> remainingLifetimeInt() {
+        return Optional.ofNullable(this.remainingLifetimeInt);
+    }
+    /**
+     * @return The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+     * 
+     */
     public Optional<String> remainingLifetimeLastRetrieved() {
         return Optional.ofNullable(this.remainingLifetimeLastRetrieved);
     }
@@ -84,6 +196,7 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
         private @Nullable String negotiatedDhGroup;
         private @Nullable String negotiatedEncryptionAlgorithm;
         private @Nullable String remainingLifetime;
+        private @Nullable Integer remainingLifetimeInt;
         private @Nullable String remainingLifetimeLastRetrieved;
         public Builder() {}
         public Builder(IpsecConnectionTunnelManagementPhaseTwoDetail defaults) {
@@ -99,6 +212,7 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
     	      this.negotiatedDhGroup = defaults.negotiatedDhGroup;
     	      this.negotiatedEncryptionAlgorithm = defaults.negotiatedEncryptionAlgorithm;
     	      this.remainingLifetime = defaults.remainingLifetime;
+    	      this.remainingLifetimeInt = defaults.remainingLifetimeInt;
     	      this.remainingLifetimeLastRetrieved = defaults.remainingLifetimeLastRetrieved;
         }
 
@@ -158,6 +272,11 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder remainingLifetimeInt(@Nullable Integer remainingLifetimeInt) {
+            this.remainingLifetimeInt = remainingLifetimeInt;
+            return this;
+        }
+        @CustomType.Setter
         public Builder remainingLifetimeLastRetrieved(@Nullable String remainingLifetimeLastRetrieved) {
             this.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
             return this;
@@ -175,6 +294,7 @@ public final class IpsecConnectionTunnelManagementPhaseTwoDetail {
             o.negotiatedDhGroup = negotiatedDhGroup;
             o.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
             o.remainingLifetime = remainingLifetime;
+            o.remainingLifetimeInt = remainingLifetimeInt;
             o.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
             return o;
         }

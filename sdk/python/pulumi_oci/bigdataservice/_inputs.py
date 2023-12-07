@@ -44,6 +44,7 @@ __all__ = [
     'BdsInstanceNetworkConfigArgs',
     'BdsInstanceNodeArgs',
     'BdsInstanceNodeAttachedBlockVolumeArgs',
+    'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs',
     'BdsInstanceUtilNodeArgs',
     'BdsInstanceUtilNodeShapeConfigArgs',
     'BdsInstanceWorkerNodeArgs',
@@ -2555,6 +2556,61 @@ class BdsInstanceNodeAttachedBlockVolumeArgs:
     @volume_size_in_gbs.setter
     def volume_size_in_gbs(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "volume_size_in_gbs", value)
+
+
+@pulumi.input_type
+class BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs:
+    def __init__(__self__, *,
+                 certificate: Optional[pulumi.Input[str]] = None,
+                 host_name: Optional[pulumi.Input[str]] = None,
+                 private_key: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] certificate: Certificate value in string format
+        :param pulumi.Input[str] host_name: Fully qualified domain name (FQDN) of the host
+        :param pulumi.Input[str] private_key: Private key of the provided certificate
+        """
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional[pulumi.Input[str]]:
+        """
+        Certificate value in string format
+        """
+        return pulumi.get(self, "certificate")
+
+    @certificate.setter
+    def certificate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "certificate", value)
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Fully qualified domain name (FQDN) of the host
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host_name", value)
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        Private key of the provided certificate
+        """
+        return pulumi.get(self, "private_key")
+
+    @private_key.setter
+    def private_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_key", value)
 
 
 @pulumi.input_type

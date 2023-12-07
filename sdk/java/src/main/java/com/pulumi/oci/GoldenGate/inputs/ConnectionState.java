@@ -84,14 +84,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Used authentication mechanism.
+     * (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     @Import(name="authenticationType")
     private @Nullable Output<String> authenticationType;
 
     /**
-     * @return (Updatable) Used authentication mechanism.
+     * @return (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     public Optional<Output<String>> authenticationType() {
@@ -219,14 +219,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * (Updatable) JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
      * 
      */
     @Import(name="connectionUrl")
     private @Nullable Output<String> connectionUrl;
 
     /**
-     * @return (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * @return (Updatable) JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
      * 
      */
     public Optional<Output<String>> connectionUrl() {
@@ -264,14 +264,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      * 
      */
     @Import(name="databaseId")
     private @Nullable Output<String> databaseId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      * 
      */
     public Optional<Output<String>> databaseId() {
@@ -384,6 +384,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * 
+     */
+    @Import(name="fingerprint")
+    private @Nullable Output<String> fingerprint;
+
+    /**
+     * @return (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * 
+     */
+    public Optional<Output<String>> fingerprint() {
+        return Optional.ofNullable(this.fingerprint);
+    }
+
+    /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -399,14 +414,16 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The name or address of a host.
+     * (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
     @Import(name="host")
     private @Nullable Output<String> host;
 
     /**
-     * @return (Updatable) The name or address of a host.
+     * @return (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
     public Optional<Output<String>> host() {
@@ -729,18 +746,48 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Security Protocol.
+     * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     @Import(name="securityProtocol")
     private @Nullable Output<String> securityProtocol;
 
     /**
-     * @return (Updatable) Security Protocol.
+     * @return (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     public Optional<Output<String>> securityProtocol() {
         return Optional.ofNullable(this.securityProtocol);
+    }
+
+    /**
+     * (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+     * 
+     */
+    @Import(name="servers")
+    private @Nullable Output<String> servers;
+
+    /**
+     * @return (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+     * 
+     */
+    public Optional<Output<String>> servers() {
+        return Optional.ofNullable(this.servers);
+    }
+
+    /**
+     * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+     * 
+     */
+    @Import(name="serviceAccountKeyFile")
+    private @Nullable Output<String> serviceAccountKeyFile;
+
+    /**
+     * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+     * 
+     */
+    public Optional<Output<String>> serviceAccountKeyFile() {
+        return Optional.ofNullable(this.serviceAccountKeyFile);
     }
 
     /**
@@ -1044,14 +1091,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
      * 
      */
     @Import(name="userId")
     private @Nullable Output<String> userId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
      * 
      */
     public Optional<Output<String>> userId() {
@@ -1059,14 +1106,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      * 
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
-     * @return (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+     * @return (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      * 
      */
     public Optional<Output<String>> username() {
@@ -1136,6 +1183,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.endpoint = $.endpoint;
+        this.fingerprint = $.fingerprint;
         this.freeformTags = $.freeformTags;
         this.host = $.host;
         this.ingressIps = $.ingressIps;
@@ -1160,6 +1208,8 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.sasToken = $.sasToken;
         this.secretAccessKey = $.secretAccessKey;
         this.securityProtocol = $.securityProtocol;
+        this.servers = $.servers;
+        this.serviceAccountKeyFile = $.serviceAccountKeyFile;
         this.sessionMode = $.sessionMode;
         this.shouldUseJndi = $.shouldUseJndi;
         this.shouldValidateServerCertificate = $.shouldValidateServerCertificate;
@@ -1299,7 +1349,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authenticationType (Updatable) Used authentication mechanism.
+         * @param authenticationType (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
          * 
          * @return builder
          * 
@@ -1310,7 +1360,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param authenticationType (Updatable) Used authentication mechanism.
+         * @param authenticationType (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
          * 
          * @return builder
          * 
@@ -1498,7 +1548,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionUrl (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+         * @param connectionUrl (Updatable) JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
          * 
          * @return builder
          * 
@@ -1509,7 +1559,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param connectionUrl (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+         * @param connectionUrl (Updatable) JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
          * 
          * @return builder
          * 
@@ -1561,7 +1611,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param databaseId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+         * @param databaseId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
          * 
          * @return builder
          * 
@@ -1572,7 +1622,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param databaseId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+         * @param databaseId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
          * 
          * @return builder
          * 
@@ -1729,6 +1779,27 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param fingerprint (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fingerprint(@Nullable Output<String> fingerprint) {
+            $.fingerprint = fingerprint;
+            return this;
+        }
+
+        /**
+         * @param fingerprint (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder fingerprint(String fingerprint) {
+            return fingerprint(Output.of(fingerprint));
+        }
+
+        /**
          * @param freeformTags (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
@@ -1750,7 +1821,8 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param host (Updatable) The name or address of a host.
+         * @param host (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+         * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
          * 
          * @return builder
          * 
@@ -1761,7 +1833,8 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param host (Updatable) The name or address of a host.
+         * @param host (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+         * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
          * 
          * @return builder
          * 
@@ -2232,7 +2305,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityProtocol (Updatable) Security Protocol.
+         * @param securityProtocol (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
          * 
          * @return builder
          * 
@@ -2243,13 +2316,55 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param securityProtocol (Updatable) Security Protocol.
+         * @param securityProtocol (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
          * 
          * @return builder
          * 
          */
         public Builder securityProtocol(String securityProtocol) {
             return securityProtocol(Output.of(securityProtocol));
+        }
+
+        /**
+         * @param servers (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder servers(@Nullable Output<String> servers) {
+            $.servers = servers;
+            return this;
+        }
+
+        /**
+         * @param servers (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder servers(String servers) {
+            return servers(Output.of(servers));
+        }
+
+        /**
+         * @param serviceAccountKeyFile (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceAccountKeyFile(@Nullable Output<String> serviceAccountKeyFile) {
+            $.serviceAccountKeyFile = serviceAccountKeyFile;
+            return this;
+        }
+
+        /**
+         * @param serviceAccountKeyFile (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceAccountKeyFile(String serviceAccountKeyFile) {
+            return serviceAccountKeyFile(Output.of(serviceAccountKeyFile));
         }
 
         /**
@@ -2673,7 +2788,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+         * @param userId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
          * 
          * @return builder
          * 
@@ -2684,7 +2799,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+         * @param userId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
          * 
          * @return builder
          * 
@@ -2694,7 +2809,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param username (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+         * @param username (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
          * 
          * @return builder
          * 
@@ -2705,7 +2820,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param username (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+         * @param username (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
          * 
          * @return builder
          * 

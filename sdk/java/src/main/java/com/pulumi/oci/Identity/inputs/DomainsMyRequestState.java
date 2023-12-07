@@ -5,6 +5,7 @@ package com.pulumi.oci.Identity.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Identity.inputs.DomainsMyRequestApprovalDetailArgs;
 import com.pulumi.oci.Identity.inputs.DomainsMyRequestIdcsCreatedByArgs;
 import com.pulumi.oci.Identity.inputs.DomainsMyRequestIdcsLastModifiedByArgs;
 import com.pulumi.oci.Identity.inputs.DomainsMyRequestMetaArgs;
@@ -22,6 +23,80 @@ import javax.annotation.Nullable;
 public final class DomainsMyRequestState extends com.pulumi.resources.ResourceArgs {
 
     public static final DomainsMyRequestState Empty = new DomainsMyRequestState();
+
+    /**
+     * Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can&#39;t escalate the request if canceling or escalation is in progress.
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="action")
+    private @Nullable Output<String> action;
+
+    /**
+     * @return Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can&#39;t escalate the request if canceling or escalation is in progress.
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: true
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: false
+     * * returned: default
+     * * type: string
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<String>> action() {
+        return Optional.ofNullable(this.action);
+    }
+
+    /**
+     * Approvals created for this request.
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="approvalDetails")
+    private @Nullable Output<List<DomainsMyRequestApprovalDetailArgs>> approvalDetails;
+
+    /**
+     * @return Approvals created for this request.
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: false
+     * * multiValued: true
+     * * mutability: readOnly
+     * * returned: request
+     * * type: complex
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<List<DomainsMyRequestApprovalDetailArgs>>> approvalDetails() {
+        return Optional.ofNullable(this.approvalDetails);
+    }
 
     /**
      * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If &#39;attributes&#39; query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
@@ -171,6 +246,43 @@ public final class DomainsMyRequestState extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<String>> domainOcid() {
         return Optional.ofNullable(this.domainOcid);
+    }
+
+    /**
+     * (Updatable) Time by when Request expires
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="expires")
+    private @Nullable Output<String> expires;
+
+    /**
+     * @return (Updatable) Time by when Request expires
+     * 
+     * **Added In:** 2307071836
+     * 
+     * **SCIM++ Properties:**
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: dateTime
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<String>> expires() {
+        return Optional.ofNullable(this.expires);
     }
 
     /**
@@ -540,13 +652,13 @@ public final class DomainsMyRequestState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * status
+     * (Updatable) status.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -557,13 +669,13 @@ public final class DomainsMyRequestState extends com.pulumi.resources.ResourceAr
     private @Nullable Output<String> status;
 
     /**
-     * @return status
+     * @return (Updatable) status.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -653,12 +765,15 @@ public final class DomainsMyRequestState extends com.pulumi.resources.ResourceAr
     private DomainsMyRequestState() {}
 
     private DomainsMyRequestState(DomainsMyRequestState $) {
+        this.action = $.action;
+        this.approvalDetails = $.approvalDetails;
         this.attributeSets = $.attributeSets;
         this.attributes = $.attributes;
         this.authorization = $.authorization;
         this.compartmentOcid = $.compartmentOcid;
         this.deleteInProgress = $.deleteInProgress;
         this.domainOcid = $.domainOcid;
+        this.expires = $.expires;
         this.idcsCreatedBies = $.idcsCreatedBies;
         this.idcsEndpoint = $.idcsEndpoint;
         this.idcsLastModifiedBies = $.idcsLastModifiedBies;
@@ -692,6 +807,112 @@ public final class DomainsMyRequestState extends com.pulumi.resources.ResourceAr
 
         public Builder(DomainsMyRequestState defaults) {
             $ = new DomainsMyRequestState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param action Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can&#39;t escalate the request if canceling or escalation is in progress.
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder action(@Nullable Output<String> action) {
+            $.action = action;
+            return this;
+        }
+
+        /**
+         * @param action Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can&#39;t escalate the request if canceling or escalation is in progress.
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder action(String action) {
+            return action(Output.of(action));
+        }
+
+        /**
+         * @param approvalDetails Approvals created for this request.
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approvalDetails(@Nullable Output<List<DomainsMyRequestApprovalDetailArgs>> approvalDetails) {
+            $.approvalDetails = approvalDetails;
+            return this;
+        }
+
+        /**
+         * @param approvalDetails Approvals created for this request.
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approvalDetails(List<DomainsMyRequestApprovalDetailArgs> approvalDetails) {
+            return approvalDetails(Output.of(approvalDetails));
+        }
+
+        /**
+         * @param approvalDetails Approvals created for this request.
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: true
+         * * mutability: readOnly
+         * * returned: request
+         * * type: complex
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approvalDetails(DomainsMyRequestApprovalDetailArgs... approvalDetails) {
+            return approvalDetails(List.of(approvalDetails));
         }
 
         /**
@@ -888,6 +1109,49 @@ public final class DomainsMyRequestState extends com.pulumi.resources.ResourceAr
          */
         public Builder domainOcid(String domainOcid) {
             return domainOcid(Output.of(domainOcid));
+        }
+
+        /**
+         * @param expires (Updatable) Time by when Request expires
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder expires(@Nullable Output<String> expires) {
+            $.expires = expires;
+            return this;
+        }
+
+        /**
+         * @param expires (Updatable) Time by when Request expires
+         * 
+         * **Added In:** 2307071836
+         * 
+         * **SCIM++ Properties:**
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder expires(String expires) {
+            return expires(Output.of(expires));
         }
 
         /**
@@ -1424,13 +1688,13 @@ public final class DomainsMyRequestState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param status status
+         * @param status (Updatable) status.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -1445,13 +1709,13 @@ public final class DomainsMyRequestState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param status status
+         * @param status (Updatable) status.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string

@@ -274,6 +274,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+        /// </summary>
+        public readonly string TimeOfLastBackup;
+        /// <summary>
         /// The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
         /// </summary>
         public readonly string TimeSnapshotStandbyRevert;
@@ -396,6 +400,8 @@ namespace Pulumi.Oci.Database
 
             string timeCreated,
 
+            string timeOfLastBackup,
+
             string timeSnapshotStandbyRevert,
 
             int totalCpus,
@@ -456,6 +462,7 @@ namespace Pulumi.Oci.Database
             StandbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             State = state;
             TimeCreated = timeCreated;
+            TimeOfLastBackup = timeOfLastBackup;
             TimeSnapshotStandbyRevert = timeSnapshotStandbyRevert;
             TotalCpus = totalCpus;
             VaultId = vaultId;

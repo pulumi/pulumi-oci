@@ -136,6 +136,12 @@ import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionArgs;
 import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsArgs;
 import com.pulumi.oci.Database.inputs.GetDbNodeConsoleConnectionsPlainArgs;
+import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoriesArgs;
+import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoriesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryArgs;
+import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryContentArgs;
+import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryContentPlainArgs;
+import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbNodePlainArgs;
 import com.pulumi.oci.Database.inputs.GetDbNodesArgs;
 import com.pulumi.oci.Database.inputs.GetDbNodesPlainArgs;
@@ -306,6 +312,9 @@ import com.pulumi.oci.Database.outputs.GetDbHomeResult;
 import com.pulumi.oci.Database.outputs.GetDbHomesResult;
 import com.pulumi.oci.Database.outputs.GetDbNodeConsoleConnectionResult;
 import com.pulumi.oci.Database.outputs.GetDbNodeConsoleConnectionsResult;
+import com.pulumi.oci.Database.outputs.GetDbNodeConsoleHistoriesResult;
+import com.pulumi.oci.Database.outputs.GetDbNodeConsoleHistoryContentResult;
+import com.pulumi.oci.Database.outputs.GetDbNodeConsoleHistoryResult;
 import com.pulumi.oci.Database.outputs.GetDbNodeResult;
 import com.pulumi.oci.Database.outputs.GetDbNodesResult;
 import com.pulumi.oci.Database.outputs.GetDbServerResult;
@@ -713,6 +722,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
      *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
      *             .isShared(var_.autonomous_database_character_set_is_shared())
      *             .build());
      * 
@@ -753,6 +763,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
      *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
      *             .isShared(var_.autonomous_database_character_set_is_shared())
      *             .build());
      * 
@@ -793,6 +804,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
      *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
      *             .isShared(var_.autonomous_database_character_set_is_shared())
      *             .build());
      * 
@@ -833,6 +845,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
      *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
      *             .isShared(var_.autonomous_database_character_set_is_shared())
      *             .build());
      * 
@@ -873,6 +886,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
      *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
      *             .isShared(var_.autonomous_database_character_set_is_shared())
      *             .build());
      * 
@@ -913,6 +927,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
      *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
+     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
      *             .isShared(var_.autonomous_database_character_set_is_shared())
      *             .build());
      * 
@@ -3486,6 +3501,7 @@ public final class DatabaseFunctions {
      * Creates and downloads a wallet for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -3512,6 +3528,7 @@ public final class DatabaseFunctions {
      *             .password(var_.autonomous_database_wallet_password())
      *             .base64EncodeContent(&#34;false&#34;)
      *             .generateType(var_.autonomous_database_wallet_generate_type())
+     *             .isRegional(var_.autonomous_database_wallet_is_regional())
      *             .build());
      * 
      *     }
@@ -3530,6 +3547,7 @@ public final class DatabaseFunctions {
      * Creates and downloads a wallet for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -3556,6 +3574,7 @@ public final class DatabaseFunctions {
      *             .password(var_.autonomous_database_wallet_password())
      *             .base64EncodeContent(&#34;false&#34;)
      *             .generateType(var_.autonomous_database_wallet_generate_type())
+     *             .isRegional(var_.autonomous_database_wallet_is_regional())
      *             .build());
      * 
      *     }
@@ -3574,6 +3593,7 @@ public final class DatabaseFunctions {
      * Creates and downloads a wallet for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -3600,6 +3620,7 @@ public final class DatabaseFunctions {
      *             .password(var_.autonomous_database_wallet_password())
      *             .base64EncodeContent(&#34;false&#34;)
      *             .generateType(var_.autonomous_database_wallet_generate_type())
+     *             .isRegional(var_.autonomous_database_wallet_is_regional())
      *             .build());
      * 
      *     }
@@ -3618,6 +3639,7 @@ public final class DatabaseFunctions {
      * Creates and downloads a wallet for the specified Autonomous Database.
      * 
      * ## Example Usage
+     * 
      * ```java
      * package generated_program;
      * 
@@ -3644,6 +3666,7 @@ public final class DatabaseFunctions {
      *             .password(var_.autonomous_database_wallet_password())
      *             .base64EncodeContent(&#34;false&#34;)
      *             .generateType(var_.autonomous_database_wallet_generate_type())
+     *             .isRegional(var_.autonomous_database_wallet_is_regional())
      *             .build());
      * 
      *     }
@@ -11257,6 +11280,490 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetDbNodeConsoleConnectionsResult> getDbNodeConsoleConnectionsPlain(GetDbNodeConsoleConnectionsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", TypeShape.of(GetDbNodeConsoleConnectionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Node Console Histories in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the console histories for the specified database node.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistories = DatabaseFunctions.getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs.builder()
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .displayName(var_.db_node_console_history_display_name())
+     *             .state(var_.db_node_console_history_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDbNodeConsoleHistoriesResult> getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs args) {
+        return getDbNodeConsoleHistories(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db Node Console Histories in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the console histories for the specified database node.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistories = DatabaseFunctions.getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs.builder()
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .displayName(var_.db_node_console_history_display_name())
+     *             .state(var_.db_node_console_history_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDbNodeConsoleHistoriesResult> getDbNodeConsoleHistoriesPlain(GetDbNodeConsoleHistoriesPlainArgs args) {
+        return getDbNodeConsoleHistoriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Db Node Console Histories in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the console histories for the specified database node.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistories = DatabaseFunctions.getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs.builder()
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .displayName(var_.db_node_console_history_display_name())
+     *             .state(var_.db_node_console_history_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDbNodeConsoleHistoriesResult> getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbNodeConsoleHistories:getDbNodeConsoleHistories", TypeShape.of(GetDbNodeConsoleHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Db Node Console Histories in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the console histories for the specified database node.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistories = DatabaseFunctions.getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs.builder()
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .displayName(var_.db_node_console_history_display_name())
+     *             .state(var_.db_node_console_history_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDbNodeConsoleHistoriesResult> getDbNodeConsoleHistoriesPlain(GetDbNodeConsoleHistoriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDbNodeConsoleHistories:getDbNodeConsoleHistories", TypeShape.of(GetDbNodeConsoleHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Node Console History resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database node console history.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistory = DatabaseFunctions.getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs.builder()
+     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDbNodeConsoleHistoryResult> getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs args) {
+        return getDbNodeConsoleHistory(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Db Node Console History resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database node console history.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistory = DatabaseFunctions.getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs.builder()
+     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDbNodeConsoleHistoryResult> getDbNodeConsoleHistoryPlain(GetDbNodeConsoleHistoryPlainArgs args) {
+        return getDbNodeConsoleHistoryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Db Node Console History resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database node console history.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistory = DatabaseFunctions.getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs.builder()
+     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDbNodeConsoleHistoryResult> getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbNodeConsoleHistory:getDbNodeConsoleHistory", TypeShape.of(GetDbNodeConsoleHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Node Console History resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified database node console history.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistory = DatabaseFunctions.getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs.builder()
+     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDbNodeConsoleHistoryResult> getDbNodeConsoleHistoryPlain(GetDbNodeConsoleHistoryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDbNodeConsoleHistory:getDbNodeConsoleHistory", TypeShape.of(GetDbNodeConsoleHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Node Console History Content resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves the specified database node console history contents upto a megabyte.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistoryContent = DatabaseFunctions.getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs.builder()
+     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDbNodeConsoleHistoryContentResult> getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs args) {
+        return getDbNodeConsoleHistoryContent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Db Node Console History Content resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves the specified database node console history contents upto a megabyte.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistoryContent = DatabaseFunctions.getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs.builder()
+     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDbNodeConsoleHistoryContentResult> getDbNodeConsoleHistoryContentPlain(GetDbNodeConsoleHistoryContentPlainArgs args) {
+        return getDbNodeConsoleHistoryContentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Db Node Console History Content resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves the specified database node console history contents upto a megabyte.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistoryContent = DatabaseFunctions.getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs.builder()
+     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetDbNodeConsoleHistoryContentResult> getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDbNodeConsoleHistoryContent:getDbNodeConsoleHistoryContent", TypeShape.of(GetDbNodeConsoleHistoryContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Db Node Console History Content resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Retrieves the specified database node console history contents upto a megabyte.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbNodeConsoleHistoryContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbNodeConsoleHistoryContent = DatabaseFunctions.getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs.builder()
+     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
+     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetDbNodeConsoleHistoryContentResult> getDbNodeConsoleHistoryContentPlain(GetDbNodeConsoleHistoryContentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDbNodeConsoleHistoryContent:getDbNodeConsoleHistoryContent", TypeShape.of(GetDbNodeConsoleHistoryContentResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.

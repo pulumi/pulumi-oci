@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDat
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContact;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupSchedule;
@@ -83,7 +84,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String compartmentId;
     /**
-     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * @return Compute used by database tools.
      * 
      */
     private Double computeCount;
@@ -147,6 +148,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      * 
      */
     private String dbName;
+    /**
+     * @return The list of database tools details.
+     * 
+     */
+    private List<GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail> dbToolsDetails;
     /**
      * @return A valid Oracle Database version for Autonomous Database.
      * 
@@ -297,7 +303,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String kmsKeyVersionId;
     /**
-     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
      * 
      */
     private String licenseModel;
@@ -363,7 +369,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private String openMode;
     /**
-     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
+     * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
     private List<String> peerDbIds;
@@ -638,7 +644,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.compartmentId;
     }
     /**
-     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * @return Compute used by database tools.
      * 
      */
     public Double computeCount() {
@@ -727,6 +733,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     public String dbName() {
         return this.dbName;
+    }
+    /**
+     * @return The list of database tools details.
+     * 
+     */
+    public List<GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail> dbToolsDetails() {
+        return this.dbToolsDetails;
     }
     /**
      * @return A valid Oracle Database version for Autonomous Database.
@@ -936,7 +949,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.kmsKeyVersionId;
     }
     /**
-     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
      * 
      */
     public String licenseModel() {
@@ -1028,7 +1041,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         return this.openMode;
     }
     /**
-     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
+     * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
     public List<String> peerDbIds() {
@@ -1337,6 +1350,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private String databaseManagementStatus;
         private String dataguardRegionType;
         private String dbName;
+        private List<GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail> dbToolsDetails;
         private String dbVersion;
         private String dbWorkload;
         private Map<String,Object> definedTags;
@@ -1446,6 +1460,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.databaseManagementStatus = defaults.databaseManagementStatus;
     	      this.dataguardRegionType = defaults.dataguardRegionType;
     	      this.dbName = defaults.dbName;
+    	      this.dbToolsDetails = defaults.dbToolsDetails;
     	      this.dbVersion = defaults.dbVersion;
     	      this.dbWorkload = defaults.dbWorkload;
     	      this.definedTags = defaults.definedTags;
@@ -1667,6 +1682,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         public Builder dbName(String dbName) {
             this.dbName = Objects.requireNonNull(dbName);
             return this;
+        }
+        @CustomType.Setter
+        public Builder dbToolsDetails(List<GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail> dbToolsDetails) {
+            this.dbToolsDetails = Objects.requireNonNull(dbToolsDetails);
+            return this;
+        }
+        public Builder dbToolsDetails(GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetail... dbToolsDetails) {
+            return dbToolsDetails(List.of(dbToolsDetails));
         }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
@@ -2143,6 +2166,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             o.databaseManagementStatus = databaseManagementStatus;
             o.dataguardRegionType = dataguardRegionType;
             o.dbName = dbName;
+            o.dbToolsDetails = dbToolsDetails;
             o.dbVersion = dbVersion;
             o.dbWorkload = dbWorkload;
             o.definedTags = definedTags;

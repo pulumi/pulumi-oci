@@ -101,7 +101,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<bool> IsAppDefinedRelationDiscoveryEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
+        /// Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
         /// </summary>
         [Output("isIncludeAllSchemas")]
         public Output<bool> IsIncludeAllSchemas { get; private set; } = null!;
@@ -301,7 +301,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<bool>? IsAppDefinedRelationDiscoveryEnabled { get; set; }
 
         /// <summary>
-        /// Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
+        /// Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
         /// </summary>
         [Input("isIncludeAllSchemas")]
         public Input<bool>? IsIncludeAllSchemas { get; set; }
@@ -409,7 +409,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<bool>? IsAppDefinedRelationDiscoveryEnabled { get; set; }
 
         /// <summary>
-        /// Indicates if all the schemas should be scanned by the discovery job. If it is set to true, sensitive data is discovered in all schemas (except for schemas maintained by Oracle). If both attributes are not provided, the configuration from the sensitive data model is used.
+        /// Indicates if all the schemas should be scanned by the discovery job. If it's set to true, the schemasForDiscovery attribute is ignored and all schemas are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
         /// </summary>
         [Input("isIncludeAllSchemas")]
         public Input<bool>? IsIncludeAllSchemas { get; set; }

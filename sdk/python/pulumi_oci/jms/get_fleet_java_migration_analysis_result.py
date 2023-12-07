@@ -21,10 +21,13 @@ class GetFleetJavaMigrationAnalysisResultResult:
     """
     A collection of values returned by getFleetJavaMigrationAnalysisResult.
     """
-    def __init__(__self__, application_execution_type=None, application_name=None, application_path=None, bucket=None, fleet_id=None, host_name=None, id=None, java_migration_analysis_result_id=None, managed_instance_id=None, metadata=None, namespace=None, object_lists=None, object_storage_upload_dir_path=None, source_jdk_version=None, target_jdk_version=None, time_created=None, work_request_id=None):
+    def __init__(__self__, application_execution_type=None, application_key=None, application_name=None, application_path=None, bucket=None, fleet_id=None, host_name=None, id=None, java_migration_analysis_result_id=None, managed_instance_id=None, metadata=None, namespace=None, object_lists=None, object_storage_upload_dir_path=None, source_jdk_version=None, target_jdk_version=None, time_created=None, work_request_id=None):
         if application_execution_type and not isinstance(application_execution_type, str):
             raise TypeError("Expected argument 'application_execution_type' to be a str")
         pulumi.set(__self__, "application_execution_type", application_execution_type)
+        if application_key and not isinstance(application_key, str):
+            raise TypeError("Expected argument 'application_key' to be a str")
+        pulumi.set(__self__, "application_key", application_key)
         if application_name and not isinstance(application_name, str):
             raise TypeError("Expected argument 'application_name' to be a str")
         pulumi.set(__self__, "application_name", application_name)
@@ -81,6 +84,14 @@ class GetFleetJavaMigrationAnalysisResultResult:
         Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
         """
         return pulumi.get(self, "application_execution_type")
+
+    @property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> str:
+        """
+        The unique key that identifies the application.
+        """
+        return pulumi.get(self, "application_key")
 
     @property
     @pulumi.getter(name="applicationName")
@@ -215,6 +226,7 @@ class AwaitableGetFleetJavaMigrationAnalysisResultResult(GetFleetJavaMigrationAn
             yield self
         return GetFleetJavaMigrationAnalysisResultResult(
             application_execution_type=self.application_execution_type,
+            application_key=self.application_key,
             application_name=self.application_name,
             application_path=self.application_path,
             bucket=self.bucket,
@@ -263,6 +275,7 @@ def get_fleet_java_migration_analysis_result(fleet_id: Optional[str] = None,
 
     return AwaitableGetFleetJavaMigrationAnalysisResultResult(
         application_execution_type=pulumi.get(__ret__, 'application_execution_type'),
+        application_key=pulumi.get(__ret__, 'application_key'),
         application_name=pulumi.get(__ret__, 'application_name'),
         application_path=pulumi.get(__ret__, 'application_path'),
         bucket=pulumi.get(__ret__, 'bucket'),

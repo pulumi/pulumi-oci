@@ -36,6 +36,7 @@ class AutonomousDatabaseArgs:
                  data_storage_size_in_tbs: Optional[pulumi.Input[int]] = None,
                  database_edition: Optional[pulumi.Input[str]] = None,
                  database_management_status: Optional[pulumi.Input[str]] = None,
+                 db_tools_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -87,7 +88,7 @@ class AutonomousDatabaseArgs:
         """
         The set of arguments for constructing a AutonomousDatabase resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
-        :param pulumi.Input[str] db_name: (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
+        :param pulumi.Input[str] db_name: The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
         :param pulumi.Input[str] admin_password: (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
         :param pulumi.Input[bool] are_primary_whitelisted_ips_used: (Updatable) This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
         :param pulumi.Input[str] autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -101,7 +102,7 @@ class AutonomousDatabaseArgs:
                
                AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
-        :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param pulumi.Input[float] compute_count: (Updatable) Compute used by database tools.
         :param pulumi.Input[str] compute_model: (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
@@ -122,6 +123,9 @@ class AutonomousDatabaseArgs:
                **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter. This input is ignored for Always Free resources.
         :param pulumi.Input[str] database_edition: (Updatable) The Oracle Database Edition that applies to the Autonomous databases.
         :param pulumi.Input[str] database_management_status: Status of Database Management for this Autonomous Database.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]] db_tools_details: (Updatable) The list of database tools details.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] db_version: (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD and APEX are only supported for `db_version` `19c` and above.
         :param pulumi.Input[str] db_workload: (Updatable) The Autonomous Database workload type. The following values are valid:
                * OLTP - indicates an Autonomous Transaction Processing database
@@ -178,6 +182,8 @@ class AutonomousDatabaseArgs:
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+               
+               This cannot be used in conjunction with adminPassword.
         :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
                
@@ -252,6 +258,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "database_edition", database_edition)
         if database_management_status is not None:
             pulumi.set(__self__, "database_management_status", database_management_status)
+        if db_tools_details is not None:
+            pulumi.set(__self__, "db_tools_details", db_tools_details)
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
         if db_workload is not None:
@@ -365,7 +373,7 @@ class AutonomousDatabaseArgs:
     @pulumi.getter(name="dbName")
     def db_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
+        The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
         """
         return pulumi.get(self, "db_name")
 
@@ -489,7 +497,7 @@ class AutonomousDatabaseArgs:
     @pulumi.getter(name="computeCount")
     def compute_count(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        (Updatable) Compute used by database tools.
         """
         return pulumi.get(self, "compute_count")
 
@@ -604,6 +612,20 @@ class AutonomousDatabaseArgs:
     @database_management_status.setter
     def database_management_status(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "database_management_status", value)
+
+    @property
+    @pulumi.getter(name="dbToolsDetails")
+    def db_tools_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]]:
+        """
+        (Updatable) The list of database tools details.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
+        """
+        return pulumi.get(self, "db_tools_details")
+
+    @db_tools_details.setter
+    def db_tools_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]]):
+        pulumi.set(self, "db_tools_details", value)
 
     @property
     @pulumi.getter(name="dbVersion")
@@ -1046,6 +1068,8 @@ class AutonomousDatabaseArgs:
     def secret_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+
+        This cannot be used in conjunction with adminPassword.
         """
         return pulumi.get(self, "secret_id")
 
@@ -1252,6 +1276,7 @@ class _AutonomousDatabaseState:
                  database_management_status: Optional[pulumi.Input[str]] = None,
                  dataguard_region_type: Optional[pulumi.Input[str]] = None,
                  db_name: Optional[pulumi.Input[str]] = None,
+                 db_tools_details: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -1367,7 +1392,7 @@ class _AutonomousDatabaseState:
                AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
-        :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param pulumi.Input[float] compute_count: (Updatable) Compute used by database tools.
         :param pulumi.Input[str] compute_model: (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringArgs']]] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionUrlArgs']]] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
@@ -1391,7 +1416,10 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] database_edition: (Updatable) The Oracle Database Edition that applies to the Autonomous databases.
         :param pulumi.Input[str] database_management_status: Status of Database Management for this Autonomous Database.
         :param pulumi.Input[str] dataguard_region_type: The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
-        :param pulumi.Input[str] db_name: (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
+        :param pulumi.Input[str] db_name: The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]] db_tools_details: (Updatable) The list of database tools details.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] db_version: (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD and APEX are only supported for `db_version` `19c` and above.
         :param pulumi.Input[str] db_workload: (Updatable) The Autonomous Database workload type. The following values are valid:
                * OLTP - indicates an Autonomous Transaction Processing database
@@ -1472,6 +1500,8 @@ class _AutonomousDatabaseState:
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+               
+               This cannot be used in conjunction with adminPassword.
         :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[str] service_console_url: The URL of the Service Console for the Autonomous Database.
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
@@ -1585,6 +1615,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "dataguard_region_type", dataguard_region_type)
         if db_name is not None:
             pulumi.set(__self__, "db_name", db_name)
+        if db_tools_details is not None:
+            pulumi.set(__self__, "db_tools_details", db_tools_details)
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
         if db_workload is not None:
@@ -1962,7 +1994,7 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="computeCount")
     def compute_count(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        (Updatable) Compute used by database tools.
         """
         return pulumi.get(self, "compute_count")
 
@@ -2118,13 +2150,27 @@ class _AutonomousDatabaseState:
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
+        The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
         """
         return pulumi.get(self, "db_name")
 
     @db_name.setter
     def db_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "db_name", value)
+
+    @property
+    @pulumi.getter(name="dbToolsDetails")
+    def db_tools_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]]:
+        """
+        (Updatable) The list of database tools details.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
+        """
+        return pulumi.get(self, "db_tools_details")
+
+    @db_tools_details.setter
+    def db_tools_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseDbToolsDetailArgs']]]]):
+        pulumi.set(self, "db_tools_details", value)
 
     @property
     @pulumi.getter(name="dbVersion")
@@ -2855,6 +2901,8 @@ class _AutonomousDatabaseState:
     def secret_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+
+        This cannot be used in conjunction with adminPassword.
         """
         return pulumi.get(self, "secret_id")
 
@@ -3316,6 +3364,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  database_edition: Optional[pulumi.Input[str]] = None,
                  database_management_status: Optional[pulumi.Input[str]] = None,
                  db_name: Optional[pulumi.Input[str]] = None,
+                 db_tools_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseDbToolsDetailArgs']]]]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -3394,7 +3443,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
-        :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param pulumi.Input[float] compute_count: (Updatable) Compute used by database tools.
         :param pulumi.Input[str] compute_model: (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param pulumi.Input[int] cpu_core_count: (Updatable) The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
                **Note:** This parameter cannot be used with the `ocpuCount` parameter. This input is ignored for Always Free resources.
@@ -3415,7 +3464,10 @@ class AutonomousDatabase(pulumi.CustomResource):
                **Note:** This parameter cannot be used with the `dataStorageSizeInGBs` parameter. This input is ignored for Always Free resources.
         :param pulumi.Input[str] database_edition: (Updatable) The Oracle Database Edition that applies to the Autonomous databases.
         :param pulumi.Input[str] database_management_status: Status of Database Management for this Autonomous Database.
-        :param pulumi.Input[str] db_name: (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
+        :param pulumi.Input[str] db_name: The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseDbToolsDetailArgs']]]] db_tools_details: (Updatable) The list of database tools details.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] db_version: (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD and APEX are only supported for `db_version` `19c` and above.
         :param pulumi.Input[str] db_workload: (Updatable) The Autonomous Database workload type. The following values are valid:
                * OLTP - indicates an Autonomous Transaction Processing database
@@ -3472,6 +3524,8 @@ class AutonomousDatabase(pulumi.CustomResource):
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+               
+               This cannot be used in conjunction with adminPassword.
         :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
                
@@ -3562,6 +3616,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  database_edition: Optional[pulumi.Input[str]] = None,
                  database_management_status: Optional[pulumi.Input[str]] = None,
                  db_name: Optional[pulumi.Input[str]] = None,
+                 db_tools_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseDbToolsDetailArgs']]]]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -3643,6 +3698,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             if db_name is None and not opts.urn:
                 raise TypeError("Missing required property 'db_name'")
             __props__.__dict__["db_name"] = db_name
+            __props__.__dict__["db_tools_details"] = db_tools_details
             __props__.__dict__["db_version"] = db_version
             __props__.__dict__["db_workload"] = db_workload
             __props__.__dict__["defined_tags"] = defined_tags
@@ -3785,6 +3841,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             database_management_status: Optional[pulumi.Input[str]] = None,
             dataguard_region_type: Optional[pulumi.Input[str]] = None,
             db_name: Optional[pulumi.Input[str]] = None,
+            db_tools_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseDbToolsDetailArgs']]]]] = None,
             db_version: Optional[pulumi.Input[str]] = None,
             db_workload: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -3905,7 +3962,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
         :param pulumi.Input[str] clone_type: The Autonomous Database clone type.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
-        :param pulumi.Input[float] compute_count: (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        :param pulumi.Input[float] compute_count: (Updatable) Compute used by database tools.
         :param pulumi.Input[str] compute_model: (Updatable) The compute model of the Autonomous Database. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseConnectionStringArgs']]]] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseConnectionUrlArgs']]]] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
@@ -3929,7 +3986,10 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] database_edition: (Updatable) The Oracle Database Edition that applies to the Autonomous databases.
         :param pulumi.Input[str] database_management_status: Status of Database Management for this Autonomous Database.
         :param pulumi.Input[str] dataguard_region_type: The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the "primary" role is operating in a remote Data Guard standby region.
-        :param pulumi.Input[str] db_name: (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
+        :param pulumi.Input[str] db_name: The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseDbToolsDetailArgs']]]] db_tools_details: (Updatable) The list of database tools details.
+               
+               This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] db_version: (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD and APEX are only supported for `db_version` `19c` and above.
         :param pulumi.Input[str] db_workload: (Updatable) The Autonomous Database workload type. The following values are valid:
                * OLTP - indicates an Autonomous Transaction Processing database
@@ -4010,6 +4070,8 @@ class AutonomousDatabase(pulumi.CustomResource):
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[str] secret_id: (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+               
+               This cannot be used in conjunction with adminPassword.
         :param pulumi.Input[int] secret_version_number: (Updatable) The version of the vault secret. If no version is specified, the latest version will be used.
         :param pulumi.Input[str] service_console_url: The URL of the Service Console for the Autonomous Database.
         :param pulumi.Input[str] source: The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
@@ -4099,6 +4161,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["database_management_status"] = database_management_status
         __props__.__dict__["dataguard_region_type"] = dataguard_region_type
         __props__.__dict__["db_name"] = db_name
+        __props__.__dict__["db_tools_details"] = db_tools_details
         __props__.__dict__["db_version"] = db_version
         __props__.__dict__["db_workload"] = db_workload
         __props__.__dict__["defined_tags"] = defined_tags
@@ -4323,7 +4386,7 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="computeCount")
     def compute_count(self) -> pulumi.Output[float]:
         """
-        (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the 'ECPU' compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+        (Updatable) Compute used by database tools.
         """
         return pulumi.get(self, "compute_count")
 
@@ -4431,9 +4494,19 @@ class AutonomousDatabase(pulumi.CustomResource):
     @pulumi.getter(name="dbName")
     def db_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
+        The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
         """
         return pulumi.get(self, "db_name")
+
+    @property
+    @pulumi.getter(name="dbToolsDetails")
+    def db_tools_details(self) -> pulumi.Output[Sequence['outputs.AutonomousDatabaseDbToolsDetail']]:
+        """
+        (Updatable) The list of database tools details.
+
+        This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
+        """
+        return pulumi.get(self, "db_tools_details")
 
     @property
     @pulumi.getter(name="dbVersion")
@@ -4928,6 +5001,8 @@ class AutonomousDatabase(pulumi.CustomResource):
     def secret_id(self) -> pulumi.Output[str]:
         """
         (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+
+        This cannot be used in conjunction with adminPassword.
         """
         return pulumi.get(self, "secret_id")
 

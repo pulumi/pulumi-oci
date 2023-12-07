@@ -133,6 +133,7 @@ namespace Pulumi.Oci.OsManagement
         public readonly string Id;
         public readonly int ManagedInstanceCount;
         public readonly string ManagedInstanceGroupId;
+        public readonly ImmutableArray<string> ManagedInstanceIds;
         /// <summary>
         /// list of Managed Instances in the group
         /// </summary>
@@ -164,6 +165,8 @@ namespace Pulumi.Oci.OsManagement
 
             string managedInstanceGroupId,
 
+            ImmutableArray<string> managedInstanceIds,
+
             ImmutableArray<Outputs.GetManagedInstanceGroupManagedInstanceResult> managedInstances,
 
             string osFamily,
@@ -178,6 +181,7 @@ namespace Pulumi.Oci.OsManagement
             Id = id;
             ManagedInstanceCount = managedInstanceCount;
             ManagedInstanceGroupId = managedInstanceGroupId;
+            ManagedInstanceIds = managedInstanceIds;
             ManagedInstances = managedInstances;
             OsFamily = osFamily;
             State = state;

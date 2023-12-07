@@ -54,6 +54,7 @@ import javax.annotation.Nullable;
  *             .description(var_.managed_instance_group_description())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .osFamily(var_.managed_instance_group_os_family())
+ *             .managedInstanceIds(var_.managed_instance_group_managed_instance_ids())
  *             .build());
  * 
  *     }
@@ -148,6 +149,26 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
         return this.managedInstanceCount;
     }
     /**
+     * The list of managed instance OCIDs to be added to the managed instance group.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="managedInstanceIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> managedInstanceIds;
+
+    /**
+     * @return The list of managed instance OCIDs to be added to the managed instance group.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<List<String>> managedInstanceIds() {
+        return this.managedInstanceIds;
+    }
+    /**
      * list of Managed Instances in the group
      * 
      */
@@ -164,18 +185,12 @@ public class ManagedInstanceGroup extends com.pulumi.resources.CustomResource {
     /**
      * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="osFamily", refs={String.class}, tree="[0]")
     private Output<String> osFamily;
 
     /**
      * @return The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> osFamily() {

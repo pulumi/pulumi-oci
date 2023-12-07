@@ -130,6 +130,10 @@ export class Fleet extends pulumi.CustomResource {
      */
     public readonly isAdvancedFeaturesEnabled!: pulumi.Output<boolean>;
     /**
+     * Whether or not export setting is enabled in this Fleet.
+     */
+    public /*out*/ readonly isExportSettingEnabled!: pulumi.Output<boolean>;
+    /**
      * (Updatable) Custom Log for inventory or operation log.
      */
     public readonly operationLog!: pulumi.Output<outputs.Jms.FleetOperationLog>;
@@ -171,6 +175,7 @@ export class Fleet extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["inventoryLog"] = state ? state.inventoryLog : undefined;
             resourceInputs["isAdvancedFeaturesEnabled"] = state ? state.isAdvancedFeaturesEnabled : undefined;
+            resourceInputs["isExportSettingEnabled"] = state ? state.isExportSettingEnabled : undefined;
             resourceInputs["operationLog"] = state ? state.operationLog : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -199,6 +204,7 @@ export class Fleet extends pulumi.CustomResource {
             resourceInputs["approximateJavaServerCount"] = undefined /*out*/;
             resourceInputs["approximateJreCount"] = undefined /*out*/;
             resourceInputs["approximateManagedInstanceCount"] = undefined /*out*/;
+            resourceInputs["isExportSettingEnabled"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -260,6 +266,10 @@ export interface FleetState {
      * (Updatable) Whether or not advanced features are enabled in this Fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` API instead.
      */
     isAdvancedFeaturesEnabled?: pulumi.Input<boolean>;
+    /**
+     * Whether or not export setting is enabled in this Fleet.
+     */
+    isExportSettingEnabled?: pulumi.Input<boolean>;
     /**
      * (Updatable) Custom Log for inventory or operation log.
      */

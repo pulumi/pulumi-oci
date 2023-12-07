@@ -73,6 +73,8 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * returned: always
         /// * type: integer
         /// * uniqueness: none
+        /// * idcsMaxValue: 100
+        /// * idcsMinValue: 0
         /// </summary>
         public readonly int Score;
         /// <summary>

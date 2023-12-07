@@ -21,6 +21,7 @@ __all__ = [
     'GetConnectionsFilterArgs',
     'GetDatabaseRegistrationsFilterArgs',
     'GetDeploymentBackupsFilterArgs',
+    'GetDeploymentCertificatesFilterArgs',
     'GetDeploymentTypesFilterArgs',
     'GetDeploymentUpgradesFilterArgs',
     'GetDeploymentVersionsFilterArgs',
@@ -76,7 +77,8 @@ class ConnectionBootstrapServerArgs:
                  port: Optional[pulumi.Input[int]] = None,
                  private_ip: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] host: (Updatable) The name or address of a host.
+        :param pulumi.Input[str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+               For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
         :param pulumi.Input[str] private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
@@ -91,7 +93,8 @@ class ConnectionBootstrapServerArgs:
     @pulumi.getter
     def host(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name or address of a host.
+        (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+        For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         """
         return pulumi.get(self, "host")
 
@@ -655,6 +658,45 @@ class GetDatabaseRegistrationsFilterArgs:
 
 @pulumi.input_type
 class GetDeploymentBackupsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetDeploymentCertificatesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

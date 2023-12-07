@@ -4,7 +4,10 @@
 package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Jms.outputs.GetJavaFamilyLatestReleaseArtifact;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -34,6 +37,21 @@ public final class GetJavaFamilyResult {
      * 
      */
     private String id;
+    /**
+     * @return Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+     * 
+     */
+    private Boolean isSupportedVersion;
+    /**
+     * @return List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+     * 
+     */
+    private List<GetJavaFamilyLatestReleaseArtifact> latestReleaseArtifacts;
+    /**
+     * @return Latest Java release version in the family.
+     * 
+     */
+    private String latestReleaseVersion;
     /**
      * @return This indicates the support category for the Java release family.
      * 
@@ -77,6 +95,27 @@ public final class GetJavaFamilyResult {
         return this.id;
     }
     /**
+     * @return Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+     * 
+     */
+    public Boolean isSupportedVersion() {
+        return this.isSupportedVersion;
+    }
+    /**
+     * @return List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+     * 
+     */
+    public List<GetJavaFamilyLatestReleaseArtifact> latestReleaseArtifacts() {
+        return this.latestReleaseArtifacts;
+    }
+    /**
+     * @return Latest Java release version in the family.
+     * 
+     */
+    public String latestReleaseVersion() {
+        return this.latestReleaseVersion;
+    }
+    /**
      * @return This indicates the support category for the Java release family.
      * 
      */
@@ -98,6 +137,9 @@ public final class GetJavaFamilyResult {
         private String endOfSupportLifeDate;
         private String familyVersion;
         private String id;
+        private Boolean isSupportedVersion;
+        private List<GetJavaFamilyLatestReleaseArtifact> latestReleaseArtifacts;
+        private String latestReleaseVersion;
         private String supportType;
         public Builder() {}
         public Builder(GetJavaFamilyResult defaults) {
@@ -107,6 +149,9 @@ public final class GetJavaFamilyResult {
     	      this.endOfSupportLifeDate = defaults.endOfSupportLifeDate;
     	      this.familyVersion = defaults.familyVersion;
     	      this.id = defaults.id;
+    	      this.isSupportedVersion = defaults.isSupportedVersion;
+    	      this.latestReleaseArtifacts = defaults.latestReleaseArtifacts;
+    	      this.latestReleaseVersion = defaults.latestReleaseVersion;
     	      this.supportType = defaults.supportType;
         }
 
@@ -136,6 +181,24 @@ public final class GetJavaFamilyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isSupportedVersion(Boolean isSupportedVersion) {
+            this.isSupportedVersion = Objects.requireNonNull(isSupportedVersion);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder latestReleaseArtifacts(List<GetJavaFamilyLatestReleaseArtifact> latestReleaseArtifacts) {
+            this.latestReleaseArtifacts = Objects.requireNonNull(latestReleaseArtifacts);
+            return this;
+        }
+        public Builder latestReleaseArtifacts(GetJavaFamilyLatestReleaseArtifact... latestReleaseArtifacts) {
+            return latestReleaseArtifacts(List.of(latestReleaseArtifacts));
+        }
+        @CustomType.Setter
+        public Builder latestReleaseVersion(String latestReleaseVersion) {
+            this.latestReleaseVersion = Objects.requireNonNull(latestReleaseVersion);
+            return this;
+        }
+        @CustomType.Setter
         public Builder supportType(String supportType) {
             this.supportType = Objects.requireNonNull(supportType);
             return this;
@@ -147,6 +210,9 @@ public final class GetJavaFamilyResult {
             o.endOfSupportLifeDate = endOfSupportLifeDate;
             o.familyVersion = familyVersion;
             o.id = id;
+            o.isSupportedVersion = isSupportedVersion;
+            o.latestReleaseArtifacts = latestReleaseArtifacts;
+            o.latestReleaseVersion = latestReleaseVersion;
             o.supportType = supportType;
             return o;
         }

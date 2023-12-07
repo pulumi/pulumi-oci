@@ -120,7 +120,8 @@ func (o ConnectionAdditionalAttributeArrayOutput) Index(i pulumi.IntInput) Conne
 }
 
 type ConnectionBootstrapServer struct {
-	// (Updatable) The name or address of a host.
+	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host *string `pulumi:"host"`
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port *int `pulumi:"port"`
@@ -140,7 +141,8 @@ type ConnectionBootstrapServerInput interface {
 }
 
 type ConnectionBootstrapServerArgs struct {
-	// (Updatable) The name or address of a host.
+	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host pulumi.StringPtrInput `pulumi:"host"`
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port pulumi.IntPtrInput `pulumi:"port"`
@@ -199,7 +201,8 @@ func (o ConnectionBootstrapServerOutput) ToConnectionBootstrapServerOutputWithCo
 	return o
 }
 
-// (Updatable) The name or address of a host.
+// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
+// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 func (o ConnectionBootstrapServerOutput) Host() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionBootstrapServer) *string { return v.Host }).(pulumi.StringPtrOutput)
 }
@@ -1604,6 +1607,8 @@ func (o GetConnectionAssignmentsFilterArrayOutput) Index(i pulumi.IntInput) GetC
 
 type GetConnectionBootstrapServer struct {
 	// The name or address of a host.
+	// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host string `pulumi:"host"`
 	// The port of an endpoint usually specified for a connection.
 	Port int `pulumi:"port"`
@@ -1624,6 +1629,8 @@ type GetConnectionBootstrapServerInput interface {
 
 type GetConnectionBootstrapServerArgs struct {
 	// The name or address of a host.
+	// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host pulumi.StringInput `pulumi:"host"`
 	// The port of an endpoint usually specified for a connection.
 	Port pulumi.IntInput `pulumi:"port"`
@@ -1683,6 +1690,8 @@ func (o GetConnectionBootstrapServerOutput) ToGetConnectionBootstrapServerOutput
 }
 
 // The name or address of a host.
+// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 func (o GetConnectionBootstrapServerOutput) Host() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionBootstrapServer) string { return v.Host }).(pulumi.StringOutput)
 }
@@ -1916,7 +1925,9 @@ type GetConnectionsConnectionCollectionItem struct {
 	AccountName string `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes []GetConnectionsConnectionCollectionItemAdditionalAttribute `pulumi:"additionalAttributes"`
-	// Used authentication mechanism to access Azure Data Lake Storage.
+	// Used authentication mechanism to be provided for the following connection types:
+	// * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
+	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 	AuthenticationType string `pulumi:"authenticationType"`
 	// Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
 	AzureTenantId string `pulumi:"azureTenantId"`
@@ -1929,15 +1940,19 @@ type GetConnectionsConnectionCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
 	ConnectionFactory string `pulumi:"connectionFactory"`
-	// JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+	// * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+	// * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+	// * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 	ConnectionString string `pulumi:"connectionString"`
 	// The array of connection types.
 	ConnectionType string `pulumi:"connectionType"`
-	// JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+	// * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
+	// * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+	// * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
 	ConnectionUrl      string `pulumi:"connectionUrl"`
 	ConsumerProperties string `pulumi:"consumerProperties"`
 	CoreSiteXml        string `pulumi:"coreSiteXml"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId string `pulumi:"databaseId"`
 	// The name of the database.
 	DatabaseName string `pulumi:"databaseName"`
@@ -1952,10 +1967,13 @@ type GetConnectionsConnectionCollectionItem struct {
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName string `pulumi:"displayName"`
 	// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
-	Endpoint string `pulumi:"endpoint"`
+	Endpoint    string `pulumi:"endpoint"`
+	Fingerprint string `pulumi:"fingerprint"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The name or address of a host.
+	// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host string `pulumi:"host"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	Id string `pulumi:"id"`
@@ -1991,8 +2009,14 @@ type GetConnectionsConnectionCollectionItem struct {
 	Region          string `pulumi:"region"`
 	SasToken        string `pulumi:"sasToken"`
 	SecretAccessKey string `pulumi:"secretAccessKey"`
-	// Security protocol for PostgreSQL / Microsoft SQL Server..
+	// Security Protocol to be provided for the following connection types:
+	// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 	SecurityProtocol string `pulumi:"securityProtocol"`
+	// Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
+	// If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+	Servers               string `pulumi:"servers"`
+	ServiceAccountKeyFile string `pulumi:"serviceAccountKeyFile"`
 	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode string `pulumi:"sessionMode"`
 	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
@@ -2005,7 +2029,7 @@ type GetConnectionsConnectionCollectionItem struct {
 	SslCrl         string `pulumi:"sslCrl"`
 	SslKey         string `pulumi:"sslKey"`
 	SslKeyPassword string `pulumi:"sslKeyPassword"`
-	// SSL mode for PostgreSQL.
+	// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
 	SslMode string `pulumi:"sslMode"`
 	// A filter to return only connections having the 'lifecycleState' given.
 	State string `pulumi:"state"`
@@ -2055,7 +2079,9 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	AccountName pulumi.StringInput `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
-	// Used authentication mechanism to access Azure Data Lake Storage.
+	// Used authentication mechanism to be provided for the following connection types:
+	// * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
+	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 	AuthenticationType pulumi.StringInput `pulumi:"authenticationType"`
 	// Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
 	AzureTenantId pulumi.StringInput `pulumi:"azureTenantId"`
@@ -2068,15 +2094,19 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
 	ConnectionFactory pulumi.StringInput `pulumi:"connectionFactory"`
-	// JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+	// * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+	// * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+	// * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
 	// The array of connection types.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
-	// JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+	// * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
+	// * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+	// * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
 	ConnectionUrl      pulumi.StringInput `pulumi:"connectionUrl"`
 	ConsumerProperties pulumi.StringInput `pulumi:"consumerProperties"`
 	CoreSiteXml        pulumi.StringInput `pulumi:"coreSiteXml"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
 	// The name of the database.
 	DatabaseName pulumi.StringInput `pulumi:"databaseName"`
@@ -2091,10 +2121,13 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
-	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+	Endpoint    pulumi.StringInput `pulumi:"endpoint"`
+	Fingerprint pulumi.StringInput `pulumi:"fingerprint"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The name or address of a host.
+	// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host pulumi.StringInput `pulumi:"host"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -2130,8 +2163,14 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	Region          pulumi.StringInput `pulumi:"region"`
 	SasToken        pulumi.StringInput `pulumi:"sasToken"`
 	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
-	// Security protocol for PostgreSQL / Microsoft SQL Server..
+	// Security Protocol to be provided for the following connection types:
+	// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 	SecurityProtocol pulumi.StringInput `pulumi:"securityProtocol"`
+	// Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
+	// If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+	Servers               pulumi.StringInput `pulumi:"servers"`
+	ServiceAccountKeyFile pulumi.StringInput `pulumi:"serviceAccountKeyFile"`
 	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode pulumi.StringInput `pulumi:"sessionMode"`
 	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
@@ -2144,7 +2183,7 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	SslCrl         pulumi.StringInput `pulumi:"sslCrl"`
 	SslKey         pulumi.StringInput `pulumi:"sslKey"`
 	SslKeyPassword pulumi.StringInput `pulumi:"sslKeyPassword"`
-	// SSL mode for PostgreSQL.
+	// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
 	SslMode pulumi.StringInput `pulumi:"sslMode"`
 	// A filter to return only connections having the 'lifecycleState' given.
 	State pulumi.StringInput `pulumi:"state"`
@@ -2247,7 +2286,9 @@ func (o GetConnectionsConnectionCollectionItemOutput) AdditionalAttributes() Get
 	}).(GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput)
 }
 
-// Used authentication mechanism to access Azure Data Lake Storage.
+// Used authentication mechanism to be provided for the following connection types:
+// * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
+// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 func (o GetConnectionsConnectionCollectionItemOutput) AuthenticationType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AuthenticationType }).(pulumi.StringOutput)
 }
@@ -2283,7 +2324,9 @@ func (o GetConnectionsConnectionCollectionItemOutput) ConnectionFactory() pulumi
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConnectionFactory }).(pulumi.StringOutput)
 }
 
-// JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+// * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+// * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+// * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
 func (o GetConnectionsConnectionCollectionItemOutput) ConnectionString() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConnectionString }).(pulumi.StringOutput)
 }
@@ -2293,7 +2336,9 @@ func (o GetConnectionsConnectionCollectionItemOutput) ConnectionType() pulumi.St
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConnectionType }).(pulumi.StringOutput)
 }
 
-// JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+// * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
+// * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+// * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
 func (o GetConnectionsConnectionCollectionItemOutput) ConnectionUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConnectionUrl }).(pulumi.StringOutput)
 }
@@ -2306,7 +2351,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) CoreSiteXml() pulumi.Strin
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.CoreSiteXml }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 func (o GetConnectionsConnectionCollectionItemOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DatabaseId }).(pulumi.StringOutput)
 }
@@ -2346,12 +2391,18 @@ func (o GetConnectionsConnectionCollectionItemOutput) Endpoint() pulumi.StringOu
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Endpoint }).(pulumi.StringOutput)
 }
 
+func (o GetConnectionsConnectionCollectionItemOutput) Fingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Fingerprint }).(pulumi.StringOutput)
+}
+
 // A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 func (o GetConnectionsConnectionCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
 // The name or address of a host.
+// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 func (o GetConnectionsConnectionCollectionItemOutput) Host() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Host }).(pulumi.StringOutput)
 }
@@ -2458,9 +2509,21 @@ func (o GetConnectionsConnectionCollectionItemOutput) SecretAccessKey() pulumi.S
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SecretAccessKey }).(pulumi.StringOutput)
 }
 
-// Security protocol for PostgreSQL / Microsoft SQL Server..
+// Security Protocol to be provided for the following connection types:
+// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 func (o GetConnectionsConnectionCollectionItemOutput) SecurityProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SecurityProtocol }).(pulumi.StringOutput)
+}
+
+// Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
+// If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+func (o GetConnectionsConnectionCollectionItemOutput) Servers() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Servers }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) ServiceAccountKeyFile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ServiceAccountKeyFile }).(pulumi.StringOutput)
 }
 
 // The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
@@ -2499,7 +2562,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) SslKeyPassword() pulumi.St
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslKeyPassword }).(pulumi.StringOutput)
 }
 
-// SSL mode for PostgreSQL.
+// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
 func (o GetConnectionsConnectionCollectionItemOutput) SslMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslMode }).(pulumi.StringOutput)
 }
@@ -2704,6 +2767,8 @@ func (o GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput) In
 
 type GetConnectionsConnectionCollectionItemBootstrapServer struct {
 	// The name or address of a host.
+	// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host string `pulumi:"host"`
 	// The port of an endpoint usually specified for a connection.
 	Port int `pulumi:"port"`
@@ -2724,6 +2789,8 @@ type GetConnectionsConnectionCollectionItemBootstrapServerInput interface {
 
 type GetConnectionsConnectionCollectionItemBootstrapServerArgs struct {
 	// The name or address of a host.
+	// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host pulumi.StringInput `pulumi:"host"`
 	// The port of an endpoint usually specified for a connection.
 	Port pulumi.IntInput `pulumi:"port"`
@@ -2783,6 +2850,8 @@ func (o GetConnectionsConnectionCollectionItemBootstrapServerOutput) ToGetConnec
 }
 
 // The name or address of a host.
+// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 func (o GetConnectionsConnectionCollectionItemBootstrapServerOutput) Host() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemBootstrapServer) string { return v.Host }).(pulumi.StringOutput)
 }
@@ -4023,6 +4092,437 @@ func (o GetDeploymentBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetDeplo
 	}).(GetDeploymentBackupsFilterOutput)
 }
 
+type GetDeploymentCertificatesCertificateCollection struct {
+	Items []GetDeploymentCertificatesCertificateCollectionItem `pulumi:"items"`
+}
+
+// GetDeploymentCertificatesCertificateCollectionInput is an input type that accepts GetDeploymentCertificatesCertificateCollectionArgs and GetDeploymentCertificatesCertificateCollectionOutput values.
+// You can construct a concrete instance of `GetDeploymentCertificatesCertificateCollectionInput` via:
+//
+//	GetDeploymentCertificatesCertificateCollectionArgs{...}
+type GetDeploymentCertificatesCertificateCollectionInput interface {
+	pulumi.Input
+
+	ToGetDeploymentCertificatesCertificateCollectionOutput() GetDeploymentCertificatesCertificateCollectionOutput
+	ToGetDeploymentCertificatesCertificateCollectionOutputWithContext(context.Context) GetDeploymentCertificatesCertificateCollectionOutput
+}
+
+type GetDeploymentCertificatesCertificateCollectionArgs struct {
+	Items GetDeploymentCertificatesCertificateCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDeploymentCertificatesCertificateCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentCertificatesCertificateCollection)(nil)).Elem()
+}
+
+func (i GetDeploymentCertificatesCertificateCollectionArgs) ToGetDeploymentCertificatesCertificateCollectionOutput() GetDeploymentCertificatesCertificateCollectionOutput {
+	return i.ToGetDeploymentCertificatesCertificateCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentCertificatesCertificateCollectionArgs) ToGetDeploymentCertificatesCertificateCollectionOutputWithContext(ctx context.Context) GetDeploymentCertificatesCertificateCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentCertificatesCertificateCollectionOutput)
+}
+
+// GetDeploymentCertificatesCertificateCollectionArrayInput is an input type that accepts GetDeploymentCertificatesCertificateCollectionArray and GetDeploymentCertificatesCertificateCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentCertificatesCertificateCollectionArrayInput` via:
+//
+//	GetDeploymentCertificatesCertificateCollectionArray{ GetDeploymentCertificatesCertificateCollectionArgs{...} }
+type GetDeploymentCertificatesCertificateCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentCertificatesCertificateCollectionArrayOutput() GetDeploymentCertificatesCertificateCollectionArrayOutput
+	ToGetDeploymentCertificatesCertificateCollectionArrayOutputWithContext(context.Context) GetDeploymentCertificatesCertificateCollectionArrayOutput
+}
+
+type GetDeploymentCertificatesCertificateCollectionArray []GetDeploymentCertificatesCertificateCollectionInput
+
+func (GetDeploymentCertificatesCertificateCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentCertificatesCertificateCollection)(nil)).Elem()
+}
+
+func (i GetDeploymentCertificatesCertificateCollectionArray) ToGetDeploymentCertificatesCertificateCollectionArrayOutput() GetDeploymentCertificatesCertificateCollectionArrayOutput {
+	return i.ToGetDeploymentCertificatesCertificateCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentCertificatesCertificateCollectionArray) ToGetDeploymentCertificatesCertificateCollectionArrayOutputWithContext(ctx context.Context) GetDeploymentCertificatesCertificateCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentCertificatesCertificateCollectionArrayOutput)
+}
+
+type GetDeploymentCertificatesCertificateCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentCertificatesCertificateCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentCertificatesCertificateCollection)(nil)).Elem()
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionOutput) ToGetDeploymentCertificatesCertificateCollectionOutput() GetDeploymentCertificatesCertificateCollectionOutput {
+	return o
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionOutput) ToGetDeploymentCertificatesCertificateCollectionOutputWithContext(ctx context.Context) GetDeploymentCertificatesCertificateCollectionOutput {
+	return o
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionOutput) Items() GetDeploymentCertificatesCertificateCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollection) []GetDeploymentCertificatesCertificateCollectionItem {
+		return v.Items
+	}).(GetDeploymentCertificatesCertificateCollectionItemArrayOutput)
+}
+
+type GetDeploymentCertificatesCertificateCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentCertificatesCertificateCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentCertificatesCertificateCollection)(nil)).Elem()
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionArrayOutput) ToGetDeploymentCertificatesCertificateCollectionArrayOutput() GetDeploymentCertificatesCertificateCollectionArrayOutput {
+	return o
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionArrayOutput) ToGetDeploymentCertificatesCertificateCollectionArrayOutputWithContext(ctx context.Context) GetDeploymentCertificatesCertificateCollectionArrayOutput {
+	return o
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionArrayOutput) Index(i pulumi.IntInput) GetDeploymentCertificatesCertificateCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentCertificatesCertificateCollection {
+		return vs[0].([]GetDeploymentCertificatesCertificateCollection)[vs[1].(int)]
+	}).(GetDeploymentCertificatesCertificateCollectionOutput)
+}
+
+type GetDeploymentCertificatesCertificateCollectionItem struct {
+	AuthorityKeyId     string `pulumi:"authorityKeyId"`
+	CertificateContent string `pulumi:"certificateContent"`
+	// A unique Deployment identifier.
+	DeploymentId string `pulumi:"deploymentId"`
+	IsCa         bool   `pulumi:"isCa"`
+	// Indicates if the certificate is self signed.
+	IsSelfSigned bool   `pulumi:"isSelfSigned"`
+	Issuer       string `pulumi:"issuer"`
+	// The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+	Key                string `pulumi:"key"`
+	Md5hash            string `pulumi:"md5hash"`
+	PublicKey          string `pulumi:"publicKey"`
+	PublicKeyAlgorithm string `pulumi:"publicKeyAlgorithm"`
+	PublicKeySize      string `pulumi:"publicKeySize"`
+	Serial             string `pulumi:"serial"`
+	Sha1hash           string `pulumi:"sha1hash"`
+	// A filter to return only connections having the 'lifecycleState' given.
+	State string `pulumi:"state"`
+	// The Certificate subject.
+	Subject      string `pulumi:"subject"`
+	SubjectKeyId string `pulumi:"subjectKeyId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated   string `pulumi:"timeCreated"`
+	TimeValidFrom string `pulumi:"timeValidFrom"`
+	// The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeValidTo string `pulumi:"timeValidTo"`
+	Version     string `pulumi:"version"`
+}
+
+// GetDeploymentCertificatesCertificateCollectionItemInput is an input type that accepts GetDeploymentCertificatesCertificateCollectionItemArgs and GetDeploymentCertificatesCertificateCollectionItemOutput values.
+// You can construct a concrete instance of `GetDeploymentCertificatesCertificateCollectionItemInput` via:
+//
+//	GetDeploymentCertificatesCertificateCollectionItemArgs{...}
+type GetDeploymentCertificatesCertificateCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDeploymentCertificatesCertificateCollectionItemOutput() GetDeploymentCertificatesCertificateCollectionItemOutput
+	ToGetDeploymentCertificatesCertificateCollectionItemOutputWithContext(context.Context) GetDeploymentCertificatesCertificateCollectionItemOutput
+}
+
+type GetDeploymentCertificatesCertificateCollectionItemArgs struct {
+	AuthorityKeyId     pulumi.StringInput `pulumi:"authorityKeyId"`
+	CertificateContent pulumi.StringInput `pulumi:"certificateContent"`
+	// A unique Deployment identifier.
+	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
+	IsCa         pulumi.BoolInput   `pulumi:"isCa"`
+	// Indicates if the certificate is self signed.
+	IsSelfSigned pulumi.BoolInput   `pulumi:"isSelfSigned"`
+	Issuer       pulumi.StringInput `pulumi:"issuer"`
+	// The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+	Key                pulumi.StringInput `pulumi:"key"`
+	Md5hash            pulumi.StringInput `pulumi:"md5hash"`
+	PublicKey          pulumi.StringInput `pulumi:"publicKey"`
+	PublicKeyAlgorithm pulumi.StringInput `pulumi:"publicKeyAlgorithm"`
+	PublicKeySize      pulumi.StringInput `pulumi:"publicKeySize"`
+	Serial             pulumi.StringInput `pulumi:"serial"`
+	Sha1hash           pulumi.StringInput `pulumi:"sha1hash"`
+	// A filter to return only connections having the 'lifecycleState' given.
+	State pulumi.StringInput `pulumi:"state"`
+	// The Certificate subject.
+	Subject      pulumi.StringInput `pulumi:"subject"`
+	SubjectKeyId pulumi.StringInput `pulumi:"subjectKeyId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated   pulumi.StringInput `pulumi:"timeCreated"`
+	TimeValidFrom pulumi.StringInput `pulumi:"timeValidFrom"`
+	// The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeValidTo pulumi.StringInput `pulumi:"timeValidTo"`
+	Version     pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetDeploymentCertificatesCertificateCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentCertificatesCertificateCollectionItem)(nil)).Elem()
+}
+
+func (i GetDeploymentCertificatesCertificateCollectionItemArgs) ToGetDeploymentCertificatesCertificateCollectionItemOutput() GetDeploymentCertificatesCertificateCollectionItemOutput {
+	return i.ToGetDeploymentCertificatesCertificateCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentCertificatesCertificateCollectionItemArgs) ToGetDeploymentCertificatesCertificateCollectionItemOutputWithContext(ctx context.Context) GetDeploymentCertificatesCertificateCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentCertificatesCertificateCollectionItemOutput)
+}
+
+// GetDeploymentCertificatesCertificateCollectionItemArrayInput is an input type that accepts GetDeploymentCertificatesCertificateCollectionItemArray and GetDeploymentCertificatesCertificateCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentCertificatesCertificateCollectionItemArrayInput` via:
+//
+//	GetDeploymentCertificatesCertificateCollectionItemArray{ GetDeploymentCertificatesCertificateCollectionItemArgs{...} }
+type GetDeploymentCertificatesCertificateCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentCertificatesCertificateCollectionItemArrayOutput() GetDeploymentCertificatesCertificateCollectionItemArrayOutput
+	ToGetDeploymentCertificatesCertificateCollectionItemArrayOutputWithContext(context.Context) GetDeploymentCertificatesCertificateCollectionItemArrayOutput
+}
+
+type GetDeploymentCertificatesCertificateCollectionItemArray []GetDeploymentCertificatesCertificateCollectionItemInput
+
+func (GetDeploymentCertificatesCertificateCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentCertificatesCertificateCollectionItem)(nil)).Elem()
+}
+
+func (i GetDeploymentCertificatesCertificateCollectionItemArray) ToGetDeploymentCertificatesCertificateCollectionItemArrayOutput() GetDeploymentCertificatesCertificateCollectionItemArrayOutput {
+	return i.ToGetDeploymentCertificatesCertificateCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentCertificatesCertificateCollectionItemArray) ToGetDeploymentCertificatesCertificateCollectionItemArrayOutputWithContext(ctx context.Context) GetDeploymentCertificatesCertificateCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentCertificatesCertificateCollectionItemArrayOutput)
+}
+
+type GetDeploymentCertificatesCertificateCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentCertificatesCertificateCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentCertificatesCertificateCollectionItem)(nil)).Elem()
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) ToGetDeploymentCertificatesCertificateCollectionItemOutput() GetDeploymentCertificatesCertificateCollectionItemOutput {
+	return o
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) ToGetDeploymentCertificatesCertificateCollectionItemOutputWithContext(ctx context.Context) GetDeploymentCertificatesCertificateCollectionItemOutput {
+	return o
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) AuthorityKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.AuthorityKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) CertificateContent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.CertificateContent }).(pulumi.StringOutput)
+}
+
+// A unique Deployment identifier.
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) DeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.DeploymentId }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) IsCa() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) bool { return v.IsCa }).(pulumi.BoolOutput)
+}
+
+// Indicates if the certificate is self signed.
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) IsSelfSigned() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) bool { return v.IsSelfSigned }).(pulumi.BoolOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Issuer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Issuer }).(pulumi.StringOutput)
+}
+
+// The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Md5hash() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Md5hash }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) PublicKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.PublicKey }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) PublicKeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.PublicKeyAlgorithm }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) PublicKeySize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.PublicKeySize }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Serial() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Serial }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Sha1hash() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Sha1hash }).(pulumi.StringOutput)
+}
+
+// A filter to return only connections having the 'lifecycleState' given.
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The Certificate subject.
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Subject() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Subject }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) SubjectKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.SubjectKeyId }).(pulumi.StringOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) TimeValidFrom() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.TimeValidFrom }).(pulumi.StringOutput)
+}
+
+// The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) TimeValidTo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.TimeValidTo }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetDeploymentCertificatesCertificateCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentCertificatesCertificateCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentCertificatesCertificateCollectionItem)(nil)).Elem()
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemArrayOutput) ToGetDeploymentCertificatesCertificateCollectionItemArrayOutput() GetDeploymentCertificatesCertificateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemArrayOutput) ToGetDeploymentCertificatesCertificateCollectionItemArrayOutputWithContext(ctx context.Context) GetDeploymentCertificatesCertificateCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDeploymentCertificatesCertificateCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentCertificatesCertificateCollectionItem {
+		return vs[0].([]GetDeploymentCertificatesCertificateCollectionItem)[vs[1].(int)]
+	}).(GetDeploymentCertificatesCertificateCollectionItemOutput)
+}
+
+type GetDeploymentCertificatesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDeploymentCertificatesFilterInput is an input type that accepts GetDeploymentCertificatesFilterArgs and GetDeploymentCertificatesFilterOutput values.
+// You can construct a concrete instance of `GetDeploymentCertificatesFilterInput` via:
+//
+//	GetDeploymentCertificatesFilterArgs{...}
+type GetDeploymentCertificatesFilterInput interface {
+	pulumi.Input
+
+	ToGetDeploymentCertificatesFilterOutput() GetDeploymentCertificatesFilterOutput
+	ToGetDeploymentCertificatesFilterOutputWithContext(context.Context) GetDeploymentCertificatesFilterOutput
+}
+
+type GetDeploymentCertificatesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDeploymentCertificatesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentCertificatesFilter)(nil)).Elem()
+}
+
+func (i GetDeploymentCertificatesFilterArgs) ToGetDeploymentCertificatesFilterOutput() GetDeploymentCertificatesFilterOutput {
+	return i.ToGetDeploymentCertificatesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentCertificatesFilterArgs) ToGetDeploymentCertificatesFilterOutputWithContext(ctx context.Context) GetDeploymentCertificatesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentCertificatesFilterOutput)
+}
+
+// GetDeploymentCertificatesFilterArrayInput is an input type that accepts GetDeploymentCertificatesFilterArray and GetDeploymentCertificatesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentCertificatesFilterArrayInput` via:
+//
+//	GetDeploymentCertificatesFilterArray{ GetDeploymentCertificatesFilterArgs{...} }
+type GetDeploymentCertificatesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentCertificatesFilterArrayOutput() GetDeploymentCertificatesFilterArrayOutput
+	ToGetDeploymentCertificatesFilterArrayOutputWithContext(context.Context) GetDeploymentCertificatesFilterArrayOutput
+}
+
+type GetDeploymentCertificatesFilterArray []GetDeploymentCertificatesFilterInput
+
+func (GetDeploymentCertificatesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentCertificatesFilter)(nil)).Elem()
+}
+
+func (i GetDeploymentCertificatesFilterArray) ToGetDeploymentCertificatesFilterArrayOutput() GetDeploymentCertificatesFilterArrayOutput {
+	return i.ToGetDeploymentCertificatesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentCertificatesFilterArray) ToGetDeploymentCertificatesFilterArrayOutputWithContext(ctx context.Context) GetDeploymentCertificatesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentCertificatesFilterArrayOutput)
+}
+
+type GetDeploymentCertificatesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentCertificatesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentCertificatesFilter)(nil)).Elem()
+}
+
+func (o GetDeploymentCertificatesFilterOutput) ToGetDeploymentCertificatesFilterOutput() GetDeploymentCertificatesFilterOutput {
+	return o
+}
+
+func (o GetDeploymentCertificatesFilterOutput) ToGetDeploymentCertificatesFilterOutputWithContext(ctx context.Context) GetDeploymentCertificatesFilterOutput {
+	return o
+}
+
+func (o GetDeploymentCertificatesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentCertificatesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDeploymentCertificatesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDeploymentCertificatesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentCertificatesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentCertificatesFilter)(nil)).Elem()
+}
+
+func (o GetDeploymentCertificatesFilterArrayOutput) ToGetDeploymentCertificatesFilterArrayOutput() GetDeploymentCertificatesFilterArrayOutput {
+	return o
+}
+
+func (o GetDeploymentCertificatesFilterArrayOutput) ToGetDeploymentCertificatesFilterArrayOutputWithContext(ctx context.Context) GetDeploymentCertificatesFilterArrayOutput {
+	return o
+}
+
+func (o GetDeploymentCertificatesFilterArrayOutput) Index(i pulumi.IntInput) GetDeploymentCertificatesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentCertificatesFilter {
+		return vs[0].([]GetDeploymentCertificatesFilter)[vs[1].(int)]
+	}).(GetDeploymentCertificatesFilterOutput)
+}
+
 type GetDeploymentDeploymentDiagnosticData struct {
 	// Name of the bucket where the object is to be uploaded in the object storage
 	Bucket string `pulumi:"bucket"`
@@ -4809,10 +5309,12 @@ func (o GetDeploymentTypesDeploymentTypeCollectionArrayOutput) Index(i pulumi.In
 }
 
 type GetDeploymentTypesDeploymentTypeCollectionItem struct {
-	// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category string `pulumi:"category"`
 	// An array of connectionTypes.
 	ConnectionTypes []string `pulumi:"connectionTypes"`
+	// The default admin username used by deployment.
+	DefaultUsername string `pulumi:"defaultUsername"`
 	// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
 	DeploymentType string `pulumi:"deploymentType"`
 	// A filter to return only the resources that match the entire 'displayName' given.
@@ -4821,6 +5323,8 @@ type GetDeploymentTypesDeploymentTypeCollectionItem struct {
 	OggVersion string `pulumi:"oggVersion"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
 	SourceTechnologies []string `pulumi:"sourceTechnologies"`
+	// The URL to the webpage listing the supported technologies.
+	SupportedTechnologiesUrl string `pulumi:"supportedTechnologiesUrl"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
 	TargetTechnologies []string `pulumi:"targetTechnologies"`
 }
@@ -4837,10 +5341,12 @@ type GetDeploymentTypesDeploymentTypeCollectionItemInput interface {
 }
 
 type GetDeploymentTypesDeploymentTypeCollectionItemArgs struct {
-	// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category pulumi.StringInput `pulumi:"category"`
 	// An array of connectionTypes.
 	ConnectionTypes pulumi.StringArrayInput `pulumi:"connectionTypes"`
+	// The default admin username used by deployment.
+	DefaultUsername pulumi.StringInput `pulumi:"defaultUsername"`
 	// The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
 	// A filter to return only the resources that match the entire 'displayName' given.
@@ -4849,6 +5355,8 @@ type GetDeploymentTypesDeploymentTypeCollectionItemArgs struct {
 	OggVersion pulumi.StringInput `pulumi:"oggVersion"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
 	SourceTechnologies pulumi.StringArrayInput `pulumi:"sourceTechnologies"`
+	// The URL to the webpage listing the supported technologies.
+	SupportedTechnologiesUrl pulumi.StringInput `pulumi:"supportedTechnologiesUrl"`
 	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
 	TargetTechnologies pulumi.StringArrayInput `pulumi:"targetTechnologies"`
 }
@@ -4904,7 +5412,7 @@ func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) ToGetDeploymentTyp
 	return o
 }
 
-// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) string { return v.Category }).(pulumi.StringOutput)
 }
@@ -4912,6 +5420,11 @@ func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) Category() pulumi.
 // An array of connectionTypes.
 func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) ConnectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) []string { return v.ConnectionTypes }).(pulumi.StringArrayOutput)
+}
+
+// The default admin username used by deployment.
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) DefaultUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) string { return v.DefaultUsername }).(pulumi.StringOutput)
 }
 
 // The type of deployment, the value determines the exact 'type' of the service executed in the deployment. Default value is DATABASE_ORACLE.
@@ -4932,6 +5445,11 @@ func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) OggVersion() pulum
 // List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
 func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) SourceTechnologies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) []string { return v.SourceTechnologies }).(pulumi.StringArrayOutput)
+}
+
+// The URL to the webpage listing the supported technologies.
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) SupportedTechnologiesUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) string { return v.SupportedTechnologiesUrl }).(pulumi.StringOutput)
 }
 
 // List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
@@ -8664,6 +9182,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionItemArrayInput)(nil)).Elem(), GetDeploymentBackupsDeploymentBackupCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsFilterInput)(nil)).Elem(), GetDeploymentBackupsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsFilterArrayInput)(nil)).Elem(), GetDeploymentBackupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentCertificatesCertificateCollectionInput)(nil)).Elem(), GetDeploymentCertificatesCertificateCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentCertificatesCertificateCollectionArrayInput)(nil)).Elem(), GetDeploymentCertificatesCertificateCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentCertificatesCertificateCollectionItemInput)(nil)).Elem(), GetDeploymentCertificatesCertificateCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentCertificatesCertificateCollectionItemArrayInput)(nil)).Elem(), GetDeploymentCertificatesCertificateCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentCertificatesFilterInput)(nil)).Elem(), GetDeploymentCertificatesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentCertificatesFilterArrayInput)(nil)).Elem(), GetDeploymentCertificatesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceConfigurationInput)(nil)).Elem(), GetDeploymentMaintenanceConfigurationArgs{})
@@ -8780,6 +9304,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentBackupsDeploymentBackupCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsFilterOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentCertificatesCertificateCollectionOutput{})
+	pulumi.RegisterOutputType(GetDeploymentCertificatesCertificateCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentCertificatesCertificateCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDeploymentCertificatesCertificateCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentCertificatesFilterOutput{})
+	pulumi.RegisterOutputType(GetDeploymentCertificatesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentMaintenanceConfigurationOutput{})

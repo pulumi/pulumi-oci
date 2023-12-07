@@ -30,6 +30,11 @@ export type DeploymentBackup = import("./deploymentBackup").DeploymentBackup;
 export const DeploymentBackup: typeof import("./deploymentBackup").DeploymentBackup = null as any;
 utilities.lazyLoad(exports, ["DeploymentBackup"], () => require("./deploymentBackup"));
 
+export { DeploymentCertificateArgs, DeploymentCertificateState } from "./deploymentCertificate";
+export type DeploymentCertificate = import("./deploymentCertificate").DeploymentCertificate;
+export const DeploymentCertificate: typeof import("./deploymentCertificate").DeploymentCertificate = null as any;
+utilities.lazyLoad(exports, ["DeploymentCertificate"], () => require("./deploymentCertificate"));
+
 export { GetConnectionArgs, GetConnectionResult, GetConnectionOutputArgs } from "./getConnection";
 export const getConnection: typeof import("./getConnection").getConnection = null as any;
 export const getConnectionOutput: typeof import("./getConnection").getConnectionOutput = null as any;
@@ -74,6 +79,16 @@ export { GetDeploymentBackupsArgs, GetDeploymentBackupsResult, GetDeploymentBack
 export const getDeploymentBackups: typeof import("./getDeploymentBackups").getDeploymentBackups = null as any;
 export const getDeploymentBackupsOutput: typeof import("./getDeploymentBackups").getDeploymentBackupsOutput = null as any;
 utilities.lazyLoad(exports, ["getDeploymentBackups","getDeploymentBackupsOutput"], () => require("./getDeploymentBackups"));
+
+export { GetDeploymentCertificateArgs, GetDeploymentCertificateResult, GetDeploymentCertificateOutputArgs } from "./getDeploymentCertificate";
+export const getDeploymentCertificate: typeof import("./getDeploymentCertificate").getDeploymentCertificate = null as any;
+export const getDeploymentCertificateOutput: typeof import("./getDeploymentCertificate").getDeploymentCertificateOutput = null as any;
+utilities.lazyLoad(exports, ["getDeploymentCertificate","getDeploymentCertificateOutput"], () => require("./getDeploymentCertificate"));
+
+export { GetDeploymentCertificatesArgs, GetDeploymentCertificatesResult, GetDeploymentCertificatesOutputArgs } from "./getDeploymentCertificates";
+export const getDeploymentCertificates: typeof import("./getDeploymentCertificates").getDeploymentCertificates = null as any;
+export const getDeploymentCertificatesOutput: typeof import("./getDeploymentCertificates").getDeploymentCertificatesOutput = null as any;
+utilities.lazyLoad(exports, ["getDeploymentCertificates","getDeploymentCertificatesOutput"], () => require("./getDeploymentCertificates"));
 
 export { GetDeploymentTypeArgs, GetDeploymentTypeResult, GetDeploymentTypeOutputArgs } from "./getDeploymentType";
 export const getDeploymentType: typeof import("./getDeploymentType").getDeploymentType = null as any;
@@ -150,6 +165,8 @@ const _module = {
                 return new Deployment(name, <any>undefined, { urn })
             case "oci:GoldenGate/deploymentBackup:DeploymentBackup":
                 return new DeploymentBackup(name, <any>undefined, { urn })
+            case "oci:GoldenGate/deploymentCertificate:DeploymentCertificate":
+                return new DeploymentCertificate(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -160,3 +177,4 @@ pulumi.runtime.registerResourceModule("oci", "GoldenGate/connectionAssignment", 
 pulumi.runtime.registerResourceModule("oci", "GoldenGate/databaseRegistration", _module)
 pulumi.runtime.registerResourceModule("oci", "GoldenGate/deployment", _module)
 pulumi.runtime.registerResourceModule("oci", "GoldenGate/deploymentBackup", _module)
+pulumi.runtime.registerResourceModule("oci", "GoldenGate/deploymentCertificate", _module)

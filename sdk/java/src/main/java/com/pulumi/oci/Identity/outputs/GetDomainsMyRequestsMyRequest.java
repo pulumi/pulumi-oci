@@ -4,6 +4,7 @@
 package com.pulumi.oci.Identity.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Identity.outputs.GetDomainsMyRequestsMyRequestApprovalDetail;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyRequestsMyRequestIdcsCreatedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyRequestsMyRequestIdcsLastModifiedBy;
 import com.pulumi.oci.Identity.outputs.GetDomainsMyRequestsMyRequestMeta;
@@ -17,6 +18,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDomainsMyRequestsMyRequest {
+    /**
+     * @return Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can&#39;t escalate the request if canceling or escalation is in progress.
+     * 
+     */
+    private String action;
+    /**
+     * @return Approvals created for this request.
+     * 
+     */
+    private List<GetDomainsMyRequestsMyRequestApprovalDetail> approvalDetails;
     /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
@@ -32,6 +43,11 @@ public final class GetDomainsMyRequestsMyRequest {
      * 
      */
     private String domainOcid;
+    /**
+     * @return Time by when Request expires
+     * 
+     */
+    private String expires;
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
      * 
@@ -105,6 +121,20 @@ public final class GetDomainsMyRequestsMyRequest {
 
     private GetDomainsMyRequestsMyRequest() {}
     /**
+     * @return Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can&#39;t escalate the request if canceling or escalation is in progress.
+     * 
+     */
+    public String action() {
+        return this.action;
+    }
+    /**
+     * @return Approvals created for this request.
+     * 
+     */
+    public List<GetDomainsMyRequestsMyRequestApprovalDetail> approvalDetails() {
+        return this.approvalDetails;
+    }
+    /**
      * @return Oracle Cloud Infrastructure Compartment Id (ocid) in which the resource lives.
      * 
      */
@@ -124,6 +154,13 @@ public final class GetDomainsMyRequestsMyRequest {
      */
     public String domainOcid() {
         return this.domainOcid;
+    }
+    /**
+     * @return Time by when Request expires
+     * 
+     */
+    public String expires() {
+        return this.expires;
     }
     /**
      * @return Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider&#39;s entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
@@ -233,9 +270,12 @@ public final class GetDomainsMyRequestsMyRequest {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String action;
+        private List<GetDomainsMyRequestsMyRequestApprovalDetail> approvalDetails;
         private String compartmentOcid;
         private Boolean deleteInProgress;
         private String domainOcid;
+        private String expires;
         private String id;
         private List<GetDomainsMyRequestsMyRequestIdcsCreatedBy> idcsCreatedBies;
         private List<GetDomainsMyRequestsMyRequestIdcsLastModifiedBy> idcsLastModifiedBies;
@@ -253,9 +293,12 @@ public final class GetDomainsMyRequestsMyRequest {
         public Builder() {}
         public Builder(GetDomainsMyRequestsMyRequest defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.action = defaults.action;
+    	      this.approvalDetails = defaults.approvalDetails;
     	      this.compartmentOcid = defaults.compartmentOcid;
     	      this.deleteInProgress = defaults.deleteInProgress;
     	      this.domainOcid = defaults.domainOcid;
+    	      this.expires = defaults.expires;
     	      this.id = defaults.id;
     	      this.idcsCreatedBies = defaults.idcsCreatedBies;
     	      this.idcsLastModifiedBies = defaults.idcsLastModifiedBies;
@@ -273,6 +316,19 @@ public final class GetDomainsMyRequestsMyRequest {
         }
 
         @CustomType.Setter
+        public Builder action(String action) {
+            this.action = Objects.requireNonNull(action);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder approvalDetails(List<GetDomainsMyRequestsMyRequestApprovalDetail> approvalDetails) {
+            this.approvalDetails = Objects.requireNonNull(approvalDetails);
+            return this;
+        }
+        public Builder approvalDetails(GetDomainsMyRequestsMyRequestApprovalDetail... approvalDetails) {
+            return approvalDetails(List.of(approvalDetails));
+        }
+        @CustomType.Setter
         public Builder compartmentOcid(String compartmentOcid) {
             this.compartmentOcid = Objects.requireNonNull(compartmentOcid);
             return this;
@@ -285,6 +341,11 @@ public final class GetDomainsMyRequestsMyRequest {
         @CustomType.Setter
         public Builder domainOcid(String domainOcid) {
             this.domainOcid = Objects.requireNonNull(domainOcid);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder expires(String expires) {
+            this.expires = Objects.requireNonNull(expires);
             return this;
         }
         @CustomType.Setter
@@ -383,9 +444,12 @@ public final class GetDomainsMyRequestsMyRequest {
         }
         public GetDomainsMyRequestsMyRequest build() {
             final var o = new GetDomainsMyRequestsMyRequest();
+            o.action = action;
+            o.approvalDetails = approvalDetails;
             o.compartmentOcid = compartmentOcid;
             o.deleteInProgress = deleteInProgress;
             o.domainOcid = domainOcid;
+            o.expires = expires;
             o.id = id;
             o.idcsCreatedBies = idcsCreatedBies;
             o.idcsLastModifiedBies = idcsLastModifiedBies;

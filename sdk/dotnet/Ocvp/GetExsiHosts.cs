@@ -39,6 +39,7 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testEsxiHosts = Oci.Ocvp.GetExsiHosts.Invoke(new()
         ///     {
+        ///         ClusterId = oci_ocvp_cluster.Test_cluster.Id,
         ///         CompartmentId = @var.Compartment_id,
         ///         ComputeInstanceId = oci_core_instance.Test_instance.Id,
         ///         DisplayName = @var.Esxi_host_display_name,
@@ -84,6 +85,7 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testEsxiHosts = Oci.Ocvp.GetExsiHosts.Invoke(new()
         ///     {
+        ///         ClusterId = oci_ocvp_cluster.Test_cluster.Id,
         ///         CompartmentId = @var.Compartment_id,
         ///         ComputeInstanceId = oci_core_instance.Test_instance.Id,
         ///         DisplayName = @var.Esxi_host_display_name,
@@ -105,6 +107,12 @@ namespace Pulumi.Oci.Ocvp
 
     public sealed class GetExsiHostsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+        /// </summary>
+        [Input("clusterId")]
+        public string? ClusterId { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
         /// </summary>
@@ -163,6 +171,12 @@ namespace Pulumi.Oci.Ocvp
 
     public sealed class GetExsiHostsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+        /// </summary>
+        [Input("clusterId")]
+        public Input<string>? ClusterId { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
         /// </summary>
@@ -224,7 +238,11 @@ namespace Pulumi.Oci.Ocvp
     public sealed class GetExsiHostsResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the ESXi host belongs to.
+        /// </summary>
+        public readonly string? ClusterId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
@@ -247,7 +265,7 @@ namespace Pulumi.Oci.Ocvp
         public readonly bool? IsBillingDonorsOnly;
         public readonly bool? IsSwapBillingOnly;
         /// <summary>
-        /// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
         /// </summary>
         public readonly string? SddcId;
         /// <summary>
@@ -257,6 +275,8 @@ namespace Pulumi.Oci.Ocvp
 
         [OutputConstructor]
         private GetExsiHostsResult(
+            string? clusterId,
+
             string? compartmentId,
 
             string? computeInstanceId,
@@ -277,6 +297,7 @@ namespace Pulumi.Oci.Ocvp
 
             string? state)
         {
+            ClusterId = clusterId;
             CompartmentId = compartmentId;
             ComputeInstanceId = computeInstanceId;
             DisplayName = displayName;

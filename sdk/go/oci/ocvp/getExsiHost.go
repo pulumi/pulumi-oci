@@ -58,7 +58,7 @@ type GetExsiHostArgs struct {
 
 // A collection of values returned by getExsiHost.
 type GetExsiHostResult struct {
-	// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+	// Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 	BillingContractEndDate string `pulumi:"billingContractEndDate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
 	//
@@ -66,13 +66,17 @@ type GetExsiHostResult struct {
 	BillingDonorHostId string `pulumi:"billingDonorHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation.
 	CapacityReservationId string `pulumi:"capacityReservationId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the ESXi host belongs to.
+	ClusterId string `pulumi:"clusterId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The availability domain of the ESXi host.
 	ComputeAvailabilityDomain string `pulumi:"computeAvailabilityDomain"`
 	// In terms of implementation, an ESXi host is a Compute instance that is configured with the chosen bundle of VMware software. The `computeInstanceId` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that Compute instance.
 	ComputeInstanceId string `pulumi:"computeInstanceId"`
-	// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+	// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+	CurrentCommitment string `pulumi:"currentCommitment"`
+	// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `currentCommitment` instead.
 	//
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
 	CurrentSku string `pulumi:"currentSku"`
@@ -81,6 +85,8 @@ type GetExsiHostResult struct {
 	// A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	EsxiHostId  string `pulumi:"esxiHostId"`
+	// The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
+	EsxiSoftwareVersion string `pulumi:"esxiSoftwareVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
 	//
 	// Deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
@@ -91,7 +97,7 @@ type GetExsiHostResult struct {
 	GracePeriodEndDate string `pulumi:"gracePeriodEndDate"`
 	// The OCPU count of the ESXi host.
 	HostOcpuCount float64 `pulumi:"hostOcpuCount"`
-	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+	// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
 	HostShapeName string `pulumi:"hostShapeName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host.
 	Id string `pulumi:"id"`
@@ -99,7 +105,9 @@ type GetExsiHostResult struct {
 	IsBillingContinuationInProgress bool `pulumi:"isBillingContinuationInProgress"`
 	// Indicates whether this host is in the progress of swapping billing.
 	IsBillingSwappingInProgress bool `pulumi:"isBillingSwappingInProgress"`
-	// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+	// The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+	NextCommitment string `pulumi:"nextCommitment"`
+	// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
 	//
 	// Deprecated: The 'next_sku' field has been deprecated. It is no longer supported.
 	NextSku string `pulumi:"nextSku"`
@@ -109,7 +117,7 @@ type GetExsiHostResult struct {
 	NonUpgradedEsxiHostId string `pulumi:"nonUpgradedEsxiHostId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the esxi host that is newly created to replace the failed node.
 	ReplacementEsxiHostId string `pulumi:"replacementEsxiHostId"`
-	// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
 	//
 	// Deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.
 	SddcId string `pulumi:"sddcId"`
@@ -165,7 +173,7 @@ func (o GetExsiHostResultOutput) ToGetExsiHostResultOutputWithContext(ctx contex
 	return o
 }
 
-// Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+// Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
 func (o GetExsiHostResultOutput) BillingContractEndDate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.BillingContractEndDate }).(pulumi.StringOutput)
 }
@@ -182,7 +190,12 @@ func (o GetExsiHostResultOutput) CapacityReservationId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the ESXi host belongs to.
+func (o GetExsiHostResultOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
 func (o GetExsiHostResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -197,7 +210,12 @@ func (o GetExsiHostResultOutput) ComputeInstanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.ComputeInstanceId }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+// The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+func (o GetExsiHostResultOutput) CurrentCommitment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.CurrentCommitment }).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `currentCommitment` instead.
 //
 // Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
 func (o GetExsiHostResultOutput) CurrentSku() pulumi.StringOutput {
@@ -216,6 +234,11 @@ func (o GetExsiHostResultOutput) DisplayName() pulumi.StringOutput {
 
 func (o GetExsiHostResultOutput) EsxiHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.EsxiHostId }).(pulumi.StringOutput)
+}
+
+// The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
+func (o GetExsiHostResultOutput) EsxiSoftwareVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.EsxiSoftwareVersion }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
@@ -240,7 +263,7 @@ func (o GetExsiHostResultOutput) HostOcpuCount() pulumi.Float64Output {
 	return o.ApplyT(func(v GetExsiHostResult) float64 { return v.HostOcpuCount }).(pulumi.Float64Output)
 }
 
-// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+// The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
 func (o GetExsiHostResultOutput) HostShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.HostShapeName }).(pulumi.StringOutput)
 }
@@ -260,7 +283,12 @@ func (o GetExsiHostResultOutput) IsBillingSwappingInProgress() pulumi.BoolOutput
 	return o.ApplyT(func(v GetExsiHostResult) bool { return v.IsBillingSwappingInProgress }).(pulumi.BoolOutput)
 }
 
-// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+// The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+func (o GetExsiHostResultOutput) NextCommitment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExsiHostResult) string { return v.NextCommitment }).(pulumi.StringOutput)
+}
+
+// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
 //
 // Deprecated: The 'next_sku' field has been deprecated. It is no longer supported.
 func (o GetExsiHostResultOutput) NextSku() pulumi.StringOutput {
@@ -279,7 +307,7 @@ func (o GetExsiHostResultOutput) ReplacementEsxiHostId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExsiHostResult) string { return v.ReplacementEsxiHostId }).(pulumi.StringOutput)
 }
 
-// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
 //
 // Deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.
 func (o GetExsiHostResultOutput) SddcId() pulumi.StringOutput {

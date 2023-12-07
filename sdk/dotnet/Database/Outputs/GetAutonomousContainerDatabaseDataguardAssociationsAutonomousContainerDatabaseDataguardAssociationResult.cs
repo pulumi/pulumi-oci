@@ -21,7 +21,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The rate at which redo logs are synchronized between the associated Autonomous Container Databases.  Example: `180 Mb per second`
         /// </summary>
         public readonly string ApplyRate;
-        public readonly string AutonomousContainerDatabaseDataguardAssociationId;
+        public readonly int AutonomousContainerDatabaseDataguardAssociationId;
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -42,14 +42,18 @@ namespace Pulumi.Oci.Database.Outputs
         /// Additional information about the current lifecycleState, if available.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigResult> PeerAutonomousContainerDatabaseBackupConfigs;
+        public readonly string PeerAutonomousContainerDatabaseCompartmentId;
         /// <summary>
         /// The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         /// </summary>
         public readonly string PeerAutonomousContainerDatabaseDataguardAssociationId;
+        public readonly string PeerAutonomousContainerDatabaseDisplayName;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
         /// </summary>
         public readonly string PeerAutonomousContainerDatabaseId;
+        public readonly string PeerCloudAutonomousVmClusterId;
         /// <summary>
         /// The current state of Autonomous Data Guard.
         /// </summary>
@@ -66,6 +70,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
         public readonly string Role;
+        public readonly int StandbyMaintenanceBufferInDays;
         /// <summary>
         /// The current state of Autonomous Data Guard.
         /// </summary>
@@ -93,7 +98,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             string applyRate,
 
-            string autonomousContainerDatabaseDataguardAssociationId,
+            int autonomousContainerDatabaseDataguardAssociationId,
 
             string autonomousContainerDatabaseId,
 
@@ -105,9 +110,17 @@ namespace Pulumi.Oci.Database.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigResult> peerAutonomousContainerDatabaseBackupConfigs,
+
+            string peerAutonomousContainerDatabaseCompartmentId,
+
             string peerAutonomousContainerDatabaseDataguardAssociationId,
 
+            string peerAutonomousContainerDatabaseDisplayName,
+
             string peerAutonomousContainerDatabaseId,
+
+            string peerCloudAutonomousVmClusterId,
 
             string peerLifecycleState,
 
@@ -116,6 +129,8 @@ namespace Pulumi.Oci.Database.Outputs
             string protectionMode,
 
             string role,
+
+            int standbyMaintenanceBufferInDays,
 
             string state,
 
@@ -135,12 +150,17 @@ namespace Pulumi.Oci.Database.Outputs
             Id = id;
             IsAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
             LifecycleDetails = lifecycleDetails;
+            PeerAutonomousContainerDatabaseBackupConfigs = peerAutonomousContainerDatabaseBackupConfigs;
+            PeerAutonomousContainerDatabaseCompartmentId = peerAutonomousContainerDatabaseCompartmentId;
             PeerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;
+            PeerAutonomousContainerDatabaseDisplayName = peerAutonomousContainerDatabaseDisplayName;
             PeerAutonomousContainerDatabaseId = peerAutonomousContainerDatabaseId;
+            PeerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
             PeerLifecycleState = peerLifecycleState;
             PeerRole = peerRole;
             ProtectionMode = protectionMode;
             Role = role;
+            StandbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             State = state;
             TimeCreated = timeCreated;
             TimeLastRoleChanged = timeLastRoleChanged;

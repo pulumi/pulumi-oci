@@ -23,7 +23,7 @@ class GetJavaFamiliesResult:
     """
     A collection of values returned by getJavaFamilies.
     """
-    def __init__(__self__, display_name=None, family_version=None, filters=None, id=None, java_family_collections=None):
+    def __init__(__self__, display_name=None, family_version=None, filters=None, id=None, is_supported_version=None, java_family_collections=None):
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -36,6 +36,9 @@ class GetJavaFamiliesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_supported_version and not isinstance(is_supported_version, bool):
+            raise TypeError("Expected argument 'is_supported_version' to be a bool")
+        pulumi.set(__self__, "is_supported_version", is_supported_version)
         if java_family_collections and not isinstance(java_family_collections, list):
             raise TypeError("Expected argument 'java_family_collections' to be a list")
         pulumi.set(__self__, "java_family_collections", java_family_collections)
@@ -70,6 +73,14 @@ class GetJavaFamiliesResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isSupportedVersion")
+    def is_supported_version(self) -> Optional[bool]:
+        """
+        Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+        """
+        return pulumi.get(self, "is_supported_version")
+
+    @property
     @pulumi.getter(name="javaFamilyCollections")
     def java_family_collections(self) -> Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionResult']:
         """
@@ -88,12 +99,14 @@ class AwaitableGetJavaFamiliesResult(GetJavaFamiliesResult):
             family_version=self.family_version,
             filters=self.filters,
             id=self.id,
+            is_supported_version=self.is_supported_version,
             java_family_collections=self.java_family_collections)
 
 
 def get_java_families(display_name: Optional[str] = None,
                       family_version: Optional[str] = None,
                       filters: Optional[Sequence[pulumi.InputType['GetJavaFamiliesFilterArgs']]] = None,
+                      is_supported_version: Optional[bool] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJavaFamiliesResult:
     """
     This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
@@ -108,17 +121,20 @@ def get_java_families(display_name: Optional[str] = None,
     import pulumi_oci as oci
 
     test_java_families = oci.Jms.get_java_families(display_name=var["java_family_display_name"],
-        family_version=var["java_family_family_version"])
+        family_version=var["java_family_family_version"],
+        is_supported_version=var["java_family_is_supported_version"])
     ```
 
 
     :param str display_name: The display name for the Java family.
     :param str family_version: The version identifier for the Java family.
+    :param bool is_supported_version: Filter the Java Release Family versions by support status.
     """
     __args__ = dict()
     __args__['displayName'] = display_name
     __args__['familyVersion'] = family_version
     __args__['filters'] = filters
+    __args__['isSupportedVersion'] = is_supported_version
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Jms/getJavaFamilies:getJavaFamilies', __args__, opts=opts, typ=GetJavaFamiliesResult).value
 
@@ -127,6 +143,7 @@ def get_java_families(display_name: Optional[str] = None,
         family_version=pulumi.get(__ret__, 'family_version'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        is_supported_version=pulumi.get(__ret__, 'is_supported_version'),
         java_family_collections=pulumi.get(__ret__, 'java_family_collections'))
 
 
@@ -134,6 +151,7 @@ def get_java_families(display_name: Optional[str] = None,
 def get_java_families_output(display_name: Optional[pulumi.Input[Optional[str]]] = None,
                              family_version: Optional[pulumi.Input[Optional[str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetJavaFamiliesFilterArgs']]]]] = None,
+                             is_supported_version: Optional[pulumi.Input[Optional[bool]]] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJavaFamiliesResult]:
     """
     This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
@@ -148,11 +166,13 @@ def get_java_families_output(display_name: Optional[pulumi.Input[Optional[str]]]
     import pulumi_oci as oci
 
     test_java_families = oci.Jms.get_java_families(display_name=var["java_family_display_name"],
-        family_version=var["java_family_family_version"])
+        family_version=var["java_family_family_version"],
+        is_supported_version=var["java_family_is_supported_version"])
     ```
 
 
     :param str display_name: The display name for the Java family.
     :param str family_version: The version identifier for the Java family.
+    :param bool is_supported_version: Filter the Java Release Family versions by support status.
     """
     ...

@@ -45,6 +45,7 @@ __all__ = [
     'BdsInstanceNetworkConfig',
     'BdsInstanceNode',
     'BdsInstanceNodeAttachedBlockVolume',
+    'BdsInstanceOperationCertificateManagementsManagementHostCertDetail',
     'BdsInstanceUtilNode',
     'BdsInstanceUtilNodeShapeConfig',
     'BdsInstanceWorkerNode',
@@ -2769,6 +2770,68 @@ class BdsInstanceNodeAttachedBlockVolume(dict):
         The size of the volume in GBs.
         """
         return pulumi.get(self, "volume_size_in_gbs")
+
+
+@pulumi.output_type
+class BdsInstanceOperationCertificateManagementsManagementHostCertDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostName":
+            suggest = "host_name"
+        elif key == "privateKey":
+            suggest = "private_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceOperationCertificateManagementsManagementHostCertDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceOperationCertificateManagementsManagementHostCertDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceOperationCertificateManagementsManagementHostCertDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate: Optional[str] = None,
+                 host_name: Optional[str] = None,
+                 private_key: Optional[str] = None):
+        """
+        :param str certificate: Certificate value in string format
+        :param str host_name: Fully qualified domain name (FQDN) of the host
+        :param str private_key: Private key of the provided certificate
+        """
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
+
+    @property
+    @pulumi.getter
+    def certificate(self) -> Optional[str]:
+        """
+        Certificate value in string format
+        """
+        return pulumi.get(self, "certificate")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[str]:
+        """
+        Fully qualified domain name (FQDN) of the host
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> Optional[str]:
+        """
+        Private key of the provided certificate
+        """
+        return pulumi.get(self, "private_key")
 
 
 @pulumi.output_type

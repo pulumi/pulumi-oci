@@ -30,10 +30,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseTools.GetDatabaseToolsConnections(ctx, &databasetools.GetDatabaseToolsConnectionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Database_tools_connection_display_name),
-//				State:         pulumi.StringRef(_var.Database_tools_connection_state),
-//				Types:         _var.Database_tools_connection_type,
+//				CompartmentId:             _var.Compartment_id,
+//				DisplayName:               pulumi.StringRef(_var.Database_tools_connection_display_name),
+//				RelatedResourceIdentifier: pulumi.StringRef(_var.Database_tools_connection_related_resource_identifier),
+//				RuntimeSupports:           _var.Database_tools_connection_runtime_support,
+//				State:                     pulumi.StringRef(_var.Database_tools_connection_state),
+//				Types:                     _var.Database_tools_connection_type,
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -60,6 +62,10 @@ type GetDatabaseToolsConnectionsArgs struct {
 	// A filter to return only resources that match the entire specified display name.
 	DisplayName *string                             `pulumi:"displayName"`
 	Filters     []GetDatabaseToolsConnectionsFilter `pulumi:"filters"`
+	// A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+	RelatedResourceIdentifier *string `pulumi:"relatedResourceIdentifier"`
+	// A filter to return only resources with one of the specified runtimeSupport values.
+	RuntimeSupports []string `pulumi:"runtimeSupports"`
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State *string `pulumi:"state"`
 	// A filter to return only resources their type matches the specified type.
@@ -76,7 +82,10 @@ type GetDatabaseToolsConnectionsResult struct {
 	DisplayName *string                             `pulumi:"displayName"`
 	Filters     []GetDatabaseToolsConnectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                        string  `pulumi:"id"`
+	RelatedResourceIdentifier *string `pulumi:"relatedResourceIdentifier"`
+	// Specifies whether this connection is supported by the Database Tools Runtime.
+	RuntimeSupports []string `pulumi:"runtimeSupports"`
 	// The current state of the Database Tools connection.
 	State *string `pulumi:"state"`
 	// The Database Tools connection type.
@@ -103,6 +112,10 @@ type GetDatabaseToolsConnectionsOutputArgs struct {
 	// A filter to return only resources that match the entire specified display name.
 	DisplayName pulumi.StringPtrInput                       `pulumi:"displayName"`
 	Filters     GetDatabaseToolsConnectionsFilterArrayInput `pulumi:"filters"`
+	// A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+	RelatedResourceIdentifier pulumi.StringPtrInput `pulumi:"relatedResourceIdentifier"`
+	// A filter to return only resources with one of the specified runtimeSupport values.
+	RuntimeSupports pulumi.StringArrayInput `pulumi:"runtimeSupports"`
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// A filter to return only resources their type matches the specified type.
@@ -152,6 +165,15 @@ func (o GetDatabaseToolsConnectionsResultOutput) Filters() GetDatabaseToolsConne
 // The provider-assigned unique ID for this managed resource.
 func (o GetDatabaseToolsConnectionsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseToolsConnectionsResultOutput) RelatedResourceIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) *string { return v.RelatedResourceIdentifier }).(pulumi.StringPtrOutput)
+}
+
+// Specifies whether this connection is supported by the Database Tools Runtime.
+func (o GetDatabaseToolsConnectionsResultOutput) RuntimeSupports() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsResult) []string { return v.RuntimeSupports }).(pulumi.StringArrayOutput)
 }
 
 // The current state of the Database Tools connection.

@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetExsiHostsEsxiHostCollection {
     /**
-     * @return Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+     * @return Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     private String billingContractEndDate;
@@ -33,6 +33,11 @@ public final class GetExsiHostsEsxiHostCollection {
      */
     private String capacityReservationId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * 
+     */
+    private String clusterId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      * 
      */
@@ -48,7 +53,12 @@ public final class GetExsiHostsEsxiHostCollection {
      */
     private String computeInstanceId;
     /**
-     * @return (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * 
+     */
+    private String currentCommitment;
+    /**
+     * @return (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `current_commitment` instead.
      * 
      * @deprecated
      * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
@@ -66,6 +76,11 @@ public final class GetExsiHostsEsxiHostCollection {
      * 
      */
     private String displayName;
+    /**
+     * @return The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * 
+     */
+    private String esxiSoftwareVersion;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
      * 
@@ -91,7 +106,7 @@ public final class GetExsiHostsEsxiHostCollection {
      */
     private Double hostOcpuCount;
     /**
-     * @return The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * @return The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
     private String hostShapeName;
@@ -111,7 +126,12 @@ public final class GetExsiHostsEsxiHostCollection {
      */
     private Boolean isBillingSwappingInProgress;
     /**
-     * @return (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * 
+     */
+    private String nextCommitment;
+    /**
+     * @return (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
      * 
      * @deprecated
      * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
@@ -175,7 +195,7 @@ public final class GetExsiHostsEsxiHostCollection {
 
     private GetExsiHostsEsxiHostCollection() {}
     /**
-     * @return Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+     * @return Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      * 
      */
     public String billingContractEndDate() {
@@ -200,6 +220,13 @@ public final class GetExsiHostsEsxiHostCollection {
         return this.capacityReservationId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
+     * 
+     */
+    public String clusterId() {
+        return this.clusterId;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
      * 
      */
@@ -221,7 +248,14 @@ public final class GetExsiHostsEsxiHostCollection {
         return this.computeInstanceId;
     }
     /**
-     * @return (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * 
+     */
+    public String currentCommitment() {
+        return this.currentCommitment;
+    }
+    /**
+     * @return (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `current_commitment` instead.
      * 
      * @deprecated
      * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
@@ -244,6 +278,13 @@ public final class GetExsiHostsEsxiHostCollection {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
+     * 
+     */
+    public String esxiSoftwareVersion() {
+        return this.esxiSoftwareVersion;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that failed.
@@ -278,7 +319,7 @@ public final class GetExsiHostsEsxiHostCollection {
         return this.hostOcpuCount;
     }
     /**
-     * @return The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * @return The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
     public String hostShapeName() {
@@ -306,7 +347,14 @@ public final class GetExsiHostsEsxiHostCollection {
         return this.isBillingSwappingInProgress;
     }
     /**
-     * @return (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     * 
+     */
+    public String nextCommitment() {
+        return this.nextCommitment;
+    }
+    /**
+     * @return (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
      * 
      * @deprecated
      * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
@@ -400,12 +448,15 @@ public final class GetExsiHostsEsxiHostCollection {
         private String billingContractEndDate;
         private String billingDonorHostId;
         private String capacityReservationId;
+        private String clusterId;
         private String compartmentId;
         private String computeAvailabilityDomain;
         private String computeInstanceId;
+        private String currentCommitment;
         private String currentSku;
         private Map<String,Object> definedTags;
         private String displayName;
+        private String esxiSoftwareVersion;
         private String failedEsxiHostId;
         private Map<String,Object> freeformTags;
         private String gracePeriodEndDate;
@@ -414,6 +465,7 @@ public final class GetExsiHostsEsxiHostCollection {
         private String id;
         private Boolean isBillingContinuationInProgress;
         private Boolean isBillingSwappingInProgress;
+        private String nextCommitment;
         private String nextSku;
         private String nonUpgradedEsxiHostId;
         private String replacementEsxiHostId;
@@ -430,12 +482,15 @@ public final class GetExsiHostsEsxiHostCollection {
     	      this.billingContractEndDate = defaults.billingContractEndDate;
     	      this.billingDonorHostId = defaults.billingDonorHostId;
     	      this.capacityReservationId = defaults.capacityReservationId;
+    	      this.clusterId = defaults.clusterId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeAvailabilityDomain = defaults.computeAvailabilityDomain;
     	      this.computeInstanceId = defaults.computeInstanceId;
+    	      this.currentCommitment = defaults.currentCommitment;
     	      this.currentSku = defaults.currentSku;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.esxiSoftwareVersion = defaults.esxiSoftwareVersion;
     	      this.failedEsxiHostId = defaults.failedEsxiHostId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.gracePeriodEndDate = defaults.gracePeriodEndDate;
@@ -444,6 +499,7 @@ public final class GetExsiHostsEsxiHostCollection {
     	      this.id = defaults.id;
     	      this.isBillingContinuationInProgress = defaults.isBillingContinuationInProgress;
     	      this.isBillingSwappingInProgress = defaults.isBillingSwappingInProgress;
+    	      this.nextCommitment = defaults.nextCommitment;
     	      this.nextSku = defaults.nextSku;
     	      this.nonUpgradedEsxiHostId = defaults.nonUpgradedEsxiHostId;
     	      this.replacementEsxiHostId = defaults.replacementEsxiHostId;
@@ -472,6 +528,11 @@ public final class GetExsiHostsEsxiHostCollection {
             return this;
         }
         @CustomType.Setter
+        public Builder clusterId(String clusterId) {
+            this.clusterId = Objects.requireNonNull(clusterId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
@@ -487,6 +548,11 @@ public final class GetExsiHostsEsxiHostCollection {
             return this;
         }
         @CustomType.Setter
+        public Builder currentCommitment(String currentCommitment) {
+            this.currentCommitment = Objects.requireNonNull(currentCommitment);
+            return this;
+        }
+        @CustomType.Setter
         public Builder currentSku(String currentSku) {
             this.currentSku = Objects.requireNonNull(currentSku);
             return this;
@@ -499,6 +565,11 @@ public final class GetExsiHostsEsxiHostCollection {
         @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder esxiSoftwareVersion(String esxiSoftwareVersion) {
+            this.esxiSoftwareVersion = Objects.requireNonNull(esxiSoftwareVersion);
             return this;
         }
         @CustomType.Setter
@@ -539,6 +610,11 @@ public final class GetExsiHostsEsxiHostCollection {
         @CustomType.Setter
         public Builder isBillingSwappingInProgress(Boolean isBillingSwappingInProgress) {
             this.isBillingSwappingInProgress = Objects.requireNonNull(isBillingSwappingInProgress);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nextCommitment(String nextCommitment) {
+            this.nextCommitment = Objects.requireNonNull(nextCommitment);
             return this;
         }
         @CustomType.Setter
@@ -596,12 +672,15 @@ public final class GetExsiHostsEsxiHostCollection {
             o.billingContractEndDate = billingContractEndDate;
             o.billingDonorHostId = billingDonorHostId;
             o.capacityReservationId = capacityReservationId;
+            o.clusterId = clusterId;
             o.compartmentId = compartmentId;
             o.computeAvailabilityDomain = computeAvailabilityDomain;
             o.computeInstanceId = computeInstanceId;
+            o.currentCommitment = currentCommitment;
             o.currentSku = currentSku;
             o.definedTags = definedTags;
             o.displayName = displayName;
+            o.esxiSoftwareVersion = esxiSoftwareVersion;
             o.failedEsxiHostId = failedEsxiHostId;
             o.freeformTags = freeformTags;
             o.gracePeriodEndDate = gracePeriodEndDate;
@@ -610,6 +689,7 @@ public final class GetExsiHostsEsxiHostCollection {
             o.id = id;
             o.isBillingContinuationInProgress = isBillingContinuationInProgress;
             o.isBillingSwappingInProgress = isBillingSwappingInProgress;
+            o.nextCommitment = nextCommitment;
             o.nextSku = nextSku;
             o.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
             o.replacementEsxiHostId = replacementEsxiHostId;

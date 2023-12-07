@@ -40,6 +40,7 @@ namespace Pulumi.Oci.OsManagement
     ///             { "bar-key", "value" },
     ///         },
     ///         OsFamily = @var.Managed_instance_group_os_family,
+    ///         ManagedInstanceIds = @var.Managed_instance_group_managed_instance_ids,
     ///     });
     /// 
     /// });
@@ -90,17 +91,23 @@ namespace Pulumi.Oci.OsManagement
         public Output<int> ManagedInstanceCount { get; private set; } = null!;
 
         /// <summary>
+        /// The list of managed instance OCIDs to be added to the managed instance group.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("managedInstanceIds")]
+        public Output<ImmutableArray<string>> ManagedInstanceIds { get; private set; } = null!;
+
+        /// <summary>
         /// list of Managed Instances in the group
         /// </summary>
         [Output("managedInstances")]
         public Output<ImmutableArray<Outputs.ManagedInstanceGroupManagedInstance>> ManagedInstances { get; private set; } = null!;
 
         /// <summary>
-        /// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
         /// </summary>
         [Output("osFamily")]
         public Output<string> OsFamily { get; private set; } = null!;
@@ -199,12 +206,24 @@ namespace Pulumi.Oci.OsManagement
             set => _freeformTags = value;
         }
 
+        [Input("managedInstanceIds")]
+        private InputList<string>? _managedInstanceIds;
+
         /// <summary>
-        /// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
+        /// The list of managed instance OCIDs to be added to the managed instance group.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        public InputList<string> ManagedInstanceIds
+        {
+            get => _managedInstanceIds ?? (_managedInstanceIds = new InputList<string>());
+            set => _managedInstanceIds = value;
+        }
+
+        /// <summary>
+        /// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
         /// </summary>
         [Input("osFamily")]
         public Input<string>? OsFamily { get; set; }
@@ -262,6 +281,22 @@ namespace Pulumi.Oci.OsManagement
         [Input("managedInstanceCount")]
         public Input<int>? ManagedInstanceCount { get; set; }
 
+        [Input("managedInstanceIds")]
+        private InputList<string>? _managedInstanceIds;
+
+        /// <summary>
+        /// The list of managed instance OCIDs to be added to the managed instance group.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        public InputList<string> ManagedInstanceIds
+        {
+            get => _managedInstanceIds ?? (_managedInstanceIds = new InputList<string>());
+            set => _managedInstanceIds = value;
+        }
+
         [Input("managedInstances")]
         private InputList<Inputs.ManagedInstanceGroupManagedInstanceGetArgs>? _managedInstances;
 
@@ -275,11 +310,7 @@ namespace Pulumi.Oci.OsManagement
         }
 
         /// <summary>
-        /// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
         /// </summary>
         [Input("osFamily")]
         public Input<string>? OsFamily { get; set; }

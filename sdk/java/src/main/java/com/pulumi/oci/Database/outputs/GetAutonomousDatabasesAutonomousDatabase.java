@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseB
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseConnectionUrl;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseCustomerContact;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseLongTermBackupSchedule;
@@ -56,7 +57,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     private String autonomousDatabaseBackupId;
     private String autonomousDatabaseId;
     /**
-     * @return The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+     * @return The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      * 
      */
     private String autonomousMaintenanceScheduleType;
@@ -87,7 +88,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String compartmentId;
     /**
-     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * @return Compute used by database tools.
      * 
      */
     private Double computeCount;
@@ -142,7 +143,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String databaseManagementStatus;
     /**
-     * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the &#34;primary&#34; role is operating in a remote Data Guard standby region.
+     * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      * 
      */
     private String dataguardRegionType;
@@ -151,6 +152,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private String dbName;
+    /**
+     * @return The list of database tools details.
+     * 
+     */
+    private List<GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail> dbToolsDetails;
     /**
      * @return A filter to return only autonomous database resources that match the specified dbVersion.
      * 
@@ -167,7 +173,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * @return The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     private String disasterRecoveryRegionType;
@@ -299,7 +305,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String kmsKeyVersionId;
     /**
-     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
      * 
      */
     private String licenseModel;
@@ -314,7 +320,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Integer localAdgAutoFailoverMaxDataLossLimit;
     /**
-     * @return Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     private String localDisasterRecoveryType;
@@ -370,7 +376,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String operationsInsightsStatus;
     /**
-     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
+     * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
     private List<String> peerDbIds;
@@ -455,7 +461,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesAutonomousDatabaseStandbyDb> standbyDbs;
     /**
-     * @return The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
      */
     private List<String> standbyWhitelistedIps;
@@ -630,7 +636,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.autonomousDatabaseId;
     }
     /**
-     * @return The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
+     * @return The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
      * 
      */
     public String autonomousMaintenanceScheduleType() {
@@ -675,7 +681,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.compartmentId;
     }
     /**
-     * @return The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * @return Compute used by database tools.
      * 
      */
     public Double computeCount() {
@@ -752,7 +758,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.databaseManagementStatus;
     }
     /**
-     * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the &#34;primary&#34; role is operating in a remote Data Guard standby region.
+     * @return The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Database Serverless, Autonomous Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Autonomous Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Autonomous Data Guard association, and cannot be performed when the database using the primary role is operating in a remote Autonomous Data Guard standby region.
      * 
      */
     public String dataguardRegionType() {
@@ -764,6 +770,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     public String dbName() {
         return this.dbName;
+    }
+    /**
+     * @return The list of database tools details.
+     * 
+     */
+    public List<GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail> dbToolsDetails() {
+        return this.dbToolsDetails;
     }
     /**
      * @return A filter to return only autonomous database resources that match the specified dbVersion.
@@ -787,7 +800,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.definedTags;
     }
     /**
-     * @return The disaster recovery (DR) region type of the Autonomous Database. For Shared Autonomous Databases, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+     * @return The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
      * 
      */
     public String disasterRecoveryRegionType() {
@@ -975,7 +988,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.kmsKeyVersionId;
     }
     /**
-     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+     * @return The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
      * 
      */
     public String licenseModel() {
@@ -996,7 +1009,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.localAdgAutoFailoverMaxDataLossLimit;
     }
     /**
-     * @return Indicates the local disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the local disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     public String localDisasterRecoveryType() {
@@ -1074,7 +1087,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.operationsInsightsStatus;
     }
     /**
-     * @return The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for shared Exadata infrastructure, standby databases located in the same region as the source primary database do not have OCIDs.
+     * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
      * 
      */
     public List<String> peerDbIds() {
@@ -1201,7 +1214,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.standbyDbs;
     }
     /**
-     * @return The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
+     * @return The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
      * 
      */
     public List<String> standbyWhitelistedIps() {
@@ -1425,6 +1438,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String databaseManagementStatus;
         private String dataguardRegionType;
         private String dbName;
+        private List<GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail> dbToolsDetails;
         private String dbVersion;
         private String dbWorkload;
         private Map<String,Object> definedTags;
@@ -1551,6 +1565,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.databaseManagementStatus = defaults.databaseManagementStatus;
     	      this.dataguardRegionType = defaults.dataguardRegionType;
     	      this.dbName = defaults.dbName;
+    	      this.dbToolsDetails = defaults.dbToolsDetails;
     	      this.dbVersion = defaults.dbVersion;
     	      this.dbWorkload = defaults.dbWorkload;
     	      this.definedTags = defaults.definedTags;
@@ -1805,6 +1820,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         public Builder dbName(String dbName) {
             this.dbName = Objects.requireNonNull(dbName);
             return this;
+        }
+        @CustomType.Setter
+        public Builder dbToolsDetails(List<GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail> dbToolsDetails) {
+            this.dbToolsDetails = Objects.requireNonNull(dbToolsDetails);
+            return this;
+        }
+        public Builder dbToolsDetails(GetAutonomousDatabasesAutonomousDatabaseDbToolsDetail... dbToolsDetails) {
+            return dbToolsDetails(List.of(dbToolsDetails));
         }
         @CustomType.Setter
         public Builder dbVersion(String dbVersion) {
@@ -2350,6 +2373,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             o.databaseManagementStatus = databaseManagementStatus;
             o.dataguardRegionType = dataguardRegionType;
             o.dbName = dbName;
+            o.dbToolsDetails = dbToolsDetails;
             o.dbVersion = dbVersion;
             o.dbWorkload = dbWorkload;
             o.definedTags = definedTags;

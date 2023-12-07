@@ -25,6 +25,11 @@ export type BdsInstanceMetastoreConfig = import("./bdsInstanceMetastoreConfig").
 export const BdsInstanceMetastoreConfig: typeof import("./bdsInstanceMetastoreConfig").BdsInstanceMetastoreConfig = null as any;
 utilities.lazyLoad(exports, ["BdsInstanceMetastoreConfig"], () => require("./bdsInstanceMetastoreConfig"));
 
+export { BdsInstanceOperationCertificateManagementsManagementArgs, BdsInstanceOperationCertificateManagementsManagementState } from "./bdsInstanceOperationCertificateManagementsManagement";
+export type BdsInstanceOperationCertificateManagementsManagement = import("./bdsInstanceOperationCertificateManagementsManagement").BdsInstanceOperationCertificateManagementsManagement;
+export const BdsInstanceOperationCertificateManagementsManagement: typeof import("./bdsInstanceOperationCertificateManagementsManagement").BdsInstanceOperationCertificateManagementsManagement = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceOperationCertificateManagementsManagement"], () => require("./bdsInstanceOperationCertificateManagementsManagement"));
+
 export { BdsInstancePatchActionArgs, BdsInstancePatchActionState } from "./bdsInstancePatchAction";
 export type BdsInstancePatchAction = import("./bdsInstancePatchAction").BdsInstancePatchAction;
 export const BdsInstancePatchAction: typeof import("./bdsInstancePatchAction").BdsInstancePatchAction = null as any;
@@ -103,6 +108,8 @@ const _module = {
                 return new BdsInstanceApiKey(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig":
                 return new BdsInstanceMetastoreConfig(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsInstanceOperationCertificateManagementsManagement:BdsInstanceOperationCertificateManagementsManagement":
+                return new BdsInstanceOperationCertificateManagementsManagement(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstancePatchAction:BdsInstancePatchAction":
                 return new BdsInstancePatchAction(name, <any>undefined, { urn })
             default:
@@ -114,4 +121,5 @@ pulumi.runtime.registerResourceModule("oci", "BigDataService/autoScalingConfigur
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceApiKey", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceMetastoreConfig", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceOperationCertificateManagementsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstancePatchAction", _module)

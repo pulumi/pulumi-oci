@@ -44,6 +44,7 @@ import javax.annotation.Nullable;
  *             .password(var_.autonomous_database_wallet_password())
  *             .base64EncodeContent(&#34;false&#34;)
  *             .generateType(var_.autonomous_database_wallet_generate_type())
+ *             .isRegional(var_.autonomous_database_wallet_is_regional())
  *             .build());
  * 
  *     }
@@ -108,6 +109,20 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
      */
     public Output<Optional<String>> generateType() {
         return Codegen.optional(this.generateType);
+    }
+    /**
+     * True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+     * 
+     */
+    @Export(name="isRegional", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isRegional;
+
+    /**
+     * @return True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+     * 
+     */
+    public Output<Boolean> isRegional() {
+        return this.isRegional;
     }
     /**
      * The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.

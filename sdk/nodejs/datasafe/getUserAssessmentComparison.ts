@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
  *
- * Gets the details of the comparison report for the user assessments submitted for comparison.
+ * Gets the details of the comparison report for the user assessments provided.
  *
  * ## Example Usage
  *
@@ -72,7 +72,7 @@ export interface GetUserAssessmentComparisonResult {
 /**
  * This data source provides details about a specific User Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
  *
- * Gets the details of the comparison report for the user assessments submitted for comparison.
+ * Gets the details of the comparison report for the user assessments provided.
  *
  * ## Example Usage
  *

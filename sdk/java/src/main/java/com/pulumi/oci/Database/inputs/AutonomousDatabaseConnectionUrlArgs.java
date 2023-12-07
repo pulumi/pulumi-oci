@@ -31,6 +31,21 @@ public final class AutonomousDatabaseConnectionUrlArgs extends com.pulumi.resour
     }
 
     /**
+     * The URL of the Database Transforms for the Autonomous Database.
+     * 
+     */
+    @Import(name="databaseTransformsUrl")
+    private @Nullable Output<String> databaseTransformsUrl;
+
+    /**
+     * @return The URL of the Database Transforms for the Autonomous Database.
+     * 
+     */
+    public Optional<Output<String>> databaseTransformsUrl() {
+        return Optional.ofNullable(this.databaseTransformsUrl);
+    }
+
+    /**
      * The URL of the Graph Studio for the Autonomous Database.
      * 
      */
@@ -46,6 +61,21 @@ public final class AutonomousDatabaseConnectionUrlArgs extends com.pulumi.resour
     }
 
     /**
+     * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+     * 
+     */
+    @Import(name="machineLearningNotebookUrl")
+    private @Nullable Output<String> machineLearningNotebookUrl;
+
+    /**
+     * @return The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+     * 
+     */
+    public Optional<Output<String>> machineLearningNotebookUrl() {
+        return Optional.ofNullable(this.machineLearningNotebookUrl);
+    }
+
+    /**
      * Oracle Machine Learning user management URL.
      * 
      */
@@ -58,6 +88,36 @@ public final class AutonomousDatabaseConnectionUrlArgs extends com.pulumi.resour
      */
     public Optional<Output<String>> machineLearningUserManagementUrl() {
         return Optional.ofNullable(this.machineLearningUserManagementUrl);
+    }
+
+    /**
+     * The URL of the MongoDB API for the Autonomous Database.
+     * 
+     */
+    @Import(name="mongoDbUrl")
+    private @Nullable Output<String> mongoDbUrl;
+
+    /**
+     * @return The URL of the MongoDB API for the Autonomous Database.
+     * 
+     */
+    public Optional<Output<String>> mongoDbUrl() {
+        return Optional.ofNullable(this.mongoDbUrl);
+    }
+
+    /**
+     * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+     * 
+     */
+    @Import(name="ordsUrl")
+    private @Nullable Output<String> ordsUrl;
+
+    /**
+     * @return The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+     * 
+     */
+    public Optional<Output<String>> ordsUrl() {
+        return Optional.ofNullable(this.ordsUrl);
     }
 
     /**
@@ -79,8 +139,12 @@ public final class AutonomousDatabaseConnectionUrlArgs extends com.pulumi.resour
 
     private AutonomousDatabaseConnectionUrlArgs(AutonomousDatabaseConnectionUrlArgs $) {
         this.apexUrl = $.apexUrl;
+        this.databaseTransformsUrl = $.databaseTransformsUrl;
         this.graphStudioUrl = $.graphStudioUrl;
+        this.machineLearningNotebookUrl = $.machineLearningNotebookUrl;
         this.machineLearningUserManagementUrl = $.machineLearningUserManagementUrl;
+        this.mongoDbUrl = $.mongoDbUrl;
+        this.ordsUrl = $.ordsUrl;
         this.sqlDevWebUrl = $.sqlDevWebUrl;
     }
 
@@ -124,6 +188,27 @@ public final class AutonomousDatabaseConnectionUrlArgs extends com.pulumi.resour
         }
 
         /**
+         * @param databaseTransformsUrl The URL of the Database Transforms for the Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseTransformsUrl(@Nullable Output<String> databaseTransformsUrl) {
+            $.databaseTransformsUrl = databaseTransformsUrl;
+            return this;
+        }
+
+        /**
+         * @param databaseTransformsUrl The URL of the Database Transforms for the Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseTransformsUrl(String databaseTransformsUrl) {
+            return databaseTransformsUrl(Output.of(databaseTransformsUrl));
+        }
+
+        /**
          * @param graphStudioUrl The URL of the Graph Studio for the Autonomous Database.
          * 
          * @return builder
@@ -145,6 +230,27 @@ public final class AutonomousDatabaseConnectionUrlArgs extends com.pulumi.resour
         }
 
         /**
+         * @param machineLearningNotebookUrl The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder machineLearningNotebookUrl(@Nullable Output<String> machineLearningNotebookUrl) {
+            $.machineLearningNotebookUrl = machineLearningNotebookUrl;
+            return this;
+        }
+
+        /**
+         * @param machineLearningNotebookUrl The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder machineLearningNotebookUrl(String machineLearningNotebookUrl) {
+            return machineLearningNotebookUrl(Output.of(machineLearningNotebookUrl));
+        }
+
+        /**
          * @param machineLearningUserManagementUrl Oracle Machine Learning user management URL.
          * 
          * @return builder
@@ -163,6 +269,48 @@ public final class AutonomousDatabaseConnectionUrlArgs extends com.pulumi.resour
          */
         public Builder machineLearningUserManagementUrl(String machineLearningUserManagementUrl) {
             return machineLearningUserManagementUrl(Output.of(machineLearningUserManagementUrl));
+        }
+
+        /**
+         * @param mongoDbUrl The URL of the MongoDB API for the Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mongoDbUrl(@Nullable Output<String> mongoDbUrl) {
+            $.mongoDbUrl = mongoDbUrl;
+            return this;
+        }
+
+        /**
+         * @param mongoDbUrl The URL of the MongoDB API for the Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder mongoDbUrl(String mongoDbUrl) {
+            return mongoDbUrl(Output.of(mongoDbUrl));
+        }
+
+        /**
+         * @param ordsUrl The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ordsUrl(@Nullable Output<String> ordsUrl) {
+            $.ordsUrl = ordsUrl;
+            return this;
+        }
+
+        /**
+         * @param ordsUrl The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ordsUrl(String ordsUrl) {
+            return ordsUrl(Output.of(ordsUrl));
         }
 
         /**

@@ -96,7 +96,7 @@ namespace Pulumi.Oci.Database
         public Output<double> AutonomousDataStoragePercentage { get; private set; } = null!;
 
         /// <summary>
-        /// The data disk group size to be allocated for Autonomous Databases, in TBs.
+        /// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
         [Output("autonomousDataStorageSizeInTbs")]
         public Output<double> AutonomousDataStorageSizeInTbs { get; private set; } = null!;
@@ -156,7 +156,7 @@ namespace Pulumi.Oci.Database
         public Output<int> CpuCoreCount { get; private set; } = null!;
 
         /// <summary>
-        /// The number of CPU cores to be enabled per VM cluster node.
+        /// (Updatable) The number of CPU cores to be enabled per VM cluster node.
         /// </summary>
         [Output("cpuCoreCountPerNode")]
         public Output<int> CpuCoreCountPerNode { get; private set; } = null!;
@@ -215,6 +215,9 @@ namespace Pulumi.Oci.Database
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
 
+        [Output("exadataStorageInTbsLowestScaledValue")]
+        public Output<double> ExadataStorageInTbsLowestScaledValue { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
@@ -246,7 +249,7 @@ namespace Pulumi.Oci.Database
         public Output<string> LastUpdateHistoryEntryId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+        /// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
         /// 
         /// This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
         /// </summary>
@@ -270,6 +273,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("maintenanceWindows")]
         public Output<ImmutableArray<Outputs.CloudAutonomousVmClusterMaintenanceWindow>> MaintenanceWindows { get; private set; } = null!;
+
+        /// <summary>
+        /// The lowest value to which ACDs can be scaled down.
+        /// </summary>
+        [Output("maxAcdsLowestScaledValue")]
+        public Output<int> MaxAcdsLowestScaledValue { get; private set; } = null!;
 
         /// <summary>
         /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
@@ -313,6 +322,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("ocpuCount")]
         public Output<double> OcpuCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The lowest value to which ocpus can be scaled down.
+        /// </summary>
+        [Output("ocpusLowestScaledValue")]
+        public Output<int> OcpusLowestScaledValue { get; private set; } = null!;
 
         /// <summary>
         /// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
@@ -395,7 +410,7 @@ namespace Pulumi.Oci.Database
         public Output<double> TotalAutonomousDataStorageInTbs { get; private set; } = null!;
 
         /// <summary>
-        /// The total number of Autonomous Container Databases that can be created.
+        /// (Updatable) The total number of Autonomous Container Databases that can be created.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -456,7 +471,7 @@ namespace Pulumi.Oci.Database
     public sealed class CloudAutonomousVmClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The data disk group size to be allocated for Autonomous Databases, in TBs.
+        /// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
         [Input("autonomousDataStorageSizeInTbs")]
         public Input<double>? AutonomousDataStorageSizeInTbs { get; set; }
@@ -486,7 +501,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? ComputeModel { get; set; }
 
         /// <summary>
-        /// The number of CPU cores to be enabled per VM cluster node.
+        /// (Updatable) The number of CPU cores to be enabled per VM cluster node.
         /// </summary>
         [Input("cpuCoreCountPerNode")]
         public Input<int>? CpuCoreCountPerNode { get; set; }
@@ -546,7 +561,7 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsMtlsEnabledVmCluster { get; set; }
 
         /// <summary>
-        /// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+        /// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
         /// 
         /// This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
         /// </summary>
@@ -603,7 +618,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// The total number of Autonomous Container Databases that can be created.
+        /// (Updatable) The total number of Autonomous Container Databases that can be created.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -626,7 +641,7 @@ namespace Pulumi.Oci.Database
         public Input<double>? AutonomousDataStoragePercentage { get; set; }
 
         /// <summary>
-        /// The data disk group size to be allocated for Autonomous Databases, in TBs.
+        /// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
         /// </summary>
         [Input("autonomousDataStorageSizeInTbs")]
         public Input<double>? AutonomousDataStorageSizeInTbs { get; set; }
@@ -686,7 +701,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? CpuCoreCount { get; set; }
 
         /// <summary>
-        /// The number of CPU cores to be enabled per VM cluster node.
+        /// (Updatable) The number of CPU cores to be enabled per VM cluster node.
         /// </summary>
         [Input("cpuCoreCountPerNode")]
         public Input<int>? CpuCoreCountPerNode { get; set; }
@@ -757,6 +772,9 @@ namespace Pulumi.Oci.Database
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
+        [Input("exadataStorageInTbsLowestScaledValue")]
+        public Input<double>? ExadataStorageInTbsLowestScaledValue { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -794,7 +812,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? LastUpdateHistoryEntryId { get; set; }
 
         /// <summary>
-        /// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+        /// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
         /// 
         /// This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
         /// </summary>
@@ -824,6 +842,12 @@ namespace Pulumi.Oci.Database
             get => _maintenanceWindows ?? (_maintenanceWindows = new InputList<Inputs.CloudAutonomousVmClusterMaintenanceWindowGetArgs>());
             set => _maintenanceWindows = value;
         }
+
+        /// <summary>
+        /// The lowest value to which ACDs can be scaled down.
+        /// </summary>
+        [Input("maxAcdsLowestScaledValue")]
+        public Input<int>? MaxAcdsLowestScaledValue { get; set; }
 
         /// <summary>
         /// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
@@ -873,6 +897,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("ocpuCount")]
         public Input<double>? OcpuCount { get; set; }
+
+        /// <summary>
+        /// The lowest value to which ocpus can be scaled down.
+        /// </summary>
+        [Input("ocpusLowestScaledValue")]
+        public Input<int>? OcpusLowestScaledValue { get; set; }
 
         /// <summary>
         /// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
@@ -955,7 +985,7 @@ namespace Pulumi.Oci.Database
         public Input<double>? TotalAutonomousDataStorageInTbs { get; set; }
 
         /// <summary>
-        /// The total number of Autonomous Container Databases that can be created.
+        /// (Updatable) The total number of Autonomous Container Databases that can be created.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

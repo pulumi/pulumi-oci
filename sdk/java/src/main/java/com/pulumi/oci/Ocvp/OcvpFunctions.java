@@ -7,24 +7,36 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.Ocvp.inputs.GetClusterArgs;
+import com.pulumi.oci.Ocvp.inputs.GetClusterPlainArgs;
+import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
+import com.pulumi.oci.Ocvp.inputs.GetClustersPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetExsiHostArgs;
 import com.pulumi.oci.Ocvp.inputs.GetExsiHostPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetExsiHostsArgs;
 import com.pulumi.oci.Ocvp.inputs.GetExsiHostsPlainArgs;
+import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordArgs;
+import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSddcArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSddcPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSddcsArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSddcsPlainArgs;
+import com.pulumi.oci.Ocvp.inputs.GetSupportedCommitmentsArgs;
+import com.pulumi.oci.Ocvp.inputs.GetSupportedCommitmentsPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedSkusPlainArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsArgs;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedVmwareSoftwareVersionsPlainArgs;
+import com.pulumi.oci.Ocvp.outputs.GetClusterResult;
+import com.pulumi.oci.Ocvp.outputs.GetClustersResult;
 import com.pulumi.oci.Ocvp.outputs.GetExsiHostResult;
 import com.pulumi.oci.Ocvp.outputs.GetExsiHostsResult;
+import com.pulumi.oci.Ocvp.outputs.GetRetrievePasswordResult;
 import com.pulumi.oci.Ocvp.outputs.GetSddcResult;
 import com.pulumi.oci.Ocvp.outputs.GetSddcsResult;
+import com.pulumi.oci.Ocvp.outputs.GetSupportedCommitmentsResult;
 import com.pulumi.oci.Ocvp.outputs.GetSupportedHostShapesResult;
 import com.pulumi.oci.Ocvp.outputs.GetSupportedSkusResult;
 import com.pulumi.oci.Ocvp.outputs.GetSupportedVmwareSoftwareVersionsResult;
@@ -32,6 +44,414 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class OcvpFunctions {
+    /**
+     * This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified Cluster&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
+     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetClusterResult> getCluster(GetClusterArgs args) {
+        return getCluster(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified Cluster&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
+     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetClusterResult> getClusterPlain(GetClusterPlainArgs args) {
+        return getClusterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified Cluster&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
+     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetClusterResult> getCluster(GetClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getCluster:getCluster", TypeShape.of(GetClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Gets the specified Cluster&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
+     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetClusterResult> getClusterPlain(GetClusterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getCluster:getCluster", TypeShape.of(GetClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the Clusters in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_display_name())
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .state(var_.cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetClustersResult> getClusters() {
+        return getClusters(GetClustersArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the Clusters in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_display_name())
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .state(var_.cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetClustersResult> getClustersPlain() {
+        return getClustersPlain(GetClustersPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the Clusters in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_display_name())
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .state(var_.cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetClustersResult> getClusters(GetClustersArgs args) {
+        return getClusters(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the Clusters in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_display_name())
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .state(var_.cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetClustersResult> getClustersPlain(GetClustersPlainArgs args) {
+        return getClustersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the Clusters in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_display_name())
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .state(var_.cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetClustersResult> getClusters(GetClustersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getClusters:getClusters", TypeShape.of(GetClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists the Clusters in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.cluster_display_name())
+     *             .sddcId(oci_ocvp_sddc.test_sddc().id())
+     *             .state(var_.cluster_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetClustersResult> getClustersPlain(GetClustersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getClusters:getClusters", TypeShape.of(GetClustersResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
@@ -224,6 +644,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
      *             .compartmentId(var_.compartment_id())
      *             .computeInstanceId(oci_core_instance.test_instance().id())
      *             .displayName(var_.esxi_host_display_name())
@@ -277,6 +698,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
      *             .compartmentId(var_.compartment_id())
      *             .computeInstanceId(oci_core_instance.test_instance().id())
      *             .displayName(var_.esxi_host_display_name())
@@ -330,6 +752,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
      *             .compartmentId(var_.compartment_id())
      *             .computeInstanceId(oci_core_instance.test_instance().id())
      *             .displayName(var_.esxi_host_display_name())
@@ -383,6 +806,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
      *             .compartmentId(var_.compartment_id())
      *             .computeInstanceId(oci_core_instance.test_instance().id())
      *             .displayName(var_.esxi_host_display_name())
@@ -436,6 +860,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
      *             .compartmentId(var_.compartment_id())
      *             .computeInstanceId(oci_core_instance.test_instance().id())
      *             .displayName(var_.esxi_host_display_name())
@@ -489,6 +914,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
+     *             .clusterId(oci_ocvp_cluster.test_cluster().id())
      *             .compartmentId(var_.compartment_id())
      *             .computeInstanceId(oci_core_instance.test_instance().id())
      *             .displayName(var_.esxi_host_display_name())
@@ -505,6 +931,158 @@ public final class OcvpFunctions {
      */
     public static CompletableFuture<GetExsiHostsResult> getExsiHostsPlain(GetExsiHostsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Ocvp/getExsiHosts:getExsiHosts", TypeShape.of(GetExsiHostsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPassword = OcvpFunctions.getRetrievePassword(GetRetrievePasswordArgs.builder()
+     *             .sddcId(var_.compartment_id())
+     *             .type(var_.password_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRetrievePasswordResult> getRetrievePassword(GetRetrievePasswordArgs args) {
+        return getRetrievePassword(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPassword = OcvpFunctions.getRetrievePassword(GetRetrievePasswordArgs.builder()
+     *             .sddcId(var_.compartment_id())
+     *             .type(var_.password_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRetrievePasswordResult> getRetrievePasswordPlain(GetRetrievePasswordPlainArgs args) {
+        return getRetrievePasswordPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPassword = OcvpFunctions.getRetrievePassword(GetRetrievePasswordArgs.builder()
+     *             .sddcId(var_.compartment_id())
+     *             .type(var_.password_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRetrievePasswordResult> getRetrievePassword(GetRetrievePasswordArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getRetrievePassword:getRetrievePassword", TypeShape.of(GetRetrievePasswordResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetRetrievePasswordArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPassword = OcvpFunctions.getRetrievePassword(GetRetrievePasswordArgs.builder()
+     *             .sddcId(var_.compartment_id())
+     *             .type(var_.password_type())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRetrievePasswordResult> getRetrievePasswordPlain(GetRetrievePasswordPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getRetrievePassword:getRetrievePassword", TypeShape.of(GetRetrievePasswordResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -835,6 +1413,166 @@ public final class OcvpFunctions {
         return Deployment.getInstance().invokeAsync("oci:Ocvp/getSddcs:getSddcs", TypeShape.of(GetSddcsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Supported Commitments in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists supported Commitments.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedCommitmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSupportedCommitmentsResult> getSupportedCommitments(GetSupportedCommitmentsArgs args) {
+        return getSupportedCommitments(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Supported Commitments in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists supported Commitments.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedCommitmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSupportedCommitmentsResult> getSupportedCommitmentsPlain(GetSupportedCommitmentsPlainArgs args) {
+        return getSupportedCommitmentsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Supported Commitments in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists supported Commitments.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedCommitmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetSupportedCommitmentsResult> getSupportedCommitments(GetSupportedCommitmentsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Ocvp/getSupportedCommitments:getSupportedCommitments", TypeShape.of(GetSupportedCommitmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Supported Commitments in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+     * 
+     * Lists supported Commitments.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Ocvp.OcvpFunctions;
+     * import com.pulumi.oci.Ocvp.inputs.GetSupportedCommitmentsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetSupportedCommitmentsResult> getSupportedCommitmentsPlain(GetSupportedCommitmentsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Ocvp/getSupportedCommitments:getSupportedCommitments", TypeShape.of(GetSupportedCommitmentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Supported Host Shapes in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
      * 
      * Lists supported compute shapes for ESXi hosts.
@@ -863,8 +1601,9 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .initialHostShapeName(oci_core_shape.test_shape().name())
+     *             .isSingleHostSddcSupported(var_.supported_host_shape_is_single_host_sddc_supported())
      *             .name(var_.supported_host_shape_name())
-     *             .sddcType(var_.supported_host_shape_sddc_type())
      *             .build());
      * 
      *     }
@@ -904,8 +1643,9 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .initialHostShapeName(oci_core_shape.test_shape().name())
+     *             .isSingleHostSddcSupported(var_.supported_host_shape_is_single_host_sddc_supported())
      *             .name(var_.supported_host_shape_name())
-     *             .sddcType(var_.supported_host_shape_sddc_type())
      *             .build());
      * 
      *     }
@@ -945,8 +1685,9 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .initialHostShapeName(oci_core_shape.test_shape().name())
+     *             .isSingleHostSddcSupported(var_.supported_host_shape_is_single_host_sddc_supported())
      *             .name(var_.supported_host_shape_name())
-     *             .sddcType(var_.supported_host_shape_sddc_type())
      *             .build());
      * 
      *     }
@@ -986,8 +1727,9 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .initialHostShapeName(oci_core_shape.test_shape().name())
+     *             .isSingleHostSddcSupported(var_.supported_host_shape_is_single_host_sddc_supported())
      *             .name(var_.supported_host_shape_name())
-     *             .sddcType(var_.supported_host_shape_sddc_type())
      *             .build());
      * 
      *     }
@@ -1000,7 +1742,7 @@ public final class OcvpFunctions {
     }
     /**
      * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci_ocvp_supported_commitments&#34; instead.
+     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 
@@ -1041,7 +1783,7 @@ public final class OcvpFunctions {
     }
     /**
      * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci_ocvp_supported_commitments&#34; instead.
+     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 
@@ -1082,7 +1824,7 @@ public final class OcvpFunctions {
     }
     /**
      * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci_ocvp_supported_commitments&#34; instead.
+     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 
@@ -1123,7 +1865,7 @@ public final class OcvpFunctions {
     }
     /**
      * This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.\
-     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci_ocvp_supported_commitments&#34; instead.
+     * !&gt; **WARNING:** This data source is deprecated and will be removed, please use &#34;oci.Ocvp.getSupportedCommitments&#34; instead.
      * 
      * Lists supported SKUs.
      * 
@@ -1192,6 +1934,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .version(var_.supported_vmware_software_version_version())
      *             .build());
      * 
      *     }
@@ -1232,6 +1976,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .version(var_.supported_vmware_software_version_version())
      *             .build());
      * 
      *     }
@@ -1272,6 +2018,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .version(var_.supported_vmware_software_version_version())
      *             .build());
      * 
      *     }
@@ -1312,6 +2060,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
      *             .compartmentId(var_.compartment_id())
+     *             .hostShapeName(oci_core_shape.test_shape().name())
+     *             .version(var_.supported_vmware_software_version_version())
      *             .build());
      * 
      *     }

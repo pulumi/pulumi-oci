@@ -17,18 +17,21 @@ __all__ = ['IpsecConnectionTunnelManagementArgs', 'IpsecConnectionTunnelManageme
 class IpsecConnectionTunnelManagementArgs:
     def __init__(__self__, *,
                  ipsec_id: pulumi.Input[str],
-                 routing: pulumi.Input[str],
                  tunnel_id: pulumi.Input[str],
                  bgp_session_infos: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dpd_configs: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementDpdConfigArgs']]]] = None,
                  encryption_domain_config: Optional[pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] = None,
                  ike_version: Optional[pulumi.Input[str]] = None,
+                 nat_translation_enabled: Optional[pulumi.Input[str]] = None,
+                 oracle_can_initiate: Optional[pulumi.Input[str]] = None,
+                 phase_one_details: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailArgs']]]] = None,
+                 phase_two_details: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailArgs']]]] = None,
+                 routing: Optional[pulumi.Input[str]] = None,
                  shared_secret: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a IpsecConnectionTunnelManagement resource.
         :param pulumi.Input[str] ipsec_id: The OCID of the IPSec connection.
-        :param pulumi.Input[str] routing: The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
         :param pulumi.Input[str] tunnel_id: The OCID of the IPSec connection's tunnel.
         :param pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementBgpSessionInfoArgs']]] bgp_session_infos: Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
                
@@ -36,10 +39,22 @@ class IpsecConnectionTunnelManagementArgs:
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs'] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
+        :param pulumi.Input[str] nat_translation_enabled: By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+               
+               The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+               
+               The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+        :param pulumi.Input[str] oracle_can_initiate: Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+        :param pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailArgs']]] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+               
+               See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+        :param pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailArgs']]] phase_two_details: Configuration details for IPSec phase two configuration parameters.
+               
+               See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+        :param pulumi.Input[str] routing: The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
         :param pulumi.Input[str] shared_secret: The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
         """
         pulumi.set(__self__, "ipsec_id", ipsec_id)
-        pulumi.set(__self__, "routing", routing)
         pulumi.set(__self__, "tunnel_id", tunnel_id)
         if bgp_session_infos is not None:
             pulumi.set(__self__, "bgp_session_infos", bgp_session_infos)
@@ -51,6 +66,16 @@ class IpsecConnectionTunnelManagementArgs:
             pulumi.set(__self__, "encryption_domain_config", encryption_domain_config)
         if ike_version is not None:
             pulumi.set(__self__, "ike_version", ike_version)
+        if nat_translation_enabled is not None:
+            pulumi.set(__self__, "nat_translation_enabled", nat_translation_enabled)
+        if oracle_can_initiate is not None:
+            pulumi.set(__self__, "oracle_can_initiate", oracle_can_initiate)
+        if phase_one_details is not None:
+            pulumi.set(__self__, "phase_one_details", phase_one_details)
+        if phase_two_details is not None:
+            pulumi.set(__self__, "phase_two_details", phase_two_details)
+        if routing is not None:
+            pulumi.set(__self__, "routing", routing)
         if shared_secret is not None:
             pulumi.set(__self__, "shared_secret", shared_secret)
 
@@ -65,18 +90,6 @@ class IpsecConnectionTunnelManagementArgs:
     @ipsec_id.setter
     def ipsec_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "ipsec_id", value)
-
-    @property
-    @pulumi.getter
-    def routing(self) -> pulumi.Input[str]:
-        """
-        The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
-        """
-        return pulumi.get(self, "routing")
-
-    @routing.setter
-    def routing(self, value: pulumi.Input[str]):
-        pulumi.set(self, "routing", value)
 
     @property
     @pulumi.getter(name="tunnelId")
@@ -150,6 +163,74 @@ class IpsecConnectionTunnelManagementArgs:
         pulumi.set(self, "ike_version", value)
 
     @property
+    @pulumi.getter(name="natTranslationEnabled")
+    def nat_translation_enabled(self) -> Optional[pulumi.Input[str]]:
+        """
+        By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+
+        The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+
+        The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+        """
+        return pulumi.get(self, "nat_translation_enabled")
+
+    @nat_translation_enabled.setter
+    def nat_translation_enabled(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "nat_translation_enabled", value)
+
+    @property
+    @pulumi.getter(name="oracleCanInitiate")
+    def oracle_can_initiate(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+        """
+        return pulumi.get(self, "oracle_can_initiate")
+
+    @oracle_can_initiate.setter
+    def oracle_can_initiate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "oracle_can_initiate", value)
+
+    @property
+    @pulumi.getter(name="phaseOneDetails")
+    def phase_one_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailArgs']]]]:
+        """
+        Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+
+        See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+        """
+        return pulumi.get(self, "phase_one_details")
+
+    @phase_one_details.setter
+    def phase_one_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailArgs']]]]):
+        pulumi.set(self, "phase_one_details", value)
+
+    @property
+    @pulumi.getter(name="phaseTwoDetails")
+    def phase_two_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailArgs']]]]:
+        """
+        Configuration details for IPSec phase two configuration parameters.
+
+        See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+        """
+        return pulumi.get(self, "phase_two_details")
+
+    @phase_two_details.setter
+    def phase_two_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailArgs']]]]):
+        pulumi.set(self, "phase_two_details", value)
+
+    @property
+    @pulumi.getter
+    def routing(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
+        """
+        return pulumi.get(self, "routing")
+
+    @routing.setter
+    def routing(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "routing", value)
+
+    @property
     @pulumi.getter(name="sharedSecret")
     def shared_secret(self) -> Optional[pulumi.Input[str]]:
         """
@@ -197,9 +278,23 @@ class _IpsecConnectionTunnelManagementState:
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
         :param pulumi.Input[str] cpe_ip: The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] dpd_mode: This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+        :param pulumi.Input[int] dpd_timeout_in_sec: DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
         :param pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs'] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
         :param pulumi.Input[str] ipsec_id: The OCID of the IPSec connection.
+        :param pulumi.Input[str] nat_translation_enabled: By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+               
+               The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+               
+               The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+        :param pulumi.Input[str] oracle_can_initiate: Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+        :param pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailArgs']]] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+               
+               See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+        :param pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailArgs']]] phase_two_details: Configuration details for IPSec phase two configuration parameters.
+               
+               See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
         :param pulumi.Input[str] routing: The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
         :param pulumi.Input[str] shared_secret: The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
         :param pulumi.Input[str] state: The IPSec connection's tunnel's lifecycle state.
@@ -330,6 +425,9 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="dpdMode")
     def dpd_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+        """
         return pulumi.get(self, "dpd_mode")
 
     @dpd_mode.setter
@@ -339,6 +437,9 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="dpdTimeoutInSec")
     def dpd_timeout_in_sec(self) -> Optional[pulumi.Input[int]]:
+        """
+        DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+        """
         return pulumi.get(self, "dpd_timeout_in_sec")
 
     @dpd_timeout_in_sec.setter
@@ -384,6 +485,13 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="natTranslationEnabled")
     def nat_translation_enabled(self) -> Optional[pulumi.Input[str]]:
+        """
+        By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+
+        The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+
+        The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+        """
         return pulumi.get(self, "nat_translation_enabled")
 
     @nat_translation_enabled.setter
@@ -393,6 +501,9 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="oracleCanInitiate")
     def oracle_can_initiate(self) -> Optional[pulumi.Input[str]]:
+        """
+        Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+        """
         return pulumi.get(self, "oracle_can_initiate")
 
     @oracle_can_initiate.setter
@@ -402,6 +513,11 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="phaseOneDetails")
     def phase_one_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseOneDetailArgs']]]]:
+        """
+        Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+
+        See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+        """
         return pulumi.get(self, "phase_one_details")
 
     @phase_one_details.setter
@@ -411,6 +527,11 @@ class _IpsecConnectionTunnelManagementState:
     @property
     @pulumi.getter(name="phaseTwoDetails")
     def phase_two_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['IpsecConnectionTunnelManagementPhaseTwoDetailArgs']]]]:
+        """
+        Configuration details for IPSec phase two configuration parameters.
+
+        See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+        """
         return pulumi.get(self, "phase_two_details")
 
     @phase_two_details.setter
@@ -525,6 +646,10 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
                  encryption_domain_config: Optional[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]] = None,
                  ike_version: Optional[pulumi.Input[str]] = None,
                  ipsec_id: Optional[pulumi.Input[str]] = None,
+                 nat_translation_enabled: Optional[pulumi.Input[str]] = None,
+                 oracle_can_initiate: Optional[pulumi.Input[str]] = None,
+                 phase_one_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementPhaseOneDetailArgs']]]]] = None,
+                 phase_two_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementPhaseTwoDetailArgs']]]]] = None,
                  routing: Optional[pulumi.Input[str]] = None,
                  shared_secret: Optional[pulumi.Input[str]] = None,
                  tunnel_id: Optional[pulumi.Input[str]] = None,
@@ -546,7 +671,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             static route.
 
         ** IMPORTANT **
-        Destroying `the Core.IpsecConnectionTunnelManagement` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
+        Destroying the `Core.IpsecConnectionTunnelManagement` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
 
         ## Example Usage
 
@@ -581,6 +706,18 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
         :param pulumi.Input[str] ipsec_id: The OCID of the IPSec connection.
+        :param pulumi.Input[str] nat_translation_enabled: By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+               
+               The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+               
+               The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+        :param pulumi.Input[str] oracle_can_initiate: Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementPhaseOneDetailArgs']]]] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+               
+               See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementPhaseTwoDetailArgs']]]] phase_two_details: Configuration details for IPSec phase two configuration parameters.
+               
+               See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
         :param pulumi.Input[str] routing: The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
         :param pulumi.Input[str] shared_secret: The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
         :param pulumi.Input[str] tunnel_id: The OCID of the IPSec connection's tunnel.
@@ -608,7 +745,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             static route.
 
         ** IMPORTANT **
-        Destroying `the Core.IpsecConnectionTunnelManagement` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
+        Destroying the `Core.IpsecConnectionTunnelManagement` leaves the resource in its existing state. It will not destroy the tunnel and it will not return the tunnel to its default values.
 
         ## Example Usage
 
@@ -655,6 +792,10 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
                  encryption_domain_config: Optional[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']]] = None,
                  ike_version: Optional[pulumi.Input[str]] = None,
                  ipsec_id: Optional[pulumi.Input[str]] = None,
+                 nat_translation_enabled: Optional[pulumi.Input[str]] = None,
+                 oracle_can_initiate: Optional[pulumi.Input[str]] = None,
+                 phase_one_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementPhaseOneDetailArgs']]]]] = None,
+                 phase_two_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementPhaseTwoDetailArgs']]]]] = None,
                  routing: Optional[pulumi.Input[str]] = None,
                  shared_secret: Optional[pulumi.Input[str]] = None,
                  tunnel_id: Optional[pulumi.Input[str]] = None,
@@ -675,10 +816,12 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             if ipsec_id is None and not opts.urn:
                 raise TypeError("Missing required property 'ipsec_id'")
             __props__.__dict__["ipsec_id"] = ipsec_id
-            if routing is None and not opts.urn:
-                raise TypeError("Missing required property 'routing'")
+            __props__.__dict__["nat_translation_enabled"] = nat_translation_enabled
+            __props__.__dict__["oracle_can_initiate"] = oracle_can_initiate
+            __props__.__dict__["phase_one_details"] = phase_one_details
+            __props__.__dict__["phase_two_details"] = phase_two_details
             __props__.__dict__["routing"] = routing
-            __props__.__dict__["shared_secret"] = shared_secret
+            __props__.__dict__["shared_secret"] = None if shared_secret is None else pulumi.Output.secret(shared_secret)
             if tunnel_id is None and not opts.urn:
                 raise TypeError("Missing required property 'tunnel_id'")
             __props__.__dict__["tunnel_id"] = tunnel_id
@@ -687,15 +830,13 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             __props__.__dict__["cpe_ip"] = None
             __props__.__dict__["dpd_mode"] = None
             __props__.__dict__["dpd_timeout_in_sec"] = None
-            __props__.__dict__["nat_translation_enabled"] = None
-            __props__.__dict__["oracle_can_initiate"] = None
-            __props__.__dict__["phase_one_details"] = None
-            __props__.__dict__["phase_two_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["status"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_status_updated"] = None
             __props__.__dict__["vpn_ip"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["sharedSecret"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(IpsecConnectionTunnelManagement, __self__).__init__(
             'oci:Core/ipsecConnectionTunnelManagement:IpsecConnectionTunnelManagement',
             resource_name,
@@ -743,9 +884,23 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
         :param pulumi.Input[str] cpe_ip: The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param pulumi.Input[str] dpd_mode: This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+        :param pulumi.Input[int] dpd_timeout_in_sec: DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
         :param pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
         :param pulumi.Input[str] ipsec_id: The OCID of the IPSec connection.
+        :param pulumi.Input[str] nat_translation_enabled: By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+               
+               The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+               
+               The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+        :param pulumi.Input[str] oracle_can_initiate: Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementPhaseOneDetailArgs']]]] phase_one_details: Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+               
+               See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementPhaseTwoDetailArgs']]]] phase_two_details: Configuration details for IPSec phase two configuration parameters.
+               
+               See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
         :param pulumi.Input[str] routing: The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
         :param pulumi.Input[str] shared_secret: The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
         :param pulumi.Input[str] state: The IPSec connection's tunnel's lifecycle state.
@@ -834,11 +989,17 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="dpdMode")
     def dpd_mode(self) -> pulumi.Output[str]:
+        """
+        This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+        """
         return pulumi.get(self, "dpd_mode")
 
     @property
     @pulumi.getter(name="dpdTimeoutInSec")
     def dpd_timeout_in_sec(self) -> pulumi.Output[int]:
+        """
+        DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+        """
         return pulumi.get(self, "dpd_timeout_in_sec")
 
     @property
@@ -868,21 +1029,41 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
     @property
     @pulumi.getter(name="natTranslationEnabled")
     def nat_translation_enabled(self) -> pulumi.Output[str]:
+        """
+        By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500, and when it detects that the port used to forward packets has changed (most likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+
+        The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+
+        The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T even if it senses there may be a NAT device in use.
+        """
         return pulumi.get(self, "nat_translation_enabled")
 
     @property
     @pulumi.getter(name="oracleCanInitiate")
     def oracle_can_initiate(self) -> pulumi.Output[str]:
+        """
+        Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device (`RESPONDER_ONLY`), or both respond to and initiate requests (`INITIATOR_OR_RESPONDER`).
+        """
         return pulumi.get(self, "oracle_can_initiate")
 
     @property
     @pulumi.getter(name="phaseOneDetails")
     def phase_one_details(self) -> pulumi.Output[Sequence['outputs.IpsecConnectionTunnelManagementPhaseOneDetail']]:
+        """
+        Configuration details for IKE phase one (ISAKMP) configuration parameters. 
+
+        See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
+        """
         return pulumi.get(self, "phase_one_details")
 
     @property
     @pulumi.getter(name="phaseTwoDetails")
     def phase_two_details(self) -> pulumi.Output[Sequence['outputs.IpsecConnectionTunnelManagementPhaseTwoDetail']]:
+        """
+        Configuration details for IPSec phase two configuration parameters.
+
+        See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
+        """
         return pulumi.get(self, "phase_two_details")
 
     @property

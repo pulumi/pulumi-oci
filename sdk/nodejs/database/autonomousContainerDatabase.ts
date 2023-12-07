@@ -68,7 +68,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly backupConfig!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseBackupConfig>;
     /**
-     * The OCID of the Cloud Autonomous VM Cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      */
     public readonly cloudAutonomousVmClusterId!: pulumi.Output<string>;
     /**
@@ -247,6 +247,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
+     * The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+     */
+    public /*out*/ readonly timeOfLastBackup!: pulumi.Output<string>;
+    /**
      * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      */
     public /*out*/ readonly timeSnapshotStandbyRevert!: pulumi.Output<string>;
@@ -326,6 +330,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["standbyMaintenanceBufferInDays"] = state ? state.standbyMaintenanceBufferInDays : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeOfLastBackup"] = state ? state.timeOfLastBackup : undefined;
             resourceInputs["timeSnapshotStandbyRevert"] = state ? state.timeSnapshotStandbyRevert : undefined;
             resourceInputs["totalCpus"] = state ? state.totalCpus : undefined;
             resourceInputs["vaultId"] = state ? state.vaultId : undefined;
@@ -390,6 +395,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["role"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeOfLastBackup"] = undefined /*out*/;
             resourceInputs["timeSnapshotStandbyRevert"] = undefined /*out*/;
             resourceInputs["totalCpus"] = undefined /*out*/;
         }
@@ -423,7 +429,7 @@ export interface AutonomousContainerDatabaseState {
      */
     backupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseBackupConfig>;
     /**
-     * The OCID of the Cloud Autonomous VM Cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      */
     cloudAutonomousVmClusterId?: pulumi.Input<string>;
     /**
@@ -602,6 +608,10 @@ export interface AutonomousContainerDatabaseState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
+     * The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+     */
+    timeOfLastBackup?: pulumi.Input<string>;
+    /**
      * The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      */
     timeSnapshotStandbyRevert?: pulumi.Input<string>;
@@ -636,7 +646,7 @@ export interface AutonomousContainerDatabaseArgs {
      */
     backupConfig?: pulumi.Input<inputs.Database.AutonomousContainerDatabaseBackupConfig>;
     /**
-     * The OCID of the Cloud Autonomous VM Cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      */
     cloudAutonomousVmClusterId?: pulumi.Input<string>;
     /**

@@ -22,7 +22,7 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, access_key_id=None, account_key=None, account_name=None, additional_attributes=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, endpoint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, lifecycle_details=None, nsg_ids=None, password=None, port=None, private_ip=None, private_key_file=None, private_key_passphrase=None, producer_properties=None, public_key_fingerprint=None, region=None, sas_token=None, secret_access_key=None, security_protocol=None, session_mode=None, should_use_jndi=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_mode=None, state=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, time_created=None, time_updated=None, trust_store=None, trust_store_password=None, url=None, user_id=None, username=None, vault_id=None, wallet=None):
+    def __init__(__self__, access_key_id=None, account_key=None, account_name=None, additional_attributes=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, lifecycle_details=None, nsg_ids=None, password=None, port=None, private_ip=None, private_key_file=None, private_key_passphrase=None, producer_properties=None, public_key_fingerprint=None, region=None, sas_token=None, secret_access_key=None, security_protocol=None, servers=None, service_account_key_file=None, session_mode=None, should_use_jndi=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_mode=None, state=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, time_created=None, time_updated=None, trust_store=None, trust_store_password=None, url=None, user_id=None, username=None, vault_id=None, wallet=None):
         if access_key_id and not isinstance(access_key_id, str):
             raise TypeError("Expected argument 'access_key_id' to be a str")
         pulumi.set(__self__, "access_key_id", access_key_id)
@@ -98,6 +98,9 @@ class GetConnectionResult:
         if endpoint and not isinstance(endpoint, str):
             raise TypeError("Expected argument 'endpoint' to be a str")
         pulumi.set(__self__, "endpoint", endpoint)
+        if fingerprint and not isinstance(fingerprint, str):
+            raise TypeError("Expected argument 'fingerprint' to be a str")
+        pulumi.set(__self__, "fingerprint", fingerprint)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -173,6 +176,12 @@ class GetConnectionResult:
         if security_protocol and not isinstance(security_protocol, str):
             raise TypeError("Expected argument 'security_protocol' to be a str")
         pulumi.set(__self__, "security_protocol", security_protocol)
+        if servers and not isinstance(servers, str):
+            raise TypeError("Expected argument 'servers' to be a str")
+        pulumi.set(__self__, "servers", servers)
+        if service_account_key_file and not isinstance(service_account_key_file, str):
+            raise TypeError("Expected argument 'service_account_key_file' to be a str")
+        pulumi.set(__self__, "service_account_key_file", service_account_key_file)
         if session_mode and not isinstance(session_mode, str):
             raise TypeError("Expected argument 'session_mode' to be a str")
         pulumi.set(__self__, "session_mode", session_mode)
@@ -279,7 +288,9 @@ class GetConnectionResult:
     @pulumi.getter(name="authenticationType")
     def authentication_type(self) -> str:
         """
-        Used authentication mechanism to access Azure Data Lake Storage.
+        Used authentication mechanism to be provided for the following connection types:
+        * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
+        * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         """
         return pulumi.get(self, "authentication_type")
 
@@ -337,7 +348,9 @@ class GetConnectionResult:
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> str:
         """
-        Connection string. AZURE_SYNAPSE_ANALYTICS e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;', MONGODB e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'.
+        * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+        * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+        * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         """
         return pulumi.get(self, "connection_string")
 
@@ -353,7 +366,9 @@ class GetConnectionResult:
     @pulumi.getter(name="connectionUrl")
     def connection_url(self) -> str:
         """
-        JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676', SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
+        * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
+        * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
         """
         return pulumi.get(self, "connection_url")
 
@@ -432,6 +447,11 @@ class GetConnectionResult:
         return pulumi.get(self, "endpoint")
 
     @property
+    @pulumi.getter
+    def fingerprint(self) -> str:
+        return pulumi.get(self, "fingerprint")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -444,6 +464,8 @@ class GetConnectionResult:
     def host(self) -> str:
         """
         The name or address of a host.
+        In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+        For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         """
         return pulumi.get(self, "host")
 
@@ -597,9 +619,25 @@ class GetConnectionResult:
     @pulumi.getter(name="securityProtocol")
     def security_protocol(self) -> str:
         """
-        Security Protocol for Microsoft SQL Server/PostgreSQL.
+        Security Protocol to be provided for the following connection types:
+        * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+        * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         """
         return pulumi.get(self, "security_protocol")
+
+    @property
+    @pulumi.getter
+    def servers(self) -> str:
+        """
+        Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
+        If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+        """
+        return pulumi.get(self, "servers")
+
+    @property
+    @pulumi.getter(name="serviceAccountKeyFile")
+    def service_account_key_file(self) -> str:
+        return pulumi.get(self, "service_account_key_file")
 
     @property
     @pulumi.getter(name="sessionMode")
@@ -657,7 +695,7 @@ class GetConnectionResult:
     @pulumi.getter(name="sslMode")
     def ssl_mode(self) -> str:
         """
-        SSL mode for PostgreSQL.
+        SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
         """
         return pulumi.get(self, "ssl_mode")
 
@@ -697,7 +735,7 @@ class GetConnectionResult:
     @pulumi.getter(name="technologyType")
     def technology_type(self) -> str:
         """
-        The Kafka (e.g. Confluent) Schema Registry technology type.
+        The technology type.
         """
         return pulumi.get(self, "technology_type")
 
@@ -804,6 +842,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             description=self.description,
             display_name=self.display_name,
             endpoint=self.endpoint,
+            fingerprint=self.fingerprint,
             freeform_tags=self.freeform_tags,
             host=self.host,
             id=self.id,
@@ -829,6 +868,8 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             sas_token=self.sas_token,
             secret_access_key=self.secret_access_key,
             security_protocol=self.security_protocol,
+            servers=self.servers,
+            service_account_key_file=self.service_account_key_file,
             session_mode=self.session_mode,
             should_use_jndi=self.should_use_jndi,
             should_validate_server_certificate=self.should_validate_server_certificate,
@@ -905,6 +946,7 @@ def get_connection(connection_id: Optional[str] = None,
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         endpoint=pulumi.get(__ret__, 'endpoint'),
+        fingerprint=pulumi.get(__ret__, 'fingerprint'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         host=pulumi.get(__ret__, 'host'),
         id=pulumi.get(__ret__, 'id'),
@@ -930,6 +972,8 @@ def get_connection(connection_id: Optional[str] = None,
         sas_token=pulumi.get(__ret__, 'sas_token'),
         secret_access_key=pulumi.get(__ret__, 'secret_access_key'),
         security_protocol=pulumi.get(__ret__, 'security_protocol'),
+        servers=pulumi.get(__ret__, 'servers'),
+        service_account_key_file=pulumi.get(__ret__, 'service_account_key_file'),
         session_mode=pulumi.get(__ret__, 'session_mode'),
         should_use_jndi=pulumi.get(__ret__, 'should_use_jndi'),
         should_validate_server_certificate=pulumi.get(__ret__, 'should_validate_server_certificate'),

@@ -5,15 +5,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Esxi Host resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
- *
- * Adds another ESXi host to an existing SDDC. The attributes of the specified
- * `Sddc` determine the VMware software and other configuration settings used
- * by the ESXi host.
- *
- * Use the [WorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/WorkRequest/) operations to track the
- * creation of the ESXi host.
- *
  * ## Import
  *
  * EsxiHosts can be imported using the `id`, e.g.
@@ -51,7 +42,7 @@ export class EsxiHost extends pulumi.CustomResource {
     }
 
     /**
-     * Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+     * Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      */
     public /*out*/ readonly billingContractEndDate!: pulumi.Output<string>;
     /**
@@ -65,11 +56,15 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     public readonly capacityReservationId!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
+     */
+    public readonly clusterId!: pulumi.Output<string | undefined>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+     * The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
      */
     public readonly computeAvailabilityDomain!: pulumi.Output<string>;
     /**
@@ -77,7 +72,11 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     public /*out*/ readonly computeInstanceId!: pulumi.Output<string>;
     /**
-     * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     */
+    public /*out*/ readonly currentCommitment!: pulumi.Output<string>;
+    /**
+     * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
      *
      * @deprecated The 'current_sku' field has been deprecated. It is no longer supported.
      */
@@ -87,13 +86,17 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+     * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      *
-     * If this attribute is not specified, the SDDC's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host's display name is `MySDDC-4`.
+     * If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
      *
      * Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * (Updatable) The ESXi software bundle to install on the ESXi host.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
+     */
+    public readonly esxiSoftwareVersion!: pulumi.Output<string>;
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      *
@@ -113,7 +116,7 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     public readonly hostOcpuCount!: pulumi.Output<number>;
     /**
-     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
      */
     public readonly hostShapeName!: pulumi.Output<string>;
     /**
@@ -124,6 +127,10 @@ export class EsxiHost extends pulumi.CustomResource {
      * Indicates whether this host is in the progress of swapping billing.
      */
     public /*out*/ readonly isBillingSwappingInProgress!: pulumi.Output<boolean>;
+    /**
+     * The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     */
+    public /*out*/ readonly nextCommitment!: pulumi.Output<string>;
     /**
      * @deprecated The 'next_sku' field has been deprecated. It is no longer supported.
      */
@@ -139,7 +146,7 @@ export class EsxiHost extends pulumi.CustomResource {
      */
     public /*out*/ readonly replacementEsxiHostId!: pulumi.Output<string>;
     /**
-     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `oci.Ocvp.EsxiHost` resource.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `clusterId` instead.
      *
      *
      * ** IMPORTANT **
@@ -155,7 +162,7 @@ export class EsxiHost extends pulumi.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
      */
-    public readonly swapBillingHostId!: pulumi.Output<string>;
+    public /*out*/ readonly swapBillingHostId!: pulumi.Output<string>;
     /**
      * The date and time the ESXi host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -189,12 +196,15 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["billingContractEndDate"] = state ? state.billingContractEndDate : undefined;
             resourceInputs["billingDonorHostId"] = state ? state.billingDonorHostId : undefined;
             resourceInputs["capacityReservationId"] = state ? state.capacityReservationId : undefined;
+            resourceInputs["clusterId"] = state ? state.clusterId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeAvailabilityDomain"] = state ? state.computeAvailabilityDomain : undefined;
             resourceInputs["computeInstanceId"] = state ? state.computeInstanceId : undefined;
+            resourceInputs["currentCommitment"] = state ? state.currentCommitment : undefined;
             resourceInputs["currentSku"] = state ? state.currentSku : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["esxiSoftwareVersion"] = state ? state.esxiSoftwareVersion : undefined;
             resourceInputs["failedEsxiHostId"] = state ? state.failedEsxiHostId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["gracePeriodEndDate"] = state ? state.gracePeriodEndDate : undefined;
@@ -202,6 +212,7 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["hostShapeName"] = state ? state.hostShapeName : undefined;
             resourceInputs["isBillingContinuationInProgress"] = state ? state.isBillingContinuationInProgress : undefined;
             resourceInputs["isBillingSwappingInProgress"] = state ? state.isBillingSwappingInProgress : undefined;
+            resourceInputs["nextCommitment"] = state ? state.nextCommitment : undefined;
             resourceInputs["nextSku"] = state ? state.nextSku : undefined;
             resourceInputs["nonUpgradedEsxiHostId"] = state ? state.nonUpgradedEsxiHostId : undefined;
             resourceInputs["replacementEsxiHostId"] = state ? state.replacementEsxiHostId : undefined;
@@ -216,10 +227,12 @@ export class EsxiHost extends pulumi.CustomResource {
             const args = argsOrState as EsxiHostArgs | undefined;
             resourceInputs["billingDonorHostId"] = args ? args.billingDonorHostId : undefined;
             resourceInputs["capacityReservationId"] = args ? args.capacityReservationId : undefined;
+            resourceInputs["clusterId"] = args ? args.clusterId : undefined;
             resourceInputs["computeAvailabilityDomain"] = args ? args.computeAvailabilityDomain : undefined;
             resourceInputs["currentSku"] = args ? args.currentSku : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["esxiSoftwareVersion"] = args ? args.esxiSoftwareVersion : undefined;
             resourceInputs["failedEsxiHostId"] = args ? args.failedEsxiHostId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["hostOcpuCount"] = args ? args.hostOcpuCount : undefined;
@@ -227,15 +240,17 @@ export class EsxiHost extends pulumi.CustomResource {
             resourceInputs["nextSku"] = args ? args.nextSku : undefined;
             resourceInputs["nonUpgradedEsxiHostId"] = args ? args.nonUpgradedEsxiHostId : undefined;
             resourceInputs["sddcId"] = args ? args.sddcId : undefined;
-            resourceInputs["swapBillingHostId"] = args ? args.swapBillingHostId : undefined;
             resourceInputs["billingContractEndDate"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["computeInstanceId"] = undefined /*out*/;
+            resourceInputs["currentCommitment"] = undefined /*out*/;
             resourceInputs["gracePeriodEndDate"] = undefined /*out*/;
             resourceInputs["isBillingContinuationInProgress"] = undefined /*out*/;
             resourceInputs["isBillingSwappingInProgress"] = undefined /*out*/;
+            resourceInputs["nextCommitment"] = undefined /*out*/;
             resourceInputs["replacementEsxiHostId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["swapBillingHostId"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["upgradedReplacementEsxiHostId"] = undefined /*out*/;
@@ -251,7 +266,7 @@ export class EsxiHost extends pulumi.CustomResource {
  */
 export interface EsxiHostState {
     /**
-     * Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku` becomes the new `currentSKU` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
+     * Current billing cycle end date. If the value in `currentCommitment` and `nextCommitment` are different, the value specified in `nextCommitment` becomes the new `currentCommitment` when the `contractEndDate` is reached. Example: `2016-08-25T21:10:29.600Z`
      */
     billingContractEndDate?: pulumi.Input<string>;
     /**
@@ -265,11 +280,15 @@ export interface EsxiHostState {
      */
     capacityReservationId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
+     */
+    clusterId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+     * The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
      */
     computeAvailabilityDomain?: pulumi.Input<string>;
     /**
@@ -277,7 +296,11 @@ export interface EsxiHostState {
      */
     computeInstanceId?: pulumi.Input<string>;
     /**
-     * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * The billing option currently used by the ESXi host. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     */
+    currentCommitment?: pulumi.Input<string>;
+    /**
+     * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
      *
      * @deprecated The 'current_sku' field has been deprecated. It is no longer supported.
      */
@@ -287,13 +310,17 @@ export interface EsxiHostState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+     * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      *
-     * If this attribute is not specified, the SDDC's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host's display name is `MySDDC-4`.
+     * If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
      *
      * Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The ESXi software bundle to install on the ESXi host.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
+     */
+    esxiSoftwareVersion?: pulumi.Input<string>;
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      *
@@ -313,7 +340,7 @@ export interface EsxiHostState {
      */
     hostOcpuCount?: pulumi.Input<number>;
     /**
-     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
      */
     hostShapeName?: pulumi.Input<string>;
     /**
@@ -324,6 +351,10 @@ export interface EsxiHostState {
      * Indicates whether this host is in the progress of swapping billing.
      */
     isBillingSwappingInProgress?: pulumi.Input<boolean>;
+    /**
+     * The billing option to switch to after the current billing cycle ends. If `nextCommitment` is null or empty, `currentCommitment` continues to the next billing cycle. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments).
+     */
+    nextCommitment?: pulumi.Input<string>;
     /**
      * @deprecated The 'next_sku' field has been deprecated. It is no longer supported.
      */
@@ -339,7 +370,7 @@ export interface EsxiHostState {
      */
     replacementEsxiHostId?: pulumi.Input<string>;
     /**
-     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `oci.Ocvp.EsxiHost` resource.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `clusterId` instead.
      *
      *
      * ** IMPORTANT **
@@ -389,11 +420,15 @@ export interface EsxiHostArgs {
      */
     capacityReservationId?: pulumi.Input<string>;
     /**
-     * The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
+     */
+    clusterId?: pulumi.Input<string>;
+    /**
+     * The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
      */
     computeAvailabilityDomain?: pulumi.Input<string>;
     /**
-     * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
      *
      * @deprecated The 'current_sku' field has been deprecated. It is no longer supported.
      */
@@ -403,13 +438,17 @@ export interface EsxiHostArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+     * (Updatable) A descriptive name for the ESXi host. It's changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      *
-     * If this attribute is not specified, the SDDC's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host's display name is `MySDDC-4`.
+     * If this attribute is not specified, the Cluster's `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you're creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host's display name is `MyCluster-4`.
      *
      * Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) The ESXi software bundle to install on the ESXi host.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
+     */
+    esxiSoftwareVersion?: pulumi.Input<string>;
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      *
@@ -425,7 +464,7 @@ export interface EsxiHostArgs {
      */
     hostOcpuCount?: pulumi.Input<number>;
     /**
-     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
      */
     hostShapeName?: pulumi.Input<string>;
     /**
@@ -439,7 +478,7 @@ export interface EsxiHostArgs {
      */
     nonUpgradedEsxiHostId?: pulumi.Input<string>;
     /**
-     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `oci.Ocvp.EsxiHost` resource.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `clusterId` instead.
      *
      *
      * ** IMPORTANT **
@@ -448,8 +487,4 @@ export interface EsxiHostArgs {
      * @deprecated The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.
      */
     sddcId?: pulumi.Input<string>;
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
-     */
-    swapBillingHostId?: pulumi.Input<string>;
 }

@@ -335,70 +335,70 @@ public class UserAssessment extends com.pulumi.resources.CustomResource {
         return this.targetIds;
     }
     /**
-     * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time when the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeLastAssessed", refs={String.class}, tree="[0]")
     private Output<String> timeLastAssessed;
 
     /**
-     * @return The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The date and time the user assessment was last run, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public Output<String> timeLastAssessed() {
         return this.timeLastAssessed;
     }
     /**
-     * The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return The last date and time when the user assessment was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * Indicates whether the user assessment was created by the system or the user.
+     * Indicates whether the user assessment was created by system or user.
      * 
      */
     @Export(name="triggeredBy", refs={String.class}, tree="[0]")
     private Output<String> triggeredBy;
 
     /**
-     * @return Indicates whether the user assessment was created by the system or the user.
+     * @return Indicates whether the user assessment was created by system or user.
      * 
      */
     public Output<String> triggeredBy() {
         return this.triggeredBy;
     }
     /**
-     * The type of the user assessment. The possible types are:
+     * Type of user assessment. Type can be:
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return The type of the user assessment. The possible types are:
+     * @return Type of user assessment. Type can be:
      * 
      */
     public Output<String> type() {

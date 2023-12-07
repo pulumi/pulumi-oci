@@ -23,7 +23,10 @@ class GetExsiHostsResult:
     """
     A collection of values returned by getExsiHosts.
     """
-    def __init__(__self__, compartment_id=None, compute_instance_id=None, display_name=None, esxi_host_collections=None, filters=None, id=None, is_billing_donors_only=None, is_swap_billing_only=None, sddc_id=None, state=None):
+    def __init__(__self__, cluster_id=None, compartment_id=None, compute_instance_id=None, display_name=None, esxi_host_collections=None, filters=None, id=None, is_billing_donors_only=None, is_swap_billing_only=None, sddc_id=None, state=None):
+        if cluster_id and not isinstance(cluster_id, str):
+            raise TypeError("Expected argument 'cluster_id' to be a str")
+        pulumi.set(__self__, "cluster_id", cluster_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -56,10 +59,18 @@ class GetExsiHostsResult:
         pulumi.set(__self__, "state", state)
 
     @property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster that the ESXi host belongs to.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the SDDC.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Cluster.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -114,7 +125,7 @@ class GetExsiHostsResult:
     @pulumi.getter(name="sddcId")
     def sddc_id(self) -> Optional[str]:
         """
-        (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC that the ESXi host belongs to.
         """
         return pulumi.get(self, "sddc_id")
 
@@ -133,6 +144,7 @@ class AwaitableGetExsiHostsResult(GetExsiHostsResult):
         if False:
             yield self
         return GetExsiHostsResult(
+            cluster_id=self.cluster_id,
             compartment_id=self.compartment_id,
             compute_instance_id=self.compute_instance_id,
             display_name=self.display_name,
@@ -145,7 +157,8 @@ class AwaitableGetExsiHostsResult(GetExsiHostsResult):
             state=self.state)
 
 
-def get_exsi_hosts(compartment_id: Optional[str] = None,
+def get_exsi_hosts(cluster_id: Optional[str] = None,
+                   compartment_id: Optional[str] = None,
                    compute_instance_id: Optional[str] = None,
                    display_name: Optional[str] = None,
                    filters: Optional[Sequence[pulumi.InputType['GetExsiHostsFilterArgs']]] = None,
@@ -173,7 +186,8 @@ def get_exsi_hosts(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(compartment_id=var["compartment_id"],
+    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(cluster_id=oci_ocvp_cluster["test_cluster"]["id"],
+        compartment_id=var["compartment_id"],
         compute_instance_id=oci_core_instance["test_instance"]["id"],
         display_name=var["esxi_host_display_name"],
         is_billing_donors_only=var["esxi_host_is_billing_donors_only"],
@@ -183,6 +197,7 @@ def get_exsi_hosts(compartment_id: Optional[str] = None,
     ```
 
 
+    :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
     :param str compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
     :param str display_name: A filter to return only resources that match the given display name exactly.
@@ -192,6 +207,7 @@ def get_exsi_hosts(compartment_id: Optional[str] = None,
     :param str state: The lifecycle state of the resource.
     """
     __args__ = dict()
+    __args__['clusterId'] = cluster_id
     __args__['compartmentId'] = compartment_id
     __args__['computeInstanceId'] = compute_instance_id
     __args__['displayName'] = display_name
@@ -204,6 +220,7 @@ def get_exsi_hosts(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Ocvp/getExsiHosts:getExsiHosts', __args__, opts=opts, typ=GetExsiHostsResult).value
 
     return AwaitableGetExsiHostsResult(
+        cluster_id=pulumi.get(__ret__, 'cluster_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_instance_id=pulumi.get(__ret__, 'compute_instance_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -217,7 +234,8 @@ def get_exsi_hosts(compartment_id: Optional[str] = None,
 
 
 @_utilities.lift_output_func(get_exsi_hosts)
-def get_exsi_hosts_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
+def get_exsi_hosts_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = None,
+                          compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                           compute_instance_id: Optional[pulumi.Input[Optional[str]]] = None,
                           display_name: Optional[pulumi.Input[Optional[str]]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetExsiHostsFilterArgs']]]]] = None,
@@ -245,7 +263,8 @@ def get_exsi_hosts_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(compartment_id=var["compartment_id"],
+    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(cluster_id=oci_ocvp_cluster["test_cluster"]["id"],
+        compartment_id=var["compartment_id"],
         compute_instance_id=oci_core_instance["test_instance"]["id"],
         display_name=var["esxi_host_display_name"],
         is_billing_donors_only=var["esxi_host_is_billing_donors_only"],
@@ -255,6 +274,7 @@ def get_exsi_hosts_output(compartment_id: Optional[pulumi.Input[Optional[str]]] 
     ```
 
 
+    :param str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment as optional parameter.
     :param str compute_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute instance.
     :param str display_name: A filter to return only resources that match the given display name exactly.

@@ -473,6 +473,12 @@ public class DbSystemsUpgrade extends com.pulumi.resources.CustomResource {
     public Output<String> newGiVersion() {
         return this.newGiVersion;
     }
+    @Export(name="newOsVersion", refs={String.class}, tree="[0]")
+    private Output<String> newOsVersion;
+
+    public Output<String> newOsVersion() {
+        return this.newOsVersion;
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 

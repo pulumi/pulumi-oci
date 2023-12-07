@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string HostFormat;
         /// <summary>
+        /// True for a regional connection string, applicable to cross-region DG only.
+        /// </summary>
+        public readonly bool IsRegional;
+        /// <summary>
         /// Protocol used by the connection.
         /// </summary>
         public readonly string Protocol;
@@ -54,6 +58,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string hostFormat,
 
+            bool isRegional,
+
             string protocol,
 
             string sessionMode,
@@ -67,6 +73,7 @@ namespace Pulumi.Oci.Database.Outputs
             ConsumerGroup = consumerGroup;
             DisplayName = displayName;
             HostFormat = hostFormat;
+            IsRegional = isRegional;
             Protocol = protocol;
             SessionMode = sessionMode;
             SyntaxFormat = syntaxFormat;

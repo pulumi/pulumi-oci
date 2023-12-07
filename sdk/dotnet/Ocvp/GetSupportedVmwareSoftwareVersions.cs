@@ -33,6 +33,8 @@ namespace Pulumi.Oci.Ocvp
         ///     var testSupportedVmwareSoftwareVersions = Oci.Ocvp.GetSupportedVmwareSoftwareVersions.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         HostShapeName = oci_core_shape.Test_shape.Name,
+        ///         Version = @var.Supported_vmware_software_version_version,
         ///     });
         /// 
         /// });
@@ -65,6 +67,8 @@ namespace Pulumi.Oci.Ocvp
         ///     var testSupportedVmwareSoftwareVersions = Oci.Ocvp.GetSupportedVmwareSoftwareVersions.Invoke(new()
         ///     {
         ///         CompartmentId = @var.Compartment_id,
+        ///         HostShapeName = oci_core_shape.Test_shape.Name,
+        ///         Version = @var.Supported_vmware_software_version_version,
         ///     });
         /// 
         /// });
@@ -93,6 +97,18 @@ namespace Pulumi.Oci.Ocvp
             set => _filters = value;
         }
 
+        /// <summary>
+        /// A filter to return only resources that match or support the given ESXi host shape.
+        /// </summary>
+        [Input("hostShapeName")]
+        public string? HostShapeName { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the given VMware software version exactly.
+        /// </summary>
+        [Input("version")]
+        public string? Version { get; set; }
+
         public GetSupportedVmwareSoftwareVersionsArgs()
         {
         }
@@ -115,6 +131,18 @@ namespace Pulumi.Oci.Ocvp
             set => _filters = value;
         }
 
+        /// <summary>
+        /// A filter to return only resources that match or support the given ESXi host shape.
+        /// </summary>
+        [Input("hostShapeName")]
+        public Input<string>? HostShapeName { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the given VMware software version exactly.
+        /// </summary>
+        [Input("version")]
+        public Input<string>? Version { get; set; }
+
         public GetSupportedVmwareSoftwareVersionsInvokeArgs()
         {
         }
@@ -127,6 +155,7 @@ namespace Pulumi.Oci.Ocvp
     {
         public readonly string CompartmentId;
         public readonly ImmutableArray<Outputs.GetSupportedVmwareSoftwareVersionsFilterResult> Filters;
+        public readonly string? HostShapeName;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -135,6 +164,10 @@ namespace Pulumi.Oci.Ocvp
         /// A list of the supported versions of bundled VMware software.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSupportedVmwareSoftwareVersionsItemResult> Items;
+        /// <summary>
+        /// A short, unique string that identifies the version of bundled software.
+        /// </summary>
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetSupportedVmwareSoftwareVersionsResult(
@@ -142,14 +175,20 @@ namespace Pulumi.Oci.Ocvp
 
             ImmutableArray<Outputs.GetSupportedVmwareSoftwareVersionsFilterResult> filters,
 
+            string? hostShapeName,
+
             string id,
 
-            ImmutableArray<Outputs.GetSupportedVmwareSoftwareVersionsItemResult> items)
+            ImmutableArray<Outputs.GetSupportedVmwareSoftwareVersionsItemResult> items,
+
+            string? version)
         {
             CompartmentId = compartmentId;
             Filters = filters;
+            HostShapeName = hostShapeName;
             Id = id;
             Items = items;
+            Version = version;
         }
     }
 }

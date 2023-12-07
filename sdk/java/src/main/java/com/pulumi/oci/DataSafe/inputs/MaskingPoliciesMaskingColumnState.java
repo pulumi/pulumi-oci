@@ -64,14 +64,14 @@ public final class MaskingPoliciesMaskingColumnState extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
+     * (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
      * 
      */
     @Import(name="isMaskingEnabled")
     private @Nullable Output<Boolean> isMaskingEnabled;
 
     /**
-     * @return (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
+     * @return (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
      * 
      */
     public Optional<Output<Boolean>> isMaskingEnabled() {
@@ -377,7 +377,7 @@ public final class MaskingPoliciesMaskingColumnState extends com.pulumi.resource
         }
 
         /**
-         * @param isMaskingEnabled (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
+         * @param isMaskingEnabled (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class MaskingPoliciesMaskingColumnState extends com.pulumi.resource
         }
 
         /**
-         * @param isMaskingEnabled (Updatable) Indicates whether data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
+         * @param isMaskingEnabled (Updatable) Indicates if data masking is enabled for the masking column. Set it to false if  you don&#39;t want to mask the column.
          * 
          * @return builder
          * 

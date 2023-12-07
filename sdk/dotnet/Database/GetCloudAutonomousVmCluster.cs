@@ -193,6 +193,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Domain;
         /// <summary>
+        /// The lowest value to which exadataStorage in TBs can be scaled down.
+        /// </summary>
+        public readonly double ExadataStorageInTbsLowestScaledValue;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
@@ -217,7 +221,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string LastUpdateHistoryEntryId;
         /// <summary>
-        /// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+        /// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
         /// </summary>
         public readonly string LicenseModel;
         /// <summary>
@@ -229,6 +233,10 @@ namespace Pulumi.Oci.Database
         /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudAutonomousVmClusterMaintenanceWindowResult> MaintenanceWindows;
+        /// <summary>
+        /// The lowest value to which ACDs can be scaled down.
+        /// </summary>
+        public readonly int MaxAcdsLowestScaledValue;
         /// <summary>
         /// The amount of memory (in GBs) enabled per OCPU or ECPU.
         /// </summary>
@@ -258,6 +266,10 @@ namespace Pulumi.Oci.Database
         /// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         /// </summary>
         public readonly double OcpuCount;
+        /// <summary>
+        /// The lowest value to which ocpus can be scaled down.
+        /// </summary>
+        public readonly int OcpusLowestScaledValue;
         /// <summary>
         /// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
@@ -367,6 +379,8 @@ namespace Pulumi.Oci.Database
 
             string domain,
 
+            double exadataStorageInTbsLowestScaledValue,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string hostname,
@@ -387,6 +401,8 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetCloudAutonomousVmClusterMaintenanceWindowResult> maintenanceWindows,
 
+            int maxAcdsLowestScaledValue,
+
             int memoryPerOracleComputeUnitInGbs,
 
             int memorySizeInGbs,
@@ -400,6 +416,8 @@ namespace Pulumi.Oci.Database
             ImmutableArray<string> nsgIds,
 
             double ocpuCount,
+
+            int ocpusLowestScaledValue,
 
             int provisionableAutonomousContainerDatabases,
 
@@ -453,6 +471,7 @@ namespace Pulumi.Oci.Database
             Description = description;
             DisplayName = displayName;
             Domain = domain;
+            ExadataStorageInTbsLowestScaledValue = exadataStorageInTbsLowestScaledValue;
             FreeformTags = freeformTags;
             Hostname = hostname;
             Id = id;
@@ -463,6 +482,7 @@ namespace Pulumi.Oci.Database
             LifecycleDetails = lifecycleDetails;
             MaintenanceWindowDetails = maintenanceWindowDetails;
             MaintenanceWindows = maintenanceWindows;
+            MaxAcdsLowestScaledValue = maxAcdsLowestScaledValue;
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             MemorySizeInGbs = memorySizeInGbs;
             NextMaintenanceRunId = nextMaintenanceRunId;
@@ -470,6 +490,7 @@ namespace Pulumi.Oci.Database
             NonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
             NsgIds = nsgIds;
             OcpuCount = ocpuCount;
+            OcpusLowestScaledValue = ocpusLowestScaledValue;
             ProvisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
             ProvisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
             ProvisionedCpus = provisionedCpus;

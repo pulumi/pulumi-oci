@@ -92,7 +92,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
 
     public /*out*/ readonly autonomousDataStoragePercentage!: pulumi.Output<number>;
     /**
-     * The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
     public readonly autonomousDataStorageSizeInTbs!: pulumi.Output<number>;
     /**
@@ -120,7 +120,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     public readonly computeModel!: pulumi.Output<string>;
     /**
-     * The number of CPU cores to enable per VM cluster node.
+     * (Updatable) The number of CPU cores to enable per VM cluster node.
      */
     public readonly cpuCoreCountPerNode!: pulumi.Output<number>;
     public /*out*/ readonly cpuPercentage!: pulumi.Output<number>;
@@ -128,6 +128,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      * The number of enabled CPU cores.
      */
     public /*out*/ readonly cpusEnabled!: pulumi.Output<number>;
+    public /*out*/ readonly cpusLowestScaledValue!: pulumi.Output<number>;
     public /*out*/ readonly dataStorageSizeInGb!: pulumi.Output<number>;
     /**
      * The total data storage allocated in TBs
@@ -153,6 +154,10 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     public readonly exadataInfrastructureId!: pulumi.Output<string>;
+    /**
+     * The lowest value to which exadataStorage in TBs can be scaled down.
+     */
+    public /*out*/ readonly exadataStorageInTbsLowestScaledValue!: pulumi.Output<number>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -186,6 +191,10 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.AutonomousVmClusterMaintenanceWindow[]>;
     /**
+     * The lowest value to which ACDs can be scaled down.
+     */
+    public /*out*/ readonly maxAcdsLowestScaledValue!: pulumi.Output<number>;
+    /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
     public readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
@@ -206,6 +215,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      * The number of enabled OCPU cores.
      */
     public /*out*/ readonly ocpusEnabled!: pulumi.Output<number>;
+    public /*out*/ readonly provisionableAutonomousContainerDatabases!: pulumi.Output<number>;
     public /*out*/ readonly provisionedAutonomousContainerDatabases!: pulumi.Output<number>;
     public /*out*/ readonly provisionedCpus!: pulumi.Output<number>;
     /**
@@ -245,7 +255,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
     public readonly timeZone!: pulumi.Output<string>;
     public /*out*/ readonly totalAutonomousDataStorageInTbs!: pulumi.Output<number>;
     /**
-     * The total number of Autonomous Container Databases that can be created.
+     * (Updatable) The total number of Autonomous Container Databases that can be created.
      */
     public readonly totalContainerDatabases!: pulumi.Output<number>;
     /**
@@ -281,6 +291,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["cpuCoreCountPerNode"] = state ? state.cpuCoreCountPerNode : undefined;
             resourceInputs["cpuPercentage"] = state ? state.cpuPercentage : undefined;
             resourceInputs["cpusEnabled"] = state ? state.cpusEnabled : undefined;
+            resourceInputs["cpusLowestScaledValue"] = state ? state.cpusLowestScaledValue : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
             resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
             resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
@@ -288,6 +299,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["exadataInfrastructureId"] = state ? state.exadataInfrastructureId : undefined;
+            resourceInputs["exadataStorageInTbsLowestScaledValue"] = state ? state.exadataStorageInTbsLowestScaledValue : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isLocalBackupEnabled"] = state ? state.isLocalBackupEnabled : undefined;
             resourceInputs["isMtlsEnabled"] = state ? state.isMtlsEnabled : undefined;
@@ -296,12 +308,14 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["maintenanceWindowDetails"] = state ? state.maintenanceWindowDetails : undefined;
             resourceInputs["maintenanceWindows"] = state ? state.maintenanceWindows : undefined;
+            resourceInputs["maxAcdsLowestScaledValue"] = state ? state.maxAcdsLowestScaledValue : undefined;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = state ? state.memoryPerOracleComputeUnitInGbs : undefined;
             resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
             resourceInputs["nonProvisionableAutonomousContainerDatabases"] = state ? state.nonProvisionableAutonomousContainerDatabases : undefined;
             resourceInputs["ocpusEnabled"] = state ? state.ocpusEnabled : undefined;
+            resourceInputs["provisionableAutonomousContainerDatabases"] = state ? state.provisionableAutonomousContainerDatabases : undefined;
             resourceInputs["provisionedAutonomousContainerDatabases"] = state ? state.provisionedAutonomousContainerDatabases : undefined;
             resourceInputs["provisionedCpus"] = state ? state.provisionedCpus : undefined;
             resourceInputs["reclaimableCpus"] = state ? state.reclaimableCpus : undefined;
@@ -356,17 +370,21 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["availableDataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["cpuPercentage"] = undefined /*out*/;
             resourceInputs["cpusEnabled"] = undefined /*out*/;
+            resourceInputs["cpusLowestScaledValue"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInGb"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
+            resourceInputs["exadataStorageInTbsLowestScaledValue"] = undefined /*out*/;
             resourceInputs["lastMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["maintenanceWindows"] = undefined /*out*/;
+            resourceInputs["maxAcdsLowestScaledValue"] = undefined /*out*/;
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["nodeCount"] = undefined /*out*/;
             resourceInputs["nonProvisionableAutonomousContainerDatabases"] = undefined /*out*/;
             resourceInputs["ocpusEnabled"] = undefined /*out*/;
+            resourceInputs["provisionableAutonomousContainerDatabases"] = undefined /*out*/;
             resourceInputs["provisionedAutonomousContainerDatabases"] = undefined /*out*/;
             resourceInputs["provisionedCpus"] = undefined /*out*/;
             resourceInputs["reclaimableCpus"] = undefined /*out*/;
@@ -388,7 +406,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
 export interface AutonomousVmClusterState {
     autonomousDataStoragePercentage?: pulumi.Input<number>;
     /**
-     * The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
     autonomousDataStorageSizeInTbs?: pulumi.Input<number>;
     /**
@@ -416,7 +434,7 @@ export interface AutonomousVmClusterState {
      */
     computeModel?: pulumi.Input<string>;
     /**
-     * The number of CPU cores to enable per VM cluster node.
+     * (Updatable) The number of CPU cores to enable per VM cluster node.
      */
     cpuCoreCountPerNode?: pulumi.Input<number>;
     cpuPercentage?: pulumi.Input<number>;
@@ -424,6 +442,7 @@ export interface AutonomousVmClusterState {
      * The number of enabled CPU cores.
      */
     cpusEnabled?: pulumi.Input<number>;
+    cpusLowestScaledValue?: pulumi.Input<number>;
     dataStorageSizeInGb?: pulumi.Input<number>;
     /**
      * The total data storage allocated in TBs
@@ -449,6 +468,10 @@ export interface AutonomousVmClusterState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      */
     exadataInfrastructureId?: pulumi.Input<string>;
+    /**
+     * The lowest value to which exadataStorage in TBs can be scaled down.
+     */
+    exadataStorageInTbsLowestScaledValue?: pulumi.Input<number>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
@@ -482,6 +505,10 @@ export interface AutonomousVmClusterState {
      */
     maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindow>[]>;
     /**
+     * The lowest value to which ACDs can be scaled down.
+     */
+    maxAcdsLowestScaledValue?: pulumi.Input<number>;
+    /**
      * The amount of memory (in GBs) to be enabled per OCPU or ECPU.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
@@ -502,6 +529,7 @@ export interface AutonomousVmClusterState {
      * The number of enabled OCPU cores.
      */
     ocpusEnabled?: pulumi.Input<number>;
+    provisionableAutonomousContainerDatabases?: pulumi.Input<number>;
     provisionedAutonomousContainerDatabases?: pulumi.Input<number>;
     provisionedCpus?: pulumi.Input<number>;
     /**
@@ -541,7 +569,7 @@ export interface AutonomousVmClusterState {
     timeZone?: pulumi.Input<string>;
     totalAutonomousDataStorageInTbs?: pulumi.Input<number>;
     /**
-     * The total number of Autonomous Container Databases that can be created.
+     * (Updatable) The total number of Autonomous Container Databases that can be created.
      */
     totalContainerDatabases?: pulumi.Input<number>;
     /**
@@ -559,7 +587,7 @@ export interface AutonomousVmClusterState {
  */
 export interface AutonomousVmClusterArgs {
     /**
-     * The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
     autonomousDataStorageSizeInTbs?: pulumi.Input<number>;
     /**
@@ -571,7 +599,7 @@ export interface AutonomousVmClusterArgs {
      */
     computeModel?: pulumi.Input<string>;
     /**
-     * The number of CPU cores to enable per VM cluster node.
+     * (Updatable) The number of CPU cores to enable per VM cluster node.
      */
     cpuCoreCountPerNode?: pulumi.Input<number>;
     /**
@@ -627,7 +655,7 @@ export interface AutonomousVmClusterArgs {
      */
     timeZone?: pulumi.Input<string>;
     /**
-     * The total number of Autonomous Container Databases that can be created.
+     * (Updatable) The total number of Autonomous Container Databases that can be created.
      */
     totalContainerDatabases?: pulumi.Input<number>;
     /**

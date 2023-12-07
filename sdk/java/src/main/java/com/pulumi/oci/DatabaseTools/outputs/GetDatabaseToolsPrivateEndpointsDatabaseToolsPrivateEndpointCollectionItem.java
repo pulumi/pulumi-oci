@@ -4,6 +4,7 @@
 package com.pulumi.oci.DatabaseTools.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock;
 import com.pulumi.oci.DatabaseTools.outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration;
 import java.lang.Object;
 import java.lang.String;
@@ -63,6 +64,11 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock> locks;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint&#39;s VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
@@ -186,6 +192,13 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         return this.lifecycleDetails;
     }
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock> locks() {
+        return this.locks;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint&#39;s VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      * 
      */
@@ -275,6 +288,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         private Map<String,Object> freeformTags;
         private String id;
         private String lifecycleDetails;
+        private List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock> locks;
         private List<String> nsgIds;
         private String privateEndpointIp;
         private String privateEndpointVnicId;
@@ -298,6 +312,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.nsgIds = defaults.nsgIds;
     	      this.privateEndpointIp = defaults.privateEndpointIp;
     	      this.privateEndpointVnicId = defaults.privateEndpointVnicId;
@@ -362,6 +377,14 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock> locks) {
+            this.locks = Objects.requireNonNull(locks);
+            return this;
+        }
+        public Builder locks(GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
@@ -431,6 +454,7 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
             o.freeformTags = freeformTags;
             o.id = id;
             o.lifecycleDetails = lifecycleDetails;
+            o.locks = locks;
             o.nsgIds = nsgIds;
             o.privateEndpointIp = privateEndpointIp;
             o.privateEndpointVnicId = privateEndpointVnicId;

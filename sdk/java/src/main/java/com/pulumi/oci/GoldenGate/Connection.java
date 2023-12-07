@@ -83,6 +83,7 @@ import javax.annotation.Nullable;
  *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
  *             .description(var_.connection_description())
  *             .endpoint(var_.connection_endpoint())
+ *             .fingerprint(var_.connection_fingerprint())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .host(var_.connection_host())
  *             .jndiConnectionFactory(var_.connection_jndi_connection_factory())
@@ -105,6 +106,8 @@ import javax.annotation.Nullable;
  *             .sasToken(var_.connection_sas_token())
  *             .secretAccessKey(var_.connection_secret_access_key())
  *             .securityProtocol(var_.connection_security_protocol())
+ *             .servers(var_.connection_servers())
+ *             .serviceAccountKeyFile(var_.connection_service_account_key_file())
  *             .sessionMode(var_.connection_session_mode())
  *             .shouldUseJndi(var_.connection_should_use_jndi())
  *             .shouldValidateServerCertificate(var_.connection_should_validate_server_certificate())
@@ -198,14 +201,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.additionalAttributes;
     }
     /**
-     * (Updatable) Used authentication mechanism.
+     * (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     @Export(name="authenticationType", refs={String.class}, tree="[0]")
     private Output<String> authenticationType;
 
     /**
-     * @return (Updatable) Used authentication mechanism.
+     * @return (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     public Output<String> authenticationType() {
@@ -324,14 +327,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.connectionType;
     }
     /**
-     * (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * (Updatable) JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
      * 
      */
     @Export(name="connectionUrl", refs={String.class}, tree="[0]")
     private Output<String> connectionUrl;
 
     /**
-     * @return (Updatable) JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: &#39;mq://myjms.host.domain:7676&#39;, SNOWFLAKE: JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
+     * @return (Updatable) JDBC connection URL. e.g.: &#39;jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;&#39;
      * 
      */
     public Output<String> connectionUrl() {
@@ -366,14 +369,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.coreSiteXml;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      * 
      */
     @Export(name="databaseId", refs={String.class}, tree="[0]")
     private Output<String> databaseId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      * 
      */
     public Output<String> databaseId() {
@@ -478,6 +481,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.endpoint;
     }
     /**
+     * (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * 
+     */
+    @Export(name="fingerprint", refs={String.class}, tree="[0]")
+    private Output<String> fingerprint;
+
+    /**
+     * @return (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * 
+     */
+    public Output<String> fingerprint() {
+        return this.fingerprint;
+    }
+    /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -492,14 +509,16 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) The name or address of a host.
+     * (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
     @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
-     * @return (Updatable) The name or address of a host.
+     * @return (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
     public Output<String> host() {
@@ -800,18 +819,46 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.secretAccessKey;
     }
     /**
-     * (Updatable) Security Protocol.
+     * (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     @Export(name="securityProtocol", refs={String.class}, tree="[0]")
     private Output<String> securityProtocol;
 
     /**
-     * @return (Updatable) Security Protocol.
+     * @return (Updatable) Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     public Output<String> securityProtocol() {
         return this.securityProtocol;
+    }
+    /**
+     * (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+     * 
+     */
+    @Export(name="servers", refs={String.class}, tree="[0]")
+    private Output<String> servers;
+
+    /**
+     * @return (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
+     * 
+     */
+    public Output<String> servers() {
+        return this.servers;
+    }
+    /**
+     * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+     * 
+     */
+    @Export(name="serviceAccountKeyFile", refs={String.class}, tree="[0]")
+    private Output<String> serviceAccountKeyFile;
+
+    /**
+     * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
+     * 
+     */
+    public Output<String> serviceAccountKeyFile() {
+        return this.serviceAccountKeyFile;
     }
     /**
      * (Updatable) The mode of the database connection session to be established by the data client. &#39;REDIRECT&#39; - for a RAC database, &#39;DIRECT&#39; - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
@@ -1094,28 +1141,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.url;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
      * 
      */
     @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database/ Object Storage. The user must have write access.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to.
      * 
      */
     public Output<String> userId() {
         return this.userId;
     }
     /**
-     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+     * (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      * 
      */
     @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**
-     * @return (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivity requirements defined in it.
+     * @return (Updatable) The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
      * 
      */
     public Output<String> username() {

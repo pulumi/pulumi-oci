@@ -23,14 +23,14 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     public static final AutonomousVmClusterArgs Empty = new AutonomousVmClusterArgs();
 
     /**
-     * The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     @Import(name="autonomousDataStorageSizeInTbs")
     private @Nullable Output<Double> autonomousDataStorageSizeInTbs;
 
     /**
-     * @return The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * @return (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     public Optional<Output<Double>> autonomousDataStorageSizeInTbs() {
@@ -68,14 +68,14 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The number of CPU cores to enable per VM cluster node.
+     * (Updatable) The number of CPU cores to enable per VM cluster node.
      * 
      */
     @Import(name="cpuCoreCountPerNode")
     private @Nullable Output<Integer> cpuCoreCountPerNode;
 
     /**
-     * @return The number of CPU cores to enable per VM cluster node.
+     * @return (Updatable) The number of CPU cores to enable per VM cluster node.
      * 
      */
     public Optional<Output<Integer>> cpuCoreCountPerNode() {
@@ -278,14 +278,14 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The total number of Autonomous Container Databases that can be created.
+     * (Updatable) The total number of Autonomous Container Databases that can be created.
      * 
      */
     @Import(name="totalContainerDatabases")
     private @Nullable Output<Integer> totalContainerDatabases;
 
     /**
-     * @return The total number of Autonomous Container Databases that can be created.
+     * @return (Updatable) The total number of Autonomous Container Databases that can be created.
      * 
      */
     public Optional<Output<Integer>> totalContainerDatabases() {
@@ -356,7 +356,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param autonomousDataStorageSizeInTbs The data disk group size to be allocated for Autonomous Databases, in TBs.
+         * @param autonomousDataStorageSizeInTbs (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
          * 
          * @return builder
          * 
@@ -367,7 +367,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param autonomousDataStorageSizeInTbs The data disk group size to be allocated for Autonomous Databases, in TBs.
+         * @param autonomousDataStorageSizeInTbs (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param cpuCoreCountPerNode The number of CPU cores to enable per VM cluster node.
+         * @param cpuCoreCountPerNode (Updatable) The number of CPU cores to enable per VM cluster node.
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param cpuCoreCountPerNode The number of CPU cores to enable per VM cluster node.
+         * @param cpuCoreCountPerNode (Updatable) The number of CPU cores to enable per VM cluster node.
          * 
          * @return builder
          * 
@@ -733,7 +733,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param totalContainerDatabases The total number of Autonomous Container Databases that can be created.
+         * @param totalContainerDatabases (Updatable) The total number of Autonomous Container Databases that can be created.
          * 
          * @return builder
          * 
@@ -744,7 +744,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param totalContainerDatabases The total number of Autonomous Container Databases that can be created.
+         * @param totalContainerDatabases (Updatable) The total number of Autonomous Container Databases that can be created.
          * 
          * @return builder
          * 

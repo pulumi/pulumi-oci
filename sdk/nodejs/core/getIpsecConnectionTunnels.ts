@@ -52,7 +52,7 @@ export interface GetIpsecConnectionTunnelsResult {
      */
     readonly id: string;
     /**
-     * The list of ip_sec_connection_tunnels.
+     * The list of two ip_sec_connection_tunnels.
      */
     readonly ipSecConnectionTunnels: outputs.Core.GetIpsecConnectionTunnelsIpSecConnectionTunnel[];
     readonly ipsecId: string;

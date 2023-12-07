@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Jms.Outputs
     public sealed class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult
     {
         /// <summary>
-        /// Commonly used name for the license type.
+        /// Commonly used name for the MoS release.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -30,6 +30,18 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string FamilyVersion;
         /// <summary>
+        /// Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+        /// </summary>
+        public readonly bool IsSupportedVersion;
+        /// <summary>
+        /// List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactResult> LatestReleaseArtifacts;
+        /// <summary>
+        /// Latest Java release version in the family.
+        /// </summary>
+        public readonly string LatestReleaseVersion;
+        /// <summary>
         /// This indicates the support category for the Java release family.
         /// </summary>
         public readonly string SupportType;
@@ -44,12 +56,21 @@ namespace Pulumi.Oci.Jms.Outputs
 
             string familyVersion,
 
+            bool isSupportedVersion,
+
+            ImmutableArray<Outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactResult> latestReleaseArtifacts,
+
+            string latestReleaseVersion,
+
             string supportType)
         {
             DisplayName = displayName;
             DocUrl = docUrl;
             EndOfSupportLifeDate = endOfSupportLifeDate;
             FamilyVersion = familyVersion;
+            IsSupportedVersion = isSupportedVersion;
+            LatestReleaseArtifacts = latestReleaseArtifacts;
+            LatestReleaseVersion = latestReleaseVersion;
             SupportType = supportType;
         }
     }

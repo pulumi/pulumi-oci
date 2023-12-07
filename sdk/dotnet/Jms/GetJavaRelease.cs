@@ -114,6 +114,10 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJavaReleaseArtifactResult> Artifacts;
         /// <summary>
+        /// The number of days since this release has been under the security baseline.
+        /// </summary>
+        public readonly int DaysUnderSecurityBaseline;
+        /// <summary>
         /// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJavaReleaseFamilyDetailResult> FamilyDetails;
@@ -133,6 +137,10 @@ namespace Pulumi.Oci.Jms
         /// License type for the Java version.
         /// </summary>
         public readonly string LicenseType;
+        /// <summary>
+        /// List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJavaReleaseMosPatchResult> MosPatches;
         /// <summary>
         /// Parent Java release version identifier. This is applicable for BPR releases.
         /// </summary>
@@ -164,6 +172,8 @@ namespace Pulumi.Oci.Jms
 
             ImmutableArray<Outputs.GetJavaReleaseArtifactResult> artifacts,
 
+            int daysUnderSecurityBaseline,
+
             ImmutableArray<Outputs.GetJavaReleaseFamilyDetailResult> familyDetails,
 
             string familyVersion,
@@ -173,6 +183,8 @@ namespace Pulumi.Oci.Jms
             ImmutableArray<Outputs.GetJavaReleaseLicenseDetailResult> licenseDetails,
 
             string licenseType,
+
+            ImmutableArray<Outputs.GetJavaReleaseMosPatchResult> mosPatches,
 
             string parentReleaseVersion,
 
@@ -188,11 +200,13 @@ namespace Pulumi.Oci.Jms
         {
             ArtifactContentTypes = artifactContentTypes;
             Artifacts = artifacts;
+            DaysUnderSecurityBaseline = daysUnderSecurityBaseline;
             FamilyDetails = familyDetails;
             FamilyVersion = familyVersion;
             Id = id;
             LicenseDetails = licenseDetails;
             LicenseType = licenseType;
+            MosPatches = mosPatches;
             ParentReleaseVersion = parentReleaseVersion;
             ReleaseDate = releaseDate;
             ReleaseNotesUrl = releaseNotesUrl;

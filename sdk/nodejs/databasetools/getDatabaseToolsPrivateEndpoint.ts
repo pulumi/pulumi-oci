@@ -86,6 +86,10 @@ export interface GetDatabaseToolsPrivateEndpointResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.DatabaseTools.GetDatabaseToolsPrivateEndpointLock[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint's VNIC belongs to.  For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/NetworkSecurityGroup/).
      */
     readonly nsgIds: string[];

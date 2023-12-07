@@ -96,7 +96,7 @@ type CloudAutonomousVmCluster struct {
 
 	// The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
 	AutonomousDataStoragePercentage pulumi.Float64Output `pulumi:"autonomousDataStoragePercentage"`
-	// The data disk group size to be allocated for Autonomous Databases, in TBs.
+	// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs pulumi.Float64Output `pulumi:"autonomousDataStorageSizeInTbs"`
 	// The name of the availability domain that the cloud Autonomous VM cluster is located in.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
@@ -116,7 +116,7 @@ type CloudAutonomousVmCluster struct {
 	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
 	// The number of CPU cores on the cloud Autonomous VM cluster.
 	CpuCoreCount pulumi.IntOutput `pulumi:"cpuCoreCount"`
-	// The number of CPU cores to be enabled per VM cluster node.
+	// (Updatable) The number of CPU cores to be enabled per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntOutput `pulumi:"cpuCoreCountPerNode"`
 	// The percentage of total number of CPUs used in an Autonomous VM Cluster.
 	CpuPercentage pulumi.Float64Output `pulumi:"cpuPercentage"`
@@ -135,7 +135,8 @@ type CloudAutonomousVmCluster struct {
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The domain name for the cloud Autonomous VM cluster.
-	Domain pulumi.StringOutput `pulumi:"domain"`
+	Domain                               pulumi.StringOutput  `pulumi:"domain"`
+	ExadataStorageInTbsLowestScaledValue pulumi.Float64Output `pulumi:"exadataStorageInTbsLowestScaledValue"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The hostname for the cloud Autonomous VM cluster.
@@ -146,7 +147,7 @@ type CloudAutonomousVmCluster struct {
 	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId pulumi.StringOutput `pulumi:"lastUpdateHistoryEntryId"`
-	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
 	//
 	// This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 	LicenseModel pulumi.StringOutput `pulumi:"licenseModel"`
@@ -156,6 +157,8 @@ type CloudAutonomousVmCluster struct {
 	MaintenanceWindowDetails CloudAutonomousVmClusterMaintenanceWindowDetailsPtrOutput `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows CloudAutonomousVmClusterMaintenanceWindowArrayOutput `pulumi:"maintenanceWindows"`
+	// The lowest value to which ACDs can be scaled down.
+	MaxAcdsLowestScaledValue pulumi.IntOutput `pulumi:"maxAcdsLowestScaledValue"`
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntOutput `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
@@ -171,6 +174,8 @@ type CloudAutonomousVmCluster struct {
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount pulumi.Float64Output `pulumi:"ocpuCount"`
+	// The lowest value to which ocpus can be scaled down.
+	OcpusLowestScaledValue pulumi.IntOutput `pulumi:"ocpusLowestScaledValue"`
 	// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
 	ProvisionableAutonomousContainerDatabases pulumi.IntOutput `pulumi:"provisionableAutonomousContainerDatabases"`
 	// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
@@ -199,7 +204,7 @@ type CloudAutonomousVmCluster struct {
 	TimeUpdated pulumi.StringPtrOutput `pulumi:"timeUpdated"`
 	// The total data disk group size for Autonomous Databases, in TBs.
 	TotalAutonomousDataStorageInTbs pulumi.Float64Output `pulumi:"totalAutonomousDataStorageInTbs"`
-	// The total number of Autonomous Container Databases that can be created.
+	// (Updatable) The total number of Autonomous Container Databases that can be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -252,7 +257,7 @@ func GetCloudAutonomousVmCluster(ctx *pulumi.Context,
 type cloudAutonomousVmClusterState struct {
 	// The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
 	AutonomousDataStoragePercentage *float64 `pulumi:"autonomousDataStoragePercentage"`
-	// The data disk group size to be allocated for Autonomous Databases, in TBs.
+	// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs *float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	// The name of the availability domain that the cloud Autonomous VM cluster is located in.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
@@ -272,7 +277,7 @@ type cloudAutonomousVmClusterState struct {
 	ComputeModel *string `pulumi:"computeModel"`
 	// The number of CPU cores on the cloud Autonomous VM cluster.
 	CpuCoreCount *int `pulumi:"cpuCoreCount"`
-	// The number of CPU cores to be enabled per VM cluster node.
+	// (Updatable) The number of CPU cores to be enabled per VM cluster node.
 	CpuCoreCountPerNode *int `pulumi:"cpuCoreCountPerNode"`
 	// The percentage of total number of CPUs used in an Autonomous VM Cluster.
 	CpuPercentage *float64 `pulumi:"cpuPercentage"`
@@ -291,7 +296,8 @@ type cloudAutonomousVmClusterState struct {
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The domain name for the cloud Autonomous VM cluster.
-	Domain *string `pulumi:"domain"`
+	Domain                               *string  `pulumi:"domain"`
+	ExadataStorageInTbsLowestScaledValue *float64 `pulumi:"exadataStorageInTbsLowestScaledValue"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The hostname for the cloud Autonomous VM cluster.
@@ -302,7 +308,7 @@ type cloudAutonomousVmClusterState struct {
 	LastMaintenanceRunId *string `pulumi:"lastMaintenanceRunId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId *string `pulumi:"lastUpdateHistoryEntryId"`
-	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
 	//
 	// This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 	LicenseModel *string `pulumi:"licenseModel"`
@@ -312,6 +318,8 @@ type cloudAutonomousVmClusterState struct {
 	MaintenanceWindowDetails *CloudAutonomousVmClusterMaintenanceWindowDetails `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []CloudAutonomousVmClusterMaintenanceWindow `pulumi:"maintenanceWindows"`
+	// The lowest value to which ACDs can be scaled down.
+	MaxAcdsLowestScaledValue *int `pulumi:"maxAcdsLowestScaledValue"`
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs *int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
@@ -327,6 +335,8 @@ type cloudAutonomousVmClusterState struct {
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount *float64 `pulumi:"ocpuCount"`
+	// The lowest value to which ocpus can be scaled down.
+	OcpusLowestScaledValue *int `pulumi:"ocpusLowestScaledValue"`
 	// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
 	ProvisionableAutonomousContainerDatabases *int `pulumi:"provisionableAutonomousContainerDatabases"`
 	// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
@@ -355,7 +365,7 @@ type cloudAutonomousVmClusterState struct {
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The total data disk group size for Autonomous Databases, in TBs.
 	TotalAutonomousDataStorageInTbs *float64 `pulumi:"totalAutonomousDataStorageInTbs"`
-	// The total number of Autonomous Container Databases that can be created.
+	// (Updatable) The total number of Autonomous Container Databases that can be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -367,7 +377,7 @@ type cloudAutonomousVmClusterState struct {
 type CloudAutonomousVmClusterState struct {
 	// The percentage of the data storage used for the Autonomous Databases in an Autonomous VM Cluster.
 	AutonomousDataStoragePercentage pulumi.Float64PtrInput
-	// The data disk group size to be allocated for Autonomous Databases, in TBs.
+	// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs pulumi.Float64PtrInput
 	// The name of the availability domain that the cloud Autonomous VM cluster is located in.
 	AvailabilityDomain pulumi.StringPtrInput
@@ -387,7 +397,7 @@ type CloudAutonomousVmClusterState struct {
 	ComputeModel pulumi.StringPtrInput
 	// The number of CPU cores on the cloud Autonomous VM cluster.
 	CpuCoreCount pulumi.IntPtrInput
-	// The number of CPU cores to be enabled per VM cluster node.
+	// (Updatable) The number of CPU cores to be enabled per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntPtrInput
 	// The percentage of total number of CPUs used in an Autonomous VM Cluster.
 	CpuPercentage pulumi.Float64PtrInput
@@ -406,7 +416,8 @@ type CloudAutonomousVmClusterState struct {
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
 	DisplayName pulumi.StringPtrInput
 	// The domain name for the cloud Autonomous VM cluster.
-	Domain pulumi.StringPtrInput
+	Domain                               pulumi.StringPtrInput
+	ExadataStorageInTbsLowestScaledValue pulumi.Float64PtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
 	// The hostname for the cloud Autonomous VM cluster.
@@ -417,7 +428,7 @@ type CloudAutonomousVmClusterState struct {
 	LastMaintenanceRunId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
 	LastUpdateHistoryEntryId pulumi.StringPtrInput
-	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
 	//
 	// This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 	LicenseModel pulumi.StringPtrInput
@@ -427,6 +438,8 @@ type CloudAutonomousVmClusterState struct {
 	MaintenanceWindowDetails CloudAutonomousVmClusterMaintenanceWindowDetailsPtrInput
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows CloudAutonomousVmClusterMaintenanceWindowArrayInput
+	// The lowest value to which ACDs can be scaled down.
+	MaxAcdsLowestScaledValue pulumi.IntPtrInput
 	// The amount of memory (in GBs) to be enabled per OCPU or ECPU.
 	MemoryPerOracleComputeUnitInGbs pulumi.IntPtrInput
 	// The memory allocated in GBs.
@@ -442,6 +455,8 @@ type CloudAutonomousVmClusterState struct {
 	NsgIds pulumi.StringArrayInput
 	// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount pulumi.Float64PtrInput
+	// The lowest value to which ocpus can be scaled down.
+	OcpusLowestScaledValue pulumi.IntPtrInput
 	// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
 	ProvisionableAutonomousContainerDatabases pulumi.IntPtrInput
 	// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
@@ -470,7 +485,7 @@ type CloudAutonomousVmClusterState struct {
 	TimeUpdated pulumi.StringPtrInput
 	// The total data disk group size for Autonomous Databases, in TBs.
 	TotalAutonomousDataStorageInTbs pulumi.Float64PtrInput
-	// The total number of Autonomous Container Databases that can be created.
+	// (Updatable) The total number of Autonomous Container Databases that can be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -484,7 +499,7 @@ func (CloudAutonomousVmClusterState) ElementType() reflect.Type {
 }
 
 type cloudAutonomousVmClusterArgs struct {
-	// The data disk group size to be allocated for Autonomous Databases, in TBs.
+	// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs *float64 `pulumi:"autonomousDataStorageSizeInTbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
 	CloudExadataInfrastructureId string `pulumi:"cloudExadataInfrastructureId"`
@@ -494,7 +509,7 @@ type cloudAutonomousVmClusterArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The compute model of the Cloud Autonomous VM Cluster.
 	ComputeModel *string `pulumi:"computeModel"`
-	// The number of CPU cores to be enabled per VM cluster node.
+	// (Updatable) The number of CPU cores to be enabled per VM cluster node.
 	CpuCoreCountPerNode *int `pulumi:"cpuCoreCountPerNode"`
 	// The list of database servers.
 	DbServers []string `pulumi:"dbServers"`
@@ -508,7 +523,7 @@ type cloudAutonomousVmClusterArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster *bool `pulumi:"isMtlsEnabledVmCluster"`
-	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
 	//
 	// This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 	LicenseModel *string `pulumi:"licenseModel"`
@@ -527,7 +542,7 @@ type cloudAutonomousVmClusterArgs struct {
 	SubnetId string `pulumi:"subnetId"`
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// The total number of Autonomous Container Databases that can be created.
+	// (Updatable) The total number of Autonomous Container Databases that can be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -536,7 +551,7 @@ type cloudAutonomousVmClusterArgs struct {
 
 // The set of arguments for constructing a CloudAutonomousVmCluster resource.
 type CloudAutonomousVmClusterArgs struct {
-	// The data disk group size to be allocated for Autonomous Databases, in TBs.
+	// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs pulumi.Float64PtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
 	CloudExadataInfrastructureId pulumi.StringInput
@@ -546,7 +561,7 @@ type CloudAutonomousVmClusterArgs struct {
 	CompartmentId pulumi.StringInput
 	// The compute model of the Cloud Autonomous VM Cluster.
 	ComputeModel pulumi.StringPtrInput
-	// The number of CPU cores to be enabled per VM cluster node.
+	// (Updatable) The number of CPU cores to be enabled per VM cluster node.
 	CpuCoreCountPerNode pulumi.IntPtrInput
 	// The list of database servers.
 	DbServers pulumi.StringArrayInput
@@ -560,7 +575,7 @@ type CloudAutonomousVmClusterArgs struct {
 	FreeformTags pulumi.MapInput
 	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster pulumi.BoolPtrInput
-	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
 	//
 	// This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 	LicenseModel pulumi.StringPtrInput
@@ -579,7 +594,7 @@ type CloudAutonomousVmClusterArgs struct {
 	SubnetId pulumi.StringInput
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated pulumi.StringPtrInput
-	// The total number of Autonomous Container Databases that can be created.
+	// (Updatable) The total number of Autonomous Container Databases that can be created.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -678,7 +693,7 @@ func (o CloudAutonomousVmClusterOutput) AutonomousDataStoragePercentage() pulumi
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.Float64Output { return v.AutonomousDataStoragePercentage }).(pulumi.Float64Output)
 }
 
-// The data disk group size to be allocated for Autonomous Databases, in TBs.
+// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 func (o CloudAutonomousVmClusterOutput) AutonomousDataStorageSizeInTbs() pulumi.Float64Output {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.Float64Output { return v.AutonomousDataStorageSizeInTbs }).(pulumi.Float64Output)
 }
@@ -730,7 +745,7 @@ func (o CloudAutonomousVmClusterOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.CpuCoreCount }).(pulumi.IntOutput)
 }
 
-// The number of CPU cores to be enabled per VM cluster node.
+// (Updatable) The number of CPU cores to be enabled per VM cluster node.
 func (o CloudAutonomousVmClusterOutput) CpuCoreCountPerNode() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.CpuCoreCountPerNode }).(pulumi.IntOutput)
 }
@@ -780,6 +795,10 @@ func (o CloudAutonomousVmClusterOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }
 
+func (o CloudAutonomousVmClusterOutput) ExadataStorageInTbsLowestScaledValue() pulumi.Float64Output {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.Float64Output { return v.ExadataStorageInTbsLowestScaledValue }).(pulumi.Float64Output)
+}
+
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o CloudAutonomousVmClusterOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
@@ -805,7 +824,7 @@ func (o CloudAutonomousVmClusterOutput) LastUpdateHistoryEntryId() pulumi.String
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.LastUpdateHistoryEntryId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`.
 //
 // This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, maxCpuCoreCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier.
 func (o CloudAutonomousVmClusterOutput) LicenseModel() pulumi.StringOutput {
@@ -829,6 +848,11 @@ func (o CloudAutonomousVmClusterOutput) MaintenanceWindows() CloudAutonomousVmCl
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) CloudAutonomousVmClusterMaintenanceWindowArrayOutput {
 		return v.MaintenanceWindows
 	}).(CloudAutonomousVmClusterMaintenanceWindowArrayOutput)
+}
+
+// The lowest value to which ACDs can be scaled down.
+func (o CloudAutonomousVmClusterOutput) MaxAcdsLowestScaledValue() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.MaxAcdsLowestScaledValue }).(pulumi.IntOutput)
 }
 
 // The amount of memory (in GBs) to be enabled per OCPU or ECPU.
@@ -867,6 +891,11 @@ func (o CloudAutonomousVmClusterOutput) NsgIds() pulumi.StringArrayOutput {
 // The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 func (o CloudAutonomousVmClusterOutput) OcpuCount() pulumi.Float64Output {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.Float64Output { return v.OcpuCount }).(pulumi.Float64Output)
+}
+
+// The lowest value to which ocpus can be scaled down.
+func (o CloudAutonomousVmClusterOutput) OcpusLowestScaledValue() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.OcpusLowestScaledValue }).(pulumi.IntOutput)
 }
 
 // The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
@@ -936,7 +965,7 @@ func (o CloudAutonomousVmClusterOutput) TotalAutonomousDataStorageInTbs() pulumi
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.Float64Output { return v.TotalAutonomousDataStorageInTbs }).(pulumi.Float64Output)
 }
 
-// The total number of Autonomous Container Databases that can be created.
+// (Updatable) The total number of Autonomous Container Databases that can be created.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

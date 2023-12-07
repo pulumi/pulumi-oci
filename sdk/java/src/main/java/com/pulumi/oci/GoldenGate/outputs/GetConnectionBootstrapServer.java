@@ -12,6 +12,8 @@ import java.util.Objects;
 public final class GetConnectionBootstrapServer {
     /**
      * @return The name or address of a host.
+     * In case of Generic connection type it represents the Host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
     private String host;
@@ -29,6 +31,8 @@ public final class GetConnectionBootstrapServer {
     private GetConnectionBootstrapServer() {}
     /**
      * @return The name or address of a host.
+     * In case of Generic connection type it represents the Host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
+     * For multiple hosts, provide a comma separated list. Example: `&#34;server1.example.com:1000,server1.example.com:2000&#34;`
      * 
      */
     public String host() {

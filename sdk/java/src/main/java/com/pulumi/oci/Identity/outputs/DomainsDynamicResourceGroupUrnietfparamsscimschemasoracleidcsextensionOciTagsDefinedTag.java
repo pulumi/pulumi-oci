@@ -49,6 +49,7 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
      * **SCIM++ Properties:**
      * * caseExact: false
      * * required: true
+     * * idcsReturnEmptyWhenNull: true
      * * mutability: readWrite
      * * returned: default
      * * type: string
@@ -103,6 +104,7 @@ public final class DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcs
      * **SCIM++ Properties:**
      * * caseExact: false
      * * required: true
+     * * idcsReturnEmptyWhenNull: true
      * * mutability: readWrite
      * * returned: default
      * * type: string

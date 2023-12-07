@@ -88,7 +88,7 @@ type GetDiscoveryJobsResultsResult struct {
 	Filters       []GetDiscoveryJobsResultsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
+	// Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
 	IsResultApplied *bool `pulumi:"isResultApplied"`
 	// The database object that contains the sensitive column.
 	Objects []string `pulumi:"objects"`
@@ -180,7 +180,7 @@ func (o GetDiscoveryJobsResultsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoveryJobsResultsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Indicates whether the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
+// Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
 func (o GetDiscoveryJobsResultsResultOutput) IsResultApplied() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetDiscoveryJobsResultsResult) *bool { return v.IsResultApplied }).(pulumi.BoolPtrOutput)
 }

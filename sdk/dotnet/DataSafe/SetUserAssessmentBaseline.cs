@@ -45,7 +45,7 @@ namespace Pulumi.Oci.DataSafe
     public partial class SetUserAssessmentBaseline : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The list of OCIDs for the user assessments that need to be updated while setting the baseline.
+        /// The list of user assessment OCIDs that need to be updated while setting the baseline.
         /// </summary>
         [Output("assessmentIds")]
         public Output<ImmutableArray<string>> AssessmentIds { get; private set; } = null!;
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _assessmentIds;
 
         /// <summary>
-        /// The list of OCIDs for the user assessments that need to be updated while setting the baseline.
+        /// The list of user assessment OCIDs that need to be updated while setting the baseline.
         /// </summary>
         public InputList<string> AssessmentIds
         {
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _assessmentIds;
 
         /// <summary>
-        /// The list of OCIDs for the user assessments that need to be updated while setting the baseline.
+        /// The list of user assessment OCIDs that need to be updated while setting the baseline.
         /// </summary>
         public InputList<string> AssessmentIds
         {

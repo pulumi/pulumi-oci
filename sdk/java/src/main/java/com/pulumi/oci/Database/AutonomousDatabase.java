@@ -14,6 +14,7 @@ import com.pulumi.oci.Database.outputs.AutonomousDatabaseBackupConfig;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseConnectionUrl;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseCustomerContact;
+import com.pulumi.oci.Database.outputs.AutonomousDatabaseDbToolsDetail;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLongTermBackupSchedule;
@@ -267,14 +268,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * (Updatable) Compute used by database tools.
      * 
      */
     @Export(name="computeCount", refs={Double.class}, tree="[0]")
     private Output<Double> computeCount;
 
     /**
-     * @return (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is on Shared or Dedicated infrastructure. For an Autonomous Database on Shared infrastructure, the &#39;ECPU&#39; compute model requires values in multiples of two. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value.
+     * @return (Updatable) Compute used by database tools.
      * 
      */
     public Output<Double> computeCount() {
@@ -459,18 +460,36 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.dataguardRegionType;
     }
     /**
-     * (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
+     * The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
      * 
      */
     @Export(name="dbName", refs={String.class}, tree="[0]")
     private Output<String> dbName;
 
     /**
-     * @return (Updatable) Specify the database name; it must consist of letters and numbers only. The maximum length is 30 characters. The same database name cannot be used for multiple Autonomous Databases in the same tenancy in the same region.
+     * @return The database name. The name must begin with an alphabetic character and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy. It is required in all cases except when creating a cross-region Autonomous Data Guard standby instance or a cross-region disaster recovery standby instance.
      * 
      */
     public Output<String> dbName() {
         return this.dbName;
+    }
+    /**
+     * (Updatable) The list of database tools details.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
+     * 
+     */
+    @Export(name="dbToolsDetails", refs={List.class,AutonomousDatabaseDbToolsDetail.class}, tree="[0,1]")
+    private Output<List<AutonomousDatabaseDbToolsDetail>> dbToolsDetails;
+
+    /**
+     * @return (Updatable) The list of database tools details.
+     * 
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, isLocalDataGuardEnabled, or isFreeTier.
+     * 
+     */
+    public Output<List<AutonomousDatabaseDbToolsDetail>> dbToolsDetails() {
+        return this.dbToolsDetails;
     }
     /**
      * (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD and APEX are only supported for `db_version` `19c` and above.
@@ -1329,12 +1348,16 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
      * 
+     * This cannot be used in conjunction with adminPassword.
+     * 
      */
     @Export(name="secretId", refs={String.class}, tree="[0]")
     private Output<String> secretId;
 
     /**
      * @return (Updatable) The Oracle Cloud Infrastructure vault secret [/Content/General/Concepts/identifiers.htm]OCID.
+     * 
+     * This cannot be used in conjunction with adminPassword.
      * 
      */
     public Output<String> secretId() {

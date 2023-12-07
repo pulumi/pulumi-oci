@@ -22,7 +22,7 @@ class GetDatabaseToolsPrivateEndpointResult:
     """
     A collection of values returned by getDatabaseToolsPrivateEndpoint.
     """
-    def __init__(__self__, additional_fqdns=None, compartment_id=None, database_tools_private_endpoint_id=None, defined_tags=None, description=None, display_name=None, endpoint_fqdn=None, endpoint_service_id=None, freeform_tags=None, id=None, lifecycle_details=None, nsg_ids=None, private_endpoint_ip=None, private_endpoint_vnic_id=None, reverse_connection_configurations=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None, vcn_id=None):
+    def __init__(__self__, additional_fqdns=None, compartment_id=None, database_tools_private_endpoint_id=None, defined_tags=None, description=None, display_name=None, endpoint_fqdn=None, endpoint_service_id=None, freeform_tags=None, id=None, lifecycle_details=None, locks=None, nsg_ids=None, private_endpoint_ip=None, private_endpoint_vnic_id=None, reverse_connection_configurations=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None, vcn_id=None):
         if additional_fqdns and not isinstance(additional_fqdns, list):
             raise TypeError("Expected argument 'additional_fqdns' to be a list")
         pulumi.set(__self__, "additional_fqdns", additional_fqdns)
@@ -56,6 +56,9 @@ class GetDatabaseToolsPrivateEndpointResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if nsg_ids and not isinstance(nsg_ids, list):
             raise TypeError("Expected argument 'nsg_ids' to be a list")
         pulumi.set(__self__, "nsg_ids", nsg_ids)
@@ -173,6 +176,14 @@ class GetDatabaseToolsPrivateEndpointResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDatabaseToolsPrivateEndpointLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
@@ -270,6 +281,7 @@ class AwaitableGetDatabaseToolsPrivateEndpointResult(GetDatabaseToolsPrivateEndp
             freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             nsg_ids=self.nsg_ids,
             private_endpoint_ip=self.private_endpoint_ip,
             private_endpoint_vnic_id=self.private_endpoint_vnic_id,
@@ -318,6 +330,7 @@ def get_database_tools_private_endpoint(database_tools_private_endpoint_id: Opti
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         private_endpoint_ip=pulumi.get(__ret__, 'private_endpoint_ip'),
         private_endpoint_vnic_id=pulumi.get(__ret__, 'private_endpoint_vnic_id'),

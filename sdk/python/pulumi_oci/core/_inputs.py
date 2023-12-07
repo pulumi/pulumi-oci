@@ -48,6 +48,7 @@ __all__ = [
     'ComputeCapacityReservationInstanceReservationConfigArgs',
     'ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs',
     'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs',
+    'ComputeCapacityTopologyCapacitySourceArgs',
     'CrossConnectGroupMacsecPropertiesArgs',
     'CrossConnectGroupMacsecPropertiesPrimaryKeyArgs',
     'CrossConnectMacsecPropertiesArgs',
@@ -200,6 +201,10 @@ __all__ = [
     'GetComputeCapacityReservationInstanceShapesFilterArgs',
     'GetComputeCapacityReservationInstancesFilterArgs',
     'GetComputeCapacityReservationsFilterArgs',
+    'GetComputeCapacityTopologiesFilterArgs',
+    'GetComputeCapacityTopologyComputeBareMetalHostsFilterArgs',
+    'GetComputeCapacityTopologyComputeHpcIslandsFilterArgs',
+    'GetComputeCapacityTopologyComputeNetworkBlocksFilterArgs',
     'GetComputeClustersFilterArgs',
     'GetComputeGlobalImageCapabilitySchemasFilterArgs',
     'GetComputeGlobalImageCapabilitySchemasVersionsFilterArgs',
@@ -2649,6 +2654,44 @@ class ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs
     @ocpus.setter
     def ocpus(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpus", value)
+
+
+@pulumi.input_type
+class ComputeCapacityTopologyCapacitySourceArgs:
+    def __init__(__self__, *,
+                 capacity_type: pulumi.Input[str],
+                 compartment_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] capacity_type: (Updatable) The capacity type of bare metal hosts.
+        :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute capacity topology.
+        """
+        pulumi.set(__self__, "capacity_type", capacity_type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+
+    @property
+    @pulumi.getter(name="capacityType")
+    def capacity_type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The capacity type of bare metal hosts.
+        """
+        return pulumi.get(self, "capacity_type")
+
+    @capacity_type.setter
+    def capacity_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "capacity_type", value)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute capacity topology.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
 
 
 @pulumi.input_type
@@ -10993,14 +11036,17 @@ class InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs:
 @pulumi.input_type
 class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
     def __init__(__self__, *,
+                 bgp_ipv6_state: Optional[pulumi.Input[str]] = None,
                  bgp_ipv6state: Optional[pulumi.Input[str]] = None,
                  bgp_state: Optional[pulumi.Input[str]] = None,
                  customer_bgp_asn: Optional[pulumi.Input[str]] = None,
                  customer_interface_ip: Optional[pulumi.Input[str]] = None,
+                 customer_interface_ipv6: Optional[pulumi.Input[str]] = None,
                  oracle_bgp_asn: Optional[pulumi.Input[str]] = None,
-                 oracle_interface_ip: Optional[pulumi.Input[str]] = None):
+                 oracle_interface_ip: Optional[pulumi.Input[str]] = None,
+                 oracle_interface_ipv6: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] bgp_ipv6state: The state of the BGP IPv6 session.
+        :param pulumi.Input[str] bgp_ipv6_state: The state of the BGP IPv6 session.
         :param pulumi.Input[str] bgp_state: The state of the BGP session.
         :param pulumi.Input[str] customer_bgp_asn: If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnel/)), this ASN is required and used for the tunnel's BGP session. This is the ASN of the network on the CPE end of the BGP session. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
                
@@ -11016,6 +11062,15 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
                The value must be a /30 or /31.
                
                Example: `10.0.0.5/31`
+        :param pulumi.Input[str] customer_interface_ipv6: The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+               
+               If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel's BGP session.
+               
+               If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+               
+               Only subnet masks from /64 up to /127 are allowed.
+               
+               Example: `2001:db8::1/64`
         :param pulumi.Input[str] oracle_bgp_asn: The Oracle BGP ASN.
         :param pulumi.Input[str] oracle_interface_ip: The IP address for the Oracle end of the inside tunnel interface.
                
@@ -11026,7 +11081,21 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
                The value must be a /30 or /31.
                
                Example: `10.0.0.4/31`
+        :param pulumi.Input[str] oracle_interface_ipv6: The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+               
+               If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel's BGP session.
+               
+               If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+               
+               Only subnet masks from /64 up to /127 are allowed.
+               
+               Example: `2001:db8::1/64`
         """
+        if bgp_ipv6_state is not None:
+            pulumi.set(__self__, "bgp_ipv6_state", bgp_ipv6_state)
+        if bgp_ipv6state is not None:
+            warnings.warn("""The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""", DeprecationWarning)
+            pulumi.log.warn("""bgp_ipv6state is deprecated: The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""")
         if bgp_ipv6state is not None:
             pulumi.set(__self__, "bgp_ipv6state", bgp_ipv6state)
         if bgp_state is not None:
@@ -11035,17 +11104,33 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
             pulumi.set(__self__, "customer_bgp_asn", customer_bgp_asn)
         if customer_interface_ip is not None:
             pulumi.set(__self__, "customer_interface_ip", customer_interface_ip)
+        if customer_interface_ipv6 is not None:
+            pulumi.set(__self__, "customer_interface_ipv6", customer_interface_ipv6)
         if oracle_bgp_asn is not None:
             pulumi.set(__self__, "oracle_bgp_asn", oracle_bgp_asn)
         if oracle_interface_ip is not None:
             pulumi.set(__self__, "oracle_interface_ip", oracle_interface_ip)
+        if oracle_interface_ipv6 is not None:
+            pulumi.set(__self__, "oracle_interface_ipv6", oracle_interface_ipv6)
+
+    @property
+    @pulumi.getter(name="bgpIpv6State")
+    def bgp_ipv6_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The state of the BGP IPv6 session.
+        """
+        return pulumi.get(self, "bgp_ipv6_state")
+
+    @bgp_ipv6_state.setter
+    def bgp_ipv6_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "bgp_ipv6_state", value)
 
     @property
     @pulumi.getter(name="bgpIpv6state")
     def bgp_ipv6state(self) -> Optional[pulumi.Input[str]]:
-        """
-        The state of the BGP IPv6 session.
-        """
+        warnings.warn("""The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""", DeprecationWarning)
+        pulumi.log.warn("""bgp_ipv6state is deprecated: The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""")
+
         return pulumi.get(self, "bgp_ipv6state")
 
     @bgp_ipv6state.setter
@@ -11101,6 +11186,26 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
         pulumi.set(self, "customer_interface_ip", value)
 
     @property
+    @pulumi.getter(name="customerInterfaceIpv6")
+    def customer_interface_ipv6(self) -> Optional[pulumi.Input[str]]:
+        """
+        The IPv6 address for the CPE end of the inside tunnel interface. This IP address is optional.
+
+        If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel's BGP session.
+
+        If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+
+        Only subnet masks from /64 up to /127 are allowed.
+
+        Example: `2001:db8::1/64`
+        """
+        return pulumi.get(self, "customer_interface_ipv6")
+
+    @customer_interface_ipv6.setter
+    def customer_interface_ipv6(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "customer_interface_ipv6", value)
+
+    @property
     @pulumi.getter(name="oracleBgpAsn")
     def oracle_bgp_asn(self) -> Optional[pulumi.Input[str]]:
         """
@@ -11132,12 +11237,36 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
     def oracle_interface_ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "oracle_interface_ip", value)
 
+    @property
+    @pulumi.getter(name="oracleInterfaceIpv6")
+    def oracle_interface_ipv6(self) -> Optional[pulumi.Input[str]]:
+        """
+        The IPv6 address for the Oracle end of the inside tunnel interface. This IP address is optional.
+
+        If the tunnel's `routing` attribute is set to `BGP` (see [IPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/)), this IP address is used for the tunnel's BGP session.
+
+        If `routing` is instead set to `STATIC`, you can set this IP address to troubleshoot or monitor the tunnel.
+
+        Only subnet masks from /64 up to /127 are allowed.
+
+        Example: `2001:db8::1/64`
+        """
+        return pulumi.get(self, "oracle_interface_ipv6")
+
+    @oracle_interface_ipv6.setter
+    def oracle_interface_ipv6(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "oracle_interface_ipv6", value)
+
 
 @pulumi.input_type
 class IpsecConnectionTunnelManagementDpdConfigArgs:
     def __init__(__self__, *,
                  dpd_mode: Optional[pulumi.Input[str]] = None,
                  dpd_timeout_in_sec: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] dpd_mode: This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+        :param pulumi.Input[int] dpd_timeout_in_sec: DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+        """
         if dpd_mode is not None:
             pulumi.set(__self__, "dpd_mode", dpd_mode)
         if dpd_timeout_in_sec is not None:
@@ -11146,6 +11275,9 @@ class IpsecConnectionTunnelManagementDpdConfigArgs:
     @property
     @pulumi.getter(name="dpdMode")
     def dpd_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+        """
         return pulumi.get(self, "dpd_mode")
 
     @dpd_mode.setter
@@ -11155,6 +11287,9 @@ class IpsecConnectionTunnelManagementDpdConfigArgs:
     @property
     @pulumi.getter(name="dpdTimeoutInSec")
     def dpd_timeout_in_sec(self) -> Optional[pulumi.Input[int]]:
+        """
+        DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+        """
         return pulumi.get(self, "dpd_timeout_in_sec")
 
     @dpd_timeout_in_sec.setter
@@ -11214,7 +11349,21 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
                  negotiated_dh_group: Optional[pulumi.Input[str]] = None,
                  negotiated_encryption_algorithm: Optional[pulumi.Input[str]] = None,
                  remaining_lifetime: Optional[pulumi.Input[str]] = None,
+                 remaining_lifetime_int: Optional[pulumi.Input[int]] = None,
                  remaining_lifetime_last_retrieved: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] custom_authentication_algorithm: The authentication algorithm proposed during phase two tunnel negotiation.
+        :param pulumi.Input[str] custom_dh_group: The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
+        :param pulumi.Input[str] custom_encryption_algorithm: The encryption algorithm proposed during phase two tunnel negotiation.
+        :param pulumi.Input[bool] is_custom_phase_one_config: Indicates whether custom configuration is enabled for phase one options.
+        :param pulumi.Input[bool] is_ike_established: Indicates whether IKE phase one is established.
+        :param pulumi.Input[int] lifetime: Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+        :param pulumi.Input[str] negotiated_authentication_algorithm: The negotiated phase two authentication algorithm.
+        :param pulumi.Input[str] negotiated_dh_group: The negotiated Diffie-Hellman group.
+        :param pulumi.Input[str] negotiated_encryption_algorithm: The negotiated encryption algorithm.
+        :param pulumi.Input[int] remaining_lifetime_int: The remaining lifetime before the key is refreshed.
+        :param pulumi.Input[str] remaining_lifetime_last_retrieved: The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
         if custom_authentication_algorithm is not None:
             pulumi.set(__self__, "custom_authentication_algorithm", custom_authentication_algorithm)
         if custom_dh_group is not None:
@@ -11234,13 +11383,21 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
         if negotiated_encryption_algorithm is not None:
             pulumi.set(__self__, "negotiated_encryption_algorithm", negotiated_encryption_algorithm)
         if remaining_lifetime is not None:
+            warnings.warn("""The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""", DeprecationWarning)
+            pulumi.log.warn("""remaining_lifetime is deprecated: The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""")
+        if remaining_lifetime is not None:
             pulumi.set(__self__, "remaining_lifetime", remaining_lifetime)
+        if remaining_lifetime_int is not None:
+            pulumi.set(__self__, "remaining_lifetime_int", remaining_lifetime_int)
         if remaining_lifetime_last_retrieved is not None:
             pulumi.set(__self__, "remaining_lifetime_last_retrieved", remaining_lifetime_last_retrieved)
 
     @property
     @pulumi.getter(name="customAuthenticationAlgorithm")
     def custom_authentication_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        The authentication algorithm proposed during phase two tunnel negotiation.
+        """
         return pulumi.get(self, "custom_authentication_algorithm")
 
     @custom_authentication_algorithm.setter
@@ -11250,6 +11407,9 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
     @property
     @pulumi.getter(name="customDhGroup")
     def custom_dh_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
+        """
         return pulumi.get(self, "custom_dh_group")
 
     @custom_dh_group.setter
@@ -11259,6 +11419,9 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
     @property
     @pulumi.getter(name="customEncryptionAlgorithm")
     def custom_encryption_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        The encryption algorithm proposed during phase two tunnel negotiation.
+        """
         return pulumi.get(self, "custom_encryption_algorithm")
 
     @custom_encryption_algorithm.setter
@@ -11268,6 +11431,9 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
     @property
     @pulumi.getter(name="isCustomPhaseOneConfig")
     def is_custom_phase_one_config(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether custom configuration is enabled for phase one options.
+        """
         return pulumi.get(self, "is_custom_phase_one_config")
 
     @is_custom_phase_one_config.setter
@@ -11277,6 +11443,9 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
     @property
     @pulumi.getter(name="isIkeEstablished")
     def is_ike_established(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether IKE phase one is established.
+        """
         return pulumi.get(self, "is_ike_established")
 
     @is_ike_established.setter
@@ -11286,6 +11455,9 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
     @property
     @pulumi.getter
     def lifetime(self) -> Optional[pulumi.Input[int]]:
+        """
+        Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+        """
         return pulumi.get(self, "lifetime")
 
     @lifetime.setter
@@ -11295,6 +11467,9 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
     @property
     @pulumi.getter(name="negotiatedAuthenticationAlgorithm")
     def negotiated_authentication_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        The negotiated phase two authentication algorithm.
+        """
         return pulumi.get(self, "negotiated_authentication_algorithm")
 
     @negotiated_authentication_algorithm.setter
@@ -11304,6 +11479,9 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
     @property
     @pulumi.getter(name="negotiatedDhGroup")
     def negotiated_dh_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        The negotiated Diffie-Hellman group.
+        """
         return pulumi.get(self, "negotiated_dh_group")
 
     @negotiated_dh_group.setter
@@ -11313,6 +11491,9 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
     @property
     @pulumi.getter(name="negotiatedEncryptionAlgorithm")
     def negotiated_encryption_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        The negotiated encryption algorithm.
+        """
         return pulumi.get(self, "negotiated_encryption_algorithm")
 
     @negotiated_encryption_algorithm.setter
@@ -11322,6 +11503,9 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
     @property
     @pulumi.getter(name="remainingLifetime")
     def remaining_lifetime(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""", DeprecationWarning)
+        pulumi.log.warn("""remaining_lifetime is deprecated: The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""")
+
         return pulumi.get(self, "remaining_lifetime")
 
     @remaining_lifetime.setter
@@ -11329,8 +11513,23 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
         pulumi.set(self, "remaining_lifetime", value)
 
     @property
+    @pulumi.getter(name="remainingLifetimeInt")
+    def remaining_lifetime_int(self) -> Optional[pulumi.Input[int]]:
+        """
+        The remaining lifetime before the key is refreshed.
+        """
+        return pulumi.get(self, "remaining_lifetime_int")
+
+    @remaining_lifetime_int.setter
+    def remaining_lifetime_int(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "remaining_lifetime_int", value)
+
+    @property
     @pulumi.getter(name="remainingLifetimeLastRetrieved")
     def remaining_lifetime_last_retrieved(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
         return pulumi.get(self, "remaining_lifetime_last_retrieved")
 
     @remaining_lifetime_last_retrieved.setter
@@ -11352,7 +11551,22 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
                  negotiated_dh_group: Optional[pulumi.Input[str]] = None,
                  negotiated_encryption_algorithm: Optional[pulumi.Input[str]] = None,
                  remaining_lifetime: Optional[pulumi.Input[str]] = None,
+                 remaining_lifetime_int: Optional[pulumi.Input[int]] = None,
                  remaining_lifetime_last_retrieved: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] custom_authentication_algorithm: The authentication algorithm proposed during phase two tunnel negotiation.
+        :param pulumi.Input[str] custom_encryption_algorithm: The encryption algorithm proposed during phase two tunnel negotiation.
+        :param pulumi.Input[str] dh_group: The Diffie-Hellman group used for PFS, if PFS is enabled.
+        :param pulumi.Input[bool] is_custom_phase_two_config: Indicates whether custom configuration is enabled for phase two options.
+        :param pulumi.Input[bool] is_esp_established: Indicates that ESP phase two is established.
+        :param pulumi.Input[bool] is_pfs_enabled: Indicates whether perfect forward secrecy (PFS) is enabled.
+        :param pulumi.Input[int] lifetime: Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+        :param pulumi.Input[str] negotiated_authentication_algorithm: The negotiated phase two authentication algorithm.
+        :param pulumi.Input[str] negotiated_dh_group: The negotiated Diffie-Hellman group.
+        :param pulumi.Input[str] negotiated_encryption_algorithm: The negotiated encryption algorithm.
+        :param pulumi.Input[int] remaining_lifetime_int: The remaining lifetime before the key is refreshed.
+        :param pulumi.Input[str] remaining_lifetime_last_retrieved: The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
         if custom_authentication_algorithm is not None:
             pulumi.set(__self__, "custom_authentication_algorithm", custom_authentication_algorithm)
         if custom_encryption_algorithm is not None:
@@ -11374,13 +11588,21 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
         if negotiated_encryption_algorithm is not None:
             pulumi.set(__self__, "negotiated_encryption_algorithm", negotiated_encryption_algorithm)
         if remaining_lifetime is not None:
+            warnings.warn("""The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""", DeprecationWarning)
+            pulumi.log.warn("""remaining_lifetime is deprecated: The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""")
+        if remaining_lifetime is not None:
             pulumi.set(__self__, "remaining_lifetime", remaining_lifetime)
+        if remaining_lifetime_int is not None:
+            pulumi.set(__self__, "remaining_lifetime_int", remaining_lifetime_int)
         if remaining_lifetime_last_retrieved is not None:
             pulumi.set(__self__, "remaining_lifetime_last_retrieved", remaining_lifetime_last_retrieved)
 
     @property
     @pulumi.getter(name="customAuthenticationAlgorithm")
     def custom_authentication_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        The authentication algorithm proposed during phase two tunnel negotiation.
+        """
         return pulumi.get(self, "custom_authentication_algorithm")
 
     @custom_authentication_algorithm.setter
@@ -11390,6 +11612,9 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
     @property
     @pulumi.getter(name="customEncryptionAlgorithm")
     def custom_encryption_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        The encryption algorithm proposed during phase two tunnel negotiation.
+        """
         return pulumi.get(self, "custom_encryption_algorithm")
 
     @custom_encryption_algorithm.setter
@@ -11399,6 +11624,9 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
     @property
     @pulumi.getter(name="dhGroup")
     def dh_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Diffie-Hellman group used for PFS, if PFS is enabled.
+        """
         return pulumi.get(self, "dh_group")
 
     @dh_group.setter
@@ -11408,6 +11636,9 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
     @property
     @pulumi.getter(name="isCustomPhaseTwoConfig")
     def is_custom_phase_two_config(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether custom configuration is enabled for phase two options.
+        """
         return pulumi.get(self, "is_custom_phase_two_config")
 
     @is_custom_phase_two_config.setter
@@ -11417,6 +11648,9 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
     @property
     @pulumi.getter(name="isEspEstablished")
     def is_esp_established(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates that ESP phase two is established.
+        """
         return pulumi.get(self, "is_esp_established")
 
     @is_esp_established.setter
@@ -11426,6 +11660,9 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
     @property
     @pulumi.getter(name="isPfsEnabled")
     def is_pfs_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether perfect forward secrecy (PFS) is enabled.
+        """
         return pulumi.get(self, "is_pfs_enabled")
 
     @is_pfs_enabled.setter
@@ -11435,6 +11672,9 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
     @property
     @pulumi.getter
     def lifetime(self) -> Optional[pulumi.Input[int]]:
+        """
+        Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
+        """
         return pulumi.get(self, "lifetime")
 
     @lifetime.setter
@@ -11444,6 +11684,9 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
     @property
     @pulumi.getter(name="negotiatedAuthenticationAlgorithm")
     def negotiated_authentication_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        The negotiated phase two authentication algorithm.
+        """
         return pulumi.get(self, "negotiated_authentication_algorithm")
 
     @negotiated_authentication_algorithm.setter
@@ -11453,6 +11696,9 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
     @property
     @pulumi.getter(name="negotiatedDhGroup")
     def negotiated_dh_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        The negotiated Diffie-Hellman group.
+        """
         return pulumi.get(self, "negotiated_dh_group")
 
     @negotiated_dh_group.setter
@@ -11462,6 +11708,9 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
     @property
     @pulumi.getter(name="negotiatedEncryptionAlgorithm")
     def negotiated_encryption_algorithm(self) -> Optional[pulumi.Input[str]]:
+        """
+        The negotiated encryption algorithm.
+        """
         return pulumi.get(self, "negotiated_encryption_algorithm")
 
     @negotiated_encryption_algorithm.setter
@@ -11471,6 +11720,9 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
     @property
     @pulumi.getter(name="remainingLifetime")
     def remaining_lifetime(self) -> Optional[pulumi.Input[str]]:
+        warnings.warn("""The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""", DeprecationWarning)
+        pulumi.log.warn("""remaining_lifetime is deprecated: The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""")
+
         return pulumi.get(self, "remaining_lifetime")
 
     @remaining_lifetime.setter
@@ -11478,8 +11730,23 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
         pulumi.set(self, "remaining_lifetime", value)
 
     @property
+    @pulumi.getter(name="remainingLifetimeInt")
+    def remaining_lifetime_int(self) -> Optional[pulumi.Input[int]]:
+        """
+        The remaining lifetime before the key is refreshed.
+        """
+        return pulumi.get(self, "remaining_lifetime_int")
+
+    @remaining_lifetime_int.setter
+    def remaining_lifetime_int(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "remaining_lifetime_int", value)
+
+    @property
     @pulumi.getter(name="remainingLifetimeLastRetrieved")
     def remaining_lifetime_last_retrieved(self) -> Optional[pulumi.Input[str]]:
+        """
+        The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
         return pulumi.get(self, "remaining_lifetime_last_retrieved")
 
     @remaining_lifetime_last_retrieved.setter
@@ -14465,6 +14732,162 @@ class GetComputeCapacityReservationInstancesFilterArgs:
 
 @pulumi.input_type
 class GetComputeCapacityReservationsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetComputeCapacityTopologiesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetComputeCapacityTopologyComputeBareMetalHostsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetComputeCapacityTopologyComputeHpcIslandsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetComputeCapacityTopologyComputeNetworkBlocksFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

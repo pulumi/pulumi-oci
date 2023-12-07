@@ -458,6 +458,13 @@ public final class DbSystemsUpgradeState extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.newGiVersion);
     }
 
+    @Import(name="newOsVersion")
+    private @Nullable Output<String> newOsVersion;
+
+    public Optional<Output<String>> newOsVersion() {
+        return Optional.ofNullable(this.newOsVersion);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      * 
@@ -802,6 +809,7 @@ public final class DbSystemsUpgradeState extends com.pulumi.resources.ResourceAr
         this.listenerPort = $.listenerPort;
         this.maintenanceWindows = $.maintenanceWindows;
         this.newGiVersion = $.newGiVersion;
+        this.newOsVersion = $.newOsVersion;
         this.nextMaintenanceRunId = $.nextMaintenanceRunId;
         this.nodeCount = $.nodeCount;
         this.nsgIds = $.nsgIds;
@@ -1499,6 +1507,15 @@ public final class DbSystemsUpgradeState extends com.pulumi.resources.ResourceAr
          */
         public Builder newGiVersion(String newGiVersion) {
             return newGiVersion(Output.of(newGiVersion));
+        }
+
+        public Builder newOsVersion(@Nullable Output<String> newOsVersion) {
+            $.newOsVersion = newOsVersion;
+            return this;
+        }
+
+        public Builder newOsVersion(String newOsVersion) {
+            return newOsVersion(Output.of(newOsVersion));
         }
 
         /**

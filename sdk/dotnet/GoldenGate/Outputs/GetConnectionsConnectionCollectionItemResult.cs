@@ -27,7 +27,9 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult> AdditionalAttributes;
         /// <summary>
-        /// Used authentication mechanism to access Azure Data Lake Storage.
+        /// Used authentication mechanism to be provided for the following connection types:
+        /// * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
+        /// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         /// </summary>
         public readonly string AuthenticationType;
         /// <summary>
@@ -52,7 +54,9 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string ConnectionFactory;
         /// <summary>
-        /// JDBC connection string. e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        /// * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
+        /// * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+        /// * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://&lt;synapse-workspace&gt;.sql.azuresynapse.net:1433;database=&lt;db-name&gt;;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         /// </summary>
         public readonly string ConnectionString;
         /// <summary>
@@ -60,13 +64,15 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string ConnectionType;
         /// <summary>
-        /// JDBC connection URL. e.g.: 'jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;'
+        /// * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
+        /// * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://&lt;account_name&gt;.snowflakecomputing.com/?warehouse=&lt;warehouse-name&gt;&amp;db=&lt;db-name&gt;'
+        /// * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
         /// </summary>
         public readonly string ConnectionUrl;
         public readonly string ConsumerProperties;
         public readonly string CoreSiteXml;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
         /// </summary>
         public readonly string DatabaseId;
         /// <summary>
@@ -97,12 +103,15 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
         /// </summary>
         public readonly string Endpoint;
+        public readonly string Fingerprint;
         /// <summary>
         /// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// The name or address of a host.
+        /// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
+        /// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         /// </summary>
         public readonly string Host;
         /// <summary>
@@ -164,9 +173,17 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string SasToken;
         public readonly string SecretAccessKey;
         /// <summary>
-        /// Security protocol for PostgreSQL / Microsoft SQL Server..
+        /// Security Protocol to be provided for the following connection types:
+        /// * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+        /// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         /// </summary>
         public readonly string SecurityProtocol;
+        /// <summary>
+        /// Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
+        /// If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
+        /// </summary>
+        public readonly string Servers;
+        public readonly string ServiceAccountKeyFile;
         /// <summary>
         /// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         /// </summary>
@@ -188,7 +205,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string SslKey;
         public readonly string SslKeyPassword;
         /// <summary>
-        /// SSL mode for PostgreSQL.
+        /// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
         /// </summary>
         public readonly string SslMode;
         /// <summary>
@@ -293,6 +310,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string endpoint,
 
+            string fingerprint,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string host,
@@ -342,6 +361,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string secretAccessKey,
 
             string securityProtocol,
+
+            string servers,
+
+            string serviceAccountKeyFile,
 
             string sessionMode,
 
@@ -415,6 +438,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             Description = description;
             DisplayName = displayName;
             Endpoint = endpoint;
+            Fingerprint = fingerprint;
             FreeformTags = freeformTags;
             Host = host;
             Id = id;
@@ -440,6 +464,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             SasToken = sasToken;
             SecretAccessKey = secretAccessKey;
             SecurityProtocol = securityProtocol;
+            Servers = servers;
+            ServiceAccountKeyFile = serviceAccountKeyFile;
             SessionMode = sessionMode;
             ShouldUseJndi = shouldUseJndi;
             ShouldValidateServerCertificate = shouldValidateServerCertificate;

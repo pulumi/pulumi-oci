@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -93,10 +94,28 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+     * The list of managed instance OCIDs to be added to the managed instance group.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="managedInstanceIds")
+    private @Nullable Output<List<String>> managedInstanceIds;
+
+    /**
+     * @return The list of managed instance OCIDs to be added to the managed instance group.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<List<String>>> managedInstanceIds() {
+        return Optional.ofNullable(this.managedInstanceIds);
+    }
+
+    /**
+     * The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
      * 
      */
     @Import(name="osFamily")
@@ -104,9 +123,6 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
 
     /**
      * @return The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> osFamily() {
@@ -121,6 +137,7 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.managedInstanceIds = $.managedInstanceIds;
         this.osFamily = $.osFamily;
     }
 
@@ -248,10 +265,47 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param osFamily The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+         * @param managedInstanceIds The list of managed instance OCIDs to be added to the managed instance group.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedInstanceIds(@Nullable Output<List<String>> managedInstanceIds) {
+            $.managedInstanceIds = managedInstanceIds;
+            return this;
+        }
+
+        /**
+         * @param managedInstanceIds The list of managed instance OCIDs to be added to the managed instance group.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedInstanceIds(List<String> managedInstanceIds) {
+            return managedInstanceIds(Output.of(managedInstanceIds));
+        }
+
+        /**
+         * @param managedInstanceIds The list of managed instance OCIDs to be added to the managed instance group.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managedInstanceIds(String... managedInstanceIds) {
+            return managedInstanceIds(List.of(managedInstanceIds));
+        }
+
+        /**
+         * @param osFamily The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
          * 
          * @return builder
          * 
@@ -263,9 +317,6 @@ public final class ManagedInstanceGroupArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param osFamily The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

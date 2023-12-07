@@ -57,14 +57,29 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
+     * 
+     */
+    @Import(name="clusterId")
+    private @Nullable Output<String> clusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
+     * 
+     */
+    public Optional<Output<String>> clusterId() {
+        return Optional.ofNullable(this.clusterId);
+    }
+
+    /**
+     * The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
      * 
      */
     @Import(name="computeAvailabilityDomain")
     private @Nullable Output<String> computeAvailabilityDomain;
 
     /**
-     * @return The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+     * @return The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
      * 
      */
     public Optional<Output<String>> computeAvailabilityDomain() {
@@ -72,7 +87,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
      * 
      * @deprecated
      * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
@@ -83,7 +98,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> currentSku;
 
     /**
-     * @return (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+     * @return (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
      * 
      * @deprecated
      * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
@@ -110,9 +125,9 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+     * (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      * 
-     * If this attribute is not specified, the SDDC&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host&#39;s display name is `MySDDC-4`.
+     * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
      * 
      * Avoid entering confidential information.
      * 
@@ -121,15 +136,30 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+     * @return (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
      * 
-     * If this attribute is not specified, the SDDC&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host&#39;s display name is `MySDDC-4`.
+     * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
      * 
      * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * (Updatable) The ESXi software bundle to install on the ESXi host.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
+     * 
+     */
+    @Import(name="esxiSoftwareVersion")
+    private @Nullable Output<String> esxiSoftwareVersion;
+
+    /**
+     * @return (Updatable) The ESXi software bundle to install on the ESXi host.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
+     * 
+     */
+    public Optional<Output<String>> esxiSoftwareVersion() {
+        return Optional.ofNullable(this.esxiSoftwareVersion);
     }
 
     /**
@@ -186,14 +216,14 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
     @Import(name="hostShapeName")
     private @Nullable Output<String> hostShapeName;
 
     /**
-     * @return The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+     * @return The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
     public Optional<Output<String>> hostShapeName() {
@@ -243,7 +273,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -257,7 +287,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> sddcId;
 
     /**
-     * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.
+     * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -271,30 +301,17 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.sddcId);
     }
 
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
-     * 
-     */
-    @Import(name="swapBillingHostId")
-    private @Nullable Output<String> swapBillingHostId;
-
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
-     * 
-     */
-    public Optional<Output<String>> swapBillingHostId() {
-        return Optional.ofNullable(this.swapBillingHostId);
-    }
-
     private EsxiHostArgs() {}
 
     private EsxiHostArgs(EsxiHostArgs $) {
         this.billingDonorHostId = $.billingDonorHostId;
         this.capacityReservationId = $.capacityReservationId;
+        this.clusterId = $.clusterId;
         this.computeAvailabilityDomain = $.computeAvailabilityDomain;
         this.currentSku = $.currentSku;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.esxiSoftwareVersion = $.esxiSoftwareVersion;
         this.failedEsxiHostId = $.failedEsxiHostId;
         this.freeformTags = $.freeformTags;
         this.hostOcpuCount = $.hostOcpuCount;
@@ -302,7 +319,6 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         this.nextSku = $.nextSku;
         this.nonUpgradedEsxiHostId = $.nonUpgradedEsxiHostId;
         this.sddcId = $.sddcId;
-        this.swapBillingHostId = $.swapBillingHostId;
     }
 
     public static Builder builder() {
@@ -374,7 +390,28 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param computeAvailabilityDomain The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+         * @param clusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterId(@Nullable Output<String> clusterId) {
+            $.clusterId = clusterId;
+            return this;
+        }
+
+        /**
+         * @param clusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster to add the ESXi host to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterId(String clusterId) {
+            return clusterId(Output.of(clusterId));
+        }
+
+        /**
+         * @param computeAvailabilityDomain The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
          * 
          * @return builder
          * 
@@ -385,7 +422,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param computeAvailabilityDomain The availability domain to create the ESXi host in. If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain; for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+         * @param computeAvailabilityDomain The availability domain to create the ESXi host in. If keep empty, for AD-specific Cluster, new ESXi host will be created in the same availability domain; for multi-AD Cluster, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
          * 
          * @return builder
          * 
@@ -395,7 +432,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param currentSku (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+         * @param currentSku (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
          * 
          * @return builder
          * 
@@ -410,7 +447,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param currentSku (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).
+         * @param currentSku (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
          * 
          * @return builder
          * 
@@ -445,9 +482,9 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+         * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
          * 
-         * If this attribute is not specified, the SDDC&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host&#39;s display name is `MySDDC-4`.
+         * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
          * 
          * Avoid entering confidential information.
          * 
@@ -460,9 +497,9 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the SDDC.
+         * @param displayName (Updatable) A descriptive name for the ESXi host. It&#39;s changeable. Esxi Host name requirements are 1-16 character length limit, Must start with a letter,  Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the Cluster.
          * 
-         * If this attribute is not specified, the SDDC&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the SDDC, and `instanceDisplayNamePrefix` is `MySDDC`, the host&#39;s display name is `MySDDC-4`.
+         * If this attribute is not specified, the Cluster&#39;s `instanceDisplayNamePrefix` attribute is used to name and incrementally number the ESXi host. For example, if you&#39;re creating the fourth ESXi host in the Cluster, and `instanceDisplayNamePrefix` is `MyCluster`, the host&#39;s display name is `MyCluster-4`.
          * 
          * Avoid entering confidential information.
          * 
@@ -471,6 +508,27 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param esxiSoftwareVersion (Updatable) The ESXi software bundle to install on the ESXi host.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder esxiSoftwareVersion(@Nullable Output<String> esxiSoftwareVersion) {
+            $.esxiSoftwareVersion = esxiSoftwareVersion;
+            return this;
+        }
+
+        /**
+         * @param esxiSoftwareVersion (Updatable) The ESXi software bundle to install on the ESXi host.  Only versions under the same vmwareSoftwareVersion and have been validate by Oracle Cloud VMware Solution will be accepted. To get a list of the available versions, use [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder esxiSoftwareVersion(String esxiSoftwareVersion) {
+            return esxiSoftwareVersion(Output.of(esxiSoftwareVersion));
         }
 
         /**
@@ -545,7 +603,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hostShapeName The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+         * @param hostShapeName The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
          * 
          * @return builder
          * 
@@ -556,7 +614,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hostShapeName The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
+         * @param hostShapeName The compute shape name of the ESXi host. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapes/ListSupportedHostShapes).
          * 
          * @return builder
          * 
@@ -620,7 +678,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sddcId (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.
+         * @param sddcId (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -638,7 +696,7 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sddcId (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.
+         * @param sddcId (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -652,27 +710,6 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
         @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
         public Builder sddcId(String sddcId) {
             return sddcId(Output.of(sddcId));
-        }
-
-        /**
-         * @param swapBillingHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder swapBillingHostId(@Nullable Output<String> swapBillingHostId) {
-            $.swapBillingHostId = swapBillingHostId;
-            return this;
-        }
-
-        /**
-         * @param swapBillingHostId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the active ESXi Host to swap billing with current host.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder swapBillingHostId(String swapBillingHostId) {
-            return swapBillingHostId(Output.of(swapBillingHostId));
         }
 
         public EsxiHostArgs build() {

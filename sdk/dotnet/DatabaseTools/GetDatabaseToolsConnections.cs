@@ -33,6 +33,8 @@ namespace Pulumi.Oci.DatabaseTools
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         DisplayName = @var.Database_tools_connection_display_name,
+        ///         RelatedResourceIdentifier = @var.Database_tools_connection_related_resource_identifier,
+        ///         RuntimeSupports = @var.Database_tools_connection_runtime_support,
         ///         State = @var.Database_tools_connection_state,
         ///         Types = @var.Database_tools_connection_type,
         ///     });
@@ -67,6 +69,8 @@ namespace Pulumi.Oci.DatabaseTools
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         DisplayName = @var.Database_tools_connection_display_name,
+        ///         RelatedResourceIdentifier = @var.Database_tools_connection_related_resource_identifier,
+        ///         RuntimeSupports = @var.Database_tools_connection_runtime_support,
         ///         State = @var.Database_tools_connection_state,
         ///         Types = @var.Database_tools_connection_type,
         ///     });
@@ -101,6 +105,24 @@ namespace Pulumi.Oci.DatabaseTools
         {
             get => _filters ?? (_filters = new List<Inputs.GetDatabaseToolsConnectionsFilterArgs>());
             set => _filters = value;
+        }
+
+        /// <summary>
+        /// A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+        /// </summary>
+        [Input("relatedResourceIdentifier")]
+        public string? RelatedResourceIdentifier { get; set; }
+
+        [Input("runtimeSupports")]
+        private List<string>? _runtimeSupports;
+
+        /// <summary>
+        /// A filter to return only resources with one of the specified runtimeSupport values.
+        /// </summary>
+        public List<string> RuntimeSupports
+        {
+            get => _runtimeSupports ?? (_runtimeSupports = new List<string>());
+            set => _runtimeSupports = value;
         }
 
         /// <summary>
@@ -150,6 +172,24 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
+        /// A filter to return only resources associated to the related resource identifier OCID passed in the query string.
+        /// </summary>
+        [Input("relatedResourceIdentifier")]
+        public Input<string>? RelatedResourceIdentifier { get; set; }
+
+        [Input("runtimeSupports")]
+        private InputList<string>? _runtimeSupports;
+
+        /// <summary>
+        /// A filter to return only resources with one of the specified runtimeSupport values.
+        /// </summary>
+        public InputList<string> RuntimeSupports
+        {
+            get => _runtimeSupports ?? (_runtimeSupports = new InputList<string>());
+            set => _runtimeSupports = value;
+        }
+
+        /// <summary>
         /// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         /// </summary>
         [Input("state")]
@@ -194,6 +234,11 @@ namespace Pulumi.Oci.DatabaseTools
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? RelatedResourceIdentifier;
+        /// <summary>
+        /// Specifies whether this connection is supported by the Database Tools Runtime.
+        /// </summary>
+        public readonly ImmutableArray<string> RuntimeSupports;
         /// <summary>
         /// The current state of the Database Tools connection.
         /// </summary>
@@ -215,6 +260,10 @@ namespace Pulumi.Oci.DatabaseTools
 
             string id,
 
+            string? relatedResourceIdentifier,
+
+            ImmutableArray<string> runtimeSupports,
+
             string? state,
 
             ImmutableArray<string> types)
@@ -224,6 +273,8 @@ namespace Pulumi.Oci.DatabaseTools
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            RelatedResourceIdentifier = relatedResourceIdentifier;
+            RuntimeSupports = runtimeSupports;
             State = state;
             Types = types;
         }

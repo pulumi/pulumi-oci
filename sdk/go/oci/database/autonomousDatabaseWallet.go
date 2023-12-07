@@ -31,6 +31,7 @@ import (
 //				Password:             pulumi.Any(_var.Autonomous_database_wallet_password),
 //				Base64EncodeContent:  pulumi.Bool(false),
 //				GenerateType:         pulumi.Any(_var.Autonomous_database_wallet_generate_type),
+//				IsRegional:           pulumi.Any(_var.Autonomous_database_wallet_is_regional),
 //			})
 //			if err != nil {
 //				return err
@@ -56,6 +57,8 @@ type AutonomousDatabaseWallet struct {
 	//
 	// **Serverless instance usage:**
 	GenerateType pulumi.StringPtrOutput `pulumi:"generateType"`
+	// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+	IsRegional pulumi.BoolOutput `pulumi:"isRegional"`
 	// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 	//
 	// ** IMPORTANT **
@@ -115,6 +118,8 @@ type autonomousDatabaseWalletState struct {
 	//
 	// **Serverless instance usage:**
 	GenerateType *string `pulumi:"generateType"`
+	// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+	IsRegional *bool `pulumi:"isRegional"`
 	// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 	//
 	// ** IMPORTANT **
@@ -132,6 +137,8 @@ type AutonomousDatabaseWalletState struct {
 	//
 	// **Serverless instance usage:**
 	GenerateType pulumi.StringPtrInput
+	// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+	IsRegional pulumi.BoolPtrInput
 	// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 	//
 	// ** IMPORTANT **
@@ -151,6 +158,8 @@ type autonomousDatabaseWalletArgs struct {
 	//
 	// **Serverless instance usage:**
 	GenerateType *string `pulumi:"generateType"`
+	// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+	IsRegional *bool `pulumi:"isRegional"`
 	// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 	//
 	// ** IMPORTANT **
@@ -167,6 +176,8 @@ type AutonomousDatabaseWalletArgs struct {
 	//
 	// **Serverless instance usage:**
 	GenerateType pulumi.StringPtrInput
+	// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+	IsRegional pulumi.BoolPtrInput
 	// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
 	//
 	// ** IMPORTANT **
@@ -280,6 +291,11 @@ func (o AutonomousDatabaseWalletOutput) Content() pulumi.StringOutput {
 // **Serverless instance usage:**
 func (o AutonomousDatabaseWalletOutput) GenerateType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseWallet) pulumi.StringPtrOutput { return v.GenerateType }).(pulumi.StringPtrOutput)
+}
+
+// True when requesting regional connection strings in PDB connect info, applicable to cross-region DG only.
+func (o AutonomousDatabaseWalletOutput) IsRegional() pulumi.BoolOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseWallet) pulumi.BoolOutput { return v.IsRegional }).(pulumi.BoolOutput)
 }
 
 // The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.

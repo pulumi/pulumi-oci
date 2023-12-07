@@ -4,9 +4,11 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -21,7 +23,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
      * 
      */
     private String applyRate;
-    private String autonomousContainerDatabaseDataguardAssociationId;
+    private Integer autonomousContainerDatabaseDataguardAssociationId;
     /**
      * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -47,16 +49,20 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
      * 
      */
     private String lifecycleDetails;
+    private List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs;
+    private String peerAutonomousContainerDatabaseCompartmentId;
     /**
      * @return The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      * 
      */
     private String peerAutonomousContainerDatabaseDataguardAssociationId;
+    private String peerAutonomousContainerDatabaseDisplayName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      * 
      */
     private String peerAutonomousContainerDatabaseId;
+    private String peerCloudAutonomousVmClusterId;
     /**
      * @return The current state of Autonomous Data Guard.
      * 
@@ -77,6 +83,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
      * 
      */
     private String role;
+    private Integer standbyMaintenanceBufferInDays;
     /**
      * @return The current state of Autonomous Data Guard.
      * 
@@ -118,7 +125,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     public String applyRate() {
         return this.applyRate;
     }
-    public String autonomousContainerDatabaseDataguardAssociationId() {
+    public Integer autonomousContainerDatabaseDataguardAssociationId() {
         return this.autonomousContainerDatabaseDataguardAssociationId;
     }
     /**
@@ -156,6 +163,12 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    public List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs() {
+        return this.peerAutonomousContainerDatabaseBackupConfigs;
+    }
+    public String peerAutonomousContainerDatabaseCompartmentId() {
+        return this.peerAutonomousContainerDatabaseCompartmentId;
+    }
     /**
      * @return The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
      * 
@@ -163,12 +176,18 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     public String peerAutonomousContainerDatabaseDataguardAssociationId() {
         return this.peerAutonomousContainerDatabaseDataguardAssociationId;
     }
+    public String peerAutonomousContainerDatabaseDisplayName() {
+        return this.peerAutonomousContainerDatabaseDisplayName;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
      * 
      */
     public String peerAutonomousContainerDatabaseId() {
         return this.peerAutonomousContainerDatabaseId;
+    }
+    public String peerCloudAutonomousVmClusterId() {
+        return this.peerCloudAutonomousVmClusterId;
     }
     /**
      * @return The current state of Autonomous Data Guard.
@@ -197,6 +216,9 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
      */
     public String role() {
         return this.role;
+    }
+    public Integer standbyMaintenanceBufferInDays() {
+        return this.standbyMaintenanceBufferInDays;
     }
     /**
      * @return The current state of Autonomous Data Guard.
@@ -245,18 +267,23 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     public static final class Builder {
         private String applyLag;
         private String applyRate;
-        private String autonomousContainerDatabaseDataguardAssociationId;
+        private Integer autonomousContainerDatabaseDataguardAssociationId;
         private String autonomousContainerDatabaseId;
         private Integer fastStartFailOverLagLimitInSeconds;
         private String id;
         private Boolean isAutomaticFailoverEnabled;
         private String lifecycleDetails;
+        private List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs;
+        private String peerAutonomousContainerDatabaseCompartmentId;
         private String peerAutonomousContainerDatabaseDataguardAssociationId;
+        private String peerAutonomousContainerDatabaseDisplayName;
         private String peerAutonomousContainerDatabaseId;
+        private String peerCloudAutonomousVmClusterId;
         private String peerLifecycleState;
         private String peerRole;
         private String protectionMode;
         private String role;
+        private Integer standbyMaintenanceBufferInDays;
         private String state;
         private String timeCreated;
         private String timeLastRoleChanged;
@@ -273,12 +300,17 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
     	      this.id = defaults.id;
     	      this.isAutomaticFailoverEnabled = defaults.isAutomaticFailoverEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.peerAutonomousContainerDatabaseBackupConfigs = defaults.peerAutonomousContainerDatabaseBackupConfigs;
+    	      this.peerAutonomousContainerDatabaseCompartmentId = defaults.peerAutonomousContainerDatabaseCompartmentId;
     	      this.peerAutonomousContainerDatabaseDataguardAssociationId = defaults.peerAutonomousContainerDatabaseDataguardAssociationId;
+    	      this.peerAutonomousContainerDatabaseDisplayName = defaults.peerAutonomousContainerDatabaseDisplayName;
     	      this.peerAutonomousContainerDatabaseId = defaults.peerAutonomousContainerDatabaseId;
+    	      this.peerCloudAutonomousVmClusterId = defaults.peerCloudAutonomousVmClusterId;
     	      this.peerLifecycleState = defaults.peerLifecycleState;
     	      this.peerRole = defaults.peerRole;
     	      this.protectionMode = defaults.protectionMode;
     	      this.role = defaults.role;
+    	      this.standbyMaintenanceBufferInDays = defaults.standbyMaintenanceBufferInDays;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeLastRoleChanged = defaults.timeLastRoleChanged;
@@ -297,7 +329,7 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
             return this;
         }
         @CustomType.Setter
-        public Builder autonomousContainerDatabaseDataguardAssociationId(String autonomousContainerDatabaseDataguardAssociationId) {
+        public Builder autonomousContainerDatabaseDataguardAssociationId(Integer autonomousContainerDatabaseDataguardAssociationId) {
             this.autonomousContainerDatabaseDataguardAssociationId = Objects.requireNonNull(autonomousContainerDatabaseDataguardAssociationId);
             return this;
         }
@@ -327,13 +359,36 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
             return this;
         }
         @CustomType.Setter
+        public Builder peerAutonomousContainerDatabaseBackupConfigs(List<GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs) {
+            this.peerAutonomousContainerDatabaseBackupConfigs = Objects.requireNonNull(peerAutonomousContainerDatabaseBackupConfigs);
+            return this;
+        }
+        public Builder peerAutonomousContainerDatabaseBackupConfigs(GetAutonomousContainerDatabaseDataguardAssociationsAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig... peerAutonomousContainerDatabaseBackupConfigs) {
+            return peerAutonomousContainerDatabaseBackupConfigs(List.of(peerAutonomousContainerDatabaseBackupConfigs));
+        }
+        @CustomType.Setter
+        public Builder peerAutonomousContainerDatabaseCompartmentId(String peerAutonomousContainerDatabaseCompartmentId) {
+            this.peerAutonomousContainerDatabaseCompartmentId = Objects.requireNonNull(peerAutonomousContainerDatabaseCompartmentId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder peerAutonomousContainerDatabaseDataguardAssociationId(String peerAutonomousContainerDatabaseDataguardAssociationId) {
             this.peerAutonomousContainerDatabaseDataguardAssociationId = Objects.requireNonNull(peerAutonomousContainerDatabaseDataguardAssociationId);
             return this;
         }
         @CustomType.Setter
+        public Builder peerAutonomousContainerDatabaseDisplayName(String peerAutonomousContainerDatabaseDisplayName) {
+            this.peerAutonomousContainerDatabaseDisplayName = Objects.requireNonNull(peerAutonomousContainerDatabaseDisplayName);
+            return this;
+        }
+        @CustomType.Setter
         public Builder peerAutonomousContainerDatabaseId(String peerAutonomousContainerDatabaseId) {
             this.peerAutonomousContainerDatabaseId = Objects.requireNonNull(peerAutonomousContainerDatabaseId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
+            this.peerCloudAutonomousVmClusterId = Objects.requireNonNull(peerCloudAutonomousVmClusterId);
             return this;
         }
         @CustomType.Setter
@@ -354,6 +409,11 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
         @CustomType.Setter
         public Builder role(String role) {
             this.role = Objects.requireNonNull(role);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder standbyMaintenanceBufferInDays(Integer standbyMaintenanceBufferInDays) {
+            this.standbyMaintenanceBufferInDays = Objects.requireNonNull(standbyMaintenanceBufferInDays);
             return this;
         }
         @CustomType.Setter
@@ -391,12 +451,17 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsAutonomous
             o.id = id;
             o.isAutomaticFailoverEnabled = isAutomaticFailoverEnabled;
             o.lifecycleDetails = lifecycleDetails;
+            o.peerAutonomousContainerDatabaseBackupConfigs = peerAutonomousContainerDatabaseBackupConfigs;
+            o.peerAutonomousContainerDatabaseCompartmentId = peerAutonomousContainerDatabaseCompartmentId;
             o.peerAutonomousContainerDatabaseDataguardAssociationId = peerAutonomousContainerDatabaseDataguardAssociationId;
+            o.peerAutonomousContainerDatabaseDisplayName = peerAutonomousContainerDatabaseDisplayName;
             o.peerAutonomousContainerDatabaseId = peerAutonomousContainerDatabaseId;
+            o.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
             o.peerLifecycleState = peerLifecycleState;
             o.peerRole = peerRole;
             o.protectionMode = protectionMode;
             o.role = role;
+            o.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             o.state = state;
             o.timeCreated = timeCreated;
             o.timeLastRoleChanged = timeLastRoleChanged;

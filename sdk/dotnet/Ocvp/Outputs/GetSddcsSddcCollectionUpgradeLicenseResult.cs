@@ -13,13 +13,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
     [OutputType]
     public sealed class GetSddcsSddcCollectionUpgradeLicenseResult
     {
-        /// <summary>
-        /// vSphere license key value.
-        /// </summary>
         public readonly string LicenseKey;
-        /// <summary>
-        /// vSphere license type.
-        /// </summary>
         public readonly string LicenseType;
 
         [OutputConstructor]

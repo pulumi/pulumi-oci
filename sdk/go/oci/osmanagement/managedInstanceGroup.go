@@ -42,7 +42,8 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				OsFamily: pulumi.Any(_var.Managed_instance_group_os_family),
+//				OsFamily:           pulumi.Any(_var.Managed_instance_group_os_family),
+//				ManagedInstanceIds: pulumi.Any(_var.Managed_instance_group_managed_instance_ids),
 //			})
 //			if err != nil {
 //				return err
@@ -76,12 +77,14 @@ type ManagedInstanceGroup struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags         pulumi.MapOutput `pulumi:"freeformTags"`
 	ManagedInstanceCount pulumi.IntOutput `pulumi:"managedInstanceCount"`
-	// list of Managed Instances in the group
-	ManagedInstances ManagedInstanceGroupManagedInstanceArrayOutput `pulumi:"managedInstances"`
-	// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+	// The list of managed instance OCIDs to be added to the managed instance group.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ManagedInstanceIds pulumi.StringArrayOutput `pulumi:"managedInstanceIds"`
+	// list of Managed Instances in the group
+	ManagedInstances ManagedInstanceGroupManagedInstanceArrayOutput `pulumi:"managedInstances"`
+	// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
 	OsFamily pulumi.StringOutput `pulumi:"osFamily"`
 	// The current state of the Software Source.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -134,12 +137,14 @@ type managedInstanceGroupState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags         map[string]interface{} `pulumi:"freeformTags"`
 	ManagedInstanceCount *int                   `pulumi:"managedInstanceCount"`
-	// list of Managed Instances in the group
-	ManagedInstances []ManagedInstanceGroupManagedInstance `pulumi:"managedInstances"`
-	// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+	// The list of managed instance OCIDs to be added to the managed instance group.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
+	// list of Managed Instances in the group
+	ManagedInstances []ManagedInstanceGroupManagedInstance `pulumi:"managedInstances"`
+	// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
 	OsFamily *string `pulumi:"osFamily"`
 	// The current state of the Software Source.
 	State *string `pulumi:"state"`
@@ -157,12 +162,14 @@ type ManagedInstanceGroupState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags         pulumi.MapInput
 	ManagedInstanceCount pulumi.IntPtrInput
-	// list of Managed Instances in the group
-	ManagedInstances ManagedInstanceGroupManagedInstanceArrayInput
-	// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+	// The list of managed instance OCIDs to be added to the managed instance group.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ManagedInstanceIds pulumi.StringArrayInput
+	// list of Managed Instances in the group
+	ManagedInstances ManagedInstanceGroupManagedInstanceArrayInput
+	// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
 	OsFamily pulumi.StringPtrInput
 	// The current state of the Software Source.
 	State pulumi.StringPtrInput
@@ -183,10 +190,12 @@ type managedInstanceGroupArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+	// The list of managed instance OCIDs to be added to the managed instance group.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
+	// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
 	OsFamily *string `pulumi:"osFamily"`
 }
 
@@ -202,10 +211,12 @@ type ManagedInstanceGroupArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
+	// The list of managed instance OCIDs to be added to the managed instance group.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ManagedInstanceIds pulumi.StringArrayInput
+	// The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
 	OsFamily pulumi.StringPtrInput
 }
 
@@ -325,6 +336,14 @@ func (o ManagedInstanceGroupOutput) ManagedInstanceCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.IntOutput { return v.ManagedInstanceCount }).(pulumi.IntOutput)
 }
 
+// The list of managed instance OCIDs to be added to the managed instance group.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedInstanceGroupOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringArrayOutput { return v.ManagedInstanceIds }).(pulumi.StringArrayOutput)
+}
+
 // list of Managed Instances in the group
 func (o ManagedInstanceGroupOutput) ManagedInstances() ManagedInstanceGroupManagedInstanceArrayOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) ManagedInstanceGroupManagedInstanceArrayOutput {
@@ -333,9 +352,6 @@ func (o ManagedInstanceGroupOutput) ManagedInstances() ManagedInstanceGroupManag
 }
 
 // The Operating System type of the managed instance(s) on which this scheduled job will operate. If not specified, this defaults to Linux.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ManagedInstanceGroupOutput) OsFamily() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringOutput { return v.OsFamily }).(pulumi.StringOutput)
 }

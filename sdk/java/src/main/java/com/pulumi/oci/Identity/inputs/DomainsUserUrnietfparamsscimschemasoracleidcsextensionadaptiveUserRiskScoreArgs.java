@@ -143,6 +143,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
      * * returned: always
      * * type: integer
      * * uniqueness: none
+     * * idcsMaxValue: 100
+     * * idcsMinValue: 0
      * 
      */
     @Import(name="score", required=true)
@@ -162,6 +164,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
      * * returned: always
      * * type: integer
      * * uniqueness: none
+     * * idcsMaxValue: 100
+     * * idcsMinValue: 0
      * 
      */
     public Output<Integer> score() {
@@ -456,6 +460,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
          * * returned: always
          * * type: integer
          * * uniqueness: none
+         * * idcsMaxValue: 100
+         * * idcsMinValue: 0
          * 
          * @return builder
          * 
@@ -479,6 +485,8 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiv
          * * returned: always
          * * type: integer
          * * uniqueness: none
+         * * idcsMaxValue: 100
+         * * idcsMinValue: 0
          * 
          * @return builder
          * 

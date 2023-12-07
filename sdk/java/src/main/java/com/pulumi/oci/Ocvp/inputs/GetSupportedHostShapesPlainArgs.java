@@ -5,6 +5,7 @@ package com.pulumi.oci.Ocvp.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Ocvp.inputs.GetSupportedHostShapesFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -36,6 +37,36 @@ public final class GetSupportedHostShapesPlainArgs extends com.pulumi.resources.
 
     public Optional<List<GetSupportedHostShapesFilter>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * A filter to return only the shapes compatible with the initial host shape of the Cluster.
+     * 
+     */
+    @Import(name="initialHostShapeName")
+    private @Nullable String initialHostShapeName;
+
+    /**
+     * @return A filter to return only the shapes compatible with the initial host shape of the Cluster.
+     * 
+     */
+    public Optional<String> initialHostShapeName() {
+        return Optional.ofNullable(this.initialHostShapeName);
+    }
+
+    /**
+     * A filter to return only resources that support single host SDDC.
+     * 
+     */
+    @Import(name="isSingleHostSddcSupported")
+    private @Nullable Boolean isSingleHostSddcSupported;
+
+    /**
+     * @return A filter to return only resources that support single host SDDC.
+     * 
+     */
+    public Optional<Boolean> isSingleHostSddcSupported() {
+        return Optional.ofNullable(this.isSingleHostSddcSupported);
     }
 
     /**
@@ -81,6 +112,8 @@ public final class GetSupportedHostShapesPlainArgs extends com.pulumi.resources.
     private GetSupportedHostShapesPlainArgs(GetSupportedHostShapesPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
+        this.initialHostShapeName = $.initialHostShapeName;
+        this.isSingleHostSddcSupported = $.isSingleHostSddcSupported;
         this.name = $.name;
         this.sddcType = $.sddcType;
     }
@@ -121,6 +154,28 @@ public final class GetSupportedHostShapesPlainArgs extends com.pulumi.resources.
 
         public Builder filters(GetSupportedHostShapesFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param initialHostShapeName A filter to return only the shapes compatible with the initial host shape of the Cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder initialHostShapeName(@Nullable String initialHostShapeName) {
+            $.initialHostShapeName = initialHostShapeName;
+            return this;
+        }
+
+        /**
+         * @param isSingleHostSddcSupported A filter to return only resources that support single host SDDC.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isSingleHostSddcSupported(@Nullable Boolean isSingleHostSddcSupported) {
+            $.isSingleHostSddcSupported = isSingleHostSddcSupported;
+            return this;
         }
 
         /**

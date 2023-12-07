@@ -68,14 +68,14 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
-     * The OCID of the Cloud Autonomous VM Cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      * 
      */
     @Import(name="cloudAutonomousVmClusterId")
     private @Nullable Output<String> cloudAutonomousVmClusterId;
 
     /**
-     * @return The OCID of the Cloud Autonomous VM Cluster.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      * 
      */
     public Optional<Output<String>> cloudAutonomousVmClusterId() {
@@ -587,7 +587,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param cloudAutonomousVmClusterId The OCID of the Cloud Autonomous VM Cluster.
+         * @param cloudAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
          * 
          * @return builder
          * 
@@ -598,7 +598,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param cloudAutonomousVmClusterId The OCID of the Cloud Autonomous VM Cluster.
+         * @param cloudAutonomousVmClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
          * 
          * @return builder
          * 

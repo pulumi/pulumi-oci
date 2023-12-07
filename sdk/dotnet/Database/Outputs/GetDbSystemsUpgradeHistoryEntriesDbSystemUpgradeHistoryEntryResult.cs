@@ -30,9 +30,17 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string NewGiVersion;
         /// <summary>
+        /// A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+        /// </summary>
+        public readonly string NewOsVersion;
+        /// <summary>
         /// A valid Oracle Grid Infrastructure (GI) software version.
         /// </summary>
         public readonly string OldGiVersion;
+        /// <summary>
+        /// A valid Oracle Software (OS) version eg. Oracle Linux Server release 8
+        /// </summary>
+        public readonly string OldOsVersion;
         /// <summary>
         /// The retention period, in days, for the snapshot that allows you to perform a rollback of the upgrade operation. After this number of days passes, you cannot roll back the upgrade.
         /// </summary>
@@ -60,7 +68,11 @@ namespace Pulumi.Oci.Database.Outputs
 
             string newGiVersion,
 
+            string newOsVersion,
+
             string oldGiVersion,
+
+            string oldOsVersion,
 
             int snapshotRetentionPeriodInDays,
 
@@ -74,7 +86,9 @@ namespace Pulumi.Oci.Database.Outputs
             Id = id;
             LifecycleDetails = lifecycleDetails;
             NewGiVersion = newGiVersion;
+            NewOsVersion = newOsVersion;
             OldGiVersion = oldGiVersion;
+            OldOsVersion = oldOsVersion;
             SnapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
             State = state;
             TimeEnded = timeEnded;

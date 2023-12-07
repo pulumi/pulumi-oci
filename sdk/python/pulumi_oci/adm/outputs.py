@@ -19,6 +19,7 @@ __all__ = [
     'VulnerabilityAuditApplicationDependency',
     'VulnerabilityAuditConfiguration',
     'VulnerabilityAuditSource',
+    'VulnerabilityAuditUsageData',
     'VulnerabilityAuditVulnerability',
     'GetKnowledgebasesFilterResult',
     'GetKnowledgebasesKnowledgeBaseCollectionResult',
@@ -58,6 +59,7 @@ __all__ = [
     'GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityResult',
     'GetVulnerabilityAuditConfigurationResult',
     'GetVulnerabilityAuditSourceResult',
+    'GetVulnerabilityAuditUsageDataResult',
     'GetVulnerabilityAuditVulnerabilityResult',
     'GetVulnerabilityAuditsFilterResult',
     'GetVulnerabilityAuditsVulnerabilityAuditCollectionResult',
@@ -65,6 +67,7 @@ __all__ = [
     'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemApplicationDependencyResult',
     'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationResult',
     'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult',
+    'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataResult',
     'GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult',
 ]
 
@@ -728,10 +731,6 @@ class VulnerabilityAuditSource(dict):
                  oci_resource_id: Optional[str] = None):
         """
         :param str type: Source type of the vulnerability audit.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str description: Description of the external resource source.
         :param str oci_resource_id: The Oracle Cloud identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure resource that triggered the vulnerability audit.
         """
@@ -746,10 +745,6 @@ class VulnerabilityAuditSource(dict):
     def type(self) -> str:
         """
         Source type of the vulnerability audit.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "type")
 
@@ -771,6 +766,82 @@ class VulnerabilityAuditSource(dict):
 
 
 @pulumi.output_type
+class VulnerabilityAuditUsageData(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VulnerabilityAuditUsageData. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VulnerabilityAuditUsageData.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VulnerabilityAuditUsageData.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: str,
+                 namespace: str,
+                 object: str,
+                 source_type: str):
+        """
+        :param str bucket: The Object Storage bucket to read the usage data from.
+        :param str namespace: The Object Storage namespace to read the usage data from.
+        :param str object: The Object Storage object name to read the usage data from.
+        :param str source_type: The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The Object Storage bucket to read the usage data from.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The Object Storage namespace to read the usage data from.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        The Object Storage object name to read the usage data from.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
 class VulnerabilityAuditVulnerability(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -779,6 +850,8 @@ class VulnerabilityAuditVulnerability(dict):
             suggest = "cvss_v2score"
         elif key == "cvssV3score":
             suggest = "cvss_v3score"
+        elif key == "isFalsePositive":
+            suggest = "is_false_positive"
         elif key == "isIgnored":
             suggest = "is_ignored"
 
@@ -797,11 +870,13 @@ class VulnerabilityAuditVulnerability(dict):
                  cvss_v2score: Optional[float] = None,
                  cvss_v3score: Optional[float] = None,
                  id: Optional[str] = None,
+                 is_false_positive: Optional[bool] = None,
                  is_ignored: Optional[bool] = None):
         """
         :param float cvss_v2score: Common Vulnerability Scoring System (CVSS) Version 2.
         :param float cvss_v3score: Common Vulnerability Scoring System (CVSS) Version 3.
         :param str id: Unique vulnerability identifier, e.g. CVE-1999-0067.
+        :param bool is_false_positive: Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
         :param bool is_ignored: Indicates if the vulnerability was ignored according to the audit configuration.
         """
         if cvss_v2score is not None:
@@ -810,6 +885,8 @@ class VulnerabilityAuditVulnerability(dict):
             pulumi.set(__self__, "cvss_v3score", cvss_v3score)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_false_positive is not None:
+            pulumi.set(__self__, "is_false_positive", is_false_positive)
         if is_ignored is not None:
             pulumi.set(__self__, "is_ignored", is_ignored)
 
@@ -836,6 +913,14 @@ class VulnerabilityAuditVulnerability(dict):
         Unique vulnerability identifier, e.g. CVE-1999-0067.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isFalsePositive")
+    def is_false_positive(self) -> Optional[bool]:
+        """
+        Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+        """
+        return pulumi.get(self, "is_false_positive")
 
     @property
     @pulumi.getter(name="isIgnored")
@@ -2656,16 +2741,19 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
                  cvss_v2score: float,
                  cvss_v3score: float,
                  id: str,
+                 is_false_positive: bool,
                  is_ignored: bool):
         """
         :param float cvss_v2score: Common Vulnerability Scoring System (CVSS) Version 2.
         :param float cvss_v3score: Common Vulnerability Scoring System (CVSS) Version 3.
         :param str id: Unique vulnerability identifier, e.g. CVE-1999-0067.
+        :param bool is_false_positive: Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
         :param bool is_ignored: Indicates if the vulnerability was ignored according to the audit configuration.
         """
         pulumi.set(__self__, "cvss_v2score", cvss_v2score)
         pulumi.set(__self__, "cvss_v3score", cvss_v3score)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_false_positive", is_false_positive)
         pulumi.set(__self__, "is_ignored", is_ignored)
 
     @property
@@ -2691,6 +2779,14 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilitiesApplicationDepend
         Unique vulnerability identifier, e.g. CVE-1999-0067.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isFalsePositive")
+    def is_false_positive(self) -> bool:
+        """
+        Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+        """
+        return pulumi.get(self, "is_false_positive")
 
     @property
     @pulumi.getter(name="isIgnored")
@@ -2796,6 +2892,7 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityRe
                  cvss_v2score: float,
                  cvss_v3score: float,
                  id: str,
+                 is_false_positive: bool,
                  is_ignored: bool):
         """
         :param float cvss_v2score: Common Vulnerability Scoring System (CVSS) Version 2.
@@ -2806,6 +2903,7 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityRe
         pulumi.set(__self__, "cvss_v2score", cvss_v2score)
         pulumi.set(__self__, "cvss_v3score", cvss_v3score)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_false_positive", is_false_positive)
         pulumi.set(__self__, "is_ignored", is_ignored)
 
     @property
@@ -2831,6 +2929,11 @@ class GetVulnerabilityAuditApplicationDependencyVulnerabilityItemVulnerabilityRe
         Unique vulnerability identifier, e.g. CVE-1999-0067.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isFalsePositive")
+    def is_false_positive(self) -> bool:
+        return pulumi.get(self, "is_false_positive")
 
     @property
     @pulumi.getter(name="isIgnored")
@@ -2922,21 +3025,75 @@ class GetVulnerabilityAuditSourceResult(dict):
 
 
 @pulumi.output_type
+class GetVulnerabilityAuditUsageDataResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 namespace: str,
+                 object: str,
+                 source_type: str):
+        """
+        :param str bucket: The Object Storage bucket to read the usage data from.
+        :param str namespace: The Object Storage namespace to read the usage data from.
+        :param str object: The Object Storage object name to read the usage data from.
+        :param str source_type: The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The Object Storage bucket to read the usage data from.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The Object Storage namespace to read the usage data from.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        The Object Storage object name to read the usage data from.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+        """
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
 class GetVulnerabilityAuditVulnerabilityResult(dict):
     def __init__(__self__, *,
                  cvss_v2score: float,
                  cvss_v3score: float,
                  id: str,
+                 is_false_positive: bool,
                  is_ignored: bool):
         """
         :param float cvss_v2score: Common Vulnerability Scoring System (CVSS) Version 2.
         :param float cvss_v3score: Common Vulnerability Scoring System (CVSS) Version 3.
         :param str id: Unique vulnerability identifier, e.g. CVE-1999-0067.
+        :param bool is_false_positive: Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
         :param bool is_ignored: Indicates if the vulnerability was ignored according to the audit configuration.
         """
         pulumi.set(__self__, "cvss_v2score", cvss_v2score)
         pulumi.set(__self__, "cvss_v3score", cvss_v3score)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_false_positive", is_false_positive)
         pulumi.set(__self__, "is_ignored", is_ignored)
 
     @property
@@ -2962,6 +3119,14 @@ class GetVulnerabilityAuditVulnerabilityResult(dict):
         Unique vulnerability identifier, e.g. CVE-1999-0067.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isFalsePositive")
+    def is_false_positive(self) -> bool:
+        """
+        Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+        """
+        return pulumi.get(self, "is_false_positive")
 
     @property
     @pulumi.getter(name="isIgnored")
@@ -3024,6 +3189,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
                  id: str,
                  is_success: bool,
                  knowledge_base_id: str,
+                 lifecycle_details: str,
                  max_observed_cvss_v2score: float,
                  max_observed_cvss_v2score_with_ignored: float,
                  max_observed_cvss_v3score: float,
@@ -3033,6 +3199,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
                  system_tags: Mapping[str, Any],
                  time_created: str,
                  time_updated: str,
+                 usage_datas: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataResult'],
                  vulnerabilities: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult'],
                  vulnerable_artifacts_count: int,
                  vulnerable_artifacts_count_with_ignored: int):
@@ -3046,6 +3213,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
         :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         :param bool is_success: A filter to return only successful or failed Vulnerability Audits.
         :param str knowledge_base_id: A filter to return only Vulnerability Audits that were created against the specified knowledge base.
+        :param str lifecycle_details: Details on the lifecycle state.
         :param float max_observed_cvss_v2score: Maximum Common Vulnerability Scoring System Version 2 score observed for non-ignored vulnerable application dependencies.
         :param float max_observed_cvss_v2score_with_ignored: Maximum Common Vulnerability Scoring System Version 2 score observed for vulnerable application dependencies including ignored ones.
         :param float max_observed_cvss_v3score: Maximum Common Vulnerability Scoring System Version 3 score observed for non-ignored vulnerable application dependencies.
@@ -3055,6 +3223,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The creation date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str time_updated: The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArgs'] usage_datas: The source details of the usage data on Object Storage. Set `sourceType` to `objectStorageTuple` and use [UsageDataViaObjectStorageTupleDetails](https://docs.cloud.oracle.com/iaas/api/#/en/adm/latest/requests/UsageDataViaObjectStorageTupleDetails) when specifying the namespace, bucket name, and object name.
         :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityArgs'] vulnerabilities: List of vulnerabilities found in the vulnerability audit.
         :param int vulnerable_artifacts_count: Count of non-ignored vulnerable application dependencies.
         :param int vulnerable_artifacts_count_with_ignored: Count of all vulnerable application dependencies.
@@ -3069,6 +3238,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_success", is_success)
         pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "max_observed_cvss_v2score", max_observed_cvss_v2score)
         pulumi.set(__self__, "max_observed_cvss_v2score_with_ignored", max_observed_cvss_v2score_with_ignored)
         pulumi.set(__self__, "max_observed_cvss_v3score", max_observed_cvss_v3score)
@@ -3078,6 +3248,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "usage_datas", usage_datas)
         pulumi.set(__self__, "vulnerabilities", vulnerabilities)
         pulumi.set(__self__, "vulnerable_artifacts_count", vulnerable_artifacts_count)
         pulumi.set(__self__, "vulnerable_artifacts_count_with_ignored", vulnerable_artifacts_count_with_ignored)
@@ -3160,6 +3331,14 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
         return pulumi.get(self, "knowledge_base_id")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Details on the lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter(name="maxObservedCvssV2score")
     def max_observed_cvss_v2score(self) -> float:
         """
@@ -3230,6 +3409,14 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
         The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="usageDatas")
+    def usage_datas(self) -> Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataResult']:
+        """
+        The source details of the usage data on Object Storage. Set `sourceType` to `objectStorageTuple` and use [UsageDataViaObjectStorageTupleDetails](https://docs.cloud.oracle.com/iaas/api/#/en/adm/latest/requests/UsageDataViaObjectStorageTupleDetails) when specifying the namespace, bucket name, and object name.
+        """
+        return pulumi.get(self, "usage_datas")
 
     @property
     @pulumi.getter
@@ -3363,21 +3550,75 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult(dict):
 
 
 @pulumi.output_type
+class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 namespace: str,
+                 object: str,
+                 source_type: str):
+        """
+        :param str bucket: The Object Storage bucket to read the usage data from.
+        :param str namespace: The Object Storage namespace to read the usage data from.
+        :param str object: The Object Storage object name to read the usage data from.
+        :param str source_type: The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "source_type", source_type)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The Object Storage bucket to read the usage data from.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The Object Storage namespace to read the usage data from.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        The Object Storage object name to read the usage data from.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> str:
+        """
+        The destination type. Use `objectStorageTuple` when specifying the namespace, bucket name, and object name.
+        """
+        return pulumi.get(self, "source_type")
+
+
+@pulumi.output_type
 class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult(dict):
     def __init__(__self__, *,
                  cvss_v2score: float,
                  cvss_v3score: float,
                  id: str,
+                 is_false_positive: bool,
                  is_ignored: bool):
         """
         :param float cvss_v2score: Common Vulnerability Scoring System (CVSS) Version 2.
         :param float cvss_v3score: Common Vulnerability Scoring System (CVSS) Version 3.
         :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
+        :param bool is_false_positive: Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
         :param bool is_ignored: Indicates if the vulnerability was ignored according to the audit configuration.
         """
         pulumi.set(__self__, "cvss_v2score", cvss_v2score)
         pulumi.set(__self__, "cvss_v3score", cvss_v3score)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_false_positive", is_false_positive)
         pulumi.set(__self__, "is_ignored", is_ignored)
 
     @property
@@ -3403,6 +3644,14 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemVulnerabilityResult(
         A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isFalsePositive")
+    def is_false_positive(self) -> bool:
+        """
+        Indicates if the vulnerability is a false positive according to the usage data. If no usage data was provided or the service cannot infer usage of the vulnerable code then this property is `null`.
+        """
+        return pulumi.get(self, "is_false_positive")
 
     @property
     @pulumi.getter(name="isIgnored")

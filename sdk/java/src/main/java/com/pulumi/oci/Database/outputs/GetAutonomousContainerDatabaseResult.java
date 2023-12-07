@@ -227,6 +227,11 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     private String timeCreated;
     /**
+     * @return The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+     * 
+     */
+    private String timeOfLastBackup;
+    /**
      * @return The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      * 
      */
@@ -559,6 +564,13 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.timeCreated;
     }
     /**
+     * @return The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
+     * 
+     */
+    public String timeOfLastBackup() {
+        return this.timeOfLastBackup;
+    }
+    /**
      * @return The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
      * 
      */
@@ -648,6 +660,7 @@ public final class GetAutonomousContainerDatabaseResult {
         private Integer standbyMaintenanceBufferInDays;
         private String state;
         private String timeCreated;
+        private String timeOfLastBackup;
         private String timeSnapshotStandbyRevert;
         private Integer totalCpus;
         private String vaultId;
@@ -707,6 +720,7 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.standbyMaintenanceBufferInDays = defaults.standbyMaintenanceBufferInDays;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeOfLastBackup = defaults.timeOfLastBackup;
     	      this.timeSnapshotStandbyRevert = defaults.timeSnapshotStandbyRevert;
     	      this.totalCpus = defaults.totalCpus;
     	      this.vaultId = defaults.vaultId;
@@ -992,6 +1006,11 @@ public final class GetAutonomousContainerDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeOfLastBackup(String timeOfLastBackup) {
+            this.timeOfLastBackup = Objects.requireNonNull(timeOfLastBackup);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeSnapshotStandbyRevert(String timeSnapshotStandbyRevert) {
             this.timeSnapshotStandbyRevert = Objects.requireNonNull(timeSnapshotStandbyRevert);
             return this;
@@ -1065,6 +1084,7 @@ public final class GetAutonomousContainerDatabaseResult {
             o.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             o.state = state;
             o.timeCreated = timeCreated;
+            o.timeOfLastBackup = timeOfLastBackup;
             o.timeSnapshotStandbyRevert = timeSnapshotStandbyRevert;
             o.totalCpus = totalCpus;
             o.vaultId = vaultId;

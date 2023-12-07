@@ -53,6 +53,10 @@ export interface GetFleetJavaMigrationAnalysisResultResult {
      */
     readonly applicationExecutionType: string;
     /**
+     * The unique key that identifies the application.
+     */
+    readonly applicationKey: string;
+    /**
      * The name of the application for which the Java migration analysis was performed.
      */
     readonly applicationName: string;

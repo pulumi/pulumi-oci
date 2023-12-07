@@ -63,6 +63,8 @@ type GetFleetJavaMigrationAnalysisResultArgs struct {
 type GetFleetJavaMigrationAnalysisResultResult struct {
 	// Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
 	ApplicationExecutionType string `pulumi:"applicationExecutionType"`
+	// The unique key that identifies the application.
+	ApplicationKey string `pulumi:"applicationKey"`
 	// The name of the application for which the Java migration analysis was performed.
 	ApplicationName string `pulumi:"applicationName"`
 	// The installation path of the application for which the Java migration analysis was performed.
@@ -139,6 +141,11 @@ func (o GetFleetJavaMigrationAnalysisResultResultOutput) ToGetFleetJavaMigration
 // Execution type of the application for an application type, such as WAR and EAR, that is deployed or installed.
 func (o GetFleetJavaMigrationAnalysisResultResultOutput) ApplicationExecutionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.ApplicationExecutionType }).(pulumi.StringOutput)
+}
+
+// The unique key that identifies the application.
+func (o GetFleetJavaMigrationAnalysisResultResultOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetJavaMigrationAnalysisResultResult) string { return v.ApplicationKey }).(pulumi.StringOutput)
 }
 
 // The name of the application for which the Java migration analysis was performed.

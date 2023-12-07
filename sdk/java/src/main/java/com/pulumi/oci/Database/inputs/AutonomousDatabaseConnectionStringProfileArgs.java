@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -58,6 +59,13 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
      */
     public Optional<Output<String>> hostFormat() {
         return Optional.ofNullable(this.hostFormat);
+    }
+
+    @Import(name="isRegional")
+    private @Nullable Output<Boolean> isRegional;
+
+    public Optional<Output<Boolean>> isRegional() {
+        return Optional.ofNullable(this.isRegional);
     }
 
     /**
@@ -141,6 +149,7 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
         this.consumerGroup = $.consumerGroup;
         this.displayName = $.displayName;
         this.hostFormat = $.hostFormat;
+        this.isRegional = $.isRegional;
         this.protocol = $.protocol;
         this.sessionMode = $.sessionMode;
         this.syntaxFormat = $.syntaxFormat;
@@ -227,6 +236,15 @@ public final class AutonomousDatabaseConnectionStringProfileArgs extends com.pul
          */
         public Builder hostFormat(String hostFormat) {
             return hostFormat(Output.of(hostFormat));
+        }
+
+        public Builder isRegional(@Nullable Output<Boolean> isRegional) {
+            $.isRegional = isRegional;
+            return this;
+        }
+
+        public Builder isRegional(Boolean isRegional) {
+            return isRegional(Output.of(isRegional));
         }
 
         /**

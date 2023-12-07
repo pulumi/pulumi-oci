@@ -62,6 +62,8 @@ type GetJavaReleaseResult struct {
 	ArtifactContentTypes []string `pulumi:"artifactContentTypes"`
 	// List of Java artifacts.
 	Artifacts []GetJavaReleaseArtifact `pulumi:"artifacts"`
+	// The number of days since this release has been under the security baseline.
+	DaysUnderSecurityBaseline int `pulumi:"daysUnderSecurityBaseline"`
 	// Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 	FamilyDetails []GetJavaReleaseFamilyDetail `pulumi:"familyDetails"`
 	// Java release family identifier.
@@ -72,6 +74,8 @@ type GetJavaReleaseResult struct {
 	LicenseDetails []GetJavaReleaseLicenseDetail `pulumi:"licenseDetails"`
 	// License type for the Java version.
 	LicenseType string `pulumi:"licenseType"`
+	// List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
+	MosPatches []GetJavaReleaseMosPatch `pulumi:"mosPatches"`
 	// Parent Java release version identifier. This is applicable for BPR releases.
 	ParentReleaseVersion string `pulumi:"parentReleaseVersion"`
 	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -134,6 +138,11 @@ func (o GetJavaReleaseResultOutput) Artifacts() GetJavaReleaseArtifactArrayOutpu
 	return o.ApplyT(func(v GetJavaReleaseResult) []GetJavaReleaseArtifact { return v.Artifacts }).(GetJavaReleaseArtifactArrayOutput)
 }
 
+// The number of days since this release has been under the security baseline.
+func (o GetJavaReleaseResultOutput) DaysUnderSecurityBaseline() pulumi.IntOutput {
+	return o.ApplyT(func(v GetJavaReleaseResult) int { return v.DaysUnderSecurityBaseline }).(pulumi.IntOutput)
+}
+
 // Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
 func (o GetJavaReleaseResultOutput) FamilyDetails() GetJavaReleaseFamilyDetailArrayOutput {
 	return o.ApplyT(func(v GetJavaReleaseResult) []GetJavaReleaseFamilyDetail { return v.FamilyDetails }).(GetJavaReleaseFamilyDetailArrayOutput)
@@ -157,6 +166,11 @@ func (o GetJavaReleaseResultOutput) LicenseDetails() GetJavaReleaseLicenseDetail
 // License type for the Java version.
 func (o GetJavaReleaseResultOutput) LicenseType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleaseResult) string { return v.LicenseType }).(pulumi.StringOutput)
+}
+
+// List of My Oracle Support(MoS) patches available for this release. This information is only available for `BPR` release type.
+func (o GetJavaReleaseResultOutput) MosPatches() GetJavaReleaseMosPatchArrayOutput {
+	return o.ApplyT(func(v GetJavaReleaseResult) []GetJavaReleaseMosPatch { return v.MosPatches }).(GetJavaReleaseMosPatchArrayOutput)
 }
 
 // Parent Java release version identifier. This is applicable for BPR releases.

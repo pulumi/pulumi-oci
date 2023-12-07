@@ -12,7 +12,55 @@ namespace Pulumi.Oci.Database
     /// <summary>
     /// This resource provides the Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
     /// 
-    /// Update Autonomous Data Guard association.
+    /// Create a new Autonomous Data Guard association. An Autonomous Data Guard association represents the replication relationship between the
+    /// specified Autonomous Container database and a peer Autonomous Container database. For more information, see [Using Oracle Data Guard](https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/usingdataguard.htm).
+    /// 
+    /// All Oracle Cloud Infrastructure resources, including Data Guard associations, get an Oracle-assigned, unique ID
+    /// called an Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response.
+    /// You can also retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the
+    /// resource in the Console. For more information, see
+    /// [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testAutonomousContainerDatabaseDataguardAssociation = new Oci.Database.AutonomousContainerDatabaseDataguardAssociation("testAutonomousContainerDatabaseDataguardAssociation", new()
+    ///     {
+    ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
+    ///         PeerAutonomousContainerDatabaseDisplayName = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name,
+    ///         PeerCloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
+    ///         ProtectionMode = @var.Autonomous_container_database_dataguard_association_protection_mode,
+    ///         FastStartFailOverLagLimitInSeconds = @var.Autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds,
+    ///         IsAutomaticFailoverEnabled = @var.Autonomous_container_database_dataguard_association_is_automatic_failover_enabled,
+    ///         PeerAutonomousContainerDatabaseBackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs
+    ///         {
+    ///             BackupDestinationDetails = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs
+    ///                 {
+    ///                     Type = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type,
+    ///                     DbrsPolicyId = oci_identity_policy.Test_policy.Id,
+    ///                     Id = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
+    ///                     InternetProxy = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+    ///                     VpcPassword = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
+    ///                     VpcUser = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
+    ///                 },
+    ///             },
+    ///             RecoveryWindowInDays = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days,
+    ///         },
+    ///         PeerAutonomousContainerDatabaseCompartmentId = oci_identity_compartment.Test_compartment.Id,
+    ///         StandbyMaintenanceBufferInDays = @var.Autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// 
     /// ## Import
     /// 
@@ -37,11 +85,8 @@ namespace Pulumi.Oci.Database
         [Output("applyRate")]
         public Output<string> ApplyRate { get; private set; } = null!;
 
-        /// <summary>
-        /// The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// </summary>
         [Output("autonomousContainerDatabaseDataguardAssociationId")]
-        public Output<string> AutonomousContainerDatabaseDataguardAssociationId { get; private set; } = null!;
+        public Output<int> AutonomousContainerDatabaseDataguardAssociationId { get; private set; } = null!;
 
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -68,16 +113,40 @@ namespace Pulumi.Oci.Database
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Backup options for the standby Autonomous Container Database.
+        /// </summary>
+        [Output("peerAutonomousContainerDatabaseBackupConfig")]
+        public Output<Outputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig> PeerAutonomousContainerDatabaseBackupConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
+        /// </summary>
+        [Output("peerAutonomousContainerDatabaseCompartmentId")]
+        public Output<string> PeerAutonomousContainerDatabaseCompartmentId { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         /// </summary>
         [Output("peerAutonomousContainerDatabaseDataguardAssociationId")]
         public Output<string> PeerAutonomousContainerDatabaseDataguardAssociationId { get; private set; } = null!;
 
         /// <summary>
+        /// The display name for the peer Autonomous Container Database.
+        /// </summary>
+        [Output("peerAutonomousContainerDatabaseDisplayName")]
+        public Output<string> PeerAutonomousContainerDatabaseDisplayName { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
         /// </summary>
         [Output("peerAutonomousContainerDatabaseId")]
         public Output<string> PeerAutonomousContainerDatabaseId { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+        /// </summary>
+        [Output("peerCloudAutonomousVmClusterId")]
+        public Output<string> PeerCloudAutonomousVmClusterId { get; private set; } = null!;
 
         /// <summary>
         /// The current state of Autonomous Data Guard.
@@ -95,6 +164,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
         /// 
         /// 
+        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -106,6 +176,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("role")]
         public Output<string> Role { get; private set; } = null!;
+
+        /// <summary>
+        /// The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
+        /// </summary>
+        [Output("standbyMaintenanceBufferInDays")]
+        public Output<int> StandbyMaintenanceBufferInDays { get; private set; } = null!;
 
         /// <summary>
         /// The current state of Autonomous Data Guard.
@@ -183,11 +259,8 @@ namespace Pulumi.Oci.Database
 
     public sealed class AutonomousContainerDatabaseDataguardAssociationArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// </summary>
-        [Input("autonomousContainerDatabaseDataguardAssociationId", required: true)]
-        public Input<string> AutonomousContainerDatabaseDataguardAssociationId { get; set; } = null!;
+        [Input("autonomousContainerDatabaseDataguardAssociationId")]
+        public Input<int>? AutonomousContainerDatabaseDataguardAssociationId { get; set; }
 
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -208,14 +281,45 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
 
         /// <summary>
+        /// Backup options for the standby Autonomous Container Database.
+        /// </summary>
+        [Input("peerAutonomousContainerDatabaseBackupConfig")]
+        public Input<Inputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs>? PeerAutonomousContainerDatabaseBackupConfig { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
+        /// </summary>
+        [Input("peerAutonomousContainerDatabaseCompartmentId")]
+        public Input<string>? PeerAutonomousContainerDatabaseCompartmentId { get; set; }
+
+        /// <summary>
+        /// The display name for the peer Autonomous Container Database.
+        /// </summary>
+        [Input("peerAutonomousContainerDatabaseDisplayName", required: true)]
+        public Input<string> PeerAutonomousContainerDatabaseDisplayName { get; set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+        /// </summary>
+        [Input("peerCloudAutonomousVmClusterId", required: true)]
+        public Input<string> PeerCloudAutonomousVmClusterId { get; set; } = null!;
+
+        /// <summary>
         /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
+        /// 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("protectionMode")]
-        public Input<string>? ProtectionMode { get; set; }
+        [Input("protectionMode", required: true)]
+        public Input<string> ProtectionMode { get; set; } = null!;
+
+        /// <summary>
+        /// The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
+        /// </summary>
+        [Input("standbyMaintenanceBufferInDays")]
+        public Input<int>? StandbyMaintenanceBufferInDays { get; set; }
 
         public AutonomousContainerDatabaseDataguardAssociationArgs()
         {
@@ -237,11 +341,8 @@ namespace Pulumi.Oci.Database
         [Input("applyRate")]
         public Input<string>? ApplyRate { get; set; }
 
-        /// <summary>
-        /// The Autonomous Container Database-Autonomous Data Guard association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// </summary>
         [Input("autonomousContainerDatabaseDataguardAssociationId")]
-        public Input<string>? AutonomousContainerDatabaseDataguardAssociationId { get; set; }
+        public Input<int>? AutonomousContainerDatabaseDataguardAssociationId { get; set; }
 
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -268,16 +369,40 @@ namespace Pulumi.Oci.Database
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
+        /// Backup options for the standby Autonomous Container Database.
+        /// </summary>
+        [Input("peerAutonomousContainerDatabaseBackupConfig")]
+        public Input<Inputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigGetArgs>? PeerAutonomousContainerDatabaseBackupConfig { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
+        /// </summary>
+        [Input("peerAutonomousContainerDatabaseCompartmentId")]
+        public Input<string>? PeerAutonomousContainerDatabaseCompartmentId { get; set; }
+
+        /// <summary>
         /// The OCID of the peer Autonomous Container Database-Autonomous Data Guard association.
         /// </summary>
         [Input("peerAutonomousContainerDatabaseDataguardAssociationId")]
         public Input<string>? PeerAutonomousContainerDatabaseDataguardAssociationId { get; set; }
 
         /// <summary>
+        /// The display name for the peer Autonomous Container Database.
+        /// </summary>
+        [Input("peerAutonomousContainerDatabaseDisplayName")]
+        public Input<string>? PeerAutonomousContainerDatabaseDisplayName { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Container Database.
         /// </summary>
         [Input("peerAutonomousContainerDatabaseId")]
         public Input<string>? PeerAutonomousContainerDatabaseId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+        /// </summary>
+        [Input("peerCloudAutonomousVmClusterId")]
+        public Input<string>? PeerCloudAutonomousVmClusterId { get; set; }
 
         /// <summary>
         /// The current state of Autonomous Data Guard.
@@ -295,6 +420,7 @@ namespace Pulumi.Oci.Database
         /// (Updatable) The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation. 
         /// 
         /// 
+        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -306,6 +432,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }
+
+        /// <summary>
+        /// The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
+        /// </summary>
+        [Input("standbyMaintenanceBufferInDays")]
+        public Input<int>? StandbyMaintenanceBufferInDays { get; set; }
 
         /// <summary>
         /// The current state of Autonomous Data Guard.

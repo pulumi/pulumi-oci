@@ -54,7 +54,7 @@ class GetIpsecConnectionTunnelsResult:
     @pulumi.getter(name="ipSecConnectionTunnels")
     def ip_sec_connection_tunnels(self) -> Sequence['outputs.GetIpsecConnectionTunnelsIpSecConnectionTunnelResult']:
         """
-        The list of ip_sec_connection_tunnels.
+        The list of two ip_sec_connection_tunnels.
         """
         return pulumi.get(self, "ip_sec_connection_tunnels")
 

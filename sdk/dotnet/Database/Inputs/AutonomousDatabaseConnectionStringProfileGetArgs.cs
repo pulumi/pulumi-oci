@@ -30,6 +30,9 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("hostFormat")]
         public Input<string>? HostFormat { get; set; }
 
+        [Input("isRegional")]
+        public Input<bool>? IsRegional { get; set; }
+
         /// <summary>
         /// Protocol used by the connection.
         /// </summary>

@@ -551,35 +551,35 @@ public final class GetManagedInstancesManagedInstance {
             return this;
         }
         public GetManagedInstancesManagedInstance build() {
-            final var o = new GetManagedInstancesManagedInstance();
-            o.autonomouses = autonomouses;
-            o.bugUpdatesAvailable = bugUpdatesAvailable;
-            o.childSoftwareSources = childSoftwareSources;
-            o.compartmentId = compartmentId;
-            o.description = description;
-            o.displayName = displayName;
-            o.enhancementUpdatesAvailable = enhancementUpdatesAvailable;
-            o.id = id;
-            o.isDataCollectionAuthorized = isDataCollectionAuthorized;
-            o.isRebootRequired = isRebootRequired;
-            o.kspliceEffectiveKernelVersion = kspliceEffectiveKernelVersion;
-            o.lastBoot = lastBoot;
-            o.lastCheckin = lastCheckin;
-            o.managedInstanceGroups = managedInstanceGroups;
-            o.managedInstanceId = managedInstanceId;
-            o.notificationTopicId = notificationTopicId;
-            o.osFamily = osFamily;
-            o.osKernelVersion = osKernelVersion;
-            o.osName = osName;
-            o.osVersion = osVersion;
-            o.otherUpdatesAvailable = otherUpdatesAvailable;
-            o.parentSoftwareSources = parentSoftwareSources;
-            o.scheduledJobCount = scheduledJobCount;
-            o.securityUpdatesAvailable = securityUpdatesAvailable;
-            o.status = status;
-            o.updatesAvailable = updatesAvailable;
-            o.workRequestCount = workRequestCount;
-            return o;
+            final var _resultValue = new GetManagedInstancesManagedInstance();
+            _resultValue.autonomouses = autonomouses;
+            _resultValue.bugUpdatesAvailable = bugUpdatesAvailable;
+            _resultValue.childSoftwareSources = childSoftwareSources;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.enhancementUpdatesAvailable = enhancementUpdatesAvailable;
+            _resultValue.id = id;
+            _resultValue.isDataCollectionAuthorized = isDataCollectionAuthorized;
+            _resultValue.isRebootRequired = isRebootRequired;
+            _resultValue.kspliceEffectiveKernelVersion = kspliceEffectiveKernelVersion;
+            _resultValue.lastBoot = lastBoot;
+            _resultValue.lastCheckin = lastCheckin;
+            _resultValue.managedInstanceGroups = managedInstanceGroups;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.notificationTopicId = notificationTopicId;
+            _resultValue.osFamily = osFamily;
+            _resultValue.osKernelVersion = osKernelVersion;
+            _resultValue.osName = osName;
+            _resultValue.osVersion = osVersion;
+            _resultValue.otherUpdatesAvailable = otherUpdatesAvailable;
+            _resultValue.parentSoftwareSources = parentSoftwareSources;
+            _resultValue.scheduledJobCount = scheduledJobCount;
+            _resultValue.securityUpdatesAvailable = securityUpdatesAvailable;
+            _resultValue.status = status;
+            _resultValue.updatesAvailable = updatesAvailable;
+            _resultValue.workRequestCount = workRequestCount;
+            return _resultValue;
         }
     }
 }

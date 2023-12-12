@@ -42,9 +42,9 @@ public final class GetWorkspaceProjectsProjectSummaryCollection {
             return items(List.of(items));
         }
         public GetWorkspaceProjectsProjectSummaryCollection build() {
-            final var o = new GetWorkspaceProjectsProjectSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetWorkspaceProjectsProjectSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

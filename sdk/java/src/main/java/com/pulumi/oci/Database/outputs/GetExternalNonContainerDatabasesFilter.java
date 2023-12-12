@@ -67,11 +67,11 @@ public final class GetExternalNonContainerDatabasesFilter {
             return values(List.of(values));
         }
         public GetExternalNonContainerDatabasesFilter build() {
-            final var o = new GetExternalNonContainerDatabasesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExternalNonContainerDatabasesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

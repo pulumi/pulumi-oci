@@ -86,11 +86,11 @@ public final class ExternalListenerServicedAsm {
             return this;
         }
         public ExternalListenerServicedAsm build() {
-            final var o = new ExternalListenerServicedAsm();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new ExternalListenerServicedAsm();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

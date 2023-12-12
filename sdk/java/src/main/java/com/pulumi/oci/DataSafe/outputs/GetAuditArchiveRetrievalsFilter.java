@@ -67,11 +67,11 @@ public final class GetAuditArchiveRetrievalsFilter {
             return values(List.of(values));
         }
         public GetAuditArchiveRetrievalsFilter build() {
-            final var o = new GetAuditArchiveRetrievalsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAuditArchiveRetrievalsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

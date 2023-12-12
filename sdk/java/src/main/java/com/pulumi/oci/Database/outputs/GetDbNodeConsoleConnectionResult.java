@@ -230,19 +230,19 @@ public final class GetDbNodeConsoleConnectionResult {
             return this;
         }
         public GetDbNodeConsoleConnectionResult build() {
-            final var o = new GetDbNodeConsoleConnectionResult();
-            o.compartmentId = compartmentId;
-            o.connectionString = connectionString;
-            o.dbNodeId = dbNodeId;
-            o.definedTags = definedTags;
-            o.fingerprint = fingerprint;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.publicKey = publicKey;
-            o.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDbNodeConsoleConnectionResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionString = connectionString;
+            _resultValue.dbNodeId = dbNodeId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.fingerprint = fingerprint;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.publicKey = publicKey;
+            _resultValue.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

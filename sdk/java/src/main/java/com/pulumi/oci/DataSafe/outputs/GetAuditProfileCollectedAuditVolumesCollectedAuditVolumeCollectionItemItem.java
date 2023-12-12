@@ -103,12 +103,12 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
             return this;
         }
         public GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem build() {
-            final var o = new GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem();
-            o.archivedVolume = archivedVolume;
-            o.auditProfileId = auditProfileId;
-            o.monthInConsideration = monthInConsideration;
-            o.onlineVolume = onlineVolume;
-            return o;
+            final var _resultValue = new GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem();
+            _resultValue.archivedVolume = archivedVolume;
+            _resultValue.auditProfileId = auditProfileId;
+            _resultValue.monthInConsideration = monthInConsideration;
+            _resultValue.onlineVolume = onlineVolume;
+            return _resultValue;
         }
     }
 }

@@ -110,12 +110,12 @@ public final class DatabaseToolsConnectionProxyClient {
             return this;
         }
         public DatabaseToolsConnectionProxyClient build() {
-            final var o = new DatabaseToolsConnectionProxyClient();
-            o.proxyAuthenticationType = proxyAuthenticationType;
-            o.roles = roles;
-            o.userName = userName;
-            o.userPassword = userPassword;
-            return o;
+            final var _resultValue = new DatabaseToolsConnectionProxyClient();
+            _resultValue.proxyAuthenticationType = proxyAuthenticationType;
+            _resultValue.roles = roles;
+            _resultValue.userName = userName;
+            _resultValue.userPassword = userPassword;
+            return _resultValue;
         }
     }
 }

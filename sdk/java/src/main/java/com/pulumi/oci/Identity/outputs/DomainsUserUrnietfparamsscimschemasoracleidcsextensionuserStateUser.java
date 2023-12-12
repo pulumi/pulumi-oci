@@ -409,17 +409,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser();
-            o.lastFailedLoginDate = lastFailedLoginDate;
-            o.lastSuccessfulLoginDate = lastSuccessfulLoginDate;
-            o.locked = locked;
-            o.loginAttempts = loginAttempts;
-            o.maxConcurrentSessions = maxConcurrentSessions;
-            o.previousSuccessfulLoginDate = previousSuccessfulLoginDate;
-            o.recoveryAttempts = recoveryAttempts;
-            o.recoveryEnrollAttempts = recoveryEnrollAttempts;
-            o.recoveryLocked = recoveryLocked;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser();
+            _resultValue.lastFailedLoginDate = lastFailedLoginDate;
+            _resultValue.lastSuccessfulLoginDate = lastSuccessfulLoginDate;
+            _resultValue.locked = locked;
+            _resultValue.loginAttempts = loginAttempts;
+            _resultValue.maxConcurrentSessions = maxConcurrentSessions;
+            _resultValue.previousSuccessfulLoginDate = previousSuccessfulLoginDate;
+            _resultValue.recoveryAttempts = recoveryAttempts;
+            _resultValue.recoveryEnrollAttempts = recoveryEnrollAttempts;
+            _resultValue.recoveryLocked = recoveryLocked;
+            return _resultValue;
         }
     }
 }

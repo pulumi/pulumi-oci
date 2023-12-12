@@ -42,9 +42,9 @@ public final class GetRemediationRecipesRemediationRecipeCollection {
             return items(List.of(items));
         }
         public GetRemediationRecipesRemediationRecipeCollection build() {
-            final var o = new GetRemediationRecipesRemediationRecipeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetRemediationRecipesRemediationRecipeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

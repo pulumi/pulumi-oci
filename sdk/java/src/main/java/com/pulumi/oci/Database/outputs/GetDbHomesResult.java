@@ -212,18 +212,18 @@ public final class GetDbHomesResult {
             return this;
         }
         public GetDbHomesResult build() {
-            final var o = new GetDbHomesResult();
-            o.backupId = backupId;
-            o.compartmentId = compartmentId;
-            o.dbHomes = dbHomes;
-            o.dbSystemId = dbSystemId;
-            o.dbVersion = dbVersion;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.vmClusterId = vmClusterId;
-            return o;
+            final var _resultValue = new GetDbHomesResult();
+            _resultValue.backupId = backupId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbHomes = dbHomes;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.vmClusterId = vmClusterId;
+            return _resultValue;
         }
     }
 }

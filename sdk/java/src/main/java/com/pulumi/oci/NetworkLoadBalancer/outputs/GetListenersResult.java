@@ -97,12 +97,12 @@ public final class GetListenersResult {
             return this;
         }
         public GetListenersResult build() {
-            final var o = new GetListenersResult();
-            o.filters = filters;
-            o.id = id;
-            o.listenerCollections = listenerCollections;
-            o.networkLoadBalancerId = networkLoadBalancerId;
-            return o;
+            final var _resultValue = new GetListenersResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.listenerCollections = listenerCollections;
+            _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            return _resultValue;
         }
     }
 }

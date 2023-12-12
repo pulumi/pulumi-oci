@@ -543,36 +543,36 @@ public final class GetExadataInsightResult {
             return this;
         }
         public GetExadataInsightResult build() {
-            final var o = new GetExadataInsightResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
-            o.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
-            o.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
-            o.enterpriseManagerEntityName = enterpriseManagerEntityName;
-            o.enterpriseManagerEntityType = enterpriseManagerEntityType;
-            o.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
-            o.entitySource = entitySource;
-            o.exadataDisplayName = exadataDisplayName;
-            o.exadataInfraId = exadataInfraId;
-            o.exadataInfraResourceType = exadataInfraResourceType;
-            o.exadataInsightId = exadataInsightId;
-            o.exadataName = exadataName;
-            o.exadataRackType = exadataRackType;
-            o.exadataShape = exadataShape;
-            o.exadataType = exadataType;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isAutoSyncEnabled = isAutoSyncEnabled;
-            o.isVirtualizedExadata = isVirtualizedExadata;
-            o.lifecycleDetails = lifecycleDetails;
-            o.memberVmClusterDetails = memberVmClusterDetails;
-            o.state = state;
-            o.status = status;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetExadataInsightResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            _resultValue.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
+            _resultValue.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
+            _resultValue.enterpriseManagerEntityName = enterpriseManagerEntityName;
+            _resultValue.enterpriseManagerEntityType = enterpriseManagerEntityType;
+            _resultValue.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
+            _resultValue.entitySource = entitySource;
+            _resultValue.exadataDisplayName = exadataDisplayName;
+            _resultValue.exadataInfraId = exadataInfraId;
+            _resultValue.exadataInfraResourceType = exadataInfraResourceType;
+            _resultValue.exadataInsightId = exadataInsightId;
+            _resultValue.exadataName = exadataName;
+            _resultValue.exadataRackType = exadataRackType;
+            _resultValue.exadataShape = exadataShape;
+            _resultValue.exadataType = exadataType;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isAutoSyncEnabled = isAutoSyncEnabled;
+            _resultValue.isVirtualizedExadata = isVirtualizedExadata;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.memberVmClusterDetails = memberVmClusterDetails;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

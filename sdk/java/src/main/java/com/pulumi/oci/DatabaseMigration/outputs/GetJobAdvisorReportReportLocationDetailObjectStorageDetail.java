@@ -84,11 +84,11 @@ public final class GetJobAdvisorReportReportLocationDetailObjectStorageDetail {
             return this;
         }
         public GetJobAdvisorReportReportLocationDetailObjectStorageDetail build() {
-            final var o = new GetJobAdvisorReportReportLocationDetailObjectStorageDetail();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new GetJobAdvisorReportReportLocationDetailObjectStorageDetail();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

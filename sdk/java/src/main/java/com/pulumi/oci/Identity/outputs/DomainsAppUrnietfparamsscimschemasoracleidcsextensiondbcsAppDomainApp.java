@@ -146,11 +146,11 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppD
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

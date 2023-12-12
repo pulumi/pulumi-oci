@@ -50,10 +50,10 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCon
             return this;
         }
         public GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost build() {
-            final var o = new GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost();
-            o.hostIp = hostIp;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailHost();
+            _resultValue.hostIp = hostIp;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

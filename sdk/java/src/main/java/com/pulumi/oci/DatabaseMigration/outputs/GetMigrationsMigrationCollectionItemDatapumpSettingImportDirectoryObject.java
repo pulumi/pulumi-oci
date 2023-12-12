@@ -65,10 +65,10 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSettingImportDire
             return this;
         }
         public GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject build() {
-            final var o = new GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject();
-            o.name = name;
-            o.path = path;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemDatapumpSettingImportDirectoryObject();
+            _resultValue.name = name;
+            _resultValue.path = path;
+            return _resultValue;
         }
     }
 }

@@ -91,11 +91,11 @@ public final class TargetAssetEstimatedCostStorage {
             return volumes(List.of(volumes));
         }
         public TargetAssetEstimatedCostStorage build() {
-            final var o = new TargetAssetEstimatedCostStorage();
-            o.totalGbPerMonth = totalGbPerMonth;
-            o.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
-            o.volumes = volumes;
-            return o;
+            final var _resultValue = new TargetAssetEstimatedCostStorage();
+            _resultValue.totalGbPerMonth = totalGbPerMonth;
+            _resultValue.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
+            _resultValue.volumes = volumes;
+            return _resultValue;
         }
     }
 }

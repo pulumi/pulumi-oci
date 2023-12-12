@@ -88,11 +88,11 @@ public final class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTra
             return values(List.of(values));
         }
         public GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItem build() {
-            final var o = new GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItem();
-            o.ifExists = ifExists;
-            o.name = name;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItem();
+            _resultValue.ifExists = ifExists;
+            _resultValue.name = name;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -131,16 +131,16 @@ public final class GetImagesImageImageSourceDetail {
             return this;
         }
         public GetImagesImageImageSourceDetail build() {
-            final var o = new GetImagesImageImageSourceDetail();
-            o.bucketName = bucketName;
-            o.namespaceName = namespaceName;
-            o.objectName = objectName;
-            o.operatingSystem = operatingSystem;
-            o.operatingSystemVersion = operatingSystemVersion;
-            o.sourceImageType = sourceImageType;
-            o.sourceType = sourceType;
-            o.sourceUri = sourceUri;
-            return o;
+            final var _resultValue = new GetImagesImageImageSourceDetail();
+            _resultValue.bucketName = bucketName;
+            _resultValue.namespaceName = namespaceName;
+            _resultValue.objectName = objectName;
+            _resultValue.operatingSystem = operatingSystem;
+            _resultValue.operatingSystemVersion = operatingSystemVersion;
+            _resultValue.sourceImageType = sourceImageType;
+            _resultValue.sourceType = sourceType;
+            _resultValue.sourceUri = sourceUri;
+            return _resultValue;
         }
     }
 }

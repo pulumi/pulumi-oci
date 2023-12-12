@@ -84,11 +84,11 @@ public final class GetBdsInstancesBdsInstanceMasterNodeShapeConfig {
             return this;
         }
         public GetBdsInstancesBdsInstanceMasterNodeShapeConfig build() {
-            final var o = new GetBdsInstancesBdsInstanceMasterNodeShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.nvmes = nvmes;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetBdsInstancesBdsInstanceMasterNodeShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.nvmes = nvmes;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

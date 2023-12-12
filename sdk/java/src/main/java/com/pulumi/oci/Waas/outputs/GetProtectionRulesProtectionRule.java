@@ -190,16 +190,16 @@ public final class GetProtectionRulesProtectionRule {
             return this;
         }
         public GetProtectionRulesProtectionRule build() {
-            final var o = new GetProtectionRulesProtectionRule();
-            o.action = action;
-            o.description = description;
-            o.exclusions = exclusions;
-            o.key = key;
-            o.labels = labels;
-            o.modSecurityRuleIds = modSecurityRuleIds;
-            o.name = name;
-            o.waasPolicyId = waasPolicyId;
-            return o;
+            final var _resultValue = new GetProtectionRulesProtectionRule();
+            _resultValue.action = action;
+            _resultValue.description = description;
+            _resultValue.exclusions = exclusions;
+            _resultValue.key = key;
+            _resultValue.labels = labels;
+            _resultValue.modSecurityRuleIds = modSecurityRuleIds;
+            _resultValue.name = name;
+            _resultValue.waasPolicyId = waasPolicyId;
+            return _resultValue;
         }
     }
 }

@@ -139,15 +139,15 @@ public final class GetLogAnalyticsResourceCategoriesListResult {
             return this;
         }
         public GetLogAnalyticsResourceCategoriesListResult build() {
-            final var o = new GetLogAnalyticsResourceCategoriesListResult();
-            o.categories = categories;
-            o.id = id;
-            o.items = items;
-            o.namespace = namespace;
-            o.resourceCategories = resourceCategories;
-            o.resourceIds = resourceIds;
-            o.resourceTypes = resourceTypes;
-            return o;
+            final var _resultValue = new GetLogAnalyticsResourceCategoriesListResult();
+            _resultValue.categories = categories;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.namespace = namespace;
+            _resultValue.resourceCategories = resourceCategories;
+            _resultValue.resourceIds = resourceIds;
+            _resultValue.resourceTypes = resourceTypes;
+            return _resultValue;
         }
     }
 }

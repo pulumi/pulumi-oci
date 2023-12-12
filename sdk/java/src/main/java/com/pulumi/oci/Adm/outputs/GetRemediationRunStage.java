@@ -122,13 +122,13 @@ public final class GetRemediationRunStage {
             return this;
         }
         public GetRemediationRunStage build() {
-            final var o = new GetRemediationRunStage();
-            o.summary = summary;
-            o.timeCreated = timeCreated;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetRemediationRunStage();
+            _resultValue.summary = summary;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

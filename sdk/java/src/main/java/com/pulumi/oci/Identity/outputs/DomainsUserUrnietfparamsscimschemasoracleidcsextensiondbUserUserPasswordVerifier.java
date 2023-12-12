@@ -107,10 +107,10 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserU
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

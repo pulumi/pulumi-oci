@@ -105,12 +105,12 @@ public final class GetScheduledRunsResult {
             return scheduledRunCollections(List.of(scheduledRunCollections));
         }
         public GetScheduledRunsResult build() {
-            final var o = new GetScheduledRunsResult();
-            o.filters = filters;
-            o.id = id;
-            o.scheduleId = scheduleId;
-            o.scheduledRunCollections = scheduledRunCollections;
-            return o;
+            final var _resultValue = new GetScheduledRunsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.scheduleId = scheduleId;
+            _resultValue.scheduledRunCollections = scheduledRunCollections;
+            return _resultValue;
         }
     }
 }

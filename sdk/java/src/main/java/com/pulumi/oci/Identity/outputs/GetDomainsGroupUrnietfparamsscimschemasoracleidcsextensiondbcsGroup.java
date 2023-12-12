@@ -112,12 +112,12 @@ public final class GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbc
             return instanceLevelSchemaNames(List.of(instanceLevelSchemaNames));
         }
         public GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup build() {
-            final var o = new GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup();
-            o.domainLevelSchema = domainLevelSchema;
-            o.domainLevelSchemaNames = domainLevelSchemaNames;
-            o.instanceLevelSchema = instanceLevelSchema;
-            o.instanceLevelSchemaNames = instanceLevelSchemaNames;
-            return o;
+            final var _resultValue = new GetDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup();
+            _resultValue.domainLevelSchema = domainLevelSchema;
+            _resultValue.domainLevelSchemaNames = domainLevelSchemaNames;
+            _resultValue.instanceLevelSchema = instanceLevelSchema;
+            _resultValue.instanceLevelSchemaNames = instanceLevelSchemaNames;
+            return _resultValue;
         }
     }
 }

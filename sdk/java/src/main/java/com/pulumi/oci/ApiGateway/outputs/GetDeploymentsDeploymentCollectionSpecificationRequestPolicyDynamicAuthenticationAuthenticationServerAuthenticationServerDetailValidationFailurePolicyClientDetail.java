@@ -103,12 +103,12 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail();
-            o.clientId = clientId;
-            o.clientSecretId = clientSecretId;
-            o.clientSecretVersionNumber = clientSecretVersionNumber;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetail();
+            _resultValue.clientId = clientId;
+            _resultValue.clientSecretId = clientSecretId;
+            _resultValue.clientSecretVersionNumber = clientSecretVersionNumber;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

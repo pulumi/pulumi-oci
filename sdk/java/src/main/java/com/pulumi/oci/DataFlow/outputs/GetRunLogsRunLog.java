@@ -101,14 +101,14 @@ public final class GetRunLogsRunLog {
             return this;
         }
         public GetRunLogsRunLog build() {
-            final var o = new GetRunLogsRunLog();
-            o.name = name;
-            o.runId = runId;
-            o.sizeInBytes = sizeInBytes;
-            o.source = source;
-            o.timeCreated = timeCreated;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetRunLogsRunLog();
+            _resultValue.name = name;
+            _resultValue.runId = runId;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.source = source;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

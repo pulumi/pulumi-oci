@@ -67,10 +67,10 @@ public final class ClusterOptionsKubernetesNetworkConfig {
             return this;
         }
         public ClusterOptionsKubernetesNetworkConfig build() {
-            final var o = new ClusterOptionsKubernetesNetworkConfig();
-            o.podsCidr = podsCidr;
-            o.servicesCidr = servicesCidr;
-            return o;
+            final var _resultValue = new ClusterOptionsKubernetesNetworkConfig();
+            _resultValue.podsCidr = podsCidr;
+            _resultValue.servicesCidr = servicesCidr;
+            return _resultValue;
         }
     }
 }

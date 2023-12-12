@@ -225,18 +225,18 @@ public final class DrPlanExecutionGroupExecutionStepExecution {
             return this;
         }
         public DrPlanExecutionGroupExecutionStepExecution build() {
-            final var o = new DrPlanExecutionGroupExecutionStepExecution();
-            o.displayName = displayName;
-            o.executionDurationInSec = executionDurationInSec;
-            o.groupId = groupId;
-            o.logLocations = logLocations;
-            o.status = status;
-            o.statusDetails = statusDetails;
-            o.stepId = stepId;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            o.type = type;
-            return o;
+            final var _resultValue = new DrPlanExecutionGroupExecutionStepExecution();
+            _resultValue.displayName = displayName;
+            _resultValue.executionDurationInSec = executionDurationInSec;
+            _resultValue.groupId = groupId;
+            _resultValue.logLocations = logLocations;
+            _resultValue.status = status;
+            _resultValue.statusDetails = statusDetails;
+            _resultValue.stepId = stepId;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

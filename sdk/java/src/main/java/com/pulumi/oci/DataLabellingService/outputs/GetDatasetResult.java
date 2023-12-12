@@ -422,28 +422,28 @@ public final class GetDatasetResult {
             return this;
         }
         public GetDatasetResult build() {
-            final var o = new GetDatasetResult();
-            o.additionalProperties = additionalProperties;
-            o.annotationFormat = annotationFormat;
-            o.compartmentId = compartmentId;
-            o.datasetFormatDetails = datasetFormatDetails;
-            o.datasetId = datasetId;
-            o.datasetSourceDetails = datasetSourceDetails;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.initialImportDatasetConfigurations = initialImportDatasetConfigurations;
-            o.initialRecordGenerationConfigurations = initialRecordGenerationConfigurations;
-            o.labelSets = labelSets;
-            o.labelingInstructions = labelingInstructions;
-            o.lifecycleDetails = lifecycleDetails;
-            o.lifecycleSubstate = lifecycleSubstate;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDatasetResult();
+            _resultValue.additionalProperties = additionalProperties;
+            _resultValue.annotationFormat = annotationFormat;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.datasetFormatDetails = datasetFormatDetails;
+            _resultValue.datasetId = datasetId;
+            _resultValue.datasetSourceDetails = datasetSourceDetails;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.initialImportDatasetConfigurations = initialImportDatasetConfigurations;
+            _resultValue.initialRecordGenerationConfigurations = initialRecordGenerationConfigurations;
+            _resultValue.labelSets = labelSets;
+            _resultValue.labelingInstructions = labelingInstructions;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.lifecycleSubstate = lifecycleSubstate;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

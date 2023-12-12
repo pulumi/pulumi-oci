@@ -88,11 +88,11 @@ public final class GetDomainsUserAttributesSettingAttributeSetting {
             return this;
         }
         public GetDomainsUserAttributesSettingAttributeSetting build() {
-            final var o = new GetDomainsUserAttributesSettingAttributeSetting();
-            o.endUserMutability = endUserMutability;
-            o.endUserMutabilityCanonicalValues = endUserMutabilityCanonicalValues;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetDomainsUserAttributesSettingAttributeSetting();
+            _resultValue.endUserMutability = endUserMutability;
+            _resultValue.endUserMutabilityCanonicalValues = endUserMutabilityCanonicalValues;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

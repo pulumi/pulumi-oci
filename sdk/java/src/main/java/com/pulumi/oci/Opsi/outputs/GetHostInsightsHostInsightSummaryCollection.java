@@ -42,9 +42,9 @@ public final class GetHostInsightsHostInsightSummaryCollection {
             return items(List.of(items));
         }
         public GetHostInsightsHostInsightSummaryCollection build() {
-            final var o = new GetHostInsightsHostInsightSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetHostInsightsHostInsightSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

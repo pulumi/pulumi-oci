@@ -46,9 +46,9 @@ public final class GetSessionsSessionKeyDetail {
             return this;
         }
         public GetSessionsSessionKeyDetail build() {
-            final var o = new GetSessionsSessionKeyDetail();
-            o.publicKeyContent = publicKeyContent;
-            return o;
+            final var _resultValue = new GetSessionsSessionKeyDetail();
+            _resultValue.publicKeyContent = publicKeyContent;
+            return _resultValue;
         }
     }
 }

@@ -144,14 +144,14 @@ public final class GetSubscribersResult {
             return subscriberCollections(List.of(subscriberCollections));
         }
         public GetSubscribersResult build() {
-            final var o = new GetSubscribersResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.subscriberCollections = subscriberCollections;
-            return o;
+            final var _resultValue = new GetSubscribersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.subscriberCollections = subscriberCollections;
+            return _resultValue;
         }
     }
 }

@@ -204,17 +204,17 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
             return this;
         }
         public DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKey build() {
-            final var o = new DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKey();
-            o.alg = alg;
-            o.e = e;
-            o.format = format;
-            o.key = key;
-            o.keyOps = keyOps;
-            o.kid = kid;
-            o.kty = kty;
-            o.n = n;
-            o.use = use;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKey();
+            _resultValue.alg = alg;
+            _resultValue.e = e;
+            _resultValue.format = format;
+            _resultValue.key = key;
+            _resultValue.keyOps = keyOps;
+            _resultValue.kid = kid;
+            _resultValue.kty = kty;
+            _resultValue.n = n;
+            _resultValue.use = use;
+            return _resultValue;
         }
     }
 }

@@ -97,12 +97,12 @@ public final class GetOpensearchVersionsResult {
             return opensearchVersionsCollections(List.of(opensearchVersionsCollections));
         }
         public GetOpensearchVersionsResult build() {
-            final var o = new GetOpensearchVersionsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.opensearchVersionsCollections = opensearchVersionsCollections;
-            return o;
+            final var _resultValue = new GetOpensearchVersionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.opensearchVersionsCollections = opensearchVersionsCollections;
+            return _resultValue;
         }
     }
 }

@@ -314,23 +314,23 @@ public final class BdsInstanceClusterDetail {
             return this;
         }
         public BdsInstanceClusterDetail build() {
-            final var o = new BdsInstanceClusterDetail();
-            o.ambariUrl = ambariUrl;
-            o.bdCellVersion = bdCellVersion;
-            o.bdaVersion = bdaVersion;
-            o.bdmVersion = bdmVersion;
-            o.bdsVersion = bdsVersion;
-            o.bigDataManagerUrl = bigDataManagerUrl;
-            o.clouderaManagerUrl = clouderaManagerUrl;
-            o.csqlCellVersion = csqlCellVersion;
-            o.dbVersion = dbVersion;
-            o.hueServerUrl = hueServerUrl;
-            o.jupyterHubUrl = jupyterHubUrl;
-            o.odhVersion = odhVersion;
-            o.osVersion = osVersion;
-            o.timeCreated = timeCreated;
-            o.timeRefreshed = timeRefreshed;
-            return o;
+            final var _resultValue = new BdsInstanceClusterDetail();
+            _resultValue.ambariUrl = ambariUrl;
+            _resultValue.bdCellVersion = bdCellVersion;
+            _resultValue.bdaVersion = bdaVersion;
+            _resultValue.bdmVersion = bdmVersion;
+            _resultValue.bdsVersion = bdsVersion;
+            _resultValue.bigDataManagerUrl = bigDataManagerUrl;
+            _resultValue.clouderaManagerUrl = clouderaManagerUrl;
+            _resultValue.csqlCellVersion = csqlCellVersion;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.hueServerUrl = hueServerUrl;
+            _resultValue.jupyterHubUrl = jupyterHubUrl;
+            _resultValue.odhVersion = odhVersion;
+            _resultValue.osVersion = osVersion;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeRefreshed = timeRefreshed;
+            return _resultValue;
         }
     }
 }

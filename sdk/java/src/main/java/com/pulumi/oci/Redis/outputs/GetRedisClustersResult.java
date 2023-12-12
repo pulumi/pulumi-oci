@@ -144,14 +144,14 @@ public final class GetRedisClustersResult {
             return this;
         }
         public GetRedisClustersResult build() {
-            final var o = new GetRedisClustersResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.redisClusterCollections = redisClusterCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetRedisClustersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.redisClusterCollections = redisClusterCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

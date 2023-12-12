@@ -85,11 +85,11 @@ public final class GetVirtualServiceMtl {
             return this;
         }
         public GetVirtualServiceMtl build() {
-            final var o = new GetVirtualServiceMtl();
-            o.certificateId = certificateId;
-            o.maximumValidity = maximumValidity;
-            o.mode = mode;
-            return o;
+            final var _resultValue = new GetVirtualServiceMtl();
+            _resultValue.certificateId = certificateId;
+            _resultValue.maximumValidity = maximumValidity;
+            _resultValue.mode = mode;
+            return _resultValue;
         }
     }
 }

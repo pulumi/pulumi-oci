@@ -165,14 +165,14 @@ public final class GetClustersClusterOption {
             return serviceLbSubnetIds(List.of(serviceLbSubnetIds));
         }
         public GetClustersClusterOption build() {
-            final var o = new GetClustersClusterOption();
-            o.addOns = addOns;
-            o.admissionControllerOptions = admissionControllerOptions;
-            o.kubernetesNetworkConfigs = kubernetesNetworkConfigs;
-            o.persistentVolumeConfigs = persistentVolumeConfigs;
-            o.serviceLbConfigs = serviceLbConfigs;
-            o.serviceLbSubnetIds = serviceLbSubnetIds;
-            return o;
+            final var _resultValue = new GetClustersClusterOption();
+            _resultValue.addOns = addOns;
+            _resultValue.admissionControllerOptions = admissionControllerOptions;
+            _resultValue.kubernetesNetworkConfigs = kubernetesNetworkConfigs;
+            _resultValue.persistentVolumeConfigs = persistentVolumeConfigs;
+            _resultValue.serviceLbConfigs = serviceLbConfigs;
+            _resultValue.serviceLbSubnetIds = serviceLbSubnetIds;
+            return _resultValue;
         }
     }
 }

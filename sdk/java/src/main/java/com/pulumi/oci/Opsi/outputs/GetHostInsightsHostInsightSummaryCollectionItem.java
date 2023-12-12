@@ -543,35 +543,35 @@ public final class GetHostInsightsHostInsightSummaryCollectionItem {
             return this;
         }
         public GetHostInsightsHostInsightSummaryCollectionItem build() {
-            final var o = new GetHostInsightsHostInsightSummaryCollectionItem();
-            o.compartmentId = compartmentId;
-            o.computeId = computeId;
-            o.definedTags = definedTags;
-            o.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
-            o.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
-            o.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
-            o.enterpriseManagerEntityName = enterpriseManagerEntityName;
-            o.enterpriseManagerEntityType = enterpriseManagerEntityType;
-            o.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
-            o.entitySource = entitySource;
-            o.exadataInsightId = exadataInsightId;
-            o.freeformTags = freeformTags;
-            o.hostDisplayName = hostDisplayName;
-            o.hostName = hostName;
-            o.hostType = hostType;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.managementAgentId = managementAgentId;
-            o.platformName = platformName;
-            o.platformType = platformType;
-            o.platformVersion = platformVersion;
-            o.processorCount = processorCount;
-            o.state = state;
-            o.status = status;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetHostInsightsHostInsightSummaryCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeId = computeId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            _resultValue.enterpriseManagerEntityDisplayName = enterpriseManagerEntityDisplayName;
+            _resultValue.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
+            _resultValue.enterpriseManagerEntityName = enterpriseManagerEntityName;
+            _resultValue.enterpriseManagerEntityType = enterpriseManagerEntityType;
+            _resultValue.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
+            _resultValue.entitySource = entitySource;
+            _resultValue.exadataInsightId = exadataInsightId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostDisplayName = hostDisplayName;
+            _resultValue.hostName = hostName;
+            _resultValue.hostType = hostType;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.managementAgentId = managementAgentId;
+            _resultValue.platformName = platformName;
+            _resultValue.platformType = platformType;
+            _resultValue.platformVersion = platformVersion;
+            _resultValue.processorCount = processorCount;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -334,29 +334,29 @@ public final class GetUserAssessmentProfilesResult {
             return this;
         }
         public GetUserAssessmentProfilesResult build() {
-            final var o = new GetUserAssessmentProfilesResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.failedLoginAttemptsGreaterThanOrEqual = failedLoginAttemptsGreaterThanOrEqual;
-            o.failedLoginAttemptsLessThan = failedLoginAttemptsLessThan;
-            o.filters = filters;
-            o.id = id;
-            o.inactiveAccountTimeGreaterThanOrEqual = inactiveAccountTimeGreaterThanOrEqual;
-            o.inactiveAccountTimeLessThan = inactiveAccountTimeLessThan;
-            o.isUserCreated = isUserCreated;
-            o.passwordLockTimeGreaterThanOrEqual = passwordLockTimeGreaterThanOrEqual;
-            o.passwordLockTimeLessThan = passwordLockTimeLessThan;
-            o.passwordVerificationFunction = passwordVerificationFunction;
-            o.profileName = profileName;
-            o.profiles = profiles;
-            o.sessionsPerUserGreaterThanOrEqual = sessionsPerUserGreaterThanOrEqual;
-            o.sessionsPerUserLessThan = sessionsPerUserLessThan;
-            o.targetId = targetId;
-            o.userAssessmentId = userAssessmentId;
-            o.userCountGreaterThanOrEqual = userCountGreaterThanOrEqual;
-            o.userCountLessThan = userCountLessThan;
-            return o;
+            final var _resultValue = new GetUserAssessmentProfilesResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.failedLoginAttemptsGreaterThanOrEqual = failedLoginAttemptsGreaterThanOrEqual;
+            _resultValue.failedLoginAttemptsLessThan = failedLoginAttemptsLessThan;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.inactiveAccountTimeGreaterThanOrEqual = inactiveAccountTimeGreaterThanOrEqual;
+            _resultValue.inactiveAccountTimeLessThan = inactiveAccountTimeLessThan;
+            _resultValue.isUserCreated = isUserCreated;
+            _resultValue.passwordLockTimeGreaterThanOrEqual = passwordLockTimeGreaterThanOrEqual;
+            _resultValue.passwordLockTimeLessThan = passwordLockTimeLessThan;
+            _resultValue.passwordVerificationFunction = passwordVerificationFunction;
+            _resultValue.profileName = profileName;
+            _resultValue.profiles = profiles;
+            _resultValue.sessionsPerUserGreaterThanOrEqual = sessionsPerUserGreaterThanOrEqual;
+            _resultValue.sessionsPerUserLessThan = sessionsPerUserLessThan;
+            _resultValue.targetId = targetId;
+            _resultValue.userAssessmentId = userAssessmentId;
+            _resultValue.userCountGreaterThanOrEqual = userCountGreaterThanOrEqual;
+            _resultValue.userCountLessThan = userCountLessThan;
+            return _resultValue;
         }
     }
 }

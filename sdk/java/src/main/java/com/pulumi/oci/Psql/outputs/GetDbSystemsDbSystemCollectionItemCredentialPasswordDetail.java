@@ -71,12 +71,12 @@ public final class GetDbSystemsDbSystemCollectionItemCredentialPasswordDetail {
             return this;
         }
         public GetDbSystemsDbSystemCollectionItemCredentialPasswordDetail build() {
-            final var o = new GetDbSystemsDbSystemCollectionItemCredentialPasswordDetail();
-            o.password = password;
-            o.passwordType = passwordType;
-            o.secretId = secretId;
-            o.secretVersion = secretVersion;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemCollectionItemCredentialPasswordDetail();
+            _resultValue.password = password;
+            _resultValue.passwordType = passwordType;
+            _resultValue.secretId = secretId;
+            _resultValue.secretVersion = secretVersion;
+            return _resultValue;
         }
     }
 }

@@ -163,16 +163,16 @@ public final class GetPrivateApplicationPackagesPrivateApplicationPackageCollect
             return this;
         }
         public GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem build() {
-            final var o = new GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem();
-            o.contentUrl = contentUrl;
-            o.displayName = displayName;
-            o.id = id;
-            o.mimeType = mimeType;
-            o.packageType = packageType;
-            o.privateApplicationId = privateApplicationId;
-            o.timeCreated = timeCreated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetPrivateApplicationPackagesPrivateApplicationPackageCollectionItem();
+            _resultValue.contentUrl = contentUrl;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.mimeType = mimeType;
+            _resultValue.packageType = packageType;
+            _resultValue.privateApplicationId = privateApplicationId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

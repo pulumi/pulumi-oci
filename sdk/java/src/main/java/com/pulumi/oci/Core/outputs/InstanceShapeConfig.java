@@ -282,21 +282,21 @@ public final class InstanceShapeConfig {
             return this;
         }
         public InstanceShapeConfig build() {
-            final var o = new InstanceShapeConfig();
-            o.baselineOcpuUtilization = baselineOcpuUtilization;
-            o.gpuDescription = gpuDescription;
-            o.gpus = gpus;
-            o.localDiskDescription = localDiskDescription;
-            o.localDisks = localDisks;
-            o.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
-            o.maxVnicAttachments = maxVnicAttachments;
-            o.memoryInGbs = memoryInGbs;
-            o.networkingBandwidthInGbps = networkingBandwidthInGbps;
-            o.nvmes = nvmes;
-            o.ocpus = ocpus;
-            o.processorDescription = processorDescription;
-            o.vcpus = vcpus;
-            return o;
+            final var _resultValue = new InstanceShapeConfig();
+            _resultValue.baselineOcpuUtilization = baselineOcpuUtilization;
+            _resultValue.gpuDescription = gpuDescription;
+            _resultValue.gpus = gpus;
+            _resultValue.localDiskDescription = localDiskDescription;
+            _resultValue.localDisks = localDisks;
+            _resultValue.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
+            _resultValue.maxVnicAttachments = maxVnicAttachments;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.networkingBandwidthInGbps = networkingBandwidthInGbps;
+            _resultValue.nvmes = nvmes;
+            _resultValue.ocpus = ocpus;
+            _resultValue.processorDescription = processorDescription;
+            _resultValue.vcpus = vcpus;
+            return _resultValue;
         }
     }
 }

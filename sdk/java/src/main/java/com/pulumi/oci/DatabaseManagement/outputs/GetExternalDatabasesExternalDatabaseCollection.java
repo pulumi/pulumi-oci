@@ -50,9 +50,9 @@ public final class GetExternalDatabasesExternalDatabaseCollection {
             return items(List.of(items));
         }
         public GetExternalDatabasesExternalDatabaseCollection build() {
-            final var o = new GetExternalDatabasesExternalDatabaseCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalDatabasesExternalDatabaseCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetExternalListenersExternalListenerCollection {
             return items(List.of(items));
         }
         public GetExternalListenersExternalListenerCollection build() {
-            final var o = new GetExternalListenersExternalListenerCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalListenersExternalListenerCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

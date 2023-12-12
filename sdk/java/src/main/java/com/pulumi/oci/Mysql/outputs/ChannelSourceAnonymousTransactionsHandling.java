@@ -105,12 +105,12 @@ public final class ChannelSourceAnonymousTransactionsHandling {
             return this;
         }
         public ChannelSourceAnonymousTransactionsHandling build() {
-            final var o = new ChannelSourceAnonymousTransactionsHandling();
-            o.lastConfiguredLogFilename = lastConfiguredLogFilename;
-            o.lastConfiguredLogOffset = lastConfiguredLogOffset;
-            o.policy = policy;
-            o.uuid = uuid;
-            return o;
+            final var _resultValue = new ChannelSourceAnonymousTransactionsHandling();
+            _resultValue.lastConfiguredLogFilename = lastConfiguredLogFilename;
+            _resultValue.lastConfiguredLogOffset = lastConfiguredLogOffset;
+            _resultValue.policy = policy;
+            _resultValue.uuid = uuid;
+            return _resultValue;
         }
     }
 }

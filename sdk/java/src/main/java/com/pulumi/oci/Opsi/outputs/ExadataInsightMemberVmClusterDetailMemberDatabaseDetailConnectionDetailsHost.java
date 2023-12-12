@@ -68,10 +68,10 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
             return this;
         }
         public ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost build() {
-            final var o = new ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost();
-            o.hostIp = hostIp;
-            o.port = port;
-            return o;
+            final var _resultValue = new ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHost();
+            _resultValue.hostIp = hostIp;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

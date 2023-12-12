@@ -48,9 +48,9 @@ public final class GatewayIpAddress {
             return this;
         }
         public GatewayIpAddress build() {
-            final var o = new GatewayIpAddress();
-            o.ipAddress = ipAddress;
-            return o;
+            final var _resultValue = new GatewayIpAddress();
+            _resultValue.ipAddress = ipAddress;
+            return _resultValue;
         }
     }
 }

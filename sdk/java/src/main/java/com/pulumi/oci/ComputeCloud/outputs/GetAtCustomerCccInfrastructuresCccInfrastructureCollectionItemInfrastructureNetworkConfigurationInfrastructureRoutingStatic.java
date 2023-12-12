@@ -65,10 +65,10 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
             return this;
         }
         public GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic build() {
-            final var o = new GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic();
-            o.uplinkHsrpGroup = uplinkHsrpGroup;
-            o.uplinkVlan = uplinkVlan;
-            return o;
+            final var _resultValue = new GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationInfrastructureRoutingStatic();
+            _resultValue.uplinkHsrpGroup = uplinkHsrpGroup;
+            _resultValue.uplinkVlan = uplinkVlan;
+            return _resultValue;
         }
     }
 }

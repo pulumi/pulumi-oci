@@ -84,11 +84,11 @@ public final class GetContainerImagesContainerImageCollectionItemVersion {
             return this;
         }
         public GetContainerImagesContainerImageCollectionItemVersion build() {
-            final var o = new GetContainerImagesContainerImageCollectionItemVersion();
-            o.createdBy = createdBy;
-            o.timeCreated = timeCreated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetContainerImagesContainerImageCollectionItemVersion();
+            _resultValue.createdBy = createdBy;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

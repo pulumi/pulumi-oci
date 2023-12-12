@@ -188,16 +188,16 @@ public final class GetSubscriptionsSubscription {
             return this;
         }
         public GetSubscriptionsSubscription build() {
-            final var o = new GetSubscriptionsSubscription();
-            o.currencies = currencies;
-            o.holdReason = holdReason;
-            o.serviceName = serviceName;
-            o.status = status;
-            o.subscribedServices = subscribedServices;
-            o.timeEnd = timeEnd;
-            o.timeHoldReleaseEta = timeHoldReleaseEta;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetSubscriptionsSubscription();
+            _resultValue.currencies = currencies;
+            _resultValue.holdReason = holdReason;
+            _resultValue.serviceName = serviceName;
+            _resultValue.status = status;
+            _resultValue.subscribedServices = subscribedServices;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeHoldReleaseEta = timeHoldReleaseEta;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

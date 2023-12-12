@@ -244,20 +244,20 @@ public final class GetViewResult {
             return this;
         }
         public GetViewResult build() {
-            final var o = new GetViewResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isProtected = isProtected;
-            o.scope = scope;
-            o.self = self;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.viewId = viewId;
-            return o;
+            final var _resultValue = new GetViewResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isProtected = isProtected;
+            _resultValue.scope = scope;
+            _resultValue.self = self;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.viewId = viewId;
+            return _resultValue;
         }
     }
 }

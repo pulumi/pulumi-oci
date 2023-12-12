@@ -129,13 +129,13 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationPublicKe
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyAuthenticationPublicKey build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyAuthenticationPublicKey();
-            o.isSslVerifyDisabled = isSslVerifyDisabled;
-            o.keys = keys;
-            o.maxCacheDurationInHours = maxCacheDurationInHours;
-            o.type = type;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyAuthenticationPublicKey();
+            _resultValue.isSslVerifyDisabled = isSslVerifyDisabled;
+            _resultValue.keys = keys;
+            _resultValue.maxCacheDurationInHours = maxCacheDurationInHours;
+            _resultValue.type = type;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

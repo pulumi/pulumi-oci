@@ -50,9 +50,9 @@ public final class GetFusionEnvironmentAdminUsersAdminUserCollection {
             return items(List.of(items));
         }
         public GetFusionEnvironmentAdminUsersAdminUserCollection build() {
-            final var o = new GetFusionEnvironmentAdminUsersAdminUserCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentAdminUsersAdminUserCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

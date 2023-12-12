@@ -69,10 +69,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
             return objects(List.of(objects));
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema();
-            o.name = name;
-            o.objects = objects;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingDetailSchema();
+            _resultValue.name = name;
+            _resultValue.objects = objects;
+            return _resultValue;
         }
     }
 }

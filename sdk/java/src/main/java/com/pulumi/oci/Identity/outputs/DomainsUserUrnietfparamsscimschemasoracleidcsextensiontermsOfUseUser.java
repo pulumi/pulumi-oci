@@ -75,9 +75,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOf
             return termsOfUseConsents(List.of(termsOfUseConsents));
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser();
-            o.termsOfUseConsents = termsOfUseConsents;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser();
+            _resultValue.termsOfUseConsents = termsOfUseConsents;
+            return _resultValue;
         }
     }
 }

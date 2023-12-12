@@ -70,10 +70,10 @@ public final class GetLogsLogConfiguration {
             return sources(List.of(sources));
         }
         public GetLogsLogConfiguration build() {
-            final var o = new GetLogsLogConfiguration();
-            o.compartmentId = compartmentId;
-            o.sources = sources;
-            return o;
+            final var _resultValue = new GetLogsLogConfiguration();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.sources = sources;
+            return _resultValue;
         }
     }
 }

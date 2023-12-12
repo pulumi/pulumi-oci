@@ -141,14 +141,14 @@ public final class GetVmClusterRecommendedNetworkVmNetworkNode {
             return this;
         }
         public GetVmClusterRecommendedNetworkVmNetworkNode build() {
-            final var o = new GetVmClusterRecommendedNetworkVmNetworkNode();
-            o.dbServerId = dbServerId;
-            o.hostname = hostname;
-            o.ip = ip;
-            o.state = state;
-            o.vip = vip;
-            o.vipHostname = vipHostname;
-            return o;
+            final var _resultValue = new GetVmClusterRecommendedNetworkVmNetworkNode();
+            _resultValue.dbServerId = dbServerId;
+            _resultValue.hostname = hostname;
+            _resultValue.ip = ip;
+            _resultValue.state = state;
+            _resultValue.vip = vip;
+            _resultValue.vipHostname = vipHostname;
+            return _resultValue;
         }
     }
 }

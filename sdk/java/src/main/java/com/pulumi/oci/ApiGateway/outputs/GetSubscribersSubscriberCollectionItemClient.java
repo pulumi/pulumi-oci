@@ -65,10 +65,10 @@ public final class GetSubscribersSubscriberCollectionItemClient {
             return this;
         }
         public GetSubscribersSubscriberCollectionItemClient build() {
-            final var o = new GetSubscribersSubscriberCollectionItemClient();
-            o.name = name;
-            o.token = token;
-            return o;
+            final var _resultValue = new GetSubscribersSubscriberCollectionItemClient();
+            _resultValue.name = name;
+            _resultValue.token = token;
+            return _resultValue;
         }
     }
 }

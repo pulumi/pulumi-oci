@@ -65,10 +65,10 @@ public final class GetManagementAgentPluginCountItemDimension {
             return this;
         }
         public GetManagementAgentPluginCountItemDimension build() {
-            final var o = new GetManagementAgentPluginCountItemDimension();
-            o.pluginDisplayName = pluginDisplayName;
-            o.pluginName = pluginName;
-            return o;
+            final var _resultValue = new GetManagementAgentPluginCountItemDimension();
+            _resultValue.pluginDisplayName = pluginDisplayName;
+            _resultValue.pluginName = pluginName;
+            return _resultValue;
         }
     }
 }

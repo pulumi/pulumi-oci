@@ -65,10 +65,10 @@ public final class GetProtectedDatabaseRecoveryServiceSubnet {
             return this;
         }
         public GetProtectedDatabaseRecoveryServiceSubnet build() {
-            final var o = new GetProtectedDatabaseRecoveryServiceSubnet();
-            o.recoveryServiceSubnetId = recoveryServiceSubnetId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetProtectedDatabaseRecoveryServiceSubnet();
+            _resultValue.recoveryServiceSubnetId = recoveryServiceSubnetId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

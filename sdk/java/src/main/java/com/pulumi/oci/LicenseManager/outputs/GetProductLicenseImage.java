@@ -122,13 +122,13 @@ public final class GetProductLicenseImage {
             return this;
         }
         public GetProductLicenseImage build() {
-            final var o = new GetProductLicenseImage();
-            o.id = id;
-            o.listingId = listingId;
-            o.listingName = listingName;
-            o.packageVersion = packageVersion;
-            o.publisher = publisher;
-            return o;
+            final var _resultValue = new GetProductLicenseImage();
+            _resultValue.id = id;
+            _resultValue.listingId = listingId;
+            _resultValue.listingName = listingName;
+            _resultValue.packageVersion = packageVersion;
+            _resultValue.publisher = publisher;
+            return _resultValue;
         }
     }
 }

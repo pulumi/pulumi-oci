@@ -148,14 +148,14 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionString {
             return profiles(List.of(profiles));
         }
         public GetAutonomousDatabasesAutonomousDatabaseConnectionString build() {
-            final var o = new GetAutonomousDatabasesAutonomousDatabaseConnectionString();
-            o.allConnectionStrings = allConnectionStrings;
-            o.dedicated = dedicated;
-            o.high = high;
-            o.low = low;
-            o.medium = medium;
-            o.profiles = profiles;
-            return o;
+            final var _resultValue = new GetAutonomousDatabasesAutonomousDatabaseConnectionString();
+            _resultValue.allConnectionStrings = allConnectionStrings;
+            _resultValue.dedicated = dedicated;
+            _resultValue.high = high;
+            _resultValue.low = low;
+            _resultValue.medium = medium;
+            _resultValue.profiles = profiles;
+            return _resultValue;
         }
     }
 }

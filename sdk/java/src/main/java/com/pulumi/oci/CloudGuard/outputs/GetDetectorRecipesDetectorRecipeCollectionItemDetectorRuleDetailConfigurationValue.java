@@ -84,11 +84,11 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
             return this;
         }
         public GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue build() {
-            final var o = new GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue();
-            o.listType = listType;
-            o.managedListType = managedListType;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue();
+            _resultValue.listType = listType;
+            _resultValue.managedListType = managedListType;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

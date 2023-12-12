@@ -147,15 +147,15 @@ public final class GetActionsResult {
             return this;
         }
         public GetActionsResult build() {
-            final var o = new GetActionsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.operatorActionCollections = operatorActionCollections;
-            o.resourceType = resourceType;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetActionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.operatorActionCollections = operatorActionCollections;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

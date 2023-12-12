@@ -67,10 +67,10 @@ public final class TargetAssetEstimatedCostOsImage {
             return this;
         }
         public TargetAssetEstimatedCostOsImage build() {
-            final var o = new TargetAssetEstimatedCostOsImage();
-            o.totalPerHour = totalPerHour;
-            o.totalPerHourBySubscription = totalPerHourBySubscription;
-            return o;
+            final var _resultValue = new TargetAssetEstimatedCostOsImage();
+            _resultValue.totalPerHour = totalPerHour;
+            _resultValue.totalPerHourBySubscription = totalPerHourBySubscription;
+            return _resultValue;
         }
     }
 }

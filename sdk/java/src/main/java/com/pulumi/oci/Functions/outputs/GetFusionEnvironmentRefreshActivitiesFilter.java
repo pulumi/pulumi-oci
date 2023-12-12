@@ -67,11 +67,11 @@ public final class GetFusionEnvironmentRefreshActivitiesFilter {
             return values(List.of(values));
         }
         public GetFusionEnvironmentRefreshActivitiesFilter build() {
-            final var o = new GetFusionEnvironmentRefreshActivitiesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentRefreshActivitiesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

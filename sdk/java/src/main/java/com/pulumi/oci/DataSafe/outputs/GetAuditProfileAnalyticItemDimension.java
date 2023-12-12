@@ -46,9 +46,9 @@ public final class GetAuditProfileAnalyticItemDimension {
             return this;
         }
         public GetAuditProfileAnalyticItemDimension build() {
-            final var o = new GetAuditProfileAnalyticItemDimension();
-            o.isPaidUsageEnabled = isPaidUsageEnabled;
-            return o;
+            final var _resultValue = new GetAuditProfileAnalyticItemDimension();
+            _resultValue.isPaidUsageEnabled = isPaidUsageEnabled;
+            return _resultValue;
         }
     }
 }

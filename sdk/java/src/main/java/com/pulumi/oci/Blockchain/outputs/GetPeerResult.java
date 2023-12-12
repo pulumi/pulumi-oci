@@ -198,18 +198,18 @@ public final class GetPeerResult {
             return this;
         }
         public GetPeerResult build() {
-            final var o = new GetPeerResult();
-            o.ad = ad;
-            o.alias = alias;
-            o.blockchainPlatformId = blockchainPlatformId;
-            o.host = host;
-            o.id = id;
-            o.ocpuAllocationParams = ocpuAllocationParams;
-            o.peerId = peerId;
-            o.peerKey = peerKey;
-            o.role = role;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetPeerResult();
+            _resultValue.ad = ad;
+            _resultValue.alias = alias;
+            _resultValue.blockchainPlatformId = blockchainPlatformId;
+            _resultValue.host = host;
+            _resultValue.id = id;
+            _resultValue.ocpuAllocationParams = ocpuAllocationParams;
+            _resultValue.peerId = peerId;
+            _resultValue.peerKey = peerKey;
+            _resultValue.role = role;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -182,16 +182,16 @@ public final class GetBackendSetHealthResult {
             return warningStateBackendNames(List.of(warningStateBackendNames));
         }
         public GetBackendSetHealthResult build() {
-            final var o = new GetBackendSetHealthResult();
-            o.backendSetName = backendSetName;
-            o.criticalStateBackendNames = criticalStateBackendNames;
-            o.id = id;
-            o.loadBalancerId = loadBalancerId;
-            o.status = status;
-            o.totalBackendCount = totalBackendCount;
-            o.unknownStateBackendNames = unknownStateBackendNames;
-            o.warningStateBackendNames = warningStateBackendNames;
-            return o;
+            final var _resultValue = new GetBackendSetHealthResult();
+            _resultValue.backendSetName = backendSetName;
+            _resultValue.criticalStateBackendNames = criticalStateBackendNames;
+            _resultValue.id = id;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.status = status;
+            _resultValue.totalBackendCount = totalBackendCount;
+            _resultValue.unknownStateBackendNames = unknownStateBackendNames;
+            _resultValue.warningStateBackendNames = warningStateBackendNames;
+            return _resultValue;
         }
     }
 }

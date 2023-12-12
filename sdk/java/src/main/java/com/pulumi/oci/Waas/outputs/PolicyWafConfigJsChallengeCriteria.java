@@ -137,11 +137,11 @@ public final class PolicyWafConfigJsChallengeCriteria {
             return this;
         }
         public PolicyWafConfigJsChallengeCriteria build() {
-            final var o = new PolicyWafConfigJsChallengeCriteria();
-            o.condition = condition;
-            o.isCaseSensitive = isCaseSensitive;
-            o.value = value;
-            return o;
+            final var _resultValue = new PolicyWafConfigJsChallengeCriteria();
+            _resultValue.condition = condition;
+            _resultValue.isCaseSensitive = isCaseSensitive;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

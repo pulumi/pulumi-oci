@@ -84,11 +84,11 @@ public final class GetExternalListenersExternalListenerCollectionItemServicedAsm
             return this;
         }
         public GetExternalListenersExternalListenerCollectionItemServicedAsm build() {
-            final var o = new GetExternalListenersExternalListenerCollectionItemServicedAsm();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalListenersExternalListenerCollectionItemServicedAsm();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

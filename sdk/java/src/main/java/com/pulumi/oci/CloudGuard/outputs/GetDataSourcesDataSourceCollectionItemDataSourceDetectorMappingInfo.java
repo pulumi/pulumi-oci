@@ -65,10 +65,10 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappi
             return this;
         }
         public GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo build() {
-            final var o = new GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo();
-            o.detectorRecipeId = detectorRecipeId;
-            o.detectorRuleId = detectorRuleId;
-            return o;
+            final var _resultValue = new GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo();
+            _resultValue.detectorRecipeId = detectorRecipeId;
+            _resultValue.detectorRuleId = detectorRuleId;
+            return _resultValue;
         }
     }
 }

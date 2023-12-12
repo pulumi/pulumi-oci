@@ -69,10 +69,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyAuthorization 
             return this;
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyAuthorization build() {
-            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyAuthorization();
-            o.allowedScopes = allowedScopes;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteRequestPolicyAuthorization();
+            _resultValue.allowedScopes = allowedScopes;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

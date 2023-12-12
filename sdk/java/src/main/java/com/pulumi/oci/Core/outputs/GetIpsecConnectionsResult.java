@@ -144,14 +144,14 @@ public final class GetIpsecConnectionsResult {
             return this;
         }
         public GetIpsecConnectionsResult build() {
-            final var o = new GetIpsecConnectionsResult();
-            o.compartmentId = compartmentId;
-            o.connections = connections;
-            o.cpeId = cpeId;
-            o.drgId = drgId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetIpsecConnectionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connections = connections;
+            _resultValue.cpeId = cpeId;
+            _resultValue.drgId = drgId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

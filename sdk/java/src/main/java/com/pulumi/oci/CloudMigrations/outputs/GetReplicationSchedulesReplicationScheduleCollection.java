@@ -42,9 +42,9 @@ public final class GetReplicationSchedulesReplicationScheduleCollection {
             return items(List.of(items));
         }
         public GetReplicationSchedulesReplicationScheduleCollection build() {
-            final var o = new GetReplicationSchedulesReplicationScheduleCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetReplicationSchedulesReplicationScheduleCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

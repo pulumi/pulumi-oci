@@ -106,12 +106,12 @@ public final class PipelineLogConfigurationDetails {
             return this;
         }
         public PipelineLogConfigurationDetails build() {
-            final var o = new PipelineLogConfigurationDetails();
-            o.enableAutoLogCreation = enableAutoLogCreation;
-            o.enableLogging = enableLogging;
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new PipelineLogConfigurationDetails();
+            _resultValue.enableAutoLogCreation = enableAutoLogCreation;
+            _resultValue.enableLogging = enableLogging;
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

@@ -97,12 +97,12 @@ public final class GetJobShapesResult {
             return jobShapes(List.of(jobShapes));
         }
         public GetJobShapesResult build() {
-            final var o = new GetJobShapesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.jobShapes = jobShapes;
-            return o;
+            final var _resultValue = new GetJobShapesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.jobShapes = jobShapes;
+            return _resultValue;
         }
     }
 }

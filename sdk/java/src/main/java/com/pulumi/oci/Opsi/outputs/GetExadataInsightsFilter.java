@@ -67,11 +67,11 @@ public final class GetExadataInsightsFilter {
             return values(List.of(values));
         }
         public GetExadataInsightsFilter build() {
-            final var o = new GetExadataInsightsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExadataInsightsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

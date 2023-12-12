@@ -50,9 +50,9 @@ public final class GetManagedDatabaseAddmTasksAddmTasksCollection {
             return items(List.of(items));
         }
         public GetManagedDatabaseAddmTasksAddmTasksCollection build() {
-            final var o = new GetManagedDatabaseAddmTasksAddmTasksCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAddmTasksAddmTasksCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

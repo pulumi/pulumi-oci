@@ -165,14 +165,14 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return smtpCredentials(List.of(smtpCredentials));
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser();
-            o.apiKeys = apiKeys;
-            o.authTokens = authTokens;
-            o.customerSecretKeys = customerSecretKeys;
-            o.dbCredentials = dbCredentials;
-            o.oAuth2clientCredentials = oAuth2clientCredentials;
-            o.smtpCredentials = smtpCredentials;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser();
+            _resultValue.apiKeys = apiKeys;
+            _resultValue.authTokens = authTokens;
+            _resultValue.customerSecretKeys = customerSecretKeys;
+            _resultValue.dbCredentials = dbCredentials;
+            _resultValue.oAuth2clientCredentials = oAuth2clientCredentials;
+            _resultValue.smtpCredentials = smtpCredentials;
+            return _resultValue;
         }
     }
 }

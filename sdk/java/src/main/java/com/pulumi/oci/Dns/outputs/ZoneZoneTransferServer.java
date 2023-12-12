@@ -107,12 +107,12 @@ public final class ZoneZoneTransferServer {
             return this;
         }
         public ZoneZoneTransferServer build() {
-            final var o = new ZoneZoneTransferServer();
-            o.address = address;
-            o.isTransferDestination = isTransferDestination;
-            o.isTransferSource = isTransferSource;
-            o.port = port;
-            return o;
+            final var _resultValue = new ZoneZoneTransferServer();
+            _resultValue.address = address;
+            _resultValue.isTransferDestination = isTransferDestination;
+            _resultValue.isTransferSource = isTransferSource;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

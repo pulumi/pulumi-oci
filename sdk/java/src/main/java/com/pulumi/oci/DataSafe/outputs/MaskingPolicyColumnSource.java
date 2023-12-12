@@ -86,11 +86,11 @@ public final class MaskingPolicyColumnSource {
             return this;
         }
         public MaskingPolicyColumnSource build() {
-            final var o = new MaskingPolicyColumnSource();
-            o.columnSource = columnSource;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new MaskingPolicyColumnSource();
+            _resultValue.columnSource = columnSource;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

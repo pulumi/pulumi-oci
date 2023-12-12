@@ -144,14 +144,14 @@ public final class GetComputeClustersResult {
             return this;
         }
         public GetComputeClustersResult build() {
-            final var o = new GetComputeClustersResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.computeClusterCollections = computeClusterCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetComputeClustersResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeClusterCollections = computeClusterCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

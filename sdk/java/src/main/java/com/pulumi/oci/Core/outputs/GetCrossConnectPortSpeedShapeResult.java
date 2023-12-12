@@ -97,12 +97,12 @@ public final class GetCrossConnectPortSpeedShapeResult {
             return this;
         }
         public GetCrossConnectPortSpeedShapeResult build() {
-            final var o = new GetCrossConnectPortSpeedShapeResult();
-            o.compartmentId = compartmentId;
-            o.crossConnectPortSpeedShapes = crossConnectPortSpeedShapes;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetCrossConnectPortSpeedShapeResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.crossConnectPortSpeedShapes = crossConnectPortSpeedShapes;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

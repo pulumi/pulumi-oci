@@ -153,11 +153,11 @@ public final class DomainsSelfRegistrationProfileHeaderText {
             return this;
         }
         public DomainsSelfRegistrationProfileHeaderText build() {
-            final var o = new DomainsSelfRegistrationProfileHeaderText();
-            o.default_ = default_;
-            o.locale = locale;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsSelfRegistrationProfileHeaderText();
+            _resultValue.default_ = default_;
+            _resultValue.locale = locale;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

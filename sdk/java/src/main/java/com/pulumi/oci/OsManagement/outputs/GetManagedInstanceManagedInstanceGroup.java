@@ -65,10 +65,10 @@ public final class GetManagedInstanceManagedInstanceGroup {
             return this;
         }
         public GetManagedInstanceManagedInstanceGroup build() {
-            final var o = new GetManagedInstanceManagedInstanceGroup();
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetManagedInstanceManagedInstanceGroup();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

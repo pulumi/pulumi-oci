@@ -67,11 +67,11 @@ public final class GetNetworkAddressListsFilter {
             return values(List.of(values));
         }
         public GetNetworkAddressListsFilter build() {
-            final var o = new GetNetworkAddressListsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetNetworkAddressListsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

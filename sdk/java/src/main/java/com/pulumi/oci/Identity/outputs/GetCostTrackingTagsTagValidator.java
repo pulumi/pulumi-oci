@@ -69,10 +69,10 @@ public final class GetCostTrackingTagsTagValidator {
             return values(List.of(values));
         }
         public GetCostTrackingTagsTagValidator build() {
-            final var o = new GetCostTrackingTagsTagValidator();
-            o.validatorType = validatorType;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCostTrackingTagsTagValidator();
+            _resultValue.validatorType = validatorType;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -586,36 +586,36 @@ public final class GetDomainsMyTrustedUserAgentsMyTrustedUserAgent {
             return users(List.of(users));
         }
         public GetDomainsMyTrustedUserAgentsMyTrustedUserAgent build() {
-            final var o = new GetDomainsMyTrustedUserAgentsMyTrustedUserAgent();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.expiryTime = expiryTime;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.lastUsedOn = lastUsedOn;
-            o.location = location;
-            o.metas = metas;
-            o.myTrustedUserAgentId = myTrustedUserAgentId;
-            o.name = name;
-            o.ocid = ocid;
-            o.platform = platform;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.tokenType = tokenType;
-            o.trustToken = trustToken;
-            o.trustedFactors = trustedFactors;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetDomainsMyTrustedUserAgentsMyTrustedUserAgent();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.expiryTime = expiryTime;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.lastUsedOn = lastUsedOn;
+            _resultValue.location = location;
+            _resultValue.metas = metas;
+            _resultValue.myTrustedUserAgentId = myTrustedUserAgentId;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.platform = platform;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.tokenType = tokenType;
+            _resultValue.trustToken = trustToken;
+            _resultValue.trustedFactors = trustedFactors;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }

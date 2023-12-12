@@ -65,10 +65,10 @@ public final class GetAutoScalingConfigurationPolicyResourceAction {
             return this;
         }
         public GetAutoScalingConfigurationPolicyResourceAction build() {
-            final var o = new GetAutoScalingConfigurationPolicyResourceAction();
-            o.action = action;
-            o.actionType = actionType;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationPolicyResourceAction();
+            _resultValue.action = action;
+            _resultValue.actionType = actionType;
+            return _resultValue;
         }
     }
 }

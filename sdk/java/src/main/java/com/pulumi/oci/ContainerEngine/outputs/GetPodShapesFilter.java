@@ -75,11 +75,11 @@ public final class GetPodShapesFilter {
             return values(List.of(values));
         }
         public GetPodShapesFilter build() {
-            final var o = new GetPodShapesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPodShapesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

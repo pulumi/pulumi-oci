@@ -268,20 +268,20 @@ public final class GetNetworkSourcesNetworkSource {
             return virtualSourceLists(List.of(virtualSourceLists));
         }
         public GetNetworkSourcesNetworkSource build() {
-            final var o = new GetNetworkSourcesNetworkSource();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.inactiveState = inactiveState;
-            o.name = name;
-            o.publicSourceLists = publicSourceLists;
-            o.services = services;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.virtualSourceLists = virtualSourceLists;
-            return o;
+            final var _resultValue = new GetNetworkSourcesNetworkSource();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.inactiveState = inactiveState;
+            _resultValue.name = name;
+            _resultValue.publicSourceLists = publicSourceLists;
+            _resultValue.services = services;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.virtualSourceLists = virtualSourceLists;
+            return _resultValue;
         }
     }
 }

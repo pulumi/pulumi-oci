@@ -96,11 +96,11 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationValidati
             return setHeaders(List.of(setHeaders));
         }
         public GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformation build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformation();
-            o.filterHeaders = filterHeaders;
-            o.renameHeaders = renameHeaders;
-            o.setHeaders = setHeaders;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformation();
+            _resultValue.filterHeaders = filterHeaders;
+            _resultValue.renameHeaders = renameHeaders;
+            _resultValue.setHeaders = setHeaders;
+            return _resultValue;
         }
     }
 }

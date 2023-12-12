@@ -109,12 +109,12 @@ public final class GetPoolConfiguration {
             return shapeConfigs(List.of(shapeConfigs));
         }
         public GetPoolConfiguration build() {
-            final var o = new GetPoolConfiguration();
-            o.max = max;
-            o.min = min;
-            o.shape = shape;
-            o.shapeConfigs = shapeConfigs;
-            return o;
+            final var _resultValue = new GetPoolConfiguration();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            _resultValue.shape = shape;
+            _resultValue.shapeConfigs = shapeConfigs;
+            return _resultValue;
         }
     }
 }

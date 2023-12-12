@@ -91,11 +91,11 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
             return values(List.of(values));
         }
         public DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaim build() {
-            final var o = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaim();
-            o.isRequired = isRequired;
-            o.key = key;
-            o.values = values;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaim();
+            _resultValue.isRequired = isRequired;
+            _resultValue.key = key;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

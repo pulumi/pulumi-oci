@@ -65,10 +65,10 @@ public final class GetKeyStoreAssociatedDatabase {
             return this;
         }
         public GetKeyStoreAssociatedDatabase build() {
-            final var o = new GetKeyStoreAssociatedDatabase();
-            o.dbName = dbName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetKeyStoreAssociatedDatabase();
+            _resultValue.dbName = dbName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -213,18 +213,18 @@ public final class GetSecretVersionResult {
             return this;
         }
         public GetSecretVersionResult build() {
-            final var o = new GetSecretVersionResult();
-            o.contentType = contentType;
-            o.id = id;
-            o.name = name;
-            o.secretId = secretId;
-            o.secretVersionNumber = secretVersionNumber;
-            o.stages = stages;
-            o.timeCreated = timeCreated;
-            o.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
-            o.timeOfDeletion = timeOfDeletion;
-            o.versionNumber = versionNumber;
-            return o;
+            final var _resultValue = new GetSecretVersionResult();
+            _resultValue.contentType = contentType;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.secretId = secretId;
+            _resultValue.secretVersionNumber = secretVersionNumber;
+            _resultValue.stages = stages;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
+            _resultValue.timeOfDeletion = timeOfDeletion;
+            _resultValue.versionNumber = versionNumber;
+            return _resultValue;
         }
     }
 }

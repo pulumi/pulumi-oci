@@ -220,18 +220,18 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthChecker {
             return this;
         }
         public NetworkLoadBalancersBackendSetsUnifiedHealthChecker build() {
-            final var o = new NetworkLoadBalancersBackendSetsUnifiedHealthChecker();
-            o.intervalInMillis = intervalInMillis;
-            o.port = port;
-            o.protocol = protocol;
-            o.requestData = requestData;
-            o.responseBodyRegex = responseBodyRegex;
-            o.responseData = responseData;
-            o.retries = retries;
-            o.returnCode = returnCode;
-            o.timeoutInMillis = timeoutInMillis;
-            o.urlPath = urlPath;
-            return o;
+            final var _resultValue = new NetworkLoadBalancersBackendSetsUnifiedHealthChecker();
+            _resultValue.intervalInMillis = intervalInMillis;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.requestData = requestData;
+            _resultValue.responseBodyRegex = responseBodyRegex;
+            _resultValue.responseData = responseData;
+            _resultValue.retries = retries;
+            _resultValue.returnCode = returnCode;
+            _resultValue.timeoutInMillis = timeoutInMillis;
+            _resultValue.urlPath = urlPath;
+            return _resultValue;
         }
     }
 }

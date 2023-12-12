@@ -69,10 +69,10 @@ public final class SddcInitialConfigurationInitialClusterConfigurationDatastore 
             return this;
         }
         public SddcInitialConfigurationInitialClusterConfigurationDatastore build() {
-            final var o = new SddcInitialConfigurationInitialClusterConfigurationDatastore();
-            o.blockVolumeIds = blockVolumeIds;
-            o.datastoreType = datastoreType;
-            return o;
+            final var _resultValue = new SddcInitialConfigurationInitialClusterConfigurationDatastore();
+            _resultValue.blockVolumeIds = blockVolumeIds;
+            _resultValue.datastoreType = datastoreType;
+            return _resultValue;
         }
     }
 }

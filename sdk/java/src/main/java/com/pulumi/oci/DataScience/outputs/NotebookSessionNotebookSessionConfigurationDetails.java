@@ -126,13 +126,13 @@ public final class NotebookSessionNotebookSessionConfigurationDetails {
             return this;
         }
         public NotebookSessionNotebookSessionConfigurationDetails build() {
-            final var o = new NotebookSessionNotebookSessionConfigurationDetails();
-            o.blockStorageSizeInGbs = blockStorageSizeInGbs;
-            o.notebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
-            o.privateEndpointId = privateEndpointId;
-            o.shape = shape;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new NotebookSessionNotebookSessionConfigurationDetails();
+            _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.notebookSessionShapeConfigDetails = notebookSessionShapeConfigDetails;
+            _resultValue.privateEndpointId = privateEndpointId;
+            _resultValue.shape = shape;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

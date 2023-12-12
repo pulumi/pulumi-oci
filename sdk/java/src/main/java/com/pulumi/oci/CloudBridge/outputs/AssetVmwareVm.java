@@ -254,19 +254,19 @@ public final class AssetVmwareVm {
             return this;
         }
         public AssetVmwareVm build() {
-            final var o = new AssetVmwareVm();
-            o.cluster = cluster;
-            o.customerFields = customerFields;
-            o.customerTags = customerTags;
-            o.faultToleranceBandwidth = faultToleranceBandwidth;
-            o.faultToleranceSecondaryLatency = faultToleranceSecondaryLatency;
-            o.faultToleranceState = faultToleranceState;
-            o.instanceUuid = instanceUuid;
-            o.isDisksCbtEnabled = isDisksCbtEnabled;
-            o.isDisksUuidEnabled = isDisksUuidEnabled;
-            o.path = path;
-            o.vmwareToolsStatus = vmwareToolsStatus;
-            return o;
+            final var _resultValue = new AssetVmwareVm();
+            _resultValue.cluster = cluster;
+            _resultValue.customerFields = customerFields;
+            _resultValue.customerTags = customerTags;
+            _resultValue.faultToleranceBandwidth = faultToleranceBandwidth;
+            _resultValue.faultToleranceSecondaryLatency = faultToleranceSecondaryLatency;
+            _resultValue.faultToleranceState = faultToleranceState;
+            _resultValue.instanceUuid = instanceUuid;
+            _resultValue.isDisksCbtEnabled = isDisksCbtEnabled;
+            _resultValue.isDisksUuidEnabled = isDisksUuidEnabled;
+            _resultValue.path = path;
+            _resultValue.vmwareToolsStatus = vmwareToolsStatus;
+            return _resultValue;
         }
     }
 }

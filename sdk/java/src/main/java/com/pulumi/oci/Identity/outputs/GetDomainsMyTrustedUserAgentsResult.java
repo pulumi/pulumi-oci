@@ -241,24 +241,24 @@ public final class GetDomainsMyTrustedUserAgentsResult {
             return this;
         }
         public GetDomainsMyTrustedUserAgentsResult build() {
-            final var o = new GetDomainsMyTrustedUserAgentsResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.idcsEndpoint = idcsEndpoint;
-            o.itemsPerPage = itemsPerPage;
-            o.myTrustedUserAgentCount = myTrustedUserAgentCount;
-            o.myTrustedUserAgentFilter = myTrustedUserAgentFilter;
-            o.myTrustedUserAgents = myTrustedUserAgents;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.startIndex = startIndex;
-            o.totalResults = totalResults;
-            return o;
+            final var _resultValue = new GetDomainsMyTrustedUserAgentsResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.itemsPerPage = itemsPerPage;
+            _resultValue.myTrustedUserAgentCount = myTrustedUserAgentCount;
+            _resultValue.myTrustedUserAgentFilter = myTrustedUserAgentFilter;
+            _resultValue.myTrustedUserAgents = myTrustedUserAgents;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.startIndex = startIndex;
+            _resultValue.totalResults = totalResults;
+            return _resultValue;
         }
     }
 }

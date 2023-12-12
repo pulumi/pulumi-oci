@@ -242,22 +242,22 @@ public final class GetManagedDatabaseSqlPlanBaselinesResult {
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselinesResult build() {
-            final var o = new GetManagedDatabaseSqlPlanBaselinesResult();
-            o.filters = filters;
-            o.id = id;
-            o.isAccepted = isAccepted;
-            o.isAdaptive = isAdaptive;
-            o.isEnabled = isEnabled;
-            o.isFixed = isFixed;
-            o.isReproduced = isReproduced;
-            o.limit = limit;
-            o.managedDatabaseId = managedDatabaseId;
-            o.origin = origin;
-            o.planName = planName;
-            o.sqlHandle = sqlHandle;
-            o.sqlPlanBaselineCollections = sqlPlanBaselineCollections;
-            o.sqlText = sqlText;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlPlanBaselinesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isAccepted = isAccepted;
+            _resultValue.isAdaptive = isAdaptive;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.isFixed = isFixed;
+            _resultValue.isReproduced = isReproduced;
+            _resultValue.limit = limit;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.origin = origin;
+            _resultValue.planName = planName;
+            _resultValue.sqlHandle = sqlHandle;
+            _resultValue.sqlPlanBaselineCollections = sqlPlanBaselineCollections;
+            _resultValue.sqlText = sqlText;
+            return _resultValue;
         }
     }
 }

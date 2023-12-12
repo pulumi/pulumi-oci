@@ -65,10 +65,10 @@ public final class GetTraceSpanTag {
             return this;
         }
         public GetTraceSpanTag build() {
-            final var o = new GetTraceSpanTag();
-            o.tagName = tagName;
-            o.tagValue = tagValue;
-            return o;
+            final var _resultValue = new GetTraceSpanTag();
+            _resultValue.tagName = tagName;
+            _resultValue.tagValue = tagValue;
+            return _resultValue;
         }
     }
 }

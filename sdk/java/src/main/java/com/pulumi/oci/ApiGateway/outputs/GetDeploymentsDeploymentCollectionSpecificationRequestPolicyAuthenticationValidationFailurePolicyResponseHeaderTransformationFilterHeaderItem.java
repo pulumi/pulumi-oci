@@ -46,9 +46,9 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItem build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationFailurePolicyResponseHeaderTransformationFilterHeaderItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection {
             return items(List.of(items));
         }
         public GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection build() {
-            final var o = new GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

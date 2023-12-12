@@ -65,10 +65,10 @@ public final class GetConfigurationDbConfigurationOverrideItem {
             return this;
         }
         public GetConfigurationDbConfigurationOverrideItem build() {
-            final var o = new GetConfigurationDbConfigurationOverrideItem();
-            o.configKey = configKey;
-            o.overridenConfigValue = overridenConfigValue;
-            return o;
+            final var _resultValue = new GetConfigurationDbConfigurationOverrideItem();
+            _resultValue.configKey = configKey;
+            _resultValue.overridenConfigValue = overridenConfigValue;
+            return _resultValue;
         }
     }
 }

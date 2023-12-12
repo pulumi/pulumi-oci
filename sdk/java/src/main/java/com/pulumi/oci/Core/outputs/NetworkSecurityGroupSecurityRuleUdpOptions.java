@@ -52,10 +52,10 @@ public final class NetworkSecurityGroupSecurityRuleUdpOptions {
             return this;
         }
         public NetworkSecurityGroupSecurityRuleUdpOptions build() {
-            final var o = new NetworkSecurityGroupSecurityRuleUdpOptions();
-            o.destinationPortRange = destinationPortRange;
-            o.sourcePortRange = sourcePortRange;
-            return o;
+            final var _resultValue = new NetworkSecurityGroupSecurityRuleUdpOptions();
+            _resultValue.destinationPortRange = destinationPortRange;
+            _resultValue.sourcePortRange = sourcePortRange;
+            return _resultValue;
         }
     }
 }

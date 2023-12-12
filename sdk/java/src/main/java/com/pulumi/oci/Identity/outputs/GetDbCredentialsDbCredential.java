@@ -163,16 +163,16 @@ public final class GetDbCredentialsDbCredential {
             return this;
         }
         public GetDbCredentialsDbCredential build() {
-            final var o = new GetDbCredentialsDbCredential();
-            o.description = description;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.password = password;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeExpires = timeExpires;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetDbCredentialsDbCredential();
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.password = password;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeExpires = timeExpires;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

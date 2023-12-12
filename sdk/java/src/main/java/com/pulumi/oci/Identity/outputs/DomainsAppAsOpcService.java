@@ -109,10 +109,10 @@ public final class DomainsAppAsOpcService {
             return this;
         }
         public DomainsAppAsOpcService build() {
-            final var o = new DomainsAppAsOpcService();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppAsOpcService();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

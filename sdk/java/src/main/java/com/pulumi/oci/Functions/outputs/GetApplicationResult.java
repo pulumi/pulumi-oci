@@ -340,24 +340,24 @@ public final class GetApplicationResult {
             return traceConfigs(List.of(traceConfigs));
         }
         public GetApplicationResult build() {
-            final var o = new GetApplicationResult();
-            o.applicationId = applicationId;
-            o.compartmentId = compartmentId;
-            o.config = config;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.imagePolicyConfigs = imagePolicyConfigs;
-            o.networkSecurityGroupIds = networkSecurityGroupIds;
-            o.shape = shape;
-            o.state = state;
-            o.subnetIds = subnetIds;
-            o.syslogUrl = syslogUrl;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.traceConfigs = traceConfigs;
-            return o;
+            final var _resultValue = new GetApplicationResult();
+            _resultValue.applicationId = applicationId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.config = config;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.imagePolicyConfigs = imagePolicyConfigs;
+            _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
+            _resultValue.shape = shape;
+            _resultValue.state = state;
+            _resultValue.subnetIds = subnetIds;
+            _resultValue.syslogUrl = syslogUrl;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.traceConfigs = traceConfigs;
+            return _resultValue;
         }
     }
 }

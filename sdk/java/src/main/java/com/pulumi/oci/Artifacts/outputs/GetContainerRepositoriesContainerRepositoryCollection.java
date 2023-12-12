@@ -123,14 +123,14 @@ public final class GetContainerRepositoriesContainerRepositoryCollection {
             return this;
         }
         public GetContainerRepositoriesContainerRepositoryCollection build() {
-            final var o = new GetContainerRepositoriesContainerRepositoryCollection();
-            o.imageCount = imageCount;
-            o.items = items;
-            o.layerCount = layerCount;
-            o.layersSizeInBytes = layersSizeInBytes;
-            o.remainingItemsCount = remainingItemsCount;
-            o.repositoryCount = repositoryCount;
-            return o;
+            final var _resultValue = new GetContainerRepositoriesContainerRepositoryCollection();
+            _resultValue.imageCount = imageCount;
+            _resultValue.items = items;
+            _resultValue.layerCount = layerCount;
+            _resultValue.layersSizeInBytes = layersSizeInBytes;
+            _resultValue.remainingItemsCount = remainingItemsCount;
+            _resultValue.repositoryCount = repositoryCount;
+            return _resultValue;
         }
     }
 }

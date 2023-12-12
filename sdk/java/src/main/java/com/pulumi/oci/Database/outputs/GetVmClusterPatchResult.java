@@ -205,18 +205,18 @@ public final class GetVmClusterPatchResult {
             return this;
         }
         public GetVmClusterPatchResult build() {
-            final var o = new GetVmClusterPatchResult();
-            o.availableActions = availableActions;
-            o.description = description;
-            o.id = id;
-            o.lastAction = lastAction;
-            o.lifecycleDetails = lifecycleDetails;
-            o.patchId = patchId;
-            o.state = state;
-            o.timeReleased = timeReleased;
-            o.version = version;
-            o.vmClusterId = vmClusterId;
-            return o;
+            final var _resultValue = new GetVmClusterPatchResult();
+            _resultValue.availableActions = availableActions;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.lastAction = lastAction;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.patchId = patchId;
+            _resultValue.state = state;
+            _resultValue.timeReleased = timeReleased;
+            _resultValue.version = version;
+            _resultValue.vmClusterId = vmClusterId;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItemAliasCred
             return this;
         }
         public GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential build() {
-            final var o = new GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential();
-            o.name = name;
-            o.service = service;
-            o.source = source;
-            return o;
+            final var _resultValue = new GetMonitoredResourcesMonitoredResourceCollectionItemAliasCredential();
+            _resultValue.name = name;
+            _resultValue.service = service;
+            _resultValue.source = source;
+            return _resultValue;
         }
     }
 }

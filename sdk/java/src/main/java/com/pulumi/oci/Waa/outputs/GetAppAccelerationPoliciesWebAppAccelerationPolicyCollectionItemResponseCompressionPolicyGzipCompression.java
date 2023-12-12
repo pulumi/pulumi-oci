@@ -46,9 +46,9 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
             return this;
         }
         public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression build() {
-            final var o = new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCompressionPolicyGzipCompression();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

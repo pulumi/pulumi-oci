@@ -69,10 +69,10 @@ public final class GetConfigurationItem {
             return values(List.of(values));
         }
         public GetConfigurationItem build() {
-            final var o = new GetConfigurationItem();
-            o.key = key;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetConfigurationItem();
+            _resultValue.key = key;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

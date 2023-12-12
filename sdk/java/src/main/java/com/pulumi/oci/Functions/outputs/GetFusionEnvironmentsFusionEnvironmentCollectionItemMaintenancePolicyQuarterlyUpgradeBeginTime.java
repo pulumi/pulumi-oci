@@ -65,10 +65,10 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenan
             return this;
         }
         public GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime build() {
-            final var o = new GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime();
-            o.beginTimesValue = beginTimesValue;
-            o.overrideType = overrideType;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTime();
+            _resultValue.beginTimesValue = beginTimesValue;
+            _resultValue.overrideType = overrideType;
+            return _resultValue;
         }
     }
 }

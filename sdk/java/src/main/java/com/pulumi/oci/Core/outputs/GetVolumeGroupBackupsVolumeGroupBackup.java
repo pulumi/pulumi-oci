@@ -390,27 +390,27 @@ public final class GetVolumeGroupBackupsVolumeGroupBackup {
             return this;
         }
         public GetVolumeGroupBackupsVolumeGroupBackup build() {
-            final var o = new GetVolumeGroupBackupsVolumeGroupBackup();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.expirationTime = expirationTime;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.sizeInGbs = sizeInGbs;
-            o.sizeInMbs = sizeInMbs;
-            o.sourceDetails = sourceDetails;
-            o.sourceType = sourceType;
-            o.sourceVolumeGroupBackupId = sourceVolumeGroupBackupId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeRequestReceived = timeRequestReceived;
-            o.type = type;
-            o.uniqueSizeInGbs = uniqueSizeInGbs;
-            o.uniqueSizeInMbs = uniqueSizeInMbs;
-            o.volumeBackupIds = volumeBackupIds;
-            o.volumeGroupId = volumeGroupId;
-            return o;
+            final var _resultValue = new GetVolumeGroupBackupsVolumeGroupBackup();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.expirationTime = expirationTime;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.sizeInGbs = sizeInGbs;
+            _resultValue.sizeInMbs = sizeInMbs;
+            _resultValue.sourceDetails = sourceDetails;
+            _resultValue.sourceType = sourceType;
+            _resultValue.sourceVolumeGroupBackupId = sourceVolumeGroupBackupId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeRequestReceived = timeRequestReceived;
+            _resultValue.type = type;
+            _resultValue.uniqueSizeInGbs = uniqueSizeInGbs;
+            _resultValue.uniqueSizeInMbs = uniqueSizeInMbs;
+            _resultValue.volumeBackupIds = volumeBackupIds;
+            _resultValue.volumeGroupId = volumeGroupId;
+            return _resultValue;
         }
     }
 }

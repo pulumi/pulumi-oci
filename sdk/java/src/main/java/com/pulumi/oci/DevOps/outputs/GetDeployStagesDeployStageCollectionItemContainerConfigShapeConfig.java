@@ -65,10 +65,10 @@ public final class GetDeployStagesDeployStageCollectionItemContainerConfigShapeC
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig build() {
-            final var o = new GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetDeployStagesDeployStageCollectionItemContainerConfigShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructureCusto
             return this;
         }
         public GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact build() {
-            final var o = new GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact();
-            o.email = email;
-            return o;
+            final var _resultValue = new GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContact();
+            _resultValue.email = email;
+            return _resultValue;
         }
     }
 }

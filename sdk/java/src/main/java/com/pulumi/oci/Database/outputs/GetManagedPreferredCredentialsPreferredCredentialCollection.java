@@ -42,9 +42,9 @@ public final class GetManagedPreferredCredentialsPreferredCredentialCollection {
             return items(List.of(items));
         }
         public GetManagedPreferredCredentialsPreferredCredentialCollection build() {
-            final var o = new GetManagedPreferredCredentialsPreferredCredentialCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedPreferredCredentialsPreferredCredentialCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

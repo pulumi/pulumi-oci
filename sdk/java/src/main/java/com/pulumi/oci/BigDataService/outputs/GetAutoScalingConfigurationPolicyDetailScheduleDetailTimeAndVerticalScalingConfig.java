@@ -104,12 +104,12 @@ public final class GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndV
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig build() {
-            final var o = new GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig();
-            o.targetMemoryPerNode = targetMemoryPerNode;
-            o.targetOcpusPerNode = targetOcpusPerNode;
-            o.targetShape = targetShape;
-            o.timeRecurrence = timeRecurrence;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationPolicyDetailScheduleDetailTimeAndVerticalScalingConfig();
+            _resultValue.targetMemoryPerNode = targetMemoryPerNode;
+            _resultValue.targetOcpusPerNode = targetOcpusPerNode;
+            _resultValue.targetShape = targetShape;
+            _resultValue.timeRecurrence = timeRecurrence;
+            return _resultValue;
         }
     }
 }

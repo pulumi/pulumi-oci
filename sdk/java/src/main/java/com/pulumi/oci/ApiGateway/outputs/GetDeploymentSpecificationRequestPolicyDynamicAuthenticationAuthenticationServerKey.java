@@ -127,13 +127,13 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
             return values(List.of(values));
         }
         public GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey();
-            o.expression = expression;
-            o.isDefault = isDefault;
-            o.name = name;
-            o.type = type;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerKey();
+            _resultValue.expression = expression;
+            _resultValue.isDefault = isDefault;
+            _resultValue.name = name;
+            _resultValue.type = type;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

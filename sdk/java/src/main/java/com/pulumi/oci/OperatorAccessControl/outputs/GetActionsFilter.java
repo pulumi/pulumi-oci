@@ -75,11 +75,11 @@ public final class GetActionsFilter {
             return values(List.of(values));
         }
         public GetActionsFilter build() {
-            final var o = new GetActionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetActionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

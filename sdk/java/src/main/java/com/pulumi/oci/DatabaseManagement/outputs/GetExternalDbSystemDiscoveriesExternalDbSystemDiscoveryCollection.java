@@ -42,9 +42,9 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             return items(List.of(items));
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection build() {
-            final var o = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

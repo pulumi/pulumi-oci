@@ -70,10 +70,10 @@ public final class GetJobAdvisorReportReportLocationDetail {
             return objectStorageDetails(List.of(objectStorageDetails));
         }
         public GetJobAdvisorReportReportLocationDetail build() {
-            final var o = new GetJobAdvisorReportReportLocationDetail();
-            o.locationInSource = locationInSource;
-            o.objectStorageDetails = objectStorageDetails;
-            return o;
+            final var _resultValue = new GetJobAdvisorReportReportLocationDetail();
+            _resultValue.locationInSource = locationInSource;
+            _resultValue.objectStorageDetails = objectStorageDetails;
+            return _resultValue;
         }
     }
 }

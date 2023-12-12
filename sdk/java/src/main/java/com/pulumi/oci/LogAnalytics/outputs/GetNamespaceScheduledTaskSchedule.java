@@ -42,9 +42,9 @@ public final class GetNamespaceScheduledTaskSchedule {
             return schedules(List.of(schedules));
         }
         public GetNamespaceScheduledTaskSchedule build() {
-            final var o = new GetNamespaceScheduledTaskSchedule();
-            o.schedules = schedules;
-            return o;
+            final var _resultValue = new GetNamespaceScheduledTaskSchedule();
+            _resultValue.schedules = schedules;
+            return _resultValue;
         }
     }
 }

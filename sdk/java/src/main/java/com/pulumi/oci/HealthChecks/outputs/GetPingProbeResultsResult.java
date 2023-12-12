@@ -148,15 +148,15 @@ public final class GetPingProbeResultsResult {
             return this;
         }
         public GetPingProbeResultsResult build() {
-            final var o = new GetPingProbeResultsResult();
-            o.filters = filters;
-            o.id = id;
-            o.pingProbeResults = pingProbeResults;
-            o.probeConfigurationId = probeConfigurationId;
-            o.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
-            o.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
-            o.target = target;
-            return o;
+            final var _resultValue = new GetPingProbeResultsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.pingProbeResults = pingProbeResults;
+            _resultValue.probeConfigurationId = probeConfigurationId;
+            _resultValue.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
+            _resultValue.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
+            _resultValue.target = target;
+            return _resultValue;
         }
     }
 }

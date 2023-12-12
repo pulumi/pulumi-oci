@@ -50,9 +50,9 @@ public final class GetProfilesProfileCollectionItemTargetTag {
             return items(List.of(items));
         }
         public GetProfilesProfileCollectionItemTargetTag build() {
-            final var o = new GetProfilesProfileCollectionItemTargetTag();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetProfilesProfileCollectionItemTargetTag();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetResponderRecipeResponderRuleDetailConfiguration {
             return this;
         }
         public GetResponderRecipeResponderRuleDetailConfiguration build() {
-            final var o = new GetResponderRecipeResponderRuleDetailConfiguration();
-            o.configKey = configKey;
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetResponderRecipeResponderRuleDetailConfiguration();
+            _resultValue.configKey = configKey;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

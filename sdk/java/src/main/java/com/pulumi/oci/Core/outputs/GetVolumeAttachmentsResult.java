@@ -163,15 +163,15 @@ public final class GetVolumeAttachmentsResult {
             return this;
         }
         public GetVolumeAttachmentsResult build() {
-            final var o = new GetVolumeAttachmentsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.instanceId = instanceId;
-            o.volumeAttachments = volumeAttachments;
-            o.volumeId = volumeId;
-            return o;
+            final var _resultValue = new GetVolumeAttachmentsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            _resultValue.volumeAttachments = volumeAttachments;
+            _resultValue.volumeId = volumeId;
+            return _resultValue;
         }
     }
 }

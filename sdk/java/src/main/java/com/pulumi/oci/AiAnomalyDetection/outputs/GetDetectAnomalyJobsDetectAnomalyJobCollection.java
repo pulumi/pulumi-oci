@@ -42,9 +42,9 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollection {
             return items(List.of(items));
         }
         public GetDetectAnomalyJobsDetectAnomalyJobCollection build() {
-            final var o = new GetDetectAnomalyJobsDetectAnomalyJobCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDetectAnomalyJobsDetectAnomalyJobCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

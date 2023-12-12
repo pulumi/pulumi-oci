@@ -173,15 +173,15 @@ public final class GetDiscoveryJobDiscoveryDetail {
             return tags(List.of(tags));
         }
         public GetDiscoveryJobDiscoveryDetail build() {
-            final var o = new GetDiscoveryJobDiscoveryDetail();
-            o.agentId = agentId;
-            o.credentials = credentials;
-            o.license = license;
-            o.properties = properties;
-            o.resourceName = resourceName;
-            o.resourceType = resourceType;
-            o.tags = tags;
-            return o;
+            final var _resultValue = new GetDiscoveryJobDiscoveryDetail();
+            _resultValue.agentId = agentId;
+            _resultValue.credentials = credentials;
+            _resultValue.license = license;
+            _resultValue.properties = properties;
+            _resultValue.resourceName = resourceName;
+            _resultValue.resourceType = resourceType;
+            _resultValue.tags = tags;
+            return _resultValue;
         }
     }
 }

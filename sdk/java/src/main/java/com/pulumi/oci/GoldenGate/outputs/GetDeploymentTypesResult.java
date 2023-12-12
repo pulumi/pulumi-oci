@@ -155,15 +155,15 @@ public final class GetDeploymentTypesResult {
             return this;
         }
         public GetDeploymentTypesResult build() {
-            final var o = new GetDeploymentTypesResult();
-            o.compartmentId = compartmentId;
-            o.deploymentType = deploymentType;
-            o.deploymentTypeCollections = deploymentTypeCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.oggVersion = oggVersion;
-            return o;
+            final var _resultValue = new GetDeploymentTypesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.deploymentType = deploymentType;
+            _resultValue.deploymentTypeCollections = deploymentTypeCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.oggVersion = oggVersion;
+            return _resultValue;
         }
     }
 }

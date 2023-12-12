@@ -329,24 +329,24 @@ public final class GetPrivateEndpointsDataSciencePrivateEndpoint {
             return this;
         }
         public GetPrivateEndpointsDataSciencePrivateEndpoint build() {
-            final var o = new GetPrivateEndpointsDataSciencePrivateEndpoint();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.dataScienceResourceType = dataScienceResourceType;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.fqdn = fqdn;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.nsgIds = nsgIds;
-            o.state = state;
-            o.subDomain = subDomain;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetPrivateEndpointsDataSciencePrivateEndpoint();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.dataScienceResourceType = dataScienceResourceType;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.fqdn = fqdn;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.state = state;
+            _resultValue.subDomain = subDomain;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

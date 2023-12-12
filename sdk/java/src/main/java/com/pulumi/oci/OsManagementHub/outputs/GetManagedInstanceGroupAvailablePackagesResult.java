@@ -162,16 +162,16 @@ public final class GetManagedInstanceGroupAvailablePackagesResult {
             return this;
         }
         public GetManagedInstanceGroupAvailablePackagesResult build() {
-            final var o = new GetManagedInstanceGroupAvailablePackagesResult();
-            o.compartmentId = compartmentId;
-            o.displayNameContains = displayNameContains;
-            o.displayNames = displayNames;
-            o.filters = filters;
-            o.id = id;
-            o.isLatest = isLatest;
-            o.managedInstanceGroupAvailablePackageCollections = managedInstanceGroupAvailablePackageCollections;
-            o.managedInstanceGroupId = managedInstanceGroupId;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupAvailablePackagesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.displayNames = displayNames;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isLatest = isLatest;
+            _resultValue.managedInstanceGroupAvailablePackageCollections = managedInstanceGroupAvailablePackageCollections;
+            _resultValue.managedInstanceGroupId = managedInstanceGroupId;
+            return _resultValue;
         }
     }
 }

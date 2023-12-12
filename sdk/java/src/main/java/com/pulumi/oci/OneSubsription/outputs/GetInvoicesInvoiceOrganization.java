@@ -66,10 +66,10 @@ public final class GetInvoicesInvoiceOrganization {
             return this;
         }
         public GetInvoicesInvoiceOrganization build() {
-            final var o = new GetInvoicesInvoiceOrganization();
-            o.name = name;
-            o.number = number;
-            return o;
+            final var _resultValue = new GetInvoicesInvoiceOrganization();
+            _resultValue.name = name;
+            _resultValue.number = number;
+            return _resultValue;
         }
     }
 }

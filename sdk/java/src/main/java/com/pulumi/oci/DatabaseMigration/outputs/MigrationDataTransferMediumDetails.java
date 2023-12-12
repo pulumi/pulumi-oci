@@ -68,10 +68,10 @@ public final class MigrationDataTransferMediumDetails {
             return this;
         }
         public MigrationDataTransferMediumDetails build() {
-            final var o = new MigrationDataTransferMediumDetails();
-            o.databaseLinkDetails = databaseLinkDetails;
-            o.objectStorageDetails = objectStorageDetails;
-            return o;
+            final var _resultValue = new MigrationDataTransferMediumDetails();
+            _resultValue.databaseLinkDetails = databaseLinkDetails;
+            _resultValue.objectStorageDetails = objectStorageDetails;
+            return _resultValue;
         }
     }
 }

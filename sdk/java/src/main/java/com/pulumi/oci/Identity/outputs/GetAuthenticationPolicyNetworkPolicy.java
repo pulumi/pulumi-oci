@@ -50,9 +50,9 @@ public final class GetAuthenticationPolicyNetworkPolicy {
             return networkSourceIds(List.of(networkSourceIds));
         }
         public GetAuthenticationPolicyNetworkPolicy build() {
-            final var o = new GetAuthenticationPolicyNetworkPolicy();
-            o.networkSourceIds = networkSourceIds;
-            return o;
+            final var _resultValue = new GetAuthenticationPolicyNetworkPolicy();
+            _resultValue.networkSourceIds = networkSourceIds;
+            return _resultValue;
         }
     }
 }

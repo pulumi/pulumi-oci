@@ -75,11 +75,11 @@ public final class GetVirtualServicesFilter {
             return values(List.of(values));
         }
         public GetVirtualServicesFilter build() {
-            final var o = new GetVirtualServicesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVirtualServicesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

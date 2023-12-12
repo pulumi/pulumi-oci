@@ -184,16 +184,16 @@ public final class GetWorkRequestsWorkRequest {
             return this;
         }
         public GetWorkRequestsWorkRequest build() {
-            final var o = new GetWorkRequestsWorkRequest();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.operationType = operationType;
-            o.resources = resources;
-            o.status = status;
-            o.timeAccepted = timeAccepted;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetWorkRequestsWorkRequest();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.operationType = operationType;
+            _resultValue.resources = resources;
+            _resultValue.status = status;
+            _resultValue.timeAccepted = timeAccepted;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

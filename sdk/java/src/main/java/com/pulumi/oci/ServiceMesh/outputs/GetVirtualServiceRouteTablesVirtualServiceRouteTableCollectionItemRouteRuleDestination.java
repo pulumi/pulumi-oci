@@ -85,11 +85,11 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
             return this;
         }
         public GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination build() {
-            final var o = new GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination();
-            o.port = port;
-            o.virtualDeploymentId = virtualDeploymentId;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestination();
+            _resultValue.port = port;
+            _resultValue.virtualDeploymentId = virtualDeploymentId;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

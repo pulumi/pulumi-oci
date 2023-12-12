@@ -290,22 +290,22 @@ public final class GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectio
             return this;
         }
         public GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem build() {
-            final var o = new GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem();
-            o.displayName = displayName;
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.refreshActivityId = refreshActivityId;
-            o.refreshIssueDetailsLists = refreshIssueDetailsLists;
-            o.serviceAvailability = serviceAvailability;
-            o.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
-            o.state = state;
-            o.timeAccepted = timeAccepted;
-            o.timeExpectedFinish = timeExpectedFinish;
-            o.timeFinished = timeFinished;
-            o.timeOfRestorationPoint = timeOfRestorationPoint;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem();
+            _resultValue.displayName = displayName;
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.refreshActivityId = refreshActivityId;
+            _resultValue.refreshIssueDetailsLists = refreshIssueDetailsLists;
+            _resultValue.serviceAvailability = serviceAvailability;
+            _resultValue.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
+            _resultValue.state = state;
+            _resultValue.timeAccepted = timeAccepted;
+            _resultValue.timeExpectedFinish = timeExpectedFinish;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeOfRestorationPoint = timeOfRestorationPoint;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

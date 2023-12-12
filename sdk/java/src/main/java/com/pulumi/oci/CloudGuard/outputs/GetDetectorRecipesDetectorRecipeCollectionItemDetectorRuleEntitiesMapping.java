@@ -84,11 +84,11 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEnt
             return this;
         }
         public GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping build() {
-            final var o = new GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping();
-            o.displayName = displayName;
-            o.entityType = entityType;
-            o.queryField = queryField;
-            return o;
+            final var _resultValue = new GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping();
+            _resultValue.displayName = displayName;
+            _resultValue.entityType = entityType;
+            _resultValue.queryField = queryField;
+            return _resultValue;
         }
     }
 }

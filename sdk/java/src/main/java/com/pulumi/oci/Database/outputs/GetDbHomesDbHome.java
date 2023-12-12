@@ -386,29 +386,29 @@ public final class GetDbHomesDbHome {
             return this;
         }
         public GetDbHomesDbHome build() {
-            final var o = new GetDbHomesDbHome();
-            o.compartmentId = compartmentId;
-            o.databaseSoftwareImageId = databaseSoftwareImageId;
-            o.databases = databases;
-            o.dbHomeId = dbHomeId;
-            o.dbHomeLocation = dbHomeLocation;
-            o.dbSystemId = dbSystemId;
-            o.dbVersion = dbVersion;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.enableDatabaseDelete = enableDatabaseDelete;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isDesupportedVersion = isDesupportedVersion;
-            o.kmsKeyId = kmsKeyId;
-            o.kmsKeyVersionId = kmsKeyVersionId;
-            o.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.source = source;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.vmClusterId = vmClusterId;
-            return o;
+            final var _resultValue = new GetDbHomesDbHome();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
+            _resultValue.databases = databases;
+            _resultValue.dbHomeId = dbHomeId;
+            _resultValue.dbHomeLocation = dbHomeLocation;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.enableDatabaseDelete = enableDatabaseDelete;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isDesupportedVersion = isDesupportedVersion;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.kmsKeyVersionId = kmsKeyVersionId;
+            _resultValue.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.source = source;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vmClusterId = vmClusterId;
+            return _resultValue;
         }
     }
 }

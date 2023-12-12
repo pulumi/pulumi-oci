@@ -67,11 +67,11 @@ public final class GetTriggersFilter {
             return values(List.of(values));
         }
         public GetTriggersFilter build() {
-            final var o = new GetTriggersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetTriggersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

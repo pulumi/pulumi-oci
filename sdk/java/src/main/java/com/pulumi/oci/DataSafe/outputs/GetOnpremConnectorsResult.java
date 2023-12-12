@@ -170,17 +170,17 @@ public final class GetOnpremConnectorsResult {
             return onPremConnectors(List.of(onPremConnectors));
         }
         public GetOnpremConnectorsResult build() {
-            final var o = new GetOnpremConnectorsResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.onPremConnectorId = onPremConnectorId;
-            o.onPremConnectorLifecycleState = onPremConnectorLifecycleState;
-            o.onPremConnectors = onPremConnectors;
-            return o;
+            final var _resultValue = new GetOnpremConnectorsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.onPremConnectorId = onPremConnectorId;
+            _resultValue.onPremConnectorLifecycleState = onPremConnectorLifecycleState;
+            _resultValue.onPremConnectors = onPremConnectors;
+            return _resultValue;
         }
     }
 }

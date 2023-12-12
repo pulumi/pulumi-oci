@@ -400,27 +400,27 @@ public final class GetContainerImagesContainerImageCollectionItem {
             return versions(List.of(versions));
         }
         public GetContainerImagesContainerImageCollectionItem build() {
-            final var o = new GetContainerImagesContainerImageCollectionItem();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.digest = digest;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.layers = layers;
-            o.layersSizeInBytes = layersSizeInBytes;
-            o.manifestSizeInBytes = manifestSizeInBytes;
-            o.pullCount = pullCount;
-            o.repositoryId = repositoryId;
-            o.repositoryName = repositoryName;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeLastPulled = timeLastPulled;
-            o.version = version;
-            o.versions = versions;
-            return o;
+            final var _resultValue = new GetContainerImagesContainerImageCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.digest = digest;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.layers = layers;
+            _resultValue.layersSizeInBytes = layersSizeInBytes;
+            _resultValue.manifestSizeInBytes = manifestSizeInBytes;
+            _resultValue.pullCount = pullCount;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.repositoryName = repositoryName;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastPulled = timeLastPulled;
+            _resultValue.version = version;
+            _resultValue.versions = versions;
+            return _resultValue;
         }
     }
 }

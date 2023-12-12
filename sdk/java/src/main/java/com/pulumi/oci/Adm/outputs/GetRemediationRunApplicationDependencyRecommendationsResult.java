@@ -117,13 +117,13 @@ public final class GetRemediationRunApplicationDependencyRecommendationsResult {
             return this;
         }
         public GetRemediationRunApplicationDependencyRecommendationsResult build() {
-            final var o = new GetRemediationRunApplicationDependencyRecommendationsResult();
-            o.applicationDependencyRecommendationCollections = applicationDependencyRecommendationCollections;
-            o.filters = filters;
-            o.gav = gav;
-            o.id = id;
-            o.remediationRunId = remediationRunId;
-            return o;
+            final var _resultValue = new GetRemediationRunApplicationDependencyRecommendationsResult();
+            _resultValue.applicationDependencyRecommendationCollections = applicationDependencyRecommendationCollections;
+            _resultValue.filters = filters;
+            _resultValue.gav = gav;
+            _resultValue.id = id;
+            _resultValue.remediationRunId = remediationRunId;
+            return _resultValue;
         }
     }
 }

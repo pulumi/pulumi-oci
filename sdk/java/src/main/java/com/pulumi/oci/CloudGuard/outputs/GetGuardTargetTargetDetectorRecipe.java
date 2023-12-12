@@ -264,20 +264,20 @@ public final class GetGuardTargetTargetDetectorRecipe {
             return this;
         }
         public GetGuardTargetTargetDetectorRecipe build() {
-            final var o = new GetGuardTargetTargetDetectorRecipe();
-            o.compartmentId = compartmentId;
-            o.description = description;
-            o.detector = detector;
-            o.detectorRecipeId = detectorRecipeId;
-            o.detectorRules = detectorRules;
-            o.displayName = displayName;
-            o.effectiveDetectorRules = effectiveDetectorRules;
-            o.id = id;
-            o.owner = owner;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetGuardTargetTargetDetectorRecipe();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.description = description;
+            _resultValue.detector = detector;
+            _resultValue.detectorRecipeId = detectorRecipeId;
+            _resultValue.detectorRules = detectorRules;
+            _resultValue.displayName = displayName;
+            _resultValue.effectiveDetectorRules = effectiveDetectorRules;
+            _resultValue.id = id;
+            _resultValue.owner = owner;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

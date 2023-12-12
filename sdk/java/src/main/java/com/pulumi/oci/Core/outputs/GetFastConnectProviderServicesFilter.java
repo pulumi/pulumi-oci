@@ -67,11 +67,11 @@ public final class GetFastConnectProviderServicesFilter {
             return values(List.of(values));
         }
         public GetFastConnectProviderServicesFilter build() {
-            final var o = new GetFastConnectProviderServicesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFastConnectProviderServicesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

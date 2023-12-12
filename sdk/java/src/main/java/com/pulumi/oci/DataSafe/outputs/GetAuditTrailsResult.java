@@ -216,19 +216,19 @@ public final class GetAuditTrailsResult {
             return this;
         }
         public GetAuditTrailsResult build() {
-            final var o = new GetAuditTrailsResult();
-            o.accessLevel = accessLevel;
-            o.auditTrailCollections = auditTrailCollections;
-            o.auditTrailId = auditTrailId;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.status = status;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new GetAuditTrailsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.auditTrailCollections = auditTrailCollections;
+            _resultValue.auditTrailId = auditTrailId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

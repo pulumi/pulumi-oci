@@ -42,9 +42,9 @@ public final class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnal
             return items(List.of(items));
         }
         public GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection build() {
-            final var o = new GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

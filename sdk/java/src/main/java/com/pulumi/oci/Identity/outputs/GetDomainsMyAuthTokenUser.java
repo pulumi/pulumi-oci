@@ -122,13 +122,13 @@ public final class GetDomainsMyAuthTokenUser {
             return this;
         }
         public GetDomainsMyAuthTokenUser build() {
-            final var o = new GetDomainsMyAuthTokenUser();
-            o.display = display;
-            o.name = name;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyAuthTokenUser();
+            _resultValue.display = display;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

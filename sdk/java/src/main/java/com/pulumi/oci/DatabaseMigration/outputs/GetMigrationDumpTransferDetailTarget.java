@@ -84,11 +84,11 @@ public final class GetMigrationDumpTransferDetailTarget {
             return this;
         }
         public GetMigrationDumpTransferDetailTarget build() {
-            final var o = new GetMigrationDumpTransferDetailTarget();
-            o.kind = kind;
-            o.ociHome = ociHome;
-            o.walletLocation = walletLocation;
-            return o;
+            final var _resultValue = new GetMigrationDumpTransferDetailTarget();
+            _resultValue.kind = kind;
+            _resultValue.ociHome = ociHome;
+            _resultValue.walletLocation = walletLocation;
+            return _resultValue;
         }
     }
 }

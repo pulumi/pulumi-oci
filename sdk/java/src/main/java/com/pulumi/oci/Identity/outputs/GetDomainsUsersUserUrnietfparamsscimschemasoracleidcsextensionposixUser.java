@@ -123,13 +123,13 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser();
-            o.gecos = gecos;
-            o.gidNumber = gidNumber;
-            o.homeDirectory = homeDirectory;
-            o.loginShell = loginShell;
-            o.uidNumber = uidNumber;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionposixUser();
+            _resultValue.gecos = gecos;
+            _resultValue.gidNumber = gidNumber;
+            _resultValue.homeDirectory = homeDirectory;
+            _resultValue.loginShell = loginShell;
+            _resultValue.uidNumber = uidNumber;
+            return _resultValue;
         }
     }
 }

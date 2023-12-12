@@ -85,11 +85,11 @@ public final class GetVbInstanceAlternateCustomEndpoint {
             return this;
         }
         public GetVbInstanceAlternateCustomEndpoint build() {
-            final var o = new GetVbInstanceAlternateCustomEndpoint();
-            o.certificateSecretId = certificateSecretId;
-            o.certificateSecretVersion = certificateSecretVersion;
-            o.hostname = hostname;
-            return o;
+            final var _resultValue = new GetVbInstanceAlternateCustomEndpoint();
+            _resultValue.certificateSecretId = certificateSecretId;
+            _resultValue.certificateSecretVersion = certificateSecretVersion;
+            _resultValue.hostname = hostname;
+            return _resultValue;
         }
     }
 }

@@ -107,12 +107,12 @@ public final class GetBdsInstanceGetOsPatchTargetPackage {
             return this;
         }
         public GetBdsInstanceGetOsPatchTargetPackage build() {
-            final var o = new GetBdsInstanceGetOsPatchTargetPackage();
-            o.packageName = packageName;
-            o.relatedCvEs = relatedCvEs;
-            o.targetVersion = targetVersion;
-            o.updateType = updateType;
-            return o;
+            final var _resultValue = new GetBdsInstanceGetOsPatchTargetPackage();
+            _resultValue.packageName = packageName;
+            _resultValue.relatedCvEs = relatedCvEs;
+            _resultValue.targetVersion = targetVersion;
+            _resultValue.updateType = updateType;
+            return _resultValue;
         }
     }
 }

@@ -75,11 +75,11 @@ public final class GetVirtualCircuitBandwidthShapesFilter {
             return values(List.of(values));
         }
         public GetVirtualCircuitBandwidthShapesFilter build() {
-            final var o = new GetVirtualCircuitBandwidthShapesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVirtualCircuitBandwidthShapesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -434,30 +434,30 @@ public final class GetDomainsApprovalWorkflowAssignmentResult {
             return this;
         }
         public GetDomainsApprovalWorkflowAssignmentResult build() {
-            final var o = new GetDomainsApprovalWorkflowAssignmentResult();
-            o.approvalWorkflowAssignmentId = approvalWorkflowAssignmentId;
-            o.approvalWorkflows = approvalWorkflows;
-            o.assignedTos = assignedTos;
-            o.assignmentType = assignmentType;
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.metas = metas;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            return o;
+            final var _resultValue = new GetDomainsApprovalWorkflowAssignmentResult();
+            _resultValue.approvalWorkflowAssignmentId = approvalWorkflowAssignmentId;
+            _resultValue.approvalWorkflows = approvalWorkflows;
+            _resultValue.assignedTos = assignedTos;
+            _resultValue.assignmentType = assignmentType;
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.metas = metas;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            return _resultValue;
         }
     }
 }

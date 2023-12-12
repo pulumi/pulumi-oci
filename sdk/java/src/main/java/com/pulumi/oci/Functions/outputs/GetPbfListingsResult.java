@@ -172,17 +172,17 @@ public final class GetPbfListingsResult {
             return triggers(List.of(triggers));
         }
         public GetPbfListingsResult build() {
-            final var o = new GetPbfListingsResult();
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.nameContains = nameContains;
-            o.nameStartsWith = nameStartsWith;
-            o.pbfListingId = pbfListingId;
-            o.pbfListingsCollections = pbfListingsCollections;
-            o.state = state;
-            o.triggers = triggers;
-            return o;
+            final var _resultValue = new GetPbfListingsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.nameContains = nameContains;
+            _resultValue.nameStartsWith = nameStartsWith;
+            _resultValue.pbfListingId = pbfListingId;
+            _resultValue.pbfListingsCollections = pbfListingsCollections;
+            _resultValue.state = state;
+            _resultValue.triggers = triggers;
+            return _resultValue;
         }
     }
 }

@@ -109,12 +109,12 @@ public final class GetNetworkLoadBalancerIpAddress {
             return reservedIps(List.of(reservedIps));
         }
         public GetNetworkLoadBalancerIpAddress build() {
-            final var o = new GetNetworkLoadBalancerIpAddress();
-            o.ipAddress = ipAddress;
-            o.ipVersion = ipVersion;
-            o.isPublic = isPublic;
-            o.reservedIps = reservedIps;
-            return o;
+            final var _resultValue = new GetNetworkLoadBalancerIpAddress();
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.ipVersion = ipVersion;
+            _resultValue.isPublic = isPublic;
+            _resultValue.reservedIps = reservedIps;
+            return _resultValue;
         }
     }
 }

@@ -51,9 +51,9 @@ public final class BuildRunBuildOutputArtifactOverrideParameter {
             return items(List.of(items));
         }
         public BuildRunBuildOutputArtifactOverrideParameter build() {
-            final var o = new BuildRunBuildOutputArtifactOverrideParameter();
-            o.items = items;
-            return o;
+            final var _resultValue = new BuildRunBuildOutputArtifactOverrideParameter();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -182,16 +182,16 @@ public final class GetCloudAutonomousVmClustersResult {
             return this;
         }
         public GetCloudAutonomousVmClustersResult build() {
-            final var o = new GetCloudAutonomousVmClustersResult();
-            o.availabilityDomain = availabilityDomain;
-            o.cloudAutonomousVmClusters = cloudAutonomousVmClusters;
-            o.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCloudAutonomousVmClustersResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.cloudAutonomousVmClusters = cloudAutonomousVmClusters;
+            _resultValue.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

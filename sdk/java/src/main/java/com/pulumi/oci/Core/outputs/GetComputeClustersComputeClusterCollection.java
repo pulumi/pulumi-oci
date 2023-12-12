@@ -42,9 +42,9 @@ public final class GetComputeClustersComputeClusterCollection {
             return items(List.of(items));
         }
         public GetComputeClustersComputeClusterCollection build() {
-            final var o = new GetComputeClustersComputeClusterCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetComputeClustersComputeClusterCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

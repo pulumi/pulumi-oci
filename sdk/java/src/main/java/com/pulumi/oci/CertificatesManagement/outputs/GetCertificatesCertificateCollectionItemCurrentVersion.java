@@ -252,19 +252,19 @@ public final class GetCertificatesCertificateCollectionItemCurrentVersion {
             return this;
         }
         public GetCertificatesCertificateCollectionItemCurrentVersion build() {
-            final var o = new GetCertificatesCertificateCollectionItemCurrentVersion();
-            o.certificateId = certificateId;
-            o.issuerCaVersionNumber = issuerCaVersionNumber;
-            o.revocationStatuses = revocationStatuses;
-            o.serialNumber = serialNumber;
-            o.stages = stages;
-            o.subjectAlternativeNames = subjectAlternativeNames;
-            o.timeCreated = timeCreated;
-            o.timeOfDeletion = timeOfDeletion;
-            o.validities = validities;
-            o.versionName = versionName;
-            o.versionNumber = versionNumber;
-            return o;
+            final var _resultValue = new GetCertificatesCertificateCollectionItemCurrentVersion();
+            _resultValue.certificateId = certificateId;
+            _resultValue.issuerCaVersionNumber = issuerCaVersionNumber;
+            _resultValue.revocationStatuses = revocationStatuses;
+            _resultValue.serialNumber = serialNumber;
+            _resultValue.stages = stages;
+            _resultValue.subjectAlternativeNames = subjectAlternativeNames;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfDeletion = timeOfDeletion;
+            _resultValue.validities = validities;
+            _resultValue.versionName = versionName;
+            _resultValue.versionNumber = versionNumber;
+            return _resultValue;
         }
     }
 }

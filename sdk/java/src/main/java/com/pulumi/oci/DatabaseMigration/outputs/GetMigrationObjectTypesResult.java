@@ -86,11 +86,11 @@ public final class GetMigrationObjectTypesResult {
             return migrationObjectTypeSummaryCollections(List.of(migrationObjectTypeSummaryCollections));
         }
         public GetMigrationObjectTypesResult build() {
-            final var o = new GetMigrationObjectTypesResult();
-            o.filters = filters;
-            o.id = id;
-            o.migrationObjectTypeSummaryCollections = migrationObjectTypeSummaryCollections;
-            return o;
+            final var _resultValue = new GetMigrationObjectTypesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.migrationObjectTypeSummaryCollections = migrationObjectTypeSummaryCollections;
+            return _resultValue;
         }
     }
 }

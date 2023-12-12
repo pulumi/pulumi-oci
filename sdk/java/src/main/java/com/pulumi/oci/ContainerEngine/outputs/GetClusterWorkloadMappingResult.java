@@ -211,18 +211,18 @@ public final class GetClusterWorkloadMappingResult {
             return this;
         }
         public GetClusterWorkloadMappingResult build() {
-            final var o = new GetClusterWorkloadMappingResult();
-            o.clusterId = clusterId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.mappedCompartmentId = mappedCompartmentId;
-            o.mappedTenancyId = mappedTenancyId;
-            o.namespace = namespace;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.workloadMappingId = workloadMappingId;
-            return o;
+            final var _resultValue = new GetClusterWorkloadMappingResult();
+            _resultValue.clusterId = clusterId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.mappedCompartmentId = mappedCompartmentId;
+            _resultValue.mappedTenancyId = mappedTenancyId;
+            _resultValue.namespace = namespace;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.workloadMappingId = workloadMappingId;
+            return _resultValue;
         }
     }
 }

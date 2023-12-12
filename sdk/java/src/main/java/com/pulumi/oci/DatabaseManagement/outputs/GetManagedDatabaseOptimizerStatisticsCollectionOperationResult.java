@@ -345,25 +345,25 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationResul
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionOperationResult build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsCollectionOperationResult();
-            o.completedCount = completedCount;
-            o.databases = databases;
-            o.durationInSeconds = durationInSeconds;
-            o.endTime = endTime;
-            o.failedCount = failedCount;
-            o.id = id;
-            o.inProgressCount = inProgressCount;
-            o.jobName = jobName;
-            o.managedDatabaseId = managedDatabaseId;
-            o.operationName = operationName;
-            o.optimizerStatisticsCollectionOperationId = optimizerStatisticsCollectionOperationId;
-            o.startTime = startTime;
-            o.status = status;
-            o.target = target;
-            o.tasks = tasks;
-            o.timedOutCount = timedOutCount;
-            o.totalObjectsCount = totalObjectsCount;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsCollectionOperationResult();
+            _resultValue.completedCount = completedCount;
+            _resultValue.databases = databases;
+            _resultValue.durationInSeconds = durationInSeconds;
+            _resultValue.endTime = endTime;
+            _resultValue.failedCount = failedCount;
+            _resultValue.id = id;
+            _resultValue.inProgressCount = inProgressCount;
+            _resultValue.jobName = jobName;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.operationName = operationName;
+            _resultValue.optimizerStatisticsCollectionOperationId = optimizerStatisticsCollectionOperationId;
+            _resultValue.startTime = startTime;
+            _resultValue.status = status;
+            _resultValue.target = target;
+            _resultValue.tasks = tasks;
+            _resultValue.timedOutCount = timedOutCount;
+            _resultValue.totalObjectsCount = totalObjectsCount;
+            return _resultValue;
         }
     }
 }

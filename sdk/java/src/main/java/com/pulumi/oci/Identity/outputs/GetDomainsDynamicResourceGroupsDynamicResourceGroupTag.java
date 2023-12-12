@@ -65,10 +65,10 @@ public final class GetDomainsDynamicResourceGroupsDynamicResourceGroupTag {
             return this;
         }
         public GetDomainsDynamicResourceGroupsDynamicResourceGroupTag build() {
-            final var o = new GetDomainsDynamicResourceGroupsDynamicResourceGroupTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsDynamicResourceGroupsDynamicResourceGroupTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

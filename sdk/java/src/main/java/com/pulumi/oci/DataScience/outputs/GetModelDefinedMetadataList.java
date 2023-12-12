@@ -115,12 +115,12 @@ public final class GetModelDefinedMetadataList {
             return this;
         }
         public GetModelDefinedMetadataList build() {
-            final var o = new GetModelDefinedMetadataList();
-            o.category = category;
-            o.description = description;
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetModelDefinedMetadataList();
+            _resultValue.category = category;
+            _resultValue.description = description;
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

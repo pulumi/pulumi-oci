@@ -257,20 +257,20 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult {
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult();
-            o.databases = databases;
-            o.errorMessage = errorMessage;
-            o.executionName = executionName;
-            o.findings = findings;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.reports = reports;
-            o.status = status;
-            o.statusMessage = statusMessage;
-            o.taskName = taskName;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult();
+            _resultValue.databases = databases;
+            _resultValue.errorMessage = errorMessage;
+            _resultValue.executionName = executionName;
+            _resultValue.findings = findings;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.reports = reports;
+            _resultValue.status = status;
+            _resultValue.statusMessage = statusMessage;
+            _resultValue.taskName = taskName;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

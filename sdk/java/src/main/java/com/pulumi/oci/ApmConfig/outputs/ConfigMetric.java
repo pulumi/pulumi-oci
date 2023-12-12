@@ -105,12 +105,12 @@ public final class ConfigMetric {
             return this;
         }
         public ConfigMetric build() {
-            final var o = new ConfigMetric();
-            o.description = description;
-            o.name = name;
-            o.unit = unit;
-            o.valueSource = valueSource;
-            return o;
+            final var _resultValue = new ConfigMetric();
+            _resultValue.description = description;
+            _resultValue.name = name;
+            _resultValue.unit = unit;
+            _resultValue.valueSource = valueSource;
+            return _resultValue;
         }
     }
 }

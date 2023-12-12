@@ -48,9 +48,9 @@ public final class GetAlertAnalyticItemDimension {
             return this;
         }
         public GetAlertAnalyticItemDimension build() {
-            final var o = new GetAlertAnalyticItemDimension();
-            o.groupBy = groupBy;
-            return o;
+            final var _resultValue = new GetAlertAnalyticItemDimension();
+            _resultValue.groupBy = groupBy;
+            return _resultValue;
         }
     }
 }

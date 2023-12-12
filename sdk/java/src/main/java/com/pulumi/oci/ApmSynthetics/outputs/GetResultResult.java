@@ -176,16 +176,16 @@ public final class GetResultResult {
             return this;
         }
         public GetResultResult build() {
-            final var o = new GetResultResult();
-            o.apmDomainId = apmDomainId;
-            o.executionTime = executionTime;
-            o.id = id;
-            o.monitorId = monitorId;
-            o.resultContentType = resultContentType;
-            o.resultDataSets = resultDataSets;
-            o.resultType = resultType;
-            o.vantagePoint = vantagePoint;
-            return o;
+            final var _resultValue = new GetResultResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.executionTime = executionTime;
+            _resultValue.id = id;
+            _resultValue.monitorId = monitorId;
+            _resultValue.resultContentType = resultContentType;
+            _resultValue.resultDataSets = resultDataSets;
+            _resultValue.resultType = resultType;
+            _resultValue.vantagePoint = vantagePoint;
+            return _resultValue;
         }
     }
 }

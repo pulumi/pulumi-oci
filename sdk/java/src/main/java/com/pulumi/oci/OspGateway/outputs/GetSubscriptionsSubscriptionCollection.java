@@ -42,9 +42,9 @@ public final class GetSubscriptionsSubscriptionCollection {
             return items(List.of(items));
         }
         public GetSubscriptionsSubscriptionCollection build() {
-            final var o = new GetSubscriptionsSubscriptionCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSubscriptionsSubscriptionCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

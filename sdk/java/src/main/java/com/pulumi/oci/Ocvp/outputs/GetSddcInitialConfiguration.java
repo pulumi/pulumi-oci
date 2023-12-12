@@ -50,9 +50,9 @@ public final class GetSddcInitialConfiguration {
             return initialClusterConfigurations(List.of(initialClusterConfigurations));
         }
         public GetSddcInitialConfiguration build() {
-            final var o = new GetSddcInitialConfiguration();
-            o.initialClusterConfigurations = initialClusterConfigurations;
-            return o;
+            final var _resultValue = new GetSddcInitialConfiguration();
+            _resultValue.initialClusterConfigurations = initialClusterConfigurations;
+            return _resultValue;
         }
     }
 }

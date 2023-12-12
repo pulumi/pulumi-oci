@@ -67,11 +67,11 @@ public final class GetFusionEnvironmentTimeAvailableForRefreshsFilter {
             return values(List.of(values));
         }
         public GetFusionEnvironmentTimeAvailableForRefreshsFilter build() {
-            final var o = new GetFusionEnvironmentTimeAvailableForRefreshsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentTimeAvailableForRefreshsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

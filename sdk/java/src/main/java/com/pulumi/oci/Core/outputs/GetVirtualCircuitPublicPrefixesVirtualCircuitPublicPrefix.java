@@ -69,10 +69,10 @@ public final class GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix {
             return this;
         }
         public GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix build() {
-            final var o = new GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix();
-            o.cidrBlock = cidrBlock;
-            o.verificationState = verificationState;
-            return o;
+            final var _resultValue = new GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix();
+            _resultValue.cidrBlock = cidrBlock;
+            _resultValue.verificationState = verificationState;
+            return _resultValue;
         }
     }
 }

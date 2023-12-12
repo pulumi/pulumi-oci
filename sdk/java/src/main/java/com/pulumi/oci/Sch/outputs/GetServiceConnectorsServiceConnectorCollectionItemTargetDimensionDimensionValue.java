@@ -84,11 +84,11 @@ public final class GetServiceConnectorsServiceConnectorCollectionItemTargetDimen
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue build() {
-            final var o = new GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue();
-            o.kind = kind;
-            o.path = path;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionDimensionValue();
+            _resultValue.kind = kind;
+            _resultValue.path = path;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

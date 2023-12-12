@@ -199,17 +199,17 @@ public final class GetDomainsAppsAppGrantedAppRole {
             return this;
         }
         public GetDomainsAppsAppGrantedAppRole build() {
-            final var o = new GetDomainsAppsAppGrantedAppRole();
-            o.adminRole = adminRole;
-            o.appId = appId;
-            o.appName = appName;
-            o.display = display;
-            o.legacyGroupName = legacyGroupName;
-            o.readOnly = readOnly;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppGrantedAppRole();
+            _resultValue.adminRole = adminRole;
+            _resultValue.appId = appId;
+            _resultValue.appName = appName;
+            _resultValue.display = display;
+            _resultValue.legacyGroupName = legacyGroupName;
+            _resultValue.readOnly = readOnly;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

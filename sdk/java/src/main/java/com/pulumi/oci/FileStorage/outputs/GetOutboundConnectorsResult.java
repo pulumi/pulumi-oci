@@ -163,15 +163,15 @@ public final class GetOutboundConnectorsResult {
             return this;
         }
         public GetOutboundConnectorsResult build() {
-            final var o = new GetOutboundConnectorsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.outboundConnectors = outboundConnectors;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetOutboundConnectorsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.outboundConnectors = outboundConnectors;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

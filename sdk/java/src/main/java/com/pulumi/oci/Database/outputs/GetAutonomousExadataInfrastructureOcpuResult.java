@@ -120,13 +120,13 @@ public final class GetAutonomousExadataInfrastructureOcpuResult {
             return this;
         }
         public GetAutonomousExadataInfrastructureOcpuResult build() {
-            final var o = new GetAutonomousExadataInfrastructureOcpuResult();
-            o.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
-            o.byWorkloadTypes = byWorkloadTypes;
-            o.consumedCpu = consumedCpu;
-            o.id = id;
-            o.totalCpu = totalCpu;
-            return o;
+            final var _resultValue = new GetAutonomousExadataInfrastructureOcpuResult();
+            _resultValue.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
+            _resultValue.byWorkloadTypes = byWorkloadTypes;
+            _resultValue.consumedCpu = consumedCpu;
+            _resultValue.id = id;
+            _resultValue.totalCpu = totalCpu;
+            return _resultValue;
         }
     }
 }

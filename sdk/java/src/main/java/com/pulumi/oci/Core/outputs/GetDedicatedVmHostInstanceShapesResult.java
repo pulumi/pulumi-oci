@@ -128,14 +128,14 @@ public final class GetDedicatedVmHostInstanceShapesResult {
             return this;
         }
         public GetDedicatedVmHostInstanceShapesResult build() {
-            final var o = new GetDedicatedVmHostInstanceShapesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.dedicatedVmHostInstanceShapes = dedicatedVmHostInstanceShapes;
-            o.dedicatedVmHostShape = dedicatedVmHostShape;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDedicatedVmHostInstanceShapesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dedicatedVmHostInstanceShapes = dedicatedVmHostInstanceShapes;
+            _resultValue.dedicatedVmHostShape = dedicatedVmHostShape;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

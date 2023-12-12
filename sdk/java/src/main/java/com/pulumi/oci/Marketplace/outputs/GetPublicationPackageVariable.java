@@ -142,14 +142,14 @@ public final class GetPublicationPackageVariable {
             return this;
         }
         public GetPublicationPackageVariable build() {
-            final var o = new GetPublicationPackageVariable();
-            o.dataType = dataType;
-            o.defaultValue = defaultValue;
-            o.description = description;
-            o.hintMessage = hintMessage;
-            o.isMandatory = isMandatory;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPublicationPackageVariable();
+            _resultValue.dataType = dataType;
+            _resultValue.defaultValue = defaultValue;
+            _resultValue.description = description;
+            _resultValue.hintMessage = hintMessage;
+            _resultValue.isMandatory = isMandatory;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

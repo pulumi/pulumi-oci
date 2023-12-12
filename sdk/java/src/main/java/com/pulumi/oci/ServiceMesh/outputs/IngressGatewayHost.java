@@ -99,11 +99,11 @@ public final class IngressGatewayHost {
             return this;
         }
         public IngressGatewayHost build() {
-            final var o = new IngressGatewayHost();
-            o.hostnames = hostnames;
-            o.listeners = listeners;
-            o.name = name;
-            return o;
+            final var _resultValue = new IngressGatewayHost();
+            _resultValue.hostnames = hostnames;
+            _resultValue.listeners = listeners;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

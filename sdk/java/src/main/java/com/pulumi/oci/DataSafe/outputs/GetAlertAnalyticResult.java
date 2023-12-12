@@ -202,19 +202,19 @@ public final class GetAlertAnalyticResult {
             return this;
         }
         public GetAlertAnalyticResult build() {
-            final var o = new GetAlertAnalyticResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.groupBies = groupBies;
-            o.id = id;
-            o.items = items;
-            o.queryTimeZone = queryTimeZone;
-            o.scimQuery = scimQuery;
-            o.summaryFields = summaryFields;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetAlertAnalyticResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.groupBies = groupBies;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.queryTimeZone = queryTimeZone;
+            _resultValue.scimQuery = scimQuery;
+            _resultValue.summaryFields = summaryFields;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

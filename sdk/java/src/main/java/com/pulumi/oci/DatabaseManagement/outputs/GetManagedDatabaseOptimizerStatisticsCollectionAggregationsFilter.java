@@ -67,11 +67,11 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFi
             return values(List.of(values));
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

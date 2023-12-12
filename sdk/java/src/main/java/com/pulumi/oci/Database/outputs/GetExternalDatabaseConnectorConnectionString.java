@@ -104,12 +104,12 @@ public final class GetExternalDatabaseConnectorConnectionString {
             return this;
         }
         public GetExternalDatabaseConnectorConnectionString build() {
-            final var o = new GetExternalDatabaseConnectorConnectionString();
-            o.hostname = hostname;
-            o.port = port;
-            o.protocol = protocol;
-            o.service = service;
-            return o;
+            final var _resultValue = new GetExternalDatabaseConnectorConnectionString();
+            _resultValue.hostname = hostname;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.service = service;
+            return _resultValue;
         }
     }
 }

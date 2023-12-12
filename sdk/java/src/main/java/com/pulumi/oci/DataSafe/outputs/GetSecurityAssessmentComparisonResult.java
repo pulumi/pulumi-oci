@@ -149,15 +149,15 @@ public final class GetSecurityAssessmentComparisonResult {
             return this;
         }
         public GetSecurityAssessmentComparisonResult build() {
-            final var o = new GetSecurityAssessmentComparisonResult();
-            o.baselineId = baselineId;
-            o.comparisonSecurityAssessmentId = comparisonSecurityAssessmentId;
-            o.id = id;
-            o.securityAssessmentId = securityAssessmentId;
-            o.state = state;
-            o.targets = targets;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentComparisonResult();
+            _resultValue.baselineId = baselineId;
+            _resultValue.comparisonSecurityAssessmentId = comparisonSecurityAssessmentId;
+            _resultValue.id = id;
+            _resultValue.securityAssessmentId = securityAssessmentId;
+            _resultValue.state = state;
+            _resultValue.targets = targets;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

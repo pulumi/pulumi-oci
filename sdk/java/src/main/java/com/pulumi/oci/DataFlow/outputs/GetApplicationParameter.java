@@ -65,10 +65,10 @@ public final class GetApplicationParameter {
             return this;
         }
         public GetApplicationParameter build() {
-            final var o = new GetApplicationParameter();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetApplicationParameter();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

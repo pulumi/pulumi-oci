@@ -65,10 +65,10 @@ public final class GetLogAnalyticsPreferenceItem {
             return this;
         }
         public GetLogAnalyticsPreferenceItem build() {
-            final var o = new GetLogAnalyticsPreferenceItem();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetLogAnalyticsPreferenceItem();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

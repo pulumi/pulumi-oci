@@ -48,9 +48,9 @@ public final class IngressGatewayAccessLogging {
             return this;
         }
         public IngressGatewayAccessLogging build() {
-            final var o = new IngressGatewayAccessLogging();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new IngressGatewayAccessLogging();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

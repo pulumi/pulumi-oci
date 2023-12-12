@@ -113,12 +113,12 @@ public final class NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails {
             return podSubnetIds(List.of(podSubnetIds));
         }
         public NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails build() {
-            final var o = new NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails();
-            o.cniType = cniType;
-            o.maxPodsPerNode = maxPodsPerNode;
-            o.podNsgIds = podNsgIds;
-            o.podSubnetIds = podSubnetIds;
-            return o;
+            final var _resultValue = new NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails();
+            _resultValue.cniType = cniType;
+            _resultValue.maxPodsPerNode = maxPodsPerNode;
+            _resultValue.podNsgIds = podNsgIds;
+            _resultValue.podSubnetIds = podSubnetIds;
+            return _resultValue;
         }
     }
 }

@@ -135,13 +135,13 @@ public final class GetPodShapesPodShape {
             return this;
         }
         public GetPodShapesPodShape build() {
-            final var o = new GetPodShapesPodShape();
-            o.memoryOptions = memoryOptions;
-            o.name = name;
-            o.networkBandwidthOptions = networkBandwidthOptions;
-            o.ocpuOptions = ocpuOptions;
-            o.processorDescription = processorDescription;
-            return o;
+            final var _resultValue = new GetPodShapesPodShape();
+            _resultValue.memoryOptions = memoryOptions;
+            _resultValue.name = name;
+            _resultValue.networkBandwidthOptions = networkBandwidthOptions;
+            _resultValue.ocpuOptions = ocpuOptions;
+            _resultValue.processorDescription = processorDescription;
+            return _resultValue;
         }
     }
 }

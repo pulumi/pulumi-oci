@@ -42,9 +42,9 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollection {
             return items(List.of(items));
         }
         public GetMaskingPoliciesMaskingColumnsMaskingColumnCollection build() {
-            final var o = new GetMaskingPoliciesMaskingColumnsMaskingColumnCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMaskingPoliciesMaskingColumnsMaskingColumnCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

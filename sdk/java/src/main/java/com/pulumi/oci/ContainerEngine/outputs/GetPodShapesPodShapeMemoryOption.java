@@ -122,13 +122,13 @@ public final class GetPodShapesPodShapeMemoryOption {
             return this;
         }
         public GetPodShapesPodShapeMemoryOption build() {
-            final var o = new GetPodShapesPodShapeMemoryOption();
-            o.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
-            o.maxInGbs = maxInGbs;
-            o.maxPerOcpuInGbs = maxPerOcpuInGbs;
-            o.minInGbs = minInGbs;
-            o.minPerOcpuInGbs = minPerOcpuInGbs;
-            return o;
+            final var _resultValue = new GetPodShapesPodShapeMemoryOption();
+            _resultValue.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
+            _resultValue.maxInGbs = maxInGbs;
+            _resultValue.maxPerOcpuInGbs = maxPerOcpuInGbs;
+            _resultValue.minInGbs = minInGbs;
+            _resultValue.minPerOcpuInGbs = minPerOcpuInGbs;
+            return _resultValue;
         }
     }
 }

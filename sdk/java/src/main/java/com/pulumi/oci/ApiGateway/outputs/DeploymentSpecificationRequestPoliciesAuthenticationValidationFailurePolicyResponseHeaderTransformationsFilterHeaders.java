@@ -78,10 +78,10 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
             return this;
         }
         public DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeaders build() {
-            final var o = new DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeaders();
-            o.items = items;
-            o.type = type;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeaders();
+            _resultValue.items = items;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

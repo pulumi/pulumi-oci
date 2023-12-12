@@ -48,9 +48,9 @@ public final class TargetAssetTestSpecInstanceOption {
             return this;
         }
         public TargetAssetTestSpecInstanceOption build() {
-            final var o = new TargetAssetTestSpecInstanceOption();
-            o.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
-            return o;
+            final var _resultValue = new TargetAssetTestSpecInstanceOption();
+            _resultValue.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
+            return _resultValue;
         }
     }
 }

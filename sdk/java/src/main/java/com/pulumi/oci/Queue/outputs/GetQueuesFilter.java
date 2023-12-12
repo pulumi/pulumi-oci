@@ -67,11 +67,11 @@ public final class GetQueuesFilter {
             return values(List.of(values));
         }
         public GetQueuesFilter build() {
-            final var o = new GetQueuesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetQueuesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -242,21 +242,21 @@ public final class GetDbSystemsDbSystemDbHome {
             return this;
         }
         public GetDbSystemsDbSystemDbHome build() {
-            final var o = new GetDbSystemsDbSystemDbHome();
-            o.createAsync = createAsync;
-            o.databaseSoftwareImageId = databaseSoftwareImageId;
-            o.databases = databases;
-            o.dbHomeLocation = dbHomeLocation;
-            o.dbVersion = dbVersion;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemDbHome();
+            _resultValue.createAsync = createAsync;
+            _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
+            _resultValue.databases = databases;
+            _resultValue.dbHomeLocation = dbHomeLocation;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lastPatchHistoryEntryId = lastPatchHistoryEntryId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

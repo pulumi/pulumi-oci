@@ -50,9 +50,9 @@ public final class GetExternalAsmUsersExternalAsmUserCollection {
             return items(List.of(items));
         }
         public GetExternalAsmUsersExternalAsmUserCollection build() {
-            final var o = new GetExternalAsmUsersExternalAsmUserCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalAsmUsersExternalAsmUserCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

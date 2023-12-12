@@ -73,12 +73,12 @@ public final class LogAnalyticsObjectCollectionRuleOverride {
             return this;
         }
         public LogAnalyticsObjectCollectionRuleOverride build() {
-            final var o = new LogAnalyticsObjectCollectionRuleOverride();
-            o.matchType = matchType;
-            o.matchValue = matchValue;
-            o.propertyName = propertyName;
-            o.propertyValue = propertyValue;
-            return o;
+            final var _resultValue = new LogAnalyticsObjectCollectionRuleOverride();
+            _resultValue.matchType = matchType;
+            _resultValue.matchValue = matchValue;
+            _resultValue.propertyName = propertyName;
+            _resultValue.propertyValue = propertyValue;
+            return _resultValue;
         }
     }
 }

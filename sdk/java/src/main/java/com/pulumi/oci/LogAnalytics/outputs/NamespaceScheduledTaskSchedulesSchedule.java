@@ -144,14 +144,14 @@ public final class NamespaceScheduledTaskSchedulesSchedule {
             return this;
         }
         public NamespaceScheduledTaskSchedulesSchedule build() {
-            final var o = new NamespaceScheduledTaskSchedulesSchedule();
-            o.expression = expression;
-            o.misfirePolicy = misfirePolicy;
-            o.recurringInterval = recurringInterval;
-            o.repeatCount = repeatCount;
-            o.timeZone = timeZone;
-            o.type = type;
-            return o;
+            final var _resultValue = new NamespaceScheduledTaskSchedulesSchedule();
+            _resultValue.expression = expression;
+            _resultValue.misfirePolicy = misfirePolicy;
+            _resultValue.recurringInterval = recurringInterval;
+            _resultValue.repeatCount = repeatCount;
+            _resultValue.timeZone = timeZone;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

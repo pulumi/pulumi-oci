@@ -57,10 +57,10 @@ public final class GetConnectionReplicationCredential {
             return this;
         }
         public GetConnectionReplicationCredential build() {
-            final var o = new GetConnectionReplicationCredential();
-            o.password = password;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetConnectionReplicationCredential();
+            _resultValue.password = password;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

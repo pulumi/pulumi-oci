@@ -75,11 +75,11 @@ public final class GetStreamsFilter {
             return values(List.of(values));
         }
         public GetStreamsFilter build() {
-            final var o = new GetStreamsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetStreamsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

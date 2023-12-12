@@ -163,15 +163,15 @@ public final class GetDetectionModelsResult {
             return this;
         }
         public GetDetectionModelsResult build() {
-            final var o = new GetDetectionModelsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.modelCollections = modelCollections;
-            o.projectId = projectId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDetectionModelsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.modelCollections = modelCollections;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

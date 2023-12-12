@@ -236,18 +236,18 @@ public final class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenan
             return weeksOfMonths(List.of(weeksOfMonths));
         }
         public GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow build() {
-            final var o = new GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow();
-            o.customActionTimeoutInMins = customActionTimeoutInMins;
-            o.daysOfWeeks = daysOfWeeks;
-            o.hoursOfDays = hoursOfDays;
-            o.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
-            o.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
-            o.leadTimeInWeeks = leadTimeInWeeks;
-            o.months = months;
-            o.patchingMode = patchingMode;
-            o.preference = preference;
-            o.weeksOfMonths = weeksOfMonths;
-            return o;
+            final var _resultValue = new GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindow();
+            _resultValue.customActionTimeoutInMins = customActionTimeoutInMins;
+            _resultValue.daysOfWeeks = daysOfWeeks;
+            _resultValue.hoursOfDays = hoursOfDays;
+            _resultValue.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+            _resultValue.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
+            _resultValue.leadTimeInWeeks = leadTimeInWeeks;
+            _resultValue.months = months;
+            _resultValue.patchingMode = patchingMode;
+            _resultValue.preference = preference;
+            _resultValue.weeksOfMonths = weeksOfMonths;
+            return _resultValue;
         }
     }
 }

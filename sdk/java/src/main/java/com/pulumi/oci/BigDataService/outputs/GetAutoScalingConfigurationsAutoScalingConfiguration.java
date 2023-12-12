@@ -158,19 +158,19 @@ public final class GetAutoScalingConfigurationsAutoScalingConfiguration {
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfiguration build() {
-            final var o = new GetAutoScalingConfigurationsAutoScalingConfiguration();
-            o.bdsInstanceId = bdsInstanceId;
-            o.clusterAdminPassword = clusterAdminPassword;
-            o.displayName = displayName;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.nodeType = nodeType;
-            o.policies = policies;
-            o.policyDetails = policyDetails;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationsAutoScalingConfiguration();
+            _resultValue.bdsInstanceId = bdsInstanceId;
+            _resultValue.clusterAdminPassword = clusterAdminPassword;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.nodeType = nodeType;
+            _resultValue.policies = policies;
+            _resultValue.policyDetails = policyDetails;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

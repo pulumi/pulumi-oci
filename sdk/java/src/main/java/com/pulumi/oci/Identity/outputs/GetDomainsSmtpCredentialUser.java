@@ -122,13 +122,13 @@ public final class GetDomainsSmtpCredentialUser {
             return this;
         }
         public GetDomainsSmtpCredentialUser build() {
-            final var o = new GetDomainsSmtpCredentialUser();
-            o.display = display;
-            o.name = name;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSmtpCredentialUser();
+            _resultValue.display = display;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -68,10 +68,10 @@ public final class DeploymentSpecificationLoggingPolicies {
             return this;
         }
         public DeploymentSpecificationLoggingPolicies build() {
-            final var o = new DeploymentSpecificationLoggingPolicies();
-            o.accessLog = accessLog;
-            o.executionLog = executionLog;
-            return o;
+            final var _resultValue = new DeploymentSpecificationLoggingPolicies();
+            _resultValue.accessLog = accessLog;
+            _resultValue.executionLog = executionLog;
+            return _resultValue;
         }
     }
 }

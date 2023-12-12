@@ -84,11 +84,11 @@ public final class GetOrganizationSubscriptionsOrganizationSubscriptionCurrency 
             return this;
         }
         public GetOrganizationSubscriptionsOrganizationSubscriptionCurrency build() {
-            final var o = new GetOrganizationSubscriptionsOrganizationSubscriptionCurrency();
-            o.isoCode = isoCode;
-            o.name = name;
-            o.stdPrecision = stdPrecision;
-            return o;
+            final var _resultValue = new GetOrganizationSubscriptionsOrganizationSubscriptionCurrency();
+            _resultValue.isoCode = isoCode;
+            _resultValue.name = name;
+            _resultValue.stdPrecision = stdPrecision;
+            return _resultValue;
         }
     }
 }

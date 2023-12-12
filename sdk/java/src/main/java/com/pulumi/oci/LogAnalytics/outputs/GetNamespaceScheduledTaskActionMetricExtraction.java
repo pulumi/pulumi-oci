@@ -103,12 +103,12 @@ public final class GetNamespaceScheduledTaskActionMetricExtraction {
             return this;
         }
         public GetNamespaceScheduledTaskActionMetricExtraction build() {
-            final var o = new GetNamespaceScheduledTaskActionMetricExtraction();
-            o.compartmentId = compartmentId;
-            o.metricName = metricName;
-            o.namespace = namespace;
-            o.resourceGroup = resourceGroup;
-            return o;
+            final var _resultValue = new GetNamespaceScheduledTaskActionMetricExtraction();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.metricName = metricName;
+            _resultValue.namespace = namespace;
+            _resultValue.resourceGroup = resourceGroup;
+            return _resultValue;
         }
     }
 }

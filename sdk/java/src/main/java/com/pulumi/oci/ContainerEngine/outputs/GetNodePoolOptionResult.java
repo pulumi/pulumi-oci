@@ -160,15 +160,15 @@ public final class GetNodePoolOptionResult {
             return sources(List.of(sources));
         }
         public GetNodePoolOptionResult build() {
-            final var o = new GetNodePoolOptionResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.images = images;
-            o.kubernetesVersions = kubernetesVersions;
-            o.nodePoolOptionId = nodePoolOptionId;
-            o.shapes = shapes;
-            o.sources = sources;
-            return o;
+            final var _resultValue = new GetNodePoolOptionResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.images = images;
+            _resultValue.kubernetesVersions = kubernetesVersions;
+            _resultValue.nodePoolOptionId = nodePoolOptionId;
+            _resultValue.shapes = shapes;
+            _resultValue.sources = sources;
+            return _resultValue;
         }
     }
 }

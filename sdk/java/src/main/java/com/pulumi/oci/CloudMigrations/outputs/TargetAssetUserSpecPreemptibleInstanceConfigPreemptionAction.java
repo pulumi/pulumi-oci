@@ -68,10 +68,10 @@ public final class TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction 
             return this;
         }
         public TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction build() {
-            final var o = new TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction();
-            o.preserveBootVolume = preserveBootVolume;
-            o.type = type;
-            return o;
+            final var _resultValue = new TargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction();
+            _resultValue.preserveBootVolume = preserveBootVolume;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

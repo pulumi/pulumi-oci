@@ -54,10 +54,10 @@ public final class GetContainerImagesContainerImageCollection {
             return this;
         }
         public GetContainerImagesContainerImageCollection build() {
-            final var o = new GetContainerImagesContainerImageCollection();
-            o.items = items;
-            o.remainingItemsCount = remainingItemsCount;
-            return o;
+            final var _resultValue = new GetContainerImagesContainerImageCollection();
+            _resultValue.items = items;
+            _resultValue.remainingItemsCount = remainingItemsCount;
+            return _resultValue;
         }
     }
 }

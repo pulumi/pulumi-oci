@@ -235,19 +235,19 @@ public final class GetComputeCapacityTopologyResult {
             return this;
         }
         public GetComputeCapacityTopologyResult build() {
-            final var o = new GetComputeCapacityTopologyResult();
-            o.availabilityDomain = availabilityDomain;
-            o.capacitySources = capacitySources;
-            o.compartmentId = compartmentId;
-            o.computeCapacityTopologyId = computeCapacityTopologyId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetComputeCapacityTopologyResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.capacitySources = capacitySources;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeCapacityTopologyId = computeCapacityTopologyId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

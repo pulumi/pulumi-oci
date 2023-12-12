@@ -363,26 +363,26 @@ public final class GetAgentDependencyResult {
             return this;
         }
         public GetAgentDependencyResult build() {
-            final var o = new GetAgentDependencyResult();
-            o.agentDependencyId = agentDependencyId;
-            o.bucket = bucket;
-            o.checksum = checksum;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.dependencyName = dependencyName;
-            o.dependencyVersion = dependencyVersion;
-            o.description = description;
-            o.displayName = displayName;
-            o.eTag = eTag;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.namespace = namespace;
-            o.object = object;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetAgentDependencyResult();
+            _resultValue.agentDependencyId = agentDependencyId;
+            _resultValue.bucket = bucket;
+            _resultValue.checksum = checksum;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.dependencyName = dependencyName;
+            _resultValue.dependencyVersion = dependencyVersion;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.eTag = eTag;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

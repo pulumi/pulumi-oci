@@ -162,15 +162,15 @@ public final class GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapab
             return this;
         }
         public GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema build() {
-            final var o = new GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema();
-            o.compartmentId = compartmentId;
-            o.currentVersionName = currentVersionName;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchema();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.currentVersionName = currentVersionName;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

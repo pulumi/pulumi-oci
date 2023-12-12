@@ -42,9 +42,9 @@ public final class GetQueriesQueryCollection {
             return items(List.of(items));
         }
         public GetQueriesQueryCollection build() {
-            final var o = new GetQueriesQueryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetQueriesQueryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -104,12 +104,12 @@ public final class GetMigrationIncludeObject {
             return this;
         }
         public GetMigrationIncludeObject build() {
-            final var o = new GetMigrationIncludeObject();
-            o.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
-            o.object = object;
-            o.owner = owner;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetMigrationIncludeObject();
+            _resultValue.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
+            _resultValue.object = object;
+            _resultValue.owner = owner;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -101,13 +101,13 @@ public final class GetVmClusterNetworkDownloadConfigFileResult {
             return this;
         }
         public GetVmClusterNetworkDownloadConfigFileResult build() {
-            final var o = new GetVmClusterNetworkDownloadConfigFileResult();
-            o.base64EncodeContent = base64EncodeContent;
-            o.content = content;
-            o.exadataInfrastructureId = exadataInfrastructureId;
-            o.id = id;
-            o.vmClusterNetworkId = vmClusterNetworkId;
-            return o;
+            final var _resultValue = new GetVmClusterNetworkDownloadConfigFileResult();
+            _resultValue.base64EncodeContent = base64EncodeContent;
+            _resultValue.content = content;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.id = id;
+            _resultValue.vmClusterNetworkId = vmClusterNetworkId;
+            return _resultValue;
         }
     }
 }

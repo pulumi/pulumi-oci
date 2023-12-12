@@ -226,19 +226,19 @@ public final class GetDataAssetsResult {
             return this;
         }
         public GetDataAssetsResult build() {
-            final var o = new GetDataAssetsResult();
-            o.catalogId = catalogId;
-            o.createdById = createdById;
-            o.dataAssetCollections = dataAssetCollections;
-            o.displayName = displayName;
-            o.displayNameContains = displayNameContains;
-            o.externalKey = externalKey;
-            o.fields = fields;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.typeKey = typeKey;
-            return o;
+            final var _resultValue = new GetDataAssetsResult();
+            _resultValue.catalogId = catalogId;
+            _resultValue.createdById = createdById;
+            _resultValue.dataAssetCollections = dataAssetCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.externalKey = externalKey;
+            _resultValue.fields = fields;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.typeKey = typeKey;
+            return _resultValue;
         }
     }
 }

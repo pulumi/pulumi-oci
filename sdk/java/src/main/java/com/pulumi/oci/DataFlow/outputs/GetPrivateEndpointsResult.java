@@ -174,16 +174,16 @@ public final class GetPrivateEndpointsResult {
             return this;
         }
         public GetPrivateEndpointsResult build() {
-            final var o = new GetPrivateEndpointsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.displayNameStartsWith = displayNameStartsWith;
-            o.filters = filters;
-            o.id = id;
-            o.ownerPrincipalId = ownerPrincipalId;
-            o.privateEndpointCollections = privateEndpointCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetPrivateEndpointsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameStartsWith = displayNameStartsWith;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ownerPrincipalId = ownerPrincipalId;
+            _resultValue.privateEndpointCollections = privateEndpointCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

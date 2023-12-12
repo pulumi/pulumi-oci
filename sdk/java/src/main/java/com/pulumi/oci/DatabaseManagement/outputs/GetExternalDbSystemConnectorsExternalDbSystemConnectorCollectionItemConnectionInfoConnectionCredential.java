@@ -141,14 +141,14 @@ public final class GetExternalDbSystemConnectorsExternalDbSystemConnectorCollect
             return this;
         }
         public GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredential build() {
-            final var o = new GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredential();
-            o.credentialName = credentialName;
-            o.credentialType = credentialType;
-            o.passwordSecretId = passwordSecretId;
-            o.role = role;
-            o.sslSecretId = sslSecretId;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new GetExternalDbSystemConnectorsExternalDbSystemConnectorCollectionItemConnectionInfoConnectionCredential();
+            _resultValue.credentialName = credentialName;
+            _resultValue.credentialType = credentialType;
+            _resultValue.passwordSecretId = passwordSecretId;
+            _resultValue.role = role;
+            _resultValue.sslSecretId = sslSecretId;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

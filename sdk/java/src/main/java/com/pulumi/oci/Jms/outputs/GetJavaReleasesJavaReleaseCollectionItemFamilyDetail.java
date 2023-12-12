@@ -185,16 +185,16 @@ public final class GetJavaReleasesJavaReleaseCollectionItemFamilyDetail {
             return this;
         }
         public GetJavaReleasesJavaReleaseCollectionItemFamilyDetail build() {
-            final var o = new GetJavaReleasesJavaReleaseCollectionItemFamilyDetail();
-            o.displayName = displayName;
-            o.docUrl = docUrl;
-            o.endOfSupportLifeDate = endOfSupportLifeDate;
-            o.familyVersion = familyVersion;
-            o.isSupportedVersion = isSupportedVersion;
-            o.latestReleaseArtifacts = latestReleaseArtifacts;
-            o.latestReleaseVersion = latestReleaseVersion;
-            o.supportType = supportType;
-            return o;
+            final var _resultValue = new GetJavaReleasesJavaReleaseCollectionItemFamilyDetail();
+            _resultValue.displayName = displayName;
+            _resultValue.docUrl = docUrl;
+            _resultValue.endOfSupportLifeDate = endOfSupportLifeDate;
+            _resultValue.familyVersion = familyVersion;
+            _resultValue.isSupportedVersion = isSupportedVersion;
+            _resultValue.latestReleaseArtifacts = latestReleaseArtifacts;
+            _resultValue.latestReleaseVersion = latestReleaseVersion;
+            _resultValue.supportType = supportType;
+            return _resultValue;
         }
     }
 }

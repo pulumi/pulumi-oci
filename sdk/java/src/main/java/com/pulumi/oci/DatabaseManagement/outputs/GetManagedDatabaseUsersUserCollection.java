@@ -42,9 +42,9 @@ public final class GetManagedDatabaseUsersUserCollection {
             return items(List.of(items));
         }
         public GetManagedDatabaseUsersUserCollection build() {
-            final var o = new GetManagedDatabaseUsersUserCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUsersUserCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

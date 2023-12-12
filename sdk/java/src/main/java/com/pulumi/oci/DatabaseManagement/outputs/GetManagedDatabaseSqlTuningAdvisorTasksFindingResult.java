@@ -168,18 +168,18 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksFindingResult build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksFindingResult();
-            o.beginExecId = beginExecId;
-            o.endExecId = endExecId;
-            o.findingFilter = findingFilter;
-            o.id = id;
-            o.indexHashFilter = indexHashFilter;
-            o.items = items;
-            o.managedDatabaseId = managedDatabaseId;
-            o.searchPeriod = searchPeriod;
-            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-            o.statsHashFilter = statsHashFilter;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksFindingResult();
+            _resultValue.beginExecId = beginExecId;
+            _resultValue.endExecId = endExecId;
+            _resultValue.findingFilter = findingFilter;
+            _resultValue.id = id;
+            _resultValue.indexHashFilter = indexHashFilter;
+            _resultValue.items = items;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.searchPeriod = searchPeriod;
+            _resultValue.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            _resultValue.statsHashFilter = statsHashFilter;
+            return _resultValue;
         }
     }
 }

@@ -368,25 +368,25 @@ public final class GetGatewaysGatewayCollection {
             return this;
         }
         public GetGatewaysGatewayCollection build() {
-            final var o = new GetGatewaysGatewayCollection();
-            o.caBundles = caBundles;
-            o.certificateId = certificateId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.endpointType = endpointType;
-            o.freeformTags = freeformTags;
-            o.hostname = hostname;
-            o.id = id;
-            o.ipAddresses = ipAddresses;
-            o.lifecycleDetails = lifecycleDetails;
-            o.networkSecurityGroupIds = networkSecurityGroupIds;
-            o.responseCacheDetails = responseCacheDetails;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetGatewaysGatewayCollection();
+            _resultValue.caBundles = caBundles;
+            _resultValue.certificateId = certificateId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.endpointType = endpointType;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostname = hostname;
+            _resultValue.id = id;
+            _resultValue.ipAddresses = ipAddresses;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
+            _resultValue.responseCacheDetails = responseCacheDetails;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

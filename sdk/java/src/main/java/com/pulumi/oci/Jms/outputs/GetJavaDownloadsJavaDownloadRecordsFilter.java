@@ -67,11 +67,11 @@ public final class GetJavaDownloadsJavaDownloadRecordsFilter {
             return values(List.of(values));
         }
         public GetJavaDownloadsJavaDownloadRecordsFilter build() {
-            final var o = new GetJavaDownloadsJavaDownloadRecordsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadRecordsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

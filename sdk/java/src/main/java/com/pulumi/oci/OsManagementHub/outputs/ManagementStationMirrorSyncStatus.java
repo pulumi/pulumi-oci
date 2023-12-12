@@ -124,13 +124,13 @@ public final class ManagementStationMirrorSyncStatus {
             return this;
         }
         public ManagementStationMirrorSyncStatus build() {
-            final var o = new ManagementStationMirrorSyncStatus();
-            o.failed = failed;
-            o.queued = queued;
-            o.synced = synced;
-            o.syncing = syncing;
-            o.unsynced = unsynced;
-            return o;
+            final var _resultValue = new ManagementStationMirrorSyncStatus();
+            _resultValue.failed = failed;
+            _resultValue.queued = queued;
+            _resultValue.synced = synced;
+            _resultValue.syncing = syncing;
+            _resultValue.unsynced = unsynced;
+            return _resultValue;
         }
     }
 }

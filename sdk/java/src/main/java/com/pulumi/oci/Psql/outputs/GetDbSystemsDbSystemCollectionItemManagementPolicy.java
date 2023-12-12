@@ -70,10 +70,10 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicy {
             return this;
         }
         public GetDbSystemsDbSystemCollectionItemManagementPolicy build() {
-            final var o = new GetDbSystemsDbSystemCollectionItemManagementPolicy();
-            o.backupPolicies = backupPolicies;
-            o.maintenanceWindowStart = maintenanceWindowStart;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemCollectionItemManagementPolicy();
+            _resultValue.backupPolicies = backupPolicies;
+            _resultValue.maintenanceWindowStart = maintenanceWindowStart;
+            return _resultValue;
         }
     }
 }

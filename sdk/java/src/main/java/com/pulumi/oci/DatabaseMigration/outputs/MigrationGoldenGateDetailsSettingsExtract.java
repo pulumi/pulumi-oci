@@ -68,10 +68,10 @@ public final class MigrationGoldenGateDetailsSettingsExtract {
             return this;
         }
         public MigrationGoldenGateDetailsSettingsExtract build() {
-            final var o = new MigrationGoldenGateDetailsSettingsExtract();
-            o.longTransDuration = longTransDuration;
-            o.performanceProfile = performanceProfile;
-            return o;
+            final var _resultValue = new MigrationGoldenGateDetailsSettingsExtract();
+            _resultValue.longTransDuration = longTransDuration;
+            _resultValue.performanceProfile = performanceProfile;
+            return _resultValue;
         }
     }
 }

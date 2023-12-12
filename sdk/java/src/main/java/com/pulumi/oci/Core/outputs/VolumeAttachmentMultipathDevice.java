@@ -87,11 +87,11 @@ public final class VolumeAttachmentMultipathDevice {
             return this;
         }
         public VolumeAttachmentMultipathDevice build() {
-            final var o = new VolumeAttachmentMultipathDevice();
-            o.ipv4 = ipv4;
-            o.iqn = iqn;
-            o.port = port;
-            return o;
+            final var _resultValue = new VolumeAttachmentMultipathDevice();
+            _resultValue.ipv4 = ipv4;
+            _resultValue.iqn = iqn;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

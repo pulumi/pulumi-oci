@@ -50,9 +50,9 @@ public final class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountSt
             return objectTypeCountLists(List.of(objectTypeCountLists));
         }
         public GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic build() {
-            final var o = new GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic();
-            o.objectTypeCountLists = objectTypeCountLists;
-            return o;
+            final var _resultValue = new GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic();
+            _resultValue.objectTypeCountLists = objectTypeCountLists;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetNamespaceEffectivePropertiesEffectivePropertyCollectionIte
             return this;
         }
         public GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern build() {
-            final var o = new GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern();
-            o.effectiveLevel = effectiveLevel;
-            o.id = id;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetNamespaceEffectivePropertiesEffectivePropertyCollectionItemPattern();
+            _resultValue.effectiveLevel = effectiveLevel;
+            _resultValue.id = id;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

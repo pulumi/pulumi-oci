@@ -49,10 +49,10 @@ public final class GetSddcsSddcCollectionUpgradeLicense {
             return this;
         }
         public GetSddcsSddcCollectionUpgradeLicense build() {
-            final var o = new GetSddcsSddcCollectionUpgradeLicense();
-            o.licenseKey = licenseKey;
-            o.licenseType = licenseType;
-            return o;
+            final var _resultValue = new GetSddcsSddcCollectionUpgradeLicense();
+            _resultValue.licenseKey = licenseKey;
+            _resultValue.licenseType = licenseType;
+            return _resultValue;
         }
     }
 }

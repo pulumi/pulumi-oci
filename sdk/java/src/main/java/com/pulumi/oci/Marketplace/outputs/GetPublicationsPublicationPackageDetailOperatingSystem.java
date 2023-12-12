@@ -46,9 +46,9 @@ public final class GetPublicationsPublicationPackageDetailOperatingSystem {
             return this;
         }
         public GetPublicationsPublicationPackageDetailOperatingSystem build() {
-            final var o = new GetPublicationsPublicationPackageDetailOperatingSystem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPublicationsPublicationPackageDetailOperatingSystem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

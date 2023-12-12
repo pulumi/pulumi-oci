@@ -50,9 +50,9 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
             return items(List.of(items));
         }
         public GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelector build() {
-            final var o = new GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelector();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelector();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetFusionEnvironmentScheduledActivitiesFilter {
             return values(List.of(values));
         }
         public GetFusionEnvironmentScheduledActivitiesFilter build() {
-            final var o = new GetFusionEnvironmentScheduledActivitiesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentScheduledActivitiesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

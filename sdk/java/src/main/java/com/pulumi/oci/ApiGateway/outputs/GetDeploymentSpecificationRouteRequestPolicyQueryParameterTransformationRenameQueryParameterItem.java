@@ -65,10 +65,10 @@ public final class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTra
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem build() {
-            final var o = new GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem();
-            o.from = from;
-            o.to = to;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationRenameQueryParameterItem();
+            _resultValue.from = from;
+            _resultValue.to = to;
+            return _resultValue;
         }
     }
 }

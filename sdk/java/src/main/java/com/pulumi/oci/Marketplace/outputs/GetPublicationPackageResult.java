@@ -305,23 +305,23 @@ public final class GetPublicationPackageResult {
             return this;
         }
         public GetPublicationPackageResult build() {
-            final var o = new GetPublicationPackageResult();
-            o.appCatalogListingId = appCatalogListingId;
-            o.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
-            o.description = description;
-            o.id = id;
-            o.imageId = imageId;
-            o.listingId = listingId;
-            o.operatingSystems = operatingSystems;
-            o.packageType = packageType;
-            o.packageVersion = packageVersion;
-            o.publicationId = publicationId;
-            o.resourceId = resourceId;
-            o.resourceLink = resourceLink;
-            o.timeCreated = timeCreated;
-            o.variables = variables;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetPublicationPackageResult();
+            _resultValue.appCatalogListingId = appCatalogListingId;
+            _resultValue.appCatalogListingResourceVersion = appCatalogListingResourceVersion;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.imageId = imageId;
+            _resultValue.listingId = listingId;
+            _resultValue.operatingSystems = operatingSystems;
+            _resultValue.packageType = packageType;
+            _resultValue.packageVersion = packageVersion;
+            _resultValue.publicationId = publicationId;
+            _resultValue.resourceId = resourceId;
+            _resultValue.resourceLink = resourceLink;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.variables = variables;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

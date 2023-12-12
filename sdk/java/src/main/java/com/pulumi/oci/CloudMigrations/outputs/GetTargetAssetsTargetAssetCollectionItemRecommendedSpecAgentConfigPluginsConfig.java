@@ -65,10 +65,10 @@ public final class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentC
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfig build() {
-            final var o = new GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfig();
-            o.desiredState = desiredState;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetTargetAssetsTargetAssetCollectionItemRecommendedSpecAgentConfigPluginsConfig();
+            _resultValue.desiredState = desiredState;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

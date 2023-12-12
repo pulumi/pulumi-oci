@@ -223,13 +223,13 @@ public final class DomainsUserPhoneNumber {
             return this;
         }
         public DomainsUserPhoneNumber build() {
-            final var o = new DomainsUserPhoneNumber();
-            o.display = display;
-            o.primary = primary;
-            o.type = type;
-            o.value = value;
-            o.verified = verified;
-            return o;
+            final var _resultValue = new DomainsUserPhoneNumber();
+            _resultValue.display = display;
+            _resultValue.primary = primary;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            _resultValue.verified = verified;
+            return _resultValue;
         }
     }
 }

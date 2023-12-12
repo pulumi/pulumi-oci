@@ -67,11 +67,11 @@ public final class GetNatGatewaysFilter {
             return values(List.of(values));
         }
         public GetNatGatewaysFilter build() {
-            final var o = new GetNatGatewaysFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetNatGatewaysFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

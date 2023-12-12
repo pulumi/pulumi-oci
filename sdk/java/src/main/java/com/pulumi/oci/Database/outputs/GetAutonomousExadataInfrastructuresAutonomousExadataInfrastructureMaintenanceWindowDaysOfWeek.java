@@ -46,9 +46,9 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
             return this;
         }
         public GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeek build() {
-            final var o = new GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeek();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeek();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

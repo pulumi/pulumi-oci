@@ -142,14 +142,14 @@ public final class GetTopUtilizedResourcesItem {
             return this;
         }
         public GetTopUtilizedResourcesItem build() {
-            final var o = new GetTopUtilizedResourcesItem();
-            o.resourceCompartmentId = resourceCompartmentId;
-            o.resourceCompartmentName = resourceCompartmentName;
-            o.resourceId = resourceId;
-            o.resourceName = resourceName;
-            o.totalUnits = totalUnits;
-            o.unitType = unitType;
-            return o;
+            final var _resultValue = new GetTopUtilizedResourcesItem();
+            _resultValue.resourceCompartmentId = resourceCompartmentId;
+            _resultValue.resourceCompartmentName = resourceCompartmentName;
+            _resultValue.resourceId = resourceId;
+            _resultValue.resourceName = resourceName;
+            _resultValue.totalUnits = totalUnits;
+            _resultValue.unitType = unitType;
+            return _resultValue;
         }
     }
 }

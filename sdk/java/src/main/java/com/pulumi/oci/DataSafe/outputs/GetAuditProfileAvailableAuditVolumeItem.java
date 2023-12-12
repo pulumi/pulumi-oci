@@ -103,12 +103,12 @@ public final class GetAuditProfileAvailableAuditVolumeItem {
             return this;
         }
         public GetAuditProfileAvailableAuditVolumeItem build() {
-            final var o = new GetAuditProfileAvailableAuditVolumeItem();
-            o.auditProfileId = auditProfileId;
-            o.monthInConsideration = monthInConsideration;
-            o.trailLocation = trailLocation;
-            o.volume = volume;
-            return o;
+            final var _resultValue = new GetAuditProfileAvailableAuditVolumeItem();
+            _resultValue.auditProfileId = auditProfileId;
+            _resultValue.monthInConsideration = monthInConsideration;
+            _resultValue.trailLocation = trailLocation;
+            _resultValue.volume = volume;
+            return _resultValue;
         }
     }
 }

@@ -66,10 +66,10 @@ public final class GetFunctionProvisionedConcurrencyConfig {
             return this;
         }
         public GetFunctionProvisionedConcurrencyConfig build() {
-            final var o = new GetFunctionProvisionedConcurrencyConfig();
-            o.count = count;
-            o.strategy = strategy;
-            return o;
+            final var _resultValue = new GetFunctionProvisionedConcurrencyConfig();
+            _resultValue.count = count;
+            _resultValue.strategy = strategy;
+            return _resultValue;
         }
     }
 }

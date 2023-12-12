@@ -50,9 +50,9 @@ public final class GetBuildPipelineStageDeliverArtifactCollection {
             return items(List.of(items));
         }
         public GetBuildPipelineStageDeliverArtifactCollection build() {
-            final var o = new GetBuildPipelineStageDeliverArtifactCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetBuildPipelineStageDeliverArtifactCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

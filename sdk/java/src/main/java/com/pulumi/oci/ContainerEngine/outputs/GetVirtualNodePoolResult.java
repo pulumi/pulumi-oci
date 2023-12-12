@@ -426,28 +426,28 @@ public final class GetVirtualNodePoolResult {
             return virtualNodeTags(List.of(virtualNodeTags));
         }
         public GetVirtualNodePoolResult build() {
-            final var o = new GetVirtualNodePoolResult();
-            o.clusterId = clusterId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.initialVirtualNodeLabels = initialVirtualNodeLabels;
-            o.kubernetesVersion = kubernetesVersion;
-            o.lifecycleDetails = lifecycleDetails;
-            o.nsgIds = nsgIds;
-            o.placementConfigurations = placementConfigurations;
-            o.podConfigurations = podConfigurations;
-            o.size = size;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.taints = taints;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.virtualNodePoolId = virtualNodePoolId;
-            o.virtualNodeTags = virtualNodeTags;
-            return o;
+            final var _resultValue = new GetVirtualNodePoolResult();
+            _resultValue.clusterId = clusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.initialVirtualNodeLabels = initialVirtualNodeLabels;
+            _resultValue.kubernetesVersion = kubernetesVersion;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.placementConfigurations = placementConfigurations;
+            _resultValue.podConfigurations = podConfigurations;
+            _resultValue.size = size;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.taints = taints;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.virtualNodePoolId = virtualNodePoolId;
+            _resultValue.virtualNodeTags = virtualNodeTags;
+            return _resultValue;
         }
     }
 }

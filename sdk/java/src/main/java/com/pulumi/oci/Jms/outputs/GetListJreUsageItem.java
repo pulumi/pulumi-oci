@@ -394,27 +394,27 @@ public final class GetListJreUsageItem {
             return this;
         }
         public GetListJreUsageItem build() {
-            final var o = new GetListJreUsageItem();
-            o.approximateApplicationCount = approximateApplicationCount;
-            o.approximateInstallationCount = approximateInstallationCount;
-            o.approximateManagedInstanceCount = approximateManagedInstanceCount;
-            o.approximatePendingWorkRequestCount = approximatePendingWorkRequestCount;
-            o.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
-            o.distribution = distribution;
-            o.endOfSupportLifeDate = endOfSupportLifeDate;
-            o.fleetId = fleetId;
-            o.id = id;
-            o.managedInstanceId = managedInstanceId;
-            o.operatingSystems = operatingSystems;
-            o.releaseDate = releaseDate;
-            o.securityStatus = securityStatus;
-            o.timeEnd = timeEnd;
-            o.timeFirstSeen = timeFirstSeen;
-            o.timeLastSeen = timeLastSeen;
-            o.timeStart = timeStart;
-            o.vendor = vendor;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetListJreUsageItem();
+            _resultValue.approximateApplicationCount = approximateApplicationCount;
+            _resultValue.approximateInstallationCount = approximateInstallationCount;
+            _resultValue.approximateManagedInstanceCount = approximateManagedInstanceCount;
+            _resultValue.approximatePendingWorkRequestCount = approximatePendingWorkRequestCount;
+            _resultValue.daysUnderSecurityBaseline = daysUnderSecurityBaseline;
+            _resultValue.distribution = distribution;
+            _resultValue.endOfSupportLifeDate = endOfSupportLifeDate;
+            _resultValue.fleetId = fleetId;
+            _resultValue.id = id;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.operatingSystems = operatingSystems;
+            _resultValue.releaseDate = releaseDate;
+            _resultValue.securityStatus = securityStatus;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeFirstSeen = timeFirstSeen;
+            _resultValue.timeLastSeen = timeLastSeen;
+            _resultValue.timeStart = timeStart;
+            _resultValue.vendor = vendor;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

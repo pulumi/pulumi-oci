@@ -109,13 +109,13 @@ public final class GetPublishersResult {
             return publishers(List.of(publishers));
         }
         public GetPublishersResult build() {
-            final var o = new GetPublishersResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.publisherId = publisherId;
-            o.publishers = publishers;
-            return o;
+            final var _resultValue = new GetPublishersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.publisherId = publisherId;
+            _resultValue.publishers = publishers;
+            return _resultValue;
         }
     }
 }

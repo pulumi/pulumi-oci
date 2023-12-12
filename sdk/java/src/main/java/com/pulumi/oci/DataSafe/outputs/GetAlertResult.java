@@ -465,31 +465,31 @@ public final class GetAlertResult {
             return this;
         }
         public GetAlertResult build() {
-            final var o = new GetAlertResult();
-            o.alertId = alertId;
-            o.alertType = alertType;
-            o.comment = comment;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.featureDetails = featureDetails;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.operation = operation;
-            o.operationStatus = operationStatus;
-            o.operationTime = operationTime;
-            o.policyId = policyId;
-            o.resourceName = resourceName;
-            o.severity = severity;
-            o.state = state;
-            o.status = status;
-            o.systemTags = systemTags;
-            o.targetIds = targetIds;
-            o.targetNames = targetNames;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetAlertResult();
+            _resultValue.alertId = alertId;
+            _resultValue.alertType = alertType;
+            _resultValue.comment = comment;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.featureDetails = featureDetails;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.operation = operation;
+            _resultValue.operationStatus = operationStatus;
+            _resultValue.operationTime = operationTime;
+            _resultValue.policyId = policyId;
+            _resultValue.resourceName = resourceName;
+            _resultValue.severity = severity;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetIds = targetIds;
+            _resultValue.targetNames = targetNames;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

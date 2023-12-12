@@ -65,10 +65,10 @@ public final class GetDatabasesDatabaseDatabaseManagementConfig {
             return this;
         }
         public GetDatabasesDatabaseDatabaseManagementConfig build() {
-            final var o = new GetDatabasesDatabaseDatabaseManagementConfig();
-            o.managementStatus = managementStatus;
-            o.managementType = managementType;
-            return o;
+            final var _resultValue = new GetDatabasesDatabaseDatabaseManagementConfig();
+            _resultValue.managementStatus = managementStatus;
+            _resultValue.managementType = managementType;
+            return _resultValue;
         }
     }
 }

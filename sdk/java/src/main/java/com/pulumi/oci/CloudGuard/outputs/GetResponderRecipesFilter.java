@@ -75,11 +75,11 @@ public final class GetResponderRecipesFilter {
             return values(List.of(values));
         }
         public GetResponderRecipesFilter build() {
-            final var o = new GetResponderRecipesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetResponderRecipesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

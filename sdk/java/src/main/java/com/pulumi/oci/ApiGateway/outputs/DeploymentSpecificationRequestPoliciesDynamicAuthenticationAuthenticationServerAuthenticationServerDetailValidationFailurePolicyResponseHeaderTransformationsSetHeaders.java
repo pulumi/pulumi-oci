@@ -51,9 +51,9 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
             return items(List.of(items));
         }
         public DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeaders build() {
-            final var o = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeaders();
-            o.items = items;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeaders();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

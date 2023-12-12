@@ -89,11 +89,11 @@ public final class GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorage {
             return volumes(List.of(volumes));
         }
         public GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorage build() {
-            final var o = new GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorage();
-            o.totalGbPerMonth = totalGbPerMonth;
-            o.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
-            o.volumes = volumes;
-            return o;
+            final var _resultValue = new GetMigrationPlanMigrationPlanStatTotalEstimatedCostStorage();
+            _resultValue.totalGbPerMonth = totalGbPerMonth;
+            _resultValue.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
+            _resultValue.volumes = volumes;
+            return _resultValue;
         }
     }
 }

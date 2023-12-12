@@ -111,10 +111,10 @@ public final class DomainsUserDbCredentialTag {
             return this;
         }
         public DomainsUserDbCredentialTag build() {
-            final var o = new DomainsUserDbCredentialTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserDbCredentialTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

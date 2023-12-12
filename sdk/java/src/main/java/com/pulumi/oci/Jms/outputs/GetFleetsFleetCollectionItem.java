@@ -382,26 +382,26 @@ public final class GetFleetsFleetCollectionItem {
             return this;
         }
         public GetFleetsFleetCollectionItem build() {
-            final var o = new GetFleetsFleetCollectionItem();
-            o.approximateApplicationCount = approximateApplicationCount;
-            o.approximateInstallationCount = approximateInstallationCount;
-            o.approximateJavaServerCount = approximateJavaServerCount;
-            o.approximateJreCount = approximateJreCount;
-            o.approximateManagedInstanceCount = approximateManagedInstanceCount;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.inventoryLogs = inventoryLogs;
-            o.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
-            o.isExportSettingEnabled = isExportSettingEnabled;
-            o.operationLogs = operationLogs;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetFleetsFleetCollectionItem();
+            _resultValue.approximateApplicationCount = approximateApplicationCount;
+            _resultValue.approximateInstallationCount = approximateInstallationCount;
+            _resultValue.approximateJavaServerCount = approximateJavaServerCount;
+            _resultValue.approximateJreCount = approximateJreCount;
+            _resultValue.approximateManagedInstanceCount = approximateManagedInstanceCount;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.inventoryLogs = inventoryLogs;
+            _resultValue.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
+            _resultValue.isExportSettingEnabled = isExportSettingEnabled;
+            _resultValue.operationLogs = operationLogs;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

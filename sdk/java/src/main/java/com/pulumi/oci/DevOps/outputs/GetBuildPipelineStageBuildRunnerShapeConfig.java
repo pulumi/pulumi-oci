@@ -85,11 +85,11 @@ public final class GetBuildPipelineStageBuildRunnerShapeConfig {
             return this;
         }
         public GetBuildPipelineStageBuildRunnerShapeConfig build() {
-            final var o = new GetBuildPipelineStageBuildRunnerShapeConfig();
-            o.buildRunnerType = buildRunnerType;
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetBuildPipelineStageBuildRunnerShapeConfig();
+            _resultValue.buildRunnerType = buildRunnerType;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

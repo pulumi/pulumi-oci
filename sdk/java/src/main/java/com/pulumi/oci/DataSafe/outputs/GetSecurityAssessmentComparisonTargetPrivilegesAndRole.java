@@ -159,14 +159,14 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRole {
             return this;
         }
         public GetSecurityAssessmentComparisonTargetPrivilegesAndRole build() {
-            final var o = new GetSecurityAssessmentComparisonTargetPrivilegesAndRole();
-            o.addedItems = addedItems;
-            o.baselines = baselines;
-            o.currents = currents;
-            o.modifiedItems = modifiedItems;
-            o.removedItems = removedItems;
-            o.severity = severity;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentComparisonTargetPrivilegesAndRole();
+            _resultValue.addedItems = addedItems;
+            _resultValue.baselines = baselines;
+            _resultValue.currents = currents;
+            _resultValue.modifiedItems = modifiedItems;
+            _resultValue.removedItems = removedItems;
+            _resultValue.severity = severity;
+            return _resultValue;
         }
     }
 }

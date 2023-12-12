@@ -109,12 +109,12 @@ public final class GetExternalDbSystemDiscoveryPatchOperationValue {
             return this;
         }
         public GetExternalDbSystemDiscoveryPatchOperationValue build() {
-            final var o = new GetExternalDbSystemDiscoveryPatchOperationValue();
-            o.compartmentId = compartmentId;
-            o.connectors = connectors;
-            o.displayName = displayName;
-            o.isSelectedForMonitoring = isSelectedForMonitoring;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveryPatchOperationValue();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectors = connectors;
+            _resultValue.displayName = displayName;
+            _resultValue.isSelectedForMonitoring = isSelectedForMonitoring;
+            return _resultValue;
         }
     }
 }

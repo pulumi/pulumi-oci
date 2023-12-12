@@ -97,12 +97,12 @@ public final class GetShapesResult {
             return shapes(List.of(shapes));
         }
         public GetShapesResult build() {
-            final var o = new GetShapesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.shapes = shapes;
-            return o;
+            final var _resultValue = new GetShapesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.shapes = shapes;
+            return _resultValue;
         }
     }
 }

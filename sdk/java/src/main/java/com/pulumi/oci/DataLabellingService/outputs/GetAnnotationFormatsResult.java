@@ -97,12 +97,12 @@ public final class GetAnnotationFormatsResult {
             return this;
         }
         public GetAnnotationFormatsResult build() {
-            final var o = new GetAnnotationFormatsResult();
-            o.annotationFormatCollections = annotationFormatCollections;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAnnotationFormatsResult();
+            _resultValue.annotationFormatCollections = annotationFormatCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

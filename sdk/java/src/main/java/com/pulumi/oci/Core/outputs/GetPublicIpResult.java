@@ -314,23 +314,23 @@ public final class GetPublicIpResult {
             return this;
         }
         public GetPublicIpResult build() {
-            final var o = new GetPublicIpResult();
-            o.assignedEntityId = assignedEntityId;
-            o.assignedEntityType = assignedEntityType;
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.lifetime = lifetime;
-            o.privateIpId = privateIpId;
-            o.publicIpPoolId = publicIpPoolId;
-            o.scope = scope;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetPublicIpResult();
+            _resultValue.assignedEntityId = assignedEntityId;
+            _resultValue.assignedEntityType = assignedEntityType;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.lifetime = lifetime;
+            _resultValue.privateIpId = privateIpId;
+            _resultValue.publicIpPoolId = publicIpPoolId;
+            _resultValue.scope = scope;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

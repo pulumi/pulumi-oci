@@ -70,10 +70,10 @@ public final class GetClustersClusterImagePolicyConfig {
             return keyDetails(List.of(keyDetails));
         }
         public GetClustersClusterImagePolicyConfig build() {
-            final var o = new GetClustersClusterImagePolicyConfig();
-            o.isPolicyEnabled = isPolicyEnabled;
-            o.keyDetails = keyDetails;
-            return o;
+            final var _resultValue = new GetClustersClusterImagePolicyConfig();
+            _resultValue.isPolicyEnabled = isPolicyEnabled;
+            _resultValue.keyDetails = keyDetails;
+            return _resultValue;
         }
     }
 }

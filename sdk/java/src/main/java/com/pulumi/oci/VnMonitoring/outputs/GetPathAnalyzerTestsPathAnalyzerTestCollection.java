@@ -42,9 +42,9 @@ public final class GetPathAnalyzerTestsPathAnalyzerTestCollection {
             return items(List.of(items));
         }
         public GetPathAnalyzerTestsPathAnalyzerTestCollection build() {
-            final var o = new GetPathAnalyzerTestsPathAnalyzerTestCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetPathAnalyzerTestsPathAnalyzerTestCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

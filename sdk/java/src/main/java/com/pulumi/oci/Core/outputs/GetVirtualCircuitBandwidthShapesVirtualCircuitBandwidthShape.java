@@ -66,10 +66,10 @@ public final class GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape 
             return this;
         }
         public GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape build() {
-            final var o = new GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape();
-            o.bandwidthInMbps = bandwidthInMbps;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetVirtualCircuitBandwidthShapesVirtualCircuitBandwidthShape();
+            _resultValue.bandwidthInMbps = bandwidthInMbps;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

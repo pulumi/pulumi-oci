@@ -103,12 +103,12 @@ public final class GetManagementStationsManagementStationCollectionItemMirror {
             return this;
         }
         public GetManagementStationsManagementStationCollectionItemMirror build() {
-            final var o = new GetManagementStationsManagementStationCollectionItemMirror();
-            o.directory = directory;
-            o.port = port;
-            o.sslcert = sslcert;
-            o.sslport = sslport;
-            return o;
+            final var _resultValue = new GetManagementStationsManagementStationCollectionItemMirror();
+            _resultValue.directory = directory;
+            _resultValue.port = port;
+            _resultValue.sslcert = sslcert;
+            _resultValue.sslport = sslport;
+            return _resultValue;
         }
     }
 }

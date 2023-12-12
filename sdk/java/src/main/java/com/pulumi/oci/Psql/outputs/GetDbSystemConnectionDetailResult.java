@@ -123,13 +123,13 @@ public final class GetDbSystemConnectionDetailResult {
             return primaryDbEndpoints(List.of(primaryDbEndpoints));
         }
         public GetDbSystemConnectionDetailResult build() {
-            final var o = new GetDbSystemConnectionDetailResult();
-            o.caCertificate = caCertificate;
-            o.dbSystemId = dbSystemId;
-            o.id = id;
-            o.instanceEndpoints = instanceEndpoints;
-            o.primaryDbEndpoints = primaryDbEndpoints;
-            return o;
+            final var _resultValue = new GetDbSystemConnectionDetailResult();
+            _resultValue.caCertificate = caCertificate;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.id = id;
+            _resultValue.instanceEndpoints = instanceEndpoints;
+            _resultValue.primaryDbEndpoints = primaryDbEndpoints;
+            return _resultValue;
         }
     }
 }

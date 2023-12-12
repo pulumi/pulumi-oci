@@ -76,11 +76,11 @@ public final class GetManagementDashboardsExportResult {
             return this;
         }
         public GetManagementDashboardsExportResult build() {
-            final var o = new GetManagementDashboardsExportResult();
-            o.exportDashboardId = exportDashboardId;
-            o.exportDetails = exportDetails;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetManagementDashboardsExportResult();
+            _resultValue.exportDashboardId = exportDashboardId;
+            _resultValue.exportDetails = exportDetails;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

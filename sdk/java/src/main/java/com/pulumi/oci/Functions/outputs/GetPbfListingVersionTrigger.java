@@ -46,9 +46,9 @@ public final class GetPbfListingVersionTrigger {
             return this;
         }
         public GetPbfListingVersionTrigger build() {
-            final var o = new GetPbfListingVersionTrigger();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPbfListingVersionTrigger();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

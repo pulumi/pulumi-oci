@@ -422,28 +422,28 @@ public final class GetVolumeBackupsVolumeBackup {
             return this;
         }
         public GetVolumeBackupsVolumeBackup build() {
-            final var o = new GetVolumeBackupsVolumeBackup();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.expirationTime = expirationTime;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.kmsKeyId = kmsKeyId;
-            o.sizeInGbs = sizeInGbs;
-            o.sizeInMbs = sizeInMbs;
-            o.sourceDetails = sourceDetails;
-            o.sourceType = sourceType;
-            o.sourceVolumeBackupId = sourceVolumeBackupId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeRequestReceived = timeRequestReceived;
-            o.type = type;
-            o.uniqueSizeInGbs = uniqueSizeInGbs;
-            o.uniqueSizeInMbs = uniqueSizeInMbs;
-            o.volumeId = volumeId;
-            return o;
+            final var _resultValue = new GetVolumeBackupsVolumeBackup();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.expirationTime = expirationTime;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.sizeInGbs = sizeInGbs;
+            _resultValue.sizeInMbs = sizeInMbs;
+            _resultValue.sourceDetails = sourceDetails;
+            _resultValue.sourceType = sourceType;
+            _resultValue.sourceVolumeBackupId = sourceVolumeBackupId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeRequestReceived = timeRequestReceived;
+            _resultValue.type = type;
+            _resultValue.uniqueSizeInGbs = uniqueSizeInGbs;
+            _resultValue.uniqueSizeInMbs = uniqueSizeInMbs;
+            _resultValue.volumeId = volumeId;
+            return _resultValue;
         }
     }
 }

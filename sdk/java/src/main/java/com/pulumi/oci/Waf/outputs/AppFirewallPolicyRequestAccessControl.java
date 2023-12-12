@@ -75,10 +75,10 @@ public final class AppFirewallPolicyRequestAccessControl {
             return rules(List.of(rules));
         }
         public AppFirewallPolicyRequestAccessControl build() {
-            final var o = new AppFirewallPolicyRequestAccessControl();
-            o.defaultActionName = defaultActionName;
-            o.rules = rules;
-            return o;
+            final var _resultValue = new AppFirewallPolicyRequestAccessControl();
+            _resultValue.defaultActionName = defaultActionName;
+            _resultValue.rules = rules;
+            return _resultValue;
         }
     }
 }

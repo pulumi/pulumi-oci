@@ -223,18 +223,18 @@ public final class GetCustomProtectionRulesCustomProtectionRule {
             return this;
         }
         public GetCustomProtectionRulesCustomProtectionRule build() {
-            final var o = new GetCustomProtectionRulesCustomProtectionRule();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.modSecurityRuleIds = modSecurityRuleIds;
-            o.state = state;
-            o.template = template;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetCustomProtectionRulesCustomProtectionRule();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.modSecurityRuleIds = modSecurityRuleIds;
+            _resultValue.state = state;
+            _resultValue.template = template;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetGuardTargetsTargetCollection {
             return items(List.of(items));
         }
         public GetGuardTargetsTargetCollection build() {
-            final var o = new GetGuardTargetsTargetCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetGuardTargetsTargetCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

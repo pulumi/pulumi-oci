@@ -128,14 +128,14 @@ public final class GetIpsecConnectionTunnelRoutesResult {
             return tunnelRoutes(List.of(tunnelRoutes));
         }
         public GetIpsecConnectionTunnelRoutesResult build() {
-            final var o = new GetIpsecConnectionTunnelRoutesResult();
-            o.advertiser = advertiser;
-            o.filters = filters;
-            o.id = id;
-            o.ipsecId = ipsecId;
-            o.tunnelId = tunnelId;
-            o.tunnelRoutes = tunnelRoutes;
-            return o;
+            final var _resultValue = new GetIpsecConnectionTunnelRoutesResult();
+            _resultValue.advertiser = advertiser;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ipsecId = ipsecId;
+            _resultValue.tunnelId = tunnelId;
+            _resultValue.tunnelRoutes = tunnelRoutes;
+            return _resultValue;
         }
     }
 }

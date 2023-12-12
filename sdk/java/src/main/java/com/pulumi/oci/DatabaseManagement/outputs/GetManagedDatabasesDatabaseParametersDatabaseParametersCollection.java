@@ -127,13 +127,13 @@ public final class GetManagedDatabasesDatabaseParametersDatabaseParametersCollec
             return items(List.of(items));
         }
         public GetManagedDatabasesDatabaseParametersDatabaseParametersCollection build() {
-            final var o = new GetManagedDatabasesDatabaseParametersDatabaseParametersCollection();
-            o.databaseName = databaseName;
-            o.databaseSubType = databaseSubType;
-            o.databaseType = databaseType;
-            o.databaseVersion = databaseVersion;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabasesDatabaseParametersDatabaseParametersCollection();
+            _resultValue.databaseName = databaseName;
+            _resultValue.databaseSubType = databaseSubType;
+            _resultValue.databaseType = databaseType;
+            _resultValue.databaseVersion = databaseVersion;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -281,21 +281,21 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
             return this;
         }
         public GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem build() {
-            final var o = new GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.metadatas = metadatas;
-            o.metricNamespace = metricNamespace;
-            o.name = name;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.metadatas = metadatas;
+            _resultValue.metricNamespace = metricNamespace;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

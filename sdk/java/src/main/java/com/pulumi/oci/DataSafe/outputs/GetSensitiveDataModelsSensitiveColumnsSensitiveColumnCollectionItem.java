@@ -461,30 +461,30 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
             return this;
         }
         public GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem build() {
-            final var o = new GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem();
-            o.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
-            o.appName = appName;
-            o.columnGroups = columnGroups;
-            o.columnName = columnName;
-            o.dataType = dataType;
-            o.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
-            o.estimatedDataValueCount = estimatedDataValueCount;
-            o.key = key;
-            o.lifecycleDetails = lifecycleDetails;
-            o.object = object;
-            o.objectType = objectType;
-            o.parentColumnKeys = parentColumnKeys;
-            o.relationType = relationType;
-            o.sampleDataValues = sampleDataValues;
-            o.schemaName = schemaName;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.sensitiveTypeId = sensitiveTypeId;
-            o.source = source;
-            o.state = state;
-            o.status = status;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem();
+            _resultValue.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
+            _resultValue.appName = appName;
+            _resultValue.columnGroups = columnGroups;
+            _resultValue.columnName = columnName;
+            _resultValue.dataType = dataType;
+            _resultValue.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
+            _resultValue.estimatedDataValueCount = estimatedDataValueCount;
+            _resultValue.key = key;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.object = object;
+            _resultValue.objectType = objectType;
+            _resultValue.parentColumnKeys = parentColumnKeys;
+            _resultValue.relationType = relationType;
+            _resultValue.sampleDataValues = sampleDataValues;
+            _resultValue.schemaName = schemaName;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
+            _resultValue.source = source;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

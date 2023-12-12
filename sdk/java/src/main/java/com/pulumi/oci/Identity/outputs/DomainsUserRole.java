@@ -184,12 +184,12 @@ public final class DomainsUserRole {
             return this;
         }
         public DomainsUserRole build() {
-            final var o = new DomainsUserRole();
-            o.display = display;
-            o.primary = primary;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserRole();
+            _resultValue.display = display;
+            _resultValue.primary = primary;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -127,13 +127,13 @@ public final class GetDeploymentSpecificationRouteBackendRoutingBackendKey {
             return values(List.of(values));
         }
         public GetDeploymentSpecificationRouteBackendRoutingBackendKey build() {
-            final var o = new GetDeploymentSpecificationRouteBackendRoutingBackendKey();
-            o.expression = expression;
-            o.isDefault = isDefault;
-            o.name = name;
-            o.type = type;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteBackendRoutingBackendKey();
+            _resultValue.expression = expression;
+            _resultValue.isDefault = isDefault;
+            _resultValue.name = name;
+            _resultValue.type = type;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

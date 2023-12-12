@@ -42,9 +42,9 @@ public final class GetSoftwareSourcesSoftwareSourceCollection {
             return items(List.of(items));
         }
         public GetSoftwareSourcesSoftwareSourceCollection build() {
-            final var o = new GetSoftwareSourcesSoftwareSourceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSoftwareSourcesSoftwareSourceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

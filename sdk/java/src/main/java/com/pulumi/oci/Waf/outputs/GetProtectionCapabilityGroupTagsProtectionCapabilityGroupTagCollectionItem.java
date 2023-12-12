@@ -46,9 +46,9 @@ public final class GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagC
             return this;
         }
         public GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem build() {
-            final var o = new GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollectionItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

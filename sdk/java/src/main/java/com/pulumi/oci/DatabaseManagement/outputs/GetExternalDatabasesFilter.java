@@ -67,11 +67,11 @@ public final class GetExternalDatabasesFilter {
             return values(List.of(values));
         }
         public GetExternalDatabasesFilter build() {
-            final var o = new GetExternalDatabasesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExternalDatabasesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

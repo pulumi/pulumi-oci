@@ -304,23 +304,23 @@ public final class GetCatalogTypeResult {
             return this;
         }
         public GetCatalogTypeResult build() {
-            final var o = new GetCatalogTypeResult();
-            o.catalogId = catalogId;
-            o.description = description;
-            o.externalTypeName = externalTypeName;
-            o.fields = fields;
-            o.id = id;
-            o.isApproved = isApproved;
-            o.isInternal = isInternal;
-            o.isTag = isTag;
-            o.key = key;
-            o.name = name;
-            o.properties = properties;
-            o.state = state;
-            o.typeCategory = typeCategory;
-            o.typeKey = typeKey;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new GetCatalogTypeResult();
+            _resultValue.catalogId = catalogId;
+            _resultValue.description = description;
+            _resultValue.externalTypeName = externalTypeName;
+            _resultValue.fields = fields;
+            _resultValue.id = id;
+            _resultValue.isApproved = isApproved;
+            _resultValue.isInternal = isInternal;
+            _resultValue.isTag = isTag;
+            _resultValue.key = key;
+            _resultValue.name = name;
+            _resultValue.properties = properties;
+            _resultValue.state = state;
+            _resultValue.typeCategory = typeCategory;
+            _resultValue.typeKey = typeKey;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

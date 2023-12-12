@@ -137,13 +137,13 @@ public final class GetCpeDeviceShapeResult {
             return this;
         }
         public GetCpeDeviceShapeResult build() {
-            final var o = new GetCpeDeviceShapeResult();
-            o.cpeDeviceInfos = cpeDeviceInfos;
-            o.cpeDeviceShapeId = cpeDeviceShapeId;
-            o.id = id;
-            o.parameters = parameters;
-            o.template = template;
-            return o;
+            final var _resultValue = new GetCpeDeviceShapeResult();
+            _resultValue.cpeDeviceInfos = cpeDeviceInfos;
+            _resultValue.cpeDeviceShapeId = cpeDeviceShapeId;
+            _resultValue.id = id;
+            _resultValue.parameters = parameters;
+            _resultValue.template = template;
+            return _resultValue;
         }
     }
 }

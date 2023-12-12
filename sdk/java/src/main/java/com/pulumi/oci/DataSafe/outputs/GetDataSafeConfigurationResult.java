@@ -217,18 +217,18 @@ public final class GetDataSafeConfigurationResult {
             return this;
         }
         public GetDataSafeConfigurationResult build() {
-            final var o = new GetDataSafeConfigurationResult();
-            o.compartmentId = compartmentId;
-            o.dataSafeNatGatewayIpAddress = dataSafeNatGatewayIpAddress;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.globalSettings = globalSettings;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.state = state;
-            o.timeEnabled = timeEnabled;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetDataSafeConfigurationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dataSafeNatGatewayIpAddress = dataSafeNatGatewayIpAddress;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.globalSettings = globalSettings;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.state = state;
+            _resultValue.timeEnabled = timeEnabled;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

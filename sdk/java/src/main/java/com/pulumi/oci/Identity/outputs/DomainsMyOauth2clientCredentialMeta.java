@@ -224,13 +224,13 @@ public final class DomainsMyOauth2clientCredentialMeta {
             return this;
         }
         public DomainsMyOauth2clientCredentialMeta build() {
-            final var o = new DomainsMyOauth2clientCredentialMeta();
-            o.created = created;
-            o.lastModified = lastModified;
-            o.location = location;
-            o.resourceType = resourceType;
-            o.version = version;
-            return o;
+            final var _resultValue = new DomainsMyOauth2clientCredentialMeta();
+            _resultValue.created = created;
+            _resultValue.lastModified = lastModified;
+            _resultValue.location = location;
+            _resultValue.resourceType = resourceType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

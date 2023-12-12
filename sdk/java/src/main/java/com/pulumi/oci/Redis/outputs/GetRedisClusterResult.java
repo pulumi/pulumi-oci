@@ -408,28 +408,28 @@ public final class GetRedisClusterResult {
             return this;
         }
         public GetRedisClusterResult build() {
-            final var o = new GetRedisClusterResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.nodeCollections = nodeCollections;
-            o.nodeCount = nodeCount;
-            o.nodeMemoryInGbs = nodeMemoryInGbs;
-            o.primaryEndpointIpAddress = primaryEndpointIpAddress;
-            o.primaryFqdn = primaryFqdn;
-            o.redisClusterId = redisClusterId;
-            o.replicasEndpointIpAddress = replicasEndpointIpAddress;
-            o.replicasFqdn = replicasFqdn;
-            o.softwareVersion = softwareVersion;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetRedisClusterResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.nodeCollections = nodeCollections;
+            _resultValue.nodeCount = nodeCount;
+            _resultValue.nodeMemoryInGbs = nodeMemoryInGbs;
+            _resultValue.primaryEndpointIpAddress = primaryEndpointIpAddress;
+            _resultValue.primaryFqdn = primaryFqdn;
+            _resultValue.redisClusterId = redisClusterId;
+            _resultValue.replicasEndpointIpAddress = replicasEndpointIpAddress;
+            _resultValue.replicasFqdn = replicasFqdn;
+            _resultValue.softwareVersion = softwareVersion;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

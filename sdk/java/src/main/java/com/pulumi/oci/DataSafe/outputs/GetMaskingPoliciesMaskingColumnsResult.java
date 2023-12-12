@@ -343,26 +343,26 @@ public final class GetMaskingPoliciesMaskingColumnsResult {
             return this;
         }
         public GetMaskingPoliciesMaskingColumnsResult build() {
-            final var o = new GetMaskingPoliciesMaskingColumnsResult();
-            o.columnNames = columnNames;
-            o.dataTypes = dataTypes;
-            o.filters = filters;
-            o.id = id;
-            o.isMaskingEnabled = isMaskingEnabled;
-            o.isSeedRequired = isSeedRequired;
-            o.maskingColumnCollections = maskingColumnCollections;
-            o.maskingColumnGroups = maskingColumnGroups;
-            o.maskingColumnLifecycleState = maskingColumnLifecycleState;
-            o.maskingPolicyId = maskingPolicyId;
-            o.objectTypes = objectTypes;
-            o.objects = objects;
-            o.schemaNames = schemaNames;
-            o.sensitiveTypeId = sensitiveTypeId;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            o.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
-            o.timeUpdatedLessThan = timeUpdatedLessThan;
-            return o;
+            final var _resultValue = new GetMaskingPoliciesMaskingColumnsResult();
+            _resultValue.columnNames = columnNames;
+            _resultValue.dataTypes = dataTypes;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isMaskingEnabled = isMaskingEnabled;
+            _resultValue.isSeedRequired = isSeedRequired;
+            _resultValue.maskingColumnCollections = maskingColumnCollections;
+            _resultValue.maskingColumnGroups = maskingColumnGroups;
+            _resultValue.maskingColumnLifecycleState = maskingColumnLifecycleState;
+            _resultValue.maskingPolicyId = maskingPolicyId;
+            _resultValue.objectTypes = objectTypes;
+            _resultValue.objects = objects;
+            _resultValue.schemaNames = schemaNames;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            _resultValue.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
+            _resultValue.timeUpdatedLessThan = timeUpdatedLessThan;
+            return _resultValue;
         }
     }
 }

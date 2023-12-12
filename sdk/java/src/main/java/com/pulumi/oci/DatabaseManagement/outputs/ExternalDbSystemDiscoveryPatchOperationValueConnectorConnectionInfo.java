@@ -88,11 +88,11 @@ public final class ExternalDbSystemDiscoveryPatchOperationValueConnectorConnecti
             return this;
         }
         public ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo build() {
-            final var o = new ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo();
-            o.componentType = componentType;
-            o.connectionCredentials = connectionCredentials;
-            o.connectionString = connectionString;
-            return o;
+            final var _resultValue = new ExternalDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo();
+            _resultValue.componentType = componentType;
+            _resultValue.connectionCredentials = connectionCredentials;
+            _resultValue.connectionString = connectionString;
+            return _resultValue;
         }
     }
 }

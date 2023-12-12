@@ -143,16 +143,16 @@ public final class GetSubscriptionsResult {
             return subscriptions(List.of(subscriptions));
         }
         public GetSubscriptionsResult build() {
-            final var o = new GetSubscriptionsResult();
-            o.buyerEmail = buyerEmail;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.isCommitInfoRequired = isCommitInfoRequired;
-            o.planNumber = planNumber;
-            o.subscriptionId = subscriptionId;
-            o.subscriptions = subscriptions;
-            return o;
+            final var _resultValue = new GetSubscriptionsResult();
+            _resultValue.buyerEmail = buyerEmail;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isCommitInfoRequired = isCommitInfoRequired;
+            _resultValue.planNumber = planNumber;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.subscriptions = subscriptions;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetJavaReleasesJavaReleaseCollection {
             return items(List.of(items));
         }
         public GetJavaReleasesJavaReleaseCollection build() {
-            final var o = new GetJavaReleasesJavaReleaseCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetJavaReleasesJavaReleaseCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

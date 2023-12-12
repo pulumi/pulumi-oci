@@ -190,16 +190,16 @@ public final class GetMetricsMetric {
             return this;
         }
         public GetMetricsMetric build() {
-            final var o = new GetMetricsMetric();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.dimensionFilters = dimensionFilters;
-            o.dimensions = dimensions;
-            o.groupBies = groupBies;
-            o.name = name;
-            o.namespace = namespace;
-            o.resourceGroup = resourceGroup;
-            return o;
+            final var _resultValue = new GetMetricsMetric();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.dimensionFilters = dimensionFilters;
+            _resultValue.dimensions = dimensions;
+            _resultValue.groupBies = groupBies;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.resourceGroup = resourceGroup;
+            return _resultValue;
         }
     }
 }

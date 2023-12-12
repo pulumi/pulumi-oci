@@ -144,14 +144,14 @@ public final class GetUserGroupMembershipsResult {
             return this;
         }
         public GetUserGroupMembershipsResult build() {
-            final var o = new GetUserGroupMembershipsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.groupId = groupId;
-            o.id = id;
-            o.memberships = memberships;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetUserGroupMembershipsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.memberships = memberships;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

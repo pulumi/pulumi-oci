@@ -85,11 +85,11 @@ public final class GetShapesShapeMaxVnicAttachmentOption {
             return this;
         }
         public GetShapesShapeMaxVnicAttachmentOption build() {
-            final var o = new GetShapesShapeMaxVnicAttachmentOption();
-            o.defaultPerOcpu = defaultPerOcpu;
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new GetShapesShapeMaxVnicAttachmentOption();
+            _resultValue.defaultPerOcpu = defaultPerOcpu;
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetDomainsUserDbCredentialsUserDbCredentialUrnietfparamsscims
             return this;
         }
         public GetDomainsUserDbCredentialsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new GetDomainsUserDbCredentialsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new GetDomainsUserDbCredentialsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

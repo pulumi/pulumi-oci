@@ -75,11 +75,11 @@ public final class GetDynamicGroupsFilter {
             return values(List.of(values));
         }
         public GetDynamicGroupsFilter build() {
-            final var o = new GetDynamicGroupsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDynamicGroupsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

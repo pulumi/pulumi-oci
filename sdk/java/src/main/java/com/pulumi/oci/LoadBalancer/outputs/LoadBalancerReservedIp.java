@@ -40,9 +40,9 @@ public final class LoadBalancerReservedIp {
             return this;
         }
         public LoadBalancerReservedIp build() {
-            final var o = new LoadBalancerReservedIp();
-            o.id = id;
-            return o;
+            final var _resultValue = new LoadBalancerReservedIp();
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

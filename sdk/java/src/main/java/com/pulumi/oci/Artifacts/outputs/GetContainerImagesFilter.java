@@ -67,11 +67,11 @@ public final class GetContainerImagesFilter {
             return values(List.of(values));
         }
         public GetContainerImagesFilter build() {
-            final var o = new GetContainerImagesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetContainerImagesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

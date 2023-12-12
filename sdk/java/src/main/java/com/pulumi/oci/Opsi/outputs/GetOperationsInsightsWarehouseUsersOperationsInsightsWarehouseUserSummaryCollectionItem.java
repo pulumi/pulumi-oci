@@ -315,23 +315,23 @@ public final class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehous
             return this;
         }
         public GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem build() {
-            final var o = new GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem();
-            o.compartmentId = compartmentId;
-            o.connectionPassword = connectionPassword;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isAwrDataAccess = isAwrDataAccess;
-            o.isEmDataAccess = isEmDataAccess;
-            o.isOpsiDataAccess = isOpsiDataAccess;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionPassword = connectionPassword;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isAwrDataAccess = isAwrDataAccess;
+            _resultValue.isEmDataAccess = isEmDataAccess;
+            _resultValue.isOpsiDataAccess = isOpsiDataAccess;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

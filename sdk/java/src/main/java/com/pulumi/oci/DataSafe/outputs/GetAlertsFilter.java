@@ -67,11 +67,11 @@ public final class GetAlertsFilter {
             return values(List.of(values));
         }
         public GetAlertsFilter build() {
-            final var o = new GetAlertsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAlertsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

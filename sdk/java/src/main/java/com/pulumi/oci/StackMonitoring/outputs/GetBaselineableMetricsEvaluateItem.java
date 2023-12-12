@@ -118,12 +118,12 @@ public final class GetBaselineableMetricsEvaluateItem {
             return trainingDataPoints(List.of(trainingDataPoints));
         }
         public GetBaselineableMetricsEvaluateItem build() {
-            final var o = new GetBaselineableMetricsEvaluateItem();
-            o.dataPoints = dataPoints;
-            o.dimensions = dimensions;
-            o.evaluationDataPoints = evaluationDataPoints;
-            o.trainingDataPoints = trainingDataPoints;
-            return o;
+            final var _resultValue = new GetBaselineableMetricsEvaluateItem();
+            _resultValue.dataPoints = dataPoints;
+            _resultValue.dimensions = dimensions;
+            _resultValue.evaluationDataPoints = evaluationDataPoints;
+            _resultValue.trainingDataPoints = trainingDataPoints;
+            return _resultValue;
         }
     }
 }

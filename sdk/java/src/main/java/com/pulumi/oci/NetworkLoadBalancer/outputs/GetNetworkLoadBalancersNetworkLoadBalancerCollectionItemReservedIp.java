@@ -46,9 +46,9 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReser
             return this;
         }
         public GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp build() {
-            final var o = new GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp();
-            o.id = id;
-            return o;
+            final var _resultValue = new GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemReservedIp();
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

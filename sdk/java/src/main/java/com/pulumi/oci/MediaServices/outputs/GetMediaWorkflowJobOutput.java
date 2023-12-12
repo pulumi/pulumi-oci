@@ -122,13 +122,13 @@ public final class GetMediaWorkflowJobOutput {
             return this;
         }
         public GetMediaWorkflowJobOutput build() {
-            final var o = new GetMediaWorkflowJobOutput();
-            o.assetType = assetType;
-            o.bucket = bucket;
-            o.id = id;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new GetMediaWorkflowJobOutput();
+            _resultValue.assetType = assetType;
+            _resultValue.bucket = bucket;
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

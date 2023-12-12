@@ -60,10 +60,10 @@ public final class AutonomousDatabaseResourcePoolSummary {
             return this;
         }
         public AutonomousDatabaseResourcePoolSummary build() {
-            final var o = new AutonomousDatabaseResourcePoolSummary();
-            o.isDisabled = isDisabled;
-            o.poolSize = poolSize;
-            return o;
+            final var _resultValue = new AutonomousDatabaseResourcePoolSummary();
+            _resultValue.isDisabled = isDisabled;
+            _resultValue.poolSize = poolSize;
+            return _resultValue;
         }
     }
 }

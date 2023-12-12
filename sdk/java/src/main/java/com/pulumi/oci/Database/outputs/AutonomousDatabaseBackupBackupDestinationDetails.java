@@ -124,13 +124,13 @@ public final class AutonomousDatabaseBackupBackupDestinationDetails {
             return this;
         }
         public AutonomousDatabaseBackupBackupDestinationDetails build() {
-            final var o = new AutonomousDatabaseBackupBackupDestinationDetails();
-            o.id = id;
-            o.internetProxy = internetProxy;
-            o.type = type;
-            o.vpcPassword = vpcPassword;
-            o.vpcUser = vpcUser;
-            return o;
+            final var _resultValue = new AutonomousDatabaseBackupBackupDestinationDetails();
+            _resultValue.id = id;
+            _resultValue.internetProxy = internetProxy;
+            _resultValue.type = type;
+            _resultValue.vpcPassword = vpcPassword;
+            _resultValue.vpcUser = vpcUser;
+            return _resultValue;
         }
     }
 }

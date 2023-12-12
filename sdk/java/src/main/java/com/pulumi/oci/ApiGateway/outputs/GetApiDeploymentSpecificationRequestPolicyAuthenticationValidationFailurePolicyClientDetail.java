@@ -103,12 +103,12 @@ public final class GetApiDeploymentSpecificationRequestPolicyAuthenticationValid
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetail build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetail();
-            o.clientId = clientId;
-            o.clientSecretId = clientSecretId;
-            o.clientSecretVersionNumber = clientSecretVersionNumber;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicyClientDetail();
+            _resultValue.clientId = clientId;
+            _resultValue.clientSecretId = clientSecretId;
+            _resultValue.clientSecretVersionNumber = clientSecretVersionNumber;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

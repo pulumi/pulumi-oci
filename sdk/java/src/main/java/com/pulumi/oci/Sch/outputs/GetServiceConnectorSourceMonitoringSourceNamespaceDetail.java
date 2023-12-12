@@ -70,10 +70,10 @@ public final class GetServiceConnectorSourceMonitoringSourceNamespaceDetail {
             return namespaces(List.of(namespaces));
         }
         public GetServiceConnectorSourceMonitoringSourceNamespaceDetail build() {
-            final var o = new GetServiceConnectorSourceMonitoringSourceNamespaceDetail();
-            o.kind = kind;
-            o.namespaces = namespaces;
-            return o;
+            final var _resultValue = new GetServiceConnectorSourceMonitoringSourceNamespaceDetail();
+            _resultValue.kind = kind;
+            _resultValue.namespaces = namespaces;
+            return _resultValue;
         }
     }
 }

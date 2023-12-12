@@ -95,12 +95,12 @@ public final class GetScheduleQueryPropertyDateRange {
             return this;
         }
         public GetScheduleQueryPropertyDateRange build() {
-            final var o = new GetScheduleQueryPropertyDateRange();
-            o.dateRangeType = dateRangeType;
-            o.dynamicDateRangeType = dynamicDateRangeType;
-            o.timeUsageEnded = timeUsageEnded;
-            o.timeUsageStarted = timeUsageStarted;
-            return o;
+            final var _resultValue = new GetScheduleQueryPropertyDateRange();
+            _resultValue.dateRangeType = dateRangeType;
+            _resultValue.dynamicDateRangeType = dynamicDateRangeType;
+            _resultValue.timeUsageEnded = timeUsageEnded;
+            _resultValue.timeUsageStarted = timeUsageStarted;
+            return _resultValue;
         }
     }
 }

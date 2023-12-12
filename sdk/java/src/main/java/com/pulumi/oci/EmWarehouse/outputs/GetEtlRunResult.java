@@ -121,13 +121,13 @@ public final class GetEtlRunResult {
             return items(List.of(items));
         }
         public GetEtlRunResult build() {
-            final var o = new GetEtlRunResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.emWarehouseId = emWarehouseId;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetEtlRunResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.emWarehouseId = emWarehouseId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

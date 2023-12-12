@@ -292,22 +292,22 @@ public final class GetDetectionDataAssetResult {
             return this;
         }
         public GetDetectionDataAssetResult build() {
-            final var o = new GetDetectionDataAssetResult();
-            o.compartmentId = compartmentId;
-            o.dataAssetId = dataAssetId;
-            o.dataSourceDetails = dataSourceDetails;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.privateEndpointId = privateEndpointId;
-            o.projectId = projectId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDetectionDataAssetResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dataAssetId = dataAssetId;
+            _resultValue.dataSourceDetails = dataSourceDetails;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.privateEndpointId = privateEndpointId;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

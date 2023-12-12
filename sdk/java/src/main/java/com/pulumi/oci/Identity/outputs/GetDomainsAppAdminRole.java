@@ -103,12 +103,12 @@ public final class GetDomainsAppAdminRole {
             return this;
         }
         public GetDomainsAppAdminRole build() {
-            final var o = new GetDomainsAppAdminRole();
-            o.description = description;
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppAdminRole();
+            _resultValue.description = description;
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

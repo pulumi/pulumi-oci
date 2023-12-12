@@ -67,11 +67,11 @@ public final class GetVmClusterUpdatesFilter {
             return values(List.of(values));
         }
         public GetVmClusterUpdatesFilter build() {
-            final var o = new GetVmClusterUpdatesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVmClusterUpdatesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -109,12 +109,12 @@ public final class GetResponderRecipesResponderRecipeCollectionItemResponderRule
             return this;
         }
         public GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail build() {
-            final var o = new GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail();
-            o.condition = condition;
-            o.configurations = configurations;
-            o.isEnabled = isEnabled;
-            o.mode = mode;
-            return o;
+            final var _resultValue = new GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail();
+            _resultValue.condition = condition;
+            _resultValue.configurations = configurations;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.mode = mode;
+            return _resultValue;
         }
     }
 }

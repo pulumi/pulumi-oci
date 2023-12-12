@@ -84,11 +84,11 @@ public final class GetDomainsRuleReturn {
             return this;
         }
         public GetDomainsRuleReturn build() {
-            final var o = new GetDomainsRuleReturn();
-            o.name = name;
-            o.returnGroovy = returnGroovy;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsRuleReturn();
+            _resultValue.name = name;
+            _resultValue.returnGroovy = returnGroovy;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

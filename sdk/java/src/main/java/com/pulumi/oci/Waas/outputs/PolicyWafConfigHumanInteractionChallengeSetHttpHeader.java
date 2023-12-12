@@ -71,10 +71,10 @@ public final class PolicyWafConfigHumanInteractionChallengeSetHttpHeader {
             return this;
         }
         public PolicyWafConfigHumanInteractionChallengeSetHttpHeader build() {
-            final var o = new PolicyWafConfigHumanInteractionChallengeSetHttpHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new PolicyWafConfigHumanInteractionChallengeSetHttpHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

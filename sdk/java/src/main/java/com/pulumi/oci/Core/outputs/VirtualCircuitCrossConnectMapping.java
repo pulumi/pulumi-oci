@@ -203,15 +203,15 @@ public final class VirtualCircuitCrossConnectMapping {
             return this;
         }
         public VirtualCircuitCrossConnectMapping build() {
-            final var o = new VirtualCircuitCrossConnectMapping();
-            o.bgpMd5authKey = bgpMd5authKey;
-            o.crossConnectOrCrossConnectGroupId = crossConnectOrCrossConnectGroupId;
-            o.customerBgpPeeringIp = customerBgpPeeringIp;
-            o.customerBgpPeeringIpv6 = customerBgpPeeringIpv6;
-            o.oracleBgpPeeringIp = oracleBgpPeeringIp;
-            o.oracleBgpPeeringIpv6 = oracleBgpPeeringIpv6;
-            o.vlan = vlan;
-            return o;
+            final var _resultValue = new VirtualCircuitCrossConnectMapping();
+            _resultValue.bgpMd5authKey = bgpMd5authKey;
+            _resultValue.crossConnectOrCrossConnectGroupId = crossConnectOrCrossConnectGroupId;
+            _resultValue.customerBgpPeeringIp = customerBgpPeeringIp;
+            _resultValue.customerBgpPeeringIpv6 = customerBgpPeeringIpv6;
+            _resultValue.oracleBgpPeeringIp = oracleBgpPeeringIp;
+            _resultValue.oracleBgpPeeringIpv6 = oracleBgpPeeringIpv6;
+            _resultValue.vlan = vlan;
+            return _resultValue;
         }
     }
 }

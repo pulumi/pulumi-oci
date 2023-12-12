@@ -128,13 +128,13 @@ public final class NamespaceIngestTimeRuleConditions {
             return this;
         }
         public NamespaceIngestTimeRuleConditions build() {
-            final var o = new NamespaceIngestTimeRuleConditions();
-            o.additionalConditions = additionalConditions;
-            o.fieldName = fieldName;
-            o.fieldOperator = fieldOperator;
-            o.fieldValue = fieldValue;
-            o.kind = kind;
-            return o;
+            final var _resultValue = new NamespaceIngestTimeRuleConditions();
+            _resultValue.additionalConditions = additionalConditions;
+            _resultValue.fieldName = fieldName;
+            _resultValue.fieldOperator = fieldOperator;
+            _resultValue.fieldValue = fieldValue;
+            _resultValue.kind = kind;
+            return _resultValue;
         }
     }
 }

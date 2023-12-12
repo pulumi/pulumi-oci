@@ -87,11 +87,11 @@ public final class DbSystemIormConfigCachDbPlan {
             return this;
         }
         public DbSystemIormConfigCachDbPlan build() {
-            final var o = new DbSystemIormConfigCachDbPlan();
-            o.dbName = dbName;
-            o.flashCacheLimit = flashCacheLimit;
-            o.share = share;
-            return o;
+            final var _resultValue = new DbSystemIormConfigCachDbPlan();
+            _resultValue.dbName = dbName;
+            _resultValue.flashCacheLimit = flashCacheLimit;
+            _resultValue.share = share;
+            return _resultValue;
         }
     }
 }

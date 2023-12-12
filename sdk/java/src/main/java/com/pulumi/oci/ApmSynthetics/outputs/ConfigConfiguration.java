@@ -373,25 +373,25 @@ public final class ConfigConfiguration {
             return verifyTexts(List.of(verifyTexts));
         }
         public ConfigConfiguration build() {
-            final var o = new ConfigConfiguration();
-            o.clientCertificateDetails = clientCertificateDetails;
-            o.configType = configType;
-            o.dnsConfiguration = dnsConfiguration;
-            o.isCertificateValidationEnabled = isCertificateValidationEnabled;
-            o.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
-            o.isFailureRetried = isFailureRetried;
-            o.isRedirectionEnabled = isRedirectionEnabled;
-            o.networkConfiguration = networkConfiguration;
-            o.reqAuthenticationDetails = reqAuthenticationDetails;
-            o.reqAuthenticationScheme = reqAuthenticationScheme;
-            o.requestHeaders = requestHeaders;
-            o.requestMethod = requestMethod;
-            o.requestPostBody = requestPostBody;
-            o.requestQueryParams = requestQueryParams;
-            o.verifyResponseCodes = verifyResponseCodes;
-            o.verifyResponseContent = verifyResponseContent;
-            o.verifyTexts = verifyTexts;
-            return o;
+            final var _resultValue = new ConfigConfiguration();
+            _resultValue.clientCertificateDetails = clientCertificateDetails;
+            _resultValue.configType = configType;
+            _resultValue.dnsConfiguration = dnsConfiguration;
+            _resultValue.isCertificateValidationEnabled = isCertificateValidationEnabled;
+            _resultValue.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
+            _resultValue.isFailureRetried = isFailureRetried;
+            _resultValue.isRedirectionEnabled = isRedirectionEnabled;
+            _resultValue.networkConfiguration = networkConfiguration;
+            _resultValue.reqAuthenticationDetails = reqAuthenticationDetails;
+            _resultValue.reqAuthenticationScheme = reqAuthenticationScheme;
+            _resultValue.requestHeaders = requestHeaders;
+            _resultValue.requestMethod = requestMethod;
+            _resultValue.requestPostBody = requestPostBody;
+            _resultValue.requestQueryParams = requestQueryParams;
+            _resultValue.verifyResponseCodes = verifyResponseCodes;
+            _resultValue.verifyResponseContent = verifyResponseContent;
+            _resultValue.verifyTexts = verifyTexts;
+            return _resultValue;
         }
     }
 }

@@ -177,17 +177,17 @@ public final class GetSummarizeResourceInventoryResult {
             return this;
         }
         public GetSummarizeResourceInventoryResult build() {
-            final var o = new GetSummarizeResourceInventoryResult();
-            o.activeFleetCount = activeFleetCount;
-            o.applicationCount = applicationCount;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.installationCount = installationCount;
-            o.jreCount = jreCount;
-            o.managedInstanceCount = managedInstanceCount;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetSummarizeResourceInventoryResult();
+            _resultValue.activeFleetCount = activeFleetCount;
+            _resultValue.applicationCount = applicationCount;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.installationCount = installationCount;
+            _resultValue.jreCount = jreCount;
+            _resultValue.managedInstanceCount = managedInstanceCount;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

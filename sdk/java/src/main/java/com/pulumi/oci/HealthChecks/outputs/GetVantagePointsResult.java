@@ -125,13 +125,13 @@ public final class GetVantagePointsResult {
             return this;
         }
         public GetVantagePointsResult build() {
-            final var o = new GetVantagePointsResult();
-            o.displayName = displayName;
-            o.filters = filters;
-            o.healthChecksVantagePoints = healthChecksVantagePoints;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetVantagePointsResult();
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.healthChecksVantagePoints = healthChecksVantagePoints;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

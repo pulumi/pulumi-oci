@@ -42,9 +42,9 @@ public final class GetScheduledRunsScheduledRunCollection {
             return items(List.of(items));
         }
         public GetScheduledRunsScheduledRunCollection build() {
-            final var o = new GetScheduledRunsScheduledRunCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetScheduledRunsScheduledRunCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

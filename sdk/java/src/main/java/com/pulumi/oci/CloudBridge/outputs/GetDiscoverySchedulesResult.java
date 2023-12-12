@@ -155,15 +155,15 @@ public final class GetDiscoverySchedulesResult {
             return this;
         }
         public GetDiscoverySchedulesResult build() {
-            final var o = new GetDiscoverySchedulesResult();
-            o.compartmentId = compartmentId;
-            o.discoveryScheduleCollections = discoveryScheduleCollections;
-            o.discoveryScheduleId = discoveryScheduleId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDiscoverySchedulesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.discoveryScheduleCollections = discoveryScheduleCollections;
+            _resultValue.discoveryScheduleId = discoveryScheduleId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

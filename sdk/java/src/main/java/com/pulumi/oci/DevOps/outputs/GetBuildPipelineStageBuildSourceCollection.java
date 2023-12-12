@@ -50,9 +50,9 @@ public final class GetBuildPipelineStageBuildSourceCollection {
             return items(List.of(items));
         }
         public GetBuildPipelineStageBuildSourceCollection build() {
-            final var o = new GetBuildPipelineStageBuildSourceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetBuildPipelineStageBuildSourceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

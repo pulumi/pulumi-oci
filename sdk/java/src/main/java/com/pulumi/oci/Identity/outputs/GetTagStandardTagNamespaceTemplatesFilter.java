@@ -67,11 +67,11 @@ public final class GetTagStandardTagNamespaceTemplatesFilter {
             return values(List.of(values));
         }
         public GetTagStandardTagNamespaceTemplatesFilter build() {
-            final var o = new GetTagStandardTagNamespaceTemplatesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetTagStandardTagNamespaceTemplatesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

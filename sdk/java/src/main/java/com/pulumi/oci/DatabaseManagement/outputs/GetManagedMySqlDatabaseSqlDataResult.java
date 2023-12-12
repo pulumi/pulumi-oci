@@ -131,15 +131,15 @@ public final class GetManagedMySqlDatabaseSqlDataResult {
             return this;
         }
         public GetManagedMySqlDatabaseSqlDataResult build() {
-            final var o = new GetManagedMySqlDatabaseSqlDataResult();
-            o.endTime = endTime;
-            o.filterColumn = filterColumn;
-            o.filters = filters;
-            o.id = id;
-            o.managedMySqlDatabaseId = managedMySqlDatabaseId;
-            o.mySqlDataCollections = mySqlDataCollections;
-            o.startTime = startTime;
-            return o;
+            final var _resultValue = new GetManagedMySqlDatabaseSqlDataResult();
+            _resultValue.endTime = endTime;
+            _resultValue.filterColumn = filterColumn;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedMySqlDatabaseId = managedMySqlDatabaseId;
+            _resultValue.mySqlDataCollections = mySqlDataCollections;
+            _resultValue.startTime = startTime;
+            return _resultValue;
         }
     }
 }

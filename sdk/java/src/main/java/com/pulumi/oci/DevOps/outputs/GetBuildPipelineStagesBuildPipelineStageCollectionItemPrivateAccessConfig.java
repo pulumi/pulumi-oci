@@ -88,11 +88,11 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivate
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig build() {
-            final var o = new GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig();
-            o.networkChannelType = networkChannelType;
-            o.nsgIds = nsgIds;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetBuildPipelineStagesBuildPipelineStageCollectionItemPrivateAccessConfig();
+            _resultValue.networkChannelType = networkChannelType;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

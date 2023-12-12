@@ -238,21 +238,21 @@ public final class GetMaskingPoliciesResult {
             return this;
         }
         public GetMaskingPoliciesResult build() {
-            final var o = new GetMaskingPoliciesResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.maskingPolicyCollections = maskingPolicyCollections;
-            o.maskingPolicyId = maskingPolicyId;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.state = state;
-            o.targetId = targetId;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            return o;
+            final var _resultValue = new GetMaskingPoliciesResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.maskingPolicyCollections = maskingPolicyCollections;
+            _resultValue.maskingPolicyId = maskingPolicyId;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            return _resultValue;
         }
     }
 }

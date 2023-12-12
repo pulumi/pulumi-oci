@@ -117,14 +117,14 @@ public final class GetUiPasswordResult {
             return this;
         }
         public GetUiPasswordResult build() {
-            final var o = new GetUiPasswordResult();
-            o.id = id;
-            o.inactiveStatus = inactiveStatus;
-            o.password = password;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetUiPasswordResult();
+            _resultValue.id = id;
+            _resultValue.inactiveStatus = inactiveStatus;
+            _resultValue.password = password;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

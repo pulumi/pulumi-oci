@@ -67,10 +67,10 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
             return this;
         }
         public TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup build() {
-            final var o = new TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup();
-            o.compartmentId = compartmentId;
-            o.condition = condition;
-            return o;
+            final var _resultValue = new TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.condition = condition;
+            return _resultValue;
         }
     }
 }

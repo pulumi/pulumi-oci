@@ -163,15 +163,15 @@ public final class GetTopUtilizedProductLicensesItem {
             return this;
         }
         public GetTopUtilizedProductLicensesItem build() {
-            final var o = new GetTopUtilizedProductLicensesItem();
-            o.isUnlimited = isUnlimited;
-            o.productLicenseId = productLicenseId;
-            o.productType = productType;
-            o.status = status;
-            o.totalLicenseUnitCount = totalLicenseUnitCount;
-            o.totalUnitsConsumed = totalUnitsConsumed;
-            o.unitType = unitType;
-            return o;
+            final var _resultValue = new GetTopUtilizedProductLicensesItem();
+            _resultValue.isUnlimited = isUnlimited;
+            _resultValue.productLicenseId = productLicenseId;
+            _resultValue.productType = productType;
+            _resultValue.status = status;
+            _resultValue.totalLicenseUnitCount = totalLicenseUnitCount;
+            _resultValue.totalUnitsConsumed = totalUnitsConsumed;
+            _resultValue.unitType = unitType;
+            return _resultValue;
         }
     }
 }

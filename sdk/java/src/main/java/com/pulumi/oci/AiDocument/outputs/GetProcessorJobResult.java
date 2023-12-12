@@ -280,21 +280,21 @@ public final class GetProcessorJobResult {
             return this;
         }
         public GetProcessorJobResult build() {
-            final var o = new GetProcessorJobResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.id = id;
-            o.inputLocations = inputLocations;
-            o.lifecycleDetails = lifecycleDetails;
-            o.outputLocations = outputLocations;
-            o.percentComplete = percentComplete;
-            o.processorConfigs = processorConfigs;
-            o.processorJobId = processorJobId;
-            o.state = state;
-            o.timeAccepted = timeAccepted;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetProcessorJobResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.inputLocations = inputLocations;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.outputLocations = outputLocations;
+            _resultValue.percentComplete = percentComplete;
+            _resultValue.processorConfigs = processorConfigs;
+            _resultValue.processorJobId = processorJobId;
+            _resultValue.state = state;
+            _resultValue.timeAccepted = timeAccepted;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

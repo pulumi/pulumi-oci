@@ -66,10 +66,10 @@ public final class UsagePlanEntitlementRateLimit {
             return this;
         }
         public UsagePlanEntitlementRateLimit build() {
-            final var o = new UsagePlanEntitlementRateLimit();
-            o.unit = unit;
-            o.value = value;
-            return o;
+            final var _resultValue = new UsagePlanEntitlementRateLimit();
+            _resultValue.unit = unit;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -165,15 +165,15 @@ public final class GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCo
             return this;
         }
         public GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem build() {
-            final var o = new GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem();
-            o.id = id;
-            o.odaPrivateEndpointId = odaPrivateEndpointId;
-            o.protocol = protocol;
-            o.scanListenerInfos = scanListenerInfos;
-            o.scanListenerType = scanListenerType;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetOdaPrivateEndpointScanProxiesOdaPrivateEndpointScanProxyCollectionItem();
+            _resultValue.id = id;
+            _resultValue.odaPrivateEndpointId = odaPrivateEndpointId;
+            _resultValue.protocol = protocol;
+            _resultValue.scanListenerInfos = scanListenerInfos;
+            _resultValue.scanListenerType = scanListenerType;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

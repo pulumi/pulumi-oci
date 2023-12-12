@@ -70,10 +70,10 @@ public final class GetDbSystemComputePerformancesDbSystemComputePerformance {
             return this;
         }
         public GetDbSystemComputePerformancesDbSystemComputePerformance build() {
-            final var o = new GetDbSystemComputePerformancesDbSystemComputePerformance();
-            o.computePerformanceLists = computePerformanceLists;
-            o.shape = shape;
-            return o;
+            final var _resultValue = new GetDbSystemComputePerformancesDbSystemComputePerformance();
+            _resultValue.computePerformanceLists = computePerformanceLists;
+            _resultValue.shape = shape;
+            return _resultValue;
         }
     }
 }

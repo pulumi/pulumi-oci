@@ -65,10 +65,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyBodyValidation
             return this;
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContent build() {
-            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContent();
-            o.mediaType = mediaType;
-            o.validationType = validationType;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteRequestPolicyBodyValidationContent();
+            _resultValue.mediaType = mediaType;
+            _resultValue.validationType = validationType;
+            return _resultValue;
         }
     }
 }

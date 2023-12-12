@@ -93,11 +93,11 @@ public final class GetExternalDbSystemConnectorConnectionInfo {
             return connectionStrings(List.of(connectionStrings));
         }
         public GetExternalDbSystemConnectorConnectionInfo build() {
-            final var o = new GetExternalDbSystemConnectorConnectionInfo();
-            o.componentType = componentType;
-            o.connectionCredentials = connectionCredentials;
-            o.connectionStrings = connectionStrings;
-            return o;
+            final var _resultValue = new GetExternalDbSystemConnectorConnectionInfo();
+            _resultValue.componentType = componentType;
+            _resultValue.connectionCredentials = connectionCredentials;
+            _resultValue.connectionStrings = connectionStrings;
+            return _resultValue;
         }
     }
 }

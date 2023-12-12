@@ -67,10 +67,10 @@ public final class LifecycleEnvironmentStageManagedInstanceId {
             return this;
         }
         public LifecycleEnvironmentStageManagedInstanceId build() {
-            final var o = new LifecycleEnvironmentStageManagedInstanceId();
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new LifecycleEnvironmentStageManagedInstanceId();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

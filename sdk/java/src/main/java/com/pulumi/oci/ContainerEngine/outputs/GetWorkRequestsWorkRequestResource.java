@@ -103,12 +103,12 @@ public final class GetWorkRequestsWorkRequestResource {
             return this;
         }
         public GetWorkRequestsWorkRequestResource build() {
-            final var o = new GetWorkRequestsWorkRequestResource();
-            o.actionType = actionType;
-            o.entityType = entityType;
-            o.entityUri = entityUri;
-            o.identifier = identifier;
-            return o;
+            final var _resultValue = new GetWorkRequestsWorkRequestResource();
+            _resultValue.actionType = actionType;
+            _resultValue.entityType = entityType;
+            _resultValue.entityUri = entityUri;
+            _resultValue.identifier = identifier;
+            return _resultValue;
         }
     }
 }

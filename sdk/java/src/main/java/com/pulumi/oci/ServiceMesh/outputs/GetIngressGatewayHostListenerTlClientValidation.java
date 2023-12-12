@@ -73,10 +73,10 @@ public final class GetIngressGatewayHostListenerTlClientValidation {
             return trustedCaBundles(List.of(trustedCaBundles));
         }
         public GetIngressGatewayHostListenerTlClientValidation build() {
-            final var o = new GetIngressGatewayHostListenerTlClientValidation();
-            o.subjectAlternateNames = subjectAlternateNames;
-            o.trustedCaBundles = trustedCaBundles;
-            return o;
+            final var _resultValue = new GetIngressGatewayHostListenerTlClientValidation();
+            _resultValue.subjectAlternateNames = subjectAlternateNames;
+            _resultValue.trustedCaBundles = trustedCaBundles;
+            return _resultValue;
         }
     }
 }

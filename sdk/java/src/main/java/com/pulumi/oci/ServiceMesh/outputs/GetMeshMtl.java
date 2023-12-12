@@ -46,9 +46,9 @@ public final class GetMeshMtl {
             return this;
         }
         public GetMeshMtl build() {
-            final var o = new GetMeshMtl();
-            o.minimum = minimum;
-            return o;
+            final var _resultValue = new GetMeshMtl();
+            _resultValue.minimum = minimum;
+            return _resultValue;
         }
     }
 }

@@ -182,16 +182,16 @@ public final class GetAutonomousDatabaseBackupsResult {
             return this;
         }
         public GetAutonomousDatabaseBackupsResult build() {
-            final var o = new GetAutonomousDatabaseBackupsResult();
-            o.autonomousDatabaseBackups = autonomousDatabaseBackups;
-            o.autonomousDatabaseId = autonomousDatabaseId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseBackupsResult();
+            _resultValue.autonomousDatabaseBackups = autonomousDatabaseBackups;
+            _resultValue.autonomousDatabaseId = autonomousDatabaseId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

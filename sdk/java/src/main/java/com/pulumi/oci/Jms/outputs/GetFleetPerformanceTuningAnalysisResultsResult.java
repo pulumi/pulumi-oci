@@ -166,16 +166,16 @@ public final class GetFleetPerformanceTuningAnalysisResultsResult {
             return this;
         }
         public GetFleetPerformanceTuningAnalysisResultsResult build() {
-            final var o = new GetFleetPerformanceTuningAnalysisResultsResult();
-            o.applicationId = applicationId;
-            o.filters = filters;
-            o.fleetId = fleetId;
-            o.id = id;
-            o.managedInstanceId = managedInstanceId;
-            o.performanceTuningAnalysisResultCollections = performanceTuningAnalysisResultCollections;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetFleetPerformanceTuningAnalysisResultsResult();
+            _resultValue.applicationId = applicationId;
+            _resultValue.filters = filters;
+            _resultValue.fleetId = fleetId;
+            _resultValue.id = id;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.performanceTuningAnalysisResultCollections = performanceTuningAnalysisResultCollections;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

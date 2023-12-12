@@ -141,14 +141,14 @@ public final class GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCo
             return this;
         }
         public GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItem build() {
-            final var o = new GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItem();
-            o.computeCapacityTopologyId = computeCapacityTopologyId;
-            o.id = id;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.totalComputeBareMetalHostCount = totalComputeBareMetalHostCount;
-            return o;
+            final var _resultValue = new GetComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItem();
+            _resultValue.computeCapacityTopologyId = computeCapacityTopologyId;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.totalComputeBareMetalHostCount = totalComputeBareMetalHostCount;
+            return _resultValue;
         }
     }
 }

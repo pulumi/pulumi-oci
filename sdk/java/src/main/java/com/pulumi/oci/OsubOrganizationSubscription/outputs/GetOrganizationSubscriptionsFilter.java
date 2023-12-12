@@ -75,11 +75,11 @@ public final class GetOrganizationSubscriptionsFilter {
             return values(List.of(values));
         }
         public GetOrganizationSubscriptionsFilter build() {
-            final var o = new GetOrganizationSubscriptionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetOrganizationSubscriptionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

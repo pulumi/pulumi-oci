@@ -499,31 +499,31 @@ public final class GetDomainsApprovalWorkflowStepsApprovalWorkflowStep {
             return this;
         }
         public GetDomainsApprovalWorkflowStepsApprovalWorkflowStep build() {
-            final var o = new GetDomainsApprovalWorkflowStepsApprovalWorkflowStep();
-            o.approvers = approvers;
-            o.approversExpressions = approversExpressions;
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.metas = metas;
-            o.minimumApprovals = minimumApprovals;
-            o.ocid = ocid;
-            o.order = order;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDomainsApprovalWorkflowStepsApprovalWorkflowStep();
+            _resultValue.approvers = approvers;
+            _resultValue.approversExpressions = approversExpressions;
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.metas = metas;
+            _resultValue.minimumApprovals = minimumApprovals;
+            _resultValue.ocid = ocid;
+            _resultValue.order = order;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

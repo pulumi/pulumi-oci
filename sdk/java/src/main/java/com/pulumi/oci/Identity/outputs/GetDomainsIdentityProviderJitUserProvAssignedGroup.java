@@ -84,11 +84,11 @@ public final class GetDomainsIdentityProviderJitUserProvAssignedGroup {
             return this;
         }
         public GetDomainsIdentityProviderJitUserProvAssignedGroup build() {
-            final var o = new GetDomainsIdentityProviderJitUserProvAssignedGroup();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsIdentityProviderJitUserProvAssignedGroup();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

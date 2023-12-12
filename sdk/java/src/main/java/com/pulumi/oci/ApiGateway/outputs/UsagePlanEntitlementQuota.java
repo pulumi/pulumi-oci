@@ -104,12 +104,12 @@ public final class UsagePlanEntitlementQuota {
             return this;
         }
         public UsagePlanEntitlementQuota build() {
-            final var o = new UsagePlanEntitlementQuota();
-            o.operationOnBreach = operationOnBreach;
-            o.resetPolicy = resetPolicy;
-            o.unit = unit;
-            o.value = value;
-            return o;
+            final var _resultValue = new UsagePlanEntitlementQuota();
+            _resultValue.operationOnBreach = operationOnBreach;
+            _resultValue.resetPolicy = resetPolicy;
+            _resultValue.unit = unit;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

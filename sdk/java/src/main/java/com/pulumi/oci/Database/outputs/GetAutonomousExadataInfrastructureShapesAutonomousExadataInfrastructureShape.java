@@ -142,14 +142,14 @@ public final class GetAutonomousExadataInfrastructureShapesAutonomousExadataInfr
             return this;
         }
         public GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape build() {
-            final var o = new GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape();
-            o.availableCoreCount = availableCoreCount;
-            o.coreCountIncrement = coreCountIncrement;
-            o.maximumNodeCount = maximumNodeCount;
-            o.minimumCoreCount = minimumCoreCount;
-            o.minimumNodeCount = minimumNodeCount;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAutonomousExadataInfrastructureShapesAutonomousExadataInfrastructureShape();
+            _resultValue.availableCoreCount = availableCoreCount;
+            _resultValue.coreCountIncrement = coreCountIncrement;
+            _resultValue.maximumNodeCount = maximumNodeCount;
+            _resultValue.minimumCoreCount = minimumCoreCount;
+            _resultValue.minimumNodeCount = minimumNodeCount;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

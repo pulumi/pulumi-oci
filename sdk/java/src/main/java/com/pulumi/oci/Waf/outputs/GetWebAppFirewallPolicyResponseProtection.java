@@ -50,9 +50,9 @@ public final class GetWebAppFirewallPolicyResponseProtection {
             return rules(List.of(rules));
         }
         public GetWebAppFirewallPolicyResponseProtection build() {
-            final var o = new GetWebAppFirewallPolicyResponseProtection();
-            o.rules = rules;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPolicyResponseProtection();
+            _resultValue.rules = rules;
+            return _resultValue;
         }
     }
 }

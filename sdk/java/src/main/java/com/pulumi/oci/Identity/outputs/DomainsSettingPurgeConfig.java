@@ -102,10 +102,10 @@ public final class DomainsSettingPurgeConfig {
             return this;
         }
         public DomainsSettingPurgeConfig build() {
-            final var o = new DomainsSettingPurgeConfig();
-            o.resourceName = resourceName;
-            o.retentionPeriod = retentionPeriod;
-            return o;
+            final var _resultValue = new DomainsSettingPurgeConfig();
+            _resultValue.resourceName = resourceName;
+            _resultValue.retentionPeriod = retentionPeriod;
+            return _resultValue;
         }
     }
 }

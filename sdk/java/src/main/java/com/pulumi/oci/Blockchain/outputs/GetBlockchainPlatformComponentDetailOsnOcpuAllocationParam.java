@@ -46,9 +46,9 @@ public final class GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam {
             return this;
         }
         public GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam build() {
-            final var o = new GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam();
-            o.ocpuAllocationNumber = ocpuAllocationNumber;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformComponentDetailOsnOcpuAllocationParam();
+            _resultValue.ocpuAllocationNumber = ocpuAllocationNumber;
+            return _resultValue;
         }
     }
 }

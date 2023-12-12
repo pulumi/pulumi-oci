@@ -65,10 +65,10 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaU
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCode();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

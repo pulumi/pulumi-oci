@@ -86,11 +86,11 @@ public final class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProg
             return this;
         }
         public GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress build() {
-            final var o = new GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress();
-            o.deployStageExecutionProgress = deployStageExecutionProgress;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress();
+            _resultValue.deployStageExecutionProgress = deployStageExecutionProgress;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

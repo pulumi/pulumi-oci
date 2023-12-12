@@ -42,9 +42,9 @@ public final class GetDeploymentCertificatesCertificateCollection {
             return items(List.of(items));
         }
         public GetDeploymentCertificatesCertificateCollection build() {
-            final var o = new GetDeploymentCertificatesCertificateCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeploymentCertificatesCertificateCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

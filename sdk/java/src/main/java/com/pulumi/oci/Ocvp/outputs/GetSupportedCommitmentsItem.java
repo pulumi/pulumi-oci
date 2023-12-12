@@ -46,9 +46,9 @@ public final class GetSupportedCommitmentsItem {
             return this;
         }
         public GetSupportedCommitmentsItem build() {
-            final var o = new GetSupportedCommitmentsItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetSupportedCommitmentsItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

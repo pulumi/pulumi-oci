@@ -348,25 +348,25 @@ public final class GetSoftwareSourceSoftwarePackageResult {
             return this;
         }
         public GetSoftwareSourceSoftwarePackageResult build() {
-            final var o = new GetSoftwareSourceSoftwarePackageResult();
-            o.architecture = architecture;
-            o.checksum = checksum;
-            o.checksumType = checksumType;
-            o.dependencies = dependencies;
-            o.description = description;
-            o.displayName = displayName;
-            o.files = files;
-            o.id = id;
-            o.isLatest = isLatest;
-            o.lastModifiedDate = lastModifiedDate;
-            o.name = name;
-            o.sizeInBytes = sizeInBytes;
-            o.softwarePackageName = softwarePackageName;
-            o.softwareSourceId = softwareSourceId;
-            o.softwareSources = softwareSources;
-            o.type = type;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetSoftwareSourceSoftwarePackageResult();
+            _resultValue.architecture = architecture;
+            _resultValue.checksum = checksum;
+            _resultValue.checksumType = checksumType;
+            _resultValue.dependencies = dependencies;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.files = files;
+            _resultValue.id = id;
+            _resultValue.isLatest = isLatest;
+            _resultValue.lastModifiedDate = lastModifiedDate;
+            _resultValue.name = name;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.softwarePackageName = softwarePackageName;
+            _resultValue.softwareSourceId = softwareSourceId;
+            _resultValue.softwareSources = softwareSources;
+            _resultValue.type = type;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

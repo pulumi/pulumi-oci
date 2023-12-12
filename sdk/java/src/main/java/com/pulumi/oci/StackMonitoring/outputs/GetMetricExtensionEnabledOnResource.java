@@ -46,9 +46,9 @@ public final class GetMetricExtensionEnabledOnResource {
             return this;
         }
         public GetMetricExtensionEnabledOnResource build() {
-            final var o = new GetMetricExtensionEnabledOnResource();
-            o.resourceId = resourceId;
-            return o;
+            final var _resultValue = new GetMetricExtensionEnabledOnResource();
+            _resultValue.resourceId = resourceId;
+            return _resultValue;
         }
     }
 }

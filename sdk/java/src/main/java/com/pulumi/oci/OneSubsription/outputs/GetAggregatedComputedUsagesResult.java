@@ -169,17 +169,17 @@ public final class GetAggregatedComputedUsagesResult {
             return this;
         }
         public GetAggregatedComputedUsagesResult build() {
-            final var o = new GetAggregatedComputedUsagesResult();
-            o.aggregatedComputedUsages = aggregatedComputedUsages;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.grouping = grouping;
-            o.id = id;
-            o.parentProduct = parentProduct;
-            o.subscriptionId = subscriptionId;
-            o.timeFrom = timeFrom;
-            o.timeTo = timeTo;
-            return o;
+            final var _resultValue = new GetAggregatedComputedUsagesResult();
+            _resultValue.aggregatedComputedUsages = aggregatedComputedUsages;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.grouping = grouping;
+            _resultValue.id = id;
+            _resultValue.parentProduct = parentProduct;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.timeFrom = timeFrom;
+            _resultValue.timeTo = timeTo;
+            return _resultValue;
         }
     }
 }

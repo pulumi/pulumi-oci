@@ -119,14 +119,14 @@ public final class GetInvoicesInvoiceLinesResult {
             return this;
         }
         public GetInvoicesInvoiceLinesResult build() {
-            final var o = new GetInvoicesInvoiceLinesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.internalInvoiceId = internalInvoiceId;
-            o.invoiceLineCollections = invoiceLineCollections;
-            o.ospHomeRegion = ospHomeRegion;
-            return o;
+            final var _resultValue = new GetInvoicesInvoiceLinesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.internalInvoiceId = internalInvoiceId;
+            _resultValue.invoiceLineCollections = invoiceLineCollections;
+            _resultValue.ospHomeRegion = ospHomeRegion;
+            return _resultValue;
         }
     }
 }

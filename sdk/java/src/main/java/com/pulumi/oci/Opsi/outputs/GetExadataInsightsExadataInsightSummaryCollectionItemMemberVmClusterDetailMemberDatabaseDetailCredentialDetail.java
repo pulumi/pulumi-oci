@@ -93,14 +93,14 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             return this;
         }
         public GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail build() {
-            final var o = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail();
-            o.credentialSourceName = credentialSourceName;
-            o.credentialType = credentialType;
-            o.passwordSecretId = passwordSecretId;
-            o.role = role;
-            o.userName = userName;
-            o.walletSecretId = walletSecretId;
-            return o;
+            final var _resultValue = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail();
+            _resultValue.credentialSourceName = credentialSourceName;
+            _resultValue.credentialType = credentialType;
+            _resultValue.passwordSecretId = passwordSecretId;
+            _resultValue.role = role;
+            _resultValue.userName = userName;
+            _resultValue.walletSecretId = walletSecretId;
+            return _resultValue;
         }
     }
 }

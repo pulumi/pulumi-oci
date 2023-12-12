@@ -73,10 +73,10 @@ public final class GetMigrationDataTransferMediumDetail {
             return objectStorageDetails(List.of(objectStorageDetails));
         }
         public GetMigrationDataTransferMediumDetail build() {
-            final var o = new GetMigrationDataTransferMediumDetail();
-            o.databaseLinkDetails = databaseLinkDetails;
-            o.objectStorageDetails = objectStorageDetails;
-            return o;
+            final var _resultValue = new GetMigrationDataTransferMediumDetail();
+            _resultValue.databaseLinkDetails = databaseLinkDetails;
+            _resultValue.objectStorageDetails = objectStorageDetails;
+            return _resultValue;
         }
     }
 }

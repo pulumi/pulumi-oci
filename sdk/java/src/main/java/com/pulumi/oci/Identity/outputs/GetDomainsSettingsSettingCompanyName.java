@@ -65,10 +65,10 @@ public final class GetDomainsSettingsSettingCompanyName {
             return this;
         }
         public GetDomainsSettingsSettingCompanyName build() {
-            final var o = new GetDomainsSettingsSettingCompanyName();
-            o.locale = locale;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSettingsSettingCompanyName();
+            _resultValue.locale = locale;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetDetectionProjectsFilter {
             return values(List.of(values));
         }
         public GetDetectionProjectsFilter build() {
-            final var o = new GetDetectionProjectsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDetectionProjectsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

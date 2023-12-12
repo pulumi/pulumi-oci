@@ -311,22 +311,22 @@ public final class GetPoliciesPolicy {
             return this;
         }
         public GetPoliciesPolicy build() {
-            final var o = new GetPoliciesPolicy();
-            o.ETag = ETag;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.inactiveState = inactiveState;
-            o.lastUpdateETag = lastUpdateETag;
-            o.name = name;
-            o.policyHash = policyHash;
-            o.state = state;
-            o.statements = statements;
-            o.timeCreated = timeCreated;
-            o.versionDate = versionDate;
-            return o;
+            final var _resultValue = new GetPoliciesPolicy();
+            _resultValue.ETag = ETag;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.inactiveState = inactiveState;
+            _resultValue.lastUpdateETag = lastUpdateETag;
+            _resultValue.name = name;
+            _resultValue.policyHash = policyHash;
+            _resultValue.state = state;
+            _resultValue.statements = statements;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.versionDate = versionDate;
+            return _resultValue;
         }
     }
 }

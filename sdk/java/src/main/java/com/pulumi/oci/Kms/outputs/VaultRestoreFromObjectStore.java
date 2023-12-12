@@ -124,13 +124,13 @@ public final class VaultRestoreFromObjectStore {
             return this;
         }
         public VaultRestoreFromObjectStore build() {
-            final var o = new VaultRestoreFromObjectStore();
-            o.bucket = bucket;
-            o.destination = destination;
-            o.namespace = namespace;
-            o.object = object;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new VaultRestoreFromObjectStore();
+            _resultValue.bucket = bucket;
+            _resultValue.destination = destination;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

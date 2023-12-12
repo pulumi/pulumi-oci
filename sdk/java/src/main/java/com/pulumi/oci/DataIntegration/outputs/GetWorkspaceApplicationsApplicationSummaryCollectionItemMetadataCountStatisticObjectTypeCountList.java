@@ -65,10 +65,10 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetad
             return this;
         }
         public GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList build() {
-            final var o = new GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList();
-            o.objectCount = objectCount;
-            o.objectType = objectType;
-            return o;
+            final var _resultValue = new GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatisticObjectTypeCountList();
+            _resultValue.objectCount = objectCount;
+            _resultValue.objectType = objectType;
+            return _resultValue;
         }
     }
 }

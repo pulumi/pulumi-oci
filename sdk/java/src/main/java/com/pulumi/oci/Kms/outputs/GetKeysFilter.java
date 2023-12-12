@@ -67,11 +67,11 @@ public final class GetKeysFilter {
             return values(List.of(values));
         }
         public GetKeysFilter build() {
-            final var o = new GetKeysFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetKeysFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

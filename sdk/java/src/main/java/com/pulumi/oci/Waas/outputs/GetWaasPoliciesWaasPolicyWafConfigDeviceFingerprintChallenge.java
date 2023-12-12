@@ -186,16 +186,16 @@ public final class GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge 
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge build() {
-            final var o = new GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge();
-            o.action = action;
-            o.actionExpirationInSeconds = actionExpirationInSeconds;
-            o.challengeSettings = challengeSettings;
-            o.failureThreshold = failureThreshold;
-            o.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
-            o.isEnabled = isEnabled;
-            o.maxAddressCount = maxAddressCount;
-            o.maxAddressCountExpirationInSeconds = maxAddressCountExpirationInSeconds;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyWafConfigDeviceFingerprintChallenge();
+            _resultValue.action = action;
+            _resultValue.actionExpirationInSeconds = actionExpirationInSeconds;
+            _resultValue.challengeSettings = challengeSettings;
+            _resultValue.failureThreshold = failureThreshold;
+            _resultValue.failureThresholdExpirationInSeconds = failureThresholdExpirationInSeconds;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.maxAddressCount = maxAddressCount;
+            _resultValue.maxAddressCountExpirationInSeconds = maxAddressCountExpirationInSeconds;
+            return _resultValue;
         }
     }
 }

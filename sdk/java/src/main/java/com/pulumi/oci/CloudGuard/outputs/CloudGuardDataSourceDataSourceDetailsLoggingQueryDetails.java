@@ -68,10 +68,10 @@ public final class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails {
             return this;
         }
         public CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails build() {
-            final var o = new CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails();
-            o.keyEntitiesCount = keyEntitiesCount;
-            o.loggingQueryType = loggingQueryType;
-            return o;
+            final var _resultValue = new CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails();
+            _resultValue.keyEntitiesCount = keyEntitiesCount;
+            _resultValue.loggingQueryType = loggingQueryType;
+            return _resultValue;
         }
     }
 }

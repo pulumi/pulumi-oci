@@ -89,11 +89,11 @@ public final class GetModelsModelCollectionItemTestStrategyValidationDataset {
             return locationDetails(List.of(locationDetails));
         }
         public GetModelsModelCollectionItemTestStrategyValidationDataset build() {
-            final var o = new GetModelsModelCollectionItemTestStrategyValidationDataset();
-            o.datasetId = datasetId;
-            o.datasetType = datasetType;
-            o.locationDetails = locationDetails;
-            return o;
+            final var _resultValue = new GetModelsModelCollectionItemTestStrategyValidationDataset();
+            _resultValue.datasetId = datasetId;
+            _resultValue.datasetType = datasetType;
+            _resultValue.locationDetails = locationDetails;
+            return _resultValue;
         }
     }
 }

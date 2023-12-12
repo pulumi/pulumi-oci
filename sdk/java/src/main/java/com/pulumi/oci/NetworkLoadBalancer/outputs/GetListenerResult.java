@@ -156,16 +156,16 @@ public final class GetListenerResult {
             return this;
         }
         public GetListenerResult build() {
-            final var o = new GetListenerResult();
-            o.defaultBackendSetName = defaultBackendSetName;
-            o.id = id;
-            o.ipVersion = ipVersion;
-            o.listenerName = listenerName;
-            o.name = name;
-            o.networkLoadBalancerId = networkLoadBalancerId;
-            o.port = port;
-            o.protocol = protocol;
-            return o;
+            final var _resultValue = new GetListenerResult();
+            _resultValue.defaultBackendSetName = defaultBackendSetName;
+            _resultValue.id = id;
+            _resultValue.ipVersion = ipVersion;
+            _resultValue.listenerName = listenerName;
+            _resultValue.name = name;
+            _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            return _resultValue;
         }
     }
 }

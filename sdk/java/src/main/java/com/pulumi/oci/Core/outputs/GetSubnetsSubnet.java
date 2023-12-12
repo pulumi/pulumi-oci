@@ -455,30 +455,30 @@ public final class GetSubnetsSubnet {
             return this;
         }
         public GetSubnetsSubnet build() {
-            final var o = new GetSubnetsSubnet();
-            o.availabilityDomain = availabilityDomain;
-            o.cidrBlock = cidrBlock;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.dhcpOptionsId = dhcpOptionsId;
-            o.displayName = displayName;
-            o.dnsLabel = dnsLabel;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ipv6cidrBlock = ipv6cidrBlock;
-            o.ipv6cidrBlocks = ipv6cidrBlocks;
-            o.ipv6virtualRouterIp = ipv6virtualRouterIp;
-            o.prohibitInternetIngress = prohibitInternetIngress;
-            o.prohibitPublicIpOnVnic = prohibitPublicIpOnVnic;
-            o.routeTableId = routeTableId;
-            o.securityListIds = securityListIds;
-            o.state = state;
-            o.subnetDomainName = subnetDomainName;
-            o.timeCreated = timeCreated;
-            o.vcnId = vcnId;
-            o.virtualRouterIp = virtualRouterIp;
-            o.virtualRouterMac = virtualRouterMac;
-            return o;
+            final var _resultValue = new GetSubnetsSubnet();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.cidrBlock = cidrBlock;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.dhcpOptionsId = dhcpOptionsId;
+            _resultValue.displayName = displayName;
+            _resultValue.dnsLabel = dnsLabel;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ipv6cidrBlock = ipv6cidrBlock;
+            _resultValue.ipv6cidrBlocks = ipv6cidrBlocks;
+            _resultValue.ipv6virtualRouterIp = ipv6virtualRouterIp;
+            _resultValue.prohibitInternetIngress = prohibitInternetIngress;
+            _resultValue.prohibitPublicIpOnVnic = prohibitPublicIpOnVnic;
+            _resultValue.routeTableId = routeTableId;
+            _resultValue.securityListIds = securityListIds;
+            _resultValue.state = state;
+            _resultValue.subnetDomainName = subnetDomainName;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vcnId = vcnId;
+            _resultValue.virtualRouterIp = virtualRouterIp;
+            _resultValue.virtualRouterMac = virtualRouterMac;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetDomainsSmtpCredentialsSmtpCredentialTag {
             return this;
         }
         public GetDomainsSmtpCredentialsSmtpCredentialTag build() {
-            final var o = new GetDomainsSmtpCredentialsSmtpCredentialTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSmtpCredentialsSmtpCredentialTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

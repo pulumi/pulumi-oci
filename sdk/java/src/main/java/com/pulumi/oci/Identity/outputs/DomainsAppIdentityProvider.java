@@ -146,11 +146,11 @@ public final class DomainsAppIdentityProvider {
             return this;
         }
         public DomainsAppIdentityProvider build() {
-            final var o = new DomainsAppIdentityProvider();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppIdentityProvider();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

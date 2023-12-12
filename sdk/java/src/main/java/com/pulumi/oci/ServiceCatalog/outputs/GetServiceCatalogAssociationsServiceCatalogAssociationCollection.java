@@ -42,9 +42,9 @@ public final class GetServiceCatalogAssociationsServiceCatalogAssociationCollect
             return items(List.of(items));
         }
         public GetServiceCatalogAssociationsServiceCatalogAssociationCollection build() {
-            final var o = new GetServiceCatalogAssociationsServiceCatalogAssociationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetServiceCatalogAssociationsServiceCatalogAssociationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

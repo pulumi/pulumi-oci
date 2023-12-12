@@ -141,14 +141,14 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
             return this;
         }
         public GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile build() {
-            final var o = new GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile();
-            o.checksum = checksum;
-            o.checksumType = checksumType;
-            o.path = path;
-            o.sizeInBytes = sizeInBytes;
-            o.timeModified = timeModified;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItemFile();
+            _resultValue.checksum = checksum;
+            _resultValue.checksumType = checksumType;
+            _resultValue.path = path;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.timeModified = timeModified;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

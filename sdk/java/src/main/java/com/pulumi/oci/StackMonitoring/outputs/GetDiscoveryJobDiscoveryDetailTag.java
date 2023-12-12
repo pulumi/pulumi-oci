@@ -48,9 +48,9 @@ public final class GetDiscoveryJobDiscoveryDetailTag {
             return this;
         }
         public GetDiscoveryJobDiscoveryDetailTag build() {
-            final var o = new GetDiscoveryJobDiscoveryDetailTag();
-            o.propertiesMap = propertiesMap;
-            return o;
+            final var _resultValue = new GetDiscoveryJobDiscoveryDetailTag();
+            _resultValue.propertiesMap = propertiesMap;
+            return _resultValue;
         }
     }
 }

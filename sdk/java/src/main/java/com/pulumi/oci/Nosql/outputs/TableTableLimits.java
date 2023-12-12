@@ -112,12 +112,12 @@ public final class TableTableLimits {
             return this;
         }
         public TableTableLimits build() {
-            final var o = new TableTableLimits();
-            o.capacityMode = capacityMode;
-            o.maxReadUnits = maxReadUnits;
-            o.maxStorageInGbs = maxStorageInGbs;
-            o.maxWriteUnits = maxWriteUnits;
-            return o;
+            final var _resultValue = new TableTableLimits();
+            _resultValue.capacityMode = capacityMode;
+            _resultValue.maxReadUnits = maxReadUnits;
+            _resultValue.maxStorageInGbs = maxStorageInGbs;
+            _resultValue.maxWriteUnits = maxWriteUnits;
+            return _resultValue;
         }
     }
 }

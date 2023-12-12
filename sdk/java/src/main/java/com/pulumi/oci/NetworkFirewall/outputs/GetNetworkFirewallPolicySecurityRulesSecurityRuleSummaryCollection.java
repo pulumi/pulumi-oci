@@ -42,9 +42,9 @@ public final class GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryColle
             return items(List.of(items));
         }
         public GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection build() {
-            final var o = new GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicySecurityRulesSecurityRuleSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

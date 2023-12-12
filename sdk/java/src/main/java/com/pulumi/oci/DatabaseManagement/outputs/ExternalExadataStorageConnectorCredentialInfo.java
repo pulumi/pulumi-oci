@@ -124,13 +124,13 @@ public final class ExternalExadataStorageConnectorCredentialInfo {
             return this;
         }
         public ExternalExadataStorageConnectorCredentialInfo build() {
-            final var o = new ExternalExadataStorageConnectorCredentialInfo();
-            o.password = password;
-            o.sslTrustStoreLocation = sslTrustStoreLocation;
-            o.sslTrustStorePassword = sslTrustStorePassword;
-            o.sslTrustStoreType = sslTrustStoreType;
-            o.username = username;
-            return o;
+            final var _resultValue = new ExternalExadataStorageConnectorCredentialInfo();
+            _resultValue.password = password;
+            _resultValue.sslTrustStoreLocation = sslTrustStoreLocation;
+            _resultValue.sslTrustStorePassword = sslTrustStorePassword;
+            _resultValue.sslTrustStoreType = sslTrustStoreType;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

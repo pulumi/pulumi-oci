@@ -67,11 +67,11 @@ public final class GetDeploymentBackupsFilter {
             return values(List.of(values));
         }
         public GetDeploymentBackupsFilter build() {
-            final var o = new GetDeploymentBackupsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDeploymentBackupsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

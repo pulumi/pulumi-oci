@@ -323,24 +323,24 @@ public final class GetDiscoveryJobResult {
             return this;
         }
         public GetDiscoveryJobResult build() {
-            final var o = new GetDiscoveryJobResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.discoveryClient = discoveryClient;
-            o.discoveryDetails = discoveryDetails;
-            o.discoveryJobId = discoveryJobId;
-            o.discoveryType = discoveryType;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.shouldPropagateTagsToDiscoveredResources = shouldPropagateTagsToDiscoveredResources;
-            o.state = state;
-            o.status = status;
-            o.statusMessage = statusMessage;
-            o.systemTags = systemTags;
-            o.tenantId = tenantId;
-            o.timeUpdated = timeUpdated;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetDiscoveryJobResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.discoveryClient = discoveryClient;
+            _resultValue.discoveryDetails = discoveryDetails;
+            _resultValue.discoveryJobId = discoveryJobId;
+            _resultValue.discoveryType = discoveryType;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.shouldPropagateTagsToDiscoveredResources = shouldPropagateTagsToDiscoveredResources;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.statusMessage = statusMessage;
+            _resultValue.systemTags = systemTags;
+            _resultValue.tenantId = tenantId;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

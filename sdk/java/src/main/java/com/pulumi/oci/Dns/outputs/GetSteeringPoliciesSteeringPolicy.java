@@ -286,21 +286,21 @@ public final class GetSteeringPoliciesSteeringPolicy {
             return this;
         }
         public GetSteeringPoliciesSteeringPolicy build() {
-            final var o = new GetSteeringPoliciesSteeringPolicy();
-            o.answers = answers;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.healthCheckMonitorId = healthCheckMonitorId;
-            o.id = id;
-            o.rules = rules;
-            o.self = self;
-            o.state = state;
-            o.template = template;
-            o.timeCreated = timeCreated;
-            o.ttl = ttl;
-            return o;
+            final var _resultValue = new GetSteeringPoliciesSteeringPolicy();
+            _resultValue.answers = answers;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.healthCheckMonitorId = healthCheckMonitorId;
+            _resultValue.id = id;
+            _resultValue.rules = rules;
+            _resultValue.self = self;
+            _resultValue.state = state;
+            _resultValue.template = template;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.ttl = ttl;
+            return _resultValue;
         }
     }
 }

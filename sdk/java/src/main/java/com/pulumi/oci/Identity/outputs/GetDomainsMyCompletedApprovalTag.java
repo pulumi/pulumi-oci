@@ -65,10 +65,10 @@ public final class GetDomainsMyCompletedApprovalTag {
             return this;
         }
         public GetDomainsMyCompletedApprovalTag build() {
-            final var o = new GetDomainsMyCompletedApprovalTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyCompletedApprovalTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

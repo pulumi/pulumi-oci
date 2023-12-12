@@ -87,11 +87,11 @@ public final class FusionEnvironmentFamilyFamilyMaintenancePolicy {
             return this;
         }
         public FusionEnvironmentFamilyFamilyMaintenancePolicy build() {
-            final var o = new FusionEnvironmentFamilyFamilyMaintenancePolicy();
-            o.concurrentMaintenance = concurrentMaintenance;
-            o.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
-            o.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
-            return o;
+            final var _resultValue = new FusionEnvironmentFamilyFamilyMaintenancePolicy();
+            _resultValue.concurrentMaintenance = concurrentMaintenance;
+            _resultValue.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
+            _resultValue.quarterlyUpgradeBeginTimes = quarterlyUpgradeBeginTimes;
+            return _resultValue;
         }
     }
 }

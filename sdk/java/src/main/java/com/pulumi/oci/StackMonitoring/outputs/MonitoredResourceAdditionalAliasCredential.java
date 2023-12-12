@@ -84,11 +84,11 @@ public final class MonitoredResourceAdditionalAliasCredential {
             return this;
         }
         public MonitoredResourceAdditionalAliasCredential build() {
-            final var o = new MonitoredResourceAdditionalAliasCredential();
-            o.name = name;
-            o.service = service;
-            o.source = source;
-            return o;
+            final var _resultValue = new MonitoredResourceAdditionalAliasCredential();
+            _resultValue.name = name;
+            _resultValue.service = service;
+            _resultValue.source = source;
+            return _resultValue;
         }
     }
 }

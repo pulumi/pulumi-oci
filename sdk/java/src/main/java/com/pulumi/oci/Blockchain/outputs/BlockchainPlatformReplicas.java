@@ -86,11 +86,11 @@ public final class BlockchainPlatformReplicas {
             return this;
         }
         public BlockchainPlatformReplicas build() {
-            final var o = new BlockchainPlatformReplicas();
-            o.caCount = caCount;
-            o.consoleCount = consoleCount;
-            o.proxyCount = proxyCount;
-            return o;
+            final var _resultValue = new BlockchainPlatformReplicas();
+            _resultValue.caCount = caCount;
+            _resultValue.consoleCount = consoleCount;
+            _resultValue.proxyCount = proxyCount;
+            return _resultValue;
         }
     }
 }

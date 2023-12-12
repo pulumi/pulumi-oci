@@ -143,14 +143,14 @@ public final class DatabaseInsightCredentialDetails {
             return this;
         }
         public DatabaseInsightCredentialDetails build() {
-            final var o = new DatabaseInsightCredentialDetails();
-            o.credentialSourceName = credentialSourceName;
-            o.credentialType = credentialType;
-            o.passwordSecretId = passwordSecretId;
-            o.role = role;
-            o.userName = userName;
-            o.walletSecretId = walletSecretId;
-            return o;
+            final var _resultValue = new DatabaseInsightCredentialDetails();
+            _resultValue.credentialSourceName = credentialSourceName;
+            _resultValue.credentialType = credentialType;
+            _resultValue.passwordSecretId = passwordSecretId;
+            _resultValue.role = role;
+            _resultValue.userName = userName;
+            _resultValue.walletSecretId = walletSecretId;
+            return _resultValue;
         }
     }
 }

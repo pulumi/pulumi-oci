@@ -123,13 +123,13 @@ public final class GetDbVersionsDbVersion {
             return this;
         }
         public GetDbVersionsDbVersion build() {
-            final var o = new GetDbVersionsDbVersion();
-            o.isLatestForMajorVersion = isLatestForMajorVersion;
-            o.isPreviewDbVersion = isPreviewDbVersion;
-            o.isUpgradeSupported = isUpgradeSupported;
-            o.supportsPdb = supportsPdb;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetDbVersionsDbVersion();
+            _resultValue.isLatestForMajorVersion = isLatestForMajorVersion;
+            _resultValue.isPreviewDbVersion = isPreviewDbVersion;
+            _resultValue.isUpgradeSupported = isUpgradeSupported;
+            _resultValue.supportsPdb = supportsPdb;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

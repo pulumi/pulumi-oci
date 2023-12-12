@@ -163,15 +163,15 @@ public final class GetVlansResult {
             return vlans(List.of(vlans));
         }
         public GetVlansResult build() {
-            final var o = new GetVlansResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.vcnId = vcnId;
-            o.vlans = vlans;
-            return o;
+            final var _resultValue = new GetVlansResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.vcnId = vcnId;
+            _resultValue.vlans = vlans;
+            return _resultValue;
         }
     }
 }

@@ -97,12 +97,12 @@ public final class GetRunLogsResult {
             return runLogs(List.of(runLogs));
         }
         public GetRunLogsResult build() {
-            final var o = new GetRunLogsResult();
-            o.filters = filters;
-            o.id = id;
-            o.runId = runId;
-            o.runLogs = runLogs;
-            return o;
+            final var _resultValue = new GetRunLogsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.runId = runId;
+            _resultValue.runLogs = runLogs;
+            return _resultValue;
         }
     }
 }

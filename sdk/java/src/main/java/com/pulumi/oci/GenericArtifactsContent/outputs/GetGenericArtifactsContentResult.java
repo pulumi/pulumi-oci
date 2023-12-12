@@ -57,10 +57,10 @@ public final class GetGenericArtifactsContentResult {
             return this;
         }
         public GetGenericArtifactsContentResult build() {
-            final var o = new GetGenericArtifactsContentResult();
-            o.artifactId = artifactId;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetGenericArtifactsContentResult();
+            _resultValue.artifactId = artifactId;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

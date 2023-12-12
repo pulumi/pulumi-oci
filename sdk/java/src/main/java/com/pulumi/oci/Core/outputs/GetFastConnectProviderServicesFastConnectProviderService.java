@@ -260,20 +260,20 @@ public final class GetFastConnectProviderServicesFastConnectProviderService {
             return this;
         }
         public GetFastConnectProviderServicesFastConnectProviderService build() {
-            final var o = new GetFastConnectProviderServicesFastConnectProviderService();
-            o.bandwithShapeManagement = bandwithShapeManagement;
-            o.customerAsnManagement = customerAsnManagement;
-            o.description = description;
-            o.id = id;
-            o.privatePeeringBgpManagement = privatePeeringBgpManagement;
-            o.providerName = providerName;
-            o.providerServiceKeyManagement = providerServiceKeyManagement;
-            o.providerServiceName = providerServiceName;
-            o.publicPeeringBgpManagement = publicPeeringBgpManagement;
-            o.requiredTotalCrossConnects = requiredTotalCrossConnects;
-            o.supportedVirtualCircuitTypes = supportedVirtualCircuitTypes;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetFastConnectProviderServicesFastConnectProviderService();
+            _resultValue.bandwithShapeManagement = bandwithShapeManagement;
+            _resultValue.customerAsnManagement = customerAsnManagement;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.privatePeeringBgpManagement = privatePeeringBgpManagement;
+            _resultValue.providerName = providerName;
+            _resultValue.providerServiceKeyManagement = providerServiceKeyManagement;
+            _resultValue.providerServiceName = providerServiceName;
+            _resultValue.publicPeeringBgpManagement = publicPeeringBgpManagement;
+            _resultValue.requiredTotalCrossConnects = requiredTotalCrossConnects;
+            _resultValue.supportedVirtualCircuitTypes = supportedVirtualCircuitTypes;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

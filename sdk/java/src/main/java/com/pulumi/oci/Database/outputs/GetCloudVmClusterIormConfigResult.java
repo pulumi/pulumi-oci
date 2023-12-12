@@ -130,14 +130,14 @@ public final class GetCloudVmClusterIormConfigResult {
             return this;
         }
         public GetCloudVmClusterIormConfigResult build() {
-            final var o = new GetCloudVmClusterIormConfigResult();
-            o.cloudVmClusterId = cloudVmClusterId;
-            o.dbPlans = dbPlans;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.objective = objective;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCloudVmClusterIormConfigResult();
+            _resultValue.cloudVmClusterId = cloudVmClusterId;
+            _resultValue.dbPlans = dbPlans;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.objective = objective;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

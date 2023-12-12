@@ -104,12 +104,12 @@ public final class GetJobJobLogConfigurationDetail {
             return this;
         }
         public GetJobJobLogConfigurationDetail build() {
-            final var o = new GetJobJobLogConfigurationDetail();
-            o.enableAutoLogCreation = enableAutoLogCreation;
-            o.enableLogging = enableLogging;
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new GetJobJobLogConfigurationDetail();
+            _resultValue.enableAutoLogCreation = enableAutoLogCreation;
+            _resultValue.enableLogging = enableLogging;
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

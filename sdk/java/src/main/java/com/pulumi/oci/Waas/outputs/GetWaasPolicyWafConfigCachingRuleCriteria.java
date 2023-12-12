@@ -97,10 +97,10 @@ public final class GetWaasPolicyWafConfigCachingRuleCriteria {
             return this;
         }
         public GetWaasPolicyWafConfigCachingRuleCriteria build() {
-            final var o = new GetWaasPolicyWafConfigCachingRuleCriteria();
-            o.condition = condition;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetWaasPolicyWafConfigCachingRuleCriteria();
+            _resultValue.condition = condition;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

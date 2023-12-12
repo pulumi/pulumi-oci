@@ -84,11 +84,11 @@ public final class GetTargetAssetsTargetAssetCollectionItemCompatibilityMessage 
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemCompatibilityMessage build() {
-            final var o = new GetTargetAssetsTargetAssetCollectionItemCompatibilityMessage();
-            o.message = message;
-            o.name = name;
-            o.severity = severity;
-            return o;
+            final var _resultValue = new GetTargetAssetsTargetAssetCollectionItemCompatibilityMessage();
+            _resultValue.message = message;
+            _resultValue.name = name;
+            _resultValue.severity = severity;
+            return _resultValue;
         }
     }
 }

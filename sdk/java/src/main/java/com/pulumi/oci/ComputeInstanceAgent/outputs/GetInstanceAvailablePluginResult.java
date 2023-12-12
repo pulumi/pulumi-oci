@@ -139,15 +139,15 @@ public final class GetInstanceAvailablePluginResult {
             return this;
         }
         public GetInstanceAvailablePluginResult build() {
-            final var o = new GetInstanceAvailablePluginResult();
-            o.availablePlugins = availablePlugins;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.osName = osName;
-            o.osVersion = osVersion;
-            return o;
+            final var _resultValue = new GetInstanceAvailablePluginResult();
+            _resultValue.availablePlugins = availablePlugins;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.osName = osName;
+            _resultValue.osVersion = osVersion;
+            return _resultValue;
         }
     }
 }

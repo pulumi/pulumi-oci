@@ -115,10 +115,10 @@ public final class DomainsCloudGateTag {
             return this;
         }
         public DomainsCloudGateTag build() {
-            final var o = new DomainsCloudGateTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsCloudGateTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

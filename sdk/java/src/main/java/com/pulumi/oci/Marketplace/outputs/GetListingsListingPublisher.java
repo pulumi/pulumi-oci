@@ -84,11 +84,11 @@ public final class GetListingsListingPublisher {
             return this;
         }
         public GetListingsListingPublisher build() {
-            final var o = new GetListingsListingPublisher();
-            o.description = description;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetListingsListingPublisher();
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

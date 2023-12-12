@@ -145,14 +145,14 @@ public final class DeployStageContainerConfig {
             return this;
         }
         public DeployStageContainerConfig build() {
-            final var o = new DeployStageContainerConfig();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.containerConfigType = containerConfigType;
-            o.networkChannel = networkChannel;
-            o.shapeConfig = shapeConfig;
-            o.shapeName = shapeName;
-            return o;
+            final var _resultValue = new DeployStageContainerConfig();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.containerConfigType = containerConfigType;
+            _resultValue.networkChannel = networkChannel;
+            _resultValue.shapeConfig = shapeConfig;
+            _resultValue.shapeName = shapeName;
+            return _resultValue;
         }
     }
 }

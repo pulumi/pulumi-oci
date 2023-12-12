@@ -215,19 +215,19 @@ public final class GetSteeringPoliciesResult {
             return this;
         }
         public GetSteeringPoliciesResult build() {
-            final var o = new GetSteeringPoliciesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.displayNameContains = displayNameContains;
-            o.filters = filters;
-            o.healthCheckMonitorId = healthCheckMonitorId;
-            o.id = id;
-            o.state = state;
-            o.steeringPolicies = steeringPolicies;
-            o.template = template;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            return o;
+            final var _resultValue = new GetSteeringPoliciesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.filters = filters;
+            _resultValue.healthCheckMonitorId = healthCheckMonitorId;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.steeringPolicies = steeringPolicies;
+            _resultValue.template = template;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            return _resultValue;
         }
     }
 }

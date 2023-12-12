@@ -67,11 +67,11 @@ public final class GetSubnetsFilter {
             return values(List.of(values));
         }
         public GetSubnetsFilter build() {
-            final var o = new GetSubnetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSubnetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

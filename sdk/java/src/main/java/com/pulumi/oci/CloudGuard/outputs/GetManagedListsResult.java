@@ -197,18 +197,18 @@ public final class GetManagedListsResult {
             return this;
         }
         public GetManagedListsResult build() {
-            final var o = new GetManagedListsResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.listType = listType;
-            o.managedListCollections = managedListCollections;
-            o.resourceMetadataOnly = resourceMetadataOnly;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetManagedListsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.listType = listType;
+            _resultValue.managedListCollections = managedListCollections;
+            _resultValue.resourceMetadataOnly = resourceMetadataOnly;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -70,10 +70,10 @@ public final class GetRepositoryFileDiffChangeDiffSection {
             return this;
         }
         public GetRepositoryFileDiffChangeDiffSection build() {
-            final var o = new GetRepositoryFileDiffChangeDiffSection();
-            o.lines = lines;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetRepositoryFileDiffChangeDiffSection();
+            _resultValue.lines = lines;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

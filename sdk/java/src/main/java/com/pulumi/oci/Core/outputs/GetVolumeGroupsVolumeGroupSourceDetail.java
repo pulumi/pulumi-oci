@@ -126,13 +126,13 @@ public final class GetVolumeGroupsVolumeGroupSourceDetail {
             return volumeIds(List.of(volumeIds));
         }
         public GetVolumeGroupsVolumeGroupSourceDetail build() {
-            final var o = new GetVolumeGroupsVolumeGroupSourceDetail();
-            o.type = type;
-            o.volumeGroupBackupId = volumeGroupBackupId;
-            o.volumeGroupId = volumeGroupId;
-            o.volumeGroupReplicaId = volumeGroupReplicaId;
-            o.volumeIds = volumeIds;
-            return o;
+            final var _resultValue = new GetVolumeGroupsVolumeGroupSourceDetail();
+            _resultValue.type = type;
+            _resultValue.volumeGroupBackupId = volumeGroupBackupId;
+            _resultValue.volumeGroupId = volumeGroupId;
+            _resultValue.volumeGroupReplicaId = volumeGroupReplicaId;
+            _resultValue.volumeIds = volumeIds;
+            return _resultValue;
         }
     }
 }

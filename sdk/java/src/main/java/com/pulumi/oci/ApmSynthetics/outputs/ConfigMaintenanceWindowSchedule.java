@@ -67,10 +67,10 @@ public final class ConfigMaintenanceWindowSchedule {
             return this;
         }
         public ConfigMaintenanceWindowSchedule build() {
-            final var o = new ConfigMaintenanceWindowSchedule();
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new ConfigMaintenanceWindowSchedule();
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

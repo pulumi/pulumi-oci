@@ -91,11 +91,11 @@ public final class MaskingPoliciesMaskingColumnMaskingFormat {
             return formatEntries(List.of(formatEntries));
         }
         public MaskingPoliciesMaskingColumnMaskingFormat build() {
-            final var o = new MaskingPoliciesMaskingColumnMaskingFormat();
-            o.condition = condition;
-            o.description = description;
-            o.formatEntries = formatEntries;
-            return o;
+            final var _resultValue = new MaskingPoliciesMaskingColumnMaskingFormat();
+            _resultValue.condition = condition;
+            _resultValue.description = description;
+            _resultValue.formatEntries = formatEntries;
+            return _resultValue;
         }
     }
 }

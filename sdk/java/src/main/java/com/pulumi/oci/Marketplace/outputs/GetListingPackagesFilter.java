@@ -75,11 +75,11 @@ public final class GetListingPackagesFilter {
             return values(List.of(values));
         }
         public GetListingPackagesFilter build() {
-            final var o = new GetListingPackagesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetListingPackagesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

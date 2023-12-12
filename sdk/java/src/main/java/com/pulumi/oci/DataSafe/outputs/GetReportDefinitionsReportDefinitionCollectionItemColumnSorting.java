@@ -86,11 +86,11 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnSorti
             return this;
         }
         public GetReportDefinitionsReportDefinitionCollectionItemColumnSorting build() {
-            final var o = new GetReportDefinitionsReportDefinitionCollectionItemColumnSorting();
-            o.fieldName = fieldName;
-            o.isAscending = isAscending;
-            o.sortingOrder = sortingOrder;
-            return o;
+            final var _resultValue = new GetReportDefinitionsReportDefinitionCollectionItemColumnSorting();
+            _resultValue.fieldName = fieldName;
+            _resultValue.isAscending = isAscending;
+            _resultValue.sortingOrder = sortingOrder;
+            return _resultValue;
         }
     }
 }

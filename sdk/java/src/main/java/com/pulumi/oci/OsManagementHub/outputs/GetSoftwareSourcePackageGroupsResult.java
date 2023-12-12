@@ -161,16 +161,16 @@ public final class GetSoftwareSourcePackageGroupsResult {
             return this;
         }
         public GetSoftwareSourcePackageGroupsResult build() {
-            final var o = new GetSoftwareSourcePackageGroupsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.groupTypes = groupTypes;
-            o.id = id;
-            o.name = name;
-            o.nameContains = nameContains;
-            o.packageGroupCollections = packageGroupCollections;
-            o.softwareSourceId = softwareSourceId;
-            return o;
+            final var _resultValue = new GetSoftwareSourcePackageGroupsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.groupTypes = groupTypes;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.nameContains = nameContains;
+            _resultValue.packageGroupCollections = packageGroupCollections;
+            _resultValue.softwareSourceId = softwareSourceId;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetAppAccelerationsWebAppAccelerationCollection {
             return items(List.of(items));
         }
         public GetAppAccelerationsWebAppAccelerationCollection build() {
-            final var o = new GetAppAccelerationsWebAppAccelerationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAppAccelerationsWebAppAccelerationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

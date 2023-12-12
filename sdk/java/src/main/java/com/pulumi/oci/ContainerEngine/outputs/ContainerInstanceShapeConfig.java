@@ -106,12 +106,12 @@ public final class ContainerInstanceShapeConfig {
             return this;
         }
         public ContainerInstanceShapeConfig build() {
-            final var o = new ContainerInstanceShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.networkingBandwidthInGbps = networkingBandwidthInGbps;
-            o.ocpus = ocpus;
-            o.processorDescription = processorDescription;
-            return o;
+            final var _resultValue = new ContainerInstanceShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.networkingBandwidthInGbps = networkingBandwidthInGbps;
+            _resultValue.ocpus = ocpus;
+            _resultValue.processorDescription = processorDescription;
+            return _resultValue;
         }
     }
 }

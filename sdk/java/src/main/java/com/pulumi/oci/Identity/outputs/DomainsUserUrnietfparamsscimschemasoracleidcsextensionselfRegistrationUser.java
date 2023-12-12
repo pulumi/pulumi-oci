@@ -148,11 +148,11 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfReg
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser();
-            o.consentGranted = consentGranted;
-            o.selfRegistrationProfile = selfRegistrationProfile;
-            o.userToken = userToken;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser();
+            _resultValue.consentGranted = consentGranted;
+            _resultValue.selfRegistrationProfile = selfRegistrationProfile;
+            _resultValue.userToken = userToken;
+            return _resultValue;
         }
     }
 }

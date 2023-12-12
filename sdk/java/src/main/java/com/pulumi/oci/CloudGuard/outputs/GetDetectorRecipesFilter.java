@@ -83,11 +83,11 @@ public final class GetDetectorRecipesFilter {
             return values(List.of(values));
         }
         public GetDetectorRecipesFilter build() {
-            final var o = new GetDetectorRecipesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDetectorRecipesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

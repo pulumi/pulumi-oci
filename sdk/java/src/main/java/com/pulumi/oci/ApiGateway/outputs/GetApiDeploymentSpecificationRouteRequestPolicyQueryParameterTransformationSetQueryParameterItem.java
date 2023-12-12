@@ -88,11 +88,11 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameter
             return values(List.of(values));
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItem build() {
-            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItem();
-            o.ifExists = ifExists;
-            o.name = name;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterTransformationSetQueryParameterItem();
+            _resultValue.ifExists = ifExists;
+            _resultValue.name = name;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

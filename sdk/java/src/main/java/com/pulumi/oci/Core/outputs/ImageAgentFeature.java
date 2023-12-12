@@ -67,10 +67,10 @@ public final class ImageAgentFeature {
             return this;
         }
         public ImageAgentFeature build() {
-            final var o = new ImageAgentFeature();
-            o.isManagementSupported = isManagementSupported;
-            o.isMonitoringSupported = isMonitoringSupported;
-            return o;
+            final var _resultValue = new ImageAgentFeature();
+            _resultValue.isManagementSupported = isManagementSupported;
+            _resultValue.isMonitoringSupported = isMonitoringSupported;
+            return _resultValue;
         }
     }
 }

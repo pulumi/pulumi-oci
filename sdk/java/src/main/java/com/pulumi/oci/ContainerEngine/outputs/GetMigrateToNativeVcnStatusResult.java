@@ -79,12 +79,12 @@ public final class GetMigrateToNativeVcnStatusResult {
             return this;
         }
         public GetMigrateToNativeVcnStatusResult build() {
-            final var o = new GetMigrateToNativeVcnStatusResult();
-            o.clusterId = clusterId;
-            o.id = id;
-            o.state = state;
-            o.timeDecommissionScheduled = timeDecommissionScheduled;
-            return o;
+            final var _resultValue = new GetMigrateToNativeVcnStatusResult();
+            _resultValue.clusterId = clusterId;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.timeDecommissionScheduled = timeDecommissionScheduled;
+            return _resultValue;
         }
     }
 }

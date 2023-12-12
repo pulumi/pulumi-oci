@@ -111,10 +111,10 @@ public final class DomainsIdentitySettingPosixUid {
             return this;
         }
         public DomainsIdentitySettingPosixUid build() {
-            final var o = new DomainsIdentitySettingPosixUid();
-            o.manualAssignmentEndsAt = manualAssignmentEndsAt;
-            o.manualAssignmentStartsFrom = manualAssignmentStartsFrom;
-            return o;
+            final var _resultValue = new DomainsIdentitySettingPosixUid();
+            _resultValue.manualAssignmentEndsAt = manualAssignmentEndsAt;
+            _resultValue.manualAssignmentStartsFrom = manualAssignmentStartsFrom;
+            return _resultValue;
         }
     }
 }

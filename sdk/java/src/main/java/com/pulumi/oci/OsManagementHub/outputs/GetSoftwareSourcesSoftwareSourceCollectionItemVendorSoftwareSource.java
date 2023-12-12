@@ -65,10 +65,10 @@ public final class GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareS
             return this;
         }
         public GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource build() {
-            final var o = new GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource();
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetSoftwareSourcesSoftwareSourceCollectionItemVendorSoftwareSource();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

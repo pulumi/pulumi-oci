@@ -95,11 +95,11 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnecti
             return connectionStrings(List.of(connectionStrings));
         }
         public ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo build() {
-            final var o = new ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo();
-            o.componentType = componentType;
-            o.connectionCredentials = connectionCredentials;
-            o.connectionStrings = connectionStrings;
-            return o;
+            final var _resultValue = new ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo();
+            _resultValue.componentType = componentType;
+            _resultValue.connectionCredentials = connectionCredentials;
+            _resultValue.connectionStrings = connectionStrings;
+            return _resultValue;
         }
     }
 }

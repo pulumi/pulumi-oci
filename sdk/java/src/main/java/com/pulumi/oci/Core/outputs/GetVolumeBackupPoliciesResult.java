@@ -106,12 +106,12 @@ public final class GetVolumeBackupPoliciesResult {
             return volumeBackupPolicies(List.of(volumeBackupPolicies));
         }
         public GetVolumeBackupPoliciesResult build() {
-            final var o = new GetVolumeBackupPoliciesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.volumeBackupPolicies = volumeBackupPolicies;
-            return o;
+            final var _resultValue = new GetVolumeBackupPoliciesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.volumeBackupPolicies = volumeBackupPolicies;
+            return _resultValue;
         }
     }
 }

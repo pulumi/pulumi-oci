@@ -160,15 +160,15 @@ public final class GetIdentityProviderGroupsIdentityProviderGroup {
             return this;
         }
         public GetIdentityProviderGroupsIdentityProviderGroup build() {
-            final var o = new GetIdentityProviderGroupsIdentityProviderGroup();
-            o.displayName = displayName;
-            o.externalIdentifier = externalIdentifier;
-            o.id = id;
-            o.identityProviderId = identityProviderId;
-            o.name = name;
-            o.timeCreated = timeCreated;
-            o.timeModified = timeModified;
-            return o;
+            final var _resultValue = new GetIdentityProviderGroupsIdentityProviderGroup();
+            _resultValue.displayName = displayName;
+            _resultValue.externalIdentifier = externalIdentifier;
+            _resultValue.id = id;
+            _resultValue.identityProviderId = identityProviderId;
+            _resultValue.name = name;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeModified = timeModified;
+            return _resultValue;
         }
     }
 }

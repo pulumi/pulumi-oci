@@ -326,24 +326,24 @@ public final class GetOperationsInsightsWarehouseUserResult {
             return this;
         }
         public GetOperationsInsightsWarehouseUserResult build() {
-            final var o = new GetOperationsInsightsWarehouseUserResult();
-            o.compartmentId = compartmentId;
-            o.connectionPassword = connectionPassword;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isAwrDataAccess = isAwrDataAccess;
-            o.isEmDataAccess = isEmDataAccess;
-            o.isOpsiDataAccess = isOpsiDataAccess;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-            o.operationsInsightsWarehouseUserId = operationsInsightsWarehouseUserId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetOperationsInsightsWarehouseUserResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionPassword = connectionPassword;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isAwrDataAccess = isAwrDataAccess;
+            _resultValue.isEmDataAccess = isEmDataAccess;
+            _resultValue.isOpsiDataAccess = isOpsiDataAccess;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            _resultValue.operationsInsightsWarehouseUserId = operationsInsightsWarehouseUserId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

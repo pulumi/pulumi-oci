@@ -150,16 +150,16 @@ public final class GetMigrationPlanAvailableShapesResult {
             return this;
         }
         public GetMigrationPlanAvailableShapesResult build() {
-            final var o = new GetMigrationPlanAvailableShapesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.availableShapesCollections = availableShapesCollections;
-            o.compartmentId = compartmentId;
-            o.dvhHostId = dvhHostId;
-            o.filters = filters;
-            o.id = id;
-            o.migrationPlanId = migrationPlanId;
-            o.reservedCapacityId = reservedCapacityId;
-            return o;
+            final var _resultValue = new GetMigrationPlanAvailableShapesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.availableShapesCollections = availableShapesCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dvhHostId = dvhHostId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.migrationPlanId = migrationPlanId;
+            _resultValue.reservedCapacityId = reservedCapacityId;
+            return _resultValue;
         }
     }
 }

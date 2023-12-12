@@ -67,11 +67,11 @@ public final class GetClusterWorkloadMappingsFilter {
             return values(List.of(values));
         }
         public GetClusterWorkloadMappingsFilter build() {
-            final var o = new GetClusterWorkloadMappingsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetClusterWorkloadMappingsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

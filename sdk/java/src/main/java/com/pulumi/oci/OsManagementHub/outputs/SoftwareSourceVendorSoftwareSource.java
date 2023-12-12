@@ -71,10 +71,10 @@ public final class SoftwareSourceVendorSoftwareSource {
             return this;
         }
         public SoftwareSourceVendorSoftwareSource build() {
-            final var o = new SoftwareSourceVendorSoftwareSource();
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new SoftwareSourceVendorSoftwareSource();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

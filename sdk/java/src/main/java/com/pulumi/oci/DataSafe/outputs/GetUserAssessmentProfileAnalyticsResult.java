@@ -154,17 +154,17 @@ public final class GetUserAssessmentProfileAnalyticsResult {
             return this;
         }
         public GetUserAssessmentProfileAnalyticsResult build() {
-            final var o = new GetUserAssessmentProfileAnalyticsResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.id = id;
-            o.profileAggregations = profileAggregations;
-            o.profileName = profileName;
-            o.targetId = targetId;
-            o.userAssessmentId = userAssessmentId;
-            return o;
+            final var _resultValue = new GetUserAssessmentProfileAnalyticsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.profileAggregations = profileAggregations;
+            _resultValue.profileName = profileName;
+            _resultValue.targetId = targetId;
+            _resultValue.userAssessmentId = userAssessmentId;
+            return _resultValue;
         }
     }
 }

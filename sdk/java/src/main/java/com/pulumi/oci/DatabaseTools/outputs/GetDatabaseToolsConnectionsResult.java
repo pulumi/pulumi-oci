@@ -199,17 +199,17 @@ public final class GetDatabaseToolsConnectionsResult {
             return types(List.of(types));
         }
         public GetDatabaseToolsConnectionsResult build() {
-            final var o = new GetDatabaseToolsConnectionsResult();
-            o.compartmentId = compartmentId;
-            o.databaseToolsConnectionCollections = databaseToolsConnectionCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.relatedResourceIdentifier = relatedResourceIdentifier;
-            o.runtimeSupports = runtimeSupports;
-            o.state = state;
-            o.types = types;
-            return o;
+            final var _resultValue = new GetDatabaseToolsConnectionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseToolsConnectionCollections = databaseToolsConnectionCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.relatedResourceIdentifier = relatedResourceIdentifier;
+            _resultValue.runtimeSupports = runtimeSupports;
+            _resultValue.state = state;
+            _resultValue.types = types;
+            return _resultValue;
         }
     }
 }

@@ -144,14 +144,14 @@ public final class GetConnectHarnessesResult {
             return this;
         }
         public GetConnectHarnessesResult build() {
-            final var o = new GetConnectHarnessesResult();
-            o.compartmentId = compartmentId;
-            o.connectHarnesses = connectHarnesses;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetConnectHarnessesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectHarnesses = connectHarnesses;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

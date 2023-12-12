@@ -349,25 +349,25 @@ public final class GetTriggersTriggerCollectionItem {
             return this;
         }
         public GetTriggersTriggerCollectionItem build() {
-            final var o = new GetTriggersTriggerCollectionItem();
-            o.actions = actions;
-            o.compartmentId = compartmentId;
-            o.connectionId = connectionId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.projectId = projectId;
-            o.repositoryId = repositoryId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.triggerSource = triggerSource;
-            o.triggerUrl = triggerUrl;
-            return o;
+            final var _resultValue = new GetTriggersTriggerCollectionItem();
+            _resultValue.actions = actions;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionId = connectionId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.projectId = projectId;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.triggerSource = triggerSource;
+            _resultValue.triggerUrl = triggerUrl;
+            return _resultValue;
         }
     }
 }

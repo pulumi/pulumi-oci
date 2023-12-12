@@ -449,31 +449,31 @@ public final class GetDomainsNetworkPerimeterResult {
             return this;
         }
         public GetDomainsNetworkPerimeterResult build() {
-            final var o = new GetDomainsNetworkPerimeterResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.description = description;
-            o.domainOcid = domainOcid;
-            o.externalId = externalId;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.ipAddresses = ipAddresses;
-            o.metas = metas;
-            o.name = name;
-            o.networkPerimeterId = networkPerimeterId;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            return o;
+            final var _resultValue = new GetDomainsNetworkPerimeterResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.description = description;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.externalId = externalId;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.ipAddresses = ipAddresses;
+            _resultValue.metas = metas;
+            _resultValue.name = name;
+            _resultValue.networkPerimeterId = networkPerimeterId;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            return _resultValue;
         }
     }
 }

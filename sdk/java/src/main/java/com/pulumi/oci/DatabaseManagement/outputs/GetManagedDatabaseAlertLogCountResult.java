@@ -169,18 +169,18 @@ public final class GetManagedDatabaseAlertLogCountResult {
             return this;
         }
         public GetManagedDatabaseAlertLogCountResult build() {
-            final var o = new GetManagedDatabaseAlertLogCountResult();
-            o.groupBy = groupBy;
-            o.id = id;
-            o.isRegularExpression = isRegularExpression;
-            o.items = items;
-            o.levelFilter = levelFilter;
-            o.logSearchText = logSearchText;
-            o.managedDatabaseId = managedDatabaseId;
-            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-            o.typeFilter = typeFilter;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAlertLogCountResult();
+            _resultValue.groupBy = groupBy;
+            _resultValue.id = id;
+            _resultValue.isRegularExpression = isRegularExpression;
+            _resultValue.items = items;
+            _resultValue.levelFilter = levelFilter;
+            _resultValue.logSearchText = logSearchText;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            _resultValue.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            _resultValue.typeFilter = typeFilter;
+            return _resultValue;
         }
     }
 }

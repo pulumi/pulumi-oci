@@ -129,14 +129,14 @@ public final class GetManagedDatabaseCursorCacheStatementsResult {
             return this;
         }
         public GetManagedDatabaseCursorCacheStatementsResult build() {
-            final var o = new GetManagedDatabaseCursorCacheStatementsResult();
-            o.cursorCacheStatementCollections = cursorCacheStatementCollections;
-            o.filters = filters;
-            o.id = id;
-            o.limit = limit;
-            o.managedDatabaseId = managedDatabaseId;
-            o.sqlText = sqlText;
-            return o;
+            final var _resultValue = new GetManagedDatabaseCursorCacheStatementsResult();
+            _resultValue.cursorCacheStatementCollections = cursorCacheStatementCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.limit = limit;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.sqlText = sqlText;
+            return _resultValue;
         }
     }
 }

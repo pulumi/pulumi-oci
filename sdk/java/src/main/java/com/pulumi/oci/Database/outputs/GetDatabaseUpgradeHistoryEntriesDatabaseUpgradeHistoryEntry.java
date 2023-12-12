@@ -259,20 +259,20 @@ public final class GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry {
             return this;
         }
         public GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry build() {
-            final var o = new GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry();
-            o.action = action;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.options = options;
-            o.source = source;
-            o.sourceDbHomeId = sourceDbHomeId;
-            o.state = state;
-            o.targetDatabaseSoftwareImageId = targetDatabaseSoftwareImageId;
-            o.targetDbHomeId = targetDbHomeId;
-            o.targetDbVersion = targetDbVersion;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntry();
+            _resultValue.action = action;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.options = options;
+            _resultValue.source = source;
+            _resultValue.sourceDbHomeId = sourceDbHomeId;
+            _resultValue.state = state;
+            _resultValue.targetDatabaseSoftwareImageId = targetDatabaseSoftwareImageId;
+            _resultValue.targetDbHomeId = targetDbHomeId;
+            _resultValue.targetDbVersion = targetDbVersion;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

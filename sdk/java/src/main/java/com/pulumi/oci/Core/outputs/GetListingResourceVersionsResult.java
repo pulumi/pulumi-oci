@@ -89,12 +89,12 @@ public final class GetListingResourceVersionsResult {
             return this;
         }
         public GetListingResourceVersionsResult build() {
-            final var o = new GetListingResourceVersionsResult();
-            o.appCatalogListingResourceVersions = appCatalogListingResourceVersions;
-            o.filters = filters;
-            o.id = id;
-            o.listingId = listingId;
-            return o;
+            final var _resultValue = new GetListingResourceVersionsResult();
+            _resultValue.appCatalogListingResourceVersions = appCatalogListingResourceVersions;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.listingId = listingId;
+            return _resultValue;
         }
     }
 }

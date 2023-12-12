@@ -85,11 +85,11 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetect
             return this;
         }
         public GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule build() {
-            final var o = new GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule();
-            o.displayName = displayName;
-            o.id = id;
-            o.isPreferred = isPreferred;
-            return o;
+            final var _resultValue = new GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.isPreferred = isPreferred;
+            return _resultValue;
         }
     }
 }

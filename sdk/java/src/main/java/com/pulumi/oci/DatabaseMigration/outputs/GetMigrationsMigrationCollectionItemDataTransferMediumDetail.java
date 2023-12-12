@@ -73,10 +73,10 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetail 
             return objectStorageDetails(List.of(objectStorageDetails));
         }
         public GetMigrationsMigrationCollectionItemDataTransferMediumDetail build() {
-            final var o = new GetMigrationsMigrationCollectionItemDataTransferMediumDetail();
-            o.databaseLinkDetails = databaseLinkDetails;
-            o.objectStorageDetails = objectStorageDetails;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemDataTransferMediumDetail();
+            _resultValue.databaseLinkDetails = databaseLinkDetails;
+            _resultValue.objectStorageDetails = objectStorageDetails;
+            return _resultValue;
         }
     }
 }

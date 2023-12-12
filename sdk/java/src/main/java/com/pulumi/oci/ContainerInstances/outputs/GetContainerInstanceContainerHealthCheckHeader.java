@@ -57,10 +57,10 @@ public final class GetContainerInstanceContainerHealthCheckHeader {
             return this;
         }
         public GetContainerInstanceContainerHealthCheckHeader build() {
-            final var o = new GetContainerInstanceContainerHealthCheckHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetContainerInstanceContainerHealthCheckHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

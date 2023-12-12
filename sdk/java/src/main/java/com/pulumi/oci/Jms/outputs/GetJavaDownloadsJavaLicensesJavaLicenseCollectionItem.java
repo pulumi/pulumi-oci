@@ -84,11 +84,11 @@ public final class GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem {
             return this;
         }
         public GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem build() {
-            final var o = new GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem();
-            o.displayName = displayName;
-            o.licenseType = licenseType;
-            o.licenseUrl = licenseUrl;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaLicensesJavaLicenseCollectionItem();
+            _resultValue.displayName = displayName;
+            _resultValue.licenseType = licenseType;
+            _resultValue.licenseUrl = licenseUrl;
+            return _resultValue;
         }
     }
 }

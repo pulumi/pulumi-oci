@@ -127,14 +127,14 @@ public final class GetAutonomousDatabaseInstanceWalletManagementResult {
             return this;
         }
         public GetAutonomousDatabaseInstanceWalletManagementResult build() {
-            final var o = new GetAutonomousDatabaseInstanceWalletManagementResult();
-            o.autonomousDatabaseId = autonomousDatabaseId;
-            o.gracePeriod = gracePeriod;
-            o.id = id;
-            o.shouldRotate = shouldRotate;
-            o.state = state;
-            o.timeRotated = timeRotated;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseInstanceWalletManagementResult();
+            _resultValue.autonomousDatabaseId = autonomousDatabaseId;
+            _resultValue.gracePeriod = gracePeriod;
+            _resultValue.id = id;
+            _resultValue.shouldRotate = shouldRotate;
+            _resultValue.state = state;
+            _resultValue.timeRotated = timeRotated;
+            return _resultValue;
         }
     }
 }

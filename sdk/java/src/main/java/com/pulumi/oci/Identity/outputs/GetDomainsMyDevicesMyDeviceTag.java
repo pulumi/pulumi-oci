@@ -65,10 +65,10 @@ public final class GetDomainsMyDevicesMyDeviceTag {
             return this;
         }
         public GetDomainsMyDevicesMyDeviceTag build() {
-            final var o = new GetDomainsMyDevicesMyDeviceTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyDevicesMyDeviceTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

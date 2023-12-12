@@ -67,10 +67,10 @@ public final class PipelineStepDetailStepInfrastructureConfigurationDetailsShape
             return this;
         }
         public PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails build() {
-            final var o = new PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

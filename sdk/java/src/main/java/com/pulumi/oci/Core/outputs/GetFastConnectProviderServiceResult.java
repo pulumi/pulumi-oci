@@ -271,21 +271,21 @@ public final class GetFastConnectProviderServiceResult {
             return this;
         }
         public GetFastConnectProviderServiceResult build() {
-            final var o = new GetFastConnectProviderServiceResult();
-            o.bandwithShapeManagement = bandwithShapeManagement;
-            o.customerAsnManagement = customerAsnManagement;
-            o.description = description;
-            o.id = id;
-            o.privatePeeringBgpManagement = privatePeeringBgpManagement;
-            o.providerName = providerName;
-            o.providerServiceId = providerServiceId;
-            o.providerServiceKeyManagement = providerServiceKeyManagement;
-            o.providerServiceName = providerServiceName;
-            o.publicPeeringBgpManagement = publicPeeringBgpManagement;
-            o.requiredTotalCrossConnects = requiredTotalCrossConnects;
-            o.supportedVirtualCircuitTypes = supportedVirtualCircuitTypes;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetFastConnectProviderServiceResult();
+            _resultValue.bandwithShapeManagement = bandwithShapeManagement;
+            _resultValue.customerAsnManagement = customerAsnManagement;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.privatePeeringBgpManagement = privatePeeringBgpManagement;
+            _resultValue.providerName = providerName;
+            _resultValue.providerServiceId = providerServiceId;
+            _resultValue.providerServiceKeyManagement = providerServiceKeyManagement;
+            _resultValue.providerServiceName = providerServiceName;
+            _resultValue.publicPeeringBgpManagement = publicPeeringBgpManagement;
+            _resultValue.requiredTotalCrossConnects = requiredTotalCrossConnects;
+            _resultValue.supportedVirtualCircuitTypes = supportedVirtualCircuitTypes;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

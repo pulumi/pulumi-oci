@@ -183,12 +183,12 @@ public final class DomainsAppUserRole {
             return this;
         }
         public DomainsAppUserRole build() {
-            final var o = new DomainsAppUserRole();
-            o.description = description;
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppUserRole();
+            _resultValue.description = description;
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

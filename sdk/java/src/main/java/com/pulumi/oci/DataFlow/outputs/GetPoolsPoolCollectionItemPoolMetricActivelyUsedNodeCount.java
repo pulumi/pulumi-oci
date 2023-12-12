@@ -66,10 +66,10 @@ public final class GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount {
             return this;
         }
         public GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount build() {
-            final var o = new GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount();
-            o.logicalShape = logicalShape;
-            o.poolCount = poolCount;
-            return o;
+            final var _resultValue = new GetPoolsPoolCollectionItemPoolMetricActivelyUsedNodeCount();
+            _resultValue.logicalShape = logicalShape;
+            _resultValue.poolCount = poolCount;
+            return _resultValue;
         }
     }
 }

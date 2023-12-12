@@ -86,11 +86,11 @@ public final class GetPluggableDatabaseConnectionString {
             return this;
         }
         public GetPluggableDatabaseConnectionString build() {
-            final var o = new GetPluggableDatabaseConnectionString();
-            o.allConnectionStrings = allConnectionStrings;
-            o.pdbDefault = pdbDefault;
-            o.pdbIpDefault = pdbIpDefault;
-            return o;
+            final var _resultValue = new GetPluggableDatabaseConnectionString();
+            _resultValue.allConnectionStrings = allConnectionStrings;
+            _resultValue.pdbDefault = pdbDefault;
+            _resultValue.pdbIpDefault = pdbIpDefault;
+            return _resultValue;
         }
     }
 }

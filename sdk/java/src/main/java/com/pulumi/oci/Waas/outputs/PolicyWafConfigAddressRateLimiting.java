@@ -106,12 +106,12 @@ public final class PolicyWafConfigAddressRateLimiting {
             return this;
         }
         public PolicyWafConfigAddressRateLimiting build() {
-            final var o = new PolicyWafConfigAddressRateLimiting();
-            o.allowedRatePerAddress = allowedRatePerAddress;
-            o.blockResponseCode = blockResponseCode;
-            o.isEnabled = isEnabled;
-            o.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
-            return o;
+            final var _resultValue = new PolicyWafConfigAddressRateLimiting();
+            _resultValue.allowedRatePerAddress = allowedRatePerAddress;
+            _resultValue.blockResponseCode = blockResponseCode;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.maxDelayedCountPerAddress = maxDelayedCountPerAddress;
+            return _resultValue;
         }
     }
 }

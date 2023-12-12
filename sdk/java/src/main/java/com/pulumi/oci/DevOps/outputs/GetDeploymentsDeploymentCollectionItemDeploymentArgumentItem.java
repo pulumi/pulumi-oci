@@ -65,10 +65,10 @@ public final class GetDeploymentsDeploymentCollectionItemDeploymentArgumentItem 
             return this;
         }
         public GetDeploymentsDeploymentCollectionItemDeploymentArgumentItem build() {
-            final var o = new GetDeploymentsDeploymentCollectionItemDeploymentArgumentItem();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionItemDeploymentArgumentItem();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

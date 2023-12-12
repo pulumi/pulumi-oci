@@ -54,10 +54,10 @@ public final class GetDetectAnomalyJobInputDetailData {
             return values(List.of(values));
         }
         public GetDetectAnomalyJobInputDetailData build() {
-            final var o = new GetDetectAnomalyJobInputDetailData();
-            o.timestamp = timestamp;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDetectAnomalyJobInputDetailData();
+            _resultValue.timestamp = timestamp;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

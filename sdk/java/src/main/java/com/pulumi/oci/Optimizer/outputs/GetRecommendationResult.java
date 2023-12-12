@@ -354,25 +354,25 @@ public final class GetRecommendationResult {
             return this;
         }
         public GetRecommendationResult build() {
-            final var o = new GetRecommendationResult();
-            o.categoryId = categoryId;
-            o.compartmentId = compartmentId;
-            o.description = description;
-            o.estimatedCostSaving = estimatedCostSaving;
-            o.extendedMetadata = extendedMetadata;
-            o.id = id;
-            o.importance = importance;
-            o.name = name;
-            o.recommendationId = recommendationId;
-            o.resourceCounts = resourceCounts;
-            o.state = state;
-            o.status = status;
-            o.supportedLevels = supportedLevels;
-            o.timeCreated = timeCreated;
-            o.timeStatusBegin = timeStatusBegin;
-            o.timeStatusEnd = timeStatusEnd;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetRecommendationResult();
+            _resultValue.categoryId = categoryId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.description = description;
+            _resultValue.estimatedCostSaving = estimatedCostSaving;
+            _resultValue.extendedMetadata = extendedMetadata;
+            _resultValue.id = id;
+            _resultValue.importance = importance;
+            _resultValue.name = name;
+            _resultValue.recommendationId = recommendationId;
+            _resultValue.resourceCounts = resourceCounts;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.supportedLevels = supportedLevels;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeStatusBegin = timeStatusBegin;
+            _resultValue.timeStatusEnd = timeStatusEnd;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

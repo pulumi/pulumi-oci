@@ -215,19 +215,19 @@ public final class GetDeploymentsResult {
             return this;
         }
         public GetDeploymentsResult build() {
-            final var o = new GetDeploymentsResult();
-            o.assignableConnectionId = assignableConnectionId;
-            o.assignedConnectionId = assignedConnectionId;
-            o.compartmentId = compartmentId;
-            o.deploymentCollections = deploymentCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.fqdn = fqdn;
-            o.id = id;
-            o.lifecycleSubState = lifecycleSubState;
-            o.state = state;
-            o.supportedConnectionType = supportedConnectionType;
-            return o;
+            final var _resultValue = new GetDeploymentsResult();
+            _resultValue.assignableConnectionId = assignableConnectionId;
+            _resultValue.assignedConnectionId = assignedConnectionId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.deploymentCollections = deploymentCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.fqdn = fqdn;
+            _resultValue.id = id;
+            _resultValue.lifecycleSubState = lifecycleSubState;
+            _resultValue.state = state;
+            _resultValue.supportedConnectionType = supportedConnectionType;
+            return _resultValue;
         }
     }
 }

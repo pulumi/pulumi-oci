@@ -156,11 +156,11 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential();
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredential();
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

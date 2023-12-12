@@ -42,9 +42,9 @@ public final class GetDbSystemsDbSystemCollection {
             return items(List.of(items));
         }
         public GetDbSystemsDbSystemCollection build() {
-            final var o = new GetDbSystemsDbSystemCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

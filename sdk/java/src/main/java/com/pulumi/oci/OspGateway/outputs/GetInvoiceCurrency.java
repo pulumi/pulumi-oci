@@ -123,13 +123,13 @@ public final class GetInvoiceCurrency {
             return this;
         }
         public GetInvoiceCurrency build() {
-            final var o = new GetInvoiceCurrency();
-            o.currencyCode = currencyCode;
-            o.currencySymbol = currencySymbol;
-            o.name = name;
-            o.roundDecimalPoint = roundDecimalPoint;
-            o.usdConversion = usdConversion;
-            return o;
+            final var _resultValue = new GetInvoiceCurrency();
+            _resultValue.currencyCode = currencyCode;
+            _resultValue.currencySymbol = currencySymbol;
+            _resultValue.name = name;
+            _resultValue.roundDecimalPoint = roundDecimalPoint;
+            _resultValue.usdConversion = usdConversion;
+            return _resultValue;
         }
     }
 }

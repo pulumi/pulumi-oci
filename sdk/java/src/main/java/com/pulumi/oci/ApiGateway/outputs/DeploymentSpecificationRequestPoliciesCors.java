@@ -158,14 +158,14 @@ public final class DeploymentSpecificationRequestPoliciesCors {
             return this;
         }
         public DeploymentSpecificationRequestPoliciesCors build() {
-            final var o = new DeploymentSpecificationRequestPoliciesCors();
-            o.allowedHeaders = allowedHeaders;
-            o.allowedMethods = allowedMethods;
-            o.allowedOrigins = allowedOrigins;
-            o.exposedHeaders = exposedHeaders;
-            o.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
-            o.maxAgeInSeconds = maxAgeInSeconds;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesCors();
+            _resultValue.allowedHeaders = allowedHeaders;
+            _resultValue.allowedMethods = allowedMethods;
+            _resultValue.allowedOrigins = allowedOrigins;
+            _resultValue.exposedHeaders = exposedHeaders;
+            _resultValue.isAllowCredentialsEnabled = isAllowCredentialsEnabled;
+            _resultValue.maxAgeInSeconds = maxAgeInSeconds;
+            return _resultValue;
         }
     }
 }

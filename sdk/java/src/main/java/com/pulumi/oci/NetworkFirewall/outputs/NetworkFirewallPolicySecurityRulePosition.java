@@ -73,10 +73,10 @@ public final class NetworkFirewallPolicySecurityRulePosition {
             return this;
         }
         public NetworkFirewallPolicySecurityRulePosition build() {
-            final var o = new NetworkFirewallPolicySecurityRulePosition();
-            o.afterRule = afterRule;
-            o.beforeRule = beforeRule;
-            return o;
+            final var _resultValue = new NetworkFirewallPolicySecurityRulePosition();
+            _resultValue.afterRule = afterRule;
+            _resultValue.beforeRule = beforeRule;
+            return _resultValue;
         }
     }
 }

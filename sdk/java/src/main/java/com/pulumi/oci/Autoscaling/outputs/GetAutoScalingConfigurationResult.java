@@ -279,21 +279,21 @@ public final class GetAutoScalingConfigurationResult {
             return this;
         }
         public GetAutoScalingConfigurationResult build() {
-            final var o = new GetAutoScalingConfigurationResult();
-            o.autoScalingConfigurationId = autoScalingConfigurationId;
-            o.autoScalingResources = autoScalingResources;
-            o.compartmentId = compartmentId;
-            o.coolDownInSeconds = coolDownInSeconds;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.maxResourceCount = maxResourceCount;
-            o.minResourceCount = minResourceCount;
-            o.policies = policies;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationResult();
+            _resultValue.autoScalingConfigurationId = autoScalingConfigurationId;
+            _resultValue.autoScalingResources = autoScalingResources;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.coolDownInSeconds = coolDownInSeconds;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.maxResourceCount = maxResourceCount;
+            _resultValue.minResourceCount = minResourceCount;
+            _resultValue.policies = policies;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

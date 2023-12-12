@@ -194,17 +194,17 @@ public final class GetBdsInstanceGetOsPatchResult {
             return targetPackages(List.of(targetPackages));
         }
         public GetBdsInstanceGetOsPatchResult build() {
-            final var o = new GetBdsInstanceGetOsPatchResult();
-            o.bdsInstanceId = bdsInstanceId;
-            o.filters = filters;
-            o.id = id;
-            o.minBdsVersion = minBdsVersion;
-            o.minCompatibleOdhVersionMap = minCompatibleOdhVersionMap;
-            o.osPatchVersion = osPatchVersion;
-            o.patchType = patchType;
-            o.releaseDate = releaseDate;
-            o.targetPackages = targetPackages;
-            return o;
+            final var _resultValue = new GetBdsInstanceGetOsPatchResult();
+            _resultValue.bdsInstanceId = bdsInstanceId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.minBdsVersion = minBdsVersion;
+            _resultValue.minCompatibleOdhVersionMap = minCompatibleOdhVersionMap;
+            _resultValue.osPatchVersion = osPatchVersion;
+            _resultValue.patchType = patchType;
+            _resultValue.releaseDate = releaseDate;
+            _resultValue.targetPackages = targetPackages;
+            return _resultValue;
         }
     }
 }

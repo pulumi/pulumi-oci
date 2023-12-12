@@ -46,9 +46,9 @@ public final class GetPluggableDatabasesPluggableDatabasePluggableDatabaseManage
             return this;
         }
         public GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig build() {
-            final var o = new GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig();
-            o.managementStatus = managementStatus;
-            return o;
+            final var _resultValue = new GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig();
+            _resultValue.managementStatus = managementStatus;
+            return _resultValue;
         }
     }
 }

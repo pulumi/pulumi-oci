@@ -88,11 +88,11 @@ public final class PipelineInfrastructureConfigurationDetails {
             return this;
         }
         public PipelineInfrastructureConfigurationDetails build() {
-            final var o = new PipelineInfrastructureConfigurationDetails();
-            o.blockStorageSizeInGbs = blockStorageSizeInGbs;
-            o.shapeConfigDetails = shapeConfigDetails;
-            o.shapeName = shapeName;
-            return o;
+            final var _resultValue = new PipelineInfrastructureConfigurationDetails();
+            _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
+            _resultValue.shapeConfigDetails = shapeConfigDetails;
+            _resultValue.shapeName = shapeName;
+            return _resultValue;
         }
     }
 }

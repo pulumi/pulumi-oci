@@ -193,17 +193,17 @@ public final class GetMysqlBackupsResult {
             return this;
         }
         public GetMysqlBackupsResult build() {
-            final var o = new GetMysqlBackupsResult();
-            o.backupId = backupId;
-            o.backups = backups;
-            o.compartmentId = compartmentId;
-            o.creationType = creationType;
-            o.dbSystemId = dbSystemId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetMysqlBackupsResult();
+            _resultValue.backupId = backupId;
+            _resultValue.backups = backups;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.creationType = creationType;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

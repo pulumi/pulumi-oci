@@ -50,9 +50,9 @@ public final class GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDa
             return items(List.of(items));
         }
         public GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection build() {
-            final var o = new GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

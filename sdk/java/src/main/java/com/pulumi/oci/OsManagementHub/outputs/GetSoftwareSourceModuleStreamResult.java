@@ -236,19 +236,19 @@ public final class GetSoftwareSourceModuleStreamResult {
             return this;
         }
         public GetSoftwareSourceModuleStreamResult build() {
-            final var o = new GetSoftwareSourceModuleStreamResult();
-            o.archType = archType;
-            o.description = description;
-            o.id = id;
-            o.isDefault = isDefault;
-            o.isLatest = isLatest;
-            o.moduleName = moduleName;
-            o.name = name;
-            o.packages = packages;
-            o.profiles = profiles;
-            o.softwareSourceId = softwareSourceId;
-            o.streamName = streamName;
-            return o;
+            final var _resultValue = new GetSoftwareSourceModuleStreamResult();
+            _resultValue.archType = archType;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.isDefault = isDefault;
+            _resultValue.isLatest = isLatest;
+            _resultValue.moduleName = moduleName;
+            _resultValue.name = name;
+            _resultValue.packages = packages;
+            _resultValue.profiles = profiles;
+            _resultValue.softwareSourceId = softwareSourceId;
+            _resultValue.streamName = streamName;
+            return _resultValue;
         }
     }
 }

@@ -73,10 +73,10 @@ public final class LoadBalancerShapeDetails {
             return this;
         }
         public LoadBalancerShapeDetails build() {
-            final var o = new LoadBalancerShapeDetails();
-            o.maximumBandwidthInMbps = maximumBandwidthInMbps;
-            o.minimumBandwidthInMbps = minimumBandwidthInMbps;
-            return o;
+            final var _resultValue = new LoadBalancerShapeDetails();
+            _resultValue.maximumBandwidthInMbps = maximumBandwidthInMbps;
+            _resultValue.minimumBandwidthInMbps = minimumBandwidthInMbps;
+            return _resultValue;
         }
     }
 }

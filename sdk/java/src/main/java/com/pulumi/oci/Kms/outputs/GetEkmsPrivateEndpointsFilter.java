@@ -67,11 +67,11 @@ public final class GetEkmsPrivateEndpointsFilter {
             return values(List.of(values));
         }
         public GetEkmsPrivateEndpointsFilter build() {
-            final var o = new GetEkmsPrivateEndpointsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetEkmsPrivateEndpointsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

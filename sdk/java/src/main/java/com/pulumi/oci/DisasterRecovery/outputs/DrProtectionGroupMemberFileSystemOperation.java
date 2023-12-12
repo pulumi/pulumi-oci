@@ -126,13 +126,13 @@ public final class DrProtectionGroupMemberFileSystemOperation {
             return this;
         }
         public DrProtectionGroupMemberFileSystemOperation build() {
-            final var o = new DrProtectionGroupMemberFileSystemOperation();
-            o.exportPath = exportPath;
-            o.mountDetails = mountDetails;
-            o.mountPoint = mountPoint;
-            o.mountTargetId = mountTargetId;
-            o.unmountDetails = unmountDetails;
-            return o;
+            final var _resultValue = new DrProtectionGroupMemberFileSystemOperation();
+            _resultValue.exportPath = exportPath;
+            _resultValue.mountDetails = mountDetails;
+            _resultValue.mountPoint = mountPoint;
+            _resultValue.mountTargetId = mountTargetId;
+            _resultValue.unmountDetails = unmountDetails;
+            return _resultValue;
         }
     }
 }

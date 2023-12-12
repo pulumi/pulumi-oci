@@ -204,17 +204,17 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
             return this;
         }
         public DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKey build() {
-            final var o = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKey();
-            o.alg = alg;
-            o.e = e;
-            o.format = format;
-            o.key = key;
-            o.keyOps = keyOps;
-            o.kid = kid;
-            o.kty = kty;
-            o.n = n;
-            o.use = use;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKey();
+            _resultValue.alg = alg;
+            _resultValue.e = e;
+            _resultValue.format = format;
+            _resultValue.key = key;
+            _resultValue.keyOps = keyOps;
+            _resultValue.kid = kid;
+            _resultValue.kty = kty;
+            _resultValue.n = n;
+            _resultValue.use = use;
+            return _resultValue;
         }
     }
 }

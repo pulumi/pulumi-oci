@@ -65,10 +65,10 @@ public final class GetMigrationsMigrationCollectionItemDataTransferMediumDetails
             return this;
         }
         public GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket build() {
-            final var o = new GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemDataTransferMediumDetailsV2ObjectStorageBucket();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

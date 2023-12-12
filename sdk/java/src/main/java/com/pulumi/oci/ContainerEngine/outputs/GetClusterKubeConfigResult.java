@@ -112,14 +112,14 @@ public final class GetClusterKubeConfigResult {
             return this;
         }
         public GetClusterKubeConfigResult build() {
-            final var o = new GetClusterKubeConfigResult();
-            o.clusterId = clusterId;
-            o.content = content;
-            o.endpoint = endpoint;
-            o.expiration = expiration;
-            o.id = id;
-            o.tokenVersion = tokenVersion;
-            return o;
+            final var _resultValue = new GetClusterKubeConfigResult();
+            _resultValue.clusterId = clusterId;
+            _resultValue.content = content;
+            _resultValue.endpoint = endpoint;
+            _resultValue.expiration = expiration;
+            _resultValue.id = id;
+            _resultValue.tokenVersion = tokenVersion;
+            return _resultValue;
         }
     }
 }

@@ -106,12 +106,12 @@ public final class ConnectionConnectDescriptor {
             return this;
         }
         public ConnectionConnectDescriptor build() {
-            final var o = new ConnectionConnectDescriptor();
-            o.connectString = connectString;
-            o.databaseServiceName = databaseServiceName;
-            o.host = host;
-            o.port = port;
-            return o;
+            final var _resultValue = new ConnectionConnectDescriptor();
+            _resultValue.connectString = connectString;
+            _resultValue.databaseServiceName = databaseServiceName;
+            _resultValue.host = host;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

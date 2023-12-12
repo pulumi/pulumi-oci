@@ -42,9 +42,9 @@ public final class GetSensitiveTypesSensitiveTypeCollection {
             return items(List.of(items));
         }
         public GetSensitiveTypesSensitiveTypeCollection build() {
-            final var o = new GetSensitiveTypesSensitiveTypeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSensitiveTypesSensitiveTypeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

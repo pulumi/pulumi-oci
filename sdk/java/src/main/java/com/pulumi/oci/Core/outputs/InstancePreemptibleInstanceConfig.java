@@ -46,9 +46,9 @@ public final class InstancePreemptibleInstanceConfig {
             return this;
         }
         public InstancePreemptibleInstanceConfig build() {
-            final var o = new InstancePreemptibleInstanceConfig();
-            o.preemptionAction = preemptionAction;
-            return o;
+            final var _resultValue = new InstancePreemptibleInstanceConfig();
+            _resultValue.preemptionAction = preemptionAction;
+            return _resultValue;
         }
     }
 }

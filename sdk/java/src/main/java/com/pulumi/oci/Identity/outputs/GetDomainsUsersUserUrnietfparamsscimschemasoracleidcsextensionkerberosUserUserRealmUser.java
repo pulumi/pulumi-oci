@@ -103,12 +103,12 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser();
-            o.principalName = principalName;
-            o.realmName = realmName;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUser();
+            _resultValue.principalName = principalName;
+            _resultValue.realmName = realmName;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

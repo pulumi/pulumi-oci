@@ -42,9 +42,9 @@ public final class GetLogAnalyticsEntitiesLogAnalyticsEntityCollection {
             return items(List.of(items));
         }
         public GetLogAnalyticsEntitiesLogAnalyticsEntityCollection build() {
-            final var o = new GetLogAnalyticsEntitiesLogAnalyticsEntityCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetLogAnalyticsEntitiesLogAnalyticsEntityCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

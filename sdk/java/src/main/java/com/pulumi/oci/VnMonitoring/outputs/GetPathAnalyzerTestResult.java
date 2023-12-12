@@ -324,23 +324,23 @@ public final class GetPathAnalyzerTestResult {
             return this;
         }
         public GetPathAnalyzerTestResult build() {
-            final var o = new GetPathAnalyzerTestResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.destinationEndpoints = destinationEndpoints;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.pathAnalyzerTestId = pathAnalyzerTestId;
-            o.protocol = protocol;
-            o.protocolParameters = protocolParameters;
-            o.queryOptions = queryOptions;
-            o.sourceEndpoints = sourceEndpoints;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetPathAnalyzerTestResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.destinationEndpoints = destinationEndpoints;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.pathAnalyzerTestId = pathAnalyzerTestId;
+            _resultValue.protocol = protocol;
+            _resultValue.protocolParameters = protocolParameters;
+            _resultValue.queryOptions = queryOptions;
+            _resultValue.sourceEndpoints = sourceEndpoints;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

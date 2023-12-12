@@ -131,13 +131,13 @@ public final class UsagePlanEntitlement {
             return targets(List.of(targets));
         }
         public UsagePlanEntitlement build() {
-            final var o = new UsagePlanEntitlement();
-            o.description = description;
-            o.name = name;
-            o.quota = quota;
-            o.rateLimit = rateLimit;
-            o.targets = targets;
-            return o;
+            final var _resultValue = new UsagePlanEntitlement();
+            _resultValue.description = description;
+            _resultValue.name = name;
+            _resultValue.quota = quota;
+            _resultValue.rateLimit = rateLimit;
+            _resultValue.targets = targets;
+            return _resultValue;
         }
     }
 }

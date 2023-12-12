@@ -144,14 +144,14 @@ public final class GetOdaInstancesResult {
             return this;
         }
         public GetOdaInstancesResult build() {
-            final var o = new GetOdaInstancesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.odaInstances = odaInstances;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetOdaInstancesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.odaInstances = odaInstances;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

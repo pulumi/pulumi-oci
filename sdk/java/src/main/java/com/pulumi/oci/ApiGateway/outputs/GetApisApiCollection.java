@@ -42,9 +42,9 @@ public final class GetApisApiCollection {
             return items(List.of(items));
         }
         public GetApisApiCollection build() {
-            final var o = new GetApisApiCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetApisApiCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

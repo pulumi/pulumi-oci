@@ -84,11 +84,11 @@ public final class GetDomainsCloudGateOauthClient {
             return this;
         }
         public GetDomainsCloudGateOauthClient build() {
-            final var o = new GetDomainsCloudGateOauthClient();
-            o.clientId = clientId;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsCloudGateOauthClient();
+            _resultValue.clientId = clientId;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

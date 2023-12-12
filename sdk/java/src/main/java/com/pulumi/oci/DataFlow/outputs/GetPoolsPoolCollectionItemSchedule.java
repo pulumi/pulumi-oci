@@ -85,11 +85,11 @@ public final class GetPoolsPoolCollectionItemSchedule {
             return this;
         }
         public GetPoolsPoolCollectionItemSchedule build() {
-            final var o = new GetPoolsPoolCollectionItemSchedule();
-            o.dayOfWeek = dayOfWeek;
-            o.startTime = startTime;
-            o.stopTime = stopTime;
-            return o;
+            final var _resultValue = new GetPoolsPoolCollectionItemSchedule();
+            _resultValue.dayOfWeek = dayOfWeek;
+            _resultValue.startTime = startTime;
+            _resultValue.stopTime = stopTime;
+            return _resultValue;
         }
     }
 }

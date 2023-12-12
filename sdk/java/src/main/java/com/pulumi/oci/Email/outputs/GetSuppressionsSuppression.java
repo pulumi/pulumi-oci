@@ -198,17 +198,17 @@ public final class GetSuppressionsSuppression {
             return this;
         }
         public GetSuppressionsSuppression build() {
-            final var o = new GetSuppressionsSuppression();
-            o.compartmentId = compartmentId;
-            o.emailAddress = emailAddress;
-            o.errorDetail = errorDetail;
-            o.errorSource = errorSource;
-            o.id = id;
-            o.messageId = messageId;
-            o.reason = reason;
-            o.timeCreated = timeCreated;
-            o.timeLastSuppressed = timeLastSuppressed;
-            return o;
+            final var _resultValue = new GetSuppressionsSuppression();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.errorDetail = errorDetail;
+            _resultValue.errorSource = errorSource;
+            _resultValue.id = id;
+            _resultValue.messageId = messageId;
+            _resultValue.reason = reason;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastSuppressed = timeLastSuppressed;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollection {
             return items(List.of(items));
         }
         public GetControlAssignmentsOperatorControlAssignmentCollection build() {
-            final var o = new GetControlAssignmentsOperatorControlAssignmentCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetControlAssignmentsOperatorControlAssignmentCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

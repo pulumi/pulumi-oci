@@ -465,30 +465,30 @@ public final class GetPipelineRunsPipelineRun {
             return this;
         }
         public GetPipelineRunsPipelineRun build() {
-            final var o = new GetPipelineRunsPipelineRun();
-            o.compartmentId = compartmentId;
-            o.configurationDetails = configurationDetails;
-            o.configurationOverrideDetails = configurationOverrideDetails;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.deleteRelatedJobRuns = deleteRelatedJobRuns;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
-            o.logDetails = logDetails;
-            o.pipelineId = pipelineId;
-            o.projectId = projectId;
-            o.state = state;
-            o.stepOverrideDetails = stepOverrideDetails;
-            o.stepRuns = stepRuns;
-            o.systemTags = systemTags;
-            o.timeAccepted = timeAccepted;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetPipelineRunsPipelineRun();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurationDetails = configurationDetails;
+            _resultValue.configurationOverrideDetails = configurationOverrideDetails;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deleteRelatedJobRuns = deleteRelatedJobRuns;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
+            _resultValue.logDetails = logDetails;
+            _resultValue.pipelineId = pipelineId;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.stepOverrideDetails = stepOverrideDetails;
+            _resultValue.stepRuns = stepRuns;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeAccepted = timeAccepted;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

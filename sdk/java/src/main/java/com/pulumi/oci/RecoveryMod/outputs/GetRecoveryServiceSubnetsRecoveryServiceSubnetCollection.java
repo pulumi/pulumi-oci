@@ -42,9 +42,9 @@ public final class GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection {
             return items(List.of(items));
         }
         public GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection build() {
-            final var o = new GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetRecoveryServiceSubnetsRecoveryServiceSubnetCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

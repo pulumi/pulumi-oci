@@ -155,15 +155,15 @@ public final class GetSendersResult {
             return this;
         }
         public GetSendersResult build() {
-            final var o = new GetSendersResult();
-            o.compartmentId = compartmentId;
-            o.domain = domain;
-            o.emailAddress = emailAddress;
-            o.filters = filters;
-            o.id = id;
-            o.senders = senders;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetSendersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.domain = domain;
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.senders = senders;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

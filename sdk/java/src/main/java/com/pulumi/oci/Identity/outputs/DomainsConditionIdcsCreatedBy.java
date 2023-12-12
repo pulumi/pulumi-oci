@@ -224,13 +224,13 @@ public final class DomainsConditionIdcsCreatedBy {
             return this;
         }
         public DomainsConditionIdcsCreatedBy build() {
-            final var o = new DomainsConditionIdcsCreatedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsConditionIdcsCreatedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

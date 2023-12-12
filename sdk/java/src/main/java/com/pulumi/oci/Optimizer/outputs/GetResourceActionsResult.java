@@ -249,21 +249,21 @@ public final class GetResourceActionsResult {
             return this;
         }
         public GetResourceActionsResult build() {
-            final var o = new GetResourceActionsResult();
-            o.childTenancyIds = childTenancyIds;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.id = id;
-            o.includeOrganization = includeOrganization;
-            o.name = name;
-            o.recommendationId = recommendationId;
-            o.recommendationName = recommendationName;
-            o.resourceActionCollections = resourceActionCollections;
-            o.resourceType = resourceType;
-            o.state = state;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetResourceActionsResult();
+            _resultValue.childTenancyIds = childTenancyIds;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.includeOrganization = includeOrganization;
+            _resultValue.name = name;
+            _resultValue.recommendationId = recommendationId;
+            _resultValue.recommendationName = recommendationName;
+            _resultValue.resourceActionCollections = resourceActionCollections;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

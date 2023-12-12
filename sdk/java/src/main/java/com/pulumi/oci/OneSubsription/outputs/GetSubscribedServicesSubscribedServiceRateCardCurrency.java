@@ -84,11 +84,11 @@ public final class GetSubscribedServicesSubscribedServiceRateCardCurrency {
             return this;
         }
         public GetSubscribedServicesSubscribedServiceRateCardCurrency build() {
-            final var o = new GetSubscribedServicesSubscribedServiceRateCardCurrency();
-            o.isoCode = isoCode;
-            o.name = name;
-            o.stdPrecision = stdPrecision;
-            return o;
+            final var _resultValue = new GetSubscribedServicesSubscribedServiceRateCardCurrency();
+            _resultValue.isoCode = isoCode;
+            _resultValue.name = name;
+            _resultValue.stdPrecision = stdPrecision;
+            return _resultValue;
         }
     }
 }

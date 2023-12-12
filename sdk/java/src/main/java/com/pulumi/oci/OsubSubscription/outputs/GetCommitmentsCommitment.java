@@ -160,15 +160,15 @@ public final class GetCommitmentsCommitment {
             return this;
         }
         public GetCommitmentsCommitment build() {
-            final var o = new GetCommitmentsCommitment();
-            o.availableAmount = availableAmount;
-            o.fundedAllocationValue = fundedAllocationValue;
-            o.id = id;
-            o.quantity = quantity;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            o.usedAmount = usedAmount;
-            return o;
+            final var _resultValue = new GetCommitmentsCommitment();
+            _resultValue.availableAmount = availableAmount;
+            _resultValue.fundedAllocationValue = fundedAllocationValue;
+            _resultValue.id = id;
+            _resultValue.quantity = quantity;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            _resultValue.usedAmount = usedAmount;
+            return _resultValue;
         }
     }
 }

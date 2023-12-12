@@ -384,27 +384,27 @@ public final class GetExternalExadataInfrastructuresExternalExadataInfrastructur
             return this;
         }
         public GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem build() {
-            final var o = new GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem();
-            o.additionalDetails = additionalDetails;
-            o.compartmentId = compartmentId;
-            o.databaseCompartments = databaseCompartments;
-            o.databaseSystems = databaseSystems;
-            o.dbSystemIds = dbSystemIds;
-            o.discoveryKey = discoveryKey;
-            o.displayName = displayName;
-            o.id = id;
-            o.internalId = internalId;
-            o.licenseModel = licenseModel;
-            o.lifecycleDetails = lifecycleDetails;
-            o.rackSize = rackSize;
-            o.state = state;
-            o.status = status;
-            o.storageGrids = storageGrids;
-            o.storageServerNames = storageServerNames;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItem();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseCompartments = databaseCompartments;
+            _resultValue.databaseSystems = databaseSystems;
+            _resultValue.dbSystemIds = dbSystemIds;
+            _resultValue.discoveryKey = discoveryKey;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.internalId = internalId;
+            _resultValue.licenseModel = licenseModel;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.rackSize = rackSize;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.storageGrids = storageGrids;
+            _resultValue.storageServerNames = storageServerNames;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -142,14 +142,14 @@ public final class GetSubscriptionRewardSummary {
             return this;
         }
         public GetSubscriptionRewardSummary build() {
-            final var o = new GetSubscriptionRewardSummary();
-            o.currency = currency;
-            o.redemptionCode = redemptionCode;
-            o.rewardsRate = rewardsRate;
-            o.subscriptionId = subscriptionId;
-            o.tenancyId = tenancyId;
-            o.totalRewardsAvailable = totalRewardsAvailable;
-            return o;
+            final var _resultValue = new GetSubscriptionRewardSummary();
+            _resultValue.currency = currency;
+            _resultValue.redemptionCode = redemptionCode;
+            _resultValue.rewardsRate = rewardsRate;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.tenancyId = tenancyId;
+            _resultValue.totalRewardsAvailable = totalRewardsAvailable;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetExternalDbSystemConnectorsFilter {
             return values(List.of(values));
         }
         public GetExternalDbSystemConnectorsFilter build() {
-            final var o = new GetExternalDbSystemConnectorsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExternalDbSystemConnectorsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

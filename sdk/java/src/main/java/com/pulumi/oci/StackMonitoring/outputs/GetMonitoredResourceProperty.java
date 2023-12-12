@@ -65,10 +65,10 @@ public final class GetMonitoredResourceProperty {
             return this;
         }
         public GetMonitoredResourceProperty build() {
-            final var o = new GetMonitoredResourceProperty();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetMonitoredResourceProperty();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

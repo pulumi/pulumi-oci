@@ -42,9 +42,9 @@ public final class GetComputeCapacityTopologiesComputeCapacityTopologyCollection
             return items(List.of(items));
         }
         public GetComputeCapacityTopologiesComputeCapacityTopologyCollection build() {
-            final var o = new GetComputeCapacityTopologiesComputeCapacityTopologyCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetComputeCapacityTopologiesComputeCapacityTopologyCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -105,12 +105,12 @@ public final class GetDrgsResult {
             return this;
         }
         public GetDrgsResult build() {
-            final var o = new GetDrgsResult();
-            o.compartmentId = compartmentId;
-            o.drgs = drgs;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDrgsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.drgs = drgs;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

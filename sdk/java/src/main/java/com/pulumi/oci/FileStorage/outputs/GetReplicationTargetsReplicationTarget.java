@@ -333,24 +333,24 @@ public final class GetReplicationTargetsReplicationTarget {
             return this;
         }
         public GetReplicationTargetsReplicationTarget build() {
-            final var o = new GetReplicationTargetsReplicationTarget();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.deltaProgress = deltaProgress;
-            o.deltaStatus = deltaStatus;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lastSnapshotId = lastSnapshotId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.recoveryPointTime = recoveryPointTime;
-            o.replicationId = replicationId;
-            o.sourceId = sourceId;
-            o.state = state;
-            o.targetId = targetId;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetReplicationTargetsReplicationTarget();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deltaProgress = deltaProgress;
+            _resultValue.deltaStatus = deltaStatus;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lastSnapshotId = lastSnapshotId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.recoveryPointTime = recoveryPointTime;
+            _resultValue.replicationId = replicationId;
+            _resultValue.sourceId = sourceId;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

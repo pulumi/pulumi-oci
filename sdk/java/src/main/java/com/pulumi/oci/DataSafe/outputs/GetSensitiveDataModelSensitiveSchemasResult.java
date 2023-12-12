@@ -119,13 +119,13 @@ public final class GetSensitiveDataModelSensitiveSchemasResult {
             return sensitiveSchemaCollections(List.of(sensitiveSchemaCollections));
         }
         public GetSensitiveDataModelSensitiveSchemasResult build() {
-            final var o = new GetSensitiveDataModelSensitiveSchemasResult();
-            o.filters = filters;
-            o.id = id;
-            o.schemaNames = schemaNames;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.sensitiveSchemaCollections = sensitiveSchemaCollections;
-            return o;
+            final var _resultValue = new GetSensitiveDataModelSensitiveSchemasResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.schemaNames = schemaNames;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.sensitiveSchemaCollections = sensitiveSchemaCollections;
+            return _resultValue;
         }
     }
 }

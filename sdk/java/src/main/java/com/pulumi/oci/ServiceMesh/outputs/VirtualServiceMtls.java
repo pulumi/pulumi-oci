@@ -87,11 +87,11 @@ public final class VirtualServiceMtls {
             return this;
         }
         public VirtualServiceMtls build() {
-            final var o = new VirtualServiceMtls();
-            o.certificateId = certificateId;
-            o.maximumValidity = maximumValidity;
-            o.mode = mode;
-            return o;
+            final var _resultValue = new VirtualServiceMtls();
+            _resultValue.certificateId = certificateId;
+            _resultValue.maximumValidity = maximumValidity;
+            _resultValue.mode = mode;
+            return _resultValue;
         }
     }
 }

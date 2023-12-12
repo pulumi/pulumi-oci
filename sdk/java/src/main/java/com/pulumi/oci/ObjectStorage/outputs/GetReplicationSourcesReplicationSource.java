@@ -84,11 +84,11 @@ public final class GetReplicationSourcesReplicationSource {
             return this;
         }
         public GetReplicationSourcesReplicationSource build() {
-            final var o = new GetReplicationSourcesReplicationSource();
-            o.policyName = policyName;
-            o.sourceBucketName = sourceBucketName;
-            o.sourceRegionName = sourceRegionName;
-            return o;
+            final var _resultValue = new GetReplicationSourcesReplicationSource();
+            _resultValue.policyName = policyName;
+            _resultValue.sourceBucketName = sourceBucketName;
+            _resultValue.sourceRegionName = sourceRegionName;
+            return _resultValue;
         }
     }
 }

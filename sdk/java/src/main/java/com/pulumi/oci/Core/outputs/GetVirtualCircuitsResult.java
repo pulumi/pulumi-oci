@@ -144,14 +144,14 @@ public final class GetVirtualCircuitsResult {
             return virtualCircuits(List.of(virtualCircuits));
         }
         public GetVirtualCircuitsResult build() {
-            final var o = new GetVirtualCircuitsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.virtualCircuits = virtualCircuits;
-            return o;
+            final var _resultValue = new GetVirtualCircuitsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.virtualCircuits = virtualCircuits;
+            return _resultValue;
         }
     }
 }

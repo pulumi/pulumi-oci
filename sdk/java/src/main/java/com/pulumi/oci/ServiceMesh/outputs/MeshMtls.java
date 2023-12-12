@@ -52,9 +52,9 @@ public final class MeshMtls {
             return this;
         }
         public MeshMtls build() {
-            final var o = new MeshMtls();
-            o.minimum = minimum;
-            return o;
+            final var _resultValue = new MeshMtls();
+            _resultValue.minimum = minimum;
+            return _resultValue;
         }
     }
 }

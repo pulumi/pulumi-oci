@@ -625,37 +625,37 @@ public final class GetDomainsCloudGatesCloudGate {
             return upstreamServers(List.of(upstreamServers));
         }
         public GetDomainsCloudGatesCloudGate build() {
-            final var o = new GetDomainsCloudGatesCloudGate();
-            o.active = active;
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.description = description;
-            o.displayName = displayName;
-            o.domainOcid = domainOcid;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.isOpcService = isOpcService;
-            o.lastModifiedTime = lastModifiedTime;
-            o.mappings = mappings;
-            o.metas = metas;
-            o.oauthClients = oauthClients;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.servers = servers;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.type = type;
-            o.upstreamServerGroups = upstreamServerGroups;
-            o.upstreamServers = upstreamServers;
-            return o;
+            final var _resultValue = new GetDomainsCloudGatesCloudGate();
+            _resultValue.active = active;
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.isOpcService = isOpcService;
+            _resultValue.lastModifiedTime = lastModifiedTime;
+            _resultValue.mappings = mappings;
+            _resultValue.metas = metas;
+            _resultValue.oauthClients = oauthClients;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.servers = servers;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.type = type;
+            _resultValue.upstreamServerGroups = upstreamServerGroups;
+            _resultValue.upstreamServers = upstreamServers;
+            return _resultValue;
         }
     }
 }

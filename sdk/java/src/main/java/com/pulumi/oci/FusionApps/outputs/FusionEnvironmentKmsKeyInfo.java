@@ -106,15 +106,15 @@ public final class FusionEnvironmentKmsKeyInfo {
             return this;
         }
         public FusionEnvironmentKmsKeyInfo build() {
-            final var o = new FusionEnvironmentKmsKeyInfo();
-            o.activeKeyId = activeKeyId;
-            o.activeKeyVersion = activeKeyVersion;
-            o.currentKeyLifecycleState = currentKeyLifecycleState;
-            o.scheduledKeyId = scheduledKeyId;
-            o.scheduledKeyStatus = scheduledKeyStatus;
-            o.scheduledKeyVersion = scheduledKeyVersion;
-            o.scheduledLifecycleState = scheduledLifecycleState;
-            return o;
+            final var _resultValue = new FusionEnvironmentKmsKeyInfo();
+            _resultValue.activeKeyId = activeKeyId;
+            _resultValue.activeKeyVersion = activeKeyVersion;
+            _resultValue.currentKeyLifecycleState = currentKeyLifecycleState;
+            _resultValue.scheduledKeyId = scheduledKeyId;
+            _resultValue.scheduledKeyStatus = scheduledKeyStatus;
+            _resultValue.scheduledKeyVersion = scheduledKeyVersion;
+            _resultValue.scheduledLifecycleState = scheduledLifecycleState;
+            return _resultValue;
         }
     }
 }

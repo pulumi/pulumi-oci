@@ -193,12 +193,12 @@ public final class DomainsIdentitySettingMyProfile {
             return this;
         }
         public DomainsIdentitySettingMyProfile build() {
-            final var o = new DomainsIdentitySettingMyProfile();
-            o.allowEndUsersToChangeTheirPassword = allowEndUsersToChangeTheirPassword;
-            o.allowEndUsersToLinkTheirSupportAccount = allowEndUsersToLinkTheirSupportAccount;
-            o.allowEndUsersToManageTheirCapabilities = allowEndUsersToManageTheirCapabilities;
-            o.allowEndUsersToUpdateTheirSecuritySettings = allowEndUsersToUpdateTheirSecuritySettings;
-            return o;
+            final var _resultValue = new DomainsIdentitySettingMyProfile();
+            _resultValue.allowEndUsersToChangeTheirPassword = allowEndUsersToChangeTheirPassword;
+            _resultValue.allowEndUsersToLinkTheirSupportAccount = allowEndUsersToLinkTheirSupportAccount;
+            _resultValue.allowEndUsersToManageTheirCapabilities = allowEndUsersToManageTheirCapabilities;
+            _resultValue.allowEndUsersToUpdateTheirSecuritySettings = allowEndUsersToUpdateTheirSecuritySettings;
+            return _resultValue;
         }
     }
 }

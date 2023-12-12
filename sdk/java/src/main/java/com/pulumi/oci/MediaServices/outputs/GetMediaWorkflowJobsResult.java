@@ -163,15 +163,15 @@ public final class GetMediaWorkflowJobsResult {
             return this;
         }
         public GetMediaWorkflowJobsResult build() {
-            final var o = new GetMediaWorkflowJobsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.mediaWorkflowId = mediaWorkflowId;
-            o.mediaWorkflowJobCollections = mediaWorkflowJobCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetMediaWorkflowJobsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.mediaWorkflowId = mediaWorkflowId;
+            _resultValue.mediaWorkflowJobCollections = mediaWorkflowJobCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

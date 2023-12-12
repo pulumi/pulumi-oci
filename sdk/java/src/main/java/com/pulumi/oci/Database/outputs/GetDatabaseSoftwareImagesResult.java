@@ -202,17 +202,17 @@ public final class GetDatabaseSoftwareImagesResult {
             return this;
         }
         public GetDatabaseSoftwareImagesResult build() {
-            final var o = new GetDatabaseSoftwareImagesResult();
-            o.compartmentId = compartmentId;
-            o.databaseSoftwareImages = databaseSoftwareImages;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.imageShapeFamily = imageShapeFamily;
-            o.imageType = imageType;
-            o.isUpgradeSupported = isUpgradeSupported;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDatabaseSoftwareImagesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseSoftwareImages = databaseSoftwareImages;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.imageShapeFamily = imageShapeFamily;
+            _resultValue.imageType = imageType;
+            _resultValue.isUpgradeSupported = isUpgradeSupported;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

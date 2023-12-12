@@ -285,22 +285,22 @@ public final class GetAutonomousDatabaseDataguardAssociationResult {
             return this;
         }
         public GetAutonomousDatabaseDataguardAssociationResult build() {
-            final var o = new GetAutonomousDatabaseDataguardAssociationResult();
-            o.applyLag = applyLag;
-            o.applyRate = applyRate;
-            o.autonomousDatabaseDataguardAssociationId = autonomousDatabaseDataguardAssociationId;
-            o.autonomousDatabaseId = autonomousDatabaseId;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.peerAutonomousDatabaseId = peerAutonomousDatabaseId;
-            o.peerAutonomousDatabaseLifeCycleState = peerAutonomousDatabaseLifeCycleState;
-            o.peerRole = peerRole;
-            o.protectionMode = protectionMode;
-            o.role = role;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeLastRoleChanged = timeLastRoleChanged;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseDataguardAssociationResult();
+            _resultValue.applyLag = applyLag;
+            _resultValue.applyRate = applyRate;
+            _resultValue.autonomousDatabaseDataguardAssociationId = autonomousDatabaseDataguardAssociationId;
+            _resultValue.autonomousDatabaseId = autonomousDatabaseId;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.peerAutonomousDatabaseId = peerAutonomousDatabaseId;
+            _resultValue.peerAutonomousDatabaseLifeCycleState = peerAutonomousDatabaseLifeCycleState;
+            _resultValue.peerRole = peerRole;
+            _resultValue.protectionMode = protectionMode;
+            _resultValue.role = role;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastRoleChanged = timeLastRoleChanged;
+            return _resultValue;
         }
     }
 }

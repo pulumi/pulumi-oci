@@ -141,14 +141,14 @@ public final class GetImportableComputeEntityItem {
             return this;
         }
         public GetImportableComputeEntityItem build() {
-            final var o = new GetImportableComputeEntityItem();
-            o.compartmentId = compartmentId;
-            o.computeDisplayName = computeDisplayName;
-            o.computeId = computeId;
-            o.entitySource = entitySource;
-            o.hostName = hostName;
-            o.platformType = platformType;
-            return o;
+            final var _resultValue = new GetImportableComputeEntityItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeDisplayName = computeDisplayName;
+            _resultValue.computeId = computeId;
+            _resultValue.entitySource = entitySource;
+            _resultValue.hostName = hostName;
+            _resultValue.platformType = platformType;
+            return _resultValue;
         }
     }
 }

@@ -87,11 +87,11 @@ public final class SecurityListEgressSecurityRuleTcpOptions {
             return this;
         }
         public SecurityListEgressSecurityRuleTcpOptions build() {
-            final var o = new SecurityListEgressSecurityRuleTcpOptions();
-            o.max = max;
-            o.min = min;
-            o.sourcePortRange = sourcePortRange;
-            return o;
+            final var _resultValue = new SecurityListEgressSecurityRuleTcpOptions();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            _resultValue.sourcePortRange = sourcePortRange;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetAgentImagesAgentImageCollectionItem {
             return this;
         }
         public GetAgentImagesAgentImageCollectionItem build() {
-            final var o = new GetAgentImagesAgentImageCollectionItem();
-            o.downloadUrl = downloadUrl;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetAgentImagesAgentImageCollectionItem();
+            _resultValue.downloadUrl = downloadUrl;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

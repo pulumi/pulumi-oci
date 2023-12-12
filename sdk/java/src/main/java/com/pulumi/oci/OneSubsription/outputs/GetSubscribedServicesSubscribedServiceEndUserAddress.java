@@ -204,17 +204,17 @@ public final class GetSubscribedServicesSubscribedServiceEndUserAddress {
             return this;
         }
         public GetSubscribedServicesSubscribedServiceEndUserAddress build() {
-            final var o = new GetSubscribedServicesSubscribedServiceEndUserAddress();
-            o.billSiteUseId = billSiteUseId;
-            o.isBillTo = isBillTo;
-            o.isShipTo = isShipTo;
-            o.locations = locations;
-            o.name = name;
-            o.phone = phone;
-            o.service2siteUseId = service2siteUseId;
-            o.tcaCustAcctSiteId = tcaCustAcctSiteId;
-            o.tcaPartySiteNumber = tcaPartySiteNumber;
-            return o;
+            final var _resultValue = new GetSubscribedServicesSubscribedServiceEndUserAddress();
+            _resultValue.billSiteUseId = billSiteUseId;
+            _resultValue.isBillTo = isBillTo;
+            _resultValue.isShipTo = isShipTo;
+            _resultValue.locations = locations;
+            _resultValue.name = name;
+            _resultValue.phone = phone;
+            _resultValue.service2siteUseId = service2siteUseId;
+            _resultValue.tcaCustAcctSiteId = tcaCustAcctSiteId;
+            _resultValue.tcaPartySiteNumber = tcaPartySiteNumber;
+            return _resultValue;
         }
     }
 }

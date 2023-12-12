@@ -369,26 +369,26 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItem {
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItem build() {
-            final var o = new GetDrProtectionGroupsDrProtectionGroupCollectionItem();
-            o.associations = associations;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.disassociateTrigger = disassociateTrigger;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifeCycleDetails = lifeCycleDetails;
-            o.lifecycleSubState = lifecycleSubState;
-            o.logLocations = logLocations;
-            o.members = members;
-            o.peerId = peerId;
-            o.peerRegion = peerRegion;
-            o.role = role;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsDrProtectionGroupCollectionItem();
+            _resultValue.associations = associations;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.disassociateTrigger = disassociateTrigger;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifeCycleDetails = lifeCycleDetails;
+            _resultValue.lifecycleSubState = lifecycleSubState;
+            _resultValue.logLocations = logLocations;
+            _resultValue.members = members;
+            _resultValue.peerId = peerId;
+            _resultValue.peerRegion = peerRegion;
+            _resultValue.role = role;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

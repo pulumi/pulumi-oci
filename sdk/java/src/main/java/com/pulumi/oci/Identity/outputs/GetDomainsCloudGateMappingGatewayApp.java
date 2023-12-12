@@ -84,11 +84,11 @@ public final class GetDomainsCloudGateMappingGatewayApp {
             return this;
         }
         public GetDomainsCloudGateMappingGatewayApp build() {
-            final var o = new GetDomainsCloudGateMappingGatewayApp();
-            o.name = name;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsCloudGateMappingGatewayApp();
+            _resultValue.name = name;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

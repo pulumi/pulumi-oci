@@ -85,11 +85,11 @@ public final class GetMigrationDumpTransferDetail {
             return targets(List.of(targets));
         }
         public GetMigrationDumpTransferDetail build() {
-            final var o = new GetMigrationDumpTransferDetail();
-            o.sharedStorageMountTargetId = sharedStorageMountTargetId;
-            o.sources = sources;
-            o.targets = targets;
-            return o;
+            final var _resultValue = new GetMigrationDumpTransferDetail();
+            _resultValue.sharedStorageMountTargetId = sharedStorageMountTargetId;
+            _resultValue.sources = sources;
+            _resultValue.targets = targets;
+            return _resultValue;
         }
     }
 }

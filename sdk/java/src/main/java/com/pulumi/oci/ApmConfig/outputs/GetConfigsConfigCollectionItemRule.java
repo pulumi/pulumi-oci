@@ -162,15 +162,15 @@ public final class GetConfigsConfigCollectionItemRule {
             return this;
         }
         public GetConfigsConfigCollectionItemRule build() {
-            final var o = new GetConfigsConfigCollectionItemRule();
-            o.displayName = displayName;
-            o.filterText = filterText;
-            o.isApplyToErrorSpans = isApplyToErrorSpans;
-            o.isEnabled = isEnabled;
-            o.priority = priority;
-            o.satisfiedResponseTime = satisfiedResponseTime;
-            o.toleratingResponseTime = toleratingResponseTime;
-            return o;
+            final var _resultValue = new GetConfigsConfigCollectionItemRule();
+            _resultValue.displayName = displayName;
+            _resultValue.filterText = filterText;
+            _resultValue.isApplyToErrorSpans = isApplyToErrorSpans;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.priority = priority;
+            _resultValue.satisfiedResponseTime = satisfiedResponseTime;
+            _resultValue.toleratingResponseTime = toleratingResponseTime;
+            return _resultValue;
         }
     }
 }

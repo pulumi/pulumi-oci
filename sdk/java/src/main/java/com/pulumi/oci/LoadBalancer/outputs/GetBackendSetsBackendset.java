@@ -214,18 +214,18 @@ public final class GetBackendSetsBackendset {
             return this;
         }
         public GetBackendSetsBackendset build() {
-            final var o = new GetBackendSetsBackendset();
-            o.backends = backends;
-            o.healthCheckers = healthCheckers;
-            o.id = id;
-            o.lbCookieSessionPersistenceConfigurations = lbCookieSessionPersistenceConfigurations;
-            o.loadBalancerId = loadBalancerId;
-            o.name = name;
-            o.policy = policy;
-            o.sessionPersistenceConfigurations = sessionPersistenceConfigurations;
-            o.sslConfigurations = sslConfigurations;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetBackendSetsBackendset();
+            _resultValue.backends = backends;
+            _resultValue.healthCheckers = healthCheckers;
+            _resultValue.id = id;
+            _resultValue.lbCookieSessionPersistenceConfigurations = lbCookieSessionPersistenceConfigurations;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.name = name;
+            _resultValue.policy = policy;
+            _resultValue.sessionPersistenceConfigurations = sessionPersistenceConfigurations;
+            _resultValue.sslConfigurations = sslConfigurations;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -142,14 +142,14 @@ public final class GetImageLaunchOption {
             return this;
         }
         public GetImageLaunchOption build() {
-            final var o = new GetImageLaunchOption();
-            o.bootVolumeType = bootVolumeType;
-            o.firmware = firmware;
-            o.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
-            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-            o.networkType = networkType;
-            o.remoteDataVolumeType = remoteDataVolumeType;
-            return o;
+            final var _resultValue = new GetImageLaunchOption();
+            _resultValue.bootVolumeType = bootVolumeType;
+            _resultValue.firmware = firmware;
+            _resultValue.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
+            _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            _resultValue.networkType = networkType;
+            _resultValue.remoteDataVolumeType = remoteDataVolumeType;
+            return _resultValue;
         }
     }
 }

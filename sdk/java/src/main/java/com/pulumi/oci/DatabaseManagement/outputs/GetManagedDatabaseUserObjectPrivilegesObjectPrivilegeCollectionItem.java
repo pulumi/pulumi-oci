@@ -198,17 +198,17 @@ public final class GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollecti
             return this;
         }
         public GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem build() {
-            final var o = new GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem();
-            o.common = common;
-            o.grantOption = grantOption;
-            o.grantor = grantor;
-            o.hierarchy = hierarchy;
-            o.inherited = inherited;
-            o.name = name;
-            o.object = object;
-            o.owner = owner;
-            o.schemaType = schemaType;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserObjectPrivilegesObjectPrivilegeCollectionItem();
+            _resultValue.common = common;
+            _resultValue.grantOption = grantOption;
+            _resultValue.grantor = grantor;
+            _resultValue.hierarchy = hierarchy;
+            _resultValue.inherited = inherited;
+            _resultValue.name = name;
+            _resultValue.object = object;
+            _resultValue.owner = owner;
+            _resultValue.schemaType = schemaType;
+            return _resultValue;
         }
     }
 }

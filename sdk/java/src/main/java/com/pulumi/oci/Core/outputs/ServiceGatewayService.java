@@ -67,10 +67,10 @@ public final class ServiceGatewayService {
             return this;
         }
         public ServiceGatewayService build() {
-            final var o = new ServiceGatewayService();
-            o.serviceId = serviceId;
-            o.serviceName = serviceName;
-            return o;
+            final var _resultValue = new ServiceGatewayService();
+            _resultValue.serviceId = serviceId;
+            _resultValue.serviceName = serviceName;
+            return _resultValue;
         }
     }
 }

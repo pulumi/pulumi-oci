@@ -65,10 +65,10 @@ public final class GetContainerRepositoryReadme {
             return this;
         }
         public GetContainerRepositoryReadme build() {
-            final var o = new GetContainerRepositoryReadme();
-            o.content = content;
-            o.format = format;
-            return o;
+            final var _resultValue = new GetContainerRepositoryReadme();
+            _resultValue.content = content;
+            _resultValue.format = format;
+            return _resultValue;
         }
     }
 }

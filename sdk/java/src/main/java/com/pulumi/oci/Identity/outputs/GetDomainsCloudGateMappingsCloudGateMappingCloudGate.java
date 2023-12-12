@@ -65,10 +65,10 @@ public final class GetDomainsCloudGateMappingsCloudGateMappingCloudGate {
             return this;
         }
         public GetDomainsCloudGateMappingsCloudGateMappingCloudGate build() {
-            final var o = new GetDomainsCloudGateMappingsCloudGateMappingCloudGate();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsCloudGateMappingsCloudGateMappingCloudGate();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

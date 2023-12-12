@@ -314,23 +314,23 @@ public final class GetContainerSignaturesContainerImageSignatureCollectionItem {
             return this;
         }
         public GetContainerSignaturesContainerImageSignatureCollectionItem build() {
-            final var o = new GetContainerSignaturesContainerImageSignatureCollectionItem();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.imageId = imageId;
-            o.kmsKeyId = kmsKeyId;
-            o.kmsKeyVersionId = kmsKeyVersionId;
-            o.message = message;
-            o.signature = signature;
-            o.signingAlgorithm = signingAlgorithm;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetContainerSignaturesContainerImageSignatureCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.imageId = imageId;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.kmsKeyVersionId = kmsKeyVersionId;
+            _resultValue.message = message;
+            _resultValue.signature = signature;
+            _resultValue.signingAlgorithm = signingAlgorithm;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -104,12 +104,12 @@ public final class GetTableTableLimit {
             return this;
         }
         public GetTableTableLimit build() {
-            final var o = new GetTableTableLimit();
-            o.capacityMode = capacityMode;
-            o.maxReadUnits = maxReadUnits;
-            o.maxStorageInGbs = maxStorageInGbs;
-            o.maxWriteUnits = maxWriteUnits;
-            return o;
+            final var _resultValue = new GetTableTableLimit();
+            _resultValue.capacityMode = capacityMode;
+            _resultValue.maxReadUnits = maxReadUnits;
+            _resultValue.maxStorageInGbs = maxStorageInGbs;
+            _resultValue.maxWriteUnits = maxWriteUnits;
+            return _resultValue;
         }
     }
 }

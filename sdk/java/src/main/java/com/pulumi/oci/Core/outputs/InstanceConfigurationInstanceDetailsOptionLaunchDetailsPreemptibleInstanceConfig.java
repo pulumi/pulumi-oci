@@ -48,9 +48,9 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemp
             return this;
         }
         public InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig build() {
-            final var o = new InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig();
-            o.preemptionAction = preemptionAction;
-            return o;
+            final var _resultValue = new InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig();
+            _resultValue.preemptionAction = preemptionAction;
+            return _resultValue;
         }
     }
 }

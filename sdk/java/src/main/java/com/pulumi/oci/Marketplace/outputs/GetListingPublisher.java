@@ -226,18 +226,18 @@ public final class GetListingPublisher {
             return this;
         }
         public GetListingPublisher build() {
-            final var o = new GetListingPublisher();
-            o.contactEmail = contactEmail;
-            o.contactPhone = contactPhone;
-            o.description = description;
-            o.hqAddress = hqAddress;
-            o.id = id;
-            o.links = links;
-            o.logos = logos;
-            o.name = name;
-            o.websiteUrl = websiteUrl;
-            o.yearFounded = yearFounded;
-            return o;
+            final var _resultValue = new GetListingPublisher();
+            _resultValue.contactEmail = contactEmail;
+            _resultValue.contactPhone = contactPhone;
+            _resultValue.description = description;
+            _resultValue.hqAddress = hqAddress;
+            _resultValue.id = id;
+            _resultValue.links = links;
+            _resultValue.logos = logos;
+            _resultValue.name = name;
+            _resultValue.websiteUrl = websiteUrl;
+            _resultValue.yearFounded = yearFounded;
+            return _resultValue;
         }
     }
 }

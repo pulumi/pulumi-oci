@@ -86,11 +86,11 @@ public final class GetCpeDeviceShapesResult {
             return this;
         }
         public GetCpeDeviceShapesResult build() {
-            final var o = new GetCpeDeviceShapesResult();
-            o.cpeDeviceShapes = cpeDeviceShapes;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetCpeDeviceShapesResult();
+            _resultValue.cpeDeviceShapes = cpeDeviceShapes;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

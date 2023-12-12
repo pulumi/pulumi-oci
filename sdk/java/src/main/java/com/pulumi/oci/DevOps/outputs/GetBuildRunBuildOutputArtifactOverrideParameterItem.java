@@ -84,11 +84,11 @@ public final class GetBuildRunBuildOutputArtifactOverrideParameterItem {
             return this;
         }
         public GetBuildRunBuildOutputArtifactOverrideParameterItem build() {
-            final var o = new GetBuildRunBuildOutputArtifactOverrideParameterItem();
-            o.deployArtifactId = deployArtifactId;
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetBuildRunBuildOutputArtifactOverrideParameterItem();
+            _resultValue.deployArtifactId = deployArtifactId;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

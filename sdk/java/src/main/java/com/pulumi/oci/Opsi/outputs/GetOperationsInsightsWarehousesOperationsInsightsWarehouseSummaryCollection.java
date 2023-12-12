@@ -42,9 +42,9 @@ public final class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSum
             return items(List.of(items));
         }
         public GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection build() {
-            final var o = new GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

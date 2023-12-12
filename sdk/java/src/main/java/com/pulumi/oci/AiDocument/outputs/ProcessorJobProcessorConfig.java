@@ -136,13 +136,13 @@ public final class ProcessorJobProcessorConfig {
             return this;
         }
         public ProcessorJobProcessorConfig build() {
-            final var o = new ProcessorJobProcessorConfig();
-            o.documentType = documentType;
-            o.features = features;
-            o.isZipOutputEnabled = isZipOutputEnabled;
-            o.language = language;
-            o.processorType = processorType;
-            return o;
+            final var _resultValue = new ProcessorJobProcessorConfig();
+            _resultValue.documentType = documentType;
+            _resultValue.features = features;
+            _resultValue.isZipOutputEnabled = isZipOutputEnabled;
+            _resultValue.language = language;
+            _resultValue.processorType = processorType;
+            return _resultValue;
         }
     }
 }

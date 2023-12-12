@@ -67,11 +67,11 @@ public final class GetEndpointsFilter {
             return values(List.of(values));
         }
         public GetEndpointsFilter build() {
-            final var o = new GetEndpointsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetEndpointsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

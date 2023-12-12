@@ -70,10 +70,10 @@ public final class GetHttpProbeResultsHttpProbeResultDn {
             return this;
         }
         public GetHttpProbeResultsHttpProbeResultDn build() {
-            final var o = new GetHttpProbeResultsHttpProbeResultDn();
-            o.addresses = addresses;
-            o.domainLookupDuration = domainLookupDuration;
-            return o;
+            final var _resultValue = new GetHttpProbeResultsHttpProbeResultDn();
+            _resultValue.addresses = addresses;
+            _resultValue.domainLookupDuration = domainLookupDuration;
+            return _resultValue;
         }
     }
 }

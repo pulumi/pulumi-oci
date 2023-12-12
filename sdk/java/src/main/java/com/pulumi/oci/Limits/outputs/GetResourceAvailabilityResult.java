@@ -188,18 +188,18 @@ public final class GetResourceAvailabilityResult {
             return this;
         }
         public GetResourceAvailabilityResult build() {
-            final var o = new GetResourceAvailabilityResult();
-            o.availabilityDomain = availabilityDomain;
-            o.available = available;
-            o.compartmentId = compartmentId;
-            o.effectiveQuotaValue = effectiveQuotaValue;
-            o.fractionalAvailability = fractionalAvailability;
-            o.fractionalUsage = fractionalUsage;
-            o.id = id;
-            o.limitName = limitName;
-            o.serviceName = serviceName;
-            o.used = used;
-            return o;
+            final var _resultValue = new GetResourceAvailabilityResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.available = available;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.effectiveQuotaValue = effectiveQuotaValue;
+            _resultValue.fractionalAvailability = fractionalAvailability;
+            _resultValue.fractionalUsage = fractionalUsage;
+            _resultValue.id = id;
+            _resultValue.limitName = limitName;
+            _resultValue.serviceName = serviceName;
+            _resultValue.used = used;
+            return _resultValue;
         }
     }
 }

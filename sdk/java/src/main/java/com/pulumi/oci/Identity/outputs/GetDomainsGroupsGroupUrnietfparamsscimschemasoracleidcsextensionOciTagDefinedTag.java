@@ -84,11 +84,11 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
             return this;
         }
         public GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag build() {
-            final var o = new GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag();
-            o.key = key;
-            o.namespace = namespace;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagDefinedTag();
+            _resultValue.key = key;
+            _resultValue.namespace = namespace;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

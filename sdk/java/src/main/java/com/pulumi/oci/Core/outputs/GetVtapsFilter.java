@@ -67,11 +67,11 @@ public final class GetVtapsFilter {
             return values(List.of(values));
         }
         public GetVtapsFilter build() {
-            final var o = new GetVtapsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVtapsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

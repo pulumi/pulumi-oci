@@ -137,14 +137,14 @@ public final class GetLogGroupsResult {
             return logGroups(List.of(logGroups));
         }
         public GetLogGroupsResult build() {
-            final var o = new GetLogGroupsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-            o.logGroups = logGroups;
-            return o;
+            final var _resultValue = new GetLogGroupsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            _resultValue.logGroups = logGroups;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetRepositoriesRepositoryCollection {
             return items(List.of(items));
         }
         public GetRepositoriesRepositoryCollection build() {
-            final var o = new GetRepositoriesRepositoryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetRepositoriesRepositoryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

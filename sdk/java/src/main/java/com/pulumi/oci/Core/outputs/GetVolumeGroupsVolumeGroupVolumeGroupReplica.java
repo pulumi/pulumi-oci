@@ -84,11 +84,11 @@ public final class GetVolumeGroupsVolumeGroupVolumeGroupReplica {
             return this;
         }
         public GetVolumeGroupsVolumeGroupVolumeGroupReplica build() {
-            final var o = new GetVolumeGroupsVolumeGroupVolumeGroupReplica();
-            o.availabilityDomain = availabilityDomain;
-            o.displayName = displayName;
-            o.volumeGroupReplicaId = volumeGroupReplicaId;
-            return o;
+            final var _resultValue = new GetVolumeGroupsVolumeGroupVolumeGroupReplica();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.displayName = displayName;
+            _resultValue.volumeGroupReplicaId = volumeGroupReplicaId;
+            return _resultValue;
         }
     }
 }

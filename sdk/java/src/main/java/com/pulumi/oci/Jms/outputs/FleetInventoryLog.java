@@ -71,10 +71,10 @@ public final class FleetInventoryLog {
             return this;
         }
         public FleetInventoryLog build() {
-            final var o = new FleetInventoryLog();
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new FleetInventoryLog();
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

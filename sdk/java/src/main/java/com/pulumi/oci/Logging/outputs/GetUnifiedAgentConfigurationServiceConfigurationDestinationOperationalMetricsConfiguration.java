@@ -73,10 +73,10 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
             return sources(List.of(sources));
         }
         public GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration build() {
-            final var o = new GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration();
-            o.destinations = destinations;
-            o.sources = sources;
-            return o;
+            final var _resultValue = new GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration();
+            _resultValue.destinations = destinations;
+            _resultValue.sources = sources;
+            return _resultValue;
         }
     }
 }

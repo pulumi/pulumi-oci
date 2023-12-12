@@ -42,9 +42,9 @@ public final class GetDetectionDataAssetsDataAssetCollection {
             return items(List.of(items));
         }
         public GetDetectionDataAssetsDataAssetCollection build() {
-            final var o = new GetDetectionDataAssetsDataAssetCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDetectionDataAssetsDataAssetCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

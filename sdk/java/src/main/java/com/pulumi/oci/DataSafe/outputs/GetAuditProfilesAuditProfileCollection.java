@@ -42,9 +42,9 @@ public final class GetAuditProfilesAuditProfileCollection {
             return items(List.of(items));
         }
         public GetAuditProfilesAuditProfileCollection build() {
-            final var o = new GetAuditProfilesAuditProfileCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAuditProfilesAuditProfileCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

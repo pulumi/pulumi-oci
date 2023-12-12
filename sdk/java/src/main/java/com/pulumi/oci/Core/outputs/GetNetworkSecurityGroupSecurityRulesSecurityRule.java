@@ -311,22 +311,22 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRule {
             return udpOptions(List.of(udpOptions));
         }
         public GetNetworkSecurityGroupSecurityRulesSecurityRule build() {
-            final var o = new GetNetworkSecurityGroupSecurityRulesSecurityRule();
-            o.description = description;
-            o.destination = destination;
-            o.destinationType = destinationType;
-            o.direction = direction;
-            o.icmpOptions = icmpOptions;
-            o.id = id;
-            o.isValid = isValid;
-            o.protocol = protocol;
-            o.source = source;
-            o.sourceType = sourceType;
-            o.stateless = stateless;
-            o.tcpOptions = tcpOptions;
-            o.timeCreated = timeCreated;
-            o.udpOptions = udpOptions;
-            return o;
+            final var _resultValue = new GetNetworkSecurityGroupSecurityRulesSecurityRule();
+            _resultValue.description = description;
+            _resultValue.destination = destination;
+            _resultValue.destinationType = destinationType;
+            _resultValue.direction = direction;
+            _resultValue.icmpOptions = icmpOptions;
+            _resultValue.id = id;
+            _resultValue.isValid = isValid;
+            _resultValue.protocol = protocol;
+            _resultValue.source = source;
+            _resultValue.sourceType = sourceType;
+            _resultValue.stateless = stateless;
+            _resultValue.tcpOptions = tcpOptions;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.udpOptions = udpOptions;
+            return _resultValue;
         }
     }
 }

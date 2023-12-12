@@ -84,11 +84,11 @@ public final class GetContainerInstancesContainerInstanceCollectionItemVolumeCon
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemVolumeConfig build() {
-            final var o = new GetContainerInstancesContainerInstanceCollectionItemVolumeConfig();
-            o.data = data;
-            o.fileName = fileName;
-            o.path = path;
-            return o;
+            final var _resultValue = new GetContainerInstancesContainerInstanceCollectionItemVolumeConfig();
+            _resultValue.data = data;
+            _resultValue.fileName = fileName;
+            _resultValue.path = path;
+            return _resultValue;
         }
     }
 }

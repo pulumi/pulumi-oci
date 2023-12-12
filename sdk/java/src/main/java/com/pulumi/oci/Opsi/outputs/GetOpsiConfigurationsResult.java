@@ -169,15 +169,15 @@ public final class GetOpsiConfigurationsResult {
             return states(List.of(states));
         }
         public GetOpsiConfigurationsResult build() {
-            final var o = new GetOpsiConfigurationsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.opsiConfigTypes = opsiConfigTypes;
-            o.opsiConfigurationsCollections = opsiConfigurationsCollections;
-            o.states = states;
-            return o;
+            final var _resultValue = new GetOpsiConfigurationsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.opsiConfigTypes = opsiConfigTypes;
+            _resultValue.opsiConfigurationsCollections = opsiConfigurationsCollections;
+            _resultValue.states = states;
+            return _resultValue;
         }
     }
 }

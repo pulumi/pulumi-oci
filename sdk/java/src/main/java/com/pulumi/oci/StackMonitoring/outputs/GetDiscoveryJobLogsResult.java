@@ -117,13 +117,13 @@ public final class GetDiscoveryJobLogsResult {
             return this;
         }
         public GetDiscoveryJobLogsResult build() {
-            final var o = new GetDiscoveryJobLogsResult();
-            o.discoveryJobId = discoveryJobId;
-            o.discoveryJobLogCollections = discoveryJobLogCollections;
-            o.filters = filters;
-            o.id = id;
-            o.logType = logType;
-            return o;
+            final var _resultValue = new GetDiscoveryJobLogsResult();
+            _resultValue.discoveryJobId = discoveryJobId;
+            _resultValue.discoveryJobLogCollections = discoveryJobLogCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.logType = logType;
+            return _resultValue;
         }
     }
 }

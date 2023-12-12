@@ -95,11 +95,11 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyA
             return verifyClaims(List.of(verifyClaims));
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy();
-            o.audiences = audiences;
-            o.issuers = issuers;
-            o.verifyClaims = verifyClaims;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationValidationPolicyAdditionalValidationPolicy();
+            _resultValue.audiences = audiences;
+            _resultValue.issuers = issuers;
+            _resultValue.verifyClaims = verifyClaims;
+            return _resultValue;
         }
     }
 }

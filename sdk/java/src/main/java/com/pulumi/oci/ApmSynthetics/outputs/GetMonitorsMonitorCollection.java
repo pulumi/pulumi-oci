@@ -42,9 +42,9 @@ public final class GetMonitorsMonitorCollection {
             return items(List.of(items));
         }
         public GetMonitorsMonitorCollection build() {
-            final var o = new GetMonitorsMonitorCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMonitorsMonitorCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

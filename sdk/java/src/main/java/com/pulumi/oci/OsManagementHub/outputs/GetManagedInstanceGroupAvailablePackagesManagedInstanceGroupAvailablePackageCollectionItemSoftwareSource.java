@@ -103,12 +103,12 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
             return this;
         }
         public GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource build() {
-            final var o = new GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource();
-            o.description = description;
-            o.displayName = displayName;
-            o.id = id;
-            o.softwareSourceType = softwareSourceType;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItemSoftwareSource();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.softwareSourceType = softwareSourceType;
+            return _resultValue;
         }
     }
 }

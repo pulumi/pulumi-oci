@@ -275,20 +275,20 @@ public final class GetMetricDataMetricData {
             return this;
         }
         public GetMetricDataMetricData build() {
-            final var o = new GetMetricDataMetricData();
-            o.aggregatedDatapoints = aggregatedDatapoints;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.dimensions = dimensions;
-            o.endTime = endTime;
-            o.metadata = metadata;
-            o.name = name;
-            o.namespace = namespace;
-            o.query = query;
-            o.resolution = resolution;
-            o.resourceGroup = resourceGroup;
-            o.startTime = startTime;
-            return o;
+            final var _resultValue = new GetMetricDataMetricData();
+            _resultValue.aggregatedDatapoints = aggregatedDatapoints;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.dimensions = dimensions;
+            _resultValue.endTime = endTime;
+            _resultValue.metadata = metadata;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.query = query;
+            _resultValue.resolution = resolution;
+            _resultValue.resourceGroup = resourceGroup;
+            _resultValue.startTime = startTime;
+            return _resultValue;
         }
     }
 }

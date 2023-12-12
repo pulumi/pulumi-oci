@@ -124,13 +124,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig build() {
-            final var o = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig();
-            o.baselineOcpuUtilization = baselineOcpuUtilization;
-            o.memoryInGbs = memoryInGbs;
-            o.nvmes = nvmes;
-            o.ocpus = ocpus;
-            o.vcpus = vcpus;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig();
+            _resultValue.baselineOcpuUtilization = baselineOcpuUtilization;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.nvmes = nvmes;
+            _resultValue.ocpus = ocpus;
+            _resultValue.vcpus = vcpus;
+            return _resultValue;
         }
     }
 }

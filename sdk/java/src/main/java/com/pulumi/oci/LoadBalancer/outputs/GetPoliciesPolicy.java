@@ -46,9 +46,9 @@ public final class GetPoliciesPolicy {
             return this;
         }
         public GetPoliciesPolicy build() {
-            final var o = new GetPoliciesPolicy();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPoliciesPolicy();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

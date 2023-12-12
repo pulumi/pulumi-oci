@@ -125,13 +125,13 @@ public final class DeploymentMaintenanceConfiguration {
             return this;
         }
         public DeploymentMaintenanceConfiguration build() {
-            final var o = new DeploymentMaintenanceConfiguration();
-            o.bundleReleaseUpgradePeriodInDays = bundleReleaseUpgradePeriodInDays;
-            o.interimReleaseUpgradePeriodInDays = interimReleaseUpgradePeriodInDays;
-            o.isInterimReleaseAutoUpgradeEnabled = isInterimReleaseAutoUpgradeEnabled;
-            o.majorReleaseUpgradePeriodInDays = majorReleaseUpgradePeriodInDays;
-            o.securityPatchUpgradePeriodInDays = securityPatchUpgradePeriodInDays;
-            return o;
+            final var _resultValue = new DeploymentMaintenanceConfiguration();
+            _resultValue.bundleReleaseUpgradePeriodInDays = bundleReleaseUpgradePeriodInDays;
+            _resultValue.interimReleaseUpgradePeriodInDays = interimReleaseUpgradePeriodInDays;
+            _resultValue.isInterimReleaseAutoUpgradeEnabled = isInterimReleaseAutoUpgradeEnabled;
+            _resultValue.majorReleaseUpgradePeriodInDays = majorReleaseUpgradePeriodInDays;
+            _resultValue.securityPatchUpgradePeriodInDays = securityPatchUpgradePeriodInDays;
+            return _resultValue;
         }
     }
 }

@@ -74,10 +74,10 @@ public final class PluggableDatabaseManagementsManagementPluggableDatabaseManage
             return this;
         }
         public PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig build() {
-            final var o = new PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig();
-            o.enablePluggabledatabasemanagement = enablePluggabledatabasemanagement;
-            o.managementStatus = managementStatus;
-            return o;
+            final var _resultValue = new PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig();
+            _resultValue.enablePluggabledatabasemanagement = enablePluggabledatabasemanagement;
+            _resultValue.managementStatus = managementStatus;
+            return _resultValue;
         }
     }
 }

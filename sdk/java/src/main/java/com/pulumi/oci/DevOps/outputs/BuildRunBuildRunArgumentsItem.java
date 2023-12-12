@@ -65,10 +65,10 @@ public final class BuildRunBuildRunArgumentsItem {
             return this;
         }
         public BuildRunBuildRunArgumentsItem build() {
-            final var o = new BuildRunBuildRunArgumentsItem();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new BuildRunBuildRunArgumentsItem();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

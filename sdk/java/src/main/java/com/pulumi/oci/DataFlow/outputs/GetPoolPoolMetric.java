@@ -146,14 +146,14 @@ public final class GetPoolPoolMetric {
             return this;
         }
         public GetPoolPoolMetric build() {
-            final var o = new GetPoolPoolMetric();
-            o.activeRunsCount = activeRunsCount;
-            o.activelyUsedNodeCounts = activelyUsedNodeCounts;
-            o.timeLastMetricsUpdated = timeLastMetricsUpdated;
-            o.timeLastStarted = timeLastStarted;
-            o.timeLastStopped = timeLastStopped;
-            o.timeLastUsed = timeLastUsed;
-            return o;
+            final var _resultValue = new GetPoolPoolMetric();
+            _resultValue.activeRunsCount = activeRunsCount;
+            _resultValue.activelyUsedNodeCounts = activelyUsedNodeCounts;
+            _resultValue.timeLastMetricsUpdated = timeLastMetricsUpdated;
+            _resultValue.timeLastStarted = timeLastStarted;
+            _resultValue.timeLastStopped = timeLastStopped;
+            _resultValue.timeLastUsed = timeLastUsed;
+            return _resultValue;
         }
     }
 }

@@ -97,12 +97,12 @@ public final class GetManagedPreferredCredentialsResult {
             return preferredCredentialCollections(List.of(preferredCredentialCollections));
         }
         public GetManagedPreferredCredentialsResult build() {
-            final var o = new GetManagedPreferredCredentialsResult();
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.preferredCredentialCollections = preferredCredentialCollections;
-            return o;
+            final var _resultValue = new GetManagedPreferredCredentialsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.preferredCredentialCollections = preferredCredentialCollections;
+            return _resultValue;
         }
     }
 }

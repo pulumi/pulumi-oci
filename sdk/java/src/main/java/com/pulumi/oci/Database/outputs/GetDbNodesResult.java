@@ -166,16 +166,16 @@ public final class GetDbNodesResult {
             return this;
         }
         public GetDbNodesResult build() {
-            final var o = new GetDbNodesResult();
-            o.compartmentId = compartmentId;
-            o.dbNodes = dbNodes;
-            o.dbServerId = dbServerId;
-            o.dbSystemId = dbSystemId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.vmClusterId = vmClusterId;
-            return o;
+            final var _resultValue = new GetDbNodesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbNodes = dbNodes;
+            _resultValue.dbServerId = dbServerId;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.vmClusterId = vmClusterId;
+            return _resultValue;
         }
     }
 }

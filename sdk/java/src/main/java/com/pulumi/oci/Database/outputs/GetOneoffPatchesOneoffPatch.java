@@ -331,24 +331,24 @@ public final class GetOneoffPatchesOneoffPatch {
             return this;
         }
         public GetOneoffPatchesOneoffPatch build() {
-            final var o = new GetOneoffPatchesOneoffPatch();
-            o.compartmentId = compartmentId;
-            o.dbVersion = dbVersion;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.downloadOneoffPatchTrigger = downloadOneoffPatchTrigger;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.oneOffPatches = oneOffPatches;
-            o.releaseUpdate = releaseUpdate;
-            o.sha256sum = sha256sum;
-            o.sizeInKbs = sizeInKbs;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeOfExpiration = timeOfExpiration;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetOneoffPatchesOneoffPatch();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.downloadOneoffPatchTrigger = downloadOneoffPatchTrigger;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.oneOffPatches = oneOffPatches;
+            _resultValue.releaseUpdate = releaseUpdate;
+            _resultValue.sha256sum = sha256sum;
+            _resultValue.sizeInKbs = sizeInKbs;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfExpiration = timeOfExpiration;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

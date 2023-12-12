@@ -93,11 +93,11 @@ public final class GeneratedKeyKeyShape {
             return this;
         }
         public GeneratedKeyKeyShape build() {
-            final var o = new GeneratedKeyKeyShape();
-            o.algorithm = algorithm;
-            o.curveId = curveId;
-            o.length = length;
-            return o;
+            final var _resultValue = new GeneratedKeyKeyShape();
+            _resultValue.algorithm = algorithm;
+            _resultValue.curveId = curveId;
+            _resultValue.length = length;
+            return _resultValue;
         }
     }
 }

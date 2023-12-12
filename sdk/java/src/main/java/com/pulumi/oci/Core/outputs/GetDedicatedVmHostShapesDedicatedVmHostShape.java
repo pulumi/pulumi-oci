@@ -65,10 +65,10 @@ public final class GetDedicatedVmHostShapesDedicatedVmHostShape {
             return this;
         }
         public GetDedicatedVmHostShapesDedicatedVmHostShape build() {
-            final var o = new GetDedicatedVmHostShapesDedicatedVmHostShape();
-            o.availabilityDomain = availabilityDomain;
-            o.dedicatedVmHostShape = dedicatedVmHostShape;
-            return o;
+            final var _resultValue = new GetDedicatedVmHostShapesDedicatedVmHostShape();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.dedicatedVmHostShape = dedicatedVmHostShape;
+            return _resultValue;
         }
     }
 }

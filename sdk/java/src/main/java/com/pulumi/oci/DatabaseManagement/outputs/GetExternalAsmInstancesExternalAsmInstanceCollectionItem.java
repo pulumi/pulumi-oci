@@ -274,21 +274,21 @@ public final class GetExternalAsmInstancesExternalAsmInstanceCollectionItem {
             return this;
         }
         public GetExternalAsmInstancesExternalAsmInstanceCollectionItem build() {
-            final var o = new GetExternalAsmInstancesExternalAsmInstanceCollectionItem();
-            o.adrHomeDirectory = adrHomeDirectory;
-            o.compartmentId = compartmentId;
-            o.componentName = componentName;
-            o.displayName = displayName;
-            o.externalAsmId = externalAsmId;
-            o.externalDbNodeId = externalDbNodeId;
-            o.externalDbSystemId = externalDbSystemId;
-            o.hostName = hostName;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetExternalAsmInstancesExternalAsmInstanceCollectionItem();
+            _resultValue.adrHomeDirectory = adrHomeDirectory;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.componentName = componentName;
+            _resultValue.displayName = displayName;
+            _resultValue.externalAsmId = externalAsmId;
+            _resultValue.externalDbNodeId = externalDbNodeId;
+            _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.hostName = hostName;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

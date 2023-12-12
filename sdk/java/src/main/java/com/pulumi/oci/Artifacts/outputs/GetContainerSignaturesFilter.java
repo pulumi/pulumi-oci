@@ -67,11 +67,11 @@ public final class GetContainerSignaturesFilter {
             return values(List.of(values));
         }
         public GetContainerSignaturesFilter build() {
-            final var o = new GetContainerSignaturesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetContainerSignaturesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -182,16 +182,16 @@ public final class GetProtectedDatabasesResult {
             return this;
         }
         public GetProtectedDatabasesResult build() {
-            final var o = new GetProtectedDatabasesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.protectedDatabaseCollections = protectedDatabaseCollections;
-            o.protectionPolicyId = protectionPolicyId;
-            o.recoveryServiceSubnetId = recoveryServiceSubnetId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetProtectedDatabasesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.protectedDatabaseCollections = protectedDatabaseCollections;
+            _resultValue.protectionPolicyId = protectionPolicyId;
+            _resultValue.recoveryServiceSubnetId = recoveryServiceSubnetId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

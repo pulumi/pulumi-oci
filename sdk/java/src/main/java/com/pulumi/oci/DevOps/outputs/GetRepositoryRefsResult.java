@@ -163,15 +163,15 @@ public final class GetRepositoryRefsResult {
             return repositoryRefCollections(List.of(repositoryRefCollections));
         }
         public GetRepositoryRefsResult build() {
-            final var o = new GetRepositoryRefsResult();
-            o.commitId = commitId;
-            o.filters = filters;
-            o.id = id;
-            o.refName = refName;
-            o.refType = refType;
-            o.repositoryId = repositoryId;
-            o.repositoryRefCollections = repositoryRefCollections;
-            return o;
+            final var _resultValue = new GetRepositoryRefsResult();
+            _resultValue.commitId = commitId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.refName = refName;
+            _resultValue.refType = refType;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.repositoryRefCollections = repositoryRefCollections;
+            return _resultValue;
         }
     }
 }

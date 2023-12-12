@@ -65,10 +65,10 @@ public final class GetWorkspaceProjectsProjectSummaryCollectionItemParentRef {
             return this;
         }
         public GetWorkspaceProjectsProjectSummaryCollectionItemParentRef build() {
-            final var o = new GetWorkspaceProjectsProjectSummaryCollectionItemParentRef();
-            o.parent = parent;
-            o.rootDocId = rootDocId;
-            return o;
+            final var _resultValue = new GetWorkspaceProjectsProjectSummaryCollectionItemParentRef();
+            _resultValue.parent = parent;
+            _resultValue.rootDocId = rootDocId;
+            return _resultValue;
         }
     }
 }

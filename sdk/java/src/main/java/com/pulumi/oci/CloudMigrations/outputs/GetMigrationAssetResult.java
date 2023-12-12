@@ -433,30 +433,30 @@ public final class GetMigrationAssetResult {
             return this;
         }
         public GetMigrationAssetResult build() {
-            final var o = new GetMigrationAssetResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.dependedOnBies = dependedOnBies;
-            o.displayName = displayName;
-            o.id = id;
-            o.inventoryAssetId = inventoryAssetId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.migrationAssetDependsOns = migrationAssetDependsOns;
-            o.migrationAssetId = migrationAssetId;
-            o.migrationId = migrationId;
-            o.notifications = notifications;
-            o.parentSnapshot = parentSnapshot;
-            o.replicationCompartmentId = replicationCompartmentId;
-            o.replicationScheduleId = replicationScheduleId;
-            o.snapShotBucketName = snapShotBucketName;
-            o.snapshots = snapshots;
-            o.sourceAssetId = sourceAssetId;
-            o.state = state;
-            o.tenancyId = tenancyId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetMigrationAssetResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dependedOnBies = dependedOnBies;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.inventoryAssetId = inventoryAssetId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.migrationAssetDependsOns = migrationAssetDependsOns;
+            _resultValue.migrationAssetId = migrationAssetId;
+            _resultValue.migrationId = migrationId;
+            _resultValue.notifications = notifications;
+            _resultValue.parentSnapshot = parentSnapshot;
+            _resultValue.replicationCompartmentId = replicationCompartmentId;
+            _resultValue.replicationScheduleId = replicationScheduleId;
+            _resultValue.snapShotBucketName = snapShotBucketName;
+            _resultValue.snapshots = snapshots;
+            _resultValue.sourceAssetId = sourceAssetId;
+            _resultValue.state = state;
+            _resultValue.tenancyId = tenancyId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -66,10 +66,10 @@ public final class GetRepositoryFileLineLine {
             return this;
         }
         public GetRepositoryFileLineLine build() {
-            final var o = new GetRepositoryFileLineLine();
-            o.lineContent = lineContent;
-            o.lineNumber = lineNumber;
-            return o;
+            final var _resultValue = new GetRepositoryFileLineLine();
+            _resultValue.lineContent = lineContent;
+            _resultValue.lineNumber = lineNumber;
+            return _resultValue;
         }
     }
 }

@@ -67,10 +67,10 @@ public final class CertificateAuthorityCurrentVersionValidity {
             return this;
         }
         public CertificateAuthorityCurrentVersionValidity build() {
-            final var o = new CertificateAuthorityCurrentVersionValidity();
-            o.timeOfValidityNotAfter = timeOfValidityNotAfter;
-            o.timeOfValidityNotBefore = timeOfValidityNotBefore;
-            return o;
+            final var _resultValue = new CertificateAuthorityCurrentVersionValidity();
+            _resultValue.timeOfValidityNotAfter = timeOfValidityNotAfter;
+            _resultValue.timeOfValidityNotBefore = timeOfValidityNotBefore;
+            return _resultValue;
         }
     }
 }

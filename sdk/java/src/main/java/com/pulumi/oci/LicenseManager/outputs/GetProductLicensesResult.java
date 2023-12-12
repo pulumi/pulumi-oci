@@ -118,13 +118,13 @@ public final class GetProductLicensesResult {
             return productLicenseCollections(List.of(productLicenseCollections));
         }
         public GetProductLicensesResult build() {
-            final var o = new GetProductLicensesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-            o.productLicenseCollections = productLicenseCollections;
-            return o;
+            final var _resultValue = new GetProductLicensesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            _resultValue.productLicenseCollections = productLicenseCollections;
+            return _resultValue;
         }
     }
 }

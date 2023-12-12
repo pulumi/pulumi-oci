@@ -163,15 +163,15 @@ public final class GetExternalDatabaseConnectorsResult {
             return this;
         }
         public GetExternalDatabaseConnectorsResult build() {
-            final var o = new GetExternalDatabaseConnectorsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.externalDatabaseConnectors = externalDatabaseConnectors;
-            o.externalDatabaseId = externalDatabaseId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetExternalDatabaseConnectorsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalDatabaseConnectors = externalDatabaseConnectors;
+            _resultValue.externalDatabaseId = externalDatabaseId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

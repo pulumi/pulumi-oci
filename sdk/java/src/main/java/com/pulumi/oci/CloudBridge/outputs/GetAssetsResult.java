@@ -231,19 +231,19 @@ public final class GetAssetsResult {
             return this;
         }
         public GetAssetsResult build() {
-            final var o = new GetAssetsResult();
-            o.assetCollections = assetCollections;
-            o.assetId = assetId;
-            o.assetType = assetType;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.externalAssetKey = externalAssetKey;
-            o.filters = filters;
-            o.id = id;
-            o.inventoryId = inventoryId;
-            o.sourceKey = sourceKey;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAssetsResult();
+            _resultValue.assetCollections = assetCollections;
+            _resultValue.assetId = assetId;
+            _resultValue.assetType = assetType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalAssetKey = externalAssetKey;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.inventoryId = inventoryId;
+            _resultValue.sourceKey = sourceKey;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

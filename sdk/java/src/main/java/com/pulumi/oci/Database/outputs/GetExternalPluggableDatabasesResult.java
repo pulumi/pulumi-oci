@@ -163,15 +163,15 @@ public final class GetExternalPluggableDatabasesResult {
             return this;
         }
         public GetExternalPluggableDatabasesResult build() {
-            final var o = new GetExternalPluggableDatabasesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.externalContainerDatabaseId = externalContainerDatabaseId;
-            o.externalPluggableDatabases = externalPluggableDatabases;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetExternalPluggableDatabasesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalContainerDatabaseId = externalContainerDatabaseId;
+            _resultValue.externalPluggableDatabases = externalPluggableDatabases;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

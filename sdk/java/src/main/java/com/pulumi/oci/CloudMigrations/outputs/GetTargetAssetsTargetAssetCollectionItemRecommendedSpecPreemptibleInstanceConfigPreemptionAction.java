@@ -66,10 +66,10 @@ public final class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemp
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction build() {
-            final var o = new GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction();
-            o.preserveBootVolume = preserveBootVolume;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfigPreemptionAction();
+            _resultValue.preserveBootVolume = preserveBootVolume;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

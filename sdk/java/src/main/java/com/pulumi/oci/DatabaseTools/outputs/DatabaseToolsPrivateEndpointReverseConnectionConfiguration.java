@@ -51,9 +51,9 @@ public final class DatabaseToolsPrivateEndpointReverseConnectionConfiguration {
             return reverseConnectionsSourceIps(List.of(reverseConnectionsSourceIps));
         }
         public DatabaseToolsPrivateEndpointReverseConnectionConfiguration build() {
-            final var o = new DatabaseToolsPrivateEndpointReverseConnectionConfiguration();
-            o.reverseConnectionsSourceIps = reverseConnectionsSourceIps;
-            return o;
+            final var _resultValue = new DatabaseToolsPrivateEndpointReverseConnectionConfiguration();
+            _resultValue.reverseConnectionsSourceIps = reverseConnectionsSourceIps;
+            return _resultValue;
         }
     }
 }

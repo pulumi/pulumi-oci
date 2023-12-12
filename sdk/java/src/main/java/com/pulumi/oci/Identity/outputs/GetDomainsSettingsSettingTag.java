@@ -65,10 +65,10 @@ public final class GetDomainsSettingsSettingTag {
             return this;
         }
         public GetDomainsSettingsSettingTag build() {
-            final var o = new GetDomainsSettingsSettingTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSettingsSettingTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

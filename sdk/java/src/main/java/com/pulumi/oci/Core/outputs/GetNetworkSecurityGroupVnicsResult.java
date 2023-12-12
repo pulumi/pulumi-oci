@@ -97,12 +97,12 @@ public final class GetNetworkSecurityGroupVnicsResult {
             return networkSecurityGroupVnics(List.of(networkSecurityGroupVnics));
         }
         public GetNetworkSecurityGroupVnicsResult build() {
-            final var o = new GetNetworkSecurityGroupVnicsResult();
-            o.filters = filters;
-            o.id = id;
-            o.networkSecurityGroupId = networkSecurityGroupId;
-            o.networkSecurityGroupVnics = networkSecurityGroupVnics;
-            return o;
+            final var _resultValue = new GetNetworkSecurityGroupVnicsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkSecurityGroupId = networkSecurityGroupId;
+            _resultValue.networkSecurityGroupVnics = networkSecurityGroupVnics;
+            return _resultValue;
         }
     }
 }

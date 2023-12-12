@@ -65,10 +65,10 @@ public final class GetMaskingAnalyticItemDimension {
             return this;
         }
         public GetMaskingAnalyticItemDimension build() {
-            final var o = new GetMaskingAnalyticItemDimension();
-            o.policyId = policyId;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new GetMaskingAnalyticItemDimension();
+            _resultValue.policyId = policyId;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

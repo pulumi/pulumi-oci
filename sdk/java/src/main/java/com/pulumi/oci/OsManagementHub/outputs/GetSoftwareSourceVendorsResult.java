@@ -117,13 +117,13 @@ public final class GetSoftwareSourceVendorsResult {
             return softwareSourceVendorCollections(List.of(softwareSourceVendorCollections));
         }
         public GetSoftwareSourceVendorsResult build() {
-            final var o = new GetSoftwareSourceVendorsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.softwareSourceVendorCollections = softwareSourceVendorCollections;
-            return o;
+            final var _resultValue = new GetSoftwareSourceVendorsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.softwareSourceVendorCollections = softwareSourceVendorCollections;
+            return _resultValue;
         }
     }
 }

@@ -116,14 +116,14 @@ public final class GetSubscriptionProductResult {
             return this;
         }
         public GetSubscriptionProductResult build() {
-            final var o = new GetSubscriptionProductResult();
-            o.id = id;
-            o.items = items;
-            o.producttype = producttype;
-            o.subscriptionId = subscriptionId;
-            o.tenancyId = tenancyId;
-            o.usagePeriodKey = usagePeriodKey;
-            return o;
+            final var _resultValue = new GetSubscriptionProductResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.producttype = producttype;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.tenancyId = tenancyId;
+            _resultValue.usagePeriodKey = usagePeriodKey;
+            return _resultValue;
         }
     }
 }

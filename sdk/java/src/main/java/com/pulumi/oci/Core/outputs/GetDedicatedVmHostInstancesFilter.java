@@ -67,11 +67,11 @@ public final class GetDedicatedVmHostInstancesFilter {
             return values(List.of(values));
         }
         public GetDedicatedVmHostInstancesFilter build() {
-            final var o = new GetDedicatedVmHostInstancesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDedicatedVmHostInstancesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

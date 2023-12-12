@@ -84,11 +84,11 @@ public final class GetAutoScalingConfigurationPolicyExecutionSchedule {
             return this;
         }
         public GetAutoScalingConfigurationPolicyExecutionSchedule build() {
-            final var o = new GetAutoScalingConfigurationPolicyExecutionSchedule();
-            o.expression = expression;
-            o.timezone = timezone;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationPolicyExecutionSchedule();
+            _resultValue.expression = expression;
+            _resultValue.timezone = timezone;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

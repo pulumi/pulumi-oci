@@ -50,9 +50,9 @@ public final class GetSubscriptionRedeemableUsersRedeemableUserCollection {
             return items(List.of(items));
         }
         public GetSubscriptionRedeemableUsersRedeemableUserCollection build() {
-            final var o = new GetSubscriptionRedeemableUsersRedeemableUserCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSubscriptionRedeemableUsersRedeemableUserCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

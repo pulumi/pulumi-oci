@@ -68,9 +68,9 @@ public final class DomainsAuthenticationFactorSettingNotificationSettings {
             return this;
         }
         public DomainsAuthenticationFactorSettingNotificationSettings build() {
-            final var o = new DomainsAuthenticationFactorSettingNotificationSettings();
-            o.pullEnabled = pullEnabled;
-            return o;
+            final var _resultValue = new DomainsAuthenticationFactorSettingNotificationSettings();
+            _resultValue.pullEnabled = pullEnabled;
+            return _resultValue;
         }
     }
 }

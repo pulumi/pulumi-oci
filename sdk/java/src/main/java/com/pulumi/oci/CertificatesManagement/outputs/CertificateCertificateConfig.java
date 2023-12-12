@@ -226,18 +226,18 @@ public final class CertificateCertificateConfig {
             return this;
         }
         public CertificateCertificateConfig build() {
-            final var o = new CertificateCertificateConfig();
-            o.certificateProfileType = certificateProfileType;
-            o.configType = configType;
-            o.csrPem = csrPem;
-            o.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
-            o.keyAlgorithm = keyAlgorithm;
-            o.signatureAlgorithm = signatureAlgorithm;
-            o.subject = subject;
-            o.subjectAlternativeNames = subjectAlternativeNames;
-            o.validity = validity;
-            o.versionName = versionName;
-            return o;
+            final var _resultValue = new CertificateCertificateConfig();
+            _resultValue.certificateProfileType = certificateProfileType;
+            _resultValue.configType = configType;
+            _resultValue.csrPem = csrPem;
+            _resultValue.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
+            _resultValue.keyAlgorithm = keyAlgorithm;
+            _resultValue.signatureAlgorithm = signatureAlgorithm;
+            _resultValue.subject = subject;
+            _resultValue.subjectAlternativeNames = subjectAlternativeNames;
+            _resultValue.validity = validity;
+            _resultValue.versionName = versionName;
+            return _resultValue;
         }
     }
 }

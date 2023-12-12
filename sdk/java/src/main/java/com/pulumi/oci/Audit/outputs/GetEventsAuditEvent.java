@@ -184,16 +184,16 @@ public final class GetEventsAuditEvent {
             return this;
         }
         public GetEventsAuditEvent build() {
-            final var o = new GetEventsAuditEvent();
-            o.cloudEventsVersion = cloudEventsVersion;
-            o.contentType = contentType;
-            o.datas = datas;
-            o.eventId = eventId;
-            o.eventTime = eventTime;
-            o.eventType = eventType;
-            o.eventTypeVersion = eventTypeVersion;
-            o.source = source;
-            return o;
+            final var _resultValue = new GetEventsAuditEvent();
+            _resultValue.cloudEventsVersion = cloudEventsVersion;
+            _resultValue.contentType = contentType;
+            _resultValue.datas = datas;
+            _resultValue.eventId = eventId;
+            _resultValue.eventTime = eventTime;
+            _resultValue.eventType = eventType;
+            _resultValue.eventTypeVersion = eventTypeVersion;
+            _resultValue.source = source;
+            return _resultValue;
         }
     }
 }

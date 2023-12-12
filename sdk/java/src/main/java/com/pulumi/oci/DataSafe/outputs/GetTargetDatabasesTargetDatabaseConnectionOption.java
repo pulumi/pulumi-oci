@@ -88,11 +88,11 @@ public final class GetTargetDatabasesTargetDatabaseConnectionOption {
             return this;
         }
         public GetTargetDatabasesTargetDatabaseConnectionOption build() {
-            final var o = new GetTargetDatabasesTargetDatabaseConnectionOption();
-            o.connectionType = connectionType;
-            o.datasafePrivateEndpointId = datasafePrivateEndpointId;
-            o.onPremConnectorId = onPremConnectorId;
-            return o;
+            final var _resultValue = new GetTargetDatabasesTargetDatabaseConnectionOption();
+            _resultValue.connectionType = connectionType;
+            _resultValue.datasafePrivateEndpointId = datasafePrivateEndpointId;
+            _resultValue.onPremConnectorId = onPremConnectorId;
+            return _resultValue;
         }
     }
 }

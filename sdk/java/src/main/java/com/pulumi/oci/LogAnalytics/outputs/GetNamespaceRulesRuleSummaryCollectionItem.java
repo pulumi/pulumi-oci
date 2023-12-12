@@ -277,21 +277,21 @@ public final class GetNamespaceRulesRuleSummaryCollectionItem {
             return this;
         }
         public GetNamespaceRulesRuleSummaryCollectionItem build() {
-            final var o = new GetNamespaceRulesRuleSummaryCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.kind = kind;
-            o.lastExecutionStatus = lastExecutionStatus;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeLastExecuted = timeLastExecuted;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetNamespaceRulesRuleSummaryCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.kind = kind;
+            _resultValue.lastExecutionStatus = lastExecutionStatus;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastExecuted = timeLastExecuted;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

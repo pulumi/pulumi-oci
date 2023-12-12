@@ -42,9 +42,9 @@ public final class GetDetectorRecipesDetectorRecipeCollection {
             return items(List.of(items));
         }
         public GetDetectorRecipesDetectorRecipeCollection build() {
-            final var o = new GetDetectorRecipesDetectorRecipeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDetectorRecipesDetectorRecipeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

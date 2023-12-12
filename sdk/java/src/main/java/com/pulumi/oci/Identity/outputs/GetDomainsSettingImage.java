@@ -84,11 +84,11 @@ public final class GetDomainsSettingImage {
             return this;
         }
         public GetDomainsSettingImage build() {
-            final var o = new GetDomainsSettingImage();
-            o.display = display;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSettingImage();
+            _resultValue.display = display;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -75,11 +75,11 @@ public final class GetPathRouteSetsFilter {
             return values(List.of(values));
         }
         public GetPathRouteSetsFilter build() {
-            final var o = new GetPathRouteSetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPathRouteSetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

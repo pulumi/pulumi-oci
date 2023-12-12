@@ -67,11 +67,11 @@ public final class GetManagementAgentAvailableHistoriesFilter {
             return values(List.of(values));
         }
         public GetManagementAgentAvailableHistoriesFilter build() {
-            final var o = new GetManagementAgentAvailableHistoriesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagementAgentAvailableHistoriesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

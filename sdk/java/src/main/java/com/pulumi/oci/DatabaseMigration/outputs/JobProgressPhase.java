@@ -211,17 +211,17 @@ public final class JobProgressPhase {
             return this;
         }
         public JobProgressPhase build() {
-            final var o = new JobProgressPhase();
-            o.action = action;
-            o.durationInMs = durationInMs;
-            o.extracts = extracts;
-            o.isAdvisorReportAvailable = isAdvisorReportAvailable;
-            o.issue = issue;
-            o.logLocations = logLocations;
-            o.name = name;
-            o.progress = progress;
-            o.status = status;
-            return o;
+            final var _resultValue = new JobProgressPhase();
+            _resultValue.action = action;
+            _resultValue.durationInMs = durationInMs;
+            _resultValue.extracts = extracts;
+            _resultValue.isAdvisorReportAvailable = isAdvisorReportAvailable;
+            _resultValue.issue = issue;
+            _resultValue.logLocations = logLocations;
+            _resultValue.name = name;
+            _resultValue.progress = progress;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

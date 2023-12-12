@@ -89,11 +89,11 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem {
             return this;
         }
         public GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem build() {
-            final var o = new GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem();
-            o.count = count;
-            o.dimensions = dimensions;
-            o.metricName = metricName;
-            return o;
+            final var _resultValue = new GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItem();
+            _resultValue.count = count;
+            _resultValue.dimensions = dimensions;
+            _resultValue.metricName = metricName;
+            return _resultValue;
         }
     }
 }

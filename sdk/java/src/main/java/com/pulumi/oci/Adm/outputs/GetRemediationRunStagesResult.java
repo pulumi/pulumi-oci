@@ -144,14 +144,14 @@ public final class GetRemediationRunStagesResult {
             return this;
         }
         public GetRemediationRunStagesResult build() {
-            final var o = new GetRemediationRunStagesResult();
-            o.filters = filters;
-            o.id = id;
-            o.remediationRunId = remediationRunId;
-            o.remediationRunStageCollections = remediationRunStageCollections;
-            o.status = status;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetRemediationRunStagesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.remediationRunId = remediationRunId;
+            _resultValue.remediationRunStageCollections = remediationRunStageCollections;
+            _resultValue.status = status;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

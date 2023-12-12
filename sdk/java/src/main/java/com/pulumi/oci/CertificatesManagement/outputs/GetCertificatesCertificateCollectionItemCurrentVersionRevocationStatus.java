@@ -65,10 +65,10 @@ public final class GetCertificatesCertificateCollectionItemCurrentVersionRevocat
             return this;
         }
         public GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus build() {
-            final var o = new GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus();
-            o.revocationReason = revocationReason;
-            o.timeOfRevocation = timeOfRevocation;
-            return o;
+            final var _resultValue = new GetCertificatesCertificateCollectionItemCurrentVersionRevocationStatus();
+            _resultValue.revocationReason = revocationReason;
+            _resultValue.timeOfRevocation = timeOfRevocation;
+            return _resultValue;
         }
     }
 }

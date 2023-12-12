@@ -160,15 +160,15 @@ public final class GetApiKeysApiKey {
             return this;
         }
         public GetApiKeysApiKey build() {
-            final var o = new GetApiKeysApiKey();
-            o.fingerprint = fingerprint;
-            o.id = id;
-            o.inactiveStatus = inactiveStatus;
-            o.keyValue = keyValue;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetApiKeysApiKey();
+            _resultValue.fingerprint = fingerprint;
+            _resultValue.id = id;
+            _resultValue.inactiveStatus = inactiveStatus;
+            _resultValue.keyValue = keyValue;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

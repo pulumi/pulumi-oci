@@ -84,11 +84,11 @@ public final class GetIamWorkRequestErrorsIamWorkRequestError {
             return this;
         }
         public GetIamWorkRequestErrorsIamWorkRequestError build() {
-            final var o = new GetIamWorkRequestErrorsIamWorkRequestError();
-            o.code = code;
-            o.message = message;
-            o.timestamp = timestamp;
-            return o;
+            final var _resultValue = new GetIamWorkRequestErrorsIamWorkRequestError();
+            _resultValue.code = code;
+            _resultValue.message = message;
+            _resultValue.timestamp = timestamp;
+            return _resultValue;
         }
     }
 }

@@ -97,12 +97,12 @@ public final class GetBdsInstanceListOsPatchesResult {
             return osPatches(List.of(osPatches));
         }
         public GetBdsInstanceListOsPatchesResult build() {
-            final var o = new GetBdsInstanceListOsPatchesResult();
-            o.bdsInstanceId = bdsInstanceId;
-            o.filters = filters;
-            o.id = id;
-            o.osPatches = osPatches;
-            return o;
+            final var _resultValue = new GetBdsInstanceListOsPatchesResult();
+            _resultValue.bdsInstanceId = bdsInstanceId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.osPatches = osPatches;
+            return _resultValue;
         }
     }
 }

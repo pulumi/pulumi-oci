@@ -68,11 +68,11 @@ public final class GetPrivateApplicationsPrivateApplicationCollectionItemPackage
             return this;
         }
         public GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail build() {
-            final var o = new GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail();
-            o.packageType = packageType;
-            o.version = version;
-            o.zipFileBase64encoded = zipFileBase64encoded;
-            return o;
+            final var _resultValue = new GetPrivateApplicationsPrivateApplicationCollectionItemPackageDetail();
+            _resultValue.packageType = packageType;
+            _resultValue.version = version;
+            _resultValue.zipFileBase64encoded = zipFileBase64encoded;
+            return _resultValue;
         }
     }
 }

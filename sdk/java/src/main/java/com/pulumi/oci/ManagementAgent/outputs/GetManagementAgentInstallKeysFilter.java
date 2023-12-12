@@ -67,11 +67,11 @@ public final class GetManagementAgentInstallKeysFilter {
             return values(List.of(values));
         }
         public GetManagementAgentInstallKeysFilter build() {
-            final var o = new GetManagementAgentInstallKeysFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagementAgentInstallKeysFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

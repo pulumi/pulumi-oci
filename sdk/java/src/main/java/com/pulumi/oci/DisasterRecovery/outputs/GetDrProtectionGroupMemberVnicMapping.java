@@ -126,13 +126,13 @@ public final class GetDrProtectionGroupMemberVnicMapping {
             return this;
         }
         public GetDrProtectionGroupMemberVnicMapping build() {
-            final var o = new GetDrProtectionGroupMemberVnicMapping();
-            o.destinationNsgIdLists = destinationNsgIdLists;
-            o.destinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
-            o.destinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
-            o.destinationSubnetId = destinationSubnetId;
-            o.sourceVnicId = sourceVnicId;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupMemberVnicMapping();
+            _resultValue.destinationNsgIdLists = destinationNsgIdLists;
+            _resultValue.destinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
+            _resultValue.destinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
+            _resultValue.destinationSubnetId = destinationSubnetId;
+            _resultValue.sourceVnicId = sourceVnicId;
+            return _resultValue;
         }
     }
 }

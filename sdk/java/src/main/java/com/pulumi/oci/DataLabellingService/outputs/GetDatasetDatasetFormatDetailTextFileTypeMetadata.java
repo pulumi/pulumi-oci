@@ -142,14 +142,14 @@ public final class GetDatasetDatasetFormatDetailTextFileTypeMetadata {
             return this;
         }
         public GetDatasetDatasetFormatDetailTextFileTypeMetadata build() {
-            final var o = new GetDatasetDatasetFormatDetailTextFileTypeMetadata();
-            o.columnDelimiter = columnDelimiter;
-            o.columnIndex = columnIndex;
-            o.columnName = columnName;
-            o.escapeCharacter = escapeCharacter;
-            o.formatType = formatType;
-            o.lineDelimiter = lineDelimiter;
-            return o;
+            final var _resultValue = new GetDatasetDatasetFormatDetailTextFileTypeMetadata();
+            _resultValue.columnDelimiter = columnDelimiter;
+            _resultValue.columnIndex = columnIndex;
+            _resultValue.columnName = columnName;
+            _resultValue.escapeCharacter = escapeCharacter;
+            _resultValue.formatType = formatType;
+            _resultValue.lineDelimiter = lineDelimiter;
+            return _resultValue;
         }
     }
 }

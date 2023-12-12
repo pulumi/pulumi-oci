@@ -65,10 +65,10 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionf
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch build() {
-            final var o = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch();
-            o.formUrl = formUrl;
-            o.formUrlMatchType = formUrlMatchType;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatch();
+            _resultValue.formUrl = formUrl;
+            _resultValue.formUrlMatchType = formUrlMatchType;
+            return _resultValue;
         }
     }
 }

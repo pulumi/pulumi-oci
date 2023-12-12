@@ -50,9 +50,9 @@ public final class BuildRunBuildRunArguments {
             return items(List.of(items));
         }
         public BuildRunBuildRunArguments build() {
-            final var o = new BuildRunBuildRunArguments();
-            o.items = items;
-            return o;
+            final var _resultValue = new BuildRunBuildRunArguments();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

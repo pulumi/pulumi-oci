@@ -127,13 +127,13 @@ public final class GetAlertAnalyticItem {
             return this;
         }
         public GetAlertAnalyticItem build() {
-            final var o = new GetAlertAnalyticItem();
-            o.count = count;
-            o.dimensions = dimensions;
-            o.metricName = metricName;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetAlertAnalyticItem();
+            _resultValue.count = count;
+            _resultValue.dimensions = dimensions;
+            _resultValue.metricName = metricName;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

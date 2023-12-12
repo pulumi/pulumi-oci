@@ -95,12 +95,12 @@ public final class GetTopUtilizedProductLicensesResult {
             return items(List.of(items));
         }
         public GetTopUtilizedProductLicensesResult build() {
-            final var o = new GetTopUtilizedProductLicensesResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetTopUtilizedProductLicensesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

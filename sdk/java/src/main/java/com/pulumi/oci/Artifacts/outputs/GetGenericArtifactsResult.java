@@ -220,18 +220,18 @@ public final class GetGenericArtifactsResult {
             return this;
         }
         public GetGenericArtifactsResult build() {
-            final var o = new GetGenericArtifactsResult();
-            o.artifactPath = artifactPath;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.genericArtifactCollections = genericArtifactCollections;
-            o.id = id;
-            o.repositoryId = repositoryId;
-            o.sha256 = sha256;
-            o.state = state;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetGenericArtifactsResult();
+            _resultValue.artifactPath = artifactPath;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.genericArtifactCollections = genericArtifactCollections;
+            _resultValue.id = id;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.sha256 = sha256;
+            _resultValue.state = state;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

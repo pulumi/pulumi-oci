@@ -152,11 +152,11 @@ public final class DomainsSelfRegistrationProfileEmailTemplate {
             return this;
         }
         public DomainsSelfRegistrationProfileEmailTemplate build() {
-            final var o = new DomainsSelfRegistrationProfileEmailTemplate();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsSelfRegistrationProfileEmailTemplate();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

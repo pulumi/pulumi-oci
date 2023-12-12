@@ -68,10 +68,10 @@ public final class DbSystemManagementPolicy {
             return this;
         }
         public DbSystemManagementPolicy build() {
-            final var o = new DbSystemManagementPolicy();
-            o.backupPolicy = backupPolicy;
-            o.maintenanceWindowStart = maintenanceWindowStart;
-            return o;
+            final var _resultValue = new DbSystemManagementPolicy();
+            _resultValue.backupPolicy = backupPolicy;
+            _resultValue.maintenanceWindowStart = maintenanceWindowStart;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetApplicationDriverShapeConfig {
             return this;
         }
         public GetApplicationDriverShapeConfig build() {
-            final var o = new GetApplicationDriverShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetApplicationDriverShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

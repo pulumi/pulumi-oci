@@ -88,11 +88,11 @@ public final class InstanceConfigurationInstanceDetailsBlockVolume {
             return this;
         }
         public InstanceConfigurationInstanceDetailsBlockVolume build() {
-            final var o = new InstanceConfigurationInstanceDetailsBlockVolume();
-            o.attachDetails = attachDetails;
-            o.createDetails = createDetails;
-            o.volumeId = volumeId;
-            return o;
+            final var _resultValue = new InstanceConfigurationInstanceDetailsBlockVolume();
+            _resultValue.attachDetails = attachDetails;
+            _resultValue.createDetails = createDetails;
+            _resultValue.volumeId = volumeId;
+            return _resultValue;
         }
     }
 }

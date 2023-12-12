@@ -49,10 +49,10 @@ public final class GetBucketSummariesBucketSummaryRetentionRuleDuration {
             return this;
         }
         public GetBucketSummariesBucketSummaryRetentionRuleDuration build() {
-            final var o = new GetBucketSummariesBucketSummaryRetentionRuleDuration();
-            o.timeAmount = timeAmount;
-            o.timeUnit = timeUnit;
-            return o;
+            final var _resultValue = new GetBucketSummariesBucketSummaryRetentionRuleDuration();
+            _resultValue.timeAmount = timeAmount;
+            _resultValue.timeUnit = timeUnit;
+            return _resultValue;
         }
     }
 }

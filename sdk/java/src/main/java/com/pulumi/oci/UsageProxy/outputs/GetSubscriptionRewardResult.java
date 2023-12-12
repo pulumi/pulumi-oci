@@ -131,13 +131,13 @@ public final class GetSubscriptionRewardResult {
             return this;
         }
         public GetSubscriptionRewardResult build() {
-            final var o = new GetSubscriptionRewardResult();
-            o.id = id;
-            o.items = items;
-            o.subscriptionId = subscriptionId;
-            o.summaries = summaries;
-            o.tenancyId = tenancyId;
-            return o;
+            final var _resultValue = new GetSubscriptionRewardResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.summaries = summaries;
+            _resultValue.tenancyId = tenancyId;
+            return _resultValue;
         }
     }
 }

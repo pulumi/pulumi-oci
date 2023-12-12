@@ -85,11 +85,11 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemInstanceDet
             return this;
         }
         public GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail build() {
-            final var o = new GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail();
-            o.hostName = hostName;
-            o.instanceName = instanceName;
-            o.instanceNumber = instanceNumber;
-            return o;
+            final var _resultValue = new GetExternalDatabasesExternalDatabaseCollectionItemInstanceDetail();
+            _resultValue.hostName = hostName;
+            _resultValue.instanceName = instanceName;
+            _resultValue.instanceNumber = instanceNumber;
+            return _resultValue;
         }
     }
 }

@@ -164,11 +164,11 @@ public final class DomainsCloudGateOauthClient {
             return this;
         }
         public DomainsCloudGateOauthClient build() {
-            final var o = new DomainsCloudGateOauthClient();
-            o.clientId = clientId;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsCloudGateOauthClient();
+            _resultValue.clientId = clientId;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

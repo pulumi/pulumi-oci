@@ -50,9 +50,9 @@ public final class GetHistoriesHistoryCollection {
             return items(List.of(items));
         }
         public GetHistoriesHistoryCollection build() {
-            final var o = new GetHistoriesHistoryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetHistoriesHistoryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

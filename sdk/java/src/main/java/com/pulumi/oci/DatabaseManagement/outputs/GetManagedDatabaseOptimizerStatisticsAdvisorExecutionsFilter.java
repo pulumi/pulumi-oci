@@ -75,11 +75,11 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter 
             return values(List.of(values));
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

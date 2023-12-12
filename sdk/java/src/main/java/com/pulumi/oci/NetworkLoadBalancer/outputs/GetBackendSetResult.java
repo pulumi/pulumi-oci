@@ -184,17 +184,17 @@ public final class GetBackendSetResult {
             return this;
         }
         public GetBackendSetResult build() {
-            final var o = new GetBackendSetResult();
-            o.backendSetName = backendSetName;
-            o.backends = backends;
-            o.healthCheckers = healthCheckers;
-            o.id = id;
-            o.ipVersion = ipVersion;
-            o.isPreserveSource = isPreserveSource;
-            o.name = name;
-            o.networkLoadBalancerId = networkLoadBalancerId;
-            o.policy = policy;
-            return o;
+            final var _resultValue = new GetBackendSetResult();
+            _resultValue.backendSetName = backendSetName;
+            _resultValue.backends = backends;
+            _resultValue.healthCheckers = healthCheckers;
+            _resultValue.id = id;
+            _resultValue.ipVersion = ipVersion;
+            _resultValue.isPreserveSource = isPreserveSource;
+            _resultValue.name = name;
+            _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            _resultValue.policy = policy;
+            return _resultValue;
         }
     }
 }

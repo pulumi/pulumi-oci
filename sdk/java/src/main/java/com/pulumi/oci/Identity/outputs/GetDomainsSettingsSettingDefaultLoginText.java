@@ -65,10 +65,10 @@ public final class GetDomainsSettingsSettingDefaultLoginText {
             return this;
         }
         public GetDomainsSettingsSettingDefaultLoginText build() {
-            final var o = new GetDomainsSettingsSettingDefaultLoginText();
-            o.locale = locale;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSettingsSettingDefaultLoginText();
+            _resultValue.locale = locale;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

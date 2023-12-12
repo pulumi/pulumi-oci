@@ -91,11 +91,11 @@ public final class TargetAssetRecommendedSpecShapeConfig {
             return this;
         }
         public TargetAssetRecommendedSpecShapeConfig build() {
-            final var o = new TargetAssetRecommendedSpecShapeConfig();
-            o.baselineOcpuUtilization = baselineOcpuUtilization;
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new TargetAssetRecommendedSpecShapeConfig();
+            _resultValue.baselineOcpuUtilization = baselineOcpuUtilization;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

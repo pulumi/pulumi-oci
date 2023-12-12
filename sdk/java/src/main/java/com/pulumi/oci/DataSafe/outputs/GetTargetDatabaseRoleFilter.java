@@ -67,11 +67,11 @@ public final class GetTargetDatabaseRoleFilter {
             return values(List.of(values));
         }
         public GetTargetDatabaseRoleFilter build() {
-            final var o = new GetTargetDatabaseRoleFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetTargetDatabaseRoleFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

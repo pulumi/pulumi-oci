@@ -109,13 +109,13 @@ public final class GetContainerInstanceShapesResult {
             return this;
         }
         public GetContainerInstanceShapesResult build() {
-            final var o = new GetContainerInstanceShapesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.containerInstanceShapeCollections = containerInstanceShapeCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetContainerInstanceShapesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.containerInstanceShapeCollections = containerInstanceShapeCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

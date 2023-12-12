@@ -71,10 +71,10 @@ public final class CertificateAuthorityCertificateRevocationListDetails {
             return this;
         }
         public CertificateAuthorityCertificateRevocationListDetails build() {
-            final var o = new CertificateAuthorityCertificateRevocationListDetails();
-            o.customFormattedUrls = customFormattedUrls;
-            o.objectStorageConfig = objectStorageConfig;
-            return o;
+            final var _resultValue = new CertificateAuthorityCertificateRevocationListDetails();
+            _resultValue.customFormattedUrls = customFormattedUrls;
+            _resultValue.objectStorageConfig = objectStorageConfig;
+            return _resultValue;
         }
     }
 }

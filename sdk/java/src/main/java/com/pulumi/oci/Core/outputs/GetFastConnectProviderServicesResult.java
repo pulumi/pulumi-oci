@@ -97,12 +97,12 @@ public final class GetFastConnectProviderServicesResult {
             return this;
         }
         public GetFastConnectProviderServicesResult build() {
-            final var o = new GetFastConnectProviderServicesResult();
-            o.compartmentId = compartmentId;
-            o.fastConnectProviderServices = fastConnectProviderServices;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetFastConnectProviderServicesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.fastConnectProviderServices = fastConnectProviderServices;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

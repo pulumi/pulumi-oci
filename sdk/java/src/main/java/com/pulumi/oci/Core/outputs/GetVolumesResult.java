@@ -182,16 +182,16 @@ public final class GetVolumesResult {
             return volumes(List.of(volumes));
         }
         public GetVolumesResult build() {
-            final var o = new GetVolumesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.volumeGroupId = volumeGroupId;
-            o.volumes = volumes;
-            return o;
+            final var _resultValue = new GetVolumesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.volumeGroupId = volumeGroupId;
+            _resultValue.volumes = volumes;
+            return _resultValue;
         }
     }
 }

@@ -98,11 +98,11 @@ public final class GetRuleSetItemCondition {
             return this;
         }
         public GetRuleSetItemCondition build() {
-            final var o = new GetRuleSetItemCondition();
-            o.attributeName = attributeName;
-            o.attributeValue = attributeValue;
-            o.operator = operator;
-            return o;
+            final var _resultValue = new GetRuleSetItemCondition();
+            _resultValue.attributeName = attributeName;
+            _resultValue.attributeValue = attributeValue;
+            _resultValue.operator = operator;
+            return _resultValue;
         }
     }
 }

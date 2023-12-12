@@ -84,11 +84,11 @@ public final class GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineP
             return this;
         }
         public GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItem build() {
-            final var o = new GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItem();
-            o.defaultValue = defaultValue;
-            o.description = description;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterItem();
+            _resultValue.defaultValue = defaultValue;
+            _resultValue.description = description;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

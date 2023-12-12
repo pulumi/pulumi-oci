@@ -65,10 +65,10 @@ public final class GetTraceSpanLogSpanLog {
             return this;
         }
         public GetTraceSpanLogSpanLog build() {
-            final var o = new GetTraceSpanLogSpanLog();
-            o.logKey = logKey;
-            o.logValue = logValue;
-            return o;
+            final var _resultValue = new GetTraceSpanLogSpanLog();
+            _resultValue.logKey = logKey;
+            _resultValue.logValue = logValue;
+            return _resultValue;
         }
     }
 }

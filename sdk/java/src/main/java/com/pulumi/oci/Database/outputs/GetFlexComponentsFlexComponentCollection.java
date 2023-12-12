@@ -42,9 +42,9 @@ public final class GetFlexComponentsFlexComponentCollection {
             return items(List.of(items));
         }
         public GetFlexComponentsFlexComponentCollection build() {
-            final var o = new GetFlexComponentsFlexComponentCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFlexComponentsFlexComponentCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

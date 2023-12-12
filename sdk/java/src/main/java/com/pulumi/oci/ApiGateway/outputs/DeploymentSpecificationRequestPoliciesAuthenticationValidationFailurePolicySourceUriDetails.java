@@ -73,10 +73,10 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
             return this;
         }
         public DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetails build() {
-            final var o = new DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetails();
-            o.type = type;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetails();
+            _resultValue.type = type;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

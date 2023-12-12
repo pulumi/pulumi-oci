@@ -103,12 +103,12 @@ public final class GetLifecycleEnvironmentStageSoftwareSourceId {
             return this;
         }
         public GetLifecycleEnvironmentStageSoftwareSourceId build() {
-            final var o = new GetLifecycleEnvironmentStageSoftwareSourceId();
-            o.description = description;
-            o.displayName = displayName;
-            o.id = id;
-            o.softwareSourceType = softwareSourceType;
-            return o;
+            final var _resultValue = new GetLifecycleEnvironmentStageSoftwareSourceId();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.softwareSourceType = softwareSourceType;
+            return _resultValue;
         }
     }
 }

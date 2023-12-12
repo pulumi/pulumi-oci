@@ -42,9 +42,9 @@ public final class GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationC
             return items(List.of(items));
         }
         public GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection build() {
-            final var o = new GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

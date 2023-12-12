@@ -185,16 +185,16 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpass
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser();
-            o.applicablePasswordPolicies = applicablePasswordPolicies;
-            o.cantChange = cantChange;
-            o.cantExpire = cantExpire;
-            o.expired = expired;
-            o.lastFailedValidationDate = lastFailedValidationDate;
-            o.lastSuccessfulSetDate = lastSuccessfulSetDate;
-            o.lastSuccessfulValidationDate = lastSuccessfulValidationDate;
-            o.mustChange = mustChange;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser();
+            _resultValue.applicablePasswordPolicies = applicablePasswordPolicies;
+            _resultValue.cantChange = cantChange;
+            _resultValue.cantExpire = cantExpire;
+            _resultValue.expired = expired;
+            _resultValue.lastFailedValidationDate = lastFailedValidationDate;
+            _resultValue.lastSuccessfulSetDate = lastSuccessfulSetDate;
+            _resultValue.lastSuccessfulValidationDate = lastSuccessfulValidationDate;
+            _resultValue.mustChange = mustChange;
+            return _resultValue;
         }
     }
 }

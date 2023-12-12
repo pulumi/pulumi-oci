@@ -107,12 +107,12 @@ public final class StreamPoolKafkaSettings {
             return this;
         }
         public StreamPoolKafkaSettings build() {
-            final var o = new StreamPoolKafkaSettings();
-            o.autoCreateTopicsEnable = autoCreateTopicsEnable;
-            o.bootstrapServers = bootstrapServers;
-            o.logRetentionHours = logRetentionHours;
-            o.numPartitions = numPartitions;
-            return o;
+            final var _resultValue = new StreamPoolKafkaSettings();
+            _resultValue.autoCreateTopicsEnable = autoCreateTopicsEnable;
+            _resultValue.bootstrapServers = bootstrapServers;
+            _resultValue.logRetentionHours = logRetentionHours;
+            _resultValue.numPartitions = numPartitions;
+            return _resultValue;
         }
     }
 }

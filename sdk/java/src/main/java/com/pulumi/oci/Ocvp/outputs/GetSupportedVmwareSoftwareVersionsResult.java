@@ -128,14 +128,14 @@ public final class GetSupportedVmwareSoftwareVersionsResult {
             return this;
         }
         public GetSupportedVmwareSoftwareVersionsResult build() {
-            final var o = new GetSupportedVmwareSoftwareVersionsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.hostShapeName = hostShapeName;
-            o.id = id;
-            o.items = items;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetSupportedVmwareSoftwareVersionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.hostShapeName = hostShapeName;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

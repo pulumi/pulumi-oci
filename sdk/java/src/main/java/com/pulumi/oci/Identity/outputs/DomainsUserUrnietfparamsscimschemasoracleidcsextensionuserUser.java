@@ -1057,32 +1057,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
             return userTokens(List.of(userTokens));
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser();
-            o.accountRecoveryRequired = accountRecoveryRequired;
-            o.accounts = accounts;
-            o.appRoles = appRoles;
-            o.applicableAuthenticationTargetApps = applicableAuthenticationTargetApps;
-            o.bypassNotification = bypassNotification;
-            o.creationMechanism = creationMechanism;
-            o.delegatedAuthenticationTargetApp = delegatedAuthenticationTargetApp;
-            o.doNotShowGettingStarted = doNotShowGettingStarted;
-            o.grants = grants;
-            o.groupMembershipLastModified = groupMembershipLastModified;
-            o.idcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
-            o.isAccountRecoveryEnrolled = isAccountRecoveryEnrolled;
-            o.isAuthenticationDelegated = isAuthenticationDelegated;
-            o.isFederatedUser = isFederatedUser;
-            o.isGroupMembershipNormalized = isGroupMembershipNormalized;
-            o.isGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
-            o.notificationEmailTemplateId = notificationEmailTemplateId;
-            o.preferredUiLandingPage = preferredUiLandingPage;
-            o.status = status;
-            o.supportAccounts = supportAccounts;
-            o.syncedFromApp = syncedFromApp;
-            o.userFlowControlledByExternalClient = userFlowControlledByExternalClient;
-            o.userProvider = userProvider;
-            o.userTokens = userTokens;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser();
+            _resultValue.accountRecoveryRequired = accountRecoveryRequired;
+            _resultValue.accounts = accounts;
+            _resultValue.appRoles = appRoles;
+            _resultValue.applicableAuthenticationTargetApps = applicableAuthenticationTargetApps;
+            _resultValue.bypassNotification = bypassNotification;
+            _resultValue.creationMechanism = creationMechanism;
+            _resultValue.delegatedAuthenticationTargetApp = delegatedAuthenticationTargetApp;
+            _resultValue.doNotShowGettingStarted = doNotShowGettingStarted;
+            _resultValue.grants = grants;
+            _resultValue.groupMembershipLastModified = groupMembershipLastModified;
+            _resultValue.idcsAppRolesLimitedToGroups = idcsAppRolesLimitedToGroups;
+            _resultValue.isAccountRecoveryEnrolled = isAccountRecoveryEnrolled;
+            _resultValue.isAuthenticationDelegated = isAuthenticationDelegated;
+            _resultValue.isFederatedUser = isFederatedUser;
+            _resultValue.isGroupMembershipNormalized = isGroupMembershipNormalized;
+            _resultValue.isGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
+            _resultValue.notificationEmailTemplateId = notificationEmailTemplateId;
+            _resultValue.preferredUiLandingPage = preferredUiLandingPage;
+            _resultValue.status = status;
+            _resultValue.supportAccounts = supportAccounts;
+            _resultValue.syncedFromApp = syncedFromApp;
+            _resultValue.userFlowControlledByExternalClient = userFlowControlledByExternalClient;
+            _resultValue.userProvider = userProvider;
+            _resultValue.userTokens = userTokens;
+            return _resultValue;
         }
     }
 }

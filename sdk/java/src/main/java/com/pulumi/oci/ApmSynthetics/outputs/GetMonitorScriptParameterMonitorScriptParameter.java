@@ -65,10 +65,10 @@ public final class GetMonitorScriptParameterMonitorScriptParameter {
             return this;
         }
         public GetMonitorScriptParameterMonitorScriptParameter build() {
-            final var o = new GetMonitorScriptParameterMonitorScriptParameter();
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            return o;
+            final var _resultValue = new GetMonitorScriptParameterMonitorScriptParameter();
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            return _resultValue;
         }
     }
 }

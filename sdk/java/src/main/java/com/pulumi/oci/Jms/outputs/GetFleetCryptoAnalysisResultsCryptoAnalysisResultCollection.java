@@ -42,9 +42,9 @@ public final class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection {
             return items(List.of(items));
         }
         public GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection build() {
-            final var o = new GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

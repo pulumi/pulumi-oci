@@ -147,15 +147,15 @@ public final class GetFleetJavaMigrationAnalysisResultsResult {
             return this;
         }
         public GetFleetJavaMigrationAnalysisResultsResult build() {
-            final var o = new GetFleetJavaMigrationAnalysisResultsResult();
-            o.filters = filters;
-            o.fleetId = fleetId;
-            o.id = id;
-            o.javaMigrationAnalysisResultCollections = javaMigrationAnalysisResultCollections;
-            o.managedInstanceId = managedInstanceId;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetFleetJavaMigrationAnalysisResultsResult();
+            _resultValue.filters = filters;
+            _resultValue.fleetId = fleetId;
+            _resultValue.id = id;
+            _resultValue.javaMigrationAnalysisResultCollections = javaMigrationAnalysisResultCollections;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

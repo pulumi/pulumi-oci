@@ -93,11 +93,11 @@ public final class ScriptParameterScriptParameter {
             return this;
         }
         public ScriptParameterScriptParameter build() {
-            final var o = new ScriptParameterScriptParameter();
-            o.isSecret = isSecret;
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            return o;
+            final var _resultValue = new ScriptParameterScriptParameter();
+            _resultValue.isSecret = isSecret;
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            return _resultValue;
         }
     }
 }

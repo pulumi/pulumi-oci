@@ -84,11 +84,11 @@ public final class GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTun
             return this;
         }
         public GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail build() {
-            final var o = new GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail();
-            o.ipsecConnectionId = ipsecConnectionId;
-            o.tunnelId = tunnelId;
-            o.tunnelType = tunnelType;
-            return o;
+            final var _resultValue = new GetVirtualCircuitAssociatedTunnelsVirtualCircuitAssociatedTunnelDetail();
+            _resultValue.ipsecConnectionId = ipsecConnectionId;
+            _resultValue.tunnelId = tunnelId;
+            _resultValue.tunnelType = tunnelType;
+            return _resultValue;
         }
     }
 }

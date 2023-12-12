@@ -132,13 +132,13 @@ public final class GetAddressRuleTaxField {
             return this;
         }
         public GetAddressRuleTaxField build() {
-            final var o = new GetAddressRuleTaxField();
-            o.formats = formats;
-            o.isRequired = isRequired;
-            o.labels = labels;
-            o.language = language;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAddressRuleTaxField();
+            _resultValue.formats = formats;
+            _resultValue.isRequired = isRequired;
+            _resultValue.labels = labels;
+            _resultValue.language = language;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

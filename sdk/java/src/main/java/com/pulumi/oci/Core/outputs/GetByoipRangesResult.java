@@ -144,14 +144,14 @@ public final class GetByoipRangesResult {
             return this;
         }
         public GetByoipRangesResult build() {
-            final var o = new GetByoipRangesResult();
-            o.byoipRangeCollections = byoipRangeCollections;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetByoipRangesResult();
+            _resultValue.byoipRangeCollections = byoipRangeCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

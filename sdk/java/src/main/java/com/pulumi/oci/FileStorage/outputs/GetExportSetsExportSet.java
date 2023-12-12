@@ -209,18 +209,18 @@ public final class GetExportSetsExportSet {
             return this;
         }
         public GetExportSetsExportSet build() {
-            final var o = new GetExportSetsExportSet();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.id = id;
-            o.maxFsStatBytes = maxFsStatBytes;
-            o.maxFsStatFiles = maxFsStatFiles;
-            o.mountTargetId = mountTargetId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetExportSetsExportSet();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.maxFsStatBytes = maxFsStatBytes;
+            _resultValue.maxFsStatFiles = maxFsStatFiles;
+            _resultValue.mountTargetId = mountTargetId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

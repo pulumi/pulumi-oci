@@ -155,15 +155,15 @@ public final class GetViewsResult {
             return views(List.of(views));
         }
         public GetViewsResult build() {
-            final var o = new GetViewsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.scope = scope;
-            o.state = state;
-            o.views = views;
-            return o;
+            final var _resultValue = new GetViewsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.scope = scope;
+            _resultValue.state = state;
+            _resultValue.views = views;
+            return _resultValue;
         }
     }
 }

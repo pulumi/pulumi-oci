@@ -67,10 +67,10 @@ public final class GetClustersClusterOptionServiceLbConfig {
             return this;
         }
         public GetClustersClusterOptionServiceLbConfig build() {
-            final var o = new GetClustersClusterOptionServiceLbConfig();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            return o;
+            final var _resultValue = new GetClustersClusterOptionServiceLbConfig();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            return _resultValue;
         }
     }
 }

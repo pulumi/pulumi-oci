@@ -335,24 +335,24 @@ public final class GetPublicationsPublication {
             return this;
         }
         public GetPublicationsPublication build() {
-            final var o = new GetPublicationsPublication();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.icons = icons;
-            o.id = id;
-            o.isAgreementAcknowledged = isAgreementAcknowledged;
-            o.listingType = listingType;
-            o.longDescription = longDescription;
-            o.name = name;
-            o.packageDetails = packageDetails;
-            o.packageType = packageType;
-            o.shortDescription = shortDescription;
-            o.state = state;
-            o.supportContacts = supportContacts;
-            o.supportedOperatingSystems = supportedOperatingSystems;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetPublicationsPublication();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.icons = icons;
+            _resultValue.id = id;
+            _resultValue.isAgreementAcknowledged = isAgreementAcknowledged;
+            _resultValue.listingType = listingType;
+            _resultValue.longDescription = longDescription;
+            _resultValue.name = name;
+            _resultValue.packageDetails = packageDetails;
+            _resultValue.packageType = packageType;
+            _resultValue.shortDescription = shortDescription;
+            _resultValue.state = state;
+            _resultValue.supportContacts = supportContacts;
+            _resultValue.supportedOperatingSystems = supportedOperatingSystems;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -73,10 +73,10 @@ public final class ManagedInstanceManagementParentSoftwareSource {
             return this;
         }
         public ManagedInstanceManagementParentSoftwareSource build() {
-            final var o = new ManagedInstanceManagementParentSoftwareSource();
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new ManagedInstanceManagementParentSoftwareSource();
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

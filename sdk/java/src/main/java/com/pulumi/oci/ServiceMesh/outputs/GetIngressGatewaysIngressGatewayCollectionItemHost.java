@@ -92,11 +92,11 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHost {
             return this;
         }
         public GetIngressGatewaysIngressGatewayCollectionItemHost build() {
-            final var o = new GetIngressGatewaysIngressGatewayCollectionItemHost();
-            o.hostnames = hostnames;
-            o.listeners = listeners;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetIngressGatewaysIngressGatewayCollectionItemHost();
+            _resultValue.hostnames = hostnames;
+            _resultValue.listeners = listeners;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

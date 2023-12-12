@@ -121,13 +121,13 @@ public final class GetAwrHubAwrSourcesSummaryResult {
             return this;
         }
         public GetAwrHubAwrSourcesSummaryResult build() {
-            final var o = new GetAwrHubAwrSourcesSummaryResult();
-            o.awrHubId = awrHubId;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.items = items;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAwrHubAwrSourcesSummaryResult();
+            _resultValue.awrHubId = awrHubId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

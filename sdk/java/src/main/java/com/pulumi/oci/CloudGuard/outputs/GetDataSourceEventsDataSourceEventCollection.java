@@ -50,9 +50,9 @@ public final class GetDataSourceEventsDataSourceEventCollection {
             return items(List.of(items));
         }
         public GetDataSourceEventsDataSourceEventCollection build() {
-            final var o = new GetDataSourceEventsDataSourceEventCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDataSourceEventsDataSourceEventCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

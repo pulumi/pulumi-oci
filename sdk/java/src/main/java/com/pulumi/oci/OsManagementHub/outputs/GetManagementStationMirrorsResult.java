@@ -142,15 +142,15 @@ public final class GetManagementStationMirrorsResult {
             return mirrorsCollections(List.of(mirrorsCollections));
         }
         public GetManagementStationMirrorsResult build() {
-            final var o = new GetManagementStationMirrorsResult();
-            o.displayName = displayName;
-            o.displayNameContains = displayNameContains;
-            o.filters = filters;
-            o.id = id;
-            o.managementStationId = managementStationId;
-            o.mirrorStates = mirrorStates;
-            o.mirrorsCollections = mirrorsCollections;
-            return o;
+            final var _resultValue = new GetManagementStationMirrorsResult();
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managementStationId = managementStationId;
+            _resultValue.mirrorStates = mirrorStates;
+            _resultValue.mirrorsCollections = mirrorsCollections;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetDeployStagesDeployStageCollectionItemRollbackPolicy {
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemRollbackPolicy build() {
-            final var o = new GetDeployStagesDeployStageCollectionItemRollbackPolicy();
-            o.policyType = policyType;
-            return o;
+            final var _resultValue = new GetDeployStagesDeployStageCollectionItemRollbackPolicy();
+            _resultValue.policyType = policyType;
+            return _resultValue;
         }
     }
 }

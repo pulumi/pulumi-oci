@@ -46,9 +46,9 @@ public final class GetNetworkLoadBalancerReservedIp {
             return this;
         }
         public GetNetworkLoadBalancerReservedIp build() {
-            final var o = new GetNetworkLoadBalancerReservedIp();
-            o.id = id;
-            return o;
+            final var _resultValue = new GetNetworkLoadBalancerReservedIp();
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -164,14 +164,14 @@ public final class MysqlDbSystemBackupPolicy {
             return this;
         }
         public MysqlDbSystemBackupPolicy build() {
-            final var o = new MysqlDbSystemBackupPolicy();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.isEnabled = isEnabled;
-            o.pitrPolicy = pitrPolicy;
-            o.retentionInDays = retentionInDays;
-            o.windowStartTime = windowStartTime;
-            return o;
+            final var _resultValue = new MysqlDbSystemBackupPolicy();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.pitrPolicy = pitrPolicy;
+            _resultValue.retentionInDays = retentionInDays;
+            _resultValue.windowStartTime = windowStartTime;
+            return _resultValue;
         }
     }
 }

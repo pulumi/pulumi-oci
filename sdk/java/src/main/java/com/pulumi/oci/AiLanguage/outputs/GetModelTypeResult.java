@@ -99,12 +99,12 @@ public final class GetModelTypeResult {
             return versions(List.of(versions));
         }
         public GetModelTypeResult build() {
-            final var o = new GetModelTypeResult();
-            o.capabilities = capabilities;
-            o.id = id;
-            o.modelType = modelType;
-            o.versions = versions;
-            return o;
+            final var _resultValue = new GetModelTypeResult();
+            _resultValue.capabilities = capabilities;
+            _resultValue.id = id;
+            _resultValue.modelType = modelType;
+            _resultValue.versions = versions;
+            return _resultValue;
         }
     }
 }

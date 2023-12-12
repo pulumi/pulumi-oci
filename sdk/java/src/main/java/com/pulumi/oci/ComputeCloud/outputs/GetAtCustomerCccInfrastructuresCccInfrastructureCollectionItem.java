@@ -441,29 +441,29 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
             return upgradeInformations(List.of(upgradeInformations));
         }
         public GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem build() {
-            final var o = new GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem();
-            o.cccUpgradeScheduleId = cccUpgradeScheduleId;
-            o.compartmentId = compartmentId;
-            o.connectionDetails = connectionDetails;
-            o.connectionState = connectionState;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.infrastructureInventories = infrastructureInventories;
-            o.infrastructureNetworkConfigurations = infrastructureNetworkConfigurations;
-            o.lifecycleDetails = lifecycleDetails;
-            o.provisioningFingerprint = provisioningFingerprint;
-            o.provisioningPin = provisioningPin;
-            o.shortName = shortName;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.upgradeInformations = upgradeInformations;
-            return o;
+            final var _resultValue = new GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem();
+            _resultValue.cccUpgradeScheduleId = cccUpgradeScheduleId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionDetails = connectionDetails;
+            _resultValue.connectionState = connectionState;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.infrastructureInventories = infrastructureInventories;
+            _resultValue.infrastructureNetworkConfigurations = infrastructureNetworkConfigurations;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.provisioningFingerprint = provisioningFingerprint;
+            _resultValue.provisioningPin = provisioningPin;
+            _resultValue.shortName = shortName;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.upgradeInformations = upgradeInformations;
+            return _resultValue;
         }
     }
 }

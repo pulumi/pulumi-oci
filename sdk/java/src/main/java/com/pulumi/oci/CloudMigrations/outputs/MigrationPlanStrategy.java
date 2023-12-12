@@ -144,14 +144,14 @@ public final class MigrationPlanStrategy {
             return this;
         }
         public MigrationPlanStrategy build() {
-            final var o = new MigrationPlanStrategy();
-            o.adjustmentMultiplier = adjustmentMultiplier;
-            o.metricTimeWindow = metricTimeWindow;
-            o.metricType = metricType;
-            o.percentile = percentile;
-            o.resourceType = resourceType;
-            o.strategyType = strategyType;
-            return o;
+            final var _resultValue = new MigrationPlanStrategy();
+            _resultValue.adjustmentMultiplier = adjustmentMultiplier;
+            _resultValue.metricTimeWindow = metricTimeWindow;
+            _resultValue.metricType = metricType;
+            _resultValue.percentile = percentile;
+            _resultValue.resourceType = resourceType;
+            _resultValue.strategyType = strategyType;
+            return _resultValue;
         }
     }
 }

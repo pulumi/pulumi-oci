@@ -65,10 +65,10 @@ public final class GetExternalPluggableDatabaseOperationsInsightsConfig {
             return this;
         }
         public GetExternalPluggableDatabaseOperationsInsightsConfig build() {
-            final var o = new GetExternalPluggableDatabaseOperationsInsightsConfig();
-            o.operationsInsightsConnectorId = operationsInsightsConnectorId;
-            o.operationsInsightsStatus = operationsInsightsStatus;
-            return o;
+            final var _resultValue = new GetExternalPluggableDatabaseOperationsInsightsConfig();
+            _resultValue.operationsInsightsConnectorId = operationsInsightsConnectorId;
+            _resultValue.operationsInsightsStatus = operationsInsightsStatus;
+            return _resultValue;
         }
     }
 }

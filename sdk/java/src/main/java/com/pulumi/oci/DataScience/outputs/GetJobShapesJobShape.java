@@ -104,12 +104,12 @@ public final class GetJobShapesJobShape {
             return this;
         }
         public GetJobShapesJobShape build() {
-            final var o = new GetJobShapesJobShape();
-            o.coreCount = coreCount;
-            o.memoryInGbs = memoryInGbs;
-            o.name = name;
-            o.shapeSeries = shapeSeries;
-            return o;
+            final var _resultValue = new GetJobShapesJobShape();
+            _resultValue.coreCount = coreCount;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.name = name;
+            _resultValue.shapeSeries = shapeSeries;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlS
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute build() {
-            final var o = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute();
-            o.format = format;
-            o.name = name;
-            o.userStoreAttributeName = userStoreAttributeName;
-            return o;
+            final var _resultValue = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttribute();
+            _resultValue.format = format;
+            _resultValue.name = name;
+            _resultValue.userStoreAttributeName = userStoreAttributeName;
+            return _resultValue;
         }
     }
 }

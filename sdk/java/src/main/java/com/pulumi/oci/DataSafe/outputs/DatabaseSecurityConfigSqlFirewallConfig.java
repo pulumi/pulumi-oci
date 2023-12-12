@@ -105,12 +105,12 @@ public final class DatabaseSecurityConfigSqlFirewallConfig {
             return this;
         }
         public DatabaseSecurityConfigSqlFirewallConfig build() {
-            final var o = new DatabaseSecurityConfigSqlFirewallConfig();
-            o.excludeJob = excludeJob;
-            o.status = status;
-            o.timeStatusUpdated = timeStatusUpdated;
-            o.violationLogAutoPurge = violationLogAutoPurge;
-            return o;
+            final var _resultValue = new DatabaseSecurityConfigSqlFirewallConfig();
+            _resultValue.excludeJob = excludeJob;
+            _resultValue.status = status;
+            _resultValue.timeStatusUpdated = timeStatusUpdated;
+            _resultValue.violationLogAutoPurge = violationLogAutoPurge;
+            return _resultValue;
         }
     }
 }

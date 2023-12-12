@@ -104,12 +104,12 @@ public final class GetInstanceAvailablePluginAvailablePlugin {
             return this;
         }
         public GetInstanceAvailablePluginAvailablePlugin build() {
-            final var o = new GetInstanceAvailablePluginAvailablePlugin();
-            o.isEnabledByDefault = isEnabledByDefault;
-            o.isSupported = isSupported;
-            o.name = name;
-            o.summary = summary;
-            return o;
+            final var _resultValue = new GetInstanceAvailablePluginAvailablePlugin();
+            _resultValue.isEnabledByDefault = isEnabledByDefault;
+            _resultValue.isSupported = isSupported;
+            _resultValue.name = name;
+            _resultValue.summary = summary;
+            return _resultValue;
         }
     }
 }

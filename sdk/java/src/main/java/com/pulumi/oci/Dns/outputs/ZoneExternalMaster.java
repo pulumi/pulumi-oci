@@ -87,11 +87,11 @@ public final class ZoneExternalMaster {
             return this;
         }
         public ZoneExternalMaster build() {
-            final var o = new ZoneExternalMaster();
-            o.address = address;
-            o.port = port;
-            o.tsigKeyId = tsigKeyId;
-            return o;
+            final var _resultValue = new ZoneExternalMaster();
+            _resultValue.address = address;
+            _resultValue.port = port;
+            _resultValue.tsigKeyId = tsigKeyId;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoS
             return this;
         }
         public GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance build() {
-            final var o = new GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance();
-            o.diskIops = diskIops;
-            o.diskThroughputInMbps = diskThroughputInMbps;
-            return o;
+            final var _resultValue = new GetDbSystemStoragePerformancesDbSystemStoragePerformanceRecoStoragePerformanceListBalancedDiskPerformance();
+            _resultValue.diskIops = diskIops;
+            _resultValue.diskThroughputInMbps = diskThroughputInMbps;
+            return _resultValue;
         }
     }
 }

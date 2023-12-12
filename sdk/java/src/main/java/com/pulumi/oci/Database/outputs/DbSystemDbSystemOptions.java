@@ -48,9 +48,9 @@ public final class DbSystemDbSystemOptions {
             return this;
         }
         public DbSystemDbSystemOptions build() {
-            final var o = new DbSystemDbSystemOptions();
-            o.storageManagement = storageManagement;
-            return o;
+            final var _resultValue = new DbSystemDbSystemOptions();
+            _resultValue.storageManagement = storageManagement;
+            return _resultValue;
         }
     }
 }

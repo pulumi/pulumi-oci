@@ -220,18 +220,18 @@ public final class GetRepositoriesRepositoryCollectionItem {
             return this;
         }
         public GetRepositoriesRepositoryCollectionItem build() {
-            final var o = new GetRepositoriesRepositoryCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isImmutable = isImmutable;
-            o.repositoryType = repositoryType;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetRepositoriesRepositoryCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isImmutable = isImmutable;
+            _resultValue.repositoryType = repositoryType;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -130,13 +130,13 @@ public final class WorkspaceApplicationRegistryMetadata {
             return this;
         }
         public WorkspaceApplicationRegistryMetadata build() {
-            final var o = new WorkspaceApplicationRegistryMetadata();
-            o.aggregatorKey = aggregatorKey;
-            o.isFavorite = isFavorite;
-            o.key = key;
-            o.labels = labels;
-            o.registryVersion = registryVersion;
-            return o;
+            final var _resultValue = new WorkspaceApplicationRegistryMetadata();
+            _resultValue.aggregatorKey = aggregatorKey;
+            _resultValue.isFavorite = isFavorite;
+            _resultValue.key = key;
+            _resultValue.labels = labels;
+            _resultValue.registryVersion = registryVersion;
+            return _resultValue;
         }
     }
 }

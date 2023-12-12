@@ -338,24 +338,24 @@ public final class GetByoipRangeResult {
             return this;
         }
         public GetByoipRangeResult build() {
-            final var o = new GetByoipRangeResult();
-            o.byoipRangeId = byoipRangeId;
-            o.byoipRangeVcnIpv6allocations = byoipRangeVcnIpv6allocations;
-            o.cidrBlock = cidrBlock;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ipv6cidrBlock = ipv6cidrBlock;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeAdvertised = timeAdvertised;
-            o.timeCreated = timeCreated;
-            o.timeValidated = timeValidated;
-            o.timeWithdrawn = timeWithdrawn;
-            o.validationToken = validationToken;
-            return o;
+            final var _resultValue = new GetByoipRangeResult();
+            _resultValue.byoipRangeId = byoipRangeId;
+            _resultValue.byoipRangeVcnIpv6allocations = byoipRangeVcnIpv6allocations;
+            _resultValue.cidrBlock = cidrBlock;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ipv6cidrBlock = ipv6cidrBlock;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeAdvertised = timeAdvertised;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeValidated = timeValidated;
+            _resultValue.timeWithdrawn = timeWithdrawn;
+            _resultValue.validationToken = validationToken;
+            return _resultValue;
         }
     }
 }

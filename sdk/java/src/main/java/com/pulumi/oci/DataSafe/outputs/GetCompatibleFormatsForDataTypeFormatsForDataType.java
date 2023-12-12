@@ -70,10 +70,10 @@ public final class GetCompatibleFormatsForDataTypeFormatsForDataType {
             return maskingFormats(List.of(maskingFormats));
         }
         public GetCompatibleFormatsForDataTypeFormatsForDataType build() {
-            final var o = new GetCompatibleFormatsForDataTypeFormatsForDataType();
-            o.dataType = dataType;
-            o.maskingFormats = maskingFormats;
-            return o;
+            final var _resultValue = new GetCompatibleFormatsForDataTypeFormatsForDataType();
+            _resultValue.dataType = dataType;
+            _resultValue.maskingFormats = maskingFormats;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetAssetSourcesFilter {
             return values(List.of(values));
         }
         public GetAssetSourcesFilter build() {
-            final var o = new GetAssetSourcesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAssetSourcesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetApiKeysFilter {
             return values(List.of(values));
         }
         public GetApiKeysFilter build() {
-            final var o = new GetApiKeysFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetApiKeysFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

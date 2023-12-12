@@ -124,13 +124,13 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
             return this;
         }
         public UnifiedAgentConfigurationServiceConfigurationSourceParserPattern build() {
-            final var o = new UnifiedAgentConfigurationServiceConfigurationSourceParserPattern();
-            o.fieldTimeFormat = fieldTimeFormat;
-            o.fieldTimeKey = fieldTimeKey;
-            o.fieldTimeZone = fieldTimeZone;
-            o.name = name;
-            o.pattern = pattern;
-            return o;
+            final var _resultValue = new UnifiedAgentConfigurationServiceConfigurationSourceParserPattern();
+            _resultValue.fieldTimeFormat = fieldTimeFormat;
+            _resultValue.fieldTimeKey = fieldTimeKey;
+            _resultValue.fieldTimeZone = fieldTimeZone;
+            _resultValue.name = name;
+            _resultValue.pattern = pattern;
+            return _resultValue;
         }
     }
 }

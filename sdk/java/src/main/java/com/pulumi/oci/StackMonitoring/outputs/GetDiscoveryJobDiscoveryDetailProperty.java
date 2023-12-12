@@ -48,9 +48,9 @@ public final class GetDiscoveryJobDiscoveryDetailProperty {
             return this;
         }
         public GetDiscoveryJobDiscoveryDetailProperty build() {
-            final var o = new GetDiscoveryJobDiscoveryDetailProperty();
-            o.propertiesMap = propertiesMap;
-            return o;
+            final var _resultValue = new GetDiscoveryJobDiscoveryDetailProperty();
+            _resultValue.propertiesMap = propertiesMap;
+            return _resultValue;
         }
     }
 }

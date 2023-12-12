@@ -105,10 +105,10 @@ public final class DomainsCloudGateServerTag {
             return this;
         }
         public DomainsCloudGateServerTag build() {
-            final var o = new DomainsCloudGateServerTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsCloudGateServerTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

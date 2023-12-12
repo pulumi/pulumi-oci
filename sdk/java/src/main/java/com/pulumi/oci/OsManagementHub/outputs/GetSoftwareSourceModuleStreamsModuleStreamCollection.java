@@ -42,9 +42,9 @@ public final class GetSoftwareSourceModuleStreamsModuleStreamCollection {
             return items(List.of(items));
         }
         public GetSoftwareSourceModuleStreamsModuleStreamCollection build() {
-            final var o = new GetSoftwareSourceModuleStreamsModuleStreamCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSoftwareSourceModuleStreamsModuleStreamCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

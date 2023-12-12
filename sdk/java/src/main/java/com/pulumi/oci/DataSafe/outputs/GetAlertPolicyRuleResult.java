@@ -81,11 +81,11 @@ public final class GetAlertPolicyRuleResult {
             return items(List.of(items));
         }
         public GetAlertPolicyRuleResult build() {
-            final var o = new GetAlertPolicyRuleResult();
-            o.alertPolicyId = alertPolicyId;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAlertPolicyRuleResult();
+            _resultValue.alertPolicyId = alertPolicyId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

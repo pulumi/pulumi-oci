@@ -364,25 +364,25 @@ public final class GetTargetDatabaseResult {
             return tlsConfigs(List.of(tlsConfigs));
         }
         public GetTargetDatabaseResult build() {
-            final var o = new GetTargetDatabaseResult();
-            o.associatedResourceIds = associatedResourceIds;
-            o.compartmentId = compartmentId;
-            o.connectionOptions = connectionOptions;
-            o.credentials = credentials;
-            o.databaseDetails = databaseDetails;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.targetDatabaseId = targetDatabaseId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.tlsConfigs = tlsConfigs;
-            return o;
+            final var _resultValue = new GetTargetDatabaseResult();
+            _resultValue.associatedResourceIds = associatedResourceIds;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionOptions = connectionOptions;
+            _resultValue.credentials = credentials;
+            _resultValue.databaseDetails = databaseDetails;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetDatabaseId = targetDatabaseId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.tlsConfigs = tlsConfigs;
+            return _resultValue;
         }
     }
 }

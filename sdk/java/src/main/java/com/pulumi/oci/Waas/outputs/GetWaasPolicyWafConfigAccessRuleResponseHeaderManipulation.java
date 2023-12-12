@@ -84,11 +84,11 @@ public final class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
             return this;
         }
         public GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation build() {
-            final var o = new GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation();
-            o.action = action;
-            o.header = header;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation();
+            _resultValue.action = action;
+            _resultValue.header = header;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

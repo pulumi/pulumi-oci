@@ -67,11 +67,11 @@ public final class GetBdsInstancePatchesFilter {
             return values(List.of(values));
         }
         public GetBdsInstancePatchesFilter build() {
-            final var o = new GetBdsInstancePatchesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetBdsInstancePatchesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -86,11 +86,11 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulation {
             return this;
         }
         public PolicyWafConfigAccessRuleResponseHeaderManipulation build() {
-            final var o = new PolicyWafConfigAccessRuleResponseHeaderManipulation();
-            o.action = action;
-            o.header = header;
-            o.value = value;
-            return o;
+            final var _resultValue = new PolicyWafConfigAccessRuleResponseHeaderManipulation();
+            _resultValue.action = action;
+            _resultValue.header = header;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

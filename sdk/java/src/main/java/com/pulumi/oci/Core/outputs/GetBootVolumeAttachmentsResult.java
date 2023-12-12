@@ -163,15 +163,15 @@ public final class GetBootVolumeAttachmentsResult {
             return this;
         }
         public GetBootVolumeAttachmentsResult build() {
-            final var o = new GetBootVolumeAttachmentsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.bootVolumeAttachments = bootVolumeAttachments;
-            o.bootVolumeId = bootVolumeId;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.instanceId = instanceId;
-            return o;
+            final var _resultValue = new GetBootVolumeAttachmentsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.bootVolumeAttachments = bootVolumeAttachments;
+            _resultValue.bootVolumeId = bootVolumeId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            return _resultValue;
         }
     }
 }

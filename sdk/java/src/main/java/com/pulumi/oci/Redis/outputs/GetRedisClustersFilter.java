@@ -67,11 +67,11 @@ public final class GetRedisClustersFilter {
             return values(List.of(values));
         }
         public GetRedisClustersFilter build() {
-            final var o = new GetRedisClustersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetRedisClustersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

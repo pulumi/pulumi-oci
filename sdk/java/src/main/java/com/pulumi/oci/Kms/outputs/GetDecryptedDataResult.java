@@ -131,15 +131,15 @@ public final class GetDecryptedDataResult {
             return this;
         }
         public GetDecryptedDataResult build() {
-            final var o = new GetDecryptedDataResult();
-            o.associatedData = associatedData;
-            o.ciphertext = ciphertext;
-            o.cryptoEndpoint = cryptoEndpoint;
-            o.id = id;
-            o.keyId = keyId;
-            o.plaintext = plaintext;
-            o.plaintextChecksum = plaintextChecksum;
-            return o;
+            final var _resultValue = new GetDecryptedDataResult();
+            _resultValue.associatedData = associatedData;
+            _resultValue.ciphertext = ciphertext;
+            _resultValue.cryptoEndpoint = cryptoEndpoint;
+            _resultValue.id = id;
+            _resultValue.keyId = keyId;
+            _resultValue.plaintext = plaintext;
+            _resultValue.plaintextChecksum = plaintextChecksum;
+            return _resultValue;
         }
     }
 }

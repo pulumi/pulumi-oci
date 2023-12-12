@@ -125,13 +125,13 @@ public final class GetBackupsResult {
             return this;
         }
         public GetBackupsResult build() {
-            final var o = new GetBackupsResult();
-            o.backups = backups;
-            o.compartmentId = compartmentId;
-            o.databaseId = databaseId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetBackupsResult();
+            _resultValue.backups = backups;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseId = databaseId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetAuditProfileAvailableAuditVolumesFilter {
             return values(List.of(values));
         }
         public GetAuditProfileAvailableAuditVolumesFilter build() {
-            final var o = new GetAuditProfileAvailableAuditVolumesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAuditProfileAvailableAuditVolumesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

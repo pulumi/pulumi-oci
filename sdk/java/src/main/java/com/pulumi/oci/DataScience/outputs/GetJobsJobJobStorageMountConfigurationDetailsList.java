@@ -179,16 +179,16 @@ public final class GetJobsJobJobStorageMountConfigurationDetailsList {
             return this;
         }
         public GetJobsJobJobStorageMountConfigurationDetailsList build() {
-            final var o = new GetJobsJobJobStorageMountConfigurationDetailsList();
-            o.bucket = bucket;
-            o.destinationDirectoryName = destinationDirectoryName;
-            o.destinationPath = destinationPath;
-            o.exportId = exportId;
-            o.mountTargetId = mountTargetId;
-            o.namespace = namespace;
-            o.prefix = prefix;
-            o.storageType = storageType;
-            return o;
+            final var _resultValue = new GetJobsJobJobStorageMountConfigurationDetailsList();
+            _resultValue.bucket = bucket;
+            _resultValue.destinationDirectoryName = destinationDirectoryName;
+            _resultValue.destinationPath = destinationPath;
+            _resultValue.exportId = exportId;
+            _resultValue.mountTargetId = mountTargetId;
+            _resultValue.namespace = namespace;
+            _resultValue.prefix = prefix;
+            _resultValue.storageType = storageType;
+            return _resultValue;
         }
     }
 }

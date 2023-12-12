@@ -104,12 +104,12 @@ public final class GetTablesTableCollectionTableLimit {
             return this;
         }
         public GetTablesTableCollectionTableLimit build() {
-            final var o = new GetTablesTableCollectionTableLimit();
-            o.capacityMode = capacityMode;
-            o.maxReadUnits = maxReadUnits;
-            o.maxStorageInGbs = maxStorageInGbs;
-            o.maxWriteUnits = maxWriteUnits;
-            return o;
+            final var _resultValue = new GetTablesTableCollectionTableLimit();
+            _resultValue.capacityMode = capacityMode;
+            _resultValue.maxReadUnits = maxReadUnits;
+            _resultValue.maxStorageInGbs = maxStorageInGbs;
+            _resultValue.maxWriteUnits = maxWriteUnits;
+            return _resultValue;
         }
     }
 }

@@ -103,12 +103,12 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceProduct {
             return this;
         }
         public GetSubscriptionsSubscriptionSubscribedServiceProduct build() {
-            final var o = new GetSubscriptionsSubscriptionSubscribedServiceProduct();
-            o.name = name;
-            o.partNumber = partNumber;
-            o.provisioningGroup = provisioningGroup;
-            o.unitOfMeasure = unitOfMeasure;
-            return o;
+            final var _resultValue = new GetSubscriptionsSubscriptionSubscribedServiceProduct();
+            _resultValue.name = name;
+            _resultValue.partNumber = partNumber;
+            _resultValue.provisioningGroup = provisioningGroup;
+            _resultValue.unitOfMeasure = unitOfMeasure;
+            return _resultValue;
         }
     }
 }

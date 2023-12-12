@@ -166,15 +166,15 @@ public final class GetAppAccelerationsResult {
             return this;
         }
         public GetAppAccelerationsResult build() {
-            final var o = new GetAppAccelerationsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.states = states;
-            o.webAppAccelerationCollections = webAppAccelerationCollections;
-            o.webAppAccelerationPolicyId = webAppAccelerationPolicyId;
-            return o;
+            final var _resultValue = new GetAppAccelerationsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.states = states;
+            _resultValue.webAppAccelerationCollections = webAppAccelerationCollections;
+            _resultValue.webAppAccelerationPolicyId = webAppAccelerationPolicyId;
+            return _resultValue;
         }
     }
 }

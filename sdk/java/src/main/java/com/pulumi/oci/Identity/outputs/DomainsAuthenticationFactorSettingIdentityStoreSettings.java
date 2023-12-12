@@ -103,10 +103,10 @@ public final class DomainsAuthenticationFactorSettingIdentityStoreSettings {
             return this;
         }
         public DomainsAuthenticationFactorSettingIdentityStoreSettings build() {
-            final var o = new DomainsAuthenticationFactorSettingIdentityStoreSettings();
-            o.mobileNumberEnabled = mobileNumberEnabled;
-            o.mobileNumberUpdateEnabled = mobileNumberUpdateEnabled;
-            return o;
+            final var _resultValue = new DomainsAuthenticationFactorSettingIdentityStoreSettings();
+            _resultValue.mobileNumberEnabled = mobileNumberEnabled;
+            _resultValue.mobileNumberUpdateEnabled = mobileNumberUpdateEnabled;
+            return _resultValue;
         }
     }
 }

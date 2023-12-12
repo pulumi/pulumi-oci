@@ -46,9 +46,9 @@ public final class GetClusterNetworksClusterNetworkPlacementConfigurationPrimary
             return this;
         }
         public GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail build() {
-            final var o = new GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail();
-            o.ipv6subnetCidr = ipv6subnetCidr;
-            return o;
+            final var _resultValue = new GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnetIpv6addressIpv6subnetCidrPairDetail();
+            _resultValue.ipv6subnetCidr = ipv6subnetCidr;
+            return _resultValue;
         }
     }
 }

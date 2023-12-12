@@ -89,11 +89,11 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser();
-            o.factorIdentifiers = factorIdentifiers;
-            o.factorMethod = factorMethod;
-            o.factorType = factorType;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser();
+            _resultValue.factorIdentifiers = factorIdentifiers;
+            _resultValue.factorMethod = factorMethod;
+            _resultValue.factorType = factorType;
+            return _resultValue;
         }
     }
 }

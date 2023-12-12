@@ -48,9 +48,9 @@ public final class SubscriptionSubscriptionPaymentGateway {
             return this;
         }
         public SubscriptionSubscriptionPaymentGateway build() {
-            final var o = new SubscriptionSubscriptionPaymentGateway();
-            o.merchantDefinedData = merchantDefinedData;
-            return o;
+            final var _resultValue = new SubscriptionSubscriptionPaymentGateway();
+            _resultValue.merchantDefinedData = merchantDefinedData;
+            return _resultValue;
         }
     }
 }

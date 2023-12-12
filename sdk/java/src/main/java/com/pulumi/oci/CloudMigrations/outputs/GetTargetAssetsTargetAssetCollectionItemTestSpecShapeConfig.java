@@ -85,11 +85,11 @@ public final class GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfig {
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfig build() {
-            final var o = new GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfig();
-            o.baselineOcpuUtilization = baselineOcpuUtilization;
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetTargetAssetsTargetAssetCollectionItemTestSpecShapeConfig();
+            _resultValue.baselineOcpuUtilization = baselineOcpuUtilization;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

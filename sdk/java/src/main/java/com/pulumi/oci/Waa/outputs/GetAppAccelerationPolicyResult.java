@@ -277,21 +277,21 @@ public final class GetAppAccelerationPolicyResult {
             return this;
         }
         public GetAppAccelerationPolicyResult build() {
-            final var o = new GetAppAccelerationPolicyResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.responseCachingPolicies = responseCachingPolicies;
-            o.responseCompressionPolicies = responseCompressionPolicies;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.webAppAccelerationPolicyId = webAppAccelerationPolicyId;
-            return o;
+            final var _resultValue = new GetAppAccelerationPolicyResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.responseCachingPolicies = responseCachingPolicies;
+            _resultValue.responseCompressionPolicies = responseCompressionPolicies;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.webAppAccelerationPolicyId = webAppAccelerationPolicyId;
+            return _resultValue;
         }
     }
 }

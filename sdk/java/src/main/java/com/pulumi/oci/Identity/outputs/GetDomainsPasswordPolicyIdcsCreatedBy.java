@@ -122,13 +122,13 @@ public final class GetDomainsPasswordPolicyIdcsCreatedBy {
             return this;
         }
         public GetDomainsPasswordPolicyIdcsCreatedBy build() {
-            final var o = new GetDomainsPasswordPolicyIdcsCreatedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsPasswordPolicyIdcsCreatedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

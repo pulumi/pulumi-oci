@@ -179,16 +179,16 @@ public final class GetWorkspaceExportRequestsExportRequestSummaryCollectionItemE
             return this;
         }
         public GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem build() {
-            final var o = new GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem();
-            o.aggregatorKey = aggregatorKey;
-            o.identifier = identifier;
-            o.key = key;
-            o.name = name;
-            o.namePath = namePath;
-            o.objectType = objectType;
-            o.objectVersion = objectVersion;
-            o.timeUpdatedInMillis = timeUpdatedInMillis;
-            return o;
+            final var _resultValue = new GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem();
+            _resultValue.aggregatorKey = aggregatorKey;
+            _resultValue.identifier = identifier;
+            _resultValue.key = key;
+            _resultValue.name = name;
+            _resultValue.namePath = namePath;
+            _resultValue.objectType = objectType;
+            _resultValue.objectVersion = objectVersion;
+            _resultValue.timeUpdatedInMillis = timeUpdatedInMillis;
+            return _resultValue;
         }
     }
 }

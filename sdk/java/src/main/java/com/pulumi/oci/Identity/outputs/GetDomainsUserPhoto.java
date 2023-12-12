@@ -104,12 +104,12 @@ public final class GetDomainsUserPhoto {
             return this;
         }
         public GetDomainsUserPhoto build() {
-            final var o = new GetDomainsUserPhoto();
-            o.display = display;
-            o.primary = primary;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserPhoto();
+            _resultValue.display = display;
+            _resultValue.primary = primary;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

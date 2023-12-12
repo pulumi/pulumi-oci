@@ -67,11 +67,11 @@ public final class GetDataSourceEventsFilter {
             return values(List.of(values));
         }
         public GetDataSourceEventsFilter build() {
-            final var o = new GetDataSourceEventsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDataSourceEventsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

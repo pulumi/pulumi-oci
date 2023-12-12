@@ -67,11 +67,11 @@ public final class GetSubscriptionRewardsFilter {
             return values(List.of(values));
         }
         public GetSubscriptionRewardsFilter build() {
-            final var o = new GetSubscriptionRewardsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSubscriptionRewardsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

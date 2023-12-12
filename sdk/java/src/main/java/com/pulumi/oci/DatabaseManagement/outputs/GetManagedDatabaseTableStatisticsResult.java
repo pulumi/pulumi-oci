@@ -97,12 +97,12 @@ public final class GetManagedDatabaseTableStatisticsResult {
             return tableStatisticsCollections(List.of(tableStatisticsCollections));
         }
         public GetManagedDatabaseTableStatisticsResult build() {
-            final var o = new GetManagedDatabaseTableStatisticsResult();
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.tableStatisticsCollections = tableStatisticsCollections;
-            return o;
+            final var _resultValue = new GetManagedDatabaseTableStatisticsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.tableStatisticsCollections = tableStatisticsCollections;
+            return _resultValue;
         }
     }
 }

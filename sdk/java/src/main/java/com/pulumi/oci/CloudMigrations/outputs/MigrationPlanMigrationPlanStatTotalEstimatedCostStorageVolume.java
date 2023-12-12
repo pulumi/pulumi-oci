@@ -106,12 +106,12 @@ public final class MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume
             return this;
         }
         public MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume build() {
-            final var o = new MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume();
-            o.capacityGb = capacityGb;
-            o.description = description;
-            o.totalGbPerMonth = totalGbPerMonth;
-            o.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
-            return o;
+            final var _resultValue = new MigrationPlanMigrationPlanStatTotalEstimatedCostStorageVolume();
+            _resultValue.capacityGb = capacityGb;
+            _resultValue.description = description;
+            _resultValue.totalGbPerMonth = totalGbPerMonth;
+            _resultValue.totalGbPerMonthBySubscription = totalGbPerMonthBySubscription;
+            return _resultValue;
         }
     }
 }

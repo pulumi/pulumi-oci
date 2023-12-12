@@ -75,11 +75,11 @@ public final class GetAutonomousDatabasesClonesFilter {
             return values(List.of(values));
         }
         public GetAutonomousDatabasesClonesFilter build() {
-            final var o = new GetAutonomousDatabasesClonesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAutonomousDatabasesClonesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

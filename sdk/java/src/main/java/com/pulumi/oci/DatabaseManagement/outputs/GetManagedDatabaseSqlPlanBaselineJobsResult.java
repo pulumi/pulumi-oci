@@ -117,13 +117,13 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsResult {
             return sqlPlanBaselineJobCollections(List.of(sqlPlanBaselineJobCollections));
         }
         public GetManagedDatabaseSqlPlanBaselineJobsResult build() {
-            final var o = new GetManagedDatabaseSqlPlanBaselineJobsResult();
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.sqlPlanBaselineJobCollections = sqlPlanBaselineJobCollections;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlPlanBaselineJobsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.sqlPlanBaselineJobCollections = sqlPlanBaselineJobCollections;
+            return _resultValue;
         }
     }
 }

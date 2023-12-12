@@ -185,17 +185,17 @@ public final class GetLogsResult {
             return this;
         }
         public GetLogsResult build() {
-            final var o = new GetLogsResult();
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.logGroupId = logGroupId;
-            o.logType = logType;
-            o.logs = logs;
-            o.sourceResource = sourceResource;
-            o.sourceService = sourceService;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetLogsResult();
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logType = logType;
+            _resultValue.logs = logs;
+            _resultValue.sourceResource = sourceResource;
+            _resultValue.sourceService = sourceService;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

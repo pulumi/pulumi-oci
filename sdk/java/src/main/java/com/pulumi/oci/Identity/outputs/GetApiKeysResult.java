@@ -105,12 +105,12 @@ public final class GetApiKeysResult {
             return this;
         }
         public GetApiKeysResult build() {
-            final var o = new GetApiKeysResult();
-            o.apiKeys = apiKeys;
-            o.filters = filters;
-            o.id = id;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetApiKeysResult();
+            _resultValue.apiKeys = apiKeys;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

@@ -230,20 +230,20 @@ public final class GetRecommendationsResult {
             return this;
         }
         public GetRecommendationsResult build() {
-            final var o = new GetRecommendationsResult();
-            o.categoryId = categoryId;
-            o.categoryName = categoryName;
-            o.childTenancyIds = childTenancyIds;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.id = id;
-            o.includeOrganization = includeOrganization;
-            o.name = name;
-            o.recommendationCollections = recommendationCollections;
-            o.state = state;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetRecommendationsResult();
+            _resultValue.categoryId = categoryId;
+            _resultValue.categoryName = categoryName;
+            _resultValue.childTenancyIds = childTenancyIds;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.includeOrganization = includeOrganization;
+            _resultValue.name = name;
+            _resultValue.recommendationCollections = recommendationCollections;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

@@ -290,21 +290,21 @@ public final class GetStreamPoolsStreamPool {
             return this;
         }
         public GetStreamPoolsStreamPool build() {
-            final var o = new GetStreamPoolsStreamPool();
-            o.compartmentId = compartmentId;
-            o.customEncryptionKeys = customEncryptionKeys;
-            o.definedTags = definedTags;
-            o.endpointFqdn = endpointFqdn;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isPrivate = isPrivate;
-            o.kafkaSettings = kafkaSettings;
-            o.lifecycleStateDetails = lifecycleStateDetails;
-            o.name = name;
-            o.privateEndpointSettings = privateEndpointSettings;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetStreamPoolsStreamPool();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.customEncryptionKeys = customEncryptionKeys;
+            _resultValue.definedTags = definedTags;
+            _resultValue.endpointFqdn = endpointFqdn;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isPrivate = isPrivate;
+            _resultValue.kafkaSettings = kafkaSettings;
+            _resultValue.lifecycleStateDetails = lifecycleStateDetails;
+            _resultValue.name = name;
+            _resultValue.privateEndpointSettings = privateEndpointSettings;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

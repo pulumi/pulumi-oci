@@ -86,11 +86,11 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
             return this;
         }
         public DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation build() {
-            final var o = new DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

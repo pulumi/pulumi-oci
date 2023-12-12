@@ -144,14 +144,14 @@ public final class GetCatalogPrivateEndpointsResult {
             return this;
         }
         public GetCatalogPrivateEndpointsResult build() {
-            final var o = new GetCatalogPrivateEndpointsResult();
-            o.catalogPrivateEndpoints = catalogPrivateEndpoints;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCatalogPrivateEndpointsResult();
+            _resultValue.catalogPrivateEndpoints = catalogPrivateEndpoints;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

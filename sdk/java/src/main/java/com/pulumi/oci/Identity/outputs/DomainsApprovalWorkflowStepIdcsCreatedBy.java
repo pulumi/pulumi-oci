@@ -230,13 +230,13 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedBy {
             return this;
         }
         public DomainsApprovalWorkflowStepIdcsCreatedBy build() {
-            final var o = new DomainsApprovalWorkflowStepIdcsCreatedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsApprovalWorkflowStepIdcsCreatedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

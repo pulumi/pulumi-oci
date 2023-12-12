@@ -168,15 +168,15 @@ public final class GetSecurityAssessmentComparisonTargetDataEncryptionCurrent {
             return this;
         }
         public GetSecurityAssessmentComparisonTargetDataEncryptionCurrent build() {
-            final var o = new GetSecurityAssessmentComparisonTargetDataEncryptionCurrent();
-            o.details = details;
-            o.key = key;
-            o.references = references;
-            o.remarks = remarks;
-            o.severity = severity;
-            o.summary = summary;
-            o.title = title;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentComparisonTargetDataEncryptionCurrent();
+            _resultValue.details = details;
+            _resultValue.key = key;
+            _resultValue.references = references;
+            _resultValue.remarks = remarks;
+            _resultValue.severity = severity;
+            _resultValue.summary = summary;
+            _resultValue.title = title;
+            return _resultValue;
         }
     }
 }

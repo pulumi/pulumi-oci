@@ -127,13 +127,13 @@ public final class GetApiDeploymentSpecificationResult {
             return routes(List.of(routes));
         }
         public GetApiDeploymentSpecificationResult build() {
-            final var o = new GetApiDeploymentSpecificationResult();
-            o.apiId = apiId;
-            o.id = id;
-            o.loggingPolicies = loggingPolicies;
-            o.requestPolicies = requestPolicies;
-            o.routes = routes;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationResult();
+            _resultValue.apiId = apiId;
+            _resultValue.id = id;
+            _resultValue.loggingPolicies = loggingPolicies;
+            _resultValue.requestPolicies = requestPolicies;
+            _resultValue.routes = routes;
+            return _resultValue;
         }
     }
 }

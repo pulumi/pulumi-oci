@@ -198,17 +198,17 @@ public final class GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment
             return this;
         }
         public GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment build() {
-            final var o = new GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment();
-            o.availabilityDomain = availabilityDomain;
-            o.dedicatedVmHost = dedicatedVmHost;
-            o.faultDomain = faultDomain;
-            o.msLicense = msLicense;
-            o.preferredShapeType = preferredShapeType;
-            o.subnet = subnet;
-            o.targetCompartmentId = targetCompartmentId;
-            o.targetEnvironmentType = targetEnvironmentType;
-            o.vcn = vcn;
-            return o;
+            final var _resultValue = new GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.dedicatedVmHost = dedicatedVmHost;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.msLicense = msLicense;
+            _resultValue.preferredShapeType = preferredShapeType;
+            _resultValue.subnet = subnet;
+            _resultValue.targetCompartmentId = targetCompartmentId;
+            _resultValue.targetEnvironmentType = targetEnvironmentType;
+            _resultValue.vcn = vcn;
+            return _resultValue;
         }
     }
 }

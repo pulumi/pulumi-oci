@@ -163,15 +163,15 @@ public final class GetConsoleHistoriesResult {
             return this;
         }
         public GetConsoleHistoriesResult build() {
-            final var o = new GetConsoleHistoriesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.consoleHistories = consoleHistories;
-            o.filters = filters;
-            o.id = id;
-            o.instanceId = instanceId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetConsoleHistoriesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.consoleHistories = consoleHistories;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

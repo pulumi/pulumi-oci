@@ -115,10 +115,10 @@ public final class DomainsCloudGateMappingTag {
             return this;
         }
         public DomainsCloudGateMappingTag build() {
-            final var o = new DomainsCloudGateMappingTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsCloudGateMappingTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

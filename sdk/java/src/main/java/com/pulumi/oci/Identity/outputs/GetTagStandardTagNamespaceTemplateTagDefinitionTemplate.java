@@ -146,14 +146,14 @@ public final class GetTagStandardTagNamespaceTemplateTagDefinitionTemplate {
             return this;
         }
         public GetTagStandardTagNamespaceTemplateTagDefinitionTemplate build() {
-            final var o = new GetTagStandardTagNamespaceTemplateTagDefinitionTemplate();
-            o.description = description;
-            o.enumMutability = enumMutability;
-            o.isCostTracking = isCostTracking;
-            o.possibleValues = possibleValues;
-            o.tagDefinitionName = tagDefinitionName;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetTagStandardTagNamespaceTemplateTagDefinitionTemplate();
+            _resultValue.description = description;
+            _resultValue.enumMutability = enumMutability;
+            _resultValue.isCostTracking = isCostTracking;
+            _resultValue.possibleValues = possibleValues;
+            _resultValue.tagDefinitionName = tagDefinitionName;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

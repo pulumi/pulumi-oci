@@ -84,11 +84,11 @@ public final class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrent
             return this;
         }
         public GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference build() {
-            final var o = new GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference();
-            o.cis = cis;
-            o.gdpr = gdpr;
-            o.stig = stig;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference();
+            _resultValue.cis = cis;
+            _resultValue.gdpr = gdpr;
+            _resultValue.stig = stig;
+            return _resultValue;
         }
     }
 }

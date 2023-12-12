@@ -215,17 +215,17 @@ public final class AutoScalingConfigurationPolicyDetails {
             return this;
         }
         public AutoScalingConfigurationPolicyDetails build() {
-            final var o = new AutoScalingConfigurationPolicyDetails();
-            o.actionType = actionType;
-            o.policyType = policyType;
-            o.scaleDownConfig = scaleDownConfig;
-            o.scaleInConfig = scaleInConfig;
-            o.scaleOutConfig = scaleOutConfig;
-            o.scaleUpConfig = scaleUpConfig;
-            o.scheduleDetails = scheduleDetails;
-            o.timezone = timezone;
-            o.triggerType = triggerType;
-            return o;
+            final var _resultValue = new AutoScalingConfigurationPolicyDetails();
+            _resultValue.actionType = actionType;
+            _resultValue.policyType = policyType;
+            _resultValue.scaleDownConfig = scaleDownConfig;
+            _resultValue.scaleInConfig = scaleInConfig;
+            _resultValue.scaleOutConfig = scaleOutConfig;
+            _resultValue.scaleUpConfig = scaleUpConfig;
+            _resultValue.scheduleDetails = scheduleDetails;
+            _resultValue.timezone = timezone;
+            _resultValue.triggerType = triggerType;
+            return _resultValue;
         }
     }
 }

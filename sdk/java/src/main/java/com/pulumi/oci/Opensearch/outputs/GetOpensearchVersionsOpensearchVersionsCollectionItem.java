@@ -46,9 +46,9 @@ public final class GetOpensearchVersionsOpensearchVersionsCollectionItem {
             return this;
         }
         public GetOpensearchVersionsOpensearchVersionsCollectionItem build() {
-            final var o = new GetOpensearchVersionsOpensearchVersionsCollectionItem();
-            o.version = version;
-            return o;
+            final var _resultValue = new GetOpensearchVersionsOpensearchVersionsCollectionItem();
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetResponderRecipesResponderRecipeCollectionItemEffectiveResp
             return this;
         }
         public GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration build() {
-            final var o = new GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration();
-            o.configKey = configKey;
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRuleDetailConfiguration();
+            _resultValue.configKey = configKey;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

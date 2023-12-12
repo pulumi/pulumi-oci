@@ -218,18 +218,18 @@ public final class GetBackendSetsBackendSetCollectionItemHealthChecker {
             return this;
         }
         public GetBackendSetsBackendSetCollectionItemHealthChecker build() {
-            final var o = new GetBackendSetsBackendSetCollectionItemHealthChecker();
-            o.intervalInMillis = intervalInMillis;
-            o.port = port;
-            o.protocol = protocol;
-            o.requestData = requestData;
-            o.responseBodyRegex = responseBodyRegex;
-            o.responseData = responseData;
-            o.retries = retries;
-            o.returnCode = returnCode;
-            o.timeoutInMillis = timeoutInMillis;
-            o.urlPath = urlPath;
-            return o;
+            final var _resultValue = new GetBackendSetsBackendSetCollectionItemHealthChecker();
+            _resultValue.intervalInMillis = intervalInMillis;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.requestData = requestData;
+            _resultValue.responseBodyRegex = responseBodyRegex;
+            _resultValue.responseData = responseData;
+            _resultValue.retries = retries;
+            _resultValue.returnCode = returnCode;
+            _resultValue.timeoutInMillis = timeoutInMillis;
+            _resultValue.urlPath = urlPath;
+            return _resultValue;
         }
     }
 }

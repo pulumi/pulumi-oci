@@ -129,13 +129,13 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentEndpoint {
             return services(List.of(services));
         }
         public ExternalDbSystemDiscoveryDiscoveredComponentEndpoint build() {
-            final var o = new ExternalDbSystemDiscoveryDiscoveredComponentEndpoint();
-            o.host = host;
-            o.key = key;
-            o.port = port;
-            o.protocol = protocol;
-            o.services = services;
-            return o;
+            final var _resultValue = new ExternalDbSystemDiscoveryDiscoveredComponentEndpoint();
+            _resultValue.host = host;
+            _resultValue.key = key;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.services = services;
+            return _resultValue;
         }
     }
 }

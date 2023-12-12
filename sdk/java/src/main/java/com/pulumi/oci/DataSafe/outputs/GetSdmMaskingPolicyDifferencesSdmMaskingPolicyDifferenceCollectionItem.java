@@ -257,20 +257,20 @@ public final class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceColle
             return this;
         }
         public GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem build() {
-            final var o = new GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.differenceType = differenceType;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.maskingPolicyId = maskingPolicyId;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeCreationStarted = timeCreationStarted;
-            return o;
+            final var _resultValue = new GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.differenceType = differenceType;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.maskingPolicyId = maskingPolicyId;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeCreationStarted = timeCreationStarted;
+            return _resultValue;
         }
     }
 }

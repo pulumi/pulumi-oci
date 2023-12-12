@@ -479,32 +479,32 @@ public final class GetBootVolumeResult {
             return this;
         }
         public GetBootVolumeResult build() {
-            final var o = new GetBootVolumeResult();
-            o.autoTunedVpusPerGb = autoTunedVpusPerGb;
-            o.autotunePolicies = autotunePolicies;
-            o.availabilityDomain = availabilityDomain;
-            o.backupPolicyId = backupPolicyId;
-            o.bootVolumeId = bootVolumeId;
-            o.bootVolumeReplicas = bootVolumeReplicas;
-            o.bootVolumeReplicasDeletion = bootVolumeReplicasDeletion;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.imageId = imageId;
-            o.isAutoTuneEnabled = isAutoTuneEnabled;
-            o.isHydrated = isHydrated;
-            o.kmsKeyId = kmsKeyId;
-            o.sizeInGbs = sizeInGbs;
-            o.sizeInMbs = sizeInMbs;
-            o.sourceDetails = sourceDetails;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.volumeGroupId = volumeGroupId;
-            o.vpusPerGb = vpusPerGb;
-            return o;
+            final var _resultValue = new GetBootVolumeResult();
+            _resultValue.autoTunedVpusPerGb = autoTunedVpusPerGb;
+            _resultValue.autotunePolicies = autotunePolicies;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.backupPolicyId = backupPolicyId;
+            _resultValue.bootVolumeId = bootVolumeId;
+            _resultValue.bootVolumeReplicas = bootVolumeReplicas;
+            _resultValue.bootVolumeReplicasDeletion = bootVolumeReplicasDeletion;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.imageId = imageId;
+            _resultValue.isAutoTuneEnabled = isAutoTuneEnabled;
+            _resultValue.isHydrated = isHydrated;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.sizeInGbs = sizeInGbs;
+            _resultValue.sizeInMbs = sizeInMbs;
+            _resultValue.sourceDetails = sourceDetails;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.volumeGroupId = volumeGroupId;
+            _resultValue.vpusPerGb = vpusPerGb;
+            return _resultValue;
         }
     }
 }

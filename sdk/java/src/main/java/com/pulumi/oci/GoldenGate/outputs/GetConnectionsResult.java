@@ -221,19 +221,19 @@ public final class GetConnectionsResult {
             return technologyTypes(List.of(technologyTypes));
         }
         public GetConnectionsResult build() {
-            final var o = new GetConnectionsResult();
-            o.assignableDeploymentId = assignableDeploymentId;
-            o.assignableDeploymentType = assignableDeploymentType;
-            o.assignedDeploymentId = assignedDeploymentId;
-            o.compartmentId = compartmentId;
-            o.connectionCollections = connectionCollections;
-            o.connectionTypes = connectionTypes;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.technologyTypes = technologyTypes;
-            return o;
+            final var _resultValue = new GetConnectionsResult();
+            _resultValue.assignableDeploymentId = assignableDeploymentId;
+            _resultValue.assignableDeploymentType = assignableDeploymentType;
+            _resultValue.assignedDeploymentId = assignedDeploymentId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionCollections = connectionCollections;
+            _resultValue.connectionTypes = connectionTypes;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.technologyTypes = technologyTypes;
+            return _resultValue;
         }
     }
 }

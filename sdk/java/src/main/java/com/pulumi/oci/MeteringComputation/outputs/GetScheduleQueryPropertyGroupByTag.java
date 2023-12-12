@@ -84,11 +84,11 @@ public final class GetScheduleQueryPropertyGroupByTag {
             return this;
         }
         public GetScheduleQueryPropertyGroupByTag build() {
-            final var o = new GetScheduleQueryPropertyGroupByTag();
-            o.key = key;
-            o.namespace = namespace;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetScheduleQueryPropertyGroupByTag();
+            _resultValue.key = key;
+            _resultValue.namespace = namespace;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

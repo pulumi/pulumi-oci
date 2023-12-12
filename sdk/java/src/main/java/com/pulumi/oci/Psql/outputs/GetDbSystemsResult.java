@@ -144,14 +144,14 @@ public final class GetDbSystemsResult {
             return this;
         }
         public GetDbSystemsResult build() {
-            final var o = new GetDbSystemsResult();
-            o.compartmentId = compartmentId;
-            o.dbSystemCollections = dbSystemCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDbSystemsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbSystemCollections = dbSystemCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

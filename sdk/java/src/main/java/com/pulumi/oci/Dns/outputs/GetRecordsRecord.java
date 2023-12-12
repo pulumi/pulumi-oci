@@ -226,17 +226,17 @@ public final class GetRecordsRecord {
             return this;
         }
         public GetRecordsRecord build() {
-            final var o = new GetRecordsRecord();
-            o.compartmentId = compartmentId;
-            o.domain = domain;
-            o.isProtected = isProtected;
-            o.rdata = rdata;
-            o.recordHash = recordHash;
-            o.rrsetVersion = rrsetVersion;
-            o.rtype = rtype;
-            o.ttl = ttl;
-            o.zoneNameOrId = zoneNameOrId;
-            return o;
+            final var _resultValue = new GetRecordsRecord();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.domain = domain;
+            _resultValue.isProtected = isProtected;
+            _resultValue.rdata = rdata;
+            _resultValue.recordHash = recordHash;
+            _resultValue.rrsetVersion = rrsetVersion;
+            _resultValue.rtype = rtype;
+            _resultValue.ttl = ttl;
+            _resultValue.zoneNameOrId = zoneNameOrId;
+            return _resultValue;
         }
     }
 }

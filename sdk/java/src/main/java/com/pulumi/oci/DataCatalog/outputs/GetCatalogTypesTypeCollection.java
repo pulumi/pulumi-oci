@@ -54,10 +54,10 @@ public final class GetCatalogTypesTypeCollection {
             return items(List.of(items));
         }
         public GetCatalogTypesTypeCollection build() {
-            final var o = new GetCatalogTypesTypeCollection();
-            o.count = count;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetCatalogTypesTypeCollection();
+            _resultValue.count = count;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

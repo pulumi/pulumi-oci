@@ -103,12 +103,12 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecu
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion();
-            o.answer = answer;
-            o.hintText = hintText;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion();
+            _resultValue.answer = answer;
+            _resultValue.hintText = hintText;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

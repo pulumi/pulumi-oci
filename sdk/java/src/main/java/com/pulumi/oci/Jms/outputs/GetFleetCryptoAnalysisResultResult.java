@@ -362,26 +362,26 @@ public final class GetFleetCryptoAnalysisResultResult {
             return this;
         }
         public GetFleetCryptoAnalysisResultResult build() {
-            final var o = new GetFleetCryptoAnalysisResultResult();
-            o.aggregationMode = aggregationMode;
-            o.bucket = bucket;
-            o.cryptoAnalysisResultId = cryptoAnalysisResultId;
-            o.cryptoRoadmapVersion = cryptoRoadmapVersion;
-            o.findingCount = findingCount;
-            o.fleetId = fleetId;
-            o.hostName = hostName;
-            o.id = id;
-            o.managedInstanceId = managedInstanceId;
-            o.namespace = namespace;
-            o.nonCompliantFindingCount = nonCompliantFindingCount;
-            o.object = object;
-            o.summarizedEventCount = summarizedEventCount;
-            o.timeCreated = timeCreated;
-            o.timeFirstEvent = timeFirstEvent;
-            o.timeLastEvent = timeLastEvent;
-            o.totalEventCount = totalEventCount;
-            o.workRequestId = workRequestId;
-            return o;
+            final var _resultValue = new GetFleetCryptoAnalysisResultResult();
+            _resultValue.aggregationMode = aggregationMode;
+            _resultValue.bucket = bucket;
+            _resultValue.cryptoAnalysisResultId = cryptoAnalysisResultId;
+            _resultValue.cryptoRoadmapVersion = cryptoRoadmapVersion;
+            _resultValue.findingCount = findingCount;
+            _resultValue.fleetId = fleetId;
+            _resultValue.hostName = hostName;
+            _resultValue.id = id;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.namespace = namespace;
+            _resultValue.nonCompliantFindingCount = nonCompliantFindingCount;
+            _resultValue.object = object;
+            _resultValue.summarizedEventCount = summarizedEventCount;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeFirstEvent = timeFirstEvent;
+            _resultValue.timeLastEvent = timeLastEvent;
+            _resultValue.totalEventCount = totalEventCount;
+            _resultValue.workRequestId = workRequestId;
+            return _resultValue;
         }
     }
 }

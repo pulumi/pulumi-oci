@@ -84,11 +84,11 @@ public final class GetManagedDatabaseManagedDatabaseGroup {
             return this;
         }
         public GetManagedDatabaseManagedDatabaseGroup build() {
-            final var o = new GetManagedDatabaseManagedDatabaseGroup();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabaseManagedDatabaseGroup();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -67,10 +67,10 @@ public final class MigrationDataTransferMediumDetailsV2ObjectStorageBucket {
             return this;
         }
         public MigrationDataTransferMediumDetailsV2ObjectStorageBucket build() {
-            final var o = new MigrationDataTransferMediumDetailsV2ObjectStorageBucket();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new MigrationDataTransferMediumDetailsV2ObjectStorageBucket();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

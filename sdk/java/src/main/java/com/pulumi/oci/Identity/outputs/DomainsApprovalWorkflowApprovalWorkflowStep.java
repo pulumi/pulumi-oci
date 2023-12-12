@@ -225,13 +225,13 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStep {
             return this;
         }
         public DomainsApprovalWorkflowApprovalWorkflowStep build() {
-            final var o = new DomainsApprovalWorkflowApprovalWorkflowStep();
-            o.ocid = ocid;
-            o.order = order;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsApprovalWorkflowApprovalWorkflowStep();
+            _resultValue.ocid = ocid;
+            _resultValue.order = order;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

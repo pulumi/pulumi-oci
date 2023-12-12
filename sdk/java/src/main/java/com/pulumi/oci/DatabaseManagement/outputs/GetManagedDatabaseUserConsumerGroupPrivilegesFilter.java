@@ -75,11 +75,11 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesFilter {
             return values(List.of(values));
         }
         public GetManagedDatabaseUserConsumerGroupPrivilegesFilter build() {
-            final var o = new GetManagedDatabaseUserConsumerGroupPrivilegesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserConsumerGroupPrivilegesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

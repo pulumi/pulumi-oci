@@ -163,16 +163,16 @@ public final class GetIpsecConnectionTunnelErrorResult {
             return this;
         }
         public GetIpsecConnectionTunnelErrorResult build() {
-            final var o = new GetIpsecConnectionTunnelErrorResult();
-            o.errorCode = errorCode;
-            o.errorDescription = errorDescription;
-            o.id = id;
-            o.ipsecId = ipsecId;
-            o.ociResourcesLink = ociResourcesLink;
-            o.solution = solution;
-            o.timestamp = timestamp;
-            o.tunnelId = tunnelId;
-            return o;
+            final var _resultValue = new GetIpsecConnectionTunnelErrorResult();
+            _resultValue.errorCode = errorCode;
+            _resultValue.errorDescription = errorDescription;
+            _resultValue.id = id;
+            _resultValue.ipsecId = ipsecId;
+            _resultValue.ociResourcesLink = ociResourcesLink;
+            _resultValue.solution = solution;
+            _resultValue.timestamp = timestamp;
+            _resultValue.tunnelId = tunnelId;
+            return _resultValue;
         }
     }
 }

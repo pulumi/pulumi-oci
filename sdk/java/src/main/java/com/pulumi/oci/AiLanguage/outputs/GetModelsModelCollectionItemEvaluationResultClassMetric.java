@@ -123,13 +123,13 @@ public final class GetModelsModelCollectionItemEvaluationResultClassMetric {
             return this;
         }
         public GetModelsModelCollectionItemEvaluationResultClassMetric build() {
-            final var o = new GetModelsModelCollectionItemEvaluationResultClassMetric();
-            o.f1 = f1;
-            o.label = label;
-            o.precision = precision;
-            o.recall = recall;
-            o.support = support;
-            return o;
+            final var _resultValue = new GetModelsModelCollectionItemEvaluationResultClassMetric();
+            _resultValue.f1 = f1;
+            _resultValue.label = label;
+            _resultValue.precision = precision;
+            _resultValue.recall = recall;
+            _resultValue.support = support;
+            return _resultValue;
         }
     }
 }

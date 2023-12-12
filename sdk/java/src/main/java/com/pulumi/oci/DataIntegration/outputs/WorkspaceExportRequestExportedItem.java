@@ -181,16 +181,16 @@ public final class WorkspaceExportRequestExportedItem {
             return this;
         }
         public WorkspaceExportRequestExportedItem build() {
-            final var o = new WorkspaceExportRequestExportedItem();
-            o.aggregatorKey = aggregatorKey;
-            o.identifier = identifier;
-            o.key = key;
-            o.name = name;
-            o.namePath = namePath;
-            o.objectType = objectType;
-            o.objectVersion = objectVersion;
-            o.timeUpdatedInMillis = timeUpdatedInMillis;
-            return o;
+            final var _resultValue = new WorkspaceExportRequestExportedItem();
+            _resultValue.aggregatorKey = aggregatorKey;
+            _resultValue.identifier = identifier;
+            _resultValue.key = key;
+            _resultValue.name = name;
+            _resultValue.namePath = namePath;
+            _resultValue.objectType = objectType;
+            _resultValue.objectVersion = objectVersion;
+            _resultValue.timeUpdatedInMillis = timeUpdatedInMillis;
+            return _resultValue;
         }
     }
 }

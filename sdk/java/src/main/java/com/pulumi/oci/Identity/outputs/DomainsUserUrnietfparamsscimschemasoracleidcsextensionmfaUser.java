@@ -514,19 +514,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
             return trustedUserAgents(List.of(trustedUserAgents));
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser();
-            o.bypassCodes = bypassCodes;
-            o.devices = devices;
-            o.loginAttempts = loginAttempts;
-            o.mfaEnabledOn = mfaEnabledOn;
-            o.mfaIgnoredApps = mfaIgnoredApps;
-            o.mfaStatus = mfaStatus;
-            o.preferredAuthenticationFactor = preferredAuthenticationFactor;
-            o.preferredAuthenticationMethod = preferredAuthenticationMethod;
-            o.preferredDevice = preferredDevice;
-            o.preferredThirdPartyVendor = preferredThirdPartyVendor;
-            o.trustedUserAgents = trustedUserAgents;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser();
+            _resultValue.bypassCodes = bypassCodes;
+            _resultValue.devices = devices;
+            _resultValue.loginAttempts = loginAttempts;
+            _resultValue.mfaEnabledOn = mfaEnabledOn;
+            _resultValue.mfaIgnoredApps = mfaIgnoredApps;
+            _resultValue.mfaStatus = mfaStatus;
+            _resultValue.preferredAuthenticationFactor = preferredAuthenticationFactor;
+            _resultValue.preferredAuthenticationMethod = preferredAuthenticationMethod;
+            _resultValue.preferredDevice = preferredDevice;
+            _resultValue.preferredThirdPartyVendor = preferredThirdPartyVendor;
+            _resultValue.trustedUserAgents = trustedUserAgents;
+            return _resultValue;
         }
     }
 }

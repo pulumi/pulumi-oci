@@ -65,10 +65,10 @@ public final class GetCertificateAuthorityVersionsCertificateAuthorityVersionCol
             return this;
         }
         public GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity build() {
-            final var o = new GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity();
-            o.timeOfValidityNotAfter = timeOfValidityNotAfter;
-            o.timeOfValidityNotBefore = timeOfValidityNotBefore;
-            return o;
+            final var _resultValue = new GetCertificateAuthorityVersionsCertificateAuthorityVersionCollectionItemValidity();
+            _resultValue.timeOfValidityNotAfter = timeOfValidityNotAfter;
+            _resultValue.timeOfValidityNotBefore = timeOfValidityNotBefore;
+            return _resultValue;
         }
     }
 }

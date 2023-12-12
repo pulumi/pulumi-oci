@@ -96,11 +96,11 @@ public final class GetDeploymentSpecificationRouteRequestPolicyQueryParameterTra
             return setQueryParameters(List.of(setQueryParameters));
         }
         public GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation build() {
-            final var o = new GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation();
-            o.filterQueryParameters = filterQueryParameters;
-            o.renameQueryParameters = renameQueryParameters;
-            o.setQueryParameters = setQueryParameters;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteRequestPolicyQueryParameterTransformation();
+            _resultValue.filterQueryParameters = filterQueryParameters;
+            _resultValue.renameQueryParameters = renameQueryParameters;
+            _resultValue.setQueryParameters = setQueryParameters;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection 
             return items(List.of(items));
         }
         public GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection build() {
-            final var o = new GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

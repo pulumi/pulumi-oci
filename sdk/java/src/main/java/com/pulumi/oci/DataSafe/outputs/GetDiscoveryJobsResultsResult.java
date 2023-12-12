@@ -230,18 +230,18 @@ public final class GetDiscoveryJobsResultsResult {
             return schemaNames(List.of(schemaNames));
         }
         public GetDiscoveryJobsResultsResult build() {
-            final var o = new GetDiscoveryJobsResultsResult();
-            o.columnNames = columnNames;
-            o.discoveryJobId = discoveryJobId;
-            o.discoveryJobResultCollections = discoveryJobResultCollections;
-            o.discoveryType = discoveryType;
-            o.filters = filters;
-            o.id = id;
-            o.isResultApplied = isResultApplied;
-            o.objects = objects;
-            o.plannedAction = plannedAction;
-            o.schemaNames = schemaNames;
-            return o;
+            final var _resultValue = new GetDiscoveryJobsResultsResult();
+            _resultValue.columnNames = columnNames;
+            _resultValue.discoveryJobId = discoveryJobId;
+            _resultValue.discoveryJobResultCollections = discoveryJobResultCollections;
+            _resultValue.discoveryType = discoveryType;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isResultApplied = isResultApplied;
+            _resultValue.objects = objects;
+            _resultValue.plannedAction = plannedAction;
+            _resultValue.schemaNames = schemaNames;
+            return _resultValue;
         }
     }
 }

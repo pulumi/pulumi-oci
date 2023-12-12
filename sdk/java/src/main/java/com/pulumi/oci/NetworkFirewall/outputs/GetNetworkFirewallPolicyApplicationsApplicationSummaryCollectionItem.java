@@ -142,14 +142,14 @@ public final class GetNetworkFirewallPolicyApplicationsApplicationSummaryCollect
             return this;
         }
         public GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem build() {
-            final var o = new GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem();
-            o.icmpCode = icmpCode;
-            o.icmpType = icmpType;
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyApplicationsApplicationSummaryCollectionItem();
+            _resultValue.icmpCode = icmpCode;
+            _resultValue.icmpType = icmpType;
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceC
             return items(List.of(items));
         }
         public GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection build() {
-            final var o = new GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

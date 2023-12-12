@@ -46,9 +46,9 @@ public final class ExternalDbSystemDatabaseManagementConfig {
             return this;
         }
         public ExternalDbSystemDatabaseManagementConfig build() {
-            final var o = new ExternalDbSystemDatabaseManagementConfig();
-            o.licenseModel = licenseModel;
-            return o;
+            final var _resultValue = new ExternalDbSystemDatabaseManagementConfig();
+            _resultValue.licenseModel = licenseModel;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetExternalDbNodesFilter {
             return values(List.of(values));
         }
         public GetExternalDbNodesFilter build() {
-            final var o = new GetExternalDbNodesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExternalDbNodesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

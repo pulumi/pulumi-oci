@@ -67,10 +67,10 @@ public final class AddonConfiguration {
             return this;
         }
         public AddonConfiguration build() {
-            final var o = new AddonConfiguration();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new AddonConfiguration();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -107,12 +107,12 @@ public final class GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnable
             return this;
         }
         public GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition build() {
-            final var o = new GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition();
-            o.entityNames = entityNames;
-            o.entitySelection = entitySelection;
-            o.entityType = entityType;
-            o.operationStatus = operationStatus;
-            return o;
+            final var _resultValue = new GetAuditPoliciesAuditPolicyCollectionItemAuditConditionEnableCondition();
+            _resultValue.entityNames = entityNames;
+            _resultValue.entitySelection = entitySelection;
+            _resultValue.entityType = entityType;
+            _resultValue.operationStatus = operationStatus;
+            return _resultValue;
         }
     }
 }

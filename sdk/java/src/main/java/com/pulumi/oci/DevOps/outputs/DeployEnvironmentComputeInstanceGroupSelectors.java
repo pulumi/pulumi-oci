@@ -51,9 +51,9 @@ public final class DeployEnvironmentComputeInstanceGroupSelectors {
             return items(List.of(items));
         }
         public DeployEnvironmentComputeInstanceGroupSelectors build() {
-            final var o = new DeployEnvironmentComputeInstanceGroupSelectors();
-            o.items = items;
-            return o;
+            final var _resultValue = new DeployEnvironmentComputeInstanceGroupSelectors();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

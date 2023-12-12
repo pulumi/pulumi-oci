@@ -93,11 +93,11 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetail {
             return modelConfigurationDetails(List.of(modelConfigurationDetails));
         }
         public GetModelDeploymentModelDeploymentConfigurationDetail build() {
-            final var o = new GetModelDeploymentModelDeploymentConfigurationDetail();
-            o.deploymentType = deploymentType;
-            o.environmentConfigurationDetails = environmentConfigurationDetails;
-            o.modelConfigurationDetails = modelConfigurationDetails;
-            return o;
+            final var _resultValue = new GetModelDeploymentModelDeploymentConfigurationDetail();
+            _resultValue.deploymentType = deploymentType;
+            _resultValue.environmentConfigurationDetails = environmentConfigurationDetails;
+            _resultValue.modelConfigurationDetails = modelConfigurationDetails;
+            return _resultValue;
         }
     }
 }

@@ -230,13 +230,13 @@ public final class DomainsMyApiKeyUser {
             return this;
         }
         public DomainsMyApiKeyUser build() {
-            final var o = new DomainsMyApiKeyUser();
-            o.display = display;
-            o.name = name;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsMyApiKeyUser();
+            _resultValue.display = display;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

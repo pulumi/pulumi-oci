@@ -65,10 +65,10 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemMan
             return this;
         }
         public GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId build() {
-            final var o = new GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId();
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemManagedInstanceId();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

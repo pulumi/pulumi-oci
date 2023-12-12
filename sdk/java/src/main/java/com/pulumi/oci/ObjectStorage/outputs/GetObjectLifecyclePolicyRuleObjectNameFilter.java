@@ -94,11 +94,11 @@ public final class GetObjectLifecyclePolicyRuleObjectNameFilter {
             return inclusionPrefixes(List.of(inclusionPrefixes));
         }
         public GetObjectLifecyclePolicyRuleObjectNameFilter build() {
-            final var o = new GetObjectLifecyclePolicyRuleObjectNameFilter();
-            o.exclusionPatterns = exclusionPatterns;
-            o.inclusionPatterns = inclusionPatterns;
-            o.inclusionPrefixes = inclusionPrefixes;
-            return o;
+            final var _resultValue = new GetObjectLifecyclePolicyRuleObjectNameFilter();
+            _resultValue.exclusionPatterns = exclusionPatterns;
+            _resultValue.inclusionPatterns = inclusionPatterns;
+            _resultValue.inclusionPrefixes = inclusionPrefixes;
+            return _resultValue;
         }
     }
 }

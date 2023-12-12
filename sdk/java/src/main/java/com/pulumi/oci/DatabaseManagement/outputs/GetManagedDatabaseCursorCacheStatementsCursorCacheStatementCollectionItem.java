@@ -84,11 +84,11 @@ public final class GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCo
             return this;
         }
         public GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem build() {
-            final var o = new GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem();
-            o.schema = schema;
-            o.sqlId = sqlId;
-            o.sqlText = sqlText;
-            return o;
+            final var _resultValue = new GetManagedDatabaseCursorCacheStatementsCursorCacheStatementCollectionItem();
+            _resultValue.schema = schema;
+            _resultValue.sqlId = sqlId;
+            _resultValue.sqlText = sqlText;
+            return _resultValue;
         }
     }
 }

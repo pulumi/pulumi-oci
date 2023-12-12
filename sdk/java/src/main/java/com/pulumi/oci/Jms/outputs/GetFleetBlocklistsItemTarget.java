@@ -84,11 +84,11 @@ public final class GetFleetBlocklistsItemTarget {
             return this;
         }
         public GetFleetBlocklistsItemTarget build() {
-            final var o = new GetFleetBlocklistsItemTarget();
-            o.fleetId = fleetId;
-            o.installationKey = installationKey;
-            o.managedInstanceId = managedInstanceId;
-            return o;
+            final var _resultValue = new GetFleetBlocklistsItemTarget();
+            _resultValue.fleetId = fleetId;
+            _resultValue.installationKey = installationKey;
+            _resultValue.managedInstanceId = managedInstanceId;
+            return _resultValue;
         }
     }
 }

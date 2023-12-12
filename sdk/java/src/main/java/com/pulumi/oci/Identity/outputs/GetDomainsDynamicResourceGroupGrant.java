@@ -109,12 +109,12 @@ public final class GetDomainsDynamicResourceGroupGrant {
             return this;
         }
         public GetDomainsDynamicResourceGroupGrant build() {
-            final var o = new GetDomainsDynamicResourceGroupGrant();
-            o.appId = appId;
-            o.grantMechanism = grantMechanism;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsDynamicResourceGroupGrant();
+            _resultValue.appId = appId;
+            _resultValue.grantMechanism = grantMechanism;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

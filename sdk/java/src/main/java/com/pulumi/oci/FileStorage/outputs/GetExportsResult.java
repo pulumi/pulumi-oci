@@ -155,15 +155,15 @@ public final class GetExportsResult {
             return this;
         }
         public GetExportsResult build() {
-            final var o = new GetExportsResult();
-            o.compartmentId = compartmentId;
-            o.exportSetId = exportSetId;
-            o.exports = exports;
-            o.fileSystemId = fileSystemId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetExportsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.exportSetId = exportSetId;
+            _resultValue.exports = exports;
+            _resultValue.fileSystemId = fileSystemId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

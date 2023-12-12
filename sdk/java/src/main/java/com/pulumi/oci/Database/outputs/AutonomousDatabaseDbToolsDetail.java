@@ -108,12 +108,12 @@ public final class AutonomousDatabaseDbToolsDetail {
             return this;
         }
         public AutonomousDatabaseDbToolsDetail build() {
-            final var o = new AutonomousDatabaseDbToolsDetail();
-            o.computeCount = computeCount;
-            o.isEnabled = isEnabled;
-            o.maxIdleTimeInMinutes = maxIdleTimeInMinutes;
-            o.name = name;
-            return o;
+            final var _resultValue = new AutonomousDatabaseDbToolsDetail();
+            _resultValue.computeCount = computeCount;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.maxIdleTimeInMinutes = maxIdleTimeInMinutes;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

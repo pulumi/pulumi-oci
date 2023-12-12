@@ -85,11 +85,11 @@ public final class GetDomainsCloudGateMappingsCloudGateMappingUpstreamServerGrou
             return this;
         }
         public GetDomainsCloudGateMappingsCloudGateMappingUpstreamServerGroup build() {
-            final var o = new GetDomainsCloudGateMappingsCloudGateMappingUpstreamServerGroup();
-            o.ref = ref;
-            o.ssl = ssl;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsCloudGateMappingsCloudGateMappingUpstreamServerGroup();
+            _resultValue.ref = ref;
+            _resultValue.ssl = ssl;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetTriggersTriggerCollectionItemActionFilterExclude {
             return fileFilters(List.of(fileFilters));
         }
         public GetTriggersTriggerCollectionItemActionFilterExclude build() {
-            final var o = new GetTriggersTriggerCollectionItemActionFilterExclude();
-            o.fileFilters = fileFilters;
-            return o;
+            final var _resultValue = new GetTriggersTriggerCollectionItemActionFilterExclude();
+            _resultValue.fileFilters = fileFilters;
+            return _resultValue;
         }
     }
 }

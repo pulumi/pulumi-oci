@@ -65,10 +65,10 @@ public final class ConnectionAdminCredentials {
             return this;
         }
         public ConnectionAdminCredentials build() {
-            final var o = new ConnectionAdminCredentials();
-            o.password = password;
-            o.username = username;
-            return o;
+            final var _resultValue = new ConnectionAdminCredentials();
+            _resultValue.password = password;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

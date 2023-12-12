@@ -97,12 +97,12 @@ public final class GetCrossConnectLocationsResult {
             return this;
         }
         public GetCrossConnectLocationsResult build() {
-            final var o = new GetCrossConnectLocationsResult();
-            o.compartmentId = compartmentId;
-            o.crossConnectLocations = crossConnectLocations;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetCrossConnectLocationsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.crossConnectLocations = crossConnectLocations;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

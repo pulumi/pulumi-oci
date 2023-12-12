@@ -103,12 +103,12 @@ public final class GetDomainsNotificationSettingsNotificationSettingFromEmailAdd
             return this;
         }
         public GetDomainsNotificationSettingsNotificationSettingFromEmailAddress build() {
-            final var o = new GetDomainsNotificationSettingsNotificationSettingFromEmailAddress();
-            o.displayName = displayName;
-            o.validate = validate;
-            o.validationStatus = validationStatus;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsNotificationSettingsNotificationSettingFromEmailAddress();
+            _resultValue.displayName = displayName;
+            _resultValue.validate = validate;
+            _resultValue.validationStatus = validationStatus;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -167,16 +167,16 @@ public final class GetManagementAgentInstallKeysResult {
             return this;
         }
         public GetManagementAgentInstallKeysResult build() {
-            final var o = new GetManagementAgentInstallKeysResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.managementAgentInstallKeys = managementAgentInstallKeys;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetManagementAgentInstallKeysResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managementAgentInstallKeys = managementAgentInstallKeys;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

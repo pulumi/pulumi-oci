@@ -302,22 +302,22 @@ public final class NodePoolNode {
             return this;
         }
         public NodePoolNode build() {
-            final var o = new NodePoolNode();
-            o.availabilityDomain = availabilityDomain;
-            o.definedTags = definedTags;
-            o.errors = errors;
-            o.faultDomain = faultDomain;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.kubernetesVersion = kubernetesVersion;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.nodePoolId = nodePoolId;
-            o.privateIp = privateIp;
-            o.publicIp = publicIp;
-            o.state = state;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new NodePoolNode();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.definedTags = definedTags;
+            _resultValue.errors = errors;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.kubernetesVersion = kubernetesVersion;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.nodePoolId = nodePoolId;
+            _resultValue.privateIp = privateIp;
+            _resultValue.publicIp = publicIp;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

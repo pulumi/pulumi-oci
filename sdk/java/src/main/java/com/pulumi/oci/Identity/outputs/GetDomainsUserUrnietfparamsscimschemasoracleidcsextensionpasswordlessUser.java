@@ -89,11 +89,11 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpass
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser();
-            o.factorIdentifiers = factorIdentifiers;
-            o.factorMethod = factorMethod;
-            o.factorType = factorType;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser();
+            _resultValue.factorIdentifiers = factorIdentifiers;
+            _resultValue.factorMethod = factorMethod;
+            _resultValue.factorType = factorType;
+            return _resultValue;
         }
     }
 }

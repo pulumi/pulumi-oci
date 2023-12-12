@@ -70,10 +70,10 @@ public final class GetManagementAgentCountItem {
             return dimensions(List.of(dimensions));
         }
         public GetManagementAgentCountItem build() {
-            final var o = new GetManagementAgentCountItem();
-            o.count = count;
-            o.dimensions = dimensions;
-            return o;
+            final var _resultValue = new GetManagementAgentCountItem();
+            _resultValue.count = count;
+            _resultValue.dimensions = dimensions;
+            return _resultValue;
         }
     }
 }

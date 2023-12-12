@@ -69,10 +69,10 @@ public final class GetTagValidator {
             return values(List.of(values));
         }
         public GetTagValidator build() {
-            final var o = new GetTagValidator();
-            o.validatorType = validatorType;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetTagValidator();
+            _resultValue.validatorType = validatorType;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

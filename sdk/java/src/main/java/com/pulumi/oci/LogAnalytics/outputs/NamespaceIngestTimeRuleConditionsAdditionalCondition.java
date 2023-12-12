@@ -84,11 +84,11 @@ public final class NamespaceIngestTimeRuleConditionsAdditionalCondition {
             return this;
         }
         public NamespaceIngestTimeRuleConditionsAdditionalCondition build() {
-            final var o = new NamespaceIngestTimeRuleConditionsAdditionalCondition();
-            o.conditionField = conditionField;
-            o.conditionOperator = conditionOperator;
-            o.conditionValue = conditionValue;
-            return o;
+            final var _resultValue = new NamespaceIngestTimeRuleConditionsAdditionalCondition();
+            _resultValue.conditionField = conditionField;
+            _resultValue.conditionOperator = conditionOperator;
+            _resultValue.conditionValue = conditionValue;
+            return _resultValue;
         }
     }
 }

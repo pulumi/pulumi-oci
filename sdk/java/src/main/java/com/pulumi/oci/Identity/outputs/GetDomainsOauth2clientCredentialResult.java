@@ -533,35 +533,35 @@ public final class GetDomainsOauth2clientCredentialResult {
             return users(List.of(users));
         }
         public GetDomainsOauth2clientCredentialResult build() {
-            final var o = new GetDomainsOauth2clientCredentialResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.description = description;
-            o.domainOcid = domainOcid;
-            o.expiresOn = expiresOn;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.isResetSecret = isResetSecret;
-            o.metas = metas;
-            o.name = name;
-            o.oAuth2clientCredentialId = oAuth2clientCredentialId;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.scopes = scopes;
-            o.status = status;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetDomainsOauth2clientCredentialResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.description = description;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.expiresOn = expiresOn;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.isResetSecret = isResetSecret;
+            _resultValue.metas = metas;
+            _resultValue.name = name;
+            _resultValue.oAuth2clientCredentialId = oAuth2clientCredentialId;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.scopes = scopes;
+            _resultValue.status = status;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.urnietfparamsscimschemasoracleidcsextensionselfChangeUsers = urnietfparamsscimschemasoracleidcsextensionselfChangeUsers;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }

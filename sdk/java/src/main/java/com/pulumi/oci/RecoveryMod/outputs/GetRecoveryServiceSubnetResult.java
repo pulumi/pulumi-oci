@@ -280,21 +280,21 @@ public final class GetRecoveryServiceSubnetResult {
             return this;
         }
         public GetRecoveryServiceSubnetResult build() {
-            final var o = new GetRecoveryServiceSubnetResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.recoveryServiceSubnetId = recoveryServiceSubnetId;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetRecoveryServiceSubnetResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.recoveryServiceSubnetId = recoveryServiceSubnetId;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

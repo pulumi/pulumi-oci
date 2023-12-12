@@ -84,11 +84,11 @@ public final class GetAllowedDomainLicenseTypesAllowedDomainLicenseType {
             return this;
         }
         public GetAllowedDomainLicenseTypesAllowedDomainLicenseType build() {
-            final var o = new GetAllowedDomainLicenseTypesAllowedDomainLicenseType();
-            o.description = description;
-            o.licenseType = licenseType;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAllowedDomainLicenseTypesAllowedDomainLicenseType();
+            _resultValue.description = description;
+            _resultValue.licenseType = licenseType;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

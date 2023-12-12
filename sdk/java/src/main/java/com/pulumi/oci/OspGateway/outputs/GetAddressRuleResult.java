@@ -157,15 +157,15 @@ public final class GetAddressRuleResult {
             return taxes(List.of(taxes));
         }
         public GetAddressRuleResult build() {
-            final var o = new GetAddressRuleResult();
-            o.addresses = addresses;
-            o.compartmentId = compartmentId;
-            o.contacts = contacts;
-            o.countryCode = countryCode;
-            o.id = id;
-            o.ospHomeRegion = ospHomeRegion;
-            o.taxes = taxes;
-            return o;
+            final var _resultValue = new GetAddressRuleResult();
+            _resultValue.addresses = addresses;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.contacts = contacts;
+            _resultValue.countryCode = countryCode;
+            _resultValue.id = id;
+            _resultValue.ospHomeRegion = ospHomeRegion;
+            _resultValue.taxes = taxes;
+            return _resultValue;
         }
     }
 }

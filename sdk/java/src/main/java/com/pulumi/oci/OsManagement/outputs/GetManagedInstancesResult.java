@@ -144,14 +144,14 @@ public final class GetManagedInstancesResult {
             return this;
         }
         public GetManagedInstancesResult build() {
-            final var o = new GetManagedInstancesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.managedInstances = managedInstances;
-            o.osFamily = osFamily;
-            return o;
+            final var _resultValue = new GetManagedInstancesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedInstances = managedInstances;
+            _resultValue.osFamily = osFamily;
+            return _resultValue;
         }
     }
 }

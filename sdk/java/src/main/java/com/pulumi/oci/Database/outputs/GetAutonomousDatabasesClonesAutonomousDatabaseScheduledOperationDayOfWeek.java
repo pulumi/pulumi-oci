@@ -46,9 +46,9 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperat
             return this;
         }
         public GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek build() {
-            final var o = new GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationDayOfWeek();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

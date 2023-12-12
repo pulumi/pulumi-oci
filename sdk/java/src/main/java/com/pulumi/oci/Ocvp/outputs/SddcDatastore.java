@@ -91,11 +91,11 @@ public final class SddcDatastore {
             return this;
         }
         public SddcDatastore build() {
-            final var o = new SddcDatastore();
-            o.blockVolumeIds = blockVolumeIds;
-            o.capacity = capacity;
-            o.datastoreType = datastoreType;
-            return o;
+            final var _resultValue = new SddcDatastore();
+            _resultValue.blockVolumeIds = blockVolumeIds;
+            _resultValue.capacity = capacity;
+            _resultValue.datastoreType = datastoreType;
+            return _resultValue;
         }
     }
 }

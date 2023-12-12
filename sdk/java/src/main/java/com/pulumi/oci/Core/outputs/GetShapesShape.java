@@ -615,37 +615,37 @@ public final class GetShapesShape {
             return resizeCompatibleShapes(List.of(resizeCompatibleShapes));
         }
         public GetShapesShape build() {
-            final var o = new GetShapesShape();
-            o.baselineOcpuUtilizations = baselineOcpuUtilizations;
-            o.billingType = billingType;
-            o.gpuDescription = gpuDescription;
-            o.gpus = gpus;
-            o.isBilledForStoppedInstance = isBilledForStoppedInstance;
-            o.isFlexible = isFlexible;
-            o.isLiveMigrationSupported = isLiveMigrationSupported;
-            o.isSubcore = isSubcore;
-            o.localDiskDescription = localDiskDescription;
-            o.localDisks = localDisks;
-            o.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
-            o.maxVnicAttachmentOptions = maxVnicAttachmentOptions;
-            o.maxVnicAttachments = maxVnicAttachments;
-            o.memoryInGbs = memoryInGbs;
-            o.memoryOptions = memoryOptions;
-            o.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
-            o.name = name;
-            o.networkPorts = networkPorts;
-            o.networkingBandwidthInGbps = networkingBandwidthInGbps;
-            o.networkingBandwidthOptions = networkingBandwidthOptions;
-            o.ocpuOptions = ocpuOptions;
-            o.ocpus = ocpus;
-            o.platformConfigOptions = platformConfigOptions;
-            o.processorDescription = processorDescription;
-            o.quotaNames = quotaNames;
-            o.rdmaBandwidthInGbps = rdmaBandwidthInGbps;
-            o.rdmaPorts = rdmaPorts;
-            o.recommendedAlternatives = recommendedAlternatives;
-            o.resizeCompatibleShapes = resizeCompatibleShapes;
-            return o;
+            final var _resultValue = new GetShapesShape();
+            _resultValue.baselineOcpuUtilizations = baselineOcpuUtilizations;
+            _resultValue.billingType = billingType;
+            _resultValue.gpuDescription = gpuDescription;
+            _resultValue.gpus = gpus;
+            _resultValue.isBilledForStoppedInstance = isBilledForStoppedInstance;
+            _resultValue.isFlexible = isFlexible;
+            _resultValue.isLiveMigrationSupported = isLiveMigrationSupported;
+            _resultValue.isSubcore = isSubcore;
+            _resultValue.localDiskDescription = localDiskDescription;
+            _resultValue.localDisks = localDisks;
+            _resultValue.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
+            _resultValue.maxVnicAttachmentOptions = maxVnicAttachmentOptions;
+            _resultValue.maxVnicAttachments = maxVnicAttachments;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.memoryOptions = memoryOptions;
+            _resultValue.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
+            _resultValue.name = name;
+            _resultValue.networkPorts = networkPorts;
+            _resultValue.networkingBandwidthInGbps = networkingBandwidthInGbps;
+            _resultValue.networkingBandwidthOptions = networkingBandwidthOptions;
+            _resultValue.ocpuOptions = ocpuOptions;
+            _resultValue.ocpus = ocpus;
+            _resultValue.platformConfigOptions = platformConfigOptions;
+            _resultValue.processorDescription = processorDescription;
+            _resultValue.quotaNames = quotaNames;
+            _resultValue.rdmaBandwidthInGbps = rdmaBandwidthInGbps;
+            _resultValue.rdmaPorts = rdmaPorts;
+            _resultValue.recommendedAlternatives = recommendedAlternatives;
+            _resultValue.resizeCompatibleShapes = resizeCompatibleShapes;
+            return _resultValue;
         }
     }
 }

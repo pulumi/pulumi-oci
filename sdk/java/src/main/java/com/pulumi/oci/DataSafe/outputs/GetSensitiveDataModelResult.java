@@ -390,27 +390,27 @@ public final class GetSensitiveDataModelResult {
             return this;
         }
         public GetSensitiveDataModelResult build() {
-            final var o = new GetSensitiveDataModelResult();
-            o.appSuiteName = appSuiteName;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
-            o.isIncludeAllSchemas = isIncludeAllSchemas;
-            o.isIncludeAllSensitiveTypes = isIncludeAllSensitiveTypes;
-            o.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
-            o.schemasForDiscoveries = schemasForDiscoveries;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.sensitiveTypeIdsForDiscoveries = sensitiveTypeIdsForDiscoveries;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.targetId = targetId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetSensitiveDataModelResult();
+            _resultValue.appSuiteName = appSuiteName;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
+            _resultValue.isIncludeAllSchemas = isIncludeAllSchemas;
+            _resultValue.isIncludeAllSensitiveTypes = isIncludeAllSensitiveTypes;
+            _resultValue.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
+            _resultValue.schemasForDiscoveries = schemasForDiscoveries;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.sensitiveTypeIdsForDiscoveries = sensitiveTypeIdsForDiscoveries;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

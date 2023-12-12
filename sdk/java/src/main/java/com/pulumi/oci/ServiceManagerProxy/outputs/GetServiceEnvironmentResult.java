@@ -180,16 +180,16 @@ public final class GetServiceEnvironmentResult {
             return this;
         }
         public GetServiceEnvironmentResult build() {
-            final var o = new GetServiceEnvironmentResult();
-            o.compartmentId = compartmentId;
-            o.consoleUrl = consoleUrl;
-            o.id = id;
-            o.serviceDefinitions = serviceDefinitions;
-            o.serviceEnvironmentEndpoints = serviceEnvironmentEndpoints;
-            o.serviceEnvironmentId = serviceEnvironmentId;
-            o.status = status;
-            o.subscriptionId = subscriptionId;
-            return o;
+            final var _resultValue = new GetServiceEnvironmentResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.consoleUrl = consoleUrl;
+            _resultValue.id = id;
+            _resultValue.serviceDefinitions = serviceDefinitions;
+            _resultValue.serviceEnvironmentEndpoints = serviceEnvironmentEndpoints;
+            _resultValue.serviceEnvironmentId = serviceEnvironmentId;
+            _resultValue.status = status;
+            _resultValue.subscriptionId = subscriptionId;
+            return _resultValue;
         }
     }
 }

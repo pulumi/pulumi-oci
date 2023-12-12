@@ -67,10 +67,10 @@ public final class CloudGuardDataSourceDataSourceDetectorMappingInfo {
             return this;
         }
         public CloudGuardDataSourceDataSourceDetectorMappingInfo build() {
-            final var o = new CloudGuardDataSourceDataSourceDetectorMappingInfo();
-            o.detectorRecipeId = detectorRecipeId;
-            o.detectorRuleId = detectorRuleId;
-            return o;
+            final var _resultValue = new CloudGuardDataSourceDataSourceDetectorMappingInfo();
+            _resultValue.detectorRecipeId = detectorRecipeId;
+            _resultValue.detectorRuleId = detectorRuleId;
+            return _resultValue;
         }
     }
 }

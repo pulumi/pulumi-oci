@@ -136,14 +136,14 @@ public final class GetManagementAgentCountResult {
             return items(List.of(items));
         }
         public GetManagementAgentCountResult build() {
-            final var o = new GetManagementAgentCountResult();
-            o.compartmentId = compartmentId;
-            o.groupBies = groupBies;
-            o.hasPlugins = hasPlugins;
-            o.id = id;
-            o.installType = installType;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagementAgentCountResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.groupBies = groupBies;
+            _resultValue.hasPlugins = hasPlugins;
+            _resultValue.id = id;
+            _resultValue.installType = installType;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

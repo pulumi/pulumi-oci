@@ -67,10 +67,10 @@ public final class BackupDestinationAssociatedDatabase {
             return this;
         }
         public BackupDestinationAssociatedDatabase build() {
-            final var o = new BackupDestinationAssociatedDatabase();
-            o.dbName = dbName;
-            o.id = id;
-            return o;
+            final var _resultValue = new BackupDestinationAssociatedDatabase();
+            _resultValue.dbName = dbName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -75,11 +75,11 @@ public final class GetVantagePointsFilter {
             return values(List.of(values));
         }
         public GetVantagePointsFilter build() {
-            final var o = new GetVantagePointsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVantagePointsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

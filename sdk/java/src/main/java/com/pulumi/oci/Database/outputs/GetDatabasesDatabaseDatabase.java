@@ -358,27 +358,27 @@ public final class GetDatabasesDatabaseDatabase {
             return this;
         }
         public GetDatabasesDatabaseDatabase build() {
-            final var o = new GetDatabasesDatabaseDatabase();
-            o.adminPassword = adminPassword;
-            o.backupId = backupId;
-            o.backupTdePassword = backupTdePassword;
-            o.characterSet = characterSet;
-            o.databaseSoftwareImageId = databaseSoftwareImageId;
-            o.dbBackupConfigs = dbBackupConfigs;
-            o.dbName = dbName;
-            o.dbUniqueName = dbUniqueName;
-            o.dbWorkload = dbWorkload;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.kmsKeyId = kmsKeyId;
-            o.kmsKeyVersionId = kmsKeyVersionId;
-            o.ncharacterSet = ncharacterSet;
-            o.pdbName = pdbName;
-            o.pluggableDatabases = pluggableDatabases;
-            o.sidPrefix = sidPrefix;
-            o.tdeWalletPassword = tdeWalletPassword;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new GetDatabasesDatabaseDatabase();
+            _resultValue.adminPassword = adminPassword;
+            _resultValue.backupId = backupId;
+            _resultValue.backupTdePassword = backupTdePassword;
+            _resultValue.characterSet = characterSet;
+            _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
+            _resultValue.dbBackupConfigs = dbBackupConfigs;
+            _resultValue.dbName = dbName;
+            _resultValue.dbUniqueName = dbUniqueName;
+            _resultValue.dbWorkload = dbWorkload;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.kmsKeyVersionId = kmsKeyVersionId;
+            _resultValue.ncharacterSet = ncharacterSet;
+            _resultValue.pdbName = pdbName;
+            _resultValue.pluggableDatabases = pluggableDatabases;
+            _resultValue.sidPrefix = sidPrefix;
+            _resultValue.tdeWalletPassword = tdeWalletPassword;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

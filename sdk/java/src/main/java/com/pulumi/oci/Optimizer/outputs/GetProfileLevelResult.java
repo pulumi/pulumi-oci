@@ -133,14 +133,14 @@ public final class GetProfileLevelResult {
             return this;
         }
         public GetProfileLevelResult build() {
-            final var o = new GetProfileLevelResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.id = id;
-            o.items = items;
-            o.name = name;
-            o.recommendationName = recommendationName;
-            return o;
+            final var _resultValue = new GetProfileLevelResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.name = name;
+            _resultValue.recommendationName = recommendationName;
+            return _resultValue;
         }
     }
 }

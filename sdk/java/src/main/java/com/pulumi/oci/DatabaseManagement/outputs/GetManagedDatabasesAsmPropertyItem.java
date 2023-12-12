@@ -46,9 +46,9 @@ public final class GetManagedDatabasesAsmPropertyItem {
             return this;
         }
         public GetManagedDatabasesAsmPropertyItem build() {
-            final var o = new GetManagedDatabasesAsmPropertyItem();
-            o.diskGroup = diskGroup;
-            return o;
+            final var _resultValue = new GetManagedDatabasesAsmPropertyItem();
+            _resultValue.diskGroup = diskGroup;
+            return _resultValue;
         }
     }
 }

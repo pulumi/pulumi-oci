@@ -66,10 +66,10 @@ public final class GetRecommendationsRecommendationCollectionItemResourceCount {
             return this;
         }
         public GetRecommendationsRecommendationCollectionItemResourceCount build() {
-            final var o = new GetRecommendationsRecommendationCollectionItemResourceCount();
-            o.count = count;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetRecommendationsRecommendationCollectionItemResourceCount();
+            _resultValue.count = count;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

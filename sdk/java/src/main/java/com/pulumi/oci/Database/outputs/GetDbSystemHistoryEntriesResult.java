@@ -97,12 +97,12 @@ public final class GetDbSystemHistoryEntriesResult {
             return patchHistoryEntries(List.of(patchHistoryEntries));
         }
         public GetDbSystemHistoryEntriesResult build() {
-            final var o = new GetDbSystemHistoryEntriesResult();
-            o.dbSystemId = dbSystemId;
-            o.filters = filters;
-            o.id = id;
-            o.patchHistoryEntries = patchHistoryEntries;
-            return o;
+            final var _resultValue = new GetDbSystemHistoryEntriesResult();
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.patchHistoryEntries = patchHistoryEntries;
+            return _resultValue;
         }
     }
 }

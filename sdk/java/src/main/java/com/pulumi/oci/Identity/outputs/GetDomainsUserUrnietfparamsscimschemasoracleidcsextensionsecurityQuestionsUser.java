@@ -50,9 +50,9 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecu
             return secQuestions(List.of(secQuestions));
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser();
-            o.secQuestions = secQuestions;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser();
+            _resultValue.secQuestions = secQuestions;
+            return _resultValue;
         }
     }
 }

@@ -179,16 +179,16 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapa
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser();
-            o.canUseApiKeys = canUseApiKeys;
-            o.canUseAuthTokens = canUseAuthTokens;
-            o.canUseConsole = canUseConsole;
-            o.canUseConsolePassword = canUseConsolePassword;
-            o.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
-            o.canUseDbCredentials = canUseDbCredentials;
-            o.canUseOauth2clientCredentials = canUseOauth2clientCredentials;
-            o.canUseSmtpCredentials = canUseSmtpCredentials;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser();
+            _resultValue.canUseApiKeys = canUseApiKeys;
+            _resultValue.canUseAuthTokens = canUseAuthTokens;
+            _resultValue.canUseConsole = canUseConsole;
+            _resultValue.canUseConsolePassword = canUseConsolePassword;
+            _resultValue.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
+            _resultValue.canUseDbCredentials = canUseDbCredentials;
+            _resultValue.canUseOauth2clientCredentials = canUseOauth2clientCredentials;
+            _resultValue.canUseSmtpCredentials = canUseSmtpCredentials;
+            return _resultValue;
         }
     }
 }

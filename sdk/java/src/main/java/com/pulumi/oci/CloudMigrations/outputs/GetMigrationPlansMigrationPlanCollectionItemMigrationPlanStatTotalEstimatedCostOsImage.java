@@ -65,10 +65,10 @@ public final class GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStat
             return this;
         }
         public GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage build() {
-            final var o = new GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage();
-            o.totalPerHour = totalPerHour;
-            o.totalPerHourBySubscription = totalPerHourBySubscription;
-            return o;
+            final var _resultValue = new GetMigrationPlansMigrationPlanCollectionItemMigrationPlanStatTotalEstimatedCostOsImage();
+            _resultValue.totalPerHour = totalPerHour;
+            _resultValue.totalPerHourBySubscription = totalPerHourBySubscription;
+            return _resultValue;
         }
     }
 }

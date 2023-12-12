@@ -174,16 +174,16 @@ public final class GetControlAssignmentsResult {
             return this;
         }
         public GetControlAssignmentsResult build() {
-            final var o = new GetControlAssignmentsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.operatorControlAssignmentCollections = operatorControlAssignmentCollections;
-            o.operatorControlName = operatorControlName;
-            o.resourceName = resourceName;
-            o.resourceType = resourceType;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetControlAssignmentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.operatorControlAssignmentCollections = operatorControlAssignmentCollections;
+            _resultValue.operatorControlName = operatorControlName;
+            _resultValue.resourceName = resourceName;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

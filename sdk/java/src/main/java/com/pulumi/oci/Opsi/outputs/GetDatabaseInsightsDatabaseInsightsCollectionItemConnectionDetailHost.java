@@ -66,10 +66,10 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDe
             return this;
         }
         public GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost build() {
-            final var o = new GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost();
-            o.hostIp = hostIp;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailHost();
+            _resultValue.hostIp = hostIp;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

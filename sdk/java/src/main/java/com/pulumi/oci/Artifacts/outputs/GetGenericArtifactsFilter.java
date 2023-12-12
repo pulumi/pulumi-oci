@@ -67,11 +67,11 @@ public final class GetGenericArtifactsFilter {
             return values(List.of(values));
         }
         public GetGenericArtifactsFilter build() {
-            final var o = new GetGenericArtifactsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetGenericArtifactsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

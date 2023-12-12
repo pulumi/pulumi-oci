@@ -84,11 +84,11 @@ public final class GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy {
             return this;
         }
         public GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy build() {
-            final var o = new GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy();
-            o.displayName = displayName;
-            o.email = email;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy();
+            _resultValue.displayName = displayName;
+            _resultValue.email = email;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

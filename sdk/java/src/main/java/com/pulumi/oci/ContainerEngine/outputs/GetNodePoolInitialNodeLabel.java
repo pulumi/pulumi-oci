@@ -65,10 +65,10 @@ public final class GetNodePoolInitialNodeLabel {
             return this;
         }
         public GetNodePoolInitialNodeLabel build() {
-            final var o = new GetNodePoolInitialNodeLabel();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetNodePoolInitialNodeLabel();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

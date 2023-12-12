@@ -50,9 +50,9 @@ public final class GetPbfListingTriggersTriggersCollection {
             return items(List.of(items));
         }
         public GetPbfListingTriggersTriggersCollection build() {
-            final var o = new GetPbfListingTriggersTriggersCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetPbfListingTriggersTriggersCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

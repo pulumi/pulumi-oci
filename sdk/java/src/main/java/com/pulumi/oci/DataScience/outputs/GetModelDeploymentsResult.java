@@ -182,16 +182,16 @@ public final class GetModelDeploymentsResult {
             return this;
         }
         public GetModelDeploymentsResult build() {
-            final var o = new GetModelDeploymentsResult();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.modelDeployments = modelDeployments;
-            o.projectId = projectId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetModelDeploymentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.modelDeployments = modelDeployments;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

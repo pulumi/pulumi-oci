@@ -65,10 +65,10 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail
             return this;
         }
         public GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica build() {
-            final var o = new GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica();
-            o.availabilityDomain = availabilityDomain;
-            o.displayName = displayName;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplica();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.displayName = displayName;
+            return _resultValue;
         }
     }
 }

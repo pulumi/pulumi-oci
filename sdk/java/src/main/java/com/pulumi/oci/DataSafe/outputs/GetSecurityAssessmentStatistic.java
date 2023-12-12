@@ -185,15 +185,15 @@ public final class GetSecurityAssessmentStatistic {
             return this;
         }
         public GetSecurityAssessmentStatistic build() {
-            final var o = new GetSecurityAssessmentStatistic();
-            o.advisories = advisories;
-            o.evaluates = evaluates;
-            o.highRisks = highRisks;
-            o.lowRisks = lowRisks;
-            o.mediumRisks = mediumRisks;
-            o.passes = passes;
-            o.targetsCount = targetsCount;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentStatistic();
+            _resultValue.advisories = advisories;
+            _resultValue.evaluates = evaluates;
+            _resultValue.highRisks = highRisks;
+            _resultValue.lowRisks = lowRisks;
+            _resultValue.mediumRisks = mediumRisks;
+            _resultValue.passes = passes;
+            _resultValue.targetsCount = targetsCount;
+            return _resultValue;
         }
     }
 }

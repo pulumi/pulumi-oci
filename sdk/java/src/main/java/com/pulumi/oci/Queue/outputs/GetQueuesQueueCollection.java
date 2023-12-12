@@ -42,9 +42,9 @@ public final class GetQueuesQueueCollection {
             return items(List.of(items));
         }
         public GetQueuesQueueCollection build() {
-            final var o = new GetQueuesQueueCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetQueuesQueueCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

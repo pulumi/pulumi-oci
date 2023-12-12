@@ -122,13 +122,13 @@ public final class GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialMe
             return this;
         }
         public GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialMeta build() {
-            final var o = new GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialMeta();
-            o.created = created;
-            o.lastModified = lastModified;
-            o.location = location;
-            o.resourceType = resourceType;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetDomainsMyOauth2clientCredentialsMyOauth2clientCredentialMeta();
+            _resultValue.created = created;
+            _resultValue.lastModified = lastModified;
+            _resultValue.location = location;
+            _resultValue.resourceType = resourceType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

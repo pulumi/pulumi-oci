@@ -107,12 +107,12 @@ public final class GetModelsModelCollectionItemTrainingDatasetLocationDetail {
             return objectNames(List.of(objectNames));
         }
         public GetModelsModelCollectionItemTrainingDatasetLocationDetail build() {
-            final var o = new GetModelsModelCollectionItemTrainingDatasetLocationDetail();
-            o.bucket = bucket;
-            o.locationType = locationType;
-            o.namespace = namespace;
-            o.objectNames = objectNames;
-            return o;
+            final var _resultValue = new GetModelsModelCollectionItemTrainingDatasetLocationDetail();
+            _resultValue.bucket = bucket;
+            _resultValue.locationType = locationType;
+            _resultValue.namespace = namespace;
+            _resultValue.objectNames = objectNames;
+            return _resultValue;
         }
     }
 }

@@ -60,11 +60,11 @@ public final class GetSecurityAssessmentFindingFindingReference {
             return this;
         }
         public GetSecurityAssessmentFindingFindingReference build() {
-            final var o = new GetSecurityAssessmentFindingFindingReference();
-            o.cis = cis;
-            o.gdpr = gdpr;
-            o.stig = stig;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentFindingFindingReference();
+            _resultValue.cis = cis;
+            _resultValue.gdpr = gdpr;
+            _resultValue.stig = stig;
+            return _resultValue;
         }
     }
 }

@@ -105,12 +105,12 @@ public final class SecretSecretContent {
             return this;
         }
         public SecretSecretContent build() {
-            final var o = new SecretSecretContent();
-            o.content = content;
-            o.contentType = contentType;
-            o.name = name;
-            o.stage = stage;
-            return o;
+            final var _resultValue = new SecretSecretContent();
+            _resultValue.content = content;
+            _resultValue.contentType = contentType;
+            _resultValue.name = name;
+            _resultValue.stage = stage;
+            return _resultValue;
         }
     }
 }

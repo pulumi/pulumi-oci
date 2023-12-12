@@ -65,10 +65,10 @@ public final class GetModelsModelCollectionItemModelDetailClassificationMode {
             return this;
         }
         public GetModelsModelCollectionItemModelDetailClassificationMode build() {
-            final var o = new GetModelsModelCollectionItemModelDetailClassificationMode();
-            o.classificationMode = classificationMode;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetModelsModelCollectionItemModelDetailClassificationMode();
+            _resultValue.classificationMode = classificationMode;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

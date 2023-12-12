@@ -86,11 +86,11 @@ public final class DrPlanExecutionLogLocation {
             return this;
         }
         public DrPlanExecutionLogLocation build() {
-            final var o = new DrPlanExecutionLogLocation();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new DrPlanExecutionLogLocation();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

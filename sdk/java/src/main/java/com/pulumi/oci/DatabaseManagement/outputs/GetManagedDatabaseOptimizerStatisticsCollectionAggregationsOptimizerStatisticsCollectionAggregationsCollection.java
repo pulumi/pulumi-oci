@@ -50,9 +50,9 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOp
             return items(List.of(items));
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

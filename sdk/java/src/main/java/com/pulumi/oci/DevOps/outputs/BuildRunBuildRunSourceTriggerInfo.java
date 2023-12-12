@@ -72,10 +72,10 @@ public final class BuildRunBuildRunSourceTriggerInfo {
             return this;
         }
         public BuildRunBuildRunSourceTriggerInfo build() {
-            final var o = new BuildRunBuildRunSourceTriggerInfo();
-            o.actions = actions;
-            o.displayName = displayName;
-            return o;
+            final var _resultValue = new BuildRunBuildRunSourceTriggerInfo();
+            _resultValue.actions = actions;
+            _resultValue.displayName = displayName;
+            return _resultValue;
         }
     }
 }

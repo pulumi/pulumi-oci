@@ -85,11 +85,11 @@ public final class GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomE
             return this;
         }
         public GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint build() {
-            final var o = new GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint();
-            o.certificateSecretId = certificateSecretId;
-            o.certificateSecretVersion = certificateSecretVersion;
-            o.hostname = hostname;
-            return o;
+            final var _resultValue = new GetVbInstancesVbInstanceSummaryCollectionItemAlternateCustomEndpoint();
+            _resultValue.certificateSecretId = certificateSecretId;
+            _resultValue.certificateSecretVersion = certificateSecretVersion;
+            _resultValue.hostname = hostname;
+            return _resultValue;
         }
     }
 }

@@ -145,14 +145,14 @@ public final class CertificateAuthorityCertificateAuthorityConfig {
             return this;
         }
         public CertificateAuthorityCertificateAuthorityConfig build() {
-            final var o = new CertificateAuthorityCertificateAuthorityConfig();
-            o.configType = configType;
-            o.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
-            o.signingAlgorithm = signingAlgorithm;
-            o.subject = subject;
-            o.validity = validity;
-            o.versionName = versionName;
-            return o;
+            final var _resultValue = new CertificateAuthorityCertificateAuthorityConfig();
+            _resultValue.configType = configType;
+            _resultValue.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
+            _resultValue.signingAlgorithm = signingAlgorithm;
+            _resultValue.subject = subject;
+            _resultValue.validity = validity;
+            _resultValue.versionName = versionName;
+            return _resultValue;
         }
     }
 }

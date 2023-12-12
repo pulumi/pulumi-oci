@@ -105,12 +105,12 @@ public final class GetHttpProbeResultsHttpProbeResultConnection {
             return this;
         }
         public GetHttpProbeResultsHttpProbeResultConnection build() {
-            final var o = new GetHttpProbeResultsHttpProbeResultConnection();
-            o.address = address;
-            o.connectDuration = connectDuration;
-            o.port = port;
-            o.secureConnectDuration = secureConnectDuration;
-            return o;
+            final var _resultValue = new GetHttpProbeResultsHttpProbeResultConnection();
+            _resultValue.address = address;
+            _resultValue.connectDuration = connectDuration;
+            _resultValue.port = port;
+            _resultValue.secureConnectDuration = secureConnectDuration;
+            return _resultValue;
         }
     }
 }

@@ -160,15 +160,15 @@ public final class GetUserGroupMembershipsMembership {
             return this;
         }
         public GetUserGroupMembershipsMembership build() {
-            final var o = new GetUserGroupMembershipsMembership();
-            o.compartmentId = compartmentId;
-            o.groupId = groupId;
-            o.id = id;
-            o.inactiveState = inactiveState;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetUserGroupMembershipsMembership();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.inactiveState = inactiveState;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

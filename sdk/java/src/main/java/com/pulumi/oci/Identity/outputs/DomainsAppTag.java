@@ -111,10 +111,10 @@ public final class DomainsAppTag {
             return this;
         }
         public DomainsAppTag build() {
-            final var o = new DomainsAppTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

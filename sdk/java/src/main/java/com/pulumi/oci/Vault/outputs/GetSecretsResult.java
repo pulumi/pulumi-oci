@@ -155,15 +155,15 @@ public final class GetSecretsResult {
             return this;
         }
         public GetSecretsResult build() {
-            final var o = new GetSecretsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.secrets = secrets;
-            o.state = state;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new GetSecretsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.secrets = secrets;
+            _resultValue.state = state;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

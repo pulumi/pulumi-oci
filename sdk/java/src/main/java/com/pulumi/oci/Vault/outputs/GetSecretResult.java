@@ -364,26 +364,26 @@ public final class GetSecretResult {
             return this;
         }
         public GetSecretResult build() {
-            final var o = new GetSecretResult();
-            o.compartmentId = compartmentId;
-            o.currentVersionNumber = currentVersionNumber;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.keyId = keyId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.metadata = metadata;
-            o.secretContents = secretContents;
-            o.secretId = secretId;
-            o.secretName = secretName;
-            o.secretRules = secretRules;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
-            o.timeOfDeletion = timeOfDeletion;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new GetSecretResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.currentVersionNumber = currentVersionNumber;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.keyId = keyId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.metadata = metadata;
+            _resultValue.secretContents = secretContents;
+            _resultValue.secretId = secretId;
+            _resultValue.secretName = secretName;
+            _resultValue.secretRules = secretRules;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;
+            _resultValue.timeOfDeletion = timeOfDeletion;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

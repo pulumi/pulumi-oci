@@ -67,11 +67,11 @@ public final class GetCaptureFiltersFilter {
             return values(List.of(values));
         }
         public GetCaptureFiltersFilter build() {
-            final var o = new GetCaptureFiltersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCaptureFiltersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

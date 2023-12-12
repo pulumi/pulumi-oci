@@ -48,9 +48,9 @@ public final class ClusterOptionsAdmissionControllerOptions {
             return this;
         }
         public ClusterOptionsAdmissionControllerOptions build() {
-            final var o = new ClusterOptionsAdmissionControllerOptions();
-            o.isPodSecurityPolicyEnabled = isPodSecurityPolicyEnabled;
-            return o;
+            final var _resultValue = new ClusterOptionsAdmissionControllerOptions();
+            _resultValue.isPodSecurityPolicyEnabled = isPodSecurityPolicyEnabled;
+            return _resultValue;
         }
     }
 }

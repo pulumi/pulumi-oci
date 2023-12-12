@@ -84,11 +84,11 @@ public final class GetDomainsIdentityProviderJitUserProvGroupMapping {
             return this;
         }
         public GetDomainsIdentityProviderJitUserProvGroupMapping build() {
-            final var o = new GetDomainsIdentityProviderJitUserProvGroupMapping();
-            o.idpGroup = idpGroup;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsIdentityProviderJitUserProvGroupMapping();
+            _resultValue.idpGroup = idpGroup;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

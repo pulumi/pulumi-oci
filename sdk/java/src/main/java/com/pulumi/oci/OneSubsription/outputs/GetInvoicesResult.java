@@ -145,16 +145,16 @@ public final class GetInvoicesResult {
             return this;
         }
         public GetInvoicesResult build() {
-            final var o = new GetInvoicesResult();
-            o.arCustomerTransactionId = arCustomerTransactionId;
-            o.compartmentId = compartmentId;
-            o.fields = fields;
-            o.filters = filters;
-            o.id = id;
-            o.invoices = invoices;
-            o.timeFrom = timeFrom;
-            o.timeTo = timeTo;
-            return o;
+            final var _resultValue = new GetInvoicesResult();
+            _resultValue.arCustomerTransactionId = arCustomerTransactionId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.fields = fields;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.invoices = invoices;
+            _resultValue.timeFrom = timeFrom;
+            _resultValue.timeTo = timeTo;
+            return _resultValue;
         }
     }
 }

@@ -218,18 +218,18 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem {
             return this;
         }
         public GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem build() {
-            final var o = new GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem();
-            o.description = description;
-            o.errorMessage = errorMessage;
-            o.id = id;
-            o.name = name;
-            o.owner = owner;
-            o.scheduledJobName = scheduledJobName;
-            o.statementCounts = statementCounts;
-            o.status = status;
-            o.timeCreated = timeCreated;
-            o.timeLastModified = timeLastModified;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningSetsSqlTuningSetCollectionItem();
+            _resultValue.description = description;
+            _resultValue.errorMessage = errorMessage;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.owner = owner;
+            _resultValue.scheduledJobName = scheduledJobName;
+            _resultValue.statementCounts = statementCounts;
+            _resultValue.status = status;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastModified = timeLastModified;
+            return _resultValue;
         }
     }
 }

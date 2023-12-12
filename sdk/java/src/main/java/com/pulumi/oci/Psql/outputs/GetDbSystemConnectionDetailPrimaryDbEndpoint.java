@@ -85,11 +85,11 @@ public final class GetDbSystemConnectionDetailPrimaryDbEndpoint {
             return this;
         }
         public GetDbSystemConnectionDetailPrimaryDbEndpoint build() {
-            final var o = new GetDbSystemConnectionDetailPrimaryDbEndpoint();
-            o.fqdn = fqdn;
-            o.ipAddress = ipAddress;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetDbSystemConnectionDetailPrimaryDbEndpoint();
+            _resultValue.fqdn = fqdn;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

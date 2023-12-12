@@ -50,9 +50,9 @@ public final class GetSubscriptionsSubscriptionCollectionItemPaymentGateway {
             return merchantDefinedDatas(List.of(merchantDefinedDatas));
         }
         public GetSubscriptionsSubscriptionCollectionItemPaymentGateway build() {
-            final var o = new GetSubscriptionsSubscriptionCollectionItemPaymentGateway();
-            o.merchantDefinedDatas = merchantDefinedDatas;
-            return o;
+            final var _resultValue = new GetSubscriptionsSubscriptionCollectionItemPaymentGateway();
+            _resultValue.merchantDefinedDatas = merchantDefinedDatas;
+            return _resultValue;
         }
     }
 }

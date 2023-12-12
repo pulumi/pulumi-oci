@@ -152,15 +152,15 @@ public final class GetManagedMySqlDatabaseResult {
             return this;
         }
         public GetManagedMySqlDatabaseResult build() {
-            final var o = new GetManagedMySqlDatabaseResult();
-            o.compartmentId = compartmentId;
-            o.dbName = dbName;
-            o.dbVersion = dbVersion;
-            o.id = id;
-            o.managedMySqlDatabaseId = managedMySqlDatabaseId;
-            o.name = name;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetManagedMySqlDatabaseResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbName = dbName;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.id = id;
+            _resultValue.managedMySqlDatabaseId = managedMySqlDatabaseId;
+            _resultValue.name = name;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential build() {
-            final var o = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential();
-            o.accessToken = accessToken;
-            o.accessTokenExpiry = accessTokenExpiry;
-            o.refreshToken = refreshToken;
-            return o;
+            final var _resultValue = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredential();
+            _resultValue.accessToken = accessToken;
+            _resultValue.accessTokenExpiry = accessTokenExpiry;
+            _resultValue.refreshToken = refreshToken;
+            return _resultValue;
         }
     }
 }

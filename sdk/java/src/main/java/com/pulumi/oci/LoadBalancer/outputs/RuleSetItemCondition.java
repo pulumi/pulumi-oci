@@ -100,11 +100,11 @@ public final class RuleSetItemCondition {
             return this;
         }
         public RuleSetItemCondition build() {
-            final var o = new RuleSetItemCondition();
-            o.attributeName = attributeName;
-            o.attributeValue = attributeValue;
-            o.operator = operator;
-            return o;
+            final var _resultValue = new RuleSetItemCondition();
+            _resultValue.attributeName = attributeName;
+            _resultValue.attributeValue = attributeValue;
+            _resultValue.operator = operator;
+            return _resultValue;
         }
     }
 }

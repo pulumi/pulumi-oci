@@ -65,10 +65,10 @@ public final class GetApplicationsApplicationApplicationLogConfig {
             return this;
         }
         public GetApplicationsApplicationApplicationLogConfig build() {
-            final var o = new GetApplicationsApplicationApplicationLogConfig();
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new GetApplicationsApplicationApplicationLogConfig();
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

@@ -91,11 +91,11 @@ public final class GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem {
             return osFamilies(List.of(osFamilies));
         }
         public GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem build() {
-            final var o = new GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem();
-            o.archTypes = archTypes;
-            o.name = name;
-            o.osFamilies = osFamilies;
-            return o;
+            final var _resultValue = new GetSoftwareSourceVendorsSoftwareSourceVendorCollectionItem();
+            _resultValue.archTypes = archTypes;
+            _resultValue.name = name;
+            _resultValue.osFamilies = osFamilies;
+            return _resultValue;
         }
     }
 }

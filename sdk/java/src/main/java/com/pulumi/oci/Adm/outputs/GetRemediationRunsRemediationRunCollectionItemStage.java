@@ -122,13 +122,13 @@ public final class GetRemediationRunsRemediationRunCollectionItemStage {
             return this;
         }
         public GetRemediationRunsRemediationRunCollectionItemStage build() {
-            final var o = new GetRemediationRunsRemediationRunCollectionItemStage();
-            o.summary = summary;
-            o.timeCreated = timeCreated;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetRemediationRunsRemediationRunCollectionItemStage();
+            _resultValue.summary = summary;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

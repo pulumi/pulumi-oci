@@ -389,27 +389,27 @@ public final class GetBackupsBackup {
             return this;
         }
         public GetBackupsBackup build() {
-            final var o = new GetBackupsBackup();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.databaseEdition = databaseEdition;
-            o.databaseId = databaseId;
-            o.databaseSizeInGbs = databaseSizeInGbs;
-            o.displayName = displayName;
-            o.id = id;
-            o.keyStoreId = keyStoreId;
-            o.keyStoreWalletName = keyStoreWalletName;
-            o.kmsKeyId = kmsKeyId;
-            o.kmsKeyVersionId = kmsKeyVersionId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.shape = shape;
-            o.state = state;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            o.type = type;
-            o.vaultId = vaultId;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetBackupsBackup();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseEdition = databaseEdition;
+            _resultValue.databaseId = databaseId;
+            _resultValue.databaseSizeInGbs = databaseSizeInGbs;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.keyStoreId = keyStoreId;
+            _resultValue.keyStoreWalletName = keyStoreWalletName;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.kmsKeyVersionId = kmsKeyVersionId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.shape = shape;
+            _resultValue.state = state;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.type = type;
+            _resultValue.vaultId = vaultId;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

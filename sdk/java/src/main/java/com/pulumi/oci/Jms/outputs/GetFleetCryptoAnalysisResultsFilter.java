@@ -67,11 +67,11 @@ public final class GetFleetCryptoAnalysisResultsFilter {
             return values(List.of(values));
         }
         public GetFleetCryptoAnalysisResultsFilter build() {
-            final var o = new GetFleetCryptoAnalysisResultsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFleetCryptoAnalysisResultsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

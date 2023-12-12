@@ -276,17 +276,17 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
             return this;
         }
         public IpsecConnectionTunnelManagementBgpSessionInfo build() {
-            final var o = new IpsecConnectionTunnelManagementBgpSessionInfo();
-            o.bgpIpv6State = bgpIpv6State;
-            o.bgpIpv6state = bgpIpv6state;
-            o.bgpState = bgpState;
-            o.customerBgpAsn = customerBgpAsn;
-            o.customerInterfaceIp = customerInterfaceIp;
-            o.customerInterfaceIpv6 = customerInterfaceIpv6;
-            o.oracleBgpAsn = oracleBgpAsn;
-            o.oracleInterfaceIp = oracleInterfaceIp;
-            o.oracleInterfaceIpv6 = oracleInterfaceIpv6;
-            return o;
+            final var _resultValue = new IpsecConnectionTunnelManagementBgpSessionInfo();
+            _resultValue.bgpIpv6State = bgpIpv6State;
+            _resultValue.bgpIpv6state = bgpIpv6state;
+            _resultValue.bgpState = bgpState;
+            _resultValue.customerBgpAsn = customerBgpAsn;
+            _resultValue.customerInterfaceIp = customerInterfaceIp;
+            _resultValue.customerInterfaceIpv6 = customerInterfaceIpv6;
+            _resultValue.oracleBgpAsn = oracleBgpAsn;
+            _resultValue.oracleInterfaceIp = oracleInterfaceIp;
+            _resultValue.oracleInterfaceIpv6 = oracleInterfaceIpv6;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItemService
             return this;
         }
         public GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint build() {
-            final var o = new GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint();
-            o.description = description;
-            o.environmentType = environmentType;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint();
+            _resultValue.description = description;
+            _resultValue.environmentType = environmentType;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

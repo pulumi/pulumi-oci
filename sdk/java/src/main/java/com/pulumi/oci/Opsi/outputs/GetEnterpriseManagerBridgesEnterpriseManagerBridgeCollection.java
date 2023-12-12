@@ -42,9 +42,9 @@ public final class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection 
             return items(List.of(items));
         }
         public GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection build() {
-            final var o = new GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

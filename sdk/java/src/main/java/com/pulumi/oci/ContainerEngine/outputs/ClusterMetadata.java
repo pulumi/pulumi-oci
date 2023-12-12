@@ -219,18 +219,18 @@ public final class ClusterMetadata {
             return this;
         }
         public ClusterMetadata build() {
-            final var o = new ClusterMetadata();
-            o.createdByUserId = createdByUserId;
-            o.createdByWorkRequestId = createdByWorkRequestId;
-            o.deletedByUserId = deletedByUserId;
-            o.deletedByWorkRequestId = deletedByWorkRequestId;
-            o.timeCreated = timeCreated;
-            o.timeCredentialExpiration = timeCredentialExpiration;
-            o.timeDeleted = timeDeleted;
-            o.timeUpdated = timeUpdated;
-            o.updatedByUserId = updatedByUserId;
-            o.updatedByWorkRequestId = updatedByWorkRequestId;
-            return o;
+            final var _resultValue = new ClusterMetadata();
+            _resultValue.createdByUserId = createdByUserId;
+            _resultValue.createdByWorkRequestId = createdByWorkRequestId;
+            _resultValue.deletedByUserId = deletedByUserId;
+            _resultValue.deletedByWorkRequestId = deletedByWorkRequestId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeCredentialExpiration = timeCredentialExpiration;
+            _resultValue.timeDeleted = timeDeleted;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.updatedByUserId = updatedByUserId;
+            _resultValue.updatedByWorkRequestId = updatedByWorkRequestId;
+            return _resultValue;
         }
     }
 }

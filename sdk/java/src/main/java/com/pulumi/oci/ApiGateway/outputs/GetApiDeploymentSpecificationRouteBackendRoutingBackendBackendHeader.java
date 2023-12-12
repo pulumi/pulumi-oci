@@ -65,10 +65,10 @@ public final class GetApiDeploymentSpecificationRouteBackendRoutingBackendBacken
             return this;
         }
         public GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeader build() {
-            final var o = new GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

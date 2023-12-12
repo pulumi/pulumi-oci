@@ -183,17 +183,17 @@ public final class GetWorkspaceFoldersResult {
             return this;
         }
         public GetWorkspaceFoldersResult build() {
-            final var o = new GetWorkspaceFoldersResult();
-            o.aggregatorKey = aggregatorKey;
-            o.fields = fields;
-            o.filters = filters;
-            o.folderSummaryCollections = folderSummaryCollections;
-            o.id = id;
-            o.identifiers = identifiers;
-            o.name = name;
-            o.nameContains = nameContains;
-            o.workspaceId = workspaceId;
-            return o;
+            final var _resultValue = new GetWorkspaceFoldersResult();
+            _resultValue.aggregatorKey = aggregatorKey;
+            _resultValue.fields = fields;
+            _resultValue.filters = filters;
+            _resultValue.folderSummaryCollections = folderSummaryCollections;
+            _resultValue.id = id;
+            _resultValue.identifiers = identifiers;
+            _resultValue.name = name;
+            _resultValue.nameContains = nameContains;
+            _resultValue.workspaceId = workspaceId;
+            return _resultValue;
         }
     }
 }

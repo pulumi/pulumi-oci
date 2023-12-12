@@ -42,9 +42,9 @@ public final class GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollecti
             return items(List.of(items));
         }
         public GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollection build() {
-            final var o = new GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

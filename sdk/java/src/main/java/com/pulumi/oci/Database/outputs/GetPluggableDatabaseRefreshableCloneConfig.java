@@ -46,9 +46,9 @@ public final class GetPluggableDatabaseRefreshableCloneConfig {
             return this;
         }
         public GetPluggableDatabaseRefreshableCloneConfig build() {
-            final var o = new GetPluggableDatabaseRefreshableCloneConfig();
-            o.isRefreshableClone = isRefreshableClone;
-            return o;
+            final var _resultValue = new GetPluggableDatabaseRefreshableCloneConfig();
+            _resultValue.isRefreshableClone = isRefreshableClone;
+            return _resultValue;
         }
     }
 }

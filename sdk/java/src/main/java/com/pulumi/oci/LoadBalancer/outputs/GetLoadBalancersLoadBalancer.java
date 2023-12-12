@@ -367,25 +367,25 @@ public final class GetLoadBalancersLoadBalancer {
             return this;
         }
         public GetLoadBalancersLoadBalancer build() {
-            final var o = new GetLoadBalancersLoadBalancer();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ipAddressDetails = ipAddressDetails;
-            o.ipAddresses = ipAddresses;
-            o.ipMode = ipMode;
-            o.isPrivate = isPrivate;
-            o.networkSecurityGroupIds = networkSecurityGroupIds;
-            o.reservedIps = reservedIps;
-            o.shape = shape;
-            o.shapeDetails = shapeDetails;
-            o.state = state;
-            o.subnetIds = subnetIds;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetLoadBalancersLoadBalancer();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ipAddressDetails = ipAddressDetails;
+            _resultValue.ipAddresses = ipAddresses;
+            _resultValue.ipMode = ipMode;
+            _resultValue.isPrivate = isPrivate;
+            _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
+            _resultValue.reservedIps = reservedIps;
+            _resultValue.shape = shape;
+            _resultValue.shapeDetails = shapeDetails;
+            _resultValue.state = state;
+            _resultValue.subnetIds = subnetIds;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

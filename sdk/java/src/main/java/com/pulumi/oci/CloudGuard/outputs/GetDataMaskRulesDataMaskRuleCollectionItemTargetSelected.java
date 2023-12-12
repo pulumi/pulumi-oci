@@ -69,10 +69,10 @@ public final class GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected {
             return values(List.of(values));
         }
         public GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected build() {
-            final var o = new GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected();
-            o.kind = kind;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected();
+            _resultValue.kind = kind;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

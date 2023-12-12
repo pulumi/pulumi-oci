@@ -70,10 +70,10 @@ public final class GetTraceSpanLog {
             return this;
         }
         public GetTraceSpanLog build() {
-            final var o = new GetTraceSpanLog();
-            o.spanLogs = spanLogs;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetTraceSpanLog();
+            _resultValue.spanLogs = spanLogs;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

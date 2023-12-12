@@ -163,15 +163,15 @@ public final class GetVirtualServiceRouteTablesResult {
             return virtualServiceRouteTableCollections(List.of(virtualServiceRouteTableCollections));
         }
         public GetVirtualServiceRouteTablesResult build() {
-            final var o = new GetVirtualServiceRouteTablesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            o.virtualServiceId = virtualServiceId;
-            o.virtualServiceRouteTableCollections = virtualServiceRouteTableCollections;
-            return o;
+            final var _resultValue = new GetVirtualServiceRouteTablesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.virtualServiceId = virtualServiceId;
+            _resultValue.virtualServiceRouteTableCollections = virtualServiceRouteTableCollections;
+            return _resultValue;
         }
     }
 }

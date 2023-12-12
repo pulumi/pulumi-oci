@@ -124,13 +124,13 @@ public final class GetCustomTablesResult {
             return this;
         }
         public GetCustomTablesResult build() {
-            final var o = new GetCustomTablesResult();
-            o.compartmentId = compartmentId;
-            o.customTableCollections = customTableCollections;
-            o.filters = filters;
-            o.id = id;
-            o.savedReportId = savedReportId;
-            return o;
+            final var _resultValue = new GetCustomTablesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.customTableCollections = customTableCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.savedReportId = savedReportId;
+            return _resultValue;
         }
     }
 }

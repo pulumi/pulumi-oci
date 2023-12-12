@@ -161,15 +161,15 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadap
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore();
-            o.lastUpdateTimestamp = lastUpdateTimestamp;
-            o.ref = ref;
-            o.riskLevel = riskLevel;
-            o.score = score;
-            o.source = source;
-            o.status = status;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScore();
+            _resultValue.lastUpdateTimestamp = lastUpdateTimestamp;
+            _resultValue.ref = ref;
+            _resultValue.riskLevel = riskLevel;
+            _resultValue.score = score;
+            _resultValue.source = source;
+            _resultValue.status = status;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

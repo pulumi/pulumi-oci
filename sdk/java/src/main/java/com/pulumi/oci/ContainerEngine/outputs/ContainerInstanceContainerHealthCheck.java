@@ -288,22 +288,22 @@ public final class ContainerInstanceContainerHealthCheck {
             return this;
         }
         public ContainerInstanceContainerHealthCheck build() {
-            final var o = new ContainerInstanceContainerHealthCheck();
-            o.commands = commands;
-            o.failureAction = failureAction;
-            o.failureThreshold = failureThreshold;
-            o.headers = headers;
-            o.healthCheckType = healthCheckType;
-            o.initialDelayInSeconds = initialDelayInSeconds;
-            o.intervalInSeconds = intervalInSeconds;
-            o.name = name;
-            o.path = path;
-            o.port = port;
-            o.status = status;
-            o.statusDetails = statusDetails;
-            o.successThreshold = successThreshold;
-            o.timeoutInSeconds = timeoutInSeconds;
-            return o;
+            final var _resultValue = new ContainerInstanceContainerHealthCheck();
+            _resultValue.commands = commands;
+            _resultValue.failureAction = failureAction;
+            _resultValue.failureThreshold = failureThreshold;
+            _resultValue.headers = headers;
+            _resultValue.healthCheckType = healthCheckType;
+            _resultValue.initialDelayInSeconds = initialDelayInSeconds;
+            _resultValue.intervalInSeconds = intervalInSeconds;
+            _resultValue.name = name;
+            _resultValue.path = path;
+            _resultValue.port = port;
+            _resultValue.status = status;
+            _resultValue.statusDetails = statusDetails;
+            _resultValue.successThreshold = successThreshold;
+            _resultValue.timeoutInSeconds = timeoutInSeconds;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectio
             return items(List.of(items));
         }
         public GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection build() {
-            final var o = new GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAnnouncementSubscriptionsAnnouncementSubscriptionCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetNetworkSecurityGroupVnicsFilter {
             return values(List.of(values));
         }
         public GetNetworkSecurityGroupVnicsFilter build() {
-            final var o = new GetNetworkSecurityGroupVnicsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetNetworkSecurityGroupVnicsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

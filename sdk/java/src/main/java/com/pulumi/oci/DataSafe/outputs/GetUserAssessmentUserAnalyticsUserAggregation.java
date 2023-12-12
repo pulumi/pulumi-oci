@@ -50,9 +50,9 @@ public final class GetUserAssessmentUserAnalyticsUserAggregation {
             return items(List.of(items));
         }
         public GetUserAssessmentUserAnalyticsUserAggregation build() {
-            final var o = new GetUserAssessmentUserAnalyticsUserAggregation();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetUserAssessmentUserAnalyticsUserAggregation();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

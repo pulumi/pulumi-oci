@@ -119,13 +119,13 @@ public final class GetLoadBalancerRoutingPoliciesRoutingPolicy {
             return this;
         }
         public GetLoadBalancerRoutingPoliciesRoutingPolicy build() {
-            final var o = new GetLoadBalancerRoutingPoliciesRoutingPolicy();
-            o.conditionLanguageVersion = conditionLanguageVersion;
-            o.loadBalancerId = loadBalancerId;
-            o.name = name;
-            o.rules = rules;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetLoadBalancerRoutingPoliciesRoutingPolicy();
+            _resultValue.conditionLanguageVersion = conditionLanguageVersion;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.name = name;
+            _resultValue.rules = rules;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

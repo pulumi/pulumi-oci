@@ -42,9 +42,9 @@ public final class GetExternalAsmInstancesExternalAsmInstanceCollection {
             return items(List.of(items));
         }
         public GetExternalAsmInstancesExternalAsmInstanceCollection build() {
-            final var o = new GetExternalAsmInstancesExternalAsmInstanceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExternalAsmInstancesExternalAsmInstanceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -108,13 +108,13 @@ public final class GetBackendsResult {
             return this;
         }
         public GetBackendsResult build() {
-            final var o = new GetBackendsResult();
-            o.backendCollections = backendCollections;
-            o.backendSetName = backendSetName;
-            o.filters = filters;
-            o.id = id;
-            o.networkLoadBalancerId = networkLoadBalancerId;
-            return o;
+            final var _resultValue = new GetBackendsResult();
+            _resultValue.backendCollections = backendCollections;
+            _resultValue.backendSetName = backendSetName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.networkLoadBalancerId = networkLoadBalancerId;
+            return _resultValue;
         }
     }
 }

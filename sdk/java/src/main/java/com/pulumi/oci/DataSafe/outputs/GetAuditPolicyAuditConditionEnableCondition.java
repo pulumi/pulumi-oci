@@ -107,12 +107,12 @@ public final class GetAuditPolicyAuditConditionEnableCondition {
             return this;
         }
         public GetAuditPolicyAuditConditionEnableCondition build() {
-            final var o = new GetAuditPolicyAuditConditionEnableCondition();
-            o.entityNames = entityNames;
-            o.entitySelection = entitySelection;
-            o.entityType = entityType;
-            o.operationStatus = operationStatus;
-            return o;
+            final var _resultValue = new GetAuditPolicyAuditConditionEnableCondition();
+            _resultValue.entityNames = entityNames;
+            _resultValue.entitySelection = entitySelection;
+            _resultValue.entityType = entityType;
+            _resultValue.operationStatus = operationStatus;
+            return _resultValue;
         }
     }
 }

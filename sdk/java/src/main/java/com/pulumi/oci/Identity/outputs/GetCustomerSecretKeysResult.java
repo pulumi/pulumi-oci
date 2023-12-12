@@ -105,12 +105,12 @@ public final class GetCustomerSecretKeysResult {
             return this;
         }
         public GetCustomerSecretKeysResult build() {
-            final var o = new GetCustomerSecretKeysResult();
-            o.customerSecretKeys = customerSecretKeys;
-            o.filters = filters;
-            o.id = id;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetCustomerSecretKeysResult();
+            _resultValue.customerSecretKeys = customerSecretKeys;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

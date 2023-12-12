@@ -66,10 +66,10 @@ public final class GetTargetDatabasesSchemasSchema {
             return this;
         }
         public GetTargetDatabasesSchemasSchema build() {
-            final var o = new GetTargetDatabasesSchemasSchema();
-            o.isOracleMaintained = isOracleMaintained;
-            o.schemaName = schemaName;
-            return o;
+            final var _resultValue = new GetTargetDatabasesSchemasSchema();
+            _resultValue.isOracleMaintained = isOracleMaintained;
+            _resultValue.schemaName = schemaName;
+            return _resultValue;
         }
     }
 }

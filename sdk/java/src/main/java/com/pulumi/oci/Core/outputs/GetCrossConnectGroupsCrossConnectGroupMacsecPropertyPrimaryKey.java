@@ -103,12 +103,12 @@ public final class GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKe
             return this;
         }
         public GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey build() {
-            final var o = new GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey();
-            o.connectivityAssociationKeySecretId = connectivityAssociationKeySecretId;
-            o.connectivityAssociationKeySecretVersion = connectivityAssociationKeySecretVersion;
-            o.connectivityAssociationNameSecretId = connectivityAssociationNameSecretId;
-            o.connectivityAssociationNameSecretVersion = connectivityAssociationNameSecretVersion;
-            return o;
+            final var _resultValue = new GetCrossConnectGroupsCrossConnectGroupMacsecPropertyPrimaryKey();
+            _resultValue.connectivityAssociationKeySecretId = connectivityAssociationKeySecretId;
+            _resultValue.connectivityAssociationKeySecretVersion = connectivityAssociationKeySecretVersion;
+            _resultValue.connectivityAssociationNameSecretId = connectivityAssociationNameSecretId;
+            _resultValue.connectivityAssociationNameSecretVersion = connectivityAssociationNameSecretVersion;
+            return _resultValue;
         }
     }
 }

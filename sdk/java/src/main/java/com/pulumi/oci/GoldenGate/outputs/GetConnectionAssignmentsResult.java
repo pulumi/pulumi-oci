@@ -174,16 +174,16 @@ public final class GetConnectionAssignmentsResult {
             return this;
         }
         public GetConnectionAssignmentsResult build() {
-            final var o = new GetConnectionAssignmentsResult();
-            o.compartmentId = compartmentId;
-            o.connectionAssignmentCollections = connectionAssignmentCollections;
-            o.connectionId = connectionId;
-            o.deploymentId = deploymentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetConnectionAssignmentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionAssignmentCollections = connectionAssignmentCollections;
+            _resultValue.connectionId = connectionId;
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -85,11 +85,11 @@ public final class GetTargetAssetUserSpecShapeConfig {
             return this;
         }
         public GetTargetAssetUserSpecShapeConfig build() {
-            final var o = new GetTargetAssetUserSpecShapeConfig();
-            o.baselineOcpuUtilization = baselineOcpuUtilization;
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetTargetAssetUserSpecShapeConfig();
+            _resultValue.baselineOcpuUtilization = baselineOcpuUtilization;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

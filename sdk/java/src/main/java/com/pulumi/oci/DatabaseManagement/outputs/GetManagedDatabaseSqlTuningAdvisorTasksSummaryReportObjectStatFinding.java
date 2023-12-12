@@ -142,14 +142,14 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectSta
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding();
-            o.object = object;
-            o.objectHashValue = objectHashValue;
-            o.objectType = objectType;
-            o.problemType = problemType;
-            o.referenceCount = referenceCount;
-            o.schema = schema;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportObjectStatFinding();
+            _resultValue.object = object;
+            _resultValue.objectHashValue = objectHashValue;
+            _resultValue.objectType = objectType;
+            _resultValue.problemType = problemType;
+            _resultValue.referenceCount = referenceCount;
+            _resultValue.schema = schema;
+            return _resultValue;
         }
     }
 }

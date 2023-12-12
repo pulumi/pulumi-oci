@@ -65,10 +65,10 @@ public final class GetDomainsIdentitySettingsIdentitySettingTag {
             return this;
         }
         public GetDomainsIdentitySettingsIdentitySettingTag build() {
-            final var o = new GetDomainsIdentitySettingsIdentitySettingTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsIdentitySettingsIdentitySettingTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -75,11 +75,11 @@ public final class GetTargetAssetsFilter {
             return values(List.of(values));
         }
         public GetTargetAssetsFilter build() {
-            final var o = new GetTargetAssetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetTargetAssetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

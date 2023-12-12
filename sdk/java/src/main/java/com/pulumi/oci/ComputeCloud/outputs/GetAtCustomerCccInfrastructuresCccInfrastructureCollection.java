@@ -42,9 +42,9 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollection {
             return items(List.of(items));
         }
         public GetAtCustomerCccInfrastructuresCccInfrastructureCollection build() {
-            final var o = new GetAtCustomerCccInfrastructuresCccInfrastructureCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAtCustomerCccInfrastructuresCccInfrastructureCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

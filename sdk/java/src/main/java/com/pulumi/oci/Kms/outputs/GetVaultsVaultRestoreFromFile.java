@@ -60,11 +60,11 @@ public final class GetVaultsVaultRestoreFromFile {
             return this;
         }
         public GetVaultsVaultRestoreFromFile build() {
-            final var o = new GetVaultsVaultRestoreFromFile();
-            o.contentLength = contentLength;
-            o.contentMd5 = contentMd5;
-            o.restoreVaultFromFileDetails = restoreVaultFromFileDetails;
-            return o;
+            final var _resultValue = new GetVaultsVaultRestoreFromFile();
+            _resultValue.contentLength = contentLength;
+            _resultValue.contentMd5 = contentMd5;
+            _resultValue.restoreVaultFromFileDetails = restoreVaultFromFileDetails;
+            return _resultValue;
         }
     }
 }

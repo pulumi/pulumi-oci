@@ -75,11 +75,11 @@ public final class GetFastLaunchJobConfigsFilter {
             return values(List.of(values));
         }
         public GetFastLaunchJobConfigsFilter build() {
-            final var o = new GetFastLaunchJobConfigsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFastLaunchJobConfigsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

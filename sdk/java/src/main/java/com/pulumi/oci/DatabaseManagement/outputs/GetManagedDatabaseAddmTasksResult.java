@@ -127,14 +127,14 @@ public final class GetManagedDatabaseAddmTasksResult {
             return this;
         }
         public GetManagedDatabaseAddmTasksResult build() {
-            final var o = new GetManagedDatabaseAddmTasksResult();
-            o.addmTasksCollections = addmTasksCollections;
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAddmTasksResult();
+            _resultValue.addmTasksCollections = addmTasksCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

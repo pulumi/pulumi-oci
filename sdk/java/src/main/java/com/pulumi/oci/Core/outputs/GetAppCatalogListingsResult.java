@@ -136,14 +136,14 @@ public final class GetAppCatalogListingsResult {
             return this;
         }
         public GetAppCatalogListingsResult build() {
-            final var o = new GetAppCatalogListingsResult();
-            o.appCatalogListings = appCatalogListings;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.publisherName = publisherName;
-            o.publisherType = publisherType;
-            return o;
+            final var _resultValue = new GetAppCatalogListingsResult();
+            _resultValue.appCatalogListings = appCatalogListings;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.publisherName = publisherName;
+            _resultValue.publisherType = publisherType;
+            return _resultValue;
         }
     }
 }

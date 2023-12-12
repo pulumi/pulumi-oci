@@ -232,19 +232,19 @@ public final class GetSteeringPolicyAttachmentResult {
             return this;
         }
         public GetSteeringPolicyAttachmentResult build() {
-            final var o = new GetSteeringPolicyAttachmentResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.domainName = domainName;
-            o.id = id;
-            o.rtypes = rtypes;
-            o.self = self;
-            o.state = state;
-            o.steeringPolicyAttachmentId = steeringPolicyAttachmentId;
-            o.steeringPolicyId = steeringPolicyId;
-            o.timeCreated = timeCreated;
-            o.zoneId = zoneId;
-            return o;
+            final var _resultValue = new GetSteeringPolicyAttachmentResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.domainName = domainName;
+            _resultValue.id = id;
+            _resultValue.rtypes = rtypes;
+            _resultValue.self = self;
+            _resultValue.state = state;
+            _resultValue.steeringPolicyAttachmentId = steeringPolicyAttachmentId;
+            _resultValue.steeringPolicyId = steeringPolicyId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.zoneId = zoneId;
+            return _resultValue;
         }
     }
 }

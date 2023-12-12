@@ -330,24 +330,24 @@ public final class GetVmClusterRecommendedNetworkResult {
             return vmNetworks(List.of(vmNetworks));
         }
         public GetVmClusterRecommendedNetworkResult build() {
-            final var o = new GetVmClusterRecommendedNetworkResult();
-            o.compartmentId = compartmentId;
-            o.dbServers = dbServers;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.dns = dns;
-            o.drScanListenerPortTcp = drScanListenerPortTcp;
-            o.drScans = drScans;
-            o.exadataInfrastructureId = exadataInfrastructureId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.networks = networks;
-            o.ntps = ntps;
-            o.scanListenerPortTcp = scanListenerPortTcp;
-            o.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
-            o.scans = scans;
-            o.vmNetworks = vmNetworks;
-            return o;
+            final var _resultValue = new GetVmClusterRecommendedNetworkResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbServers = dbServers;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.dns = dns;
+            _resultValue.drScanListenerPortTcp = drScanListenerPortTcp;
+            _resultValue.drScans = drScans;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.networks = networks;
+            _resultValue.ntps = ntps;
+            _resultValue.scanListenerPortTcp = scanListenerPortTcp;
+            _resultValue.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
+            _resultValue.scans = scans;
+            _resultValue.vmNetworks = vmNetworks;
+            return _resultValue;
         }
     }
 }

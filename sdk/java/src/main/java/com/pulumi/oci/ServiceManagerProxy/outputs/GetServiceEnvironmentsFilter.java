@@ -67,11 +67,11 @@ public final class GetServiceEnvironmentsFilter {
             return values(List.of(values));
         }
         public GetServiceEnvironmentsFilter build() {
-            final var o = new GetServiceEnvironmentsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetServiceEnvironmentsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

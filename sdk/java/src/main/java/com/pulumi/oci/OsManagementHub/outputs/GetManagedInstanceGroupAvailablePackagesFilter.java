@@ -75,11 +75,11 @@ public final class GetManagedInstanceGroupAvailablePackagesFilter {
             return values(List.of(values));
         }
         public GetManagedInstanceGroupAvailablePackagesFilter build() {
-            final var o = new GetManagedInstanceGroupAvailablePackagesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupAvailablePackagesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

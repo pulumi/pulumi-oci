@@ -85,11 +85,11 @@ public final class GetDetectorRecipeDetectorRuleCandidateResponderRule {
             return this;
         }
         public GetDetectorRecipeDetectorRuleCandidateResponderRule build() {
-            final var o = new GetDetectorRecipeDetectorRuleCandidateResponderRule();
-            o.displayName = displayName;
-            o.id = id;
-            o.isPreferred = isPreferred;
-            return o;
+            final var _resultValue = new GetDetectorRecipeDetectorRuleCandidateResponderRule();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.isPreferred = isPreferred;
+            return _resultValue;
         }
     }
 }

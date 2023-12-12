@@ -93,11 +93,11 @@ public final class GetIngressGatewayHostListenerTl {
             return serverCertificates(List.of(serverCertificates));
         }
         public GetIngressGatewayHostListenerTl build() {
-            final var o = new GetIngressGatewayHostListenerTl();
-            o.clientValidations = clientValidations;
-            o.mode = mode;
-            o.serverCertificates = serverCertificates;
-            return o;
+            final var _resultValue = new GetIngressGatewayHostListenerTl();
+            _resultValue.clientValidations = clientValidations;
+            _resultValue.mode = mode;
+            _resultValue.serverCertificates = serverCertificates;
+            return _resultValue;
         }
     }
 }

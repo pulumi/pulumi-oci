@@ -50,9 +50,9 @@ public final class GetSubscriptionRedemptionsRedemptionCollection {
             return items(List.of(items));
         }
         public GetSubscriptionRedemptionsRedemptionCollection build() {
-            final var o = new GetSubscriptionRedemptionsRedemptionCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSubscriptionRedemptionsRedemptionCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

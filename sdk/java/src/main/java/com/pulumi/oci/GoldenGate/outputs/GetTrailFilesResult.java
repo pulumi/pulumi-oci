@@ -136,14 +136,14 @@ public final class GetTrailFilesResult {
             return this;
         }
         public GetTrailFilesResult build() {
-            final var o = new GetTrailFilesResult();
-            o.deploymentId = deploymentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.trailFileCollections = trailFileCollections;
-            o.trailFileId = trailFileId;
-            return o;
+            final var _resultValue = new GetTrailFilesResult();
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.trailFileCollections = trailFileCollections;
+            _resultValue.trailFileId = trailFileId;
+            return _resultValue;
         }
     }
 }

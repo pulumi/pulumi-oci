@@ -111,12 +111,12 @@ public final class FusionEnvironmentAdminUserItem {
             return this;
         }
         public FusionEnvironmentAdminUserItem build() {
-            final var o = new FusionEnvironmentAdminUserItem();
-            o.emailAddress = emailAddress;
-            o.firstName = firstName;
-            o.lastName = lastName;
-            o.username = username;
-            return o;
+            final var _resultValue = new FusionEnvironmentAdminUserItem();
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.firstName = firstName;
+            _resultValue.lastName = lastName;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

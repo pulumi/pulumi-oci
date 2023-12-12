@@ -86,11 +86,11 @@ public final class NodePoolNodeSourceDetails {
             return this;
         }
         public NodePoolNodeSourceDetails build() {
-            final var o = new NodePoolNodeSourceDetails();
-            o.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
-            o.imageId = imageId;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new NodePoolNodeSourceDetails();
+            _resultValue.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            _resultValue.imageId = imageId;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

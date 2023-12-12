@@ -127,13 +127,13 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
             return values(List.of(values));
         }
         public GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration build() {
-            final var o = new GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration();
-            o.configKey = configKey;
-            o.dataType = dataType;
-            o.name = name;
-            o.value = value;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration();
+            _resultValue.configKey = configKey;
+            _resultValue.dataType = dataType;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

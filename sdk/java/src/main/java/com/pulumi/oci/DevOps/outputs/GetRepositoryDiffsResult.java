@@ -132,15 +132,15 @@ public final class GetRepositoryDiffsResult {
             return this;
         }
         public GetRepositoryDiffsResult build() {
-            final var o = new GetRepositoryDiffsResult();
-            o.baseVersion = baseVersion;
-            o.diffCollections = diffCollections;
-            o.filters = filters;
-            o.id = id;
-            o.isComparisonFromMergeBase = isComparisonFromMergeBase;
-            o.repositoryId = repositoryId;
-            o.targetVersion = targetVersion;
-            return o;
+            final var _resultValue = new GetRepositoryDiffsResult();
+            _resultValue.baseVersion = baseVersion;
+            _resultValue.diffCollections = diffCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isComparisonFromMergeBase = isComparisonFromMergeBase;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.targetVersion = targetVersion;
+            return _resultValue;
         }
     }
 }

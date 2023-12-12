@@ -144,14 +144,14 @@ public final class GetManagedDatabaseGroupsResult {
             return this;
         }
         public GetManagedDatabaseGroupsResult build() {
-            final var o = new GetManagedDatabaseGroupsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseGroupCollections = managedDatabaseGroupCollections;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetManagedDatabaseGroupsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseGroupCollections = managedDatabaseGroupCollections;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

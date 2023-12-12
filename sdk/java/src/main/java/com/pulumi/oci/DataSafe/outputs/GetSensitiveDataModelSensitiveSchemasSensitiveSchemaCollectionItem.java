@@ -46,9 +46,9 @@ public final class GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectio
             return this;
         }
         public GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem build() {
-            final var o = new GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem();
-            o.schemaName = schemaName;
-            return o;
+            final var _resultValue = new GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItem();
+            _resultValue.schemaName = schemaName;
+            return _resultValue;
         }
     }
 }

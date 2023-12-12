@@ -116,13 +116,13 @@ public final class GetExternalListenerServicesResult {
             return this;
         }
         public GetExternalListenerServicesResult build() {
-            final var o = new GetExternalListenerServicesResult();
-            o.externalListenerId = externalListenerId;
-            o.externalListenerServiceCollections = externalListenerServiceCollections;
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            return o;
+            final var _resultValue = new GetExternalListenerServicesResult();
+            _resultValue.externalListenerId = externalListenerId;
+            _resultValue.externalListenerServiceCollections = externalListenerServiceCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            return _resultValue;
         }
     }
 }

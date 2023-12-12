@@ -68,10 +68,10 @@ public final class DeploymentSpecificationRouteBackendRoutingBackend {
             return this;
         }
         public DeploymentSpecificationRouteBackendRoutingBackend build() {
-            final var o = new DeploymentSpecificationRouteBackendRoutingBackend();
-            o.backend = backend;
-            o.key = key;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteBackendRoutingBackend();
+            _resultValue.backend = backend;
+            _resultValue.key = key;
+            return _resultValue;
         }
     }
 }

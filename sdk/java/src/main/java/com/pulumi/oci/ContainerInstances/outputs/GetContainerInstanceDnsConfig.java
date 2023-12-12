@@ -94,11 +94,11 @@ public final class GetContainerInstanceDnsConfig {
             return searches(List.of(searches));
         }
         public GetContainerInstanceDnsConfig build() {
-            final var o = new GetContainerInstanceDnsConfig();
-            o.nameservers = nameservers;
-            o.options = options;
-            o.searches = searches;
-            return o;
+            final var _resultValue = new GetContainerInstanceDnsConfig();
+            _resultValue.nameservers = nameservers;
+            _resultValue.options = options;
+            _resultValue.searches = searches;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetProfileManagedInstanceGroup {
             return this;
         }
         public GetProfileManagedInstanceGroup build() {
-            final var o = new GetProfileManagedInstanceGroup();
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetProfileManagedInstanceGroup();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -92,11 +92,11 @@ public final class ModelModelTrainingResultRowReductionDetail {
             return this;
         }
         public ModelModelTrainingResultRowReductionDetail build() {
-            final var o = new ModelModelTrainingResultRowReductionDetail();
-            o.isReductionEnabled = isReductionEnabled;
-            o.reductionMethod = reductionMethod;
-            o.reductionPercentage = reductionPercentage;
-            return o;
+            final var _resultValue = new ModelModelTrainingResultRowReductionDetail();
+            _resultValue.isReductionEnabled = isReductionEnabled;
+            _resultValue.reductionMethod = reductionMethod;
+            _resultValue.reductionPercentage = reductionPercentage;
+            return _resultValue;
         }
     }
 }

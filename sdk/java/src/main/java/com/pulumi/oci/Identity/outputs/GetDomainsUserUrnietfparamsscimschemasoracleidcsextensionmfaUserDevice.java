@@ -198,17 +198,17 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaU
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice();
-            o.authenticationMethod = authenticationMethod;
-            o.display = display;
-            o.factorStatus = factorStatus;
-            o.factorType = factorType;
-            o.lastSyncTime = lastSyncTime;
-            o.ref = ref;
-            o.status = status;
-            o.thirdPartyVendorName = thirdPartyVendorName;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevice();
+            _resultValue.authenticationMethod = authenticationMethod;
+            _resultValue.display = display;
+            _resultValue.factorStatus = factorStatus;
+            _resultValue.factorType = factorType;
+            _resultValue.lastSyncTime = lastSyncTime;
+            _resultValue.ref = ref;
+            _resultValue.status = status;
+            _resultValue.thirdPartyVendorName = thirdPartyVendorName;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

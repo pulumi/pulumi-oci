@@ -67,11 +67,11 @@ public final class GetDatabasePdbConversionHistoryEntriesFilter {
             return values(List.of(values));
         }
         public GetDatabasePdbConversionHistoryEntriesFilter build() {
-            final var o = new GetDatabasePdbConversionHistoryEntriesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDatabasePdbConversionHistoryEntriesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

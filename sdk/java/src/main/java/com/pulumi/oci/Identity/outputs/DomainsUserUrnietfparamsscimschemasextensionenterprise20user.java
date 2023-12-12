@@ -294,14 +294,14 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20user 
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasextensionenterprise20user build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasextensionenterprise20user();
-            o.costCenter = costCenter;
-            o.department = department;
-            o.division = division;
-            o.employeeNumber = employeeNumber;
-            o.manager = manager;
-            o.organization = organization;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasextensionenterprise20user();
+            _resultValue.costCenter = costCenter;
+            _resultValue.department = department;
+            _resultValue.division = division;
+            _resultValue.employeeNumber = employeeNumber;
+            _resultValue.manager = manager;
+            _resultValue.organization = organization;
+            return _resultValue;
         }
     }
 }

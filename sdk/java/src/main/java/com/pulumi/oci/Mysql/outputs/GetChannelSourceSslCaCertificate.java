@@ -65,10 +65,10 @@ public final class GetChannelSourceSslCaCertificate {
             return this;
         }
         public GetChannelSourceSslCaCertificate build() {
-            final var o = new GetChannelSourceSslCaCertificate();
-            o.certificateType = certificateType;
-            o.contents = contents;
-            return o;
+            final var _resultValue = new GetChannelSourceSslCaCertificate();
+            _resultValue.certificateType = certificateType;
+            _resultValue.contents = contents;
+            return _resultValue;
         }
     }
 }

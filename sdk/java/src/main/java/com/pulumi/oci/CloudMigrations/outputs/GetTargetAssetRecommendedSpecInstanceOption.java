@@ -46,9 +46,9 @@ public final class GetTargetAssetRecommendedSpecInstanceOption {
             return this;
         }
         public GetTargetAssetRecommendedSpecInstanceOption build() {
-            final var o = new GetTargetAssetRecommendedSpecInstanceOption();
-            o.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
-            return o;
+            final var _resultValue = new GetTargetAssetRecommendedSpecInstanceOption();
+            _resultValue.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
+            return _resultValue;
         }
     }
 }

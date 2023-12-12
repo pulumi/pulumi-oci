@@ -131,15 +131,15 @@ public final class GetAwrHubAwrSnapshotsResult {
             return this;
         }
         public GetAwrHubAwrSnapshotsResult build() {
-            final var o = new GetAwrHubAwrSnapshotsResult();
-            o.awrHubId = awrHubId;
-            o.awrSnapshotCollections = awrSnapshotCollections;
-            o.awrSourceDatabaseIdentifier = awrSourceDatabaseIdentifier;
-            o.filters = filters;
-            o.id = id;
-            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-            return o;
+            final var _resultValue = new GetAwrHubAwrSnapshotsResult();
+            _resultValue.awrHubId = awrHubId;
+            _resultValue.awrSnapshotCollections = awrSnapshotCollections;
+            _resultValue.awrSourceDatabaseIdentifier = awrSourceDatabaseIdentifier;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            _resultValue.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            return _resultValue;
         }
     }
 }

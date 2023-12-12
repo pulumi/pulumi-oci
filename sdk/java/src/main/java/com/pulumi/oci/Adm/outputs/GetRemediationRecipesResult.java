@@ -144,14 +144,14 @@ public final class GetRemediationRecipesResult {
             return this;
         }
         public GetRemediationRecipesResult build() {
-            final var o = new GetRemediationRecipesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.remediationRecipeCollections = remediationRecipeCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetRemediationRecipesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.remediationRecipeCollections = remediationRecipeCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

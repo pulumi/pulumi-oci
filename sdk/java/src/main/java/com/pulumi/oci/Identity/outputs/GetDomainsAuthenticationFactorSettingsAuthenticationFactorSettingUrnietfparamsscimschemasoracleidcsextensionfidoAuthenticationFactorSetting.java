@@ -204,17 +204,17 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
             return this;
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting build() {
-            final var o = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting();
-            o.attestation = attestation;
-            o.authenticatorSelectionAttachment = authenticatorSelectionAttachment;
-            o.authenticatorSelectionRequireResidentKey = authenticatorSelectionRequireResidentKey;
-            o.authenticatorSelectionResidentKey = authenticatorSelectionResidentKey;
-            o.authenticatorSelectionUserVerification = authenticatorSelectionUserVerification;
-            o.domainValidationLevel = domainValidationLevel;
-            o.excludeCredentials = excludeCredentials;
-            o.publicKeyTypes = publicKeyTypes;
-            o.timeout = timeout;
-            return o;
+            final var _resultValue = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingUrnietfparamsscimschemasoracleidcsextensionfidoAuthenticationFactorSetting();
+            _resultValue.attestation = attestation;
+            _resultValue.authenticatorSelectionAttachment = authenticatorSelectionAttachment;
+            _resultValue.authenticatorSelectionRequireResidentKey = authenticatorSelectionRequireResidentKey;
+            _resultValue.authenticatorSelectionResidentKey = authenticatorSelectionResidentKey;
+            _resultValue.authenticatorSelectionUserVerification = authenticatorSelectionUserVerification;
+            _resultValue.domainValidationLevel = domainValidationLevel;
+            _resultValue.excludeCredentials = excludeCredentials;
+            _resultValue.publicKeyTypes = publicKeyTypes;
+            _resultValue.timeout = timeout;
+            return _resultValue;
         }
     }
 }

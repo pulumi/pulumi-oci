@@ -174,18 +174,18 @@ public final class GetNamespaceEffectivePropertiesResult {
             return this;
         }
         public GetNamespaceEffectivePropertiesResult build() {
-            final var o = new GetNamespaceEffectivePropertiesResult();
-            o.agentId = agentId;
-            o.effectivePropertyCollections = effectivePropertyCollections;
-            o.entityId = entityId;
-            o.filters = filters;
-            o.id = id;
-            o.isIncludePatterns = isIncludePatterns;
-            o.name = name;
-            o.namespace = namespace;
-            o.patternId = patternId;
-            o.sourceName = sourceName;
-            return o;
+            final var _resultValue = new GetNamespaceEffectivePropertiesResult();
+            _resultValue.agentId = agentId;
+            _resultValue.effectivePropertyCollections = effectivePropertyCollections;
+            _resultValue.entityId = entityId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isIncludePatterns = isIncludePatterns;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.patternId = patternId;
+            _resultValue.sourceName = sourceName;
+            return _resultValue;
         }
     }
 }

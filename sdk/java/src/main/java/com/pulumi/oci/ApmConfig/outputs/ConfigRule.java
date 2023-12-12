@@ -170,15 +170,15 @@ public final class ConfigRule {
             return this;
         }
         public ConfigRule build() {
-            final var o = new ConfigRule();
-            o.displayName = displayName;
-            o.filterText = filterText;
-            o.isApplyToErrorSpans = isApplyToErrorSpans;
-            o.isEnabled = isEnabled;
-            o.priority = priority;
-            o.satisfiedResponseTime = satisfiedResponseTime;
-            o.toleratingResponseTime = toleratingResponseTime;
-            return o;
+            final var _resultValue = new ConfigRule();
+            _resultValue.displayName = displayName;
+            _resultValue.filterText = filterText;
+            _resultValue.isApplyToErrorSpans = isApplyToErrorSpans;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.priority = priority;
+            _resultValue.satisfiedResponseTime = satisfiedResponseTime;
+            _resultValue.toleratingResponseTime = toleratingResponseTime;
+            return _resultValue;
         }
     }
 }

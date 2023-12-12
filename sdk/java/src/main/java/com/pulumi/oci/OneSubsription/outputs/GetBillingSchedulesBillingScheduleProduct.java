@@ -65,10 +65,10 @@ public final class GetBillingSchedulesBillingScheduleProduct {
             return this;
         }
         public GetBillingSchedulesBillingScheduleProduct build() {
-            final var o = new GetBillingSchedulesBillingScheduleProduct();
-            o.name = name;
-            o.partNumber = partNumber;
-            return o;
+            final var _resultValue = new GetBillingSchedulesBillingScheduleProduct();
+            _resultValue.name = name;
+            _resultValue.partNumber = partNumber;
+            return _resultValue;
         }
     }
 }

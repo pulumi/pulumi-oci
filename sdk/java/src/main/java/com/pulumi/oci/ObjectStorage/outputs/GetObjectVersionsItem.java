@@ -218,18 +218,18 @@ public final class GetObjectVersionsItem {
             return this;
         }
         public GetObjectVersionsItem build() {
-            final var o = new GetObjectVersionsItem();
-            o.archivalState = archivalState;
-            o.etag = etag;
-            o.isDeleteMarker = isDeleteMarker;
-            o.md5 = md5;
-            o.name = name;
-            o.size = size;
-            o.storageTier = storageTier;
-            o.timeCreated = timeCreated;
-            o.timeModified = timeModified;
-            o.versionId = versionId;
-            return o;
+            final var _resultValue = new GetObjectVersionsItem();
+            _resultValue.archivalState = archivalState;
+            _resultValue.etag = etag;
+            _resultValue.isDeleteMarker = isDeleteMarker;
+            _resultValue.md5 = md5;
+            _resultValue.name = name;
+            _resultValue.size = size;
+            _resultValue.storageTier = storageTier;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeModified = timeModified;
+            _resultValue.versionId = versionId;
+            return _resultValue;
         }
     }
 }

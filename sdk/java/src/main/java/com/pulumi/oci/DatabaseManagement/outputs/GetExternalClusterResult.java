@@ -396,27 +396,27 @@ public final class GetExternalClusterResult {
             return vipConfigurations(List.of(vipConfigurations));
         }
         public GetExternalClusterResult build() {
-            final var o = new GetExternalClusterResult();
-            o.additionalDetails = additionalDetails;
-            o.compartmentId = compartmentId;
-            o.componentName = componentName;
-            o.displayName = displayName;
-            o.externalClusterId = externalClusterId;
-            o.externalConnectorId = externalConnectorId;
-            o.externalDbSystemId = externalDbSystemId;
-            o.gridHome = gridHome;
-            o.id = id;
-            o.isFlexCluster = isFlexCluster;
-            o.lifecycleDetails = lifecycleDetails;
-            o.networkConfigurations = networkConfigurations;
-            o.ocrFileLocation = ocrFileLocation;
-            o.scanConfigurations = scanConfigurations;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            o.vipConfigurations = vipConfigurations;
-            return o;
+            final var _resultValue = new GetExternalClusterResult();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.componentName = componentName;
+            _resultValue.displayName = displayName;
+            _resultValue.externalClusterId = externalClusterId;
+            _resultValue.externalConnectorId = externalConnectorId;
+            _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.gridHome = gridHome;
+            _resultValue.id = id;
+            _resultValue.isFlexCluster = isFlexCluster;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.networkConfigurations = networkConfigurations;
+            _resultValue.ocrFileLocation = ocrFileLocation;
+            _resultValue.scanConfigurations = scanConfigurations;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            _resultValue.vipConfigurations = vipConfigurations;
+            return _resultValue;
         }
     }
 }

@@ -92,11 +92,11 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTrigge
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter build() {
-            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter();
-            o.events = events;
-            o.includes = includes;
-            o.triggerSource = triggerSource;
-            return o;
+            final var _resultValue = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceTriggerInfoActionFilter();
+            _resultValue.events = events;
+            _resultValue.includes = includes;
+            _resultValue.triggerSource = triggerSource;
+            return _resultValue;
         }
     }
 }

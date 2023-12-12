@@ -84,11 +84,11 @@ public final class GetDomainsMyDeviceNonCompliance {
             return this;
         }
         public GetDomainsMyDeviceNonCompliance build() {
-            final var o = new GetDomainsMyDeviceNonCompliance();
-            o.action = action;
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyDeviceNonCompliance();
+            _resultValue.action = action;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

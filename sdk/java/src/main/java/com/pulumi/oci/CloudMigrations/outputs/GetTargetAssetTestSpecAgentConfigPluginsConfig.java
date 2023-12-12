@@ -65,10 +65,10 @@ public final class GetTargetAssetTestSpecAgentConfigPluginsConfig {
             return this;
         }
         public GetTargetAssetTestSpecAgentConfigPluginsConfig build() {
-            final var o = new GetTargetAssetTestSpecAgentConfigPluginsConfig();
-            o.desiredState = desiredState;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetTargetAssetTestSpecAgentConfigPluginsConfig();
+            _resultValue.desiredState = desiredState;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

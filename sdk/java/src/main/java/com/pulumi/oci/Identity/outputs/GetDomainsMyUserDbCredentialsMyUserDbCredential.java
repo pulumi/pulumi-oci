@@ -568,35 +568,35 @@ public final class GetDomainsMyUserDbCredentialsMyUserDbCredential {
             return users(List.of(users));
         }
         public GetDomainsMyUserDbCredentialsMyUserDbCredential build() {
-            final var o = new GetDomainsMyUserDbCredentialsMyUserDbCredential();
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.dbPassword = dbPassword;
-            o.deleteInProgress = deleteInProgress;
-            o.description = description;
-            o.domainOcid = domainOcid;
-            o.expired = expired;
-            o.expiresOn = expiresOn;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.lastSetDate = lastSetDate;
-            o.metas = metas;
-            o.mixedDbPassword = mixedDbPassword;
-            o.mixedSalt = mixedSalt;
-            o.name = name;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.salt = salt;
-            o.schemas = schemas;
-            o.status = status;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetDomainsMyUserDbCredentialsMyUserDbCredential();
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.dbPassword = dbPassword;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.description = description;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.expired = expired;
+            _resultValue.expiresOn = expiresOn;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.lastSetDate = lastSetDate;
+            _resultValue.metas = metas;
+            _resultValue.mixedDbPassword = mixedDbPassword;
+            _resultValue.mixedSalt = mixedSalt;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.salt = salt;
+            _resultValue.schemas = schemas;
+            _resultValue.status = status;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }

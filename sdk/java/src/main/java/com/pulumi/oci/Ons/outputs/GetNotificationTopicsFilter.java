@@ -75,11 +75,11 @@ public final class GetNotificationTopicsFilter {
             return values(List.of(values));
         }
         public GetNotificationTopicsFilter build() {
-            final var o = new GetNotificationTopicsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetNotificationTopicsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

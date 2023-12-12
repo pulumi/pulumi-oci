@@ -46,9 +46,9 @@ public final class GetCategoriesCategory {
             return this;
         }
         public GetCategoriesCategory build() {
-            final var o = new GetCategoriesCategory();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetCategoriesCategory();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

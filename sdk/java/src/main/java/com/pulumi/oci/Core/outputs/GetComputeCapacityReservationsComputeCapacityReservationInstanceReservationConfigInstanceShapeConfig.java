@@ -65,10 +65,10 @@ public final class GetComputeCapacityReservationsComputeCapacityReservationInsta
             return this;
         }
         public GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig build() {
-            final var o = new GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

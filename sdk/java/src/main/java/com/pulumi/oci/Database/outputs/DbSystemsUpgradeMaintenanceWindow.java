@@ -161,14 +161,14 @@ public final class DbSystemsUpgradeMaintenanceWindow {
             return weeksOfMonths(List.of(weeksOfMonths));
         }
         public DbSystemsUpgradeMaintenanceWindow build() {
-            final var o = new DbSystemsUpgradeMaintenanceWindow();
-            o.daysOfWeeks = daysOfWeeks;
-            o.hoursOfDays = hoursOfDays;
-            o.leadTimeInWeeks = leadTimeInWeeks;
-            o.months = months;
-            o.preference = preference;
-            o.weeksOfMonths = weeksOfMonths;
-            return o;
+            final var _resultValue = new DbSystemsUpgradeMaintenanceWindow();
+            _resultValue.daysOfWeeks = daysOfWeeks;
+            _resultValue.hoursOfDays = hoursOfDays;
+            _resultValue.leadTimeInWeeks = leadTimeInWeeks;
+            _resultValue.months = months;
+            _resultValue.preference = preference;
+            _resultValue.weeksOfMonths = weeksOfMonths;
+            return _resultValue;
         }
     }
 }

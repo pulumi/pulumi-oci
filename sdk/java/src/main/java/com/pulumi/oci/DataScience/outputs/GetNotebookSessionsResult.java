@@ -182,16 +182,16 @@ public final class GetNotebookSessionsResult {
             return this;
         }
         public GetNotebookSessionsResult build() {
-            final var o = new GetNotebookSessionsResult();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.notebookSessions = notebookSessions;
-            o.projectId = projectId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetNotebookSessionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.notebookSessions = notebookSessions;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

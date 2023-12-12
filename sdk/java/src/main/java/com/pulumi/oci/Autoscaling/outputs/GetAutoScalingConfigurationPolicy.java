@@ -208,17 +208,17 @@ public final class GetAutoScalingConfigurationPolicy {
             return this;
         }
         public GetAutoScalingConfigurationPolicy build() {
-            final var o = new GetAutoScalingConfigurationPolicy();
-            o.capacities = capacities;
-            o.displayName = displayName;
-            o.executionSchedules = executionSchedules;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.policyType = policyType;
-            o.resourceActions = resourceActions;
-            o.rules = rules;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationPolicy();
+            _resultValue.capacities = capacities;
+            _resultValue.displayName = displayName;
+            _resultValue.executionSchedules = executionSchedules;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.policyType = policyType;
+            _resultValue.resourceActions = resourceActions;
+            _resultValue.rules = rules;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

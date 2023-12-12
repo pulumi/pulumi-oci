@@ -67,10 +67,10 @@ public final class WorkspaceProjectMetadataCountStatisticObjectTypeCountList {
             return this;
         }
         public WorkspaceProjectMetadataCountStatisticObjectTypeCountList build() {
-            final var o = new WorkspaceProjectMetadataCountStatisticObjectTypeCountList();
-            o.objectCount = objectCount;
-            o.objectType = objectType;
-            return o;
+            final var _resultValue = new WorkspaceProjectMetadataCountStatisticObjectTypeCountList();
+            _resultValue.objectCount = objectCount;
+            _resultValue.objectType = objectType;
+            return _resultValue;
         }
     }
 }

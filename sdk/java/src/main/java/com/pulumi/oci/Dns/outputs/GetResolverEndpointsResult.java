@@ -147,15 +147,15 @@ public final class GetResolverEndpointsResult {
             return this;
         }
         public GetResolverEndpointsResult build() {
-            final var o = new GetResolverEndpointsResult();
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.resolverEndpoints = resolverEndpoints;
-            o.resolverId = resolverId;
-            o.scope = scope;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetResolverEndpointsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.resolverEndpoints = resolverEndpoints;
+            _resultValue.resolverId = resolverId;
+            _resultValue.scope = scope;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

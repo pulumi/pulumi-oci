@@ -65,10 +65,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig {
             return this;
         }
         public GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig build() {
-            final var o = new GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig();
-            o.manualBackupBucketName = manualBackupBucketName;
-            o.manualBackupType = manualBackupType;
-            return o;
+            final var _resultValue = new GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfig();
+            _resultValue.manualBackupBucketName = manualBackupBucketName;
+            _resultValue.manualBackupType = manualBackupType;
+            return _resultValue;
         }
     }
 }

@@ -309,22 +309,22 @@ public final class GetWorkspaceProjectsProjectSummaryCollectionItemMetadata {
             return this;
         }
         public GetWorkspaceProjectsProjectSummaryCollectionItemMetadata build() {
-            final var o = new GetWorkspaceProjectsProjectSummaryCollectionItemMetadata();
-            o.aggregatorKey = aggregatorKey;
-            o.aggregators = aggregators;
-            o.countStatistics = countStatistics;
-            o.createdBy = createdBy;
-            o.createdByName = createdByName;
-            o.identifierPath = identifierPath;
-            o.infoFields = infoFields;
-            o.isFavorite = isFavorite;
-            o.labels = labels;
-            o.registryVersion = registryVersion;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.updatedBy = updatedBy;
-            o.updatedByName = updatedByName;
-            return o;
+            final var _resultValue = new GetWorkspaceProjectsProjectSummaryCollectionItemMetadata();
+            _resultValue.aggregatorKey = aggregatorKey;
+            _resultValue.aggregators = aggregators;
+            _resultValue.countStatistics = countStatistics;
+            _resultValue.createdBy = createdBy;
+            _resultValue.createdByName = createdByName;
+            _resultValue.identifierPath = identifierPath;
+            _resultValue.infoFields = infoFields;
+            _resultValue.isFavorite = isFavorite;
+            _resultValue.labels = labels;
+            _resultValue.registryVersion = registryVersion;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.updatedBy = updatedBy;
+            _resultValue.updatedByName = updatedByName;
+            return _resultValue;
         }
     }
 }

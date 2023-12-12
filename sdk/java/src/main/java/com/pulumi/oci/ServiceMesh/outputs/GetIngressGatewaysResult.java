@@ -163,15 +163,15 @@ public final class GetIngressGatewaysResult {
             return this;
         }
         public GetIngressGatewaysResult build() {
-            final var o = new GetIngressGatewaysResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.ingressGatewayCollections = ingressGatewayCollections;
-            o.meshId = meshId;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetIngressGatewaysResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ingressGatewayCollections = ingressGatewayCollections;
+            _resultValue.meshId = meshId;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

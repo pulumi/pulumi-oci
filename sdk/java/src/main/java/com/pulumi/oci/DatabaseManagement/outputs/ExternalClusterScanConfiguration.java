@@ -106,12 +106,12 @@ public final class ExternalClusterScanConfiguration {
             return this;
         }
         public ExternalClusterScanConfiguration build() {
-            final var o = new ExternalClusterScanConfiguration();
-            o.networkNumber = networkNumber;
-            o.scanName = scanName;
-            o.scanPort = scanPort;
-            o.scanProtocol = scanProtocol;
-            return o;
+            final var _resultValue = new ExternalClusterScanConfiguration();
+            _resultValue.networkNumber = networkNumber;
+            _resultValue.scanName = scanName;
+            _resultValue.scanPort = scanPort;
+            _resultValue.scanProtocol = scanProtocol;
+            return _resultValue;
         }
     }
 }

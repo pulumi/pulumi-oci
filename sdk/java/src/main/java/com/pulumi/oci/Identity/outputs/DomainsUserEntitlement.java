@@ -184,12 +184,12 @@ public final class DomainsUserEntitlement {
             return this;
         }
         public DomainsUserEntitlement build() {
-            final var o = new DomainsUserEntitlement();
-            o.display = display;
-            o.primary = primary;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserEntitlement();
+            _resultValue.display = display;
+            _resultValue.primary = primary;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

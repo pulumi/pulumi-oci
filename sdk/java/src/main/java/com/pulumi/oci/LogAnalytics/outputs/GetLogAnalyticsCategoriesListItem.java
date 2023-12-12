@@ -123,13 +123,13 @@ public final class GetLogAnalyticsCategoriesListItem {
             return this;
         }
         public GetLogAnalyticsCategoriesListItem build() {
-            final var o = new GetLogAnalyticsCategoriesListItem();
-            o.description = description;
-            o.displayName = displayName;
-            o.isSystem = isSystem;
-            o.name = name;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetLogAnalyticsCategoriesListItem();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.isSystem = isSystem;
+            _resultValue.name = name;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

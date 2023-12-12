@@ -122,13 +122,13 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOpti
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask();
-            o.status = status;
-            o.target = target;
-            o.targetType = targetType;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollectionItemTask();
+            _resultValue.status = status;
+            _resultValue.target = target;
+            _resultValue.targetType = targetType;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

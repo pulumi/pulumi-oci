@@ -65,10 +65,10 @@ public final class GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDi
             return this;
         }
         public GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery build() {
-            final var o = new GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery();
-            o.hostname = hostname;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscovery();
+            _resultValue.hostname = hostname;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -132,13 +132,13 @@ public final class GetAddressRuleAddressField {
             return this;
         }
         public GetAddressRuleAddressField build() {
-            final var o = new GetAddressRuleAddressField();
-            o.formats = formats;
-            o.isRequired = isRequired;
-            o.labels = labels;
-            o.language = language;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAddressRuleAddressField();
+            _resultValue.formats = formats;
+            _resultValue.isRequired = isRequired;
+            _resultValue.labels = labels;
+            _resultValue.language = language;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

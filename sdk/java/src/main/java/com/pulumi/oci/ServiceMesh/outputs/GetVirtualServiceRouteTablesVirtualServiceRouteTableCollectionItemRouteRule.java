@@ -147,14 +147,14 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
             return this;
         }
         public GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule build() {
-            final var o = new GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule();
-            o.destinations = destinations;
-            o.isGrpc = isGrpc;
-            o.path = path;
-            o.pathType = pathType;
-            o.requestTimeoutInMs = requestTimeoutInMs;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule();
+            _resultValue.destinations = destinations;
+            _resultValue.isGrpc = isGrpc;
+            _resultValue.path = path;
+            _resultValue.pathType = pathType;
+            _resultValue.requestTimeoutInMs = requestTimeoutInMs;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

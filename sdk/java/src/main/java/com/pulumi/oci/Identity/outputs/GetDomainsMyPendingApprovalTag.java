@@ -65,10 +65,10 @@ public final class GetDomainsMyPendingApprovalTag {
             return this;
         }
         public GetDomainsMyPendingApprovalTag build() {
-            final var o = new GetDomainsMyPendingApprovalTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyPendingApprovalTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

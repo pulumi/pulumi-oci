@@ -46,9 +46,9 @@ public final class GetDomainsCustomerSecretKeysCustomerSecretKeyUrnietfparamssci
             return this;
         }
         public GetDomainsCustomerSecretKeysCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new GetDomainsCustomerSecretKeysCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new GetDomainsCustomerSecretKeysCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

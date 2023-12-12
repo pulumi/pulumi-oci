@@ -54,10 +54,10 @@ public final class PolicyOriginGroup {
             return originGroups(List.of(originGroups));
         }
         public PolicyOriginGroup build() {
-            final var o = new PolicyOriginGroup();
-            o.label = label;
-            o.originGroups = originGroups;
-            return o;
+            final var _resultValue = new PolicyOriginGroup();
+            _resultValue.label = label;
+            _resultValue.originGroups = originGroups;
+            return _resultValue;
         }
     }
 }

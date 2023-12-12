@@ -85,11 +85,11 @@ public final class GetDomainsAppsAppAllowedScope {
             return this;
         }
         public GetDomainsAppsAppAllowedScope build() {
-            final var o = new GetDomainsAppsAppAllowedScope();
-            o.fqs = fqs;
-            o.idOfDefiningApp = idOfDefiningApp;
-            o.readOnly = readOnly;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppAllowedScope();
+            _resultValue.fqs = fqs;
+            _resultValue.idOfDefiningApp = idOfDefiningApp;
+            _resultValue.readOnly = readOnly;
+            return _resultValue;
         }
     }
 }

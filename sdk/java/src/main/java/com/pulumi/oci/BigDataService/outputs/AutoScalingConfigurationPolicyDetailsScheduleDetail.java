@@ -95,11 +95,11 @@ public final class AutoScalingConfigurationPolicyDetailsScheduleDetail {
             return timeAndVerticalScalingConfigs(List.of(timeAndVerticalScalingConfigs));
         }
         public AutoScalingConfigurationPolicyDetailsScheduleDetail build() {
-            final var o = new AutoScalingConfigurationPolicyDetailsScheduleDetail();
-            o.scheduleType = scheduleType;
-            o.timeAndHorizontalScalingConfigs = timeAndHorizontalScalingConfigs;
-            o.timeAndVerticalScalingConfigs = timeAndVerticalScalingConfigs;
-            return o;
+            final var _resultValue = new AutoScalingConfigurationPolicyDetailsScheduleDetail();
+            _resultValue.scheduleType = scheduleType;
+            _resultValue.timeAndHorizontalScalingConfigs = timeAndHorizontalScalingConfigs;
+            _resultValue.timeAndVerticalScalingConfigs = timeAndVerticalScalingConfigs;
+            return _resultValue;
         }
     }
 }

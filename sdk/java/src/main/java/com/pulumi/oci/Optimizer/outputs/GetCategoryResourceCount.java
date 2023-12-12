@@ -66,10 +66,10 @@ public final class GetCategoryResourceCount {
             return this;
         }
         public GetCategoryResourceCount build() {
-            final var o = new GetCategoryResourceCount();
-            o.count = count;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetCategoryResourceCount();
+            _resultValue.count = count;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

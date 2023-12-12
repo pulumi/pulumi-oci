@@ -269,20 +269,20 @@ public final class GetQueriesQueryCollectionItemQueryDefinitionReportQuery {
             return this;
         }
         public GetQueriesQueryCollectionItemQueryDefinitionReportQuery build() {
-            final var o = new GetQueriesQueryCollectionItemQueryDefinitionReportQuery();
-            o.compartmentDepth = compartmentDepth;
-            o.dateRangeName = dateRangeName;
-            o.filter = filter;
-            o.forecasts = forecasts;
-            o.granularity = granularity;
-            o.groupBies = groupBies;
-            o.groupByTags = groupByTags;
-            o.isAggregateByTime = isAggregateByTime;
-            o.queryType = queryType;
-            o.tenantId = tenantId;
-            o.timeUsageEnded = timeUsageEnded;
-            o.timeUsageStarted = timeUsageStarted;
-            return o;
+            final var _resultValue = new GetQueriesQueryCollectionItemQueryDefinitionReportQuery();
+            _resultValue.compartmentDepth = compartmentDepth;
+            _resultValue.dateRangeName = dateRangeName;
+            _resultValue.filter = filter;
+            _resultValue.forecasts = forecasts;
+            _resultValue.granularity = granularity;
+            _resultValue.groupBies = groupBies;
+            _resultValue.groupByTags = groupByTags;
+            _resultValue.isAggregateByTime = isAggregateByTime;
+            _resultValue.queryType = queryType;
+            _resultValue.tenantId = tenantId;
+            _resultValue.timeUsageEnded = timeUsageEnded;
+            _resultValue.timeUsageStarted = timeUsageStarted;
+            return _resultValue;
         }
     }
 }

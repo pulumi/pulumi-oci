@@ -146,14 +146,14 @@ public final class GetSoftwareSourceModuleStreamProfilesModuleStreamProfileColle
             return this;
         }
         public GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem build() {
-            final var o = new GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem();
-            o.description = description;
-            o.isDefault = isDefault;
-            o.moduleName = moduleName;
-            o.name = name;
-            o.packages = packages;
-            o.streamName = streamName;
-            return o;
+            final var _resultValue = new GetSoftwareSourceModuleStreamProfilesModuleStreamProfileCollectionItem();
+            _resultValue.description = description;
+            _resultValue.isDefault = isDefault;
+            _resultValue.moduleName = moduleName;
+            _resultValue.name = name;
+            _resultValue.packages = packages;
+            _resultValue.streamName = streamName;
+            return _resultValue;
         }
     }
 }

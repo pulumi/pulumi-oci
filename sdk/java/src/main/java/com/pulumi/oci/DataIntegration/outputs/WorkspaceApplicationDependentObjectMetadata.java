@@ -163,15 +163,15 @@ public final class WorkspaceApplicationDependentObjectMetadata {
             return this;
         }
         public WorkspaceApplicationDependentObjectMetadata build() {
-            final var o = new WorkspaceApplicationDependentObjectMetadata();
-            o.action = action;
-            o.identifier = identifier;
-            o.key = key;
-            o.name = name;
-            o.namePath = namePath;
-            o.objectVersion = objectVersion;
-            o.type = type;
-            return o;
+            final var _resultValue = new WorkspaceApplicationDependentObjectMetadata();
+            _resultValue.action = action;
+            _resultValue.identifier = identifier;
+            _resultValue.key = key;
+            _resultValue.name = name;
+            _resultValue.namePath = namePath;
+            _resultValue.objectVersion = objectVersion;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

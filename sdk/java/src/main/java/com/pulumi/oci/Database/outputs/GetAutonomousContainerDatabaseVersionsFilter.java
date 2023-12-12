@@ -67,11 +67,11 @@ public final class GetAutonomousContainerDatabaseVersionsFilter {
             return values(List.of(values));
         }
         public GetAutonomousContainerDatabaseVersionsFilter build() {
-            final var o = new GetAutonomousContainerDatabaseVersionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabaseVersionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

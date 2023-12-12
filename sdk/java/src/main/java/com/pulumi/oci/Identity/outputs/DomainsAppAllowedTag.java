@@ -155,11 +155,11 @@ public final class DomainsAppAllowedTag {
             return this;
         }
         public DomainsAppAllowedTag build() {
-            final var o = new DomainsAppAllowedTag();
-            o.key = key;
-            o.readOnly = readOnly;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppAllowedTag();
+            _resultValue.key = key;
+            _resultValue.readOnly = readOnly;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetConfigurationsConfigurationCollectionItemDbConfigurationOv
             return items(List.of(items));
         }
         public GetConfigurationsConfigurationCollectionItemDbConfigurationOverride build() {
-            final var o = new GetConfigurationsConfigurationCollectionItemDbConfigurationOverride();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetConfigurationsConfigurationCollectionItemDbConfigurationOverride();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

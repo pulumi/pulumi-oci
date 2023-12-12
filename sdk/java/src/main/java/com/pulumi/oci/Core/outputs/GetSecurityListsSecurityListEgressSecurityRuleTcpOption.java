@@ -81,11 +81,11 @@ public final class GetSecurityListsSecurityListEgressSecurityRuleTcpOption {
             return sourcePortRanges(List.of(sourcePortRanges));
         }
         public GetSecurityListsSecurityListEgressSecurityRuleTcpOption build() {
-            final var o = new GetSecurityListsSecurityListEgressSecurityRuleTcpOption();
-            o.max = max;
-            o.min = min;
-            o.sourcePortRanges = sourcePortRanges;
-            return o;
+            final var _resultValue = new GetSecurityListsSecurityListEgressSecurityRuleTcpOption();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            _resultValue.sourcePortRanges = sourcePortRanges;
+            return _resultValue;
         }
     }
 }

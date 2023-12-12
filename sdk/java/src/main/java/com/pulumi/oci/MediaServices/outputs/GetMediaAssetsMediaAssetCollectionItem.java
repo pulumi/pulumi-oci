@@ -475,31 +475,31 @@ public final class GetMediaAssetsMediaAssetCollectionItem {
             return this;
         }
         public GetMediaAssetsMediaAssetCollectionItem build() {
-            final var o = new GetMediaAssetsMediaAssetCollectionItem();
-            o.bucket = bucket;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.masterMediaAssetId = masterMediaAssetId;
-            o.mediaAssetTags = mediaAssetTags;
-            o.mediaWorkflowJobId = mediaWorkflowJobId;
-            o.metadatas = metadatas;
-            o.namespace = namespace;
-            o.object = object;
-            o.objectEtag = objectEtag;
-            o.parentMediaAssetId = parentMediaAssetId;
-            o.segmentRangeEndIndex = segmentRangeEndIndex;
-            o.segmentRangeStartIndex = segmentRangeStartIndex;
-            o.sourceMediaWorkflowId = sourceMediaWorkflowId;
-            o.sourceMediaWorkflowVersion = sourceMediaWorkflowVersion;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetMediaAssetsMediaAssetCollectionItem();
+            _resultValue.bucket = bucket;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.masterMediaAssetId = masterMediaAssetId;
+            _resultValue.mediaAssetTags = mediaAssetTags;
+            _resultValue.mediaWorkflowJobId = mediaWorkflowJobId;
+            _resultValue.metadatas = metadatas;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            _resultValue.objectEtag = objectEtag;
+            _resultValue.parentMediaAssetId = parentMediaAssetId;
+            _resultValue.segmentRangeEndIndex = segmentRangeEndIndex;
+            _resultValue.segmentRangeStartIndex = segmentRangeStartIndex;
+            _resultValue.sourceMediaWorkflowId = sourceMediaWorkflowId;
+            _resultValue.sourceMediaWorkflowVersion = sourceMediaWorkflowVersion;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetDomainsMyDevicesMyDeviceAuthenticationFactor {
             return this;
         }
         public GetDomainsMyDevicesMyDeviceAuthenticationFactor build() {
-            final var o = new GetDomainsMyDevicesMyDeviceAuthenticationFactor();
-            o.publicKey = publicKey;
-            o.status = status;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDomainsMyDevicesMyDeviceAuthenticationFactor();
+            _resultValue.publicKey = publicKey;
+            _resultValue.status = status;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

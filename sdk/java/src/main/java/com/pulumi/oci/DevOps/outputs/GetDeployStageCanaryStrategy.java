@@ -84,11 +84,11 @@ public final class GetDeployStageCanaryStrategy {
             return this;
         }
         public GetDeployStageCanaryStrategy build() {
-            final var o = new GetDeployStageCanaryStrategy();
-            o.ingressName = ingressName;
-            o.namespace = namespace;
-            o.strategyType = strategyType;
-            return o;
+            final var _resultValue = new GetDeployStageCanaryStrategy();
+            _resultValue.ingressName = ingressName;
+            _resultValue.namespace = namespace;
+            _resultValue.strategyType = strategyType;
+            return _resultValue;
         }
     }
 }

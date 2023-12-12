@@ -199,17 +199,17 @@ public final class GetManagementStationMirrorsMirrorsCollectionItem {
             return this;
         }
         public GetManagementStationMirrorsMirrorsCollectionItem build() {
-            final var o = new GetManagementStationMirrorsMirrorsCollectionItem();
-            o.archType = archType;
-            o.displayName = displayName;
-            o.id = id;
-            o.log = log;
-            o.osFamily = osFamily;
-            o.percentage = percentage;
-            o.state = state;
-            o.timeLastSynced = timeLastSynced;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetManagementStationMirrorsMirrorsCollectionItem();
+            _resultValue.archType = archType;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.log = log;
+            _resultValue.osFamily = osFamily;
+            _resultValue.percentage = percentage;
+            _resultValue.state = state;
+            _resultValue.timeLastSynced = timeLastSynced;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

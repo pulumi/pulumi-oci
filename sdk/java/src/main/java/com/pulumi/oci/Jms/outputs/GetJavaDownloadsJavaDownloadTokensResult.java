@@ -185,17 +185,17 @@ public final class GetJavaDownloadsJavaDownloadTokensResult {
             return this;
         }
         public GetJavaDownloadsJavaDownloadTokensResult build() {
-            final var o = new GetJavaDownloadsJavaDownloadTokensResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.familyVersion = familyVersion;
-            o.filters = filters;
-            o.id = id;
-            o.javaDownloadTokenCollections = javaDownloadTokenCollections;
-            o.searchByUser = searchByUser;
-            o.state = state;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadTokensResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.familyVersion = familyVersion;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.javaDownloadTokenCollections = javaDownloadTokenCollections;
+            _resultValue.searchByUser = searchByUser;
+            _resultValue.state = state;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

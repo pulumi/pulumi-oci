@@ -49,10 +49,10 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig build() {
-            final var o = new GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig();
-            o.memoryLimitInGbs = memoryLimitInGbs;
-            o.vcpusLimit = vcpusLimit;
-            return o;
+            final var _resultValue = new GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig();
+            _resultValue.memoryLimitInGbs = memoryLimitInGbs;
+            _resultValue.vcpusLimit = vcpusLimit;
+            return _resultValue;
         }
     }
 }

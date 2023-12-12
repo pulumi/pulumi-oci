@@ -65,10 +65,10 @@ public final class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollect
             return this;
         }
         public GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem build() {
-            final var o = new GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem();
-            o.id = id;
-            o.region = region;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItem();
+            _resultValue.id = id;
+            _resultValue.region = region;
+            return _resultValue;
         }
     }
 }

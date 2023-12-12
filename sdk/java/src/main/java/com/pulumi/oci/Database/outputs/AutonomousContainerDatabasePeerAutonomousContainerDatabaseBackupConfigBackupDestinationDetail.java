@@ -124,13 +124,13 @@ public final class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBac
             return this;
         }
         public AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail build() {
-            final var o = new AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail();
-            o.id = id;
-            o.internetProxy = internetProxy;
-            o.type = type;
-            o.vpcPassword = vpcPassword;
-            o.vpcUser = vpcUser;
-            return o;
+            final var _resultValue = new AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail();
+            _resultValue.id = id;
+            _resultValue.internetProxy = internetProxy;
+            _resultValue.type = type;
+            _resultValue.vpcPassword = vpcPassword;
+            _resultValue.vpcUser = vpcUser;
+            return _resultValue;
         }
     }
 }

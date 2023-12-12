@@ -150,11 +150,11 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

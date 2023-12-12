@@ -60,11 +60,11 @@ public final class GetStacksStackConfigSource {
             return this;
         }
         public GetStacksStackConfigSource build() {
-            final var o = new GetStacksStackConfigSource();
-            o.configSourceType = configSourceType;
-            o.workingDirectory = workingDirectory;
-            o.zipFileBase64encoded = zipFileBase64encoded;
-            return o;
+            final var _resultValue = new GetStacksStackConfigSource();
+            _resultValue.configSourceType = configSourceType;
+            _resultValue.workingDirectory = workingDirectory;
+            _resultValue.zipFileBase64encoded = zipFileBase64encoded;
+            return _resultValue;
         }
     }
 }

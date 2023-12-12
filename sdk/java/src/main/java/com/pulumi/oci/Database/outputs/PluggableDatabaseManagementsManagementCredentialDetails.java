@@ -65,10 +65,10 @@ public final class PluggableDatabaseManagementsManagementCredentialDetails {
             return this;
         }
         public PluggableDatabaseManagementsManagementCredentialDetails build() {
-            final var o = new PluggableDatabaseManagementsManagementCredentialDetails();
-            o.passwordSecretId = passwordSecretId;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new PluggableDatabaseManagementsManagementCredentialDetails();
+            _resultValue.passwordSecretId = passwordSecretId;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

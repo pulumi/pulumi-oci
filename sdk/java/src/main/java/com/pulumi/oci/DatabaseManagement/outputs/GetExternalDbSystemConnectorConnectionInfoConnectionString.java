@@ -127,13 +127,13 @@ public final class GetExternalDbSystemConnectorConnectionInfoConnectionString {
             return this;
         }
         public GetExternalDbSystemConnectorConnectionInfoConnectionString build() {
-            final var o = new GetExternalDbSystemConnectorConnectionInfoConnectionString();
-            o.hostName = hostName;
-            o.hosts = hosts;
-            o.port = port;
-            o.protocol = protocol;
-            o.service = service;
-            return o;
+            final var _resultValue = new GetExternalDbSystemConnectorConnectionInfoConnectionString();
+            _resultValue.hostName = hostName;
+            _resultValue.hosts = hosts;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.service = service;
+            return _resultValue;
         }
     }
 }

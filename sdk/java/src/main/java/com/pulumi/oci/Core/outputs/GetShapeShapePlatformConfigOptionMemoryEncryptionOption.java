@@ -53,10 +53,10 @@ public final class GetShapeShapePlatformConfigOptionMemoryEncryptionOption {
             return this;
         }
         public GetShapeShapePlatformConfigOptionMemoryEncryptionOption build() {
-            final var o = new GetShapeShapePlatformConfigOptionMemoryEncryptionOption();
-            o.allowedValues = allowedValues;
-            o.isDefaultEnabled = isDefaultEnabled;
-            return o;
+            final var _resultValue = new GetShapeShapePlatformConfigOptionMemoryEncryptionOption();
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.isDefaultEnabled = isDefaultEnabled;
+            return _resultValue;
         }
     }
 }

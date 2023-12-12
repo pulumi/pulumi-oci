@@ -50,9 +50,9 @@ public final class GetManagedDatabaseUserDataAccessContainersDataAccessContainer
             return items(List.of(items));
         }
         public GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection build() {
-            final var o = new GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserDataAccessContainersDataAccessContainerCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

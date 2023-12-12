@@ -161,15 +161,15 @@ public final class GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryColle
             return this;
         }
         public GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem build() {
-            final var o = new GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem();
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.source = source;
-            o.type = type;
-            o.vaultSecretId = vaultSecretId;
-            o.versionNumber = versionNumber;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyMappedSecretsMappedSecretSummaryCollectionItem();
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.source = source;
+            _resultValue.type = type;
+            _resultValue.vaultSecretId = vaultSecretId;
+            _resultValue.versionNumber = versionNumber;
+            return _resultValue;
         }
     }
 }

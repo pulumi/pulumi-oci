@@ -99,11 +99,11 @@ public final class InstanceConfigurationInstanceDetailsOption {
             return secondaryVnics(List.of(secondaryVnics));
         }
         public InstanceConfigurationInstanceDetailsOption build() {
-            final var o = new InstanceConfigurationInstanceDetailsOption();
-            o.blockVolumes = blockVolumes;
-            o.launchDetails = launchDetails;
-            o.secondaryVnics = secondaryVnics;
-            return o;
+            final var _resultValue = new InstanceConfigurationInstanceDetailsOption();
+            _resultValue.blockVolumes = blockVolumes;
+            _resultValue.launchDetails = launchDetails;
+            _resultValue.secondaryVnics = secondaryVnics;
+            return _resultValue;
         }
     }
 }

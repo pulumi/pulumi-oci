@@ -93,11 +93,11 @@ public final class GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataS
             return this;
         }
         public GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList build() {
-            final var o = new GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList();
-            o.balancedDiskPerformances = balancedDiskPerformances;
-            o.highDiskPerformances = highDiskPerformances;
-            o.sizeInGbs = sizeInGbs;
-            return o;
+            final var _resultValue = new GetDbSystemStoragePerformancesDbSystemStoragePerformanceDataStoragePerformanceList();
+            _resultValue.balancedDiskPerformances = balancedDiskPerformances;
+            _resultValue.highDiskPerformances = highDiskPerformances;
+            _resultValue.sizeInGbs = sizeInGbs;
+            return _resultValue;
         }
     }
 }

@@ -138,13 +138,13 @@ public final class GetNetworkFirewallPolicySecurityRuleCondition {
             return urls(List.of(urls));
         }
         public GetNetworkFirewallPolicySecurityRuleCondition build() {
-            final var o = new GetNetworkFirewallPolicySecurityRuleCondition();
-            o.applications = applications;
-            o.destinationAddresses = destinationAddresses;
-            o.services = services;
-            o.sourceAddresses = sourceAddresses;
-            o.urls = urls;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicySecurityRuleCondition();
+            _resultValue.applications = applications;
+            _resultValue.destinationAddresses = destinationAddresses;
+            _resultValue.services = services;
+            _resultValue.sourceAddresses = sourceAddresses;
+            _resultValue.urls = urls;
+            return _resultValue;
         }
     }
 }

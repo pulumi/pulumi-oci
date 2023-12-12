@@ -105,12 +105,12 @@ public final class GetEkmsPrivateEndpointsResult {
             return this;
         }
         public GetEkmsPrivateEndpointsResult build() {
-            final var o = new GetEkmsPrivateEndpointsResult();
-            o.compartmentId = compartmentId;
-            o.ekmsPrivateEndpoints = ekmsPrivateEndpoints;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetEkmsPrivateEndpointsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.ekmsPrivateEndpoints = ekmsPrivateEndpoints;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

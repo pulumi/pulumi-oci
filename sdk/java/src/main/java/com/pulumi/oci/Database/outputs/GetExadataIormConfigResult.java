@@ -130,14 +130,14 @@ public final class GetExadataIormConfigResult {
             return this;
         }
         public GetExadataIormConfigResult build() {
-            final var o = new GetExadataIormConfigResult();
-            o.dbPlans = dbPlans;
-            o.dbSystemId = dbSystemId;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.objective = objective;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetExadataIormConfigResult();
+            _resultValue.dbPlans = dbPlans;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.objective = objective;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

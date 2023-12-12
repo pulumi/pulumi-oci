@@ -46,9 +46,9 @@ public final class GetMeshCertificateAuthority {
             return this;
         }
         public GetMeshCertificateAuthority build() {
-            final var o = new GetMeshCertificateAuthority();
-            o.id = id;
-            return o;
+            final var _resultValue = new GetMeshCertificateAuthority();
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

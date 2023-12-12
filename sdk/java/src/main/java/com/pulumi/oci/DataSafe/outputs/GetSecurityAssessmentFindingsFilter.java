@@ -67,11 +67,11 @@ public final class GetSecurityAssessmentFindingsFilter {
             return values(List.of(values));
         }
         public GetSecurityAssessmentFindingsFilter build() {
-            final var o = new GetSecurityAssessmentFindingsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentFindingsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

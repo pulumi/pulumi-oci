@@ -109,13 +109,13 @@ public final class GetPeersResult {
             return peerCollections(List.of(peerCollections));
         }
         public GetPeersResult build() {
-            final var o = new GetPeersResult();
-            o.blockchainPlatformId = blockchainPlatformId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.peerCollections = peerCollections;
-            return o;
+            final var _resultValue = new GetPeersResult();
+            _resultValue.blockchainPlatformId = blockchainPlatformId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.peerCollections = peerCollections;
+            return _resultValue;
         }
     }
 }

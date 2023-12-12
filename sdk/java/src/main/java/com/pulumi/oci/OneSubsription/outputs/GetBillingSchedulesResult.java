@@ -128,14 +128,14 @@ public final class GetBillingSchedulesResult {
             return this;
         }
         public GetBillingSchedulesResult build() {
-            final var o = new GetBillingSchedulesResult();
-            o.billingSchedules = billingSchedules;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.subscribedServiceId = subscribedServiceId;
-            o.subscriptionId = subscriptionId;
-            return o;
+            final var _resultValue = new GetBillingSchedulesResult();
+            _resultValue.billingSchedules = billingSchedules;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.subscribedServiceId = subscribedServiceId;
+            _resultValue.subscriptionId = subscriptionId;
+            return _resultValue;
         }
     }
 }

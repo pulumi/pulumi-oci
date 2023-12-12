@@ -197,20 +197,20 @@ public final class GetObjectVersionsResult {
             return this;
         }
         public GetObjectVersionsResult build() {
-            final var o = new GetObjectVersionsResult();
-            o.bucket = bucket;
-            o.delimiter = delimiter;
-            o.end = end;
-            o.fields = fields;
-            o.filters = filters;
-            o.id = id;
-            o.items = items;
-            o.namespace = namespace;
-            o.prefix = prefix;
-            o.prefixes = prefixes;
-            o.start = start;
-            o.startAfter = startAfter;
-            return o;
+            final var _resultValue = new GetObjectVersionsResult();
+            _resultValue.bucket = bucket;
+            _resultValue.delimiter = delimiter;
+            _resultValue.end = end;
+            _resultValue.fields = fields;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.namespace = namespace;
+            _resultValue.prefix = prefix;
+            _resultValue.prefixes = prefixes;
+            _resultValue.start = start;
+            _resultValue.startAfter = startAfter;
+            return _resultValue;
         }
     }
 }

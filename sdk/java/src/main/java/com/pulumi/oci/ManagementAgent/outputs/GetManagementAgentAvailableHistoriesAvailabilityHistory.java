@@ -103,12 +103,12 @@ public final class GetManagementAgentAvailableHistoriesAvailabilityHistory {
             return this;
         }
         public GetManagementAgentAvailableHistoriesAvailabilityHistory build() {
-            final var o = new GetManagementAgentAvailableHistoriesAvailabilityHistory();
-            o.availabilityStatus = availabilityStatus;
-            o.managementAgentId = managementAgentId;
-            o.timeAvailabilityStatusEnded = timeAvailabilityStatusEnded;
-            o.timeAvailabilityStatusStarted = timeAvailabilityStatusStarted;
-            return o;
+            final var _resultValue = new GetManagementAgentAvailableHistoriesAvailabilityHistory();
+            _resultValue.availabilityStatus = availabilityStatus;
+            _resultValue.managementAgentId = managementAgentId;
+            _resultValue.timeAvailabilityStatusEnded = timeAvailabilityStatusEnded;
+            _resultValue.timeAvailabilityStatusStarted = timeAvailabilityStatusStarted;
+            return _resultValue;
         }
     }
 }

@@ -314,23 +314,23 @@ public final class GetDomainsAuthenticationFactorSettingClientAppSetting {
             return this;
         }
         public GetDomainsAuthenticationFactorSettingClientAppSetting build() {
-            final var o = new GetDomainsAuthenticationFactorSettingClientAppSetting();
-            o.deviceProtectionPolicy = deviceProtectionPolicy;
-            o.initialLockoutPeriodInSecs = initialLockoutPeriodInSecs;
-            o.keyPairLength = keyPairLength;
-            o.lockoutEscalationPattern = lockoutEscalationPattern;
-            o.maxFailuresBeforeLockout = maxFailuresBeforeLockout;
-            o.maxFailuresBeforeWarning = maxFailuresBeforeWarning;
-            o.maxLockoutIntervalInSecs = maxLockoutIntervalInSecs;
-            o.minPinLength = minPinLength;
-            o.policyUpdateFreqInDays = policyUpdateFreqInDays;
-            o.requestSigningAlgo = requestSigningAlgo;
-            o.sharedSecretEncoding = sharedSecretEncoding;
-            o.unlockAppForEachRequestEnabled = unlockAppForEachRequestEnabled;
-            o.unlockAppIntervalInSecs = unlockAppIntervalInSecs;
-            o.unlockOnAppForegroundEnabled = unlockOnAppForegroundEnabled;
-            o.unlockOnAppStartEnabled = unlockOnAppStartEnabled;
-            return o;
+            final var _resultValue = new GetDomainsAuthenticationFactorSettingClientAppSetting();
+            _resultValue.deviceProtectionPolicy = deviceProtectionPolicy;
+            _resultValue.initialLockoutPeriodInSecs = initialLockoutPeriodInSecs;
+            _resultValue.keyPairLength = keyPairLength;
+            _resultValue.lockoutEscalationPattern = lockoutEscalationPattern;
+            _resultValue.maxFailuresBeforeLockout = maxFailuresBeforeLockout;
+            _resultValue.maxFailuresBeforeWarning = maxFailuresBeforeWarning;
+            _resultValue.maxLockoutIntervalInSecs = maxLockoutIntervalInSecs;
+            _resultValue.minPinLength = minPinLength;
+            _resultValue.policyUpdateFreqInDays = policyUpdateFreqInDays;
+            _resultValue.requestSigningAlgo = requestSigningAlgo;
+            _resultValue.sharedSecretEncoding = sharedSecretEncoding;
+            _resultValue.unlockAppForEachRequestEnabled = unlockAppForEachRequestEnabled;
+            _resultValue.unlockAppIntervalInSecs = unlockAppIntervalInSecs;
+            _resultValue.unlockOnAppForegroundEnabled = unlockOnAppForegroundEnabled;
+            _resultValue.unlockOnAppStartEnabled = unlockOnAppStartEnabled;
+            return _resultValue;
         }
     }
 }

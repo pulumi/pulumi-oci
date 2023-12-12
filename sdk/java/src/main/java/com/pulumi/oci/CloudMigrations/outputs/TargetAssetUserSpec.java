@@ -428,26 +428,26 @@ public final class TargetAssetUserSpec {
             return this;
         }
         public TargetAssetUserSpec build() {
-            final var o = new TargetAssetUserSpec();
-            o.agentConfig = agentConfig;
-            o.availabilityDomain = availabilityDomain;
-            o.capacityReservationId = capacityReservationId;
-            o.compartmentId = compartmentId;
-            o.createVnicDetails = createVnicDetails;
-            o.dedicatedVmHostId = dedicatedVmHostId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.faultDomain = faultDomain;
-            o.freeformTags = freeformTags;
-            o.hostnameLabel = hostnameLabel;
-            o.instanceOptions = instanceOptions;
-            o.ipxeScript = ipxeScript;
-            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-            o.preemptibleInstanceConfig = preemptibleInstanceConfig;
-            o.shape = shape;
-            o.shapeConfig = shapeConfig;
-            o.sourceDetails = sourceDetails;
-            return o;
+            final var _resultValue = new TargetAssetUserSpec();
+            _resultValue.agentConfig = agentConfig;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.capacityReservationId = capacityReservationId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createVnicDetails = createVnicDetails;
+            _resultValue.dedicatedVmHostId = dedicatedVmHostId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostnameLabel = hostnameLabel;
+            _resultValue.instanceOptions = instanceOptions;
+            _resultValue.ipxeScript = ipxeScript;
+            _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            _resultValue.preemptibleInstanceConfig = preemptibleInstanceConfig;
+            _resultValue.shape = shape;
+            _resultValue.shapeConfig = shapeConfig;
+            _resultValue.sourceDetails = sourceDetails;
+            return _resultValue;
         }
     }
 }

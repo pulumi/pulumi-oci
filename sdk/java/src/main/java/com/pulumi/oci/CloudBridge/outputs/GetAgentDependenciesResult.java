@@ -166,16 +166,16 @@ public final class GetAgentDependenciesResult {
             return this;
         }
         public GetAgentDependenciesResult build() {
-            final var o = new GetAgentDependenciesResult();
-            o.agentDependencyCollections = agentDependencyCollections;
-            o.agentId = agentId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.environmentId = environmentId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAgentDependenciesResult();
+            _resultValue.agentDependencyCollections = agentDependencyCollections;
+            _resultValue.agentId = agentId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.environmentId = environmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

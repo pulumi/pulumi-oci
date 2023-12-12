@@ -86,11 +86,11 @@ public final class NodePoolNodeSource {
             return this;
         }
         public NodePoolNodeSource build() {
-            final var o = new NodePoolNodeSource();
-            o.imageId = imageId;
-            o.sourceName = sourceName;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new NodePoolNodeSource();
+            _resultValue.imageId = imageId;
+            _resultValue.sourceName = sourceName;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

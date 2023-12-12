@@ -128,13 +128,13 @@ public final class GetScriptParameter {
             return scriptParameters(List.of(scriptParameters));
         }
         public GetScriptParameter build() {
-            final var o = new GetScriptParameter();
-            o.isOverwritten = isOverwritten;
-            o.isSecret = isSecret;
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            o.scriptParameters = scriptParameters;
-            return o;
+            final var _resultValue = new GetScriptParameter();
+            _resultValue.isOverwritten = isOverwritten;
+            _resultValue.isSecret = isSecret;
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            _resultValue.scriptParameters = scriptParameters;
+            return _resultValue;
         }
     }
 }

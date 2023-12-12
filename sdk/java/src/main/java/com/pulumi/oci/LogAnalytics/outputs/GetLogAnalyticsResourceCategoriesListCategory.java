@@ -123,13 +123,13 @@ public final class GetLogAnalyticsResourceCategoriesListCategory {
             return this;
         }
         public GetLogAnalyticsResourceCategoriesListCategory build() {
-            final var o = new GetLogAnalyticsResourceCategoriesListCategory();
-            o.description = description;
-            o.displayName = displayName;
-            o.isSystem = isSystem;
-            o.name = name;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetLogAnalyticsResourceCategoriesListCategory();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.isSystem = isSystem;
+            _resultValue.name = name;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -122,13 +122,13 @@ public final class GetImportableAgentEntitiesItem {
             return this;
         }
         public GetImportableAgentEntitiesItem build() {
-            final var o = new GetImportableAgentEntitiesItem();
-            o.entitySource = entitySource;
-            o.hostName = hostName;
-            o.managementAgentDisplayName = managementAgentDisplayName;
-            o.managementAgentId = managementAgentId;
-            o.platformType = platformType;
-            return o;
+            final var _resultValue = new GetImportableAgentEntitiesItem();
+            _resultValue.entitySource = entitySource;
+            _resultValue.hostName = hostName;
+            _resultValue.managementAgentDisplayName = managementAgentDisplayName;
+            _resultValue.managementAgentId = managementAgentId;
+            _resultValue.platformType = platformType;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCount
             return objectTypeCountLists(List.of(objectTypeCountLists));
         }
         public GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic build() {
-            final var o = new GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic();
-            o.objectTypeCountLists = objectTypeCountLists;
-            return o;
+            final var _resultValue = new GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic();
+            _resultValue.objectTypeCountLists = objectTypeCountLists;
+            return _resultValue;
         }
     }
 }

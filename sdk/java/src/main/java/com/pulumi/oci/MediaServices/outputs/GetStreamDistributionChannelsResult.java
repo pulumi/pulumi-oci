@@ -144,14 +144,14 @@ public final class GetStreamDistributionChannelsResult {
             return streamDistributionChannelCollections(List.of(streamDistributionChannelCollections));
         }
         public GetStreamDistributionChannelsResult build() {
-            final var o = new GetStreamDistributionChannelsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.streamDistributionChannelCollections = streamDistributionChannelCollections;
-            return o;
+            final var _resultValue = new GetStreamDistributionChannelsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.streamDistributionChannelCollections = streamDistributionChannelCollections;
+            return _resultValue;
         }
     }
 }

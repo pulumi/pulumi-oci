@@ -107,10 +107,10 @@ public final class DomainsCloudGateServerCloudGate {
             return this;
         }
         public DomainsCloudGateServerCloudGate build() {
-            final var o = new DomainsCloudGateServerCloudGate();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsCloudGateServerCloudGate();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

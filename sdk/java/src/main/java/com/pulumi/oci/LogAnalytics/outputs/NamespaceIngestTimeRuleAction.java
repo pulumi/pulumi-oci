@@ -153,14 +153,14 @@ public final class NamespaceIngestTimeRuleAction {
             return this;
         }
         public NamespaceIngestTimeRuleAction build() {
-            final var o = new NamespaceIngestTimeRuleAction();
-            o.compartmentId = compartmentId;
-            o.dimensions = dimensions;
-            o.metricName = metricName;
-            o.namespace = namespace;
-            o.resourceGroup = resourceGroup;
-            o.type = type;
-            return o;
+            final var _resultValue = new NamespaceIngestTimeRuleAction();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dimensions = dimensions;
+            _resultValue.metricName = metricName;
+            _resultValue.namespace = namespace;
+            _resultValue.resourceGroup = resourceGroup;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

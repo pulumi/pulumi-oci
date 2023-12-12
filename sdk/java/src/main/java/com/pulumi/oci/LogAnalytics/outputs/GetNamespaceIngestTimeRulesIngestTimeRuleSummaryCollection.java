@@ -42,9 +42,9 @@ public final class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection {
             return items(List.of(items));
         }
         public GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection build() {
-            final var o = new GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

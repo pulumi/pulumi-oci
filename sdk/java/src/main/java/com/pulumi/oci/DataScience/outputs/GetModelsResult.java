@@ -204,18 +204,18 @@ public final class GetModelsResult {
             return this;
         }
         public GetModelsResult build() {
-            final var o = new GetModelsResult();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.modelVersionSetName = modelVersionSetName;
-            o.models = models;
-            o.projectId = projectId;
-            o.state = state;
-            o.versionLabel = versionLabel;
-            return o;
+            final var _resultValue = new GetModelsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.modelVersionSetName = modelVersionSetName;
+            _resultValue.models = models;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.versionLabel = versionLabel;
+            return _resultValue;
         }
     }
 }

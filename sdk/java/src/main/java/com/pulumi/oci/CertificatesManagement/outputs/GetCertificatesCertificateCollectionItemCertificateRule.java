@@ -84,11 +84,11 @@ public final class GetCertificatesCertificateCollectionItemCertificateRule {
             return this;
         }
         public GetCertificatesCertificateCollectionItemCertificateRule build() {
-            final var o = new GetCertificatesCertificateCollectionItemCertificateRule();
-            o.advanceRenewalPeriod = advanceRenewalPeriod;
-            o.renewalInterval = renewalInterval;
-            o.ruleType = ruleType;
-            return o;
+            final var _resultValue = new GetCertificatesCertificateCollectionItemCertificateRule();
+            _resultValue.advanceRenewalPeriod = advanceRenewalPeriod;
+            _resultValue.renewalInterval = renewalInterval;
+            _resultValue.ruleType = ruleType;
+            return _resultValue;
         }
     }
 }

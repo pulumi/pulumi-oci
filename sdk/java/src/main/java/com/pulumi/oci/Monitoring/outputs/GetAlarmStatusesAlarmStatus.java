@@ -146,14 +146,14 @@ public final class GetAlarmStatusesAlarmStatus {
             return this;
         }
         public GetAlarmStatusesAlarmStatus build() {
-            final var o = new GetAlarmStatusesAlarmStatus();
-            o.displayName = displayName;
-            o.id = id;
-            o.severity = severity;
-            o.status = status;
-            o.suppressions = suppressions;
-            o.timestampTriggered = timestampTriggered;
-            return o;
+            final var _resultValue = new GetAlarmStatusesAlarmStatus();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.severity = severity;
+            _resultValue.status = status;
+            _resultValue.suppressions = suppressions;
+            _resultValue.timestampTriggered = timestampTriggered;
+            return _resultValue;
         }
     }
 }

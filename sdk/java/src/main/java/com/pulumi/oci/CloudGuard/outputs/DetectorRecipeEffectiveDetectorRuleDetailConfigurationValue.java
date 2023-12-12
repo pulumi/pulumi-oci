@@ -86,11 +86,11 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue {
             return this;
         }
         public DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue build() {
-            final var o = new DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue();
-            o.listType = listType;
-            o.managedListType = managedListType;
-            o.value = value;
-            return o;
+            final var _resultValue = new DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue();
+            _resultValue.listType = listType;
+            _resultValue.managedListType = managedListType;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

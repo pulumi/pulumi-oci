@@ -167,15 +167,15 @@ public final class SqlEndpointNetworkConfiguration {
             return this;
         }
         public SqlEndpointNetworkConfiguration build() {
-            final var o = new SqlEndpointNetworkConfiguration();
-            o.accessControlRules = accessControlRules;
-            o.hostNamePrefix = hostNamePrefix;
-            o.networkType = networkType;
-            o.privateEndpointIp = privateEndpointIp;
-            o.publicEndpointIp = publicEndpointIp;
-            o.subnetId = subnetId;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new SqlEndpointNetworkConfiguration();
+            _resultValue.accessControlRules = accessControlRules;
+            _resultValue.hostNamePrefix = hostNamePrefix;
+            _resultValue.networkType = networkType;
+            _resultValue.privateEndpointIp = privateEndpointIp;
+            _resultValue.publicEndpointIp = publicEndpointIp;
+            _resultValue.subnetId = subnetId;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

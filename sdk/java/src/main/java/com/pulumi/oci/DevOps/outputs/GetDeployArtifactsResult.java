@@ -163,15 +163,15 @@ public final class GetDeployArtifactsResult {
             return this;
         }
         public GetDeployArtifactsResult build() {
-            final var o = new GetDeployArtifactsResult();
-            o.compartmentId = compartmentId;
-            o.deployArtifactCollections = deployArtifactCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.projectId = projectId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDeployArtifactsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.deployArtifactCollections = deployArtifactCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

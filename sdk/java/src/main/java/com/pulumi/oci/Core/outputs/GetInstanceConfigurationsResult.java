@@ -105,12 +105,12 @@ public final class GetInstanceConfigurationsResult {
             return instanceConfigurations(List.of(instanceConfigurations));
         }
         public GetInstanceConfigurationsResult build() {
-            final var o = new GetInstanceConfigurationsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.instanceConfigurations = instanceConfigurations;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instanceConfigurations = instanceConfigurations;
+            return _resultValue;
         }
     }
 }

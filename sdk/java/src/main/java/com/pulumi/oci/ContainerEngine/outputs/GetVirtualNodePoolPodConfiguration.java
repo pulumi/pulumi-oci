@@ -88,11 +88,11 @@ public final class GetVirtualNodePoolPodConfiguration {
             return this;
         }
         public GetVirtualNodePoolPodConfiguration build() {
-            final var o = new GetVirtualNodePoolPodConfiguration();
-            o.nsgIds = nsgIds;
-            o.shape = shape;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetVirtualNodePoolPodConfiguration();
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.shape = shape;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

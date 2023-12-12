@@ -465,31 +465,31 @@ public final class GetAutonomousExadataInfrastructureResult {
             return this;
         }
         public GetAutonomousExadataInfrastructureResult build() {
-            final var o = new GetAutonomousExadataInfrastructureResult();
-            o.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.createAsync = createAsync;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.domain = domain;
-            o.freeformTags = freeformTags;
-            o.hostname = hostname;
-            o.id = id;
-            o.lastMaintenanceRunId = lastMaintenanceRunId;
-            o.licenseModel = licenseModel;
-            o.lifecycleDetails = lifecycleDetails;
-            o.maintenanceWindowDetails = maintenanceWindowDetails;
-            o.maintenanceWindows = maintenanceWindows;
-            o.nextMaintenanceRunId = nextMaintenanceRunId;
-            o.nsgIds = nsgIds;
-            o.scanDnsName = scanDnsName;
-            o.shape = shape;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.zoneId = zoneId;
-            return o;
+            final var _resultValue = new GetAutonomousExadataInfrastructureResult();
+            _resultValue.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createAsync = createAsync;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.domain = domain;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostname = hostname;
+            _resultValue.id = id;
+            _resultValue.lastMaintenanceRunId = lastMaintenanceRunId;
+            _resultValue.licenseModel = licenseModel;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maintenanceWindowDetails = maintenanceWindowDetails;
+            _resultValue.maintenanceWindows = maintenanceWindows;
+            _resultValue.nextMaintenanceRunId = nextMaintenanceRunId;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.scanDnsName = scanDnsName;
+            _resultValue.shape = shape;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.zoneId = zoneId;
+            return _resultValue;
         }
     }
 }

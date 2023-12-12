@@ -112,10 +112,10 @@ public final class DomainsAuthenticationFactorSettingEmailSettings {
             return this;
         }
         public DomainsAuthenticationFactorSettingEmailSettings build() {
-            final var o = new DomainsAuthenticationFactorSettingEmailSettings();
-            o.emailLinkCustomUrl = emailLinkCustomUrl;
-            o.emailLinkEnabled = emailLinkEnabled;
-            return o;
+            final var _resultValue = new DomainsAuthenticationFactorSettingEmailSettings();
+            _resultValue.emailLinkCustomUrl = emailLinkCustomUrl;
+            _resultValue.emailLinkEnabled = emailLinkEnabled;
+            return _resultValue;
         }
     }
 }

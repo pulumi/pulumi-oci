@@ -42,9 +42,9 @@ public final class GetOsnsOsnCollection {
             return items(List.of(items));
         }
         public GetOsnsOsnCollection build() {
-            final var o = new GetOsnsOsnCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetOsnsOsnCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

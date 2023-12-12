@@ -278,21 +278,21 @@ public final class MonitoredResourcesListMemberItem {
             return this;
         }
         public MonitoredResourcesListMemberItem build() {
-            final var o = new MonitoredResourcesListMemberItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.externalId = externalId;
-            o.freeformTags = freeformTags;
-            o.hostName = hostName;
-            o.license = license;
-            o.parentId = parentId;
-            o.resourceDisplayName = resourceDisplayName;
-            o.resourceId = resourceId;
-            o.resourceName = resourceName;
-            o.resourceType = resourceType;
-            o.state = state;
-            o.systemTags = systemTags;
-            return o;
+            final var _resultValue = new MonitoredResourcesListMemberItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.externalId = externalId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostName = hostName;
+            _resultValue.license = license;
+            _resultValue.parentId = parentId;
+            _resultValue.resourceDisplayName = resourceDisplayName;
+            _resultValue.resourceId = resourceId;
+            _resultValue.resourceName = resourceName;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            return _resultValue;
         }
     }
 }

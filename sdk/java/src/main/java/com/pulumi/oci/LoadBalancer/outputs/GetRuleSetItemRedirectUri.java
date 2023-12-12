@@ -123,13 +123,13 @@ public final class GetRuleSetItemRedirectUri {
             return this;
         }
         public GetRuleSetItemRedirectUri build() {
-            final var o = new GetRuleSetItemRedirectUri();
-            o.host = host;
-            o.path = path;
-            o.port = port;
-            o.protocol = protocol;
-            o.query = query;
-            return o;
+            final var _resultValue = new GetRuleSetItemRedirectUri();
+            _resultValue.host = host;
+            _resultValue.path = path;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.query = query;
+            return _resultValue;
         }
     }
 }

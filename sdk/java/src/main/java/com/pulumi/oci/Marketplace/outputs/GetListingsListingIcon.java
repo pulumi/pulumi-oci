@@ -103,12 +103,12 @@ public final class GetListingsListingIcon {
             return this;
         }
         public GetListingsListingIcon build() {
-            final var o = new GetListingsListingIcon();
-            o.contentUrl = contentUrl;
-            o.fileExtension = fileExtension;
-            o.mimeType = mimeType;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetListingsListingIcon();
+            _resultValue.contentUrl = contentUrl;
+            _resultValue.fileExtension = fileExtension;
+            _resultValue.mimeType = mimeType;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

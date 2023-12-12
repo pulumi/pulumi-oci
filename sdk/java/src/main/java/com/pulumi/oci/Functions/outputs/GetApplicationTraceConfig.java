@@ -66,10 +66,10 @@ public final class GetApplicationTraceConfig {
             return this;
         }
         public GetApplicationTraceConfig build() {
-            final var o = new GetApplicationTraceConfig();
-            o.domainId = domainId;
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new GetApplicationTraceConfig();
+            _resultValue.domainId = domainId;
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

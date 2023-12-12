@@ -94,11 +94,11 @@ public final class GetIpsecAlgorithmAllowedPhaseTwoParameter {
             return pfsDhGroups(List.of(pfsDhGroups));
         }
         public GetIpsecAlgorithmAllowedPhaseTwoParameter build() {
-            final var o = new GetIpsecAlgorithmAllowedPhaseTwoParameter();
-            o.authenticationAlgorithms = authenticationAlgorithms;
-            o.encryptionAlgorithms = encryptionAlgorithms;
-            o.pfsDhGroups = pfsDhGroups;
-            return o;
+            final var _resultValue = new GetIpsecAlgorithmAllowedPhaseTwoParameter();
+            _resultValue.authenticationAlgorithms = authenticationAlgorithms;
+            _resultValue.encryptionAlgorithms = encryptionAlgorithms;
+            _resultValue.pfsDhGroups = pfsDhGroups;
+            return _resultValue;
         }
     }
 }

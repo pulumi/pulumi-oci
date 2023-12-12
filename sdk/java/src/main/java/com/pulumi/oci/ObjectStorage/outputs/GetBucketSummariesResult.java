@@ -124,13 +124,13 @@ public final class GetBucketSummariesResult {
             return this;
         }
         public GetBucketSummariesResult build() {
-            final var o = new GetBucketSummariesResult();
-            o.bucketSummaries = bucketSummaries;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetBucketSummariesResult();
+            _resultValue.bucketSummaries = bucketSummaries;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

@@ -85,11 +85,11 @@ public final class GetDomainsSelfRegistrationProfileConsentText {
             return this;
         }
         public GetDomainsSelfRegistrationProfileConsentText build() {
-            final var o = new GetDomainsSelfRegistrationProfileConsentText();
-            o.default_ = default_;
-            o.locale = locale;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsSelfRegistrationProfileConsentText();
+            _resultValue.default_ = default_;
+            _resultValue.locale = locale;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

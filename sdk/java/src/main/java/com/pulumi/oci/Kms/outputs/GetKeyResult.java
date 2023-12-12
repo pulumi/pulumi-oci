@@ -460,31 +460,31 @@ public final class GetKeyResult {
             return this;
         }
         public GetKeyResult build() {
-            final var o = new GetKeyResult();
-            o.compartmentId = compartmentId;
-            o.currentKeyVersion = currentKeyVersion;
-            o.definedTags = definedTags;
-            o.desiredState = desiredState;
-            o.displayName = displayName;
-            o.externalKeyReferenceDetails = externalKeyReferenceDetails;
-            o.externalKeyReferences = externalKeyReferences;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isPrimary = isPrimary;
-            o.keyId = keyId;
-            o.keyShapes = keyShapes;
-            o.managementEndpoint = managementEndpoint;
-            o.protectionMode = protectionMode;
-            o.replicaDetails = replicaDetails;
-            o.restoreFromFiles = restoreFromFiles;
-            o.restoreFromObjectStores = restoreFromObjectStores;
-            o.restoreTrigger = restoreTrigger;
-            o.restoredFromKeyId = restoredFromKeyId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeOfDeletion = timeOfDeletion;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new GetKeyResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.currentKeyVersion = currentKeyVersion;
+            _resultValue.definedTags = definedTags;
+            _resultValue.desiredState = desiredState;
+            _resultValue.displayName = displayName;
+            _resultValue.externalKeyReferenceDetails = externalKeyReferenceDetails;
+            _resultValue.externalKeyReferences = externalKeyReferences;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isPrimary = isPrimary;
+            _resultValue.keyId = keyId;
+            _resultValue.keyShapes = keyShapes;
+            _resultValue.managementEndpoint = managementEndpoint;
+            _resultValue.protectionMode = protectionMode;
+            _resultValue.replicaDetails = replicaDetails;
+            _resultValue.restoreFromFiles = restoreFromFiles;
+            _resultValue.restoreFromObjectStores = restoreFromObjectStores;
+            _resultValue.restoreTrigger = restoreTrigger;
+            _resultValue.restoredFromKeyId = restoredFromKeyId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfDeletion = timeOfDeletion;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

@@ -108,13 +108,13 @@ public final class GetListenerRulesResult {
             return this;
         }
         public GetListenerRulesResult build() {
-            final var o = new GetListenerRulesResult();
-            o.filters = filters;
-            o.id = id;
-            o.listenerName = listenerName;
-            o.listenerRules = listenerRules;
-            o.loadBalancerId = loadBalancerId;
-            return o;
+            final var _resultValue = new GetListenerRulesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.listenerName = listenerName;
+            _resultValue.listenerRules = listenerRules;
+            _resultValue.loadBalancerId = loadBalancerId;
+            return _resultValue;
         }
     }
 }

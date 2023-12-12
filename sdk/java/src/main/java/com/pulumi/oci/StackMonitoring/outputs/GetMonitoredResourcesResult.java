@@ -136,14 +136,14 @@ public final class GetMonitoredResourcesResult {
             return this;
         }
         public GetMonitoredResourcesResult build() {
-            final var o = new GetMonitoredResourcesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.monitoredResourceCollections = monitoredResourceCollections;
-            o.name = name;
-            o.workRequestId = workRequestId;
-            return o;
+            final var _resultValue = new GetMonitoredResourcesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.monitoredResourceCollections = monitoredResourceCollections;
+            _resultValue.name = name;
+            _resultValue.workRequestId = workRequestId;
+            return _resultValue;
         }
     }
 }

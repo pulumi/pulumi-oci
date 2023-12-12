@@ -50,9 +50,9 @@ public final class GetDeploymentsDeploymentCollectionItemDeploymentArgument {
             return items(List.of(items));
         }
         public GetDeploymentsDeploymentCollectionItemDeploymentArgument build() {
-            final var o = new GetDeploymentsDeploymentCollectionItemDeploymentArgument();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionItemDeploymentArgument();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

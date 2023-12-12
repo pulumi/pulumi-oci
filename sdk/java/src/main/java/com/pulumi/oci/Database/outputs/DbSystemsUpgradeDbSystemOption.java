@@ -48,9 +48,9 @@ public final class DbSystemsUpgradeDbSystemOption {
             return this;
         }
         public DbSystemsUpgradeDbSystemOption build() {
-            final var o = new DbSystemsUpgradeDbSystemOption();
-            o.storageManagement = storageManagement;
-            return o;
+            final var _resultValue = new DbSystemsUpgradeDbSystemOption();
+            _resultValue.storageManagement = storageManagement;
+            return _resultValue;
         }
     }
 }

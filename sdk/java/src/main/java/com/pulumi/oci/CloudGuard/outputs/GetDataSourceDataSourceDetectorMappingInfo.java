@@ -65,10 +65,10 @@ public final class GetDataSourceDataSourceDetectorMappingInfo {
             return this;
         }
         public GetDataSourceDataSourceDetectorMappingInfo build() {
-            final var o = new GetDataSourceDataSourceDetectorMappingInfo();
-            o.detectorRecipeId = detectorRecipeId;
-            o.detectorRuleId = detectorRuleId;
-            return o;
+            final var _resultValue = new GetDataSourceDataSourceDetectorMappingInfo();
+            _resultValue.detectorRecipeId = detectorRecipeId;
+            _resultValue.detectorRuleId = detectorRuleId;
+            return _resultValue;
         }
     }
 }

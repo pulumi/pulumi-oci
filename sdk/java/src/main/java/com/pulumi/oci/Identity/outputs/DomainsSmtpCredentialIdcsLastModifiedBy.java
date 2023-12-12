@@ -224,13 +224,13 @@ public final class DomainsSmtpCredentialIdcsLastModifiedBy {
             return this;
         }
         public DomainsSmtpCredentialIdcsLastModifiedBy build() {
-            final var o = new DomainsSmtpCredentialIdcsLastModifiedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsSmtpCredentialIdcsLastModifiedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

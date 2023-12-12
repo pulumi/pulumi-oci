@@ -202,18 +202,18 @@ public final class GetMetricsResult {
             return this;
         }
         public GetMetricsResult build() {
-            final var o = new GetMetricsResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.dimensionFilters = dimensionFilters;
-            o.filters = filters;
-            o.groupBies = groupBies;
-            o.id = id;
-            o.metrics = metrics;
-            o.name = name;
-            o.namespace = namespace;
-            o.resourceGroup = resourceGroup;
-            return o;
+            final var _resultValue = new GetMetricsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.dimensionFilters = dimensionFilters;
+            _resultValue.filters = filters;
+            _resultValue.groupBies = groupBies;
+            _resultValue.id = id;
+            _resultValue.metrics = metrics;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.resourceGroup = resourceGroup;
+            return _resultValue;
         }
     }
 }

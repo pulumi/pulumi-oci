@@ -67,10 +67,10 @@ public final class BuildRunBuildOutputExportedVariableItem {
             return this;
         }
         public BuildRunBuildOutputExportedVariableItem build() {
-            final var o = new BuildRunBuildOutputExportedVariableItem();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new BuildRunBuildOutputExportedVariableItem();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

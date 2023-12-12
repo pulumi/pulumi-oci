@@ -42,9 +42,9 @@ public final class GetAgentsAgentCollection {
             return items(List.of(items));
         }
         public GetAgentsAgentCollection build() {
-            final var o = new GetAgentsAgentCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAgentsAgentCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetListingPackagesListingPackageOperatingSystem {
             return this;
         }
         public GetListingPackagesListingPackageOperatingSystem build() {
-            final var o = new GetListingPackagesListingPackageOperatingSystem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetListingPackagesListingPackageOperatingSystem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

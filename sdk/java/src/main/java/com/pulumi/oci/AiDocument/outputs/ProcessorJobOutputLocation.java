@@ -84,11 +84,11 @@ public final class ProcessorJobOutputLocation {
             return this;
         }
         public ProcessorJobOutputLocation build() {
-            final var o = new ProcessorJobOutputLocation();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.prefix = prefix;
-            return o;
+            final var _resultValue = new ProcessorJobOutputLocation();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.prefix = prefix;
+            return _resultValue;
         }
     }
 }

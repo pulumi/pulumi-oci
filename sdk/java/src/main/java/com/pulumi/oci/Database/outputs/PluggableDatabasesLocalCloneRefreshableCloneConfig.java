@@ -48,9 +48,9 @@ public final class PluggableDatabasesLocalCloneRefreshableCloneConfig {
             return this;
         }
         public PluggableDatabasesLocalCloneRefreshableCloneConfig build() {
-            final var o = new PluggableDatabasesLocalCloneRefreshableCloneConfig();
-            o.isRefreshableClone = isRefreshableClone;
-            return o;
+            final var _resultValue = new PluggableDatabasesLocalCloneRefreshableCloneConfig();
+            _resultValue.isRefreshableClone = isRefreshableClone;
+            return _resultValue;
         }
     }
 }

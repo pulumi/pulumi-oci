@@ -87,11 +87,11 @@ public final class TableSchemaIdentity {
             return this;
         }
         public TableSchemaIdentity build() {
-            final var o = new TableSchemaIdentity();
-            o.columnName = columnName;
-            o.isAlways = isAlways;
-            o.isNull = isNull;
-            return o;
+            final var _resultValue = new TableSchemaIdentity();
+            _resultValue.columnName = columnName;
+            _resultValue.isAlways = isAlways;
+            _resultValue.isNull = isNull;
+            return _resultValue;
         }
     }
 }

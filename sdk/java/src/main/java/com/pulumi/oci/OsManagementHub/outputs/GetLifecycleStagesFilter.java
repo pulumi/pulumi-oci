@@ -67,11 +67,11 @@ public final class GetLifecycleStagesFilter {
             return values(List.of(values));
         }
         public GetLifecycleStagesFilter build() {
-            final var o = new GetLifecycleStagesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetLifecycleStagesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

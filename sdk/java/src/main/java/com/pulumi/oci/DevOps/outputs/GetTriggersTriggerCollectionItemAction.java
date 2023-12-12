@@ -89,11 +89,11 @@ public final class GetTriggersTriggerCollectionItemAction {
             return this;
         }
         public GetTriggersTriggerCollectionItemAction build() {
-            final var o = new GetTriggersTriggerCollectionItemAction();
-            o.buildPipelineId = buildPipelineId;
-            o.filters = filters;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetTriggersTriggerCollectionItemAction();
+            _resultValue.buildPipelineId = buildPipelineId;
+            _resultValue.filters = filters;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

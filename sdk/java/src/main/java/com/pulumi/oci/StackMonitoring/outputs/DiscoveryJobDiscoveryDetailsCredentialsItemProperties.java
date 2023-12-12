@@ -49,9 +49,9 @@ public final class DiscoveryJobDiscoveryDetailsCredentialsItemProperties {
             return this;
         }
         public DiscoveryJobDiscoveryDetailsCredentialsItemProperties build() {
-            final var o = new DiscoveryJobDiscoveryDetailsCredentialsItemProperties();
-            o.propertiesMap = propertiesMap;
-            return o;
+            final var _resultValue = new DiscoveryJobDiscoveryDetailsCredentialsItemProperties();
+            _resultValue.propertiesMap = propertiesMap;
+            return _resultValue;
         }
     }
 }

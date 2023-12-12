@@ -81,11 +81,11 @@ public final class GetImportableAgentEntitiesResult {
             return items(List.of(items));
         }
         public GetImportableAgentEntitiesResult build() {
-            final var o = new GetImportableAgentEntitiesResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetImportableAgentEntitiesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

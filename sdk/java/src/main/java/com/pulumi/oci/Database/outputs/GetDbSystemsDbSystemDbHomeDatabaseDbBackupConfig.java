@@ -122,16 +122,16 @@ public final class GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig {
             return this;
         }
         public GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig build() {
-            final var o = new GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig();
-            o.autoBackupEnabled = autoBackupEnabled;
-            o.autoBackupWindow = autoBackupWindow;
-            o.autoFullBackupDay = autoFullBackupDay;
-            o.autoFullBackupWindow = autoFullBackupWindow;
-            o.backupDeletionPolicy = backupDeletionPolicy;
-            o.backupDestinationDetails = backupDestinationDetails;
-            o.recoveryWindowInDays = recoveryWindowInDays;
-            o.runImmediateFullBackup = runImmediateFullBackup;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemDbHomeDatabaseDbBackupConfig();
+            _resultValue.autoBackupEnabled = autoBackupEnabled;
+            _resultValue.autoBackupWindow = autoBackupWindow;
+            _resultValue.autoFullBackupDay = autoFullBackupDay;
+            _resultValue.autoFullBackupWindow = autoFullBackupWindow;
+            _resultValue.backupDeletionPolicy = backupDeletionPolicy;
+            _resultValue.backupDestinationDetails = backupDestinationDetails;
+            _resultValue.recoveryWindowInDays = recoveryWindowInDays;
+            _resultValue.runImmediateFullBackup = runImmediateFullBackup;
+            return _resultValue;
         }
     }
 }

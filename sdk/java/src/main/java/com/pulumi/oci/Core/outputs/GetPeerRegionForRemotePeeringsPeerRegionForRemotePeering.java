@@ -46,9 +46,9 @@ public final class GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering {
             return this;
         }
         public GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering build() {
-            final var o = new GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

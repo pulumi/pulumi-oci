@@ -67,11 +67,11 @@ public final class GetClusterNetworksFilter {
             return values(List.of(values));
         }
         public GetClusterNetworksFilter build() {
-            final var o = new GetClusterNetworksFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetClusterNetworksFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

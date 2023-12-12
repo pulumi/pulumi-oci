@@ -144,14 +144,14 @@ public final class GetDkimsResult {
             return this;
         }
         public GetDkimsResult build() {
-            final var o = new GetDkimsResult();
-            o.dkimCollections = dkimCollections;
-            o.emailDomainId = emailDomainId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDkimsResult();
+            _resultValue.dkimCollections = dkimCollections;
+            _resultValue.emailDomainId = emailDomainId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

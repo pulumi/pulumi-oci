@@ -65,10 +65,10 @@ public final class GetActionProperty {
             return this;
         }
         public GetActionProperty build() {
-            final var o = new GetActionProperty();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetActionProperty();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -127,13 +127,13 @@ public final class GetNamespaceIngestTimeRuleCondition {
             return this;
         }
         public GetNamespaceIngestTimeRuleCondition build() {
-            final var o = new GetNamespaceIngestTimeRuleCondition();
-            o.additionalConditions = additionalConditions;
-            o.fieldName = fieldName;
-            o.fieldOperator = fieldOperator;
-            o.fieldValue = fieldValue;
-            o.kind = kind;
-            return o;
+            final var _resultValue = new GetNamespaceIngestTimeRuleCondition();
+            _resultValue.additionalConditions = additionalConditions;
+            _resultValue.fieldName = fieldName;
+            _resultValue.fieldOperator = fieldOperator;
+            _resultValue.fieldValue = fieldValue;
+            _resultValue.kind = kind;
+            return _resultValue;
         }
     }
 }

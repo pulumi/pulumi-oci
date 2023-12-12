@@ -75,11 +75,11 @@ public final class GetExadataInfrastructuresFilter {
             return values(List.of(values));
         }
         public GetExadataInfrastructuresFilter build() {
-            final var o = new GetExadataInfrastructuresFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExadataInfrastructuresFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

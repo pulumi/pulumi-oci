@@ -65,10 +65,10 @@ public final class GetCrossConnectLocationsCrossConnectLocation {
             return this;
         }
         public GetCrossConnectLocationsCrossConnectLocation build() {
-            final var o = new GetCrossConnectLocationsCrossConnectLocation();
-            o.description = description;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetCrossConnectLocationsCrossConnectLocation();
+            _resultValue.description = description;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

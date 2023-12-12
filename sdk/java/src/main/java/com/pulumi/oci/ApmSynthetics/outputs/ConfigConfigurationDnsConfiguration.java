@@ -68,10 +68,10 @@ public final class ConfigConfigurationDnsConfiguration {
             return this;
         }
         public ConfigConfigurationDnsConfiguration build() {
-            final var o = new ConfigConfigurationDnsConfiguration();
-            o.isOverrideDns = isOverrideDns;
-            o.overrideDnsIp = overrideDnsIp;
-            return o;
+            final var _resultValue = new ConfigConfigurationDnsConfiguration();
+            _resultValue.isOverrideDns = isOverrideDns;
+            _resultValue.overrideDnsIp = overrideDnsIp;
+            return _resultValue;
         }
     }
 }

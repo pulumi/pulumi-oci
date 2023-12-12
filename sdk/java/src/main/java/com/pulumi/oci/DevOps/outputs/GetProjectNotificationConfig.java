@@ -46,9 +46,9 @@ public final class GetProjectNotificationConfig {
             return this;
         }
         public GetProjectNotificationConfig build() {
-            final var o = new GetProjectNotificationConfig();
-            o.topicId = topicId;
-            return o;
+            final var _resultValue = new GetProjectNotificationConfig();
+            _resultValue.topicId = topicId;
+            return _resultValue;
         }
     }
 }

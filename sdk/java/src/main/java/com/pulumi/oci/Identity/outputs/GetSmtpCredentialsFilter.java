@@ -67,11 +67,11 @@ public final class GetSmtpCredentialsFilter {
             return values(List.of(values));
         }
         public GetSmtpCredentialsFilter build() {
-            final var o = new GetSmtpCredentialsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSmtpCredentialsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

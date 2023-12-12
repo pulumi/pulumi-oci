@@ -66,10 +66,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyE
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog();
-            o.isEnabled = isEnabled;
-            o.logLevel = logLevel;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyExecutionLog();
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.logLevel = logLevel;
+            return _resultValue;
         }
     }
 }

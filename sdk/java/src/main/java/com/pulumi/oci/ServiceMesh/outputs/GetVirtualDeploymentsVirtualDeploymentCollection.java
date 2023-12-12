@@ -42,9 +42,9 @@ public final class GetVirtualDeploymentsVirtualDeploymentCollection {
             return items(List.of(items));
         }
         public GetVirtualDeploymentsVirtualDeploymentCollection build() {
-            final var o = new GetVirtualDeploymentsVirtualDeploymentCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetVirtualDeploymentsVirtualDeploymentCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

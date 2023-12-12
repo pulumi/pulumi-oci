@@ -57,10 +57,10 @@ public final class GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOpti
             return sourcePortRanges(List.of(sourcePortRanges));
         }
         public GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOption build() {
-            final var o = new GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOption();
-            o.destinationPortRanges = destinationPortRanges;
-            o.sourcePortRanges = sourcePortRanges;
-            return o;
+            final var _resultValue = new GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleUdpOption();
+            _resultValue.destinationPortRanges = destinationPortRanges;
+            _resultValue.sourcePortRanges = sourcePortRanges;
+            return _resultValue;
         }
     }
 }

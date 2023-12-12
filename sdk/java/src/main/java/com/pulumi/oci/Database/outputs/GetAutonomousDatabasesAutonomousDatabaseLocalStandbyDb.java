@@ -123,13 +123,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb {
             return this;
         }
         public GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb build() {
-            final var o = new GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb();
-            o.lagTimeInSeconds = lagTimeInSeconds;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
-            o.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
-            return o;
+            final var _resultValue = new GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDb();
+            _resultValue.lagTimeInSeconds = lagTimeInSeconds;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
+            _resultValue.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            return _resultValue;
         }
     }
 }

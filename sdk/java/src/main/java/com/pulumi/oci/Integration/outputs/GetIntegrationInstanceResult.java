@@ -514,34 +514,34 @@ public final class GetIntegrationInstanceResult {
             return this;
         }
         public GetIntegrationInstanceResult build() {
-            final var o = new GetIntegrationInstanceResult();
-            o.alternateCustomEndpoints = alternateCustomEndpoints;
-            o.attachments = attachments;
-            o.compartmentId = compartmentId;
-            o.consumptionModel = consumptionModel;
-            o.customEndpoints = customEndpoints;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.domainId = domainId;
-            o.enableProcessAutomationTrigger = enableProcessAutomationTrigger;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.idcsAt = idcsAt;
-            o.idcsInfos = idcsInfos;
-            o.instanceUrl = instanceUrl;
-            o.integrationInstanceId = integrationInstanceId;
-            o.integrationInstanceType = integrationInstanceType;
-            o.isByol = isByol;
-            o.isFileServerEnabled = isFileServerEnabled;
-            o.isVisualBuilderEnabled = isVisualBuilderEnabled;
-            o.messagePacks = messagePacks;
-            o.networkEndpointDetails = networkEndpointDetails;
-            o.shape = shape;
-            o.state = state;
-            o.stateMessage = stateMessage;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetIntegrationInstanceResult();
+            _resultValue.alternateCustomEndpoints = alternateCustomEndpoints;
+            _resultValue.attachments = attachments;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.consumptionModel = consumptionModel;
+            _resultValue.customEndpoints = customEndpoints;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.domainId = domainId;
+            _resultValue.enableProcessAutomationTrigger = enableProcessAutomationTrigger;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.idcsAt = idcsAt;
+            _resultValue.idcsInfos = idcsInfos;
+            _resultValue.instanceUrl = instanceUrl;
+            _resultValue.integrationInstanceId = integrationInstanceId;
+            _resultValue.integrationInstanceType = integrationInstanceType;
+            _resultValue.isByol = isByol;
+            _resultValue.isFileServerEnabled = isFileServerEnabled;
+            _resultValue.isVisualBuilderEnabled = isVisualBuilderEnabled;
+            _resultValue.messagePacks = messagePacks;
+            _resultValue.networkEndpointDetails = networkEndpointDetails;
+            _resultValue.shape = shape;
+            _resultValue.state = state;
+            _resultValue.stateMessage = stateMessage;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -53,10 +53,10 @@ public final class GetShapeShapePlatformConfigOptionSecureBootOption {
             return this;
         }
         public GetShapeShapePlatformConfigOptionSecureBootOption build() {
-            final var o = new GetShapeShapePlatformConfigOptionSecureBootOption();
-            o.allowedValues = allowedValues;
-            o.isDefaultEnabled = isDefaultEnabled;
-            return o;
+            final var _resultValue = new GetShapeShapePlatformConfigOptionSecureBootOption();
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.isDefaultEnabled = isDefaultEnabled;
+            return _resultValue;
         }
     }
 }

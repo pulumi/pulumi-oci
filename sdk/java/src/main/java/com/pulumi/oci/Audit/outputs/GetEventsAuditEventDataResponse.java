@@ -124,13 +124,13 @@ public final class GetEventsAuditEventDataResponse {
             return this;
         }
         public GetEventsAuditEventDataResponse build() {
-            final var o = new GetEventsAuditEventDataResponse();
-            o.headers = headers;
-            o.message = message;
-            o.payload = payload;
-            o.responseTime = responseTime;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetEventsAuditEventDataResponse();
+            _resultValue.headers = headers;
+            _resultValue.message = message;
+            _resultValue.payload = payload;
+            _resultValue.responseTime = responseTime;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

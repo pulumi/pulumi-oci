@@ -85,11 +85,11 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThr
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold build() {
-            final var o = new GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold();
-            o.durationInMinutes = durationInMinutes;
-            o.operator = operator;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationPolicyDetailScaleUpConfigMetricThreshold();
+            _resultValue.durationInMinutes = durationInMinutes;
+            _resultValue.operator = operator;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -51,9 +51,9 @@ public final class TriggerActionFilterExcludeFileFilter {
             return filePaths(List.of(filePaths));
         }
         public TriggerActionFilterExcludeFileFilter build() {
-            final var o = new TriggerActionFilterExcludeFileFilter();
-            o.filePaths = filePaths;
-            return o;
+            final var _resultValue = new TriggerActionFilterExcludeFileFilter();
+            _resultValue.filePaths = filePaths;
+            return _resultValue;
         }
     }
 }

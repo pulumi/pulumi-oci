@@ -42,9 +42,9 @@ public final class GetFleetsFleetCollection {
             return items(List.of(items));
         }
         public GetFleetsFleetCollection build() {
-            final var o = new GetFleetsFleetCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFleetsFleetCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

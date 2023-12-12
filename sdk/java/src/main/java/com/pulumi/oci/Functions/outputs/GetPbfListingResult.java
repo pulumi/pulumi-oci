@@ -258,20 +258,20 @@ public final class GetPbfListingResult {
             return triggers(List.of(triggers));
         }
         public GetPbfListingResult build() {
-            final var o = new GetPbfListingResult();
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.name = name;
-            o.pbfListingId = pbfListingId;
-            o.publisherDetails = publisherDetails;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.triggers = triggers;
-            return o;
+            final var _resultValue = new GetPbfListingResult();
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.pbfListingId = pbfListingId;
+            _resultValue.publisherDetails = publisherDetails;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.triggers = triggers;
+            return _resultValue;
         }
     }
 }

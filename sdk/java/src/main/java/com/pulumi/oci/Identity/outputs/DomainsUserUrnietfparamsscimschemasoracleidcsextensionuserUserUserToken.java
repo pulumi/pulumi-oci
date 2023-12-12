@@ -113,10 +113,10 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

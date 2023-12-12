@@ -73,10 +73,10 @@ public final class GetDeploymentSpecificationLoggingPolicy {
             return executionLogs(List.of(executionLogs));
         }
         public GetDeploymentSpecificationLoggingPolicy build() {
-            final var o = new GetDeploymentSpecificationLoggingPolicy();
-            o.accessLogs = accessLogs;
-            o.executionLogs = executionLogs;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationLoggingPolicy();
+            _resultValue.accessLogs = accessLogs;
+            _resultValue.executionLogs = executionLogs;
+            return _resultValue;
         }
     }
 }

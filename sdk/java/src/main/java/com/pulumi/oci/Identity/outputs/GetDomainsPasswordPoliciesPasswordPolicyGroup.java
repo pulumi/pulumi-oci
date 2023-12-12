@@ -84,11 +84,11 @@ public final class GetDomainsPasswordPoliciesPasswordPolicyGroup {
             return this;
         }
         public GetDomainsPasswordPoliciesPasswordPolicyGroup build() {
-            final var o = new GetDomainsPasswordPoliciesPasswordPolicyGroup();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsPasswordPoliciesPasswordPolicyGroup();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

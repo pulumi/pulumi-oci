@@ -122,13 +122,13 @@ public final class GetDomainsMySupportAccountIdcsCreatedBy {
             return this;
         }
         public GetDomainsMySupportAccountIdcsCreatedBy build() {
-            final var o = new GetDomainsMySupportAccountIdcsCreatedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMySupportAccountIdcsCreatedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

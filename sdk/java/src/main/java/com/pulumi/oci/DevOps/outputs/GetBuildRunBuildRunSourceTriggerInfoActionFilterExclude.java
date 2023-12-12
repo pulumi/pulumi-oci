@@ -42,9 +42,9 @@ public final class GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude {
             return fileFilters(List.of(fileFilters));
         }
         public GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude build() {
-            final var o = new GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude();
-            o.fileFilters = fileFilters;
-            return o;
+            final var _resultValue = new GetBuildRunBuildRunSourceTriggerInfoActionFilterExclude();
+            _resultValue.fileFilters = fileFilters;
+            return _resultValue;
         }
     }
 }

@@ -87,12 +87,12 @@ public final class GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMe
             return this;
         }
         public GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction build() {
-            final var o = new GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction();
-            o.compartmentId = compartmentId;
-            o.metricName = metricName;
-            o.namespace = namespace;
-            o.resourceGroup = resourceGroup;
-            return o;
+            final var _resultValue = new GetNamespaceScheduledTasksScheduledTaskCollectionItemActionMetricExtraction();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.metricName = metricName;
+            _resultValue.namespace = namespace;
+            _resultValue.resourceGroup = resourceGroup;
+            return _resultValue;
         }
     }
 }

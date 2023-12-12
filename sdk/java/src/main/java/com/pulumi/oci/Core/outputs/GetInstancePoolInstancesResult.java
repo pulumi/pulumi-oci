@@ -136,14 +136,14 @@ public final class GetInstancePoolInstancesResult {
             return instances(List.of(instances));
         }
         public GetInstancePoolInstancesResult build() {
-            final var o = new GetInstancePoolInstancesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.instancePoolId = instancePoolId;
-            o.instances = instances;
-            return o;
+            final var _resultValue = new GetInstancePoolInstancesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instancePoolId = instancePoolId;
+            _resultValue.instances = instances;
+            return _resultValue;
         }
     }
 }

@@ -131,13 +131,13 @@ public final class GetVantagePointsHealthChecksVantagePoint {
             return routings(List.of(routings));
         }
         public GetVantagePointsHealthChecksVantagePoint build() {
-            final var o = new GetVantagePointsHealthChecksVantagePoint();
-            o.displayName = displayName;
-            o.geos = geos;
-            o.name = name;
-            o.providerName = providerName;
-            o.routings = routings;
-            return o;
+            final var _resultValue = new GetVantagePointsHealthChecksVantagePoint();
+            _resultValue.displayName = displayName;
+            _resultValue.geos = geos;
+            _resultValue.name = name;
+            _resultValue.providerName = providerName;
+            _resultValue.routings = routings;
+            return _resultValue;
         }
     }
 }

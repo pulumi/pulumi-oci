@@ -50,9 +50,9 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuni
             return items(List.of(items));
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

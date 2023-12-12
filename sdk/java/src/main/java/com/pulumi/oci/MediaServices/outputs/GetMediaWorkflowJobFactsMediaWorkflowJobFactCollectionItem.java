@@ -122,13 +122,13 @@ public final class GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem {
             return this;
         }
         public GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem build() {
-            final var o = new GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem();
-            o.detail = detail;
-            o.key = key;
-            o.mediaWorkflowJobId = mediaWorkflowJobId;
-            o.name = name;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetMediaWorkflowJobFactsMediaWorkflowJobFactCollectionItem();
+            _resultValue.detail = detail;
+            _resultValue.key = key;
+            _resultValue.mediaWorkflowJobId = mediaWorkflowJobId;
+            _resultValue.name = name;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

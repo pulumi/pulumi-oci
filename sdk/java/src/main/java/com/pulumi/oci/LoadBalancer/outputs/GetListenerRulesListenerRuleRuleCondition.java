@@ -92,11 +92,11 @@ public final class GetListenerRulesListenerRuleRuleCondition {
             return this;
         }
         public GetListenerRulesListenerRuleRuleCondition build() {
-            final var o = new GetListenerRulesListenerRuleRuleCondition();
-            o.attributeName = attributeName;
-            o.attributeValue = attributeValue;
-            o.operator = operator;
-            return o;
+            final var _resultValue = new GetListenerRulesListenerRuleRuleCondition();
+            _resultValue.attributeName = attributeName;
+            _resultValue.attributeValue = attributeValue;
+            _resultValue.operator = operator;
+            return _resultValue;
         }
     }
 }

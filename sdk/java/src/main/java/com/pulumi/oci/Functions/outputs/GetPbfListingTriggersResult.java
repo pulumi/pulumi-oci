@@ -106,12 +106,12 @@ public final class GetPbfListingTriggersResult {
             return triggersCollections(List.of(triggersCollections));
         }
         public GetPbfListingTriggersResult build() {
-            final var o = new GetPbfListingTriggersResult();
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.triggersCollections = triggersCollections;
-            return o;
+            final var _resultValue = new GetPbfListingTriggersResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.triggersCollections = triggersCollections;
+            return _resultValue;
         }
     }
 }

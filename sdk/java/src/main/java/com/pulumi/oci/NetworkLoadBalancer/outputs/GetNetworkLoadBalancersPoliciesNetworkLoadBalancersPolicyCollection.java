@@ -50,9 +50,9 @@ public final class GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyColl
             return items(List.of(items));
         }
         public GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection build() {
-            final var o = new GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNetworkLoadBalancersPoliciesNetworkLoadBalancersPolicyCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -70,10 +70,10 @@ public final class GetDbSystemConnectionDetailInstanceEndpoint {
             return endpoints(List.of(endpoints));
         }
         public GetDbSystemConnectionDetailInstanceEndpoint build() {
-            final var o = new GetDbSystemConnectionDetailInstanceEndpoint();
-            o.dbInstanceId = dbInstanceId;
-            o.endpoints = endpoints;
-            return o;
+            final var _resultValue = new GetDbSystemConnectionDetailInstanceEndpoint();
+            _resultValue.dbInstanceId = dbInstanceId;
+            _resultValue.endpoints = endpoints;
+            return _resultValue;
         }
     }
 }

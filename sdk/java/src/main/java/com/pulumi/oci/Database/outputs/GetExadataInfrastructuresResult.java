@@ -144,14 +144,14 @@ public final class GetExadataInfrastructuresResult {
             return this;
         }
         public GetExadataInfrastructuresResult build() {
-            final var o = new GetExadataInfrastructuresResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.exadataInfrastructures = exadataInfrastructures;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetExadataInfrastructuresResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.exadataInfrastructures = exadataInfrastructures;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

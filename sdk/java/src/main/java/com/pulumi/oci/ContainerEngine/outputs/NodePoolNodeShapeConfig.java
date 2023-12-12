@@ -67,10 +67,10 @@ public final class NodePoolNodeShapeConfig {
             return this;
         }
         public NodePoolNodeShapeConfig build() {
-            final var o = new NodePoolNodeShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new NodePoolNodeShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

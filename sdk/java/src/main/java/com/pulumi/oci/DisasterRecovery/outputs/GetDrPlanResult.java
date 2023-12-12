@@ -330,24 +330,24 @@ public final class GetDrPlanResult {
             return this;
         }
         public GetDrPlanResult build() {
-            final var o = new GetDrPlanResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.drPlanId = drPlanId;
-            o.drProtectionGroupId = drProtectionGroupId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifeCycleDetails = lifeCycleDetails;
-            o.peerDrProtectionGroupId = peerDrProtectionGroupId;
-            o.peerRegion = peerRegion;
-            o.planGroups = planGroups;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDrPlanResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.drPlanId = drPlanId;
+            _resultValue.drProtectionGroupId = drProtectionGroupId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifeCycleDetails = lifeCycleDetails;
+            _resultValue.peerDrProtectionGroupId = peerDrProtectionGroupId;
+            _resultValue.peerRegion = peerRegion;
+            _resultValue.planGroups = planGroups;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

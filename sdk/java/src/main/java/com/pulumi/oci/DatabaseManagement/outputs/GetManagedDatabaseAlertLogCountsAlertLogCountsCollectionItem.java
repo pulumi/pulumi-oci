@@ -66,10 +66,10 @@ public final class GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem 
             return this;
         }
         public GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem build() {
-            final var o = new GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem();
-            o.category = category;
-            o.count = count;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAlertLogCountsAlertLogCountsCollectionItem();
+            _resultValue.category = category;
+            _resultValue.count = count;
+            return _resultValue;
         }
     }
 }

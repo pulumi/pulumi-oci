@@ -105,12 +105,12 @@ public final class GetProblemEntitiesResult {
             return this;
         }
         public GetProblemEntitiesResult build() {
-            final var o = new GetProblemEntitiesResult();
-            o.filters = filters;
-            o.id = id;
-            o.problemEntityCollections = problemEntityCollections;
-            o.problemId = problemId;
-            return o;
+            final var _resultValue = new GetProblemEntitiesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.problemEntityCollections = problemEntityCollections;
+            _resultValue.problemId = problemId;
+            return _resultValue;
         }
     }
 }

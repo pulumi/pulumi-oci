@@ -144,14 +144,14 @@ public final class GetCloudExadataInfrastructuresResult {
             return this;
         }
         public GetCloudExadataInfrastructuresResult build() {
-            final var o = new GetCloudExadataInfrastructuresResult();
-            o.cloudExadataInfrastructures = cloudExadataInfrastructures;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCloudExadataInfrastructuresResult();
+            _resultValue.cloudExadataInfrastructures = cloudExadataInfrastructures;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

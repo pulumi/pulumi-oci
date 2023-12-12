@@ -84,11 +84,11 @@ public final class GetMessagesDeploymentMessagesCollectionItem {
             return this;
         }
         public GetMessagesDeploymentMessagesCollectionItem build() {
-            final var o = new GetMessagesDeploymentMessagesCollectionItem();
-            o.deploymentMessage = deploymentMessage;
-            o.deploymentMessageStatus = deploymentMessageStatus;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetMessagesDeploymentMessagesCollectionItem();
+            _resultValue.deploymentMessage = deploymentMessage;
+            _resultValue.deploymentMessageStatus = deploymentMessageStatus;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

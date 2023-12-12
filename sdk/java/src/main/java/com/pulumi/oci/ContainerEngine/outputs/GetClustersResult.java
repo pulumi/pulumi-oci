@@ -147,14 +147,14 @@ public final class GetClustersResult {
             return states(List.of(states));
         }
         public GetClustersResult build() {
-            final var o = new GetClustersResult();
-            o.clusters = clusters;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.states = states;
-            return o;
+            final var _resultValue = new GetClustersResult();
+            _resultValue.clusters = clusters;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.states = states;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek {
             return this;
         }
         public GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek build() {
-            final var o = new GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeek();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

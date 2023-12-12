@@ -215,22 +215,22 @@ public final class GetInstallationSiteResult {
             return this;
         }
         public GetInstallationSiteResult build() {
-            final var o = new GetInstallationSiteResult();
-            o.applicationId = applicationId;
-            o.fleetId = fleetId;
-            o.id = id;
-            o.installationPath = installationPath;
-            o.items = items;
-            o.jreDistribution = jreDistribution;
-            o.jreSecurityStatus = jreSecurityStatus;
-            o.jreVendor = jreVendor;
-            o.jreVersion = jreVersion;
-            o.managedInstanceId = managedInstanceId;
-            o.osFamilies = osFamilies;
-            o.pathContains = pathContains;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetInstallationSiteResult();
+            _resultValue.applicationId = applicationId;
+            _resultValue.fleetId = fleetId;
+            _resultValue.id = id;
+            _resultValue.installationPath = installationPath;
+            _resultValue.items = items;
+            _resultValue.jreDistribution = jreDistribution;
+            _resultValue.jreSecurityStatus = jreSecurityStatus;
+            _resultValue.jreVendor = jreVendor;
+            _resultValue.jreVersion = jreVersion;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.osFamilies = osFamilies;
+            _resultValue.pathContains = pathContains;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

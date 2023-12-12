@@ -528,34 +528,34 @@ public final class GetExternalListenerResult {
             return this;
         }
         public GetExternalListenerResult build() {
-            final var o = new GetExternalListenerResult();
-            o.additionalDetails = additionalDetails;
-            o.adrHomeDirectory = adrHomeDirectory;
-            o.compartmentId = compartmentId;
-            o.componentName = componentName;
-            o.displayName = displayName;
-            o.endpoints = endpoints;
-            o.externalConnectorId = externalConnectorId;
-            o.externalDbHomeId = externalDbHomeId;
-            o.externalDbNodeId = externalDbNodeId;
-            o.externalDbSystemId = externalDbSystemId;
-            o.externalListenerId = externalListenerId;
-            o.hostName = hostName;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.listenerAlias = listenerAlias;
-            o.listenerOraLocation = listenerOraLocation;
-            o.listenerType = listenerType;
-            o.logDirectory = logDirectory;
-            o.oracleHome = oracleHome;
-            o.servicedAsms = servicedAsms;
-            o.servicedDatabases = servicedDatabases;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.traceDirectory = traceDirectory;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetExternalListenerResult();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.adrHomeDirectory = adrHomeDirectory;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.componentName = componentName;
+            _resultValue.displayName = displayName;
+            _resultValue.endpoints = endpoints;
+            _resultValue.externalConnectorId = externalConnectorId;
+            _resultValue.externalDbHomeId = externalDbHomeId;
+            _resultValue.externalDbNodeId = externalDbNodeId;
+            _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.externalListenerId = externalListenerId;
+            _resultValue.hostName = hostName;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.listenerAlias = listenerAlias;
+            _resultValue.listenerOraLocation = listenerOraLocation;
+            _resultValue.listenerType = listenerType;
+            _resultValue.logDirectory = logDirectory;
+            _resultValue.oracleHome = oracleHome;
+            _resultValue.servicedAsms = servicedAsms;
+            _resultValue.servicedDatabases = servicedDatabases;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.traceDirectory = traceDirectory;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

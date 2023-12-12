@@ -103,12 +103,12 @@ public final class GetDomainsIdentityProviderCorrelationPolicy {
             return this;
         }
         public GetDomainsIdentityProviderCorrelationPolicy build() {
-            final var o = new GetDomainsIdentityProviderCorrelationPolicy();
-            o.display = display;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsIdentityProviderCorrelationPolicy();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

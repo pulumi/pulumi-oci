@@ -90,11 +90,11 @@ public final class GetDetectionModelModelTrainingResultRowReductionDetail {
             return this;
         }
         public GetDetectionModelModelTrainingResultRowReductionDetail build() {
-            final var o = new GetDetectionModelModelTrainingResultRowReductionDetail();
-            o.isReductionEnabled = isReductionEnabled;
-            o.reductionMethod = reductionMethod;
-            o.reductionPercentage = reductionPercentage;
-            return o;
+            final var _resultValue = new GetDetectionModelModelTrainingResultRowReductionDetail();
+            _resultValue.isReductionEnabled = isReductionEnabled;
+            _resultValue.reductionMethod = reductionMethod;
+            _resultValue.reductionPercentage = reductionPercentage;
+            return _resultValue;
         }
     }
 }

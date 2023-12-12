@@ -353,25 +353,25 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksFindingItem {
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksFindingItem build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksFindingItem();
-            o.dbTimeBenefit = dbTimeBenefit;
-            o.isAlternativePlanFindingPresent = isAlternativePlanFindingPresent;
-            o.isErrorFindingPresent = isErrorFindingPresent;
-            o.isIndexFindingPresent = isIndexFindingPresent;
-            o.isMiscellaneousFindingPresent = isMiscellaneousFindingPresent;
-            o.isRestructureSqlFindingPresent = isRestructureSqlFindingPresent;
-            o.isSqlProfileFindingImplemented = isSqlProfileFindingImplemented;
-            o.isSqlProfileFindingPresent = isSqlProfileFindingPresent;
-            o.isStatsFindingPresent = isStatsFindingPresent;
-            o.isTimeoutFindingPresent = isTimeoutFindingPresent;
-            o.parsingSchema = parsingSchema;
-            o.perExecutionPercentage = perExecutionPercentage;
-            o.sqlKey = sqlKey;
-            o.sqlText = sqlText;
-            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-            o.sqlTuningAdvisorTaskObjectExecutionId = sqlTuningAdvisorTaskObjectExecutionId;
-            o.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksFindingItem();
+            _resultValue.dbTimeBenefit = dbTimeBenefit;
+            _resultValue.isAlternativePlanFindingPresent = isAlternativePlanFindingPresent;
+            _resultValue.isErrorFindingPresent = isErrorFindingPresent;
+            _resultValue.isIndexFindingPresent = isIndexFindingPresent;
+            _resultValue.isMiscellaneousFindingPresent = isMiscellaneousFindingPresent;
+            _resultValue.isRestructureSqlFindingPresent = isRestructureSqlFindingPresent;
+            _resultValue.isSqlProfileFindingImplemented = isSqlProfileFindingImplemented;
+            _resultValue.isSqlProfileFindingPresent = isSqlProfileFindingPresent;
+            _resultValue.isStatsFindingPresent = isStatsFindingPresent;
+            _resultValue.isTimeoutFindingPresent = isTimeoutFindingPresent;
+            _resultValue.parsingSchema = parsingSchema;
+            _resultValue.perExecutionPercentage = perExecutionPercentage;
+            _resultValue.sqlKey = sqlKey;
+            _resultValue.sqlText = sqlText;
+            _resultValue.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            _resultValue.sqlTuningAdvisorTaskObjectExecutionId = sqlTuningAdvisorTaskObjectExecutionId;
+            _resultValue.sqlTuningAdvisorTaskObjectId = sqlTuningAdvisorTaskObjectId;
+            return _resultValue;
         }
     }
 }

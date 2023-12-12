@@ -66,10 +66,10 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
             return this;
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEmailSetting build() {
-            final var o = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEmailSetting();
-            o.emailLinkCustomUrl = emailLinkCustomUrl;
-            o.emailLinkEnabled = emailLinkEnabled;
-            return o;
+            final var _resultValue = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEmailSetting();
+            _resultValue.emailLinkCustomUrl = emailLinkCustomUrl;
+            _resultValue.emailLinkEnabled = emailLinkEnabled;
+            return _resultValue;
         }
     }
 }

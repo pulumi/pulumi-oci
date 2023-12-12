@@ -42,9 +42,9 @@ public final class GetProtectionPoliciesProtectionPolicyCollection {
             return items(List.of(items));
         }
         public GetProtectionPoliciesProtectionPolicyCollection build() {
-            final var o = new GetProtectionPoliciesProtectionPolicyCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetProtectionPoliciesProtectionPolicyCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

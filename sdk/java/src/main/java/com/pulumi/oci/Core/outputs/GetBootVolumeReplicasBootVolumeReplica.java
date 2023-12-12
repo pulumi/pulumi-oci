@@ -276,21 +276,21 @@ public final class GetBootVolumeReplicasBootVolumeReplica {
             return this;
         }
         public GetBootVolumeReplicasBootVolumeReplica build() {
-            final var o = new GetBootVolumeReplicasBootVolumeReplica();
-            o.availabilityDomain = availabilityDomain;
-            o.bootVolumeId = bootVolumeId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.imageId = imageId;
-            o.sizeInGbs = sizeInGbs;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeLastSynced = timeLastSynced;
-            o.volumeGroupReplicaId = volumeGroupReplicaId;
-            return o;
+            final var _resultValue = new GetBootVolumeReplicasBootVolumeReplica();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.bootVolumeId = bootVolumeId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.imageId = imageId;
+            _resultValue.sizeInGbs = sizeInGbs;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastSynced = timeLastSynced;
+            _resultValue.volumeGroupReplicaId = volumeGroupReplicaId;
+            return _resultValue;
         }
     }
 }

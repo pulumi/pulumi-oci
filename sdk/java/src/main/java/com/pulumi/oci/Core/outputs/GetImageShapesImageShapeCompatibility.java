@@ -112,12 +112,12 @@ public final class GetImageShapesImageShapeCompatibility {
             return this;
         }
         public GetImageShapesImageShapeCompatibility build() {
-            final var o = new GetImageShapesImageShapeCompatibility();
-            o.imageId = imageId;
-            o.memoryConstraints = memoryConstraints;
-            o.ocpuConstraints = ocpuConstraints;
-            o.shape = shape;
-            return o;
+            final var _resultValue = new GetImageShapesImageShapeCompatibility();
+            _resultValue.imageId = imageId;
+            _resultValue.memoryConstraints = memoryConstraints;
+            _resultValue.ocpuConstraints = ocpuConstraints;
+            _resultValue.shape = shape;
+            return _resultValue;
         }
     }
 }

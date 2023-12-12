@@ -262,20 +262,20 @@ public final class GetProductLicenseConsumersItem {
             return this;
         }
         public GetProductLicenseConsumersItem build() {
-            final var o = new GetProductLicenseConsumersItem();
-            o.areAllOptionsAvailable = areAllOptionsAvailable;
-            o.isBaseLicenseAvailable = isBaseLicenseAvailable;
-            o.licenseUnitType = licenseUnitType;
-            o.licenseUnitsConsumed = licenseUnitsConsumed;
-            o.missingProducts = missingProducts;
-            o.productName = productName;
-            o.resourceCompartmentId = resourceCompartmentId;
-            o.resourceCompartmentName = resourceCompartmentName;
-            o.resourceId = resourceId;
-            o.resourceName = resourceName;
-            o.resourceUnitCount = resourceUnitCount;
-            o.resourceUnitType = resourceUnitType;
-            return o;
+            final var _resultValue = new GetProductLicenseConsumersItem();
+            _resultValue.areAllOptionsAvailable = areAllOptionsAvailable;
+            _resultValue.isBaseLicenseAvailable = isBaseLicenseAvailable;
+            _resultValue.licenseUnitType = licenseUnitType;
+            _resultValue.licenseUnitsConsumed = licenseUnitsConsumed;
+            _resultValue.missingProducts = missingProducts;
+            _resultValue.productName = productName;
+            _resultValue.resourceCompartmentId = resourceCompartmentId;
+            _resultValue.resourceCompartmentName = resourceCompartmentName;
+            _resultValue.resourceId = resourceId;
+            _resultValue.resourceName = resourceName;
+            _resultValue.resourceUnitCount = resourceUnitCount;
+            _resultValue.resourceUnitType = resourceUnitType;
+            return _resultValue;
         }
     }
 }

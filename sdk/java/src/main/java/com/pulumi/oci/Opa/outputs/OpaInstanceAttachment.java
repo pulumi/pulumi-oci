@@ -127,13 +127,13 @@ public final class OpaInstanceAttachment {
             return this;
         }
         public OpaInstanceAttachment build() {
-            final var o = new OpaInstanceAttachment();
-            o.isImplicit = isImplicit;
-            o.targetId = targetId;
-            o.targetInstanceUrl = targetInstanceUrl;
-            o.targetRole = targetRole;
-            o.targetServiceType = targetServiceType;
-            return o;
+            final var _resultValue = new OpaInstanceAttachment();
+            _resultValue.isImplicit = isImplicit;
+            _resultValue.targetId = targetId;
+            _resultValue.targetInstanceUrl = targetInstanceUrl;
+            _resultValue.targetRole = targetRole;
+            _resultValue.targetServiceType = targetServiceType;
+            return _resultValue;
         }
     }
 }

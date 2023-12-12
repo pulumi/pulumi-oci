@@ -84,11 +84,11 @@ public final class GetAssetVmwareVcenter {
             return this;
         }
         public GetAssetVmwareVcenter build() {
-            final var o = new GetAssetVmwareVcenter();
-            o.dataCenter = dataCenter;
-            o.vcenterKey = vcenterKey;
-            o.vcenterVersion = vcenterVersion;
-            return o;
+            final var _resultValue = new GetAssetVmwareVcenter();
+            _resultValue.dataCenter = dataCenter;
+            _resultValue.vcenterKey = vcenterKey;
+            _resultValue.vcenterVersion = vcenterVersion;
+            return _resultValue;
         }
     }
 }

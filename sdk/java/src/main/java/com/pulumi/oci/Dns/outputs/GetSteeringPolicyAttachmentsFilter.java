@@ -67,11 +67,11 @@ public final class GetSteeringPolicyAttachmentsFilter {
             return values(List.of(values));
         }
         public GetSteeringPolicyAttachmentsFilter build() {
-            final var o = new GetSteeringPolicyAttachmentsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSteeringPolicyAttachmentsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

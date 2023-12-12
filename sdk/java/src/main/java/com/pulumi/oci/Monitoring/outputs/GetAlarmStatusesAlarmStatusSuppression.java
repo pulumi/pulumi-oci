@@ -84,11 +84,11 @@ public final class GetAlarmStatusesAlarmStatusSuppression {
             return this;
         }
         public GetAlarmStatusesAlarmStatusSuppression build() {
-            final var o = new GetAlarmStatusesAlarmStatusSuppression();
-            o.description = description;
-            o.timeSuppressFrom = timeSuppressFrom;
-            o.timeSuppressUntil = timeSuppressUntil;
-            return o;
+            final var _resultValue = new GetAlarmStatusesAlarmStatusSuppression();
+            _resultValue.description = description;
+            _resultValue.timeSuppressFrom = timeSuppressFrom;
+            _resultValue.timeSuppressUntil = timeSuppressUntil;
+            return _resultValue;
         }
     }
 }

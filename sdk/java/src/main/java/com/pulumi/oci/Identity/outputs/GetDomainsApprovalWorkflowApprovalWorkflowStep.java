@@ -123,13 +123,13 @@ public final class GetDomainsApprovalWorkflowApprovalWorkflowStep {
             return this;
         }
         public GetDomainsApprovalWorkflowApprovalWorkflowStep build() {
-            final var o = new GetDomainsApprovalWorkflowApprovalWorkflowStep();
-            o.ocid = ocid;
-            o.order = order;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsApprovalWorkflowApprovalWorkflowStep();
+            _resultValue.ocid = ocid;
+            _resultValue.order = order;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

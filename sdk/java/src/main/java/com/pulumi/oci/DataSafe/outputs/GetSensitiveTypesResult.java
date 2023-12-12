@@ -268,23 +268,23 @@ public final class GetSensitiveTypesResult {
             return this;
         }
         public GetSensitiveTypesResult build() {
-            final var o = new GetSensitiveTypesResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.defaultMaskingFormatId = defaultMaskingFormatId;
-            o.displayName = displayName;
-            o.entityType = entityType;
-            o.filters = filters;
-            o.id = id;
-            o.parentCategoryId = parentCategoryId;
-            o.sensitiveTypeCollections = sensitiveTypeCollections;
-            o.sensitiveTypeId = sensitiveTypeId;
-            o.sensitiveTypeSource = sensitiveTypeSource;
-            o.state = state;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            return o;
+            final var _resultValue = new GetSensitiveTypesResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.defaultMaskingFormatId = defaultMaskingFormatId;
+            _resultValue.displayName = displayName;
+            _resultValue.entityType = entityType;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.parentCategoryId = parentCategoryId;
+            _resultValue.sensitiveTypeCollections = sensitiveTypeCollections;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
+            _resultValue.sensitiveTypeSource = sensitiveTypeSource;
+            _resultValue.state = state;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            return _resultValue;
         }
     }
 }

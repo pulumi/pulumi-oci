@@ -73,10 +73,10 @@ public final class MediaAssetMediaAssetTag {
             return this;
         }
         public MediaAssetMediaAssetTag build() {
-            final var o = new MediaAssetMediaAssetTag();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new MediaAssetMediaAssetTag();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

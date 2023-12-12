@@ -67,11 +67,11 @@ public final class GetSqlEndpointsFilter {
             return values(List.of(values));
         }
         public GetSqlEndpointsFilter build() {
-            final var o = new GetSqlEndpointsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSqlEndpointsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

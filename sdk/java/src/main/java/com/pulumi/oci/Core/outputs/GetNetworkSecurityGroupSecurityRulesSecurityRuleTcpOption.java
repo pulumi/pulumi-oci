@@ -57,10 +57,10 @@ public final class GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption {
             return sourcePortRanges(List.of(sourcePortRanges));
         }
         public GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption build() {
-            final var o = new GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption();
-            o.destinationPortRanges = destinationPortRanges;
-            o.sourcePortRanges = sourcePortRanges;
-            return o;
+            final var _resultValue = new GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOption();
+            _resultValue.destinationPortRanges = destinationPortRanges;
+            _resultValue.sourcePortRanges = sourcePortRanges;
+            return _resultValue;
         }
     }
 }

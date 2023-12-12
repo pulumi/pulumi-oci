@@ -82,13 +82,13 @@ public final class GetExternalExadataStorageConnectorsExternalExadataStorageConn
             return this;
         }
         public GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo build() {
-            final var o = new GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo();
-            o.password = password;
-            o.sslTrustStoreLocation = sslTrustStoreLocation;
-            o.sslTrustStorePassword = sslTrustStorePassword;
-            o.sslTrustStoreType = sslTrustStoreType;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageConnectorsExternalExadataStorageConnectorCollectionItemCredentialInfo();
+            _resultValue.password = password;
+            _resultValue.sslTrustStoreLocation = sslTrustStoreLocation;
+            _resultValue.sslTrustStorePassword = sslTrustStorePassword;
+            _resultValue.sslTrustStoreType = sslTrustStoreType;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

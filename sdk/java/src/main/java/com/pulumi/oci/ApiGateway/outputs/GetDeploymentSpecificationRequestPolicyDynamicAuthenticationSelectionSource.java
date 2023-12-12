@@ -65,10 +65,10 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationS
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSource build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSource();
-            o.selector = selector;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationSelectionSource();
+            _resultValue.selector = selector;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -302,22 +302,22 @@ public final class GetSnapshotsSnapshot {
             return this;
         }
         public GetSnapshotsSnapshot build() {
-            final var o = new GetSnapshotsSnapshot();
-            o.definedTags = definedTags;
-            o.expirationTime = expirationTime;
-            o.fileSystemId = fileSystemId;
-            o.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isCloneSource = isCloneSource;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.provenanceId = provenanceId;
-            o.snapshotTime = snapshotTime;
-            o.snapshotType = snapshotType;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetSnapshotsSnapshot();
+            _resultValue.definedTags = definedTags;
+            _resultValue.expirationTime = expirationTime;
+            _resultValue.fileSystemId = fileSystemId;
+            _resultValue.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isCloneSource = isCloneSource;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.provenanceId = provenanceId;
+            _resultValue.snapshotTime = snapshotTime;
+            _resultValue.snapshotType = snapshotType;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -104,12 +104,12 @@ public final class GetDomainsUserEntitlement {
             return this;
         }
         public GetDomainsUserEntitlement build() {
-            final var o = new GetDomainsUserEntitlement();
-            o.display = display;
-            o.primary = primary;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserEntitlement();
+            _resultValue.display = display;
+            _resultValue.primary = primary;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

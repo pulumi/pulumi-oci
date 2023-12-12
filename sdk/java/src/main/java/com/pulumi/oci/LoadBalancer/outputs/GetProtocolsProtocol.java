@@ -46,9 +46,9 @@ public final class GetProtocolsProtocol {
             return this;
         }
         public GetProtocolsProtocol build() {
-            final var o = new GetProtocolsProtocol();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetProtocolsProtocol();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

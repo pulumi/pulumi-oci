@@ -92,11 +92,11 @@ public final class SteeringPolicyRuleCase {
             return this;
         }
         public SteeringPolicyRuleCase build() {
-            final var o = new SteeringPolicyRuleCase();
-            o.answerDatas = answerDatas;
-            o.caseCondition = caseCondition;
-            o.count = count;
-            return o;
+            final var _resultValue = new SteeringPolicyRuleCase();
+            _resultValue.answerDatas = answerDatas;
+            _resultValue.caseCondition = caseCondition;
+            _resultValue.count = count;
+            return _resultValue;
         }
     }
 }

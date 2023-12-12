@@ -206,17 +206,17 @@ public final class GetDetectionModelsModelCollectionItemModelTrainingResultSigna
             return this;
         }
         public GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail build() {
-            final var o = new GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail();
-            o.details = details;
-            o.fap = fap;
-            o.isQuantized = isQuantized;
-            o.max = max;
-            o.min = min;
-            o.mviRatio = mviRatio;
-            o.signalName = signalName;
-            o.status = status;
-            o.std = std;
-            return o;
+            final var _resultValue = new GetDetectionModelsModelCollectionItemModelTrainingResultSignalDetail();
+            _resultValue.details = details;
+            _resultValue.fap = fap;
+            _resultValue.isQuantized = isQuantized;
+            _resultValue.max = max;
+            _resultValue.min = min;
+            _resultValue.mviRatio = mviRatio;
+            _resultValue.signalName = signalName;
+            _resultValue.status = status;
+            _resultValue.std = std;
+            return _resultValue;
         }
     }
 }

@@ -376,26 +376,26 @@ public final class GetMigrationPlanResult {
             return this;
         }
         public GetMigrationPlanResult build() {
-            final var o = new GetMigrationPlanResult();
-            o.calculatedLimits = calculatedLimits;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.migrationId = migrationId;
-            o.migrationPlanId = migrationPlanId;
-            o.migrationPlanStats = migrationPlanStats;
-            o.referenceToRmsStack = referenceToRmsStack;
-            o.sourceMigrationPlanId = sourceMigrationPlanId;
-            o.state = state;
-            o.strategies = strategies;
-            o.systemTags = systemTags;
-            o.targetEnvironments = targetEnvironments;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetMigrationPlanResult();
+            _resultValue.calculatedLimits = calculatedLimits;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.migrationId = migrationId;
+            _resultValue.migrationPlanId = migrationPlanId;
+            _resultValue.migrationPlanStats = migrationPlanStats;
+            _resultValue.referenceToRmsStack = referenceToRmsStack;
+            _resultValue.sourceMigrationPlanId = sourceMigrationPlanId;
+            _resultValue.state = state;
+            _resultValue.strategies = strategies;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetEnvironments = targetEnvironments;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

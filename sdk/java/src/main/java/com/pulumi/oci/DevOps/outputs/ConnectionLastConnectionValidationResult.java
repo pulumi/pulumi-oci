@@ -86,11 +86,11 @@ public final class ConnectionLastConnectionValidationResult {
             return this;
         }
         public ConnectionLastConnectionValidationResult build() {
-            final var o = new ConnectionLastConnectionValidationResult();
-            o.message = message;
-            o.result = result;
-            o.timeValidated = timeValidated;
-            return o;
+            final var _resultValue = new ConnectionLastConnectionValidationResult();
+            _resultValue.message = message;
+            _resultValue.result = result;
+            _resultValue.timeValidated = timeValidated;
+            return _resultValue;
         }
     }
 }

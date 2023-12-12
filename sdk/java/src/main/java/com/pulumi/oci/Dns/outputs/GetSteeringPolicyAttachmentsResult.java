@@ -226,20 +226,20 @@ public final class GetSteeringPolicyAttachmentsResult {
             return this;
         }
         public GetSteeringPolicyAttachmentsResult build() {
-            final var o = new GetSteeringPolicyAttachmentsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.domain = domain;
-            o.domainContains = domainContains;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.steeringPolicyAttachments = steeringPolicyAttachments;
-            o.steeringPolicyId = steeringPolicyId;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            o.zoneId = zoneId;
-            return o;
+            final var _resultValue = new GetSteeringPolicyAttachmentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.domain = domain;
+            _resultValue.domainContains = domainContains;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.steeringPolicyAttachments = steeringPolicyAttachments;
+            _resultValue.steeringPolicyId = steeringPolicyId;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            _resultValue.zoneId = zoneId;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetUnifiedAgentConfigurationGroupAssociation {
             return groupLists(List.of(groupLists));
         }
         public GetUnifiedAgentConfigurationGroupAssociation build() {
-            final var o = new GetUnifiedAgentConfigurationGroupAssociation();
-            o.groupLists = groupLists;
-            return o;
+            final var _resultValue = new GetUnifiedAgentConfigurationGroupAssociation();
+            _resultValue.groupLists = groupLists;
+            return _resultValue;
         }
     }
 }

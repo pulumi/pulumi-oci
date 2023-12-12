@@ -46,9 +46,9 @@ public final class GetGiVersionsGiVersion {
             return this;
         }
         public GetGiVersionsGiVersion build() {
-            final var o = new GetGiVersionsGiVersion();
-            o.version = version;
-            return o;
+            final var _resultValue = new GetGiVersionsGiVersion();
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

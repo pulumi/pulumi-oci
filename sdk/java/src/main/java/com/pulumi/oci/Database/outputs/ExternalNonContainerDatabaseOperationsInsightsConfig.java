@@ -67,10 +67,10 @@ public final class ExternalNonContainerDatabaseOperationsInsightsConfig {
             return this;
         }
         public ExternalNonContainerDatabaseOperationsInsightsConfig build() {
-            final var o = new ExternalNonContainerDatabaseOperationsInsightsConfig();
-            o.operationsInsightsConnectorId = operationsInsightsConnectorId;
-            o.operationsInsightsStatus = operationsInsightsStatus;
-            return o;
+            final var _resultValue = new ExternalNonContainerDatabaseOperationsInsightsConfig();
+            _resultValue.operationsInsightsConnectorId = operationsInsightsConnectorId;
+            _resultValue.operationsInsightsStatus = operationsInsightsStatus;
+            return _resultValue;
         }
     }
 }

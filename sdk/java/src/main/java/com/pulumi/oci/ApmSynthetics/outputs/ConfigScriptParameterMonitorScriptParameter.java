@@ -67,10 +67,10 @@ public final class ConfigScriptParameterMonitorScriptParameter {
             return this;
         }
         public ConfigScriptParameterMonitorScriptParameter build() {
-            final var o = new ConfigScriptParameterMonitorScriptParameter();
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            return o;
+            final var _resultValue = new ConfigScriptParameterMonitorScriptParameter();
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            return _resultValue;
         }
     }
 }

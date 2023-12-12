@@ -84,11 +84,11 @@ public final class GetContainerInstanceShapeItemNetworkingBandwidthOption {
             return this;
         }
         public GetContainerInstanceShapeItemNetworkingBandwidthOption build() {
-            final var o = new GetContainerInstanceShapeItemNetworkingBandwidthOption();
-            o.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
-            o.maxInGbps = maxInGbps;
-            o.minInGbps = minInGbps;
-            return o;
+            final var _resultValue = new GetContainerInstanceShapeItemNetworkingBandwidthOption();
+            _resultValue.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
+            _resultValue.maxInGbps = maxInGbps;
+            _resultValue.minInGbps = minInGbps;
+            return _resultValue;
         }
     }
 }

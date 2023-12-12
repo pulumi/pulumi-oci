@@ -436,29 +436,29 @@ public final class GetProductLicensesProductLicenseCollectionItem {
             return this;
         }
         public GetProductLicensesProductLicenseCollectionItem build() {
-            final var o = new GetProductLicensesProductLicenseCollectionItem();
-            o.activeLicenseRecordCount = activeLicenseRecordCount;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.images = images;
-            o.isOverSubscribed = isOverSubscribed;
-            o.isUnlimited = isUnlimited;
-            o.isVendorOracle = isVendorOracle;
-            o.licenseUnit = licenseUnit;
-            o.state = state;
-            o.status = status;
-            o.statusDescription = statusDescription;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.totalActiveLicenseUnitCount = totalActiveLicenseUnitCount;
-            o.totalLicenseRecordCount = totalLicenseRecordCount;
-            o.totalLicenseUnitsConsumed = totalLicenseUnitsConsumed;
-            o.vendorName = vendorName;
-            return o;
+            final var _resultValue = new GetProductLicensesProductLicenseCollectionItem();
+            _resultValue.activeLicenseRecordCount = activeLicenseRecordCount;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.images = images;
+            _resultValue.isOverSubscribed = isOverSubscribed;
+            _resultValue.isUnlimited = isUnlimited;
+            _resultValue.isVendorOracle = isVendorOracle;
+            _resultValue.licenseUnit = licenseUnit;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.statusDescription = statusDescription;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.totalActiveLicenseUnitCount = totalActiveLicenseUnitCount;
+            _resultValue.totalLicenseRecordCount = totalLicenseRecordCount;
+            _resultValue.totalLicenseUnitsConsumed = totalLicenseUnitsConsumed;
+            _resultValue.vendorName = vendorName;
+            return _resultValue;
         }
     }
 }

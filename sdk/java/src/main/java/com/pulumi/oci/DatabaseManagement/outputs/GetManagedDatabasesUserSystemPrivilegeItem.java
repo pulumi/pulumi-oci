@@ -103,12 +103,12 @@ public final class GetManagedDatabasesUserSystemPrivilegeItem {
             return this;
         }
         public GetManagedDatabasesUserSystemPrivilegeItem build() {
-            final var o = new GetManagedDatabasesUserSystemPrivilegeItem();
-            o.adminOption = adminOption;
-            o.common = common;
-            o.inherited = inherited;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabasesUserSystemPrivilegeItem();
+            _resultValue.adminOption = adminOption;
+            _resultValue.common = common;
+            _resultValue.inherited = inherited;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

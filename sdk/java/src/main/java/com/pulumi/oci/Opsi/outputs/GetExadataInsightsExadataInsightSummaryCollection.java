@@ -42,9 +42,9 @@ public final class GetExadataInsightsExadataInsightSummaryCollection {
             return items(List.of(items));
         }
         public GetExadataInsightsExadataInsightSummaryCollection build() {
-            final var o = new GetExadataInsightsExadataInsightSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetExadataInsightsExadataInsightSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

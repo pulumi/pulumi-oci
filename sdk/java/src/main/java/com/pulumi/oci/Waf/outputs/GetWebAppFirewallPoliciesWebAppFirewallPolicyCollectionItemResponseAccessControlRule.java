@@ -124,13 +124,13 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule build() {
-            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule();
-            o.actionName = actionName;
-            o.condition = condition;
-            o.conditionLanguage = conditionLanguage;
-            o.name = name;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlRule();
+            _resultValue.actionName = actionName;
+            _resultValue.condition = condition;
+            _resultValue.conditionLanguage = conditionLanguage;
+            _resultValue.name = name;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -88,11 +88,11 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
             return values(List.of(values));
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItem build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItem();
-            o.ifExists = ifExists;
-            o.name = name;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderTransformationSetHeaderItem();
+            _resultValue.ifExists = ifExists;
+            _resultValue.name = name;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -185,18 +185,18 @@ public final class GetTraceSnapshotDataResult {
             return traceSnapshotDetails(List.of(traceSnapshotDetails));
         }
         public GetTraceSnapshotDataResult build() {
-            final var o = new GetTraceSnapshotDataResult();
-            o.apmDomainId = apmDomainId;
-            o.id = id;
-            o.isSummarized = isSummarized;
-            o.key = key;
-            o.snapshotTime = snapshotTime;
-            o.threadId = threadId;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            o.traceKey = traceKey;
-            o.traceSnapshotDetails = traceSnapshotDetails;
-            return o;
+            final var _resultValue = new GetTraceSnapshotDataResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.id = id;
+            _resultValue.isSummarized = isSummarized;
+            _resultValue.key = key;
+            _resultValue.snapshotTime = snapshotTime;
+            _resultValue.threadId = threadId;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.traceKey = traceKey;
+            _resultValue.traceSnapshotDetails = traceSnapshotDetails;
+            return _resultValue;
         }
     }
 }

@@ -124,13 +124,13 @@ public final class GetEventsAuditEventDataRequest {
             return this;
         }
         public GetEventsAuditEventDataRequest build() {
-            final var o = new GetEventsAuditEventDataRequest();
-            o.action = action;
-            o.headers = headers;
-            o.id = id;
-            o.parameters = parameters;
-            o.path = path;
-            return o;
+            final var _resultValue = new GetEventsAuditEventDataRequest();
+            _resultValue.action = action;
+            _resultValue.headers = headers;
+            _resultValue.id = id;
+            _resultValue.parameters = parameters;
+            _resultValue.path = path;
+            return _resultValue;
         }
     }
 }

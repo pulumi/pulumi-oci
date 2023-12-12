@@ -104,12 +104,12 @@ public final class GetModelDeploymentShapesModelDeploymentShape {
             return this;
         }
         public GetModelDeploymentShapesModelDeploymentShape build() {
-            final var o = new GetModelDeploymentShapesModelDeploymentShape();
-            o.coreCount = coreCount;
-            o.memoryInGbs = memoryInGbs;
-            o.name = name;
-            o.shapeSeries = shapeSeries;
-            return o;
+            final var _resultValue = new GetModelDeploymentShapesModelDeploymentShape();
+            _resultValue.coreCount = coreCount;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.name = name;
+            _resultValue.shapeSeries = shapeSeries;
+            return _resultValue;
         }
     }
 }

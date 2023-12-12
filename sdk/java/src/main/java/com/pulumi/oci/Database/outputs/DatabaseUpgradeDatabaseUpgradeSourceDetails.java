@@ -119,12 +119,12 @@ public final class DatabaseUpgradeDatabaseUpgradeSourceDetails {
             return this;
         }
         public DatabaseUpgradeDatabaseUpgradeSourceDetails build() {
-            final var o = new DatabaseUpgradeDatabaseUpgradeSourceDetails();
-            o.databaseSoftwareImageId = databaseSoftwareImageId;
-            o.dbVersion = dbVersion;
-            o.options = options;
-            o.source = source;
-            return o;
+            final var _resultValue = new DatabaseUpgradeDatabaseUpgradeSourceDetails();
+            _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.options = options;
+            _resultValue.source = source;
+            return _resultValue;
         }
     }
 }

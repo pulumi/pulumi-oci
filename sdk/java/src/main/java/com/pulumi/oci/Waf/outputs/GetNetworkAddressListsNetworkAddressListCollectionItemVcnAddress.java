@@ -65,10 +65,10 @@ public final class GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddr
             return this;
         }
         public GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress build() {
-            final var o = new GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress();
-            o.addresses = addresses;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetNetworkAddressListsNetworkAddressListCollectionItemVcnAddress();
+            _resultValue.addresses = addresses;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

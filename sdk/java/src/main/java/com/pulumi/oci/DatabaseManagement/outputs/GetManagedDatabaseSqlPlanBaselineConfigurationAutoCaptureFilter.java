@@ -137,13 +137,13 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilt
             return valuesToIncludes(List.of(valuesToIncludes));
         }
         public GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter build() {
-            final var o = new GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter();
-            o.modifiedBy = modifiedBy;
-            o.name = name;
-            o.timeLastModified = timeLastModified;
-            o.valuesToExcludes = valuesToExcludes;
-            o.valuesToIncludes = valuesToIncludes;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlPlanBaselineConfigurationAutoCaptureFilter();
+            _resultValue.modifiedBy = modifiedBy;
+            _resultValue.name = name;
+            _resultValue.timeLastModified = timeLastModified;
+            _resultValue.valuesToExcludes = valuesToExcludes;
+            _resultValue.valuesToIncludes = valuesToIncludes;
+            return _resultValue;
         }
     }
 }

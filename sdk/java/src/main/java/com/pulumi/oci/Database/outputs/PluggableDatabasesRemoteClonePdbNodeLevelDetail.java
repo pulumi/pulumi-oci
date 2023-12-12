@@ -67,10 +67,10 @@ public final class PluggableDatabasesRemoteClonePdbNodeLevelDetail {
             return this;
         }
         public PluggableDatabasesRemoteClonePdbNodeLevelDetail build() {
-            final var o = new PluggableDatabasesRemoteClonePdbNodeLevelDetail();
-            o.nodeName = nodeName;
-            o.openMode = openMode;
-            return o;
+            final var _resultValue = new PluggableDatabasesRemoteClonePdbNodeLevelDetail();
+            _resultValue.nodeName = nodeName;
+            _resultValue.openMode = openMode;
+            return _resultValue;
         }
     }
 }

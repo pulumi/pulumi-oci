@@ -67,11 +67,11 @@ public final class GetAutonomousVirtualMachinesFilter {
             return values(List.of(values));
         }
         public GetAutonomousVirtualMachinesFilter build() {
-            final var o = new GetAutonomousVirtualMachinesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAutonomousVirtualMachinesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

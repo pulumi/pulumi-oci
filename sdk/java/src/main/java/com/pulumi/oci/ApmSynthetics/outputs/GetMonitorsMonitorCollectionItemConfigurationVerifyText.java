@@ -46,9 +46,9 @@ public final class GetMonitorsMonitorCollectionItemConfigurationVerifyText {
             return this;
         }
         public GetMonitorsMonitorCollectionItemConfigurationVerifyText build() {
-            final var o = new GetMonitorsMonitorCollectionItemConfigurationVerifyText();
-            o.text = text;
-            return o;
+            final var _resultValue = new GetMonitorsMonitorCollectionItemConfigurationVerifyText();
+            _resultValue.text = text;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetMysqlBackupsFilter {
             return values(List.of(values));
         }
         public GetMysqlBackupsFilter build() {
-            final var o = new GetMysqlBackupsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetMysqlBackupsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -53,10 +53,10 @@ public final class GetNetworkSourceVirtualSourceList {
             return this;
         }
         public GetNetworkSourceVirtualSourceList build() {
-            final var o = new GetNetworkSourceVirtualSourceList();
-            o.ipRanges = ipRanges;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetNetworkSourceVirtualSourceList();
+            _resultValue.ipRanges = ipRanges;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

@@ -104,12 +104,12 @@ public final class GetTrailSequencesTrailSequenceCollectionItem {
             return this;
         }
         public GetTrailSequencesTrailSequenceCollectionItem build() {
-            final var o = new GetTrailSequencesTrailSequenceCollectionItem();
-            o.displayName = displayName;
-            o.sequenceId = sequenceId;
-            o.sizeInBytes = sizeInBytes;
-            o.timeLastUpdated = timeLastUpdated;
-            return o;
+            final var _resultValue = new GetTrailSequencesTrailSequenceCollectionItem();
+            _resultValue.displayName = displayName;
+            _resultValue.sequenceId = sequenceId;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.timeLastUpdated = timeLastUpdated;
+            return _resultValue;
         }
     }
 }

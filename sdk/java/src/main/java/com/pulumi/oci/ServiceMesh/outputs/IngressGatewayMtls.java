@@ -68,10 +68,10 @@ public final class IngressGatewayMtls {
             return this;
         }
         public IngressGatewayMtls build() {
-            final var o = new IngressGatewayMtls();
-            o.certificateId = certificateId;
-            o.maximumValidity = maximumValidity;
-            return o;
+            final var _resultValue = new IngressGatewayMtls();
+            _resultValue.certificateId = certificateId;
+            _resultValue.maximumValidity = maximumValidity;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetClustersClusterClusterPodNetworkOption {
             return this;
         }
         public GetClustersClusterClusterPodNetworkOption build() {
-            final var o = new GetClustersClusterClusterPodNetworkOption();
-            o.cniType = cniType;
-            return o;
+            final var _resultValue = new GetClustersClusterClusterPodNetworkOption();
+            _resultValue.cniType = cniType;
+            return _resultValue;
         }
     }
 }

@@ -107,13 +107,13 @@ public final class GetCloudGuardConfigurationResult {
             return this;
         }
         public GetCloudGuardConfigurationResult build() {
-            final var o = new GetCloudGuardConfigurationResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.reportingRegion = reportingRegion;
-            o.selfManageResources = selfManageResources;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetCloudGuardConfigurationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.reportingRegion = reportingRegion;
+            _resultValue.selfManageResources = selfManageResources;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

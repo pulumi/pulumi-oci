@@ -84,11 +84,11 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbManagemen
             return this;
         }
         public GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig build() {
-            final var o = new GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig();
-            o.connectorId = connectorId;
-            o.databaseManagementStatus = databaseManagementStatus;
-            o.licenseModel = licenseModel;
-            return o;
+            final var _resultValue = new GetExternalDatabasesExternalDatabaseCollectionItemDbManagementConfig();
+            _resultValue.connectorId = connectorId;
+            _resultValue.databaseManagementStatus = databaseManagementStatus;
+            _resultValue.licenseModel = licenseModel;
+            return _resultValue;
         }
     }
 }

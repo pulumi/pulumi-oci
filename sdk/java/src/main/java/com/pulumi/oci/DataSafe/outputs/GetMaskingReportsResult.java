@@ -167,16 +167,16 @@ public final class GetMaskingReportsResult {
             return this;
         }
         public GetMaskingReportsResult build() {
-            final var o = new GetMaskingReportsResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.id = id;
-            o.maskingPolicyId = maskingPolicyId;
-            o.maskingReportCollections = maskingReportCollections;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new GetMaskingReportsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.maskingPolicyId = maskingPolicyId;
+            _resultValue.maskingReportCollections = maskingReportCollections;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

@@ -181,16 +181,16 @@ public final class GetRepositoryPathsRepositoryPathCollectionItem {
             return this;
         }
         public GetRepositoryPathsRepositoryPathCollectionItem build() {
-            final var o = new GetRepositoryPathsRepositoryPathCollectionItem();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.name = name;
-            o.path = path;
-            o.sha = sha;
-            o.sizeInBytes = sizeInBytes;
-            o.submoduleGitUrl = submoduleGitUrl;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetRepositoryPathsRepositoryPathCollectionItem();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.name = name;
+            _resultValue.path = path;
+            _resultValue.sha = sha;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.submoduleGitUrl = submoduleGitUrl;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

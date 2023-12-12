@@ -54,10 +54,10 @@ public final class GetContainerSignaturesContainerImageSignatureCollection {
             return this;
         }
         public GetContainerSignaturesContainerImageSignatureCollection build() {
-            final var o = new GetContainerSignaturesContainerImageSignatureCollection();
-            o.items = items;
-            o.remainingItemsCount = remainingItemsCount;
-            return o;
+            final var _resultValue = new GetContainerSignaturesContainerImageSignatureCollection();
+            _resultValue.items = items;
+            _resultValue.remainingItemsCount = remainingItemsCount;
+            return _resultValue;
         }
     }
 }

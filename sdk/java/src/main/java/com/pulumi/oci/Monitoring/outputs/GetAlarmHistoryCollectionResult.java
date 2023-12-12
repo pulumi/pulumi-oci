@@ -144,15 +144,15 @@ public final class GetAlarmHistoryCollectionResult {
             return this;
         }
         public GetAlarmHistoryCollectionResult build() {
-            final var o = new GetAlarmHistoryCollectionResult();
-            o.alarmHistorytype = alarmHistorytype;
-            o.alarmId = alarmId;
-            o.entries = entries;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
-            o.timestampLessThan = timestampLessThan;
-            return o;
+            final var _resultValue = new GetAlarmHistoryCollectionResult();
+            _resultValue.alarmHistorytype = alarmHistorytype;
+            _resultValue.alarmId = alarmId;
+            _resultValue.entries = entries;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.timestampGreaterThanOrEqualTo = timestampGreaterThanOrEqualTo;
+            _resultValue.timestampLessThan = timestampLessThan;
+            return _resultValue;
         }
     }
 }

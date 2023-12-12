@@ -65,10 +65,10 @@ public final class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummar
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog build() {
-            final var o = new GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog();
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog();
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

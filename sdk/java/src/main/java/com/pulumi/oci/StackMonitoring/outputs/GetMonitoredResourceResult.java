@@ -497,33 +497,33 @@ public final class GetMonitoredResourceResult {
             return this;
         }
         public GetMonitoredResourceResult build() {
-            final var o = new GetMonitoredResourceResult();
-            o.additionalAliases = additionalAliases;
-            o.additionalCredentials = additionalCredentials;
-            o.aliases = aliases;
-            o.compartmentId = compartmentId;
-            o.credentials = credentials;
-            o.databaseConnectionDetails = databaseConnectionDetails;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.externalId = externalId;
-            o.externalResourceId = externalResourceId;
-            o.freeformTags = freeformTags;
-            o.hostName = hostName;
-            o.id = id;
-            o.license = license;
-            o.managementAgentId = managementAgentId;
-            o.monitoredResourceId = monitoredResourceId;
-            o.name = name;
-            o.properties = properties;
-            o.resourceTimeZone = resourceTimeZone;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.tenantId = tenantId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetMonitoredResourceResult();
+            _resultValue.additionalAliases = additionalAliases;
+            _resultValue.additionalCredentials = additionalCredentials;
+            _resultValue.aliases = aliases;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.credentials = credentials;
+            _resultValue.databaseConnectionDetails = databaseConnectionDetails;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.externalId = externalId;
+            _resultValue.externalResourceId = externalResourceId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostName = hostName;
+            _resultValue.id = id;
+            _resultValue.license = license;
+            _resultValue.managementAgentId = managementAgentId;
+            _resultValue.monitoredResourceId = monitoredResourceId;
+            _resultValue.name = name;
+            _resultValue.properties = properties;
+            _resultValue.resourceTimeZone = resourceTimeZone;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.tenantId = tenantId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

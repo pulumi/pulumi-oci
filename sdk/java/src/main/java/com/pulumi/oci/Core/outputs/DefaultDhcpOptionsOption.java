@@ -80,12 +80,12 @@ public final class DefaultDhcpOptionsOption {
             return this;
         }
         public DefaultDhcpOptionsOption build() {
-            final var o = new DefaultDhcpOptionsOption();
-            o.customDnsServers = customDnsServers;
-            o.searchDomainNames = searchDomainNames;
-            o.serverType = serverType;
-            o.type = type;
-            return o;
+            final var _resultValue = new DefaultDhcpOptionsOption();
+            _resultValue.customDnsServers = customDnsServers;
+            _resultValue.searchDomainNames = searchDomainNames;
+            _resultValue.serverType = serverType;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

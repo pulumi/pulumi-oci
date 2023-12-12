@@ -117,13 +117,13 @@ public final class GetDbSystemStoragePerformancesResult {
             return this;
         }
         public GetDbSystemStoragePerformancesResult build() {
-            final var o = new GetDbSystemStoragePerformancesResult();
-            o.dbSystemStoragePerformances = dbSystemStoragePerformances;
-            o.filters = filters;
-            o.id = id;
-            o.shapeType = shapeType;
-            o.storageManagement = storageManagement;
-            return o;
+            final var _resultValue = new GetDbSystemStoragePerformancesResult();
+            _resultValue.dbSystemStoragePerformances = dbSystemStoragePerformances;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.shapeType = shapeType;
+            _resultValue.storageManagement = storageManagement;
+            return _resultValue;
         }
     }
 }

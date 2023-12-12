@@ -123,13 +123,13 @@ public final class GetListUserGrantsGrant {
             return this;
         }
         public GetListUserGrantsGrant build() {
-            final var o = new GetListUserGrantsGrant();
-            o.depthLevel = depthLevel;
-            o.grantName = grantName;
-            o.key = key;
-            o.privilegeCategory = privilegeCategory;
-            o.privilegeType = privilegeType;
-            return o;
+            final var _resultValue = new GetListUserGrantsGrant();
+            _resultValue.depthLevel = depthLevel;
+            _resultValue.grantName = grantName;
+            _resultValue.key = key;
+            _resultValue.privilegeCategory = privilegeCategory;
+            _resultValue.privilegeType = privilegeType;
+            return _resultValue;
         }
     }
 }

@@ -196,12 +196,12 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
             return this;
         }
         public DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy build() {
-            final var o = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy();
-            o.name = name;
-            o.priority = priority;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy();
+            _resultValue.name = name;
+            _resultValue.priority = priority;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

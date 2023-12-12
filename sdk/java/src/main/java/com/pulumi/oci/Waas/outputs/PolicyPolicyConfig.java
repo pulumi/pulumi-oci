@@ -341,22 +341,22 @@ public final class PolicyPolicyConfig {
             return websocketPathPrefixes(List.of(websocketPathPrefixes));
         }
         public PolicyPolicyConfig build() {
-            final var o = new PolicyPolicyConfig();
-            o.certificateId = certificateId;
-            o.cipherGroup = cipherGroup;
-            o.clientAddressHeader = clientAddressHeader;
-            o.healthChecks = healthChecks;
-            o.isBehindCdn = isBehindCdn;
-            o.isCacheControlRespected = isCacheControlRespected;
-            o.isHttpsEnabled = isHttpsEnabled;
-            o.isHttpsForced = isHttpsForced;
-            o.isOriginCompressionEnabled = isOriginCompressionEnabled;
-            o.isResponseBufferingEnabled = isResponseBufferingEnabled;
-            o.isSniEnabled = isSniEnabled;
-            o.loadBalancingMethod = loadBalancingMethod;
-            o.tlsProtocols = tlsProtocols;
-            o.websocketPathPrefixes = websocketPathPrefixes;
-            return o;
+            final var _resultValue = new PolicyPolicyConfig();
+            _resultValue.certificateId = certificateId;
+            _resultValue.cipherGroup = cipherGroup;
+            _resultValue.clientAddressHeader = clientAddressHeader;
+            _resultValue.healthChecks = healthChecks;
+            _resultValue.isBehindCdn = isBehindCdn;
+            _resultValue.isCacheControlRespected = isCacheControlRespected;
+            _resultValue.isHttpsEnabled = isHttpsEnabled;
+            _resultValue.isHttpsForced = isHttpsForced;
+            _resultValue.isOriginCompressionEnabled = isOriginCompressionEnabled;
+            _resultValue.isResponseBufferingEnabled = isResponseBufferingEnabled;
+            _resultValue.isSniEnabled = isSniEnabled;
+            _resultValue.loadBalancingMethod = loadBalancingMethod;
+            _resultValue.tlsProtocols = tlsProtocols;
+            _resultValue.websocketPathPrefixes = websocketPathPrefixes;
+            return _resultValue;
         }
     }
 }

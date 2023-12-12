@@ -65,10 +65,10 @@ public final class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionIte
             return this;
         }
         public GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode build() {
-            final var o = new GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode();
-            o.hostname = hostname;
-            o.ip = ip;
-            return o;
+            final var _resultValue = new GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationManagementNode();
+            _resultValue.hostname = hostname;
+            _resultValue.ip = ip;
+            return _resultValue;
         }
     }
 }

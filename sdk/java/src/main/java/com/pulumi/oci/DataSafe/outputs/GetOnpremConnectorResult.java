@@ -268,21 +268,21 @@ public final class GetOnpremConnectorResult {
             return this;
         }
         public GetOnpremConnectorResult build() {
-            final var o = new GetOnpremConnectorResult();
-            o.availableVersion = availableVersion;
-            o.compartmentId = compartmentId;
-            o.createdVersion = createdVersion;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.onPremConnectorId = onPremConnectorId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetOnpremConnectorResult();
+            _resultValue.availableVersion = availableVersion;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdVersion = createdVersion;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.onPremConnectorId = onPremConnectorId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

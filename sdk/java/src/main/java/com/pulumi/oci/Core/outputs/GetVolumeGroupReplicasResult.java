@@ -163,15 +163,15 @@ public final class GetVolumeGroupReplicasResult {
             return volumeGroupReplicas(List.of(volumeGroupReplicas));
         }
         public GetVolumeGroupReplicasResult build() {
-            final var o = new GetVolumeGroupReplicasResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.volumeGroupReplicas = volumeGroupReplicas;
-            return o;
+            final var _resultValue = new GetVolumeGroupReplicasResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.volumeGroupReplicas = volumeGroupReplicas;
+            return _resultValue;
         }
     }
 }

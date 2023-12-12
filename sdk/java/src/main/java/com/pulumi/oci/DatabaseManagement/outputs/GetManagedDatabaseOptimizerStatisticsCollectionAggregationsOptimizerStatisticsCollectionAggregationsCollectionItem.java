@@ -237,19 +237,19 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOp
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem();
-            o.completed = completed;
-            o.failed = failed;
-            o.groupBy = groupBy;
-            o.inProgress = inProgress;
-            o.pending = pending;
-            o.skipped = skipped;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            o.timedOut = timedOut;
-            o.total = total;
-            o.unknown = unknown;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOptimizerStatisticsCollectionAggregationsCollectionItem();
+            _resultValue.completed = completed;
+            _resultValue.failed = failed;
+            _resultValue.groupBy = groupBy;
+            _resultValue.inProgress = inProgress;
+            _resultValue.pending = pending;
+            _resultValue.skipped = skipped;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            _resultValue.timedOut = timedOut;
+            _resultValue.total = total;
+            _resultValue.unknown = unknown;
+            return _resultValue;
         }
     }
 }

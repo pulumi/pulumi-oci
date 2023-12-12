@@ -203,18 +203,18 @@ public final class GetInstanceConfigurationsInstanceConfiguration {
             return this;
         }
         public GetInstanceConfigurationsInstanceConfiguration build() {
-            final var o = new GetInstanceConfigurationsInstanceConfiguration();
-            o.compartmentId = compartmentId;
-            o.deferredFields = deferredFields;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.instanceDetails = instanceDetails;
-            o.instanceId = instanceId;
-            o.source = source;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationsInstanceConfiguration();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.deferredFields = deferredFields;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.instanceDetails = instanceDetails;
+            _resultValue.instanceId = instanceId;
+            _resultValue.source = source;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

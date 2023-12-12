@@ -75,11 +75,11 @@ public final class GetManagedInstancesFilter {
             return values(List.of(values));
         }
         public GetManagedInstancesFilter build() {
-            final var o = new GetManagedInstancesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedInstancesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

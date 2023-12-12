@@ -67,11 +67,11 @@ public final class GetOpensearchVersionsFilter {
             return values(List.of(values));
         }
         public GetOpensearchVersionsFilter build() {
-            final var o = new GetOpensearchVersionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetOpensearchVersionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

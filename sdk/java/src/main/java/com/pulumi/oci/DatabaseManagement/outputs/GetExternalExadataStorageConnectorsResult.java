@@ -128,14 +128,14 @@ public final class GetExternalExadataStorageConnectorsResult {
             return this;
         }
         public GetExternalExadataStorageConnectorsResult build() {
-            final var o = new GetExternalExadataStorageConnectorsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.externalExadataInfrastructureId = externalExadataInfrastructureId;
-            o.externalExadataStorageConnectorCollections = externalExadataStorageConnectorCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageConnectorsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalExadataInfrastructureId = externalExadataInfrastructureId;
+            _resultValue.externalExadataStorageConnectorCollections = externalExadataStorageConnectorCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

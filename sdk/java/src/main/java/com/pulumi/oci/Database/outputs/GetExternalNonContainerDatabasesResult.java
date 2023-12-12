@@ -144,14 +144,14 @@ public final class GetExternalNonContainerDatabasesResult {
             return this;
         }
         public GetExternalNonContainerDatabasesResult build() {
-            final var o = new GetExternalNonContainerDatabasesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.externalNonContainerDatabases = externalNonContainerDatabases;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetExternalNonContainerDatabasesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalNonContainerDatabases = externalNonContainerDatabases;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

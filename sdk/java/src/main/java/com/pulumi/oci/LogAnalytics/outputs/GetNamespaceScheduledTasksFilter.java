@@ -67,11 +67,11 @@ public final class GetNamespaceScheduledTasksFilter {
             return values(List.of(values));
         }
         public GetNamespaceScheduledTasksFilter build() {
-            final var o = new GetNamespaceScheduledTasksFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetNamespaceScheduledTasksFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

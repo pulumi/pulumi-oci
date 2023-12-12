@@ -87,11 +87,11 @@ public final class AssetComputeNvdimm {
             return this;
         }
         public AssetComputeNvdimm build() {
-            final var o = new AssetComputeNvdimm();
-            o.controllerKey = controllerKey;
-            o.label = label;
-            o.unitNumber = unitNumber;
-            return o;
+            final var _resultValue = new AssetComputeNvdimm();
+            _resultValue.controllerKey = controllerKey;
+            _resultValue.label = label;
+            _resultValue.unitNumber = unitNumber;
+            return _resultValue;
         }
     }
 }

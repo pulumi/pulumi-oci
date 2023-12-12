@@ -66,10 +66,10 @@ public final class GetApiDeploymentSpecificationRequestPolicyRateLimiting {
             return this;
         }
         public GetApiDeploymentSpecificationRequestPolicyRateLimiting build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyRateLimiting();
-            o.rateInRequestsPerSecond = rateInRequestsPerSecond;
-            o.rateKey = rateKey;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyRateLimiting();
+            _resultValue.rateInRequestsPerSecond = rateInRequestsPerSecond;
+            _resultValue.rateKey = rateKey;
+            return _resultValue;
         }
     }
 }

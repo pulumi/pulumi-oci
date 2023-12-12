@@ -120,13 +120,13 @@ public final class GetBdsInstancesBdsInstanceWorkerNode {
             return this;
         }
         public GetBdsInstancesBdsInstanceWorkerNode build() {
-            final var o = new GetBdsInstancesBdsInstanceWorkerNode();
-            o.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
-            o.numberOfNodes = numberOfNodes;
-            o.shape = shape;
-            o.shapeConfigs = shapeConfigs;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetBdsInstancesBdsInstanceWorkerNode();
+            _resultValue.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
+            _resultValue.numberOfNodes = numberOfNodes;
+            _resultValue.shape = shape;
+            _resultValue.shapeConfigs = shapeConfigs;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

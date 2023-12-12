@@ -65,10 +65,10 @@ public final class GetClustersClusterOptionKubernetesNetworkConfig {
             return this;
         }
         public GetClustersClusterOptionKubernetesNetworkConfig build() {
-            final var o = new GetClustersClusterOptionKubernetesNetworkConfig();
-            o.podsCidr = podsCidr;
-            o.servicesCidr = servicesCidr;
-            return o;
+            final var _resultValue = new GetClustersClusterOptionKubernetesNetworkConfig();
+            _resultValue.podsCidr = podsCidr;
+            _resultValue.servicesCidr = servicesCidr;
+            return _resultValue;
         }
     }
 }

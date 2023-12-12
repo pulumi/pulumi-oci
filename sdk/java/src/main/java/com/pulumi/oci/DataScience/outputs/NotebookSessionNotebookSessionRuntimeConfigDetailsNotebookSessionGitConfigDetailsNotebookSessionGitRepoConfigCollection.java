@@ -46,9 +46,9 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSes
             return this;
         }
         public NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection build() {
-            final var o = new NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection();
-            o.url = url;
-            return o;
+            final var _resultValue = new NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection();
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

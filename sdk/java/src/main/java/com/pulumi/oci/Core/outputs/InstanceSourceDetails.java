@@ -148,14 +148,14 @@ public final class InstanceSourceDetails {
             return this;
         }
         public InstanceSourceDetails build() {
-            final var o = new InstanceSourceDetails();
-            o.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
-            o.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
-            o.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
-            o.kmsKeyId = kmsKeyId;
-            o.sourceId = sourceId;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new InstanceSourceDetails();
+            _resultValue.bootVolumeSizeInGbs = bootVolumeSizeInGbs;
+            _resultValue.bootVolumeVpusPerGb = bootVolumeVpusPerGb;
+            _resultValue.instanceSourceImageFilterDetails = instanceSourceImageFilterDetails;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.sourceId = sourceId;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

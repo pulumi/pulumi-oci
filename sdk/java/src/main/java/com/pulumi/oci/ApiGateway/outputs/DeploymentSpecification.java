@@ -92,11 +92,11 @@ public final class DeploymentSpecification {
             return routes(List.of(routes));
         }
         public DeploymentSpecification build() {
-            final var o = new DeploymentSpecification();
-            o.loggingPolicies = loggingPolicies;
-            o.requestPolicies = requestPolicies;
-            o.routes = routes;
-            return o;
+            final var _resultValue = new DeploymentSpecification();
+            _resultValue.loggingPolicies = loggingPolicies;
+            _resultValue.requestPolicies = requestPolicies;
+            _resultValue.routes = routes;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetJavaReleaseMosPatch {
             return this;
         }
         public GetJavaReleaseMosPatch build() {
-            final var o = new GetJavaReleaseMosPatch();
-            o.displayName = displayName;
-            o.patchUrl = patchUrl;
-            return o;
+            final var _resultValue = new GetJavaReleaseMosPatch();
+            _resultValue.displayName = displayName;
+            _resultValue.patchUrl = patchUrl;
+            return _resultValue;
         }
     }
 }

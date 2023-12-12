@@ -179,16 +179,16 @@ public final class GetAppCatalogListingsAppCatalogListing {
             return this;
         }
         public GetAppCatalogListingsAppCatalogListing build() {
-            final var o = new GetAppCatalogListingsAppCatalogListing();
-            o.contactUrl = contactUrl;
-            o.description = description;
-            o.displayName = displayName;
-            o.listingId = listingId;
-            o.publisherLogoUrl = publisherLogoUrl;
-            o.publisherName = publisherName;
-            o.summary = summary;
-            o.timePublished = timePublished;
-            return o;
+            final var _resultValue = new GetAppCatalogListingsAppCatalogListing();
+            _resultValue.contactUrl = contactUrl;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.listingId = listingId;
+            _resultValue.publisherLogoUrl = publisherLogoUrl;
+            _resultValue.publisherName = publisherName;
+            _resultValue.summary = summary;
+            _resultValue.timePublished = timePublished;
+            return _resultValue;
         }
     }
 }

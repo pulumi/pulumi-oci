@@ -265,20 +265,20 @@ public final class GetRulesRule {
             return this;
         }
         public GetRulesRule build() {
-            final var o = new GetRulesRule();
-            o.actions = actions;
-            o.compartmentId = compartmentId;
-            o.condition = condition;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.lifecycleMessage = lifecycleMessage;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetRulesRule();
+            _resultValue.actions = actions;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.condition = condition;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.lifecycleMessage = lifecycleMessage;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

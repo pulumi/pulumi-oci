@@ -50,9 +50,9 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetad
             return objectTypeCountLists(List.of(objectTypeCountLists));
         }
         public GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic build() {
-            final var o = new GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic();
-            o.objectTypeCountLists = objectTypeCountLists;
-            return o;
+            final var _resultValue = new GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataCountStatistic();
+            _resultValue.objectTypeCountLists = objectTypeCountLists;
+            return _resultValue;
         }
     }
 }

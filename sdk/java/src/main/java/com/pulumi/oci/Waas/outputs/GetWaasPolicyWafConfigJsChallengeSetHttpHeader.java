@@ -65,10 +65,10 @@ public final class GetWaasPolicyWafConfigJsChallengeSetHttpHeader {
             return this;
         }
         public GetWaasPolicyWafConfigJsChallengeSetHttpHeader build() {
-            final var o = new GetWaasPolicyWafConfigJsChallengeSetHttpHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetWaasPolicyWafConfigJsChallengeSetHttpHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerb
             return realmUsers(List.of(realmUsers));
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser();
-            o.realmUsers = realmUsers;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser();
+            _resultValue.realmUsers = realmUsers;
+            return _resultValue;
         }
     }
 }

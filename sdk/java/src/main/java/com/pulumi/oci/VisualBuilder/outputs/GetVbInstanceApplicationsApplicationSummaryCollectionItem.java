@@ -103,12 +103,12 @@ public final class GetVbInstanceApplicationsApplicationSummaryCollectionItem {
             return this;
         }
         public GetVbInstanceApplicationsApplicationSummaryCollectionItem build() {
-            final var o = new GetVbInstanceApplicationsApplicationSummaryCollectionItem();
-            o.id = id;
-            o.projectId = projectId;
-            o.state = state;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetVbInstanceApplicationsApplicationSummaryCollectionItem();
+            _resultValue.id = id;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

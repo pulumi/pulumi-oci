@@ -66,10 +66,10 @@ public final class GetDataSourcesDataSourceCollectionItemDataSourceDetailLogging
             return this;
         }
         public GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail build() {
-            final var o = new GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail();
-            o.keyEntitiesCount = keyEntitiesCount;
-            o.loggingQueryType = loggingQueryType;
-            return o;
+            final var _resultValue = new GetDataSourcesDataSourceCollectionItemDataSourceDetailLoggingQueryDetail();
+            _resultValue.keyEntitiesCount = keyEntitiesCount;
+            _resultValue.loggingQueryType = loggingQueryType;
+            return _resultValue;
         }
     }
 }

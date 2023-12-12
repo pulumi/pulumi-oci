@@ -158,15 +158,15 @@ public final class GetOperationsInsightsWarehouseUsersResult {
             return states(List.of(states));
         }
         public GetOperationsInsightsWarehouseUsersResult build() {
-            final var o = new GetOperationsInsightsWarehouseUsersResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-            o.operationsInsightsWarehouseUserSummaryCollections = operationsInsightsWarehouseUserSummaryCollections;
-            o.states = states;
-            return o;
+            final var _resultValue = new GetOperationsInsightsWarehouseUsersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            _resultValue.operationsInsightsWarehouseUserSummaryCollections = operationsInsightsWarehouseUserSummaryCollections;
+            _resultValue.states = states;
+            return _resultValue;
         }
     }
 }

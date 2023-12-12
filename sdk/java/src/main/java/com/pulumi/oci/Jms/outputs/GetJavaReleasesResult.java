@@ -174,16 +174,16 @@ public final class GetJavaReleasesResult {
             return this;
         }
         public GetJavaReleasesResult build() {
-            final var o = new GetJavaReleasesResult();
-            o.familyVersion = familyVersion;
-            o.filters = filters;
-            o.id = id;
-            o.javaReleaseCollections = javaReleaseCollections;
-            o.jreSecurityStatus = jreSecurityStatus;
-            o.licenseType = licenseType;
-            o.releaseType = releaseType;
-            o.releaseVersion = releaseVersion;
-            return o;
+            final var _resultValue = new GetJavaReleasesResult();
+            _resultValue.familyVersion = familyVersion;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.javaReleaseCollections = javaReleaseCollections;
+            _resultValue.jreSecurityStatus = jreSecurityStatus;
+            _resultValue.licenseType = licenseType;
+            _resultValue.releaseType = releaseType;
+            _resultValue.releaseVersion = releaseVersion;
+            return _resultValue;
         }
     }
 }

@@ -224,13 +224,13 @@ public final class DomainsNetworkPerimeterIdcsCreatedBy {
             return this;
         }
         public DomainsNetworkPerimeterIdcsCreatedBy build() {
-            final var o = new DomainsNetworkPerimeterIdcsCreatedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsNetworkPerimeterIdcsCreatedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -399,21 +399,21 @@ public final class RuleSetItem {
             return this;
         }
         public RuleSetItem build() {
-            final var o = new RuleSetItem();
-            o.action = action;
-            o.allowedMethods = allowedMethods;
-            o.areInvalidCharactersAllowed = areInvalidCharactersAllowed;
-            o.conditions = conditions;
-            o.description = description;
-            o.header = header;
-            o.httpLargeHeaderSizeInKb = httpLargeHeaderSizeInKb;
-            o.prefix = prefix;
-            o.redirectUri = redirectUri;
-            o.responseCode = responseCode;
-            o.statusCode = statusCode;
-            o.suffix = suffix;
-            o.value = value;
-            return o;
+            final var _resultValue = new RuleSetItem();
+            _resultValue.action = action;
+            _resultValue.allowedMethods = allowedMethods;
+            _resultValue.areInvalidCharactersAllowed = areInvalidCharactersAllowed;
+            _resultValue.conditions = conditions;
+            _resultValue.description = description;
+            _resultValue.header = header;
+            _resultValue.httpLargeHeaderSizeInKb = httpLargeHeaderSizeInKb;
+            _resultValue.prefix = prefix;
+            _resultValue.redirectUri = redirectUri;
+            _resultValue.responseCode = responseCode;
+            _resultValue.statusCode = statusCode;
+            _resultValue.suffix = suffix;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

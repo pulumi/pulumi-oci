@@ -123,13 +123,13 @@ public final class GetManagementAgentCountItemDimension {
             return this;
         }
         public GetManagementAgentCountItemDimension build() {
-            final var o = new GetManagementAgentCountItemDimension();
-            o.availabilityStatus = availabilityStatus;
-            o.hasPlugins = hasPlugins;
-            o.installType = installType;
-            o.platformType = platformType;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetManagementAgentCountItemDimension();
+            _resultValue.availabilityStatus = availabilityStatus;
+            _resultValue.hasPlugins = hasPlugins;
+            _resultValue.installType = installType;
+            _resultValue.platformType = platformType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

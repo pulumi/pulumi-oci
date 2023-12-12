@@ -383,25 +383,25 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
             return verifyTexts(List.of(verifyTexts));
         }
         public GetMonitorsMonitorCollectionItemConfiguration build() {
-            final var o = new GetMonitorsMonitorCollectionItemConfiguration();
-            o.clientCertificateDetails = clientCertificateDetails;
-            o.configType = configType;
-            o.dnsConfigurations = dnsConfigurations;
-            o.isCertificateValidationEnabled = isCertificateValidationEnabled;
-            o.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
-            o.isFailureRetried = isFailureRetried;
-            o.isRedirectionEnabled = isRedirectionEnabled;
-            o.networkConfigurations = networkConfigurations;
-            o.reqAuthenticationDetails = reqAuthenticationDetails;
-            o.reqAuthenticationScheme = reqAuthenticationScheme;
-            o.requestHeaders = requestHeaders;
-            o.requestMethod = requestMethod;
-            o.requestPostBody = requestPostBody;
-            o.requestQueryParams = requestQueryParams;
-            o.verifyResponseCodes = verifyResponseCodes;
-            o.verifyResponseContent = verifyResponseContent;
-            o.verifyTexts = verifyTexts;
-            return o;
+            final var _resultValue = new GetMonitorsMonitorCollectionItemConfiguration();
+            _resultValue.clientCertificateDetails = clientCertificateDetails;
+            _resultValue.configType = configType;
+            _resultValue.dnsConfigurations = dnsConfigurations;
+            _resultValue.isCertificateValidationEnabled = isCertificateValidationEnabled;
+            _resultValue.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
+            _resultValue.isFailureRetried = isFailureRetried;
+            _resultValue.isRedirectionEnabled = isRedirectionEnabled;
+            _resultValue.networkConfigurations = networkConfigurations;
+            _resultValue.reqAuthenticationDetails = reqAuthenticationDetails;
+            _resultValue.reqAuthenticationScheme = reqAuthenticationScheme;
+            _resultValue.requestHeaders = requestHeaders;
+            _resultValue.requestMethod = requestMethod;
+            _resultValue.requestPostBody = requestPostBody;
+            _resultValue.requestQueryParams = requestQueryParams;
+            _resultValue.verifyResponseCodes = verifyResponseCodes;
+            _resultValue.verifyResponseContent = verifyResponseContent;
+            _resultValue.verifyTexts = verifyTexts;
+            return _resultValue;
         }
     }
 }

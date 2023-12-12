@@ -253,19 +253,19 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationResult build() {
-            final var o = new GetFleetAdvancedFeatureConfigurationResult();
-            o.advancedUsageTrackings = advancedUsageTrackings;
-            o.analyticBucketName = analyticBucketName;
-            o.analyticNamespace = analyticNamespace;
-            o.cryptoEventAnalyses = cryptoEventAnalyses;
-            o.fleetId = fleetId;
-            o.id = id;
-            o.javaMigrationAnalyses = javaMigrationAnalyses;
-            o.jfrRecordings = jfrRecordings;
-            o.lcms = lcms;
-            o.performanceTuningAnalyses = performanceTuningAnalyses;
-            o.timeLastModified = timeLastModified;
-            return o;
+            final var _resultValue = new GetFleetAdvancedFeatureConfigurationResult();
+            _resultValue.advancedUsageTrackings = advancedUsageTrackings;
+            _resultValue.analyticBucketName = analyticBucketName;
+            _resultValue.analyticNamespace = analyticNamespace;
+            _resultValue.cryptoEventAnalyses = cryptoEventAnalyses;
+            _resultValue.fleetId = fleetId;
+            _resultValue.id = id;
+            _resultValue.javaMigrationAnalyses = javaMigrationAnalyses;
+            _resultValue.jfrRecordings = jfrRecordings;
+            _resultValue.lcms = lcms;
+            _resultValue.performanceTuningAnalyses = performanceTuningAnalyses;
+            _resultValue.timeLastModified = timeLastModified;
+            return _resultValue;
         }
     }
 }

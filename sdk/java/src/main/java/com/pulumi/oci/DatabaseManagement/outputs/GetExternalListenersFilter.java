@@ -67,11 +67,11 @@ public final class GetExternalListenersFilter {
             return values(List.of(values));
         }
         public GetExternalListenersFilter build() {
-            final var o = new GetExternalListenersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExternalListenersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

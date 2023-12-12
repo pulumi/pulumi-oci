@@ -163,15 +163,15 @@ public final class GetCloudVmClustersResult {
             return this;
         }
         public GetCloudVmClustersResult build() {
-            final var o = new GetCloudVmClustersResult();
-            o.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
-            o.cloudVmClusters = cloudVmClusters;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCloudVmClustersResult();
+            _resultValue.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
+            _resultValue.cloudVmClusters = cloudVmClusters;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

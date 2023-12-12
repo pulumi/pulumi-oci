@@ -50,9 +50,9 @@ public final class RuleActions {
             return actions(List.of(actions));
         }
         public RuleActions build() {
-            final var o = new RuleActions();
-            o.actions = actions;
-            return o;
+            final var _resultValue = new RuleActions();
+            _resultValue.actions = actions;
+            return _resultValue;
         }
     }
 }

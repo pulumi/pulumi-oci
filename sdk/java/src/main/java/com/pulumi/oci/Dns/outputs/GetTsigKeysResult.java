@@ -144,14 +144,14 @@ public final class GetTsigKeysResult {
             return tsigKeys(List.of(tsigKeys));
         }
         public GetTsigKeysResult build() {
-            final var o = new GetTsigKeysResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            o.tsigKeys = tsigKeys;
-            return o;
+            final var _resultValue = new GetTsigKeysResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.tsigKeys = tsigKeys;
+            return _resultValue;
         }
     }
 }

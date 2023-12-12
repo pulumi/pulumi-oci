@@ -122,13 +122,13 @@ public final class GetInstancePoolInstancesInstanceLoadBalancerBackend {
             return this;
         }
         public GetInstancePoolInstancesInstanceLoadBalancerBackend build() {
-            final var o = new GetInstancePoolInstancesInstanceLoadBalancerBackend();
-            o.backendHealthStatus = backendHealthStatus;
-            o.backendName = backendName;
-            o.backendSetName = backendSetName;
-            o.loadBalancerId = loadBalancerId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetInstancePoolInstancesInstanceLoadBalancerBackend();
+            _resultValue.backendHealthStatus = backendHealthStatus;
+            _resultValue.backendName = backendName;
+            _resultValue.backendSetName = backendSetName;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

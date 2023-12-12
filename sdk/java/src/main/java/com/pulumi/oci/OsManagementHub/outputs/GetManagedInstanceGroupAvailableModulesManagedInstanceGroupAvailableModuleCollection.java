@@ -50,9 +50,9 @@ public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAv
             return items(List.of(items));
         }
         public GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection build() {
-            final var o = new GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

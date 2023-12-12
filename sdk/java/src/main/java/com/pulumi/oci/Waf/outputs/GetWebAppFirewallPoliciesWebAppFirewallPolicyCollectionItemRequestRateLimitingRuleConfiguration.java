@@ -84,11 +84,11 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRe
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration build() {
-            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration();
-            o.actionDurationInSeconds = actionDurationInSeconds;
-            o.periodInSeconds = periodInSeconds;
-            o.requestsLimit = requestsLimit;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimitingRuleConfiguration();
+            _resultValue.actionDurationInSeconds = actionDurationInSeconds;
+            _resultValue.periodInSeconds = periodInSeconds;
+            _resultValue.requestsLimit = requestsLimit;
+            return _resultValue;
         }
     }
 }

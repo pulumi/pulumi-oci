@@ -136,14 +136,14 @@ public final class GetServiceCatalogsResult {
             return this;
         }
         public GetServiceCatalogsResult build() {
-            final var o = new GetServiceCatalogsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.serviceCatalogCollections = serviceCatalogCollections;
-            o.serviceCatalogId = serviceCatalogId;
-            return o;
+            final var _resultValue = new GetServiceCatalogsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.serviceCatalogCollections = serviceCatalogCollections;
+            _resultValue.serviceCatalogId = serviceCatalogId;
+            return _resultValue;
         }
     }
 }

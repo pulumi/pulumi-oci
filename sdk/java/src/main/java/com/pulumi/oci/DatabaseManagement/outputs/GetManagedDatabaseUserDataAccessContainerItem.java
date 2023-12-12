@@ -46,9 +46,9 @@ public final class GetManagedDatabaseUserDataAccessContainerItem {
             return this;
         }
         public GetManagedDatabaseUserDataAccessContainerItem build() {
-            final var o = new GetManagedDatabaseUserDataAccessContainerItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserDataAccessContainerItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

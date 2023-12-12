@@ -50,9 +50,9 @@ public final class GetAwrHubAwrSnapshotsAwrSnapshotCollection {
             return items(List.of(items));
         }
         public GetAwrHubAwrSnapshotsAwrSnapshotCollection build() {
-            final var o = new GetAwrHubAwrSnapshotsAwrSnapshotCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAwrHubAwrSnapshotsAwrSnapshotCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

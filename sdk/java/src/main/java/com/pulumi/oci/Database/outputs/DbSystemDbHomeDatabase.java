@@ -526,34 +526,34 @@ public final class DbSystemDbHomeDatabase {
             return this;
         }
         public DbSystemDbHomeDatabase build() {
-            final var o = new DbSystemDbHomeDatabase();
-            o.adminPassword = adminPassword;
-            o.backupId = backupId;
-            o.backupTdePassword = backupTdePassword;
-            o.characterSet = characterSet;
-            o.connectionStrings = connectionStrings;
-            o.databaseId = databaseId;
-            o.databaseSoftwareImageId = databaseSoftwareImageId;
-            o.dbBackupConfig = dbBackupConfig;
-            o.dbDomain = dbDomain;
-            o.dbName = dbName;
-            o.dbUniqueName = dbUniqueName;
-            o.dbWorkload = dbWorkload;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.kmsKeyId = kmsKeyId;
-            o.kmsKeyVersionId = kmsKeyVersionId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.ncharacterSet = ncharacterSet;
-            o.pdbName = pdbName;
-            o.pluggableDatabases = pluggableDatabases;
-            o.state = state;
-            o.tdeWalletPassword = tdeWalletPassword;
-            o.timeCreated = timeCreated;
-            o.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new DbSystemDbHomeDatabase();
+            _resultValue.adminPassword = adminPassword;
+            _resultValue.backupId = backupId;
+            _resultValue.backupTdePassword = backupTdePassword;
+            _resultValue.characterSet = characterSet;
+            _resultValue.connectionStrings = connectionStrings;
+            _resultValue.databaseId = databaseId;
+            _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
+            _resultValue.dbBackupConfig = dbBackupConfig;
+            _resultValue.dbDomain = dbDomain;
+            _resultValue.dbName = dbName;
+            _resultValue.dbUniqueName = dbUniqueName;
+            _resultValue.dbWorkload = dbWorkload;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.kmsKeyVersionId = kmsKeyVersionId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.ncharacterSet = ncharacterSet;
+            _resultValue.pdbName = pdbName;
+            _resultValue.pluggableDatabases = pluggableDatabases;
+            _resultValue.state = state;
+            _resultValue.tdeWalletPassword = tdeWalletPassword;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

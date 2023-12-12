@@ -269,21 +269,21 @@ public final class GetStreamResult {
             return this;
         }
         public GetStreamResult build() {
-            final var o = new GetStreamResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleStateDetails = lifecycleStateDetails;
-            o.messagesEndpoint = messagesEndpoint;
-            o.name = name;
-            o.partitions = partitions;
-            o.retentionInHours = retentionInHours;
-            o.state = state;
-            o.streamId = streamId;
-            o.streamPoolId = streamPoolId;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetStreamResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleStateDetails = lifecycleStateDetails;
+            _resultValue.messagesEndpoint = messagesEndpoint;
+            _resultValue.name = name;
+            _resultValue.partitions = partitions;
+            _resultValue.retentionInHours = retentionInHours;
+            _resultValue.state = state;
+            _resultValue.streamId = streamId;
+            _resultValue.streamPoolId = streamPoolId;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

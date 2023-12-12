@@ -84,11 +84,11 @@ public final class GetSoftwareSourceSoftwarePackageDependency {
             return this;
         }
         public GetSoftwareSourceSoftwarePackageDependency build() {
-            final var o = new GetSoftwareSourceSoftwarePackageDependency();
-            o.dependency = dependency;
-            o.dependencyModifier = dependencyModifier;
-            o.dependencyType = dependencyType;
-            return o;
+            final var _resultValue = new GetSoftwareSourceSoftwarePackageDependency();
+            _resultValue.dependency = dependency;
+            _resultValue.dependencyModifier = dependencyModifier;
+            _resultValue.dependencyType = dependencyType;
+            return _resultValue;
         }
     }
 }

@@ -92,11 +92,11 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationDestinationOp
             return this;
         }
         public GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource build() {
-            final var o = new GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource();
-            o.metrics = metrics;
-            o.recordInputs = recordInputs;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource();
+            _resultValue.metrics = metrics;
+            _resultValue.recordInputs = recordInputs;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

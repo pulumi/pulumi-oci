@@ -48,9 +48,9 @@ public final class VirtualDeploymentAccessLogging {
             return this;
         }
         public VirtualDeploymentAccessLogging build() {
-            final var o = new VirtualDeploymentAccessLogging();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new VirtualDeploymentAccessLogging();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

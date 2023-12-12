@@ -65,10 +65,10 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRu
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine();
-            o.comment = comment;
-            o.operation = operation;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRuleFindingRecommendationExampleLine();
+            _resultValue.comment = comment;
+            _resultValue.operation = operation;
+            return _resultValue;
         }
     }
 }

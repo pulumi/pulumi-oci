@@ -67,11 +67,11 @@ public final class GetLifecycleEnvironmentsFilter {
             return values(List.of(values));
         }
         public GetLifecycleEnvironmentsFilter build() {
-            final var o = new GetLifecycleEnvironmentsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetLifecycleEnvironmentsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -86,11 +86,11 @@ public final class VolumeBlockVolumeReplica {
             return this;
         }
         public VolumeBlockVolumeReplica build() {
-            final var o = new VolumeBlockVolumeReplica();
-            o.availabilityDomain = availabilityDomain;
-            o.blockVolumeReplicaId = blockVolumeReplicaId;
-            o.displayName = displayName;
-            return o;
+            final var _resultValue = new VolumeBlockVolumeReplica();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.blockVolumeReplicaId = blockVolumeReplicaId;
+            _resultValue.displayName = displayName;
+            return _resultValue;
         }
     }
 }

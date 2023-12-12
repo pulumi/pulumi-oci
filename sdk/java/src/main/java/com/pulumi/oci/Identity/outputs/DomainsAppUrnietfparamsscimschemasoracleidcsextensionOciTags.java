@@ -153,11 +153,11 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags 
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.tagSlug = tagSlug;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTags();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.tagSlug = tagSlug;
+            return _resultValue;
         }
     }
 }

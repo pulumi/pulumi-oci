@@ -42,9 +42,9 @@ public final class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection
             return items(List.of(items));
         }
         public GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection build() {
-            final var o = new GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

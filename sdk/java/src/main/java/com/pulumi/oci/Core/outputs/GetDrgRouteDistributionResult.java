@@ -211,18 +211,18 @@ public final class GetDrgRouteDistributionResult {
             return this;
         }
         public GetDrgRouteDistributionResult build() {
-            final var o = new GetDrgRouteDistributionResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.distributionType = distributionType;
-            o.drgId = drgId;
-            o.drgRouteDistributionId = drgRouteDistributionId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetDrgRouteDistributionResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.distributionType = distributionType;
+            _resultValue.drgId = drgId;
+            _resultValue.drgRouteDistributionId = drgRouteDistributionId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

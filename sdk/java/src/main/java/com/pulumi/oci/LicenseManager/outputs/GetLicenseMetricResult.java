@@ -148,15 +148,15 @@ public final class GetLicenseMetricResult {
             return this;
         }
         public GetLicenseMetricResult build() {
-            final var o = new GetLicenseMetricResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
-            o.licenseRecordExpiringSoonCount = licenseRecordExpiringSoonCount;
-            o.totalByolInstanceCount = totalByolInstanceCount;
-            o.totalLicenseIncludedInstanceCount = totalLicenseIncludedInstanceCount;
-            o.totalProductLicenseCount = totalProductLicenseCount;
-            return o;
+            final var _resultValue = new GetLicenseMetricResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.isCompartmentIdInSubtree = isCompartmentIdInSubtree;
+            _resultValue.licenseRecordExpiringSoonCount = licenseRecordExpiringSoonCount;
+            _resultValue.totalByolInstanceCount = totalByolInstanceCount;
+            _resultValue.totalLicenseIncludedInstanceCount = totalLicenseIncludedInstanceCount;
+            _resultValue.totalProductLicenseCount = totalProductLicenseCount;
+            return _resultValue;
         }
     }
 }

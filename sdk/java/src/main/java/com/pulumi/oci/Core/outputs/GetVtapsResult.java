@@ -232,19 +232,19 @@ public final class GetVtapsResult {
             return vtaps(List.of(vtaps));
         }
         public GetVtapsResult build() {
-            final var o = new GetVtapsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isVtapEnabled = isVtapEnabled;
-            o.source = source;
-            o.state = state;
-            o.targetId = targetId;
-            o.targetIp = targetIp;
-            o.vcnId = vcnId;
-            o.vtaps = vtaps;
-            return o;
+            final var _resultValue = new GetVtapsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isVtapEnabled = isVtapEnabled;
+            _resultValue.source = source;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            _resultValue.targetIp = targetIp;
+            _resultValue.vcnId = vcnId;
+            _resultValue.vtaps = vtaps;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetExternalNonContainerDatabasesExternalNonContainerDatabaseO
             return this;
         }
         public GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig build() {
-            final var o = new GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig();
-            o.operationsInsightsConnectorId = operationsInsightsConnectorId;
-            o.operationsInsightsStatus = operationsInsightsStatus;
-            return o;
+            final var _resultValue = new GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig();
+            _resultValue.operationsInsightsConnectorId = operationsInsightsConnectorId;
+            _resultValue.operationsInsightsStatus = operationsInsightsStatus;
+            return _resultValue;
         }
     }
 }

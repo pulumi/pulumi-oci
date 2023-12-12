@@ -161,15 +161,15 @@ public final class GetManagedPreferredCredentialsPreferredCredentialCollectionIt
             return this;
         }
         public GetManagedPreferredCredentialsPreferredCredentialCollectionItem build() {
-            final var o = new GetManagedPreferredCredentialsPreferredCredentialCollectionItem();
-            o.credentialName = credentialName;
-            o.isAccessible = isAccessible;
-            o.passwordSecretId = passwordSecretId;
-            o.role = role;
-            o.status = status;
-            o.type = type;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new GetManagedPreferredCredentialsPreferredCredentialCollectionItem();
+            _resultValue.credentialName = credentialName;
+            _resultValue.isAccessible = isAccessible;
+            _resultValue.passwordSecretId = passwordSecretId;
+            _resultValue.role = role;
+            _resultValue.status = status;
+            _resultValue.type = type;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

@@ -259,20 +259,20 @@ public final class GetManagedDatabaseSqlPlanBaselineConfigurationResult {
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselineConfigurationResult build() {
-            final var o = new GetManagedDatabaseSqlPlanBaselineConfigurationResult();
-            o.autoCaptureFilters = autoCaptureFilters;
-            o.autoSpmEvolveTaskParameters = autoSpmEvolveTaskParameters;
-            o.id = id;
-            o.isAutoSpmEvolveTaskEnabled = isAutoSpmEvolveTaskEnabled;
-            o.isAutomaticInitialPlanCaptureEnabled = isAutomaticInitialPlanCaptureEnabled;
-            o.isHighFrequencyAutoSpmEvolveTaskEnabled = isHighFrequencyAutoSpmEvolveTaskEnabled;
-            o.isSqlPlanBaselinesUsageEnabled = isSqlPlanBaselinesUsageEnabled;
-            o.managedDatabaseId = managedDatabaseId;
-            o.planRetentionWeeks = planRetentionWeeks;
-            o.spaceBudgetMb = spaceBudgetMb;
-            o.spaceBudgetPercent = spaceBudgetPercent;
-            o.spaceUsedMb = spaceUsedMb;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlPlanBaselineConfigurationResult();
+            _resultValue.autoCaptureFilters = autoCaptureFilters;
+            _resultValue.autoSpmEvolveTaskParameters = autoSpmEvolveTaskParameters;
+            _resultValue.id = id;
+            _resultValue.isAutoSpmEvolveTaskEnabled = isAutoSpmEvolveTaskEnabled;
+            _resultValue.isAutomaticInitialPlanCaptureEnabled = isAutomaticInitialPlanCaptureEnabled;
+            _resultValue.isHighFrequencyAutoSpmEvolveTaskEnabled = isHighFrequencyAutoSpmEvolveTaskEnabled;
+            _resultValue.isSqlPlanBaselinesUsageEnabled = isSqlPlanBaselinesUsageEnabled;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.planRetentionWeeks = planRetentionWeeks;
+            _resultValue.spaceBudgetMb = spaceBudgetMb;
+            _resultValue.spaceBudgetPercent = spaceBudgetPercent;
+            _resultValue.spaceUsedMb = spaceUsedMb;
+            return _resultValue;
         }
     }
 }

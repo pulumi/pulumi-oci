@@ -236,19 +236,19 @@ public final class GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMet
             return this;
         }
         public GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem build() {
-            final var o = new GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem();
-            o.computeCapacityTopologyId = computeCapacityTopologyId;
-            o.computeHpcIslandId = computeHpcIslandId;
-            o.computeLocalBlockId = computeLocalBlockId;
-            o.computeNetworkBlockId = computeNetworkBlockId;
-            o.id = id;
-            o.instanceId = instanceId;
-            o.instanceShape = instanceShape;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollectionItem();
+            _resultValue.computeCapacityTopologyId = computeCapacityTopologyId;
+            _resultValue.computeHpcIslandId = computeHpcIslandId;
+            _resultValue.computeLocalBlockId = computeLocalBlockId;
+            _resultValue.computeNetworkBlockId = computeNetworkBlockId;
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            _resultValue.instanceShape = instanceShape;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

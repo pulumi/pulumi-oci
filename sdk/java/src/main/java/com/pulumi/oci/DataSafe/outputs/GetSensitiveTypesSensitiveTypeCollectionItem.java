@@ -390,27 +390,27 @@ public final class GetSensitiveTypesSensitiveTypeCollectionItem {
             return this;
         }
         public GetSensitiveTypesSensitiveTypeCollectionItem build() {
-            final var o = new GetSensitiveTypesSensitiveTypeCollectionItem();
-            o.commentPattern = commentPattern;
-            o.compartmentId = compartmentId;
-            o.dataPattern = dataPattern;
-            o.defaultMaskingFormatId = defaultMaskingFormatId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.entityType = entityType;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.namePattern = namePattern;
-            o.parentCategoryId = parentCategoryId;
-            o.searchType = searchType;
-            o.shortName = shortName;
-            o.source = source;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetSensitiveTypesSensitiveTypeCollectionItem();
+            _resultValue.commentPattern = commentPattern;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dataPattern = dataPattern;
+            _resultValue.defaultMaskingFormatId = defaultMaskingFormatId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.entityType = entityType;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.namePattern = namePattern;
+            _resultValue.parentCategoryId = parentCategoryId;
+            _resultValue.searchType = searchType;
+            _resultValue.shortName = shortName;
+            _resultValue.source = source;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

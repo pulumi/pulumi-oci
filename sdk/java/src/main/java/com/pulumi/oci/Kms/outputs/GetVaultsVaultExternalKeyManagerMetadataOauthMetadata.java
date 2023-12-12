@@ -76,11 +76,11 @@ public final class GetVaultsVaultExternalKeyManagerMetadataOauthMetadata {
             return this;
         }
         public GetVaultsVaultExternalKeyManagerMetadataOauthMetadata build() {
-            final var o = new GetVaultsVaultExternalKeyManagerMetadataOauthMetadata();
-            o.clientAppId = clientAppId;
-            o.clientAppSecret = clientAppSecret;
-            o.idcsAccountNameUrl = idcsAccountNameUrl;
-            return o;
+            final var _resultValue = new GetVaultsVaultExternalKeyManagerMetadataOauthMetadata();
+            _resultValue.clientAppId = clientAppId;
+            _resultValue.clientAppSecret = clientAppSecret;
+            _resultValue.idcsAccountNameUrl = idcsAccountNameUrl;
+            return _resultValue;
         }
     }
 }

@@ -274,21 +274,21 @@ public final class GetCertificateAuthorityVersionResult {
             return this;
         }
         public GetCertificateAuthorityVersionResult build() {
-            final var o = new GetCertificateAuthorityVersionResult();
-            o.certificateAuthorityId = certificateAuthorityId;
-            o.certificateAuthorityVersionNumber = certificateAuthorityVersionNumber;
-            o.id = id;
-            o.issuerCaVersionNumber = issuerCaVersionNumber;
-            o.revocationStatuses = revocationStatuses;
-            o.serialNumber = serialNumber;
-            o.stages = stages;
-            o.subjectAlternativeNames = subjectAlternativeNames;
-            o.timeCreated = timeCreated;
-            o.timeOfDeletion = timeOfDeletion;
-            o.validities = validities;
-            o.versionName = versionName;
-            o.versionNumber = versionNumber;
-            return o;
+            final var _resultValue = new GetCertificateAuthorityVersionResult();
+            _resultValue.certificateAuthorityId = certificateAuthorityId;
+            _resultValue.certificateAuthorityVersionNumber = certificateAuthorityVersionNumber;
+            _resultValue.id = id;
+            _resultValue.issuerCaVersionNumber = issuerCaVersionNumber;
+            _resultValue.revocationStatuses = revocationStatuses;
+            _resultValue.serialNumber = serialNumber;
+            _resultValue.stages = stages;
+            _resultValue.subjectAlternativeNames = subjectAlternativeNames;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfDeletion = timeOfDeletion;
+            _resultValue.validities = validities;
+            _resultValue.versionName = versionName;
+            _resultValue.versionNumber = versionNumber;
+            return _resultValue;
         }
     }
 }

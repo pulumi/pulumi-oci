@@ -193,17 +193,17 @@ public final class GetExadataInfrastructureUnAllocatedResourceResult {
             return this;
         }
         public GetExadataInfrastructureUnAllocatedResourceResult build() {
-            final var o = new GetExadataInfrastructureUnAllocatedResourceResult();
-            o.autonomousVmClusters = autonomousVmClusters;
-            o.dbServers = dbServers;
-            o.displayName = displayName;
-            o.exadataInfrastructureId = exadataInfrastructureId;
-            o.exadataStorageInTbs = exadataStorageInTbs;
-            o.id = id;
-            o.localStorageInGbs = localStorageInGbs;
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetExadataInfrastructureUnAllocatedResourceResult();
+            _resultValue.autonomousVmClusters = autonomousVmClusters;
+            _resultValue.dbServers = dbServers;
+            _resultValue.displayName = displayName;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.exadataStorageInTbs = exadataStorageInTbs;
+            _resultValue.id = id;
+            _resultValue.localStorageInGbs = localStorageInGbs;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

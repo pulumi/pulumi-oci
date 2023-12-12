@@ -65,10 +65,10 @@ public final class GetMonitoredResourcesMonitoredResourceCollectionItemCredentia
             return this;
         }
         public GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty build() {
-            final var o = new GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetMonitoredResourcesMonitoredResourceCollectionItemCredentialProperty();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

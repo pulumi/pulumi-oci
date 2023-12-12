@@ -124,13 +124,13 @@ public final class ModelMetricOverallMetricsReportConfidenceEntry {
             return this;
         }
         public ModelMetricOverallMetricsReportConfidenceEntry build() {
-            final var o = new ModelMetricOverallMetricsReportConfidenceEntry();
-            o.accuracy = accuracy;
-            o.f1score = f1score;
-            o.precision = precision;
-            o.recall = recall;
-            o.threshold = threshold;
-            return o;
+            final var _resultValue = new ModelMetricOverallMetricsReportConfidenceEntry();
+            _resultValue.accuracy = accuracy;
+            _resultValue.f1score = f1score;
+            _resultValue.precision = precision;
+            _resultValue.recall = recall;
+            _resultValue.threshold = threshold;
+            return _resultValue;
         }
     }
 }

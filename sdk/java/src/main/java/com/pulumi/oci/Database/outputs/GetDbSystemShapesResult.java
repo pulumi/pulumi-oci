@@ -109,13 +109,13 @@ public final class GetDbSystemShapesResult {
             return this;
         }
         public GetDbSystemShapesResult build() {
-            final var o = new GetDbSystemShapesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.dbSystemShapes = dbSystemShapes;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetDbSystemShapesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbSystemShapes = dbSystemShapes;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

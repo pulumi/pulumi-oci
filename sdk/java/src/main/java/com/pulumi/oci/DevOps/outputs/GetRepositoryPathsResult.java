@@ -143,16 +143,16 @@ public final class GetRepositoryPathsResult {
             return repositoryPathCollections(List.of(repositoryPathCollections));
         }
         public GetRepositoryPathsResult build() {
-            final var o = new GetRepositoryPathsResult();
-            o.displayName = displayName;
-            o.filters = filters;
-            o.folderPath = folderPath;
-            o.id = id;
-            o.pathsInSubtree = pathsInSubtree;
-            o.ref = ref;
-            o.repositoryId = repositoryId;
-            o.repositoryPathCollections = repositoryPathCollections;
-            return o;
+            final var _resultValue = new GetRepositoryPathsResult();
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.folderPath = folderPath;
+            _resultValue.id = id;
+            _resultValue.pathsInSubtree = pathsInSubtree;
+            _resultValue.ref = ref;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.repositoryPathCollections = repositoryPathCollections;
+            return _resultValue;
         }
     }
 }

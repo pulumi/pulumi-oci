@@ -65,10 +65,10 @@ public final class GetDomainsAppSignonPolicy {
             return this;
         }
         public GetDomainsAppSignonPolicy build() {
-            final var o = new GetDomainsAppSignonPolicy();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppSignonPolicy();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

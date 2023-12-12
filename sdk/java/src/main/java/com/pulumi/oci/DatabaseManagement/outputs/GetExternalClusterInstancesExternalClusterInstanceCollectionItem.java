@@ -342,25 +342,25 @@ public final class GetExternalClusterInstancesExternalClusterInstanceCollectionI
             return this;
         }
         public GetExternalClusterInstancesExternalClusterInstanceCollectionItem build() {
-            final var o = new GetExternalClusterInstancesExternalClusterInstanceCollectionItem();
-            o.adrHomeDirectory = adrHomeDirectory;
-            o.compartmentId = compartmentId;
-            o.componentName = componentName;
-            o.crsBaseDirectory = crsBaseDirectory;
-            o.displayName = displayName;
-            o.externalClusterId = externalClusterId;
-            o.externalClusterInstanceId = externalClusterInstanceId;
-            o.externalConnectorId = externalConnectorId;
-            o.externalDbNodeId = externalDbNodeId;
-            o.externalDbSystemId = externalDbSystemId;
-            o.hostName = hostName;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.nodeRole = nodeRole;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetExternalClusterInstancesExternalClusterInstanceCollectionItem();
+            _resultValue.adrHomeDirectory = adrHomeDirectory;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.componentName = componentName;
+            _resultValue.crsBaseDirectory = crsBaseDirectory;
+            _resultValue.displayName = displayName;
+            _resultValue.externalClusterId = externalClusterId;
+            _resultValue.externalClusterInstanceId = externalClusterInstanceId;
+            _resultValue.externalConnectorId = externalConnectorId;
+            _resultValue.externalDbNodeId = externalDbNodeId;
+            _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.hostName = hostName;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.nodeRole = nodeRole;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetSddcsSddcCollectionHcxOnPremLicense {
             return this;
         }
         public GetSddcsSddcCollectionHcxOnPremLicense build() {
-            final var o = new GetSddcsSddcCollectionHcxOnPremLicense();
-            o.activationKey = activationKey;
-            o.status = status;
-            o.systemName = systemName;
-            return o;
+            final var _resultValue = new GetSddcsSddcCollectionHcxOnPremLicense();
+            _resultValue.activationKey = activationKey;
+            _resultValue.status = status;
+            _resultValue.systemName = systemName;
+            return _resultValue;
         }
     }
 }

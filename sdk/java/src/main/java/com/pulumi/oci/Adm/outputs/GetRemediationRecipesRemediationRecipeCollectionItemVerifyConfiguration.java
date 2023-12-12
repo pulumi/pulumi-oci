@@ -219,18 +219,18 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemVerifyCon
             return this;
         }
         public GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration build() {
-            final var o = new GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration();
-            o.additionalParameters = additionalParameters;
-            o.buildServiceType = buildServiceType;
-            o.jenkinsUrl = jenkinsUrl;
-            o.jobName = jobName;
-            o.patSecretId = patSecretId;
-            o.pipelineId = pipelineId;
-            o.repositoryUrl = repositoryUrl;
-            o.triggerSecretId = triggerSecretId;
-            o.username = username;
-            o.workflowName = workflowName;
-            return o;
+            final var _resultValue = new GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration();
+            _resultValue.additionalParameters = additionalParameters;
+            _resultValue.buildServiceType = buildServiceType;
+            _resultValue.jenkinsUrl = jenkinsUrl;
+            _resultValue.jobName = jobName;
+            _resultValue.patSecretId = patSecretId;
+            _resultValue.pipelineId = pipelineId;
+            _resultValue.repositoryUrl = repositoryUrl;
+            _resultValue.triggerSecretId = triggerSecretId;
+            _resultValue.username = username;
+            _resultValue.workflowName = workflowName;
+            return _resultValue;
         }
     }
 }

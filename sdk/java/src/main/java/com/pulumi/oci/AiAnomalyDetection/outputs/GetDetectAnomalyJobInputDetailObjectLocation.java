@@ -84,11 +84,11 @@ public final class GetDetectAnomalyJobInputDetailObjectLocation {
             return this;
         }
         public GetDetectAnomalyJobInputDetailObjectLocation build() {
-            final var o = new GetDetectAnomalyJobInputDetailObjectLocation();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new GetDetectAnomalyJobInputDetailObjectLocation();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

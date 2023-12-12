@@ -122,13 +122,13 @@ public final class GetDomainsIdentitySettingsIdentitySettingMeta {
             return this;
         }
         public GetDomainsIdentitySettingsIdentitySettingMeta build() {
-            final var o = new GetDomainsIdentitySettingsIdentitySettingMeta();
-            o.created = created;
-            o.lastModified = lastModified;
-            o.location = location;
-            o.resourceType = resourceType;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetDomainsIdentitySettingsIdentitySettingMeta();
+            _resultValue.created = created;
+            _resultValue.lastModified = lastModified;
+            _resultValue.location = location;
+            _resultValue.resourceType = resourceType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

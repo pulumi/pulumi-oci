@@ -46,9 +46,9 @@ public final class GetShapesShape {
             return this;
         }
         public GetShapesShape build() {
-            final var o = new GetShapesShape();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetShapesShape();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

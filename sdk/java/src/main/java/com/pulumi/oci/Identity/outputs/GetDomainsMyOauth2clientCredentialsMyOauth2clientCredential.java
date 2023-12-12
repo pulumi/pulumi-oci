@@ -496,31 +496,31 @@ public final class GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential {
             return users(List.of(users));
         }
         public GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential build() {
-            final var o = new GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential();
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.description = description;
-            o.domainOcid = domainOcid;
-            o.expiresOn = expiresOn;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.isResetSecret = isResetSecret;
-            o.metas = metas;
-            o.name = name;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.scopes = scopes;
-            o.status = status;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetDomainsMyOauth2clientCredentialsMyOauth2clientCredential();
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.description = description;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.expiresOn = expiresOn;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.isResetSecret = isResetSecret;
+            _resultValue.metas = metas;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.scopes = scopes;
+            _resultValue.status = status;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }

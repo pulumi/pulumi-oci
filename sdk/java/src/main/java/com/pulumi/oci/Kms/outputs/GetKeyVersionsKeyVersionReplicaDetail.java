@@ -46,9 +46,9 @@ public final class GetKeyVersionsKeyVersionReplicaDetail {
             return this;
         }
         public GetKeyVersionsKeyVersionReplicaDetail build() {
-            final var o = new GetKeyVersionsKeyVersionReplicaDetail();
-            o.replicationId = replicationId;
-            return o;
+            final var _resultValue = new GetKeyVersionsKeyVersionReplicaDetail();
+            _resultValue.replicationId = replicationId;
+            return _resultValue;
         }
     }
 }

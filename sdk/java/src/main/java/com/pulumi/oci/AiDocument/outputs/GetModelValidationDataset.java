@@ -122,13 +122,13 @@ public final class GetModelValidationDataset {
             return this;
         }
         public GetModelValidationDataset build() {
-            final var o = new GetModelValidationDataset();
-            o.bucket = bucket;
-            o.datasetId = datasetId;
-            o.datasetType = datasetType;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new GetModelValidationDataset();
+            _resultValue.bucket = bucket;
+            _resultValue.datasetId = datasetId;
+            _resultValue.datasetType = datasetType;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

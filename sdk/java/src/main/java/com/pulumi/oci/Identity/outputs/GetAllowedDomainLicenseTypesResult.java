@@ -98,12 +98,12 @@ public final class GetAllowedDomainLicenseTypesResult {
             return this;
         }
         public GetAllowedDomainLicenseTypesResult build() {
-            final var o = new GetAllowedDomainLicenseTypesResult();
-            o.allowedDomainLicenseTypes = allowedDomainLicenseTypes;
-            o.currentLicenseTypeName = currentLicenseTypeName;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAllowedDomainLicenseTypesResult();
+            _resultValue.allowedDomainLicenseTypes = allowedDomainLicenseTypes;
+            _resultValue.currentLicenseTypeName = currentLicenseTypeName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

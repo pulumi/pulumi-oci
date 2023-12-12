@@ -100,12 +100,12 @@ public final class GetPathRouteSetsPathRouteSet {
             return this;
         }
         public GetPathRouteSetsPathRouteSet build() {
-            final var o = new GetPathRouteSetsPathRouteSet();
-            o.loadBalancerId = loadBalancerId;
-            o.name = name;
-            o.pathRoutes = pathRoutes;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetPathRouteSetsPathRouteSet();
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.name = name;
+            _resultValue.pathRoutes = pathRoutes;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

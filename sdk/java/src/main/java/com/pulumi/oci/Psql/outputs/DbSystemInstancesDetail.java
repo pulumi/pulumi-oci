@@ -86,11 +86,11 @@ public final class DbSystemInstancesDetail {
             return this;
         }
         public DbSystemInstancesDetail build() {
-            final var o = new DbSystemInstancesDetail();
-            o.description = description;
-            o.displayName = displayName;
-            o.privateIp = privateIp;
-            return o;
+            final var _resultValue = new DbSystemInstancesDetail();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.privateIp = privateIp;
+            return _resultValue;
         }
     }
 }

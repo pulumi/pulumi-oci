@@ -67,10 +67,10 @@ public final class StreamPackagingConfigEncryption {
             return this;
         }
         public StreamPackagingConfigEncryption build() {
-            final var o = new StreamPackagingConfigEncryption();
-            o.algorithm = algorithm;
-            o.kmsKeyId = kmsKeyId;
-            return o;
+            final var _resultValue = new StreamPackagingConfigEncryption();
+            _resultValue.algorithm = algorithm;
+            _resultValue.kmsKeyId = kmsKeyId;
+            return _resultValue;
         }
     }
 }

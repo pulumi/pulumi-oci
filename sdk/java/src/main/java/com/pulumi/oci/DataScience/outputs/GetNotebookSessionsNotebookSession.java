@@ -331,23 +331,23 @@ public final class GetNotebookSessionsNotebookSession {
             return this;
         }
         public GetNotebookSessionsNotebookSession build() {
-            final var o = new GetNotebookSessionsNotebookSession();
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.notebookSessionConfigDetails = notebookSessionConfigDetails;
-            o.notebookSessionConfigurationDetails = notebookSessionConfigurationDetails;
-            o.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
-            o.notebookSessionStorageMountConfigurationDetailsLists = notebookSessionStorageMountConfigurationDetailsLists;
-            o.notebookSessionUrl = notebookSessionUrl;
-            o.projectId = projectId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetNotebookSessionsNotebookSession();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.notebookSessionConfigDetails = notebookSessionConfigDetails;
+            _resultValue.notebookSessionConfigurationDetails = notebookSessionConfigurationDetails;
+            _resultValue.notebookSessionRuntimeConfigDetails = notebookSessionRuntimeConfigDetails;
+            _resultValue.notebookSessionStorageMountConfigurationDetailsLists = notebookSessionStorageMountConfigurationDetailsLists;
+            _resultValue.notebookSessionUrl = notebookSessionUrl;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

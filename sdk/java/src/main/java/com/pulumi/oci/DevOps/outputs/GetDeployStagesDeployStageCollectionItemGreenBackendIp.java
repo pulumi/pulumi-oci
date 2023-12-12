@@ -50,9 +50,9 @@ public final class GetDeployStagesDeployStageCollectionItemGreenBackendIp {
             return items(List.of(items));
         }
         public GetDeployStagesDeployStageCollectionItemGreenBackendIp build() {
-            final var o = new GetDeployStagesDeployStageCollectionItemGreenBackendIp();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeployStagesDeployStageCollectionItemGreenBackendIp();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

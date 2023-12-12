@@ -177,17 +177,17 @@ public final class GetBackupsResult {
             return this;
         }
         public GetBackupsResult build() {
-            final var o = new GetBackupsResult();
-            o.backupCollections = backupCollections;
-            o.backupId = backupId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetBackupsResult();
+            _resultValue.backupCollections = backupCollections;
+            _resultValue.backupId = backupId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

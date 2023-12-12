@@ -158,14 +158,14 @@ public final class MonitoredResourceTaskTaskDetails {
             return this;
         }
         public MonitoredResourceTaskTaskDetails build() {
-            final var o = new MonitoredResourceTaskTaskDetails();
-            o.availabilityProxyMetricCollectionInterval = availabilityProxyMetricCollectionInterval;
-            o.availabilityProxyMetrics = availabilityProxyMetrics;
-            o.namespace = namespace;
-            o.resourceGroup = resourceGroup;
-            o.source = source;
-            o.type = type;
-            return o;
+            final var _resultValue = new MonitoredResourceTaskTaskDetails();
+            _resultValue.availabilityProxyMetricCollectionInterval = availabilityProxyMetricCollectionInterval;
+            _resultValue.availabilityProxyMetrics = availabilityProxyMetrics;
+            _resultValue.namespace = namespace;
+            _resultValue.resourceGroup = resourceGroup;
+            _resultValue.source = source;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

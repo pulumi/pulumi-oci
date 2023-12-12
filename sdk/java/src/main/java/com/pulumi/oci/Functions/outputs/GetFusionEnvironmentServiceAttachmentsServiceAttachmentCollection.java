@@ -42,9 +42,9 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
             return items(List.of(items));
         }
         public GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection build() {
-            final var o = new GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

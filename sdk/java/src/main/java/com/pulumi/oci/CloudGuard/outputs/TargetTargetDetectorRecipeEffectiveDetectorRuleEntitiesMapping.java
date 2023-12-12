@@ -90,11 +90,11 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappin
             return this;
         }
         public TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping build() {
-            final var o = new TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping();
-            o.displayName = displayName;
-            o.entityType = entityType;
-            o.queryField = queryField;
-            return o;
+            final var _resultValue = new TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping();
+            _resultValue.displayName = displayName;
+            _resultValue.entityType = entityType;
+            _resultValue.queryField = queryField;
+            return _resultValue;
         }
     }
 }

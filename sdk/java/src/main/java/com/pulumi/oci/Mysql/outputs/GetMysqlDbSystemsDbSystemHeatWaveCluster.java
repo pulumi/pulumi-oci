@@ -143,14 +143,14 @@ public final class GetMysqlDbSystemsDbSystemHeatWaveCluster {
             return this;
         }
         public GetMysqlDbSystemsDbSystemHeatWaveCluster build() {
-            final var o = new GetMysqlDbSystemsDbSystemHeatWaveCluster();
-            o.clusterSize = clusterSize;
-            o.isLakehouseEnabled = isLakehouseEnabled;
-            o.shapeName = shapeName;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetMysqlDbSystemsDbSystemHeatWaveCluster();
+            _resultValue.clusterSize = clusterSize;
+            _resultValue.isLakehouseEnabled = isLakehouseEnabled;
+            _resultValue.shapeName = shapeName;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -68,9 +68,9 @@ public final class AppAccelerationPolicyResponseCachingPolicy {
             return this;
         }
         public AppAccelerationPolicyResponseCachingPolicy build() {
-            final var o = new AppAccelerationPolicyResponseCachingPolicy();
-            o.isResponseHeaderBasedCachingEnabled = isResponseHeaderBasedCachingEnabled;
-            return o;
+            final var _resultValue = new AppAccelerationPolicyResponseCachingPolicy();
+            _resultValue.isResponseHeaderBasedCachingEnabled = isResponseHeaderBasedCachingEnabled;
+            return _resultValue;
         }
     }
 }

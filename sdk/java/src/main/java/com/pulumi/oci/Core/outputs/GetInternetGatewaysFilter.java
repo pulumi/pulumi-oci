@@ -67,11 +67,11 @@ public final class GetInternetGatewaysFilter {
             return values(List.of(values));
         }
         public GetInternetGatewaysFilter build() {
-            final var o = new GetInternetGatewaysFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetInternetGatewaysFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

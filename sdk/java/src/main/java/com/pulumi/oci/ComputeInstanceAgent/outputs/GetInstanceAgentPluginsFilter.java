@@ -75,11 +75,11 @@ public final class GetInstanceAgentPluginsFilter {
             return values(List.of(values));
         }
         public GetInstanceAgentPluginsFilter build() {
-            final var o = new GetInstanceAgentPluginsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetInstanceAgentPluginsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

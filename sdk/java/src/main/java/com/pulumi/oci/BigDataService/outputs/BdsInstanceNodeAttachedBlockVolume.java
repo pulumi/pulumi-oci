@@ -67,10 +67,10 @@ public final class BdsInstanceNodeAttachedBlockVolume {
             return this;
         }
         public BdsInstanceNodeAttachedBlockVolume build() {
-            final var o = new BdsInstanceNodeAttachedBlockVolume();
-            o.volumeAttachmentId = volumeAttachmentId;
-            o.volumeSizeInGbs = volumeSizeInGbs;
-            return o;
+            final var _resultValue = new BdsInstanceNodeAttachedBlockVolume();
+            _resultValue.volumeAttachmentId = volumeAttachmentId;
+            _resultValue.volumeSizeInGbs = volumeSizeInGbs;
+            return _resultValue;
         }
     }
 }

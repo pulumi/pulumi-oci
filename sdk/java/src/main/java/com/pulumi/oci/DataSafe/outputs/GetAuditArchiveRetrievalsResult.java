@@ -216,19 +216,19 @@ public final class GetAuditArchiveRetrievalsResult {
             return this;
         }
         public GetAuditArchiveRetrievalsResult build() {
-            final var o = new GetAuditArchiveRetrievalsResult();
-            o.accessLevel = accessLevel;
-            o.auditArchiveRetrievalCollections = auditArchiveRetrievalCollections;
-            o.auditArchiveRetrievalId = auditArchiveRetrievalId;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.targetId = targetId;
-            o.timeOfExpiry = timeOfExpiry;
-            return o;
+            final var _resultValue = new GetAuditArchiveRetrievalsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.auditArchiveRetrievalCollections = auditArchiveRetrievalCollections;
+            _resultValue.auditArchiveRetrievalId = auditArchiveRetrievalId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            _resultValue.timeOfExpiry = timeOfExpiry;
+            return _resultValue;
         }
     }
 }

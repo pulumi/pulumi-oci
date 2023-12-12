@@ -334,29 +334,29 @@ public final class GetUserAssessmentUsersResult {
             return users(List.of(users));
         }
         public GetUserAssessmentUsersResult build() {
-            final var o = new GetUserAssessmentUsersResult();
-            o.accessLevel = accessLevel;
-            o.accountStatus = accountStatus;
-            o.authenticationType = authenticationType;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.id = id;
-            o.targetId = targetId;
-            o.timeLastLoginGreaterThanOrEqualTo = timeLastLoginGreaterThanOrEqualTo;
-            o.timeLastLoginLessThan = timeLastLoginLessThan;
-            o.timePasswordLastChangedGreaterThanOrEqualTo = timePasswordLastChangedGreaterThanOrEqualTo;
-            o.timePasswordLastChangedLessThan = timePasswordLastChangedLessThan;
-            o.timeUserCreatedGreaterThanOrEqualTo = timeUserCreatedGreaterThanOrEqualTo;
-            o.timeUserCreatedLessThan = timeUserCreatedLessThan;
-            o.userAssessmentId = userAssessmentId;
-            o.userCategory = userCategory;
-            o.userKey = userKey;
-            o.userName = userName;
-            o.userProfile = userProfile;
-            o.userRole = userRole;
-            o.userType = userType;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetUserAssessmentUsersResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.accountStatus = accountStatus;
+            _resultValue.authenticationType = authenticationType;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.targetId = targetId;
+            _resultValue.timeLastLoginGreaterThanOrEqualTo = timeLastLoginGreaterThanOrEqualTo;
+            _resultValue.timeLastLoginLessThan = timeLastLoginLessThan;
+            _resultValue.timePasswordLastChangedGreaterThanOrEqualTo = timePasswordLastChangedGreaterThanOrEqualTo;
+            _resultValue.timePasswordLastChangedLessThan = timePasswordLastChangedLessThan;
+            _resultValue.timeUserCreatedGreaterThanOrEqualTo = timeUserCreatedGreaterThanOrEqualTo;
+            _resultValue.timeUserCreatedLessThan = timeUserCreatedLessThan;
+            _resultValue.userAssessmentId = userAssessmentId;
+            _resultValue.userCategory = userCategory;
+            _resultValue.userKey = userKey;
+            _resultValue.userName = userName;
+            _resultValue.userProfile = userProfile;
+            _resultValue.userRole = userRole;
+            _resultValue.userType = userType;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }

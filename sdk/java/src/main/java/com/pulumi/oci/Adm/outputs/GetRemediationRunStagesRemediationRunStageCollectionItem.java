@@ -284,21 +284,21 @@ public final class GetRemediationRunStagesRemediationRunStageCollectionItem {
             return this;
         }
         public GetRemediationRunStagesRemediationRunStageCollectionItem build() {
-            final var o = new GetRemediationRunStagesRemediationRunStageCollectionItem();
-            o.auditId = auditId;
-            o.nextStageType = nextStageType;
-            o.pipelineProperties = pipelineProperties;
-            o.previousStageType = previousStageType;
-            o.pullRequestProperties = pullRequestProperties;
-            o.recommendedUpdatesCount = recommendedUpdatesCount;
-            o.remediationRunId = remediationRunId;
-            o.status = status;
-            o.summary = summary;
-            o.timeCreated = timeCreated;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetRemediationRunStagesRemediationRunStageCollectionItem();
+            _resultValue.auditId = auditId;
+            _resultValue.nextStageType = nextStageType;
+            _resultValue.pipelineProperties = pipelineProperties;
+            _resultValue.previousStageType = previousStageType;
+            _resultValue.pullRequestProperties = pullRequestProperties;
+            _resultValue.recommendedUpdatesCount = recommendedUpdatesCount;
+            _resultValue.remediationRunId = remediationRunId;
+            _resultValue.status = status;
+            _resultValue.summary = summary;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

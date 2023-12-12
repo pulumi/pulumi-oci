@@ -90,11 +90,11 @@ public final class GetSteeringPolicyRuleCase {
             return this;
         }
         public GetSteeringPolicyRuleCase build() {
-            final var o = new GetSteeringPolicyRuleCase();
-            o.answerDatas = answerDatas;
-            o.caseCondition = caseCondition;
-            o.count = count;
-            return o;
+            final var _resultValue = new GetSteeringPolicyRuleCase();
+            _resultValue.answerDatas = answerDatas;
+            _resultValue.caseCondition = caseCondition;
+            _resultValue.count = count;
+            return _resultValue;
         }
     }
 }

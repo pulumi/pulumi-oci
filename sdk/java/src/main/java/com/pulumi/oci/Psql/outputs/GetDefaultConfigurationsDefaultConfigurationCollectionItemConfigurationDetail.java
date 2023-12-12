@@ -50,9 +50,9 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItemCon
             return items(List.of(items));
         }
         public GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail build() {
-            final var o = new GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

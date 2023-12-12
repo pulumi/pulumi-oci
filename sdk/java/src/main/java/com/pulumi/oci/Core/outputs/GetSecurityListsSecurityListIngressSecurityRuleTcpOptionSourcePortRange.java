@@ -65,10 +65,10 @@ public final class GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourc
             return this;
         }
         public GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange build() {
-            final var o = new GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new GetSecurityListsSecurityListIngressSecurityRuleTcpOptionSourcePortRange();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

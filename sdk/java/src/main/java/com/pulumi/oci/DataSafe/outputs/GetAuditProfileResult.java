@@ -408,28 +408,28 @@ public final class GetAuditProfileResult {
             return this;
         }
         public GetAuditProfileResult build() {
-            final var o = new GetAuditProfileResult();
-            o.auditCollectedVolume = auditCollectedVolume;
-            o.auditProfileId = auditProfileId;
-            o.auditTrails = auditTrails;
-            o.changeRetentionTrigger = changeRetentionTrigger;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
-            o.isPaidUsageEnabled = isPaidUsageEnabled;
-            o.lifecycleDetails = lifecycleDetails;
-            o.offlineMonths = offlineMonths;
-            o.onlineMonths = onlineMonths;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.targetId = targetId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetAuditProfileResult();
+            _resultValue.auditCollectedVolume = auditCollectedVolume;
+            _resultValue.auditProfileId = auditProfileId;
+            _resultValue.auditTrails = auditTrails;
+            _resultValue.changeRetentionTrigger = changeRetentionTrigger;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
+            _resultValue.isPaidUsageEnabled = isPaidUsageEnabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.offlineMonths = offlineMonths;
+            _resultValue.onlineMonths = onlineMonths;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -105,10 +105,10 @@ public final class DomainsKmsiSettingTag {
             return this;
         }
         public DomainsKmsiSettingTag build() {
-            final var o = new DomainsKmsiSettingTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsKmsiSettingTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

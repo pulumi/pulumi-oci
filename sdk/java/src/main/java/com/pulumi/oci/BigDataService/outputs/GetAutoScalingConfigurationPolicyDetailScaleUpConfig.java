@@ -127,13 +127,13 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleUpConfig {
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScaleUpConfig build() {
-            final var o = new GetAutoScalingConfigurationPolicyDetailScaleUpConfig();
-            o.maxMemoryPerNode = maxMemoryPerNode;
-            o.maxOcpusPerNode = maxOcpusPerNode;
-            o.memoryStepSize = memoryStepSize;
-            o.metrics = metrics;
-            o.ocpuStepSize = ocpuStepSize;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationPolicyDetailScaleUpConfig();
+            _resultValue.maxMemoryPerNode = maxMemoryPerNode;
+            _resultValue.maxOcpusPerNode = maxOcpusPerNode;
+            _resultValue.memoryStepSize = memoryStepSize;
+            _resultValue.metrics = metrics;
+            _resultValue.ocpuStepSize = ocpuStepSize;
+            return _resultValue;
         }
     }
 }

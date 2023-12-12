@@ -69,10 +69,10 @@ public final class GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter
             return packageGroups(List.of(packageGroups));
         }
         public GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter build() {
-            final var o = new GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter();
-            o.filterType = filterType;
-            o.packageGroups = packageGroups;
-            return o;
+            final var _resultValue = new GetSoftwareSourceCustomSoftwareSourceFilterPackageGroupFilter();
+            _resultValue.filterType = filterType;
+            _resultValue.packageGroups = packageGroups;
+            return _resultValue;
         }
     }
 }

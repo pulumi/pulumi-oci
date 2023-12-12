@@ -68,11 +68,11 @@ public final class GetUserAssessmentsUserAssessmentIgnoredTarget {
             return this;
         }
         public GetUserAssessmentsUserAssessmentIgnoredTarget build() {
-            final var o = new GetUserAssessmentsUserAssessmentIgnoredTarget();
-            o.lifecycleState = lifecycleState;
-            o.targetId = targetId;
-            o.userAssessmentId = userAssessmentId;
-            return o;
+            final var _resultValue = new GetUserAssessmentsUserAssessmentIgnoredTarget();
+            _resultValue.lifecycleState = lifecycleState;
+            _resultValue.targetId = targetId;
+            _resultValue.userAssessmentId = userAssessmentId;
+            return _resultValue;
         }
     }
 }

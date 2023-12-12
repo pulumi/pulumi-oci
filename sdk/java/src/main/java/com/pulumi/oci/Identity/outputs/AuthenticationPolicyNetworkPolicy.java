@@ -51,9 +51,9 @@ public final class AuthenticationPolicyNetworkPolicy {
             return networkSourceIds(List.of(networkSourceIds));
         }
         public AuthenticationPolicyNetworkPolicy build() {
-            final var o = new AuthenticationPolicyNetworkPolicy();
-            o.networkSourceIds = networkSourceIds;
-            return o;
+            final var _resultValue = new AuthenticationPolicyNetworkPolicy();
+            _resultValue.networkSourceIds = networkSourceIds;
+            return _resultValue;
         }
     }
 }

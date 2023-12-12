@@ -75,11 +75,11 @@ public final class GetLoadBalancersFilter {
             return values(List.of(values));
         }
         public GetLoadBalancersFilter build() {
-            final var o = new GetLoadBalancersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetLoadBalancersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

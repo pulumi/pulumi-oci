@@ -66,9 +66,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixG
             return this;
         }
         public DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup build() {
-            final var o = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup();
-            o.gidNumber = gidNumber;
-            return o;
+            final var _resultValue = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup();
+            _resultValue.gidNumber = gidNumber;
+            return _resultValue;
         }
     }
 }

@@ -88,11 +88,11 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
             return this;
         }
         public DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations build() {
-            final var o = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations();
-            o.filterQueryParameters = filterQueryParameters;
-            o.renameQueryParameters = renameQueryParameters;
-            o.setQueryParameters = setQueryParameters;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformations();
+            _resultValue.filterQueryParameters = filterQueryParameters;
+            _resultValue.renameQueryParameters = renameQueryParameters;
+            _resultValue.setQueryParameters = setQueryParameters;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetRegionSubscriptionsFilter {
             return values(List.of(values));
         }
         public GetRegionSubscriptionsFilter build() {
-            final var o = new GetRegionSubscriptionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetRegionSubscriptionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

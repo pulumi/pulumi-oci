@@ -170,17 +170,17 @@ public final class GetWaasPoliciesResult {
             return waasPolicies(List.of(waasPolicies));
         }
         public GetWaasPoliciesResult build() {
-            final var o = new GetWaasPoliciesResult();
-            o.compartmentId = compartmentId;
-            o.displayNames = displayNames;
-            o.filters = filters;
-            o.id = id;
-            o.ids = ids;
-            o.states = states;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            o.waasPolicies = waasPolicies;
-            return o;
+            final var _resultValue = new GetWaasPoliciesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayNames = displayNames;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ids = ids;
+            _resultValue.states = states;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            _resultValue.waasPolicies = waasPolicies;
+            return _resultValue;
         }
     }
 }

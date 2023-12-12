@@ -149,13 +149,13 @@ public final class InstancePoolPlacementConfiguration {
             return secondaryVnicSubnets(List.of(secondaryVnicSubnets));
         }
         public InstancePoolPlacementConfiguration build() {
-            final var o = new InstancePoolPlacementConfiguration();
-            o.availabilityDomain = availabilityDomain;
-            o.faultDomains = faultDomains;
-            o.primarySubnetId = primarySubnetId;
-            o.primaryVnicSubnets = primaryVnicSubnets;
-            o.secondaryVnicSubnets = secondaryVnicSubnets;
-            return o;
+            final var _resultValue = new InstancePoolPlacementConfiguration();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.faultDomains = faultDomains;
+            _resultValue.primarySubnetId = primarySubnetId;
+            _resultValue.primaryVnicSubnets = primaryVnicSubnets;
+            _resultValue.secondaryVnicSubnets = secondaryVnicSubnets;
+            return _resultValue;
         }
     }
 }

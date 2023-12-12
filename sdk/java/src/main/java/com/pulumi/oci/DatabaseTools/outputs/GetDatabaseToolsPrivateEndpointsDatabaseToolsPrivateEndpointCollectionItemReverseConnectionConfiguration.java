@@ -50,9 +50,9 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
             return reverseConnectionsSourceIps(List.of(reverseConnectionsSourceIps));
         }
         public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration build() {
-            final var o = new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration();
-            o.reverseConnectionsSourceIps = reverseConnectionsSourceIps;
-            return o;
+            final var _resultValue = new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfiguration();
+            _resultValue.reverseConnectionsSourceIps = reverseConnectionsSourceIps;
+            return _resultValue;
         }
     }
 }

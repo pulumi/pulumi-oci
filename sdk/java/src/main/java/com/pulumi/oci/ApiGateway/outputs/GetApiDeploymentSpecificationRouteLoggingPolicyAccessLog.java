@@ -46,9 +46,9 @@ public final class GetApiDeploymentSpecificationRouteLoggingPolicyAccessLog {
             return this;
         }
         public GetApiDeploymentSpecificationRouteLoggingPolicyAccessLog build() {
-            final var o = new GetApiDeploymentSpecificationRouteLoggingPolicyAccessLog();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteLoggingPolicyAccessLog();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

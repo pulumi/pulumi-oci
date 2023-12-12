@@ -42,9 +42,9 @@ public final class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection
             return items(List.of(items));
         }
         public GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection build() {
-            final var o = new GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

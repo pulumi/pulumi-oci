@@ -68,10 +68,10 @@ public final class LogConfiguration {
             return this;
         }
         public LogConfiguration build() {
-            final var o = new LogConfiguration();
-            o.compartmentId = compartmentId;
-            o.source = source;
-            return o;
+            final var _resultValue = new LogConfiguration();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.source = source;
+            return _resultValue;
         }
     }
 }

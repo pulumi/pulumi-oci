@@ -65,10 +65,10 @@ public final class GetBackendHealthHealthCheckResult {
             return this;
         }
         public GetBackendHealthHealthCheckResult build() {
-            final var o = new GetBackendHealthHealthCheckResult();
-            o.healthCheckStatus = healthCheckStatus;
-            o.timestamp = timestamp;
-            return o;
+            final var _resultValue = new GetBackendHealthHealthCheckResult();
+            _resultValue.healthCheckStatus = healthCheckStatus;
+            _resultValue.timestamp = timestamp;
+            return _resultValue;
         }
     }
 }

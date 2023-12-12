@@ -66,10 +66,10 @@ public final class UnifiedAgentConfigurationServiceConfigurationDestinationOpera
             return this;
         }
         public UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration build() {
-            final var o = new UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration();
-            o.destination = destination;
-            o.source = source;
-            return o;
+            final var _resultValue = new UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration();
+            _resultValue.destination = destination;
+            _resultValue.source = source;
+            return _resultValue;
         }
     }
 }

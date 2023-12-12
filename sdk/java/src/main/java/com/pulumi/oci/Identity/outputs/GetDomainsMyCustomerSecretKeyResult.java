@@ -462,31 +462,31 @@ public final class GetDomainsMyCustomerSecretKeyResult {
             return users(List.of(users));
         }
         public GetDomainsMyCustomerSecretKeyResult build() {
-            final var o = new GetDomainsMyCustomerSecretKeyResult();
-            o.accessKey = accessKey;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.description = description;
-            o.displayName = displayName;
-            o.domainOcid = domainOcid;
-            o.expiresOn = expiresOn;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.metas = metas;
-            o.myCustomerSecretKeyId = myCustomerSecretKeyId;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.status = status;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.users = users;
-            return o;
+            final var _resultValue = new GetDomainsMyCustomerSecretKeyResult();
+            _resultValue.accessKey = accessKey;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.expiresOn = expiresOn;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.metas = metas;
+            _resultValue.myCustomerSecretKeyId = myCustomerSecretKeyId;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.status = status;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.users = users;
+            return _resultValue;
         }
     }
 }

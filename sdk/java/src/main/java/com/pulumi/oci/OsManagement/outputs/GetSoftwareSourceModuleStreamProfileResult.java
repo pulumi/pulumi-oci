@@ -176,16 +176,16 @@ public final class GetSoftwareSourceModuleStreamProfileResult {
             return this;
         }
         public GetSoftwareSourceModuleStreamProfileResult build() {
-            final var o = new GetSoftwareSourceModuleStreamProfileResult();
-            o.description = description;
-            o.id = id;
-            o.isDefault = isDefault;
-            o.moduleName = moduleName;
-            o.packages = packages;
-            o.profileName = profileName;
-            o.softwareSourceId = softwareSourceId;
-            o.streamName = streamName;
-            return o;
+            final var _resultValue = new GetSoftwareSourceModuleStreamProfileResult();
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.isDefault = isDefault;
+            _resultValue.moduleName = moduleName;
+            _resultValue.packages = packages;
+            _resultValue.profileName = profileName;
+            _resultValue.softwareSourceId = softwareSourceId;
+            _resultValue.streamName = streamName;
+            return _resultValue;
         }
     }
 }

@@ -86,11 +86,11 @@ public final class BdsInstanceOperationCertificateManagementsManagementHostCertD
             return this;
         }
         public BdsInstanceOperationCertificateManagementsManagementHostCertDetail build() {
-            final var o = new BdsInstanceOperationCertificateManagementsManagementHostCertDetail();
-            o.certificate = certificate;
-            o.hostName = hostName;
-            o.privateKey = privateKey;
-            return o;
+            final var _resultValue = new BdsInstanceOperationCertificateManagementsManagementHostCertDetail();
+            _resultValue.certificate = certificate;
+            _resultValue.hostName = hostName;
+            _resultValue.privateKey = privateKey;
+            return _resultValue;
         }
     }
 }

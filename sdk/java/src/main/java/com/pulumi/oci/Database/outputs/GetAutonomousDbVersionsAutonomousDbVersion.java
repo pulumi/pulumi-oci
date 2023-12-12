@@ -180,16 +180,16 @@ public final class GetAutonomousDbVersionsAutonomousDbVersion {
             return this;
         }
         public GetAutonomousDbVersionsAutonomousDbVersion build() {
-            final var o = new GetAutonomousDbVersionsAutonomousDbVersion();
-            o.dbWorkload = dbWorkload;
-            o.details = details;
-            o.isDedicated = isDedicated;
-            o.isDefaultForFree = isDefaultForFree;
-            o.isDefaultForPaid = isDefaultForPaid;
-            o.isFreeTierEnabled = isFreeTierEnabled;
-            o.isPaidEnabled = isPaidEnabled;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetAutonomousDbVersionsAutonomousDbVersion();
+            _resultValue.dbWorkload = dbWorkload;
+            _resultValue.details = details;
+            _resultValue.isDedicated = isDedicated;
+            _resultValue.isDefaultForFree = isDefaultForFree;
+            _resultValue.isDefaultForPaid = isDefaultForPaid;
+            _resultValue.isFreeTierEnabled = isFreeTierEnabled;
+            _resultValue.isPaidEnabled = isPaidEnabled;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

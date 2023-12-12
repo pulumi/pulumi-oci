@@ -181,15 +181,15 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
             return this;
         }
         public GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata build() {
-            final var o = new GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata();
-            o.agentProperties = agentProperties;
-            o.format = format;
-            o.requiredProperties = requiredProperties;
-            o.uniquePropertySets = uniquePropertySets;
-            o.validPropertiesForCreates = validPropertiesForCreates;
-            o.validPropertiesForUpdates = validPropertiesForUpdates;
-            o.validPropertyValues = validPropertyValues;
-            return o;
+            final var _resultValue = new GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata();
+            _resultValue.agentProperties = agentProperties;
+            _resultValue.format = format;
+            _resultValue.requiredProperties = requiredProperties;
+            _resultValue.uniquePropertySets = uniquePropertySets;
+            _resultValue.validPropertiesForCreates = validPropertiesForCreates;
+            _resultValue.validPropertiesForUpdates = validPropertiesForUpdates;
+            _resultValue.validPropertyValues = validPropertyValues;
+            return _resultValue;
         }
     }
 }

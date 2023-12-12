@@ -318,22 +318,22 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
             return this;
         }
         public SddcInitialConfigurationInitialClusterConfiguration build() {
-            final var o = new SddcInitialConfigurationInitialClusterConfiguration();
-            o.actualEsxiHostsCount = actualEsxiHostsCount;
-            o.capacityReservationId = capacityReservationId;
-            o.computeAvailabilityDomain = computeAvailabilityDomain;
-            o.datastores = datastores;
-            o.displayName = displayName;
-            o.esxiHostsCount = esxiHostsCount;
-            o.initialCommitment = initialCommitment;
-            o.initialHostOcpuCount = initialHostOcpuCount;
-            o.initialHostShapeName = initialHostShapeName;
-            o.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
-            o.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
-            o.networkConfiguration = networkConfiguration;
-            o.vsphereType = vsphereType;
-            o.workloadNetworkCidr = workloadNetworkCidr;
-            return o;
+            final var _resultValue = new SddcInitialConfigurationInitialClusterConfiguration();
+            _resultValue.actualEsxiHostsCount = actualEsxiHostsCount;
+            _resultValue.capacityReservationId = capacityReservationId;
+            _resultValue.computeAvailabilityDomain = computeAvailabilityDomain;
+            _resultValue.datastores = datastores;
+            _resultValue.displayName = displayName;
+            _resultValue.esxiHostsCount = esxiHostsCount;
+            _resultValue.initialCommitment = initialCommitment;
+            _resultValue.initialHostOcpuCount = initialHostOcpuCount;
+            _resultValue.initialHostShapeName = initialHostShapeName;
+            _resultValue.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
+            _resultValue.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
+            _resultValue.networkConfiguration = networkConfiguration;
+            _resultValue.vsphereType = vsphereType;
+            _resultValue.workloadNetworkCidr = workloadNetworkCidr;
+            return _resultValue;
         }
     }
 }

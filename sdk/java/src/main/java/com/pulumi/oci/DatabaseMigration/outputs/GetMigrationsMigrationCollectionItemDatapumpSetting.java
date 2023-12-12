@@ -139,13 +139,13 @@ public final class GetMigrationsMigrationCollectionItemDatapumpSetting {
             return metadataRemaps(List.of(metadataRemaps));
         }
         public GetMigrationsMigrationCollectionItemDatapumpSetting build() {
-            final var o = new GetMigrationsMigrationCollectionItemDatapumpSetting();
-            o.dataPumpParameters = dataPumpParameters;
-            o.exportDirectoryObjects = exportDirectoryObjects;
-            o.importDirectoryObjects = importDirectoryObjects;
-            o.jobMode = jobMode;
-            o.metadataRemaps = metadataRemaps;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemDatapumpSetting();
+            _resultValue.dataPumpParameters = dataPumpParameters;
+            _resultValue.exportDirectoryObjects = exportDirectoryObjects;
+            _resultValue.importDirectoryObjects = importDirectoryObjects;
+            _resultValue.jobMode = jobMode;
+            _resultValue.metadataRemaps = metadataRemaps;
+            return _resultValue;
         }
     }
 }

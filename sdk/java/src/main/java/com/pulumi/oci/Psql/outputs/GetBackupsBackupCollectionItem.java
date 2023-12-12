@@ -377,26 +377,26 @@ public final class GetBackupsBackupCollectionItem {
             return this;
         }
         public GetBackupsBackupCollectionItem build() {
-            final var o = new GetBackupsBackupCollectionItem();
-            o.backupSize = backupSize;
-            o.compartmentId = compartmentId;
-            o.dbSystemDetails = dbSystemDetails;
-            o.dbSystemId = dbSystemId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lastAcceptedRequestToken = lastAcceptedRequestToken;
-            o.lastCompletedRequestToken = lastCompletedRequestToken;
-            o.lifecycleDetails = lifecycleDetails;
-            o.retentionPeriod = retentionPeriod;
-            o.sourceType = sourceType;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetBackupsBackupCollectionItem();
+            _resultValue.backupSize = backupSize;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbSystemDetails = dbSystemDetails;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lastAcceptedRequestToken = lastAcceptedRequestToken;
+            _resultValue.lastCompletedRequestToken = lastCompletedRequestToken;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.retentionPeriod = retentionPeriod;
+            _resultValue.sourceType = sourceType;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

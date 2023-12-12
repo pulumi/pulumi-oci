@@ -121,13 +121,13 @@ public final class GetVantagePointResult {
             return this;
         }
         public GetVantagePointResult build() {
-            final var o = new GetVantagePointResult();
-            o.apmDomainId = apmDomainId;
-            o.displayName = displayName;
-            o.id = id;
-            o.items = items;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetVantagePointResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

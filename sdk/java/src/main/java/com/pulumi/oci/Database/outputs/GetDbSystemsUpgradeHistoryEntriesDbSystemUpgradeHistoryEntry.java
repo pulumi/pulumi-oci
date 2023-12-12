@@ -237,19 +237,19 @@ public final class GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry 
             return this;
         }
         public GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry build() {
-            final var o = new GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry();
-            o.action = action;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.newGiVersion = newGiVersion;
-            o.newOsVersion = newOsVersion;
-            o.oldGiVersion = oldGiVersion;
-            o.oldOsVersion = oldOsVersion;
-            o.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
-            o.state = state;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetDbSystemsUpgradeHistoryEntriesDbSystemUpgradeHistoryEntry();
+            _resultValue.action = action;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.newGiVersion = newGiVersion;
+            _resultValue.newOsVersion = newOsVersion;
+            _resultValue.oldGiVersion = oldGiVersion;
+            _resultValue.oldOsVersion = oldOsVersion;
+            _resultValue.snapshotRetentionPeriodInDays = snapshotRetentionPeriodInDays;
+            _resultValue.state = state;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

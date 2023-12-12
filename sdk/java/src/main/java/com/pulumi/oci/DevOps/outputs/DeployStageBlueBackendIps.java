@@ -51,9 +51,9 @@ public final class DeployStageBlueBackendIps {
             return items(List.of(items));
         }
         public DeployStageBlueBackendIps build() {
-            final var o = new DeployStageBlueBackendIps();
-            o.items = items;
-            return o;
+            final var _resultValue = new DeployStageBlueBackendIps();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetNetworkLoadBalancersNetworkLoadBalancerCollection {
             return items(List.of(items));
         }
         public GetNetworkLoadBalancersNetworkLoadBalancerCollection build() {
-            final var o = new GetNetworkLoadBalancersNetworkLoadBalancerCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNetworkLoadBalancersNetworkLoadBalancerCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

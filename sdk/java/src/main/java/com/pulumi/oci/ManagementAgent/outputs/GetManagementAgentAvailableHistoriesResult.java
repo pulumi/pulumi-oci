@@ -128,14 +128,14 @@ public final class GetManagementAgentAvailableHistoriesResult {
             return this;
         }
         public GetManagementAgentAvailableHistoriesResult build() {
-            final var o = new GetManagementAgentAvailableHistoriesResult();
-            o.availabilityHistories = availabilityHistories;
-            o.filters = filters;
-            o.id = id;
-            o.managementAgentId = managementAgentId;
-            o.timeAvailabilityStatusEndedGreaterThan = timeAvailabilityStatusEndedGreaterThan;
-            o.timeAvailabilityStatusStartedLessThan = timeAvailabilityStatusStartedLessThan;
-            return o;
+            final var _resultValue = new GetManagementAgentAvailableHistoriesResult();
+            _resultValue.availabilityHistories = availabilityHistories;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managementAgentId = managementAgentId;
+            _resultValue.timeAvailabilityStatusEndedGreaterThan = timeAvailabilityStatusEndedGreaterThan;
+            _resultValue.timeAvailabilityStatusStartedLessThan = timeAvailabilityStatusStartedLessThan;
+            return _resultValue;
         }
     }
 }

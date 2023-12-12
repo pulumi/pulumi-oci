@@ -42,9 +42,9 @@ public final class GetInstVbsInstancesVbsInstanceSummaryCollection {
             return items(List.of(items));
         }
         public GetInstVbsInstancesVbsInstanceSummaryCollection build() {
-            final var o = new GetInstVbsInstancesVbsInstanceSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetInstVbsInstancesVbsInstanceSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

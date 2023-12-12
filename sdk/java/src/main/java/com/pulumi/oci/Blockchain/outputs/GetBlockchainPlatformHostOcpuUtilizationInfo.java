@@ -85,11 +85,11 @@ public final class GetBlockchainPlatformHostOcpuUtilizationInfo {
             return this;
         }
         public GetBlockchainPlatformHostOcpuUtilizationInfo build() {
-            final var o = new GetBlockchainPlatformHostOcpuUtilizationInfo();
-            o.host = host;
-            o.ocpuCapacityNumber = ocpuCapacityNumber;
-            o.ocpuUtilizationNumber = ocpuUtilizationNumber;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformHostOcpuUtilizationInfo();
+            _resultValue.host = host;
+            _resultValue.ocpuCapacityNumber = ocpuCapacityNumber;
+            _resultValue.ocpuUtilizationNumber = ocpuUtilizationNumber;
+            return _resultValue;
         }
     }
 }

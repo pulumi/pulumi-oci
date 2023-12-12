@@ -231,18 +231,18 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItem {
             return this;
         }
         public GetInstallationSitesInstallationSiteCollectionItemItem build() {
-            final var o = new GetInstallationSitesInstallationSiteCollectionItemItem();
-            o.approximateApplicationCount = approximateApplicationCount;
-            o.blocklists = blocklists;
-            o.installationKey = installationKey;
-            o.jres = jres;
-            o.managedInstanceId = managedInstanceId;
-            o.operatingSystems = operatingSystems;
-            o.path = path;
-            o.securityStatus = securityStatus;
-            o.state = state;
-            o.timeLastSeen = timeLastSeen;
-            return o;
+            final var _resultValue = new GetInstallationSitesInstallationSiteCollectionItemItem();
+            _resultValue.approximateApplicationCount = approximateApplicationCount;
+            _resultValue.blocklists = blocklists;
+            _resultValue.installationKey = installationKey;
+            _resultValue.jres = jres;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.operatingSystems = operatingSystems;
+            _resultValue.path = path;
+            _resultValue.securityStatus = securityStatus;
+            _resultValue.state = state;
+            _resultValue.timeLastSeen = timeLastSeen;
+            return _resultValue;
         }
     }
 }

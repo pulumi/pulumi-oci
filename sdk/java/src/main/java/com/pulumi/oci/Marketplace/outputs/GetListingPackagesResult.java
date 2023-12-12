@@ -147,15 +147,15 @@ public final class GetListingPackagesResult {
             return this;
         }
         public GetListingPackagesResult build() {
-            final var o = new GetListingPackagesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.listingId = listingId;
-            o.listingPackages = listingPackages;
-            o.packageType = packageType;
-            o.packageVersion = packageVersion;
-            return o;
+            final var _resultValue = new GetListingPackagesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.listingId = listingId;
+            _resultValue.listingPackages = listingPackages;
+            _resultValue.packageType = packageType;
+            _resultValue.packageVersion = packageVersion;
+            return _resultValue;
         }
     }
 }

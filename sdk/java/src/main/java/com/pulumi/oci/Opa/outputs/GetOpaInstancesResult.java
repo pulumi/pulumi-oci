@@ -144,14 +144,14 @@ public final class GetOpaInstancesResult {
             return this;
         }
         public GetOpaInstancesResult build() {
-            final var o = new GetOpaInstancesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.opaInstanceCollections = opaInstanceCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetOpaInstancesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.opaInstanceCollections = opaInstanceCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

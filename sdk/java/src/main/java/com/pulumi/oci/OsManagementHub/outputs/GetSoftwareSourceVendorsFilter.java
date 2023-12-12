@@ -75,11 +75,11 @@ public final class GetSoftwareSourceVendorsFilter {
             return values(List.of(values));
         }
         public GetSoftwareSourceVendorsFilter build() {
-            final var o = new GetSoftwareSourceVendorsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSoftwareSourceVendorsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

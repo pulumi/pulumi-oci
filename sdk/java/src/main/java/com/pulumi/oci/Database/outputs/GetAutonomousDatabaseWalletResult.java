@@ -124,14 +124,14 @@ public final class GetAutonomousDatabaseWalletResult {
             return this;
         }
         public GetAutonomousDatabaseWalletResult build() {
-            final var o = new GetAutonomousDatabaseWalletResult();
-            o.autonomousDatabaseId = autonomousDatabaseId;
-            o.base64EncodeContent = base64EncodeContent;
-            o.content = content;
-            o.generateType = generateType;
-            o.id = id;
-            o.password = password;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseWalletResult();
+            _resultValue.autonomousDatabaseId = autonomousDatabaseId;
+            _resultValue.base64EncodeContent = base64EncodeContent;
+            _resultValue.content = content;
+            _resultValue.generateType = generateType;
+            _resultValue.id = id;
+            _resultValue.password = password;
+            return _resultValue;
         }
     }
 }

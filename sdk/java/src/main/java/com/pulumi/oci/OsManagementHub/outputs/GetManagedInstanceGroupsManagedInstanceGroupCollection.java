@@ -42,9 +42,9 @@ public final class GetManagedInstanceGroupsManagedInstanceGroupCollection {
             return items(List.of(items));
         }
         public GetManagedInstanceGroupsManagedInstanceGroupCollection build() {
-            final var o = new GetManagedInstanceGroupsManagedInstanceGroupCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupsManagedInstanceGroupCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

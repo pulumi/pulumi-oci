@@ -111,10 +111,10 @@ public final class DomainsDynamicResourceGroupTag {
             return this;
         }
         public DomainsDynamicResourceGroupTag build() {
-            final var o = new DomainsDynamicResourceGroupTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsDynamicResourceGroupTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetBlockchainPlatformReplica {
             return this;
         }
         public GetBlockchainPlatformReplica build() {
-            final var o = new GetBlockchainPlatformReplica();
-            o.caCount = caCount;
-            o.consoleCount = consoleCount;
-            o.proxyCount = proxyCount;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformReplica();
+            _resultValue.caCount = caCount;
+            _resultValue.consoleCount = consoleCount;
+            _resultValue.proxyCount = proxyCount;
+            return _resultValue;
         }
     }
 }

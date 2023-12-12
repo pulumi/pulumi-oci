@@ -84,11 +84,11 @@ public final class GetDomainsNetworkPerimeterIpAddress {
             return this;
         }
         public GetDomainsNetworkPerimeterIpAddress build() {
-            final var o = new GetDomainsNetworkPerimeterIpAddress();
-            o.type = type;
-            o.value = value;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetDomainsNetworkPerimeterIpAddress();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

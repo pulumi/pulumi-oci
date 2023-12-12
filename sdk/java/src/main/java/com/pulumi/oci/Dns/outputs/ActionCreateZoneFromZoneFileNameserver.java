@@ -48,9 +48,9 @@ public final class ActionCreateZoneFromZoneFileNameserver {
             return this;
         }
         public ActionCreateZoneFromZoneFileNameserver build() {
-            final var o = new ActionCreateZoneFromZoneFileNameserver();
-            o.hostname = hostname;
-            return o;
+            final var _resultValue = new ActionCreateZoneFromZoneFileNameserver();
+            _resultValue.hostname = hostname;
+            return _resultValue;
         }
     }
 }

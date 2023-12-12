@@ -67,10 +67,10 @@ public final class MonitoredResourceAdditionalCredentialProperty {
             return this;
         }
         public MonitoredResourceAdditionalCredentialProperty build() {
-            final var o = new MonitoredResourceAdditionalCredentialProperty();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new MonitoredResourceAdditionalCredentialProperty();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

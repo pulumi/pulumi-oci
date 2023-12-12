@@ -65,10 +65,10 @@ public final class GetAddressRuleTaxFieldLabel {
             return this;
         }
         public GetAddressRuleTaxFieldLabel build() {
-            final var o = new GetAddressRuleTaxFieldLabel();
-            o.example = example;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetAddressRuleTaxFieldLabel();
+            _resultValue.example = example;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

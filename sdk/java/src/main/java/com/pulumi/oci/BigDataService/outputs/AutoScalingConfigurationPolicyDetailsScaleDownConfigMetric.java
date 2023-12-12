@@ -68,10 +68,10 @@ public final class AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric {
             return this;
         }
         public AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric build() {
-            final var o = new AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric();
-            o.metricType = metricType;
-            o.threshold = threshold;
-            return o;
+            final var _resultValue = new AutoScalingConfigurationPolicyDetailsScaleDownConfigMetric();
+            _resultValue.metricType = metricType;
+            _resultValue.threshold = threshold;
+            return _resultValue;
         }
     }
 }

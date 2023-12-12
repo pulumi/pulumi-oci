@@ -163,15 +163,15 @@ public final class GetMaskingPolicyMaskingObjectsResult {
             return schemaNames(List.of(schemaNames));
         }
         public GetMaskingPolicyMaskingObjectsResult build() {
-            final var o = new GetMaskingPolicyMaskingObjectsResult();
-            o.filters = filters;
-            o.id = id;
-            o.maskingObjectCollections = maskingObjectCollections;
-            o.maskingPolicyId = maskingPolicyId;
-            o.objectTypes = objectTypes;
-            o.objects = objects;
-            o.schemaNames = schemaNames;
-            return o;
+            final var _resultValue = new GetMaskingPolicyMaskingObjectsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.maskingObjectCollections = maskingObjectCollections;
+            _resultValue.maskingPolicyId = maskingPolicyId;
+            _resultValue.objectTypes = objectTypes;
+            _resultValue.objects = objects;
+            _resultValue.schemaNames = schemaNames;
+            return _resultValue;
         }
     }
 }

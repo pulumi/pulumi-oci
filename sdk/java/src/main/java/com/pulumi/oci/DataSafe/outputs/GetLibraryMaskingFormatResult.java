@@ -284,21 +284,21 @@ public final class GetLibraryMaskingFormatResult {
             return this;
         }
         public GetLibraryMaskingFormatResult build() {
-            final var o = new GetLibraryMaskingFormatResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.formatEntries = formatEntries;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.libraryMaskingFormatId = libraryMaskingFormatId;
-            o.sensitiveTypeIds = sensitiveTypeIds;
-            o.source = source;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetLibraryMaskingFormatResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.formatEntries = formatEntries;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.libraryMaskingFormatId = libraryMaskingFormatId;
+            _resultValue.sensitiveTypeIds = sensitiveTypeIds;
+            _resultValue.source = source;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

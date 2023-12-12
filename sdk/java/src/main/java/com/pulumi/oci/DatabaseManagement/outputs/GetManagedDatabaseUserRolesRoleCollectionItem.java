@@ -141,14 +141,14 @@ public final class GetManagedDatabaseUserRolesRoleCollectionItem {
             return this;
         }
         public GetManagedDatabaseUserRolesRoleCollectionItem build() {
-            final var o = new GetManagedDatabaseUserRolesRoleCollectionItem();
-            o.adminOption = adminOption;
-            o.common = common;
-            o.defaultRole = defaultRole;
-            o.delegateOption = delegateOption;
-            o.inherited = inherited;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserRolesRoleCollectionItem();
+            _resultValue.adminOption = adminOption;
+            _resultValue.common = common;
+            _resultValue.defaultRole = defaultRole;
+            _resultValue.delegateOption = delegateOption;
+            _resultValue.inherited = inherited;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

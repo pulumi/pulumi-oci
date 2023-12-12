@@ -65,10 +65,10 @@ public final class GetCpeDeviceShapeCpeDeviceInfo {
             return this;
         }
         public GetCpeDeviceShapeCpeDeviceInfo build() {
-            final var o = new GetCpeDeviceShapeCpeDeviceInfo();
-            o.platformSoftwareVersion = platformSoftwareVersion;
-            o.vendor = vendor;
-            return o;
+            final var _resultValue = new GetCpeDeviceShapeCpeDeviceInfo();
+            _resultValue.platformSoftwareVersion = platformSoftwareVersion;
+            _resultValue.vendor = vendor;
+            return _resultValue;
         }
     }
 }

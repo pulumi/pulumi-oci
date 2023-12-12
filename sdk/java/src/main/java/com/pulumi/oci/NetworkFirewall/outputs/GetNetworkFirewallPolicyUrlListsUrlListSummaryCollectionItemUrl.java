@@ -67,10 +67,10 @@ public final class GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemU
             return this;
         }
         public GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrl build() {
-            final var o = new GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrl();
-            o.pattern = pattern;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyUrlListsUrlListSummaryCollectionItemUrl();
+            _resultValue.pattern = pattern;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

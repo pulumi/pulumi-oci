@@ -42,9 +42,9 @@ public final class GetInvoicesInvoiceCollection {
             return items(List.of(items));
         }
         public GetInvoicesInvoiceCollection build() {
-            final var o = new GetInvoicesInvoiceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetInvoicesInvoiceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

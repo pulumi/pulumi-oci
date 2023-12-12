@@ -110,11 +110,11 @@ public final class AppFirewallPolicyRequestProtection {
             return rules(List.of(rules));
         }
         public AppFirewallPolicyRequestProtection build() {
-            final var o = new AppFirewallPolicyRequestProtection();
-            o.bodyInspectionSizeLimitExceededActionName = bodyInspectionSizeLimitExceededActionName;
-            o.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
-            o.rules = rules;
-            return o;
+            final var _resultValue = new AppFirewallPolicyRequestProtection();
+            _resultValue.bodyInspectionSizeLimitExceededActionName = bodyInspectionSizeLimitExceededActionName;
+            _resultValue.bodyInspectionSizeLimitInBytes = bodyInspectionSizeLimitInBytes;
+            _resultValue.rules = rules;
+            return _resultValue;
         }
     }
 }

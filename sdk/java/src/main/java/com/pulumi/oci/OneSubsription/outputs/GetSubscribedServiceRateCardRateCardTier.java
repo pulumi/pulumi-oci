@@ -84,11 +84,11 @@ public final class GetSubscribedServiceRateCardRateCardTier {
             return this;
         }
         public GetSubscribedServiceRateCardRateCardTier build() {
-            final var o = new GetSubscribedServiceRateCardRateCardTier();
-            o.netUnitPrice = netUnitPrice;
-            o.overagePrice = overagePrice;
-            o.upToQuantity = upToQuantity;
-            return o;
+            final var _resultValue = new GetSubscribedServiceRateCardRateCardTier();
+            _resultValue.netUnitPrice = netUnitPrice;
+            _resultValue.overagePrice = overagePrice;
+            _resultValue.upToQuantity = upToQuantity;
+            return _resultValue;
         }
     }
 }

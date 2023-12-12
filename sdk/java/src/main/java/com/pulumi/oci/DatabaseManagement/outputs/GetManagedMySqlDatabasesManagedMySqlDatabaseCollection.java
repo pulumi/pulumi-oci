@@ -42,9 +42,9 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollection {
             return items(List.of(items));
         }
         public GetManagedMySqlDatabasesManagedMySqlDatabaseCollection build() {
-            final var o = new GetManagedMySqlDatabasesManagedMySqlDatabaseCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedMySqlDatabasesManagedMySqlDatabaseCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

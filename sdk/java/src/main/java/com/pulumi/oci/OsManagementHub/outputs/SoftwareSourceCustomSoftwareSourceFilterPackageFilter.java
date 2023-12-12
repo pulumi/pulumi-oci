@@ -105,12 +105,12 @@ public final class SoftwareSourceCustomSoftwareSourceFilterPackageFilter {
             return this;
         }
         public SoftwareSourceCustomSoftwareSourceFilterPackageFilter build() {
-            final var o = new SoftwareSourceCustomSoftwareSourceFilterPackageFilter();
-            o.filterType = filterType;
-            o.packageName = packageName;
-            o.packageNamePattern = packageNamePattern;
-            o.packageVersion = packageVersion;
-            return o;
+            final var _resultValue = new SoftwareSourceCustomSoftwareSourceFilterPackageFilter();
+            _resultValue.filterType = filterType;
+            _resultValue.packageName = packageName;
+            _resultValue.packageNamePattern = packageNamePattern;
+            _resultValue.packageVersion = packageVersion;
+            return _resultValue;
         }
     }
 }

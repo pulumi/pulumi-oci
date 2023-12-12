@@ -95,11 +95,11 @@ public final class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationA
             return verifyClaims(List.of(verifyClaims));
         }
         public GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicy build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicy();
-            o.audiences = audiences;
-            o.issuers = issuers;
-            o.verifyClaims = verifyClaims;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicy();
+            _resultValue.audiences = audiences;
+            _resultValue.issuers = issuers;
+            _resultValue.verifyClaims = verifyClaims;
+            return _resultValue;
         }
     }
 }

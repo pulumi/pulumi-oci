@@ -67,11 +67,11 @@ public final class GetNetworkLoadBalancersProtocolsFilter {
             return values(List.of(values));
         }
         public GetNetworkLoadBalancersProtocolsFilter build() {
-            final var o = new GetNetworkLoadBalancersProtocolsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetNetworkLoadBalancersProtocolsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

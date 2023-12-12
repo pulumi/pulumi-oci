@@ -48,9 +48,9 @@ public final class DbSystemsUpgradeMaintenanceWindowMonth {
             return this;
         }
         public DbSystemsUpgradeMaintenanceWindowMonth build() {
-            final var o = new DbSystemsUpgradeMaintenanceWindowMonth();
-            o.name = name;
-            return o;
+            final var _resultValue = new DbSystemsUpgradeMaintenanceWindowMonth();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

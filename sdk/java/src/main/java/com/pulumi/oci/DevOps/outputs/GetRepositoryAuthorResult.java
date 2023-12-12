@@ -94,12 +94,12 @@ public final class GetRepositoryAuthorResult {
             return this;
         }
         public GetRepositoryAuthorResult build() {
-            final var o = new GetRepositoryAuthorResult();
-            o.id = id;
-            o.items = items;
-            o.refName = refName;
-            o.repositoryId = repositoryId;
-            return o;
+            final var _resultValue = new GetRepositoryAuthorResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.refName = refName;
+            _resultValue.repositoryId = repositoryId;
+            return _resultValue;
         }
     }
 }

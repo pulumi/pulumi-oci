@@ -42,9 +42,9 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollection {
             return items(List.of(items));
         }
         public GetBlockchainPlatformsBlockchainPlatformCollection build() {
-            final var o = new GetBlockchainPlatformsBlockchainPlatformCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformsBlockchainPlatformCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

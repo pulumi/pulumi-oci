@@ -181,18 +181,18 @@ public final class GetAlarmStatusesResult {
             return this;
         }
         public GetAlarmStatusesResult build() {
-            final var o = new GetAlarmStatusesResult();
-            o.alarmStatuses = alarmStatuses;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.entityId = entityId;
-            o.filters = filters;
-            o.id = id;
-            o.resourceId = resourceId;
-            o.serviceName = serviceName;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetAlarmStatusesResult();
+            _resultValue.alarmStatuses = alarmStatuses;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.entityId = entityId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.resourceId = resourceId;
+            _resultValue.serviceName = serviceName;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

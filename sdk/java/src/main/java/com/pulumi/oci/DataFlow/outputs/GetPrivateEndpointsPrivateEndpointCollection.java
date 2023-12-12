@@ -42,9 +42,9 @@ public final class GetPrivateEndpointsPrivateEndpointCollection {
             return items(List.of(items));
         }
         public GetPrivateEndpointsPrivateEndpointCollection build() {
-            final var o = new GetPrivateEndpointsPrivateEndpointCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetPrivateEndpointsPrivateEndpointCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

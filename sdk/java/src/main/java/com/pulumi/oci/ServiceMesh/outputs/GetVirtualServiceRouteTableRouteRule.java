@@ -147,14 +147,14 @@ public final class GetVirtualServiceRouteTableRouteRule {
             return this;
         }
         public GetVirtualServiceRouteTableRouteRule build() {
-            final var o = new GetVirtualServiceRouteTableRouteRule();
-            o.destinations = destinations;
-            o.isGrpc = isGrpc;
-            o.path = path;
-            o.pathType = pathType;
-            o.requestTimeoutInMs = requestTimeoutInMs;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetVirtualServiceRouteTableRouteRule();
+            _resultValue.destinations = destinations;
+            _resultValue.isGrpc = isGrpc;
+            _resultValue.path = path;
+            _resultValue.pathType = pathType;
+            _resultValue.requestTimeoutInMs = requestTimeoutInMs;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

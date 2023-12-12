@@ -65,10 +65,10 @@ public final class GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem {
             return this;
         }
         public GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem build() {
-            final var o = new GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem();
-            o.cidrBlock = cidrBlock;
-            o.publicIpPoolId = publicIpPoolId;
-            return o;
+            final var _resultValue = new GetByoipAllocatedRangesByoipAllocatedRangeCollectionItem();
+            _resultValue.cidrBlock = cidrBlock;
+            _resultValue.publicIpPoolId = publicIpPoolId;
+            return _resultValue;
         }
     }
 }

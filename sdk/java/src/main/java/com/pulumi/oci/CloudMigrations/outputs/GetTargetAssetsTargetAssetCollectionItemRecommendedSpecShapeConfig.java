@@ -85,11 +85,11 @@ public final class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeC
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfig build() {
-            final var o = new GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfig();
-            o.baselineOcpuUtilization = baselineOcpuUtilization;
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetTargetAssetsTargetAssetCollectionItemRecommendedSpecShapeConfig();
+            _resultValue.baselineOcpuUtilization = baselineOcpuUtilization;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

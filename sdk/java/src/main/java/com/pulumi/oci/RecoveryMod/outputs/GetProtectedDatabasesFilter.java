@@ -67,11 +67,11 @@ public final class GetProtectedDatabasesFilter {
             return values(List.of(values));
         }
         public GetProtectedDatabasesFilter build() {
-            final var o = new GetProtectedDatabasesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetProtectedDatabasesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

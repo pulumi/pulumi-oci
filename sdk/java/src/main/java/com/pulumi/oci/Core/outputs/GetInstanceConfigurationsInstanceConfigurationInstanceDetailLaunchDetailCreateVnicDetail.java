@@ -266,20 +266,20 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             return this;
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail build() {
-            final var o = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail();
-            o.assignIpv6ip = assignIpv6ip;
-            o.assignPrivateDnsRecord = assignPrivateDnsRecord;
-            o.assignPublicIp = assignPublicIp;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.hostnameLabel = hostnameLabel;
-            o.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
-            o.nsgIds = nsgIds;
-            o.privateIp = privateIp;
-            o.skipSourceDestCheck = skipSourceDestCheck;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail();
+            _resultValue.assignIpv6ip = assignIpv6ip;
+            _resultValue.assignPrivateDnsRecord = assignPrivateDnsRecord;
+            _resultValue.assignPublicIp = assignPublicIp;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostnameLabel = hostnameLabel;
+            _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.privateIp = privateIp;
+            _resultValue.skipSourceDestCheck = skipSourceDestCheck;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

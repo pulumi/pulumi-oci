@@ -193,17 +193,17 @@ public final class GetDatabaseMaintenanceRunHistoriesResult {
             return this;
         }
         public GetDatabaseMaintenanceRunHistoriesResult build() {
-            final var o = new GetDatabaseMaintenanceRunHistoriesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.maintenanceRunHistories = maintenanceRunHistories;
-            o.maintenanceType = maintenanceType;
-            o.state = state;
-            o.targetResourceId = targetResourceId;
-            o.targetResourceType = targetResourceType;
-            return o;
+            final var _resultValue = new GetDatabaseMaintenanceRunHistoriesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.maintenanceRunHistories = maintenanceRunHistories;
+            _resultValue.maintenanceType = maintenanceType;
+            _resultValue.state = state;
+            _resultValue.targetResourceId = targetResourceId;
+            _resultValue.targetResourceType = targetResourceType;
+            return _resultValue;
         }
     }
 }

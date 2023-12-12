@@ -103,12 +103,12 @@ public final class GetPublicationsPublicationIcon {
             return this;
         }
         public GetPublicationsPublicationIcon build() {
-            final var o = new GetPublicationsPublicationIcon();
-            o.contentUrl = contentUrl;
-            o.fileExtension = fileExtension;
-            o.mimeType = mimeType;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPublicationsPublicationIcon();
+            _resultValue.contentUrl = contentUrl;
+            _resultValue.fileExtension = fileExtension;
+            _resultValue.mimeType = mimeType;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

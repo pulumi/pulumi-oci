@@ -82,13 +82,13 @@ public final class GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail {
             return this;
         }
         public GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail build() {
-            final var o = new GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail();
-            o.emailAddress = emailAddress;
-            o.firstName = firstName;
-            o.lastName = lastName;
-            o.password = password;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail();
+            _resultValue.emailAddress = emailAddress;
+            _resultValue.firstName = firstName;
+            _resultValue.lastName = lastName;
+            _resultValue.password = password;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

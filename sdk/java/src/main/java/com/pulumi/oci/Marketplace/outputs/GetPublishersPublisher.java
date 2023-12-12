@@ -84,11 +84,11 @@ public final class GetPublishersPublisher {
             return this;
         }
         public GetPublishersPublisher build() {
-            final var o = new GetPublishersPublisher();
-            o.description = description;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPublishersPublisher();
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

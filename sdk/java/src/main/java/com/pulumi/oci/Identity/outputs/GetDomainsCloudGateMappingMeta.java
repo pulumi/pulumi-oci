@@ -122,13 +122,13 @@ public final class GetDomainsCloudGateMappingMeta {
             return this;
         }
         public GetDomainsCloudGateMappingMeta build() {
-            final var o = new GetDomainsCloudGateMappingMeta();
-            o.created = created;
-            o.lastModified = lastModified;
-            o.location = location;
-            o.resourceType = resourceType;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetDomainsCloudGateMappingMeta();
+            _resultValue.created = created;
+            _resultValue.lastModified = lastModified;
+            _resultValue.location = location;
+            _resultValue.resourceType = resourceType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -265,20 +265,20 @@ public final class GetTraceSpan {
             return this;
         }
         public GetTraceSpan build() {
-            final var o = new GetTraceSpan();
-            o.durationInMs = durationInMs;
-            o.isError = isError;
-            o.key = key;
-            o.kind = kind;
-            o.logs = logs;
-            o.operationName = operationName;
-            o.parentSpanKey = parentSpanKey;
-            o.serviceName = serviceName;
-            o.tags = tags;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            o.traceKey = traceKey;
-            return o;
+            final var _resultValue = new GetTraceSpan();
+            _resultValue.durationInMs = durationInMs;
+            _resultValue.isError = isError;
+            _resultValue.key = key;
+            _resultValue.kind = kind;
+            _resultValue.logs = logs;
+            _resultValue.operationName = operationName;
+            _resultValue.parentSpanKey = parentSpanKey;
+            _resultValue.serviceName = serviceName;
+            _resultValue.tags = tags;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.traceKey = traceKey;
+            return _resultValue;
         }
     }
 }

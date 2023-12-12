@@ -65,10 +65,10 @@ public final class GetComputeCapacityTopologiesComputeCapacityTopologyCollection
             return this;
         }
         public GetComputeCapacityTopologiesComputeCapacityTopologyCollectionItemCapacitySource build() {
-            final var o = new GetComputeCapacityTopologiesComputeCapacityTopologyCollectionItemCapacitySource();
-            o.capacityType = capacityType;
-            o.compartmentId = compartmentId;
-            return o;
+            final var _resultValue = new GetComputeCapacityTopologiesComputeCapacityTopologyCollectionItemCapacitySource();
+            _resultValue.capacityType = capacityType;
+            _resultValue.compartmentId = compartmentId;
+            return _resultValue;
         }
     }
 }

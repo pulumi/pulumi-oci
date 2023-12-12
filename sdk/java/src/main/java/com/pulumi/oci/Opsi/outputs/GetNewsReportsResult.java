@@ -173,16 +173,16 @@ public final class GetNewsReportsResult {
             return statuses(List.of(statuses));
         }
         public GetNewsReportsResult build() {
-            final var o = new GetNewsReportsResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.id = id;
-            o.newsReportCollections = newsReportCollections;
-            o.newsReportId = newsReportId;
-            o.states = states;
-            o.statuses = statuses;
-            return o;
+            final var _resultValue = new GetNewsReportsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.newsReportCollections = newsReportCollections;
+            _resultValue.newsReportId = newsReportId;
+            _resultValue.states = states;
+            _resultValue.statuses = statuses;
+            return _resultValue;
         }
     }
 }

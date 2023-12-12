@@ -93,11 +93,11 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
             return recommendations(List.of(recommendations));
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding();
-            o.details = details;
-            o.message = message;
-            o.recommendations = recommendations;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemReportRuleFinding();
+            _resultValue.details = details;
+            _resultValue.message = message;
+            _resultValue.recommendations = recommendations;
+            return _resultValue;
         }
     }
 }

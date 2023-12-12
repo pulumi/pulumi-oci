@@ -280,21 +280,21 @@ public final class GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
             return this;
         }
         public GetGuardTargetTargetDetailTargetSecurityZoneRecipe build() {
-            final var o = new GetGuardTargetTargetDetailTargetSecurityZoneRecipe();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.owner = owner;
-            o.securityPolicies = securityPolicies;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetGuardTargetTargetDetailTargetSecurityZoneRecipe();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.owner = owner;
+            _resultValue.securityPolicies = securityPolicies;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

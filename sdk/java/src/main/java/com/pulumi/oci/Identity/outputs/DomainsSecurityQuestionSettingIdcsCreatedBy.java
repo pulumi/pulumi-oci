@@ -224,13 +224,13 @@ public final class DomainsSecurityQuestionSettingIdcsCreatedBy {
             return this;
         }
         public DomainsSecurityQuestionSettingIdcsCreatedBy build() {
-            final var o = new DomainsSecurityQuestionSettingIdcsCreatedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsSecurityQuestionSettingIdcsCreatedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

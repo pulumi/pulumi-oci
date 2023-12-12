@@ -87,11 +87,11 @@ public final class ModelTestStrategyValidationDataset {
             return this;
         }
         public ModelTestStrategyValidationDataset build() {
-            final var o = new ModelTestStrategyValidationDataset();
-            o.datasetId = datasetId;
-            o.datasetType = datasetType;
-            o.locationDetails = locationDetails;
-            return o;
+            final var _resultValue = new ModelTestStrategyValidationDataset();
+            _resultValue.datasetId = datasetId;
+            _resultValue.datasetType = datasetType;
+            _resultValue.locationDetails = locationDetails;
+            return _resultValue;
         }
     }
 }

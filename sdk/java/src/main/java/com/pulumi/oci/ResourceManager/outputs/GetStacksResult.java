@@ -144,14 +144,14 @@ public final class GetStacksResult {
             return this;
         }
         public GetStacksResult build() {
-            final var o = new GetStacksResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.stacks = stacks;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetStacksResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.stacks = stacks;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

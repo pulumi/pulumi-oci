@@ -174,16 +174,16 @@ public final class GetNamespaceRulesResult {
             return this;
         }
         public GetNamespaceRulesResult build() {
-            final var o = new GetNamespaceRulesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.kind = kind;
-            o.namespace = namespace;
-            o.ruleSummaryCollections = ruleSummaryCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetNamespaceRulesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.kind = kind;
+            _resultValue.namespace = namespace;
+            _resultValue.ruleSummaryCollections = ruleSummaryCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

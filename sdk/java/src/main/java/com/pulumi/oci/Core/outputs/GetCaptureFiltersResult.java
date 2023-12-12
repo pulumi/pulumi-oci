@@ -163,15 +163,15 @@ public final class GetCaptureFiltersResult {
             return this;
         }
         public GetCaptureFiltersResult build() {
-            final var o = new GetCaptureFiltersResult();
-            o.captureFilters = captureFilters;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filterType = filterType;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCaptureFiltersResult();
+            _resultValue.captureFilters = captureFilters;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filterType = filterType;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

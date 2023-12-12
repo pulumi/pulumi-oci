@@ -67,10 +67,10 @@ public final class CloudGuardDataSourceDataSourceDetailsQueryStartTime {
             return this;
         }
         public CloudGuardDataSourceDataSourceDetailsQueryStartTime build() {
-            final var o = new CloudGuardDataSourceDataSourceDetailsQueryStartTime();
-            o.queryStartTime = queryStartTime;
-            o.startPolicyType = startPolicyType;
-            return o;
+            final var _resultValue = new CloudGuardDataSourceDataSourceDetailsQueryStartTime();
+            _resultValue.queryStartTime = queryStartTime;
+            _resultValue.startPolicyType = startPolicyType;
+            return _resultValue;
         }
     }
 }

@@ -315,23 +315,23 @@ public final class GetMysqlConfigurationResult {
             return variables(List.of(variables));
         }
         public GetMysqlConfigurationResult build() {
-            final var o = new GetMysqlConfigurationResult();
-            o.compartmentId = compartmentId;
-            o.configurationId = configurationId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.initVariables = initVariables;
-            o.parentConfigurationId = parentConfigurationId;
-            o.shapeName = shapeName;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            o.variables = variables;
-            return o;
+            final var _resultValue = new GetMysqlConfigurationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurationId = configurationId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.initVariables = initVariables;
+            _resultValue.parentConfigurationId = parentConfigurationId;
+            _resultValue.shapeName = shapeName;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            _resultValue.variables = variables;
+            return _resultValue;
         }
     }
 }

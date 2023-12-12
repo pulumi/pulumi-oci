@@ -554,35 +554,35 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItem {
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItem build() {
-            final var o = new GetBuildPipelineStagesBuildPipelineStageCollectionItem();
-            o.buildPipelineId = buildPipelineId;
-            o.buildPipelineStagePredecessorCollections = buildPipelineStagePredecessorCollections;
-            o.buildPipelineStageType = buildPipelineStageType;
-            o.buildRunnerShapeConfig = buildRunnerShapeConfig;
-            o.buildSourceCollection = buildSourceCollection;
-            o.buildSpecFile = buildSpecFile;
-            o.compartmentId = compartmentId;
-            o.connectionType = connectionType;
-            o.definedTags = definedTags;
-            o.deliverArtifactCollection = deliverArtifactCollection;
-            o.deployPipelineId = deployPipelineId;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.image = image;
-            o.isPassAllParametersEnabled = isPassAllParametersEnabled;
-            o.lifecycleDetails = lifecycleDetails;
-            o.primaryBuildSource = primaryBuildSource;
-            o.privateAccessConfig = privateAccessConfig;
-            o.projectId = projectId;
-            o.stageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.waitCriteria = waitCriteria;
-            return o;
+            final var _resultValue = new GetBuildPipelineStagesBuildPipelineStageCollectionItem();
+            _resultValue.buildPipelineId = buildPipelineId;
+            _resultValue.buildPipelineStagePredecessorCollections = buildPipelineStagePredecessorCollections;
+            _resultValue.buildPipelineStageType = buildPipelineStageType;
+            _resultValue.buildRunnerShapeConfig = buildRunnerShapeConfig;
+            _resultValue.buildSourceCollection = buildSourceCollection;
+            _resultValue.buildSpecFile = buildSpecFile;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionType = connectionType;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deliverArtifactCollection = deliverArtifactCollection;
+            _resultValue.deployPipelineId = deployPipelineId;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.image = image;
+            _resultValue.isPassAllParametersEnabled = isPassAllParametersEnabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.primaryBuildSource = primaryBuildSource;
+            _resultValue.privateAccessConfig = privateAccessConfig;
+            _resultValue.projectId = projectId;
+            _resultValue.stageExecutionTimeoutInSeconds = stageExecutionTimeoutInSeconds;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.waitCriteria = waitCriteria;
+            return _resultValue;
         }
     }
 }

@@ -86,11 +86,11 @@ public final class IngressGatewayHostListenerTlsClientValidationTrustedCaBundle 
             return this;
         }
         public IngressGatewayHostListenerTlsClientValidationTrustedCaBundle build() {
-            final var o = new IngressGatewayHostListenerTlsClientValidationTrustedCaBundle();
-            o.caBundleId = caBundleId;
-            o.secretName = secretName;
-            o.type = type;
-            return o;
+            final var _resultValue = new IngressGatewayHostListenerTlsClientValidationTrustedCaBundle();
+            _resultValue.caBundleId = caBundleId;
+            _resultValue.secretName = secretName;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

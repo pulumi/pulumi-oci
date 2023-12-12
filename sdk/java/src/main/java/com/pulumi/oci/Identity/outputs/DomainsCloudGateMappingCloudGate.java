@@ -121,10 +121,10 @@ public final class DomainsCloudGateMappingCloudGate {
             return this;
         }
         public DomainsCloudGateMappingCloudGate build() {
-            final var o = new DomainsCloudGateMappingCloudGate();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsCloudGateMappingCloudGate();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

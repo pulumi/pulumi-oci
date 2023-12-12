@@ -180,16 +180,16 @@ public final class GetTargetDatabasesColumnsColumn {
             return this;
         }
         public GetTargetDatabasesColumnsColumn build() {
-            final var o = new GetTargetDatabasesColumnsColumn();
-            o.characterLength = characterLength;
-            o.columnName = columnName;
-            o.dataType = dataType;
-            o.length = length;
-            o.precision = precision;
-            o.scale = scale;
-            o.schemaName = schemaName;
-            o.tableName = tableName;
-            return o;
+            final var _resultValue = new GetTargetDatabasesColumnsColumn();
+            _resultValue.characterLength = characterLength;
+            _resultValue.columnName = columnName;
+            _resultValue.dataType = dataType;
+            _resultValue.length = length;
+            _resultValue.precision = precision;
+            _resultValue.scale = scale;
+            _resultValue.schemaName = schemaName;
+            _resultValue.tableName = tableName;
+            return _resultValue;
         }
     }
 }

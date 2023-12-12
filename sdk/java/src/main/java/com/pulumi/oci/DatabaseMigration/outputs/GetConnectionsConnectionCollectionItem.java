@@ -478,31 +478,31 @@ public final class GetConnectionsConnectionCollectionItem {
             return vaultDetails(List.of(vaultDetails));
         }
         public GetConnectionsConnectionCollectionItem build() {
-            final var o = new GetConnectionsConnectionCollectionItem();
-            o.adminCredentials = adminCredentials;
-            o.certificateTdn = certificateTdn;
-            o.compartmentId = compartmentId;
-            o.connectDescriptors = connectDescriptors;
-            o.credentialsSecretId = credentialsSecretId;
-            o.databaseId = databaseId;
-            o.databaseType = databaseType;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.nsgIds = nsgIds;
-            o.privateEndpoints = privateEndpoints;
-            o.replicationCredentials = replicationCredentials;
-            o.sshDetails = sshDetails;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.tlsKeystore = tlsKeystore;
-            o.tlsWallet = tlsWallet;
-            o.vaultDetails = vaultDetails;
-            return o;
+            final var _resultValue = new GetConnectionsConnectionCollectionItem();
+            _resultValue.adminCredentials = adminCredentials;
+            _resultValue.certificateTdn = certificateTdn;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectDescriptors = connectDescriptors;
+            _resultValue.credentialsSecretId = credentialsSecretId;
+            _resultValue.databaseId = databaseId;
+            _resultValue.databaseType = databaseType;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.privateEndpoints = privateEndpoints;
+            _resultValue.replicationCredentials = replicationCredentials;
+            _resultValue.sshDetails = sshDetails;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.tlsKeystore = tlsKeystore;
+            _resultValue.tlsWallet = tlsWallet;
+            _resultValue.vaultDetails = vaultDetails;
+            return _resultValue;
         }
     }
 }

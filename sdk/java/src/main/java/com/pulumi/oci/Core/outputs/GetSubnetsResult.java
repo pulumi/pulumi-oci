@@ -163,15 +163,15 @@ public final class GetSubnetsResult {
             return this;
         }
         public GetSubnetsResult build() {
-            final var o = new GetSubnetsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.subnets = subnets;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetSubnetsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.subnets = subnets;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

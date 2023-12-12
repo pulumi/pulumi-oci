@@ -415,28 +415,28 @@ public final class GetManagementStationResult {
             return this;
         }
         public GetManagementStationResult build() {
-            final var o = new GetManagementStationResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.hostname = hostname;
-            o.id = id;
-            o.managedInstanceId = managedInstanceId;
-            o.managementStationId = managementStationId;
-            o.mirrorCapacity = mirrorCapacity;
-            o.mirrorSyncStatuses = mirrorSyncStatuses;
-            o.mirrors = mirrors;
-            o.overallPercentage = overallPercentage;
-            o.overallState = overallState;
-            o.profileId = profileId;
-            o.proxies = proxies;
-            o.scheduledJobId = scheduledJobId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.totalMirrors = totalMirrors;
-            return o;
+            final var _resultValue = new GetManagementStationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostname = hostname;
+            _resultValue.id = id;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.managementStationId = managementStationId;
+            _resultValue.mirrorCapacity = mirrorCapacity;
+            _resultValue.mirrorSyncStatuses = mirrorSyncStatuses;
+            _resultValue.mirrors = mirrors;
+            _resultValue.overallPercentage = overallPercentage;
+            _resultValue.overallState = overallState;
+            _resultValue.profileId = profileId;
+            _resultValue.proxies = proxies;
+            _resultValue.scheduledJobId = scheduledJobId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.totalMirrors = totalMirrors;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollectio
             return items(List.of(items));
         }
         public GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection build() {
-            final var o = new GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSensitiveDataModelSensitiveObjectsSensitiveObjectCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

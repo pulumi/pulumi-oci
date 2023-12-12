@@ -105,12 +105,12 @@ public final class GetKeyStoresResult {
             return keyStores(List.of(keyStores));
         }
         public GetKeyStoresResult build() {
-            final var o = new GetKeyStoresResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.keyStores = keyStores;
-            return o;
+            final var _resultValue = new GetKeyStoresResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.keyStores = keyStores;
+            return _resultValue;
         }
     }
 }

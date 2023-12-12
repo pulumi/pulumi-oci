@@ -50,9 +50,9 @@ public final class GetByoipAllocatedRangesByoipAllocatedRangeCollection {
             return items(List.of(items));
         }
         public GetByoipAllocatedRangesByoipAllocatedRangeCollection build() {
-            final var o = new GetByoipAllocatedRangesByoipAllocatedRangeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetByoipAllocatedRangesByoipAllocatedRangeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

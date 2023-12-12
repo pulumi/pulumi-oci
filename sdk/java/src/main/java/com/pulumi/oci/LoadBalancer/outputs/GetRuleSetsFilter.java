@@ -75,11 +75,11 @@ public final class GetRuleSetsFilter {
             return values(List.of(values));
         }
         public GetRuleSetsFilter build() {
-            final var o = new GetRuleSetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetRuleSetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

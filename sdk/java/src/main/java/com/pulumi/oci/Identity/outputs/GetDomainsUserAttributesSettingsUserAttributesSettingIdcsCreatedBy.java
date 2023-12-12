@@ -122,13 +122,13 @@ public final class GetDomainsUserAttributesSettingsUserAttributesSettingIdcsCrea
             return this;
         }
         public GetDomainsUserAttributesSettingsUserAttributesSettingIdcsCreatedBy build() {
-            final var o = new GetDomainsUserAttributesSettingsUserAttributesSettingIdcsCreatedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUserAttributesSettingsUserAttributesSettingIdcsCreatedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

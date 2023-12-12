@@ -65,10 +65,10 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAc
             return this;
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader build() {
-            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

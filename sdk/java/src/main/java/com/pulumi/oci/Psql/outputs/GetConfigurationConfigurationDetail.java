@@ -50,9 +50,9 @@ public final class GetConfigurationConfigurationDetail {
             return items(List.of(items));
         }
         public GetConfigurationConfigurationDetail build() {
-            final var o = new GetConfigurationConfigurationDetail();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetConfigurationConfigurationDetail();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

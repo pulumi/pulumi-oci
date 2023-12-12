@@ -42,9 +42,9 @@ public final class GetByoipRangesByoipRangeCollection {
             return items(List.of(items));
         }
         public GetByoipRangesByoipRangeCollection build() {
-            final var o = new GetByoipRangesByoipRangeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetByoipRangesByoipRangeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -57,10 +57,10 @@ public final class GetReportContentResult {
             return this;
         }
         public GetReportContentResult build() {
-            final var o = new GetReportContentResult();
-            o.id = id;
-            o.reportId = reportId;
-            return o;
+            final var _resultValue = new GetReportContentResult();
+            _resultValue.id = id;
+            _resultValue.reportId = reportId;
+            return _resultValue;
         }
     }
 }

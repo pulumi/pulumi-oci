@@ -122,13 +122,13 @@ public final class GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy
             return this;
         }
         public GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy build() {
-            final var o = new GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMySupportAccountsMySupportAccountIdcsLastModifiedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

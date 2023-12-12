@@ -241,24 +241,24 @@ public final class GetDomainsOauth2clientCredentialsResult {
             return this;
         }
         public GetDomainsOauth2clientCredentialsResult build() {
-            final var o = new GetDomainsOauth2clientCredentialsResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.idcsEndpoint = idcsEndpoint;
-            o.itemsPerPage = itemsPerPage;
-            o.oauth2clientCredentialCount = oauth2clientCredentialCount;
-            o.oauth2clientCredentialFilter = oauth2clientCredentialFilter;
-            o.oauth2clientCredentials = oauth2clientCredentials;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.startIndex = startIndex;
-            o.totalResults = totalResults;
-            return o;
+            final var _resultValue = new GetDomainsOauth2clientCredentialsResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.itemsPerPage = itemsPerPage;
+            _resultValue.oauth2clientCredentialCount = oauth2clientCredentialCount;
+            _resultValue.oauth2clientCredentialFilter = oauth2clientCredentialFilter;
+            _resultValue.oauth2clientCredentials = oauth2clientCredentials;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.startIndex = startIndex;
+            _resultValue.totalResults = totalResults;
+            return _resultValue;
         }
     }
 }

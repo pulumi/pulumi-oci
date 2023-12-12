@@ -288,22 +288,22 @@ public final class GetTargetAlertPolicyAssociationResult {
             return this;
         }
         public GetTargetAlertPolicyAssociationResult build() {
-            final var o = new GetTargetAlertPolicyAssociationResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.policyId = policyId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.targetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
-            o.targetId = targetId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetTargetAlertPolicyAssociationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.policyId = policyId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetAlertPolicyAssociationId = targetAlertPolicyAssociationId;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

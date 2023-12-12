@@ -65,10 +65,10 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail
             return this;
         }
         public GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail build() {
-            final var o = new GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail();
-            o.id = id;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailSourceDetail();
+            _resultValue.id = id;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

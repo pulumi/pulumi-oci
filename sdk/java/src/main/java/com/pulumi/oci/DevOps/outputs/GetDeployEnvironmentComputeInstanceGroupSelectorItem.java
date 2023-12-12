@@ -107,12 +107,12 @@ public final class GetDeployEnvironmentComputeInstanceGroupSelectorItem {
             return this;
         }
         public GetDeployEnvironmentComputeInstanceGroupSelectorItem build() {
-            final var o = new GetDeployEnvironmentComputeInstanceGroupSelectorItem();
-            o.computeInstanceIds = computeInstanceIds;
-            o.query = query;
-            o.region = region;
-            o.selectorType = selectorType;
-            return o;
+            final var _resultValue = new GetDeployEnvironmentComputeInstanceGroupSelectorItem();
+            _resultValue.computeInstanceIds = computeInstanceIds;
+            _resultValue.query = query;
+            _resultValue.region = region;
+            _resultValue.selectorType = selectorType;
+            return _resultValue;
         }
     }
 }

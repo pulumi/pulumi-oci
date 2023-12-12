@@ -242,13 +242,13 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount();
-            o.ocid = ocid;
-            o.ref = ref;
-            o.userId = userId;
-            o.userProvider = userProvider;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount();
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.userId = userId;
+            _resultValue.userProvider = userProvider;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

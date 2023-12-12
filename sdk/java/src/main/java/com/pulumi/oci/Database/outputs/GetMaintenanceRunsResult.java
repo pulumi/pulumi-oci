@@ -212,18 +212,18 @@ public final class GetMaintenanceRunsResult {
             return this;
         }
         public GetMaintenanceRunsResult build() {
-            final var o = new GetMaintenanceRunsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.maintenanceRuns = maintenanceRuns;
-            o.maintenanceSubtype = maintenanceSubtype;
-            o.maintenanceType = maintenanceType;
-            o.state = state;
-            o.targetResourceId = targetResourceId;
-            o.targetResourceType = targetResourceType;
-            return o;
+            final var _resultValue = new GetMaintenanceRunsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.maintenanceRuns = maintenanceRuns;
+            _resultValue.maintenanceSubtype = maintenanceSubtype;
+            _resultValue.maintenanceType = maintenanceType;
+            _resultValue.state = state;
+            _resultValue.targetResourceId = targetResourceId;
+            _resultValue.targetResourceType = targetResourceType;
+            return _resultValue;
         }
     }
 }

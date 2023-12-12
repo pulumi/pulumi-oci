@@ -57,10 +57,10 @@ public final class GetJavaDownloadsJavaDownloadReportContentResult {
             return this;
         }
         public GetJavaDownloadsJavaDownloadReportContentResult build() {
-            final var o = new GetJavaDownloadsJavaDownloadReportContentResult();
-            o.id = id;
-            o.javaDownloadReportId = javaDownloadReportId;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadReportContentResult();
+            _resultValue.id = id;
+            _resultValue.javaDownloadReportId = javaDownloadReportId;
+            return _resultValue;
         }
     }
 }

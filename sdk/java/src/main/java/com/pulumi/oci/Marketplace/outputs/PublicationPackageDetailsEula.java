@@ -67,10 +67,10 @@ public final class PublicationPackageDetailsEula {
             return this;
         }
         public PublicationPackageDetailsEula build() {
-            final var o = new PublicationPackageDetailsEula();
-            o.eulaType = eulaType;
-            o.licenseText = licenseText;
-            return o;
+            final var _resultValue = new PublicationPackageDetailsEula();
+            _resultValue.eulaType = eulaType;
+            _resultValue.licenseText = licenseText;
+            return _resultValue;
         }
     }
 }

@@ -105,12 +105,12 @@ public final class GetAppCatalogListingResourceVersionsResult {
             return this;
         }
         public GetAppCatalogListingResourceVersionsResult build() {
-            final var o = new GetAppCatalogListingResourceVersionsResult();
-            o.appCatalogListingResourceVersions = appCatalogListingResourceVersions;
-            o.filters = filters;
-            o.id = id;
-            o.listingId = listingId;
-            return o;
+            final var _resultValue = new GetAppCatalogListingResourceVersionsResult();
+            _resultValue.appCatalogListingResourceVersions = appCatalogListingResourceVersions;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.listingId = listingId;
+            return _resultValue;
         }
     }
 }

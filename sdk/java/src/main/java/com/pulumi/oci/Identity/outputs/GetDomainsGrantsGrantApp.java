@@ -84,11 +84,11 @@ public final class GetDomainsGrantsGrantApp {
             return this;
         }
         public GetDomainsGrantsGrantApp build() {
-            final var o = new GetDomainsGrantsGrantApp();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsGrantsGrantApp();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

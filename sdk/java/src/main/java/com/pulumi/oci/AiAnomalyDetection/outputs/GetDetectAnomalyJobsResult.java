@@ -193,17 +193,17 @@ public final class GetDetectAnomalyJobsResult {
             return this;
         }
         public GetDetectAnomalyJobsResult build() {
-            final var o = new GetDetectAnomalyJobsResult();
-            o.compartmentId = compartmentId;
-            o.detectAnomalyJobCollections = detectAnomalyJobCollections;
-            o.detectAnomalyJobId = detectAnomalyJobId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.modelId = modelId;
-            o.projectId = projectId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDetectAnomalyJobsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.detectAnomalyJobCollections = detectAnomalyJobCollections;
+            _resultValue.detectAnomalyJobId = detectAnomalyJobId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.modelId = modelId;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

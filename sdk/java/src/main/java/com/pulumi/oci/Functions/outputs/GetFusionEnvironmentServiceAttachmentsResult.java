@@ -155,15 +155,15 @@ public final class GetFusionEnvironmentServiceAttachmentsResult {
             return this;
         }
         public GetFusionEnvironmentServiceAttachmentsResult build() {
-            final var o = new GetFusionEnvironmentServiceAttachmentsResult();
-            o.displayName = displayName;
-            o.filters = filters;
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.serviceAttachmentCollections = serviceAttachmentCollections;
-            o.serviceInstanceType = serviceInstanceType;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentServiceAttachmentsResult();
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.serviceAttachmentCollections = serviceAttachmentCollections;
+            _resultValue.serviceInstanceType = serviceInstanceType;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

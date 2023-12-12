@@ -446,30 +446,30 @@ public final class GetReplicaResult {
             return this;
         }
         public GetReplicaResult build() {
-            final var o = new GetReplicaResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.configurationId = configurationId;
-            o.dbSystemId = dbSystemId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.faultDomain = faultDomain;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.isDeleteProtected = isDeleteProtected;
-            o.lifecycleDetails = lifecycleDetails;
-            o.mysqlVersion = mysqlVersion;
-            o.port = port;
-            o.portX = portX;
-            o.replicaId = replicaId;
-            o.replicaOverrides = replicaOverrides;
-            o.shapeName = shapeName;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetReplicaResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurationId = configurationId;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.isDeleteProtected = isDeleteProtected;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.mysqlVersion = mysqlVersion;
+            _resultValue.port = port;
+            _resultValue.portX = portX;
+            _resultValue.replicaId = replicaId;
+            _resultValue.replicaOverrides = replicaOverrides;
+            _resultValue.shapeName = shapeName;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

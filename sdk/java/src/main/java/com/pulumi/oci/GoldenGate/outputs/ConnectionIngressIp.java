@@ -48,9 +48,9 @@ public final class ConnectionIngressIp {
             return this;
         }
         public ConnectionIngressIp build() {
-            final var o = new ConnectionIngressIp();
-            o.ingressIp = ingressIp;
-            return o;
+            final var _resultValue = new ConnectionIngressIp();
+            _resultValue.ingressIp = ingressIp;
+            return _resultValue;
         }
     }
 }

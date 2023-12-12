@@ -67,11 +67,11 @@ public final class GetServiceCatalogAssociationsFilter {
             return values(List.of(values));
         }
         public GetServiceCatalogAssociationsFilter build() {
-            final var o = new GetServiceCatalogAssociationsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetServiceCatalogAssociationsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

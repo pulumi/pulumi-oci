@@ -51,10 +51,10 @@ public final class VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairD
             return this;
         }
         public VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail build() {
-            final var o = new VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail();
-            o.ipv6Address = ipv6Address;
-            o.ipv6SubnetCidr = ipv6SubnetCidr;
-            return o;
+            final var _resultValue = new VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail();
+            _resultValue.ipv6Address = ipv6Address;
+            _resultValue.ipv6SubnetCidr = ipv6SubnetCidr;
+            return _resultValue;
         }
     }
 }

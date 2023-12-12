@@ -221,21 +221,21 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             return this;
         }
         public GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail build() {
-            final var o = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail();
-            o.compartmentId = compartmentId;
-            o.connectionDetails = connectionDetails;
-            o.credentialDetails = credentialDetails;
-            o.databaseId = databaseId;
-            o.databaseResourceType = databaseResourceType;
-            o.dbmPrivateEndpointId = dbmPrivateEndpointId;
-            o.definedTags = definedTags;
-            o.deploymentType = deploymentType;
-            o.entitySource = entitySource;
-            o.freeformTags = freeformTags;
-            o.opsiPrivateEndpointId = opsiPrivateEndpointId;
-            o.serviceName = serviceName;
-            o.systemTags = systemTags;
-            return o;
+            final var _resultValue = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionDetails = connectionDetails;
+            _resultValue.credentialDetails = credentialDetails;
+            _resultValue.databaseId = databaseId;
+            _resultValue.databaseResourceType = databaseResourceType;
+            _resultValue.dbmPrivateEndpointId = dbmPrivateEndpointId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deploymentType = deploymentType;
+            _resultValue.entitySource = entitySource;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            _resultValue.serviceName = serviceName;
+            _resultValue.systemTags = systemTags;
+            return _resultValue;
         }
     }
 }

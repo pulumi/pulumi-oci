@@ -51,9 +51,9 @@ public final class ConfigurationConfigurationDetail {
             return items(List.of(items));
         }
         public ConfigurationConfigurationDetail build() {
-            final var o = new ConfigurationConfigurationDetail();
-            o.items = items;
-            return o;
+            final var _resultValue = new ConfigurationConfigurationDetail();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

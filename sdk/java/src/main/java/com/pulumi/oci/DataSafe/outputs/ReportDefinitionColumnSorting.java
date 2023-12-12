@@ -86,11 +86,11 @@ public final class ReportDefinitionColumnSorting {
             return this;
         }
         public ReportDefinitionColumnSorting build() {
-            final var o = new ReportDefinitionColumnSorting();
-            o.fieldName = fieldName;
-            o.isAscending = isAscending;
-            o.sortingOrder = sortingOrder;
-            return o;
+            final var _resultValue = new ReportDefinitionColumnSorting();
+            _resultValue.fieldName = fieldName;
+            _resultValue.isAscending = isAscending;
+            _resultValue.sortingOrder = sortingOrder;
+            return _resultValue;
         }
     }
 }

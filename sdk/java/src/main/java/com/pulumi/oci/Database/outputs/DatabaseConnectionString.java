@@ -88,11 +88,11 @@ public final class DatabaseConnectionString {
             return this;
         }
         public DatabaseConnectionString build() {
-            final var o = new DatabaseConnectionString();
-            o.allConnectionStrings = allConnectionStrings;
-            o.cdbDefault = cdbDefault;
-            o.cdbIpDefault = cdbIpDefault;
-            return o;
+            final var _resultValue = new DatabaseConnectionString();
+            _resultValue.allConnectionStrings = allConnectionStrings;
+            _resultValue.cdbDefault = cdbDefault;
+            _resultValue.cdbIpDefault = cdbIpDefault;
+            return _resultValue;
         }
     }
 }

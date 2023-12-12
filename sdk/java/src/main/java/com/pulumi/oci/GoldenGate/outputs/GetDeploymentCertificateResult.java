@@ -430,30 +430,30 @@ public final class GetDeploymentCertificateResult {
             return this;
         }
         public GetDeploymentCertificateResult build() {
-            final var o = new GetDeploymentCertificateResult();
-            o.authorityKeyId = authorityKeyId;
-            o.certificateContent = certificateContent;
-            o.certificateKey = certificateKey;
-            o.deploymentId = deploymentId;
-            o.id = id;
-            o.isCa = isCa;
-            o.isSelfSigned = isSelfSigned;
-            o.issuer = issuer;
-            o.key = key;
-            o.md5hash = md5hash;
-            o.publicKey = publicKey;
-            o.publicKeyAlgorithm = publicKeyAlgorithm;
-            o.publicKeySize = publicKeySize;
-            o.serial = serial;
-            o.sha1hash = sha1hash;
-            o.state = state;
-            o.subject = subject;
-            o.subjectKeyId = subjectKeyId;
-            o.timeCreated = timeCreated;
-            o.timeValidFrom = timeValidFrom;
-            o.timeValidTo = timeValidTo;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetDeploymentCertificateResult();
+            _resultValue.authorityKeyId = authorityKeyId;
+            _resultValue.certificateContent = certificateContent;
+            _resultValue.certificateKey = certificateKey;
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.id = id;
+            _resultValue.isCa = isCa;
+            _resultValue.isSelfSigned = isSelfSigned;
+            _resultValue.issuer = issuer;
+            _resultValue.key = key;
+            _resultValue.md5hash = md5hash;
+            _resultValue.publicKey = publicKey;
+            _resultValue.publicKeyAlgorithm = publicKeyAlgorithm;
+            _resultValue.publicKeySize = publicKeySize;
+            _resultValue.serial = serial;
+            _resultValue.sha1hash = sha1hash;
+            _resultValue.state = state;
+            _resultValue.subject = subject;
+            _resultValue.subjectKeyId = subjectKeyId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeValidFrom = timeValidFrom;
+            _resultValue.timeValidTo = timeValidTo;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -224,19 +224,19 @@ public final class GetReportDefinitionsResult {
             return this;
         }
         public GetReportDefinitionsResult build() {
-            final var o = new GetReportDefinitionsResult();
-            o.accessLevel = accessLevel;
-            o.category = category;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.dataSource = dataSource;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isSeeded = isSeeded;
-            o.reportDefinitionCollections = reportDefinitionCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetReportDefinitionsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.category = category;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.dataSource = dataSource;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isSeeded = isSeeded;
+            _resultValue.reportDefinitionCollections = reportDefinitionCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

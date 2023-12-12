@@ -161,14 +161,14 @@ public final class GetDeploymentSpecificationRoute {
             return responsePolicies(List.of(responsePolicies));
         }
         public GetDeploymentSpecificationRoute build() {
-            final var o = new GetDeploymentSpecificationRoute();
-            o.backends = backends;
-            o.loggingPolicies = loggingPolicies;
-            o.methods = methods;
-            o.path = path;
-            o.requestPolicies = requestPolicies;
-            o.responsePolicies = responsePolicies;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRoute();
+            _resultValue.backends = backends;
+            _resultValue.loggingPolicies = loggingPolicies;
+            _resultValue.methods = methods;
+            _resultValue.path = path;
+            _resultValue.requestPolicies = requestPolicies;
+            _resultValue.responsePolicies = responsePolicies;
+            return _resultValue;
         }
     }
 }

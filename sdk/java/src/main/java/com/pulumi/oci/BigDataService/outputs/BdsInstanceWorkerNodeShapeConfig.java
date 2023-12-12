@@ -90,11 +90,11 @@ public final class BdsInstanceWorkerNodeShapeConfig {
             return this;
         }
         public BdsInstanceWorkerNodeShapeConfig build() {
-            final var o = new BdsInstanceWorkerNodeShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.nvmes = nvmes;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new BdsInstanceWorkerNodeShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.nvmes = nvmes;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

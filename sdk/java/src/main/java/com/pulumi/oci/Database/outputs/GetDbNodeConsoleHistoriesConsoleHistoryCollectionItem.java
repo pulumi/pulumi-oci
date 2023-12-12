@@ -200,17 +200,17 @@ public final class GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem {
             return this;
         }
         public GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem build() {
-            final var o = new GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem();
-            o.compartmentId = compartmentId;
-            o.dbNodeId = dbNodeId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetDbNodeConsoleHistoriesConsoleHistoryCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbNodeId = dbNodeId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

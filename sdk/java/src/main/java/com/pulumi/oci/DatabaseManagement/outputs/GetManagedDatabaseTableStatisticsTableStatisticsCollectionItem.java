@@ -86,11 +86,11 @@ public final class GetManagedDatabaseTableStatisticsTableStatisticsCollectionIte
             return this;
         }
         public GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem build() {
-            final var o = new GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem();
-            o.count = count;
-            o.percentage = percentage;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetManagedDatabaseTableStatisticsTableStatisticsCollectionItem();
+            _resultValue.count = count;
+            _resultValue.percentage = percentage;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

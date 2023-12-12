@@ -207,18 +207,18 @@ public final class ModelModelTrainingResult {
             return this;
         }
         public ModelModelTrainingResult build() {
-            final var o = new ModelModelTrainingResult();
-            o.fap = fap;
-            o.isTrainingGoalAchieved = isTrainingGoalAchieved;
-            o.mae = mae;
-            o.maxInferenceSyncRows = maxInferenceSyncRows;
-            o.multivariateFap = multivariateFap;
-            o.rmse = rmse;
-            o.rowReductionDetails = rowReductionDetails;
-            o.signalDetails = signalDetails;
-            o.warning = warning;
-            o.windowSize = windowSize;
-            return o;
+            final var _resultValue = new ModelModelTrainingResult();
+            _resultValue.fap = fap;
+            _resultValue.isTrainingGoalAchieved = isTrainingGoalAchieved;
+            _resultValue.mae = mae;
+            _resultValue.maxInferenceSyncRows = maxInferenceSyncRows;
+            _resultValue.multivariateFap = multivariateFap;
+            _resultValue.rmse = rmse;
+            _resultValue.rowReductionDetails = rowReductionDetails;
+            _resultValue.signalDetails = signalDetails;
+            _resultValue.warning = warning;
+            _resultValue.windowSize = windowSize;
+            return _resultValue;
         }
     }
 }

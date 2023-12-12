@@ -66,10 +66,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyR
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting();
-            o.rateInRequestsPerSecond = rateInRequestsPerSecond;
-            o.rateKey = rateKey;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyRateLimiting();
+            _resultValue.rateInRequestsPerSecond = rateInRequestsPerSecond;
+            _resultValue.rateKey = rateKey;
+            return _resultValue;
         }
     }
 }

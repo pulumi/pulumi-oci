@@ -75,11 +75,11 @@ public final class GetApplicationsFilter {
             return values(List.of(values));
         }
         public GetApplicationsFilter build() {
-            final var o = new GetApplicationsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetApplicationsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

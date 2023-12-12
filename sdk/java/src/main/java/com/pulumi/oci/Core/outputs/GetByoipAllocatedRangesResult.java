@@ -97,12 +97,12 @@ public final class GetByoipAllocatedRangesResult {
             return this;
         }
         public GetByoipAllocatedRangesResult build() {
-            final var o = new GetByoipAllocatedRangesResult();
-            o.byoipAllocatedRangeCollections = byoipAllocatedRangeCollections;
-            o.byoipRangeId = byoipRangeId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetByoipAllocatedRangesResult();
+            _resultValue.byoipAllocatedRangeCollections = byoipAllocatedRangeCollections;
+            _resultValue.byoipRangeId = byoipRangeId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

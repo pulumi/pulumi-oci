@@ -103,12 +103,12 @@ public final class GetInstanceAgentPluginsInstanceAgentPlugin {
             return this;
         }
         public GetInstanceAgentPluginsInstanceAgentPlugin build() {
-            final var o = new GetInstanceAgentPluginsInstanceAgentPlugin();
-            o.message = message;
-            o.name = name;
-            o.status = status;
-            o.timeLastUpdatedUtc = timeLastUpdatedUtc;
-            return o;
+            final var _resultValue = new GetInstanceAgentPluginsInstanceAgentPlugin();
+            _resultValue.message = message;
+            _resultValue.name = name;
+            _resultValue.status = status;
+            _resultValue.timeLastUpdatedUtc = timeLastUpdatedUtc;
+            return _resultValue;
         }
     }
 }

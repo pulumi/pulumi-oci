@@ -443,29 +443,29 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
             return this;
         }
         public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem build() {
-            final var o = new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem();
-            o.additionalFqdns = additionalFqdns;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.endpointFqdn = endpointFqdn;
-            o.endpointServiceId = endpointServiceId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.locks = locks;
-            o.nsgIds = nsgIds;
-            o.privateEndpointIp = privateEndpointIp;
-            o.privateEndpointVnicId = privateEndpointVnicId;
-            o.reverseConnectionConfigurations = reverseConnectionConfigurations;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem();
+            _resultValue.additionalFqdns = additionalFqdns;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.endpointFqdn = endpointFqdn;
+            _resultValue.endpointServiceId = endpointServiceId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.privateEndpointIp = privateEndpointIp;
+            _resultValue.privateEndpointVnicId = privateEndpointVnicId;
+            _resultValue.reverseConnectionConfigurations = reverseConnectionConfigurations;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

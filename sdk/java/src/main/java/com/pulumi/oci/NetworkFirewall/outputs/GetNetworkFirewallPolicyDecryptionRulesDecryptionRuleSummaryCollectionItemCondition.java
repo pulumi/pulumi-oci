@@ -73,10 +73,10 @@ public final class GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryC
             return sourceAddresses(List.of(sourceAddresses));
         }
         public GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemCondition build() {
-            final var o = new GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemCondition();
-            o.destinationAddresses = destinationAddresses;
-            o.sourceAddresses = sourceAddresses;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemCondition();
+            _resultValue.destinationAddresses = destinationAddresses;
+            _resultValue.sourceAddresses = sourceAddresses;
+            return _resultValue;
         }
     }
 }

@@ -242,19 +242,19 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
             return this;
         }
         public GetDefaultConfigurationsDefaultConfigurationCollectionItem build() {
-            final var o = new GetDefaultConfigurationsDefaultConfigurationCollectionItem();
-            o.configurationDetails = configurationDetails;
-            o.dbVersion = dbVersion;
-            o.description = description;
-            o.displayName = displayName;
-            o.id = id;
-            o.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
-            o.instanceOcpuCount = instanceOcpuCount;
-            o.lifecycleDetails = lifecycleDetails;
-            o.shape = shape;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetDefaultConfigurationsDefaultConfigurationCollectionItem();
+            _resultValue.configurationDetails = configurationDetails;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
+            _resultValue.instanceOcpuCount = instanceOcpuCount;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.shape = shape;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

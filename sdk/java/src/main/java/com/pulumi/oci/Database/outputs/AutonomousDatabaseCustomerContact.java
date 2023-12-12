@@ -48,9 +48,9 @@ public final class AutonomousDatabaseCustomerContact {
             return this;
         }
         public AutonomousDatabaseCustomerContact build() {
-            final var o = new AutonomousDatabaseCustomerContact();
-            o.email = email;
-            return o;
+            final var _resultValue = new AutonomousDatabaseCustomerContact();
+            _resultValue.email = email;
+            return _resultValue;
         }
     }
 }

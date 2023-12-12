@@ -105,12 +105,12 @@ public final class ConnectionSshDetails {
             return this;
         }
         public ConnectionSshDetails build() {
-            final var o = new ConnectionSshDetails();
-            o.host = host;
-            o.sshkey = sshkey;
-            o.sudoLocation = sudoLocation;
-            o.user = user;
-            return o;
+            final var _resultValue = new ConnectionSshDetails();
+            _resultValue.host = host;
+            _resultValue.sshkey = sshkey;
+            _resultValue.sudoLocation = sudoLocation;
+            _resultValue.user = user;
+            return _resultValue;
         }
     }
 }

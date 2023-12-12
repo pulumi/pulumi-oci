@@ -103,12 +103,12 @@ public final class GetDomainsAppRolesAppRoleMember {
             return this;
         }
         public GetDomainsAppRolesAppRoleMember build() {
-            final var o = new GetDomainsAppRolesAppRoleMember();
-            o.display = display;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppRolesAppRoleMember();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

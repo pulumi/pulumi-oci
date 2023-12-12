@@ -42,9 +42,9 @@ public final class GetClustersClusterCollection {
             return items(List.of(items));
         }
         public GetClustersClusterCollection build() {
-            final var o = new GetClustersClusterCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetClustersClusterCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

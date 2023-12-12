@@ -65,10 +65,10 @@ public final class GetProfileLifecycleEnvironment {
             return this;
         }
         public GetProfileLifecycleEnvironment build() {
-            final var o = new GetProfileLifecycleEnvironment();
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetProfileLifecycleEnvironment();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

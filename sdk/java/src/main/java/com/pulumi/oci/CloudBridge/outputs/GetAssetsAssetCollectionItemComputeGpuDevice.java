@@ -123,13 +123,13 @@ public final class GetAssetsAssetCollectionItemComputeGpuDevice {
             return this;
         }
         public GetAssetsAssetCollectionItemComputeGpuDevice build() {
-            final var o = new GetAssetsAssetCollectionItemComputeGpuDevice();
-            o.coresCount = coresCount;
-            o.description = description;
-            o.manufacturer = manufacturer;
-            o.memoryInMbs = memoryInMbs;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAssetsAssetCollectionItemComputeGpuDevice();
+            _resultValue.coresCount = coresCount;
+            _resultValue.description = description;
+            _resultValue.manufacturer = manufacturer;
+            _resultValue.memoryInMbs = memoryInMbs;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

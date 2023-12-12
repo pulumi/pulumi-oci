@@ -149,14 +149,14 @@ public final class MigrationDatapumpSettingsDataPumpParameters {
             return this;
         }
         public MigrationDatapumpSettingsDataPumpParameters build() {
-            final var o = new MigrationDatapumpSettingsDataPumpParameters();
-            o.estimate = estimate;
-            o.excludeParameters = excludeParameters;
-            o.exportParallelismDegree = exportParallelismDegree;
-            o.importParallelismDegree = importParallelismDegree;
-            o.isCluster = isCluster;
-            o.tableExistsAction = tableExistsAction;
-            return o;
+            final var _resultValue = new MigrationDatapumpSettingsDataPumpParameters();
+            _resultValue.estimate = estimate;
+            _resultValue.excludeParameters = excludeParameters;
+            _resultValue.exportParallelismDegree = exportParallelismDegree;
+            _resultValue.importParallelismDegree = importParallelismDegree;
+            _resultValue.isCluster = isCluster;
+            _resultValue.tableExistsAction = tableExistsAction;
+            return _resultValue;
         }
     }
 }

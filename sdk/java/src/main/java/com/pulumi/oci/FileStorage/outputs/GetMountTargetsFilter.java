@@ -67,11 +67,11 @@ public final class GetMountTargetsFilter {
             return values(List.of(values));
         }
         public GetMountTargetsFilter build() {
-            final var o = new GetMountTargetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetMountTargetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

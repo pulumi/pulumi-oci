@@ -162,15 +162,15 @@ public final class GetConfigRule {
             return this;
         }
         public GetConfigRule build() {
-            final var o = new GetConfigRule();
-            o.displayName = displayName;
-            o.filterText = filterText;
-            o.isApplyToErrorSpans = isApplyToErrorSpans;
-            o.isEnabled = isEnabled;
-            o.priority = priority;
-            o.satisfiedResponseTime = satisfiedResponseTime;
-            o.toleratingResponseTime = toleratingResponseTime;
-            return o;
+            final var _resultValue = new GetConfigRule();
+            _resultValue.displayName = displayName;
+            _resultValue.filterText = filterText;
+            _resultValue.isApplyToErrorSpans = isApplyToErrorSpans;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.priority = priority;
+            _resultValue.satisfiedResponseTime = satisfiedResponseTime;
+            _resultValue.toleratingResponseTime = toleratingResponseTime;
+            return _resultValue;
         }
     }
 }

@@ -68,10 +68,10 @@ public final class ConnectorSourceMonitoringSource {
             return this;
         }
         public ConnectorSourceMonitoringSource build() {
-            final var o = new ConnectorSourceMonitoringSource();
-            o.compartmentId = compartmentId;
-            o.namespaceDetails = namespaceDetails;
-            return o;
+            final var _resultValue = new ConnectorSourceMonitoringSource();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.namespaceDetails = namespaceDetails;
+            return _resultValue;
         }
     }
 }

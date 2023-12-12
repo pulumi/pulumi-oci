@@ -76,11 +76,11 @@ public final class GetDbSystemsDbSystemCollectionItemInstancesDetail {
             return this;
         }
         public GetDbSystemsDbSystemCollectionItemInstancesDetail build() {
-            final var o = new GetDbSystemsDbSystemCollectionItemInstancesDetail();
-            o.description = description;
-            o.displayName = displayName;
-            o.privateIp = privateIp;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemCollectionItemInstancesDetail();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.privateIp = privateIp;
+            return _resultValue;
         }
     }
 }

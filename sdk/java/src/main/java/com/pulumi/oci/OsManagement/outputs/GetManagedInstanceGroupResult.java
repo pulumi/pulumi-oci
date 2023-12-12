@@ -242,20 +242,20 @@ public final class GetManagedInstanceGroupResult {
             return this;
         }
         public GetManagedInstanceGroupResult build() {
-            final var o = new GetManagedInstanceGroupResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.managedInstanceCount = managedInstanceCount;
-            o.managedInstanceGroupId = managedInstanceGroupId;
-            o.managedInstanceIds = managedInstanceIds;
-            o.managedInstances = managedInstances;
-            o.osFamily = osFamily;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.managedInstanceCount = managedInstanceCount;
+            _resultValue.managedInstanceGroupId = managedInstanceGroupId;
+            _resultValue.managedInstanceIds = managedInstanceIds;
+            _resultValue.managedInstances = managedInstances;
+            _resultValue.osFamily = osFamily;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

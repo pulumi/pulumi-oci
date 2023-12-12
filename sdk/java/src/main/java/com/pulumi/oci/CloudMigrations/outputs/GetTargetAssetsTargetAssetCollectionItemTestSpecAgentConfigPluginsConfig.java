@@ -65,10 +65,10 @@ public final class GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPl
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig build() {
-            final var o = new GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig();
-            o.desiredState = desiredState;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetTargetAssetsTargetAssetCollectionItemTestSpecAgentConfigPluginsConfig();
+            _resultValue.desiredState = desiredState;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

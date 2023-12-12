@@ -84,11 +84,11 @@ public final class GetSoftwareSourceStreamProfileModuleStreamProfile {
             return this;
         }
         public GetSoftwareSourceStreamProfileModuleStreamProfile build() {
-            final var o = new GetSoftwareSourceStreamProfileModuleStreamProfile();
-            o.moduleName = moduleName;
-            o.profileName = profileName;
-            o.streamName = streamName;
-            return o;
+            final var _resultValue = new GetSoftwareSourceStreamProfileModuleStreamProfile();
+            _resultValue.moduleName = moduleName;
+            _resultValue.profileName = profileName;
+            _resultValue.streamName = streamName;
+            return _resultValue;
         }
     }
 }

@@ -503,34 +503,34 @@ public final class GetSubscriptionResult {
             return this;
         }
         public GetSubscriptionResult build() {
-            final var o = new GetSubscriptionResult();
-            o.accountType = accountType;
-            o.billToCustAccountId = billToCustAccountId;
-            o.billingAddresses = billingAddresses;
-            o.compartmentId = compartmentId;
-            o.currencyCode = currencyCode;
-            o.email = email;
-            o.gsiOrgCode = gsiOrgCode;
-            o.id = id;
-            o.isIntentToPay = isIntentToPay;
-            o.languageCode = languageCode;
-            o.organizationId = organizationId;
-            o.ospHomeRegion = ospHomeRegion;
-            o.paymentGateways = paymentGateways;
-            o.paymentOptions = paymentOptions;
-            o.planType = planType;
-            o.shipToCustAcctRoleId = shipToCustAcctRoleId;
-            o.shipToCustAcctSiteId = shipToCustAcctSiteId;
-            o.subscriptionId = subscriptionId;
-            o.subscriptionPlanNumber = subscriptionPlanNumber;
-            o.subscriptions = subscriptions;
-            o.taxInfos = taxInfos;
-            o.timePersonalToCorporateConv = timePersonalToCorporateConv;
-            o.timePlanUpgrade = timePlanUpgrade;
-            o.timeStart = timeStart;
-            o.upgradeState = upgradeState;
-            o.upgradeStateDetails = upgradeStateDetails;
-            return o;
+            final var _resultValue = new GetSubscriptionResult();
+            _resultValue.accountType = accountType;
+            _resultValue.billToCustAccountId = billToCustAccountId;
+            _resultValue.billingAddresses = billingAddresses;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.currencyCode = currencyCode;
+            _resultValue.email = email;
+            _resultValue.gsiOrgCode = gsiOrgCode;
+            _resultValue.id = id;
+            _resultValue.isIntentToPay = isIntentToPay;
+            _resultValue.languageCode = languageCode;
+            _resultValue.organizationId = organizationId;
+            _resultValue.ospHomeRegion = ospHomeRegion;
+            _resultValue.paymentGateways = paymentGateways;
+            _resultValue.paymentOptions = paymentOptions;
+            _resultValue.planType = planType;
+            _resultValue.shipToCustAcctRoleId = shipToCustAcctRoleId;
+            _resultValue.shipToCustAcctSiteId = shipToCustAcctSiteId;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.subscriptionPlanNumber = subscriptionPlanNumber;
+            _resultValue.subscriptions = subscriptions;
+            _resultValue.taxInfos = taxInfos;
+            _resultValue.timePersonalToCorporateConv = timePersonalToCorporateConv;
+            _resultValue.timePlanUpgrade = timePlanUpgrade;
+            _resultValue.timeStart = timeStart;
+            _resultValue.upgradeState = upgradeState;
+            _resultValue.upgradeStateDetails = upgradeStateDetails;
+            return _resultValue;
         }
     }
 }

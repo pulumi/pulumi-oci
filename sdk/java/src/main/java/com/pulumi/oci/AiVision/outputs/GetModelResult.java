@@ -569,36 +569,36 @@ public final class GetModelResult {
             return validationDatasets(List.of(validationDatasets));
         }
         public GetModelResult build() {
-            final var o = new GetModelResult();
-            o.averagePrecision = averagePrecision;
-            o.compartmentId = compartmentId;
-            o.confidenceThreshold = confidenceThreshold;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isQuickMode = isQuickMode;
-            o.lifecycleDetails = lifecycleDetails;
-            o.maxTrainingDurationInHours = maxTrainingDurationInHours;
-            o.metrics = metrics;
-            o.modelId = modelId;
-            o.modelType = modelType;
-            o.modelVersion = modelVersion;
-            o.precision = precision;
-            o.projectId = projectId;
-            o.recall = recall;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.testImageCount = testImageCount;
-            o.testingDatasets = testingDatasets;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.totalImageCount = totalImageCount;
-            o.trainedDurationInHours = trainedDurationInHours;
-            o.trainingDatasets = trainingDatasets;
-            o.validationDatasets = validationDatasets;
-            return o;
+            final var _resultValue = new GetModelResult();
+            _resultValue.averagePrecision = averagePrecision;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.confidenceThreshold = confidenceThreshold;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isQuickMode = isQuickMode;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maxTrainingDurationInHours = maxTrainingDurationInHours;
+            _resultValue.metrics = metrics;
+            _resultValue.modelId = modelId;
+            _resultValue.modelType = modelType;
+            _resultValue.modelVersion = modelVersion;
+            _resultValue.precision = precision;
+            _resultValue.projectId = projectId;
+            _resultValue.recall = recall;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.testImageCount = testImageCount;
+            _resultValue.testingDatasets = testingDatasets;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.totalImageCount = totalImageCount;
+            _resultValue.trainedDurationInHours = trainedDurationInHours;
+            _resultValue.trainingDatasets = trainingDatasets;
+            _resultValue.validationDatasets = validationDatasets;
+            return _resultValue;
         }
     }
 }

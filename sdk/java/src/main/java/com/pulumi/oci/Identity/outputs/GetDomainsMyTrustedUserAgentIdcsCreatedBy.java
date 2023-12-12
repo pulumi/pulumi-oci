@@ -122,13 +122,13 @@ public final class GetDomainsMyTrustedUserAgentIdcsCreatedBy {
             return this;
         }
         public GetDomainsMyTrustedUserAgentIdcsCreatedBy build() {
-            final var o = new GetDomainsMyTrustedUserAgentIdcsCreatedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyTrustedUserAgentIdcsCreatedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

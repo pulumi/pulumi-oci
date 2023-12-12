@@ -68,10 +68,10 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsAvailability
             return this;
         }
         public InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig build() {
-            final var o = new InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig();
-            o.isLiveMigrationPreferred = isLiveMigrationPreferred;
-            o.recoveryAction = recoveryAction;
-            return o;
+            final var _resultValue = new InstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig();
+            _resultValue.isLiveMigrationPreferred = isLiveMigrationPreferred;
+            _resultValue.recoveryAction = recoveryAction;
+            return _resultValue;
         }
     }
 }

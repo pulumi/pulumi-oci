@@ -90,11 +90,11 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
             return this;
         }
         public GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy build() {
-            final var o = new GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy();
-            o.isDefault = isDefault;
-            o.parametersDefinitions = parametersDefinitions;
-            o.strategyName = strategyName;
-            return o;
+            final var _resultValue = new GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategy();
+            _resultValue.isDefault = isDefault;
+            _resultValue.parametersDefinitions = parametersDefinitions;
+            _resultValue.strategyName = strategyName;
+            return _resultValue;
         }
     }
 }

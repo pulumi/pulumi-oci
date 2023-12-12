@@ -46,9 +46,9 @@ public final class GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionIt
             return this;
         }
         public GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem build() {
-            final var o = new GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -117,11 +117,11 @@ public final class GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria {
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria build() {
-            final var o = new GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria();
-            o.condition = condition;
-            o.isCaseSensitive = isCaseSensitive;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyWafConfigJsChallengeCriteria();
+            _resultValue.condition = condition;
+            _resultValue.isCaseSensitive = isCaseSensitive;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

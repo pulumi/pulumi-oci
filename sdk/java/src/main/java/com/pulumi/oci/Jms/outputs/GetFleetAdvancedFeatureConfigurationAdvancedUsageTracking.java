@@ -46,9 +46,9 @@ public final class GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking {
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking build() {
-            final var o = new GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

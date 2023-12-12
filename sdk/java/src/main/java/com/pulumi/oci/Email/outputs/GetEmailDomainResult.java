@@ -250,20 +250,20 @@ public final class GetEmailDomainResult {
             return this;
         }
         public GetEmailDomainResult build() {
-            final var o = new GetEmailDomainResult();
-            o.activeDkimId = activeDkimId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.emailDomainId = emailDomainId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isSpf = isSpf;
-            o.name = name;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetEmailDomainResult();
+            _resultValue.activeDkimId = activeDkimId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.emailDomainId = emailDomainId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isSpf = isSpf;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

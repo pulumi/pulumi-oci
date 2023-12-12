@@ -196,17 +196,17 @@ public final class GetRunStatementResult {
             return this;
         }
         public GetRunStatementResult build() {
-            final var o = new GetRunStatementResult();
-            o.code = code;
-            o.id = id;
-            o.outputs = outputs;
-            o.progress = progress;
-            o.runId = runId;
-            o.state = state;
-            o.statementId = statementId;
-            o.timeCompleted = timeCompleted;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetRunStatementResult();
+            _resultValue.code = code;
+            _resultValue.id = id;
+            _resultValue.outputs = outputs;
+            _resultValue.progress = progress;
+            _resultValue.runId = runId;
+            _resultValue.state = state;
+            _resultValue.statementId = statementId;
+            _resultValue.timeCompleted = timeCompleted;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

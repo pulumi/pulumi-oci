@@ -109,12 +109,12 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilter {
             return this;
         }
         public BuildRunBuildRunSourceTriggerInfoActionFilter build() {
-            final var o = new BuildRunBuildRunSourceTriggerInfoActionFilter();
-            o.events = events;
-            o.excludes = excludes;
-            o.includes = includes;
-            o.triggerSource = triggerSource;
-            return o;
+            final var _resultValue = new BuildRunBuildRunSourceTriggerInfoActionFilter();
+            _resultValue.events = events;
+            _resultValue.excludes = excludes;
+            _resultValue.includes = includes;
+            _resultValue.triggerSource = triggerSource;
+            return _resultValue;
         }
     }
 }

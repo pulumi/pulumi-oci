@@ -356,24 +356,24 @@ public final class GetWaasPoliciesWaasPolicyWafConfigAccessRule {
             return responseHeaderManipulations(List.of(responseHeaderManipulations));
         }
         public GetWaasPoliciesWaasPolicyWafConfigAccessRule build() {
-            final var o = new GetWaasPoliciesWaasPolicyWafConfigAccessRule();
-            o.action = action;
-            o.blockAction = blockAction;
-            o.blockErrorPageCode = blockErrorPageCode;
-            o.blockErrorPageDescription = blockErrorPageDescription;
-            o.blockErrorPageMessage = blockErrorPageMessage;
-            o.blockResponseCode = blockResponseCode;
-            o.bypassChallenges = bypassChallenges;
-            o.captchaFooter = captchaFooter;
-            o.captchaHeader = captchaHeader;
-            o.captchaSubmitLabel = captchaSubmitLabel;
-            o.captchaTitle = captchaTitle;
-            o.criterias = criterias;
-            o.name = name;
-            o.redirectResponseCode = redirectResponseCode;
-            o.redirectUrl = redirectUrl;
-            o.responseHeaderManipulations = responseHeaderManipulations;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyWafConfigAccessRule();
+            _resultValue.action = action;
+            _resultValue.blockAction = blockAction;
+            _resultValue.blockErrorPageCode = blockErrorPageCode;
+            _resultValue.blockErrorPageDescription = blockErrorPageDescription;
+            _resultValue.blockErrorPageMessage = blockErrorPageMessage;
+            _resultValue.blockResponseCode = blockResponseCode;
+            _resultValue.bypassChallenges = bypassChallenges;
+            _resultValue.captchaFooter = captchaFooter;
+            _resultValue.captchaHeader = captchaHeader;
+            _resultValue.captchaSubmitLabel = captchaSubmitLabel;
+            _resultValue.captchaTitle = captchaTitle;
+            _resultValue.criterias = criterias;
+            _resultValue.name = name;
+            _resultValue.redirectResponseCode = redirectResponseCode;
+            _resultValue.redirectUrl = redirectUrl;
+            _resultValue.responseHeaderManipulations = responseHeaderManipulations;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail {
             return this;
         }
         public GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail build() {
-            final var o = new GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail();
-            o.timeEarliestRecoveryPoint = timeEarliestRecoveryPoint;
-            o.timeLatestRecoveryPoint = timeLatestRecoveryPoint;
-            return o;
+            final var _resultValue = new GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetail();
+            _resultValue.timeEarliestRecoveryPoint = timeEarliestRecoveryPoint;
+            _resultValue.timeLatestRecoveryPoint = timeLatestRecoveryPoint;
+            return _resultValue;
         }
     }
 }

@@ -95,12 +95,12 @@ public final class GetConnectionsConnectionCollectionItemSshDetail {
             return this;
         }
         public GetConnectionsConnectionCollectionItemSshDetail build() {
-            final var o = new GetConnectionsConnectionCollectionItemSshDetail();
-            o.host = host;
-            o.sshkey = sshkey;
-            o.sudoLocation = sudoLocation;
-            o.user = user;
-            return o;
+            final var _resultValue = new GetConnectionsConnectionCollectionItemSshDetail();
+            _resultValue.host = host;
+            _resultValue.sshkey = sshkey;
+            _resultValue.sudoLocation = sudoLocation;
+            _resultValue.user = user;
+            return _resultValue;
         }
     }
 }

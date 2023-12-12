@@ -139,15 +139,15 @@ public final class GetAuditTrailAnalyticResult {
             return this;
         }
         public GetAuditTrailAnalyticResult build() {
-            final var o = new GetAuditTrailAnalyticResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.groupBies = groupBies;
-            o.id = id;
-            o.items = items;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new GetAuditTrailAnalyticResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.groupBies = groupBies;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

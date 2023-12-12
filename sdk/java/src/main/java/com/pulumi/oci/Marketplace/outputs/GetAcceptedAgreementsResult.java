@@ -174,16 +174,16 @@ public final class GetAcceptedAgreementsResult {
             return this;
         }
         public GetAcceptedAgreementsResult build() {
-            final var o = new GetAcceptedAgreementsResult();
-            o.acceptedAgreementId = acceptedAgreementId;
-            o.acceptedAgreements = acceptedAgreements;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.listingId = listingId;
-            o.packageVersion = packageVersion;
-            return o;
+            final var _resultValue = new GetAcceptedAgreementsResult();
+            _resultValue.acceptedAgreementId = acceptedAgreementId;
+            _resultValue.acceptedAgreements = acceptedAgreements;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.listingId = listingId;
+            _resultValue.packageVersion = packageVersion;
+            return _resultValue;
         }
     }
 }

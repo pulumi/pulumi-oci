@@ -132,13 +132,13 @@ public final class RunStatementOutput {
             return tracebacks(List.of(tracebacks));
         }
         public RunStatementOutput build() {
-            final var o = new RunStatementOutput();
-            o.datas = datas;
-            o.errorName = errorName;
-            o.errorValue = errorValue;
-            o.status = status;
-            o.tracebacks = tracebacks;
-            return o;
+            final var _resultValue = new RunStatementOutput();
+            _resultValue.datas = datas;
+            _resultValue.errorName = errorName;
+            _resultValue.errorValue = errorValue;
+            _resultValue.status = status;
+            _resultValue.tracebacks = tracebacks;
+            return _resultValue;
         }
     }
 }

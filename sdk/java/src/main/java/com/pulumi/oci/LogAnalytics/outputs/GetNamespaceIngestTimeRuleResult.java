@@ -297,22 +297,22 @@ public final class GetNamespaceIngestTimeRuleResult {
             return this;
         }
         public GetNamespaceIngestTimeRuleResult build() {
-            final var o = new GetNamespaceIngestTimeRuleResult();
-            o.actions = actions;
-            o.compartmentId = compartmentId;
-            o.conditions = conditions;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ingestTimeRuleId = ingestTimeRuleId;
-            o.isEnabled = isEnabled;
-            o.namespace = namespace;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetNamespaceIngestTimeRuleResult();
+            _resultValue.actions = actions;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.conditions = conditions;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ingestTimeRuleId = ingestTimeRuleId;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.namespace = namespace;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

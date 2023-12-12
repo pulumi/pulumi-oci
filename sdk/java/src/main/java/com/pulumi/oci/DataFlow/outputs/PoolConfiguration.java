@@ -107,12 +107,12 @@ public final class PoolConfiguration {
             return this;
         }
         public PoolConfiguration build() {
-            final var o = new PoolConfiguration();
-            o.max = max;
-            o.min = min;
-            o.shape = shape;
-            o.shapeConfig = shapeConfig;
-            return o;
+            final var _resultValue = new PoolConfiguration();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            _resultValue.shape = shape;
+            _resultValue.shapeConfig = shapeConfig;
+            return _resultValue;
         }
     }
 }

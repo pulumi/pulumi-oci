@@ -65,10 +65,10 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondi
             return this;
         }
         public GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition build() {
-            final var o = new GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition();
-            o.attributeName = attributeName;
-            o.attributeValue = attributeValue;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentsFusionEnvironmentCollectionItemRuleCondition();
+            _resultValue.attributeName = attributeName;
+            _resultValue.attributeValue = attributeValue;
+            return _resultValue;
         }
     }
 }

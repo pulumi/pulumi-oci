@@ -163,15 +163,15 @@ public final class GetDbServersResult {
             return this;
         }
         public GetDbServersResult build() {
-            final var o = new GetDbServersResult();
-            o.compartmentId = compartmentId;
-            o.dbServers = dbServers;
-            o.displayName = displayName;
-            o.exadataInfrastructureId = exadataInfrastructureId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDbServersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbServers = dbServers;
+            _resultValue.displayName = displayName;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -111,12 +111,12 @@ public final class GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail {
             return podSubnetIds(List.of(podSubnetIds));
         }
         public GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail build() {
-            final var o = new GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail();
-            o.cniType = cniType;
-            o.maxPodsPerNode = maxPodsPerNode;
-            o.podNsgIds = podNsgIds;
-            o.podSubnetIds = podSubnetIds;
-            return o;
+            final var _resultValue = new GetNodePoolNodeConfigDetailNodePoolPodNetworkOptionDetail();
+            _resultValue.cniType = cniType;
+            _resultValue.maxPodsPerNode = maxPodsPerNode;
+            _resultValue.podNsgIds = podNsgIds;
+            _resultValue.podSubnetIds = podSubnetIds;
+            return _resultValue;
         }
     }
 }

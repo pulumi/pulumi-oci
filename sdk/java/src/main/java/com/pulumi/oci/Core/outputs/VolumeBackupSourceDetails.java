@@ -92,11 +92,11 @@ public final class VolumeBackupSourceDetails {
             return this;
         }
         public VolumeBackupSourceDetails build() {
-            final var o = new VolumeBackupSourceDetails();
-            o.kmsKeyId = kmsKeyId;
-            o.region = region;
-            o.volumeBackupId = volumeBackupId;
-            return o;
+            final var _resultValue = new VolumeBackupSourceDetails();
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.region = region;
+            _resultValue.volumeBackupId = volumeBackupId;
+            return _resultValue;
         }
     }
 }

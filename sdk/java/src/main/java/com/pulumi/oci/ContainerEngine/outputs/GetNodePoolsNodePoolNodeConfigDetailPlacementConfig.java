@@ -130,13 +130,13 @@ public final class GetNodePoolsNodePoolNodeConfigDetailPlacementConfig {
             return this;
         }
         public GetNodePoolsNodePoolNodeConfigDetailPlacementConfig build() {
-            final var o = new GetNodePoolsNodePoolNodeConfigDetailPlacementConfig();
-            o.availabilityDomain = availabilityDomain;
-            o.capacityReservationId = capacityReservationId;
-            o.faultDomains = faultDomains;
-            o.preemptibleNodeConfigs = preemptibleNodeConfigs;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetNodePoolsNodePoolNodeConfigDetailPlacementConfig();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.capacityReservationId = capacityReservationId;
+            _resultValue.faultDomains = faultDomains;
+            _resultValue.preemptibleNodeConfigs = preemptibleNodeConfigs;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

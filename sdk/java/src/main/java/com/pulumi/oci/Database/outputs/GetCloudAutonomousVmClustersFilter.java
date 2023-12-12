@@ -75,11 +75,11 @@ public final class GetCloudAutonomousVmClustersFilter {
             return values(List.of(values));
         }
         public GetCloudAutonomousVmClustersFilter build() {
-            final var o = new GetCloudAutonomousVmClustersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCloudAutonomousVmClustersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

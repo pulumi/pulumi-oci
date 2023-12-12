@@ -171,16 +171,16 @@ public final class GetMediaAssetDistributionChannelAttachmentResult {
             return this;
         }
         public GetMediaAssetDistributionChannelAttachmentResult build() {
-            final var o = new GetMediaAssetDistributionChannelAttachmentResult();
-            o.displayName = displayName;
-            o.distributionChannelId = distributionChannelId;
-            o.id = id;
-            o.mediaAssetId = mediaAssetId;
-            o.mediaWorkflowJobId = mediaWorkflowJobId;
-            o.metadataRef = metadataRef;
-            o.state = state;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetMediaAssetDistributionChannelAttachmentResult();
+            _resultValue.displayName = displayName;
+            _resultValue.distributionChannelId = distributionChannelId;
+            _resultValue.id = id;
+            _resultValue.mediaAssetId = mediaAssetId;
+            _resultValue.mediaWorkflowJobId = mediaWorkflowJobId;
+            _resultValue.metadataRef = metadataRef;
+            _resultValue.state = state;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

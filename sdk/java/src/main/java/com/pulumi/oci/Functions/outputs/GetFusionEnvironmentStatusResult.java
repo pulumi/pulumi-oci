@@ -76,11 +76,11 @@ public final class GetFusionEnvironmentStatusResult {
             return this;
         }
         public GetFusionEnvironmentStatusResult build() {
-            final var o = new GetFusionEnvironmentStatusResult();
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentStatusResult();
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

@@ -235,19 +235,19 @@ public final class GetFilesystemSnapshotPolicyResult {
             return this;
         }
         public GetFilesystemSnapshotPolicyResult build() {
-            final var o = new GetFilesystemSnapshotPolicyResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.policyPrefix = policyPrefix;
-            o.schedules = schedules;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetFilesystemSnapshotPolicyResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.policyPrefix = policyPrefix;
+            _resultValue.schedules = schedules;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

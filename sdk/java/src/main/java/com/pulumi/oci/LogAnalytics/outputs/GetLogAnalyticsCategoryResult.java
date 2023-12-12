@@ -153,15 +153,15 @@ public final class GetLogAnalyticsCategoryResult {
             return this;
         }
         public GetLogAnalyticsCategoryResult build() {
-            final var o = new GetLogAnalyticsCategoryResult();
-            o.description = description;
-            o.displayName = displayName;
-            o.id = id;
-            o.isSystem = isSystem;
-            o.name = name;
-            o.namespace = namespace;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetLogAnalyticsCategoryResult();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.isSystem = isSystem;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

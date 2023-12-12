@@ -104,12 +104,12 @@ public final class GetPipelineRunsPipelineRunLogConfigurationOverrideDetail {
             return this;
         }
         public GetPipelineRunsPipelineRunLogConfigurationOverrideDetail build() {
-            final var o = new GetPipelineRunsPipelineRunLogConfigurationOverrideDetail();
-            o.enableAutoLogCreation = enableAutoLogCreation;
-            o.enableLogging = enableLogging;
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new GetPipelineRunsPipelineRunLogConfigurationOverrideDetail();
+            _resultValue.enableAutoLogCreation = enableAutoLogCreation;
+            _resultValue.enableLogging = enableLogging;
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

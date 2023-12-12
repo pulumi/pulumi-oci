@@ -65,10 +65,10 @@ public final class GetDomainsKmsiSettingTag {
             return this;
         }
         public GetDomainsKmsiSettingTag build() {
-            final var o = new GetDomainsKmsiSettingTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsKmsiSettingTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

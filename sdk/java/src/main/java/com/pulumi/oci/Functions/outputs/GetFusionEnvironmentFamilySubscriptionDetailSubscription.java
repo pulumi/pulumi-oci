@@ -108,12 +108,12 @@ public final class GetFusionEnvironmentFamilySubscriptionDetailSubscription {
             return skuses(List.of(skuses));
         }
         public GetFusionEnvironmentFamilySubscriptionDetailSubscription build() {
-            final var o = new GetFusionEnvironmentFamilySubscriptionDetailSubscription();
-            o.classicSubscriptionId = classicSubscriptionId;
-            o.id = id;
-            o.serviceName = serviceName;
-            o.skuses = skuses;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentFamilySubscriptionDetailSubscription();
+            _resultValue.classicSubscriptionId = classicSubscriptionId;
+            _resultValue.id = id;
+            _resultValue.serviceName = serviceName;
+            _resultValue.skuses = skuses;
+            return _resultValue;
         }
     }
 }

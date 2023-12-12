@@ -67,11 +67,11 @@ public final class GetVolumeGroupsFilter {
             return values(List.of(values));
         }
         public GetVolumeGroupsFilter build() {
-            final var o = new GetVolumeGroupsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVolumeGroupsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

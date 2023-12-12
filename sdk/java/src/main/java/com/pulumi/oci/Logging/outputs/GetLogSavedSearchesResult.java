@@ -136,14 +136,14 @@ public final class GetLogSavedSearchesResult {
             return this;
         }
         public GetLogSavedSearchesResult build() {
-            final var o = new GetLogSavedSearchesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.logSavedSearchId = logSavedSearchId;
-            o.logSavedSearchSummaryCollections = logSavedSearchSummaryCollections;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetLogSavedSearchesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.logSavedSearchId = logSavedSearchId;
+            _resultValue.logSavedSearchSummaryCollections = logSavedSearchSummaryCollections;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetManagedDatabaseSqlPlanBaselinesFilter {
             return values(List.of(values));
         }
         public GetManagedDatabaseSqlPlanBaselinesFilter build() {
-            final var o = new GetManagedDatabaseSqlPlanBaselinesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlPlanBaselinesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

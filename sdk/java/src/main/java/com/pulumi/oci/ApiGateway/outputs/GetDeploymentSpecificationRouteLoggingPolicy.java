@@ -73,10 +73,10 @@ public final class GetDeploymentSpecificationRouteLoggingPolicy {
             return executionLogs(List.of(executionLogs));
         }
         public GetDeploymentSpecificationRouteLoggingPolicy build() {
-            final var o = new GetDeploymentSpecificationRouteLoggingPolicy();
-            o.accessLogs = accessLogs;
-            o.executionLogs = executionLogs;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteLoggingPolicy();
+            _resultValue.accessLogs = accessLogs;
+            _resultValue.executionLogs = executionLogs;
+            return _resultValue;
         }
     }
 }

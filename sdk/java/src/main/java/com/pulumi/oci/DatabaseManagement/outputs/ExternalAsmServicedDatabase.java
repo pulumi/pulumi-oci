@@ -186,16 +186,16 @@ public final class ExternalAsmServicedDatabase {
             return this;
         }
         public ExternalAsmServicedDatabase build() {
-            final var o = new ExternalAsmServicedDatabase();
-            o.compartmentId = compartmentId;
-            o.databaseSubType = databaseSubType;
-            o.databaseType = databaseType;
-            o.dbUniqueName = dbUniqueName;
-            o.diskGroups = diskGroups;
-            o.displayName = displayName;
-            o.id = id;
-            o.isManaged = isManaged;
-            return o;
+            final var _resultValue = new ExternalAsmServicedDatabase();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseSubType = databaseSubType;
+            _resultValue.databaseType = databaseType;
+            _resultValue.dbUniqueName = dbUniqueName;
+            _resultValue.diskGroups = diskGroups;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.isManaged = isManaged;
+            return _resultValue;
         }
     }
 }

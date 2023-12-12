@@ -432,30 +432,30 @@ public final class GetLogAnalyticsEntityResult {
             return this;
         }
         public GetLogAnalyticsEntityResult build() {
-            final var o = new GetLogAnalyticsEntityResult();
-            o.areLogsCollected = areLogsCollected;
-            o.cloudResourceId = cloudResourceId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.entityTypeInternalName = entityTypeInternalName;
-            o.entityTypeName = entityTypeName;
-            o.freeformTags = freeformTags;
-            o.hostname = hostname;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.logAnalyticsEntityId = logAnalyticsEntityId;
-            o.managementAgentCompartmentId = managementAgentCompartmentId;
-            o.managementAgentDisplayName = managementAgentDisplayName;
-            o.managementAgentId = managementAgentId;
-            o.name = name;
-            o.namespace = namespace;
-            o.properties = properties;
-            o.sourceId = sourceId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.timezoneRegion = timezoneRegion;
-            return o;
+            final var _resultValue = new GetLogAnalyticsEntityResult();
+            _resultValue.areLogsCollected = areLogsCollected;
+            _resultValue.cloudResourceId = cloudResourceId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.entityTypeInternalName = entityTypeInternalName;
+            _resultValue.entityTypeName = entityTypeName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostname = hostname;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.logAnalyticsEntityId = logAnalyticsEntityId;
+            _resultValue.managementAgentCompartmentId = managementAgentCompartmentId;
+            _resultValue.managementAgentDisplayName = managementAgentDisplayName;
+            _resultValue.managementAgentId = managementAgentId;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.properties = properties;
+            _resultValue.sourceId = sourceId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.timezoneRegion = timezoneRegion;
+            return _resultValue;
         }
     }
 }

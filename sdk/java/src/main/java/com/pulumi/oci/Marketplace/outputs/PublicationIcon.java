@@ -105,12 +105,12 @@ public final class PublicationIcon {
             return this;
         }
         public PublicationIcon build() {
-            final var o = new PublicationIcon();
-            o.contentUrl = contentUrl;
-            o.fileExtension = fileExtension;
-            o.mimeType = mimeType;
-            o.name = name;
-            return o;
+            final var _resultValue = new PublicationIcon();
+            _resultValue.contentUrl = contentUrl;
+            _resultValue.fileExtension = fileExtension;
+            _resultValue.mimeType = mimeType;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -160,15 +160,15 @@ public final class GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComp
             return this;
         }
         public GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct build() {
-            final var o = new GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct();
-            o.billingCategory = billingCategory;
-            o.name = name;
-            o.partNumber = partNumber;
-            o.productCategory = productCategory;
-            o.provisioningGroup = provisioningGroup;
-            o.ucmRateCardPartType = ucmRateCardPartType;
-            o.unitOfMeasure = unitOfMeasure;
-            return o;
+            final var _resultValue = new GetCommitmentAggregatedsComputedUsageAggregatedAggregatedComputedUsageProduct();
+            _resultValue.billingCategory = billingCategory;
+            _resultValue.name = name;
+            _resultValue.partNumber = partNumber;
+            _resultValue.productCategory = productCategory;
+            _resultValue.provisioningGroup = provisioningGroup;
+            _resultValue.ucmRateCardPartType = ucmRateCardPartType;
+            _resultValue.unitOfMeasure = unitOfMeasure;
+            return _resultValue;
         }
     }
 }

@@ -157,14 +157,14 @@ public final class GetModelsModelCollectionItemEvaluationResult {
             return this;
         }
         public GetModelsModelCollectionItemEvaluationResult build() {
-            final var o = new GetModelsModelCollectionItemEvaluationResult();
-            o.classMetrics = classMetrics;
-            o.confusionMatrix = confusionMatrix;
-            o.entityMetrics = entityMetrics;
-            o.labels = labels;
-            o.metrics = metrics;
-            o.modelType = modelType;
-            return o;
+            final var _resultValue = new GetModelsModelCollectionItemEvaluationResult();
+            _resultValue.classMetrics = classMetrics;
+            _resultValue.confusionMatrix = confusionMatrix;
+            _resultValue.entityMetrics = entityMetrics;
+            _resultValue.labels = labels;
+            _resultValue.metrics = metrics;
+            _resultValue.modelType = modelType;
+            return _resultValue;
         }
     }
 }

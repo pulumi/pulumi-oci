@@ -343,24 +343,24 @@ public final class GetLifecycleStagesLifecycleStageCollectionItem {
             return this;
         }
         public GetLifecycleStagesLifecycleStageCollectionItem build() {
-            final var o = new GetLifecycleStagesLifecycleStageCollectionItem();
-            o.archType = archType;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleEnvironmentId = lifecycleEnvironmentId;
-            o.managedInstanceIds = managedInstanceIds;
-            o.osFamily = osFamily;
-            o.rank = rank;
-            o.softwareSourceIds = softwareSourceIds;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeModified = timeModified;
-            o.vendorName = vendorName;
-            return o;
+            final var _resultValue = new GetLifecycleStagesLifecycleStageCollectionItem();
+            _resultValue.archType = archType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleEnvironmentId = lifecycleEnvironmentId;
+            _resultValue.managedInstanceIds = managedInstanceIds;
+            _resultValue.osFamily = osFamily;
+            _resultValue.rank = rank;
+            _resultValue.softwareSourceIds = softwareSourceIds;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeModified = timeModified;
+            _resultValue.vendorName = vendorName;
+            return _resultValue;
         }
     }
 }

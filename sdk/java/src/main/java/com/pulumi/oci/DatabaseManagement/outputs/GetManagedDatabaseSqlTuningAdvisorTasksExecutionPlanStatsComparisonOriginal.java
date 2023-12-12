@@ -86,11 +86,11 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal();
-            o.planStats = planStats;
-            o.planStatus = planStatus;
-            o.planType = planType;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonOriginal();
+            _resultValue.planStats = planStats;
+            _resultValue.planStatus = planStatus;
+            _resultValue.planType = planType;
+            return _resultValue;
         }
     }
 }

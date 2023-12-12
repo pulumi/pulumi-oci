@@ -65,10 +65,10 @@ public final class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetail
             return this;
         }
         public GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy build() {
-            final var o = new GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy();
-            o.autotuneType = autotuneType;
-            o.maxVpusPerGb = maxVpusPerGb;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailAutotunePolicy();
+            _resultValue.autotuneType = autotuneType;
+            _resultValue.maxVpusPerGb = maxVpusPerGb;
+            return _resultValue;
         }
     }
 }

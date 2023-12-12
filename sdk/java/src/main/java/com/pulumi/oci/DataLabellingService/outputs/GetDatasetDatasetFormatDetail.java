@@ -70,10 +70,10 @@ public final class GetDatasetDatasetFormatDetail {
             return textFileTypeMetadatas(List.of(textFileTypeMetadatas));
         }
         public GetDatasetDatasetFormatDetail build() {
-            final var o = new GetDatasetDatasetFormatDetail();
-            o.formatType = formatType;
-            o.textFileTypeMetadatas = textFileTypeMetadatas;
-            return o;
+            final var _resultValue = new GetDatasetDatasetFormatDetail();
+            _resultValue.formatType = formatType;
+            _resultValue.textFileTypeMetadatas = textFileTypeMetadatas;
+            return _resultValue;
         }
     }
 }

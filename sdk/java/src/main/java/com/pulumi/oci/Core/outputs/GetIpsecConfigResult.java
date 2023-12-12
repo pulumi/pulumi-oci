@@ -135,14 +135,14 @@ public final class GetIpsecConfigResult {
             return tunnels(List.of(tunnels));
         }
         public GetIpsecConfigResult build() {
-            final var o = new GetIpsecConfigResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.ipsecId = ipsecId;
-            o.timeCreated = timeCreated;
-            o.tunnels = tunnels;
-            return o;
+            final var _resultValue = new GetIpsecConfigResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ipsecId = ipsecId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.tunnels = tunnels;
+            return _resultValue;
         }
     }
 }

@@ -155,15 +155,15 @@ public final class GetReplicationSchedulesResult {
             return this;
         }
         public GetReplicationSchedulesResult build() {
-            final var o = new GetReplicationSchedulesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.replicationScheduleCollections = replicationScheduleCollections;
-            o.replicationScheduleId = replicationScheduleId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetReplicationSchedulesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.replicationScheduleCollections = replicationScheduleCollections;
+            _resultValue.replicationScheduleId = replicationScheduleId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

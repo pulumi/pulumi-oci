@@ -73,10 +73,10 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
             return peers(List.of(peers));
         }
         public GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail build() {
-            final var o = new GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail();
-            o.osns = osns;
-            o.peers = peers;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetail();
+            _resultValue.osns = osns;
+            _resultValue.peers = peers;
+            return _resultValue;
         }
     }
 }

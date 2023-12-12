@@ -124,13 +124,13 @@ public final class GetReportDefinitionsReportDefinitionCollectionItemColumnInfo 
             return this;
         }
         public GetReportDefinitionsReportDefinitionCollectionItemColumnInfo build() {
-            final var o = new GetReportDefinitionsReportDefinitionCollectionItemColumnInfo();
-            o.dataType = dataType;
-            o.displayName = displayName;
-            o.displayOrder = displayOrder;
-            o.fieldName = fieldName;
-            o.isHidden = isHidden;
-            return o;
+            final var _resultValue = new GetReportDefinitionsReportDefinitionCollectionItemColumnInfo();
+            _resultValue.dataType = dataType;
+            _resultValue.displayName = displayName;
+            _resultValue.displayOrder = displayOrder;
+            _resultValue.fieldName = fieldName;
+            _resultValue.isHidden = isHidden;
+            return _resultValue;
         }
     }
 }

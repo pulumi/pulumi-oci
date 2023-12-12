@@ -275,21 +275,21 @@ public final class GetFleetExportSettingResult {
             return this;
         }
         public GetFleetExportSettingResult build() {
-            final var o = new GetFleetExportSettingResult();
-            o.exportDuration = exportDuration;
-            o.exportFrequency = exportFrequency;
-            o.exportResources = exportResources;
-            o.exportSettingKey = exportSettingKey;
-            o.fleetId = fleetId;
-            o.id = id;
-            o.isCrossRegionAcknowledged = isCrossRegionAcknowledged;
-            o.isEnabled = isEnabled;
-            o.targetBucketName = targetBucketName;
-            o.targetBucketNamespace = targetBucketNamespace;
-            o.targetBucketRegion = targetBucketRegion;
-            o.timeCreated = timeCreated;
-            o.timeLastModified = timeLastModified;
-            return o;
+            final var _resultValue = new GetFleetExportSettingResult();
+            _resultValue.exportDuration = exportDuration;
+            _resultValue.exportFrequency = exportFrequency;
+            _resultValue.exportResources = exportResources;
+            _resultValue.exportSettingKey = exportSettingKey;
+            _resultValue.fleetId = fleetId;
+            _resultValue.id = id;
+            _resultValue.isCrossRegionAcknowledged = isCrossRegionAcknowledged;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.targetBucketName = targetBucketName;
+            _resultValue.targetBucketNamespace = targetBucketNamespace;
+            _resultValue.targetBucketRegion = targetBucketRegion;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastModified = timeLastModified;
+            return _resultValue;
         }
     }
 }

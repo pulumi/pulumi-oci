@@ -66,10 +66,10 @@ public final class AnalyticsInstanceCapacity {
             return this;
         }
         public AnalyticsInstanceCapacity build() {
-            final var o = new AnalyticsInstanceCapacity();
-            o.capacityType = capacityType;
-            o.capacityValue = capacityValue;
-            return o;
+            final var _resultValue = new AnalyticsInstanceCapacity();
+            _resultValue.capacityType = capacityType;
+            _resultValue.capacityValue = capacityValue;
+            return _resultValue;
         }
     }
 }

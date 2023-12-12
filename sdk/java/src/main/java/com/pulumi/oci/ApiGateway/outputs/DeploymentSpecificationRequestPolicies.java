@@ -148,14 +148,14 @@ public final class DeploymentSpecificationRequestPolicies {
             return this;
         }
         public DeploymentSpecificationRequestPolicies build() {
-            final var o = new DeploymentSpecificationRequestPolicies();
-            o.authentication = authentication;
-            o.cors = cors;
-            o.dynamicAuthentication = dynamicAuthentication;
-            o.mutualTls = mutualTls;
-            o.rateLimiting = rateLimiting;
-            o.usagePlans = usagePlans;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPolicies();
+            _resultValue.authentication = authentication;
+            _resultValue.cors = cors;
+            _resultValue.dynamicAuthentication = dynamicAuthentication;
+            _resultValue.mutualTls = mutualTls;
+            _resultValue.rateLimiting = rateLimiting;
+            _resultValue.usagePlans = usagePlans;
+            return _resultValue;
         }
     }
 }

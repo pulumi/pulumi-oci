@@ -97,12 +97,12 @@ public final class GetDbSystemPatchesResult {
             return patches(List.of(patches));
         }
         public GetDbSystemPatchesResult build() {
-            final var o = new GetDbSystemPatchesResult();
-            o.dbSystemId = dbSystemId;
-            o.filters = filters;
-            o.id = id;
-            o.patches = patches;
-            return o;
+            final var _resultValue = new GetDbSystemPatchesResult();
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.patches = patches;
+            return _resultValue;
         }
     }
 }

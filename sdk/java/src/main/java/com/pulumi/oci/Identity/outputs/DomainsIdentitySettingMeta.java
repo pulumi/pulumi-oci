@@ -224,13 +224,13 @@ public final class DomainsIdentitySettingMeta {
             return this;
         }
         public DomainsIdentitySettingMeta build() {
-            final var o = new DomainsIdentitySettingMeta();
-            o.created = created;
-            o.lastModified = lastModified;
-            o.location = location;
-            o.resourceType = resourceType;
-            o.version = version;
-            return o;
+            final var _resultValue = new DomainsIdentitySettingMeta();
+            _resultValue.created = created;
+            _resultValue.lastModified = lastModified;
+            _resultValue.location = location;
+            _resultValue.resourceType = resourceType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

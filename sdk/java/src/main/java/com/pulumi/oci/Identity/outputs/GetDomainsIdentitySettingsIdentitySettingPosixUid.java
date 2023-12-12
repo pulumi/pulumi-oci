@@ -65,10 +65,10 @@ public final class GetDomainsIdentitySettingsIdentitySettingPosixUid {
             return this;
         }
         public GetDomainsIdentitySettingsIdentitySettingPosixUid build() {
-            final var o = new GetDomainsIdentitySettingsIdentitySettingPosixUid();
-            o.manualAssignmentEndsAt = manualAssignmentEndsAt;
-            o.manualAssignmentStartsFrom = manualAssignmentStartsFrom;
-            return o;
+            final var _resultValue = new GetDomainsIdentitySettingsIdentitySettingPosixUid();
+            _resultValue.manualAssignmentEndsAt = manualAssignmentEndsAt;
+            _resultValue.manualAssignmentStartsFrom = manualAssignmentStartsFrom;
+            return _resultValue;
         }
     }
 }

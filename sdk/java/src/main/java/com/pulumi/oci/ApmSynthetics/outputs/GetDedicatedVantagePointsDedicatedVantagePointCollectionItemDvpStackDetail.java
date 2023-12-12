@@ -103,12 +103,12 @@ public final class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemD
             return this;
         }
         public GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail build() {
-            final var o = new GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail();
-            o.dvpStackId = dvpStackId;
-            o.dvpStackType = dvpStackType;
-            o.dvpStreamId = dvpStreamId;
-            o.dvpVersion = dvpVersion;
-            return o;
+            final var _resultValue = new GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail();
+            _resultValue.dvpStackId = dvpStackId;
+            _resultValue.dvpStackType = dvpStackType;
+            _resultValue.dvpStreamId = dvpStreamId;
+            _resultValue.dvpVersion = dvpVersion;
+            return _resultValue;
         }
     }
 }

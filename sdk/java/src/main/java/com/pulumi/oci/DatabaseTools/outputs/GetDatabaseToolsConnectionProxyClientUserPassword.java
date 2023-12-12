@@ -65,10 +65,10 @@ public final class GetDatabaseToolsConnectionProxyClientUserPassword {
             return this;
         }
         public GetDatabaseToolsConnectionProxyClientUserPassword build() {
-            final var o = new GetDatabaseToolsConnectionProxyClientUserPassword();
-            o.secretId = secretId;
-            o.valueType = valueType;
-            return o;
+            final var _resultValue = new GetDatabaseToolsConnectionProxyClientUserPassword();
+            _resultValue.secretId = secretId;
+            _resultValue.valueType = valueType;
+            return _resultValue;
         }
     }
 }

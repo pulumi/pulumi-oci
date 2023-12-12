@@ -183,16 +183,16 @@ public final class GetDbSystemPatchesPatch {
             return this;
         }
         public GetDbSystemPatchesPatch build() {
-            final var o = new GetDbSystemPatchesPatch();
-            o.availableActions = availableActions;
-            o.description = description;
-            o.id = id;
-            o.lastAction = lastAction;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeReleased = timeReleased;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetDbSystemPatchesPatch();
+            _resultValue.availableActions = availableActions;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.lastAction = lastAction;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeReleased = timeReleased;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

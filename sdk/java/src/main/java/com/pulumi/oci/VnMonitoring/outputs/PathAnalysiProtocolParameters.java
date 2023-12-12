@@ -131,13 +131,13 @@ public final class PathAnalysiProtocolParameters {
             return this;
         }
         public PathAnalysiProtocolParameters build() {
-            final var o = new PathAnalysiProtocolParameters();
-            o.destinationPort = destinationPort;
-            o.icmpCode = icmpCode;
-            o.icmpType = icmpType;
-            o.sourcePort = sourcePort;
-            o.type = type;
-            return o;
+            final var _resultValue = new PathAnalysiProtocolParameters();
+            _resultValue.destinationPort = destinationPort;
+            _resultValue.icmpCode = icmpCode;
+            _resultValue.icmpType = icmpType;
+            _resultValue.sourcePort = sourcePort;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

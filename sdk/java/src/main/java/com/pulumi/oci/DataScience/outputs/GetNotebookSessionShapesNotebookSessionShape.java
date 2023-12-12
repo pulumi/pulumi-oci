@@ -104,12 +104,12 @@ public final class GetNotebookSessionShapesNotebookSessionShape {
             return this;
         }
         public GetNotebookSessionShapesNotebookSessionShape build() {
-            final var o = new GetNotebookSessionShapesNotebookSessionShape();
-            o.coreCount = coreCount;
-            o.memoryInGbs = memoryInGbs;
-            o.name = name;
-            o.shapeSeries = shapeSeries;
-            return o;
+            final var _resultValue = new GetNotebookSessionShapesNotebookSessionShape();
+            _resultValue.coreCount = coreCount;
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.name = name;
+            _resultValue.shapeSeries = shapeSeries;
+            return _resultValue;
         }
     }
 }

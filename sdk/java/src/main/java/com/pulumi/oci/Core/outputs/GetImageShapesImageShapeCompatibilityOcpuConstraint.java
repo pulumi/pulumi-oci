@@ -65,10 +65,10 @@ public final class GetImageShapesImageShapeCompatibilityOcpuConstraint {
             return this;
         }
         public GetImageShapesImageShapeCompatibilityOcpuConstraint build() {
-            final var o = new GetImageShapesImageShapeCompatibilityOcpuConstraint();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new GetImageShapesImageShapeCompatibilityOcpuConstraint();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

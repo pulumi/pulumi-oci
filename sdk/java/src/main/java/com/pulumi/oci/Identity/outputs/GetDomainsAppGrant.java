@@ -128,13 +128,13 @@ public final class GetDomainsAppGrant {
             return this;
         }
         public GetDomainsAppGrant build() {
-            final var o = new GetDomainsAppGrant();
-            o.grantMechanism = grantMechanism;
-            o.granteeId = granteeId;
-            o.granteeType = granteeType;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppGrant();
+            _resultValue.grantMechanism = grantMechanism;
+            _resultValue.granteeId = granteeId;
+            _resultValue.granteeType = granteeType;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

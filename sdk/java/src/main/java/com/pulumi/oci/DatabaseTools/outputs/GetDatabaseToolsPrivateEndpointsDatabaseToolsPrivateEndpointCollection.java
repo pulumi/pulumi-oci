@@ -42,9 +42,9 @@ public final class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointC
             return items(List.of(items));
         }
         public GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection build() {
-            final var o = new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

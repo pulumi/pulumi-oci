@@ -128,14 +128,14 @@ public final class GetManagedDatabaseUserObjectPrivilegesResult {
             return this;
         }
         public GetManagedDatabaseUserObjectPrivilegesResult build() {
-            final var o = new GetManagedDatabaseUserObjectPrivilegesResult();
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.objectPrivilegeCollections = objectPrivilegeCollections;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserObjectPrivilegesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.objectPrivilegeCollections = objectPrivilegeCollections;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

@@ -144,14 +144,14 @@ public final class GetStreamCdnConfigsResult {
             return streamCdnConfigCollections(List.of(streamCdnConfigCollections));
         }
         public GetStreamCdnConfigsResult build() {
-            final var o = new GetStreamCdnConfigsResult();
-            o.displayName = displayName;
-            o.distributionChannelId = distributionChannelId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.streamCdnConfigCollections = streamCdnConfigCollections;
-            return o;
+            final var _resultValue = new GetStreamCdnConfigsResult();
+            _resultValue.displayName = displayName;
+            _resultValue.distributionChannelId = distributionChannelId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.streamCdnConfigCollections = streamCdnConfigCollections;
+            return _resultValue;
         }
     }
 }

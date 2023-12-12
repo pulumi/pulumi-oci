@@ -42,9 +42,9 @@ public final class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection 
             return items(List.of(items));
         }
         public GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection build() {
-            final var o = new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDatabaseToolsConnectionsDatabaseToolsConnectionCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -75,11 +75,11 @@ public final class GetInvoicesFilter {
             return values(List.of(values));
         }
         public GetInvoicesFilter build() {
-            final var o = new GetInvoicesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetInvoicesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

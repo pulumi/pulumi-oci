@@ -151,14 +151,14 @@ public final class DeploymentSpecificationRoute {
             return this;
         }
         public DeploymentSpecificationRoute build() {
-            final var o = new DeploymentSpecificationRoute();
-            o.backend = backend;
-            o.loggingPolicies = loggingPolicies;
-            o.methods = methods;
-            o.path = path;
-            o.requestPolicies = requestPolicies;
-            o.responsePolicies = responsePolicies;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRoute();
+            _resultValue.backend = backend;
+            _resultValue.loggingPolicies = loggingPolicies;
+            _resultValue.methods = methods;
+            _resultValue.path = path;
+            _resultValue.requestPolicies = requestPolicies;
+            _resultValue.responsePolicies = responsePolicies;
+            return _resultValue;
         }
     }
 }

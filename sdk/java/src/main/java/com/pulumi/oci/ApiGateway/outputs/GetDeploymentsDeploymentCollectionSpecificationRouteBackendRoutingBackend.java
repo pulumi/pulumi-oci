@@ -73,10 +73,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRo
             return keys(List.of(keys));
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackend build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackend();
-            o.backends = backends;
-            o.keys = keys;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackend();
+            _resultValue.backends = backends;
+            _resultValue.keys = keys;
+            return _resultValue;
         }
     }
 }

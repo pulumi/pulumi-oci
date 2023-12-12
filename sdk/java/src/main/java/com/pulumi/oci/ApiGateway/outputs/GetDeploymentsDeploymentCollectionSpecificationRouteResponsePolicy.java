@@ -73,10 +73,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteResponseP
             return responseCacheStores(List.of(responseCacheStores));
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy();
-            o.headerTransformations = headerTransformations;
-            o.responseCacheStores = responseCacheStores;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRouteResponsePolicy();
+            _resultValue.headerTransformations = headerTransformations;
+            _resultValue.responseCacheStores = responseCacheStores;
+            return _resultValue;
         }
     }
 }

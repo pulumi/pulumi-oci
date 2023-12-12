@@ -108,12 +108,12 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
             return this;
         }
         public GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn build() {
-            final var o = new GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn();
-            o.ad = ad;
-            o.ocpuAllocationParams = ocpuAllocationParams;
-            o.osnKey = osnKey;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailOsn();
+            _resultValue.ad = ad;
+            _resultValue.ocpuAllocationParams = ocpuAllocationParams;
+            _resultValue.osnKey = osnKey;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

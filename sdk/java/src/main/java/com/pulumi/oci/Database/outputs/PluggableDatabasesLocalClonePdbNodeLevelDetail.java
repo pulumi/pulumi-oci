@@ -67,10 +67,10 @@ public final class PluggableDatabasesLocalClonePdbNodeLevelDetail {
             return this;
         }
         public PluggableDatabasesLocalClonePdbNodeLevelDetail build() {
-            final var o = new PluggableDatabasesLocalClonePdbNodeLevelDetail();
-            o.nodeName = nodeName;
-            o.openMode = openMode;
-            return o;
+            final var _resultValue = new PluggableDatabasesLocalClonePdbNodeLevelDetail();
+            _resultValue.nodeName = nodeName;
+            _resultValue.openMode = openMode;
+            return _resultValue;
         }
     }
 }

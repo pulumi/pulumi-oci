@@ -363,26 +363,26 @@ public final class GetAuditArchiveRetrievalResult {
             return this;
         }
         public GetAuditArchiveRetrievalResult build() {
-            final var o = new GetAuditArchiveRetrievalResult();
-            o.auditArchiveRetrievalId = auditArchiveRetrievalId;
-            o.auditEventCount = auditEventCount;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.endDate = endDate;
-            o.errorInfo = errorInfo;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.startDate = startDate;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.targetId = targetId;
-            o.timeCompleted = timeCompleted;
-            o.timeOfExpiry = timeOfExpiry;
-            o.timeRequested = timeRequested;
-            return o;
+            final var _resultValue = new GetAuditArchiveRetrievalResult();
+            _resultValue.auditArchiveRetrievalId = auditArchiveRetrievalId;
+            _resultValue.auditEventCount = auditEventCount;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.endDate = endDate;
+            _resultValue.errorInfo = errorInfo;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.startDate = startDate;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCompleted = timeCompleted;
+            _resultValue.timeOfExpiry = timeOfExpiry;
+            _resultValue.timeRequested = timeRequested;
+            return _resultValue;
         }
     }
 }

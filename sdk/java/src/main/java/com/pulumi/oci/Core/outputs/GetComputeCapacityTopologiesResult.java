@@ -144,14 +144,14 @@ public final class GetComputeCapacityTopologiesResult {
             return this;
         }
         public GetComputeCapacityTopologiesResult build() {
-            final var o = new GetComputeCapacityTopologiesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.computeCapacityTopologyCollections = computeCapacityTopologyCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetComputeCapacityTopologiesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeCapacityTopologyCollections = computeCapacityTopologyCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

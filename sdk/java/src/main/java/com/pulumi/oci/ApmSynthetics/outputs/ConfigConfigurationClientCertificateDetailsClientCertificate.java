@@ -67,10 +67,10 @@ public final class ConfigConfigurationClientCertificateDetailsClientCertificate 
             return this;
         }
         public ConfigConfigurationClientCertificateDetailsClientCertificate build() {
-            final var o = new ConfigConfigurationClientCertificateDetailsClientCertificate();
-            o.content = content;
-            o.fileName = fileName;
-            return o;
+            final var _resultValue = new ConfigConfigurationClientCertificateDetailsClientCertificate();
+            _resultValue.content = content;
+            _resultValue.fileName = fileName;
+            return _resultValue;
         }
     }
 }

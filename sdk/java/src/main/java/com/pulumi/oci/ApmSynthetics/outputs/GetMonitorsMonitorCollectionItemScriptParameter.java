@@ -128,13 +128,13 @@ public final class GetMonitorsMonitorCollectionItemScriptParameter {
             return this;
         }
         public GetMonitorsMonitorCollectionItemScriptParameter build() {
-            final var o = new GetMonitorsMonitorCollectionItemScriptParameter();
-            o.isOverwritten = isOverwritten;
-            o.isSecret = isSecret;
-            o.monitorScriptParameters = monitorScriptParameters;
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            return o;
+            final var _resultValue = new GetMonitorsMonitorCollectionItemScriptParameter();
+            _resultValue.isOverwritten = isOverwritten;
+            _resultValue.isSecret = isSecret;
+            _resultValue.monitorScriptParameters = monitorScriptParameters;
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            return _resultValue;
         }
     }
 }

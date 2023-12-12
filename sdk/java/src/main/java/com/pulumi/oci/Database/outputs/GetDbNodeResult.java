@@ -499,33 +499,33 @@ public final class GetDbNodeResult {
             return this;
         }
         public GetDbNodeResult build() {
-            final var o = new GetDbNodeResult();
-            o.additionalDetails = additionalDetails;
-            o.backupIpId = backupIpId;
-            o.backupVnic2id = backupVnic2id;
-            o.backupVnicId = backupVnicId;
-            o.cpuCoreCount = cpuCoreCount;
-            o.dbNodeId = dbNodeId;
-            o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
-            o.dbServerId = dbServerId;
-            o.dbSystemId = dbSystemId;
-            o.definedTags = definedTags;
-            o.faultDomain = faultDomain;
-            o.freeformTags = freeformTags;
-            o.hostIpId = hostIpId;
-            o.hostname = hostname;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.maintenanceType = maintenanceType;
-            o.memorySizeInGbs = memorySizeInGbs;
-            o.softwareStorageSizeInGb = softwareStorageSizeInGb;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeMaintenanceWindowEnd = timeMaintenanceWindowEnd;
-            o.timeMaintenanceWindowStart = timeMaintenanceWindowStart;
-            o.vnic2id = vnic2id;
-            o.vnicId = vnicId;
-            return o;
+            final var _resultValue = new GetDbNodeResult();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.backupIpId = backupIpId;
+            _resultValue.backupVnic2id = backupVnic2id;
+            _resultValue.backupVnicId = backupVnicId;
+            _resultValue.cpuCoreCount = cpuCoreCount;
+            _resultValue.dbNodeId = dbNodeId;
+            _resultValue.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            _resultValue.dbServerId = dbServerId;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostIpId = hostIpId;
+            _resultValue.hostname = hostname;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maintenanceType = maintenanceType;
+            _resultValue.memorySizeInGbs = memorySizeInGbs;
+            _resultValue.softwareStorageSizeInGb = softwareStorageSizeInGb;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeMaintenanceWindowEnd = timeMaintenanceWindowEnd;
+            _resultValue.timeMaintenanceWindowStart = timeMaintenanceWindowStart;
+            _resultValue.vnic2id = vnic2id;
+            _resultValue.vnicId = vnicId;
+            return _resultValue;
         }
     }
 }

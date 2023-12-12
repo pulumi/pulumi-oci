@@ -97,12 +97,12 @@ public final class GetCnvDnsResolverAssociationResult {
             return this;
         }
         public GetCnvDnsResolverAssociationResult build() {
-            final var o = new GetCnvDnsResolverAssociationResult();
-            o.dnsResolverId = dnsResolverId;
-            o.id = id;
-            o.state = state;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetCnvDnsResolverAssociationResult();
+            _resultValue.dnsResolverId = dnsResolverId;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

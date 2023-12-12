@@ -42,9 +42,9 @@ public final class GetRunStatementsStatementCollection {
             return items(List.of(items));
         }
         public GetRunStatementsStatementCollection build() {
-            final var o = new GetRunStatementsStatementCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetRunStatementsStatementCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetQueriesFilter {
             return values(List.of(values));
         }
         public GetQueriesFilter build() {
-            final var o = new GetQueriesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetQueriesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

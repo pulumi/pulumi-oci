@@ -65,10 +65,10 @@ public final class GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliver
             return this;
         }
         public GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem build() {
-            final var o = new GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem();
-            o.artifactId = artifactId;
-            o.artifactName = artifactName;
-            return o;
+            final var _resultValue = new GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionItem();
+            _resultValue.artifactId = artifactId;
+            _resultValue.artifactName = artifactName;
+            return _resultValue;
         }
     }
 }

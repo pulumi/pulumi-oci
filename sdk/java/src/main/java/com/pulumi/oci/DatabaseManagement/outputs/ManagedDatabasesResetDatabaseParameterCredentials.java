@@ -105,12 +105,12 @@ public final class ManagedDatabasesResetDatabaseParameterCredentials {
             return this;
         }
         public ManagedDatabasesResetDatabaseParameterCredentials build() {
-            final var o = new ManagedDatabasesResetDatabaseParameterCredentials();
-            o.password = password;
-            o.role = role;
-            o.secretId = secretId;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new ManagedDatabasesResetDatabaseParameterCredentials();
+            _resultValue.password = password;
+            _resultValue.role = role;
+            _resultValue.secretId = secretId;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

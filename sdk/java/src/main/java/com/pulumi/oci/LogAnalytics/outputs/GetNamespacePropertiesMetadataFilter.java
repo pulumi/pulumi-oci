@@ -75,11 +75,11 @@ public final class GetNamespacePropertiesMetadataFilter {
             return values(List.of(values));
         }
         public GetNamespacePropertiesMetadataFilter build() {
-            final var o = new GetNamespacePropertiesMetadataFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetNamespacePropertiesMetadataFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

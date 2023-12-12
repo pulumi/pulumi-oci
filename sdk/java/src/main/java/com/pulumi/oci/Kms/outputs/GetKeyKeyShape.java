@@ -91,11 +91,11 @@ public final class GetKeyKeyShape {
             return this;
         }
         public GetKeyKeyShape build() {
-            final var o = new GetKeyKeyShape();
-            o.algorithm = algorithm;
-            o.curveId = curveId;
-            o.length = length;
-            return o;
+            final var _resultValue = new GetKeyKeyShape();
+            _resultValue.algorithm = algorithm;
+            _resultValue.curveId = curveId;
+            _resultValue.length = length;
+            return _resultValue;
         }
     }
 }

@@ -93,11 +93,11 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatab
             return connectionStrings(List.of(connectionStrings));
         }
         public GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo build() {
-            final var o = new GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo();
-            o.componentType = componentType;
-            o.connectionCredentials = connectionCredentials;
-            o.connectionStrings = connectionStrings;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo();
+            _resultValue.componentType = componentType;
+            _resultValue.connectionCredentials = connectionCredentials;
+            _resultValue.connectionStrings = connectionStrings;
+            return _resultValue;
         }
     }
 }

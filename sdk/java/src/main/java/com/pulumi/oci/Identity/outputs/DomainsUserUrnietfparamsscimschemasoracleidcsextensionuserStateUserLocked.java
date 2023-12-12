@@ -203,12 +203,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked();
-            o.expired = expired;
-            o.lockDate = lockDate;
-            o.on = on;
-            o.reason = reason;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked();
+            _resultValue.expired = expired;
+            _resultValue.lockDate = lockDate;
+            _resultValue.on = on;
+            _resultValue.reason = reason;
+            return _resultValue;
         }
     }
 }

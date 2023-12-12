@@ -42,9 +42,9 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollection {
             return items(List.of(items));
         }
         public GetServiceEnvironmentsServiceEnvironmentCollection build() {
-            final var o = new GetServiceEnvironmentsServiceEnvironmentCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetServiceEnvironmentsServiceEnvironmentCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

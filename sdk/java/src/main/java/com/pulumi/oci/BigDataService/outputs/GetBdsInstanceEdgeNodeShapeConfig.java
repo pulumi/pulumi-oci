@@ -84,11 +84,11 @@ public final class GetBdsInstanceEdgeNodeShapeConfig {
             return this;
         }
         public GetBdsInstanceEdgeNodeShapeConfig build() {
-            final var o = new GetBdsInstanceEdgeNodeShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.nvmes = nvmes;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new GetBdsInstanceEdgeNodeShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.nvmes = nvmes;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

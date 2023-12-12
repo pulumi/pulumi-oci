@@ -108,13 +108,13 @@ public final class GetAutonomousContainerDatabaseVersionsResult {
             return this;
         }
         public GetAutonomousContainerDatabaseVersionsResult build() {
-            final var o = new GetAutonomousContainerDatabaseVersionsResult();
-            o.autonomousContainerDatabaseVersions = autonomousContainerDatabaseVersions;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.serviceComponent = serviceComponent;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabaseVersionsResult();
+            _resultValue.autonomousContainerDatabaseVersions = autonomousContainerDatabaseVersions;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.serviceComponent = serviceComponent;
+            return _resultValue;
         }
     }
 }

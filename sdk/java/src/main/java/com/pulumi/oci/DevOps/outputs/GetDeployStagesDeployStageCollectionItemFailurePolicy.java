@@ -85,11 +85,11 @@ public final class GetDeployStagesDeployStageCollectionItemFailurePolicy {
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemFailurePolicy build() {
-            final var o = new GetDeployStagesDeployStageCollectionItemFailurePolicy();
-            o.failureCount = failureCount;
-            o.failurePercentage = failurePercentage;
-            o.policyType = policyType;
-            return o;
+            final var _resultValue = new GetDeployStagesDeployStageCollectionItemFailurePolicy();
+            _resultValue.failureCount = failureCount;
+            _resultValue.failurePercentage = failurePercentage;
+            _resultValue.policyType = policyType;
+            return _resultValue;
         }
     }
 }

@@ -161,15 +161,15 @@ public final class GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem {
             return this;
         }
         public GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem build() {
-            final var o = new GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem();
-            o.awrSourceDatabaseId = awrSourceDatabaseId;
-            o.errorCount = errorCount;
-            o.instanceNumber = instanceNumber;
-            o.snapshotIdentifier = snapshotIdentifier;
-            o.timeDbStartup = timeDbStartup;
-            o.timeSnapshotBegin = timeSnapshotBegin;
-            o.timeSnapshotEnd = timeSnapshotEnd;
-            return o;
+            final var _resultValue = new GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItem();
+            _resultValue.awrSourceDatabaseId = awrSourceDatabaseId;
+            _resultValue.errorCount = errorCount;
+            _resultValue.instanceNumber = instanceNumber;
+            _resultValue.snapshotIdentifier = snapshotIdentifier;
+            _resultValue.timeDbStartup = timeDbStartup;
+            _resultValue.timeSnapshotBegin = timeSnapshotBegin;
+            _resultValue.timeSnapshotEnd = timeSnapshotEnd;
+            return _resultValue;
         }
     }
 }

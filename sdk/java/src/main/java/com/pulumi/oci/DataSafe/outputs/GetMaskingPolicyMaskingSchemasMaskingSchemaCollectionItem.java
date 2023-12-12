@@ -46,9 +46,9 @@ public final class GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem {
             return this;
         }
         public GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem build() {
-            final var o = new GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem();
-            o.schemaName = schemaName;
-            return o;
+            final var _resultValue = new GetMaskingPolicyMaskingSchemasMaskingSchemaCollectionItem();
+            _resultValue.schemaName = schemaName;
+            return _resultValue;
         }
     }
 }

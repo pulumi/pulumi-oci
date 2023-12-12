@@ -46,9 +46,9 @@ public final class GetDomainsOauth2clientCredentialsOauth2clientCredentialUrniet
             return this;
         }
         public GetDomainsOauth2clientCredentialsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new GetDomainsOauth2clientCredentialsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new GetDomainsOauth2clientCredentialsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

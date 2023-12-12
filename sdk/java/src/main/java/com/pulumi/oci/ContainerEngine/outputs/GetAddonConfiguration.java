@@ -65,10 +65,10 @@ public final class GetAddonConfiguration {
             return this;
         }
         public GetAddonConfiguration build() {
-            final var o = new GetAddonConfiguration();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetAddonConfiguration();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

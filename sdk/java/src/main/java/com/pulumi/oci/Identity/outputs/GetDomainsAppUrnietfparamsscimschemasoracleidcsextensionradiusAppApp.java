@@ -318,23 +318,23 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiu
             return this;
         }
         public GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp build() {
-            final var o = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp();
-            o.captureClientIp = captureClientIp;
-            o.clientIp = clientIp;
-            o.countryCodeResponseAttributeId = countryCodeResponseAttributeId;
-            o.endUserIpAttribute = endUserIpAttribute;
-            o.groupMembershipRadiusAttribute = groupMembershipRadiusAttribute;
-            o.groupMembershipToReturns = groupMembershipToReturns;
-            o.groupNameFormat = groupNameFormat;
-            o.includeGroupInResponse = includeGroupInResponse;
-            o.passwordAndOtpTogether = passwordAndOtpTogether;
-            o.port = port;
-            o.radiusVendorSpecificId = radiusVendorSpecificId;
-            o.responseFormat = responseFormat;
-            o.responseFormatDelimiter = responseFormatDelimiter;
-            o.secretKey = secretKey;
-            o.typeOfRadiusApp = typeOfRadiusApp;
-            return o;
+            final var _resultValue = new GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppApp();
+            _resultValue.captureClientIp = captureClientIp;
+            _resultValue.clientIp = clientIp;
+            _resultValue.countryCodeResponseAttributeId = countryCodeResponseAttributeId;
+            _resultValue.endUserIpAttribute = endUserIpAttribute;
+            _resultValue.groupMembershipRadiusAttribute = groupMembershipRadiusAttribute;
+            _resultValue.groupMembershipToReturns = groupMembershipToReturns;
+            _resultValue.groupNameFormat = groupNameFormat;
+            _resultValue.includeGroupInResponse = includeGroupInResponse;
+            _resultValue.passwordAndOtpTogether = passwordAndOtpTogether;
+            _resultValue.port = port;
+            _resultValue.radiusVendorSpecificId = radiusVendorSpecificId;
+            _resultValue.responseFormat = responseFormat;
+            _resultValue.responseFormatDelimiter = responseFormatDelimiter;
+            _resultValue.secretKey = secretKey;
+            _resultValue.typeOfRadiusApp = typeOfRadiusApp;
+            return _resultValue;
         }
     }
 }

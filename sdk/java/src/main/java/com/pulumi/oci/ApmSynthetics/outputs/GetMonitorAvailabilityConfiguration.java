@@ -65,10 +65,10 @@ public final class GetMonitorAvailabilityConfiguration {
             return this;
         }
         public GetMonitorAvailabilityConfiguration build() {
-            final var o = new GetMonitorAvailabilityConfiguration();
-            o.maxAllowedFailuresPerInterval = maxAllowedFailuresPerInterval;
-            o.minAllowedRunsPerInterval = minAllowedRunsPerInterval;
-            return o;
+            final var _resultValue = new GetMonitorAvailabilityConfiguration();
+            _resultValue.maxAllowedFailuresPerInterval = maxAllowedFailuresPerInterval;
+            _resultValue.minAllowedRunsPerInterval = minAllowedRunsPerInterval;
+            return _resultValue;
         }
     }
 }

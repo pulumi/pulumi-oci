@@ -65,10 +65,10 @@ public final class GetSecurityListsSecurityListIngressSecurityRuleIcmpOption {
             return this;
         }
         public GetSecurityListsSecurityListIngressSecurityRuleIcmpOption build() {
-            final var o = new GetSecurityListsSecurityListIngressSecurityRuleIcmpOption();
-            o.code = code;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetSecurityListsSecurityListIngressSecurityRuleIcmpOption();
+            _resultValue.code = code;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

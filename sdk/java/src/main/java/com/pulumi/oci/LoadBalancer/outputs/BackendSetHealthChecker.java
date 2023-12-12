@@ -214,17 +214,17 @@ public final class BackendSetHealthChecker {
             return this;
         }
         public BackendSetHealthChecker build() {
-            final var o = new BackendSetHealthChecker();
-            o.intervalMs = intervalMs;
-            o.isForcePlainText = isForcePlainText;
-            o.port = port;
-            o.protocol = protocol;
-            o.responseBodyRegex = responseBodyRegex;
-            o.retries = retries;
-            o.returnCode = returnCode;
-            o.timeoutInMillis = timeoutInMillis;
-            o.urlPath = urlPath;
-            return o;
+            final var _resultValue = new BackendSetHealthChecker();
+            _resultValue.intervalMs = intervalMs;
+            _resultValue.isForcePlainText = isForcePlainText;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.responseBodyRegex = responseBodyRegex;
+            _resultValue.retries = retries;
+            _resultValue.returnCode = returnCode;
+            _resultValue.timeoutInMillis = timeoutInMillis;
+            _resultValue.urlPath = urlPath;
+            return _resultValue;
         }
     }
 }

@@ -122,12 +122,12 @@ public final class ProfileTargetTagsItem {
             return tagValues(List.of(tagValues));
         }
         public ProfileTargetTagsItem build() {
-            final var o = new ProfileTargetTagsItem();
-            o.tagDefinitionName = tagDefinitionName;
-            o.tagNamespaceName = tagNamespaceName;
-            o.tagValueType = tagValueType;
-            o.tagValues = tagValues;
-            return o;
+            final var _resultValue = new ProfileTargetTagsItem();
+            _resultValue.tagDefinitionName = tagDefinitionName;
+            _resultValue.tagNamespaceName = tagNamespaceName;
+            _resultValue.tagValueType = tagValueType;
+            _resultValue.tagValues = tagValues;
+            return _resultValue;
         }
     }
 }

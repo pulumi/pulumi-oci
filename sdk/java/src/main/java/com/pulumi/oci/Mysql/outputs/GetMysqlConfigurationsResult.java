@@ -196,17 +196,17 @@ public final class GetMysqlConfigurationsResult {
             return types(List.of(types));
         }
         public GetMysqlConfigurationsResult build() {
-            final var o = new GetMysqlConfigurationsResult();
-            o.compartmentId = compartmentId;
-            o.configurationId = configurationId;
-            o.configurations = configurations;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.shapeName = shapeName;
-            o.state = state;
-            o.types = types;
-            return o;
+            final var _resultValue = new GetMysqlConfigurationsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurationId = configurationId;
+            _resultValue.configurations = configurations;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.shapeName = shapeName;
+            _resultValue.state = state;
+            _resultValue.types = types;
+            return _resultValue;
         }
     }
 }

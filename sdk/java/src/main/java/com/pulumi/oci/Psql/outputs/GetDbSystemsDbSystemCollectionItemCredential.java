@@ -54,10 +54,10 @@ public final class GetDbSystemsDbSystemCollectionItemCredential {
             return this;
         }
         public GetDbSystemsDbSystemCollectionItemCredential build() {
-            final var o = new GetDbSystemsDbSystemCollectionItemCredential();
-            o.passwordDetails = passwordDetails;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemCollectionItemCredential();
+            _resultValue.passwordDetails = passwordDetails;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

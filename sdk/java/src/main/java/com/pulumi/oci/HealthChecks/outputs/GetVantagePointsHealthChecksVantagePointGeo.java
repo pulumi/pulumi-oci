@@ -161,15 +161,15 @@ public final class GetVantagePointsHealthChecksVantagePointGeo {
             return this;
         }
         public GetVantagePointsHealthChecksVantagePointGeo build() {
-            final var o = new GetVantagePointsHealthChecksVantagePointGeo();
-            o.adminDivCode = adminDivCode;
-            o.cityName = cityName;
-            o.countryCode = countryCode;
-            o.countryName = countryName;
-            o.geoKey = geoKey;
-            o.latitude = latitude;
-            o.longitude = longitude;
-            return o;
+            final var _resultValue = new GetVantagePointsHealthChecksVantagePointGeo();
+            _resultValue.adminDivCode = adminDivCode;
+            _resultValue.cityName = cityName;
+            _resultValue.countryCode = countryCode;
+            _resultValue.countryName = countryName;
+            _resultValue.geoKey = geoKey;
+            _resultValue.latitude = latitude;
+            _resultValue.longitude = longitude;
+            return _resultValue;
         }
     }
 }

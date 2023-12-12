@@ -65,10 +65,10 @@ public final class GetDomainsAppsAppRadiusPolicy {
             return this;
         }
         public GetDomainsAppsAppRadiusPolicy build() {
-            final var o = new GetDomainsAppsAppRadiusPolicy();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppRadiusPolicy();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

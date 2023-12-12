@@ -68,10 +68,10 @@ public final class QueryQueryDefinitionCostAnalysisUi {
             return this;
         }
         public QueryQueryDefinitionCostAnalysisUi build() {
-            final var o = new QueryQueryDefinitionCostAnalysisUi();
-            o.graph = graph;
-            o.isCumulativeGraph = isCumulativeGraph;
-            return o;
+            final var _resultValue = new QueryQueryDefinitionCostAnalysisUi();
+            _resultValue.graph = graph;
+            _resultValue.isCumulativeGraph = isCumulativeGraph;
+            return _resultValue;
         }
     }
 }

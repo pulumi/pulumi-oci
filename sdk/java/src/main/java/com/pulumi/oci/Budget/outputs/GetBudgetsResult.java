@@ -163,15 +163,15 @@ public final class GetBudgetsResult {
             return this;
         }
         public GetBudgetsResult build() {
-            final var o = new GetBudgetsResult();
-            o.budgets = budgets;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.targetType = targetType;
-            return o;
+            final var _resultValue = new GetBudgetsResult();
+            _resultValue.budgets = budgets;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.targetType = targetType;
+            return _resultValue;
         }
     }
 }

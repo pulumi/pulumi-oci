@@ -424,27 +424,27 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroup {
             return urnietfparamsscimschemasoracleidcsextensionrequestableGroups(List.of(urnietfparamsscimschemasoracleidcsextensionrequestableGroups));
         }
         public GetDomainsMyRequestableGroupsMyRequestableGroup build() {
-            final var o = new GetDomainsMyRequestableGroupsMyRequestableGroup();
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.displayName = displayName;
-            o.domainOcid = domainOcid;
-            o.externalId = externalId;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.members = members;
-            o.metas = metas;
-            o.nonUniqueDisplayName = nonUniqueDisplayName;
-            o.ocid = ocid;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.urnietfparamsscimschemasoracleidcsextensiongroupGroups = urnietfparamsscimschemasoracleidcsextensiongroupGroups;
-            o.urnietfparamsscimschemasoracleidcsextensionrequestableGroups = urnietfparamsscimschemasoracleidcsextensionrequestableGroups;
-            return o;
+            final var _resultValue = new GetDomainsMyRequestableGroupsMyRequestableGroup();
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.displayName = displayName;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.externalId = externalId;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.members = members;
+            _resultValue.metas = metas;
+            _resultValue.nonUniqueDisplayName = nonUniqueDisplayName;
+            _resultValue.ocid = ocid;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.urnietfparamsscimschemasoracleidcsextensiongroupGroups = urnietfparamsscimschemasoracleidcsextensiongroupGroups;
+            _resultValue.urnietfparamsscimschemasoracleidcsextensionrequestableGroups = urnietfparamsscimschemasoracleidcsextensionrequestableGroups;
+            return _resultValue;
         }
     }
 }

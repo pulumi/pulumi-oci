@@ -65,10 +65,10 @@ public final class GetMigrationAdvisorSetting {
             return this;
         }
         public GetMigrationAdvisorSetting build() {
-            final var o = new GetMigrationAdvisorSetting();
-            o.isIgnoreErrors = isIgnoreErrors;
-            o.isSkipAdvisor = isSkipAdvisor;
-            return o;
+            final var _resultValue = new GetMigrationAdvisorSetting();
+            _resultValue.isIgnoreErrors = isIgnoreErrors;
+            _resultValue.isSkipAdvisor = isSkipAdvisor;
+            return _resultValue;
         }
     }
 }

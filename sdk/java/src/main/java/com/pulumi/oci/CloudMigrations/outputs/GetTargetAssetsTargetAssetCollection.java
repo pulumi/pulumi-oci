@@ -42,9 +42,9 @@ public final class GetTargetAssetsTargetAssetCollection {
             return items(List.of(items));
         }
         public GetTargetAssetsTargetAssetCollection build() {
-            final var o = new GetTargetAssetsTargetAssetCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetTargetAssetsTargetAssetCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

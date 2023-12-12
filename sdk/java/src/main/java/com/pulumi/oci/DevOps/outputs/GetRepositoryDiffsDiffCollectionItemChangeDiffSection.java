@@ -70,10 +70,10 @@ public final class GetRepositoryDiffsDiffCollectionItemChangeDiffSection {
             return this;
         }
         public GetRepositoryDiffsDiffCollectionItemChangeDiffSection build() {
-            final var o = new GetRepositoryDiffsDiffCollectionItemChangeDiffSection();
-            o.lines = lines;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetRepositoryDiffsDiffCollectionItemChangeDiffSection();
+            _resultValue.lines = lines;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

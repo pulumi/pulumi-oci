@@ -319,23 +319,23 @@ public final class GetResolverEndpointsResolverEndpoint {
             return this;
         }
         public GetResolverEndpointsResolverEndpoint build() {
-            final var o = new GetResolverEndpointsResolverEndpoint();
-            o.compartmentId = compartmentId;
-            o.endpointType = endpointType;
-            o.forwardingAddress = forwardingAddress;
-            o.isForwarding = isForwarding;
-            o.isListening = isListening;
-            o.listeningAddress = listeningAddress;
-            o.name = name;
-            o.nsgIds = nsgIds;
-            o.resolverId = resolverId;
-            o.scope = scope;
-            o.self = self;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetResolverEndpointsResolverEndpoint();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.endpointType = endpointType;
+            _resultValue.forwardingAddress = forwardingAddress;
+            _resultValue.isForwarding = isForwarding;
+            _resultValue.isListening = isListening;
+            _resultValue.listeningAddress = listeningAddress;
+            _resultValue.name = name;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.resolverId = resolverId;
+            _resultValue.scope = scope;
+            _resultValue.self = self;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

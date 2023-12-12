@@ -203,17 +203,17 @@ public final class GetMysqlDbSystemsDbSystemEndpoint {
             return this;
         }
         public GetMysqlDbSystemsDbSystemEndpoint build() {
-            final var o = new GetMysqlDbSystemsDbSystemEndpoint();
-            o.hostname = hostname;
-            o.ipAddress = ipAddress;
-            o.modes = modes;
-            o.port = port;
-            o.portX = portX;
-            o.resourceId = resourceId;
-            o.resourceType = resourceType;
-            o.status = status;
-            o.statusDetails = statusDetails;
-            return o;
+            final var _resultValue = new GetMysqlDbSystemsDbSystemEndpoint();
+            _resultValue.hostname = hostname;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.modes = modes;
+            _resultValue.port = port;
+            _resultValue.portX = portX;
+            _resultValue.resourceId = resourceId;
+            _resultValue.resourceType = resourceType;
+            _resultValue.status = status;
+            _resultValue.statusDetails = statusDetails;
+            return _resultValue;
         }
     }
 }

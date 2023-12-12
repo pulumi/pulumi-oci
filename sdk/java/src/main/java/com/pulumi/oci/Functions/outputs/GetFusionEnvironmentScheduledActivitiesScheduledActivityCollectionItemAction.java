@@ -198,17 +198,17 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
             return this;
         }
         public GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction build() {
-            final var o = new GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction();
-            o.actionType = actionType;
-            o.artifact = artifact;
-            o.category = category;
-            o.description = description;
-            o.mode = mode;
-            o.qualifier = qualifier;
-            o.referenceKey = referenceKey;
-            o.state = state;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction();
+            _resultValue.actionType = actionType;
+            _resultValue.artifact = artifact;
+            _resultValue.category = category;
+            _resultValue.description = description;
+            _resultValue.mode = mode;
+            _resultValue.qualifier = qualifier;
+            _resultValue.referenceKey = referenceKey;
+            _resultValue.state = state;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

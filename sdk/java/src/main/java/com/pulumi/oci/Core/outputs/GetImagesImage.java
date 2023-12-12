@@ -388,27 +388,27 @@ public final class GetImagesImage {
             return this;
         }
         public GetImagesImage build() {
-            final var o = new GetImagesImage();
-            o.agentFeatures = agentFeatures;
-            o.baseImageId = baseImageId;
-            o.billableSizeInGbs = billableSizeInGbs;
-            o.compartmentId = compartmentId;
-            o.createImageAllowed = createImageAllowed;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.imageSourceDetails = imageSourceDetails;
-            o.instanceId = instanceId;
-            o.launchMode = launchMode;
-            o.launchOptions = launchOptions;
-            o.listingType = listingType;
-            o.operatingSystem = operatingSystem;
-            o.operatingSystemVersion = operatingSystemVersion;
-            o.sizeInMbs = sizeInMbs;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetImagesImage();
+            _resultValue.agentFeatures = agentFeatures;
+            _resultValue.baseImageId = baseImageId;
+            _resultValue.billableSizeInGbs = billableSizeInGbs;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createImageAllowed = createImageAllowed;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.imageSourceDetails = imageSourceDetails;
+            _resultValue.instanceId = instanceId;
+            _resultValue.launchMode = launchMode;
+            _resultValue.launchOptions = launchOptions;
+            _resultValue.listingType = listingType;
+            _resultValue.operatingSystem = operatingSystem;
+            _resultValue.operatingSystemVersion = operatingSystemVersion;
+            _resultValue.sizeInMbs = sizeInMbs;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

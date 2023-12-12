@@ -189,18 +189,18 @@ public final class GetAtCustomerCccInfrastructuresResult {
             return this;
         }
         public GetAtCustomerCccInfrastructuresResult build() {
-            final var o = new GetAtCustomerCccInfrastructuresResult();
-            o.accessLevel = accessLevel;
-            o.cccInfrastructureCollections = cccInfrastructureCollections;
-            o.cccInfrastructureId = cccInfrastructureId;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.displayNameContains = displayNameContains;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAtCustomerCccInfrastructuresResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.cccInfrastructureCollections = cccInfrastructureCollections;
+            _resultValue.cccInfrastructureId = cccInfrastructureId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -79,12 +79,12 @@ public final class GetSecretsSecretSecretContent {
             return this;
         }
         public GetSecretsSecretSecretContent build() {
-            final var o = new GetSecretsSecretSecretContent();
-            o.content = content;
-            o.contentType = contentType;
-            o.name = name;
-            o.stage = stage;
-            return o;
+            final var _resultValue = new GetSecretsSecretSecretContent();
+            _resultValue.content = content;
+            _resultValue.contentType = contentType;
+            _resultValue.name = name;
+            _resultValue.stage = stage;
+            return _resultValue;
         }
     }
 }

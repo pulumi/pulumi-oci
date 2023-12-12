@@ -297,22 +297,22 @@ public final class GetUnifiedAgentConfigurationResult {
             return this;
         }
         public GetUnifiedAgentConfigurationResult build() {
-            final var o = new GetUnifiedAgentConfigurationResult();
-            o.compartmentId = compartmentId;
-            o.configurationState = configurationState;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.groupAssociations = groupAssociations;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.serviceConfigurations = serviceConfigurations;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeLastModified = timeLastModified;
-            o.unifiedAgentConfigurationId = unifiedAgentConfigurationId;
-            return o;
+            final var _resultValue = new GetUnifiedAgentConfigurationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurationState = configurationState;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.groupAssociations = groupAssociations;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.serviceConfigurations = serviceConfigurations;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastModified = timeLastModified;
+            _resultValue.unifiedAgentConfigurationId = unifiedAgentConfigurationId;
+            return _resultValue;
         }
     }
 }

@@ -544,35 +544,35 @@ public final class GetUserAssessmentProfilesProfile {
             return this;
         }
         public GetUserAssessmentProfilesProfile build() {
-            final var o = new GetUserAssessmentProfilesProfile();
-            o.compartmentId = compartmentId;
-            o.compositeLimit = compositeLimit;
-            o.connectTime = connectTime;
-            o.cpuPerCall = cpuPerCall;
-            o.cpuPerSession = cpuPerSession;
-            o.definedTags = definedTags;
-            o.failedLoginAttempts = failedLoginAttempts;
-            o.freeformTags = freeformTags;
-            o.idleTime = idleTime;
-            o.inactiveAccountTime = inactiveAccountTime;
-            o.isUserCreated = isUserCreated;
-            o.logicalReadsPerCall = logicalReadsPerCall;
-            o.logicalReadsPerSession = logicalReadsPerSession;
-            o.passwordGraceTime = passwordGraceTime;
-            o.passwordLifeTime = passwordLifeTime;
-            o.passwordLockTime = passwordLockTime;
-            o.passwordReuseMax = passwordReuseMax;
-            o.passwordReuseTime = passwordReuseTime;
-            o.passwordRolloverTime = passwordRolloverTime;
-            o.passwordVerificationFunction = passwordVerificationFunction;
-            o.passwordVerificationFunctionDetails = passwordVerificationFunctionDetails;
-            o.privateSga = privateSga;
-            o.profileName = profileName;
-            o.sessionsPerUser = sessionsPerUser;
-            o.targetId = targetId;
-            o.userAssessmentId = userAssessmentId;
-            o.userCount = userCount;
-            return o;
+            final var _resultValue = new GetUserAssessmentProfilesProfile();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compositeLimit = compositeLimit;
+            _resultValue.connectTime = connectTime;
+            _resultValue.cpuPerCall = cpuPerCall;
+            _resultValue.cpuPerSession = cpuPerSession;
+            _resultValue.definedTags = definedTags;
+            _resultValue.failedLoginAttempts = failedLoginAttempts;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.idleTime = idleTime;
+            _resultValue.inactiveAccountTime = inactiveAccountTime;
+            _resultValue.isUserCreated = isUserCreated;
+            _resultValue.logicalReadsPerCall = logicalReadsPerCall;
+            _resultValue.logicalReadsPerSession = logicalReadsPerSession;
+            _resultValue.passwordGraceTime = passwordGraceTime;
+            _resultValue.passwordLifeTime = passwordLifeTime;
+            _resultValue.passwordLockTime = passwordLockTime;
+            _resultValue.passwordReuseMax = passwordReuseMax;
+            _resultValue.passwordReuseTime = passwordReuseTime;
+            _resultValue.passwordRolloverTime = passwordRolloverTime;
+            _resultValue.passwordVerificationFunction = passwordVerificationFunction;
+            _resultValue.passwordVerificationFunctionDetails = passwordVerificationFunctionDetails;
+            _resultValue.privateSga = privateSga;
+            _resultValue.profileName = profileName;
+            _resultValue.sessionsPerUser = sessionsPerUser;
+            _resultValue.targetId = targetId;
+            _resultValue.userAssessmentId = userAssessmentId;
+            _resultValue.userCount = userCount;
+            return _resultValue;
         }
     }
 }

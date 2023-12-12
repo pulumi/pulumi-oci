@@ -172,16 +172,16 @@ public final class GetPublicationsResult {
             return publications(List.of(publications));
         }
         public GetPublicationsResult build() {
-            final var o = new GetPublicationsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.listingType = listingType;
-            o.names = names;
-            o.operatingSystems = operatingSystems;
-            o.publicationId = publicationId;
-            o.publications = publications;
-            return o;
+            final var _resultValue = new GetPublicationsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.listingType = listingType;
+            _resultValue.names = names;
+            _resultValue.operatingSystems = operatingSystems;
+            _resultValue.publicationId = publicationId;
+            _resultValue.publications = publications;
+            return _resultValue;
         }
     }
 }

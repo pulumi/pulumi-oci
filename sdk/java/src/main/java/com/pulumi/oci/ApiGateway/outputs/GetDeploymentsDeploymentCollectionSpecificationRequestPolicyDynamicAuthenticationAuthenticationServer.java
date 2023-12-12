@@ -73,10 +73,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
             return keys(List.of(keys));
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer();
-            o.authenticationServerDetails = authenticationServerDetails;
-            o.keys = keys;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServer();
+            _resultValue.authenticationServerDetails = authenticationServerDetails;
+            _resultValue.keys = keys;
+            return _resultValue;
         }
     }
 }

@@ -257,20 +257,20 @@ public final class GetSubscriberResult {
             return usagePlans(List.of(usagePlans));
         }
         public GetSubscriberResult build() {
-            final var o = new GetSubscriberResult();
-            o.clients = clients;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.subscriberId = subscriberId;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.usagePlans = usagePlans;
-            return o;
+            final var _resultValue = new GetSubscriberResult();
+            _resultValue.clients = clients;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.subscriberId = subscriberId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.usagePlans = usagePlans;
+            return _resultValue;
         }
     }
 }

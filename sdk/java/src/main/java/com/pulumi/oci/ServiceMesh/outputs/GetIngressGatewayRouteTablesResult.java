@@ -163,15 +163,15 @@ public final class GetIngressGatewayRouteTablesResult {
             return this;
         }
         public GetIngressGatewayRouteTablesResult build() {
-            final var o = new GetIngressGatewayRouteTablesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.ingressGatewayId = ingressGatewayId;
-            o.ingressGatewayRouteTableCollections = ingressGatewayRouteTableCollections;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetIngressGatewayRouteTablesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ingressGatewayId = ingressGatewayId;
+            _resultValue.ingressGatewayRouteTableCollections = ingressGatewayRouteTableCollections;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

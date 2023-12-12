@@ -65,10 +65,10 @@ public final class GetDomainsMySupportAccountsMySupportAccountTag {
             return this;
         }
         public GetDomainsMySupportAccountsMySupportAccountTag build() {
-            final var o = new GetDomainsMySupportAccountsMySupportAccountTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMySupportAccountsMySupportAccountTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

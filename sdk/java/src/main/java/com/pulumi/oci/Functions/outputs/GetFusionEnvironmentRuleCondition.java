@@ -65,10 +65,10 @@ public final class GetFusionEnvironmentRuleCondition {
             return this;
         }
         public GetFusionEnvironmentRuleCondition build() {
-            final var o = new GetFusionEnvironmentRuleCondition();
-            o.attributeName = attributeName;
-            o.attributeValue = attributeValue;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentRuleCondition();
+            _resultValue.attributeName = attributeName;
+            _resultValue.attributeValue = attributeValue;
+            return _resultValue;
         }
     }
 }

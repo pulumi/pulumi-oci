@@ -105,12 +105,12 @@ public final class GetCostTrackingTagsResult {
             return tags(List.of(tags));
         }
         public GetCostTrackingTagsResult build() {
-            final var o = new GetCostTrackingTagsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.tags = tags;
-            return o;
+            final var _resultValue = new GetCostTrackingTagsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.tags = tags;
+            return _resultValue;
         }
     }
 }

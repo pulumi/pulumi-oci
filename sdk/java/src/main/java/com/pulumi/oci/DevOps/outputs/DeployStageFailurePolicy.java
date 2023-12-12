@@ -87,11 +87,11 @@ public final class DeployStageFailurePolicy {
             return this;
         }
         public DeployStageFailurePolicy build() {
-            final var o = new DeployStageFailurePolicy();
-            o.failureCount = failureCount;
-            o.failurePercentage = failurePercentage;
-            o.policyType = policyType;
-            return o;
+            final var _resultValue = new DeployStageFailurePolicy();
+            _resultValue.failureCount = failureCount;
+            _resultValue.failurePercentage = failurePercentage;
+            _resultValue.policyType = policyType;
+            return _resultValue;
         }
     }
 }

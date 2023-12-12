@@ -293,22 +293,22 @@ public final class GetStreamCdnConfigResult {
             return this;
         }
         public GetStreamCdnConfigResult build() {
-            final var o = new GetStreamCdnConfigResult();
-            o.compartmentId = compartmentId;
-            o.configs = configs;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.distributionChannelId = distributionChannelId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.lifecyleDetails = lifecyleDetails;
-            o.state = state;
-            o.streamCdnConfigId = streamCdnConfigId;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetStreamCdnConfigResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configs = configs;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.distributionChannelId = distributionChannelId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.lifecyleDetails = lifecyleDetails;
+            _resultValue.state = state;
+            _resultValue.streamCdnConfigId = streamCdnConfigId;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

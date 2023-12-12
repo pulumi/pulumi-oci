@@ -105,10 +105,10 @@ public final class DomainsPolicyTag {
             return this;
         }
         public DomainsPolicyTag build() {
-            final var o = new DomainsPolicyTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsPolicyTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

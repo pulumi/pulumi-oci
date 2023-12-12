@@ -448,31 +448,31 @@ public final class GetBucketSummariesBucketSummary {
             return this;
         }
         public GetBucketSummariesBucketSummary build() {
-            final var o = new GetBucketSummariesBucketSummary();
-            o.accessType = accessType;
-            o.approximateCount = approximateCount;
-            o.approximateSize = approximateSize;
-            o.autoTiering = autoTiering;
-            o.bucketId = bucketId;
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.etag = etag;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isReadOnly = isReadOnly;
-            o.kmsKeyId = kmsKeyId;
-            o.metadata = metadata;
-            o.name = name;
-            o.namespace = namespace;
-            o.objectEventsEnabled = objectEventsEnabled;
-            o.objectLifecyclePolicyEtag = objectLifecyclePolicyEtag;
-            o.replicationEnabled = replicationEnabled;
-            o.retentionRules = retentionRules;
-            o.storageTier = storageTier;
-            o.timeCreated = timeCreated;
-            o.versioning = versioning;
-            return o;
+            final var _resultValue = new GetBucketSummariesBucketSummary();
+            _resultValue.accessType = accessType;
+            _resultValue.approximateCount = approximateCount;
+            _resultValue.approximateSize = approximateSize;
+            _resultValue.autoTiering = autoTiering;
+            _resultValue.bucketId = bucketId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.etag = etag;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isReadOnly = isReadOnly;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.metadata = metadata;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.objectEventsEnabled = objectEventsEnabled;
+            _resultValue.objectLifecyclePolicyEtag = objectLifecyclePolicyEtag;
+            _resultValue.replicationEnabled = replicationEnabled;
+            _resultValue.retentionRules = retentionRules;
+            _resultValue.storageTier = storageTier;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.versioning = versioning;
+            return _resultValue;
         }
     }
 }

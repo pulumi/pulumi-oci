@@ -103,12 +103,12 @@ public final class GetConfigsConfigCollectionItemMetric {
             return this;
         }
         public GetConfigsConfigCollectionItemMetric build() {
-            final var o = new GetConfigsConfigCollectionItemMetric();
-            o.description = description;
-            o.name = name;
-            o.unit = unit;
-            o.valueSource = valueSource;
-            return o;
+            final var _resultValue = new GetConfigsConfigCollectionItemMetric();
+            _resultValue.description = description;
+            _resultValue.name = name;
+            _resultValue.unit = unit;
+            _resultValue.valueSource = valueSource;
+            return _resultValue;
         }
     }
 }

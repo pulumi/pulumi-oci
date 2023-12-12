@@ -84,11 +84,11 @@ public final class GetCloudVmClusterDataCollectionOption {
             return this;
         }
         public GetCloudVmClusterDataCollectionOption build() {
-            final var o = new GetCloudVmClusterDataCollectionOption();
-            o.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
-            o.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
-            o.isIncidentLogsEnabled = isIncidentLogsEnabled;
-            return o;
+            final var _resultValue = new GetCloudVmClusterDataCollectionOption();
+            _resultValue.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
+            _resultValue.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
+            _resultValue.isIncidentLogsEnabled = isIncidentLogsEnabled;
+            return _resultValue;
         }
     }
 }

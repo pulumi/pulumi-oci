@@ -107,12 +107,12 @@ public final class AutonomousDatabaseLongTermBackupSchedule {
             return this;
         }
         public AutonomousDatabaseLongTermBackupSchedule build() {
-            final var o = new AutonomousDatabaseLongTermBackupSchedule();
-            o.isDisabled = isDisabled;
-            o.repeatCadence = repeatCadence;
-            o.retentionPeriodInDays = retentionPeriodInDays;
-            o.timeOfBackup = timeOfBackup;
-            return o;
+            final var _resultValue = new AutonomousDatabaseLongTermBackupSchedule();
+            _resultValue.isDisabled = isDisabled;
+            _resultValue.repeatCadence = repeatCadence;
+            _resultValue.retentionPeriodInDays = retentionPeriodInDays;
+            _resultValue.timeOfBackup = timeOfBackup;
+            return _resultValue;
         }
     }
 }

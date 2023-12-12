@@ -193,16 +193,16 @@ public final class GetSchedulesScheduleCollectionItemQueryProperty {
             return this;
         }
         public GetSchedulesScheduleCollectionItemQueryProperty build() {
-            final var o = new GetSchedulesScheduleCollectionItemQueryProperty();
-            o.compartmentDepth = compartmentDepth;
-            o.dateRanges = dateRanges;
-            o.filter = filter;
-            o.granularity = granularity;
-            o.groupBies = groupBies;
-            o.groupByTags = groupByTags;
-            o.isAggregateByTime = isAggregateByTime;
-            o.queryType = queryType;
-            return o;
+            final var _resultValue = new GetSchedulesScheduleCollectionItemQueryProperty();
+            _resultValue.compartmentDepth = compartmentDepth;
+            _resultValue.dateRanges = dateRanges;
+            _resultValue.filter = filter;
+            _resultValue.granularity = granularity;
+            _resultValue.groupBies = groupBies;
+            _resultValue.groupByTags = groupByTags;
+            _resultValue.isAggregateByTime = isAggregateByTime;
+            _resultValue.queryType = queryType;
+            return _resultValue;
         }
     }
 }

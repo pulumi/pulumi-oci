@@ -277,21 +277,21 @@ public final class GetAutonomousVirtualMachinesAutonomousVirtualMachine {
             return this;
         }
         public GetAutonomousVirtualMachinesAutonomousVirtualMachine build() {
-            final var o = new GetAutonomousVirtualMachinesAutonomousVirtualMachine();
-            o.autonomousVmClusterId = autonomousVmClusterId;
-            o.clientIpAddress = clientIpAddress;
-            o.compartmentId = compartmentId;
-            o.cpuCoreCount = cpuCoreCount;
-            o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
-            o.dbServerDisplayName = dbServerDisplayName;
-            o.dbServerId = dbServerId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.memorySizeInGbs = memorySizeInGbs;
-            o.state = state;
-            o.vmName = vmName;
-            return o;
+            final var _resultValue = new GetAutonomousVirtualMachinesAutonomousVirtualMachine();
+            _resultValue.autonomousVmClusterId = autonomousVmClusterId;
+            _resultValue.clientIpAddress = clientIpAddress;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.cpuCoreCount = cpuCoreCount;
+            _resultValue.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            _resultValue.dbServerDisplayName = dbServerDisplayName;
+            _resultValue.dbServerId = dbServerId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.memorySizeInGbs = memorySizeInGbs;
+            _resultValue.state = state;
+            _resultValue.vmName = vmName;
+            return _resultValue;
         }
     }
 }

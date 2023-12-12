@@ -105,12 +105,12 @@ public final class QuotaLock {
             return this;
         }
         public QuotaLock build() {
-            final var o = new QuotaLock();
-            o.message = message;
-            o.relatedResourceId = relatedResourceId;
-            o.timeCreated = timeCreated;
-            o.type = type;
-            return o;
+            final var _resultValue = new QuotaLock();
+            _resultValue.message = message;
+            _resultValue.relatedResourceId = relatedResourceId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

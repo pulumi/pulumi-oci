@@ -85,11 +85,11 @@ public final class GetVirtualServiceRouteTableRouteRuleDestination {
             return this;
         }
         public GetVirtualServiceRouteTableRouteRuleDestination build() {
-            final var o = new GetVirtualServiceRouteTableRouteRuleDestination();
-            o.port = port;
-            o.virtualDeploymentId = virtualDeploymentId;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new GetVirtualServiceRouteTableRouteRuleDestination();
+            _resultValue.port = port;
+            _resultValue.virtualDeploymentId = virtualDeploymentId;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

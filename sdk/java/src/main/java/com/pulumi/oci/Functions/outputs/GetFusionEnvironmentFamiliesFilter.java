@@ -67,11 +67,11 @@ public final class GetFusionEnvironmentFamiliesFilter {
             return values(List.of(values));
         }
         public GetFusionEnvironmentFamiliesFilter build() {
-            final var o = new GetFusionEnvironmentFamiliesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentFamiliesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

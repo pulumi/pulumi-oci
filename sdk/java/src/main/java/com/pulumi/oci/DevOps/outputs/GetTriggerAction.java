@@ -89,11 +89,11 @@ public final class GetTriggerAction {
             return this;
         }
         public GetTriggerAction build() {
-            final var o = new GetTriggerAction();
-            o.buildPipelineId = buildPipelineId;
-            o.filters = filters;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetTriggerAction();
+            _resultValue.buildPipelineId = buildPipelineId;
+            _resultValue.filters = filters;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -295,22 +295,22 @@ public final class GetExternalDbSystemResult {
             return this;
         }
         public GetExternalDbSystemResult build() {
-            final var o = new GetExternalDbSystemResult();
-            o.compartmentId = compartmentId;
-            o.databaseManagementConfigs = databaseManagementConfigs;
-            o.dbSystemDiscoveryId = dbSystemDiscoveryId;
-            o.discoveryAgentId = discoveryAgentId;
-            o.displayName = displayName;
-            o.externalDbSystemId = externalDbSystemId;
-            o.homeDirectory = homeDirectory;
-            o.id = id;
-            o.isCluster = isCluster;
-            o.lifecycleDetails = lifecycleDetails;
-            o.stackMonitoringConfigs = stackMonitoringConfigs;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetExternalDbSystemResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.databaseManagementConfigs = databaseManagementConfigs;
+            _resultValue.dbSystemDiscoveryId = dbSystemDiscoveryId;
+            _resultValue.discoveryAgentId = discoveryAgentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.homeDirectory = homeDirectory;
+            _resultValue.id = id;
+            _resultValue.isCluster = isCluster;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.stackMonitoringConfigs = stackMonitoringConfigs;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

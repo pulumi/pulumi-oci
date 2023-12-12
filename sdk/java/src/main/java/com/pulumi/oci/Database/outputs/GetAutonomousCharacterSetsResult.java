@@ -121,14 +121,14 @@ public final class GetAutonomousCharacterSetsResult {
             return this;
         }
         public GetAutonomousCharacterSetsResult build() {
-            final var o = new GetAutonomousCharacterSetsResult();
-            o.autonomousDatabaseCharacterSets = autonomousDatabaseCharacterSets;
-            o.characterSetType = characterSetType;
-            o.filters = filters;
-            o.id = id;
-            o.isDedicated = isDedicated;
-            o.isShared = isShared;
-            return o;
+            final var _resultValue = new GetAutonomousCharacterSetsResult();
+            _resultValue.autonomousDatabaseCharacterSets = autonomousDatabaseCharacterSets;
+            _resultValue.characterSetType = characterSetType;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isDedicated = isDedicated;
+            _resultValue.isShared = isShared;
+            return _resultValue;
         }
     }
 }

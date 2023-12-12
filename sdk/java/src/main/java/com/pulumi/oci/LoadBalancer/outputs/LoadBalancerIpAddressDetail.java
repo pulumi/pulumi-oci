@@ -92,11 +92,11 @@ public final class LoadBalancerIpAddressDetail {
             return reservedIps(List.of(reservedIps));
         }
         public LoadBalancerIpAddressDetail build() {
-            final var o = new LoadBalancerIpAddressDetail();
-            o.ipAddress = ipAddress;
-            o.isPublic = isPublic;
-            o.reservedIps = reservedIps;
-            return o;
+            final var _resultValue = new LoadBalancerIpAddressDetail();
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.isPublic = isPublic;
+            _resultValue.reservedIps = reservedIps;
+            return _resultValue;
         }
     }
 }

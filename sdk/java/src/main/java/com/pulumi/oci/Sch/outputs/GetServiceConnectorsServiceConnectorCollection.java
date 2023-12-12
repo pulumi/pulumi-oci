@@ -42,9 +42,9 @@ public final class GetServiceConnectorsServiceConnectorCollection {
             return items(List.of(items));
         }
         public GetServiceConnectorsServiceConnectorCollection build() {
-            final var o = new GetServiceConnectorsServiceConnectorCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetServiceConnectorsServiceConnectorCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

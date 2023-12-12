@@ -149,11 +149,11 @@ public final class DomainsAppAllowedScope {
             return this;
         }
         public DomainsAppAllowedScope build() {
-            final var o = new DomainsAppAllowedScope();
-            o.fqs = fqs;
-            o.idOfDefiningApp = idOfDefiningApp;
-            o.readOnly = readOnly;
-            return o;
+            final var _resultValue = new DomainsAppAllowedScope();
+            _resultValue.fqs = fqs;
+            _resultValue.idOfDefiningApp = idOfDefiningApp;
+            _resultValue.readOnly = readOnly;
+            return _resultValue;
         }
     }
 }

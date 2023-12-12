@@ -67,11 +67,11 @@ public final class GetUserAssessmentUsersFilter {
             return values(List.of(values));
         }
         public GetUserAssessmentUsersFilter build() {
-            final var o = new GetUserAssessmentUsersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetUserAssessmentUsersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

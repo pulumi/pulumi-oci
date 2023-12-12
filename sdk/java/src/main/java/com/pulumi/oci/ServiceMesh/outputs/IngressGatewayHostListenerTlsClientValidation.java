@@ -72,10 +72,10 @@ public final class IngressGatewayHostListenerTlsClientValidation {
             return this;
         }
         public IngressGatewayHostListenerTlsClientValidation build() {
-            final var o = new IngressGatewayHostListenerTlsClientValidation();
-            o.subjectAlternateNames = subjectAlternateNames;
-            o.trustedCaBundle = trustedCaBundle;
-            return o;
+            final var _resultValue = new IngressGatewayHostListenerTlsClientValidation();
+            _resultValue.subjectAlternateNames = subjectAlternateNames;
+            _resultValue.trustedCaBundle = trustedCaBundle;
+            return _resultValue;
         }
     }
 }

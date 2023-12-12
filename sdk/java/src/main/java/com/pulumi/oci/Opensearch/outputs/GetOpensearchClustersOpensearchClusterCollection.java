@@ -42,9 +42,9 @@ public final class GetOpensearchClustersOpensearchClusterCollection {
             return items(List.of(items));
         }
         public GetOpensearchClustersOpensearchClusterCollection build() {
-            final var o = new GetOpensearchClustersOpensearchClusterCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetOpensearchClustersOpensearchClusterCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

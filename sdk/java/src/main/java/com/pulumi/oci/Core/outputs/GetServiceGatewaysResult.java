@@ -144,14 +144,14 @@ public final class GetServiceGatewaysResult {
             return this;
         }
         public GetServiceGatewaysResult build() {
-            final var o = new GetServiceGatewaysResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.serviceGateways = serviceGateways;
-            o.state = state;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetServiceGatewaysResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.serviceGateways = serviceGateways;
+            _resultValue.state = state;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

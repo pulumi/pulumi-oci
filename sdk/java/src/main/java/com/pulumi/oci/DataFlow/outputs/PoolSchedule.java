@@ -87,11 +87,11 @@ public final class PoolSchedule {
             return this;
         }
         public PoolSchedule build() {
-            final var o = new PoolSchedule();
-            o.dayOfWeek = dayOfWeek;
-            o.startTime = startTime;
-            o.stopTime = stopTime;
-            return o;
+            final var _resultValue = new PoolSchedule();
+            _resultValue.dayOfWeek = dayOfWeek;
+            _resultValue.startTime = startTime;
+            _resultValue.stopTime = stopTime;
+            return _resultValue;
         }
     }
 }

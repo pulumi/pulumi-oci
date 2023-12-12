@@ -67,11 +67,11 @@ public final class GetPrivateIpsFilter {
             return values(List.of(values));
         }
         public GetPrivateIpsFilter build() {
-            final var o = new GetPrivateIpsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPrivateIpsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

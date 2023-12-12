@@ -133,13 +133,13 @@ public final class GetSchedulesResult {
             return scheduleCollections(List.of(scheduleCollections));
         }
         public GetSchedulesResult build() {
-            final var o = new GetSchedulesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.scheduleCollections = scheduleCollections;
-            return o;
+            final var _resultValue = new GetSchedulesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.scheduleCollections = scheduleCollections;
+            return _resultValue;
         }
     }
 }

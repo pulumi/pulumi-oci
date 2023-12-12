@@ -160,15 +160,15 @@ public final class GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimiz
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase();
-            o.compartmentId = compartmentId;
-            o.dbDeploymentType = dbDeploymentType;
-            o.dbSubType = dbSubType;
-            o.dbType = dbType;
-            o.dbVersion = dbVersion;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsOptimizerStatisticsAdvisorExecutionsCollectionItemDatabase();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbDeploymentType = dbDeploymentType;
+            _resultValue.dbSubType = dbSubType;
+            _resultValue.dbType = dbType;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMet
             return items(List.of(items));
         }
         public GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollection build() {
-            final var o = new GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetComputeCapacityTopologyComputeBareMetalHostsComputeBareMetalHostCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

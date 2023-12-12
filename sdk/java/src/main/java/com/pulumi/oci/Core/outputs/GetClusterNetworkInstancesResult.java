@@ -136,14 +136,14 @@ public final class GetClusterNetworkInstancesResult {
             return instances(List.of(instances));
         }
         public GetClusterNetworkInstancesResult build() {
-            final var o = new GetClusterNetworkInstancesResult();
-            o.clusterNetworkId = clusterNetworkId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.instances = instances;
-            return o;
+            final var _resultValue = new GetClusterNetworkInstancesResult();
+            _resultValue.clusterNetworkId = clusterNetworkId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instances = instances;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociati
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation build() {
-            final var o = new GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation();
-            o.peerId = peerId;
-            o.peerRegion = peerRegion;
-            o.role = role;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociation();
+            _resultValue.peerId = peerId;
+            _resultValue.peerRegion = peerRegion;
+            _resultValue.role = role;
+            return _resultValue;
         }
     }
 }

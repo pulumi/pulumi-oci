@@ -67,11 +67,11 @@ public final class GetFirewallsFilter {
             return values(List.of(values));
         }
         public GetFirewallsFilter build() {
-            final var o = new GetFirewallsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFirewallsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

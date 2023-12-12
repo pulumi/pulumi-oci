@@ -122,14 +122,14 @@ public final class GetInvoiceLineComputedUsagesResult {
             return invoicelineComputedUsages(List.of(invoicelineComputedUsages));
         }
         public GetInvoiceLineComputedUsagesResult build() {
-            final var o = new GetInvoiceLineComputedUsagesResult();
-            o.compartmentId = compartmentId;
-            o.fields = fields;
-            o.filters = filters;
-            o.id = id;
-            o.invoiceLineId = invoiceLineId;
-            o.invoicelineComputedUsages = invoicelineComputedUsages;
-            return o;
+            final var _resultValue = new GetInvoiceLineComputedUsagesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.fields = fields;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.invoiceLineId = invoiceLineId;
+            _resultValue.invoicelineComputedUsages = invoicelineComputedUsages;
+            return _resultValue;
         }
     }
 }

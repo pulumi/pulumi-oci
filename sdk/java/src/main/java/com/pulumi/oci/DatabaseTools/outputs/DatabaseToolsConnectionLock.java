@@ -105,12 +105,12 @@ public final class DatabaseToolsConnectionLock {
             return this;
         }
         public DatabaseToolsConnectionLock build() {
-            final var o = new DatabaseToolsConnectionLock();
-            o.message = message;
-            o.relatedResourceId = relatedResourceId;
-            o.timeCreated = timeCreated;
-            o.type = type;
-            return o;
+            final var _resultValue = new DatabaseToolsConnectionLock();
+            _resultValue.message = message;
+            _resultValue.relatedResourceId = relatedResourceId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

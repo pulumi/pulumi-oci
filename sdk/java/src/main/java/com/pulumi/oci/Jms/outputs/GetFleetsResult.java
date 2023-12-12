@@ -155,15 +155,15 @@ public final class GetFleetsResult {
             return this;
         }
         public GetFleetsResult build() {
-            final var o = new GetFleetsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.displayNameContains = displayNameContains;
-            o.filters = filters;
-            o.fleetCollections = fleetCollections;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetFleetsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.filters = filters;
+            _resultValue.fleetCollections = fleetCollections;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

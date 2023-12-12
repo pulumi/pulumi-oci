@@ -108,12 +108,12 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailO
             return pluginsConfigs(List.of(pluginsConfigs));
         }
         public GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig build() {
-            final var o = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig();
-            o.areAllPluginsDisabled = areAllPluginsDisabled;
-            o.isManagementDisabled = isManagementDisabled;
-            o.isMonitoringDisabled = isMonitoringDisabled;
-            o.pluginsConfigs = pluginsConfigs;
-            return o;
+            final var _resultValue = new GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig();
+            _resultValue.areAllPluginsDisabled = areAllPluginsDisabled;
+            _resultValue.isManagementDisabled = isManagementDisabled;
+            _resultValue.isMonitoringDisabled = isMonitoringDisabled;
+            _resultValue.pluginsConfigs = pluginsConfigs;
+            return _resultValue;
         }
     }
 }

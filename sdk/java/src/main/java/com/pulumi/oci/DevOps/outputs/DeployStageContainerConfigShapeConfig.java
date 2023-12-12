@@ -67,10 +67,10 @@ public final class DeployStageContainerConfigShapeConfig {
             return this;
         }
         public DeployStageContainerConfigShapeConfig build() {
-            final var o = new DeployStageContainerConfigShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new DeployStageContainerConfigShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

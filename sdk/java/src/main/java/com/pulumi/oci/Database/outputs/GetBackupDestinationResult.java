@@ -378,26 +378,26 @@ public final class GetBackupDestinationResult {
             return vpcUsers(List.of(vpcUsers));
         }
         public GetBackupDestinationResult build() {
-            final var o = new GetBackupDestinationResult();
-            o.associatedDatabases = associatedDatabases;
-            o.backupDestinationId = backupDestinationId;
-            o.compartmentId = compartmentId;
-            o.connectionString = connectionString;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.localMountPointPath = localMountPointPath;
-            o.mountTypeDetails = mountTypeDetails;
-            o.nfsMountType = nfsMountType;
-            o.nfsServerExport = nfsServerExport;
-            o.nfsServers = nfsServers;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.type = type;
-            o.vpcUsers = vpcUsers;
-            return o;
+            final var _resultValue = new GetBackupDestinationResult();
+            _resultValue.associatedDatabases = associatedDatabases;
+            _resultValue.backupDestinationId = backupDestinationId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionString = connectionString;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.localMountPointPath = localMountPointPath;
+            _resultValue.mountTypeDetails = mountTypeDetails;
+            _resultValue.nfsMountType = nfsMountType;
+            _resultValue.nfsServerExport = nfsServerExport;
+            _resultValue.nfsServers = nfsServers;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.type = type;
+            _resultValue.vpcUsers = vpcUsers;
+            return _resultValue;
         }
     }
 }

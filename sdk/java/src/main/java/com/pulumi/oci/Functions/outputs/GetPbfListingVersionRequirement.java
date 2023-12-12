@@ -70,10 +70,10 @@ public final class GetPbfListingVersionRequirement {
             return policies(List.of(policies));
         }
         public GetPbfListingVersionRequirement build() {
-            final var o = new GetPbfListingVersionRequirement();
-            o.minMemoryRequiredInMbs = minMemoryRequiredInMbs;
-            o.policies = policies;
-            return o;
+            final var _resultValue = new GetPbfListingVersionRequirement();
+            _resultValue.minMemoryRequiredInMbs = minMemoryRequiredInMbs;
+            _resultValue.policies = policies;
+            return _resultValue;
         }
     }
 }

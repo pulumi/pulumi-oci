@@ -65,10 +65,10 @@ public final class GetImageShapeMemoryConstraint {
             return this;
         }
         public GetImageShapeMemoryConstraint build() {
-            final var o = new GetImageShapeMemoryConstraint();
-            o.maxInGbs = maxInGbs;
-            o.minInGbs = minInGbs;
-            return o;
+            final var _resultValue = new GetImageShapeMemoryConstraint();
+            _resultValue.maxInGbs = maxInGbs;
+            _resultValue.minInGbs = minInGbs;
+            return _resultValue;
         }
     }
 }

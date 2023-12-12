@@ -87,11 +87,11 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurat
             return this;
         }
         public ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfiguration build() {
-            final var o = new ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfiguration();
-            o.networkNumber = networkNumber;
-            o.networkType = networkType;
-            o.subnet = subnet;
-            return o;
+            final var _resultValue = new ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfiguration();
+            _resultValue.networkNumber = networkNumber;
+            _resultValue.networkType = networkType;
+            _resultValue.subnet = subnet;
+            return _resultValue;
         }
     }
 }

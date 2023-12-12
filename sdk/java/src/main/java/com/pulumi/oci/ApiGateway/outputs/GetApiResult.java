@@ -279,21 +279,21 @@ public final class GetApiResult {
             return validationResults(List.of(validationResults));
         }
         public GetApiResult build() {
-            final var o = new GetApiResult();
-            o.apiId = apiId;
-            o.compartmentId = compartmentId;
-            o.content = content;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.specificationType = specificationType;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.validationResults = validationResults;
-            return o;
+            final var _resultValue = new GetApiResult();
+            _resultValue.apiId = apiId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.content = content;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.specificationType = specificationType;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.validationResults = validationResults;
+            return _resultValue;
         }
     }
 }

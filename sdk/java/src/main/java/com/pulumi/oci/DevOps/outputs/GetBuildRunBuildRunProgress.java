@@ -86,11 +86,11 @@ public final class GetBuildRunBuildRunProgress {
             return this;
         }
         public GetBuildRunBuildRunProgress build() {
-            final var o = new GetBuildRunBuildRunProgress();
-            o.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetBuildRunBuildRunProgress();
+            _resultValue.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

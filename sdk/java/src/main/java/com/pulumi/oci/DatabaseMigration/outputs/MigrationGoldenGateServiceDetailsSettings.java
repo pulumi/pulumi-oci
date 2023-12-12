@@ -88,11 +88,11 @@ public final class MigrationGoldenGateServiceDetailsSettings {
             return this;
         }
         public MigrationGoldenGateServiceDetailsSettings build() {
-            final var o = new MigrationGoldenGateServiceDetailsSettings();
-            o.acceptableLag = acceptableLag;
-            o.extract = extract;
-            o.replicat = replicat;
-            return o;
+            final var _resultValue = new MigrationGoldenGateServiceDetailsSettings();
+            _resultValue.acceptableLag = acceptableLag;
+            _resultValue.extract = extract;
+            _resultValue.replicat = replicat;
+            return _resultValue;
         }
     }
 }

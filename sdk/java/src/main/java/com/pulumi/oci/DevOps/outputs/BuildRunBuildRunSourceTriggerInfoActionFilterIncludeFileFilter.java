@@ -43,9 +43,9 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilte
             return filePaths(List.of(filePaths));
         }
         public BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter build() {
-            final var o = new BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter();
-            o.filePaths = filePaths;
-            return o;
+            final var _resultValue = new BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter();
+            _resultValue.filePaths = filePaths;
+            return _resultValue;
         }
     }
 }

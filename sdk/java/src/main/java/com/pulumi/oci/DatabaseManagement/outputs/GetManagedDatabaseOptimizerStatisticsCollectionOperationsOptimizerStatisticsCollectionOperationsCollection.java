@@ -42,9 +42,9 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsOpti
             return items(List.of(items));
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollection build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsCollectionOperationsOptimizerStatisticsCollectionOperationsCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

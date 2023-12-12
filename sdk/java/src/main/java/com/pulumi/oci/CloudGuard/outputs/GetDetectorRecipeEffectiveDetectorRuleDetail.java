@@ -150,14 +150,14 @@ public final class GetDetectorRecipeEffectiveDetectorRuleDetail {
             return this;
         }
         public GetDetectorRecipeEffectiveDetectorRuleDetail build() {
-            final var o = new GetDetectorRecipeEffectiveDetectorRuleDetail();
-            o.condition = condition;
-            o.configurations = configurations;
-            o.isConfigurationAllowed = isConfigurationAllowed;
-            o.isEnabled = isEnabled;
-            o.labels = labels;
-            o.riskLevel = riskLevel;
-            return o;
+            final var _resultValue = new GetDetectorRecipeEffectiveDetectorRuleDetail();
+            _resultValue.condition = condition;
+            _resultValue.configurations = configurations;
+            _resultValue.isConfigurationAllowed = isConfigurationAllowed;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.labels = labels;
+            _resultValue.riskLevel = riskLevel;
+            return _resultValue;
         }
     }
 }

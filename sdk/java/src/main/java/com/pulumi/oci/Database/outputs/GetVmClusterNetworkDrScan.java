@@ -89,11 +89,11 @@ public final class GetVmClusterNetworkDrScan {
             return this;
         }
         public GetVmClusterNetworkDrScan build() {
-            final var o = new GetVmClusterNetworkDrScan();
-            o.hostname = hostname;
-            o.ips = ips;
-            o.scanListenerPortTcp = scanListenerPortTcp;
-            return o;
+            final var _resultValue = new GetVmClusterNetworkDrScan();
+            _resultValue.hostname = hostname;
+            _resultValue.ips = ips;
+            _resultValue.scanListenerPortTcp = scanListenerPortTcp;
+            return _resultValue;
         }
     }
 }

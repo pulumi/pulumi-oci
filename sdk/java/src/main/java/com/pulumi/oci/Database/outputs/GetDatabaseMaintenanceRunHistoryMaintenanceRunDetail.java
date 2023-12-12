@@ -585,37 +585,37 @@ public final class GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail {
             return this;
         }
         public GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail build() {
-            final var o = new GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail();
-            o.compartmentId = compartmentId;
-            o.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
-            o.currentPatchingComponent = currentPatchingComponent;
-            o.customActionTimeoutInMins = customActionTimeoutInMins;
-            o.description = description;
-            o.displayName = displayName;
-            o.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
-            o.estimatedPatchingTimes = estimatedPatchingTimes;
-            o.id = id;
-            o.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
-            o.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
-            o.lifecycleDetails = lifecycleDetails;
-            o.maintenanceSubtype = maintenanceSubtype;
-            o.maintenanceType = maintenanceType;
-            o.patchFailureCount = patchFailureCount;
-            o.patchId = patchId;
-            o.patchingEndTime = patchingEndTime;
-            o.patchingMode = patchingMode;
-            o.patchingStartTime = patchingStartTime;
-            o.patchingStatus = patchingStatus;
-            o.peerMaintenanceRunId = peerMaintenanceRunId;
-            o.state = state;
-            o.targetDbServerVersion = targetDbServerVersion;
-            o.targetResourceId = targetResourceId;
-            o.targetResourceType = targetResourceType;
-            o.targetStorageServerVersion = targetStorageServerVersion;
-            o.timeEnded = timeEnded;
-            o.timeScheduled = timeScheduled;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetDatabaseMaintenanceRunHistoryMaintenanceRunDetail();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.currentCustomActionTimeoutInMins = currentCustomActionTimeoutInMins;
+            _resultValue.currentPatchingComponent = currentPatchingComponent;
+            _resultValue.customActionTimeoutInMins = customActionTimeoutInMins;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
+            _resultValue.estimatedPatchingTimes = estimatedPatchingTimes;
+            _resultValue.id = id;
+            _resultValue.isCustomActionTimeoutEnabled = isCustomActionTimeoutEnabled;
+            _resultValue.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maintenanceSubtype = maintenanceSubtype;
+            _resultValue.maintenanceType = maintenanceType;
+            _resultValue.patchFailureCount = patchFailureCount;
+            _resultValue.patchId = patchId;
+            _resultValue.patchingEndTime = patchingEndTime;
+            _resultValue.patchingMode = patchingMode;
+            _resultValue.patchingStartTime = patchingStartTime;
+            _resultValue.patchingStatus = patchingStatus;
+            _resultValue.peerMaintenanceRunId = peerMaintenanceRunId;
+            _resultValue.state = state;
+            _resultValue.targetDbServerVersion = targetDbServerVersion;
+            _resultValue.targetResourceId = targetResourceId;
+            _resultValue.targetResourceType = targetResourceType;
+            _resultValue.targetStorageServerVersion = targetStorageServerVersion;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeScheduled = timeScheduled;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

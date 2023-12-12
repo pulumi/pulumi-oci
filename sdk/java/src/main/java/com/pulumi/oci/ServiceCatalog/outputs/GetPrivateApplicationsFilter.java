@@ -67,11 +67,11 @@ public final class GetPrivateApplicationsFilter {
             return values(List.of(values));
         }
         public GetPrivateApplicationsFilter build() {
-            final var o = new GetPrivateApplicationsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPrivateApplicationsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

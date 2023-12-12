@@ -50,9 +50,9 @@ public final class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemp
             return preemptionActions(List.of(preemptionActions));
         }
         public GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig build() {
-            final var o = new GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig();
-            o.preemptionActions = preemptionActions;
-            return o;
+            final var _resultValue = new GetTargetAssetsTargetAssetCollectionItemRecommendedSpecPreemptibleInstanceConfig();
+            _resultValue.preemptionActions = preemptionActions;
+            return _resultValue;
         }
     }
 }

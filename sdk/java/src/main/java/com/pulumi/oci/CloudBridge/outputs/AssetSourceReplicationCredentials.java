@@ -65,10 +65,10 @@ public final class AssetSourceReplicationCredentials {
             return this;
         }
         public AssetSourceReplicationCredentials build() {
-            final var o = new AssetSourceReplicationCredentials();
-            o.secretId = secretId;
-            o.type = type;
-            return o;
+            final var _resultValue = new AssetSourceReplicationCredentials();
+            _resultValue.secretId = secretId;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

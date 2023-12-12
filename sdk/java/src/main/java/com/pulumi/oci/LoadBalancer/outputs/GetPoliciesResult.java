@@ -97,12 +97,12 @@ public final class GetPoliciesResult {
             return policies(List.of(policies));
         }
         public GetPoliciesResult build() {
-            final var o = new GetPoliciesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.policies = policies;
-            return o;
+            final var _resultValue = new GetPoliciesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.policies = policies;
+            return _resultValue;
         }
     }
 }

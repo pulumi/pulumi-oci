@@ -174,16 +174,16 @@ public final class GetManagementStationsResult {
             return this;
         }
         public GetManagementStationsResult build() {
-            final var o = new GetManagementStationsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.displayNameContains = displayNameContains;
-            o.filters = filters;
-            o.id = id;
-            o.managedInstanceId = managedInstanceId;
-            o.managementStationCollections = managementStationCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetManagementStationsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameContains = displayNameContains;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.managementStationCollections = managementStationCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

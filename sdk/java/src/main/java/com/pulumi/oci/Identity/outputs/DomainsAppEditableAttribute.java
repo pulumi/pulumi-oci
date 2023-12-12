@@ -72,9 +72,9 @@ public final class DomainsAppEditableAttribute {
             return this;
         }
         public DomainsAppEditableAttribute build() {
-            final var o = new DomainsAppEditableAttribute();
-            o.name = name;
-            return o;
+            final var _resultValue = new DomainsAppEditableAttribute();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -161,15 +161,15 @@ public final class GetProtectedDatabasesProtectedDatabaseCollectionItemMetric {
             return this;
         }
         public GetProtectedDatabasesProtectedDatabaseCollectionItemMetric build() {
-            final var o = new GetProtectedDatabasesProtectedDatabaseCollectionItemMetric();
-            o.backupSpaceEstimateInGbs = backupSpaceEstimateInGbs;
-            o.backupSpaceUsedInGbs = backupSpaceUsedInGbs;
-            o.currentRetentionPeriodInSeconds = currentRetentionPeriodInSeconds;
-            o.dbSizeInGbs = dbSizeInGbs;
-            o.isRedoLogsEnabled = isRedoLogsEnabled;
-            o.retentionPeriodInDays = retentionPeriodInDays;
-            o.unprotectedWindowInSeconds = unprotectedWindowInSeconds;
-            return o;
+            final var _resultValue = new GetProtectedDatabasesProtectedDatabaseCollectionItemMetric();
+            _resultValue.backupSpaceEstimateInGbs = backupSpaceEstimateInGbs;
+            _resultValue.backupSpaceUsedInGbs = backupSpaceUsedInGbs;
+            _resultValue.currentRetentionPeriodInSeconds = currentRetentionPeriodInSeconds;
+            _resultValue.dbSizeInGbs = dbSizeInGbs;
+            _resultValue.isRedoLogsEnabled = isRedoLogsEnabled;
+            _resultValue.retentionPeriodInDays = retentionPeriodInDays;
+            _resultValue.unprotectedWindowInSeconds = unprotectedWindowInSeconds;
+            return _resultValue;
         }
     }
 }

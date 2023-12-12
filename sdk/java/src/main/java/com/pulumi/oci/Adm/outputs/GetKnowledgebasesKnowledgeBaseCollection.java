@@ -42,9 +42,9 @@ public final class GetKnowledgebasesKnowledgeBaseCollection {
             return items(List.of(items));
         }
         public GetKnowledgebasesKnowledgeBaseCollection build() {
-            final var o = new GetKnowledgebasesKnowledgeBaseCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetKnowledgebasesKnowledgeBaseCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

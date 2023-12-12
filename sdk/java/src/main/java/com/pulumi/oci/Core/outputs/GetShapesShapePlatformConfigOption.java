@@ -277,19 +277,19 @@ public final class GetShapesShapePlatformConfigOption {
             return virtualInstructionsOptions(List.of(virtualInstructionsOptions));
         }
         public GetShapesShapePlatformConfigOption build() {
-            final var o = new GetShapesShapePlatformConfigOption();
-            o.accessControlServiceOptions = accessControlServiceOptions;
-            o.inputOutputMemoryManagementUnitOptions = inputOutputMemoryManagementUnitOptions;
-            o.measuredBootOptions = measuredBootOptions;
-            o.memoryEncryptionOptions = memoryEncryptionOptions;
-            o.numaNodesPerSocketPlatformOptions = numaNodesPerSocketPlatformOptions;
-            o.percentageOfCoresEnabledOptions = percentageOfCoresEnabledOptions;
-            o.secureBootOptions = secureBootOptions;
-            o.symmetricMultiThreadingOptions = symmetricMultiThreadingOptions;
-            o.trustedPlatformModuleOptions = trustedPlatformModuleOptions;
-            o.type = type;
-            o.virtualInstructionsOptions = virtualInstructionsOptions;
-            return o;
+            final var _resultValue = new GetShapesShapePlatformConfigOption();
+            _resultValue.accessControlServiceOptions = accessControlServiceOptions;
+            _resultValue.inputOutputMemoryManagementUnitOptions = inputOutputMemoryManagementUnitOptions;
+            _resultValue.measuredBootOptions = measuredBootOptions;
+            _resultValue.memoryEncryptionOptions = memoryEncryptionOptions;
+            _resultValue.numaNodesPerSocketPlatformOptions = numaNodesPerSocketPlatformOptions;
+            _resultValue.percentageOfCoresEnabledOptions = percentageOfCoresEnabledOptions;
+            _resultValue.secureBootOptions = secureBootOptions;
+            _resultValue.symmetricMultiThreadingOptions = symmetricMultiThreadingOptions;
+            _resultValue.trustedPlatformModuleOptions = trustedPlatformModuleOptions;
+            _resultValue.type = type;
+            _resultValue.virtualInstructionsOptions = virtualInstructionsOptions;
+            return _resultValue;
         }
     }
 }

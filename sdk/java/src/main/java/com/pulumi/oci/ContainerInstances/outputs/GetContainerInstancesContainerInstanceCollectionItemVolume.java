@@ -108,12 +108,12 @@ public final class GetContainerInstancesContainerInstanceCollectionItemVolume {
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemVolume build() {
-            final var o = new GetContainerInstancesContainerInstanceCollectionItemVolume();
-            o.backingStore = backingStore;
-            o.configs = configs;
-            o.name = name;
-            o.volumeType = volumeType;
-            return o;
+            final var _resultValue = new GetContainerInstancesContainerInstanceCollectionItemVolume();
+            _resultValue.backingStore = backingStore;
+            _resultValue.configs = configs;
+            _resultValue.name = name;
+            _resultValue.volumeType = volumeType;
+            return _resultValue;
         }
     }
 }

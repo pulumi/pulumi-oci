@@ -42,9 +42,9 @@ public final class GetDetectionProjectsProjectCollection {
             return items(List.of(items));
         }
         public GetDetectionProjectsProjectCollection build() {
-            final var o = new GetDetectionProjectsProjectCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDetectionProjectsProjectCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

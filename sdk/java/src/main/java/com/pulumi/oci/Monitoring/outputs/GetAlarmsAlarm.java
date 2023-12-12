@@ -475,31 +475,31 @@ public final class GetAlarmsAlarm {
             return this;
         }
         public GetAlarmsAlarm build() {
-            final var o = new GetAlarmsAlarm();
-            o.body = body;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.destinations = destinations;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.isNotificationsPerMetricDimensionEnabled = isNotificationsPerMetricDimensionEnabled;
-            o.messageFormat = messageFormat;
-            o.metricCompartmentId = metricCompartmentId;
-            o.metricCompartmentIdInSubtree = metricCompartmentIdInSubtree;
-            o.namespace = namespace;
-            o.pendingDuration = pendingDuration;
-            o.query = query;
-            o.repeatNotificationDuration = repeatNotificationDuration;
-            o.resolution = resolution;
-            o.resourceGroup = resourceGroup;
-            o.severity = severity;
-            o.state = state;
-            o.suppressions = suppressions;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetAlarmsAlarm();
+            _resultValue.body = body;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.destinations = destinations;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.isNotificationsPerMetricDimensionEnabled = isNotificationsPerMetricDimensionEnabled;
+            _resultValue.messageFormat = messageFormat;
+            _resultValue.metricCompartmentId = metricCompartmentId;
+            _resultValue.metricCompartmentIdInSubtree = metricCompartmentIdInSubtree;
+            _resultValue.namespace = namespace;
+            _resultValue.pendingDuration = pendingDuration;
+            _resultValue.query = query;
+            _resultValue.repeatNotificationDuration = repeatNotificationDuration;
+            _resultValue.resolution = resolution;
+            _resultValue.resourceGroup = resourceGroup;
+            _resultValue.severity = severity;
+            _resultValue.state = state;
+            _resultValue.suppressions = suppressions;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

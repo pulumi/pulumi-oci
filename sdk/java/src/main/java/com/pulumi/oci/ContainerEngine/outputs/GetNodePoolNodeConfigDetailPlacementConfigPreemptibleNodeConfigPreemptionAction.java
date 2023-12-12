@@ -66,10 +66,10 @@ public final class GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConf
             return this;
         }
         public GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction build() {
-            final var o = new GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction();
-            o.isPreserveBootVolume = isPreserveBootVolume;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNodePoolNodeConfigDetailPlacementConfigPreemptibleNodeConfigPreemptionAction();
+            _resultValue.isPreserveBootVolume = isPreserveBootVolume;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

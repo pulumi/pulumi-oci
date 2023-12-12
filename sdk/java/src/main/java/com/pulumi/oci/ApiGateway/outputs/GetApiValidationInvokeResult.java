@@ -81,11 +81,11 @@ public final class GetApiValidationInvokeResult {
             return validations(List.of(validations));
         }
         public GetApiValidationInvokeResult build() {
-            final var o = new GetApiValidationInvokeResult();
-            o.apiId = apiId;
-            o.id = id;
-            o.validations = validations;
-            return o;
+            final var _resultValue = new GetApiValidationInvokeResult();
+            _resultValue.apiId = apiId;
+            _resultValue.id = id;
+            _resultValue.validations = validations;
+            return _resultValue;
         }
     }
 }

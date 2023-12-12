@@ -153,11 +153,11 @@ public final class DomainsSelfRegistrationProfileConsentText {
             return this;
         }
         public DomainsSelfRegistrationProfileConsentText build() {
-            final var o = new DomainsSelfRegistrationProfileConsentText();
-            o.default_ = default_;
-            o.locale = locale;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsSelfRegistrationProfileConsentText();
+            _resultValue.default_ = default_;
+            _resultValue.locale = locale;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

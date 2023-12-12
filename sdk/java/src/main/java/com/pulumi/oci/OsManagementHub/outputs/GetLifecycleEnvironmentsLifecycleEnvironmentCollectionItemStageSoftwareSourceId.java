@@ -103,12 +103,12 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemSta
             return this;
         }
         public GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId build() {
-            final var o = new GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId();
-            o.description = description;
-            o.displayName = displayName;
-            o.id = id;
-            o.softwareSourceType = softwareSourceType;
-            return o;
+            final var _resultValue = new GetLifecycleEnvironmentsLifecycleEnvironmentCollectionItemStageSoftwareSourceId();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.softwareSourceType = softwareSourceType;
+            return _resultValue;
         }
     }
 }

@@ -185,16 +185,16 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionm
             return values(List.of(values));
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty build() {
-            final var o = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty();
-            o.confidential = confidential;
-            o.displayName = displayName;
-            o.helpMessage = helpMessage;
-            o.icfType = icfType;
-            o.name = name;
-            o.order = order;
-            o.required = required;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty();
+            _resultValue.confidential = confidential;
+            _resultValue.displayName = displayName;
+            _resultValue.helpMessage = helpMessage;
+            _resultValue.icfType = icfType;
+            _resultValue.name = name;
+            _resultValue.order = order;
+            _resultValue.required = required;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

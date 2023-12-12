@@ -67,11 +67,11 @@ public final class GetIpsecStatusFilter {
             return values(List.of(values));
         }
         public GetIpsecStatusFilter build() {
-            final var o = new GetIpsecStatusFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetIpsecStatusFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

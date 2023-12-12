@@ -340,24 +340,24 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem {
             return this;
         }
         public GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem build() {
-            final var o = new GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem();
-            o.childColumns = childColumns;
-            o.columnName = columnName;
-            o.dataType = dataType;
-            o.isMaskingEnabled = isMaskingEnabled;
-            o.key = key;
-            o.lifecycleDetails = lifecycleDetails;
-            o.maskingColumnGroup = maskingColumnGroup;
-            o.maskingFormats = maskingFormats;
-            o.maskingPolicyId = maskingPolicyId;
-            o.object = object;
-            o.objectType = objectType;
-            o.schemaName = schemaName;
-            o.sensitiveTypeId = sensitiveTypeId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItem();
+            _resultValue.childColumns = childColumns;
+            _resultValue.columnName = columnName;
+            _resultValue.dataType = dataType;
+            _resultValue.isMaskingEnabled = isMaskingEnabled;
+            _resultValue.key = key;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.maskingColumnGroup = maskingColumnGroup;
+            _resultValue.maskingFormats = maskingFormats;
+            _resultValue.maskingPolicyId = maskingPolicyId;
+            _resultValue.object = object;
+            _resultValue.objectType = objectType;
+            _resultValue.schemaName = schemaName;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

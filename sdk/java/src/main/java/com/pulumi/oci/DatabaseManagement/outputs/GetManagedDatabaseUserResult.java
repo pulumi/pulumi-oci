@@ -524,35 +524,35 @@ public final class GetManagedDatabaseUserResult {
             return this;
         }
         public GetManagedDatabaseUserResult build() {
-            final var o = new GetManagedDatabaseUserResult();
-            o.allShared = allShared;
-            o.authentication = authentication;
-            o.common = common;
-            o.consumerGroup = consumerGroup;
-            o.defaultCollation = defaultCollation;
-            o.defaultTablespace = defaultTablespace;
-            o.editionsEnabled = editionsEnabled;
-            o.externalName = externalName;
-            o.externalShared = externalShared;
-            o.id = id;
-            o.implicit = implicit;
-            o.inherited = inherited;
-            o.localTempTablespace = localTempTablespace;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.oracleMaintained = oracleMaintained;
-            o.passwordVersions = passwordVersions;
-            o.profile = profile;
-            o.proxyConnect = proxyConnect;
-            o.status = status;
-            o.tempTablespace = tempTablespace;
-            o.timeCreated = timeCreated;
-            o.timeExpiring = timeExpiring;
-            o.timeLastLogin = timeLastLogin;
-            o.timeLocked = timeLocked;
-            o.timePasswordChanged = timePasswordChanged;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserResult();
+            _resultValue.allShared = allShared;
+            _resultValue.authentication = authentication;
+            _resultValue.common = common;
+            _resultValue.consumerGroup = consumerGroup;
+            _resultValue.defaultCollation = defaultCollation;
+            _resultValue.defaultTablespace = defaultTablespace;
+            _resultValue.editionsEnabled = editionsEnabled;
+            _resultValue.externalName = externalName;
+            _resultValue.externalShared = externalShared;
+            _resultValue.id = id;
+            _resultValue.implicit = implicit;
+            _resultValue.inherited = inherited;
+            _resultValue.localTempTablespace = localTempTablespace;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.oracleMaintained = oracleMaintained;
+            _resultValue.passwordVersions = passwordVersions;
+            _resultValue.profile = profile;
+            _resultValue.proxyConnect = proxyConnect;
+            _resultValue.status = status;
+            _resultValue.tempTablespace = tempTablespace;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeExpiring = timeExpiring;
+            _resultValue.timeLastLogin = timeLastLogin;
+            _resultValue.timeLocked = timeLocked;
+            _resultValue.timePasswordChanged = timePasswordChanged;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

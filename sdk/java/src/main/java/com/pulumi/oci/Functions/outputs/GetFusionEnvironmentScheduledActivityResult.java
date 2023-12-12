@@ -310,23 +310,23 @@ public final class GetFusionEnvironmentScheduledActivityResult {
             return this;
         }
         public GetFusionEnvironmentScheduledActivityResult build() {
-            final var o = new GetFusionEnvironmentScheduledActivityResult();
-            o.actions = actions;
-            o.delayInHours = delayInHours;
-            o.displayName = displayName;
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.runCycle = runCycle;
-            o.scheduledActivityId = scheduledActivityId;
-            o.serviceAvailability = serviceAvailability;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeExpectedFinish = timeExpectedFinish;
-            o.timeFinished = timeFinished;
-            o.timeScheduledStart = timeScheduledStart;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentScheduledActivityResult();
+            _resultValue.actions = actions;
+            _resultValue.delayInHours = delayInHours;
+            _resultValue.displayName = displayName;
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.runCycle = runCycle;
+            _resultValue.scheduledActivityId = scheduledActivityId;
+            _resultValue.serviceAvailability = serviceAvailability;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeExpectedFinish = timeExpectedFinish;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeScheduledStart = timeScheduledStart;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

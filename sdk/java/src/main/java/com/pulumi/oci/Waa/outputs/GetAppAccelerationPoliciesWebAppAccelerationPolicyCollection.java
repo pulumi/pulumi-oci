@@ -42,9 +42,9 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection 
             return items(List.of(items));
         }
         public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection build() {
-            final var o = new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

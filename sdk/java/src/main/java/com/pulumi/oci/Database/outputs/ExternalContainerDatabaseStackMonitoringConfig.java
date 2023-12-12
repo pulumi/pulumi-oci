@@ -67,10 +67,10 @@ public final class ExternalContainerDatabaseStackMonitoringConfig {
             return this;
         }
         public ExternalContainerDatabaseStackMonitoringConfig build() {
-            final var o = new ExternalContainerDatabaseStackMonitoringConfig();
-            o.stackMonitoringConnectorId = stackMonitoringConnectorId;
-            o.stackMonitoringStatus = stackMonitoringStatus;
-            return o;
+            final var _resultValue = new ExternalContainerDatabaseStackMonitoringConfig();
+            _resultValue.stackMonitoringConnectorId = stackMonitoringConnectorId;
+            _resultValue.stackMonitoringStatus = stackMonitoringStatus;
+            return _resultValue;
         }
     }
 }

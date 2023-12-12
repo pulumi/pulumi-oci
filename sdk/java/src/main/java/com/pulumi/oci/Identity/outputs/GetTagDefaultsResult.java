@@ -144,14 +144,14 @@ public final class GetTagDefaultsResult {
             return this;
         }
         public GetTagDefaultsResult build() {
-            final var o = new GetTagDefaultsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.tagDefaults = tagDefaults;
-            o.tagDefinitionId = tagDefinitionId;
-            return o;
+            final var _resultValue = new GetTagDefaultsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.tagDefaults = tagDefaults;
+            _resultValue.tagDefinitionId = tagDefinitionId;
+            return _resultValue;
         }
     }
 }

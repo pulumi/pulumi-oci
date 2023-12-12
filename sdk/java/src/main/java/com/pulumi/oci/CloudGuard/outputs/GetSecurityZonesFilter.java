@@ -67,11 +67,11 @@ public final class GetSecurityZonesFilter {
             return values(List.of(values));
         }
         public GetSecurityZonesFilter build() {
-            final var o = new GetSecurityZonesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSecurityZonesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

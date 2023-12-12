@@ -98,11 +98,11 @@ public final class AutoScalingConfigurationPolicyCapacity {
             return this;
         }
         public AutoScalingConfigurationPolicyCapacity build() {
-            final var o = new AutoScalingConfigurationPolicyCapacity();
-            o.initial = initial;
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new AutoScalingConfigurationPolicyCapacity();
+            _resultValue.initial = initial;
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

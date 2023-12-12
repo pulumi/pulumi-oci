@@ -113,10 +113,10 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticlo
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp();
-            o.multicloudPlatformUrl = multicloudPlatformUrl;
-            o.multicloudServiceType = multicloudServiceType;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp();
+            _resultValue.multicloudPlatformUrl = multicloudPlatformUrl;
+            _resultValue.multicloudServiceType = multicloudServiceType;
+            return _resultValue;
         }
     }
 }

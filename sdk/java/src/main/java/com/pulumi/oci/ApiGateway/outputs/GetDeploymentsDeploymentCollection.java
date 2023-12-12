@@ -281,21 +281,21 @@ public final class GetDeploymentsDeploymentCollection {
             return this;
         }
         public GetDeploymentsDeploymentCollection build() {
-            final var o = new GetDeploymentsDeploymentCollection();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.endpoint = endpoint;
-            o.freeformTags = freeformTags;
-            o.gatewayId = gatewayId;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.pathPrefix = pathPrefix;
-            o.specifications = specifications;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollection();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.endpoint = endpoint;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.gatewayId = gatewayId;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.pathPrefix = pathPrefix;
+            _resultValue.specifications = specifications;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -117,13 +117,13 @@ public final class GetIamWorkRequestsResult {
             return this;
         }
         public GetIamWorkRequestsResult build() {
-            final var o = new GetIamWorkRequestsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.iamWorkRequests = iamWorkRequests;
-            o.id = id;
-            o.resourceIdentifier = resourceIdentifier;
-            return o;
+            final var _resultValue = new GetIamWorkRequestsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.iamWorkRequests = iamWorkRequests;
+            _resultValue.id = id;
+            _resultValue.resourceIdentifier = resourceIdentifier;
+            return _resultValue;
         }
     }
 }

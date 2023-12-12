@@ -65,10 +65,10 @@ public final class GetNamespacePropertiesMetadataPropertyMetadataSummaryCollecti
             return this;
         }
         public GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel build() {
-            final var o = new GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel();
-            o.constraints = constraints;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetNamespacePropertiesMetadataPropertyMetadataSummaryCollectionItemLevel();
+            _resultValue.constraints = constraints;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

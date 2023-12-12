@@ -66,10 +66,10 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemMtl {
             return this;
         }
         public GetIngressGatewaysIngressGatewayCollectionItemMtl build() {
-            final var o = new GetIngressGatewaysIngressGatewayCollectionItemMtl();
-            o.certificateId = certificateId;
-            o.maximumValidity = maximumValidity;
-            return o;
+            final var _resultValue = new GetIngressGatewaysIngressGatewayCollectionItemMtl();
+            _resultValue.certificateId = certificateId;
+            _resultValue.maximumValidity = maximumValidity;
+            return _resultValue;
         }
     }
 }

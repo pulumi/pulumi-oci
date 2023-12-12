@@ -197,18 +197,18 @@ public final class GetDedicatedVmHostsResult {
             return this;
         }
         public GetDedicatedVmHostsResult build() {
-            final var o = new GetDedicatedVmHostsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.dedicatedVmHosts = dedicatedVmHosts;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.instanceShapeName = instanceShapeName;
-            o.remainingMemoryInGbsGreaterThanOrEqualTo = remainingMemoryInGbsGreaterThanOrEqualTo;
-            o.remainingOcpusGreaterThanOrEqualTo = remainingOcpusGreaterThanOrEqualTo;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDedicatedVmHostsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dedicatedVmHosts = dedicatedVmHosts;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instanceShapeName = instanceShapeName;
+            _resultValue.remainingMemoryInGbsGreaterThanOrEqualTo = remainingMemoryInGbsGreaterThanOrEqualTo;
+            _resultValue.remainingOcpusGreaterThanOrEqualTo = remainingOcpusGreaterThanOrEqualTo;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

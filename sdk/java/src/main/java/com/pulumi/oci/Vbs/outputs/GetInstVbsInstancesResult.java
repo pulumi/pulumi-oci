@@ -144,14 +144,14 @@ public final class GetInstVbsInstancesResult {
             return vbsInstanceSummaryCollections(List.of(vbsInstanceSummaryCollections));
         }
         public GetInstVbsInstancesResult build() {
-            final var o = new GetInstVbsInstancesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            o.vbsInstanceSummaryCollections = vbsInstanceSummaryCollections;
-            return o;
+            final var _resultValue = new GetInstVbsInstancesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.vbsInstanceSummaryCollections = vbsInstanceSummaryCollections;
+            return _resultValue;
         }
     }
 }

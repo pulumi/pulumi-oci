@@ -67,11 +67,11 @@ public final class GetQueryQuickPicksFilter {
             return values(List.of(values));
         }
         public GetQueryQuickPicksFilter build() {
-            final var o = new GetQueryQuickPicksFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetQueryQuickPicksFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

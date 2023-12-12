@@ -136,14 +136,14 @@ public final class GetNamespaceStorageOverlappingRecallsResult {
             return this;
         }
         public GetNamespaceStorageOverlappingRecallsResult build() {
-            final var o = new GetNamespaceStorageOverlappingRecallsResult();
-            o.filters = filters;
-            o.id = id;
-            o.namespace = namespace;
-            o.overlappingRecallCollections = overlappingRecallCollections;
-            o.timeDataEnded = timeDataEnded;
-            o.timeDataStarted = timeDataStarted;
-            return o;
+            final var _resultValue = new GetNamespaceStorageOverlappingRecallsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.namespace = namespace;
+            _resultValue.overlappingRecallCollections = overlappingRecallCollections;
+            _resultValue.timeDataEnded = timeDataEnded;
+            _resultValue.timeDataStarted = timeDataStarted;
+            return _resultValue;
         }
     }
 }

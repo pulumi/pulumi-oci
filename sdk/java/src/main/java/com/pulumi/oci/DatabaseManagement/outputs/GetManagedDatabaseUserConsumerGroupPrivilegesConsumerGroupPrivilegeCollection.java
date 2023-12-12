@@ -50,9 +50,9 @@ public final class GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPri
             return items(List.of(items));
         }
         public GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection build() {
-            final var o = new GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserConsumerGroupPrivilegesConsumerGroupPrivilegeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

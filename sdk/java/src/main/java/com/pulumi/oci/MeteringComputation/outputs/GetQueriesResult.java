@@ -113,12 +113,12 @@ public final class GetQueriesResult {
             return queryCollections(List.of(queryCollections));
         }
         public GetQueriesResult build() {
-            final var o = new GetQueriesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.queryCollections = queryCollections;
-            return o;
+            final var _resultValue = new GetQueriesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.queryCollections = queryCollections;
+            return _resultValue;
         }
     }
 }

@@ -155,15 +155,15 @@ public final class GetOceInstancesResult {
             return this;
         }
         public GetOceInstancesResult build() {
-            final var o = new GetOceInstancesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.oceInstances = oceInstances;
-            o.state = state;
-            o.tenancyId = tenancyId;
-            return o;
+            final var _resultValue = new GetOceInstancesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.oceInstances = oceInstances;
+            _resultValue.state = state;
+            _resultValue.tenancyId = tenancyId;
+            return _resultValue;
         }
     }
 }

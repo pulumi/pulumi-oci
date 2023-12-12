@@ -166,15 +166,15 @@ public final class GetVirtualNodePoolsResult {
             return virtualNodePools(List.of(virtualNodePools));
         }
         public GetVirtualNodePoolsResult build() {
-            final var o = new GetVirtualNodePoolsResult();
-            o.clusterId = clusterId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.states = states;
-            o.virtualNodePools = virtualNodePools;
-            return o;
+            final var _resultValue = new GetVirtualNodePoolsResult();
+            _resultValue.clusterId = clusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.states = states;
+            _resultValue.virtualNodePools = virtualNodePools;
+            return _resultValue;
         }
     }
 }

@@ -89,11 +89,11 @@ public final class GetQueriesQueryCollectionItem {
             return queryDefinitions(List.of(queryDefinitions));
         }
         public GetQueriesQueryCollectionItem build() {
-            final var o = new GetQueriesQueryCollectionItem();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.queryDefinitions = queryDefinitions;
-            return o;
+            final var _resultValue = new GetQueriesQueryCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.queryDefinitions = queryDefinitions;
+            return _resultValue;
         }
     }
 }

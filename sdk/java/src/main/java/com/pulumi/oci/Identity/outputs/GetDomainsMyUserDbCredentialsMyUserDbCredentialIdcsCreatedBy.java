@@ -122,13 +122,13 @@ public final class GetDomainsMyUserDbCredentialsMyUserDbCredentialIdcsCreatedBy 
             return this;
         }
         public GetDomainsMyUserDbCredentialsMyUserDbCredentialIdcsCreatedBy build() {
-            final var o = new GetDomainsMyUserDbCredentialsMyUserDbCredentialIdcsCreatedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyUserDbCredentialsMyUserDbCredentialIdcsCreatedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -251,20 +251,20 @@ public final class GetSecretbundleResult {
             return this;
         }
         public GetSecretbundleResult build() {
-            final var o = new GetSecretbundleResult();
-            o.id = id;
-            o.metadata = metadata;
-            o.secretBundleContents = secretBundleContents;
-            o.secretId = secretId;
-            o.secretVersionName = secretVersionName;
-            o.stage = stage;
-            o.stages = stages;
-            o.timeCreated = timeCreated;
-            o.timeOfDeletion = timeOfDeletion;
-            o.timeOfExpiry = timeOfExpiry;
-            o.versionName = versionName;
-            o.versionNumber = versionNumber;
-            return o;
+            final var _resultValue = new GetSecretbundleResult();
+            _resultValue.id = id;
+            _resultValue.metadata = metadata;
+            _resultValue.secretBundleContents = secretBundleContents;
+            _resultValue.secretId = secretId;
+            _resultValue.secretVersionName = secretVersionName;
+            _resultValue.stage = stage;
+            _resultValue.stages = stages;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfDeletion = timeOfDeletion;
+            _resultValue.timeOfExpiry = timeOfExpiry;
+            _resultValue.versionName = versionName;
+            _resultValue.versionNumber = versionNumber;
+            return _resultValue;
         }
     }
 }

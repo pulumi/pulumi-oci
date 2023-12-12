@@ -123,13 +123,13 @@ public final class GetDomainsAppAccount {
             return this;
         }
         public GetDomainsAppAccount build() {
-            final var o = new GetDomainsAppAccount();
-            o.active = active;
-            o.name = name;
-            o.ownerId = ownerId;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppAccount();
+            _resultValue.active = active;
+            _resultValue.name = name;
+            _resultValue.ownerId = ownerId;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

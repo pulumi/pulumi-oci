@@ -84,11 +84,11 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItemService
             return this;
         }
         public GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition build() {
-            final var o = new GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition();
-            o.displayName = displayName;
-            o.shortDisplayName = shortDisplayName;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition();
+            _resultValue.displayName = displayName;
+            _resultValue.shortDisplayName = shortDisplayName;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

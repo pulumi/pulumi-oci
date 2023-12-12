@@ -453,30 +453,30 @@ public final class GetSoftwareSourcesSoftwareSource {
             return this;
         }
         public GetSoftwareSourcesSoftwareSource build() {
-            final var o = new GetSoftwareSourcesSoftwareSource();
-            o.archType = archType;
-            o.associatedManagedInstances = associatedManagedInstances;
-            o.checksumType = checksumType;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.gpgKeyFingerprint = gpgKeyFingerprint;
-            o.gpgKeyId = gpgKeyId;
-            o.gpgKeyUrl = gpgKeyUrl;
-            o.id = id;
-            o.maintainerEmail = maintainerEmail;
-            o.maintainerName = maintainerName;
-            o.maintainerPhone = maintainerPhone;
-            o.packages = packages;
-            o.parentId = parentId;
-            o.parentName = parentName;
-            o.repoType = repoType;
-            o.state = state;
-            o.status = status;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetSoftwareSourcesSoftwareSource();
+            _resultValue.archType = archType;
+            _resultValue.associatedManagedInstances = associatedManagedInstances;
+            _resultValue.checksumType = checksumType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.gpgKeyFingerprint = gpgKeyFingerprint;
+            _resultValue.gpgKeyId = gpgKeyId;
+            _resultValue.gpgKeyUrl = gpgKeyUrl;
+            _resultValue.id = id;
+            _resultValue.maintainerEmail = maintainerEmail;
+            _resultValue.maintainerName = maintainerName;
+            _resultValue.maintainerPhone = maintainerPhone;
+            _resultValue.packages = packages;
+            _resultValue.parentId = parentId;
+            _resultValue.parentName = parentName;
+            _resultValue.repoType = repoType;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

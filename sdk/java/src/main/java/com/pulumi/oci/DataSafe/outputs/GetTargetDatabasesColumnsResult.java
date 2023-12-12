@@ -211,19 +211,19 @@ public final class GetTargetDatabasesColumnsResult {
             return this;
         }
         public GetTargetDatabasesColumnsResult build() {
-            final var o = new GetTargetDatabasesColumnsResult();
-            o.columnNameContains = columnNameContains;
-            o.columnNames = columnNames;
-            o.columns = columns;
-            o.datatypes = datatypes;
-            o.filters = filters;
-            o.id = id;
-            o.schemaNameContains = schemaNameContains;
-            o.schemaNames = schemaNames;
-            o.tableNameContains = tableNameContains;
-            o.tableNames = tableNames;
-            o.targetDatabaseId = targetDatabaseId;
-            return o;
+            final var _resultValue = new GetTargetDatabasesColumnsResult();
+            _resultValue.columnNameContains = columnNameContains;
+            _resultValue.columnNames = columnNames;
+            _resultValue.columns = columns;
+            _resultValue.datatypes = datatypes;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.schemaNameContains = schemaNameContains;
+            _resultValue.schemaNames = schemaNames;
+            _resultValue.tableNameContains = tableNameContains;
+            _resultValue.tableNames = tableNames;
+            _resultValue.targetDatabaseId = targetDatabaseId;
+            return _resultValue;
         }
     }
 }

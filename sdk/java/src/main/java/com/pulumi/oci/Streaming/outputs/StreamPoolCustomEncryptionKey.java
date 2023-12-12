@@ -67,10 +67,10 @@ public final class StreamPoolCustomEncryptionKey {
             return this;
         }
         public StreamPoolCustomEncryptionKey build() {
-            final var o = new StreamPoolCustomEncryptionKey();
-            o.keyState = keyState;
-            o.kmsKeyId = kmsKeyId;
-            return o;
+            final var _resultValue = new StreamPoolCustomEncryptionKey();
+            _resultValue.keyState = keyState;
+            _resultValue.kmsKeyId = kmsKeyId;
+            return _resultValue;
         }
     }
 }

@@ -236,18 +236,18 @@ public final class TargetTargetResponderRecipe {
             return this;
         }
         public TargetTargetResponderRecipe build() {
-            final var o = new TargetTargetResponderRecipe();
-            o.compartmentId = compartmentId;
-            o.description = description;
-            o.displayName = displayName;
-            o.effectiveResponderRules = effectiveResponderRules;
-            o.id = id;
-            o.owner = owner;
-            o.responderRecipeId = responderRecipeId;
-            o.responderRules = responderRules;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new TargetTargetResponderRecipe();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.effectiveResponderRules = effectiveResponderRules;
+            _resultValue.id = id;
+            _resultValue.owner = owner;
+            _resultValue.responderRecipeId = responderRecipeId;
+            _resultValue.responderRules = responderRules;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

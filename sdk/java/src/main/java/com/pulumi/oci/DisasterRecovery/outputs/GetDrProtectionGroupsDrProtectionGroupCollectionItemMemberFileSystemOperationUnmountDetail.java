@@ -46,9 +46,9 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFil
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail build() {
-            final var o = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail();
-            o.mountTargetId = mountTargetId;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationUnmountDetail();
+            _resultValue.mountTargetId = mountTargetId;
+            return _resultValue;
         }
     }
 }

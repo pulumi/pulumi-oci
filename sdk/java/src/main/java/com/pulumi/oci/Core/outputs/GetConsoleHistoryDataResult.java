@@ -101,13 +101,13 @@ public final class GetConsoleHistoryDataResult {
             return this;
         }
         public GetConsoleHistoryDataResult build() {
-            final var o = new GetConsoleHistoryDataResult();
-            o.consoleHistoryId = consoleHistoryId;
-            o.data = data;
-            o.id = id;
-            o.length = length;
-            o.offset = offset;
-            return o;
+            final var _resultValue = new GetConsoleHistoryDataResult();
+            _resultValue.consoleHistoryId = consoleHistoryId;
+            _resultValue.data = data;
+            _resultValue.id = id;
+            _resultValue.length = length;
+            _resultValue.offset = offset;
+            return _resultValue;
         }
     }
 }

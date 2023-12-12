@@ -67,11 +67,11 @@ public final class GetAppAccelerationPoliciesFilter {
             return values(List.of(values));
         }
         public GetAppAccelerationPoliciesFilter build() {
-            final var o = new GetAppAccelerationPoliciesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAppAccelerationPoliciesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

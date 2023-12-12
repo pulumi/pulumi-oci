@@ -107,12 +107,12 @@ public final class GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeIn
             return this;
         }
         public GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem build() {
-            final var o = new GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem();
-            o.computeInstanceIds = computeInstanceIds;
-            o.query = query;
-            o.region = region;
-            o.selectorType = selectorType;
-            return o;
+            final var _resultValue = new GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorItem();
+            _resultValue.computeInstanceIds = computeInstanceIds;
+            _resultValue.query = query;
+            _resultValue.region = region;
+            _resultValue.selectorType = selectorType;
+            return _resultValue;
         }
     }
 }

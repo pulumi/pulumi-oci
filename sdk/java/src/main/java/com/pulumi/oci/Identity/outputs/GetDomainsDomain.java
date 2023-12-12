@@ -405,30 +405,30 @@ public final class GetDomainsDomain {
             return this;
         }
         public GetDomainsDomain build() {
-            final var o = new GetDomainsDomain();
-            o.adminEmail = adminEmail;
-            o.adminFirstName = adminFirstName;
-            o.adminLastName = adminLastName;
-            o.adminUserName = adminUserName;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.homeRegion = homeRegion;
-            o.homeRegionUrl = homeRegionUrl;
-            o.id = id;
-            o.isHiddenOnLogin = isHiddenOnLogin;
-            o.isNotificationBypassed = isNotificationBypassed;
-            o.isPrimaryEmailRequired = isPrimaryEmailRequired;
-            o.licenseType = licenseType;
-            o.lifecycleDetails = lifecycleDetails;
-            o.replicaRegions = replicaRegions;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.type = type;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetDomainsDomain();
+            _resultValue.adminEmail = adminEmail;
+            _resultValue.adminFirstName = adminFirstName;
+            _resultValue.adminLastName = adminLastName;
+            _resultValue.adminUserName = adminUserName;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.homeRegion = homeRegion;
+            _resultValue.homeRegionUrl = homeRegionUrl;
+            _resultValue.id = id;
+            _resultValue.isHiddenOnLogin = isHiddenOnLogin;
+            _resultValue.isNotificationBypassed = isNotificationBypassed;
+            _resultValue.isPrimaryEmailRequired = isPrimaryEmailRequired;
+            _resultValue.licenseType = licenseType;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.replicaRegions = replicaRegions;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.type = type;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

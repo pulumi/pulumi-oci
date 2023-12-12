@@ -46,9 +46,9 @@ public final class GetUsagePlanEntitlementTarget {
             return this;
         }
         public GetUsagePlanEntitlementTarget build() {
-            final var o = new GetUsagePlanEntitlementTarget();
-            o.deploymentId = deploymentId;
-            return o;
+            final var _resultValue = new GetUsagePlanEntitlementTarget();
+            _resultValue.deploymentId = deploymentId;
+            return _resultValue;
         }
     }
 }

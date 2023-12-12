@@ -140,11 +140,11 @@ public final class DomainsAuthenticationFactorSettingCompliancePolicy {
             return this;
         }
         public DomainsAuthenticationFactorSettingCompliancePolicy build() {
-            final var o = new DomainsAuthenticationFactorSettingCompliancePolicy();
-            o.action = action;
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAuthenticationFactorSettingCompliancePolicy();
+            _resultValue.action = action;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

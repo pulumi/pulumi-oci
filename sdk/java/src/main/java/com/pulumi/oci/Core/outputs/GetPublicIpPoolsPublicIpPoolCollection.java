@@ -42,9 +42,9 @@ public final class GetPublicIpPoolsPublicIpPoolCollection {
             return items(List.of(items));
         }
         public GetPublicIpPoolsPublicIpPoolCollection build() {
-            final var o = new GetPublicIpPoolsPublicIpPoolCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetPublicIpPoolsPublicIpPoolCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -69,10 +69,10 @@ public final class GetClusterNetworkClusterConfiguration {
             return networkBlockIds(List.of(networkBlockIds));
         }
         public GetClusterNetworkClusterConfiguration build() {
-            final var o = new GetClusterNetworkClusterConfiguration();
-            o.hpcIslandId = hpcIslandId;
-            o.networkBlockIds = networkBlockIds;
-            return o;
+            final var _resultValue = new GetClusterNetworkClusterConfiguration();
+            _resultValue.hpcIslandId = hpcIslandId;
+            _resultValue.networkBlockIds = networkBlockIds;
+            return _resultValue;
         }
     }
 }

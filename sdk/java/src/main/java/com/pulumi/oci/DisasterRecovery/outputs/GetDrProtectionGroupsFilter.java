@@ -67,11 +67,11 @@ public final class GetDrProtectionGroupsFilter {
             return values(List.of(values));
         }
         public GetDrProtectionGroupsFilter build() {
-            final var o = new GetDrProtectionGroupsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

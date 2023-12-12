@@ -97,12 +97,12 @@ public final class GetAutonomousDatabaseRefreshableClonesResult {
             return refreshableCloneCollections(List.of(refreshableCloneCollections));
         }
         public GetAutonomousDatabaseRefreshableClonesResult build() {
-            final var o = new GetAutonomousDatabaseRefreshableClonesResult();
-            o.autonomousDatabaseId = autonomousDatabaseId;
-            o.filters = filters;
-            o.id = id;
-            o.refreshableCloneCollections = refreshableCloneCollections;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseRefreshableClonesResult();
+            _resultValue.autonomousDatabaseId = autonomousDatabaseId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.refreshableCloneCollections = refreshableCloneCollections;
+            return _resultValue;
         }
     }
 }

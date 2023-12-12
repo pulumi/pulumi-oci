@@ -219,19 +219,19 @@ public final class GetStackResult {
             return this;
         }
         public GetStackResult build() {
-            final var o = new GetStackResult();
-            o.compartmentId = compartmentId;
-            o.configSources = configSources;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.stackId = stackId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.variables = variables;
-            return o;
+            final var _resultValue = new GetStackResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configSources = configSources;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.stackId = stackId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.variables = variables;
+            return _resultValue;
         }
     }
 }

@@ -52,9 +52,9 @@ public final class AppAccelerationPolicyResponseCompressionPolicyGzipCompression
             return this;
         }
         public AppAccelerationPolicyResponseCompressionPolicyGzipCompression build() {
-            final var o = new AppAccelerationPolicyResponseCompressionPolicyGzipCompression();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new AppAccelerationPolicyResponseCompressionPolicyGzipCompression();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

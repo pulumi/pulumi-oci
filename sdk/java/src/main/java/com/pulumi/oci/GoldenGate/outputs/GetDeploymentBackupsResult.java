@@ -163,15 +163,15 @@ public final class GetDeploymentBackupsResult {
             return this;
         }
         public GetDeploymentBackupsResult build() {
-            final var o = new GetDeploymentBackupsResult();
-            o.compartmentId = compartmentId;
-            o.deploymentBackupCollections = deploymentBackupCollections;
-            o.deploymentId = deploymentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDeploymentBackupsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.deploymentBackupCollections = deploymentBackupCollections;
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

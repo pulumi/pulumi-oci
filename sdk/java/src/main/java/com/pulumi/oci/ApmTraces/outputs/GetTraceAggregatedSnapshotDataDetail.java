@@ -65,10 +65,10 @@ public final class GetTraceAggregatedSnapshotDataDetail {
             return this;
         }
         public GetTraceAggregatedSnapshotDataDetail build() {
-            final var o = new GetTraceAggregatedSnapshotDataDetail();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetTraceAggregatedSnapshotDataDetail();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

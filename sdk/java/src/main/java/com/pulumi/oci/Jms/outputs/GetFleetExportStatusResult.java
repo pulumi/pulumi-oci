@@ -122,13 +122,13 @@ public final class GetFleetExportStatusResult {
             return this;
         }
         public GetFleetExportStatusResult build() {
-            final var o = new GetFleetExportStatusResult();
-            o.fleetId = fleetId;
-            o.id = id;
-            o.latestRunStatus = latestRunStatus;
-            o.timeLastRun = timeLastRun;
-            o.timeNextRun = timeNextRun;
-            return o;
+            final var _resultValue = new GetFleetExportStatusResult();
+            _resultValue.fleetId = fleetId;
+            _resultValue.id = id;
+            _resultValue.latestRunStatus = latestRunStatus;
+            _resultValue.timeLastRun = timeLastRun;
+            _resultValue.timeNextRun = timeNextRun;
+            return _resultValue;
         }
     }
 }

@@ -169,15 +169,15 @@ public final class SessionTargetResourceDetails {
             return this;
         }
         public SessionTargetResourceDetails build() {
-            final var o = new SessionTargetResourceDetails();
-            o.sessionType = sessionType;
-            o.targetResourceDisplayName = targetResourceDisplayName;
-            o.targetResourceFqdn = targetResourceFqdn;
-            o.targetResourceId = targetResourceId;
-            o.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
-            o.targetResourcePort = targetResourcePort;
-            o.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
-            return o;
+            final var _resultValue = new SessionTargetResourceDetails();
+            _resultValue.sessionType = sessionType;
+            _resultValue.targetResourceDisplayName = targetResourceDisplayName;
+            _resultValue.targetResourceFqdn = targetResourceFqdn;
+            _resultValue.targetResourceId = targetResourceId;
+            _resultValue.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
+            _resultValue.targetResourcePort = targetResourcePort;
+            _resultValue.targetResourcePrivateIpAddress = targetResourcePrivateIpAddress;
+            return _resultValue;
         }
     }
 }

@@ -51,9 +51,9 @@ public final class DeploymentDeployPipelineEnvironment {
             return items(List.of(items));
         }
         public DeploymentDeployPipelineEnvironment build() {
-            final var o = new DeploymentDeployPipelineEnvironment();
-            o.items = items;
-            return o;
+            final var _resultValue = new DeploymentDeployPipelineEnvironment();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

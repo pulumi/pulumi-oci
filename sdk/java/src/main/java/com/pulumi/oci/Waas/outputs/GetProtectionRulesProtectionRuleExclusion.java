@@ -69,10 +69,10 @@ public final class GetProtectionRulesProtectionRuleExclusion {
             return this;
         }
         public GetProtectionRulesProtectionRuleExclusion build() {
-            final var o = new GetProtectionRulesProtectionRuleExclusion();
-            o.exclusions = exclusions;
-            o.target = target;
-            return o;
+            final var _resultValue = new GetProtectionRulesProtectionRuleExclusion();
+            _resultValue.exclusions = exclusions;
+            _resultValue.target = target;
+            return _resultValue;
         }
     }
 }

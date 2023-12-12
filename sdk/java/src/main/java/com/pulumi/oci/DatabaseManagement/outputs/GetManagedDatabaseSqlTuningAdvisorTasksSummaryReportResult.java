@@ -218,20 +218,20 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
             return this;
         }
         public GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult build() {
-            final var o = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult();
-            o.beginExecIdGreaterThanOrEqualTo = beginExecIdGreaterThanOrEqualTo;
-            o.endExecIdLessThanOrEqualTo = endExecIdLessThanOrEqualTo;
-            o.id = id;
-            o.indexFindings = indexFindings;
-            o.managedDatabaseId = managedDatabaseId;
-            o.objectStatFindings = objectStatFindings;
-            o.searchPeriod = searchPeriod;
-            o.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
-            o.statistics = statistics;
-            o.taskInfos = taskInfos;
-            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult();
+            _resultValue.beginExecIdGreaterThanOrEqualTo = beginExecIdGreaterThanOrEqualTo;
+            _resultValue.endExecIdLessThanOrEqualTo = endExecIdLessThanOrEqualTo;
+            _resultValue.id = id;
+            _resultValue.indexFindings = indexFindings;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.objectStatFindings = objectStatFindings;
+            _resultValue.searchPeriod = searchPeriod;
+            _resultValue.sqlTuningAdvisorTaskId = sqlTuningAdvisorTaskId;
+            _resultValue.statistics = statistics;
+            _resultValue.taskInfos = taskInfos;
+            _resultValue.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            _resultValue.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            return _resultValue;
         }
     }
 }

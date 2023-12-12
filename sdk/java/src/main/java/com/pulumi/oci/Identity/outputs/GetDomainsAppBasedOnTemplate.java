@@ -103,12 +103,12 @@ public final class GetDomainsAppBasedOnTemplate {
             return this;
         }
         public GetDomainsAppBasedOnTemplate build() {
-            final var o = new GetDomainsAppBasedOnTemplate();
-            o.lastModified = lastModified;
-            o.ref = ref;
-            o.value = value;
-            o.wellKnownId = wellKnownId;
-            return o;
+            final var _resultValue = new GetDomainsAppBasedOnTemplate();
+            _resultValue.lastModified = lastModified;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            _resultValue.wellKnownId = wellKnownId;
+            return _resultValue;
         }
     }
 }

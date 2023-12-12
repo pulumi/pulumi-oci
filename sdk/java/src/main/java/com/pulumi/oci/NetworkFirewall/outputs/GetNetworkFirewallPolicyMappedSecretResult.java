@@ -164,16 +164,16 @@ public final class GetNetworkFirewallPolicyMappedSecretResult {
             return this;
         }
         public GetNetworkFirewallPolicyMappedSecretResult build() {
-            final var o = new GetNetworkFirewallPolicyMappedSecretResult();
-            o.id = id;
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.source = source;
-            o.type = type;
-            o.vaultSecretId = vaultSecretId;
-            o.versionNumber = versionNumber;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyMappedSecretResult();
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.source = source;
+            _resultValue.type = type;
+            _resultValue.vaultSecretId = vaultSecretId;
+            _resultValue.versionNumber = versionNumber;
+            return _resultValue;
         }
     }
 }

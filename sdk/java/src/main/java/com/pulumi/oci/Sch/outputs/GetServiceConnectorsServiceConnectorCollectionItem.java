@@ -308,22 +308,22 @@ public final class GetServiceConnectorsServiceConnectorCollectionItem {
             return this;
         }
         public GetServiceConnectorsServiceConnectorCollectionItem build() {
-            final var o = new GetServiceConnectorsServiceConnectorCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecyleDetails = lifecyleDetails;
-            o.sources = sources;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.targets = targets;
-            o.tasks = tasks;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetServiceConnectorsServiceConnectorCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecyleDetails = lifecyleDetails;
+            _resultValue.sources = sources;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targets = targets;
+            _resultValue.tasks = tasks;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

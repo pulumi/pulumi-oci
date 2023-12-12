@@ -193,16 +193,16 @@ public final class GetScheduleQueryProperty {
             return this;
         }
         public GetScheduleQueryProperty build() {
-            final var o = new GetScheduleQueryProperty();
-            o.compartmentDepth = compartmentDepth;
-            o.dateRanges = dateRanges;
-            o.filter = filter;
-            o.granularity = granularity;
-            o.groupBies = groupBies;
-            o.groupByTags = groupByTags;
-            o.isAggregateByTime = isAggregateByTime;
-            o.queryType = queryType;
-            return o;
+            final var _resultValue = new GetScheduleQueryProperty();
+            _resultValue.compartmentDepth = compartmentDepth;
+            _resultValue.dateRanges = dateRanges;
+            _resultValue.filter = filter;
+            _resultValue.granularity = granularity;
+            _resultValue.groupBies = groupBies;
+            _resultValue.groupByTags = groupByTags;
+            _resultValue.isAggregateByTime = isAggregateByTime;
+            _resultValue.queryType = queryType;
+            return _resultValue;
         }
     }
 }

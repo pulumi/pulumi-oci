@@ -281,21 +281,21 @@ public final class GetCatalogsCatalog {
             return this;
         }
         public GetCatalogsCatalog build() {
-            final var o = new GetCatalogsCatalog();
-            o.attachedCatalogPrivateEndpoints = attachedCatalogPrivateEndpoints;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.numberOfObjects = numberOfObjects;
-            o.serviceApiUrl = serviceApiUrl;
-            o.serviceConsoleUrl = serviceConsoleUrl;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetCatalogsCatalog();
+            _resultValue.attachedCatalogPrivateEndpoints = attachedCatalogPrivateEndpoints;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.numberOfObjects = numberOfObjects;
+            _resultValue.serviceApiUrl = serviceApiUrl;
+            _resultValue.serviceConsoleUrl = serviceConsoleUrl;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

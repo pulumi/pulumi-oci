@@ -144,14 +144,14 @@ public final class GetNetworkSourcesResult {
             return this;
         }
         public GetNetworkSourcesResult build() {
-            final var o = new GetNetworkSourcesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.networkSources = networkSources;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetNetworkSourcesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.networkSources = networkSources;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

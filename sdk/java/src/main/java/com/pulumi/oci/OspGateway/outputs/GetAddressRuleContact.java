@@ -50,9 +50,9 @@ public final class GetAddressRuleContact {
             return fields(List.of(fields));
         }
         public GetAddressRuleContact build() {
-            final var o = new GetAddressRuleContact();
-            o.fields = fields;
-            return o;
+            final var _resultValue = new GetAddressRuleContact();
+            _resultValue.fields = fields;
+            return _resultValue;
         }
     }
 }

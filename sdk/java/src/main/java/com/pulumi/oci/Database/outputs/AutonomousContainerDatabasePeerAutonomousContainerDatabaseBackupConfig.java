@@ -72,10 +72,10 @@ public final class AutonomousContainerDatabasePeerAutonomousContainerDatabaseBac
             return this;
         }
         public AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig build() {
-            final var o = new AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig();
-            o.backupDestinationDetails = backupDestinationDetails;
-            o.recoveryWindowInDays = recoveryWindowInDays;
-            return o;
+            final var _resultValue = new AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig();
+            _resultValue.backupDestinationDetails = backupDestinationDetails;
+            _resultValue.recoveryWindowInDays = recoveryWindowInDays;
+            return _resultValue;
         }
     }
 }

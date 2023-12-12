@@ -50,9 +50,9 @@ public final class GetManagedDatabaseAlertLogCountsAlertLogCountsCollection {
             return items(List.of(items));
         }
         public GetManagedDatabaseAlertLogCountsAlertLogCountsCollection build() {
-            final var o = new GetManagedDatabaseAlertLogCountsAlertLogCountsCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAlertLogCountsAlertLogCountsCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

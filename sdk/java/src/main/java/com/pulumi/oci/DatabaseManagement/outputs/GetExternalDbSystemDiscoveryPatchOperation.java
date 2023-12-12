@@ -65,11 +65,11 @@ public final class GetExternalDbSystemDiscoveryPatchOperation {
             return values(List.of(values));
         }
         public GetExternalDbSystemDiscoveryPatchOperation build() {
-            final var o = new GetExternalDbSystemDiscoveryPatchOperation();
-            o.operation = operation;
-            o.selection = selection;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveryPatchOperation();
+            _resultValue.operation = operation;
+            _resultValue.selection = selection;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsex
             return this;
         }
         public GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup build() {
-            final var o = new GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup();
-            o.gidNumber = gidNumber;
-            return o;
+            final var _resultValue = new GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup();
+            _resultValue.gidNumber = gidNumber;
+            return _resultValue;
         }
     }
 }

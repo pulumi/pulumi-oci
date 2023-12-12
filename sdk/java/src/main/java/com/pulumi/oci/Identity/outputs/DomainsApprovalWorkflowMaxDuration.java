@@ -108,10 +108,10 @@ public final class DomainsApprovalWorkflowMaxDuration {
             return this;
         }
         public DomainsApprovalWorkflowMaxDuration build() {
-            final var o = new DomainsApprovalWorkflowMaxDuration();
-            o.unit = unit;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsApprovalWorkflowMaxDuration();
+            _resultValue.unit = unit;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetCaBundlesCaBundleCollection {
             return items(List.of(items));
         }
         public GetCaBundlesCaBundleCollection build() {
-            final var o = new GetCaBundlesCaBundleCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetCaBundlesCaBundleCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

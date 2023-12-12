@@ -574,37 +574,37 @@ public final class GetControlAssignmentResult {
             return this;
         }
         public GetControlAssignmentResult build() {
-            final var o = new GetControlAssignmentResult();
-            o.assignerId = assignerId;
-            o.comment = comment;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.detachmentDescription = detachmentDescription;
-            o.errorCode = errorCode;
-            o.errorMessage = errorMessage;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
-            o.isDefaultAssignment = isDefaultAssignment;
-            o.isEnforcedAlways = isEnforcedAlways;
-            o.isLogForwarded = isLogForwarded;
-            o.lifecycleDetails = lifecycleDetails;
-            o.operatorControlAssignmentId = operatorControlAssignmentId;
-            o.operatorControlId = operatorControlId;
-            o.remoteSyslogServerAddress = remoteSyslogServerAddress;
-            o.remoteSyslogServerCaCert = remoteSyslogServerCaCert;
-            o.remoteSyslogServerPort = remoteSyslogServerPort;
-            o.resourceCompartmentId = resourceCompartmentId;
-            o.resourceId = resourceId;
-            o.resourceName = resourceName;
-            o.resourceType = resourceType;
-            o.state = state;
-            o.timeAssignmentFrom = timeAssignmentFrom;
-            o.timeAssignmentTo = timeAssignmentTo;
-            o.timeOfAssignment = timeOfAssignment;
-            o.timeOfDeletion = timeOfDeletion;
-            o.unassignerId = unassignerId;
-            return o;
+            final var _resultValue = new GetControlAssignmentResult();
+            _resultValue.assignerId = assignerId;
+            _resultValue.comment = comment;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.detachmentDescription = detachmentDescription;
+            _resultValue.errorCode = errorCode;
+            _resultValue.errorMessage = errorMessage;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isAutoApproveDuringMaintenance = isAutoApproveDuringMaintenance;
+            _resultValue.isDefaultAssignment = isDefaultAssignment;
+            _resultValue.isEnforcedAlways = isEnforcedAlways;
+            _resultValue.isLogForwarded = isLogForwarded;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.operatorControlAssignmentId = operatorControlAssignmentId;
+            _resultValue.operatorControlId = operatorControlId;
+            _resultValue.remoteSyslogServerAddress = remoteSyslogServerAddress;
+            _resultValue.remoteSyslogServerCaCert = remoteSyslogServerCaCert;
+            _resultValue.remoteSyslogServerPort = remoteSyslogServerPort;
+            _resultValue.resourceCompartmentId = resourceCompartmentId;
+            _resultValue.resourceId = resourceId;
+            _resultValue.resourceName = resourceName;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            _resultValue.timeAssignmentFrom = timeAssignmentFrom;
+            _resultValue.timeAssignmentTo = timeAssignmentTo;
+            _resultValue.timeOfAssignment = timeOfAssignment;
+            _resultValue.timeOfDeletion = timeOfDeletion;
+            _resultValue.unassignerId = unassignerId;
+            return _resultValue;
         }
     }
 }

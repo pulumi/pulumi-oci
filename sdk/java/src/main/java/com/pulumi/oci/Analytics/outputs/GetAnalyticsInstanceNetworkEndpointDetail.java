@@ -174,15 +174,15 @@ public final class GetAnalyticsInstanceNetworkEndpointDetail {
             return whitelistedVcns(List.of(whitelistedVcns));
         }
         public GetAnalyticsInstanceNetworkEndpointDetail build() {
-            final var o = new GetAnalyticsInstanceNetworkEndpointDetail();
-            o.networkEndpointType = networkEndpointType;
-            o.networkSecurityGroupIds = networkSecurityGroupIds;
-            o.subnetId = subnetId;
-            o.vcnId = vcnId;
-            o.whitelistedIps = whitelistedIps;
-            o.whitelistedServices = whitelistedServices;
-            o.whitelistedVcns = whitelistedVcns;
-            return o;
+            final var _resultValue = new GetAnalyticsInstanceNetworkEndpointDetail();
+            _resultValue.networkEndpointType = networkEndpointType;
+            _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
+            _resultValue.subnetId = subnetId;
+            _resultValue.vcnId = vcnId;
+            _resultValue.whitelistedIps = whitelistedIps;
+            _resultValue.whitelistedServices = whitelistedServices;
+            _resultValue.whitelistedVcns = whitelistedVcns;
+            return _resultValue;
         }
     }
 }

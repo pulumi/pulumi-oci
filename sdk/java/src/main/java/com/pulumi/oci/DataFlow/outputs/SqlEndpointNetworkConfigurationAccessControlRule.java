@@ -86,11 +86,11 @@ public final class SqlEndpointNetworkConfigurationAccessControlRule {
             return this;
         }
         public SqlEndpointNetworkConfigurationAccessControlRule build() {
-            final var o = new SqlEndpointNetworkConfigurationAccessControlRule();
-            o.ipNotation = ipNotation;
-            o.value = value;
-            o.vcnIps = vcnIps;
-            return o;
+            final var _resultValue = new SqlEndpointNetworkConfigurationAccessControlRule();
+            _resultValue.ipNotation = ipNotation;
+            _resultValue.value = value;
+            _resultValue.vcnIps = vcnIps;
+            return _resultValue;
         }
     }
 }

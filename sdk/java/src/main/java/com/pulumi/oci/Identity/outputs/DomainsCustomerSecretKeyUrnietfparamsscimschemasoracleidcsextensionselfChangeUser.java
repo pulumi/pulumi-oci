@@ -70,9 +70,9 @@ public final class DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsext
             return this;
         }
         public DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser build() {
-            final var o = new DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
-            o.allowSelfChange = allowSelfChange;
-            return o;
+            final var _resultValue = new DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUser();
+            _resultValue.allowSelfChange = allowSelfChange;
+            return _resultValue;
         }
     }
 }

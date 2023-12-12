@@ -65,10 +65,10 @@ public final class GetDomainsAccountMgmtInfoTag {
             return this;
         }
         public GetDomainsAccountMgmtInfoTag build() {
-            final var o = new GetDomainsAccountMgmtInfoTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAccountMgmtInfoTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

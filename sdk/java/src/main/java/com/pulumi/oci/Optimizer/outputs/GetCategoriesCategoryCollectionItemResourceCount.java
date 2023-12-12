@@ -66,10 +66,10 @@ public final class GetCategoriesCategoryCollectionItemResourceCount {
             return this;
         }
         public GetCategoriesCategoryCollectionItemResourceCount build() {
-            final var o = new GetCategoriesCategoryCollectionItemResourceCount();
-            o.count = count;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetCategoriesCategoryCollectionItemResourceCount();
+            _resultValue.count = count;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

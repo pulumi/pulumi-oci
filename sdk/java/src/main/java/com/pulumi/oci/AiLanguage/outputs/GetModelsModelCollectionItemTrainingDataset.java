@@ -89,11 +89,11 @@ public final class GetModelsModelCollectionItemTrainingDataset {
             return locationDetails(List.of(locationDetails));
         }
         public GetModelsModelCollectionItemTrainingDataset build() {
-            final var o = new GetModelsModelCollectionItemTrainingDataset();
-            o.datasetId = datasetId;
-            o.datasetType = datasetType;
-            o.locationDetails = locationDetails;
-            return o;
+            final var _resultValue = new GetModelsModelCollectionItemTrainingDataset();
+            _resultValue.datasetId = datasetId;
+            _resultValue.datasetType = datasetType;
+            _resultValue.locationDetails = locationDetails;
+            return _resultValue;
         }
     }
 }

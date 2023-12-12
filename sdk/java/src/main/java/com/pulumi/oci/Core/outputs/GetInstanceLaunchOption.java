@@ -142,14 +142,14 @@ public final class GetInstanceLaunchOption {
             return this;
         }
         public GetInstanceLaunchOption build() {
-            final var o = new GetInstanceLaunchOption();
-            o.bootVolumeType = bootVolumeType;
-            o.firmware = firmware;
-            o.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
-            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-            o.networkType = networkType;
-            o.remoteDataVolumeType = remoteDataVolumeType;
-            return o;
+            final var _resultValue = new GetInstanceLaunchOption();
+            _resultValue.bootVolumeType = bootVolumeType;
+            _resultValue.firmware = firmware;
+            _resultValue.isConsistentVolumeNamingEnabled = isConsistentVolumeNamingEnabled;
+            _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            _resultValue.networkType = networkType;
+            _resultValue.remoteDataVolumeType = remoteDataVolumeType;
+            return _resultValue;
         }
     }
 }

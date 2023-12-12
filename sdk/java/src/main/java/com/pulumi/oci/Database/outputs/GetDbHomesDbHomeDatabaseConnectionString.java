@@ -62,11 +62,11 @@ public final class GetDbHomesDbHomeDatabaseConnectionString {
             return this;
         }
         public GetDbHomesDbHomeDatabaseConnectionString build() {
-            final var o = new GetDbHomesDbHomeDatabaseConnectionString();
-            o.allConnectionStrings = allConnectionStrings;
-            o.cdbDefault = cdbDefault;
-            o.cdbIpDefault = cdbIpDefault;
-            return o;
+            final var _resultValue = new GetDbHomesDbHomeDatabaseConnectionString();
+            _resultValue.allConnectionStrings = allConnectionStrings;
+            _resultValue.cdbDefault = cdbDefault;
+            _resultValue.cdbIpDefault = cdbIpDefault;
+            return _resultValue;
         }
     }
 }

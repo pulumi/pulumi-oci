@@ -84,11 +84,11 @@ public final class GetKeyRestoreFromFile {
             return this;
         }
         public GetKeyRestoreFromFile build() {
-            final var o = new GetKeyRestoreFromFile();
-            o.contentLength = contentLength;
-            o.contentMd5 = contentMd5;
-            o.restoreKeyFromFileDetails = restoreKeyFromFileDetails;
-            return o;
+            final var _resultValue = new GetKeyRestoreFromFile();
+            _resultValue.contentLength = contentLength;
+            _resultValue.contentMd5 = contentMd5;
+            _resultValue.restoreKeyFromFileDetails = restoreKeyFromFileDetails;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail {
             return this;
         }
         public GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail build() {
-            final var o = new GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail();
-            o.fqdn = fqdn;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail();
+            _resultValue.fqdn = fqdn;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

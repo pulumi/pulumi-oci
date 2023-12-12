@@ -67,11 +67,11 @@ public final class GetRepositoryCommitsFilter {
             return values(List.of(values));
         }
         public GetRepositoryCommitsFilter build() {
-            final var o = new GetRepositoryCommitsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetRepositoryCommitsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

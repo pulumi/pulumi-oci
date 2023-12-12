@@ -122,13 +122,13 @@ public final class GetDomainsOauthClientCertificatesOauthClientCertificateMeta {
             return this;
         }
         public GetDomainsOauthClientCertificatesOauthClientCertificateMeta build() {
-            final var o = new GetDomainsOauthClientCertificatesOauthClientCertificateMeta();
-            o.created = created;
-            o.lastModified = lastModified;
-            o.location = location;
-            o.resourceType = resourceType;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetDomainsOauthClientCertificatesOauthClientCertificateMeta();
+            _resultValue.created = created;
+            _resultValue.lastModified = lastModified;
+            _resultValue.location = location;
+            _resultValue.resourceType = resourceType;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

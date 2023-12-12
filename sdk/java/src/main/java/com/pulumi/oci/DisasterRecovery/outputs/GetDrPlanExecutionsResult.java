@@ -166,16 +166,16 @@ public final class GetDrPlanExecutionsResult {
             return this;
         }
         public GetDrPlanExecutionsResult build() {
-            final var o = new GetDrPlanExecutionsResult();
-            o.displayName = displayName;
-            o.drPlanExecutionCollections = drPlanExecutionCollections;
-            o.drPlanExecutionId = drPlanExecutionId;
-            o.drPlanExecutionType = drPlanExecutionType;
-            o.drProtectionGroupId = drProtectionGroupId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDrPlanExecutionsResult();
+            _resultValue.displayName = displayName;
+            _resultValue.drPlanExecutionCollections = drPlanExecutionCollections;
+            _resultValue.drPlanExecutionId = drPlanExecutionId;
+            _resultValue.drPlanExecutionType = drPlanExecutionType;
+            _resultValue.drProtectionGroupId = drProtectionGroupId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

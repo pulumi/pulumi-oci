@@ -46,9 +46,9 @@ public final class GetZonesZoneNameserver {
             return this;
         }
         public GetZonesZoneNameserver build() {
-            final var o = new GetZonesZoneNameserver();
-            o.hostname = hostname;
-            return o;
+            final var _resultValue = new GetZonesZoneNameserver();
+            _resultValue.hostname = hostname;
+            return _resultValue;
         }
     }
 }

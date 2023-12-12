@@ -85,11 +85,11 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItemCo
             return this;
         }
         public GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight build() {
-            final var o = new GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight();
-            o.displayName = displayName;
-            o.key = key;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new GetProtectionCapabilitiesProtectionCapabilityCollectionItemCollaborativeWeight();
+            _resultValue.displayName = displayName;
+            _resultValue.key = key;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

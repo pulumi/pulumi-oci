@@ -85,11 +85,11 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOpti
             return this;
         }
         public GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption build() {
-            final var o = new GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption();
-            o.arePrechecksEnabled = arePrechecksEnabled;
-            o.areWarningsIgnored = areWarningsIgnored;
-            o.planExecutionType = planExecutionType;
-            return o;
+            final var _resultValue = new GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption();
+            _resultValue.arePrechecksEnabled = arePrechecksEnabled;
+            _resultValue.areWarningsIgnored = areWarningsIgnored;
+            _resultValue.planExecutionType = planExecutionType;
+            return _resultValue;
         }
     }
 }

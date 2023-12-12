@@ -195,17 +195,17 @@ public final class GetManagedDatabaseGroupResult {
             return this;
         }
         public GetManagedDatabaseGroupResult build() {
-            final var o = new GetManagedDatabaseGroupResult();
-            o.compartmentId = compartmentId;
-            o.description = description;
-            o.id = id;
-            o.managedDatabaseGroupId = managedDatabaseGroupId;
-            o.managedDatabases = managedDatabases;
-            o.name = name;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetManagedDatabaseGroupResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseGroupId = managedDatabaseGroupId;
+            _resultValue.managedDatabases = managedDatabases;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

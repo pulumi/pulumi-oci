@@ -197,20 +197,20 @@ public final class GetDomainsUserAttributesSettingsResult {
             return userAttributesSettings(List.of(userAttributesSettings));
         }
         public GetDomainsUserAttributesSettingsResult build() {
-            final var o = new GetDomainsUserAttributesSettingsResult();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.idcsEndpoint = idcsEndpoint;
-            o.itemsPerPage = itemsPerPage;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.startIndex = startIndex;
-            o.totalResults = totalResults;
-            o.userAttributesSettings = userAttributesSettings;
-            return o;
+            final var _resultValue = new GetDomainsUserAttributesSettingsResult();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.itemsPerPage = itemsPerPage;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.startIndex = startIndex;
+            _resultValue.totalResults = totalResults;
+            _resultValue.userAttributesSettings = userAttributesSettings;
+            return _resultValue;
         }
     }
 }

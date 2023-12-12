@@ -108,12 +108,12 @@ public final class GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInf
             return this;
         }
         public GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo build() {
-            final var o = new GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.exadataInfraInfos = exadataInfraInfos;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalDatabasesExternalDatabaseCollectionItemDbSystemInfo();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.exadataInfraInfos = exadataInfraInfos;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

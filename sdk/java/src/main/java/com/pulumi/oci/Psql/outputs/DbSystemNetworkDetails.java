@@ -90,11 +90,11 @@ public final class DbSystemNetworkDetails {
             return this;
         }
         public DbSystemNetworkDetails build() {
-            final var o = new DbSystemNetworkDetails();
-            o.nsgIds = nsgIds;
-            o.primaryDbEndpointPrivateIp = primaryDbEndpointPrivateIp;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new DbSystemNetworkDetails();
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.primaryDbEndpointPrivateIp = primaryDbEndpointPrivateIp;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

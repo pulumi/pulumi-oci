@@ -239,19 +239,19 @@ public final class GetExternalExadataInfrastructuresExternalExadataInfrastructur
             return this;
         }
         public GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid build() {
-            final var o = new GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid();
-            o.additionalDetails = additionalDetails;
-            o.displayName = displayName;
-            o.id = id;
-            o.internalId = internalId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.serverCount = serverCount;
-            o.state = state;
-            o.status = status;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.internalId = internalId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.serverCount = serverCount;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

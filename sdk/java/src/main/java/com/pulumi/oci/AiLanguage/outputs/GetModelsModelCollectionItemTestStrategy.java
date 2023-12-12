@@ -93,11 +93,11 @@ public final class GetModelsModelCollectionItemTestStrategy {
             return validationDatasets(List.of(validationDatasets));
         }
         public GetModelsModelCollectionItemTestStrategy build() {
-            final var o = new GetModelsModelCollectionItemTestStrategy();
-            o.strategyType = strategyType;
-            o.testingDatasets = testingDatasets;
-            o.validationDatasets = validationDatasets;
-            return o;
+            final var _resultValue = new GetModelsModelCollectionItemTestStrategy();
+            _resultValue.strategyType = strategyType;
+            _resultValue.testingDatasets = testingDatasets;
+            _resultValue.validationDatasets = validationDatasets;
+            return _resultValue;
         }
     }
 }

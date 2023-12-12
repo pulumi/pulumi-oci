@@ -86,11 +86,11 @@ public final class GetPeerRegionForRemotePeeringsResult {
             return peerRegionForRemotePeerings(List.of(peerRegionForRemotePeerings));
         }
         public GetPeerRegionForRemotePeeringsResult build() {
-            final var o = new GetPeerRegionForRemotePeeringsResult();
-            o.filters = filters;
-            o.id = id;
-            o.peerRegionForRemotePeerings = peerRegionForRemotePeerings;
-            return o;
+            final var _resultValue = new GetPeerRegionForRemotePeeringsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.peerRegionForRemotePeerings = peerRegionForRemotePeerings;
+            return _resultValue;
         }
     }
 }

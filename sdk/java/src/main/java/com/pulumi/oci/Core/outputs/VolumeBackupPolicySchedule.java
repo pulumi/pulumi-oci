@@ -250,18 +250,18 @@ public final class VolumeBackupPolicySchedule {
             return this;
         }
         public VolumeBackupPolicySchedule build() {
-            final var o = new VolumeBackupPolicySchedule();
-            o.backupType = backupType;
-            o.dayOfMonth = dayOfMonth;
-            o.dayOfWeek = dayOfWeek;
-            o.hourOfDay = hourOfDay;
-            o.month = month;
-            o.offsetSeconds = offsetSeconds;
-            o.offsetType = offsetType;
-            o.period = period;
-            o.retentionSeconds = retentionSeconds;
-            o.timeZone = timeZone;
-            return o;
+            final var _resultValue = new VolumeBackupPolicySchedule();
+            _resultValue.backupType = backupType;
+            _resultValue.dayOfMonth = dayOfMonth;
+            _resultValue.dayOfWeek = dayOfWeek;
+            _resultValue.hourOfDay = hourOfDay;
+            _resultValue.month = month;
+            _resultValue.offsetSeconds = offsetSeconds;
+            _resultValue.offsetType = offsetType;
+            _resultValue.period = period;
+            _resultValue.retentionSeconds = retentionSeconds;
+            _resultValue.timeZone = timeZone;
+            return _resultValue;
         }
     }
 }

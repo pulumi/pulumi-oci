@@ -65,10 +65,10 @@ public final class GetMonitorConfigurationRequestQueryParam {
             return this;
         }
         public GetMonitorConfigurationRequestQueryParam build() {
-            final var o = new GetMonitorConfigurationRequestQueryParam();
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            return o;
+            final var _resultValue = new GetMonitorConfigurationRequestQueryParam();
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            return _resultValue;
         }
     }
 }

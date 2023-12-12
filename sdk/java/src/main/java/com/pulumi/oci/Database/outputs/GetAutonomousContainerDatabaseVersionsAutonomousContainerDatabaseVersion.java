@@ -89,11 +89,11 @@ public final class GetAutonomousContainerDatabaseVersionsAutonomousContainerData
             return this;
         }
         public GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion build() {
-            final var o = new GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion();
-            o.details = details;
-            o.supportedApps = supportedApps;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabaseVersionsAutonomousContainerDatabaseVersion();
+            _resultValue.details = details;
+            _resultValue.supportedApps = supportedApps;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

@@ -66,10 +66,10 @@ public final class GetManagedDatabaseAlertLogCountItem {
             return this;
         }
         public GetManagedDatabaseAlertLogCountItem build() {
-            final var o = new GetManagedDatabaseAlertLogCountItem();
-            o.category = category;
-            o.count = count;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAlertLogCountItem();
+            _resultValue.category = category;
+            _resultValue.count = count;
+            return _resultValue;
         }
     }
 }

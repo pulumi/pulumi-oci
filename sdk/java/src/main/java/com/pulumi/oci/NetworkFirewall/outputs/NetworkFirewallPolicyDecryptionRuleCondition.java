@@ -73,10 +73,10 @@ public final class NetworkFirewallPolicyDecryptionRuleCondition {
             return sourceAddresses(List.of(sourceAddresses));
         }
         public NetworkFirewallPolicyDecryptionRuleCondition build() {
-            final var o = new NetworkFirewallPolicyDecryptionRuleCondition();
-            o.destinationAddresses = destinationAddresses;
-            o.sourceAddresses = sourceAddresses;
-            return o;
+            final var _resultValue = new NetworkFirewallPolicyDecryptionRuleCondition();
+            _resultValue.destinationAddresses = destinationAddresses;
+            _resultValue.sourceAddresses = sourceAddresses;
+            return _resultValue;
         }
     }
 }

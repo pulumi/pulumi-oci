@@ -122,13 +122,13 @@ public final class GetContainerInstanceShapesContainerInstanceShapeCollectionIte
             return this;
         }
         public GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption build() {
-            final var o = new GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption();
-            o.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
-            o.maxInGbs = maxInGbs;
-            o.maxPerOcpuInGbs = maxPerOcpuInGbs;
-            o.minInGbs = minInGbs;
-            o.minPerOcpuInGbs = minPerOcpuInGbs;
-            return o;
+            final var _resultValue = new GetContainerInstanceShapesContainerInstanceShapeCollectionItemMemoryOption();
+            _resultValue.defaultPerOcpuInGbs = defaultPerOcpuInGbs;
+            _resultValue.maxInGbs = maxInGbs;
+            _resultValue.maxPerOcpuInGbs = maxPerOcpuInGbs;
+            _resultValue.minInGbs = minInGbs;
+            _resultValue.minPerOcpuInGbs = minPerOcpuInGbs;
+            return _resultValue;
         }
     }
 }

@@ -90,11 +90,11 @@ public final class UnifiedAgentConfigurationServiceConfiguration {
             return sources(List.of(sources));
         }
         public UnifiedAgentConfigurationServiceConfiguration build() {
-            final var o = new UnifiedAgentConfigurationServiceConfiguration();
-            o.configurationType = configurationType;
-            o.destination = destination;
-            o.sources = sources;
-            return o;
+            final var _resultValue = new UnifiedAgentConfigurationServiceConfiguration();
+            _resultValue.configurationType = configurationType;
+            _resultValue.destination = destination;
+            _resultValue.sources = sources;
+            return _resultValue;
         }
     }
 }

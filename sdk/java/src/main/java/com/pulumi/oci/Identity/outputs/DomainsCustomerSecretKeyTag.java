@@ -111,10 +111,10 @@ public final class DomainsCustomerSecretKeyTag {
             return this;
         }
         public DomainsCustomerSecretKeyTag build() {
-            final var o = new DomainsCustomerSecretKeyTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsCustomerSecretKeyTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

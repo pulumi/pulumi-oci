@@ -211,18 +211,18 @@ public final class GetDbNodeConsoleHistoryResult {
             return this;
         }
         public GetDbNodeConsoleHistoryResult build() {
-            final var o = new GetDbNodeConsoleHistoryResult();
-            o.compartmentId = compartmentId;
-            o.consoleHistoryId = consoleHistoryId;
-            o.dbNodeId = dbNodeId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetDbNodeConsoleHistoryResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.consoleHistoryId = consoleHistoryId;
+            _resultValue.dbNodeId = dbNodeId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

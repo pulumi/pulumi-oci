@@ -128,13 +128,13 @@ public final class GetMonitorScriptParameter {
             return this;
         }
         public GetMonitorScriptParameter build() {
-            final var o = new GetMonitorScriptParameter();
-            o.isOverwritten = isOverwritten;
-            o.isSecret = isSecret;
-            o.monitorScriptParameters = monitorScriptParameters;
-            o.paramName = paramName;
-            o.paramValue = paramValue;
-            return o;
+            final var _resultValue = new GetMonitorScriptParameter();
+            _resultValue.isOverwritten = isOverwritten;
+            _resultValue.isSecret = isSecret;
+            _resultValue.monitorScriptParameters = monitorScriptParameters;
+            _resultValue.paramName = paramName;
+            _resultValue.paramValue = paramValue;
+            return _resultValue;
         }
     }
 }

@@ -85,11 +85,11 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBac
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping build() {
-            final var o = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping();
-            o.destinationBackendSetName = destinationBackendSetName;
-            o.isBackendSetForNonMovable = isBackendSetForNonMovable;
-            o.sourceBackendSetName = sourceBackendSetName;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapping();
+            _resultValue.destinationBackendSetName = destinationBackendSetName;
+            _resultValue.isBackendSetForNonMovable = isBackendSetForNonMovable;
+            _resultValue.sourceBackendSetName = sourceBackendSetName;
+            return _resultValue;
         }
     }
 }

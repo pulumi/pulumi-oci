@@ -123,13 +123,13 @@ public final class GetBaselineableMetricsEvaluateItemDataPoint {
             return this;
         }
         public GetBaselineableMetricsEvaluateItemDataPoint build() {
-            final var o = new GetBaselineableMetricsEvaluateItemDataPoint();
-            o.anomaly = anomaly;
-            o.high = high;
-            o.low = low;
-            o.timestamp = timestamp;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetBaselineableMetricsEvaluateItemDataPoint();
+            _resultValue.anomaly = anomaly;
+            _resultValue.high = high;
+            _resultValue.low = low;
+            _resultValue.timestamp = timestamp;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

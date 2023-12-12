@@ -96,11 +96,11 @@ public final class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticati
             return setHeaders(List.of(setHeaders));
         }
         public GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation build() {
-            final var o = new GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation();
-            o.filterHeaders = filterHeaders;
-            o.renameHeaders = renameHeaders;
-            o.setHeaders = setHeaders;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformation();
+            _resultValue.filterHeaders = filterHeaders;
+            _resultValue.renameHeaders = renameHeaders;
+            _resultValue.setHeaders = setHeaders;
+            return _resultValue;
         }
     }
 }

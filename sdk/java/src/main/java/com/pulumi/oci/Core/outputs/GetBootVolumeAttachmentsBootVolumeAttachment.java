@@ -218,18 +218,18 @@ public final class GetBootVolumeAttachmentsBootVolumeAttachment {
             return this;
         }
         public GetBootVolumeAttachmentsBootVolumeAttachment build() {
-            final var o = new GetBootVolumeAttachmentsBootVolumeAttachment();
-            o.availabilityDomain = availabilityDomain;
-            o.bootVolumeId = bootVolumeId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.encryptionInTransitType = encryptionInTransitType;
-            o.id = id;
-            o.instanceId = instanceId;
-            o.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetBootVolumeAttachmentsBootVolumeAttachment();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.bootVolumeId = bootVolumeId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.encryptionInTransitType = encryptionInTransitType;
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            _resultValue.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

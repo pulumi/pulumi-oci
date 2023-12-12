@@ -75,11 +75,11 @@ public final class GetVirtualNodePoolsFilter {
             return values(List.of(values));
         }
         public GetVirtualNodePoolsFilter build() {
-            final var o = new GetVirtualNodePoolsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVirtualNodePoolsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

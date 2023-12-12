@@ -67,11 +67,11 @@ public final class GetDrgRouteTableRouteRulesFilter {
             return values(List.of(values));
         }
         public GetDrgRouteTableRouteRulesFilter build() {
-            final var o = new GetDrgRouteTableRouteRulesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDrgRouteTableRouteRulesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

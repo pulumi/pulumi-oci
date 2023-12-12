@@ -73,10 +73,10 @@ public final class GetLogAnalyticsEntityTopologyItem {
             return nodes(List.of(nodes));
         }
         public GetLogAnalyticsEntityTopologyItem build() {
-            final var o = new GetLogAnalyticsEntityTopologyItem();
-            o.links = links;
-            o.nodes = nodes;
-            return o;
+            final var _resultValue = new GetLogAnalyticsEntityTopologyItem();
+            _resultValue.links = links;
+            _resultValue.nodes = nodes;
+            return _resultValue;
         }
     }
 }

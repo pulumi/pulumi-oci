@@ -130,14 +130,14 @@ public final class GetUserAssessmentComparisonResult {
             return this;
         }
         public GetUserAssessmentComparisonResult build() {
-            final var o = new GetUserAssessmentComparisonResult();
-            o.comparisonUserAssessmentId = comparisonUserAssessmentId;
-            o.id = id;
-            o.state = state;
-            o.summaries = summaries;
-            o.timeCreated = timeCreated;
-            o.userAssessmentId = userAssessmentId;
-            return o;
+            final var _resultValue = new GetUserAssessmentComparisonResult();
+            _resultValue.comparisonUserAssessmentId = comparisonUserAssessmentId;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.summaries = summaries;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.userAssessmentId = userAssessmentId;
+            return _resultValue;
         }
     }
 }

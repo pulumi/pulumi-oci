@@ -158,15 +158,15 @@ public final class GetResourceUsageResult {
             return this;
         }
         public GetResourceUsageResult build() {
-            final var o = new GetResourceUsageResult();
-            o.emInstanceCount = emInstanceCount;
-            o.emInstances = emInstances;
-            o.emWarehouseId = emWarehouseId;
-            o.id = id;
-            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-            o.schemaName = schemaName;
-            o.targetsCount = targetsCount;
-            return o;
+            final var _resultValue = new GetResourceUsageResult();
+            _resultValue.emInstanceCount = emInstanceCount;
+            _resultValue.emInstances = emInstances;
+            _resultValue.emWarehouseId = emWarehouseId;
+            _resultValue.id = id;
+            _resultValue.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            _resultValue.schemaName = schemaName;
+            _resultValue.targetsCount = targetsCount;
+            return _resultValue;
         }
     }
 }

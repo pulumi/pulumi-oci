@@ -65,10 +65,10 @@ public final class GetDomainsMyAuthTokensMyAuthTokenTag {
             return this;
         }
         public GetDomainsMyAuthTokensMyAuthTokenTag build() {
-            final var o = new GetDomainsMyAuthTokensMyAuthTokenTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyAuthTokensMyAuthTokenTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

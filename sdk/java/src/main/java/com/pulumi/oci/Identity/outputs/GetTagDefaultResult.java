@@ -214,18 +214,18 @@ public final class GetTagDefaultResult {
             return this;
         }
         public GetTagDefaultResult build() {
-            final var o = new GetTagDefaultResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.isRequired = isRequired;
-            o.state = state;
-            o.tagDefaultId = tagDefaultId;
-            o.tagDefinitionId = tagDefinitionId;
-            o.tagDefinitionName = tagDefinitionName;
-            o.tagNamespaceId = tagNamespaceId;
-            o.timeCreated = timeCreated;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetTagDefaultResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.isRequired = isRequired;
+            _resultValue.state = state;
+            _resultValue.tagDefaultId = tagDefaultId;
+            _resultValue.tagDefinitionId = tagDefinitionId;
+            _resultValue.tagDefinitionName = tagDefinitionName;
+            _resultValue.tagNamespaceId = tagNamespaceId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

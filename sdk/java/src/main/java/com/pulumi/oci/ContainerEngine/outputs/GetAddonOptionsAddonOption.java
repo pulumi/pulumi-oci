@@ -244,19 +244,19 @@ public final class GetAddonOptionsAddonOption {
             return versions(List.of(versions));
         }
         public GetAddonOptionsAddonOption build() {
-            final var o = new GetAddonOptionsAddonOption();
-            o.addonGroup = addonGroup;
-            o.addonSchemaVersion = addonSchemaVersion;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.isEssential = isEssential;
-            o.name = name;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.versions = versions;
-            return o;
+            final var _resultValue = new GetAddonOptionsAddonOption();
+            _resultValue.addonGroup = addonGroup;
+            _resultValue.addonSchemaVersion = addonSchemaVersion;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.isEssential = isEssential;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.versions = versions;
+            return _resultValue;
         }
     }
 }

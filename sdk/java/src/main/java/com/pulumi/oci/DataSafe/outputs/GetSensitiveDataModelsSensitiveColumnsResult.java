@@ -374,28 +374,28 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
             return this;
         }
         public GetSensitiveDataModelsSensitiveColumnsResult build() {
-            final var o = new GetSensitiveDataModelsSensitiveColumnsResult();
-            o.columnGroup = columnGroup;
-            o.columnNames = columnNames;
-            o.dataTypes = dataTypes;
-            o.filters = filters;
-            o.id = id;
-            o.isCaseInSensitive = isCaseInSensitive;
-            o.objectTypes = objectTypes;
-            o.objects = objects;
-            o.parentColumnKeys = parentColumnKeys;
-            o.relationTypes = relationTypes;
-            o.schemaNames = schemaNames;
-            o.sensitiveColumnCollections = sensitiveColumnCollections;
-            o.sensitiveColumnLifecycleState = sensitiveColumnLifecycleState;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.sensitiveTypeIds = sensitiveTypeIds;
-            o.statuses = statuses;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            o.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
-            o.timeUpdatedLessThan = timeUpdatedLessThan;
-            return o;
+            final var _resultValue = new GetSensitiveDataModelsSensitiveColumnsResult();
+            _resultValue.columnGroup = columnGroup;
+            _resultValue.columnNames = columnNames;
+            _resultValue.dataTypes = dataTypes;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isCaseInSensitive = isCaseInSensitive;
+            _resultValue.objectTypes = objectTypes;
+            _resultValue.objects = objects;
+            _resultValue.parentColumnKeys = parentColumnKeys;
+            _resultValue.relationTypes = relationTypes;
+            _resultValue.schemaNames = schemaNames;
+            _resultValue.sensitiveColumnCollections = sensitiveColumnCollections;
+            _resultValue.sensitiveColumnLifecycleState = sensitiveColumnLifecycleState;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.sensitiveTypeIds = sensitiveTypeIds;
+            _resultValue.statuses = statuses;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            _resultValue.timeUpdatedGreaterThanOrEqualTo = timeUpdatedGreaterThanOrEqualTo;
+            _resultValue.timeUpdatedLessThan = timeUpdatedLessThan;
+            return _resultValue;
         }
     }
 }

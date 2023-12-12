@@ -42,9 +42,9 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollection {
             return items(List.of(items));
         }
         public GetDiscoveryJobsResultsDiscoveryJobResultCollection build() {
-            final var o = new GetDiscoveryJobsResultsDiscoveryJobResultCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDiscoveryJobsResultsDiscoveryJobResultCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

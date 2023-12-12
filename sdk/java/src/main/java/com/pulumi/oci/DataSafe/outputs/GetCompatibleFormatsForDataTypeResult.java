@@ -70,10 +70,10 @@ public final class GetCompatibleFormatsForDataTypeResult {
             return this;
         }
         public GetCompatibleFormatsForDataTypeResult build() {
-            final var o = new GetCompatibleFormatsForDataTypeResult();
-            o.formatsForDataTypes = formatsForDataTypes;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetCompatibleFormatsForDataTypeResult();
+            _resultValue.formatsForDataTypes = formatsForDataTypes;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

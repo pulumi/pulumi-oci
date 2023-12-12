@@ -46,9 +46,9 @@ public final class GetOpensearchVersionItem {
             return this;
         }
         public GetOpensearchVersionItem build() {
-            final var o = new GetOpensearchVersionItem();
-            o.version = version;
-            return o;
+            final var _resultValue = new GetOpensearchVersionItem();
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

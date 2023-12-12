@@ -68,10 +68,10 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
             return this;
         }
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration build() {
-            final var o = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration();
-            o.instanceShapeName = instanceShapeName;
-            o.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
-            return o;
+            final var _resultValue = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration();
+            _resultValue.instanceShapeName = instanceShapeName;
+            _resultValue.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
+            return _resultValue;
         }
     }
 }

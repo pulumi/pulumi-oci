@@ -484,32 +484,32 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnel {
             return this;
         }
         public GetIpsecConnectionTunnelsIpSecConnectionTunnel build() {
-            final var o = new GetIpsecConnectionTunnelsIpSecConnectionTunnel();
-            o.associatedVirtualCircuits = associatedVirtualCircuits;
-            o.bgpSessionInfos = bgpSessionInfos;
-            o.compartmentId = compartmentId;
-            o.cpeIp = cpeIp;
-            o.displayName = displayName;
-            o.dpdConfigs = dpdConfigs;
-            o.dpdMode = dpdMode;
-            o.dpdTimeoutInSec = dpdTimeoutInSec;
-            o.encryptionDomainConfigs = encryptionDomainConfigs;
-            o.id = id;
-            o.ikeVersion = ikeVersion;
-            o.ipsecId = ipsecId;
-            o.natTranslationEnabled = natTranslationEnabled;
-            o.oracleCanInitiate = oracleCanInitiate;
-            o.phaseOneDetails = phaseOneDetails;
-            o.phaseTwoDetails = phaseTwoDetails;
-            o.routing = routing;
-            o.sharedSecret = sharedSecret;
-            o.state = state;
-            o.status = status;
-            o.timeCreated = timeCreated;
-            o.timeStatusUpdated = timeStatusUpdated;
-            o.tunnelId = tunnelId;
-            o.vpnIp = vpnIp;
-            return o;
+            final var _resultValue = new GetIpsecConnectionTunnelsIpSecConnectionTunnel();
+            _resultValue.associatedVirtualCircuits = associatedVirtualCircuits;
+            _resultValue.bgpSessionInfos = bgpSessionInfos;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.cpeIp = cpeIp;
+            _resultValue.displayName = displayName;
+            _resultValue.dpdConfigs = dpdConfigs;
+            _resultValue.dpdMode = dpdMode;
+            _resultValue.dpdTimeoutInSec = dpdTimeoutInSec;
+            _resultValue.encryptionDomainConfigs = encryptionDomainConfigs;
+            _resultValue.id = id;
+            _resultValue.ikeVersion = ikeVersion;
+            _resultValue.ipsecId = ipsecId;
+            _resultValue.natTranslationEnabled = natTranslationEnabled;
+            _resultValue.oracleCanInitiate = oracleCanInitiate;
+            _resultValue.phaseOneDetails = phaseOneDetails;
+            _resultValue.phaseTwoDetails = phaseTwoDetails;
+            _resultValue.routing = routing;
+            _resultValue.sharedSecret = sharedSecret;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeStatusUpdated = timeStatusUpdated;
+            _resultValue.tunnelId = tunnelId;
+            _resultValue.vpnIp = vpnIp;
+            return _resultValue;
         }
     }
 }

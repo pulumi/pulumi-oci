@@ -65,10 +65,10 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSumm
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary build() {
-            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary();
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunProgressSummary();
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

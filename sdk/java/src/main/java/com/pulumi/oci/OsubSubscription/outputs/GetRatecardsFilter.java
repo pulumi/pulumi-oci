@@ -75,11 +75,11 @@ public final class GetRatecardsFilter {
             return values(List.of(values));
         }
         public GetRatecardsFilter build() {
-            final var o = new GetRatecardsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetRatecardsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

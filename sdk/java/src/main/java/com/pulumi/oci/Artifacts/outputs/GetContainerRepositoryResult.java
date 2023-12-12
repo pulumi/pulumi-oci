@@ -389,27 +389,27 @@ public final class GetContainerRepositoryResult {
             return this;
         }
         public GetContainerRepositoryResult build() {
-            final var o = new GetContainerRepositoryResult();
-            o.billableSizeInGbs = billableSizeInGbs;
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.imageCount = imageCount;
-            o.isImmutable = isImmutable;
-            o.isPublic = isPublic;
-            o.layerCount = layerCount;
-            o.layersSizeInBytes = layersSizeInBytes;
-            o.namespace = namespace;
-            o.readmes = readmes;
-            o.repositoryId = repositoryId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeLastPushed = timeLastPushed;
-            return o;
+            final var _resultValue = new GetContainerRepositoryResult();
+            _resultValue.billableSizeInGbs = billableSizeInGbs;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.imageCount = imageCount;
+            _resultValue.isImmutable = isImmutable;
+            _resultValue.isPublic = isPublic;
+            _resultValue.layerCount = layerCount;
+            _resultValue.layersSizeInBytes = layersSizeInBytes;
+            _resultValue.namespace = namespace;
+            _resultValue.readmes = readmes;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastPushed = timeLastPushed;
+            return _resultValue;
         }
     }
 }

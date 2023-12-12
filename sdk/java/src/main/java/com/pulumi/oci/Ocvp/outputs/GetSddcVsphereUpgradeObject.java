@@ -65,10 +65,10 @@ public final class GetSddcVsphereUpgradeObject {
             return this;
         }
         public GetSddcVsphereUpgradeObject build() {
-            final var o = new GetSddcVsphereUpgradeObject();
-            o.downloadLink = downloadLink;
-            o.linkDescription = linkDescription;
-            return o;
+            final var _resultValue = new GetSddcVsphereUpgradeObject();
+            _resultValue.downloadLink = downloadLink;
+            _resultValue.linkDescription = linkDescription;
+            return _resultValue;
         }
     }
 }

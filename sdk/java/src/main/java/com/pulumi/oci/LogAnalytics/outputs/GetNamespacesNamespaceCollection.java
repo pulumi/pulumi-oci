@@ -42,9 +42,9 @@ public final class GetNamespacesNamespaceCollection {
             return items(List.of(items));
         }
         public GetNamespacesNamespaceCollection build() {
-            final var o = new GetNamespacesNamespaceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNamespacesNamespaceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

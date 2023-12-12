@@ -169,18 +169,18 @@ public final class GetManagedDatabaseAttentionLogCountResult {
             return this;
         }
         public GetManagedDatabaseAttentionLogCountResult build() {
-            final var o = new GetManagedDatabaseAttentionLogCountResult();
-            o.groupBy = groupBy;
-            o.id = id;
-            o.isRegularExpression = isRegularExpression;
-            o.items = items;
-            o.logSearchText = logSearchText;
-            o.managedDatabaseId = managedDatabaseId;
-            o.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
-            o.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
-            o.typeFilter = typeFilter;
-            o.urgencyFilter = urgencyFilter;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAttentionLogCountResult();
+            _resultValue.groupBy = groupBy;
+            _resultValue.id = id;
+            _resultValue.isRegularExpression = isRegularExpression;
+            _resultValue.items = items;
+            _resultValue.logSearchText = logSearchText;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.timeGreaterThanOrEqualTo = timeGreaterThanOrEqualTo;
+            _resultValue.timeLessThanOrEqualTo = timeLessThanOrEqualTo;
+            _resultValue.typeFilter = typeFilter;
+            _resultValue.urgencyFilter = urgencyFilter;
+            return _resultValue;
         }
     }
 }

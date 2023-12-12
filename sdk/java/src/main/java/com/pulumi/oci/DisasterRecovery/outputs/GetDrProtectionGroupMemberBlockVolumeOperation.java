@@ -93,11 +93,11 @@ public final class GetDrProtectionGroupMemberBlockVolumeOperation {
             return mountDetails(List.of(mountDetails));
         }
         public GetDrProtectionGroupMemberBlockVolumeOperation build() {
-            final var o = new GetDrProtectionGroupMemberBlockVolumeOperation();
-            o.attachmentDetails = attachmentDetails;
-            o.blockVolumeId = blockVolumeId;
-            o.mountDetails = mountDetails;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupMemberBlockVolumeOperation();
+            _resultValue.attachmentDetails = attachmentDetails;
+            _resultValue.blockVolumeId = blockVolumeId;
+            _resultValue.mountDetails = mountDetails;
+            return _resultValue;
         }
     }
 }

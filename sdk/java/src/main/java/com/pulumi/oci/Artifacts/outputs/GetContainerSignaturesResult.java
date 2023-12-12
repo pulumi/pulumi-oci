@@ -246,21 +246,21 @@ public final class GetContainerSignaturesResult {
             return this;
         }
         public GetContainerSignaturesResult build() {
-            final var o = new GetContainerSignaturesResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.containerImageSignatureCollections = containerImageSignatureCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.imageDigest = imageDigest;
-            o.imageId = imageId;
-            o.kmsKeyId = kmsKeyId;
-            o.kmsKeyVersionId = kmsKeyVersionId;
-            o.repositoryId = repositoryId;
-            o.repositoryName = repositoryName;
-            o.signingAlgorithm = signingAlgorithm;
-            return o;
+            final var _resultValue = new GetContainerSignaturesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.containerImageSignatureCollections = containerImageSignatureCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.imageDigest = imageDigest;
+            _resultValue.imageId = imageId;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.kmsKeyVersionId = kmsKeyVersionId;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.repositoryName = repositoryName;
+            _resultValue.signingAlgorithm = signingAlgorithm;
+            return _resultValue;
         }
     }
 }

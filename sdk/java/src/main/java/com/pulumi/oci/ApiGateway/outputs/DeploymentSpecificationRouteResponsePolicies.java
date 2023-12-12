@@ -68,10 +68,10 @@ public final class DeploymentSpecificationRouteResponsePolicies {
             return this;
         }
         public DeploymentSpecificationRouteResponsePolicies build() {
-            final var o = new DeploymentSpecificationRouteResponsePolicies();
-            o.headerTransformations = headerTransformations;
-            o.responseCacheStore = responseCacheStore;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteResponsePolicies();
+            _resultValue.headerTransformations = headerTransformations;
+            _resultValue.responseCacheStore = responseCacheStore;
+            return _resultValue;
         }
     }
 }

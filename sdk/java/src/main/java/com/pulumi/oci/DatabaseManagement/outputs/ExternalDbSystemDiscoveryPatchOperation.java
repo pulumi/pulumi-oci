@@ -93,11 +93,11 @@ public final class ExternalDbSystemDiscoveryPatchOperation {
             return this;
         }
         public ExternalDbSystemDiscoveryPatchOperation build() {
-            final var o = new ExternalDbSystemDiscoveryPatchOperation();
-            o.operation = operation;
-            o.selection = selection;
-            o.value = value;
-            return o;
+            final var _resultValue = new ExternalDbSystemDiscoveryPatchOperation();
+            _resultValue.operation = operation;
+            _resultValue.selection = selection;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

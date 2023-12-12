@@ -89,11 +89,11 @@ public final class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMa
             return formatEntries(List.of(formatEntries));
         }
         public GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat build() {
-            final var o = new GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat();
-            o.condition = condition;
-            o.description = description;
-            o.formatEntries = formatEntries;
-            return o;
+            final var _resultValue = new GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat();
+            _resultValue.condition = condition;
+            _resultValue.description = description;
+            _resultValue.formatEntries = formatEntries;
+            return _resultValue;
         }
     }
 }

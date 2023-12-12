@@ -108,13 +108,13 @@ public final class GetSubscriptionsResult {
             return subscriptionCollections(List.of(subscriptionCollections));
         }
         public GetSubscriptionsResult build() {
-            final var o = new GetSubscriptionsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.ospHomeRegion = ospHomeRegion;
-            o.subscriptionCollections = subscriptionCollections;
-            return o;
+            final var _resultValue = new GetSubscriptionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ospHomeRegion = ospHomeRegion;
+            _resultValue.subscriptionCollections = subscriptionCollections;
+            return _resultValue;
         }
     }
 }

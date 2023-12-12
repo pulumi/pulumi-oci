@@ -67,11 +67,11 @@ public final class GetDatabaseSoftwareImagesFilter {
             return values(List.of(values));
         }
         public GetDatabaseSoftwareImagesFilter build() {
-            final var o = new GetDatabaseSoftwareImagesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDatabaseSoftwareImagesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -128,14 +128,14 @@ public final class GetManagedDatabaseUserProxiedForUsersResult {
             return this;
         }
         public GetManagedDatabaseUserProxiedForUsersResult build() {
-            final var o = new GetManagedDatabaseUserProxiedForUsersResult();
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.proxiedForUserCollections = proxiedForUserCollections;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserProxiedForUsersResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.proxiedForUserCollections = proxiedForUserCollections;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

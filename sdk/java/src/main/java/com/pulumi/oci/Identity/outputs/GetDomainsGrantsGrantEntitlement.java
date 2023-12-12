@@ -65,10 +65,10 @@ public final class GetDomainsGrantsGrantEntitlement {
             return this;
         }
         public GetDomainsGrantsGrantEntitlement build() {
-            final var o = new GetDomainsGrantsGrantEntitlement();
-            o.attributeName = attributeName;
-            o.attributeValue = attributeValue;
-            return o;
+            final var _resultValue = new GetDomainsGrantsGrantEntitlement();
+            _resultValue.attributeName = attributeName;
+            _resultValue.attributeValue = attributeValue;
+            return _resultValue;
         }
     }
 }

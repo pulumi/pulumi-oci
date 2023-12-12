@@ -46,9 +46,9 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail build() {
-            final var o = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail();
-            o.volumeAttachmentReferenceInstanceId = volumeAttachmentReferenceInstanceId;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationAttachmentDetail();
+            _resultValue.volumeAttachmentReferenceInstanceId = volumeAttachmentReferenceInstanceId;
+            return _resultValue;
         }
     }
 }

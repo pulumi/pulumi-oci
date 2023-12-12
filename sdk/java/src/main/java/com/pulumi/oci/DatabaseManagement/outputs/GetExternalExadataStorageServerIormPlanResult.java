@@ -119,13 +119,13 @@ public final class GetExternalExadataStorageServerIormPlanResult {
             return this;
         }
         public GetExternalExadataStorageServerIormPlanResult build() {
-            final var o = new GetExternalExadataStorageServerIormPlanResult();
-            o.dbPlans = dbPlans;
-            o.externalExadataStorageServerId = externalExadataStorageServerId;
-            o.id = id;
-            o.planObjective = planObjective;
-            o.planStatus = planStatus;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageServerIormPlanResult();
+            _resultValue.dbPlans = dbPlans;
+            _resultValue.externalExadataStorageServerId = externalExadataStorageServerId;
+            _resultValue.id = id;
+            _resultValue.planObjective = planObjective;
+            _resultValue.planStatus = planStatus;
+            return _resultValue;
         }
     }
 }

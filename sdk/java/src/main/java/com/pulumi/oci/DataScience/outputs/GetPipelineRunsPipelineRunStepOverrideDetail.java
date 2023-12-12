@@ -70,10 +70,10 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
             return this;
         }
         public GetPipelineRunsPipelineRunStepOverrideDetail build() {
-            final var o = new GetPipelineRunsPipelineRunStepOverrideDetail();
-            o.stepConfigurationDetails = stepConfigurationDetails;
-            o.stepName = stepName;
-            return o;
+            final var _resultValue = new GetPipelineRunsPipelineRunStepOverrideDetail();
+            _resultValue.stepConfigurationDetails = stepConfigurationDetails;
+            _resultValue.stepName = stepName;
+            return _resultValue;
         }
     }
 }

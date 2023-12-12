@@ -258,20 +258,20 @@ public final class GetAutonomousContainerDatabasesResult {
             return this;
         }
         public GetAutonomousContainerDatabasesResult build() {
-            final var o = new GetAutonomousContainerDatabasesResult();
-            o.autonomousContainerDatabases = autonomousContainerDatabases;
-            o.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
-            o.autonomousVmClusterId = autonomousVmClusterId;
-            o.availabilityDomain = availabilityDomain;
-            o.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.infrastructureType = infrastructureType;
-            o.serviceLevelAgreementType = serviceLevelAgreementType;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabasesResult();
+            _resultValue.autonomousContainerDatabases = autonomousContainerDatabases;
+            _resultValue.autonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
+            _resultValue.autonomousVmClusterId = autonomousVmClusterId;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.infrastructureType = infrastructureType;
+            _resultValue.serviceLevelAgreementType = serviceLevelAgreementType;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

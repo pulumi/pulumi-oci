@@ -67,11 +67,11 @@ public final class GetStreamPackagingConfigsFilter {
             return values(List.of(values));
         }
         public GetStreamPackagingConfigsFilter build() {
-            final var o = new GetStreamPackagingConfigsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetStreamPackagingConfigsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

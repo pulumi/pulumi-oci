@@ -84,11 +84,11 @@ public final class GetManagedDatabasesManagedDatabaseCollectionItemManagedDataba
             return this;
         }
         public GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup build() {
-            final var o = new GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabasesManagedDatabaseCollectionItemManagedDatabaseGroup();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

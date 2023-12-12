@@ -65,10 +65,10 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabaseStackMo
             return this;
         }
         public GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig build() {
-            final var o = new GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig();
-            o.stackMonitoringConnectorId = stackMonitoringConnectorId;
-            o.stackMonitoringStatus = stackMonitoringStatus;
-            return o;
+            final var _resultValue = new GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig();
+            _resultValue.stackMonitoringConnectorId = stackMonitoringConnectorId;
+            _resultValue.stackMonitoringStatus = stackMonitoringStatus;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class DatasetLabelSetItem {
             return this;
         }
         public DatasetLabelSetItem build() {
-            final var o = new DatasetLabelSetItem();
-            o.name = name;
-            return o;
+            final var _resultValue = new DatasetLabelSetItem();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

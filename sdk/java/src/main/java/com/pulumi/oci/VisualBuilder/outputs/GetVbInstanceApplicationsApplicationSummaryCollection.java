@@ -42,9 +42,9 @@ public final class GetVbInstanceApplicationsApplicationSummaryCollection {
             return items(List.of(items));
         }
         public GetVbInstanceApplicationsApplicationSummaryCollection build() {
-            final var o = new GetVbInstanceApplicationsApplicationSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetVbInstanceApplicationsApplicationSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

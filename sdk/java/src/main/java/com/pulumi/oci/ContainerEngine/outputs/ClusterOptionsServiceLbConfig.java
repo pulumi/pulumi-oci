@@ -68,10 +68,10 @@ public final class ClusterOptionsServiceLbConfig {
             return this;
         }
         public ClusterOptionsServiceLbConfig build() {
-            final var o = new ClusterOptionsServiceLbConfig();
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            return o;
+            final var _resultValue = new ClusterOptionsServiceLbConfig();
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            return _resultValue;
         }
     }
 }

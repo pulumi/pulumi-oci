@@ -85,11 +85,11 @@ public final class DiscoveryJobDiscoveryDetailsCredentialsItem {
             return this;
         }
         public DiscoveryJobDiscoveryDetailsCredentialsItem build() {
-            final var o = new DiscoveryJobDiscoveryDetailsCredentialsItem();
-            o.credentialName = credentialName;
-            o.credentialType = credentialType;
-            o.properties = properties;
-            return o;
+            final var _resultValue = new DiscoveryJobDiscoveryDetailsCredentialsItem();
+            _resultValue.credentialName = credentialName;
+            _resultValue.credentialType = credentialType;
+            _resultValue.properties = properties;
+            return _resultValue;
         }
     }
 }

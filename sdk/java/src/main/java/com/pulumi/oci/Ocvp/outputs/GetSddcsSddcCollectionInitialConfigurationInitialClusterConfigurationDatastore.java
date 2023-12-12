@@ -53,10 +53,10 @@ public final class GetSddcsSddcCollectionInitialConfigurationInitialClusterConfi
             return this;
         }
         public GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore build() {
-            final var o = new GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore();
-            o.blockVolumeIds = blockVolumeIds;
-            o.datastoreType = datastoreType;
-            return o;
+            final var _resultValue = new GetSddcsSddcCollectionInitialConfigurationInitialClusterConfigurationDatastore();
+            _resultValue.blockVolumeIds = blockVolumeIds;
+            _resultValue.datastoreType = datastoreType;
+            return _resultValue;
         }
     }
 }

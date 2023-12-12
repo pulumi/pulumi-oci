@@ -205,18 +205,18 @@ public final class GetSdmMaskingPolicyDifferencesResult {
             return this;
         }
         public GetSdmMaskingPolicyDifferencesResult build() {
-            final var o = new GetSdmMaskingPolicyDifferencesResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.differenceAccessLevel = differenceAccessLevel;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.maskingPolicyId = maskingPolicyId;
-            o.sdmMaskingPolicyDifferenceCollections = sdmMaskingPolicyDifferenceCollections;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetSdmMaskingPolicyDifferencesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.differenceAccessLevel = differenceAccessLevel;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.maskingPolicyId = maskingPolicyId;
+            _resultValue.sdmMaskingPolicyDifferenceCollections = sdmMaskingPolicyDifferenceCollections;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

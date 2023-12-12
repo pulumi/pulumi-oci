@@ -296,22 +296,22 @@ public final class GetDedicatedVmHostsDedicatedVmHost {
             return this;
         }
         public GetDedicatedVmHostsDedicatedVmHost build() {
-            final var o = new GetDedicatedVmHostsDedicatedVmHost();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.dedicatedVmHostShape = dedicatedVmHostShape;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.faultDomain = faultDomain;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.remainingMemoryInGbs = remainingMemoryInGbs;
-            o.remainingOcpus = remainingOcpus;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.totalMemoryInGbs = totalMemoryInGbs;
-            o.totalOcpus = totalOcpus;
-            return o;
+            final var _resultValue = new GetDedicatedVmHostsDedicatedVmHost();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dedicatedVmHostShape = dedicatedVmHostShape;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.remainingMemoryInGbs = remainingMemoryInGbs;
+            _resultValue.remainingOcpus = remainingOcpus;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.totalMemoryInGbs = totalMemoryInGbs;
+            _resultValue.totalOcpus = totalOcpus;
+            return _resultValue;
         }
     }
 }

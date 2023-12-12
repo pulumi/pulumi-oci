@@ -65,10 +65,10 @@ public final class GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAv
             return this;
         }
         public GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem build() {
-            final var o = new GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem();
-            o.name = name;
-            o.softwareSourceId = softwareSourceId;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupAvailableModulesManagedInstanceGroupAvailableModuleCollectionItem();
+            _resultValue.name = name;
+            _resultValue.softwareSourceId = softwareSourceId;
+            return _resultValue;
         }
     }
 }

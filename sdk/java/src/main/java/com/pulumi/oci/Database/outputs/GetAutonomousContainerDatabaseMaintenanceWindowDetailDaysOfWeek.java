@@ -46,9 +46,9 @@ public final class GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWe
             return this;
         }
         public GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek build() {
-            final var o = new GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

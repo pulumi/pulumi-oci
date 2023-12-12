@@ -67,11 +67,11 @@ public final class GetOpaInstancesFilter {
             return values(List.of(values));
         }
         public GetOpaInstancesFilter build() {
-            final var o = new GetOpaInstancesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetOpaInstancesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

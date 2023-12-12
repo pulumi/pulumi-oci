@@ -142,14 +142,14 @@ public final class GetDomainsUsersUserEmail {
             return this;
         }
         public GetDomainsUsersUserEmail build() {
-            final var o = new GetDomainsUsersUserEmail();
-            o.pendingVerificationData = pendingVerificationData;
-            o.primary = primary;
-            o.secondary = secondary;
-            o.type = type;
-            o.value = value;
-            o.verified = verified;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserEmail();
+            _resultValue.pendingVerificationData = pendingVerificationData;
+            _resultValue.primary = primary;
+            _resultValue.secondary = secondary;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            _resultValue.verified = verified;
+            return _resultValue;
         }
     }
 }

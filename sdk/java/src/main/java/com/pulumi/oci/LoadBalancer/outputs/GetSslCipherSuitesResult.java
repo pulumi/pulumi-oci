@@ -97,12 +97,12 @@ public final class GetSslCipherSuitesResult {
             return sslCipherSuites(List.of(sslCipherSuites));
         }
         public GetSslCipherSuitesResult build() {
-            final var o = new GetSslCipherSuitesResult();
-            o.filters = filters;
-            o.id = id;
-            o.loadBalancerId = loadBalancerId;
-            o.sslCipherSuites = sslCipherSuites;
-            return o;
+            final var _resultValue = new GetSslCipherSuitesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.sslCipherSuites = sslCipherSuites;
+            return _resultValue;
         }
     }
 }

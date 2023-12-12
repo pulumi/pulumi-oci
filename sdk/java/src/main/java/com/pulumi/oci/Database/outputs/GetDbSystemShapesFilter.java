@@ -75,11 +75,11 @@ public final class GetDbSystemShapesFilter {
             return values(List.of(values));
         }
         public GetDbSystemShapesFilter build() {
-            final var o = new GetDbSystemShapesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDbSystemShapesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -272,21 +272,21 @@ public final class ClusterNetworkInstancePool {
             return this;
         }
         public ClusterNetworkInstancePool build() {
-            final var o = new ClusterNetworkInstancePool();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.instanceConfigurationId = instanceConfigurationId;
-            o.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
-            o.instanceHostnameFormatter = instanceHostnameFormatter;
-            o.loadBalancers = loadBalancers;
-            o.placementConfigurations = placementConfigurations;
-            o.size = size;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new ClusterNetworkInstancePool();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.instanceConfigurationId = instanceConfigurationId;
+            _resultValue.instanceDisplayNameFormatter = instanceDisplayNameFormatter;
+            _resultValue.instanceHostnameFormatter = instanceHostnameFormatter;
+            _resultValue.loadBalancers = loadBalancers;
+            _resultValue.placementConfigurations = placementConfigurations;
+            _resultValue.size = size;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -553,36 +553,36 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItem {
             return this;
         }
         public GetBlockchainPlatformsBlockchainPlatformCollectionItem build() {
-            final var o = new GetBlockchainPlatformsBlockchainPlatformCollectionItem();
-            o.caCertArchiveText = caCertArchiveText;
-            o.compartmentId = compartmentId;
-            o.componentDetails = componentDetails;
-            o.computeShape = computeShape;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.federatedUserId = federatedUserId;
-            o.freeformTags = freeformTags;
-            o.hostOcpuUtilizationInfos = hostOcpuUtilizationInfos;
-            o.id = id;
-            o.idcsAccessToken = idcsAccessToken;
-            o.isByol = isByol;
-            o.isMultiAd = isMultiAd;
-            o.lifecycleDetails = lifecycleDetails;
-            o.loadBalancerShape = loadBalancerShape;
-            o.platformRole = platformRole;
-            o.platformShapeType = platformShapeType;
-            o.platformVersion = platformVersion;
-            o.replicas = replicas;
-            o.serviceEndpoint = serviceEndpoint;
-            o.serviceVersion = serviceVersion;
-            o.state = state;
-            o.storageSizeInTbs = storageSizeInTbs;
-            o.storageUsedInTbs = storageUsedInTbs;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.totalOcpuCapacity = totalOcpuCapacity;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformsBlockchainPlatformCollectionItem();
+            _resultValue.caCertArchiveText = caCertArchiveText;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.componentDetails = componentDetails;
+            _resultValue.computeShape = computeShape;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.federatedUserId = federatedUserId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostOcpuUtilizationInfos = hostOcpuUtilizationInfos;
+            _resultValue.id = id;
+            _resultValue.idcsAccessToken = idcsAccessToken;
+            _resultValue.isByol = isByol;
+            _resultValue.isMultiAd = isMultiAd;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.loadBalancerShape = loadBalancerShape;
+            _resultValue.platformRole = platformRole;
+            _resultValue.platformShapeType = platformShapeType;
+            _resultValue.platformVersion = platformVersion;
+            _resultValue.replicas = replicas;
+            _resultValue.serviceEndpoint = serviceEndpoint;
+            _resultValue.serviceVersion = serviceVersion;
+            _resultValue.state = state;
+            _resultValue.storageSizeInTbs = storageSizeInTbs;
+            _resultValue.storageUsedInTbs = storageUsedInTbs;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.totalOcpuCapacity = totalOcpuCapacity;
+            return _resultValue;
         }
     }
 }

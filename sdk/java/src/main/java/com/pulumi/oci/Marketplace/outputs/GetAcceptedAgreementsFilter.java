@@ -67,11 +67,11 @@ public final class GetAcceptedAgreementsFilter {
             return values(List.of(values));
         }
         public GetAcceptedAgreementsFilter build() {
-            final var o = new GetAcceptedAgreementsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAcceptedAgreementsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

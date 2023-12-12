@@ -49,10 +49,10 @@ public final class GetVcnsVirtualNetworkByoipv6cidrDetail {
             return this;
         }
         public GetVcnsVirtualNetworkByoipv6cidrDetail build() {
-            final var o = new GetVcnsVirtualNetworkByoipv6cidrDetail();
-            o.byoipv6rangeId = byoipv6rangeId;
-            o.ipv6cidrBlock = ipv6cidrBlock;
-            return o;
+            final var _resultValue = new GetVcnsVirtualNetworkByoipv6cidrDetail();
+            _resultValue.byoipv6rangeId = byoipv6rangeId;
+            _resultValue.ipv6cidrBlock = ipv6cidrBlock;
+            return _resultValue;
         }
     }
 }

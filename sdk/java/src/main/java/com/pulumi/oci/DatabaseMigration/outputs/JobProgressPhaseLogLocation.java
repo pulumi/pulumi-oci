@@ -86,11 +86,11 @@ public final class JobProgressPhaseLogLocation {
             return this;
         }
         public JobProgressPhaseLogLocation build() {
-            final var o = new JobProgressPhaseLogLocation();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new JobProgressPhaseLogLocation();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

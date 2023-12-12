@@ -134,14 +134,14 @@ public final class GetMediaWorkflowTaskDeclarationResult {
             return this;
         }
         public GetMediaWorkflowTaskDeclarationResult build() {
-            final var o = new GetMediaWorkflowTaskDeclarationResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.isCurrent = isCurrent;
-            o.items = items;
-            o.name = name;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetMediaWorkflowTaskDeclarationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.isCurrent = isCurrent;
+            _resultValue.items = items;
+            _resultValue.name = name;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

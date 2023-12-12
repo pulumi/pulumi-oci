@@ -88,11 +88,11 @@ public final class GetDeployEnvironmentNetworkChannel {
             return this;
         }
         public GetDeployEnvironmentNetworkChannel build() {
-            final var o = new GetDeployEnvironmentNetworkChannel();
-            o.networkChannelType = networkChannelType;
-            o.nsgIds = nsgIds;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetDeployEnvironmentNetworkChannel();
+            _resultValue.networkChannelType = networkChannelType;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

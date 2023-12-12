@@ -104,12 +104,12 @@ public final class GetManagedDatabaseSqlTuningSetItem {
             return this;
         }
         public GetManagedDatabaseSqlTuningSetItem build() {
-            final var o = new GetManagedDatabaseSqlTuningSetItem();
-            o.description = description;
-            o.name = name;
-            o.owner = owner;
-            o.statementCounts = statementCounts;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningSetItem();
+            _resultValue.description = description;
+            _resultValue.name = name;
+            _resultValue.owner = owner;
+            _resultValue.statementCounts = statementCounts;
+            return _resultValue;
         }
     }
 }

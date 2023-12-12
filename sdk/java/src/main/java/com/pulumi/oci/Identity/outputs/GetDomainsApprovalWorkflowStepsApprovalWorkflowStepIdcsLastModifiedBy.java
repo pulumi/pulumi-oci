@@ -122,13 +122,13 @@ public final class GetDomainsApprovalWorkflowStepsApprovalWorkflowStepIdcsLastMo
             return this;
         }
         public GetDomainsApprovalWorkflowStepsApprovalWorkflowStepIdcsLastModifiedBy build() {
-            final var o = new GetDomainsApprovalWorkflowStepsApprovalWorkflowStepIdcsLastModifiedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsApprovalWorkflowStepsApprovalWorkflowStepIdcsLastModifiedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

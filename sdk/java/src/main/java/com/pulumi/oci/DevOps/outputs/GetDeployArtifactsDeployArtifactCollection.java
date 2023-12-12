@@ -42,9 +42,9 @@ public final class GetDeployArtifactsDeployArtifactCollection {
             return items(List.of(items));
         }
         public GetDeployArtifactsDeployArtifactCollection build() {
-            final var o = new GetDeployArtifactsDeployArtifactCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeployArtifactsDeployArtifactCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

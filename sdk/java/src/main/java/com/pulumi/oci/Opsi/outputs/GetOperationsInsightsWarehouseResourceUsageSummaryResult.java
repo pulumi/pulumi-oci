@@ -115,13 +115,13 @@ public final class GetOperationsInsightsWarehouseResourceUsageSummaryResult {
             return this;
         }
         public GetOperationsInsightsWarehouseResourceUsageSummaryResult build() {
-            final var o = new GetOperationsInsightsWarehouseResourceUsageSummaryResult();
-            o.cpuUsed = cpuUsed;
-            o.id = id;
-            o.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
-            o.state = state;
-            o.storageUsedInGbs = storageUsedInGbs;
-            return o;
+            final var _resultValue = new GetOperationsInsightsWarehouseResourceUsageSummaryResult();
+            _resultValue.cpuUsed = cpuUsed;
+            _resultValue.id = id;
+            _resultValue.operationsInsightsWarehouseId = operationsInsightsWarehouseId;
+            _resultValue.state = state;
+            _resultValue.storageUsedInGbs = storageUsedInGbs;
+            return _resultValue;
         }
     }
 }

@@ -48,9 +48,9 @@ public final class TriggerActionFilterExclude {
             return this;
         }
         public TriggerActionFilterExclude build() {
-            final var o = new TriggerActionFilterExclude();
-            o.fileFilter = fileFilter;
-            return o;
+            final var _resultValue = new TriggerActionFilterExclude();
+            _resultValue.fileFilter = fileFilter;
+            return _resultValue;
         }
     }
 }

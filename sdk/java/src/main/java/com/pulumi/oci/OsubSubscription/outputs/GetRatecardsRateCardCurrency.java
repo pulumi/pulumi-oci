@@ -84,11 +84,11 @@ public final class GetRatecardsRateCardCurrency {
             return this;
         }
         public GetRatecardsRateCardCurrency build() {
-            final var o = new GetRatecardsRateCardCurrency();
-            o.isoCode = isoCode;
-            o.name = name;
-            o.stdPrecision = stdPrecision;
-            return o;
+            final var _resultValue = new GetRatecardsRateCardCurrency();
+            _resultValue.isoCode = isoCode;
+            _resultValue.name = name;
+            _resultValue.stdPrecision = stdPrecision;
+            return _resultValue;
         }
     }
 }

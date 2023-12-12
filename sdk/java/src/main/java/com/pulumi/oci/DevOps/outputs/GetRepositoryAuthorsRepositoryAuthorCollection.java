@@ -50,9 +50,9 @@ public final class GetRepositoryAuthorsRepositoryAuthorCollection {
             return items(List.of(items));
         }
         public GetRepositoryAuthorsRepositoryAuthorCollection build() {
-            final var o = new GetRepositoryAuthorsRepositoryAuthorCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetRepositoryAuthorsRepositoryAuthorCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

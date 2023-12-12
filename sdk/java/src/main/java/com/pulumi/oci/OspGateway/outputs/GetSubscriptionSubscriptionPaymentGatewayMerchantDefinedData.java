@@ -65,10 +65,10 @@ public final class GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData 
             return this;
         }
         public GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData build() {
-            final var o = new GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData();
-            o.cloudAccountName = cloudAccountName;
-            o.promoType = promoType;
-            return o;
+            final var _resultValue = new GetSubscriptionSubscriptionPaymentGatewayMerchantDefinedData();
+            _resultValue.cloudAccountName = cloudAccountName;
+            _resultValue.promoType = promoType;
+            return _resultValue;
         }
     }
 }

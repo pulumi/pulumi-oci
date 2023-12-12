@@ -394,26 +394,26 @@ public final class GetDrProtectionGroupMember {
             return vnicMappings(List.of(vnicMappings));
         }
         public GetDrProtectionGroupMember build() {
-            final var o = new GetDrProtectionGroupMember();
-            o.backendSetMappings = backendSetMappings;
-            o.blockVolumeOperations = blockVolumeOperations;
-            o.destinationAvailabilityDomain = destinationAvailabilityDomain;
-            o.destinationCapacityReservationId = destinationCapacityReservationId;
-            o.destinationCompartmentId = destinationCompartmentId;
-            o.destinationDedicatedVmHostId = destinationDedicatedVmHostId;
-            o.destinationLoadBalancerId = destinationLoadBalancerId;
-            o.destinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
-            o.exportMappings = exportMappings;
-            o.fileSystemOperations = fileSystemOperations;
-            o.isMovable = isMovable;
-            o.isRetainFaultDomain = isRetainFaultDomain;
-            o.isStartStopEnabled = isStartStopEnabled;
-            o.memberId = memberId;
-            o.memberType = memberType;
-            o.passwordVaultSecretId = passwordVaultSecretId;
-            o.vnicMapping = vnicMapping;
-            o.vnicMappings = vnicMappings;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupMember();
+            _resultValue.backendSetMappings = backendSetMappings;
+            _resultValue.blockVolumeOperations = blockVolumeOperations;
+            _resultValue.destinationAvailabilityDomain = destinationAvailabilityDomain;
+            _resultValue.destinationCapacityReservationId = destinationCapacityReservationId;
+            _resultValue.destinationCompartmentId = destinationCompartmentId;
+            _resultValue.destinationDedicatedVmHostId = destinationDedicatedVmHostId;
+            _resultValue.destinationLoadBalancerId = destinationLoadBalancerId;
+            _resultValue.destinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
+            _resultValue.exportMappings = exportMappings;
+            _resultValue.fileSystemOperations = fileSystemOperations;
+            _resultValue.isMovable = isMovable;
+            _resultValue.isRetainFaultDomain = isRetainFaultDomain;
+            _resultValue.isStartStopEnabled = isStartStopEnabled;
+            _resultValue.memberId = memberId;
+            _resultValue.memberType = memberType;
+            _resultValue.passwordVaultSecretId = passwordVaultSecretId;
+            _resultValue.vnicMapping = vnicMapping;
+            _resultValue.vnicMappings = vnicMappings;
+            return _resultValue;
         }
     }
 }

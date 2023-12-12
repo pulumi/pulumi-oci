@@ -155,15 +155,15 @@ public final class GetIndexesResult {
             return this;
         }
         public GetIndexesResult build() {
-            final var o = new GetIndexesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.indexCollections = indexCollections;
-            o.name = name;
-            o.state = state;
-            o.tableNameOrId = tableNameOrId;
-            return o;
+            final var _resultValue = new GetIndexesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.indexCollections = indexCollections;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.tableNameOrId = tableNameOrId;
+            return _resultValue;
         }
     }
 }

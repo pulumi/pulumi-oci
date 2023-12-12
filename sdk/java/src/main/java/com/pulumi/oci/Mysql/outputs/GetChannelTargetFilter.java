@@ -65,10 +65,10 @@ public final class GetChannelTargetFilter {
             return this;
         }
         public GetChannelTargetFilter build() {
-            final var o = new GetChannelTargetFilter();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetChannelTargetFilter();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -239,19 +239,19 @@ public final class GetApmDomainsApmDomain {
             return this;
         }
         public GetApmDomainsApmDomain build() {
-            final var o = new GetApmDomainsApmDomain();
-            o.compartmentId = compartmentId;
-            o.dataUploadEndpoint = dataUploadEndpoint;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isFreeTier = isFreeTier;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetApmDomainsApmDomain();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dataUploadEndpoint = dataUploadEndpoint;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isFreeTier = isFreeTier;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

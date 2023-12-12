@@ -88,11 +88,11 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderTransformati
             return this;
         }
         public DeploymentSpecificationRouteRequestPoliciesHeaderTransformations build() {
-            final var o = new DeploymentSpecificationRouteRequestPoliciesHeaderTransformations();
-            o.filterHeaders = filterHeaders;
-            o.renameHeaders = renameHeaders;
-            o.setHeaders = setHeaders;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteRequestPoliciesHeaderTransformations();
+            _resultValue.filterHeaders = filterHeaders;
+            _resultValue.renameHeaders = renameHeaders;
+            _resultValue.setHeaders = setHeaders;
+            return _resultValue;
         }
     }
 }

@@ -323,23 +323,23 @@ public final class GetExternalDatabaseConnectorsExternalDatabaseConnector {
             return this;
         }
         public GetExternalDatabaseConnectorsExternalDatabaseConnector build() {
-            final var o = new GetExternalDatabaseConnectorsExternalDatabaseConnector();
-            o.compartmentId = compartmentId;
-            o.connectionCredentials = connectionCredentials;
-            o.connectionStatus = connectionStatus;
-            o.connectionStrings = connectionStrings;
-            o.connectorAgentId = connectorAgentId;
-            o.connectorType = connectorType;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.externalDatabaseId = externalDatabaseId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetExternalDatabaseConnectorsExternalDatabaseConnector();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionCredentials = connectionCredentials;
+            _resultValue.connectionStatus = connectionStatus;
+            _resultValue.connectionStrings = connectionStrings;
+            _resultValue.connectorAgentId = connectorAgentId;
+            _resultValue.connectorType = connectorType;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.externalDatabaseId = externalDatabaseId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

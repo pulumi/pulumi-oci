@@ -142,14 +142,14 @@ public final class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDat
             return this;
         }
         public GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage build() {
-            final var o = new GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage();
-            o.displayName = displayName;
-            o.id = id;
-            o.provisionedCpus = provisionedCpus;
-            o.reclaimableCpus = reclaimableCpus;
-            o.reservedCpus = reservedCpus;
-            o.usedCpus = usedCpus;
-            return o;
+            final var _resultValue = new GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.provisionedCpus = provisionedCpus;
+            _resultValue.reclaimableCpus = reclaimableCpus;
+            _resultValue.reservedCpus = reservedCpus;
+            _resultValue.usedCpus = usedCpus;
+            return _resultValue;
         }
     }
 }

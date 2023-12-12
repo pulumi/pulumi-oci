@@ -294,23 +294,23 @@ public final class GetInstancePoolInstancesInstance {
             return this;
         }
         public GetInstancePoolInstancesInstance build() {
-            final var o = new GetInstancePoolInstancesInstance();
-            o.autoTerminateInstanceOnDelete = autoTerminateInstanceOnDelete;
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.decrementSizeOnDelete = decrementSizeOnDelete;
-            o.displayName = displayName;
-            o.faultDomain = faultDomain;
-            o.id = id;
-            o.instanceConfigurationId = instanceConfigurationId;
-            o.instanceId = instanceId;
-            o.instancePoolId = instancePoolId;
-            o.loadBalancerBackends = loadBalancerBackends;
-            o.region = region;
-            o.shape = shape;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetInstancePoolInstancesInstance();
+            _resultValue.autoTerminateInstanceOnDelete = autoTerminateInstanceOnDelete;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.decrementSizeOnDelete = decrementSizeOnDelete;
+            _resultValue.displayName = displayName;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.id = id;
+            _resultValue.instanceConfigurationId = instanceConfigurationId;
+            _resultValue.instanceId = instanceId;
+            _resultValue.instancePoolId = instancePoolId;
+            _resultValue.loadBalancerBackends = loadBalancerBackends;
+            _resultValue.region = region;
+            _resultValue.shape = shape;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

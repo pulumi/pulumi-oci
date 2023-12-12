@@ -146,14 +146,14 @@ public final class GetDomainsUserUrnietfparamsscimschemasextensionenterprise20us
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasextensionenterprise20user build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasextensionenterprise20user();
-            o.costCenter = costCenter;
-            o.department = department;
-            o.division = division;
-            o.employeeNumber = employeeNumber;
-            o.managers = managers;
-            o.organization = organization;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasextensionenterprise20user();
+            _resultValue.costCenter = costCenter;
+            _resultValue.department = department;
+            _resultValue.division = division;
+            _resultValue.employeeNumber = employeeNumber;
+            _resultValue.managers = managers;
+            _resultValue.organization = organization;
+            return _resultValue;
         }
     }
 }

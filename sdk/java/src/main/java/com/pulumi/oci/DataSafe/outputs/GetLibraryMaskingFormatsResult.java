@@ -219,20 +219,20 @@ public final class GetLibraryMaskingFormatsResult {
             return this;
         }
         public GetLibraryMaskingFormatsResult build() {
-            final var o = new GetLibraryMaskingFormatsResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.libraryMaskingFormatCollections = libraryMaskingFormatCollections;
-            o.libraryMaskingFormatId = libraryMaskingFormatId;
-            o.libraryMaskingFormatSource = libraryMaskingFormatSource;
-            o.state = state;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            return o;
+            final var _resultValue = new GetLibraryMaskingFormatsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.libraryMaskingFormatCollections = libraryMaskingFormatCollections;
+            _resultValue.libraryMaskingFormatId = libraryMaskingFormatId;
+            _resultValue.libraryMaskingFormatSource = libraryMaskingFormatSource;
+            _resultValue.state = state;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            return _resultValue;
         }
     }
 }

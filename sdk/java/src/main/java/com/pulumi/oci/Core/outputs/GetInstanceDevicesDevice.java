@@ -66,10 +66,10 @@ public final class GetInstanceDevicesDevice {
             return this;
         }
         public GetInstanceDevicesDevice build() {
-            final var o = new GetInstanceDevicesDevice();
-            o.isAvailable = isAvailable;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetInstanceDevicesDevice();
+            _resultValue.isAvailable = isAvailable;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

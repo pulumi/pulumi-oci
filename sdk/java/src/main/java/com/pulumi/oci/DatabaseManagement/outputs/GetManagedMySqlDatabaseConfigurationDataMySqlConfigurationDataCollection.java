@@ -50,9 +50,9 @@ public final class GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDat
             return items(List.of(items));
         }
         public GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection build() {
-            final var o = new GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedMySqlDatabaseConfigurationDataMySqlConfigurationDataCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -247,19 +247,19 @@ public final class GetPbfListingsPbfListingsCollectionItem {
             return triggers(List.of(triggers));
         }
         public GetPbfListingsPbfListingsCollectionItem build() {
-            final var o = new GetPbfListingsPbfListingsCollectionItem();
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.name = name;
-            o.publisherDetails = publisherDetails;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.triggers = triggers;
-            return o;
+            final var _resultValue = new GetPbfListingsPbfListingsCollectionItem();
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.publisherDetails = publisherDetails;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.triggers = triggers;
+            return _resultValue;
         }
     }
 }

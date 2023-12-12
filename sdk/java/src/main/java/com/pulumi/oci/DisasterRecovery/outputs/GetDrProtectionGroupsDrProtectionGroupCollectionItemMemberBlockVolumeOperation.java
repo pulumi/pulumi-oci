@@ -93,11 +93,11 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
             return mountDetails(List.of(mountDetails));
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation build() {
-            final var o = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation();
-            o.attachmentDetails = attachmentDetails;
-            o.blockVolumeId = blockVolumeId;
-            o.mountDetails = mountDetails;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation();
+            _resultValue.attachmentDetails = attachmentDetails;
+            _resultValue.blockVolumeId = blockVolumeId;
+            _resultValue.mountDetails = mountDetails;
+            return _resultValue;
         }
     }
 }

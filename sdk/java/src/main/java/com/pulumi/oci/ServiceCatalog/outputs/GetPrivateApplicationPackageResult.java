@@ -174,17 +174,17 @@ public final class GetPrivateApplicationPackageResult {
             return this;
         }
         public GetPrivateApplicationPackageResult build() {
-            final var o = new GetPrivateApplicationPackageResult();
-            o.contentUrl = contentUrl;
-            o.displayName = displayName;
-            o.id = id;
-            o.mimeType = mimeType;
-            o.packageType = packageType;
-            o.privateApplicationId = privateApplicationId;
-            o.privateApplicationPackageId = privateApplicationPackageId;
-            o.timeCreated = timeCreated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetPrivateApplicationPackageResult();
+            _resultValue.contentUrl = contentUrl;
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.mimeType = mimeType;
+            _resultValue.packageType = packageType;
+            _resultValue.privateApplicationId = privateApplicationId;
+            _resultValue.privateApplicationPackageId = privateApplicationPackageId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

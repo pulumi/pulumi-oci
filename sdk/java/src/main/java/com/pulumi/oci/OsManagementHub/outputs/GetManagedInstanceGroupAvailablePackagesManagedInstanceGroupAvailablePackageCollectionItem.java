@@ -166,15 +166,15 @@ public final class GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupA
             return this;
         }
         public GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem build() {
-            final var o = new GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem();
-            o.architecture = architecture;
-            o.displayName = displayName;
-            o.isLatest = isLatest;
-            o.name = name;
-            o.softwareSources = softwareSources;
-            o.type = type;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetManagedInstanceGroupAvailablePackagesManagedInstanceGroupAvailablePackageCollectionItem();
+            _resultValue.architecture = architecture;
+            _resultValue.displayName = displayName;
+            _resultValue.isLatest = isLatest;
+            _resultValue.name = name;
+            _resultValue.softwareSources = softwareSources;
+            _resultValue.type = type;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

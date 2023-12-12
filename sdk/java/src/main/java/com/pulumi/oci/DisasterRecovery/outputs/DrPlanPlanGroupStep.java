@@ -213,17 +213,17 @@ public final class DrPlanPlanGroupStep {
             return userDefinedSteps(List.of(userDefinedSteps));
         }
         public DrPlanPlanGroupStep build() {
-            final var o = new DrPlanPlanGroupStep();
-            o.displayName = displayName;
-            o.errorMode = errorMode;
-            o.groupId = groupId;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.memberId = memberId;
-            o.timeout = timeout;
-            o.type = type;
-            o.userDefinedSteps = userDefinedSteps;
-            return o;
+            final var _resultValue = new DrPlanPlanGroupStep();
+            _resultValue.displayName = displayName;
+            _resultValue.errorMode = errorMode;
+            _resultValue.groupId = groupId;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.memberId = memberId;
+            _resultValue.timeout = timeout;
+            _resultValue.type = type;
+            _resultValue.userDefinedSteps = userDefinedSteps;
+            return _resultValue;
         }
     }
 }

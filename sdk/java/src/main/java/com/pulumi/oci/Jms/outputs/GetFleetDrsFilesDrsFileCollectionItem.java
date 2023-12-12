@@ -180,16 +180,16 @@ public final class GetFleetDrsFilesDrsFileCollectionItem {
             return this;
         }
         public GetFleetDrsFilesDrsFileCollectionItem build() {
-            final var o = new GetFleetDrsFilesDrsFileCollectionItem();
-            o.bucket = bucket;
-            o.checksumType = checksumType;
-            o.checksumValue = checksumValue;
-            o.drsFileKey = drsFileKey;
-            o.drsFileName = drsFileName;
-            o.fleetId = fleetId;
-            o.isDefault = isDefault;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetFleetDrsFilesDrsFileCollectionItem();
+            _resultValue.bucket = bucket;
+            _resultValue.checksumType = checksumType;
+            _resultValue.checksumValue = checksumValue;
+            _resultValue.drsFileKey = drsFileKey;
+            _resultValue.drsFileName = drsFileName;
+            _resultValue.fleetId = fleetId;
+            _resultValue.isDefault = isDefault;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

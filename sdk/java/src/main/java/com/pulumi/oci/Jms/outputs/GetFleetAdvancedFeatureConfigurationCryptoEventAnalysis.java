@@ -70,10 +70,10 @@ public final class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis {
             return summarizedEventsLogs(List.of(summarizedEventsLogs));
         }
         public GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis build() {
-            final var o = new GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis();
-            o.isEnabled = isEnabled;
-            o.summarizedEventsLogs = summarizedEventsLogs;
-            return o;
+            final var _resultValue = new GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis();
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.summarizedEventsLogs = summarizedEventsLogs;
+            return _resultValue;
         }
     }
 }

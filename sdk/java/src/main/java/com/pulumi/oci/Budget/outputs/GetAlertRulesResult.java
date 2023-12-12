@@ -144,14 +144,14 @@ public final class GetAlertRulesResult {
             return this;
         }
         public GetAlertRulesResult build() {
-            final var o = new GetAlertRulesResult();
-            o.alertRules = alertRules;
-            o.budgetId = budgetId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAlertRulesResult();
+            _resultValue.alertRules = alertRules;
+            _resultValue.budgetId = budgetId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

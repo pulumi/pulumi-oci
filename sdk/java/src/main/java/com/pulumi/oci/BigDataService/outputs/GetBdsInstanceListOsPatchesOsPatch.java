@@ -84,11 +84,11 @@ public final class GetBdsInstanceListOsPatchesOsPatch {
             return this;
         }
         public GetBdsInstanceListOsPatchesOsPatch build() {
-            final var o = new GetBdsInstanceListOsPatchesOsPatch();
-            o.bdsInstanceId = bdsInstanceId;
-            o.osPatchVersion = osPatchVersion;
-            o.releaseDate = releaseDate;
-            return o;
+            final var _resultValue = new GetBdsInstanceListOsPatchesOsPatch();
+            _resultValue.bdsInstanceId = bdsInstanceId;
+            _resultValue.osPatchVersion = osPatchVersion;
+            _resultValue.releaseDate = releaseDate;
+            return _resultValue;
         }
     }
 }

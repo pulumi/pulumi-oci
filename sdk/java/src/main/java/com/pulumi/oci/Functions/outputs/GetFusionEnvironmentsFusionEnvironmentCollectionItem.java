@@ -603,37 +603,37 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
             return this;
         }
         public GetFusionEnvironmentsFusionEnvironmentCollectionItem build() {
-            final var o = new GetFusionEnvironmentsFusionEnvironmentCollectionItem();
-            o.additionalLanguagePacks = additionalLanguagePacks;
-            o.appliedPatchBundles = appliedPatchBundles;
-            o.compartmentId = compartmentId;
-            o.createFusionEnvironmentAdminUserDetails = createFusionEnvironmentAdminUserDetails;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.dnsPrefix = dnsPrefix;
-            o.domainId = domainId;
-            o.freeformTags = freeformTags;
-            o.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
-            o.fusionEnvironmentType = fusionEnvironmentType;
-            o.id = id;
-            o.idcsDomainUrl = idcsDomainUrl;
-            o.isBreakGlassEnabled = isBreakGlassEnabled;
-            o.kmsKeyId = kmsKeyId;
-            o.kmsKeyInfos = kmsKeyInfos;
-            o.lifecycleDetails = lifecycleDetails;
-            o.lockboxId = lockboxId;
-            o.maintenancePolicies = maintenancePolicies;
-            o.publicUrl = publicUrl;
-            o.refreshes = refreshes;
-            o.rules = rules;
-            o.state = state;
-            o.subscriptionIds = subscriptionIds;
-            o.systemName = systemName;
-            o.timeCreated = timeCreated;
-            o.timeUpcomingMaintenance = timeUpcomingMaintenance;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentsFusionEnvironmentCollectionItem();
+            _resultValue.additionalLanguagePacks = additionalLanguagePacks;
+            _resultValue.appliedPatchBundles = appliedPatchBundles;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createFusionEnvironmentAdminUserDetails = createFusionEnvironmentAdminUserDetails;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.dnsPrefix = dnsPrefix;
+            _resultValue.domainId = domainId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.fusionEnvironmentFamilyId = fusionEnvironmentFamilyId;
+            _resultValue.fusionEnvironmentType = fusionEnvironmentType;
+            _resultValue.id = id;
+            _resultValue.idcsDomainUrl = idcsDomainUrl;
+            _resultValue.isBreakGlassEnabled = isBreakGlassEnabled;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.kmsKeyInfos = kmsKeyInfos;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.lockboxId = lockboxId;
+            _resultValue.maintenancePolicies = maintenancePolicies;
+            _resultValue.publicUrl = publicUrl;
+            _resultValue.refreshes = refreshes;
+            _resultValue.rules = rules;
+            _resultValue.state = state;
+            _resultValue.subscriptionIds = subscriptionIds;
+            _resultValue.systemName = systemName;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpcomingMaintenance = timeUpcomingMaintenance;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

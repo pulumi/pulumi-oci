@@ -284,21 +284,21 @@ public final class GetClusterNetworksClusterNetwork {
             return this;
         }
         public GetClusterNetworksClusterNetwork build() {
-            final var o = new GetClusterNetworksClusterNetwork();
-            o.clusterConfigurations = clusterConfigurations;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.hpcIslandId = hpcIslandId;
-            o.id = id;
-            o.instancePools = instancePools;
-            o.networkBlockIds = networkBlockIds;
-            o.placementConfigurations = placementConfigurations;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetClusterNetworksClusterNetwork();
+            _resultValue.clusterConfigurations = clusterConfigurations;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hpcIslandId = hpcIslandId;
+            _resultValue.id = id;
+            _resultValue.instancePools = instancePools;
+            _resultValue.networkBlockIds = networkBlockIds;
+            _resultValue.placementConfigurations = placementConfigurations;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

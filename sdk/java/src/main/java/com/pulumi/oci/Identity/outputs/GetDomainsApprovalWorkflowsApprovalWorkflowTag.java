@@ -65,10 +65,10 @@ public final class GetDomainsApprovalWorkflowsApprovalWorkflowTag {
             return this;
         }
         public GetDomainsApprovalWorkflowsApprovalWorkflowTag build() {
-            final var o = new GetDomainsApprovalWorkflowsApprovalWorkflowTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsApprovalWorkflowsApprovalWorkflowTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

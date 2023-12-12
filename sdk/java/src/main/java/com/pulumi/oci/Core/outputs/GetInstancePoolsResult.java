@@ -144,14 +144,14 @@ public final class GetInstancePoolsResult {
             return this;
         }
         public GetInstancePoolsResult build() {
-            final var o = new GetInstancePoolsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.instancePools = instancePools;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetInstancePoolsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instancePools = instancePools;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

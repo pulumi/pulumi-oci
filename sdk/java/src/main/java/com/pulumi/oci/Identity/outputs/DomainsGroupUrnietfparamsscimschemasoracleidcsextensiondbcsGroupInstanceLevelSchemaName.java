@@ -113,10 +113,10 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGr
             return this;
         }
         public DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName build() {
-            final var o = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName();
-            o.dbInstanceId = dbInstanceId;
-            o.schemaName = schemaName;
-            return o;
+            final var _resultValue = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName();
+            _resultValue.dbInstanceId = dbInstanceId;
+            _resultValue.schemaName = schemaName;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetDomainsAccountMgmtInfoUserWalletArtifact {
             return this;
         }
         public GetDomainsAccountMgmtInfoUserWalletArtifact build() {
-            final var o = new GetDomainsAccountMgmtInfoUserWalletArtifact();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAccountMgmtInfoUserWalletArtifact();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetAssetSourcesAssetSourceCollection {
             return items(List.of(items));
         }
         public GetAssetSourcesAssetSourceCollection build() {
-            final var o = new GetAssetSourcesAssetSourceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAssetSourcesAssetSourceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

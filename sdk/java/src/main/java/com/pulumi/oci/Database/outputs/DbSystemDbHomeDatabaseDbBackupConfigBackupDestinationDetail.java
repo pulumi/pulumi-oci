@@ -86,11 +86,11 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
             return this;
         }
         public DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail build() {
-            final var o = new DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail();
-            o.dbrsPolicyId = dbrsPolicyId;
-            o.id = id;
-            o.type = type;
-            return o;
+            final var _resultValue = new DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail();
+            _resultValue.dbrsPolicyId = dbrsPolicyId;
+            _resultValue.id = id;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

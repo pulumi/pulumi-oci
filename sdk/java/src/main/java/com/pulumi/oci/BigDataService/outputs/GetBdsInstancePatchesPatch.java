@@ -65,10 +65,10 @@ public final class GetBdsInstancePatchesPatch {
             return this;
         }
         public GetBdsInstancePatchesPatch build() {
-            final var o = new GetBdsInstancePatchesPatch();
-            o.timeReleased = timeReleased;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetBdsInstancePatchesPatch();
+            _resultValue.timeReleased = timeReleased;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

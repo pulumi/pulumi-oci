@@ -180,16 +180,16 @@ public final class GetMountTargetsMountTargetLdapIdmap {
             return this;
         }
         public GetMountTargetsMountTargetLdapIdmap build() {
-            final var o = new GetMountTargetsMountTargetLdapIdmap();
-            o.cacheLifetimeSeconds = cacheLifetimeSeconds;
-            o.cacheRefreshIntervalSeconds = cacheRefreshIntervalSeconds;
-            o.groupSearchBase = groupSearchBase;
-            o.negativeCacheLifetimeSeconds = negativeCacheLifetimeSeconds;
-            o.outboundConnector1id = outboundConnector1id;
-            o.outboundConnector2id = outboundConnector2id;
-            o.schemaType = schemaType;
-            o.userSearchBase = userSearchBase;
-            return o;
+            final var _resultValue = new GetMountTargetsMountTargetLdapIdmap();
+            _resultValue.cacheLifetimeSeconds = cacheLifetimeSeconds;
+            _resultValue.cacheRefreshIntervalSeconds = cacheRefreshIntervalSeconds;
+            _resultValue.groupSearchBase = groupSearchBase;
+            _resultValue.negativeCacheLifetimeSeconds = negativeCacheLifetimeSeconds;
+            _resultValue.outboundConnector1id = outboundConnector1id;
+            _resultValue.outboundConnector2id = outboundConnector2id;
+            _resultValue.schemaType = schemaType;
+            _resultValue.userSearchBase = userSearchBase;
+            return _resultValue;
         }
     }
 }

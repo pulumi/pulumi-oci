@@ -65,10 +65,10 @@ public final class GetLogAnalyticsEntityTopologyItemLinkItem {
             return this;
         }
         public GetLogAnalyticsEntityTopologyItemLinkItem build() {
-            final var o = new GetLogAnalyticsEntityTopologyItemLinkItem();
-            o.destinationEntityId = destinationEntityId;
-            o.sourceEntityId = sourceEntityId;
-            return o;
+            final var _resultValue = new GetLogAnalyticsEntityTopologyItemLinkItem();
+            _resultValue.destinationEntityId = destinationEntityId;
+            _resultValue.sourceEntityId = sourceEntityId;
+            return _resultValue;
         }
     }
 }

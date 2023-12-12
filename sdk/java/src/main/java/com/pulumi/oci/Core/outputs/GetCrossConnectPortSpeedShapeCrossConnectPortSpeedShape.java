@@ -66,10 +66,10 @@ public final class GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape {
             return this;
         }
         public GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape build() {
-            final var o = new GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape();
-            o.name = name;
-            o.portSpeedInGbps = portSpeedInGbps;
-            return o;
+            final var _resultValue = new GetCrossConnectPortSpeedShapeCrossConnectPortSpeedShape();
+            _resultValue.name = name;
+            _resultValue.portSpeedInGbps = portSpeedInGbps;
+            return _resultValue;
         }
     }
 }

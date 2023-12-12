@@ -65,10 +65,10 @@ public final class GetClustersClusterOptionAddOn {
             return this;
         }
         public GetClustersClusterOptionAddOn build() {
-            final var o = new GetClustersClusterOptionAddOn();
-            o.isKubernetesDashboardEnabled = isKubernetesDashboardEnabled;
-            o.isTillerEnabled = isTillerEnabled;
-            return o;
+            final var _resultValue = new GetClustersClusterOptionAddOn();
+            _resultValue.isKubernetesDashboardEnabled = isKubernetesDashboardEnabled;
+            _resultValue.isTillerEnabled = isTillerEnabled;
+            return _resultValue;
         }
     }
 }

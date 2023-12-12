@@ -75,11 +75,11 @@ public final class GetSupportedCommitmentsFilter {
             return values(List.of(values));
         }
         public GetSupportedCommitmentsFilter build() {
-            final var o = new GetSupportedCommitmentsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSupportedCommitmentsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

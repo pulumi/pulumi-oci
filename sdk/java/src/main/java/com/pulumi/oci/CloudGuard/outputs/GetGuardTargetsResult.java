@@ -178,17 +178,17 @@ public final class GetGuardTargetsResult {
             return targetCollections(List.of(targetCollections));
         }
         public GetGuardTargetsResult build() {
-            final var o = new GetGuardTargetsResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isNonSecurityZoneTargetsOnlyQuery = isNonSecurityZoneTargetsOnlyQuery;
-            o.state = state;
-            o.targetCollections = targetCollections;
-            return o;
+            final var _resultValue = new GetGuardTargetsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isNonSecurityZoneTargetsOnlyQuery = isNonSecurityZoneTargetsOnlyQuery;
+            _resultValue.state = state;
+            _resultValue.targetCollections = targetCollections;
+            return _resultValue;
         }
     }
 }

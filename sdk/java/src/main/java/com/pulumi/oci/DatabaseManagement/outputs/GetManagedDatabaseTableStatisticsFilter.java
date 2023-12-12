@@ -67,11 +67,11 @@ public final class GetManagedDatabaseTableStatisticsFilter {
             return values(List.of(values));
         }
         public GetManagedDatabaseTableStatisticsFilter build() {
-            final var o = new GetManagedDatabaseTableStatisticsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedDatabaseTableStatisticsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

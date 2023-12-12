@@ -161,16 +161,16 @@ public final class GetManagementAgentPluginsResult {
             return this;
         }
         public GetManagementAgentPluginsResult build() {
-            final var o = new GetManagementAgentPluginsResult();
-            o.agentId = agentId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.managementAgentPlugins = managementAgentPlugins;
-            o.platformTypes = platformTypes;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetManagementAgentPluginsResult();
+            _resultValue.agentId = agentId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managementAgentPlugins = managementAgentPlugins;
+            _resultValue.platformTypes = platformTypes;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -53,10 +53,10 @@ public final class GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOptio
             return this;
         }
         public GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption build() {
-            final var o = new GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption();
-            o.allowedValues = allowedValues;
-            o.isDefaultEnabled = isDefaultEnabled;
-            return o;
+            final var _resultValue = new GetShapeShapePlatformConfigOptionSymmetricMultiThreadingOption();
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.isDefaultEnabled = isDefaultEnabled;
+            return _resultValue;
         }
     }
 }

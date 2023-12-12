@@ -84,11 +84,11 @@ public final class GetManagedDatabaseUserProxiedForUserItem {
             return this;
         }
         public GetManagedDatabaseUserProxiedForUserItem build() {
-            final var o = new GetManagedDatabaseUserProxiedForUserItem();
-            o.authentication = authentication;
-            o.flags = flags;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserProxiedForUserItem();
+            _resultValue.authentication = authentication;
+            _resultValue.flags = flags;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

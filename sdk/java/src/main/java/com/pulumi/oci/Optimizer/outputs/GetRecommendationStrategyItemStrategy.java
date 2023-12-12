@@ -90,11 +90,11 @@ public final class GetRecommendationStrategyItemStrategy {
             return this;
         }
         public GetRecommendationStrategyItemStrategy build() {
-            final var o = new GetRecommendationStrategyItemStrategy();
-            o.isDefault = isDefault;
-            o.parametersDefinitions = parametersDefinitions;
-            o.strategyName = strategyName;
-            return o;
+            final var _resultValue = new GetRecommendationStrategyItemStrategy();
+            _resultValue.isDefault = isDefault;
+            _resultValue.parametersDefinitions = parametersDefinitions;
+            _resultValue.strategyName = strategyName;
+            return _resultValue;
         }
     }
 }

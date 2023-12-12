@@ -167,16 +167,16 @@ public final class GetPbfListingVersionsResult {
             return this;
         }
         public GetPbfListingVersionsResult build() {
-            final var o = new GetPbfListingVersionsResult();
-            o.filters = filters;
-            o.id = id;
-            o.isCurrentVersion = isCurrentVersion;
-            o.name = name;
-            o.pbfListingId = pbfListingId;
-            o.pbfListingVersionId = pbfListingVersionId;
-            o.pbfListingVersionsCollections = pbfListingVersionsCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetPbfListingVersionsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isCurrentVersion = isCurrentVersion;
+            _resultValue.name = name;
+            _resultValue.pbfListingId = pbfListingId;
+            _resultValue.pbfListingVersionId = pbfListingVersionId;
+            _resultValue.pbfListingVersionsCollections = pbfListingVersionsCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

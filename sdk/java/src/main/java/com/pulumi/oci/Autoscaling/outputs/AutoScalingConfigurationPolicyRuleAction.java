@@ -70,10 +70,10 @@ public final class AutoScalingConfigurationPolicyRuleAction {
             return this;
         }
         public AutoScalingConfigurationPolicyRuleAction build() {
-            final var o = new AutoScalingConfigurationPolicyRuleAction();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new AutoScalingConfigurationPolicyRuleAction();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

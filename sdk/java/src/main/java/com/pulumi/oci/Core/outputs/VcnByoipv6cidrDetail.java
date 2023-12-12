@@ -65,10 +65,10 @@ public final class VcnByoipv6cidrDetail {
             return this;
         }
         public VcnByoipv6cidrDetail build() {
-            final var o = new VcnByoipv6cidrDetail();
-            o.byoipv6rangeId = byoipv6rangeId;
-            o.ipv6cidrBlock = ipv6cidrBlock;
-            return o;
+            final var _resultValue = new VcnByoipv6cidrDetail();
+            _resultValue.byoipv6rangeId = byoipv6rangeId;
+            _resultValue.ipv6cidrBlock = ipv6cidrBlock;
+            return _resultValue;
         }
     }
 }

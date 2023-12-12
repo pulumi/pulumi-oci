@@ -86,11 +86,11 @@ public final class GetManagedDatabasesDatabaseParameterItemAllowedValue {
             return this;
         }
         public GetManagedDatabasesDatabaseParameterItemAllowedValue build() {
-            final var o = new GetManagedDatabasesDatabaseParameterItemAllowedValue();
-            o.isDefault = isDefault;
-            o.ordinal = ordinal;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetManagedDatabasesDatabaseParameterItemAllowedValue();
+            _resultValue.isDefault = isDefault;
+            _resultValue.ordinal = ordinal;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

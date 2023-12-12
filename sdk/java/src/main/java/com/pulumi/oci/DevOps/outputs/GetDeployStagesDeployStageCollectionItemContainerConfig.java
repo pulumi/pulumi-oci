@@ -150,14 +150,14 @@ public final class GetDeployStagesDeployStageCollectionItemContainerConfig {
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemContainerConfig build() {
-            final var o = new GetDeployStagesDeployStageCollectionItemContainerConfig();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.containerConfigType = containerConfigType;
-            o.networkChannels = networkChannels;
-            o.shapeConfigs = shapeConfigs;
-            o.shapeName = shapeName;
-            return o;
+            final var _resultValue = new GetDeployStagesDeployStageCollectionItemContainerConfig();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.containerConfigType = containerConfigType;
+            _resultValue.networkChannels = networkChannels;
+            _resultValue.shapeConfigs = shapeConfigs;
+            _resultValue.shapeName = shapeName;
+            return _resultValue;
         }
     }
 }

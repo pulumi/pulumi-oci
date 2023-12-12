@@ -65,10 +65,10 @@ public final class GetDomainsBrandingSettingsBrandingSettingTag {
             return this;
         }
         public GetDomainsBrandingSettingsBrandingSettingTag build() {
-            final var o = new GetDomainsBrandingSettingsBrandingSettingTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsBrandingSettingsBrandingSettingTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

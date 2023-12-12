@@ -75,11 +75,11 @@ public final class GetProtectionCapabilityGroupTagsFilter {
             return values(List.of(values));
         }
         public GetProtectionCapabilityGroupTagsFilter build() {
-            final var o = new GetProtectionCapabilityGroupTagsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetProtectionCapabilityGroupTagsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

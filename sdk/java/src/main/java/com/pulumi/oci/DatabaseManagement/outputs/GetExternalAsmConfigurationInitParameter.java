@@ -149,14 +149,14 @@ public final class GetExternalAsmConfigurationInitParameter {
             return this;
         }
         public GetExternalAsmConfigurationInitParameter build() {
-            final var o = new GetExternalAsmConfigurationInitParameter();
-            o.asmInstanceDisplayName = asmInstanceDisplayName;
-            o.asmInstanceId = asmInstanceId;
-            o.autoMountDiskGroups = autoMountDiskGroups;
-            o.diskDiscoveryPath = diskDiscoveryPath;
-            o.preferredReadFailureGroups = preferredReadFailureGroups;
-            o.rebalancePower = rebalancePower;
-            return o;
+            final var _resultValue = new GetExternalAsmConfigurationInitParameter();
+            _resultValue.asmInstanceDisplayName = asmInstanceDisplayName;
+            _resultValue.asmInstanceId = asmInstanceId;
+            _resultValue.autoMountDiskGroups = autoMountDiskGroups;
+            _resultValue.diskDiscoveryPath = diskDiscoveryPath;
+            _resultValue.preferredReadFailureGroups = preferredReadFailureGroups;
+            _resultValue.rebalancePower = rebalancePower;
+            return _resultValue;
         }
     }
 }

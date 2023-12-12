@@ -67,10 +67,10 @@ public final class CertificateCertificateConfigValidity {
             return this;
         }
         public CertificateCertificateConfigValidity build() {
-            final var o = new CertificateCertificateConfigValidity();
-            o.timeOfValidityNotAfter = timeOfValidityNotAfter;
-            o.timeOfValidityNotBefore = timeOfValidityNotBefore;
-            return o;
+            final var _resultValue = new CertificateCertificateConfigValidity();
+            _resultValue.timeOfValidityNotAfter = timeOfValidityNotAfter;
+            _resultValue.timeOfValidityNotBefore = timeOfValidityNotBefore;
+            return _resultValue;
         }
     }
 }

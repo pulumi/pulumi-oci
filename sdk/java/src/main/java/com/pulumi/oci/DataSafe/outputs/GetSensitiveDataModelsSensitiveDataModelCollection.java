@@ -42,9 +42,9 @@ public final class GetSensitiveDataModelsSensitiveDataModelCollection {
             return items(List.of(items));
         }
         public GetSensitiveDataModelsSensitiveDataModelCollection build() {
-            final var o = new GetSensitiveDataModelsSensitiveDataModelCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSensitiveDataModelsSensitiveDataModelCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetMonitorConfigurationRequestHeader {
             return this;
         }
         public GetMonitorConfigurationRequestHeader build() {
-            final var o = new GetMonitorConfigurationRequestHeader();
-            o.headerName = headerName;
-            o.headerValue = headerValue;
-            return o;
+            final var _resultValue = new GetMonitorConfigurationRequestHeader();
+            _resultValue.headerName = headerName;
+            _resultValue.headerValue = headerValue;
+            return _resultValue;
         }
     }
 }

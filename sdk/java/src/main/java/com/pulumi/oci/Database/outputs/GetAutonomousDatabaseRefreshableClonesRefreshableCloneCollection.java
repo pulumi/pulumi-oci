@@ -42,9 +42,9 @@ public final class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollect
             return items(List.of(items));
         }
         public GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection build() {
-            final var o = new GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

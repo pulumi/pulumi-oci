@@ -204,18 +204,18 @@ public final class GetDeploymentsResult {
             return this;
         }
         public GetDeploymentsResult build() {
-            final var o = new GetDeploymentsResult();
-            o.compartmentId = compartmentId;
-            o.deployPipelineId = deployPipelineId;
-            o.deploymentCollections = deploymentCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.projectId = projectId;
-            o.state = state;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            return o;
+            final var _resultValue = new GetDeploymentsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.deployPipelineId = deployPipelineId;
+            _resultValue.deploymentCollections = deploymentCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            return _resultValue;
         }
     }
 }

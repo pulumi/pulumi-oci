@@ -144,14 +144,14 @@ public final class GetExternalClusterInstancesResult {
             return this;
         }
         public GetExternalClusterInstancesResult build() {
-            final var o = new GetExternalClusterInstancesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.externalClusterId = externalClusterId;
-            o.externalClusterInstanceCollections = externalClusterInstanceCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalClusterInstancesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalClusterId = externalClusterId;
+            _resultValue.externalClusterInstanceCollections = externalClusterInstanceCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

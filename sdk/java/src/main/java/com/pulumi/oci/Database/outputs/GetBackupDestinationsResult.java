@@ -125,13 +125,13 @@ public final class GetBackupDestinationsResult {
             return this;
         }
         public GetBackupDestinationsResult build() {
-            final var o = new GetBackupDestinationsResult();
-            o.backupDestinations = backupDestinations;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetBackupDestinationsResult();
+            _resultValue.backupDestinations = backupDestinations;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

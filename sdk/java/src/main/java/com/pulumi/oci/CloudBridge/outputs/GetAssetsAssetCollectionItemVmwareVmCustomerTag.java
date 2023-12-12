@@ -65,10 +65,10 @@ public final class GetAssetsAssetCollectionItemVmwareVmCustomerTag {
             return this;
         }
         public GetAssetsAssetCollectionItemVmwareVmCustomerTag build() {
-            final var o = new GetAssetsAssetCollectionItemVmwareVmCustomerTag();
-            o.description = description;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAssetsAssetCollectionItemVmwareVmCustomerTag();
+            _resultValue.description = description;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

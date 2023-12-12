@@ -50,9 +50,9 @@ public final class GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection 
             return items(List.of(items));
         }
         public GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection build() {
-            final var o = new GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetJobExecutionsStatusesJobExecutionsStatusSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

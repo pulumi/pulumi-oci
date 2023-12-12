@@ -65,10 +65,10 @@ public final class GetWaasPolicyOriginCustomHeader {
             return this;
         }
         public GetWaasPolicyOriginCustomHeader build() {
-            final var o = new GetWaasPolicyOriginCustomHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetWaasPolicyOriginCustomHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

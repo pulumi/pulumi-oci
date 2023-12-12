@@ -65,10 +65,10 @@ public final class GetLifecycleStagesLifecycleStageCollectionItemManagedInstance
             return this;
         }
         public GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId build() {
-            final var o = new GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId();
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetLifecycleStagesLifecycleStageCollectionItemManagedInstanceId();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

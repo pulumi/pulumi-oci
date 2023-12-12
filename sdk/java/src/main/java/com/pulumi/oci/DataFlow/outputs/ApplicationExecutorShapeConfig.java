@@ -67,10 +67,10 @@ public final class ApplicationExecutorShapeConfig {
             return this;
         }
         public ApplicationExecutorShapeConfig build() {
-            final var o = new ApplicationExecutorShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.ocpus = ocpus;
-            return o;
+            final var _resultValue = new ApplicationExecutorShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.ocpus = ocpus;
+            return _resultValue;
         }
     }
 }

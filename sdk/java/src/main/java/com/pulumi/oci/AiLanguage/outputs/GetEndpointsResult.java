@@ -182,16 +182,16 @@ public final class GetEndpointsResult {
             return this;
         }
         public GetEndpointsResult build() {
-            final var o = new GetEndpointsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.endpointCollections = endpointCollections;
-            o.filters = filters;
-            o.id = id;
-            o.modelId = modelId;
-            o.projectId = projectId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetEndpointsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.endpointCollections = endpointCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.modelId = modelId;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

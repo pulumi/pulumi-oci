@@ -154,17 +154,17 @@ public final class GetManagedDatabaseOptimizerStatisticsCollectionOperationsResu
             return this;
         }
         public GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult build() {
-            final var o = new GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult();
-            o.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
-            o.filterBy = filterBy;
-            o.filters = filters;
-            o.id = id;
-            o.limit = limit;
-            o.managedDatabaseId = managedDatabaseId;
-            o.optimizerStatisticsCollectionOperationsCollections = optimizerStatisticsCollectionOperationsCollections;
-            o.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
-            o.taskType = taskType;
-            return o;
+            final var _resultValue = new GetManagedDatabaseOptimizerStatisticsCollectionOperationsResult();
+            _resultValue.endTimeLessThanOrEqualTo = endTimeLessThanOrEqualTo;
+            _resultValue.filterBy = filterBy;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.limit = limit;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.optimizerStatisticsCollectionOperationsCollections = optimizerStatisticsCollectionOperationsCollections;
+            _resultValue.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
+            _resultValue.taskType = taskType;
+            return _resultValue;
         }
     }
 }

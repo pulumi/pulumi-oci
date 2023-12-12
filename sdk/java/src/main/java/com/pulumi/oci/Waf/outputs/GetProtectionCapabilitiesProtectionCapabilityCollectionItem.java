@@ -208,17 +208,17 @@ public final class GetProtectionCapabilitiesProtectionCapabilityCollectionItem {
             return this;
         }
         public GetProtectionCapabilitiesProtectionCapabilityCollectionItem build() {
-            final var o = new GetProtectionCapabilitiesProtectionCapabilityCollectionItem();
-            o.collaborativeActionThreshold = collaborativeActionThreshold;
-            o.collaborativeWeights = collaborativeWeights;
-            o.description = description;
-            o.displayName = displayName;
-            o.groupTags = groupTags;
-            o.isLatestVersion = isLatestVersion;
-            o.key = key;
-            o.type = type;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetProtectionCapabilitiesProtectionCapabilityCollectionItem();
+            _resultValue.collaborativeActionThreshold = collaborativeActionThreshold;
+            _resultValue.collaborativeWeights = collaborativeWeights;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.groupTags = groupTags;
+            _resultValue.isLatestVersion = isLatestVersion;
+            _resultValue.key = key;
+            _resultValue.type = type;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

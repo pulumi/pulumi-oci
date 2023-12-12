@@ -171,15 +171,15 @@ public final class GetAccessPolicyRuleDestination {
             return this;
         }
         public GetAccessPolicyRuleDestination build() {
-            final var o = new GetAccessPolicyRuleDestination();
-            o.hostnames = hostnames;
-            o.ingressGatewayId = ingressGatewayId;
-            o.ipAddresses = ipAddresses;
-            o.ports = ports;
-            o.protocol = protocol;
-            o.type = type;
-            o.virtualServiceId = virtualServiceId;
-            return o;
+            final var _resultValue = new GetAccessPolicyRuleDestination();
+            _resultValue.hostnames = hostnames;
+            _resultValue.ingressGatewayId = ingressGatewayId;
+            _resultValue.ipAddresses = ipAddresses;
+            _resultValue.ports = ports;
+            _resultValue.protocol = protocol;
+            _resultValue.type = type;
+            _resultValue.virtualServiceId = virtualServiceId;
+            return _resultValue;
         }
     }
 }

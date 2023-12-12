@@ -75,11 +75,11 @@ public final class GetIngressGatewaysFilter {
             return values(List.of(values));
         }
         public GetIngressGatewaysFilter build() {
-            final var o = new GetIngressGatewaysFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetIngressGatewaysFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

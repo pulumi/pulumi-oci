@@ -107,12 +107,12 @@ public final class ActionCreateZoneFromZoneFileZoneTransferServer {
             return this;
         }
         public ActionCreateZoneFromZoneFileZoneTransferServer build() {
-            final var o = new ActionCreateZoneFromZoneFileZoneTransferServer();
-            o.address = address;
-            o.isTransferDestination = isTransferDestination;
-            o.isTransferSource = isTransferSource;
-            o.port = port;
-            return o;
+            final var _resultValue = new ActionCreateZoneFromZoneFileZoneTransferServer();
+            _resultValue.address = address;
+            _resultValue.isTransferDestination = isTransferDestination;
+            _resultValue.isTransferSource = isTransferSource;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

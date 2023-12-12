@@ -65,10 +65,10 @@ public final class GetOutboundConnectorsOutboundConnectorEndpoint {
             return this;
         }
         public GetOutboundConnectorsOutboundConnectorEndpoint build() {
-            final var o = new GetOutboundConnectorsOutboundConnectorEndpoint();
-            o.hostname = hostname;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetOutboundConnectorsOutboundConnectorEndpoint();
+            _resultValue.hostname = hostname;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

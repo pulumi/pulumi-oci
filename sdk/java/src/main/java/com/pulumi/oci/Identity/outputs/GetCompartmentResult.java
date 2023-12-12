@@ -220,18 +220,18 @@ public final class GetCompartmentResult {
             return this;
         }
         public GetCompartmentResult build() {
-            final var o = new GetCompartmentResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.inactiveState = inactiveState;
-            o.isAccessible = isAccessible;
-            o.name = name;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetCompartmentResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.inactiveState = inactiveState;
+            _resultValue.isAccessible = isAccessible;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -193,12 +193,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurit
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion();
-            o.answer = answer;
-            o.hintText = hintText;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestion();
+            _resultValue.answer = answer;
+            _resultValue.hintText = hintText;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

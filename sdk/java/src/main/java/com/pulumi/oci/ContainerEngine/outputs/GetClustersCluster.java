@@ -399,26 +399,26 @@ public final class GetClustersCluster {
             return this;
         }
         public GetClustersCluster build() {
-            final var o = new GetClustersCluster();
-            o.availableKubernetesUpgrades = availableKubernetesUpgrades;
-            o.clusterPodNetworkOptions = clusterPodNetworkOptions;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.endpointConfigs = endpointConfigs;
-            o.endpoints = endpoints;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.imagePolicyConfigs = imagePolicyConfigs;
-            o.kmsKeyId = kmsKeyId;
-            o.kubernetesVersion = kubernetesVersion;
-            o.lifecycleDetails = lifecycleDetails;
-            o.metadatas = metadatas;
-            o.name = name;
-            o.options = options;
-            o.state = state;
-            o.type = type;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetClustersCluster();
+            _resultValue.availableKubernetesUpgrades = availableKubernetesUpgrades;
+            _resultValue.clusterPodNetworkOptions = clusterPodNetworkOptions;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.endpointConfigs = endpointConfigs;
+            _resultValue.endpoints = endpoints;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.imagePolicyConfigs = imagePolicyConfigs;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.kubernetesVersion = kubernetesVersion;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.metadatas = metadatas;
+            _resultValue.name = name;
+            _resultValue.options = options;
+            _resultValue.state = state;
+            _resultValue.type = type;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

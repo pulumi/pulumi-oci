@@ -275,23 +275,23 @@ public final class GetZonesResult {
             return zones(List.of(zones));
         }
         public GetZonesResult build() {
-            final var o = new GetZonesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.nameContains = nameContains;
-            o.scope = scope;
-            o.sortBy = sortBy;
-            o.sortOrder = sortOrder;
-            o.state = state;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            o.tsigKeyId = tsigKeyId;
-            o.viewId = viewId;
-            o.zoneType = zoneType;
-            o.zones = zones;
-            return o;
+            final var _resultValue = new GetZonesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.nameContains = nameContains;
+            _resultValue.scope = scope;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
+            _resultValue.state = state;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            _resultValue.tsigKeyId = tsigKeyId;
+            _resultValue.viewId = viewId;
+            _resultValue.zoneType = zoneType;
+            _resultValue.zones = zones;
+            return _resultValue;
         }
     }
 }

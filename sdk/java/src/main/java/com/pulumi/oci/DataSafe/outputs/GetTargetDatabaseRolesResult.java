@@ -170,16 +170,16 @@ public final class GetTargetDatabaseRolesResult {
             return this;
         }
         public GetTargetDatabaseRolesResult build() {
-            final var o = new GetTargetDatabaseRolesResult();
-            o.authenticationType = authenticationType;
-            o.filters = filters;
-            o.id = id;
-            o.isOracleMaintained = isOracleMaintained;
-            o.roleNameContains = roleNameContains;
-            o.roleNames = roleNames;
-            o.roles = roles;
-            o.targetDatabaseId = targetDatabaseId;
-            return o;
+            final var _resultValue = new GetTargetDatabaseRolesResult();
+            _resultValue.authenticationType = authenticationType;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isOracleMaintained = isOracleMaintained;
+            _resultValue.roleNameContains = roleNameContains;
+            _resultValue.roleNames = roleNames;
+            _resultValue.roles = roles;
+            _resultValue.targetDatabaseId = targetDatabaseId;
+            return _resultValue;
         }
     }
 }

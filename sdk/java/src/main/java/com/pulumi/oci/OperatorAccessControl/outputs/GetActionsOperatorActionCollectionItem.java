@@ -205,17 +205,17 @@ public final class GetActionsOperatorActionCollectionItem {
             return this;
         }
         public GetActionsOperatorActionCollectionItem build() {
-            final var o = new GetActionsOperatorActionCollectionItem();
-            o.compartmentId = compartmentId;
-            o.component = component;
-            o.customerDisplayName = customerDisplayName;
-            o.description = description;
-            o.id = id;
-            o.name = name;
-            o.properties = properties;
-            o.resourceType = resourceType;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetActionsOperatorActionCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.component = component;
+            _resultValue.customerDisplayName = customerDisplayName;
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.properties = properties;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -108,12 +108,12 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
             return this;
         }
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails build() {
-            final var o = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails();
-            o.bandwidthMbps = bandwidthMbps;
-            o.instanceConfiguration = instanceConfiguration;
-            o.modelId = modelId;
-            o.scalingPolicy = scalingPolicy;
-            return o;
+            final var _resultValue = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails();
+            _resultValue.bandwidthMbps = bandwidthMbps;
+            _resultValue.instanceConfiguration = instanceConfiguration;
+            _resultValue.modelId = modelId;
+            _resultValue.scalingPolicy = scalingPolicy;
+            return _resultValue;
         }
     }
 }

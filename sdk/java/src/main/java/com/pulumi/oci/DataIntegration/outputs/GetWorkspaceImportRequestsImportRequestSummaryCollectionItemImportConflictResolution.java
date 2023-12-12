@@ -84,11 +84,11 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemI
             return this;
         }
         public GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution build() {
-            final var o = new GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution();
-            o.duplicatePrefix = duplicatePrefix;
-            o.duplicateSuffix = duplicateSuffix;
-            o.importConflictResolutionType = importConflictResolutionType;
-            return o;
+            final var _resultValue = new GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution();
+            _resultValue.duplicatePrefix = duplicatePrefix;
+            _resultValue.duplicateSuffix = duplicateSuffix;
+            _resultValue.importConflictResolutionType = importConflictResolutionType;
+            return _resultValue;
         }
     }
 }

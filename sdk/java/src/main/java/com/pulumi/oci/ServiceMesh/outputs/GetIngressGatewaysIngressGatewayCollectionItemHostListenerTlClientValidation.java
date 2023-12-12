@@ -73,10 +73,10 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlC
             return trustedCaBundles(List.of(trustedCaBundles));
         }
         public GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation build() {
-            final var o = new GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation();
-            o.subjectAlternateNames = subjectAlternateNames;
-            o.trustedCaBundles = trustedCaBundles;
-            return o;
+            final var _resultValue = new GetIngressGatewaysIngressGatewayCollectionItemHostListenerTlClientValidation();
+            _resultValue.subjectAlternateNames = subjectAlternateNames;
+            _resultValue.trustedCaBundles = trustedCaBundles;
+            return _resultValue;
         }
     }
 }

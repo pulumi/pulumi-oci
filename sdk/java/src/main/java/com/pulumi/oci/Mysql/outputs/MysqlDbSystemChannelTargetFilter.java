@@ -67,10 +67,10 @@ public final class MysqlDbSystemChannelTargetFilter {
             return this;
         }
         public MysqlDbSystemChannelTargetFilter build() {
-            final var o = new MysqlDbSystemChannelTargetFilter();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new MysqlDbSystemChannelTargetFilter();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

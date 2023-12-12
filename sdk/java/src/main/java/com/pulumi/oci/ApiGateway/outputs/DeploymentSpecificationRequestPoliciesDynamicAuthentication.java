@@ -70,10 +70,10 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthentication {
             return this;
         }
         public DeploymentSpecificationRequestPoliciesDynamicAuthentication build() {
-            final var o = new DeploymentSpecificationRequestPoliciesDynamicAuthentication();
-            o.authenticationServers = authenticationServers;
-            o.selectionSource = selectionSource;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesDynamicAuthentication();
+            _resultValue.authenticationServers = authenticationServers;
+            _resultValue.selectionSource = selectionSource;
+            return _resultValue;
         }
     }
 }

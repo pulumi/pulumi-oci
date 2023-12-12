@@ -189,12 +189,12 @@ public final class DomainsIdentityProviderCorrelationPolicy {
             return this;
         }
         public DomainsIdentityProviderCorrelationPolicy build() {
-            final var o = new DomainsIdentityProviderCorrelationPolicy();
-            o.display = display;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsIdentityProviderCorrelationPolicy();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

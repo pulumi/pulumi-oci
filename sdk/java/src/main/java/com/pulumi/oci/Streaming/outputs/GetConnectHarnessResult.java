@@ -192,17 +192,17 @@ public final class GetConnectHarnessResult {
             return this;
         }
         public GetConnectHarnessResult build() {
-            final var o = new GetConnectHarnessResult();
-            o.compartmentId = compartmentId;
-            o.connectHarnessId = connectHarnessId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleStateDetails = lifecycleStateDetails;
-            o.name = name;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetConnectHarnessResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectHarnessId = connectHarnessId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleStateDetails = lifecycleStateDetails;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

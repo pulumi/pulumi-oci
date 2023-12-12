@@ -68,10 +68,10 @@ public final class IngressGatewayRouteTableRouteRuleIngressGatewayHost {
             return this;
         }
         public IngressGatewayRouteTableRouteRuleIngressGatewayHost build() {
-            final var o = new IngressGatewayRouteTableRouteRuleIngressGatewayHost();
-            o.name = name;
-            o.port = port;
-            return o;
+            final var _resultValue = new IngressGatewayRouteTableRouteRuleIngressGatewayHost();
+            _resultValue.name = name;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

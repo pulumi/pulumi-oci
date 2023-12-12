@@ -67,11 +67,11 @@ public final class GetOdaPrivateEndpointsFilter {
             return values(List.of(values));
         }
         public GetOdaPrivateEndpointsFilter build() {
-            final var o = new GetOdaPrivateEndpointsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetOdaPrivateEndpointsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -144,14 +144,14 @@ public final class GetExternalAsmsResult {
             return this;
         }
         public GetExternalAsmsResult build() {
-            final var o = new GetExternalAsmsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.externalAsmCollections = externalAsmCollections;
-            o.externalDbSystemId = externalDbSystemId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalAsmsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalAsmCollections = externalAsmCollections;
+            _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

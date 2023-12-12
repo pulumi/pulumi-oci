@@ -163,15 +163,15 @@ public final class GetDrgRouteTablesResult {
             return this;
         }
         public GetDrgRouteTablesResult build() {
-            final var o = new GetDrgRouteTablesResult();
-            o.displayName = displayName;
-            o.drgId = drgId;
-            o.drgRouteTables = drgRouteTables;
-            o.filters = filters;
-            o.id = id;
-            o.importDrgRouteDistributionId = importDrgRouteDistributionId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDrgRouteTablesResult();
+            _resultValue.displayName = displayName;
+            _resultValue.drgId = drgId;
+            _resultValue.drgRouteTables = drgRouteTables;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.importDrgRouteDistributionId = importDrgRouteDistributionId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

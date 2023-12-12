@@ -67,10 +67,10 @@ public final class MonitoredResourcesSearchItemProperty {
             return this;
         }
         public MonitoredResourcesSearchItemProperty build() {
-            final var o = new MonitoredResourcesSearchItemProperty();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new MonitoredResourcesSearchItemProperty();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

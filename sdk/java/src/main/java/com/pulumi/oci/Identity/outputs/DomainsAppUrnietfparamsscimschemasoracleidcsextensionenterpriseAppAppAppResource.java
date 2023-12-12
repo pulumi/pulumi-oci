@@ -109,10 +109,10 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpri
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource();
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResource();
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

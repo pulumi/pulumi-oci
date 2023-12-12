@@ -65,10 +65,10 @@ public final class GetDomainsOauth2clientCredentialTag {
             return this;
         }
         public GetDomainsOauth2clientCredentialTag build() {
-            final var o = new GetDomainsOauth2clientCredentialTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsOauth2clientCredentialTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

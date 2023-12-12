@@ -42,9 +42,9 @@ public final class GetControlsOperatorControlCollection {
             return items(List.of(items));
         }
         public GetControlsOperatorControlCollection build() {
-            final var o = new GetControlsOperatorControlCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetControlsOperatorControlCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

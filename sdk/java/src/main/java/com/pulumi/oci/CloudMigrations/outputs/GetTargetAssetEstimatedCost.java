@@ -174,15 +174,15 @@ public final class GetTargetAssetEstimatedCost {
             return this;
         }
         public GetTargetAssetEstimatedCost build() {
-            final var o = new GetTargetAssetEstimatedCost();
-            o.computes = computes;
-            o.currencyCode = currencyCode;
-            o.osImages = osImages;
-            o.storages = storages;
-            o.subscriptionId = subscriptionId;
-            o.totalEstimationPerMonth = totalEstimationPerMonth;
-            o.totalEstimationPerMonthBySubscription = totalEstimationPerMonthBySubscription;
-            return o;
+            final var _resultValue = new GetTargetAssetEstimatedCost();
+            _resultValue.computes = computes;
+            _resultValue.currencyCode = currencyCode;
+            _resultValue.osImages = osImages;
+            _resultValue.storages = storages;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.totalEstimationPerMonth = totalEstimationPerMonth;
+            _resultValue.totalEstimationPerMonthBySubscription = totalEstimationPerMonthBySubscription;
+            return _resultValue;
         }
     }
 }

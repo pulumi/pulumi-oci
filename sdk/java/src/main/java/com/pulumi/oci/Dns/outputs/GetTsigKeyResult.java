@@ -249,20 +249,20 @@ public final class GetTsigKeyResult {
             return this;
         }
         public GetTsigKeyResult build() {
-            final var o = new GetTsigKeyResult();
-            o.algorithm = algorithm;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.name = name;
-            o.secret = secret;
-            o.self = self;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.tsigKeyId = tsigKeyId;
-            return o;
+            final var _resultValue = new GetTsigKeyResult();
+            _resultValue.algorithm = algorithm;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.secret = secret;
+            _resultValue.self = self;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.tsigKeyId = tsigKeyId;
+            return _resultValue;
         }
     }
 }

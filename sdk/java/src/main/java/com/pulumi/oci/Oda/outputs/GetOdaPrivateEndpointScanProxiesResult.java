@@ -117,13 +117,13 @@ public final class GetOdaPrivateEndpointScanProxiesResult {
             return this;
         }
         public GetOdaPrivateEndpointScanProxiesResult build() {
-            final var o = new GetOdaPrivateEndpointScanProxiesResult();
-            o.filters = filters;
-            o.id = id;
-            o.odaPrivateEndpointId = odaPrivateEndpointId;
-            o.odaPrivateEndpointScanProxyCollections = odaPrivateEndpointScanProxyCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetOdaPrivateEndpointScanProxiesResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.odaPrivateEndpointId = odaPrivateEndpointId;
+            _resultValue.odaPrivateEndpointScanProxyCollections = odaPrivateEndpointScanProxyCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

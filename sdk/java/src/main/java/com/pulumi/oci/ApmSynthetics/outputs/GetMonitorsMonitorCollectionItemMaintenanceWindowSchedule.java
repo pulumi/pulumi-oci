@@ -65,10 +65,10 @@ public final class GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule {
             return this;
         }
         public GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule build() {
-            final var o = new GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule();
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule();
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

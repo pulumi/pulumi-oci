@@ -81,11 +81,11 @@ public final class GetJobOutputResult {
             return this;
         }
         public GetJobOutputResult build() {
-            final var o = new GetJobOutputResult();
-            o.id = id;
-            o.items = items;
-            o.jobId = jobId;
-            return o;
+            final var _resultValue = new GetJobOutputResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.jobId = jobId;
+            return _resultValue;
         }
     }
 }

@@ -104,15 +104,15 @@ public final class GetFusionEnvironmentKmsKeyInfo {
             return this;
         }
         public GetFusionEnvironmentKmsKeyInfo build() {
-            final var o = new GetFusionEnvironmentKmsKeyInfo();
-            o.activeKeyId = activeKeyId;
-            o.activeKeyVersion = activeKeyVersion;
-            o.currentKeyLifecycleState = currentKeyLifecycleState;
-            o.scheduledKeyId = scheduledKeyId;
-            o.scheduledKeyStatus = scheduledKeyStatus;
-            o.scheduledKeyVersion = scheduledKeyVersion;
-            o.scheduledLifecycleState = scheduledLifecycleState;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentKmsKeyInfo();
+            _resultValue.activeKeyId = activeKeyId;
+            _resultValue.activeKeyVersion = activeKeyVersion;
+            _resultValue.currentKeyLifecycleState = currentKeyLifecycleState;
+            _resultValue.scheduledKeyId = scheduledKeyId;
+            _resultValue.scheduledKeyStatus = scheduledKeyStatus;
+            _resultValue.scheduledKeyVersion = scheduledKeyVersion;
+            _resultValue.scheduledLifecycleState = scheduledLifecycleState;
+            return _resultValue;
         }
     }
 }

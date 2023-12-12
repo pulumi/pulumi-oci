@@ -65,10 +65,10 @@ public final class ConnectionReplicationCredentials {
             return this;
         }
         public ConnectionReplicationCredentials build() {
-            final var o = new ConnectionReplicationCredentials();
-            o.password = password;
-            o.username = username;
-            return o;
+            final var _resultValue = new ConnectionReplicationCredentials();
+            _resultValue.password = password;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

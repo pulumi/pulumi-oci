@@ -314,23 +314,23 @@ public final class GetMediaWorkflowResult {
             return this;
         }
         public GetMediaWorkflowResult build() {
-            final var o = new GetMediaWorkflowResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecyleDetails = lifecyleDetails;
-            o.mediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
-            o.mediaWorkflowId = mediaWorkflowId;
-            o.parameters = parameters;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.tasks = tasks;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetMediaWorkflowResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecyleDetails = lifecyleDetails;
+            _resultValue.mediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
+            _resultValue.mediaWorkflowId = mediaWorkflowId;
+            _resultValue.parameters = parameters;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.tasks = tasks;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

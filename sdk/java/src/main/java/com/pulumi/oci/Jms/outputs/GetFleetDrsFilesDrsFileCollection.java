@@ -42,9 +42,9 @@ public final class GetFleetDrsFilesDrsFileCollection {
             return items(List.of(items));
         }
         public GetFleetDrsFilesDrsFileCollection build() {
-            final var o = new GetFleetDrsFilesDrsFileCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetFleetDrsFilesDrsFileCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

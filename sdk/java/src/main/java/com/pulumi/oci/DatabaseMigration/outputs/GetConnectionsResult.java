@@ -144,14 +144,14 @@ public final class GetConnectionsResult {
             return this;
         }
         public GetConnectionsResult build() {
-            final var o = new GetConnectionsResult();
-            o.compartmentId = compartmentId;
-            o.connectionCollections = connectionCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetConnectionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionCollections = connectionCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

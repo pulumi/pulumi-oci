@@ -92,12 +92,12 @@ public final class GetTraceAggregatedSnapshotDataResult {
             return this;
         }
         public GetTraceAggregatedSnapshotDataResult build() {
-            final var o = new GetTraceAggregatedSnapshotDataResult();
-            o.apmDomainId = apmDomainId;
-            o.details = details;
-            o.id = id;
-            o.traceKey = traceKey;
-            return o;
+            final var _resultValue = new GetTraceAggregatedSnapshotDataResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.details = details;
+            _resultValue.id = id;
+            _resultValue.traceKey = traceKey;
+            return _resultValue;
         }
     }
 }

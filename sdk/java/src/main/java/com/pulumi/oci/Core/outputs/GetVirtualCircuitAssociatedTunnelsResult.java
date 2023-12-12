@@ -97,12 +97,12 @@ public final class GetVirtualCircuitAssociatedTunnelsResult {
             return this;
         }
         public GetVirtualCircuitAssociatedTunnelsResult build() {
-            final var o = new GetVirtualCircuitAssociatedTunnelsResult();
-            o.filters = filters;
-            o.id = id;
-            o.virtualCircuitAssociatedTunnelDetails = virtualCircuitAssociatedTunnelDetails;
-            o.virtualCircuitId = virtualCircuitId;
-            return o;
+            final var _resultValue = new GetVirtualCircuitAssociatedTunnelsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.virtualCircuitAssociatedTunnelDetails = virtualCircuitAssociatedTunnelDetails;
+            _resultValue.virtualCircuitId = virtualCircuitId;
+            return _resultValue;
         }
     }
 }

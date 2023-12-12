@@ -570,35 +570,35 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
             return this;
         }
         public UnifiedAgentConfigurationServiceConfigurationSourceParser build() {
-            final var o = new UnifiedAgentConfigurationServiceConfigurationSourceParser();
-            o.delimiter = delimiter;
-            o.expression = expression;
-            o.fieldTimeKey = fieldTimeKey;
-            o.formatFirstline = formatFirstline;
-            o.formats = formats;
-            o.grokFailureKey = grokFailureKey;
-            o.grokNameKey = grokNameKey;
-            o.isEstimateCurrentEvent = isEstimateCurrentEvent;
-            o.isKeepTimeKey = isKeepTimeKey;
-            o.isMergeCriFields = isMergeCriFields;
-            o.isNullEmptyString = isNullEmptyString;
-            o.isSupportColonlessIdent = isSupportColonlessIdent;
-            o.isWithPriority = isWithPriority;
-            o.keys = keys;
-            o.messageFormat = messageFormat;
-            o.messageKey = messageKey;
-            o.multiLineStartRegexp = multiLineStartRegexp;
-            o.nestedParser = nestedParser;
-            o.nullValuePattern = nullValuePattern;
-            o.parserType = parserType;
-            o.patterns = patterns;
-            o.rfc5424timeFormat = rfc5424timeFormat;
-            o.syslogParserType = syslogParserType;
-            o.timeFormat = timeFormat;
-            o.timeType = timeType;
-            o.timeoutInMilliseconds = timeoutInMilliseconds;
-            o.types = types;
-            return o;
+            final var _resultValue = new UnifiedAgentConfigurationServiceConfigurationSourceParser();
+            _resultValue.delimiter = delimiter;
+            _resultValue.expression = expression;
+            _resultValue.fieldTimeKey = fieldTimeKey;
+            _resultValue.formatFirstline = formatFirstline;
+            _resultValue.formats = formats;
+            _resultValue.grokFailureKey = grokFailureKey;
+            _resultValue.grokNameKey = grokNameKey;
+            _resultValue.isEstimateCurrentEvent = isEstimateCurrentEvent;
+            _resultValue.isKeepTimeKey = isKeepTimeKey;
+            _resultValue.isMergeCriFields = isMergeCriFields;
+            _resultValue.isNullEmptyString = isNullEmptyString;
+            _resultValue.isSupportColonlessIdent = isSupportColonlessIdent;
+            _resultValue.isWithPriority = isWithPriority;
+            _resultValue.keys = keys;
+            _resultValue.messageFormat = messageFormat;
+            _resultValue.messageKey = messageKey;
+            _resultValue.multiLineStartRegexp = multiLineStartRegexp;
+            _resultValue.nestedParser = nestedParser;
+            _resultValue.nullValuePattern = nullValuePattern;
+            _resultValue.parserType = parserType;
+            _resultValue.patterns = patterns;
+            _resultValue.rfc5424timeFormat = rfc5424timeFormat;
+            _resultValue.syslogParserType = syslogParserType;
+            _resultValue.timeFormat = timeFormat;
+            _resultValue.timeType = timeType;
+            _resultValue.timeoutInMilliseconds = timeoutInMilliseconds;
+            _resultValue.types = types;
+            return _resultValue;
         }
     }
 }

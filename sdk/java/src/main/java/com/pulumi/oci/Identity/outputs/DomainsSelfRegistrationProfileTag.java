@@ -111,10 +111,10 @@ public final class DomainsSelfRegistrationProfileTag {
             return this;
         }
         public DomainsSelfRegistrationProfileTag build() {
-            final var o = new DomainsSelfRegistrationProfileTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsSelfRegistrationProfileTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

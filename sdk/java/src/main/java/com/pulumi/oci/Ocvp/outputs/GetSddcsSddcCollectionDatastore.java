@@ -65,11 +65,11 @@ public final class GetSddcsSddcCollectionDatastore {
             return this;
         }
         public GetSddcsSddcCollectionDatastore build() {
-            final var o = new GetSddcsSddcCollectionDatastore();
-            o.blockVolumeIds = blockVolumeIds;
-            o.capacity = capacity;
-            o.datastoreType = datastoreType;
-            return o;
+            final var _resultValue = new GetSddcsSddcCollectionDatastore();
+            _resultValue.blockVolumeIds = blockVolumeIds;
+            _resultValue.capacity = capacity;
+            _resultValue.datastoreType = datastoreType;
+            return _resultValue;
         }
     }
 }

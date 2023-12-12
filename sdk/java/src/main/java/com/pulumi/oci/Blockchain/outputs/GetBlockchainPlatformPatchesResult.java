@@ -97,12 +97,12 @@ public final class GetBlockchainPlatformPatchesResult {
             return this;
         }
         public GetBlockchainPlatformPatchesResult build() {
-            final var o = new GetBlockchainPlatformPatchesResult();
-            o.blockchainPlatformId = blockchainPlatformId;
-            o.blockchainPlatformPatchCollections = blockchainPlatformPatchCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformPatchesResult();
+            _resultValue.blockchainPlatformId = blockchainPlatformId;
+            _resultValue.blockchainPlatformPatchCollections = blockchainPlatformPatchCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

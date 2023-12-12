@@ -193,17 +193,17 @@ public final class GetAssociationsResult {
             return this;
         }
         public GetAssociationsResult build() {
-            final var o = new GetAssociationsResult();
-            o.associatedResourceId = associatedResourceId;
-            o.associationCollections = associationCollections;
-            o.associationId = associationId;
-            o.associationType = associationType;
-            o.certificatesResourceId = certificatesResourceId;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAssociationsResult();
+            _resultValue.associatedResourceId = associatedResourceId;
+            _resultValue.associationCollections = associationCollections;
+            _resultValue.associationId = associationId;
+            _resultValue.associationType = associationType;
+            _resultValue.certificatesResourceId = certificatesResourceId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

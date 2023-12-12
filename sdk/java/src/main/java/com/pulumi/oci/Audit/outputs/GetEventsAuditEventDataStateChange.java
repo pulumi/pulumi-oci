@@ -67,10 +67,10 @@ public final class GetEventsAuditEventDataStateChange {
             return this;
         }
         public GetEventsAuditEventDataStateChange build() {
-            final var o = new GetEventsAuditEventDataStateChange();
-            o.current = current;
-            o.previous = previous;
-            return o;
+            final var _resultValue = new GetEventsAuditEventDataStateChange();
+            _resultValue.current = current;
+            _resultValue.previous = previous;
+            return _resultValue;
         }
     }
 }

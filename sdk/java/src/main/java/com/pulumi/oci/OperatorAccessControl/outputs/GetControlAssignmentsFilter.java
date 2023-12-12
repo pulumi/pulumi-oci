@@ -67,11 +67,11 @@ public final class GetControlAssignmentsFilter {
             return values(List.of(values));
         }
         public GetControlAssignmentsFilter build() {
-            final var o = new GetControlAssignmentsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetControlAssignmentsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

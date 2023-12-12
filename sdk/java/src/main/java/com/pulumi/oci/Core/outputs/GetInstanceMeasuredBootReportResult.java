@@ -101,12 +101,12 @@ public final class GetInstanceMeasuredBootReportResult {
             return measurements(List.of(measurements));
         }
         public GetInstanceMeasuredBootReportResult build() {
-            final var o = new GetInstanceMeasuredBootReportResult();
-            o.id = id;
-            o.instanceId = instanceId;
-            o.isPolicyVerificationSuccessful = isPolicyVerificationSuccessful;
-            o.measurements = measurements;
-            return o;
+            final var _resultValue = new GetInstanceMeasuredBootReportResult();
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            _resultValue.isPolicyVerificationSuccessful = isPolicyVerificationSuccessful;
+            _resultValue.measurements = measurements;
+            return _resultValue;
         }
     }
 }

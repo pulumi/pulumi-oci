@@ -65,10 +65,10 @@ public final class GetDeployStagesDeployStageCollectionItemWaitCriteria {
             return this;
         }
         public GetDeployStagesDeployStageCollectionItemWaitCriteria build() {
-            final var o = new GetDeployStagesDeployStageCollectionItemWaitCriteria();
-            o.waitDuration = waitDuration;
-            o.waitType = waitType;
-            return o;
+            final var _resultValue = new GetDeployStagesDeployStageCollectionItemWaitCriteria();
+            _resultValue.waitDuration = waitDuration;
+            _resultValue.waitType = waitType;
+            return _resultValue;
         }
     }
 }

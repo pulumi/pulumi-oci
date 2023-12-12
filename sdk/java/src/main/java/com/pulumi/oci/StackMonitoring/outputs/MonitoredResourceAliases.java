@@ -85,11 +85,11 @@ public final class MonitoredResourceAliases {
             return this;
         }
         public MonitoredResourceAliases build() {
-            final var o = new MonitoredResourceAliases();
-            o.credential = credential;
-            o.name = name;
-            o.source = source;
-            return o;
+            final var _resultValue = new MonitoredResourceAliases();
+            _resultValue.credential = credential;
+            _resultValue.name = name;
+            _resultValue.source = source;
+            return _resultValue;
         }
     }
 }

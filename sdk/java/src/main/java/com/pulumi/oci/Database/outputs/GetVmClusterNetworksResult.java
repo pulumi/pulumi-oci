@@ -163,15 +163,15 @@ public final class GetVmClusterNetworksResult {
             return vmClusterNetworks(List.of(vmClusterNetworks));
         }
         public GetVmClusterNetworksResult build() {
-            final var o = new GetVmClusterNetworksResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.exadataInfrastructureId = exadataInfrastructureId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.vmClusterNetworks = vmClusterNetworks;
-            return o;
+            final var _resultValue = new GetVmClusterNetworksResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.exadataInfrastructureId = exadataInfrastructureId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.vmClusterNetworks = vmClusterNetworks;
+            return _resultValue;
         }
     }
 }

@@ -144,14 +144,14 @@ public final class GetServiceConnectorsResult {
             return this;
         }
         public GetServiceConnectorsResult build() {
-            final var o = new GetServiceConnectorsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.serviceConnectorCollections = serviceConnectorCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetServiceConnectorsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.serviceConnectorCollections = serviceConnectorCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

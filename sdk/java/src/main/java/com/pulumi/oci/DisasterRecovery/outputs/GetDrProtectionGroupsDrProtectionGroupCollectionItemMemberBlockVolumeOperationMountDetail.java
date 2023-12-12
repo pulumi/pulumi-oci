@@ -46,9 +46,9 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlo
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail build() {
-            final var o = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail();
-            o.mountPoint = mountPoint;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetail();
+            _resultValue.mountPoint = mountPoint;
+            return _resultValue;
         }
     }
 }

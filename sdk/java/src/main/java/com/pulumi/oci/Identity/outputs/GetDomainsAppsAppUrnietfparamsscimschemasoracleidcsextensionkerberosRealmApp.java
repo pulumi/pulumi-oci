@@ -165,15 +165,15 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionk
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp build() {
-            final var o = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp();
-            o.defaultEncryptionSaltType = defaultEncryptionSaltType;
-            o.masterKey = masterKey;
-            o.maxRenewableAge = maxRenewableAge;
-            o.maxTicketLife = maxTicketLife;
-            o.realmName = realmName;
-            o.supportedEncryptionSaltTypes = supportedEncryptionSaltTypes;
-            o.ticketFlags = ticketFlags;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmApp();
+            _resultValue.defaultEncryptionSaltType = defaultEncryptionSaltType;
+            _resultValue.masterKey = masterKey;
+            _resultValue.maxRenewableAge = maxRenewableAge;
+            _resultValue.maxTicketLife = maxTicketLife;
+            _resultValue.realmName = realmName;
+            _resultValue.supportedEncryptionSaltTypes = supportedEncryptionSaltTypes;
+            _resultValue.ticketFlags = ticketFlags;
+            return _resultValue;
         }
     }
 }

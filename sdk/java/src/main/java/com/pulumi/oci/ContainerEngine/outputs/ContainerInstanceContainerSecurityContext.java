@@ -126,13 +126,13 @@ public final class ContainerInstanceContainerSecurityContext {
             return this;
         }
         public ContainerInstanceContainerSecurityContext build() {
-            final var o = new ContainerInstanceContainerSecurityContext();
-            o.isNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
-            o.isRootFileSystemReadonly = isRootFileSystemReadonly;
-            o.runAsGroup = runAsGroup;
-            o.runAsUser = runAsUser;
-            o.securityContextType = securityContextType;
-            return o;
+            final var _resultValue = new ContainerInstanceContainerSecurityContext();
+            _resultValue.isNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
+            _resultValue.isRootFileSystemReadonly = isRootFileSystemReadonly;
+            _resultValue.runAsGroup = runAsGroup;
+            _resultValue.runAsUser = runAsUser;
+            _resultValue.securityContextType = securityContextType;
+            return _resultValue;
         }
     }
 }

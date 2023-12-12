@@ -89,11 +89,11 @@ public final class GetAutoScalingConfigurationPolicyDetailScaleInConfig {
             return this;
         }
         public GetAutoScalingConfigurationPolicyDetailScaleInConfig build() {
-            final var o = new GetAutoScalingConfigurationPolicyDetailScaleInConfig();
-            o.metrics = metrics;
-            o.minNodeCount = minNodeCount;
-            o.stepSize = stepSize;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationPolicyDetailScaleInConfig();
+            _resultValue.metrics = metrics;
+            _resultValue.minNodeCount = minNodeCount;
+            _resultValue.stepSize = stepSize;
+            return _resultValue;
         }
     }
 }

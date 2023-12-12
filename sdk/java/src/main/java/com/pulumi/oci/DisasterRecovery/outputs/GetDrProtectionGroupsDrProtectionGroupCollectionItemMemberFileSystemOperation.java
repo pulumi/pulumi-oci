@@ -131,13 +131,13 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFil
             return unmountDetails(List.of(unmountDetails));
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation build() {
-            final var o = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation();
-            o.exportPath = exportPath;
-            o.mountDetails = mountDetails;
-            o.mountPoint = mountPoint;
-            o.mountTargetId = mountTargetId;
-            o.unmountDetails = unmountDetails;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation();
+            _resultValue.exportPath = exportPath;
+            _resultValue.mountDetails = mountDetails;
+            _resultValue.mountPoint = mountPoint;
+            _resultValue.mountTargetId = mountTargetId;
+            _resultValue.unmountDetails = unmountDetails;
+            return _resultValue;
         }
     }
 }

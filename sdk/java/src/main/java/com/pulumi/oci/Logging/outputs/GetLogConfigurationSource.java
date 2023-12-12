@@ -105,12 +105,12 @@ public final class GetLogConfigurationSource {
             return this;
         }
         public GetLogConfigurationSource build() {
-            final var o = new GetLogConfigurationSource();
-            o.category = category;
-            o.resource = resource;
-            o.service = service;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new GetLogConfigurationSource();
+            _resultValue.category = category;
+            _resultValue.resource = resource;
+            _resultValue.service = service;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

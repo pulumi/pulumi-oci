@@ -162,15 +162,15 @@ public final class GetBackendSetsBackendsetBackend {
             return this;
         }
         public GetBackendSetsBackendsetBackend build() {
-            final var o = new GetBackendSetsBackendsetBackend();
-            o.backup = backup;
-            o.drain = drain;
-            o.ipAddress = ipAddress;
-            o.name = name;
-            o.offline = offline;
-            o.port = port;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new GetBackendSetsBackendsetBackend();
+            _resultValue.backup = backup;
+            _resultValue.drain = drain;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.name = name;
+            _resultValue.offline = offline;
+            _resultValue.port = port;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

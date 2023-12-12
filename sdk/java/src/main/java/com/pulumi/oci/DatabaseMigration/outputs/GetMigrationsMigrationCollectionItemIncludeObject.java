@@ -104,12 +104,12 @@ public final class GetMigrationsMigrationCollectionItemIncludeObject {
             return this;
         }
         public GetMigrationsMigrationCollectionItemIncludeObject build() {
-            final var o = new GetMigrationsMigrationCollectionItemIncludeObject();
-            o.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
-            o.object = object;
-            o.owner = owner;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemIncludeObject();
+            _resultValue.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
+            _resultValue.object = object;
+            _resultValue.owner = owner;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

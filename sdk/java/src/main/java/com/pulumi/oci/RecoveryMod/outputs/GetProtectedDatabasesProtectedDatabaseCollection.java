@@ -42,9 +42,9 @@ public final class GetProtectedDatabasesProtectedDatabaseCollection {
             return items(List.of(items));
         }
         public GetProtectedDatabasesProtectedDatabaseCollection build() {
-            final var o = new GetProtectedDatabasesProtectedDatabaseCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetProtectedDatabasesProtectedDatabaseCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

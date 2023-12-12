@@ -340,24 +340,24 @@ public final class ConnectorTarget {
             return this;
         }
         public ConnectorTarget build() {
-            final var o = new ConnectorTarget();
-            o.batchRolloverSizeInMbs = batchRolloverSizeInMbs;
-            o.batchRolloverTimeInMs = batchRolloverTimeInMs;
-            o.bucket = bucket;
-            o.compartmentId = compartmentId;
-            o.dimensions = dimensions;
-            o.enableFormattedMessaging = enableFormattedMessaging;
-            o.functionId = functionId;
-            o.kind = kind;
-            o.logGroupId = logGroupId;
-            o.logSourceIdentifier = logSourceIdentifier;
-            o.metric = metric;
-            o.metricNamespace = metricNamespace;
-            o.namespace = namespace;
-            o.objectNamePrefix = objectNamePrefix;
-            o.streamId = streamId;
-            o.topicId = topicId;
-            return o;
+            final var _resultValue = new ConnectorTarget();
+            _resultValue.batchRolloverSizeInMbs = batchRolloverSizeInMbs;
+            _resultValue.batchRolloverTimeInMs = batchRolloverTimeInMs;
+            _resultValue.bucket = bucket;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dimensions = dimensions;
+            _resultValue.enableFormattedMessaging = enableFormattedMessaging;
+            _resultValue.functionId = functionId;
+            _resultValue.kind = kind;
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logSourceIdentifier = logSourceIdentifier;
+            _resultValue.metric = metric;
+            _resultValue.metricNamespace = metricNamespace;
+            _resultValue.namespace = namespace;
+            _resultValue.objectNamePrefix = objectNamePrefix;
+            _resultValue.streamId = streamId;
+            _resultValue.topicId = topicId;
+            return _resultValue;
         }
     }
 }

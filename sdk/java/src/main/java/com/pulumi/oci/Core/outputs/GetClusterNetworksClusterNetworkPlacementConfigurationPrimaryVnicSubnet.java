@@ -90,11 +90,11 @@ public final class GetClusterNetworksClusterNetworkPlacementConfigurationPrimary
             return this;
         }
         public GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnet build() {
-            final var o = new GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnet();
-            o.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
-            o.isAssignIpv6ip = isAssignIpv6ip;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetClusterNetworksClusterNetworkPlacementConfigurationPrimaryVnicSubnet();
+            _resultValue.ipv6addressIpv6subnetCidrPairDetails = ipv6addressIpv6subnetCidrPairDetails;
+            _resultValue.isAssignIpv6ip = isAssignIpv6ip;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

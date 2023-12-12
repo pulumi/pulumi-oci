@@ -155,15 +155,15 @@ public final class GetJavaDownloadsJavaDownloadReportsResult {
             return this;
         }
         public GetJavaDownloadsJavaDownloadReportsResult build() {
-            final var o = new GetJavaDownloadsJavaDownloadReportsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.javaDownloadReportCollections = javaDownloadReportCollections;
-            o.javaDownloadReportId = javaDownloadReportId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaDownloadReportsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.javaDownloadReportCollections = javaDownloadReportCollections;
+            _resultValue.javaDownloadReportId = javaDownloadReportId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

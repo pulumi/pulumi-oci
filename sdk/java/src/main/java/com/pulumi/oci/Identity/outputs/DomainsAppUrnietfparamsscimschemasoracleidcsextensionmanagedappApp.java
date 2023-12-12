@@ -1024,32 +1024,32 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp();
-            o.accountFormVisible = accountFormVisible;
-            o.adminConsentGranted = adminConsentGranted;
-            o.bundleConfigurationProperties = bundleConfigurationProperties;
-            o.bundlePoolConfiguration = bundlePoolConfiguration;
-            o.canBeAuthoritative = canBeAuthoritative;
-            o.connected = connected;
-            o.connectorBundles = connectorBundles;
-            o.enableAuthSyncNewUserNotification = enableAuthSyncNewUserNotification;
-            o.enableSync = enableSync;
-            o.enableSyncSummaryReportNotification = enableSyncSummaryReportNotification;
-            o.flatFileBundleConfigurationProperties = flatFileBundleConfigurationProperties;
-            o.flatFileConnectorBundle = flatFileConnectorBundle;
-            o.identityBridges = identityBridges;
-            o.isAuthoritative = isAuthoritative;
-            o.isDirectory = isDirectory;
-            o.isOnPremiseApp = isOnPremiseApp;
-            o.isSchemaCustomizationSupported = isSchemaCustomizationSupported;
-            o.isSchemaDiscoverySupported = isSchemaDiscoverySupported;
-            o.isThreeLeggedOauthEnabled = isThreeLeggedOauthEnabled;
-            o.isTwoLeggedOauthEnabled = isTwoLeggedOauthEnabled;
-            o.objectClasses = objectClasses;
-            o.syncConfigLastModified = syncConfigLastModified;
-            o.threeLeggedOauthCredential = threeLeggedOauthCredential;
-            o.threeLeggedOauthProviderName = threeLeggedOauthProviderName;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp();
+            _resultValue.accountFormVisible = accountFormVisible;
+            _resultValue.adminConsentGranted = adminConsentGranted;
+            _resultValue.bundleConfigurationProperties = bundleConfigurationProperties;
+            _resultValue.bundlePoolConfiguration = bundlePoolConfiguration;
+            _resultValue.canBeAuthoritative = canBeAuthoritative;
+            _resultValue.connected = connected;
+            _resultValue.connectorBundles = connectorBundles;
+            _resultValue.enableAuthSyncNewUserNotification = enableAuthSyncNewUserNotification;
+            _resultValue.enableSync = enableSync;
+            _resultValue.enableSyncSummaryReportNotification = enableSyncSummaryReportNotification;
+            _resultValue.flatFileBundleConfigurationProperties = flatFileBundleConfigurationProperties;
+            _resultValue.flatFileConnectorBundle = flatFileConnectorBundle;
+            _resultValue.identityBridges = identityBridges;
+            _resultValue.isAuthoritative = isAuthoritative;
+            _resultValue.isDirectory = isDirectory;
+            _resultValue.isOnPremiseApp = isOnPremiseApp;
+            _resultValue.isSchemaCustomizationSupported = isSchemaCustomizationSupported;
+            _resultValue.isSchemaDiscoverySupported = isSchemaDiscoverySupported;
+            _resultValue.isThreeLeggedOauthEnabled = isThreeLeggedOauthEnabled;
+            _resultValue.isTwoLeggedOauthEnabled = isTwoLeggedOauthEnabled;
+            _resultValue.objectClasses = objectClasses;
+            _resultValue.syncConfigLastModified = syncConfigLastModified;
+            _resultValue.threeLeggedOauthCredential = threeLeggedOauthCredential;
+            _resultValue.threeLeggedOauthProviderName = threeLeggedOauthProviderName;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingP
             return this;
         }
         public GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy build() {
-            final var o = new GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy();
-            o.type = type;
-            return o;
+            final var _resultValue = new GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicy();
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

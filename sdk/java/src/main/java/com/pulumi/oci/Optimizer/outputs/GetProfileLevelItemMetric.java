@@ -104,12 +104,12 @@ public final class GetProfileLevelItemMetric {
             return this;
         }
         public GetProfileLevelItemMetric build() {
-            final var o = new GetProfileLevelItemMetric();
-            o.name = name;
-            o.statistic = statistic;
-            o.target = target;
-            o.threshold = threshold;
-            return o;
+            final var _resultValue = new GetProfileLevelItemMetric();
+            _resultValue.name = name;
+            _resultValue.statistic = statistic;
+            _resultValue.target = target;
+            _resultValue.threshold = threshold;
+            return _resultValue;
         }
     }
 }

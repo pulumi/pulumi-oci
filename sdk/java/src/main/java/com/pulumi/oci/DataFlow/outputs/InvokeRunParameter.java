@@ -65,10 +65,10 @@ public final class InvokeRunParameter {
             return this;
         }
         public InvokeRunParameter build() {
-            final var o = new InvokeRunParameter();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new InvokeRunParameter();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

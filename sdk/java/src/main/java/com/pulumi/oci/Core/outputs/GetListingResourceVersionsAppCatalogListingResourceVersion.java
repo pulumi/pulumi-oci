@@ -129,16 +129,16 @@ public final class GetListingResourceVersionsAppCatalogListingResourceVersion {
             return this;
         }
         public GetListingResourceVersionsAppCatalogListingResourceVersion build() {
-            final var o = new GetListingResourceVersionsAppCatalogListingResourceVersion();
-            o.accessiblePorts = accessiblePorts;
-            o.allowedActions = allowedActions;
-            o.availableRegions = availableRegions;
-            o.compatibleShapes = compatibleShapes;
-            o.listingId = listingId;
-            o.listingResourceId = listingResourceId;
-            o.listingResourceVersion = listingResourceVersion;
-            o.timePublished = timePublished;
-            return o;
+            final var _resultValue = new GetListingResourceVersionsAppCatalogListingResourceVersion();
+            _resultValue.accessiblePorts = accessiblePorts;
+            _resultValue.allowedActions = allowedActions;
+            _resultValue.availableRegions = availableRegions;
+            _resultValue.compatibleShapes = compatibleShapes;
+            _resultValue.listingId = listingId;
+            _resultValue.listingResourceId = listingResourceId;
+            _resultValue.listingResourceVersion = listingResourceVersion;
+            _resultValue.timePublished = timePublished;
+            return _resultValue;
         }
     }
 }

@@ -136,14 +136,14 @@ public final class GetManagedDatabaseSqlTuningSetsResult {
             return sqlTuningSetCollections(List.of(sqlTuningSetCollections));
         }
         public GetManagedDatabaseSqlTuningSetsResult build() {
-            final var o = new GetManagedDatabaseSqlTuningSetsResult();
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.nameContains = nameContains;
-            o.owner = owner;
-            o.sqlTuningSetCollections = sqlTuningSetCollections;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningSetsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.nameContains = nameContains;
+            _resultValue.owner = owner;
+            _resultValue.sqlTuningSetCollections = sqlTuningSetCollections;
+            return _resultValue;
         }
     }
 }

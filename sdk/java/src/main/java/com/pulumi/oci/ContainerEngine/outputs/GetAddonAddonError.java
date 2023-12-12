@@ -84,11 +84,11 @@ public final class GetAddonAddonError {
             return this;
         }
         public GetAddonAddonError build() {
-            final var o = new GetAddonAddonError();
-            o.code = code;
-            o.message = message;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetAddonAddonError();
+            _resultValue.code = code;
+            _resultValue.message = message;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

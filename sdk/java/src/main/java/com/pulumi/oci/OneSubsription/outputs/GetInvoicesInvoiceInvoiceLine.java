@@ -146,14 +146,14 @@ public final class GetInvoicesInvoiceInvoiceLine {
             return this;
         }
         public GetInvoicesInvoiceInvoiceLine build() {
-            final var o = new GetInvoicesInvoiceInvoiceLine();
-            o.arInvoiceNumber = arInvoiceNumber;
-            o.dataCenter = dataCenter;
-            o.id = id;
-            o.products = products;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetInvoicesInvoiceInvoiceLine();
+            _resultValue.arInvoiceNumber = arInvoiceNumber;
+            _resultValue.dataCenter = dataCenter;
+            _resultValue.id = id;
+            _resultValue.products = products;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

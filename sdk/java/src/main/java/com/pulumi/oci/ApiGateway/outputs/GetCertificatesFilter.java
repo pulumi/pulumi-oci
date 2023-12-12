@@ -67,11 +67,11 @@ public final class GetCertificatesFilter {
             return values(List.of(values));
         }
         public GetCertificatesFilter build() {
-            final var o = new GetCertificatesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetCertificatesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

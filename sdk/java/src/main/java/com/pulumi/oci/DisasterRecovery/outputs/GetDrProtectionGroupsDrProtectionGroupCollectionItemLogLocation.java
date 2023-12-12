@@ -84,11 +84,11 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocati
             return this;
         }
         public GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation build() {
-            final var o = new GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

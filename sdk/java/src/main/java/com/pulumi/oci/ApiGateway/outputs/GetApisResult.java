@@ -144,14 +144,14 @@ public final class GetApisResult {
             return this;
         }
         public GetApisResult build() {
-            final var o = new GetApisResult();
-            o.apiCollections = apiCollections;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetApisResult();
+            _resultValue.apiCollections = apiCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

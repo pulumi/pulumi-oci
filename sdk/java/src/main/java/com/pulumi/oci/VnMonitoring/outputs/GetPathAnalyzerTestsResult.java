@@ -144,14 +144,14 @@ public final class GetPathAnalyzerTestsResult {
             return this;
         }
         public GetPathAnalyzerTestsResult build() {
-            final var o = new GetPathAnalyzerTestsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.pathAnalyzerTestCollections = pathAnalyzerTestCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetPathAnalyzerTestsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.pathAnalyzerTestCollections = pathAnalyzerTestCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

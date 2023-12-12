@@ -65,10 +65,10 @@ public final class GetConfigDimension {
             return this;
         }
         public GetConfigDimension build() {
-            final var o = new GetConfigDimension();
-            o.name = name;
-            o.valueSource = valueSource;
-            return o;
+            final var _resultValue = new GetConfigDimension();
+            _resultValue.name = name;
+            _resultValue.valueSource = valueSource;
+            return _resultValue;
         }
     }
 }

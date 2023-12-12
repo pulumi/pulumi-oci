@@ -65,10 +65,10 @@ public final class GetBackupsBackupCollectionItemDbSystemDetail {
             return this;
         }
         public GetBackupsBackupCollectionItemDbSystemDetail build() {
-            final var o = new GetBackupsBackupCollectionItemDbSystemDetail();
-            o.dbVersion = dbVersion;
-            o.systemType = systemType;
-            return o;
+            final var _resultValue = new GetBackupsBackupCollectionItemDbSystemDetail();
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.systemType = systemType;
+            return _resultValue;
         }
     }
 }

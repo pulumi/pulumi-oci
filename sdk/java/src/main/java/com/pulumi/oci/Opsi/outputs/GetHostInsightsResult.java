@@ -222,18 +222,18 @@ public final class GetHostInsightsResult {
             return statuses(List.of(statuses));
         }
         public GetHostInsightsResult build() {
-            final var o = new GetHostInsightsResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
-            o.exadataInsightId = exadataInsightId;
-            o.filters = filters;
-            o.hostInsightSummaryCollections = hostInsightSummaryCollections;
-            o.hostTypes = hostTypes;
-            o.id = id;
-            o.states = states;
-            o.statuses = statuses;
-            return o;
+            final var _resultValue = new GetHostInsightsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
+            _resultValue.exadataInsightId = exadataInsightId;
+            _resultValue.filters = filters;
+            _resultValue.hostInsightSummaryCollections = hostInsightSummaryCollections;
+            _resultValue.hostTypes = hostTypes;
+            _resultValue.id = id;
+            _resultValue.states = states;
+            _resultValue.statuses = statuses;
+            return _resultValue;
         }
     }
 }

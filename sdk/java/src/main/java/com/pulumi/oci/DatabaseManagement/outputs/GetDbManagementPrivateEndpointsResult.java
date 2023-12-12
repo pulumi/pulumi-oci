@@ -183,16 +183,16 @@ public final class GetDbManagementPrivateEndpointsResult {
             return this;
         }
         public GetDbManagementPrivateEndpointsResult build() {
-            final var o = new GetDbManagementPrivateEndpointsResult();
-            o.compartmentId = compartmentId;
-            o.dbManagementPrivateEndpointCollections = dbManagementPrivateEndpointCollections;
-            o.filters = filters;
-            o.id = id;
-            o.isCluster = isCluster;
-            o.name = name;
-            o.state = state;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetDbManagementPrivateEndpointsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbManagementPrivateEndpointCollections = dbManagementPrivateEndpointCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isCluster = isCluster;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

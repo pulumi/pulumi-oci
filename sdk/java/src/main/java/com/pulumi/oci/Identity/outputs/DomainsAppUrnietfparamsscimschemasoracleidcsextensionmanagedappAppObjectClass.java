@@ -266,14 +266,14 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass();
-            o.display = display;
-            o.isAccountObjectClass = isAccountObjectClass;
-            o.ref = ref;
-            o.resourceType = resourceType;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClass();
+            _resultValue.display = display;
+            _resultValue.isAccountObjectClass = isAccountObjectClass;
+            _resultValue.ref = ref;
+            _resultValue.resourceType = resourceType;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -277,22 +277,22 @@ public final class GetSdmMaskingPolicyDifferenceDifferenceColumnResult {
             return this;
         }
         public GetSdmMaskingPolicyDifferenceDifferenceColumnResult build() {
-            final var o = new GetSdmMaskingPolicyDifferenceDifferenceColumnResult();
-            o.columnName = columnName;
-            o.differenceColumnKey = differenceColumnKey;
-            o.differenceType = differenceType;
-            o.id = id;
-            o.key = key;
-            o.maskingColumnkey = maskingColumnkey;
-            o.object = object;
-            o.plannedAction = plannedAction;
-            o.schemaName = schemaName;
-            o.sdmMaskingPolicyDifferenceId = sdmMaskingPolicyDifferenceId;
-            o.sensitiveColumnkey = sensitiveColumnkey;
-            o.sensitiveTypeId = sensitiveTypeId;
-            o.syncStatus = syncStatus;
-            o.timeLastSynced = timeLastSynced;
-            return o;
+            final var _resultValue = new GetSdmMaskingPolicyDifferenceDifferenceColumnResult();
+            _resultValue.columnName = columnName;
+            _resultValue.differenceColumnKey = differenceColumnKey;
+            _resultValue.differenceType = differenceType;
+            _resultValue.id = id;
+            _resultValue.key = key;
+            _resultValue.maskingColumnkey = maskingColumnkey;
+            _resultValue.object = object;
+            _resultValue.plannedAction = plannedAction;
+            _resultValue.schemaName = schemaName;
+            _resultValue.sdmMaskingPolicyDifferenceId = sdmMaskingPolicyDifferenceId;
+            _resultValue.sensitiveColumnkey = sensitiveColumnkey;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
+            _resultValue.syncStatus = syncStatus;
+            _resultValue.timeLastSynced = timeLastSynced;
+            return _resultValue;
         }
     }
 }

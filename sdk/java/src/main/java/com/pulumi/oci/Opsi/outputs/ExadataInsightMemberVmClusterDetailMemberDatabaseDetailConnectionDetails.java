@@ -91,11 +91,11 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnec
             return this;
         }
         public ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails build() {
-            final var o = new ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails();
-            o.hosts = hosts;
-            o.protocol = protocol;
-            o.serviceName = serviceName;
-            return o;
+            final var _resultValue = new ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails();
+            _resultValue.hosts = hosts;
+            _resultValue.protocol = protocol;
+            _resultValue.serviceName = serviceName;
+            return _resultValue;
         }
     }
 }

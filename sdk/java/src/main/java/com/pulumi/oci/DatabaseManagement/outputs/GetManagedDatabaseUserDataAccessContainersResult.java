@@ -128,14 +128,14 @@ public final class GetManagedDatabaseUserDataAccessContainersResult {
             return this;
         }
         public GetManagedDatabaseUserDataAccessContainersResult build() {
-            final var o = new GetManagedDatabaseUserDataAccessContainersResult();
-            o.dataAccessContainerCollections = dataAccessContainerCollections;
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserDataAccessContainersResult();
+            _resultValue.dataAccessContainerCollections = dataAccessContainerCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

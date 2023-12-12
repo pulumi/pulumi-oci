@@ -144,14 +144,14 @@ public final class GetOpensearchClustersResult {
             return this;
         }
         public GetOpensearchClustersResult build() {
-            final var o = new GetOpensearchClustersResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.opensearchClusterCollections = opensearchClusterCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetOpensearchClustersResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.opensearchClusterCollections = opensearchClusterCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

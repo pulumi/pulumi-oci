@@ -76,11 +76,11 @@ public final class GetInstanceMaintenanceRebootResult {
             return this;
         }
         public GetInstanceMaintenanceRebootResult build() {
-            final var o = new GetInstanceMaintenanceRebootResult();
-            o.id = id;
-            o.instanceId = instanceId;
-            o.timeMaintenanceRebootDueMax = timeMaintenanceRebootDueMax;
-            return o;
+            final var _resultValue = new GetInstanceMaintenanceRebootResult();
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            _resultValue.timeMaintenanceRebootDueMax = timeMaintenanceRebootDueMax;
+            return _resultValue;
         }
     }
 }

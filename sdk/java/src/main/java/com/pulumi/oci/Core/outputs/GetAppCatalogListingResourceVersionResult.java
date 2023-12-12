@@ -223,18 +223,18 @@ public final class GetAppCatalogListingResourceVersionResult {
             return this;
         }
         public GetAppCatalogListingResourceVersionResult build() {
-            final var o = new GetAppCatalogListingResourceVersionResult();
-            o.accessiblePorts = accessiblePorts;
-            o.allowedActions = allowedActions;
-            o.availableRegions = availableRegions;
-            o.compatibleShapes = compatibleShapes;
-            o.id = id;
-            o.listingId = listingId;
-            o.listingResourceId = listingResourceId;
-            o.listingResourceVersion = listingResourceVersion;
-            o.resourceVersion = resourceVersion;
-            o.timePublished = timePublished;
-            return o;
+            final var _resultValue = new GetAppCatalogListingResourceVersionResult();
+            _resultValue.accessiblePorts = accessiblePorts;
+            _resultValue.allowedActions = allowedActions;
+            _resultValue.availableRegions = availableRegions;
+            _resultValue.compatibleShapes = compatibleShapes;
+            _resultValue.id = id;
+            _resultValue.listingId = listingId;
+            _resultValue.listingResourceId = listingResourceId;
+            _resultValue.listingResourceVersion = listingResourceVersion;
+            _resultValue.resourceVersion = resourceVersion;
+            _resultValue.timePublished = timePublished;
+            return _resultValue;
         }
     }
 }

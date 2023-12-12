@@ -69,10 +69,10 @@ public final class GetShapesShapePlatformConfigOptionVirtualInstructionsOption {
             return this;
         }
         public GetShapesShapePlatformConfigOptionVirtualInstructionsOption build() {
-            final var o = new GetShapesShapePlatformConfigOptionVirtualInstructionsOption();
-            o.allowedValues = allowedValues;
-            o.isDefaultEnabled = isDefaultEnabled;
-            return o;
+            final var _resultValue = new GetShapesShapePlatformConfigOptionVirtualInstructionsOption();
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.isDefaultEnabled = isDefaultEnabled;
+            return _resultValue;
         }
     }
 }

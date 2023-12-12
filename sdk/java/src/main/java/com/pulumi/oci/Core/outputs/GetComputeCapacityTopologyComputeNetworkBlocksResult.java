@@ -147,15 +147,15 @@ public final class GetComputeCapacityTopologyComputeNetworkBlocksResult {
             return this;
         }
         public GetComputeCapacityTopologyComputeNetworkBlocksResult build() {
-            final var o = new GetComputeCapacityTopologyComputeNetworkBlocksResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.computeCapacityTopologyId = computeCapacityTopologyId;
-            o.computeHpcIslandId = computeHpcIslandId;
-            o.computeNetworkBlockCollections = computeNetworkBlockCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetComputeCapacityTopologyComputeNetworkBlocksResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeCapacityTopologyId = computeCapacityTopologyId;
+            _resultValue.computeHpcIslandId = computeHpcIslandId;
+            _resultValue.computeNetworkBlockCollections = computeNetworkBlockCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

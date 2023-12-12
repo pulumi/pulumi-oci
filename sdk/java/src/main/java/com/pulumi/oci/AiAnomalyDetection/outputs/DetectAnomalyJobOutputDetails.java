@@ -105,12 +105,12 @@ public final class DetectAnomalyJobOutputDetails {
             return this;
         }
         public DetectAnomalyJobOutputDetails build() {
-            final var o = new DetectAnomalyJobOutputDetails();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.outputType = outputType;
-            o.prefix = prefix;
-            return o;
+            final var _resultValue = new DetectAnomalyJobOutputDetails();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.outputType = outputType;
+            _resultValue.prefix = prefix;
+            return _resultValue;
         }
     }
 }

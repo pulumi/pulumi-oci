@@ -131,15 +131,15 @@ public final class GetSubscriptionRedemptionsResult {
             return this;
         }
         public GetSubscriptionRedemptionsResult build() {
-            final var o = new GetSubscriptionRedemptionsResult();
-            o.filters = filters;
-            o.id = id;
-            o.redemptionCollections = redemptionCollections;
-            o.subscriptionId = subscriptionId;
-            o.tenancyId = tenancyId;
-            o.timeRedeemedGreaterThanOrEqualTo = timeRedeemedGreaterThanOrEqualTo;
-            o.timeRedeemedLessThan = timeRedeemedLessThan;
-            return o;
+            final var _resultValue = new GetSubscriptionRedemptionsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.redemptionCollections = redemptionCollections;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.tenancyId = tenancyId;
+            _resultValue.timeRedeemedGreaterThanOrEqualTo = timeRedeemedGreaterThanOrEqualTo;
+            _resultValue.timeRedeemedLessThan = timeRedeemedLessThan;
+            return _resultValue;
         }
     }
 }

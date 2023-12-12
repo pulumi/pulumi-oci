@@ -144,14 +144,14 @@ public final class GetVcnsResult {
             return virtualNetworks(List.of(virtualNetworks));
         }
         public GetVcnsResult build() {
-            final var o = new GetVcnsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.virtualNetworks = virtualNetworks;
-            return o;
+            final var _resultValue = new GetVcnsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.virtualNetworks = virtualNetworks;
+            return _resultValue;
         }
     }
 }

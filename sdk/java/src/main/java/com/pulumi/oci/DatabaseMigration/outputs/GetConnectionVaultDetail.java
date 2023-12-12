@@ -84,11 +84,11 @@ public final class GetConnectionVaultDetail {
             return this;
         }
         public GetConnectionVaultDetail build() {
-            final var o = new GetConnectionVaultDetail();
-            o.compartmentId = compartmentId;
-            o.keyId = keyId;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new GetConnectionVaultDetail();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.keyId = keyId;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

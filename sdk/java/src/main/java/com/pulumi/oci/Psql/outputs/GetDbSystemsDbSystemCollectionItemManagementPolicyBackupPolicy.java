@@ -130,13 +130,13 @@ public final class GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolic
             return this;
         }
         public GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy build() {
-            final var o = new GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy();
-            o.backupStart = backupStart;
-            o.daysOfTheMonths = daysOfTheMonths;
-            o.daysOfTheWeeks = daysOfTheWeeks;
-            o.kind = kind;
-            o.retentionDays = retentionDays;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemCollectionItemManagementPolicyBackupPolicy();
+            _resultValue.backupStart = backupStart;
+            _resultValue.daysOfTheMonths = daysOfTheMonths;
+            _resultValue.daysOfTheWeeks = daysOfTheWeeks;
+            _resultValue.kind = kind;
+            _resultValue.retentionDays = retentionDays;
+            return _resultValue;
         }
     }
 }

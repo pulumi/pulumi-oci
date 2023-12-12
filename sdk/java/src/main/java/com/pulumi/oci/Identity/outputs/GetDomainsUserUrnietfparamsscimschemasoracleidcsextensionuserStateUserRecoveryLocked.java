@@ -66,10 +66,10 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuser
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked();
-            o.lockDate = lockDate;
-            o.on = on;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked();
+            _resultValue.lockDate = lockDate;
+            _resultValue.on = on;
+            return _resultValue;
         }
     }
 }

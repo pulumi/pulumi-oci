@@ -65,10 +65,10 @@ public final class AutoScalingConfigurationAutoScalingResources {
             return this;
         }
         public AutoScalingConfigurationAutoScalingResources build() {
-            final var o = new AutoScalingConfigurationAutoScalingResources();
-            o.id = id;
-            o.type = type;
-            return o;
+            final var _resultValue = new AutoScalingConfigurationAutoScalingResources();
+            _resultValue.id = id;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

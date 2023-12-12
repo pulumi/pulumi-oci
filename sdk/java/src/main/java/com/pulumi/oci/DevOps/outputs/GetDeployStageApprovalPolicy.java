@@ -66,10 +66,10 @@ public final class GetDeployStageApprovalPolicy {
             return this;
         }
         public GetDeployStageApprovalPolicy build() {
-            final var o = new GetDeployStageApprovalPolicy();
-            o.approvalPolicyType = approvalPolicyType;
-            o.numberOfApprovalsRequired = numberOfApprovalsRequired;
-            return o;
+            final var _resultValue = new GetDeployStageApprovalPolicy();
+            _resultValue.approvalPolicyType = approvalPolicyType;
+            _resultValue.numberOfApprovalsRequired = numberOfApprovalsRequired;
+            return _resultValue;
         }
     }
 }

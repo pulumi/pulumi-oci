@@ -42,9 +42,9 @@ public final class GetEndpointsEndpointCollection {
             return items(List.of(items));
         }
         public GetEndpointsEndpointCollection build() {
-            final var o = new GetEndpointsEndpointCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetEndpointsEndpointCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

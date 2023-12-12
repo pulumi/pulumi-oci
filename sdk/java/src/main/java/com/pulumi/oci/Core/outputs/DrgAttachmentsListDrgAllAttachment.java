@@ -48,9 +48,9 @@ public final class DrgAttachmentsListDrgAllAttachment {
             return this;
         }
         public DrgAttachmentsListDrgAllAttachment build() {
-            final var o = new DrgAttachmentsListDrgAllAttachment();
-            o.id = id;
-            return o;
+            final var _resultValue = new DrgAttachmentsListDrgAllAttachment();
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

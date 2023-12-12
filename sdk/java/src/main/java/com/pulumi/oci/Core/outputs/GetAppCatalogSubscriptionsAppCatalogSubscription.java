@@ -225,20 +225,20 @@ public final class GetAppCatalogSubscriptionsAppCatalogSubscription {
             return this;
         }
         public GetAppCatalogSubscriptionsAppCatalogSubscription build() {
-            final var o = new GetAppCatalogSubscriptionsAppCatalogSubscription();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.eulaLink = eulaLink;
-            o.listingId = listingId;
-            o.listingResourceId = listingResourceId;
-            o.listingResourceVersion = listingResourceVersion;
-            o.oracleTermsOfUseLink = oracleTermsOfUseLink;
-            o.publisherName = publisherName;
-            o.signature = signature;
-            o.summary = summary;
-            o.timeCreated = timeCreated;
-            o.timeRetrieved = timeRetrieved;
-            return o;
+            final var _resultValue = new GetAppCatalogSubscriptionsAppCatalogSubscription();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.eulaLink = eulaLink;
+            _resultValue.listingId = listingId;
+            _resultValue.listingResourceId = listingResourceId;
+            _resultValue.listingResourceVersion = listingResourceVersion;
+            _resultValue.oracleTermsOfUseLink = oracleTermsOfUseLink;
+            _resultValue.publisherName = publisherName;
+            _resultValue.signature = signature;
+            _resultValue.summary = summary;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeRetrieved = timeRetrieved;
+            return _resultValue;
         }
     }
 }

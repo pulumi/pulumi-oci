@@ -138,15 +138,15 @@ public final class GetCertificatesCertificate {
             return this;
         }
         public GetCertificatesCertificate build() {
-            final var o = new GetCertificatesCertificate();
-            o.caCertificate = caCertificate;
-            o.certificateName = certificateName;
-            o.loadBalancerId = loadBalancerId;
-            o.passphrase = passphrase;
-            o.privateKey = privateKey;
-            o.publicCertificate = publicCertificate;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCertificatesCertificate();
+            _resultValue.caCertificate = caCertificate;
+            _resultValue.certificateName = certificateName;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.passphrase = passphrase;
+            _resultValue.privateKey = privateKey;
+            _resultValue.publicCertificate = publicCertificate;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

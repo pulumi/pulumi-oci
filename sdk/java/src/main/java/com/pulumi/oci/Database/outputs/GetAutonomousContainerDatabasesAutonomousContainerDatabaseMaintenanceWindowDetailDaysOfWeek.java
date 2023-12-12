@@ -46,9 +46,9 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMai
             return this;
         }
         public GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek build() {
-            final var o = new GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailDaysOfWeek();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

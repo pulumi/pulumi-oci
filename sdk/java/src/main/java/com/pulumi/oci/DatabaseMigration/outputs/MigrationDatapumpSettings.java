@@ -132,13 +132,13 @@ public final class MigrationDatapumpSettings {
             return metadataRemaps(List.of(metadataRemaps));
         }
         public MigrationDatapumpSettings build() {
-            final var o = new MigrationDatapumpSettings();
-            o.dataPumpParameters = dataPumpParameters;
-            o.exportDirectoryObject = exportDirectoryObject;
-            o.importDirectoryObject = importDirectoryObject;
-            o.jobMode = jobMode;
-            o.metadataRemaps = metadataRemaps;
-            return o;
+            final var _resultValue = new MigrationDatapumpSettings();
+            _resultValue.dataPumpParameters = dataPumpParameters;
+            _resultValue.exportDirectoryObject = exportDirectoryObject;
+            _resultValue.importDirectoryObject = importDirectoryObject;
+            _resultValue.jobMode = jobMode;
+            _resultValue.metadataRemaps = metadataRemaps;
+            return _resultValue;
         }
     }
 }

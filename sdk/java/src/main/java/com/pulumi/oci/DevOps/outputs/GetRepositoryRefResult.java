@@ -192,17 +192,17 @@ public final class GetRepositoryRefResult {
             return this;
         }
         public GetRepositoryRefResult build() {
-            final var o = new GetRepositoryRefResult();
-            o.commitId = commitId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.fullRefName = fullRefName;
-            o.id = id;
-            o.objectId = objectId;
-            o.refName = refName;
-            o.refType = refType;
-            o.repositoryId = repositoryId;
-            return o;
+            final var _resultValue = new GetRepositoryRefResult();
+            _resultValue.commitId = commitId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.fullRefName = fullRefName;
+            _resultValue.id = id;
+            _resultValue.objectId = objectId;
+            _resultValue.refName = refName;
+            _resultValue.refType = refType;
+            _resultValue.repositoryId = repositoryId;
+            return _resultValue;
         }
     }
 }

@@ -113,10 +113,10 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

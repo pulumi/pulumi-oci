@@ -60,11 +60,11 @@ public final class GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOpti
             return this;
         }
         public GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption build() {
-            final var o = new GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption();
-            o.defaultValue = defaultValue;
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new GetShapeShapePlatformConfigOptionPercentageOfCoresEnabledOption();
+            _resultValue.defaultValue = defaultValue;
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

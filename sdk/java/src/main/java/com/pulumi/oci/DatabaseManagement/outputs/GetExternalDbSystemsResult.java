@@ -125,13 +125,13 @@ public final class GetExternalDbSystemsResult {
             return this;
         }
         public GetExternalDbSystemsResult build() {
-            final var o = new GetExternalDbSystemsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.externalDbSystemCollections = externalDbSystemCollections;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetExternalDbSystemsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.externalDbSystemCollections = externalDbSystemCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetPodShapesPodShapeNetworkBandwidthOption {
             return this;
         }
         public GetPodShapesPodShapeNetworkBandwidthOption build() {
-            final var o = new GetPodShapesPodShapeNetworkBandwidthOption();
-            o.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
-            o.maxInGbps = maxInGbps;
-            o.minInGbps = minInGbps;
-            return o;
+            final var _resultValue = new GetPodShapesPodShapeNetworkBandwidthOption();
+            _resultValue.defaultPerOcpuInGbps = defaultPerOcpuInGbps;
+            _resultValue.maxInGbps = maxInGbps;
+            _resultValue.minInGbps = minInGbps;
+            return _resultValue;
         }
     }
 }

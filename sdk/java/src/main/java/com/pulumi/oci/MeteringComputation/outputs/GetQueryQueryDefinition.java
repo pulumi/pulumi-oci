@@ -113,12 +113,12 @@ public final class GetQueryQueryDefinition {
             return this;
         }
         public GetQueryQueryDefinition build() {
-            final var o = new GetQueryQueryDefinition();
-            o.costAnalysisUis = costAnalysisUis;
-            o.displayName = displayName;
-            o.reportQueries = reportQueries;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetQueryQueryDefinition();
+            _resultValue.costAnalysisUis = costAnalysisUis;
+            _resultValue.displayName = displayName;
+            _resultValue.reportQueries = reportQueries;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

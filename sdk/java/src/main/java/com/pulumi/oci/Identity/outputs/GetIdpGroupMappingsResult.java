@@ -105,12 +105,12 @@ public final class GetIdpGroupMappingsResult {
             return idpGroupMappings(List.of(idpGroupMappings));
         }
         public GetIdpGroupMappingsResult build() {
-            final var o = new GetIdpGroupMappingsResult();
-            o.filters = filters;
-            o.id = id;
-            o.identityProviderId = identityProviderId;
-            o.idpGroupMappings = idpGroupMappings;
-            return o;
+            final var _resultValue = new GetIdpGroupMappingsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.identityProviderId = identityProviderId;
+            _resultValue.idpGroupMappings = idpGroupMappings;
+            return _resultValue;
         }
     }
 }

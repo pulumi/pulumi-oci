@@ -86,11 +86,11 @@ public final class DrProtectionGroupAssociation {
             return this;
         }
         public DrProtectionGroupAssociation build() {
-            final var o = new DrProtectionGroupAssociation();
-            o.peerId = peerId;
-            o.peerRegion = peerRegion;
-            o.role = role;
-            return o;
+            final var _resultValue = new DrProtectionGroupAssociation();
+            _resultValue.peerId = peerId;
+            _resultValue.peerRegion = peerRegion;
+            _resultValue.role = role;
+            return _resultValue;
         }
     }
 }

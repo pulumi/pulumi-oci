@@ -103,12 +103,12 @@ public final class GetByoipRangeByoipRangeVcnIpv6allocation {
             return this;
         }
         public GetByoipRangeByoipRangeVcnIpv6allocation build() {
-            final var o = new GetByoipRangeByoipRangeVcnIpv6allocation();
-            o.byoipRangeId = byoipRangeId;
-            o.compartmentId = compartmentId;
-            o.ipv6cidrBlock = ipv6cidrBlock;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetByoipRangeByoipRangeVcnIpv6allocation();
+            _resultValue.byoipRangeId = byoipRangeId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.ipv6cidrBlock = ipv6cidrBlock;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

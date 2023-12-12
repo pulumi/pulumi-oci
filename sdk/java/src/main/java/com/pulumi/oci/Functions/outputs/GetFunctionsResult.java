@@ -144,14 +144,14 @@ public final class GetFunctionsResult {
             return this;
         }
         public GetFunctionsResult build() {
-            final var o = new GetFunctionsResult();
-            o.applicationId = applicationId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.functions = functions;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetFunctionsResult();
+            _resultValue.applicationId = applicationId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.functions = functions;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

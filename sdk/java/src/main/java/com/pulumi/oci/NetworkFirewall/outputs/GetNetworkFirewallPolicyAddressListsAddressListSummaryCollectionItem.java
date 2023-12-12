@@ -146,14 +146,14 @@ public final class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollect
             return this;
         }
         public GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem build() {
-            final var o = new GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem();
-            o.addresses = addresses;
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.totalAddresses = totalAddresses;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyAddressListsAddressListSummaryCollectionItem();
+            _resultValue.addresses = addresses;
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.totalAddresses = totalAddresses;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

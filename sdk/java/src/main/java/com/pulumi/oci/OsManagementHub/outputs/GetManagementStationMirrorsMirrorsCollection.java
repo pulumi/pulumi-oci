@@ -50,9 +50,9 @@ public final class GetManagementStationMirrorsMirrorsCollection {
             return items(List.of(items));
         }
         public GetManagementStationMirrorsMirrorsCollection build() {
-            final var o = new GetManagementStationMirrorsMirrorsCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagementStationMirrorsMirrorsCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

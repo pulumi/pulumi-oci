@@ -125,13 +125,13 @@ public final class ModelEvaluationResultClassMetric {
             return this;
         }
         public ModelEvaluationResultClassMetric build() {
-            final var o = new ModelEvaluationResultClassMetric();
-            o.f1 = f1;
-            o.label = label;
-            o.precision = precision;
-            o.recall = recall;
-            o.support = support;
-            return o;
+            final var _resultValue = new ModelEvaluationResultClassMetric();
+            _resultValue.f1 = f1;
+            _resultValue.label = label;
+            _resultValue.precision = precision;
+            _resultValue.recall = recall;
+            _resultValue.support = support;
+            return _resultValue;
         }
     }
 }

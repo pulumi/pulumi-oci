@@ -219,20 +219,20 @@ public final class GetSensitiveDataModelsResult {
             return this;
         }
         public GetSensitiveDataModelsResult build() {
-            final var o = new GetSensitiveDataModelsResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.sensitiveDataModelCollections = sensitiveDataModelCollections;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.state = state;
-            o.targetId = targetId;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            return o;
+            final var _resultValue = new GetSensitiveDataModelsResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.sensitiveDataModelCollections = sensitiveDataModelCollections;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            return _resultValue;
         }
     }
 }

@@ -507,34 +507,34 @@ public final class GetDatabaseRegistrationsDatabaseRegistrationCollectionItem {
             return this;
         }
         public GetDatabaseRegistrationsDatabaseRegistrationCollectionItem build() {
-            final var o = new GetDatabaseRegistrationsDatabaseRegistrationCollectionItem();
-            o.aliasName = aliasName;
-            o.compartmentId = compartmentId;
-            o.connectionString = connectionString;
-            o.databaseId = databaseId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.fqdn = fqdn;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ipAddress = ipAddress;
-            o.keyId = keyId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.password = password;
-            o.rcePrivateIp = rcePrivateIp;
-            o.secretCompartmentId = secretCompartmentId;
-            o.secretId = secretId;
-            o.sessionMode = sessionMode;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.username = username;
-            o.vaultId = vaultId;
-            o.wallet = wallet;
-            return o;
+            final var _resultValue = new GetDatabaseRegistrationsDatabaseRegistrationCollectionItem();
+            _resultValue.aliasName = aliasName;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionString = connectionString;
+            _resultValue.databaseId = databaseId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.fqdn = fqdn;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.keyId = keyId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.password = password;
+            _resultValue.rcePrivateIp = rcePrivateIp;
+            _resultValue.secretCompartmentId = secretCompartmentId;
+            _resultValue.secretId = secretId;
+            _resultValue.sessionMode = sessionMode;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.username = username;
+            _resultValue.vaultId = vaultId;
+            _resultValue.wallet = wallet;
+            return _resultValue;
         }
     }
 }

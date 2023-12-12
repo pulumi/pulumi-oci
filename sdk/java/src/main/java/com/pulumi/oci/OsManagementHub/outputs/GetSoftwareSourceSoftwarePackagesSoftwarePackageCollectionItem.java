@@ -307,22 +307,22 @@ public final class GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionIte
             return this;
         }
         public GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem build() {
-            final var o = new GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem();
-            o.architecture = architecture;
-            o.checksum = checksum;
-            o.checksumType = checksumType;
-            o.dependencies = dependencies;
-            o.description = description;
-            o.displayName = displayName;
-            o.files = files;
-            o.isLatest = isLatest;
-            o.lastModifiedDate = lastModifiedDate;
-            o.name = name;
-            o.sizeInBytes = sizeInBytes;
-            o.softwareSources = softwareSources;
-            o.type = type;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetSoftwareSourceSoftwarePackagesSoftwarePackageCollectionItem();
+            _resultValue.architecture = architecture;
+            _resultValue.checksum = checksum;
+            _resultValue.checksumType = checksumType;
+            _resultValue.dependencies = dependencies;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.files = files;
+            _resultValue.isLatest = isLatest;
+            _resultValue.lastModifiedDate = lastModifiedDate;
+            _resultValue.name = name;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.softwareSources = softwareSources;
+            _resultValue.type = type;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

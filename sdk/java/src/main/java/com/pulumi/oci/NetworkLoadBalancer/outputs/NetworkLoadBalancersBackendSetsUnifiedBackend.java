@@ -191,16 +191,16 @@ public final class NetworkLoadBalancersBackendSetsUnifiedBackend {
             return this;
         }
         public NetworkLoadBalancersBackendSetsUnifiedBackend build() {
-            final var o = new NetworkLoadBalancersBackendSetsUnifiedBackend();
-            o.ipAddress = ipAddress;
-            o.isBackup = isBackup;
-            o.isDrain = isDrain;
-            o.isOffline = isOffline;
-            o.name = name;
-            o.port = port;
-            o.targetId = targetId;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new NetworkLoadBalancersBackendSetsUnifiedBackend();
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.isBackup = isBackup;
+            _resultValue.isDrain = isDrain;
+            _resultValue.isOffline = isOffline;
+            _resultValue.name = name;
+            _resultValue.port = port;
+            _resultValue.targetId = targetId;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

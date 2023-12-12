@@ -179,16 +179,16 @@ public final class GetSubscribedServicesSubscribedServiceResellerContact {
             return this;
         }
         public GetSubscribedServicesSubscribedServiceResellerContact build() {
-            final var o = new GetSubscribedServicesSubscribedServiceResellerContact();
-            o.email = email;
-            o.firstName = firstName;
-            o.lastName = lastName;
-            o.name = name;
-            o.tcaContactId = tcaContactId;
-            o.tcaCustAccntSiteId = tcaCustAccntSiteId;
-            o.tcaPartyId = tcaPartyId;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetSubscribedServicesSubscribedServiceResellerContact();
+            _resultValue.email = email;
+            _resultValue.firstName = firstName;
+            _resultValue.lastName = lastName;
+            _resultValue.name = name;
+            _resultValue.tcaContactId = tcaContactId;
+            _resultValue.tcaCustAccntSiteId = tcaCustAccntSiteId;
+            _resultValue.tcaPartyId = tcaPartyId;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

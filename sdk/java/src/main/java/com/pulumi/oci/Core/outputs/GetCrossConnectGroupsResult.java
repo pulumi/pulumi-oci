@@ -144,14 +144,14 @@ public final class GetCrossConnectGroupsResult {
             return this;
         }
         public GetCrossConnectGroupsResult build() {
-            final var o = new GetCrossConnectGroupsResult();
-            o.compartmentId = compartmentId;
-            o.crossConnectGroups = crossConnectGroups;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCrossConnectGroupsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.crossConnectGroups = crossConnectGroups;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -57,10 +57,10 @@ public final class GetCaptureFilterVtapCaptureFilterRuleUdpOption {
             return sourcePortRanges(List.of(sourcePortRanges));
         }
         public GetCaptureFilterVtapCaptureFilterRuleUdpOption build() {
-            final var o = new GetCaptureFilterVtapCaptureFilterRuleUdpOption();
-            o.destinationPortRanges = destinationPortRanges;
-            o.sourcePortRanges = sourcePortRanges;
-            return o;
+            final var _resultValue = new GetCaptureFilterVtapCaptureFilterRuleUdpOption();
+            _resultValue.destinationPortRanges = destinationPortRanges;
+            _resultValue.sourcePortRanges = sourcePortRanges;
+            return _resultValue;
         }
     }
 }

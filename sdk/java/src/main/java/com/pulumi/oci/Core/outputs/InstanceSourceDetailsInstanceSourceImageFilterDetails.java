@@ -107,12 +107,12 @@ public final class InstanceSourceDetailsInstanceSourceImageFilterDetails {
             return this;
         }
         public InstanceSourceDetailsInstanceSourceImageFilterDetails build() {
-            final var o = new InstanceSourceDetailsInstanceSourceImageFilterDetails();
-            o.compartmentId = compartmentId;
-            o.definedTagsFilter = definedTagsFilter;
-            o.operatingSystem = operatingSystem;
-            o.operatingSystemVersion = operatingSystemVersion;
-            return o;
+            final var _resultValue = new InstanceSourceDetailsInstanceSourceImageFilterDetails();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTagsFilter = definedTagsFilter;
+            _resultValue.operatingSystem = operatingSystem;
+            _resultValue.operatingSystemVersion = operatingSystemVersion;
+            return _resultValue;
         }
     }
 }

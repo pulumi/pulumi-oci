@@ -65,10 +65,10 @@ public final class GetPodShapesPodShapeOcpuOption {
             return this;
         }
         public GetPodShapesPodShapeOcpuOption build() {
-            final var o = new GetPodShapesPodShapeOcpuOption();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new GetPodShapesPodShapeOcpuOption();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

@@ -551,35 +551,35 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
             return this;
         }
         public GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem build() {
-            final var o = new GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem();
-            o.charEncoding = charEncoding;
-            o.collectionType = collectionType;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.entityId = entityId;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.lifecycleDetails = lifecycleDetails;
-            o.logGroupId = logGroupId;
-            o.logSet = logSet;
-            o.logSetExtRegex = logSetExtRegex;
-            o.logSetKey = logSetKey;
-            o.logSourceName = logSourceName;
-            o.name = name;
-            o.namespace = namespace;
-            o.objectNameFilters = objectNameFilters;
-            o.osBucketName = osBucketName;
-            o.osNamespace = osNamespace;
-            o.overrides = overrides;
-            o.pollSince = pollSince;
-            o.pollTill = pollTill;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.timezone = timezone;
-            return o;
+            final var _resultValue = new GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem();
+            _resultValue.charEncoding = charEncoding;
+            _resultValue.collectionType = collectionType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.entityId = entityId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logSet = logSet;
+            _resultValue.logSetExtRegex = logSetExtRegex;
+            _resultValue.logSetKey = logSetKey;
+            _resultValue.logSourceName = logSourceName;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.objectNameFilters = objectNameFilters;
+            _resultValue.osBucketName = osBucketName;
+            _resultValue.osNamespace = osNamespace;
+            _resultValue.overrides = overrides;
+            _resultValue.pollSince = pollSince;
+            _resultValue.pollTill = pollTill;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.timezone = timezone;
+            return _resultValue;
         }
     }
 }

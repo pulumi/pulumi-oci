@@ -75,11 +75,11 @@ public final class GetNamespaceEffectivePropertiesFilter {
             return values(List.of(values));
         }
         public GetNamespaceEffectivePropertiesFilter build() {
-            final var o = new GetNamespaceEffectivePropertiesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetNamespaceEffectivePropertiesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

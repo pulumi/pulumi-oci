@@ -65,10 +65,10 @@ public final class GetDomainsOauthClientCertificatesOauthClientCertificateTag {
             return this;
         }
         public GetDomainsOauthClientCertificatesOauthClientCertificateTag build() {
-            final var o = new GetDomainsOauthClientCertificatesOauthClientCertificateTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsOauthClientCertificatesOauthClientCertificateTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

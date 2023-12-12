@@ -96,11 +96,11 @@ public final class GetSoftwareSourceCustomSoftwareSourceFilter {
             return packageGroupFilters(List.of(packageGroupFilters));
         }
         public GetSoftwareSourceCustomSoftwareSourceFilter build() {
-            final var o = new GetSoftwareSourceCustomSoftwareSourceFilter();
-            o.moduleStreamProfileFilters = moduleStreamProfileFilters;
-            o.packageFilters = packageFilters;
-            o.packageGroupFilters = packageGroupFilters;
-            return o;
+            final var _resultValue = new GetSoftwareSourceCustomSoftwareSourceFilter();
+            _resultValue.moduleStreamProfileFilters = moduleStreamProfileFilters;
+            _resultValue.packageFilters = packageFilters;
+            _resultValue.packageGroupFilters = packageGroupFilters;
+            return _resultValue;
         }
     }
 }

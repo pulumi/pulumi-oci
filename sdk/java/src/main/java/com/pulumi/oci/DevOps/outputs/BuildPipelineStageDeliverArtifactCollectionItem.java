@@ -67,10 +67,10 @@ public final class BuildPipelineStageDeliverArtifactCollectionItem {
             return this;
         }
         public BuildPipelineStageDeliverArtifactCollectionItem build() {
-            final var o = new BuildPipelineStageDeliverArtifactCollectionItem();
-            o.artifactId = artifactId;
-            o.artifactName = artifactName;
-            return o;
+            final var _resultValue = new BuildPipelineStageDeliverArtifactCollectionItem();
+            _resultValue.artifactId = artifactId;
+            _resultValue.artifactName = artifactName;
+            return _resultValue;
         }
     }
 }

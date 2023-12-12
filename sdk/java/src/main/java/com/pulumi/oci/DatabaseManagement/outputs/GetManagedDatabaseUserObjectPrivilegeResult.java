@@ -113,13 +113,13 @@ public final class GetManagedDatabaseUserObjectPrivilegeResult {
             return this;
         }
         public GetManagedDatabaseUserObjectPrivilegeResult build() {
-            final var o = new GetManagedDatabaseUserObjectPrivilegeResult();
-            o.id = id;
-            o.items = items;
-            o.managedDatabaseId = managedDatabaseId;
-            o.name = name;
-            o.userName = userName;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserObjectPrivilegeResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.managedDatabaseId = managedDatabaseId;
+            _resultValue.name = name;
+            _resultValue.userName = userName;
+            return _resultValue;
         }
     }
 }

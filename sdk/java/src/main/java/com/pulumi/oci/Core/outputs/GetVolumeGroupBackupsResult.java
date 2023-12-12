@@ -144,14 +144,14 @@ public final class GetVolumeGroupBackupsResult {
             return this;
         }
         public GetVolumeGroupBackupsResult build() {
-            final var o = new GetVolumeGroupBackupsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.volumeGroupBackups = volumeGroupBackups;
-            o.volumeGroupId = volumeGroupId;
-            return o;
+            final var _resultValue = new GetVolumeGroupBackupsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.volumeGroupBackups = volumeGroupBackups;
+            _resultValue.volumeGroupId = volumeGroupId;
+            return _resultValue;
         }
     }
 }

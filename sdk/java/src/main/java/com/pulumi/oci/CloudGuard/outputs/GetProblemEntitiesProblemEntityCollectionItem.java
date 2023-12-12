@@ -149,14 +149,14 @@ public final class GetProblemEntitiesProblemEntityCollectionItem {
             return this;
         }
         public GetProblemEntitiesProblemEntityCollectionItem build() {
-            final var o = new GetProblemEntitiesProblemEntityCollectionItem();
-            o.entityDetails = entityDetails;
-            o.problemId = problemId;
-            o.regions = regions;
-            o.resultUrl = resultUrl;
-            o.timeFirstDetected = timeFirstDetected;
-            o.timeLastDetected = timeLastDetected;
-            return o;
+            final var _resultValue = new GetProblemEntitiesProblemEntityCollectionItem();
+            _resultValue.entityDetails = entityDetails;
+            _resultValue.problemId = problemId;
+            _resultValue.regions = regions;
+            _resultValue.resultUrl = resultUrl;
+            _resultValue.timeFirstDetected = timeFirstDetected;
+            _resultValue.timeLastDetected = timeLastDetected;
+            return _resultValue;
         }
     }
 }

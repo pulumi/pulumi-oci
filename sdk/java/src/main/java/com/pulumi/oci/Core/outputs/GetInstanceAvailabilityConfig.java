@@ -66,10 +66,10 @@ public final class GetInstanceAvailabilityConfig {
             return this;
         }
         public GetInstanceAvailabilityConfig build() {
-            final var o = new GetInstanceAvailabilityConfig();
-            o.isLiveMigrationPreferred = isLiveMigrationPreferred;
-            o.recoveryAction = recoveryAction;
-            return o;
+            final var _resultValue = new GetInstanceAvailabilityConfig();
+            _resultValue.isLiveMigrationPreferred = isLiveMigrationPreferred;
+            _resultValue.recoveryAction = recoveryAction;
+            return _resultValue;
         }
     }
 }

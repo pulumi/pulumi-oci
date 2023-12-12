@@ -123,13 +123,13 @@ public final class GetDomainsAuthenticationFactorSettingsAuthenticationFactorSet
             return this;
         }
         public GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEndpointRestriction build() {
-            final var o = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEndpointRestriction();
-            o.maxEndpointTrustDurationInDays = maxEndpointTrustDurationInDays;
-            o.maxEnrolledDevices = maxEnrolledDevices;
-            o.maxIncorrectAttempts = maxIncorrectAttempts;
-            o.maxTrustedEndpoints = maxTrustedEndpoints;
-            o.trustedEndpointsEnabled = trustedEndpointsEnabled;
-            return o;
+            final var _resultValue = new GetDomainsAuthenticationFactorSettingsAuthenticationFactorSettingEndpointRestriction();
+            _resultValue.maxEndpointTrustDurationInDays = maxEndpointTrustDurationInDays;
+            _resultValue.maxEnrolledDevices = maxEnrolledDevices;
+            _resultValue.maxIncorrectAttempts = maxIncorrectAttempts;
+            _resultValue.maxTrustedEndpoints = maxTrustedEndpoints;
+            _resultValue.trustedEndpointsEnabled = trustedEndpointsEnabled;
+            return _resultValue;
         }
     }
 }

@@ -261,20 +261,20 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail 
             return this;
         }
         public GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail build() {
-            final var o = new GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail();
-            o.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
-            o.customDhGroup = customDhGroup;
-            o.customEncryptionAlgorithm = customEncryptionAlgorithm;
-            o.isCustomPhaseOneConfig = isCustomPhaseOneConfig;
-            o.isIkeEstablished = isIkeEstablished;
-            o.lifetime = lifetime;
-            o.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
-            o.negotiatedDhGroup = negotiatedDhGroup;
-            o.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
-            o.remainingLifetime = remainingLifetime;
-            o.remainingLifetimeInt = remainingLifetimeInt;
-            o.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
-            return o;
+            final var _resultValue = new GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetail();
+            _resultValue.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
+            _resultValue.customDhGroup = customDhGroup;
+            _resultValue.customEncryptionAlgorithm = customEncryptionAlgorithm;
+            _resultValue.isCustomPhaseOneConfig = isCustomPhaseOneConfig;
+            _resultValue.isIkeEstablished = isIkeEstablished;
+            _resultValue.lifetime = lifetime;
+            _resultValue.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
+            _resultValue.negotiatedDhGroup = negotiatedDhGroup;
+            _resultValue.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
+            _resultValue.remainingLifetime = remainingLifetime;
+            _resultValue.remainingLifetimeInt = remainingLifetimeInt;
+            _resultValue.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
+            return _resultValue;
         }
     }
 }

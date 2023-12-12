@@ -84,11 +84,11 @@ public final class GetResourceActionAction {
             return this;
         }
         public GetResourceActionAction build() {
-            final var o = new GetResourceActionAction();
-            o.description = description;
-            o.type = type;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetResourceActionAction();
+            _resultValue.description = description;
+            _resultValue.type = type;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

@@ -93,11 +93,11 @@ public final class GetMigrationGoldenGateServiceDetailSetting {
             return replicats(List.of(replicats));
         }
         public GetMigrationGoldenGateServiceDetailSetting build() {
-            final var o = new GetMigrationGoldenGateServiceDetailSetting();
-            o.acceptableLag = acceptableLag;
-            o.extracts = extracts;
-            o.replicats = replicats;
-            return o;
+            final var _resultValue = new GetMigrationGoldenGateServiceDetailSetting();
+            _resultValue.acceptableLag = acceptableLag;
+            _resultValue.extracts = extracts;
+            _resultValue.replicats = replicats;
+            return _resultValue;
         }
     }
 }

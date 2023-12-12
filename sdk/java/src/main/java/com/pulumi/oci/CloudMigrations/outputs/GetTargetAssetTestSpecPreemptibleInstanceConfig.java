@@ -50,9 +50,9 @@ public final class GetTargetAssetTestSpecPreemptibleInstanceConfig {
             return preemptionActions(List.of(preemptionActions));
         }
         public GetTargetAssetTestSpecPreemptibleInstanceConfig build() {
-            final var o = new GetTargetAssetTestSpecPreemptibleInstanceConfig();
-            o.preemptionActions = preemptionActions;
-            return o;
+            final var _resultValue = new GetTargetAssetTestSpecPreemptibleInstanceConfig();
+            _resultValue.preemptionActions = preemptionActions;
+            return _resultValue;
         }
     }
 }

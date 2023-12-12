@@ -96,11 +96,11 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransfor
             return setHeaders(List.of(setHeaders));
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformation build() {
-            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformation();
-            o.filterHeaders = filterHeaders;
-            o.renameHeaders = renameHeaders;
-            o.setHeaders = setHeaders;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformation();
+            _resultValue.filterHeaders = filterHeaders;
+            _resultValue.renameHeaders = renameHeaders;
+            _resultValue.setHeaders = setHeaders;
+            return _resultValue;
         }
     }
 }

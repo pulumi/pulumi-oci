@@ -65,10 +65,10 @@ public final class GetMonitorConfigurationClientCertificateDetailPrivateKey {
             return this;
         }
         public GetMonitorConfigurationClientCertificateDetailPrivateKey build() {
-            final var o = new GetMonitorConfigurationClientCertificateDetailPrivateKey();
-            o.content = content;
-            o.fileName = fileName;
-            return o;
+            final var _resultValue = new GetMonitorConfigurationClientCertificateDetailPrivateKey();
+            _resultValue.content = content;
+            _resultValue.fileName = fileName;
+            return _resultValue;
         }
     }
 }

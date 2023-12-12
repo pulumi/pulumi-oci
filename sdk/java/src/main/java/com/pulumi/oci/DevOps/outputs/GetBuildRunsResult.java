@@ -190,16 +190,16 @@ public final class GetBuildRunsResult {
             return this;
         }
         public GetBuildRunsResult build() {
-            final var o = new GetBuildRunsResult();
-            o.buildPipelineId = buildPipelineId;
-            o.buildRunSummaryCollections = buildRunSummaryCollections;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.projectId = projectId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetBuildRunsResult();
+            _resultValue.buildPipelineId = buildPipelineId;
+            _resultValue.buildRunSummaryCollections = buildRunSummaryCollections;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

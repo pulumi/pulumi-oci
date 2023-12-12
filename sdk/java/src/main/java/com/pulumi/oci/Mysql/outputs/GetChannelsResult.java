@@ -194,17 +194,17 @@ public final class GetChannelsResult {
             return this;
         }
         public GetChannelsResult build() {
-            final var o = new GetChannelsResult();
-            o.channelId = channelId;
-            o.channels = channels;
-            o.compartmentId = compartmentId;
-            o.dbSystemId = dbSystemId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetChannelsResult();
+            _resultValue.channelId = channelId;
+            _resultValue.channels = channels;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

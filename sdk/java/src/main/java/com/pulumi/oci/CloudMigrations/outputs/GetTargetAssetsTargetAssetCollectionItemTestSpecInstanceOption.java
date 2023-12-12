@@ -46,9 +46,9 @@ public final class GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptio
             return this;
         }
         public GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption build() {
-            final var o = new GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption();
-            o.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
-            return o;
+            final var _resultValue = new GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOption();
+            _resultValue.areLegacyImdsEndpointsDisabled = areLegacyImdsEndpointsDisabled;
+            return _resultValue;
         }
     }
 }

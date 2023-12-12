@@ -50,9 +50,9 @@ public final class GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollect
             return items(List.of(items));
         }
         public GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection build() {
-            final var o = new GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

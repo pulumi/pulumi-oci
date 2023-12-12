@@ -395,27 +395,27 @@ public final class GetAgentsAgentCollectionItem {
             return this;
         }
         public GetAgentsAgentCollectionItem build() {
-            final var o = new GetAgentsAgentCollectionItem();
-            o.agentPubKey = agentPubKey;
-            o.agentType = agentType;
-            o.agentVersion = agentVersion;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.environmentId = environmentId;
-            o.freeformTags = freeformTags;
-            o.heartBeatStatus = heartBeatStatus;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.osVersion = osVersion;
-            o.pluginLists = pluginLists;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeExpireAgentKeyInMs = timeExpireAgentKeyInMs;
-            o.timeLastSyncReceived = timeLastSyncReceived;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetAgentsAgentCollectionItem();
+            _resultValue.agentPubKey = agentPubKey;
+            _resultValue.agentType = agentType;
+            _resultValue.agentVersion = agentVersion;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.environmentId = environmentId;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.heartBeatStatus = heartBeatStatus;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.osVersion = osVersion;
+            _resultValue.pluginLists = pluginLists;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeExpireAgentKeyInMs = timeExpireAgentKeyInMs;
+            _resultValue.timeLastSyncReceived = timeLastSyncReceived;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

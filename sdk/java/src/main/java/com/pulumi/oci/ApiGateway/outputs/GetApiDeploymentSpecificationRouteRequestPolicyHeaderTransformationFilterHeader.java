@@ -70,10 +70,10 @@ public final class GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransfor
             return this;
         }
         public GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader build() {
-            final var o = new GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader();
-            o.items = items;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetApiDeploymentSpecificationRouteRequestPolicyHeaderTransformationFilterHeader();
+            _resultValue.items = items;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

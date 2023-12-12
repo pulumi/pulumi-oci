@@ -266,21 +266,21 @@ public final class GetPreauthrequestResult {
             return this;
         }
         public GetPreauthrequestResult build() {
-            final var o = new GetPreauthrequestResult();
-            o.accessType = accessType;
-            o.accessUri = accessUri;
-            o.bucket = bucket;
-            o.bucketListingAction = bucketListingAction;
-            o.fullPath = fullPath;
-            o.id = id;
-            o.name = name;
-            o.namespace = namespace;
-            o.object = object;
-            o.objectName = objectName;
-            o.parId = parId;
-            o.timeCreated = timeCreated;
-            o.timeExpires = timeExpires;
-            return o;
+            final var _resultValue = new GetPreauthrequestResult();
+            _resultValue.accessType = accessType;
+            _resultValue.accessUri = accessUri;
+            _resultValue.bucket = bucket;
+            _resultValue.bucketListingAction = bucketListingAction;
+            _resultValue.fullPath = fullPath;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            _resultValue.objectName = objectName;
+            _resultValue.parId = parId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeExpires = timeExpires;
+            return _resultValue;
         }
     }
 }

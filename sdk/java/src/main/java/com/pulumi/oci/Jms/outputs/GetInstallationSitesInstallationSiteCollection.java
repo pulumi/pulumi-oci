@@ -50,9 +50,9 @@ public final class GetInstallationSitesInstallationSiteCollection {
             return items(List.of(items));
         }
         public GetInstallationSitesInstallationSiteCollection build() {
-            final var o = new GetInstallationSitesInstallationSiteCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetInstallationSitesInstallationSiteCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

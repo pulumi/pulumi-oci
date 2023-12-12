@@ -403,28 +403,28 @@ public final class GetVcnsVirtualNetwork {
             return this;
         }
         public GetVcnsVirtualNetwork build() {
-            final var o = new GetVcnsVirtualNetwork();
-            o.byoipv6cidrBlocks = byoipv6cidrBlocks;
-            o.byoipv6cidrDetails = byoipv6cidrDetails;
-            o.cidrBlock = cidrBlock;
-            o.cidrBlocks = cidrBlocks;
-            o.compartmentId = compartmentId;
-            o.defaultDhcpOptionsId = defaultDhcpOptionsId;
-            o.defaultRouteTableId = defaultRouteTableId;
-            o.defaultSecurityListId = defaultSecurityListId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.dnsLabel = dnsLabel;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.ipv6cidrBlocks = ipv6cidrBlocks;
-            o.ipv6privateCidrBlocks = ipv6privateCidrBlocks;
-            o.isIpv6enabled = isIpv6enabled;
-            o.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.vcnDomainName = vcnDomainName;
-            return o;
+            final var _resultValue = new GetVcnsVirtualNetwork();
+            _resultValue.byoipv6cidrBlocks = byoipv6cidrBlocks;
+            _resultValue.byoipv6cidrDetails = byoipv6cidrDetails;
+            _resultValue.cidrBlock = cidrBlock;
+            _resultValue.cidrBlocks = cidrBlocks;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.defaultDhcpOptionsId = defaultDhcpOptionsId;
+            _resultValue.defaultRouteTableId = defaultRouteTableId;
+            _resultValue.defaultSecurityListId = defaultSecurityListId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.dnsLabel = dnsLabel;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.ipv6cidrBlocks = ipv6cidrBlocks;
+            _resultValue.ipv6privateCidrBlocks = ipv6privateCidrBlocks;
+            _resultValue.isIpv6enabled = isIpv6enabled;
+            _resultValue.isOracleGuaAllocationEnabled = isOracleGuaAllocationEnabled;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vcnDomainName = vcnDomainName;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation {
             return this;
         }
         public GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation build() {
-            final var o = new GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.object = object;
-            return o;
+            final var _resultValue = new GetDrPlanExecutionsDrPlanExecutionCollectionItemLogLocation();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.object = object;
+            return _resultValue;
         }
     }
 }

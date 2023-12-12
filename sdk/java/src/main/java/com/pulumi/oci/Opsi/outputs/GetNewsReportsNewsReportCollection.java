@@ -42,9 +42,9 @@ public final class GetNewsReportsNewsReportCollection {
             return items(List.of(items));
         }
         public GetNewsReportsNewsReportCollection build() {
-            final var o = new GetNewsReportsNewsReportCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNewsReportsNewsReportCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -105,12 +105,12 @@ public final class GetPipelineRunsPipelineRunConfigurationOverrideDetail {
             return this;
         }
         public GetPipelineRunsPipelineRunConfigurationOverrideDetail build() {
-            final var o = new GetPipelineRunsPipelineRunConfigurationOverrideDetail();
-            o.commandLineArguments = commandLineArguments;
-            o.environmentVariables = environmentVariables;
-            o.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetPipelineRunsPipelineRunConfigurationOverrideDetail();
+            _resultValue.commandLineArguments = commandLineArguments;
+            _resultValue.environmentVariables = environmentVariables;
+            _resultValue.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

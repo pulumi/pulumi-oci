@@ -84,11 +84,11 @@ public final class GetVolumeBlockVolumeReplica {
             return this;
         }
         public GetVolumeBlockVolumeReplica build() {
-            final var o = new GetVolumeBlockVolumeReplica();
-            o.availabilityDomain = availabilityDomain;
-            o.blockVolumeReplicaId = blockVolumeReplicaId;
-            o.displayName = displayName;
-            return o;
+            final var _resultValue = new GetVolumeBlockVolumeReplica();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.blockVolumeReplicaId = blockVolumeReplicaId;
+            _resultValue.displayName = displayName;
+            return _resultValue;
         }
     }
 }

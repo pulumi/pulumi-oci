@@ -144,14 +144,14 @@ public final class GetEmailDomainsResult {
             return this;
         }
         public GetEmailDomainsResult build() {
-            final var o = new GetEmailDomainsResult();
-            o.compartmentId = compartmentId;
-            o.emailDomainCollections = emailDomainCollections;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetEmailDomainsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.emailDomainCollections = emailDomainCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

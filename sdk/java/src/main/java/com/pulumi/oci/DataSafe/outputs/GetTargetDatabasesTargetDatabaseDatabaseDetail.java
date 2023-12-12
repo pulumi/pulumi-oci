@@ -203,17 +203,17 @@ public final class GetTargetDatabasesTargetDatabaseDatabaseDetail {
             return this;
         }
         public GetTargetDatabasesTargetDatabaseDatabaseDetail build() {
-            final var o = new GetTargetDatabasesTargetDatabaseDatabaseDetail();
-            o.autonomousDatabaseId = autonomousDatabaseId;
-            o.databaseType = databaseType;
-            o.dbSystemId = dbSystemId;
-            o.infrastructureType = infrastructureType;
-            o.instanceId = instanceId;
-            o.ipAddresses = ipAddresses;
-            o.listenerPort = listenerPort;
-            o.serviceName = serviceName;
-            o.vmClusterId = vmClusterId;
-            return o;
+            final var _resultValue = new GetTargetDatabasesTargetDatabaseDatabaseDetail();
+            _resultValue.autonomousDatabaseId = autonomousDatabaseId;
+            _resultValue.databaseType = databaseType;
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.infrastructureType = infrastructureType;
+            _resultValue.instanceId = instanceId;
+            _resultValue.ipAddresses = ipAddresses;
+            _resultValue.listenerPort = listenerPort;
+            _resultValue.serviceName = serviceName;
+            _resultValue.vmClusterId = vmClusterId;
+            return _resultValue;
         }
     }
 }

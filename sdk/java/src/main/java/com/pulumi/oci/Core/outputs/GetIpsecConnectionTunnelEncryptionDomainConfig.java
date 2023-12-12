@@ -72,10 +72,10 @@ public final class GetIpsecConnectionTunnelEncryptionDomainConfig {
             return oracleTrafficSelectors(List.of(oracleTrafficSelectors));
         }
         public GetIpsecConnectionTunnelEncryptionDomainConfig build() {
-            final var o = new GetIpsecConnectionTunnelEncryptionDomainConfig();
-            o.cpeTrafficSelectors = cpeTrafficSelectors;
-            o.oracleTrafficSelectors = oracleTrafficSelectors;
-            return o;
+            final var _resultValue = new GetIpsecConnectionTunnelEncryptionDomainConfig();
+            _resultValue.cpeTrafficSelectors = cpeTrafficSelectors;
+            _resultValue.oracleTrafficSelectors = oracleTrafficSelectors;
+            return _resultValue;
         }
     }
 }

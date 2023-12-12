@@ -73,10 +73,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
             return selectionSources(List.of(selectionSources));
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication();
-            o.authenticationServers = authenticationServers;
-            o.selectionSources = selectionSources;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthentication();
+            _resultValue.authenticationServers = authenticationServers;
+            _resultValue.selectionSources = selectionSources;
+            return _resultValue;
         }
     }
 }

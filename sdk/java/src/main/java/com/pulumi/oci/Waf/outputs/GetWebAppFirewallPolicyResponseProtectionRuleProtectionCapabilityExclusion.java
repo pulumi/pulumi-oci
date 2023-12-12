@@ -72,10 +72,10 @@ public final class GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabi
             return requestCookies(List.of(requestCookies));
         }
         public GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion build() {
-            final var o = new GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion();
-            o.args = args;
-            o.requestCookies = requestCookies;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusion();
+            _resultValue.args = args;
+            _resultValue.requestCookies = requestCookies;
+            return _resultValue;
         }
     }
 }

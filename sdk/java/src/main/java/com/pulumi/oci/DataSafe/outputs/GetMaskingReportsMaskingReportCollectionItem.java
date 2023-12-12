@@ -389,27 +389,27 @@ public final class GetMaskingReportsMaskingReportCollectionItem {
             return this;
         }
         public GetMaskingReportsMaskingReportCollectionItem build() {
-            final var o = new GetMaskingReportsMaskingReportCollectionItem();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.isDropTempTablesEnabled = isDropTempTablesEnabled;
-            o.isRedoLoggingEnabled = isRedoLoggingEnabled;
-            o.isRefreshStatsEnabled = isRefreshStatsEnabled;
-            o.maskingPolicyId = maskingPolicyId;
-            o.maskingWorkRequestId = maskingWorkRequestId;
-            o.parallelDegree = parallelDegree;
-            o.recompile = recompile;
-            o.state = state;
-            o.targetId = targetId;
-            o.timeCreated = timeCreated;
-            o.timeMaskingFinished = timeMaskingFinished;
-            o.timeMaskingStarted = timeMaskingStarted;
-            o.totalMaskedColumns = totalMaskedColumns;
-            o.totalMaskedObjects = totalMaskedObjects;
-            o.totalMaskedSchemas = totalMaskedSchemas;
-            o.totalMaskedSensitiveTypes = totalMaskedSensitiveTypes;
-            o.totalMaskedValues = totalMaskedValues;
-            return o;
+            final var _resultValue = new GetMaskingReportsMaskingReportCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.isDropTempTablesEnabled = isDropTempTablesEnabled;
+            _resultValue.isRedoLoggingEnabled = isRedoLoggingEnabled;
+            _resultValue.isRefreshStatsEnabled = isRefreshStatsEnabled;
+            _resultValue.maskingPolicyId = maskingPolicyId;
+            _resultValue.maskingWorkRequestId = maskingWorkRequestId;
+            _resultValue.parallelDegree = parallelDegree;
+            _resultValue.recompile = recompile;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeMaskingFinished = timeMaskingFinished;
+            _resultValue.timeMaskingStarted = timeMaskingStarted;
+            _resultValue.totalMaskedColumns = totalMaskedColumns;
+            _resultValue.totalMaskedObjects = totalMaskedObjects;
+            _resultValue.totalMaskedSchemas = totalMaskedSchemas;
+            _resultValue.totalMaskedSensitiveTypes = totalMaskedSensitiveTypes;
+            _resultValue.totalMaskedValues = totalMaskedValues;
+            return _resultValue;
         }
     }
 }

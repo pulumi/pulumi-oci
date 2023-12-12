@@ -42,9 +42,9 @@ public final class GetVirtualServicesVirtualServiceCollection {
             return items(List.of(items));
         }
         public GetVirtualServicesVirtualServiceCollection build() {
-            final var o = new GetVirtualServicesVirtualServiceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetVirtualServicesVirtualServiceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

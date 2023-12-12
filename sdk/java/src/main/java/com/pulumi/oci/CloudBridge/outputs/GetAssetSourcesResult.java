@@ -155,15 +155,15 @@ public final class GetAssetSourcesResult {
             return this;
         }
         public GetAssetSourcesResult build() {
-            final var o = new GetAssetSourcesResult();
-            o.assetSourceCollections = assetSourceCollections;
-            o.assetSourceId = assetSourceId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAssetSourcesResult();
+            _resultValue.assetSourceCollections = assetSourceCollections;
+            _resultValue.assetSourceId = assetSourceId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

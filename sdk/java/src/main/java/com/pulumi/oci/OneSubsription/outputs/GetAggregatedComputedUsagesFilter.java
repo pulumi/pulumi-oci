@@ -75,11 +75,11 @@ public final class GetAggregatedComputedUsagesFilter {
             return values(List.of(values));
         }
         public GetAggregatedComputedUsagesFilter build() {
-            final var o = new GetAggregatedComputedUsagesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAggregatedComputedUsagesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -231,13 +231,13 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
             return this;
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp();
-            o.display = display;
-            o.ref = ref;
-            o.targetRequestTimeout = targetRequestTimeout;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.targetRequestTimeout = targetRequestTimeout;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

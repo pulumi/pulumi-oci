@@ -154,11 +154,11 @@ public final class DomainsAppTermsOfUse {
             return this;
         }
         public DomainsAppTermsOfUse build() {
-            final var o = new DomainsAppTermsOfUse();
-            o.name = name;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAppTermsOfUse();
+            _resultValue.name = name;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

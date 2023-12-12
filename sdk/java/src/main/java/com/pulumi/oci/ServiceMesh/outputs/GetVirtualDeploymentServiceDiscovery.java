@@ -65,10 +65,10 @@ public final class GetVirtualDeploymentServiceDiscovery {
             return this;
         }
         public GetVirtualDeploymentServiceDiscovery build() {
-            final var o = new GetVirtualDeploymentServiceDiscovery();
-            o.hostname = hostname;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetVirtualDeploymentServiceDiscovery();
+            _resultValue.hostname = hostname;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

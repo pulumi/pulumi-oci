@@ -67,11 +67,11 @@ public final class GetFusionEnvironmentDataMaskingActivitiesFilter {
             return values(List.of(values));
         }
         public GetFusionEnvironmentDataMaskingActivitiesFilter build() {
-            final var o = new GetFusionEnvironmentDataMaskingActivitiesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentDataMaskingActivitiesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

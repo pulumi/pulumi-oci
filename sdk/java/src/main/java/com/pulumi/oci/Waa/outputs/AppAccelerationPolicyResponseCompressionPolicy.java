@@ -48,9 +48,9 @@ public final class AppAccelerationPolicyResponseCompressionPolicy {
             return this;
         }
         public AppAccelerationPolicyResponseCompressionPolicy build() {
-            final var o = new AppAccelerationPolicyResponseCompressionPolicy();
-            o.gzipCompression = gzipCompression;
-            return o;
+            final var _resultValue = new AppAccelerationPolicyResponseCompressionPolicy();
+            _resultValue.gzipCompression = gzipCompression;
+            return _resultValue;
         }
     }
 }

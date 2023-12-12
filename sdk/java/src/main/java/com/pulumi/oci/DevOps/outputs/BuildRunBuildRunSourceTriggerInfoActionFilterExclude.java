@@ -43,9 +43,9 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterExclude {
             return fileFilters(List.of(fileFilters));
         }
         public BuildRunBuildRunSourceTriggerInfoActionFilterExclude build() {
-            final var o = new BuildRunBuildRunSourceTriggerInfoActionFilterExclude();
-            o.fileFilters = fileFilters;
-            return o;
+            final var _resultValue = new BuildRunBuildRunSourceTriggerInfoActionFilterExclude();
+            _resultValue.fileFilters = fileFilters;
+            return _resultValue;
         }
     }
 }

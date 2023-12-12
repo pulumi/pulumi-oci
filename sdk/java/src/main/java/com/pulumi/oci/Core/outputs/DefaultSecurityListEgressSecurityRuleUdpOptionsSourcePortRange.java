@@ -49,10 +49,10 @@ public final class DefaultSecurityListEgressSecurityRuleUdpOptionsSourcePortRang
             return this;
         }
         public DefaultSecurityListEgressSecurityRuleUdpOptionsSourcePortRange build() {
-            final var o = new DefaultSecurityListEgressSecurityRuleUdpOptionsSourcePortRange();
-            o.max = max;
-            o.min = min;
-            return o;
+            final var _resultValue = new DefaultSecurityListEgressSecurityRuleUdpOptionsSourcePortRange();
+            _resultValue.max = max;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

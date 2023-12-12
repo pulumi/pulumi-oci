@@ -67,10 +67,10 @@ public final class BootVolumeAutotunePolicy {
             return this;
         }
         public BootVolumeAutotunePolicy build() {
-            final var o = new BootVolumeAutotunePolicy();
-            o.autotuneType = autotuneType;
-            o.maxVpusPerGb = maxVpusPerGb;
-            return o;
+            final var _resultValue = new BootVolumeAutotunePolicy();
+            _resultValue.autotuneType = autotuneType;
+            _resultValue.maxVpusPerGb = maxVpusPerGb;
+            return _resultValue;
         }
     }
 }

@@ -223,19 +223,19 @@ public final class GetInvokeRunsResult {
             return this;
         }
         public GetInvokeRunsResult build() {
-            final var o = new GetInvokeRunsResult();
-            o.applicationId = applicationId;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.displayNameStartsWith = displayNameStartsWith;
-            o.filters = filters;
-            o.id = id;
-            o.ownerPrincipalId = ownerPrincipalId;
-            o.poolId = poolId;
-            o.runs = runs;
-            o.state = state;
-            o.timeCreatedGreaterThan = timeCreatedGreaterThan;
-            return o;
+            final var _resultValue = new GetInvokeRunsResult();
+            _resultValue.applicationId = applicationId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameStartsWith = displayNameStartsWith;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ownerPrincipalId = ownerPrincipalId;
+            _resultValue.poolId = poolId;
+            _resultValue.runs = runs;
+            _resultValue.state = state;
+            _resultValue.timeCreatedGreaterThan = timeCreatedGreaterThan;
+            return _resultValue;
         }
     }
 }

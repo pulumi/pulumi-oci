@@ -65,10 +65,10 @@ public final class GetMysqlVersionVersionVersion {
             return this;
         }
         public GetMysqlVersionVersionVersion build() {
-            final var o = new GetMysqlVersionVersionVersion();
-            o.description = description;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetMysqlVersionVersionVersion();
+            _resultValue.description = description;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

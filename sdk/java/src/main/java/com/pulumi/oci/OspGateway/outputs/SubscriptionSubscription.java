@@ -440,29 +440,29 @@ public final class SubscriptionSubscription {
             return this;
         }
         public SubscriptionSubscription build() {
-            final var o = new SubscriptionSubscription();
-            o.accountType = accountType;
-            o.billToCustAccountId = billToCustAccountId;
-            o.billingAddresses = billingAddresses;
-            o.currencyCode = currencyCode;
-            o.gsiOrgCode = gsiOrgCode;
-            o.id = id;
-            o.isIntentToPay = isIntentToPay;
-            o.languageCode = languageCode;
-            o.organizationId = organizationId;
-            o.paymentGateway = paymentGateway;
-            o.paymentOptions = paymentOptions;
-            o.planType = planType;
-            o.shipToCustAcctRoleId = shipToCustAcctRoleId;
-            o.shipToCustAcctSiteId = shipToCustAcctSiteId;
-            o.subscriptionPlanNumber = subscriptionPlanNumber;
-            o.taxInfo = taxInfo;
-            o.timePersonalToCorporateConv = timePersonalToCorporateConv;
-            o.timePlanUpgrade = timePlanUpgrade;
-            o.timeStart = timeStart;
-            o.upgradeState = upgradeState;
-            o.upgradeStateDetails = upgradeStateDetails;
-            return o;
+            final var _resultValue = new SubscriptionSubscription();
+            _resultValue.accountType = accountType;
+            _resultValue.billToCustAccountId = billToCustAccountId;
+            _resultValue.billingAddresses = billingAddresses;
+            _resultValue.currencyCode = currencyCode;
+            _resultValue.gsiOrgCode = gsiOrgCode;
+            _resultValue.id = id;
+            _resultValue.isIntentToPay = isIntentToPay;
+            _resultValue.languageCode = languageCode;
+            _resultValue.organizationId = organizationId;
+            _resultValue.paymentGateway = paymentGateway;
+            _resultValue.paymentOptions = paymentOptions;
+            _resultValue.planType = planType;
+            _resultValue.shipToCustAcctRoleId = shipToCustAcctRoleId;
+            _resultValue.shipToCustAcctSiteId = shipToCustAcctSiteId;
+            _resultValue.subscriptionPlanNumber = subscriptionPlanNumber;
+            _resultValue.taxInfo = taxInfo;
+            _resultValue.timePersonalToCorporateConv = timePersonalToCorporateConv;
+            _resultValue.timePlanUpgrade = timePlanUpgrade;
+            _resultValue.timeStart = timeStart;
+            _resultValue.upgradeState = upgradeState;
+            _resultValue.upgradeStateDetails = upgradeStateDetails;
+            return _resultValue;
         }
     }
 }

@@ -91,11 +91,11 @@ public final class DetectorRecipeDetectorRuleCandidateResponderRule {
             return this;
         }
         public DetectorRecipeDetectorRuleCandidateResponderRule build() {
-            final var o = new DetectorRecipeDetectorRuleCandidateResponderRule();
-            o.displayName = displayName;
-            o.id = id;
-            o.isPreferred = isPreferred;
-            return o;
+            final var _resultValue = new DetectorRecipeDetectorRuleCandidateResponderRule();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            _resultValue.isPreferred = isPreferred;
+            return _resultValue;
         }
     }
 }

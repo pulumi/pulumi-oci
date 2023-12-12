@@ -89,11 +89,11 @@ public final class GetConnectionsConnectionCollectionItemBootstrapServer {
             return this;
         }
         public GetConnectionsConnectionCollectionItemBootstrapServer build() {
-            final var o = new GetConnectionsConnectionCollectionItemBootstrapServer();
-            o.host = host;
-            o.port = port;
-            o.privateIp = privateIp;
-            return o;
+            final var _resultValue = new GetConnectionsConnectionCollectionItemBootstrapServer();
+            _resultValue.host = host;
+            _resultValue.port = port;
+            _resultValue.privateIp = privateIp;
+            return _resultValue;
         }
     }
 }

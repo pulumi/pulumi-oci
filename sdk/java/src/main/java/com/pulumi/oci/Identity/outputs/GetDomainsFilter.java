@@ -75,11 +75,11 @@ public final class GetDomainsFilter {
             return values(List.of(values));
         }
         public GetDomainsFilter build() {
-            final var o = new GetDomainsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDomainsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -143,14 +143,14 @@ public final class BuildPipelineStageBuildSourceCollectionItem {
             return this;
         }
         public BuildPipelineStageBuildSourceCollectionItem build() {
-            final var o = new BuildPipelineStageBuildSourceCollectionItem();
-            o.branch = branch;
-            o.connectionId = connectionId;
-            o.connectionType = connectionType;
-            o.name = name;
-            o.repositoryId = repositoryId;
-            o.repositoryUrl = repositoryUrl;
-            return o;
+            final var _resultValue = new BuildPipelineStageBuildSourceCollectionItem();
+            _resultValue.branch = branch;
+            _resultValue.connectionId = connectionId;
+            _resultValue.connectionType = connectionType;
+            _resultValue.name = name;
+            _resultValue.repositoryId = repositoryId;
+            _resultValue.repositoryUrl = repositoryUrl;
+            return _resultValue;
         }
     }
 }

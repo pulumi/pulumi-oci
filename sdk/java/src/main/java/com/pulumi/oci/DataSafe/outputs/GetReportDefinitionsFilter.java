@@ -75,11 +75,11 @@ public final class GetReportDefinitionsFilter {
             return values(List.of(values));
         }
         public GetReportDefinitionsFilter build() {
-            final var o = new GetReportDefinitionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetReportDefinitionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

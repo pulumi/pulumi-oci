@@ -148,15 +148,15 @@ public final class GetProfileLevelsResult {
             return this;
         }
         public GetProfileLevelsResult build() {
-            final var o = new GetProfileLevelsResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.profileLevelCollections = profileLevelCollections;
-            o.recommendationName = recommendationName;
-            return o;
+            final var _resultValue = new GetProfileLevelsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.profileLevelCollections = profileLevelCollections;
+            _resultValue.recommendationName = recommendationName;
+            return _resultValue;
         }
     }
 }

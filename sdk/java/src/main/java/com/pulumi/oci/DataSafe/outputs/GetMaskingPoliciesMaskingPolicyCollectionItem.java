@@ -370,26 +370,26 @@ public final class GetMaskingPoliciesMaskingPolicyCollectionItem {
             return this;
         }
         public GetMaskingPoliciesMaskingPolicyCollectionItem build() {
-            final var o = new GetMaskingPoliciesMaskingPolicyCollectionItem();
-            o.addMaskingColumnsFromSdmTrigger = addMaskingColumnsFromSdmTrigger;
-            o.columnSources = columnSources;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isDropTempTablesEnabled = isDropTempTablesEnabled;
-            o.isRedoLoggingEnabled = isRedoLoggingEnabled;
-            o.isRefreshStatsEnabled = isRefreshStatsEnabled;
-            o.parallelDegree = parallelDegree;
-            o.postMaskingScript = postMaskingScript;
-            o.preMaskingScript = preMaskingScript;
-            o.recompile = recompile;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetMaskingPoliciesMaskingPolicyCollectionItem();
+            _resultValue.addMaskingColumnsFromSdmTrigger = addMaskingColumnsFromSdmTrigger;
+            _resultValue.columnSources = columnSources;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isDropTempTablesEnabled = isDropTempTablesEnabled;
+            _resultValue.isRedoLoggingEnabled = isRedoLoggingEnabled;
+            _resultValue.isRefreshStatsEnabled = isRefreshStatsEnabled;
+            _resultValue.parallelDegree = parallelDegree;
+            _resultValue.postMaskingScript = postMaskingScript;
+            _resultValue.preMaskingScript = preMaskingScript;
+            _resultValue.recompile = recompile;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

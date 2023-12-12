@@ -146,14 +146,14 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance build() {
-            final var o = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance();
-            o.adrHomeDirectory = adrHomeDirectory;
-            o.clusterId = clusterId;
-            o.connectors = connectors;
-            o.crsBaseDirectory = crsBaseDirectory;
-            o.hostName = hostName;
-            o.nodeRole = nodeRole;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance();
+            _resultValue.adrHomeDirectory = adrHomeDirectory;
+            _resultValue.clusterId = clusterId;
+            _resultValue.connectors = connectors;
+            _resultValue.crsBaseDirectory = crsBaseDirectory;
+            _resultValue.hostName = hostName;
+            _resultValue.nodeRole = nodeRole;
+            return _resultValue;
         }
     }
 }

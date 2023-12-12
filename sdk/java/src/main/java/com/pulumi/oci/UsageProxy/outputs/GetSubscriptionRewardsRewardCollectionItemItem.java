@@ -257,20 +257,20 @@ public final class GetSubscriptionRewardsRewardCollectionItemItem {
             return this;
         }
         public GetSubscriptionRewardsRewardCollectionItemItem build() {
-            final var o = new GetSubscriptionRewardsRewardCollectionItemItem();
-            o.availableRewards = availableRewards;
-            o.earnedRewards = earnedRewards;
-            o.eligibleUsageAmount = eligibleUsageAmount;
-            o.ineligibleUsageAmount = ineligibleUsageAmount;
-            o.isManual = isManual;
-            o.redeemedRewards = redeemedRewards;
-            o.timeRewardsEarned = timeRewardsEarned;
-            o.timeRewardsExpired = timeRewardsExpired;
-            o.timeUsageEnded = timeUsageEnded;
-            o.timeUsageStarted = timeUsageStarted;
-            o.usageAmount = usageAmount;
-            o.usagePeriodKey = usagePeriodKey;
-            return o;
+            final var _resultValue = new GetSubscriptionRewardsRewardCollectionItemItem();
+            _resultValue.availableRewards = availableRewards;
+            _resultValue.earnedRewards = earnedRewards;
+            _resultValue.eligibleUsageAmount = eligibleUsageAmount;
+            _resultValue.ineligibleUsageAmount = ineligibleUsageAmount;
+            _resultValue.isManual = isManual;
+            _resultValue.redeemedRewards = redeemedRewards;
+            _resultValue.timeRewardsEarned = timeRewardsEarned;
+            _resultValue.timeRewardsExpired = timeRewardsExpired;
+            _resultValue.timeUsageEnded = timeUsageEnded;
+            _resultValue.timeUsageStarted = timeUsageStarted;
+            _resultValue.usageAmount = usageAmount;
+            _resultValue.usagePeriodKey = usagePeriodKey;
+            return _resultValue;
         }
     }
 }

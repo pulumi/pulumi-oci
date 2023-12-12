@@ -531,33 +531,33 @@ public final class ContainerInstanceContainer {
             return this;
         }
         public ContainerInstanceContainer build() {
-            final var o = new ContainerInstanceContainer();
-            o.arguments = arguments;
-            o.availabilityDomain = availabilityDomain;
-            o.commands = commands;
-            o.compartmentId = compartmentId;
-            o.containerId = containerId;
-            o.containerInstanceId = containerInstanceId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.environmentVariables = environmentVariables;
-            o.exitCode = exitCode;
-            o.faultDomain = faultDomain;
-            o.freeformTags = freeformTags;
-            o.healthChecks = healthChecks;
-            o.imageUrl = imageUrl;
-            o.isResourcePrincipalDisabled = isResourcePrincipalDisabled;
-            o.lifecycleDetails = lifecycleDetails;
-            o.resourceConfig = resourceConfig;
-            o.securityContext = securityContext;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeTerminated = timeTerminated;
-            o.timeUpdated = timeUpdated;
-            o.volumeMounts = volumeMounts;
-            o.workingDirectory = workingDirectory;
-            return o;
+            final var _resultValue = new ContainerInstanceContainer();
+            _resultValue.arguments = arguments;
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.commands = commands;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.containerId = containerId;
+            _resultValue.containerInstanceId = containerInstanceId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.environmentVariables = environmentVariables;
+            _resultValue.exitCode = exitCode;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.healthChecks = healthChecks;
+            _resultValue.imageUrl = imageUrl;
+            _resultValue.isResourcePrincipalDisabled = isResourcePrincipalDisabled;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.resourceConfig = resourceConfig;
+            _resultValue.securityContext = securityContext;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeTerminated = timeTerminated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.volumeMounts = volumeMounts;
+            _resultValue.workingDirectory = workingDirectory;
+            return _resultValue;
         }
     }
 }

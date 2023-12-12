@@ -67,11 +67,11 @@ public final class GetAutonomousDatabaseBackupsFilter {
             return values(List.of(values));
         }
         public GetAutonomousDatabaseBackupsFilter build() {
-            final var o = new GetAutonomousDatabaseBackupsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseBackupsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

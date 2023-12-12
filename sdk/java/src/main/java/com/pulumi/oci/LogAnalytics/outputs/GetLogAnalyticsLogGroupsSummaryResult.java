@@ -80,12 +80,12 @@ public final class GetLogAnalyticsLogGroupsSummaryResult {
             return this;
         }
         public GetLogAnalyticsLogGroupsSummaryResult build() {
-            final var o = new GetLogAnalyticsLogGroupsSummaryResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.logGroupCount = logGroupCount;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetLogAnalyticsLogGroupsSummaryResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.logGroupCount = logGroupCount;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

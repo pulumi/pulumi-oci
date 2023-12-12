@@ -46,9 +46,9 @@ public final class GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration {
             return this;
         }
         public GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration build() {
-            final var o = new GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration();
-            o.disasterRecoveryType = disasterRecoveryType;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration();
+            _resultValue.disasterRecoveryType = disasterRecoveryType;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetDiscoveryAnalyticsFilter {
             return values(List.of(values));
         }
         public GetDiscoveryAnalyticsFilter build() {
-            final var o = new GetDiscoveryAnalyticsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDiscoveryAnalyticsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

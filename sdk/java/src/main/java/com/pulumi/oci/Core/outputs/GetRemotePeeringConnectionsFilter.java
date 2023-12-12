@@ -67,11 +67,11 @@ public final class GetRemotePeeringConnectionsFilter {
             return values(List.of(values));
         }
         public GetRemotePeeringConnectionsFilter build() {
-            final var o = new GetRemotePeeringConnectionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetRemotePeeringConnectionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

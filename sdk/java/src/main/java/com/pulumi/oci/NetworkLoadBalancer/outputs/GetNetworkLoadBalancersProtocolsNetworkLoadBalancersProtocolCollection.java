@@ -50,9 +50,9 @@ public final class GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolC
             return items(List.of(items));
         }
         public GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection build() {
-            final var o = new GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNetworkLoadBalancersProtocolsNetworkLoadBalancersProtocolCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

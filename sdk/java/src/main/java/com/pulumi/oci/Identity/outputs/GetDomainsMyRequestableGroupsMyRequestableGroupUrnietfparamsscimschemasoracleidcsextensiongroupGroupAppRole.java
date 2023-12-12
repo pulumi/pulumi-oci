@@ -180,16 +180,16 @@ public final class GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamss
             return this;
         }
         public GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole build() {
-            final var o = new GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole();
-            o.adminRole = adminRole;
-            o.appId = appId;
-            o.appName = appName;
-            o.display = display;
-            o.legacyGroupName = legacyGroupName;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsMyRequestableGroupsMyRequestableGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRole();
+            _resultValue.adminRole = adminRole;
+            _resultValue.appId = appId;
+            _resultValue.appName = appName;
+            _resultValue.display = display;
+            _resultValue.legacyGroupName = legacyGroupName;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

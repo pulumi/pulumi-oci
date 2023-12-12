@@ -66,10 +66,10 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar build() {
-            final var o = new GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar();
-            o.keySize = keySize;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJar();
+            _resultValue.keySize = keySize;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

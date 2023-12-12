@@ -114,10 +114,10 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp 
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp();
-            o.domainApp = domainApp;
-            o.domainName = domainName;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsApp();
+            _resultValue.domainApp = domainApp;
+            _resultValue.domainName = domainName;
+            return _resultValue;
         }
     }
 }

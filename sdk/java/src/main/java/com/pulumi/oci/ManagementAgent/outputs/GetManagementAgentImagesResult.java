@@ -139,15 +139,15 @@ public final class GetManagementAgentImagesResult {
             return this;
         }
         public GetManagementAgentImagesResult build() {
-            final var o = new GetManagementAgentImagesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.installType = installType;
-            o.managementAgentImages = managementAgentImages;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetManagementAgentImagesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.installType = installType;
+            _resultValue.managementAgentImages = managementAgentImages;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

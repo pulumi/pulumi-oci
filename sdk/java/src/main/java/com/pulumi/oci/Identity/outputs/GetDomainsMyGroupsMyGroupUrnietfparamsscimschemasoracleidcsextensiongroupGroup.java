@@ -181,15 +181,15 @@ public final class GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsex
             return syncedFromApps(List.of(syncedFromApps));
         }
         public GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup build() {
-            final var o = new GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup();
-            o.appRoles = appRoles;
-            o.creationMechanism = creationMechanism;
-            o.description = description;
-            o.grants = grants;
-            o.owners = owners;
-            o.passwordPolicies = passwordPolicies;
-            o.syncedFromApps = syncedFromApps;
-            return o;
+            final var _resultValue = new GetDomainsMyGroupsMyGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup();
+            _resultValue.appRoles = appRoles;
+            _resultValue.creationMechanism = creationMechanism;
+            _resultValue.description = description;
+            _resultValue.grants = grants;
+            _resultValue.owners = owners;
+            _resultValue.passwordPolicies = passwordPolicies;
+            _resultValue.syncedFromApps = syncedFromApps;
+            return _resultValue;
         }
     }
 }

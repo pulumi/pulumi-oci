@@ -108,13 +108,13 @@ public final class GetWorkRequestErrorsResult {
             return this;
         }
         public GetWorkRequestErrorsResult build() {
-            final var o = new GetWorkRequestErrorsResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.workRequestErrors = workRequestErrors;
-            o.workRequestId = workRequestId;
-            return o;
+            final var _resultValue = new GetWorkRequestErrorsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.workRequestErrors = workRequestErrors;
+            _resultValue.workRequestId = workRequestId;
+            return _resultValue;
         }
     }
 }

@@ -128,14 +128,14 @@ public final class GetDbSystemsUpgradeHistoryEntriesResult {
             return this;
         }
         public GetDbSystemsUpgradeHistoryEntriesResult build() {
-            final var o = new GetDbSystemsUpgradeHistoryEntriesResult();
-            o.dbSystemId = dbSystemId;
-            o.dbSystemUpgradeHistoryEntries = dbSystemUpgradeHistoryEntries;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.upgradeAction = upgradeAction;
-            return o;
+            final var _resultValue = new GetDbSystemsUpgradeHistoryEntriesResult();
+            _resultValue.dbSystemId = dbSystemId;
+            _resultValue.dbSystemUpgradeHistoryEntries = dbSystemUpgradeHistoryEntries;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.upgradeAction = upgradeAction;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetReplicasReplicaReplicaOverride {
             return this;
         }
         public GetReplicasReplicaReplicaOverride build() {
-            final var o = new GetReplicasReplicaReplicaOverride();
-            o.configurationId = configurationId;
-            o.mysqlVersion = mysqlVersion;
-            o.shapeName = shapeName;
-            return o;
+            final var _resultValue = new GetReplicasReplicaReplicaOverride();
+            _resultValue.configurationId = configurationId;
+            _resultValue.mysqlVersion = mysqlVersion;
+            _resultValue.shapeName = shapeName;
+            return _resultValue;
         }
     }
 }

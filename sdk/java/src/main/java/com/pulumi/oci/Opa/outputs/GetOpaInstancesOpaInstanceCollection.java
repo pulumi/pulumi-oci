@@ -42,9 +42,9 @@ public final class GetOpaInstancesOpaInstanceCollection {
             return items(List.of(items));
         }
         public GetOpaInstancesOpaInstanceCollection build() {
-            final var o = new GetOpaInstancesOpaInstanceCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetOpaInstancesOpaInstanceCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

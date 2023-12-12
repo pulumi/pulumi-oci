@@ -162,15 +162,15 @@ public final class PipelineRunStepRun {
             return this;
         }
         public PipelineRunStepRun build() {
-            final var o = new PipelineRunStepRun();
-            o.jobRunId = jobRunId;
-            o.lifecycleDetails = lifecycleDetails;
-            o.state = state;
-            o.stepName = stepName;
-            o.stepType = stepType;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new PipelineRunStepRun();
+            _resultValue.jobRunId = jobRunId;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.state = state;
+            _resultValue.stepName = stepName;
+            _resultValue.stepType = stepType;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

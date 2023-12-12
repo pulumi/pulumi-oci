@@ -50,9 +50,9 @@ public final class GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection {
             return items(List.of(items));
         }
         public GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection build() {
-            final var o = new GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningSetsSqlTuningSetCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetSensitiveTypesFilter {
             return values(List.of(values));
         }
         public GetSensitiveTypesFilter build() {
-            final var o = new GetSensitiveTypesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetSensitiveTypesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

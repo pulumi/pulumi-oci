@@ -239,19 +239,19 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
             return this;
         }
         public GetEmailDomainsEmailDomainCollectionItem build() {
-            final var o = new GetEmailDomainsEmailDomainCollectionItem();
-            o.activeDkimId = activeDkimId;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isSpf = isSpf;
-            o.name = name;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetEmailDomainsEmailDomainCollectionItem();
+            _resultValue.activeDkimId = activeDkimId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isSpf = isSpf;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -70,10 +70,10 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetails {
             return namespaces(List.of(namespaces));
         }
         public ConnectorSourceMonitoringSourceNamespaceDetails build() {
-            final var o = new ConnectorSourceMonitoringSourceNamespaceDetails();
-            o.kind = kind;
-            o.namespaces = namespaces;
-            return o;
+            final var _resultValue = new ConnectorSourceMonitoringSourceNamespaceDetails();
+            _resultValue.kind = kind;
+            _resultValue.namespaces = namespaces;
+            return _resultValue;
         }
     }
 }

@@ -75,11 +75,11 @@ public final class GetLogAnalyticsEntitiesFilter {
             return values(List.of(values));
         }
         public GetLogAnalyticsEntitiesFilter build() {
-            final var o = new GetLogAnalyticsEntitiesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetLogAnalyticsEntitiesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

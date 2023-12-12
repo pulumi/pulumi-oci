@@ -75,11 +75,11 @@ public final class GetManagedDatabaseUserProxiedForUsersFilter {
             return values(List.of(values));
         }
         public GetManagedDatabaseUserProxiedForUsersFilter build() {
-            final var o = new GetManagedDatabaseUserProxiedForUsersFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedDatabaseUserProxiedForUsersFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

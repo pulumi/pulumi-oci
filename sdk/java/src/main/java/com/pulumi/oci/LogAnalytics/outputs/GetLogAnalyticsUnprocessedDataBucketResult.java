@@ -142,14 +142,14 @@ public final class GetLogAnalyticsUnprocessedDataBucketResult {
             return this;
         }
         public GetLogAnalyticsUnprocessedDataBucketResult build() {
-            final var o = new GetLogAnalyticsUnprocessedDataBucketResult();
-            o.bucket = bucket;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.namespace = namespace;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetLogAnalyticsUnprocessedDataBucketResult();
+            _resultValue.bucket = bucket;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.namespace = namespace;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

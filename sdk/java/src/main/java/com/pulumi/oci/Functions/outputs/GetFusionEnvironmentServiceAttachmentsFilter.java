@@ -67,11 +67,11 @@ public final class GetFusionEnvironmentServiceAttachmentsFilter {
             return values(List.of(values));
         }
         public GetFusionEnvironmentServiceAttachmentsFilter build() {
-            final var o = new GetFusionEnvironmentServiceAttachmentsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentServiceAttachmentsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

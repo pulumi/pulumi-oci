@@ -46,9 +46,9 @@ public final class GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionI
             return this;
         }
         public GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy build() {
-            final var o = new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy();
-            o.isResponseHeaderBasedCachingEnabled = isResponseHeaderBasedCachingEnabled;
-            return o;
+            final var _resultValue = new GetAppAccelerationPoliciesWebAppAccelerationPolicyCollectionItemResponseCachingPolicy();
+            _resultValue.isResponseHeaderBasedCachingEnabled = isResponseHeaderBasedCachingEnabled;
+            return _resultValue;
         }
     }
 }

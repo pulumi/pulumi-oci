@@ -65,10 +65,10 @@ public final class GetAutonomousDatabaseApexDetail {
             return this;
         }
         public GetAutonomousDatabaseApexDetail build() {
-            final var o = new GetAutonomousDatabaseApexDetail();
-            o.apexVersion = apexVersion;
-            o.ordsVersion = ordsVersion;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseApexDetail();
+            _resultValue.apexVersion = apexVersion;
+            _resultValue.ordsVersion = ordsVersion;
+            return _resultValue;
         }
     }
 }

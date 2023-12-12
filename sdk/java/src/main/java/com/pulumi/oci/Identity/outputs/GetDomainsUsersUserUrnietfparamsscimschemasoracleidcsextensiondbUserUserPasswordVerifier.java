@@ -65,10 +65,10 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

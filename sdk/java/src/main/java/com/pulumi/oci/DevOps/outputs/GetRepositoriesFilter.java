@@ -75,11 +75,11 @@ public final class GetRepositoriesFilter {
             return values(List.of(values));
         }
         public GetRepositoriesFilter build() {
-            final var o = new GetRepositoriesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetRepositoriesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

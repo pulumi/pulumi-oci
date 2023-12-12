@@ -66,10 +66,10 @@ public final class DatasetInitialImportDatasetConfiguration {
             return this;
         }
         public DatasetInitialImportDatasetConfiguration build() {
-            final var o = new DatasetInitialImportDatasetConfiguration();
-            o.importFormat = importFormat;
-            o.importMetadataPath = importMetadataPath;
-            return o;
+            final var _resultValue = new DatasetInitialImportDatasetConfiguration();
+            _resultValue.importFormat = importFormat;
+            _resultValue.importMetadataPath = importMetadataPath;
+            return _resultValue;
         }
     }
 }

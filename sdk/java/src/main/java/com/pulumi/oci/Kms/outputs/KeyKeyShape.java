@@ -93,11 +93,11 @@ public final class KeyKeyShape {
             return this;
         }
         public KeyKeyShape build() {
-            final var o = new KeyKeyShape();
-            o.algorithm = algorithm;
-            o.curveId = curveId;
-            o.length = length;
-            return o;
+            final var _resultValue = new KeyKeyShape();
+            _resultValue.algorithm = algorithm;
+            _resultValue.curveId = curveId;
+            _resultValue.length = length;
+            return _resultValue;
         }
     }
 }

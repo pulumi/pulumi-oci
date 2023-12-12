@@ -98,13 +98,13 @@ public final class GetTablesTableCollectionSchema {
             return this;
         }
         public GetTablesTableCollectionSchema build() {
-            final var o = new GetTablesTableCollectionSchema();
-            o.columns = columns;
-            o.identities = identities;
-            o.primaryKeys = primaryKeys;
-            o.shardKeys = shardKeys;
-            o.ttl = ttl;
-            return o;
+            final var _resultValue = new GetTablesTableCollectionSchema();
+            _resultValue.columns = columns;
+            _resultValue.identities = identities;
+            _resultValue.primaryKeys = primaryKeys;
+            _resultValue.shardKeys = shardKeys;
+            _resultValue.ttl = ttl;
+            return _resultValue;
         }
     }
 }

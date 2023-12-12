@@ -67,11 +67,11 @@ public final class GetStreamCdnConfigsFilter {
             return values(List.of(values));
         }
         public GetStreamCdnConfigsFilter build() {
-            final var o = new GetStreamCdnConfigsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetStreamCdnConfigsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

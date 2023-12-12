@@ -46,9 +46,9 @@ public final class SessionKeyDetails {
             return this;
         }
         public SessionKeyDetails build() {
-            final var o = new SessionKeyDetails();
-            o.publicKeyContent = publicKeyContent;
-            return o;
+            final var _resultValue = new SessionKeyDetails();
+            _resultValue.publicKeyContent = publicKeyContent;
+            return _resultValue;
         }
     }
 }

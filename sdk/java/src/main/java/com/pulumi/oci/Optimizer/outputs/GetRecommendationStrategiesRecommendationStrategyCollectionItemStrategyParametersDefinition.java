@@ -150,14 +150,14 @@ public final class GetRecommendationStrategiesRecommendationStrategyCollectionIt
             return this;
         }
         public GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition build() {
-            final var o = new GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition();
-            o.defaultValues = defaultValues;
-            o.description = description;
-            o.isRequired = isRequired;
-            o.name = name;
-            o.possibleValues = possibleValues;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetRecommendationStrategiesRecommendationStrategyCollectionItemStrategyParametersDefinition();
+            _resultValue.defaultValues = defaultValues;
+            _resultValue.description = description;
+            _resultValue.isRequired = isRequired;
+            _resultValue.name = name;
+            _resultValue.possibleValues = possibleValues;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

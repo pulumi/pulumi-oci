@@ -113,10 +113,10 @@ public final class DomainsUserTag {
             return this;
         }
         public DomainsUserTag build() {
-            final var o = new DomainsUserTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

@@ -364,26 +364,26 @@ public final class GetAnalyticsInstanceResult {
             return this;
         }
         public GetAnalyticsInstanceResult build() {
-            final var o = new GetAnalyticsInstanceResult();
-            o.analyticsInstanceId = analyticsInstanceId;
-            o.capacities = capacities;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.emailNotification = emailNotification;
-            o.featureSet = featureSet;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.idcsAccessToken = idcsAccessToken;
-            o.kmsKeyId = kmsKeyId;
-            o.licenseType = licenseType;
-            o.name = name;
-            o.networkEndpointDetails = networkEndpointDetails;
-            o.serviceUrl = serviceUrl;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetAnalyticsInstanceResult();
+            _resultValue.analyticsInstanceId = analyticsInstanceId;
+            _resultValue.capacities = capacities;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.emailNotification = emailNotification;
+            _resultValue.featureSet = featureSet;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.idcsAccessToken = idcsAccessToken;
+            _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.licenseType = licenseType;
+            _resultValue.name = name;
+            _resultValue.networkEndpointDetails = networkEndpointDetails;
+            _resultValue.serviceUrl = serviceUrl;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

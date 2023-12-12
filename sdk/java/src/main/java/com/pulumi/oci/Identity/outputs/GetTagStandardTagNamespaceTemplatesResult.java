@@ -97,12 +97,12 @@ public final class GetTagStandardTagNamespaceTemplatesResult {
             return standardTagNamespaceTemplates(List.of(standardTagNamespaceTemplates));
         }
         public GetTagStandardTagNamespaceTemplatesResult build() {
-            final var o = new GetTagStandardTagNamespaceTemplatesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.standardTagNamespaceTemplates = standardTagNamespaceTemplates;
-            return o;
+            final var _resultValue = new GetTagStandardTagNamespaceTemplatesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.standardTagNamespaceTemplates = standardTagNamespaceTemplates;
+            return _resultValue;
         }
     }
 }

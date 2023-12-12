@@ -208,19 +208,19 @@ public final class GetMetricDataResult {
             return this;
         }
         public GetMetricDataResult build() {
-            final var o = new GetMetricDataResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.endTime = endTime;
-            o.filters = filters;
-            o.id = id;
-            o.metricDatas = metricDatas;
-            o.namespace = namespace;
-            o.query = query;
-            o.resolution = resolution;
-            o.resourceGroup = resourceGroup;
-            o.startTime = startTime;
-            return o;
+            final var _resultValue = new GetMetricDataResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.endTime = endTime;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.metricDatas = metricDatas;
+            _resultValue.namespace = namespace;
+            _resultValue.query = query;
+            _resultValue.resolution = resolution;
+            _resultValue.resourceGroup = resourceGroup;
+            _resultValue.startTime = startTime;
+            return _resultValue;
         }
     }
 }

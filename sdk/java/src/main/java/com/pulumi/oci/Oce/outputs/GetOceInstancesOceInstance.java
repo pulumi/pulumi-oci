@@ -538,35 +538,35 @@ public final class GetOceInstancesOceInstance {
             return this;
         }
         public GetOceInstancesOceInstance build() {
-            final var o = new GetOceInstancesOceInstance();
-            o.addOnFeatures = addOnFeatures;
-            o.adminEmail = adminEmail;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.drRegion = drRegion;
-            o.freeformTags = freeformTags;
-            o.guid = guid;
-            o.id = id;
-            o.idcsAccessToken = idcsAccessToken;
-            o.idcsTenancy = idcsTenancy;
-            o.instanceAccessType = instanceAccessType;
-            o.instanceLicenseType = instanceLicenseType;
-            o.instanceUsageType = instanceUsageType;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.objectStorageNamespace = objectStorageNamespace;
-            o.service = service;
-            o.state = state;
-            o.stateMessage = stateMessage;
-            o.systemTags = systemTags;
-            o.tenancyId = tenancyId;
-            o.tenancyName = tenancyName;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.upgradeSchedule = upgradeSchedule;
-            o.wafPrimaryDomain = wafPrimaryDomain;
-            return o;
+            final var _resultValue = new GetOceInstancesOceInstance();
+            _resultValue.addOnFeatures = addOnFeatures;
+            _resultValue.adminEmail = adminEmail;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.drRegion = drRegion;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.guid = guid;
+            _resultValue.id = id;
+            _resultValue.idcsAccessToken = idcsAccessToken;
+            _resultValue.idcsTenancy = idcsTenancy;
+            _resultValue.instanceAccessType = instanceAccessType;
+            _resultValue.instanceLicenseType = instanceLicenseType;
+            _resultValue.instanceUsageType = instanceUsageType;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.objectStorageNamespace = objectStorageNamespace;
+            _resultValue.service = service;
+            _resultValue.state = state;
+            _resultValue.stateMessage = stateMessage;
+            _resultValue.systemTags = systemTags;
+            _resultValue.tenancyId = tenancyId;
+            _resultValue.tenancyName = tenancyName;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.upgradeSchedule = upgradeSchedule;
+            _resultValue.wafPrimaryDomain = wafPrimaryDomain;
+            return _resultValue;
         }
     }
 }

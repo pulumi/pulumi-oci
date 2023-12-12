@@ -42,9 +42,9 @@ public final class GetSecurityZonesSecurityZoneCollection {
             return items(List.of(items));
         }
         public GetSecurityZonesSecurityZoneCollection build() {
-            final var o = new GetSecurityZonesSecurityZoneCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetSecurityZonesSecurityZoneCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

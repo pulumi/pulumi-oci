@@ -179,16 +179,16 @@ public final class GetDbSystemHistoryEntriesPatchHistoryEntry {
             return this;
         }
         public GetDbSystemHistoryEntriesPatchHistoryEntry build() {
-            final var o = new GetDbSystemHistoryEntriesPatchHistoryEntry();
-            o.action = action;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.patchId = patchId;
-            o.patchType = patchType;
-            o.state = state;
-            o.timeEnded = timeEnded;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new GetDbSystemHistoryEntriesPatchHistoryEntry();
+            _resultValue.action = action;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.patchId = patchId;
+            _resultValue.patchType = patchType;
+            _resultValue.state = state;
+            _resultValue.timeEnded = timeEnded;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

@@ -127,13 +127,13 @@ public final class GetNetworkFirewallPolicyServicesServiceSummaryCollectionItem 
             return this;
         }
         public GetNetworkFirewallPolicyServicesServiceSummaryCollectionItem build() {
-            final var o = new GetNetworkFirewallPolicyServicesServiceSummaryCollectionItem();
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.portRanges = portRanges;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyServicesServiceSummaryCollectionItem();
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.portRanges = portRanges;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

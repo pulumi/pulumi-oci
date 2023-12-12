@@ -104,12 +104,12 @@ public final class GetFlexComponentsFlexComponentCollectionItem {
             return this;
         }
         public GetFlexComponentsFlexComponentCollectionItem build() {
-            final var o = new GetFlexComponentsFlexComponentCollectionItem();
-            o.availableCoreCount = availableCoreCount;
-            o.availableDbStorageInGbs = availableDbStorageInGbs;
-            o.minimumCoreCount = minimumCoreCount;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetFlexComponentsFlexComponentCollectionItem();
+            _resultValue.availableCoreCount = availableCoreCount;
+            _resultValue.availableDbStorageInGbs = availableDbStorageInGbs;
+            _resultValue.minimumCoreCount = minimumCoreCount;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

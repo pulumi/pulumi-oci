@@ -124,14 +124,14 @@ public final class GetLogAnalyticsCategoriesListResult {
             return this;
         }
         public GetLogAnalyticsCategoriesListResult build() {
-            final var o = new GetLogAnalyticsCategoriesListResult();
-            o.categoryDisplayText = categoryDisplayText;
-            o.categoryType = categoryType;
-            o.id = id;
-            o.items = items;
-            o.name = name;
-            o.namespace = namespace;
-            return o;
+            final var _resultValue = new GetLogAnalyticsCategoriesListResult();
+            _resultValue.categoryDisplayText = categoryDisplayText;
+            _resultValue.categoryType = categoryType;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            return _resultValue;
         }
     }
 }

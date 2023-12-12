@@ -65,10 +65,10 @@ public final class GetAddressRuleAddressFieldLabel {
             return this;
         }
         public GetAddressRuleAddressFieldLabel build() {
-            final var o = new GetAddressRuleAddressFieldLabel();
-            o.example = example;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetAddressRuleAddressFieldLabel();
+            _resultValue.example = example;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

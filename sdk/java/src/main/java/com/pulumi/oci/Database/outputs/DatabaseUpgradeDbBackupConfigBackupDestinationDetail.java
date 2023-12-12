@@ -143,14 +143,14 @@ public final class DatabaseUpgradeDbBackupConfigBackupDestinationDetail {
             return this;
         }
         public DatabaseUpgradeDbBackupConfigBackupDestinationDetail build() {
-            final var o = new DatabaseUpgradeDbBackupConfigBackupDestinationDetail();
-            o.dbrsPolicyId = dbrsPolicyId;
-            o.id = id;
-            o.internetProxy = internetProxy;
-            o.type = type;
-            o.vpcPassword = vpcPassword;
-            o.vpcUser = vpcUser;
-            return o;
+            final var _resultValue = new DatabaseUpgradeDbBackupConfigBackupDestinationDetail();
+            _resultValue.dbrsPolicyId = dbrsPolicyId;
+            _resultValue.id = id;
+            _resultValue.internetProxy = internetProxy;
+            _resultValue.type = type;
+            _resultValue.vpcPassword = vpcPassword;
+            _resultValue.vpcUser = vpcUser;
+            return _resultValue;
         }
     }
 }

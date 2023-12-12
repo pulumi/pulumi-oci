@@ -65,10 +65,10 @@ public final class GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataS
             return this;
         }
         public GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary build() {
-            final var o = new GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary();
-            o.clientAppId = clientAppId;
-            o.idcsAccountNameUrl = idcsAccountNameUrl;
-            return o;
+            final var _resultValue = new GetVaultsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary();
+            _resultValue.clientAppId = clientAppId;
+            _resultValue.idcsAccountNameUrl = idcsAccountNameUrl;
+            return _resultValue;
         }
     }
 }

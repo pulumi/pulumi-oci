@@ -50,9 +50,9 @@ public final class GetAppAccelerationPolicyResponseCompressionPolicy {
             return gzipCompressions(List.of(gzipCompressions));
         }
         public GetAppAccelerationPolicyResponseCompressionPolicy build() {
-            final var o = new GetAppAccelerationPolicyResponseCompressionPolicy();
-            o.gzipCompressions = gzipCompressions;
-            return o;
+            final var _resultValue = new GetAppAccelerationPolicyResponseCompressionPolicy();
+            _resultValue.gzipCompressions = gzipCompressions;
+            return _resultValue;
         }
     }
 }

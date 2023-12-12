@@ -42,9 +42,9 @@ public final class GetRepositoryCommitsRepositoryCommitCollection {
             return items(List.of(items));
         }
         public GetRepositoryCommitsRepositoryCommitCollection build() {
-            final var o = new GetRepositoryCommitsRepositoryCommitCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetRepositoryCommitsRepositoryCommitCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

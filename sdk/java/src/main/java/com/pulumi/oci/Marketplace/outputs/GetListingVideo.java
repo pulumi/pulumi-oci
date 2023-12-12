@@ -65,10 +65,10 @@ public final class GetListingVideo {
             return this;
         }
         public GetListingVideo build() {
-            final var o = new GetListingVideo();
-            o.name = name;
-            o.url = url;
-            return o;
+            final var _resultValue = new GetListingVideo();
+            _resultValue.name = name;
+            _resultValue.url = url;
+            return _resultValue;
         }
     }
 }

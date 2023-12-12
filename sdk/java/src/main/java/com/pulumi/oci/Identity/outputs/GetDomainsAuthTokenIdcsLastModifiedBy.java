@@ -122,13 +122,13 @@ public final class GetDomainsAuthTokenIdcsLastModifiedBy {
             return this;
         }
         public GetDomainsAuthTokenIdcsLastModifiedBy build() {
-            final var o = new GetDomainsAuthTokenIdcsLastModifiedBy();
-            o.display = display;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAuthTokenIdcsLastModifiedBy();
+            _resultValue.display = display;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

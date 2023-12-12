@@ -60,11 +60,11 @@ public final class GetShapeShapeOcpuOption {
             return this;
         }
         public GetShapeShapeOcpuOption build() {
-            final var o = new GetShapeShapeOcpuOption();
-            o.max = max;
-            o.maxPerNumaNode = maxPerNumaNode;
-            o.min = min;
-            return o;
+            final var _resultValue = new GetShapeShapeOcpuOption();
+            _resultValue.max = max;
+            _resultValue.maxPerNumaNode = maxPerNumaNode;
+            _resultValue.min = min;
+            return _resultValue;
         }
     }
 }

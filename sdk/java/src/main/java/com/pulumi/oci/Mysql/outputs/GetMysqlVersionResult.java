@@ -97,12 +97,12 @@ public final class GetMysqlVersionResult {
             return versions(List.of(versions));
         }
         public GetMysqlVersionResult build() {
-            final var o = new GetMysqlVersionResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.versions = versions;
-            return o;
+            final var _resultValue = new GetMysqlVersionResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.versions = versions;
+            return _resultValue;
         }
     }
 }

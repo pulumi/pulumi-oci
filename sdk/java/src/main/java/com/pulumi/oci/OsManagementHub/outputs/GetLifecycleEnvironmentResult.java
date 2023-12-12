@@ -342,24 +342,24 @@ public final class GetLifecycleEnvironmentResult {
             return this;
         }
         public GetLifecycleEnvironmentResult build() {
-            final var o = new GetLifecycleEnvironmentResult();
-            o.archType = archType;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleEnvironmentId = lifecycleEnvironmentId;
-            o.managedInstanceIds = managedInstanceIds;
-            o.osFamily = osFamily;
-            o.stages = stages;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeModified = timeModified;
-            o.vendorName = vendorName;
-            return o;
+            final var _resultValue = new GetLifecycleEnvironmentResult();
+            _resultValue.archType = archType;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleEnvironmentId = lifecycleEnvironmentId;
+            _resultValue.managedInstanceIds = managedInstanceIds;
+            _resultValue.osFamily = osFamily;
+            _resultValue.stages = stages;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeModified = timeModified;
+            _resultValue.vendorName = vendorName;
+            return _resultValue;
         }
     }
 }

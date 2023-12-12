@@ -71,10 +71,10 @@ public final class PolicyWafConfigCustomProtectionRuleExclusion {
             return this;
         }
         public PolicyWafConfigCustomProtectionRuleExclusion build() {
-            final var o = new PolicyWafConfigCustomProtectionRuleExclusion();
-            o.exclusions = exclusions;
-            o.target = target;
-            return o;
+            final var _resultValue = new PolicyWafConfigCustomProtectionRuleExclusion();
+            _resultValue.exclusions = exclusions;
+            _resultValue.target = target;
+            return _resultValue;
         }
     }
 }

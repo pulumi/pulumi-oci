@@ -369,25 +369,25 @@ public final class GetModelsModelCollectionItem {
             return this;
         }
         public GetModelsModelCollectionItem build() {
-            final var o = new GetModelsModelCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.evaluationResults = evaluationResults;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.modelDetails = modelDetails;
-            o.projectId = projectId;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.testStrategies = testStrategies;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.trainingDatasets = trainingDatasets;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetModelsModelCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.evaluationResults = evaluationResults;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.modelDetails = modelDetails;
+            _resultValue.projectId = projectId;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.testStrategies = testStrategies;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.trainingDatasets = trainingDatasets;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

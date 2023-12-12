@@ -165,15 +165,15 @@ public final class GetBlockchainPlatformsBlockchainPlatformCollectionItemCompone
             return this;
         }
         public GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer build() {
-            final var o = new GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer();
-            o.ad = ad;
-            o.alias = alias;
-            o.host = host;
-            o.ocpuAllocationParams = ocpuAllocationParams;
-            o.peerKey = peerKey;
-            o.role = role;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailPeer();
+            _resultValue.ad = ad;
+            _resultValue.alias = alias;
+            _resultValue.host = host;
+            _resultValue.ocpuAllocationParams = ocpuAllocationParams;
+            _resultValue.peerKey = peerKey;
+            _resultValue.role = role;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

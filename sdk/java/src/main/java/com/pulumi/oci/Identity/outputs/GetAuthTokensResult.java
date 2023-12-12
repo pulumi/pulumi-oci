@@ -105,12 +105,12 @@ public final class GetAuthTokensResult {
             return this;
         }
         public GetAuthTokensResult build() {
-            final var o = new GetAuthTokensResult();
-            o.filters = filters;
-            o.id = id;
-            o.tokens = tokens;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetAuthTokensResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.tokens = tokens;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

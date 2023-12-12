@@ -50,9 +50,9 @@ public final class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem
             return properties(List.of(properties));
         }
         public GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet build() {
-            final var o = new GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet();
-            o.properties = properties;
-            return o;
+            final var _resultValue = new GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySet();
+            _resultValue.properties = properties;
+            return _resultValue;
         }
     }
 }

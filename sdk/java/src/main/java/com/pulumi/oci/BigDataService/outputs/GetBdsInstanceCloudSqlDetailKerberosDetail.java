@@ -65,10 +65,10 @@ public final class GetBdsInstanceCloudSqlDetailKerberosDetail {
             return this;
         }
         public GetBdsInstanceCloudSqlDetailKerberosDetail build() {
-            final var o = new GetBdsInstanceCloudSqlDetailKerberosDetail();
-            o.keytabFile = keytabFile;
-            o.principalName = principalName;
-            return o;
+            final var _resultValue = new GetBdsInstanceCloudSqlDetailKerberosDetail();
+            _resultValue.keytabFile = keytabFile;
+            _resultValue.principalName = principalName;
+            return _resultValue;
         }
     }
 }

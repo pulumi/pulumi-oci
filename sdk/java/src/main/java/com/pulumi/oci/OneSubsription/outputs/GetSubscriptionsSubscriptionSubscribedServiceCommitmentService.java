@@ -141,14 +141,14 @@ public final class GetSubscriptionsSubscriptionSubscribedServiceCommitmentServic
             return this;
         }
         public GetSubscriptionsSubscriptionSubscribedServiceCommitmentService build() {
-            final var o = new GetSubscriptionsSubscriptionSubscribedServiceCommitmentService();
-            o.availableAmount = availableAmount;
-            o.fundedAllocationValue = fundedAllocationValue;
-            o.lineNetAmount = lineNetAmount;
-            o.quantity = quantity;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            return o;
+            final var _resultValue = new GetSubscriptionsSubscriptionSubscribedServiceCommitmentService();
+            _resultValue.availableAmount = availableAmount;
+            _resultValue.fundedAllocationValue = fundedAllocationValue;
+            _resultValue.lineNetAmount = lineNetAmount;
+            _resultValue.quantity = quantity;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            return _resultValue;
         }
     }
 }

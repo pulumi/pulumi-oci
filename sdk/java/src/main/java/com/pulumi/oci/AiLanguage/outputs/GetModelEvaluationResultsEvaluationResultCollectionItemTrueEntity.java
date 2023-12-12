@@ -85,11 +85,11 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItemTrueEn
             return this;
         }
         public GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity build() {
-            final var o = new GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity();
-            o.length = length;
-            o.offset = offset;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity();
+            _resultValue.length = length;
+            _resultValue.offset = offset;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

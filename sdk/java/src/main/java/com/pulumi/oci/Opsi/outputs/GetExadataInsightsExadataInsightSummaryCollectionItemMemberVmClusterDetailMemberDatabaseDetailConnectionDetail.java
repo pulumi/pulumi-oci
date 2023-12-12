@@ -65,11 +65,11 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             return this;
         }
         public GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail build() {
-            final var o = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail();
-            o.hosts = hosts;
-            o.protocol = protocol;
-            o.serviceName = serviceName;
-            return o;
+            final var _resultValue = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailConnectionDetail();
+            _resultValue.hosts = hosts;
+            _resultValue.protocol = protocol;
+            _resultValue.serviceName = serviceName;
+            return _resultValue;
         }
     }
 }

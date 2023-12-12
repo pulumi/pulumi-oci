@@ -85,11 +85,11 @@ public final class GetCertificateExtension {
             return this;
         }
         public GetCertificateExtension build() {
-            final var o = new GetCertificateExtension();
-            o.isCritical = isCritical;
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetCertificateExtension();
+            _resultValue.isCritical = isCritical;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

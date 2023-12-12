@@ -86,11 +86,11 @@ public final class JobUnsupportedObject {
             return this;
         }
         public JobUnsupportedObject build() {
-            final var o = new JobUnsupportedObject();
-            o.object = object;
-            o.owner = owner;
-            o.type = type;
-            return o;
+            final var _resultValue = new JobUnsupportedObject();
+            _resultValue.object = object;
+            _resultValue.owner = owner;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -88,11 +88,11 @@ public final class ModelTestStrategy {
             return this;
         }
         public ModelTestStrategy build() {
-            final var o = new ModelTestStrategy();
-            o.strategyType = strategyType;
-            o.testingDataset = testingDataset;
-            o.validationDataset = validationDataset;
-            return o;
+            final var _resultValue = new ModelTestStrategy();
+            _resultValue.strategyType = strategyType;
+            _resultValue.testingDataset = testingDataset;
+            _resultValue.validationDataset = validationDataset;
+            return _resultValue;
         }
     }
 }

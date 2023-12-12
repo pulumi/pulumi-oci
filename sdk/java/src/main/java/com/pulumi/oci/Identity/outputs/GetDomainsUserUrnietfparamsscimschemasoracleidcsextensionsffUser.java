@@ -46,9 +46,9 @@ public final class GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffU
             return this;
         }
         public GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser build() {
-            final var o = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser();
-            o.sffAuthKeys = sffAuthKeys;
-            return o;
+            final var _resultValue = new GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser();
+            _resultValue.sffAuthKeys = sffAuthKeys;
+            return _resultValue;
         }
     }
 }

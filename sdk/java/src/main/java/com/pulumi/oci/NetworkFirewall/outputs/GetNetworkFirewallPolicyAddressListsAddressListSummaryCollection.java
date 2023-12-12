@@ -42,9 +42,9 @@ public final class GetNetworkFirewallPolicyAddressListsAddressListSummaryCollect
             return items(List.of(items));
         }
         public GetNetworkFirewallPolicyAddressListsAddressListSummaryCollection build() {
-            final var o = new GetNetworkFirewallPolicyAddressListsAddressListSummaryCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyAddressListsAddressListSummaryCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

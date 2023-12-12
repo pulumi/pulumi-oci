@@ -86,11 +86,11 @@ public final class ConnectorSourceLogSource {
             return this;
         }
         public ConnectorSourceLogSource build() {
-            final var o = new ConnectorSourceLogSource();
-            o.compartmentId = compartmentId;
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new ConnectorSourceLogSource();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

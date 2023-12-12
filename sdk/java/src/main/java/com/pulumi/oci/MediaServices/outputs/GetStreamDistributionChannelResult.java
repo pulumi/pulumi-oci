@@ -230,19 +230,19 @@ public final class GetStreamDistributionChannelResult {
             return this;
         }
         public GetStreamDistributionChannelResult build() {
-            final var o = new GetStreamDistributionChannelResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.domainName = domainName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.state = state;
-            o.streamDistributionChannelId = streamDistributionChannelId;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetStreamDistributionChannelResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.domainName = domainName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.streamDistributionChannelId = streamDistributionChannelId;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

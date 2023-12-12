@@ -174,16 +174,16 @@ public final class GetManagedDatabasesResult {
             return this;
         }
         public GetManagedDatabasesResult build() {
-            final var o = new GetManagedDatabasesResult();
-            o.compartmentId = compartmentId;
-            o.deploymentType = deploymentType;
-            o.externalExadataInfrastructureId = externalExadataInfrastructureId;
-            o.filters = filters;
-            o.id = id;
-            o.managedDatabaseCollections = managedDatabaseCollections;
-            o.managementOption = managementOption;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabasesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.deploymentType = deploymentType;
+            _resultValue.externalExadataInfrastructureId = externalExadataInfrastructureId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.managedDatabaseCollections = managedDatabaseCollections;
+            _resultValue.managementOption = managementOption;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetNewsReportContentType {
             return capacityPlanningResources(List.of(capacityPlanningResources));
         }
         public GetNewsReportContentType build() {
-            final var o = new GetNewsReportContentType();
-            o.capacityPlanningResources = capacityPlanningResources;
-            return o;
+            final var _resultValue = new GetNewsReportContentType();
+            _resultValue.capacityPlanningResources = capacityPlanningResources;
+            return _resultValue;
         }
     }
 }

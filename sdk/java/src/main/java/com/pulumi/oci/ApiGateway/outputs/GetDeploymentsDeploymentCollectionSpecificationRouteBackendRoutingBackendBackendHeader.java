@@ -65,10 +65,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRo
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendHeader build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendHeader();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendHeader();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

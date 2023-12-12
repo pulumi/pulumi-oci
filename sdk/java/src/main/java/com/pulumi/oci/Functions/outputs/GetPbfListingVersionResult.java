@@ -300,22 +300,22 @@ public final class GetPbfListingVersionResult {
             return triggers(List.of(triggers));
         }
         public GetPbfListingVersionResult build() {
-            final var o = new GetPbfListingVersionResult();
-            o.changeSummary = changeSummary;
-            o.configs = configs;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.name = name;
-            o.pbfListingId = pbfListingId;
-            o.pbfListingVersionId = pbfListingVersionId;
-            o.requirements = requirements;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.triggers = triggers;
-            return o;
+            final var _resultValue = new GetPbfListingVersionResult();
+            _resultValue.changeSummary = changeSummary;
+            _resultValue.configs = configs;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.pbfListingId = pbfListingId;
+            _resultValue.pbfListingVersionId = pbfListingVersionId;
+            _resultValue.requirements = requirements;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.triggers = triggers;
+            return _resultValue;
         }
     }
 }

@@ -144,14 +144,14 @@ public final class GetProfilesResult {
             return this;
         }
         public GetProfilesResult build() {
-            final var o = new GetProfilesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.profileCollections = profileCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetProfilesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.profileCollections = profileCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

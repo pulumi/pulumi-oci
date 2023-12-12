@@ -72,10 +72,10 @@ public final class DeploymentSpecificationRequestPoliciesMutualTls {
             return this;
         }
         public DeploymentSpecificationRequestPoliciesMutualTls build() {
-            final var o = new DeploymentSpecificationRequestPoliciesMutualTls();
-            o.allowedSans = allowedSans;
-            o.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesMutualTls();
+            _resultValue.allowedSans = allowedSans;
+            _resultValue.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
+            return _resultValue;
         }
     }
 }

@@ -104,12 +104,12 @@ public final class GetContainerInstancesContainerInstanceCollectionItemShapeConf
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemShapeConfig build() {
-            final var o = new GetContainerInstancesContainerInstanceCollectionItemShapeConfig();
-            o.memoryInGbs = memoryInGbs;
-            o.networkingBandwidthInGbps = networkingBandwidthInGbps;
-            o.ocpus = ocpus;
-            o.processorDescription = processorDescription;
-            return o;
+            final var _resultValue = new GetContainerInstancesContainerInstanceCollectionItemShapeConfig();
+            _resultValue.memoryInGbs = memoryInGbs;
+            _resultValue.networkingBandwidthInGbps = networkingBandwidthInGbps;
+            _resultValue.ocpus = ocpus;
+            _resultValue.processorDescription = processorDescription;
+            return _resultValue;
         }
     }
 }

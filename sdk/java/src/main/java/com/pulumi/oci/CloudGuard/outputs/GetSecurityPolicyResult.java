@@ -310,23 +310,23 @@ public final class GetSecurityPolicyResult {
             return this;
         }
         public GetSecurityPolicyResult build() {
-            final var o = new GetSecurityPolicyResult();
-            o.category = category;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.friendlyName = friendlyName;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.owner = owner;
-            o.securityPolicyId = securityPolicyId;
-            o.services = services;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetSecurityPolicyResult();
+            _resultValue.category = category;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.friendlyName = friendlyName;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.owner = owner;
+            _resultValue.securityPolicyId = securityPolicyId;
+            _resultValue.services = services;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

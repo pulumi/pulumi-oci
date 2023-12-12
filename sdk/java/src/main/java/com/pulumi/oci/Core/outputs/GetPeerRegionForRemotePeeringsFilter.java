@@ -75,11 +75,11 @@ public final class GetPeerRegionForRemotePeeringsFilter {
             return values(List.of(values));
         }
         public GetPeerRegionForRemotePeeringsFilter build() {
-            final var o = new GetPeerRegionForRemotePeeringsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetPeerRegionForRemotePeeringsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

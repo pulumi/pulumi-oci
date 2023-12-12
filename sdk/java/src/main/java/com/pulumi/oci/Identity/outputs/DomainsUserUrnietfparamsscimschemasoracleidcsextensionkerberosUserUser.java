@@ -69,9 +69,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerbero
             return realmUsers(List.of(realmUsers));
         }
         public DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser build() {
-            final var o = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser();
-            o.realmUsers = realmUsers;
-            return o;
+            final var _resultValue = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser();
+            _resultValue.realmUsers = realmUsers;
+            return _resultValue;
         }
     }
 }

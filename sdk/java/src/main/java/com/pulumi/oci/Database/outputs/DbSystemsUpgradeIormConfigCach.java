@@ -110,12 +110,12 @@ public final class DbSystemsUpgradeIormConfigCach {
             return this;
         }
         public DbSystemsUpgradeIormConfigCach build() {
-            final var o = new DbSystemsUpgradeIormConfigCach();
-            o.dbPlans = dbPlans;
-            o.lifecycleDetails = lifecycleDetails;
-            o.objective = objective;
-            o.state = state;
-            return o;
+            final var _resultValue = new DbSystemsUpgradeIormConfigCach();
+            _resultValue.dbPlans = dbPlans;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.objective = objective;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

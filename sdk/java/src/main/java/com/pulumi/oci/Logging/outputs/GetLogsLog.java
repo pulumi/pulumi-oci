@@ -302,22 +302,22 @@ public final class GetLogsLog {
             return this;
         }
         public GetLogsLog build() {
-            final var o = new GetLogsLog();
-            o.compartmentId = compartmentId;
-            o.configurations = configurations;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isEnabled = isEnabled;
-            o.logGroupId = logGroupId;
-            o.logType = logType;
-            o.retentionDuration = retentionDuration;
-            o.state = state;
-            o.tenancyId = tenancyId;
-            o.timeCreated = timeCreated;
-            o.timeLastModified = timeLastModified;
-            return o;
+            final var _resultValue = new GetLogsLog();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurations = configurations;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logType = logType;
+            _resultValue.retentionDuration = retentionDuration;
+            _resultValue.state = state;
+            _resultValue.tenancyId = tenancyId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastModified = timeLastModified;
+            return _resultValue;
         }
     }
 }

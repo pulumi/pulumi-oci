@@ -65,10 +65,10 @@ public final class GetDeploymentDeploymentArgumentItem {
             return this;
         }
         public GetDeploymentDeploymentArgumentItem build() {
-            final var o = new GetDeploymentDeploymentArgumentItem();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDeploymentDeploymentArgumentItem();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

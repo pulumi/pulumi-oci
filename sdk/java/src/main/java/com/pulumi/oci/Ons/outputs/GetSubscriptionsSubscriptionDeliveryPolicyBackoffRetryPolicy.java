@@ -66,10 +66,10 @@ public final class GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy 
             return this;
         }
         public GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy build() {
-            final var o = new GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy();
-            o.maxRetryDuration = maxRetryDuration;
-            o.policyType = policyType;
-            return o;
+            final var _resultValue = new GetSubscriptionsSubscriptionDeliveryPolicyBackoffRetryPolicy();
+            _resultValue.maxRetryDuration = maxRetryDuration;
+            _resultValue.policyType = policyType;
+            return _resultValue;
         }
     }
 }

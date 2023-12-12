@@ -66,10 +66,10 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig {
             return this;
         }
         public GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig build() {
-            final var o = new GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig();
-            o.dpdMode = dpdMode;
-            o.dpdTimeoutInSec = dpdTimeoutInSec;
-            return o;
+            final var _resultValue = new GetIpsecConnectionTunnelsIpSecConnectionTunnelDpdConfig();
+            _resultValue.dpdMode = dpdMode;
+            _resultValue.dpdTimeoutInSec = dpdTimeoutInSec;
+            return _resultValue;
         }
     }
 }

@@ -67,10 +67,10 @@ public final class LogAnalyticsPreferencesManagementItem {
             return this;
         }
         public LogAnalyticsPreferencesManagementItem build() {
-            final var o = new LogAnalyticsPreferencesManagementItem();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new LogAnalyticsPreferencesManagementItem();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

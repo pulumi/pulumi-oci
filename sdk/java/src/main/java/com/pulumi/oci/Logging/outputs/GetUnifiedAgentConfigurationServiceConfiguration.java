@@ -93,11 +93,11 @@ public final class GetUnifiedAgentConfigurationServiceConfiguration {
             return sources(List.of(sources));
         }
         public GetUnifiedAgentConfigurationServiceConfiguration build() {
-            final var o = new GetUnifiedAgentConfigurationServiceConfiguration();
-            o.configurationType = configurationType;
-            o.destinations = destinations;
-            o.sources = sources;
-            return o;
+            final var _resultValue = new GetUnifiedAgentConfigurationServiceConfiguration();
+            _resultValue.configurationType = configurationType;
+            _resultValue.destinations = destinations;
+            _resultValue.sources = sources;
+            return _resultValue;
         }
     }
 }

@@ -141,15 +141,15 @@ public final class GetOsnResult {
             return this;
         }
         public GetOsnResult build() {
-            final var o = new GetOsnResult();
-            o.ad = ad;
-            o.blockchainPlatformId = blockchainPlatformId;
-            o.id = id;
-            o.ocpuAllocationParams = ocpuAllocationParams;
-            o.osnId = osnId;
-            o.osnKey = osnKey;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetOsnResult();
+            _resultValue.ad = ad;
+            _resultValue.blockchainPlatformId = blockchainPlatformId;
+            _resultValue.id = id;
+            _resultValue.ocpuAllocationParams = ocpuAllocationParams;
+            _resultValue.osnId = osnId;
+            _resultValue.osnKey = osnKey;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -149,15 +149,15 @@ public final class GetNetworkFirewallPolicyAddressListResult {
             return this;
         }
         public GetNetworkFirewallPolicyAddressListResult build() {
-            final var o = new GetNetworkFirewallPolicyAddressListResult();
-            o.addresses = addresses;
-            o.id = id;
-            o.name = name;
-            o.networkFirewallPolicyId = networkFirewallPolicyId;
-            o.parentResourceId = parentResourceId;
-            o.totalAddresses = totalAddresses;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyAddressListResult();
+            _resultValue.addresses = addresses;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.networkFirewallPolicyId = networkFirewallPolicyId;
+            _resultValue.parentResourceId = parentResourceId;
+            _resultValue.totalAddresses = totalAddresses;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

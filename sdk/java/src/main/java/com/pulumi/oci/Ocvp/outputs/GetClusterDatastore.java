@@ -89,11 +89,11 @@ public final class GetClusterDatastore {
             return this;
         }
         public GetClusterDatastore build() {
-            final var o = new GetClusterDatastore();
-            o.blockVolumeIds = blockVolumeIds;
-            o.capacity = capacity;
-            o.datastoreType = datastoreType;
-            return o;
+            final var _resultValue = new GetClusterDatastore();
+            _resultValue.blockVolumeIds = blockVolumeIds;
+            _resultValue.capacity = capacity;
+            _resultValue.datastoreType = datastoreType;
+            return _resultValue;
         }
     }
 }

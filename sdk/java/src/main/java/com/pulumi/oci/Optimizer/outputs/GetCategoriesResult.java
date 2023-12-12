@@ -181,17 +181,17 @@ public final class GetCategoriesResult {
             return this;
         }
         public GetCategoriesResult build() {
-            final var o = new GetCategoriesResult();
-            o.categoryCollections = categoryCollections;
-            o.childTenancyIds = childTenancyIds;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.id = id;
-            o.includeOrganization = includeOrganization;
-            o.name = name;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetCategoriesResult();
+            _resultValue.categoryCollections = categoryCollections;
+            _resultValue.childTenancyIds = childTenancyIds;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.includeOrganization = includeOrganization;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

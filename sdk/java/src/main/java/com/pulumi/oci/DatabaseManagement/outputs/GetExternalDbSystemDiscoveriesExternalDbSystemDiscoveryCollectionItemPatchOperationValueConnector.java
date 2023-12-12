@@ -108,12 +108,12 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             return this;
         }
         public GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector build() {
-            final var o = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector();
-            o.agentId = agentId;
-            o.connectionInfos = connectionInfos;
-            o.connectorType = connectorType;
-            o.displayName = displayName;
-            return o;
+            final var _resultValue = new GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemPatchOperationValueConnector();
+            _resultValue.agentId = agentId;
+            _resultValue.connectionInfos = connectionInfos;
+            _resultValue.connectorType = connectorType;
+            _resultValue.displayName = displayName;
+            return _resultValue;
         }
     }
 }

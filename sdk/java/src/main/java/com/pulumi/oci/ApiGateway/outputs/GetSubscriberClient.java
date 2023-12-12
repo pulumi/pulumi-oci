@@ -65,10 +65,10 @@ public final class GetSubscriberClient {
             return this;
         }
         public GetSubscriberClient build() {
-            final var o = new GetSubscriberClient();
-            o.name = name;
-            o.token = token;
-            return o;
+            final var _resultValue = new GetSubscriberClient();
+            _resultValue.name = name;
+            _resultValue.token = token;
+            return _resultValue;
         }
     }
 }

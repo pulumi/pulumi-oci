@@ -174,16 +174,16 @@ public final class GetDefaultConfigurationsResult {
             return this;
         }
         public GetDefaultConfigurationsResult build() {
-            final var o = new GetDefaultConfigurationsResult();
-            o.configurationId = configurationId;
-            o.dbVersion = dbVersion;
-            o.defaultConfigurationCollections = defaultConfigurationCollections;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.shape = shape;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDefaultConfigurationsResult();
+            _resultValue.configurationId = configurationId;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.defaultConfigurationCollections = defaultConfigurationCollections;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.shape = shape;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

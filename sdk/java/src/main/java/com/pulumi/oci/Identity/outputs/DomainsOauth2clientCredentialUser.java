@@ -230,13 +230,13 @@ public final class DomainsOauth2clientCredentialUser {
             return this;
         }
         public DomainsOauth2clientCredentialUser build() {
-            final var o = new DomainsOauth2clientCredentialUser();
-            o.display = display;
-            o.name = name;
-            o.ocid = ocid;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsOauth2clientCredentialUser();
+            _resultValue.display = display;
+            _resultValue.name = name;
+            _resultValue.ocid = ocid;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

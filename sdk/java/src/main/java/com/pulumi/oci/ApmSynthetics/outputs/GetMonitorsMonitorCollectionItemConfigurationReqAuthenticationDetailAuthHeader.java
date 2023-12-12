@@ -65,10 +65,10 @@ public final class GetMonitorsMonitorCollectionItemConfigurationReqAuthenticatio
             return this;
         }
         public GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader build() {
-            final var o = new GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader();
-            o.headerName = headerName;
-            o.headerValue = headerValue;
-            return o;
+            final var _resultValue = new GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeader();
+            _resultValue.headerName = headerName;
+            _resultValue.headerValue = headerValue;
+            return _resultValue;
         }
     }
 }

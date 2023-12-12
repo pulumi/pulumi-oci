@@ -67,11 +67,11 @@ public final class GetFleetPerformanceTuningAnalysisResultsFilter {
             return values(List.of(values));
         }
         public GetFleetPerformanceTuningAnalysisResultsFilter build() {
-            final var o = new GetFleetPerformanceTuningAnalysisResultsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFleetPerformanceTuningAnalysisResultsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

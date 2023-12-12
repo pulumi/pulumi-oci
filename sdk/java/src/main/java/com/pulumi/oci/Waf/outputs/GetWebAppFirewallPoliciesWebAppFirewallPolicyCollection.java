@@ -42,9 +42,9 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection {
             return items(List.of(items));
         }
         public GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection build() {
-            final var o = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetWebAppFirewallPoliciesWebAppFirewallPolicyCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

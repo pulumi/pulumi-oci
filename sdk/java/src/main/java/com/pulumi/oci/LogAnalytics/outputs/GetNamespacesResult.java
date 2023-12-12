@@ -105,12 +105,12 @@ public final class GetNamespacesResult {
             return namespaceCollections(List.of(namespaceCollections));
         }
         public GetNamespacesResult build() {
-            final var o = new GetNamespacesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.namespaceCollections = namespaceCollections;
-            return o;
+            final var _resultValue = new GetNamespacesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.namespaceCollections = namespaceCollections;
+            return _resultValue;
         }
     }
 }

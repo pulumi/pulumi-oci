@@ -230,19 +230,19 @@ public final class GetInstanceConsoleConnectionsInstanceConsoleConnection {
             return this;
         }
         public GetInstanceConsoleConnectionsInstanceConsoleConnection build() {
-            final var o = new GetInstanceConsoleConnectionsInstanceConsoleConnection();
-            o.compartmentId = compartmentId;
-            o.connectionString = connectionString;
-            o.definedTags = definedTags;
-            o.fingerprint = fingerprint;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.instanceId = instanceId;
-            o.publicKey = publicKey;
-            o.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
-            o.state = state;
-            o.vncConnectionString = vncConnectionString;
-            return o;
+            final var _resultValue = new GetInstanceConsoleConnectionsInstanceConsoleConnection();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectionString = connectionString;
+            _resultValue.definedTags = definedTags;
+            _resultValue.fingerprint = fingerprint;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.instanceId = instanceId;
+            _resultValue.publicKey = publicKey;
+            _resultValue.serviceHostKeyFingerprint = serviceHostKeyFingerprint;
+            _resultValue.state = state;
+            _resultValue.vncConnectionString = vncConnectionString;
+            return _resultValue;
         }
     }
 }

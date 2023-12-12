@@ -92,12 +92,12 @@ public final class GetReplicationStatusResult {
             return this;
         }
         public GetReplicationStatusResult build() {
-            final var o = new GetReplicationStatusResult();
-            o.id = id;
-            o.managementEndpoint = managementEndpoint;
-            o.replicaDetails = replicaDetails;
-            o.replicationId = replicationId;
-            return o;
+            final var _resultValue = new GetReplicationStatusResult();
+            _resultValue.id = id;
+            _resultValue.managementEndpoint = managementEndpoint;
+            _resultValue.replicaDetails = replicaDetails;
+            _resultValue.replicationId = replicationId;
+            return _resultValue;
         }
     }
 }

@@ -207,18 +207,18 @@ public final class GetIndexesIndexCollection {
             return this;
         }
         public GetIndexesIndexCollection build() {
-            final var o = new GetIndexesIndexCollection();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.isIfNotExists = isIfNotExists;
-            o.keys = keys;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.state = state;
-            o.tableId = tableId;
-            o.tableName = tableName;
-            o.tableNameOrId = tableNameOrId;
-            return o;
+            final var _resultValue = new GetIndexesIndexCollection();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.isIfNotExists = isIfNotExists;
+            _resultValue.keys = keys;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.state = state;
+            _resultValue.tableId = tableId;
+            _resultValue.tableName = tableName;
+            _resultValue.tableNameOrId = tableNameOrId;
+            return _resultValue;
         }
     }
 }

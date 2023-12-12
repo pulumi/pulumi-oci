@@ -46,9 +46,9 @@ public final class PeerOcpuAllocationParam {
             return this;
         }
         public PeerOcpuAllocationParam build() {
-            final var o = new PeerOcpuAllocationParam();
-            o.ocpuAllocationNumber = ocpuAllocationNumber;
-            return o;
+            final var _resultValue = new PeerOcpuAllocationParam();
+            _resultValue.ocpuAllocationNumber = ocpuAllocationNumber;
+            return _resultValue;
         }
     }
 }

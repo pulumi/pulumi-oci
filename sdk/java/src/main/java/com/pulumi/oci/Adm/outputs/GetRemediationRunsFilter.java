@@ -67,11 +67,11 @@ public final class GetRemediationRunsFilter {
             return values(List.of(values));
         }
         public GetRemediationRunsFilter build() {
-            final var o = new GetRemediationRunsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetRemediationRunsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

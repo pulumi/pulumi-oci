@@ -144,14 +144,14 @@ public final class GetQueuesResult {
             return this;
         }
         public GetQueuesResult build() {
-            final var o = new GetQueuesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.queueCollections = queueCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetQueuesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.queueCollections = queueCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

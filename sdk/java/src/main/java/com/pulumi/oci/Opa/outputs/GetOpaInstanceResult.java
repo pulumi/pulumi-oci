@@ -437,30 +437,30 @@ public final class GetOpaInstanceResult {
             return this;
         }
         public GetOpaInstanceResult build() {
-            final var o = new GetOpaInstanceResult();
-            o.attachments = attachments;
-            o.compartmentId = compartmentId;
-            o.consumptionModel = consumptionModel;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.idcsAt = idcsAt;
-            o.identityAppDisplayName = identityAppDisplayName;
-            o.identityAppGuid = identityAppGuid;
-            o.identityAppOpcServiceInstanceGuid = identityAppOpcServiceInstanceGuid;
-            o.identityDomainUrl = identityDomainUrl;
-            o.instanceUrl = instanceUrl;
-            o.isBreakglassEnabled = isBreakglassEnabled;
-            o.meteringType = meteringType;
-            o.opaInstanceId = opaInstanceId;
-            o.shapeName = shapeName;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetOpaInstanceResult();
+            _resultValue.attachments = attachments;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.consumptionModel = consumptionModel;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.idcsAt = idcsAt;
+            _resultValue.identityAppDisplayName = identityAppDisplayName;
+            _resultValue.identityAppGuid = identityAppGuid;
+            _resultValue.identityAppOpcServiceInstanceGuid = identityAppOpcServiceInstanceGuid;
+            _resultValue.identityDomainUrl = identityDomainUrl;
+            _resultValue.instanceUrl = instanceUrl;
+            _resultValue.isBreakglassEnabled = isBreakglassEnabled;
+            _resultValue.meteringType = meteringType;
+            _resultValue.opaInstanceId = opaInstanceId;
+            _resultValue.shapeName = shapeName;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextens
             return this;
         }
         public GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName build() {
-            final var o = new GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName();
-            o.dbInstanceId = dbInstanceId;
-            o.schemaName = schemaName;
-            return o;
+            final var _resultValue = new GetDomainsGroupsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaName();
+            _resultValue.dbInstanceId = dbInstanceId;
+            _resultValue.schemaName = schemaName;
+            return _resultValue;
         }
     }
 }

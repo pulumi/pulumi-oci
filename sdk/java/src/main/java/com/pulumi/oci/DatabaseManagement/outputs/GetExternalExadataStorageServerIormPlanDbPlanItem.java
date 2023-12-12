@@ -367,26 +367,26 @@ public final class GetExternalExadataStorageServerIormPlanDbPlanItem {
             return this;
         }
         public GetExternalExadataStorageServerIormPlanDbPlanItem build() {
-            final var o = new GetExternalExadataStorageServerIormPlanDbPlanItem();
-            o.allocation = allocation;
-            o.asmCluster = asmCluster;
-            o.flashCacheLimit = flashCacheLimit;
-            o.flashCacheMin = flashCacheMin;
-            o.flashCacheSize = flashCacheSize;
-            o.isFlashCacheOn = isFlashCacheOn;
-            o.isFlashLogOn = isFlashLogOn;
-            o.isPmemCacheOn = isPmemCacheOn;
-            o.isPmemLogOn = isPmemLogOn;
-            o.level = level;
-            o.limit = limit;
-            o.name = name;
-            o.pmemCacheLimit = pmemCacheLimit;
-            o.pmemCacheMin = pmemCacheMin;
-            o.pmemCacheSize = pmemCacheSize;
-            o.role = role;
-            o.share = share;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetExternalExadataStorageServerIormPlanDbPlanItem();
+            _resultValue.allocation = allocation;
+            _resultValue.asmCluster = asmCluster;
+            _resultValue.flashCacheLimit = flashCacheLimit;
+            _resultValue.flashCacheMin = flashCacheMin;
+            _resultValue.flashCacheSize = flashCacheSize;
+            _resultValue.isFlashCacheOn = isFlashCacheOn;
+            _resultValue.isFlashLogOn = isFlashLogOn;
+            _resultValue.isPmemCacheOn = isPmemCacheOn;
+            _resultValue.isPmemLogOn = isPmemLogOn;
+            _resultValue.level = level;
+            _resultValue.limit = limit;
+            _resultValue.name = name;
+            _resultValue.pmemCacheLimit = pmemCacheLimit;
+            _resultValue.pmemCacheMin = pmemCacheMin;
+            _resultValue.pmemCacheSize = pmemCacheSize;
+            _resultValue.role = role;
+            _resultValue.share = share;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

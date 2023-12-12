@@ -104,12 +104,12 @@ public final class GetResourceUsageEmInstance {
             return this;
         }
         public GetResourceUsageEmInstance build() {
-            final var o = new GetResourceUsageEmInstance();
-            o.emDiscovererUrl = emDiscovererUrl;
-            o.emHost = emHost;
-            o.emId = emId;
-            o.targetsCount = targetsCount;
-            return o;
+            final var _resultValue = new GetResourceUsageEmInstance();
+            _resultValue.emDiscovererUrl = emDiscovererUrl;
+            _resultValue.emHost = emHost;
+            _resultValue.emId = emId;
+            _resultValue.targetsCount = targetsCount;
+            return _resultValue;
         }
     }
 }

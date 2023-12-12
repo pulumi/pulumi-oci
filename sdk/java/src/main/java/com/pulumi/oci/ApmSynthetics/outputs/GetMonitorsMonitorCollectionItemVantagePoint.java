@@ -65,10 +65,10 @@ public final class GetMonitorsMonitorCollectionItemVantagePoint {
             return this;
         }
         public GetMonitorsMonitorCollectionItemVantagePoint build() {
-            final var o = new GetMonitorsMonitorCollectionItemVantagePoint();
-            o.displayName = displayName;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetMonitorsMonitorCollectionItemVantagePoint();
+            _resultValue.displayName = displayName;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

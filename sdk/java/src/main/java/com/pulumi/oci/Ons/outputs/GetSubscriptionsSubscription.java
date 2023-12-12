@@ -235,19 +235,19 @@ public final class GetSubscriptionsSubscription {
             return this;
         }
         public GetSubscriptionsSubscription build() {
-            final var o = new GetSubscriptionsSubscription();
-            o.compartmentId = compartmentId;
-            o.createdTime = createdTime;
-            o.definedTags = definedTags;
-            o.deliveryPolicies = deliveryPolicies;
-            o.endpoint = endpoint;
-            o.etag = etag;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.protocol = protocol;
-            o.state = state;
-            o.topicId = topicId;
-            return o;
+            final var _resultValue = new GetSubscriptionsSubscription();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdTime = createdTime;
+            _resultValue.definedTags = definedTags;
+            _resultValue.deliveryPolicies = deliveryPolicies;
+            _resultValue.endpoint = endpoint;
+            _resultValue.etag = etag;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.protocol = protocol;
+            _resultValue.state = state;
+            _resultValue.topicId = topicId;
+            return _resultValue;
         }
     }
 }

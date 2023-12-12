@@ -67,11 +67,11 @@ public final class GetAppCatalogSubscriptionsFilter {
             return values(List.of(values));
         }
         public GetAppCatalogSubscriptionsFilter build() {
-            final var o = new GetAppCatalogSubscriptionsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAppCatalogSubscriptionsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

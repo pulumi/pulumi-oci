@@ -70,10 +70,10 @@ public final class GetDeploymentSpecificationRequestPolicyMutualTl {
             return this;
         }
         public GetDeploymentSpecificationRequestPolicyMutualTl build() {
-            final var o = new GetDeploymentSpecificationRequestPolicyMutualTl();
-            o.allowedSans = allowedSans;
-            o.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRequestPolicyMutualTl();
+            _resultValue.allowedSans = allowedSans;
+            _resultValue.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
+            return _resultValue;
         }
     }
 }

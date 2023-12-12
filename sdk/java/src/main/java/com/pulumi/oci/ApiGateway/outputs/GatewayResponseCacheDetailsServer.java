@@ -68,10 +68,10 @@ public final class GatewayResponseCacheDetailsServer {
             return this;
         }
         public GatewayResponseCacheDetailsServer build() {
-            final var o = new GatewayResponseCacheDetailsServer();
-            o.host = host;
-            o.port = port;
-            return o;
+            final var _resultValue = new GatewayResponseCacheDetailsServer();
+            _resultValue.host = host;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

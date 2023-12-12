@@ -74,10 +74,10 @@ public final class ExternalDbSystemStackMonitoringConfig {
             return this;
         }
         public ExternalDbSystemStackMonitoringConfig build() {
-            final var o = new ExternalDbSystemStackMonitoringConfig();
-            o.isEnabled = isEnabled;
-            o.metadata = metadata;
-            return o;
+            final var _resultValue = new ExternalDbSystemStackMonitoringConfig();
+            _resultValue.isEnabled = isEnabled;
+            _resultValue.metadata = metadata;
+            return _resultValue;
         }
     }
 }

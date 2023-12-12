@@ -84,11 +84,11 @@ public final class GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgu
             return this;
         }
         public GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem build() {
-            final var o = new GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem();
-            o.deployStageId = deployStageId;
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem();
+            _resultValue.deployStageId = deployStageId;
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

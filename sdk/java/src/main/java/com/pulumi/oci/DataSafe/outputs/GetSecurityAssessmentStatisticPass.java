@@ -179,16 +179,16 @@ public final class GetSecurityAssessmentStatisticPass {
             return this;
         }
         public GetSecurityAssessmentStatisticPass build() {
-            final var o = new GetSecurityAssessmentStatisticPass();
-            o.auditingFindingsCount = auditingFindingsCount;
-            o.authorizationControlFindingsCount = authorizationControlFindingsCount;
-            o.dataEncryptionFindingsCount = dataEncryptionFindingsCount;
-            o.dbConfigurationFindingsCount = dbConfigurationFindingsCount;
-            o.fineGrainedAccessControlFindingsCount = fineGrainedAccessControlFindingsCount;
-            o.privilegesAndRolesFindingsCount = privilegesAndRolesFindingsCount;
-            o.targetsCount = targetsCount;
-            o.userAccountsFindingsCount = userAccountsFindingsCount;
-            return o;
+            final var _resultValue = new GetSecurityAssessmentStatisticPass();
+            _resultValue.auditingFindingsCount = auditingFindingsCount;
+            _resultValue.authorizationControlFindingsCount = authorizationControlFindingsCount;
+            _resultValue.dataEncryptionFindingsCount = dataEncryptionFindingsCount;
+            _resultValue.dbConfigurationFindingsCount = dbConfigurationFindingsCount;
+            _resultValue.fineGrainedAccessControlFindingsCount = fineGrainedAccessControlFindingsCount;
+            _resultValue.privilegesAndRolesFindingsCount = privilegesAndRolesFindingsCount;
+            _resultValue.targetsCount = targetsCount;
+            _resultValue.userAccountsFindingsCount = userAccountsFindingsCount;
+            return _resultValue;
         }
     }
 }

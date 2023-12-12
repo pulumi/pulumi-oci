@@ -105,10 +105,10 @@ public final class DomainsMySmtpCredentialTag {
             return this;
         }
         public DomainsMySmtpCredentialTag build() {
-            final var o = new DomainsMySmtpCredentialTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsMySmtpCredentialTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

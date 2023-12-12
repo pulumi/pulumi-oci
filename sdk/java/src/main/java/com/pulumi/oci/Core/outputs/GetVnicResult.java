@@ -390,27 +390,27 @@ public final class GetVnicResult {
             return this;
         }
         public GetVnicResult build() {
-            final var o = new GetVnicResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.hostnameLabel = hostnameLabel;
-            o.id = id;
-            o.ipv6addresses = ipv6addresses;
-            o.isPrimary = isPrimary;
-            o.macAddress = macAddress;
-            o.nsgIds = nsgIds;
-            o.privateIpAddress = privateIpAddress;
-            o.publicIpAddress = publicIpAddress;
-            o.skipSourceDestCheck = skipSourceDestCheck;
-            o.state = state;
-            o.subnetId = subnetId;
-            o.timeCreated = timeCreated;
-            o.vlanId = vlanId;
-            o.vnicId = vnicId;
-            return o;
+            final var _resultValue = new GetVnicResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.hostnameLabel = hostnameLabel;
+            _resultValue.id = id;
+            _resultValue.ipv6addresses = ipv6addresses;
+            _resultValue.isPrimary = isPrimary;
+            _resultValue.macAddress = macAddress;
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.privateIpAddress = privateIpAddress;
+            _resultValue.publicIpAddress = publicIpAddress;
+            _resultValue.skipSourceDestCheck = skipSourceDestCheck;
+            _resultValue.state = state;
+            _resultValue.subnetId = subnetId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.vlanId = vlanId;
+            _resultValue.vnicId = vnicId;
+            return _resultValue;
         }
     }
 }

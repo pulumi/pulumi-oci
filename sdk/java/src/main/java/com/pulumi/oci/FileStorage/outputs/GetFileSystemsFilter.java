@@ -67,11 +67,11 @@ public final class GetFileSystemsFilter {
             return values(List.of(values));
         }
         public GetFileSystemsFilter build() {
-            final var o = new GetFileSystemsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFileSystemsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

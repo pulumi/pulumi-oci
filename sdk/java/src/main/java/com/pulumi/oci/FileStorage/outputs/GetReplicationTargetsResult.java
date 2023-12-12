@@ -163,15 +163,15 @@ public final class GetReplicationTargetsResult {
             return this;
         }
         public GetReplicationTargetsResult build() {
-            final var o = new GetReplicationTargetsResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.replicationTargets = replicationTargets;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetReplicationTargetsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.replicationTargets = replicationTargets;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

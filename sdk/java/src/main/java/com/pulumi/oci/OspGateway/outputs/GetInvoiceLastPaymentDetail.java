@@ -294,22 +294,22 @@ public final class GetInvoiceLastPaymentDetail {
             return this;
         }
         public GetInvoiceLastPaymentDetail build() {
-            final var o = new GetInvoiceLastPaymentDetail();
-            o.accountNumber = accountNumber;
-            o.amountPaid = amountPaid;
-            o.cardType = cardType;
-            o.creditCardType = creditCardType;
-            o.echeckRouting = echeckRouting;
-            o.lastDigits = lastDigits;
-            o.nameOnCard = nameOnCard;
-            o.paidBy = paidBy;
-            o.paymentMethod = paymentMethod;
-            o.paypalId = paypalId;
-            o.paypalReference = paypalReference;
-            o.routingNumber = routingNumber;
-            o.timeExpiration = timeExpiration;
-            o.timePaidOn = timePaidOn;
-            return o;
+            final var _resultValue = new GetInvoiceLastPaymentDetail();
+            _resultValue.accountNumber = accountNumber;
+            _resultValue.amountPaid = amountPaid;
+            _resultValue.cardType = cardType;
+            _resultValue.creditCardType = creditCardType;
+            _resultValue.echeckRouting = echeckRouting;
+            _resultValue.lastDigits = lastDigits;
+            _resultValue.nameOnCard = nameOnCard;
+            _resultValue.paidBy = paidBy;
+            _resultValue.paymentMethod = paymentMethod;
+            _resultValue.paypalId = paypalId;
+            _resultValue.paypalReference = paypalReference;
+            _resultValue.routingNumber = routingNumber;
+            _resultValue.timeExpiration = timeExpiration;
+            _resultValue.timePaidOn = timePaidOn;
+            return _resultValue;
         }
     }
 }

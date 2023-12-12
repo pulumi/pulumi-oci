@@ -84,11 +84,11 @@ public final class GetPrivateApplicationLogo {
             return this;
         }
         public GetPrivateApplicationLogo build() {
-            final var o = new GetPrivateApplicationLogo();
-            o.contentUrl = contentUrl;
-            o.displayName = displayName;
-            o.mimeType = mimeType;
-            return o;
+            final var _resultValue = new GetPrivateApplicationLogo();
+            _resultValue.contentUrl = contentUrl;
+            _resultValue.displayName = displayName;
+            _resultValue.mimeType = mimeType;
+            return _resultValue;
         }
     }
 }

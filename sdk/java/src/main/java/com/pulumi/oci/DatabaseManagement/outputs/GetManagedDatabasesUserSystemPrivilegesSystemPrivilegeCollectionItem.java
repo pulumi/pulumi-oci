@@ -103,12 +103,12 @@ public final class GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollect
             return this;
         }
         public GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItem build() {
-            final var o = new GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItem();
-            o.adminOption = adminOption;
-            o.common = common;
-            o.inherited = inherited;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollectionItem();
+            _resultValue.adminOption = adminOption;
+            _resultValue.common = common;
+            _resultValue.inherited = inherited;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

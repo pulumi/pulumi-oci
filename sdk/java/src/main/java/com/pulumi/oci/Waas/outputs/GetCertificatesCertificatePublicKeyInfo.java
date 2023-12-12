@@ -85,11 +85,11 @@ public final class GetCertificatesCertificatePublicKeyInfo {
             return this;
         }
         public GetCertificatesCertificatePublicKeyInfo build() {
-            final var o = new GetCertificatesCertificatePublicKeyInfo();
-            o.algorithm = algorithm;
-            o.exponent = exponent;
-            o.keySize = keySize;
-            return o;
+            final var _resultValue = new GetCertificatesCertificatePublicKeyInfo();
+            _resultValue.algorithm = algorithm;
+            _resultValue.exponent = exponent;
+            _resultValue.keySize = keySize;
+            return _resultValue;
         }
     }
 }

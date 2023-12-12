@@ -94,12 +94,12 @@ public final class GetVbInstanceApplicationsResult {
             return this;
         }
         public GetVbInstanceApplicationsResult build() {
-            final var o = new GetVbInstanceApplicationsResult();
-            o.applicationSummaryCollections = applicationSummaryCollections;
-            o.id = id;
-            o.idcsOpenId = idcsOpenId;
-            o.vbInstanceId = vbInstanceId;
-            return o;
+            final var _resultValue = new GetVbInstanceApplicationsResult();
+            _resultValue.applicationSummaryCollections = applicationSummaryCollections;
+            _resultValue.id = id;
+            _resultValue.idcsOpenId = idcsOpenId;
+            _resultValue.vbInstanceId = vbInstanceId;
+            return _resultValue;
         }
     }
 }

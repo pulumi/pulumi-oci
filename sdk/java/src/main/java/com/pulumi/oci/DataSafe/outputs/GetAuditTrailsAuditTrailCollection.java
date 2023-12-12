@@ -42,9 +42,9 @@ public final class GetAuditTrailsAuditTrailCollection {
             return items(List.of(items));
         }
         public GetAuditTrailsAuditTrailCollection build() {
-            final var o = new GetAuditTrailsAuditTrailCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetAuditTrailsAuditTrailCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

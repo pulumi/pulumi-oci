@@ -443,28 +443,28 @@ public final class GetDomainsMyRequestsMyRequest {
             return this;
         }
         public GetDomainsMyRequestsMyRequest build() {
-            final var o = new GetDomainsMyRequestsMyRequest();
-            o.action = action;
-            o.approvalDetails = approvalDetails;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.expires = expires;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.justification = justification;
-            o.metas = metas;
-            o.ocid = ocid;
-            o.requestings = requestings;
-            o.requestors = requestors;
-            o.schemas = schemas;
-            o.status = status;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            return o;
+            final var _resultValue = new GetDomainsMyRequestsMyRequest();
+            _resultValue.action = action;
+            _resultValue.approvalDetails = approvalDetails;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.expires = expires;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.justification = justification;
+            _resultValue.metas = metas;
+            _resultValue.ocid = ocid;
+            _resultValue.requestings = requestings;
+            _resultValue.requestors = requestors;
+            _resultValue.schemas = schemas;
+            _resultValue.status = status;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            return _resultValue;
         }
     }
 }

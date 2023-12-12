@@ -65,11 +65,11 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDet
             return this;
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig build() {
-            final var o = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig();
-            o.metrics = metrics;
-            o.minNodeCount = minNodeCount;
-            o.stepSize = stepSize;
-            return o;
+            final var _resultValue = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyDetailScaleInConfig();
+            _resultValue.metrics = metrics;
+            _resultValue.minNodeCount = minNodeCount;
+            _resultValue.stepSize = stepSize;
+            return _resultValue;
         }
     }
 }

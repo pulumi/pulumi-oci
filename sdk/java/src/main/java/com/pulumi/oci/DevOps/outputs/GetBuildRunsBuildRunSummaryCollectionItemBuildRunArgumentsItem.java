@@ -65,10 +65,10 @@ public final class GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsIte
             return this;
         }
         public GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem build() {
-            final var o = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem();
-            o.name = name;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetBuildRunsBuildRunSummaryCollectionItemBuildRunArgumentsItem();
+            _resultValue.name = name;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

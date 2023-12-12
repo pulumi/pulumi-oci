@@ -110,12 +110,12 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase
             return this;
         }
         public ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase build() {
-            final var o = new ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase();
-            o.compartmentId = compartmentId;
-            o.connectors = connectors;
-            o.containerDatabaseId = containerDatabaseId;
-            o.guid = guid;
-            return o;
+            final var _resultValue = new ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.connectors = connectors;
+            _resultValue.containerDatabaseId = containerDatabaseId;
+            _resultValue.guid = guid;
+            return _resultValue;
         }
     }
 }

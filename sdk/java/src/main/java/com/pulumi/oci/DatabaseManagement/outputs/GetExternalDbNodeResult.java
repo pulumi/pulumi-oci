@@ -326,24 +326,24 @@ public final class GetExternalDbNodeResult {
             return this;
         }
         public GetExternalDbNodeResult build() {
-            final var o = new GetExternalDbNodeResult();
-            o.additionalDetails = additionalDetails;
-            o.compartmentId = compartmentId;
-            o.componentName = componentName;
-            o.cpuCoreCount = cpuCoreCount;
-            o.displayName = displayName;
-            o.domainName = domainName;
-            o.externalConnectorId = externalConnectorId;
-            o.externalDbNodeId = externalDbNodeId;
-            o.externalDbSystemId = externalDbSystemId;
-            o.hostName = hostName;
-            o.id = id;
-            o.lifecycleDetails = lifecycleDetails;
-            o.memorySizeInGbs = memorySizeInGbs;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetExternalDbNodeResult();
+            _resultValue.additionalDetails = additionalDetails;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.componentName = componentName;
+            _resultValue.cpuCoreCount = cpuCoreCount;
+            _resultValue.displayName = displayName;
+            _resultValue.domainName = domainName;
+            _resultValue.externalConnectorId = externalConnectorId;
+            _resultValue.externalDbNodeId = externalDbNodeId;
+            _resultValue.externalDbSystemId = externalDbSystemId;
+            _resultValue.hostName = hostName;
+            _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.memorySizeInGbs = memorySizeInGbs;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTempla
             return this;
         }
         public GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate build() {
-            final var o = new GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate();
-            o.description = description;
-            o.standardTagNamespaceName = standardTagNamespaceName;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetTagStandardTagNamespaceTemplatesStandardTagNamespaceTemplate();
+            _resultValue.description = description;
+            _resultValue.standardTagNamespaceName = standardTagNamespaceName;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

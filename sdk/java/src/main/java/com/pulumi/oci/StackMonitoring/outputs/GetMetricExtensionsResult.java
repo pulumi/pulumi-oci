@@ -193,17 +193,17 @@ public final class GetMetricExtensionsResult {
             return this;
         }
         public GetMetricExtensionsResult build() {
-            final var o = new GetMetricExtensionsResult();
-            o.compartmentId = compartmentId;
-            o.enabledOnResourceId = enabledOnResourceId;
-            o.filters = filters;
-            o.id = id;
-            o.metricExtensionCollections = metricExtensionCollections;
-            o.name = name;
-            o.resourceType = resourceType;
-            o.state = state;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetMetricExtensionsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.enabledOnResourceId = enabledOnResourceId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.metricExtensionCollections = metricExtensionCollections;
+            _resultValue.name = name;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

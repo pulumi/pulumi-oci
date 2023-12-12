@@ -67,11 +67,11 @@ public final class GetFleetsFilter {
             return values(List.of(values));
         }
         public GetFleetsFilter build() {
-            final var o = new GetFleetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFleetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

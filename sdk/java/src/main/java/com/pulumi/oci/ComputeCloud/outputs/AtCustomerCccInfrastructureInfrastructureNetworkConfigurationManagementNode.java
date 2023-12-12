@@ -67,10 +67,10 @@ public final class AtCustomerCccInfrastructureInfrastructureNetworkConfiguration
             return this;
         }
         public AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode build() {
-            final var o = new AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode();
-            o.hostname = hostname;
-            o.ip = ip;
-            return o;
+            final var _resultValue = new AtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNode();
+            _resultValue.hostname = hostname;
+            _resultValue.ip = ip;
+            return _resultValue;
         }
     }
 }

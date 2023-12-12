@@ -70,10 +70,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyM
             return this;
         }
         public GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl build() {
-            final var o = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl();
-            o.allowedSans = allowedSans;
-            o.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
-            return o;
+            final var _resultValue = new GetDeploymentsDeploymentCollectionSpecificationRequestPolicyMutualTl();
+            _resultValue.allowedSans = allowedSans;
+            _resultValue.isVerifiedCertificateRequired = isVerifiedCertificateRequired;
+            return _resultValue;
         }
     }
 }

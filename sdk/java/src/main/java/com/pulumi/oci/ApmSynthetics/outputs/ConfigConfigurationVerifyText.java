@@ -48,9 +48,9 @@ public final class ConfigConfigurationVerifyText {
             return this;
         }
         public ConfigConfigurationVerifyText build() {
-            final var o = new ConfigConfigurationVerifyText();
-            o.text = text;
-            return o;
+            final var _resultValue = new ConfigConfigurationVerifyText();
+            _resultValue.text = text;
+            return _resultValue;
         }
     }
 }

@@ -89,11 +89,11 @@ public final class GetAutonomousDatabasesAutonomousDatabaseScheduledOperation {
             return this;
         }
         public GetAutonomousDatabasesAutonomousDatabaseScheduledOperation build() {
-            final var o = new GetAutonomousDatabasesAutonomousDatabaseScheduledOperation();
-            o.dayOfWeeks = dayOfWeeks;
-            o.scheduledStartTime = scheduledStartTime;
-            o.scheduledStopTime = scheduledStopTime;
-            return o;
+            final var _resultValue = new GetAutonomousDatabasesAutonomousDatabaseScheduledOperation();
+            _resultValue.dayOfWeeks = dayOfWeeks;
+            _resultValue.scheduledStartTime = scheduledStartTime;
+            _resultValue.scheduledStopTime = scheduledStopTime;
+            return _resultValue;
         }
     }
 }

@@ -84,11 +84,11 @@ public final class GetGatewaysGatewayCollectionCaBundle {
             return this;
         }
         public GetGatewaysGatewayCollectionCaBundle build() {
-            final var o = new GetGatewaysGatewayCollectionCaBundle();
-            o.caBundleId = caBundleId;
-            o.certificateAuthorityId = certificateAuthorityId;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetGatewaysGatewayCollectionCaBundle();
+            _resultValue.caBundleId = caBundleId;
+            _resultValue.certificateAuthorityId = certificateAuthorityId;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -165,15 +165,15 @@ public final class GetDataSourceEventItem {
             return this;
         }
         public GetDataSourceEventItem build() {
-            final var o = new GetDataSourceEventItem();
-            o.comments = comments;
-            o.dataSourceId = dataSourceId;
-            o.eventDate = eventDate;
-            o.eventInfos = eventInfos;
-            o.region = region;
-            o.status = status;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetDataSourceEventItem();
+            _resultValue.comments = comments;
+            _resultValue.dataSourceId = dataSourceId;
+            _resultValue.eventDate = eventDate;
+            _resultValue.eventInfos = eventInfos;
+            _resultValue.region = region;
+            _resultValue.status = status;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetKeyVersionExternalKeyReferenceDetail {
             return this;
         }
         public GetKeyVersionExternalKeyReferenceDetail build() {
-            final var o = new GetKeyVersionExternalKeyReferenceDetail();
-            o.externalKeyId = externalKeyId;
-            o.externalKeyVersionId = externalKeyVersionId;
-            return o;
+            final var _resultValue = new GetKeyVersionExternalKeyReferenceDetail();
+            _resultValue.externalKeyId = externalKeyId;
+            _resultValue.externalKeyVersionId = externalKeyVersionId;
+            return _resultValue;
         }
     }
 }

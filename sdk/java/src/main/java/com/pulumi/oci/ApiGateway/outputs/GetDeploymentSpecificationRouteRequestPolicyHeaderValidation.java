@@ -62,10 +62,10 @@ public final class GetDeploymentSpecificationRouteRequestPolicyHeaderValidation 
             return this;
         }
         public GetDeploymentSpecificationRouteRequestPolicyHeaderValidation build() {
-            final var o = new GetDeploymentSpecificationRouteRequestPolicyHeaderValidation();
-            o.headers = headers;
-            o.validationMode = validationMode;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteRequestPolicyHeaderValidation();
+            _resultValue.headers = headers;
+            _resultValue.validationMode = validationMode;
+            return _resultValue;
         }
     }
 }

@@ -103,12 +103,12 @@ public final class GetVaultReplicasVaultReplica {
             return this;
         }
         public GetVaultReplicasVaultReplica build() {
-            final var o = new GetVaultReplicasVaultReplica();
-            o.cryptoEndpoint = cryptoEndpoint;
-            o.managementEndpoint = managementEndpoint;
-            o.region = region;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetVaultReplicasVaultReplica();
+            _resultValue.cryptoEndpoint = cryptoEndpoint;
+            _resultValue.managementEndpoint = managementEndpoint;
+            _resultValue.region = region;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetExternalAsmsFilter {
             return values(List.of(values));
         }
         public GetExternalAsmsFilter build() {
-            final var o = new GetExternalAsmsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetExternalAsmsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

@@ -103,10 +103,10 @@ public final class DomainsSettingCompanyName {
             return this;
         }
         public DomainsSettingCompanyName build() {
-            final var o = new DomainsSettingCompanyName();
-            o.locale = locale;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsSettingCompanyName();
+            _resultValue.locale = locale;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

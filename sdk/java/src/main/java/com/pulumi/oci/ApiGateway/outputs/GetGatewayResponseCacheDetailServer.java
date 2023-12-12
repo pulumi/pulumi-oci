@@ -66,10 +66,10 @@ public final class GetGatewayResponseCacheDetailServer {
             return this;
         }
         public GetGatewayResponseCacheDetailServer build() {
-            final var o = new GetGatewayResponseCacheDetailServer();
-            o.host = host;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetGatewayResponseCacheDetailServer();
+            _resultValue.host = host;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

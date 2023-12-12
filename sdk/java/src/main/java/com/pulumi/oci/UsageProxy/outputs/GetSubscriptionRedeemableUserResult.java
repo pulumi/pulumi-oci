@@ -95,13 +95,13 @@ public final class GetSubscriptionRedeemableUserResult {
             return this;
         }
         public GetSubscriptionRedeemableUserResult build() {
-            final var o = new GetSubscriptionRedeemableUserResult();
-            o.id = id;
-            o.items = items;
-            o.subscriptionId = subscriptionId;
-            o.tenancyId = tenancyId;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetSubscriptionRedeemableUserResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.tenancyId = tenancyId;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

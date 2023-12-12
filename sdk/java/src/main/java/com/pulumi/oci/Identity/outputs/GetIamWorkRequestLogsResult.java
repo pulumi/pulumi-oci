@@ -97,12 +97,12 @@ public final class GetIamWorkRequestLogsResult {
             return this;
         }
         public GetIamWorkRequestLogsResult build() {
-            final var o = new GetIamWorkRequestLogsResult();
-            o.filters = filters;
-            o.iamWorkRequestId = iamWorkRequestId;
-            o.iamWorkRequestLogs = iamWorkRequestLogs;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetIamWorkRequestLogsResult();
+            _resultValue.filters = filters;
+            _resultValue.iamWorkRequestId = iamWorkRequestId;
+            _resultValue.iamWorkRequestLogs = iamWorkRequestLogs;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

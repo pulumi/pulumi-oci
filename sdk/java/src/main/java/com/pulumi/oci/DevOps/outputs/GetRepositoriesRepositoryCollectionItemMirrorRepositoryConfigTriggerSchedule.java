@@ -65,10 +65,10 @@ public final class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfig
             return this;
         }
         public GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule build() {
-            final var o = new GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule();
-            o.customSchedule = customSchedule;
-            o.scheduleType = scheduleType;
-            return o;
+            final var _resultValue = new GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedule();
+            _resultValue.customSchedule = customSchedule;
+            _resultValue.scheduleType = scheduleType;
+            return _resultValue;
         }
     }
 }

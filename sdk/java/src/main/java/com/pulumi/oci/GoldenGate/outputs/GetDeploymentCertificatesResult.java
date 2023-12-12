@@ -117,13 +117,13 @@ public final class GetDeploymentCertificatesResult {
             return this;
         }
         public GetDeploymentCertificatesResult build() {
-            final var o = new GetDeploymentCertificatesResult();
-            o.certificateCollections = certificateCollections;
-            o.deploymentId = deploymentId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDeploymentCertificatesResult();
+            _resultValue.certificateCollections = certificateCollections;
+            _resultValue.deploymentId = deploymentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

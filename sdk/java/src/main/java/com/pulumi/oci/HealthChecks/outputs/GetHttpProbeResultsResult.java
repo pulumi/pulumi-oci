@@ -148,15 +148,15 @@ public final class GetHttpProbeResultsResult {
             return this;
         }
         public GetHttpProbeResultsResult build() {
-            final var o = new GetHttpProbeResultsResult();
-            o.filters = filters;
-            o.httpProbeResults = httpProbeResults;
-            o.id = id;
-            o.probeConfigurationId = probeConfigurationId;
-            o.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
-            o.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
-            o.target = target;
-            return o;
+            final var _resultValue = new GetHttpProbeResultsResult();
+            _resultValue.filters = filters;
+            _resultValue.httpProbeResults = httpProbeResults;
+            _resultValue.id = id;
+            _resultValue.probeConfigurationId = probeConfigurationId;
+            _resultValue.startTimeGreaterThanOrEqualTo = startTimeGreaterThanOrEqualTo;
+            _resultValue.startTimeLessThanOrEqualTo = startTimeLessThanOrEqualTo;
+            _resultValue.target = target;
+            return _resultValue;
         }
     }
 }

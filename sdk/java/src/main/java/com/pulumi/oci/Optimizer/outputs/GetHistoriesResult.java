@@ -232,19 +232,19 @@ public final class GetHistoriesResult {
             return this;
         }
         public GetHistoriesResult build() {
-            final var o = new GetHistoriesResult();
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.filters = filters;
-            o.historyCollections = historyCollections;
-            o.id = id;
-            o.name = name;
-            o.recommendationId = recommendationId;
-            o.recommendationName = recommendationName;
-            o.resourceType = resourceType;
-            o.state = state;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetHistoriesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.filters = filters;
+            _resultValue.historyCollections = historyCollections;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.recommendationId = recommendationId;
+            _resultValue.recommendationName = recommendationName;
+            _resultValue.resourceType = resourceType;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

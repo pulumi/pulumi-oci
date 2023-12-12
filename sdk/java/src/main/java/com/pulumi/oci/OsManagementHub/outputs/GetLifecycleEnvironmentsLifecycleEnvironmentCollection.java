@@ -42,9 +42,9 @@ public final class GetLifecycleEnvironmentsLifecycleEnvironmentCollection {
             return items(List.of(items));
         }
         public GetLifecycleEnvironmentsLifecycleEnvironmentCollection build() {
-            final var o = new GetLifecycleEnvironmentsLifecycleEnvironmentCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetLifecycleEnvironmentsLifecycleEnvironmentCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

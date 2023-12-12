@@ -140,13 +140,13 @@ public final class TableSchema {
             return this;
         }
         public TableSchema build() {
-            final var o = new TableSchema();
-            o.columns = columns;
-            o.identities = identities;
-            o.primaryKeys = primaryKeys;
-            o.shardKeys = shardKeys;
-            o.ttl = ttl;
-            return o;
+            final var _resultValue = new TableSchema();
+            _resultValue.columns = columns;
+            _resultValue.identities = identities;
+            _resultValue.primaryKeys = primaryKeys;
+            _resultValue.shardKeys = shardKeys;
+            _resultValue.ttl = ttl;
+            return _resultValue;
         }
     }
 }

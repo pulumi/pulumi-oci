@@ -46,9 +46,9 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetri
             return this;
         }
         public ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics build() {
-            final var o = new ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics();
-            o.kind = kind;
-            return o;
+            final var _resultValue = new ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics();
+            _resultValue.kind = kind;
+            return _resultValue;
         }
     }
 }

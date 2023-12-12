@@ -66,10 +66,10 @@ public final class GetManagedDatabaseAttentionLogCountItem {
             return this;
         }
         public GetManagedDatabaseAttentionLogCountItem build() {
-            final var o = new GetManagedDatabaseAttentionLogCountItem();
-            o.category = category;
-            o.count = count;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAttentionLogCountItem();
+            _resultValue.category = category;
+            _resultValue.count = count;
+            return _resultValue;
         }
     }
 }

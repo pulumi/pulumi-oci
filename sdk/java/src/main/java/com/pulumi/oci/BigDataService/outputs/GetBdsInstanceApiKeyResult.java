@@ -231,20 +231,20 @@ public final class GetBdsInstanceApiKeyResult {
             return this;
         }
         public GetBdsInstanceApiKeyResult build() {
-            final var o = new GetBdsInstanceApiKeyResult();
-            o.apiKeyId = apiKeyId;
-            o.bdsInstanceId = bdsInstanceId;
-            o.defaultRegion = defaultRegion;
-            o.fingerprint = fingerprint;
-            o.id = id;
-            o.keyAlias = keyAlias;
-            o.passphrase = passphrase;
-            o.pemfilepath = pemfilepath;
-            o.state = state;
-            o.tenantId = tenantId;
-            o.timeCreated = timeCreated;
-            o.userId = userId;
-            return o;
+            final var _resultValue = new GetBdsInstanceApiKeyResult();
+            _resultValue.apiKeyId = apiKeyId;
+            _resultValue.bdsInstanceId = bdsInstanceId;
+            _resultValue.defaultRegion = defaultRegion;
+            _resultValue.fingerprint = fingerprint;
+            _resultValue.id = id;
+            _resultValue.keyAlias = keyAlias;
+            _resultValue.passphrase = passphrase;
+            _resultValue.pemfilepath = pemfilepath;
+            _resultValue.state = state;
+            _resultValue.tenantId = tenantId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.userId = userId;
+            return _resultValue;
         }
     }
 }

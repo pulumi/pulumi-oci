@@ -46,9 +46,9 @@ public final class GetManagedInstancesManagedInstanceAutonomouse {
             return this;
         }
         public GetManagedInstancesManagedInstanceAutonomouse build() {
-            final var o = new GetManagedInstancesManagedInstanceAutonomouse();
-            o.isAutoUpdateEnabled = isAutoUpdateEnabled;
-            return o;
+            final var _resultValue = new GetManagedInstancesManagedInstanceAutonomouse();
+            _resultValue.isAutoUpdateEnabled = isAutoUpdateEnabled;
+            return _resultValue;
         }
     }
 }

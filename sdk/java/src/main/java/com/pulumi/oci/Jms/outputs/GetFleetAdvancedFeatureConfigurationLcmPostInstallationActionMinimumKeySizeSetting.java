@@ -110,11 +110,11 @@ public final class GetFleetAdvancedFeatureConfigurationLcmPostInstallationAction
             return tls(List.of(tls));
         }
         public GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting build() {
-            final var o = new GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting();
-            o.certpaths = certpaths;
-            o.jars = jars;
-            o.tls = tls;
-            return o;
+            final var _resultValue = new GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSetting();
+            _resultValue.certpaths = certpaths;
+            _resultValue.jars = jars;
+            _resultValue.tls = tls;
+            return _resultValue;
         }
     }
 }

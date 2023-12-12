@@ -65,10 +65,10 @@ public final class GetDomainsCloudGateTag {
             return this;
         }
         public GetDomainsCloudGateTag build() {
-            final var o = new GetDomainsCloudGateTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsCloudGateTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

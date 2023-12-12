@@ -87,11 +87,11 @@ public final class BlockchainPlatformHostOcpuUtilizationInfo {
             return this;
         }
         public BlockchainPlatformHostOcpuUtilizationInfo build() {
-            final var o = new BlockchainPlatformHostOcpuUtilizationInfo();
-            o.host = host;
-            o.ocpuCapacityNumber = ocpuCapacityNumber;
-            o.ocpuUtilizationNumber = ocpuUtilizationNumber;
-            return o;
+            final var _resultValue = new BlockchainPlatformHostOcpuUtilizationInfo();
+            _resultValue.host = host;
+            _resultValue.ocpuCapacityNumber = ocpuCapacityNumber;
+            _resultValue.ocpuUtilizationNumber = ocpuUtilizationNumber;
+            return _resultValue;
         }
     }
 }

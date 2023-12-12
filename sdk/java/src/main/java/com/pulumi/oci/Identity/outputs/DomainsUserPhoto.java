@@ -184,12 +184,12 @@ public final class DomainsUserPhoto {
             return this;
         }
         public DomainsUserPhoto build() {
-            final var o = new DomainsUserPhoto();
-            o.display = display;
-            o.primary = primary;
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsUserPhoto();
+            _resultValue.display = display;
+            _resultValue.primary = primary;
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

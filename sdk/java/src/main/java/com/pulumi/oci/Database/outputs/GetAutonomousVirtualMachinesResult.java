@@ -144,14 +144,14 @@ public final class GetAutonomousVirtualMachinesResult {
             return this;
         }
         public GetAutonomousVirtualMachinesResult build() {
-            final var o = new GetAutonomousVirtualMachinesResult();
-            o.autonomousVirtualMachines = autonomousVirtualMachines;
-            o.autonomousVmClusterId = autonomousVmClusterId;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAutonomousVirtualMachinesResult();
+            _resultValue.autonomousVirtualMachines = autonomousVirtualMachines;
+            _resultValue.autonomousVmClusterId = autonomousVmClusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

@@ -108,13 +108,13 @@ public final class GetWorkRequestLogEntriesResult {
             return workRequestLogEntries(List.of(workRequestLogEntries));
         }
         public GetWorkRequestLogEntriesResult build() {
-            final var o = new GetWorkRequestLogEntriesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.workRequestId = workRequestId;
-            o.workRequestLogEntries = workRequestLogEntries;
-            return o;
+            final var _resultValue = new GetWorkRequestLogEntriesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.workRequestId = workRequestId;
+            _resultValue.workRequestLogEntries = workRequestLogEntries;
+            return _resultValue;
         }
     }
 }

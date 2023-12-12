@@ -417,27 +417,27 @@ public final class GetInvoicesInvoice {
             return this;
         }
         public GetInvoicesInvoice build() {
-            final var o = new GetInvoicesInvoice();
-            o.arInvoices = arInvoices;
-            o.billToAddresses = billToAddresses;
-            o.billToContacts = billToContacts;
-            o.billToCustomers = billToCustomers;
-            o.createdBy = createdBy;
-            o.currencies = currencies;
-            o.invoiceLines = invoiceLines;
-            o.organizations = organizations;
-            o.paymentMethod = paymentMethod;
-            o.paymentTerms = paymentTerms;
-            o.receiptMethod = receiptMethod;
-            o.spmInvoiceNumber = spmInvoiceNumber;
-            o.status = status;
-            o.subscriptionNumber = subscriptionNumber;
-            o.timeCreated = timeCreated;
-            o.timeInvoiceDate = timeInvoiceDate;
-            o.timeUpdated = timeUpdated;
-            o.type = type;
-            o.updatedBy = updatedBy;
-            return o;
+            final var _resultValue = new GetInvoicesInvoice();
+            _resultValue.arInvoices = arInvoices;
+            _resultValue.billToAddresses = billToAddresses;
+            _resultValue.billToContacts = billToContacts;
+            _resultValue.billToCustomers = billToCustomers;
+            _resultValue.createdBy = createdBy;
+            _resultValue.currencies = currencies;
+            _resultValue.invoiceLines = invoiceLines;
+            _resultValue.organizations = organizations;
+            _resultValue.paymentMethod = paymentMethod;
+            _resultValue.paymentTerms = paymentTerms;
+            _resultValue.receiptMethod = receiptMethod;
+            _resultValue.spmInvoiceNumber = spmInvoiceNumber;
+            _resultValue.status = status;
+            _resultValue.subscriptionNumber = subscriptionNumber;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeInvoiceDate = timeInvoiceDate;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.type = type;
+            _resultValue.updatedBy = updatedBy;
+            return _resultValue;
         }
     }
 }

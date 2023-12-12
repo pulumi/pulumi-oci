@@ -97,12 +97,12 @@ public final class GetRuleSetsResult {
             return ruleSets(List.of(ruleSets));
         }
         public GetRuleSetsResult build() {
-            final var o = new GetRuleSetsResult();
-            o.filters = filters;
-            o.id = id;
-            o.loadBalancerId = loadBalancerId;
-            o.ruleSets = ruleSets;
-            return o;
+            final var _resultValue = new GetRuleSetsResult();
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.ruleSets = ruleSets;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetDatasetsDatasetCollectionItemLabelSet {
             return items(List.of(items));
         }
         public GetDatasetsDatasetCollectionItemLabelSet build() {
-            final var o = new GetDatasetsDatasetCollectionItemLabelSet();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDatasetsDatasetCollectionItemLabelSet();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

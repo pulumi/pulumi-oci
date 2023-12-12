@@ -166,15 +166,15 @@ public final class GetWaasPoliciesWaasPolicyWafConfigCachingRule {
             return this;
         }
         public GetWaasPoliciesWaasPolicyWafConfigCachingRule build() {
-            final var o = new GetWaasPoliciesWaasPolicyWafConfigCachingRule();
-            o.action = action;
-            o.cachingDuration = cachingDuration;
-            o.clientCachingDuration = clientCachingDuration;
-            o.criterias = criterias;
-            o.isClientCachingEnabled = isClientCachingEnabled;
-            o.key = key;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetWaasPoliciesWaasPolicyWafConfigCachingRule();
+            _resultValue.action = action;
+            _resultValue.cachingDuration = cachingDuration;
+            _resultValue.clientCachingDuration = clientCachingDuration;
+            _resultValue.criterias = criterias;
+            _resultValue.isClientCachingEnabled = isClientCachingEnabled;
+            _resultValue.key = key;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

@@ -90,11 +90,11 @@ public final class ManagementAgentManagementAgentProperty {
             return values(List.of(values));
         }
         public ManagementAgentManagementAgentProperty build() {
-            final var o = new ManagementAgentManagementAgentProperty();
-            o.name = name;
-            o.units = units;
-            o.values = values;
-            return o;
+            final var _resultValue = new ManagementAgentManagementAgentProperty();
+            _resultValue.name = name;
+            _resultValue.units = units;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

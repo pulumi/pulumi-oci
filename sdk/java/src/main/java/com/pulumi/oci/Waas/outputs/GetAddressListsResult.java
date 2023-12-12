@@ -170,17 +170,17 @@ public final class GetAddressListsResult {
             return this;
         }
         public GetAddressListsResult build() {
-            final var o = new GetAddressListsResult();
-            o.addressLists = addressLists;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.ids = ids;
-            o.names = names;
-            o.states = states;
-            o.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
-            o.timeCreatedLessThan = timeCreatedLessThan;
-            return o;
+            final var _resultValue = new GetAddressListsResult();
+            _resultValue.addressLists = addressLists;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ids = ids;
+            _resultValue.names = names;
+            _resultValue.states = states;
+            _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
+            _resultValue.timeCreatedLessThan = timeCreatedLessThan;
+            return _resultValue;
         }
     }
 }

@@ -128,13 +128,13 @@ public final class GetIpsecConnectionTunnelRoutesTunnelRoute {
             return this;
         }
         public GetIpsecConnectionTunnelRoutesTunnelRoute build() {
-            final var o = new GetIpsecConnectionTunnelRoutesTunnelRoute();
-            o.advertiser = advertiser;
-            o.age = age;
-            o.asPaths = asPaths;
-            o.isBestPath = isBestPath;
-            o.prefix = prefix;
-            return o;
+            final var _resultValue = new GetIpsecConnectionTunnelRoutesTunnelRoute();
+            _resultValue.advertiser = advertiser;
+            _resultValue.age = age;
+            _resultValue.asPaths = asPaths;
+            _resultValue.isBestPath = isBestPath;
+            _resultValue.prefix = prefix;
+            return _resultValue;
         }
     }
 }

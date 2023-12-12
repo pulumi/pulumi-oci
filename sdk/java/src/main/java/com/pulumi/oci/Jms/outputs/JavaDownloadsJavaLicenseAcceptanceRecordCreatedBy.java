@@ -86,11 +86,11 @@ public final class JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy {
             return this;
         }
         public JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy build() {
-            final var o = new JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy();
-            o.displayName = displayName;
-            o.email = email;
-            o.id = id;
-            return o;
+            final var _resultValue = new JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy();
+            _resultValue.displayName = displayName;
+            _resultValue.email = email;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

@@ -262,20 +262,20 @@ public final class GetUserAssessmentUsersUser {
             return userTypes(List.of(userTypes));
         }
         public GetUserAssessmentUsersUser build() {
-            final var o = new GetUserAssessmentUsersUser();
-            o.accountStatus = accountStatus;
-            o.adminRoles = adminRoles;
-            o.authenticationType = authenticationType;
-            o.key = key;
-            o.targetId = targetId;
-            o.timeLastLogin = timeLastLogin;
-            o.timePasswordChanged = timePasswordChanged;
-            o.timeUserCreated = timeUserCreated;
-            o.userCategory = userCategory;
-            o.userName = userName;
-            o.userProfile = userProfile;
-            o.userTypes = userTypes;
-            return o;
+            final var _resultValue = new GetUserAssessmentUsersUser();
+            _resultValue.accountStatus = accountStatus;
+            _resultValue.adminRoles = adminRoles;
+            _resultValue.authenticationType = authenticationType;
+            _resultValue.key = key;
+            _resultValue.targetId = targetId;
+            _resultValue.timeLastLogin = timeLastLogin;
+            _resultValue.timePasswordChanged = timePasswordChanged;
+            _resultValue.timeUserCreated = timeUserCreated;
+            _resultValue.userCategory = userCategory;
+            _resultValue.userName = userName;
+            _resultValue.userProfile = userProfile;
+            _resultValue.userTypes = userTypes;
+            return _resultValue;
         }
     }
 }

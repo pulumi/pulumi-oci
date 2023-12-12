@@ -103,12 +103,12 @@ public final class GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollec
             return this;
         }
         public GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem build() {
-            final var o = new GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem();
-            o.name = name;
-            o.status = status;
-            o.timeCreated = timeCreated;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlPlanBaselineJobsSqlPlanBaselineJobCollectionItem();
+            _resultValue.name = name;
+            _resultValue.status = status;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

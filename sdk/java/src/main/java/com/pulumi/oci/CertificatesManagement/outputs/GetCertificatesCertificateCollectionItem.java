@@ -422,28 +422,28 @@ public final class GetCertificatesCertificateCollectionItem {
             return this;
         }
         public GetCertificatesCertificateCollectionItem build() {
-            final var o = new GetCertificatesCertificateCollectionItem();
-            o.certificateConfigs = certificateConfigs;
-            o.certificateProfileType = certificateProfileType;
-            o.certificateRevocationListDetails = certificateRevocationListDetails;
-            o.certificateRules = certificateRules;
-            o.compartmentId = compartmentId;
-            o.configType = configType;
-            o.currentVersions = currentVersions;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
-            o.keyAlgorithm = keyAlgorithm;
-            o.lifecycleDetails = lifecycleDetails;
-            o.name = name;
-            o.signatureAlgorithm = signatureAlgorithm;
-            o.state = state;
-            o.subjects = subjects;
-            o.timeCreated = timeCreated;
-            o.timeOfDeletion = timeOfDeletion;
-            return o;
+            final var _resultValue = new GetCertificatesCertificateCollectionItem();
+            _resultValue.certificateConfigs = certificateConfigs;
+            _resultValue.certificateProfileType = certificateProfileType;
+            _resultValue.certificateRevocationListDetails = certificateRevocationListDetails;
+            _resultValue.certificateRules = certificateRules;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configType = configType;
+            _resultValue.currentVersions = currentVersions;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.issuerCertificateAuthorityId = issuerCertificateAuthorityId;
+            _resultValue.keyAlgorithm = keyAlgorithm;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.name = name;
+            _resultValue.signatureAlgorithm = signatureAlgorithm;
+            _resultValue.state = state;
+            _resultValue.subjects = subjects;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfDeletion = timeOfDeletion;
+            return _resultValue;
         }
     }
 }

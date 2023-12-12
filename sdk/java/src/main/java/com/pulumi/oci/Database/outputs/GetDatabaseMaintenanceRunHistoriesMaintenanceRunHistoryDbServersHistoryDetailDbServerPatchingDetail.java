@@ -104,12 +104,12 @@ public final class GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServ
             return this;
         }
         public GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail build() {
-            final var o = new GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail();
-            o.estimatedPatchDuration = estimatedPatchDuration;
-            o.patchingStatus = patchingStatus;
-            o.timePatchingEnded = timePatchingEnded;
-            o.timePatchingStarted = timePatchingStarted;
-            return o;
+            final var _resultValue = new GetDatabaseMaintenanceRunHistoriesMaintenanceRunHistoryDbServersHistoryDetailDbServerPatchingDetail();
+            _resultValue.estimatedPatchDuration = estimatedPatchDuration;
+            _resultValue.patchingStatus = patchingStatus;
+            _resultValue.timePatchingEnded = timePatchingEnded;
+            _resultValue.timePatchingStarted = timePatchingStarted;
+            return _resultValue;
         }
     }
 }

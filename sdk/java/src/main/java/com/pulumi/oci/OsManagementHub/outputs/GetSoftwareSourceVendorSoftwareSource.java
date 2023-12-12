@@ -65,10 +65,10 @@ public final class GetSoftwareSourceVendorSoftwareSource {
             return this;
         }
         public GetSoftwareSourceVendorSoftwareSource build() {
-            final var o = new GetSoftwareSourceVendorSoftwareSource();
-            o.displayName = displayName;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetSoftwareSourceVendorSoftwareSource();
+            _resultValue.displayName = displayName;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

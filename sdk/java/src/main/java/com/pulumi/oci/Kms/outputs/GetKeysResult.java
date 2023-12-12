@@ -200,17 +200,17 @@ public final class GetKeysResult {
             return this;
         }
         public GetKeysResult build() {
-            final var o = new GetKeysResult();
-            o.algorithm = algorithm;
-            o.compartmentId = compartmentId;
-            o.curveId = curveId;
-            o.filters = filters;
-            o.id = id;
-            o.keys = keys;
-            o.length = length;
-            o.managementEndpoint = managementEndpoint;
-            o.protectionMode = protectionMode;
-            return o;
+            final var _resultValue = new GetKeysResult();
+            _resultValue.algorithm = algorithm;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.curveId = curveId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.keys = keys;
+            _resultValue.length = length;
+            _resultValue.managementEndpoint = managementEndpoint;
+            _resultValue.protectionMode = protectionMode;
+            return _resultValue;
         }
     }
 }

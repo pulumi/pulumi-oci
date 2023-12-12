@@ -85,11 +85,11 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionw
             return this;
         }
         public GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp build() {
-            final var o = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp();
-            o.resourceRef = resourceRef;
-            o.webTierPolicyAzControl = webTierPolicyAzControl;
-            o.webTierPolicyJson = webTierPolicyJson;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp();
+            _resultValue.resourceRef = resourceRef;
+            _resultValue.webTierPolicyAzControl = webTierPolicyAzControl;
+            _resultValue.webTierPolicyJson = webTierPolicyJson;
+            return _resultValue;
         }
     }
 }

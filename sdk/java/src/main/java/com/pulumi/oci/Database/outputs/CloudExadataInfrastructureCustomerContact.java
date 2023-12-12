@@ -48,9 +48,9 @@ public final class CloudExadataInfrastructureCustomerContact {
             return this;
         }
         public CloudExadataInfrastructureCustomerContact build() {
-            final var o = new CloudExadataInfrastructureCustomerContact();
-            o.email = email;
-            return o;
+            final var _resultValue = new CloudExadataInfrastructureCustomerContact();
+            _resultValue.email = email;
+            return _resultValue;
         }
     }
 }

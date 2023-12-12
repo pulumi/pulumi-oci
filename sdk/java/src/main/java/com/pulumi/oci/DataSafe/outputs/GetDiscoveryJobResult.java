@@ -504,33 +504,33 @@ public final class GetDiscoveryJobResult {
             return this;
         }
         public GetDiscoveryJobResult build() {
-            final var o = new GetDiscoveryJobResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.discoveryJobId = discoveryJobId;
-            o.discoveryType = discoveryType;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
-            o.isIncludeAllSchemas = isIncludeAllSchemas;
-            o.isIncludeAllSensitiveTypes = isIncludeAllSensitiveTypes;
-            o.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
-            o.schemasForDiscoveries = schemasForDiscoveries;
-            o.sensitiveDataModelId = sensitiveDataModelId;
-            o.sensitiveTypeIdsForDiscoveries = sensitiveTypeIdsForDiscoveries;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.targetId = targetId;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            o.totalColumnsScanned = totalColumnsScanned;
-            o.totalDeletedSensitiveColumns = totalDeletedSensitiveColumns;
-            o.totalModifiedSensitiveColumns = totalModifiedSensitiveColumns;
-            o.totalNewSensitiveColumns = totalNewSensitiveColumns;
-            o.totalObjectsScanned = totalObjectsScanned;
-            o.totalSchemasScanned = totalSchemasScanned;
-            return o;
+            final var _resultValue = new GetDiscoveryJobResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.discoveryJobId = discoveryJobId;
+            _resultValue.discoveryType = discoveryType;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
+            _resultValue.isIncludeAllSchemas = isIncludeAllSchemas;
+            _resultValue.isIncludeAllSensitiveTypes = isIncludeAllSensitiveTypes;
+            _resultValue.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
+            _resultValue.schemasForDiscoveries = schemasForDiscoveries;
+            _resultValue.sensitiveDataModelId = sensitiveDataModelId;
+            _resultValue.sensitiveTypeIdsForDiscoveries = sensitiveTypeIdsForDiscoveries;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.targetId = targetId;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.totalColumnsScanned = totalColumnsScanned;
+            _resultValue.totalDeletedSensitiveColumns = totalDeletedSensitiveColumns;
+            _resultValue.totalModifiedSensitiveColumns = totalModifiedSensitiveColumns;
+            _resultValue.totalNewSensitiveColumns = totalNewSensitiveColumns;
+            _resultValue.totalObjectsScanned = totalObjectsScanned;
+            _resultValue.totalSchemasScanned = totalSchemasScanned;
+            return _resultValue;
         }
     }
 }

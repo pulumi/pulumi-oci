@@ -111,12 +111,12 @@ public final class HeatWaveClusterClusterNode {
             return this;
         }
         public HeatWaveClusterClusterNode build() {
-            final var o = new HeatWaveClusterClusterNode();
-            o.nodeId = nodeId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new HeatWaveClusterClusterNode();
+            _resultValue.nodeId = nodeId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

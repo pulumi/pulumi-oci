@@ -42,9 +42,9 @@ public final class GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCol
             return items(List.of(items));
         }
         public GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection build() {
-            final var o = new GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDbManagementPrivateEndpointsDbManagementPrivateEndpointCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

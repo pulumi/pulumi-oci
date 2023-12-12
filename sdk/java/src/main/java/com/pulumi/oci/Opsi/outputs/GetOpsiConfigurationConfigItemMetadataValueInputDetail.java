@@ -107,12 +107,12 @@ public final class GetOpsiConfigurationConfigItemMetadataValueInputDetail {
             return possibleValues(List.of(possibleValues));
         }
         public GetOpsiConfigurationConfigItemMetadataValueInputDetail build() {
-            final var o = new GetOpsiConfigurationConfigItemMetadataValueInputDetail();
-            o.allowedValueType = allowedValueType;
-            o.maxValue = maxValue;
-            o.minValue = minValue;
-            o.possibleValues = possibleValues;
-            return o;
+            final var _resultValue = new GetOpsiConfigurationConfigItemMetadataValueInputDetail();
+            _resultValue.allowedValueType = allowedValueType;
+            _resultValue.maxValue = maxValue;
+            _resultValue.minValue = minValue;
+            _resultValue.possibleValues = possibleValues;
+            return _resultValue;
         }
     }
 }

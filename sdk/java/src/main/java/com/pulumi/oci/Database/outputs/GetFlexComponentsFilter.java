@@ -75,11 +75,11 @@ public final class GetFlexComponentsFilter {
             return values(List.of(values));
         }
         public GetFlexComponentsFilter build() {
-            final var o = new GetFlexComponentsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetFlexComponentsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

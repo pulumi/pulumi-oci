@@ -123,13 +123,13 @@ public final class GetInstallationSitesInstallationSiteCollectionItemItemOperati
             return this;
         }
         public GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem build() {
-            final var o = new GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem();
-            o.architecture = architecture;
-            o.family = family;
-            o.managedInstanceCount = managedInstanceCount;
-            o.name = name;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem();
+            _resultValue.architecture = architecture;
+            _resultValue.family = family;
+            _resultValue.managedInstanceCount = managedInstanceCount;
+            _resultValue.name = name;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

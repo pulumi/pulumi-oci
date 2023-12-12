@@ -296,23 +296,23 @@ public final class GetWorkspaceProjectResult {
             return this;
         }
         public GetWorkspaceProjectResult build() {
-            final var o = new GetWorkspaceProjectResult();
-            o.description = description;
-            o.id = id;
-            o.identifier = identifier;
-            o.key = key;
-            o.keyMap = keyMap;
-            o.metadatas = metadatas;
-            o.modelType = modelType;
-            o.modelVersion = modelVersion;
-            o.name = name;
-            o.objectStatus = objectStatus;
-            o.objectVersion = objectVersion;
-            o.parentReves = parentReves;
-            o.projectKey = projectKey;
-            o.registryMetadatas = registryMetadatas;
-            o.workspaceId = workspaceId;
-            return o;
+            final var _resultValue = new GetWorkspaceProjectResult();
+            _resultValue.description = description;
+            _resultValue.id = id;
+            _resultValue.identifier = identifier;
+            _resultValue.key = key;
+            _resultValue.keyMap = keyMap;
+            _resultValue.metadatas = metadatas;
+            _resultValue.modelType = modelType;
+            _resultValue.modelVersion = modelVersion;
+            _resultValue.name = name;
+            _resultValue.objectStatus = objectStatus;
+            _resultValue.objectVersion = objectVersion;
+            _resultValue.parentReves = parentReves;
+            _resultValue.projectKey = projectKey;
+            _resultValue.registryMetadatas = registryMetadatas;
+            _resultValue.workspaceId = workspaceId;
+            return _resultValue;
         }
     }
 }

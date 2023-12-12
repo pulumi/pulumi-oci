@@ -65,10 +65,10 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
             return this;
         }
         public GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension build() {
-            final var o = new GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension();
-            o.policyId = policyId;
-            o.targetId = targetId;
-            return o;
+            final var _resultValue = new GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension();
+            _resultValue.policyId = policyId;
+            _resultValue.targetId = targetId;
+            return _resultValue;
         }
     }
 }

@@ -67,11 +67,11 @@ public final class GetVolumeBackupsFilter {
             return values(List.of(values));
         }
         public GetVolumeBackupsFilter build() {
-            final var o = new GetVolumeBackupsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetVolumeBackupsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

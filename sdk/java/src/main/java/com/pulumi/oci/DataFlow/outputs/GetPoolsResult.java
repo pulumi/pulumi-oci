@@ -174,16 +174,16 @@ public final class GetPoolsResult {
             return this;
         }
         public GetPoolsResult build() {
-            final var o = new GetPoolsResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.displayNameStartsWith = displayNameStartsWith;
-            o.filters = filters;
-            o.id = id;
-            o.ownerPrincipalId = ownerPrincipalId;
-            o.poolCollections = poolCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetPoolsResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.displayNameStartsWith = displayNameStartsWith;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.ownerPrincipalId = ownerPrincipalId;
+            _resultValue.poolCollections = poolCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

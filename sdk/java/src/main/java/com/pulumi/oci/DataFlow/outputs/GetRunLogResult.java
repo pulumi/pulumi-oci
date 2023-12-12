@@ -120,14 +120,14 @@ public final class GetRunLogResult {
             return this;
         }
         public GetRunLogResult build() {
-            final var o = new GetRunLogResult();
-            o.base64EncodeContent = base64EncodeContent;
-            o.content = content;
-            o.contentType = contentType;
-            o.id = id;
-            o.name = name;
-            o.runId = runId;
-            return o;
+            final var _resultValue = new GetRunLogResult();
+            _resultValue.base64EncodeContent = base64EncodeContent;
+            _resultValue.content = content;
+            _resultValue.contentType = contentType;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.runId = runId;
+            return _resultValue;
         }
     }
 }

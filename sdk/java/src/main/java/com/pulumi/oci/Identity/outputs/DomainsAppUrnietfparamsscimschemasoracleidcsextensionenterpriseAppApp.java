@@ -247,13 +247,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpri
             return this;
         }
         public DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp build() {
-            final var o = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp();
-            o.allowAuthzDecisionTtl = allowAuthzDecisionTtl;
-            o.allowAuthzPolicy = allowAuthzPolicy;
-            o.appResources = appResources;
-            o.denyAuthzDecisionTtl = denyAuthzDecisionTtl;
-            o.denyAuthzPolicy = denyAuthzPolicy;
-            return o;
+            final var _resultValue = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppApp();
+            _resultValue.allowAuthzDecisionTtl = allowAuthzDecisionTtl;
+            _resultValue.allowAuthzPolicy = allowAuthzPolicy;
+            _resultValue.appResources = appResources;
+            _resultValue.denyAuthzDecisionTtl = denyAuthzDecisionTtl;
+            _resultValue.denyAuthzPolicy = denyAuthzPolicy;
+            return _resultValue;
         }
     }
 }

@@ -295,22 +295,22 @@ public final class GetApplianceImagesApplianceImageCollectionItem {
             return this;
         }
         public GetApplianceImagesApplianceImageCollectionItem build() {
-            final var o = new GetApplianceImagesApplianceImageCollectionItem();
-            o.checksum = checksum;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.downloadUrl = downloadUrl;
-            o.fileName = fileName;
-            o.format = format;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.platform = platform;
-            o.sizeInMbs = sizeInMbs;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.version = version;
-            return o;
+            final var _resultValue = new GetApplianceImagesApplianceImageCollectionItem();
+            _resultValue.checksum = checksum;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.downloadUrl = downloadUrl;
+            _resultValue.fileName = fileName;
+            _resultValue.format = format;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.platform = platform;
+            _resultValue.sizeInMbs = sizeInMbs;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.version = version;
+            return _resultValue;
         }
     }
 }

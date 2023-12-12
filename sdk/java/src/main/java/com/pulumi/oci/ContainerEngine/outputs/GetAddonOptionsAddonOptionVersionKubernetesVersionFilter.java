@@ -88,11 +88,11 @@ public final class GetAddonOptionsAddonOptionVersionKubernetesVersionFilter {
             return this;
         }
         public GetAddonOptionsAddonOptionVersionKubernetesVersionFilter build() {
-            final var o = new GetAddonOptionsAddonOptionVersionKubernetesVersionFilter();
-            o.exactKubernetesVersions = exactKubernetesVersions;
-            o.maximumVersion = maximumVersion;
-            o.minimalVersion = minimalVersion;
-            return o;
+            final var _resultValue = new GetAddonOptionsAddonOptionVersionKubernetesVersionFilter();
+            _resultValue.exactKubernetesVersions = exactKubernetesVersions;
+            _resultValue.maximumVersion = maximumVersion;
+            _resultValue.minimalVersion = minimalVersion;
+            return _resultValue;
         }
     }
 }

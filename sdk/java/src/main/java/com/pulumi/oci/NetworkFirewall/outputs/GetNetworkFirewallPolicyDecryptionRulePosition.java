@@ -65,10 +65,10 @@ public final class GetNetworkFirewallPolicyDecryptionRulePosition {
             return this;
         }
         public GetNetworkFirewallPolicyDecryptionRulePosition build() {
-            final var o = new GetNetworkFirewallPolicyDecryptionRulePosition();
-            o.afterRule = afterRule;
-            o.beforeRule = beforeRule;
-            return o;
+            final var _resultValue = new GetNetworkFirewallPolicyDecryptionRulePosition();
+            _resultValue.afterRule = afterRule;
+            _resultValue.beforeRule = beforeRule;
+            return _resultValue;
         }
     }
 }

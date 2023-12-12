@@ -142,14 +142,14 @@ public final class GetDeploymentVersionsDeploymentVersionCollectionItem {
             return this;
         }
         public GetDeploymentVersionsDeploymentVersionCollectionItem build() {
-            final var o = new GetDeploymentVersionsDeploymentVersionCollectionItem();
-            o.deploymentType = deploymentType;
-            o.isSecurityFix = isSecurityFix;
-            o.oggVersion = oggVersion;
-            o.releaseType = releaseType;
-            o.timeReleased = timeReleased;
-            o.timeSupportedUntil = timeSupportedUntil;
-            return o;
+            final var _resultValue = new GetDeploymentVersionsDeploymentVersionCollectionItem();
+            _resultValue.deploymentType = deploymentType;
+            _resultValue.isSecurityFix = isSecurityFix;
+            _resultValue.oggVersion = oggVersion;
+            _resultValue.releaseType = releaseType;
+            _resultValue.timeReleased = timeReleased;
+            _resultValue.timeSupportedUntil = timeSupportedUntil;
+            return _resultValue;
         }
     }
 }

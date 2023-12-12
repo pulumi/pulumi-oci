@@ -75,11 +75,11 @@ public final class GetMonitoredResourceTasksFilter {
             return values(List.of(values));
         }
         public GetMonitoredResourceTasksFilter build() {
-            final var o = new GetMonitoredResourceTasksFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetMonitoredResourceTasksFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

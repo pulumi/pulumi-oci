@@ -113,13 +113,13 @@ public final class GetLogAnalyticsEntityTopologyResult {
             return this;
         }
         public GetLogAnalyticsEntityTopologyResult build() {
-            final var o = new GetLogAnalyticsEntityTopologyResult();
-            o.id = id;
-            o.items = items;
-            o.logAnalyticsEntityId = logAnalyticsEntityId;
-            o.namespace = namespace;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetLogAnalyticsEntityTopologyResult();
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.logAnalyticsEntityId = logAnalyticsEntityId;
+            _resultValue.namespace = namespace;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

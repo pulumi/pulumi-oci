@@ -84,11 +84,11 @@ public final class GetContainerImageLayer {
             return this;
         }
         public GetContainerImageLayer build() {
-            final var o = new GetContainerImageLayer();
-            o.digest = digest;
-            o.sizeInBytes = sizeInBytes;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetContainerImageLayer();
+            _resultValue.digest = digest;
+            _resultValue.sizeInBytes = sizeInBytes;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

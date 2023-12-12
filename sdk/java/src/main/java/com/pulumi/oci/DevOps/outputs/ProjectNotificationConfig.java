@@ -52,9 +52,9 @@ public final class ProjectNotificationConfig {
             return this;
         }
         public ProjectNotificationConfig build() {
-            final var o = new ProjectNotificationConfig();
-            o.topicId = topicId;
-            return o;
+            final var _resultValue = new ProjectNotificationConfig();
+            _resultValue.topicId = topicId;
+            return _resultValue;
         }
     }
 }

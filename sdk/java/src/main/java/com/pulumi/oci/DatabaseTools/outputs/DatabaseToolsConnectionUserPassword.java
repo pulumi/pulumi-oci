@@ -71,10 +71,10 @@ public final class DatabaseToolsConnectionUserPassword {
             return this;
         }
         public DatabaseToolsConnectionUserPassword build() {
-            final var o = new DatabaseToolsConnectionUserPassword();
-            o.secretId = secretId;
-            o.valueType = valueType;
-            return o;
+            final var _resultValue = new DatabaseToolsConnectionUserPassword();
+            _resultValue.secretId = secretId;
+            _resultValue.valueType = valueType;
+            return _resultValue;
         }
     }
 }

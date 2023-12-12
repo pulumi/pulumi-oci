@@ -42,9 +42,9 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollection {
             return items(List.of(items));
         }
         public GetDrProtectionGroupsDrProtectionGroupCollection build() {
-            final var o = new GetDrProtectionGroupsDrProtectionGroupCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDrProtectionGroupsDrProtectionGroupCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -113,12 +113,12 @@ public final class ModelTestStrategyTestingDatasetLocationDetails {
             return objectNames(List.of(objectNames));
         }
         public ModelTestStrategyTestingDatasetLocationDetails build() {
-            final var o = new ModelTestStrategyTestingDatasetLocationDetails();
-            o.bucket = bucket;
-            o.locationType = locationType;
-            o.namespace = namespace;
-            o.objectNames = objectNames;
-            return o;
+            final var _resultValue = new ModelTestStrategyTestingDatasetLocationDetails();
+            _resultValue.bucket = bucket;
+            _resultValue.locationType = locationType;
+            _resultValue.namespace = namespace;
+            _resultValue.objectNames = objectNames;
+            return _resultValue;
         }
     }
 }

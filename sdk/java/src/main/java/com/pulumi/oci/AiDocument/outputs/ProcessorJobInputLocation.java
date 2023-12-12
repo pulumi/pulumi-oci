@@ -91,11 +91,11 @@ public final class ProcessorJobInputLocation {
             return this;
         }
         public ProcessorJobInputLocation build() {
-            final var o = new ProcessorJobInputLocation();
-            o.data = data;
-            o.objectLocations = objectLocations;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new ProcessorJobInputLocation();
+            _resultValue.data = data;
+            _resultValue.objectLocations = objectLocations;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

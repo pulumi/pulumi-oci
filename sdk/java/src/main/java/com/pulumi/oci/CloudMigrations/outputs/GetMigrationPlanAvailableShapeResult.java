@@ -135,15 +135,15 @@ public final class GetMigrationPlanAvailableShapeResult {
             return this;
         }
         public GetMigrationPlanAvailableShapeResult build() {
-            final var o = new GetMigrationPlanAvailableShapeResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.dvhHostId = dvhHostId;
-            o.id = id;
-            o.items = items;
-            o.migrationPlanId = migrationPlanId;
-            o.reservedCapacityId = reservedCapacityId;
-            return o;
+            final var _resultValue = new GetMigrationPlanAvailableShapeResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dvhHostId = dvhHostId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.migrationPlanId = migrationPlanId;
+            _resultValue.reservedCapacityId = reservedCapacityId;
+            return _resultValue;
         }
     }
 }

@@ -93,14 +93,14 @@ public final class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCre
             return this;
         }
         public GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail build() {
-            final var o = new GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail();
-            o.credentialSourceName = credentialSourceName;
-            o.credentialType = credentialType;
-            o.passwordSecretId = passwordSecretId;
-            o.role = role;
-            o.userName = userName;
-            o.walletSecretId = walletSecretId;
-            return o;
+            final var _resultValue = new GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail();
+            _resultValue.credentialSourceName = credentialSourceName;
+            _resultValue.credentialType = credentialType;
+            _resultValue.passwordSecretId = passwordSecretId;
+            _resultValue.role = role;
+            _resultValue.userName = userName;
+            _resultValue.walletSecretId = walletSecretId;
+            return _resultValue;
         }
     }
 }

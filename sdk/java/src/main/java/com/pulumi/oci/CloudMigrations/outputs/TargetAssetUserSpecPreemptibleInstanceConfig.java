@@ -46,9 +46,9 @@ public final class TargetAssetUserSpecPreemptibleInstanceConfig {
             return this;
         }
         public TargetAssetUserSpecPreemptibleInstanceConfig build() {
-            final var o = new TargetAssetUserSpecPreemptibleInstanceConfig();
-            o.preemptionAction = preemptionAction;
-            return o;
+            final var _resultValue = new TargetAssetUserSpecPreemptibleInstanceConfig();
+            _resultValue.preemptionAction = preemptionAction;
+            return _resultValue;
         }
     }
 }

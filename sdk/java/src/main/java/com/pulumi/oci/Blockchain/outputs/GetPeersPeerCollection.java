@@ -42,9 +42,9 @@ public final class GetPeersPeerCollection {
             return items(List.of(items));
         }
         public GetPeersPeerCollection build() {
-            final var o = new GetPeersPeerCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetPeersPeerCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

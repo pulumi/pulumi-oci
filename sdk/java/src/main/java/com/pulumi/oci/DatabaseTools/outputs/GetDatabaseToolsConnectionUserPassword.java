@@ -65,10 +65,10 @@ public final class GetDatabaseToolsConnectionUserPassword {
             return this;
         }
         public GetDatabaseToolsConnectionUserPassword build() {
-            final var o = new GetDatabaseToolsConnectionUserPassword();
-            o.secretId = secretId;
-            o.valueType = valueType;
-            return o;
+            final var _resultValue = new GetDatabaseToolsConnectionUserPassword();
+            _resultValue.secretId = secretId;
+            _resultValue.valueType = valueType;
+            return _resultValue;
         }
     }
 }

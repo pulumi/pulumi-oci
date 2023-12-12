@@ -103,12 +103,12 @@ public final class GetDatasetDatasetSourceDetail {
             return this;
         }
         public GetDatasetDatasetSourceDetail build() {
-            final var o = new GetDatasetDatasetSourceDetail();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.prefix = prefix;
-            o.sourceType = sourceType;
-            return o;
+            final var _resultValue = new GetDatasetDatasetSourceDetail();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.prefix = prefix;
+            _resultValue.sourceType = sourceType;
+            return _resultValue;
         }
     }
 }

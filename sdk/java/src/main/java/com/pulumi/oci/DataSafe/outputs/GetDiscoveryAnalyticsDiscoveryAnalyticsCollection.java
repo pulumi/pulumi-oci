@@ -50,9 +50,9 @@ public final class GetDiscoveryAnalyticsDiscoveryAnalyticsCollection {
             return items(List.of(items));
         }
         public GetDiscoveryAnalyticsDiscoveryAnalyticsCollection build() {
-            final var o = new GetDiscoveryAnalyticsDiscoveryAnalyticsCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDiscoveryAnalyticsDiscoveryAnalyticsCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

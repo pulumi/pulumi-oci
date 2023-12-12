@@ -152,14 +152,14 @@ public final class GetCrossConnectStatusResult {
             return this;
         }
         public GetCrossConnectStatusResult build() {
-            final var o = new GetCrossConnectStatusResult();
-            o.crossConnectId = crossConnectId;
-            o.encryptionStatus = encryptionStatus;
-            o.id = id;
-            o.interfaceState = interfaceState;
-            o.lightLevelIndBm = lightLevelIndBm;
-            o.lightLevelIndicator = lightLevelIndicator;
-            return o;
+            final var _resultValue = new GetCrossConnectStatusResult();
+            _resultValue.crossConnectId = crossConnectId;
+            _resultValue.encryptionStatus = encryptionStatus;
+            _resultValue.id = id;
+            _resultValue.interfaceState = interfaceState;
+            _resultValue.lightLevelIndBm = lightLevelIndBm;
+            _resultValue.lightLevelIndicator = lightLevelIndicator;
+            return _resultValue;
         }
     }
 }

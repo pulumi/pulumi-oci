@@ -65,10 +65,10 @@ public final class GetRepositoryMirrorRepositoryConfigTriggerSchedule {
             return this;
         }
         public GetRepositoryMirrorRepositoryConfigTriggerSchedule build() {
-            final var o = new GetRepositoryMirrorRepositoryConfigTriggerSchedule();
-            o.customSchedule = customSchedule;
-            o.scheduleType = scheduleType;
-            return o;
+            final var _resultValue = new GetRepositoryMirrorRepositoryConfigTriggerSchedule();
+            _resultValue.customSchedule = customSchedule;
+            _resultValue.scheduleType = scheduleType;
+            return _resultValue;
         }
     }
 }

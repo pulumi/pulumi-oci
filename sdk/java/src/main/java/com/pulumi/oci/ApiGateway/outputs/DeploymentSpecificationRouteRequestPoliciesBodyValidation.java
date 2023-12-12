@@ -104,11 +104,11 @@ public final class DeploymentSpecificationRouteRequestPoliciesBodyValidation {
             return this;
         }
         public DeploymentSpecificationRouteRequestPoliciesBodyValidation build() {
-            final var o = new DeploymentSpecificationRouteRequestPoliciesBodyValidation();
-            o.contents = contents;
-            o.required = required;
-            o.validationMode = validationMode;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteRequestPoliciesBodyValidation();
+            _resultValue.contents = contents;
+            _resultValue.required = required;
+            _resultValue.validationMode = validationMode;
+            return _resultValue;
         }
     }
 }

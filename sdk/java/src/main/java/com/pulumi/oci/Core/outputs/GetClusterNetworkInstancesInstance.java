@@ -241,19 +241,19 @@ public final class GetClusterNetworkInstancesInstance {
             return this;
         }
         public GetClusterNetworkInstancesInstance build() {
-            final var o = new GetClusterNetworkInstancesInstance();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.faultDomain = faultDomain;
-            o.id = id;
-            o.instanceConfigurationId = instanceConfigurationId;
-            o.loadBalancerBackends = loadBalancerBackends;
-            o.region = region;
-            o.shape = shape;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetClusterNetworkInstancesInstance();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.faultDomain = faultDomain;
+            _resultValue.id = id;
+            _resultValue.instanceConfigurationId = instanceConfigurationId;
+            _resultValue.loadBalancerBackends = loadBalancerBackends;
+            _resultValue.region = region;
+            _resultValue.shape = shape;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

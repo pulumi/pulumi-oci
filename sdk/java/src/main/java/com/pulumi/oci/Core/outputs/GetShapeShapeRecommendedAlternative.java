@@ -38,9 +38,9 @@ public final class GetShapeShapeRecommendedAlternative {
             return this;
         }
         public GetShapeShapeRecommendedAlternative build() {
-            final var o = new GetShapeShapeRecommendedAlternative();
-            o.shapeName = shapeName;
-            return o;
+            final var _resultValue = new GetShapeShapeRecommendedAlternative();
+            _resultValue.shapeName = shapeName;
+            return _resultValue;
         }
     }
 }

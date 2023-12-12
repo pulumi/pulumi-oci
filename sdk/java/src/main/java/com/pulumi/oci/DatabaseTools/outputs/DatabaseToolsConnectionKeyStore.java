@@ -88,11 +88,11 @@ public final class DatabaseToolsConnectionKeyStore {
             return this;
         }
         public DatabaseToolsConnectionKeyStore build() {
-            final var o = new DatabaseToolsConnectionKeyStore();
-            o.keyStoreContent = keyStoreContent;
-            o.keyStorePassword = keyStorePassword;
-            o.keyStoreType = keyStoreType;
-            return o;
+            final var _resultValue = new DatabaseToolsConnectionKeyStore();
+            _resultValue.keyStoreContent = keyStoreContent;
+            _resultValue.keyStorePassword = keyStorePassword;
+            _resultValue.keyStoreType = keyStoreType;
+            return _resultValue;
         }
     }
 }

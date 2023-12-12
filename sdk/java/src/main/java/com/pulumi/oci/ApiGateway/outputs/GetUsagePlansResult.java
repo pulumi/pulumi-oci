@@ -144,14 +144,14 @@ public final class GetUsagePlansResult {
             return usagePlanCollections(List.of(usagePlanCollections));
         }
         public GetUsagePlansResult build() {
-            final var o = new GetUsagePlansResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.usagePlanCollections = usagePlanCollections;
-            return o;
+            final var _resultValue = new GetUsagePlansResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.usagePlanCollections = usagePlanCollections;
+            return _resultValue;
         }
     }
 }

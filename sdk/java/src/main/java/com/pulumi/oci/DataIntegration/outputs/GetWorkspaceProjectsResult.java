@@ -164,16 +164,16 @@ public final class GetWorkspaceProjectsResult {
             return this;
         }
         public GetWorkspaceProjectsResult build() {
-            final var o = new GetWorkspaceProjectsResult();
-            o.fields = fields;
-            o.filters = filters;
-            o.id = id;
-            o.identifiers = identifiers;
-            o.name = name;
-            o.nameContains = nameContains;
-            o.projectSummaryCollections = projectSummaryCollections;
-            o.workspaceId = workspaceId;
-            return o;
+            final var _resultValue = new GetWorkspaceProjectsResult();
+            _resultValue.fields = fields;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.identifiers = identifiers;
+            _resultValue.name = name;
+            _resultValue.nameContains = nameContains;
+            _resultValue.projectSummaryCollections = projectSummaryCollections;
+            _resultValue.workspaceId = workspaceId;
+            return _resultValue;
         }
     }
 }

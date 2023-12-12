@@ -103,12 +103,12 @@ public final class GetClustersClusterEndpoint {
             return this;
         }
         public GetClustersClusterEndpoint build() {
-            final var o = new GetClustersClusterEndpoint();
-            o.kubernetes = kubernetes;
-            o.privateEndpoint = privateEndpoint;
-            o.publicEndpoint = publicEndpoint;
-            o.vcnHostnameEndpoint = vcnHostnameEndpoint;
-            return o;
+            final var _resultValue = new GetClustersClusterEndpoint();
+            _resultValue.kubernetes = kubernetes;
+            _resultValue.privateEndpoint = privateEndpoint;
+            _resultValue.publicEndpoint = publicEndpoint;
+            _resultValue.vcnHostnameEndpoint = vcnHostnameEndpoint;
+            return _resultValue;
         }
     }
 }

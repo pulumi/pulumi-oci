@@ -105,12 +105,12 @@ public final class DedicatedVantagePointMonitorStatusCountMap {
             return this;
         }
         public DedicatedVantagePointMonitorStatusCountMap build() {
-            final var o = new DedicatedVantagePointMonitorStatusCountMap();
-            o.disabled = disabled;
-            o.enabled = enabled;
-            o.invalid = invalid;
-            o.total = total;
-            return o;
+            final var _resultValue = new DedicatedVantagePointMonitorStatusCountMap();
+            _resultValue.disabled = disabled;
+            _resultValue.enabled = enabled;
+            _resultValue.invalid = invalid;
+            _resultValue.total = total;
+            return _resultValue;
         }
     }
 }

@@ -48,9 +48,9 @@ public final class DrProtectionGroupMemberFileSystemOperationUnmountDetails {
             return this;
         }
         public DrProtectionGroupMemberFileSystemOperationUnmountDetails build() {
-            final var o = new DrProtectionGroupMemberFileSystemOperationUnmountDetails();
-            o.mountTargetId = mountTargetId;
-            return o;
+            final var _resultValue = new DrProtectionGroupMemberFileSystemOperationUnmountDetails();
+            _resultValue.mountTargetId = mountTargetId;
+            return _resultValue;
         }
     }
 }

@@ -103,12 +103,12 @@ public final class GetConnectionsConnectionCollectionItemPrivateEndpoint {
             return this;
         }
         public GetConnectionsConnectionCollectionItemPrivateEndpoint build() {
-            final var o = new GetConnectionsConnectionCollectionItemPrivateEndpoint();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.subnetId = subnetId;
-            o.vcnId = vcnId;
-            return o;
+            final var _resultValue = new GetConnectionsConnectionCollectionItemPrivateEndpoint();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.subnetId = subnetId;
+            _resultValue.vcnId = vcnId;
+            return _resultValue;
         }
     }
 }

@@ -65,10 +65,10 @@ public final class GetTargetDatabasesTablesTable {
             return this;
         }
         public GetTargetDatabasesTablesTable build() {
-            final var o = new GetTargetDatabasesTablesTable();
-            o.schemaName = schemaName;
-            o.tableName = tableName;
-            return o;
+            final var _resultValue = new GetTargetDatabasesTablesTable();
+            _resultValue.schemaName = schemaName;
+            _resultValue.tableName = tableName;
+            return _resultValue;
         }
     }
 }

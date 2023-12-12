@@ -65,10 +65,10 @@ public final class GetProxyDetailResult {
             return this;
         }
         public GetProxyDetailResult build() {
-            final var o = new GetProxyDetailResult();
-            o.id = id;
-            o.proxyImage = proxyImage;
-            return o;
+            final var _resultValue = new GetProxyDetailResult();
+            _resultValue.id = id;
+            _resultValue.proxyImage = proxyImage;
+            return _resultValue;
         }
     }
 }

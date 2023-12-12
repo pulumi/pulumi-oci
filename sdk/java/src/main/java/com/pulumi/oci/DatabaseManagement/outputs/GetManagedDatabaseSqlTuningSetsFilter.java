@@ -75,11 +75,11 @@ public final class GetManagedDatabaseSqlTuningSetsFilter {
             return values(List.of(values));
         }
         public GetManagedDatabaseSqlTuningSetsFilter build() {
-            final var o = new GetManagedDatabaseSqlTuningSetsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedDatabaseSqlTuningSetsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

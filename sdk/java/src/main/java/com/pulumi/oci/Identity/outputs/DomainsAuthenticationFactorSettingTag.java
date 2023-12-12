@@ -105,10 +105,10 @@ public final class DomainsAuthenticationFactorSettingTag {
             return this;
         }
         public DomainsAuthenticationFactorSettingTag build() {
-            final var o = new DomainsAuthenticationFactorSettingTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new DomainsAuthenticationFactorSettingTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

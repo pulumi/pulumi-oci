@@ -181,16 +181,16 @@ public final class GetBackendSetsBackendSetCollectionItemBackend {
             return this;
         }
         public GetBackendSetsBackendSetCollectionItemBackend build() {
-            final var o = new GetBackendSetsBackendSetCollectionItemBackend();
-            o.ipAddress = ipAddress;
-            o.isBackup = isBackup;
-            o.isDrain = isDrain;
-            o.isOffline = isOffline;
-            o.name = name;
-            o.port = port;
-            o.targetId = targetId;
-            o.weight = weight;
-            return o;
+            final var _resultValue = new GetBackendSetsBackendSetCollectionItemBackend();
+            _resultValue.ipAddress = ipAddress;
+            _resultValue.isBackup = isBackup;
+            _resultValue.isDrain = isDrain;
+            _resultValue.isOffline = isOffline;
+            _resultValue.name = name;
+            _resultValue.port = port;
+            _resultValue.targetId = targetId;
+            _resultValue.weight = weight;
+            return _resultValue;
         }
     }
 }

@@ -103,12 +103,12 @@ public final class GetListingsListingBanner {
             return this;
         }
         public GetListingsListingBanner build() {
-            final var o = new GetListingsListingBanner();
-            o.contentUrl = contentUrl;
-            o.fileExtension = fileExtension;
-            o.mimeType = mimeType;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetListingsListingBanner();
+            _resultValue.contentUrl = contentUrl;
+            _resultValue.fileExtension = fileExtension;
+            _resultValue.mimeType = mimeType;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

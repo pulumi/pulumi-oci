@@ -144,14 +144,14 @@ public final class GetEnrollmentStatusesResult {
             return this;
         }
         public GetEnrollmentStatusesResult build() {
-            final var o = new GetEnrollmentStatusesResult();
-            o.compartmentId = compartmentId;
-            o.enrollmentStatusCollections = enrollmentStatusCollections;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.status = status;
-            return o;
+            final var _resultValue = new GetEnrollmentStatusesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.enrollmentStatusCollections = enrollmentStatusCollections;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.status = status;
+            return _resultValue;
         }
     }
 }

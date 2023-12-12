@@ -84,11 +84,11 @@ public final class GetDomainsAppsAppIdentityProvider {
             return this;
         }
         public GetDomainsAppsAppIdentityProvider build() {
-            final var o = new GetDomainsAppsAppIdentityProvider();
-            o.display = display;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppIdentityProvider();
+            _resultValue.display = display;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

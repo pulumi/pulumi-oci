@@ -110,12 +110,12 @@ public final class RemediationRecipeDetectConfiguration {
             return this;
         }
         public RemediationRecipeDetectConfiguration build() {
-            final var o = new RemediationRecipeDetectConfiguration();
-            o.exclusions = exclusions;
-            o.maxPermissibleCvssV2score = maxPermissibleCvssV2score;
-            o.maxPermissibleCvssV3score = maxPermissibleCvssV3score;
-            o.upgradePolicy = upgradePolicy;
-            return o;
+            final var _resultValue = new RemediationRecipeDetectConfiguration();
+            _resultValue.exclusions = exclusions;
+            _resultValue.maxPermissibleCvssV2score = maxPermissibleCvssV2score;
+            _resultValue.maxPermissibleCvssV3score = maxPermissibleCvssV3score;
+            _resultValue.upgradePolicy = upgradePolicy;
+            return _resultValue;
         }
     }
 }

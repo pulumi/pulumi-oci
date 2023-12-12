@@ -42,9 +42,9 @@ public final class GetNetworkAddressListsNetworkAddressListCollection {
             return items(List.of(items));
         }
         public GetNetworkAddressListsNetworkAddressListCollection build() {
-            final var o = new GetNetworkAddressListsNetworkAddressListCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetNetworkAddressListsNetworkAddressListCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

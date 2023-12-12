@@ -227,20 +227,20 @@ public final class GetTargetDatabasesResult {
             return targetDatabases(List.of(targetDatabases));
         }
         public GetTargetDatabasesResult build() {
-            final var o = new GetTargetDatabasesResult();
-            o.accessLevel = accessLevel;
-            o.associatedResourceId = associatedResourceId;
-            o.compartmentId = compartmentId;
-            o.compartmentIdInSubtree = compartmentIdInSubtree;
-            o.databaseType = databaseType;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.infrastructureType = infrastructureType;
-            o.state = state;
-            o.targetDatabaseId = targetDatabaseId;
-            o.targetDatabases = targetDatabases;
-            return o;
+            final var _resultValue = new GetTargetDatabasesResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.associatedResourceId = associatedResourceId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.databaseType = databaseType;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.infrastructureType = infrastructureType;
+            _resultValue.state = state;
+            _resultValue.targetDatabaseId = targetDatabaseId;
+            _resultValue.targetDatabases = targetDatabases;
+            return _resultValue;
         }
     }
 }

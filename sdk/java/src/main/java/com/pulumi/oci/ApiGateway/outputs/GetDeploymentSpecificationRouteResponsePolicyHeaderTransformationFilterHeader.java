@@ -70,10 +70,10 @@ public final class GetDeploymentSpecificationRouteResponsePolicyHeaderTransforma
             return this;
         }
         public GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeader build() {
-            final var o = new GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeader();
-            o.items = items;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationFilterHeader();
+            _resultValue.items = items;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

@@ -142,14 +142,14 @@ public final class GetInfrastructureTargetVersionResult {
             return targetStorageVersionHistoryEntries(List.of(targetStorageVersionHistoryEntries));
         }
         public GetInfrastructureTargetVersionResult build() {
-            final var o = new GetInfrastructureTargetVersionResult();
-            o.compartmentId = compartmentId;
-            o.id = id;
-            o.targetDbVersionHistoryEntries = targetDbVersionHistoryEntries;
-            o.targetResourceId = targetResourceId;
-            o.targetResourceType = targetResourceType;
-            o.targetStorageVersionHistoryEntries = targetStorageVersionHistoryEntries;
-            return o;
+            final var _resultValue = new GetInfrastructureTargetVersionResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.id = id;
+            _resultValue.targetDbVersionHistoryEntries = targetDbVersionHistoryEntries;
+            _resultValue.targetResourceId = targetResourceId;
+            _resultValue.targetResourceType = targetResourceType;
+            _resultValue.targetStorageVersionHistoryEntries = targetStorageVersionHistoryEntries;
+            return _resultValue;
         }
     }
 }

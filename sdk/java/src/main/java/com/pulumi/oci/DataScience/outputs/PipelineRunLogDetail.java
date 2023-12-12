@@ -67,10 +67,10 @@ public final class PipelineRunLogDetail {
             return this;
         }
         public PipelineRunLogDetail build() {
-            final var o = new PipelineRunLogDetail();
-            o.logGroupId = logGroupId;
-            o.logId = logId;
-            return o;
+            final var _resultValue = new PipelineRunLogDetail();
+            _resultValue.logGroupId = logGroupId;
+            _resultValue.logId = logId;
+            return _resultValue;
         }
     }
 }

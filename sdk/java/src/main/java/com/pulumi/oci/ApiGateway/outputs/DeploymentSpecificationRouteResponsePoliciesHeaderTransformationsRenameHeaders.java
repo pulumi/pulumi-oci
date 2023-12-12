@@ -50,9 +50,9 @@ public final class DeploymentSpecificationRouteResponsePoliciesHeaderTransformat
             return items(List.of(items));
         }
         public DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeaders build() {
-            final var o = new DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeaders();
-            o.items = items;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeaders();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

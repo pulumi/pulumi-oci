@@ -84,11 +84,11 @@ public final class GetQueryQueryDefinitionReportQueryForecast {
             return this;
         }
         public GetQueryQueryDefinitionReportQueryForecast build() {
-            final var o = new GetQueryQueryDefinitionReportQueryForecast();
-            o.forecastType = forecastType;
-            o.timeForecastEnded = timeForecastEnded;
-            o.timeForecastStarted = timeForecastStarted;
-            return o;
+            final var _resultValue = new GetQueryQueryDefinitionReportQueryForecast();
+            _resultValue.forecastType = forecastType;
+            _resultValue.timeForecastEnded = timeForecastEnded;
+            _resultValue.timeForecastStarted = timeForecastStarted;
+            return _resultValue;
         }
     }
 }

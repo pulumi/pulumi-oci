@@ -67,11 +67,11 @@ public final class GetMaskingPolicyMaskingObjectsFilter {
             return values(List.of(values));
         }
         public GetMaskingPolicyMaskingObjectsFilter build() {
-            final var o = new GetMaskingPolicyMaskingObjectsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetMaskingPolicyMaskingObjectsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

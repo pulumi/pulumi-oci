@@ -142,14 +142,14 @@ public final class GetDomainsAppsAppScope {
             return this;
         }
         public GetDomainsAppsAppScope build() {
-            final var o = new GetDomainsAppsAppScope();
-            o.description = description;
-            o.displayName = displayName;
-            o.fqs = fqs;
-            o.readOnly = readOnly;
-            o.requiresConsent = requiresConsent;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsAppsAppScope();
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.fqs = fqs;
+            _resultValue.readOnly = readOnly;
+            _resultValue.requiresConsent = requiresConsent;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

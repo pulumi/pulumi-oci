@@ -50,9 +50,9 @@ public final class GetPbfListingsPbfListingsCollection {
             return items(List.of(items));
         }
         public GetPbfListingsPbfListingsCollection build() {
-            final var o = new GetPbfListingsPbfListingsCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetPbfListingsPbfListingsCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

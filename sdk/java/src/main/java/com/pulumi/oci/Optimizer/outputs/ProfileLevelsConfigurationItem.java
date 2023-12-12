@@ -67,10 +67,10 @@ public final class ProfileLevelsConfigurationItem {
             return this;
         }
         public ProfileLevelsConfigurationItem build() {
-            final var o = new ProfileLevelsConfigurationItem();
-            o.level = level;
-            o.recommendationId = recommendationId;
-            return o;
+            final var _resultValue = new ProfileLevelsConfigurationItem();
+            _resultValue.level = level;
+            _resultValue.recommendationId = recommendationId;
+            return _resultValue;
         }
     }
 }

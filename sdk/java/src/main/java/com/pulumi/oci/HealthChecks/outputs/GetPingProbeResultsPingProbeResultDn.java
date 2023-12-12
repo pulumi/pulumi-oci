@@ -70,10 +70,10 @@ public final class GetPingProbeResultsPingProbeResultDn {
             return this;
         }
         public GetPingProbeResultsPingProbeResultDn build() {
-            final var o = new GetPingProbeResultsPingProbeResultDn();
-            o.addresses = addresses;
-            o.domainLookupDuration = domainLookupDuration;
-            return o;
+            final var _resultValue = new GetPingProbeResultsPingProbeResultDn();
+            _resultValue.addresses = addresses;
+            _resultValue.domainLookupDuration = domainLookupDuration;
+            return _resultValue;
         }
     }
 }

@@ -53,10 +53,10 @@ public final class GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOp
             return this;
         }
         public GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption build() {
-            final var o = new GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption();
-            o.allowedValues = allowedValues;
-            o.defaultValue = defaultValue;
-            return o;
+            final var _resultValue = new GetShapeShapePlatformConfigOptionNumaNodesPerSocketPlatformOption();
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.defaultValue = defaultValue;
+            return _resultValue;
         }
     }
 }

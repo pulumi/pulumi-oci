@@ -67,11 +67,11 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationsFilter {
             return values(List.of(values));
         }
         public GetAutonomousContainerDatabaseDataguardAssociationsFilter build() {
-            final var o = new GetAutonomousContainerDatabaseDataguardAssociationsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetAutonomousContainerDatabaseDataguardAssociationsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

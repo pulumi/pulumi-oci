@@ -42,9 +42,9 @@ public final class GetMigrationAssetsMigrationAssetCollection {
             return items(List.of(items));
         }
         public GetMigrationAssetsMigrationAssetCollection build() {
-            final var o = new GetMigrationAssetsMigrationAssetCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMigrationAssetsMigrationAssetCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

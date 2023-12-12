@@ -132,13 +132,13 @@ public final class MigrationGoldenGateServiceDetails {
             return this;
         }
         public MigrationGoldenGateServiceDetails build() {
-            final var o = new MigrationGoldenGateServiceDetails();
-            o.ggsDeployments = ggsDeployments;
-            o.settings = settings;
-            o.sourceContainerDbCredentials = sourceContainerDbCredentials;
-            o.sourceDbCredentials = sourceDbCredentials;
-            o.targetDbCredentials = targetDbCredentials;
-            return o;
+            final var _resultValue = new MigrationGoldenGateServiceDetails();
+            _resultValue.ggsDeployments = ggsDeployments;
+            _resultValue.settings = settings;
+            _resultValue.sourceContainerDbCredentials = sourceContainerDbCredentials;
+            _resultValue.sourceDbCredentials = sourceDbCredentials;
+            _resultValue.targetDbCredentials = targetDbCredentials;
+            return _resultValue;
         }
     }
 }

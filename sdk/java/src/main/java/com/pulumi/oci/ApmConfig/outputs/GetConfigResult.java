@@ -451,31 +451,31 @@ public final class GetConfigResult {
             return this;
         }
         public GetConfigResult build() {
-            final var o = new GetConfigResult();
-            o.apmDomainId = apmDomainId;
-            o.configId = configId;
-            o.configType = configType;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.dimensions = dimensions;
-            o.displayName = displayName;
-            o.etag = etag;
-            o.filterId = filterId;
-            o.filterText = filterText;
-            o.freeformTags = freeformTags;
-            o.group = group;
-            o.id = id;
-            o.inUseBies = inUseBies;
-            o.metrics = metrics;
-            o.namespace = namespace;
-            o.opcDryRun = opcDryRun;
-            o.options = options;
-            o.rules = rules;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.updatedBy = updatedBy;
-            return o;
+            final var _resultValue = new GetConfigResult();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.configId = configId;
+            _resultValue.configType = configType;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.dimensions = dimensions;
+            _resultValue.displayName = displayName;
+            _resultValue.etag = etag;
+            _resultValue.filterId = filterId;
+            _resultValue.filterText = filterText;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.group = group;
+            _resultValue.id = id;
+            _resultValue.inUseBies = inUseBies;
+            _resultValue.metrics = metrics;
+            _resultValue.namespace = namespace;
+            _resultValue.opcDryRun = opcDryRun;
+            _resultValue.options = options;
+            _resultValue.rules = rules;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.updatedBy = updatedBy;
+            return _resultValue;
         }
     }
 }

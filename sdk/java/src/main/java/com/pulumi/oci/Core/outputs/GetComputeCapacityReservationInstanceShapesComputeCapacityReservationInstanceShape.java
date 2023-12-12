@@ -65,10 +65,10 @@ public final class GetComputeCapacityReservationInstanceShapesComputeCapacityRes
             return this;
         }
         public GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape build() {
-            final var o = new GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape();
-            o.availabilityDomain = availabilityDomain;
-            o.instanceShape = instanceShape;
-            return o;
+            final var _resultValue = new GetComputeCapacityReservationInstanceShapesComputeCapacityReservationInstanceShape();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.instanceShape = instanceShape;
+            return _resultValue;
         }
     }
 }

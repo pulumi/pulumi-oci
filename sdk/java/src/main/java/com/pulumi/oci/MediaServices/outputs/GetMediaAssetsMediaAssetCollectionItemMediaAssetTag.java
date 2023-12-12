@@ -65,10 +65,10 @@ public final class GetMediaAssetsMediaAssetCollectionItemMediaAssetTag {
             return this;
         }
         public GetMediaAssetsMediaAssetCollectionItemMediaAssetTag build() {
-            final var o = new GetMediaAssetsMediaAssetCollectionItemMediaAssetTag();
-            o.type = type;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetMediaAssetsMediaAssetCollectionItemMediaAssetTag();
+            _resultValue.type = type;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

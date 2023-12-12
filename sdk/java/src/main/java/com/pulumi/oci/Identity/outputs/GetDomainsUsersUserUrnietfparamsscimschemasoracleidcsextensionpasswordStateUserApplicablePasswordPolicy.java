@@ -104,12 +104,12 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
             return this;
         }
         public GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy build() {
-            final var o = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy();
-            o.display = display;
-            o.priority = priority;
-            o.ref = ref;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy();
+            _resultValue.display = display;
+            _resultValue.priority = priority;
+            _resultValue.ref = ref;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

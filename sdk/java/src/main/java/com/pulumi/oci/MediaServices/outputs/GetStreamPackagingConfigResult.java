@@ -293,22 +293,22 @@ public final class GetStreamPackagingConfigResult {
             return this;
         }
         public GetStreamPackagingConfigResult build() {
-            final var o = new GetStreamPackagingConfigResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.distributionChannelId = distributionChannelId;
-            o.encryptions = encryptions;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.segmentTimeInSeconds = segmentTimeInSeconds;
-            o.state = state;
-            o.streamPackagingConfigId = streamPackagingConfigId;
-            o.streamPackagingFormat = streamPackagingFormat;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetStreamPackagingConfigResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.distributionChannelId = distributionChannelId;
+            _resultValue.encryptions = encryptions;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.segmentTimeInSeconds = segmentTimeInSeconds;
+            _resultValue.state = state;
+            _resultValue.streamPackagingConfigId = streamPackagingConfigId;
+            _resultValue.streamPackagingFormat = streamPackagingFormat;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

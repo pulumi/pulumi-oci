@@ -86,11 +86,11 @@ public final class VmClusterRemoveVirtualMachineDataCollectionOption {
             return this;
         }
         public VmClusterRemoveVirtualMachineDataCollectionOption build() {
-            final var o = new VmClusterRemoveVirtualMachineDataCollectionOption();
-            o.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
-            o.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
-            o.isIncidentLogsEnabled = isIncidentLogsEnabled;
-            return o;
+            final var _resultValue = new VmClusterRemoveVirtualMachineDataCollectionOption();
+            _resultValue.isDiagnosticsEventsEnabled = isDiagnosticsEventsEnabled;
+            _resultValue.isHealthMonitoringEnabled = isHealthMonitoringEnabled;
+            _resultValue.isIncidentLogsEnabled = isIncidentLogsEnabled;
+            return _resultValue;
         }
     }
 }

@@ -42,9 +42,9 @@ public final class GetEmWarehousesEmWarehouseCollection {
             return items(List.of(items));
         }
         public GetEmWarehousesEmWarehouseCollection build() {
-            final var o = new GetEmWarehousesEmWarehouseCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetEmWarehousesEmWarehouseCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -50,9 +50,9 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollection {
             return items(List.of(items));
         }
         public GetManagedMySqlDatabaseSqlDataMySqlDataCollection build() {
-            final var o = new GetManagedMySqlDatabaseSqlDataMySqlDataCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetManagedMySqlDatabaseSqlDataMySqlDataCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

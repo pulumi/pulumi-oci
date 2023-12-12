@@ -66,10 +66,10 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
             return this;
         }
         public DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer build() {
-            final var o = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer();
-            o.authenticationServerDetail = authenticationServerDetail;
-            o.key = key;
-            return o;
+            final var _resultValue = new DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer();
+            _resultValue.authenticationServerDetail = authenticationServerDetail;
+            _resultValue.key = key;
+            return _resultValue;
         }
     }
 }

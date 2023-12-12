@@ -216,18 +216,18 @@ public final class GetStacksStack {
             return this;
         }
         public GetStacksStack build() {
-            final var o = new GetStacksStack();
-            o.compartmentId = compartmentId;
-            o.configSource = configSource;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.variables = variables;
-            return o;
+            final var _resultValue = new GetStacksStack();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configSource = configSource;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.variables = variables;
+            return _resultValue;
         }
     }
 }

@@ -345,25 +345,25 @@ public final class GetBaselineableMetricResult {
             return this;
         }
         public GetBaselineableMetricResult build() {
-            final var o = new GetBaselineableMetricResult();
-            o.baselineableMetricId = baselineableMetricId;
-            o.column = column;
-            o.compartmentId = compartmentId;
-            o.createdBy = createdBy;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isOutOfBox = isOutOfBox;
-            o.lastUpdatedBy = lastUpdatedBy;
-            o.name = name;
-            o.namespace = namespace;
-            o.resourceGroup = resourceGroup;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.tenancyId = tenancyId;
-            o.timeCreated = timeCreated;
-            o.timeLastUpdated = timeLastUpdated;
-            return o;
+            final var _resultValue = new GetBaselineableMetricResult();
+            _resultValue.baselineableMetricId = baselineableMetricId;
+            _resultValue.column = column;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.createdBy = createdBy;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isOutOfBox = isOutOfBox;
+            _resultValue.lastUpdatedBy = lastUpdatedBy;
+            _resultValue.name = name;
+            _resultValue.namespace = namespace;
+            _resultValue.resourceGroup = resourceGroup;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.tenancyId = tenancyId;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeLastUpdated = timeLastUpdated;
+            return _resultValue;
         }
     }
 }

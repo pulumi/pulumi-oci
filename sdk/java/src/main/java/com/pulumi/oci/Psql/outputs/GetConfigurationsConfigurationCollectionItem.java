@@ -335,24 +335,24 @@ public final class GetConfigurationsConfigurationCollectionItem {
             return this;
         }
         public GetConfigurationsConfigurationCollectionItem build() {
-            final var o = new GetConfigurationsConfigurationCollectionItem();
-            o.compartmentId = compartmentId;
-            o.configurationDetails = configurationDetails;
-            o.dbConfigurationOverrides = dbConfigurationOverrides;
-            o.dbVersion = dbVersion;
-            o.definedTags = definedTags;
-            o.description = description;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
-            o.instanceOcpuCount = instanceOcpuCount;
-            o.lifecycleDetails = lifecycleDetails;
-            o.shape = shape;
-            o.state = state;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetConfigurationsConfigurationCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.configurationDetails = configurationDetails;
+            _resultValue.dbConfigurationOverrides = dbConfigurationOverrides;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.definedTags = definedTags;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
+            _resultValue.instanceOcpuCount = instanceOcpuCount;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.shape = shape;
+            _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

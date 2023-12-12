@@ -215,19 +215,19 @@ public final class GetDataMaskRulesResult {
             return this;
         }
         public GetDataMaskRulesResult build() {
-            final var o = new GetDataMaskRulesResult();
-            o.accessLevel = accessLevel;
-            o.compartmentId = compartmentId;
-            o.dataMaskRuleCollections = dataMaskRuleCollections;
-            o.dataMaskRuleStatus = dataMaskRuleStatus;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.iamGroupId = iamGroupId;
-            o.id = id;
-            o.state = state;
-            o.targetId = targetId;
-            o.targetType = targetType;
-            return o;
+            final var _resultValue = new GetDataMaskRulesResult();
+            _resultValue.accessLevel = accessLevel;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dataMaskRuleCollections = dataMaskRuleCollections;
+            _resultValue.dataMaskRuleStatus = dataMaskRuleStatus;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.iamGroupId = iamGroupId;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.targetId = targetId;
+            _resultValue.targetType = targetType;
+            return _resultValue;
         }
     }
 }

@@ -84,13 +84,13 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
             return this;
         }
         public GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount build() {
-            final var o = new GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount();
-            o.isReadOnly = isReadOnly;
-            o.mountPath = mountPath;
-            o.partition = partition;
-            o.subPath = subPath;
-            o.volumeName = volumeName;
-            return o;
+            final var _resultValue = new GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount();
+            _resultValue.isReadOnly = isReadOnly;
+            _resultValue.mountPath = mountPath;
+            _resultValue.partition = partition;
+            _resultValue.subPath = subPath;
+            _resultValue.volumeName = volumeName;
+            return _resultValue;
         }
     }
 }

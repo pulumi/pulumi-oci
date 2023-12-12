@@ -84,11 +84,11 @@ public final class GetQueryQueryDefinitionReportQueryGroupByTag {
             return this;
         }
         public GetQueryQueryDefinitionReportQueryGroupByTag build() {
-            final var o = new GetQueryQueryDefinitionReportQueryGroupByTag();
-            o.key = key;
-            o.namespace = namespace;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetQueryQueryDefinitionReportQueryGroupByTag();
+            _resultValue.key = key;
+            _resultValue.namespace = namespace;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

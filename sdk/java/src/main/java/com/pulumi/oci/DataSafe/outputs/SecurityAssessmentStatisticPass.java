@@ -181,16 +181,16 @@ public final class SecurityAssessmentStatisticPass {
             return this;
         }
         public SecurityAssessmentStatisticPass build() {
-            final var o = new SecurityAssessmentStatisticPass();
-            o.auditingFindingsCount = auditingFindingsCount;
-            o.authorizationControlFindingsCount = authorizationControlFindingsCount;
-            o.dataEncryptionFindingsCount = dataEncryptionFindingsCount;
-            o.dbConfigurationFindingsCount = dbConfigurationFindingsCount;
-            o.fineGrainedAccessControlFindingsCount = fineGrainedAccessControlFindingsCount;
-            o.privilegesAndRolesFindingsCount = privilegesAndRolesFindingsCount;
-            o.targetsCount = targetsCount;
-            o.userAccountsFindingsCount = userAccountsFindingsCount;
-            return o;
+            final var _resultValue = new SecurityAssessmentStatisticPass();
+            _resultValue.auditingFindingsCount = auditingFindingsCount;
+            _resultValue.authorizationControlFindingsCount = authorizationControlFindingsCount;
+            _resultValue.dataEncryptionFindingsCount = dataEncryptionFindingsCount;
+            _resultValue.dbConfigurationFindingsCount = dbConfigurationFindingsCount;
+            _resultValue.fineGrainedAccessControlFindingsCount = fineGrainedAccessControlFindingsCount;
+            _resultValue.privilegesAndRolesFindingsCount = privilegesAndRolesFindingsCount;
+            _resultValue.targetsCount = targetsCount;
+            _resultValue.userAccountsFindingsCount = userAccountsFindingsCount;
+            return _resultValue;
         }
     }
 }

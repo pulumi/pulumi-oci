@@ -166,16 +166,16 @@ public final class GetLimitValuesResult {
             return this;
         }
         public GetLimitValuesResult build() {
-            final var o = new GetLimitValuesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.limitValues = limitValues;
-            o.name = name;
-            o.scopeType = scopeType;
-            o.serviceName = serviceName;
-            return o;
+            final var _resultValue = new GetLimitValuesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.limitValues = limitValues;
+            _resultValue.name = name;
+            _resultValue.scopeType = scopeType;
+            _resultValue.serviceName = serviceName;
+            return _resultValue;
         }
     }
 }

@@ -46,9 +46,9 @@ public final class GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseMan
             return this;
         }
         public GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig build() {
-            final var o = new GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig();
-            o.licenseModel = licenseModel;
-            return o;
+            final var _resultValue = new GetExternalDbSystemsExternalDbSystemCollectionItemDatabaseManagementConfig();
+            _resultValue.licenseModel = licenseModel;
+            return _resultValue;
         }
     }
 }

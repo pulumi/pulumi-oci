@@ -54,10 +54,10 @@ public final class GetDataAssetsDataAssetCollection {
             return items(List.of(items));
         }
         public GetDataAssetsDataAssetCollection build() {
-            final var o = new GetDataAssetsDataAssetCollection();
-            o.count = count;
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDataAssetsDataAssetCollection();
+            _resultValue.count = count;
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

@@ -425,29 +425,29 @@ public final class GetCloudAutonomousVmClusterResourceUsageResult {
             return this;
         }
         public GetCloudAutonomousVmClusterResourceUsageResult build() {
-            final var o = new GetCloudAutonomousVmClusterResourceUsageResult();
-            o.autonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
-            o.autonomousVmResourceUsages = autonomousVmResourceUsages;
-            o.availableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
-            o.availableCpus = availableCpus;
-            o.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
-            o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
-            o.displayName = displayName;
-            o.exadataStorageInTbs = exadataStorageInTbs;
-            o.id = id;
-            o.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
-            o.memorySizeInGbs = memorySizeInGbs;
-            o.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
-            o.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
-            o.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
-            o.provisionedCpus = provisionedCpus;
-            o.reclaimableCpus = reclaimableCpus;
-            o.reservedCpus = reservedCpus;
-            o.totalContainerDatabases = totalContainerDatabases;
-            o.totalCpus = totalCpus;
-            o.usedAutonomousDataStorageSizeInTbs = usedAutonomousDataStorageSizeInTbs;
-            o.usedCpus = usedCpus;
-            return o;
+            final var _resultValue = new GetCloudAutonomousVmClusterResourceUsageResult();
+            _resultValue.autonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
+            _resultValue.autonomousVmResourceUsages = autonomousVmResourceUsages;
+            _resultValue.availableAutonomousDataStorageSizeInTbs = availableAutonomousDataStorageSizeInTbs;
+            _resultValue.availableCpus = availableCpus;
+            _resultValue.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
+            _resultValue.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            _resultValue.displayName = displayName;
+            _resultValue.exadataStorageInTbs = exadataStorageInTbs;
+            _resultValue.id = id;
+            _resultValue.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
+            _resultValue.memorySizeInGbs = memorySizeInGbs;
+            _resultValue.nonProvisionableAutonomousContainerDatabases = nonProvisionableAutonomousContainerDatabases;
+            _resultValue.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
+            _resultValue.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
+            _resultValue.provisionedCpus = provisionedCpus;
+            _resultValue.reclaimableCpus = reclaimableCpus;
+            _resultValue.reservedCpus = reservedCpus;
+            _resultValue.totalContainerDatabases = totalContainerDatabases;
+            _resultValue.totalCpus = totalCpus;
+            _resultValue.usedAutonomousDataStorageSizeInTbs = usedAutonomousDataStorageSizeInTbs;
+            _resultValue.usedCpus = usedCpus;
+            return _resultValue;
         }
     }
 }

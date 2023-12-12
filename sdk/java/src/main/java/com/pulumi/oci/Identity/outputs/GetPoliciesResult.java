@@ -144,14 +144,14 @@ public final class GetPoliciesResult {
             return this;
         }
         public GetPoliciesResult build() {
-            final var o = new GetPoliciesResult();
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.name = name;
-            o.policies = policies;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetPoliciesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.policies = policies;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

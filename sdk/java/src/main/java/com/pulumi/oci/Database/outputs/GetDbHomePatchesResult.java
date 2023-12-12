@@ -97,12 +97,12 @@ public final class GetDbHomePatchesResult {
             return patches(List.of(patches));
         }
         public GetDbHomePatchesResult build() {
-            final var o = new GetDbHomePatchesResult();
-            o.dbHomeId = dbHomeId;
-            o.filters = filters;
-            o.id = id;
-            o.patches = patches;
-            return o;
+            final var _resultValue = new GetDbHomePatchesResult();
+            _resultValue.dbHomeId = dbHomeId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.patches = patches;
+            return _resultValue;
         }
     }
 }

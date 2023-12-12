@@ -141,14 +141,14 @@ public final class GetExternalDatabaseConnectorConnectionCredential {
             return this;
         }
         public GetExternalDatabaseConnectorConnectionCredential build() {
-            final var o = new GetExternalDatabaseConnectorConnectionCredential();
-            o.credentialName = credentialName;
-            o.credentialType = credentialType;
-            o.password = password;
-            o.role = role;
-            o.sslSecretId = sslSecretId;
-            o.username = username;
-            return o;
+            final var _resultValue = new GetExternalDatabaseConnectorConnectionCredential();
+            _resultValue.credentialName = credentialName;
+            _resultValue.credentialType = credentialType;
+            _resultValue.password = password;
+            _resultValue.role = role;
+            _resultValue.sslSecretId = sslSecretId;
+            _resultValue.username = username;
+            return _resultValue;
         }
     }
 }

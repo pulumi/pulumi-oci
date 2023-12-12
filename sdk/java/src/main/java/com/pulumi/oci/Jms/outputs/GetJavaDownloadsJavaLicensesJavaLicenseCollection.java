@@ -42,9 +42,9 @@ public final class GetJavaDownloadsJavaLicensesJavaLicenseCollection {
             return items(List.of(items));
         }
         public GetJavaDownloadsJavaLicensesJavaLicenseCollection build() {
-            final var o = new GetJavaDownloadsJavaLicensesJavaLicenseCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetJavaDownloadsJavaLicensesJavaLicenseCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

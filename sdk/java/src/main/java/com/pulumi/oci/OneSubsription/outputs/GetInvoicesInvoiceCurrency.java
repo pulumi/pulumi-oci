@@ -84,11 +84,11 @@ public final class GetInvoicesInvoiceCurrency {
             return this;
         }
         public GetInvoicesInvoiceCurrency build() {
-            final var o = new GetInvoicesInvoiceCurrency();
-            o.isoCode = isoCode;
-            o.name = name;
-            o.stdPrecision = stdPrecision;
-            return o;
+            final var _resultValue = new GetInvoicesInvoiceCurrency();
+            _resultValue.isoCode = isoCode;
+            _resultValue.name = name;
+            _resultValue.stdPrecision = stdPrecision;
+            return _resultValue;
         }
     }
 }

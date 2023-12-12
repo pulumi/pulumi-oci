@@ -305,22 +305,22 @@ public final class GetScriptsScriptCollectionItem {
             return this;
         }
         public GetScriptsScriptCollectionItem build() {
-            final var o = new GetScriptsScriptCollectionItem();
-            o.apmDomainId = apmDomainId;
-            o.content = content;
-            o.contentFileName = contentFileName;
-            o.contentSizeInBytes = contentSizeInBytes;
-            o.contentType = contentType;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.monitorStatusCountMaps = monitorStatusCountMaps;
-            o.parameters = parameters;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            o.timeUploaded = timeUploaded;
-            return o;
+            final var _resultValue = new GetScriptsScriptCollectionItem();
+            _resultValue.apmDomainId = apmDomainId;
+            _resultValue.content = content;
+            _resultValue.contentFileName = contentFileName;
+            _resultValue.contentSizeInBytes = contentSizeInBytes;
+            _resultValue.contentType = contentType;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.monitorStatusCountMaps = monitorStatusCountMaps;
+            _resultValue.parameters = parameters;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.timeUploaded = timeUploaded;
+            return _resultValue;
         }
     }
 }

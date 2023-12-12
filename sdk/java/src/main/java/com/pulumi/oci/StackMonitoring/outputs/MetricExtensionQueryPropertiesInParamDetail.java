@@ -66,10 +66,10 @@ public final class MetricExtensionQueryPropertiesInParamDetail {
             return this;
         }
         public MetricExtensionQueryPropertiesInParamDetail build() {
-            final var o = new MetricExtensionQueryPropertiesInParamDetail();
-            o.inParamPosition = inParamPosition;
-            o.inParamValue = inParamValue;
-            return o;
+            final var _resultValue = new MetricExtensionQueryPropertiesInParamDetail();
+            _resultValue.inParamPosition = inParamPosition;
+            _resultValue.inParamValue = inParamValue;
+            return _resultValue;
         }
     }
 }

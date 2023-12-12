@@ -46,9 +46,9 @@ public final class GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDeta
             return this;
         }
         public GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail build() {
-            final var o = new GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail();
-            o.isRefreshableClone = isRefreshableClone;
-            return o;
+            final var _resultValue = new GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail();
+            _resultValue.isRefreshableClone = isRefreshableClone;
+            return _resultValue;
         }
     }
 }

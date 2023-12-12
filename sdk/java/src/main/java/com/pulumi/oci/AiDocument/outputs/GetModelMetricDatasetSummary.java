@@ -84,11 +84,11 @@ public final class GetModelMetricDatasetSummary {
             return this;
         }
         public GetModelMetricDatasetSummary build() {
-            final var o = new GetModelMetricDatasetSummary();
-            o.testSampleCount = testSampleCount;
-            o.trainingSampleCount = trainingSampleCount;
-            o.validationSampleCount = validationSampleCount;
-            return o;
+            final var _resultValue = new GetModelMetricDatasetSummary();
+            _resultValue.testSampleCount = testSampleCount;
+            _resultValue.trainingSampleCount = trainingSampleCount;
+            _resultValue.validationSampleCount = validationSampleCount;
+            return _resultValue;
         }
     }
 }

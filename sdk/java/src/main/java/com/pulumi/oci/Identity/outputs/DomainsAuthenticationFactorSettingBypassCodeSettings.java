@@ -266,14 +266,14 @@ public final class DomainsAuthenticationFactorSettingBypassCodeSettings {
             return this;
         }
         public DomainsAuthenticationFactorSettingBypassCodeSettings build() {
-            final var o = new DomainsAuthenticationFactorSettingBypassCodeSettings();
-            o.helpDeskCodeExpiryInMins = helpDeskCodeExpiryInMins;
-            o.helpDeskGenerationEnabled = helpDeskGenerationEnabled;
-            o.helpDeskMaxUsage = helpDeskMaxUsage;
-            o.length = length;
-            o.maxActive = maxActive;
-            o.selfServiceGenerationEnabled = selfServiceGenerationEnabled;
-            return o;
+            final var _resultValue = new DomainsAuthenticationFactorSettingBypassCodeSettings();
+            _resultValue.helpDeskCodeExpiryInMins = helpDeskCodeExpiryInMins;
+            _resultValue.helpDeskGenerationEnabled = helpDeskGenerationEnabled;
+            _resultValue.helpDeskMaxUsage = helpDeskMaxUsage;
+            _resultValue.length = length;
+            _resultValue.maxActive = maxActive;
+            _resultValue.selfServiceGenerationEnabled = selfServiceGenerationEnabled;
+            return _resultValue;
         }
     }
 }

@@ -73,10 +73,10 @@ public final class GetCertificateAuthoritiesCertificateAuthorityCollectionItemCe
             return objectStorageConfigs(List.of(objectStorageConfigs));
         }
         public GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail build() {
-            final var o = new GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail();
-            o.customFormattedUrls = customFormattedUrls;
-            o.objectStorageConfigs = objectStorageConfigs;
-            return o;
+            final var _resultValue = new GetCertificateAuthoritiesCertificateAuthorityCollectionItemCertificateRevocationListDetail();
+            _resultValue.customFormattedUrls = customFormattedUrls;
+            _resultValue.objectStorageConfigs = objectStorageConfigs;
+            return _resultValue;
         }
     }
 }

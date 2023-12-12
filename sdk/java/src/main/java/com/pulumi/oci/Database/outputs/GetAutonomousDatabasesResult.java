@@ -316,23 +316,23 @@ public final class GetAutonomousDatabasesResult {
             return this;
         }
         public GetAutonomousDatabasesResult build() {
-            final var o = new GetAutonomousDatabasesResult();
-            o.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
-            o.autonomousDatabases = autonomousDatabases;
-            o.compartmentId = compartmentId;
-            o.dbVersion = dbVersion;
-            o.dbWorkload = dbWorkload;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.infrastructureType = infrastructureType;
-            o.isDataGuardEnabled = isDataGuardEnabled;
-            o.isFreeTier = isFreeTier;
-            o.isRefreshableClone = isRefreshableClone;
-            o.isResourcePoolLeader = isResourcePoolLeader;
-            o.resourcePoolLeaderId = resourcePoolLeaderId;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetAutonomousDatabasesResult();
+            _resultValue.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+            _resultValue.autonomousDatabases = autonomousDatabases;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.dbWorkload = dbWorkload;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.infrastructureType = infrastructureType;
+            _resultValue.isDataGuardEnabled = isDataGuardEnabled;
+            _resultValue.isFreeTier = isFreeTier;
+            _resultValue.isRefreshableClone = isRefreshableClone;
+            _resultValue.isResourcePoolLeader = isResourcePoolLeader;
+            _resultValue.resourcePoolLeaderId = resourcePoolLeaderId;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

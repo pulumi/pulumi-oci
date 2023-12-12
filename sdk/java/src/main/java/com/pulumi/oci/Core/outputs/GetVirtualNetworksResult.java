@@ -112,14 +112,14 @@ public final class GetVirtualNetworksResult {
             return virtualNetworks(List.of(virtualNetworks));
         }
         public GetVirtualNetworksResult build() {
-            final var o = new GetVirtualNetworksResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.state = state;
-            o.virtualNetworks = virtualNetworks;
-            return o;
+            final var _resultValue = new GetVirtualNetworksResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.state = state;
+            _resultValue.virtualNetworks = virtualNetworks;
+            return _resultValue;
         }
     }
 }

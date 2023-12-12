@@ -103,12 +103,12 @@ public final class GetListingSupportContact {
             return this;
         }
         public GetListingSupportContact build() {
-            final var o = new GetListingSupportContact();
-            o.email = email;
-            o.name = name;
-            o.phone = phone;
-            o.subject = subject;
-            return o;
+            final var _resultValue = new GetListingSupportContact();
+            _resultValue.email = email;
+            _resultValue.name = name;
+            _resultValue.phone = phone;
+            _resultValue.subject = subject;
+            return _resultValue;
         }
     }
 }

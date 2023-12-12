@@ -85,11 +85,11 @@ public final class GetProductLicenseConsumersItemMissingProduct {
             return this;
         }
         public GetProductLicenseConsumersItemMissingProduct build() {
-            final var o = new GetProductLicenseConsumersItemMissingProduct();
-            o.category = category;
-            o.count = count;
-            o.name = name;
-            return o;
+            final var _resultValue = new GetProductLicenseConsumersItemMissingProduct();
+            _resultValue.category = category;
+            _resultValue.count = count;
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

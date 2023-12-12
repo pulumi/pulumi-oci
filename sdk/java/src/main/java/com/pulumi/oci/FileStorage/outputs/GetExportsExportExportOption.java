@@ -184,16 +184,16 @@ public final class GetExportsExportExportOption {
             return this;
         }
         public GetExportsExportExportOption build() {
-            final var o = new GetExportsExportExportOption();
-            o.access = access;
-            o.allowedAuths = allowedAuths;
-            o.anonymousGid = anonymousGid;
-            o.anonymousUid = anonymousUid;
-            o.identitySquash = identitySquash;
-            o.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
-            o.requirePrivilegedSourcePort = requirePrivilegedSourcePort;
-            o.source = source;
-            return o;
+            final var _resultValue = new GetExportsExportExportOption();
+            _resultValue.access = access;
+            _resultValue.allowedAuths = allowedAuths;
+            _resultValue.anonymousGid = anonymousGid;
+            _resultValue.anonymousUid = anonymousUid;
+            _resultValue.identitySquash = identitySquash;
+            _resultValue.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
+            _resultValue.requirePrivilegedSourcePort = requirePrivilegedSourcePort;
+            _resultValue.source = source;
+            return _resultValue;
         }
     }
 }

@@ -334,25 +334,25 @@ public final class GetResolversResolver {
             return this;
         }
         public GetResolversResolver build() {
-            final var o = new GetResolversResolver();
-            o.attachedVcnId = attachedVcnId;
-            o.attachedViews = attachedViews;
-            o.compartmentId = compartmentId;
-            o.defaultViewId = defaultViewId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.endpoints = endpoints;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isProtected = isProtected;
-            o.resolverId = resolverId;
-            o.rules = rules;
-            o.scope = scope;
-            o.self = self;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetResolversResolver();
+            _resultValue.attachedVcnId = attachedVcnId;
+            _resultValue.attachedViews = attachedViews;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.defaultViewId = defaultViewId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.endpoints = endpoints;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isProtected = isProtected;
+            _resultValue.resolverId = resolverId;
+            _resultValue.rules = rules;
+            _resultValue.scope = scope;
+            _resultValue.self = self;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

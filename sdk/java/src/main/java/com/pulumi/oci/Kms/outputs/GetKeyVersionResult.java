@@ -325,24 +325,24 @@ public final class GetKeyVersionResult {
             return this;
         }
         public GetKeyVersionResult build() {
-            final var o = new GetKeyVersionResult();
-            o.compartmentId = compartmentId;
-            o.externalKeyReferenceDetails = externalKeyReferenceDetails;
-            o.externalKeyVersionId = externalKeyVersionId;
-            o.id = id;
-            o.isPrimary = isPrimary;
-            o.keyId = keyId;
-            o.keyVersionId = keyVersionId;
-            o.managementEndpoint = managementEndpoint;
-            o.publicKey = publicKey;
-            o.replicaDetails = replicaDetails;
-            o.restoredFromKeyId = restoredFromKeyId;
-            o.restoredFromKeyVersionId = restoredFromKeyVersionId;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeOfDeletion = timeOfDeletion;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new GetKeyVersionResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.externalKeyReferenceDetails = externalKeyReferenceDetails;
+            _resultValue.externalKeyVersionId = externalKeyVersionId;
+            _resultValue.id = id;
+            _resultValue.isPrimary = isPrimary;
+            _resultValue.keyId = keyId;
+            _resultValue.keyVersionId = keyVersionId;
+            _resultValue.managementEndpoint = managementEndpoint;
+            _resultValue.publicKey = publicKey;
+            _resultValue.replicaDetails = replicaDetails;
+            _resultValue.restoredFromKeyId = restoredFromKeyId;
+            _resultValue.restoredFromKeyVersionId = restoredFromKeyVersionId;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeOfDeletion = timeOfDeletion;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

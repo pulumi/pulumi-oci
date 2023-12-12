@@ -144,14 +144,14 @@ public final class GetMeshesResult {
             return this;
         }
         public GetMeshesResult build() {
-            final var o = new GetMeshesResult();
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.meshCollections = meshCollections;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetMeshesResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.meshCollections = meshCollections;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

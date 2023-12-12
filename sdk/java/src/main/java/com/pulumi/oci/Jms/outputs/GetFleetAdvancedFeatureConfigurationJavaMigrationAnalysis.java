@@ -46,9 +46,9 @@ public final class GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis {
             return this;
         }
         public GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis build() {
-            final var o = new GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis();
-            o.isEnabled = isEnabled;
-            return o;
+            final var _resultValue = new GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis();
+            _resultValue.isEnabled = isEnabled;
+            return _resultValue;
         }
     }
 }

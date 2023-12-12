@@ -128,14 +128,14 @@ public final class GetDatabasePdbConversionHistoryEntriesResult {
             return this;
         }
         public GetDatabasePdbConversionHistoryEntriesResult build() {
-            final var o = new GetDatabasePdbConversionHistoryEntriesResult();
-            o.databaseId = databaseId;
-            o.filters = filters;
-            o.id = id;
-            o.pdbConversionAction = pdbConversionAction;
-            o.pdbConversionHistoryEntries = pdbConversionHistoryEntries;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetDatabasePdbConversionHistoryEntriesResult();
+            _resultValue.databaseId = databaseId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.pdbConversionAction = pdbConversionAction;
+            _resultValue.pdbConversionHistoryEntries = pdbConversionHistoryEntries;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

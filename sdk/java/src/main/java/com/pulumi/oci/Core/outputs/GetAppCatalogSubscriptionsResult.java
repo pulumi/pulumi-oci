@@ -125,13 +125,13 @@ public final class GetAppCatalogSubscriptionsResult {
             return this;
         }
         public GetAppCatalogSubscriptionsResult build() {
-            final var o = new GetAppCatalogSubscriptionsResult();
-            o.appCatalogSubscriptions = appCatalogSubscriptions;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            o.listingId = listingId;
-            return o;
+            final var _resultValue = new GetAppCatalogSubscriptionsResult();
+            _resultValue.appCatalogSubscriptions = appCatalogSubscriptions;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.listingId = listingId;
+            return _resultValue;
         }
     }
 }

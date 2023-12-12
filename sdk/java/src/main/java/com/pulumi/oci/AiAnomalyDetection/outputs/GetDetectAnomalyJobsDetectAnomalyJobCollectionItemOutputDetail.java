@@ -103,12 +103,12 @@ public final class GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetai
             return this;
         }
         public GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail build() {
-            final var o = new GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail();
-            o.bucket = bucket;
-            o.namespace = namespace;
-            o.outputType = outputType;
-            o.prefix = prefix;
-            return o;
+            final var _resultValue = new GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail();
+            _resultValue.bucket = bucket;
+            _resultValue.namespace = namespace;
+            _resultValue.outputType = outputType;
+            _resultValue.prefix = prefix;
+            return _resultValue;
         }
     }
 }

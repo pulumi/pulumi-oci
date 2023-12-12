@@ -85,11 +85,11 @@ public final class GetMigrationsMigrationCollectionItemDumpTransferDetail {
             return targets(List.of(targets));
         }
         public GetMigrationsMigrationCollectionItemDumpTransferDetail build() {
-            final var o = new GetMigrationsMigrationCollectionItemDumpTransferDetail();
-            o.sharedStorageMountTargetId = sharedStorageMountTargetId;
-            o.sources = sources;
-            o.targets = targets;
-            return o;
+            final var _resultValue = new GetMigrationsMigrationCollectionItemDumpTransferDetail();
+            _resultValue.sharedStorageMountTargetId = sharedStorageMountTargetId;
+            _resultValue.sources = sources;
+            _resultValue.targets = targets;
+            return _resultValue;
         }
     }
 }

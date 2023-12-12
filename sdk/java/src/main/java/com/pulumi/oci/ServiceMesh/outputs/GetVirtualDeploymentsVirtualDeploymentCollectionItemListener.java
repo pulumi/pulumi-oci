@@ -104,12 +104,12 @@ public final class GetVirtualDeploymentsVirtualDeploymentCollectionItemListener 
             return this;
         }
         public GetVirtualDeploymentsVirtualDeploymentCollectionItemListener build() {
-            final var o = new GetVirtualDeploymentsVirtualDeploymentCollectionItemListener();
-            o.idleTimeoutInMs = idleTimeoutInMs;
-            o.port = port;
-            o.protocol = protocol;
-            o.requestTimeoutInMs = requestTimeoutInMs;
-            return o;
+            final var _resultValue = new GetVirtualDeploymentsVirtualDeploymentCollectionItemListener();
+            _resultValue.idleTimeoutInMs = idleTimeoutInMs;
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.requestTimeoutInMs = requestTimeoutInMs;
+            return _resultValue;
         }
     }
 }

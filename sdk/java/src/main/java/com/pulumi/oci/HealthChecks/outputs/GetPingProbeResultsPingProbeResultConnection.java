@@ -66,10 +66,10 @@ public final class GetPingProbeResultsPingProbeResultConnection {
             return this;
         }
         public GetPingProbeResultsPingProbeResultConnection build() {
-            final var o = new GetPingProbeResultsPingProbeResultConnection();
-            o.address = address;
-            o.port = port;
-            return o;
+            final var _resultValue = new GetPingProbeResultsPingProbeResultConnection();
+            _resultValue.address = address;
+            _resultValue.port = port;
+            return _resultValue;
         }
     }
 }

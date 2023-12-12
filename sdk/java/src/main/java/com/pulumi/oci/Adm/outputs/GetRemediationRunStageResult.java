@@ -314,23 +314,23 @@ public final class GetRemediationRunStageResult {
             return this;
         }
         public GetRemediationRunStageResult build() {
-            final var o = new GetRemediationRunStageResult();
-            o.auditId = auditId;
-            o.id = id;
-            o.nextStageType = nextStageType;
-            o.pipelineProperties = pipelineProperties;
-            o.previousStageType = previousStageType;
-            o.pullRequestProperties = pullRequestProperties;
-            o.recommendedUpdatesCount = recommendedUpdatesCount;
-            o.remediationRunId = remediationRunId;
-            o.stageType = stageType;
-            o.status = status;
-            o.summary = summary;
-            o.timeCreated = timeCreated;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetRemediationRunStageResult();
+            _resultValue.auditId = auditId;
+            _resultValue.id = id;
+            _resultValue.nextStageType = nextStageType;
+            _resultValue.pipelineProperties = pipelineProperties;
+            _resultValue.previousStageType = previousStageType;
+            _resultValue.pullRequestProperties = pullRequestProperties;
+            _resultValue.recommendedUpdatesCount = recommendedUpdatesCount;
+            _resultValue.remediationRunId = remediationRunId;
+            _resultValue.stageType = stageType;
+            _resultValue.status = status;
+            _resultValue.summary = summary;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

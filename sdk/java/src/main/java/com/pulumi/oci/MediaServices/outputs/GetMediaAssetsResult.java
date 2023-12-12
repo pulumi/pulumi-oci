@@ -307,23 +307,23 @@ public final class GetMediaAssetsResult {
             return this;
         }
         public GetMediaAssetsResult build() {
-            final var o = new GetMediaAssetsResult();
-            o.bucket = bucket;
-            o.compartmentId = compartmentId;
-            o.displayName = displayName;
-            o.distributionChannelId = distributionChannelId;
-            o.filters = filters;
-            o.id = id;
-            o.masterMediaAssetId = masterMediaAssetId;
-            o.mediaAssetCollections = mediaAssetCollections;
-            o.mediaWorkflowJobId = mediaWorkflowJobId;
-            o.object = object;
-            o.parentMediaAssetId = parentMediaAssetId;
-            o.sourceMediaWorkflowId = sourceMediaWorkflowId;
-            o.sourceMediaWorkflowVersion = sourceMediaWorkflowVersion;
-            o.state = state;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetMediaAssetsResult();
+            _resultValue.bucket = bucket;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.displayName = displayName;
+            _resultValue.distributionChannelId = distributionChannelId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.masterMediaAssetId = masterMediaAssetId;
+            _resultValue.mediaAssetCollections = mediaAssetCollections;
+            _resultValue.mediaWorkflowJobId = mediaWorkflowJobId;
+            _resultValue.object = object;
+            _resultValue.parentMediaAssetId = parentMediaAssetId;
+            _resultValue.sourceMediaWorkflowId = sourceMediaWorkflowId;
+            _resultValue.sourceMediaWorkflowVersion = sourceMediaWorkflowVersion;
+            _resultValue.state = state;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

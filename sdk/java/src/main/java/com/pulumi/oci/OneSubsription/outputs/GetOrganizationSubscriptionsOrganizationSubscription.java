@@ -184,16 +184,16 @@ public final class GetOrganizationSubscriptionsOrganizationSubscription {
             return this;
         }
         public GetOrganizationSubscriptionsOrganizationSubscription build() {
-            final var o = new GetOrganizationSubscriptionsOrganizationSubscription();
-            o.currencies = currencies;
-            o.id = id;
-            o.serviceName = serviceName;
-            o.status = status;
-            o.timeEnd = timeEnd;
-            o.timeStart = timeStart;
-            o.totalValue = totalValue;
-            o.type = type;
-            return o;
+            final var _resultValue = new GetOrganizationSubscriptionsOrganizationSubscription();
+            _resultValue.currencies = currencies;
+            _resultValue.id = id;
+            _resultValue.serviceName = serviceName;
+            _resultValue.status = status;
+            _resultValue.timeEnd = timeEnd;
+            _resultValue.timeStart = timeStart;
+            _resultValue.totalValue = totalValue;
+            _resultValue.type = type;
+            return _resultValue;
         }
     }
 }

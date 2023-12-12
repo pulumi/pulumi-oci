@@ -50,9 +50,9 @@ public final class GetDeploymentVersionsDeploymentVersionCollection {
             return items(List.of(items));
         }
         public GetDeploymentVersionsDeploymentVersionCollection build() {
-            final var o = new GetDeploymentVersionsDeploymentVersionCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDeploymentVersionsDeploymentVersionCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

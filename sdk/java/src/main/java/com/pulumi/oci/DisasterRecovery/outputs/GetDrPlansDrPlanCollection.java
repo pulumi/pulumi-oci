@@ -42,9 +42,9 @@ public final class GetDrPlansDrPlanCollection {
             return items(List.of(items));
         }
         public GetDrPlansDrPlanCollection build() {
-            final var o = new GetDrPlansDrPlanCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetDrPlansDrPlanCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

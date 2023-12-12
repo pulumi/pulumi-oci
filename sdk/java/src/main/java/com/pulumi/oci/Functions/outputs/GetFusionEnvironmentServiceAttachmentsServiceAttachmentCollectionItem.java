@@ -277,21 +277,21 @@ public final class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollec
             return this;
         }
         public GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem build() {
-            final var o = new GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.freeformTags = freeformTags;
-            o.fusionEnvironmentId = fusionEnvironmentId;
-            o.id = id;
-            o.isSkuBased = isSkuBased;
-            o.serviceInstanceId = serviceInstanceId;
-            o.serviceInstanceType = serviceInstanceType;
-            o.serviceUrl = serviceUrl;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.fusionEnvironmentId = fusionEnvironmentId;
+            _resultValue.id = id;
+            _resultValue.isSkuBased = isSkuBased;
+            _resultValue.serviceInstanceId = serviceInstanceId;
+            _resultValue.serviceInstanceType = serviceInstanceType;
+            _resultValue.serviceUrl = serviceUrl;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

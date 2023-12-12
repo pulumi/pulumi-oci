@@ -118,13 +118,13 @@ public final class GetConfigurationResult {
             return this;
         }
         public GetConfigurationResult build() {
-            final var o = new GetConfigurationResult();
-            o.compartmentId = compartmentId;
-            o.emailIds = emailIds;
-            o.id = id;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetConfigurationResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.emailIds = emailIds;
+            _resultValue.id = id;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

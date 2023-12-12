@@ -46,9 +46,9 @@ public final class GetMysqlConfigurationsConfigurationInitVariable {
             return this;
         }
         public GetMysqlConfigurationsConfigurationInitVariable build() {
-            final var o = new GetMysqlConfigurationsConfigurationInitVariable();
-            o.lowerCaseTableNames = lowerCaseTableNames;
-            return o;
+            final var _resultValue = new GetMysqlConfigurationsConfigurationInitVariable();
+            _resultValue.lowerCaseTableNames = lowerCaseTableNames;
+            return _resultValue;
         }
     }
 }

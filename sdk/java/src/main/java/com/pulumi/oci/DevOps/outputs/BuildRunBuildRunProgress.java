@@ -88,11 +88,11 @@ public final class BuildRunBuildRunProgress {
             return this;
         }
         public BuildRunBuildRunProgress build() {
-            final var o = new BuildRunBuildRunProgress();
-            o.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
-            o.timeFinished = timeFinished;
-            o.timeStarted = timeStarted;
-            return o;
+            final var _resultValue = new BuildRunBuildRunProgress();
+            _resultValue.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
+            _resultValue.timeFinished = timeFinished;
+            _resultValue.timeStarted = timeStarted;
+            return _resultValue;
         }
     }
 }

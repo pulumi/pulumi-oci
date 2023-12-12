@@ -46,9 +46,9 @@ public final class GetPbfListingTrigger {
             return this;
         }
         public GetPbfListingTrigger build() {
-            final var o = new GetPbfListingTrigger();
-            o.name = name;
-            return o;
+            final var _resultValue = new GetPbfListingTrigger();
+            _resultValue.name = name;
+            return _resultValue;
         }
     }
 }

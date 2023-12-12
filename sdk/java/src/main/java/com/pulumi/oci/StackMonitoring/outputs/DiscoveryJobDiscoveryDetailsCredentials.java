@@ -50,9 +50,9 @@ public final class DiscoveryJobDiscoveryDetailsCredentials {
             return items(List.of(items));
         }
         public DiscoveryJobDiscoveryDetailsCredentials build() {
-            final var o = new DiscoveryJobDiscoveryDetailsCredentials();
-            o.items = items;
-            return o;
+            final var _resultValue = new DiscoveryJobDiscoveryDetailsCredentials();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

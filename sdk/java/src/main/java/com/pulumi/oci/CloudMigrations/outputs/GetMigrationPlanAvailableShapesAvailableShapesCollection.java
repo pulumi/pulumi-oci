@@ -50,9 +50,9 @@ public final class GetMigrationPlanAvailableShapesAvailableShapesCollection {
             return items(List.of(items));
         }
         public GetMigrationPlanAvailableShapesAvailableShapesCollection build() {
-            final var o = new GetMigrationPlanAvailableShapesAvailableShapesCollection();
-            o.items = items;
-            return o;
+            final var _resultValue = new GetMigrationPlanAvailableShapesAvailableShapesCollection();
+            _resultValue.items = items;
+            return _resultValue;
         }
     }
 }

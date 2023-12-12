@@ -65,10 +65,10 @@ public final class GetDomainsRuleTag {
             return this;
         }
         public GetDomainsRuleTag build() {
-            final var o = new GetDomainsRuleTag();
-            o.key = key;
-            o.value = value;
-            return o;
+            final var _resultValue = new GetDomainsRuleTag();
+            _resultValue.key = key;
+            _resultValue.value = value;
+            return _resultValue;
         }
     }
 }

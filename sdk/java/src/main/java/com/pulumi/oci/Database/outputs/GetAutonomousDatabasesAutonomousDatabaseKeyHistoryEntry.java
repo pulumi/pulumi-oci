@@ -103,12 +103,12 @@ public final class GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry {
             return this;
         }
         public GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry build() {
-            final var o = new GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry();
-            o.id = id;
-            o.kmsKeyVersionId = kmsKeyVersionId;
-            o.timeActivated = timeActivated;
-            o.vaultId = vaultId;
-            return o;
+            final var _resultValue = new GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry();
+            _resultValue.id = id;
+            _resultValue.kmsKeyVersionId = kmsKeyVersionId;
+            _resultValue.timeActivated = timeActivated;
+            _resultValue.vaultId = vaultId;
+            return _resultValue;
         }
     }
 }

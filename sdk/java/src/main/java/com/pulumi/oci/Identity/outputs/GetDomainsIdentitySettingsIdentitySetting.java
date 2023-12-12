@@ -613,37 +613,37 @@ public final class GetDomainsIdentitySettingsIdentitySetting {
             return this;
         }
         public GetDomainsIdentitySettingsIdentitySetting build() {
-            final var o = new GetDomainsIdentitySettingsIdentitySetting();
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.emitLockedMessageWhenUserIsLocked = emitLockedMessageWhenUserIsLocked;
-            o.externalId = externalId;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.identitySettingId = identitySettingId;
-            o.metas = metas;
-            o.myProfiles = myProfiles;
-            o.ocid = ocid;
-            o.posixGids = posixGids;
-            o.posixUids = posixUids;
-            o.primaryEmailRequired = primaryEmailRequired;
-            o.removeInvalidEmails = removeInvalidEmails;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.returnInactiveOverLockedMessage = returnInactiveOverLockedMessage;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            o.tokens = tokens;
-            o.userAllowedToSetRecoveryEmail = userAllowedToSetRecoveryEmail;
-            return o;
+            final var _resultValue = new GetDomainsIdentitySettingsIdentitySetting();
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.emitLockedMessageWhenUserIsLocked = emitLockedMessageWhenUserIsLocked;
+            _resultValue.externalId = externalId;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.identitySettingId = identitySettingId;
+            _resultValue.metas = metas;
+            _resultValue.myProfiles = myProfiles;
+            _resultValue.ocid = ocid;
+            _resultValue.posixGids = posixGids;
+            _resultValue.posixUids = posixUids;
+            _resultValue.primaryEmailRequired = primaryEmailRequired;
+            _resultValue.removeInvalidEmails = removeInvalidEmails;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.returnInactiveOverLockedMessage = returnInactiveOverLockedMessage;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            _resultValue.tokens = tokens;
+            _resultValue.userAllowedToSetRecoveryEmail = userAllowedToSetRecoveryEmail;
+            return _resultValue;
         }
     }
 }

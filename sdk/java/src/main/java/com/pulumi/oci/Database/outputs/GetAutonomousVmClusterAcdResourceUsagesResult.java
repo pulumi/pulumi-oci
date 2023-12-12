@@ -109,13 +109,13 @@ public final class GetAutonomousVmClusterAcdResourceUsagesResult {
             return this;
         }
         public GetAutonomousVmClusterAcdResourceUsagesResult build() {
-            final var o = new GetAutonomousVmClusterAcdResourceUsagesResult();
-            o.autonomousContainerDatabaseResourceUsages = autonomousContainerDatabaseResourceUsages;
-            o.autonomousVmClusterId = autonomousVmClusterId;
-            o.compartmentId = compartmentId;
-            o.filters = filters;
-            o.id = id;
-            return o;
+            final var _resultValue = new GetAutonomousVmClusterAcdResourceUsagesResult();
+            _resultValue.autonomousContainerDatabaseResourceUsages = autonomousContainerDatabaseResourceUsages;
+            _resultValue.autonomousVmClusterId = autonomousVmClusterId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

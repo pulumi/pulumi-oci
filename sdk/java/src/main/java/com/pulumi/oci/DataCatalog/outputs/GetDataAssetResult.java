@@ -352,26 +352,26 @@ public final class GetDataAssetResult {
             return this;
         }
         public GetDataAssetResult build() {
-            final var o = new GetDataAssetResult();
-            o.catalogId = catalogId;
-            o.createdById = createdById;
-            o.dataAssetKey = dataAssetKey;
-            o.description = description;
-            o.displayName = displayName;
-            o.externalKey = externalKey;
-            o.fields = fields;
-            o.id = id;
-            o.key = key;
-            o.lifecycleDetails = lifecycleDetails;
-            o.properties = properties;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            o.timeHarvested = timeHarvested;
-            o.timeUpdated = timeUpdated;
-            o.typeKey = typeKey;
-            o.updatedById = updatedById;
-            o.uri = uri;
-            return o;
+            final var _resultValue = new GetDataAssetResult();
+            _resultValue.catalogId = catalogId;
+            _resultValue.createdById = createdById;
+            _resultValue.dataAssetKey = dataAssetKey;
+            _resultValue.description = description;
+            _resultValue.displayName = displayName;
+            _resultValue.externalKey = externalKey;
+            _resultValue.fields = fields;
+            _resultValue.id = id;
+            _resultValue.key = key;
+            _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.properties = properties;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeHarvested = timeHarvested;
+            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.typeKey = typeKey;
+            _resultValue.updatedById = updatedById;
+            _resultValue.uri = uri;
+            return _resultValue;
         }
     }
 }

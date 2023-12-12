@@ -85,11 +85,11 @@ public final class GetNodePoolsNodePoolNodePoolCyclingDetail {
             return this;
         }
         public GetNodePoolsNodePoolNodePoolCyclingDetail build() {
-            final var o = new GetNodePoolsNodePoolNodePoolCyclingDetail();
-            o.isNodeCyclingEnabled = isNodeCyclingEnabled;
-            o.maximumSurge = maximumSurge;
-            o.maximumUnavailable = maximumUnavailable;
-            return o;
+            final var _resultValue = new GetNodePoolsNodePoolNodePoolCyclingDetail();
+            _resultValue.isNodeCyclingEnabled = isNodeCyclingEnabled;
+            _resultValue.maximumSurge = maximumSurge;
+            _resultValue.maximumUnavailable = maximumUnavailable;
+            return _resultValue;
         }
     }
 }

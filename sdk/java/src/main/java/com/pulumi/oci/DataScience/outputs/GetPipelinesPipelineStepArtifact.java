@@ -101,14 +101,14 @@ public final class GetPipelinesPipelineStepArtifact {
             return this;
         }
         public GetPipelinesPipelineStepArtifact build() {
-            final var o = new GetPipelinesPipelineStepArtifact();
-            o.artifactContentDisposition = artifactContentDisposition;
-            o.artifactContentLength = artifactContentLength;
-            o.artifactContentMd5 = artifactContentMd5;
-            o.artifactLastModified = artifactLastModified;
-            o.pipelineStepArtifact = pipelineStepArtifact;
-            o.stepName = stepName;
-            return o;
+            final var _resultValue = new GetPipelinesPipelineStepArtifact();
+            _resultValue.artifactContentDisposition = artifactContentDisposition;
+            _resultValue.artifactContentLength = artifactContentLength;
+            _resultValue.artifactContentMd5 = artifactContentMd5;
+            _resultValue.artifactLastModified = artifactLastModified;
+            _resultValue.pipelineStepArtifact = pipelineStepArtifact;
+            _resultValue.stepName = stepName;
+            return _resultValue;
         }
     }
 }

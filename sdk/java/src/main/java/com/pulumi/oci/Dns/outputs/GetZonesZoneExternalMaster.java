@@ -85,11 +85,11 @@ public final class GetZonesZoneExternalMaster {
             return this;
         }
         public GetZonesZoneExternalMaster build() {
-            final var o = new GetZonesZoneExternalMaster();
-            o.address = address;
-            o.port = port;
-            o.tsigKeyId = tsigKeyId;
-            return o;
+            final var _resultValue = new GetZonesZoneExternalMaster();
+            _resultValue.address = address;
+            _resultValue.port = port;
+            _resultValue.tsigKeyId = tsigKeyId;
+            return _resultValue;
         }
     }
 }

@@ -88,11 +88,11 @@ public final class GetDbSystemsDbSystemCollectionItemNetworkDetail {
             return this;
         }
         public GetDbSystemsDbSystemCollectionItemNetworkDetail build() {
-            final var o = new GetDbSystemsDbSystemCollectionItemNetworkDetail();
-            o.nsgIds = nsgIds;
-            o.primaryDbEndpointPrivateIp = primaryDbEndpointPrivateIp;
-            o.subnetId = subnetId;
-            return o;
+            final var _resultValue = new GetDbSystemsDbSystemCollectionItemNetworkDetail();
+            _resultValue.nsgIds = nsgIds;
+            _resultValue.primaryDbEndpointPrivateIp = primaryDbEndpointPrivateIp;
+            _resultValue.subnetId = subnetId;
+            return _resultValue;
         }
     }
 }

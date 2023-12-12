@@ -384,27 +384,27 @@ public final class GetLicenseRecordResult {
             return this;
         }
         public GetLicenseRecordResult build() {
-            final var o = new GetLicenseRecordResult();
-            o.compartmentId = compartmentId;
-            o.definedTags = definedTags;
-            o.displayName = displayName;
-            o.expirationDate = expirationDate;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.isPerpetual = isPerpetual;
-            o.isUnlimited = isUnlimited;
-            o.licenseCount = licenseCount;
-            o.licenseRecordId = licenseRecordId;
-            o.licenseUnit = licenseUnit;
-            o.productId = productId;
-            o.productLicense = productLicense;
-            o.productLicenseId = productLicenseId;
-            o.state = state;
-            o.supportEndDate = supportEndDate;
-            o.systemTags = systemTags;
-            o.timeCreated = timeCreated;
-            o.timeUpdated = timeUpdated;
-            return o;
+            final var _resultValue = new GetLicenseRecordResult();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.displayName = displayName;
+            _resultValue.expirationDate = expirationDate;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.isPerpetual = isPerpetual;
+            _resultValue.isUnlimited = isUnlimited;
+            _resultValue.licenseCount = licenseCount;
+            _resultValue.licenseRecordId = licenseRecordId;
+            _resultValue.licenseUnit = licenseUnit;
+            _resultValue.productId = productId;
+            _resultValue.productLicense = productLicense;
+            _resultValue.productLicenseId = productLicenseId;
+            _resultValue.state = state;
+            _resultValue.supportEndDate = supportEndDate;
+            _resultValue.systemTags = systemTags;
+            _resultValue.timeCreated = timeCreated;
+            _resultValue.timeUpdated = timeUpdated;
+            return _resultValue;
         }
     }
 }

@@ -593,35 +593,35 @@ public final class GetDomainsGrantsGrant {
             return this;
         }
         public GetDomainsGrantsGrant build() {
-            final var o = new GetDomainsGrantsGrant();
-            o.appEntitlementCollections = appEntitlementCollections;
-            o.apps = apps;
-            o.attributeSets = attributeSets;
-            o.attributes = attributes;
-            o.authorization = authorization;
-            o.compartmentOcid = compartmentOcid;
-            o.compositeKey = compositeKey;
-            o.deleteInProgress = deleteInProgress;
-            o.domainOcid = domainOcid;
-            o.entitlements = entitlements;
-            o.grantMechanism = grantMechanism;
-            o.grantedAttributeValuesJson = grantedAttributeValuesJson;
-            o.grantees = grantees;
-            o.grantors = grantors;
-            o.id = id;
-            o.idcsCreatedBies = idcsCreatedBies;
-            o.idcsEndpoint = idcsEndpoint;
-            o.idcsLastModifiedBies = idcsLastModifiedBies;
-            o.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
-            o.idcsPreventedOperations = idcsPreventedOperations;
-            o.isFulfilled = isFulfilled;
-            o.metas = metas;
-            o.ocid = ocid;
-            o.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
-            o.schemas = schemas;
-            o.tags = tags;
-            o.tenancyOcid = tenancyOcid;
-            return o;
+            final var _resultValue = new GetDomainsGrantsGrant();
+            _resultValue.appEntitlementCollections = appEntitlementCollections;
+            _resultValue.apps = apps;
+            _resultValue.attributeSets = attributeSets;
+            _resultValue.attributes = attributes;
+            _resultValue.authorization = authorization;
+            _resultValue.compartmentOcid = compartmentOcid;
+            _resultValue.compositeKey = compositeKey;
+            _resultValue.deleteInProgress = deleteInProgress;
+            _resultValue.domainOcid = domainOcid;
+            _resultValue.entitlements = entitlements;
+            _resultValue.grantMechanism = grantMechanism;
+            _resultValue.grantedAttributeValuesJson = grantedAttributeValuesJson;
+            _resultValue.grantees = grantees;
+            _resultValue.grantors = grantors;
+            _resultValue.id = id;
+            _resultValue.idcsCreatedBies = idcsCreatedBies;
+            _resultValue.idcsEndpoint = idcsEndpoint;
+            _resultValue.idcsLastModifiedBies = idcsLastModifiedBies;
+            _resultValue.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
+            _resultValue.idcsPreventedOperations = idcsPreventedOperations;
+            _resultValue.isFulfilled = isFulfilled;
+            _resultValue.metas = metas;
+            _resultValue.ocid = ocid;
+            _resultValue.resourceTypeSchemaVersion = resourceTypeSchemaVersion;
+            _resultValue.schemas = schemas;
+            _resultValue.tags = tags;
+            _resultValue.tenancyOcid = tenancyOcid;
+            return _resultValue;
         }
     }
 }

@@ -143,15 +143,15 @@ public final class GetAuditProfileAvailableAuditVolumeResult {
             return this;
         }
         public GetAuditProfileAvailableAuditVolumeResult build() {
-            final var o = new GetAuditProfileAvailableAuditVolumeResult();
-            o.auditProfileId = auditProfileId;
-            o.id = id;
-            o.items = items;
-            o.monthInConsiderationGreaterThan = monthInConsiderationGreaterThan;
-            o.monthInConsiderationLessThan = monthInConsiderationLessThan;
-            o.trailLocation = trailLocation;
-            o.workRequestId = workRequestId;
-            return o;
+            final var _resultValue = new GetAuditProfileAvailableAuditVolumeResult();
+            _resultValue.auditProfileId = auditProfileId;
+            _resultValue.id = id;
+            _resultValue.items = items;
+            _resultValue.monthInConsiderationGreaterThan = monthInConsiderationGreaterThan;
+            _resultValue.monthInConsiderationLessThan = monthInConsiderationLessThan;
+            _resultValue.trailLocation = trailLocation;
+            _resultValue.workRequestId = workRequestId;
+            return _resultValue;
         }
     }
 }

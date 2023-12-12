@@ -67,11 +67,11 @@ public final class GetTargetDatabasesFilter {
             return values(List.of(values));
         }
         public GetTargetDatabasesFilter build() {
-            final var o = new GetTargetDatabasesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetTargetDatabasesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

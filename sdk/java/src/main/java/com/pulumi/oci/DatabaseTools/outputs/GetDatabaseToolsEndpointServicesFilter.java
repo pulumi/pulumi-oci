@@ -75,11 +75,11 @@ public final class GetDatabaseToolsEndpointServicesFilter {
             return values(List.of(values));
         }
         public GetDatabaseToolsEndpointServicesFilter build() {
-            final var o = new GetDatabaseToolsEndpointServicesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDatabaseToolsEndpointServicesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

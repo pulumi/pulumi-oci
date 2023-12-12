@@ -57,10 +57,10 @@ public final class GetCaptureFilterFlowLogCaptureFilterRuleTcpOption {
             return sourcePortRanges(List.of(sourcePortRanges));
         }
         public GetCaptureFilterFlowLogCaptureFilterRuleTcpOption build() {
-            final var o = new GetCaptureFilterFlowLogCaptureFilterRuleTcpOption();
-            o.destinationPortRanges = destinationPortRanges;
-            o.sourcePortRanges = sourcePortRanges;
-            return o;
+            final var _resultValue = new GetCaptureFilterFlowLogCaptureFilterRuleTcpOption();
+            _resultValue.destinationPortRanges = destinationPortRanges;
+            _resultValue.sourcePortRanges = sourcePortRanges;
+            return _resultValue;
         }
     }
 }

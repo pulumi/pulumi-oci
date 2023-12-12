@@ -46,9 +46,9 @@ public final class MeshCertificateAuthority {
             return this;
         }
         public MeshCertificateAuthority build() {
-            final var o = new MeshCertificateAuthority();
-            o.id = id;
-            return o;
+            final var _resultValue = new MeshCertificateAuthority();
+            _resultValue.id = id;
+            return _resultValue;
         }
     }
 }

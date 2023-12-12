@@ -193,17 +193,17 @@ public final class GetInstancesResult {
             return this;
         }
         public GetInstancesResult build() {
-            final var o = new GetInstancesResult();
-            o.availabilityDomain = availabilityDomain;
-            o.capacityReservationId = capacityReservationId;
-            o.compartmentId = compartmentId;
-            o.computeClusterId = computeClusterId;
-            o.displayName = displayName;
-            o.filters = filters;
-            o.id = id;
-            o.instances = instances;
-            o.state = state;
-            return o;
+            final var _resultValue = new GetInstancesResult();
+            _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.capacityReservationId = capacityReservationId;
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.computeClusterId = computeClusterId;
+            _resultValue.displayName = displayName;
+            _resultValue.filters = filters;
+            _resultValue.id = id;
+            _resultValue.instances = instances;
+            _resultValue.state = state;
+            return _resultValue;
         }
     }
 }

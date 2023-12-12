@@ -141,14 +141,14 @@ public final class GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem {
             return this;
         }
         public GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem build() {
-            final var o = new GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem();
-            o.compartmentId = compartmentId;
-            o.dbName = dbName;
-            o.dbVersion = dbVersion;
-            o.id = id;
-            o.name = name;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetManagedMySqlDatabasesManagedMySqlDatabaseCollectionItem();
+            _resultValue.compartmentId = compartmentId;
+            _resultValue.dbName = dbName;
+            _resultValue.dbVersion = dbVersion;
+            _resultValue.id = id;
+            _resultValue.name = name;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

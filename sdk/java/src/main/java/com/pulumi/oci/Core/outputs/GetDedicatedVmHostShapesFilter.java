@@ -67,11 +67,11 @@ public final class GetDedicatedVmHostShapesFilter {
             return values(List.of(values));
         }
         public GetDedicatedVmHostShapesFilter build() {
-            final var o = new GetDedicatedVmHostShapesFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetDedicatedVmHostShapesFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

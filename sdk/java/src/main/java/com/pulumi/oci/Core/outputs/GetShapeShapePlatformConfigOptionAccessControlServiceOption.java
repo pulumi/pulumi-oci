@@ -53,10 +53,10 @@ public final class GetShapeShapePlatformConfigOptionAccessControlServiceOption {
             return this;
         }
         public GetShapeShapePlatformConfigOptionAccessControlServiceOption build() {
-            final var o = new GetShapeShapePlatformConfigOptionAccessControlServiceOption();
-            o.allowedValues = allowedValues;
-            o.isDefaultEnabled = isDefaultEnabled;
-            return o;
+            final var _resultValue = new GetShapeShapePlatformConfigOptionAccessControlServiceOption();
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.isDefaultEnabled = isDefaultEnabled;
+            return _resultValue;
         }
     }
 }

@@ -90,11 +90,11 @@ public final class GetIngressGatewaysIngressGatewayCollectionItemHostListener {
             return tls(List.of(tls));
         }
         public GetIngressGatewaysIngressGatewayCollectionItemHostListener build() {
-            final var o = new GetIngressGatewaysIngressGatewayCollectionItemHostListener();
-            o.port = port;
-            o.protocol = protocol;
-            o.tls = tls;
-            return o;
+            final var _resultValue = new GetIngressGatewaysIngressGatewayCollectionItemHostListener();
+            _resultValue.port = port;
+            _resultValue.protocol = protocol;
+            _resultValue.tls = tls;
+            return _resultValue;
         }
     }
 }

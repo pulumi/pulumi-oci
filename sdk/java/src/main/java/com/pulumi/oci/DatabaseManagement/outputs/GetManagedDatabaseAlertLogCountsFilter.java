@@ -67,11 +67,11 @@ public final class GetManagedDatabaseAlertLogCountsFilter {
             return values(List.of(values));
         }
         public GetManagedDatabaseAlertLogCountsFilter build() {
-            final var o = new GetManagedDatabaseAlertLogCountsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetManagedDatabaseAlertLogCountsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

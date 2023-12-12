@@ -100,13 +100,13 @@ public final class GetAutonomousDatabaseRegionalWalletManagementResult {
             return this;
         }
         public GetAutonomousDatabaseRegionalWalletManagementResult build() {
-            final var o = new GetAutonomousDatabaseRegionalWalletManagementResult();
-            o.gracePeriod = gracePeriod;
-            o.id = id;
-            o.shouldRotate = shouldRotate;
-            o.state = state;
-            o.timeRotated = timeRotated;
-            return o;
+            final var _resultValue = new GetAutonomousDatabaseRegionalWalletManagementResult();
+            _resultValue.gracePeriod = gracePeriod;
+            _resultValue.id = id;
+            _resultValue.shouldRotate = shouldRotate;
+            _resultValue.state = state;
+            _resultValue.timeRotated = timeRotated;
+            return _resultValue;
         }
     }
 }

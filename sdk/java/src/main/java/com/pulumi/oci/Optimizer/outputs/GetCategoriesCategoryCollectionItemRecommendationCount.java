@@ -66,10 +66,10 @@ public final class GetCategoriesCategoryCollectionItemRecommendationCount {
             return this;
         }
         public GetCategoriesCategoryCollectionItemRecommendationCount build() {
-            final var o = new GetCategoriesCategoryCollectionItemRecommendationCount();
-            o.count = count;
-            o.importance = importance;
-            return o;
+            final var _resultValue = new GetCategoriesCategoryCollectionItemRecommendationCount();
+            _resultValue.count = count;
+            _resultValue.importance = importance;
+            return _resultValue;
         }
     }
 }

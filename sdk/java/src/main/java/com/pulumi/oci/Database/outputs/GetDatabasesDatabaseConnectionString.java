@@ -86,11 +86,11 @@ public final class GetDatabasesDatabaseConnectionString {
             return this;
         }
         public GetDatabasesDatabaseConnectionString build() {
-            final var o = new GetDatabasesDatabaseConnectionString();
-            o.allConnectionStrings = allConnectionStrings;
-            o.cdbDefault = cdbDefault;
-            o.cdbIpDefault = cdbIpDefault;
-            return o;
+            final var _resultValue = new GetDatabasesDatabaseConnectionString();
+            _resultValue.allConnectionStrings = allConnectionStrings;
+            _resultValue.cdbDefault = cdbDefault;
+            _resultValue.cdbIpDefault = cdbIpDefault;
+            return _resultValue;
         }
     }
 }

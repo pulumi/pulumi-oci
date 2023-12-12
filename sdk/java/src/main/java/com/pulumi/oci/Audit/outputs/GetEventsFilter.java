@@ -67,11 +67,11 @@ public final class GetEventsFilter {
             return values(List.of(values));
         }
         public GetEventsFilter build() {
-            final var o = new GetEventsFilter();
-            o.name = name;
-            o.regex = regex;
-            o.values = values;
-            return o;
+            final var _resultValue = new GetEventsFilter();
+            _resultValue.name = name;
+            _resultValue.regex = regex;
+            _resultValue.values = values;
+            return _resultValue;
         }
     }
 }

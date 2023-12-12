@@ -200,17 +200,17 @@ public final class GetClusterWorkloadMappingsWorkloadMapping {
             return this;
         }
         public GetClusterWorkloadMappingsWorkloadMapping build() {
-            final var o = new GetClusterWorkloadMappingsWorkloadMapping();
-            o.clusterId = clusterId;
-            o.definedTags = definedTags;
-            o.freeformTags = freeformTags;
-            o.id = id;
-            o.mappedCompartmentId = mappedCompartmentId;
-            o.mappedTenancyId = mappedTenancyId;
-            o.namespace = namespace;
-            o.state = state;
-            o.timeCreated = timeCreated;
-            return o;
+            final var _resultValue = new GetClusterWorkloadMappingsWorkloadMapping();
+            _resultValue.clusterId = clusterId;
+            _resultValue.definedTags = definedTags;
+            _resultValue.freeformTags = freeformTags;
+            _resultValue.id = id;
+            _resultValue.mappedCompartmentId = mappedCompartmentId;
+            _resultValue.mappedTenancyId = mappedTenancyId;
+            _resultValue.namespace = namespace;
+            _resultValue.state = state;
+            _resultValue.timeCreated = timeCreated;
+            return _resultValue;
         }
     }
 }

@@ -124,13 +124,13 @@ public final class SubscriptionSubscriptionTaxInfo {
             return this;
         }
         public SubscriptionSubscriptionTaxInfo build() {
-            final var o = new SubscriptionSubscriptionTaxInfo();
-            o.noTaxReasonCode = noTaxReasonCode;
-            o.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
-            o.taxCnpj = taxCnpj;
-            o.taxPayerId = taxPayerId;
-            o.taxRegNumber = taxRegNumber;
-            return o;
+            final var _resultValue = new SubscriptionSubscriptionTaxInfo();
+            _resultValue.noTaxReasonCode = noTaxReasonCode;
+            _resultValue.noTaxReasonCodeDetails = noTaxReasonCodeDetails;
+            _resultValue.taxCnpj = taxCnpj;
+            _resultValue.taxPayerId = taxPayerId;
+            _resultValue.taxRegNumber = taxRegNumber;
+            return _resultValue;
         }
     }
 }

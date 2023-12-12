@@ -37,7 +37,7 @@ class DatabaseSecurityConfigArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['DatabaseSecurityConfigSqlFirewallConfigArgs'] sql_firewall_config: (Updatable) Details to update the SQL firewall config.
+        :param pulumi.Input['DatabaseSecurityConfigSqlFirewallConfigArgs'] sql_firewall_config: (Updatable) Details to update the SQL Firewall config.
         """
         pulumi.set(__self__, "database_security_config_id", database_security_config_id)
         if compartment_id is not None:
@@ -147,7 +147,7 @@ class DatabaseSecurityConfigArgs:
     @pulumi.getter(name="sqlFirewallConfig")
     def sql_firewall_config(self) -> Optional[pulumi.Input['DatabaseSecurityConfigSqlFirewallConfigArgs']]:
         """
-        (Updatable) Details to update the SQL firewall config.
+        (Updatable) Details to update the SQL Firewall config.
         """
         return pulumi.get(self, "sql_firewall_config")
 
@@ -188,7 +188,7 @@ class _DatabaseSecurityConfigState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input['DatabaseSecurityConfigSqlFirewallConfigArgs'] sql_firewall_config: (Updatable) Details to update the SQL firewall config.
+        :param pulumi.Input['DatabaseSecurityConfigSqlFirewallConfigArgs'] sql_firewall_config: (Updatable) Details to update the SQL Firewall config.
         :param pulumi.Input[str] state: The current state of the database security config.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The target OCID corresponding to the database security config.
@@ -331,7 +331,7 @@ class _DatabaseSecurityConfigState:
     @pulumi.getter(name="sqlFirewallConfig")
     def sql_firewall_config(self) -> Optional[pulumi.Input['DatabaseSecurityConfigSqlFirewallConfigArgs']]:
         """
-        (Updatable) Details to update the SQL firewall config.
+        (Updatable) Details to update the SQL Firewall config.
         """
         return pulumi.get(self, "sql_firewall_config")
 
@@ -452,7 +452,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['DatabaseSecurityConfigSqlFirewallConfigArgs']] sql_firewall_config: (Updatable) Details to update the SQL firewall config.
+        :param pulumi.Input[pulumi.InputType['DatabaseSecurityConfigSqlFirewallConfigArgs']] sql_firewall_config: (Updatable) Details to update the SQL Firewall config.
         """
         ...
     @overload
@@ -566,7 +566,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[pulumi.InputType['DatabaseSecurityConfigSqlFirewallConfigArgs']] sql_firewall_config: (Updatable) Details to update the SQL firewall config.
+        :param pulumi.Input[pulumi.InputType['DatabaseSecurityConfigSqlFirewallConfigArgs']] sql_firewall_config: (Updatable) Details to update the SQL Firewall config.
         :param pulumi.Input[str] state: The current state of the database security config.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_id: The target OCID corresponding to the database security config.
@@ -667,7 +667,7 @@ class DatabaseSecurityConfig(pulumi.CustomResource):
     @pulumi.getter(name="sqlFirewallConfig")
     def sql_firewall_config(self) -> pulumi.Output['outputs.DatabaseSecurityConfigSqlFirewallConfig']:
         """
-        (Updatable) Details to update the SQL firewall config.
+        (Updatable) Details to update the SQL Firewall config.
         """
         return pulumi.get(self, "sql_firewall_config")
 

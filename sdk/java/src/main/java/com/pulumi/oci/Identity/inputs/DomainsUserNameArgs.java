@@ -24,14 +24,14 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
      * 
      */
-    @Import(name="familyName", required=true)
-    private Output<String> familyName;
+    @Import(name="familyName")
+    private @Nullable Output<String> familyName;
 
     /**
      * @return (Updatable) Last name
@@ -42,14 +42,14 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
      * 
      */
-    public Output<String> familyName() {
-        return this.familyName;
+    public Optional<Output<String>> familyName() {
+        return Optional.ofNullable(this.familyName);
     }
 
     /**
@@ -269,7 +269,7 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -277,7 +277,7 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder familyName(Output<String> familyName) {
+        public Builder familyName(@Nullable Output<String> familyName) {
             $.familyName = familyName;
             return this;
         }
@@ -291,7 +291,7 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -513,7 +513,6 @@ public final class DomainsUserNameArgs extends com.pulumi.resources.ResourceArgs
         }
 
         public DomainsUserNameArgs build() {
-            $.familyName = Objects.requireNonNull($.familyName, "expected parameter 'familyName' to be non-null");
             return $;
         }
     }

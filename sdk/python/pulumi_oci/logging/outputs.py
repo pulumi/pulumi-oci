@@ -121,18 +121,22 @@ class LogConfigurationSource(dict):
                  category: str,
                  resource: str,
                  service: str,
-                 source_type: str):
+                 source_type: str,
+                 parameters: Optional[Mapping[str, Any]] = None):
         """
         :param str category: Log object category.
         :param str resource: The unique identifier of the resource emitting the log.
         :param str service: Service generating log.
         :param str source_type: The log source.
                * **OCISERVICE:** Oracle Service.
+        :param Mapping[str, Any] parameters: (Updatable) Log category parameters are stored here.
         """
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "resource", resource)
         pulumi.set(__self__, "service", service)
         pulumi.set(__self__, "source_type", source_type)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
 
     @property
     @pulumi.getter
@@ -166,6 +170,14 @@ class LogConfigurationSource(dict):
         * **OCISERVICE:** Oracle Service.
         """
         return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Log category parameters are stored here.
+        """
+        return pulumi.get(self, "parameters")
 
 
 @pulumi.output_type
@@ -1168,17 +1180,20 @@ class GetLogConfigurationResult(dict):
 class GetLogConfigurationSourceResult(dict):
     def __init__(__self__, *,
                  category: str,
+                 parameters: Mapping[str, Any],
                  resource: str,
                  service: str,
                  source_type: str):
         """
         :param str category: Log object category.
+        :param Mapping[str, Any] parameters: Log category parameters are stored here.
         :param str resource: The unique identifier of the resource emitting the log.
         :param str service: Service generating log.
         :param str source_type: The log source.
                * **OCISERVICE:** Oracle Service.
         """
         pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "parameters", parameters)
         pulumi.set(__self__, "resource", resource)
         pulumi.set(__self__, "service", service)
         pulumi.set(__self__, "source_type", source_type)
@@ -1190,6 +1205,14 @@ class GetLogConfigurationSourceResult(dict):
         Log object category.
         """
         return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Mapping[str, Any]:
+        """
+        Log category parameters are stored here.
+        """
+        return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter
@@ -1733,17 +1756,20 @@ class GetLogsLogConfigurationResult(dict):
 class GetLogsLogConfigurationSourceResult(dict):
     def __init__(__self__, *,
                  category: str,
+                 parameters: Mapping[str, Any],
                  resource: str,
                  service: str,
                  source_type: str):
         """
         :param str category: Log object category.
+        :param Mapping[str, Any] parameters: Log category parameters are stored here.
         :param str resource: The unique identifier of the resource emitting the log.
         :param str service: Service generating log.
         :param str source_type: The log source.
                * **OCISERVICE:** Oracle Service.
         """
         pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "parameters", parameters)
         pulumi.set(__self__, "resource", resource)
         pulumi.set(__self__, "service", service)
         pulumi.set(__self__, "source_type", source_type)
@@ -1755,6 +1781,14 @@ class GetLogsLogConfigurationSourceResult(dict):
         Log object category.
         """
         return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Mapping[str, Any]:
+        """
+        Log category parameters are stored here.
+        """
+        return pulumi.get(self, "parameters")
 
     @property
     @pulumi.getter

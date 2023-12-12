@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string ActionTaken;
         /// <summary>
-        /// The time of the audit event occurrence in the target database.
+        /// The time that the audit event occurs in the target database.
         /// </summary>
         public readonly string AuditEventTime;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string ClientIp;
         /// <summary>
-        /// The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+        /// The application from which the audit event was generated. For example SQL Plus or SQL Developer.
         /// </summary>
         public readonly string ClientProgram;
         /// <summary>
@@ -85,11 +85,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string ErrorCode;
         /// <summary>
-        /// The detailed message on why the Error occurred.
+        /// The detailed message on why the error occurred.
         /// </summary>
         public readonly string ErrorMessage;
         /// <summary>
-        /// The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        /// The name of the detail action executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
         /// </summary>
         public readonly string EventName;
         /// <summary>
@@ -117,11 +117,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string ObjectOwner;
         /// <summary>
-        /// The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+        /// The type of the object in the source database affected by the action. For example PL/SQL, SYNONYM or PACKAGE BODY.
         /// </summary>
         public readonly string ObjectType;
         /// <summary>
-        /// The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+        /// The name of the action executed by the user on the target database. For example ALTER, CREATE or DROP.
         /// </summary>
         public readonly string Operation;
         /// <summary>

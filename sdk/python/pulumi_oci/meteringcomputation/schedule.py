@@ -41,9 +41,9 @@ class ScheduleArgs:
         :param pulumi.Input[str] description: (Updatable) The description of the schedule.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: The unique name of the user-created schedule.
-        :param pulumi.Input[str] output_file_format: (Updatable) Specifies supported output file format.
+        :param pulumi.Input[str] output_file_format: (Updatable) Specifies the supported output file format.
         :param pulumi.Input['ScheduleQueryPropertiesArgs'] query_properties: The query properties.
-        :param pulumi.Input[str] saved_report_id: The saved report id which can also be used to generate query.
+        :param pulumi.Input[str] saved_report_id: The saved report ID which can also be used to generate a query.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "result_location", result_location)
@@ -168,7 +168,7 @@ class ScheduleArgs:
     @pulumi.getter(name="outputFileFormat")
     def output_file_format(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specifies supported output file format.
+        (Updatable) Specifies the supported output file format.
         """
         return pulumi.get(self, "output_file_format")
 
@@ -192,7 +192,7 @@ class ScheduleArgs:
     @pulumi.getter(name="savedReportId")
     def saved_report_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The saved report id which can also be used to generate query.
+        The saved report ID which can also be used to generate a query.
         """
         return pulumi.get(self, "saved_report_id")
 
@@ -226,10 +226,10 @@ class _ScheduleState:
         :param pulumi.Input[str] description: (Updatable) The description of the schedule.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: The unique name of the user-created schedule.
-        :param pulumi.Input[str] output_file_format: (Updatable) Specifies supported output file format.
+        :param pulumi.Input[str] output_file_format: (Updatable) Specifies the supported output file format.
         :param pulumi.Input['ScheduleQueryPropertiesArgs'] query_properties: The query properties.
         :param pulumi.Input['ScheduleResultLocationArgs'] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        :param pulumi.Input[str] saved_report_id: The saved report id which can also be used to generate query.
+        :param pulumi.Input[str] saved_report_id: The saved report ID which can also be used to generate a query.
         :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param pulumi.Input[str] state: The schedule lifecycle state.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -336,7 +336,7 @@ class _ScheduleState:
     @pulumi.getter(name="outputFileFormat")
     def output_file_format(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specifies supported output file format.
+        (Updatable) Specifies the supported output file format.
         """
         return pulumi.get(self, "output_file_format")
 
@@ -372,7 +372,7 @@ class _ScheduleState:
     @pulumi.getter(name="savedReportId")
     def saved_report_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The saved report id which can also be used to generate query.
+        The saved report ID which can also be used to generate a query.
         """
         return pulumi.get(self, "saved_report_id")
 
@@ -540,10 +540,10 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description of the schedule.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: The unique name of the user-created schedule.
-        :param pulumi.Input[str] output_file_format: (Updatable) Specifies supported output file format.
+        :param pulumi.Input[str] output_file_format: (Updatable) Specifies the supported output file format.
         :param pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']] query_properties: The query properties.
         :param pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        :param pulumi.Input[str] saved_report_id: The saved report id which can also be used to generate query.
+        :param pulumi.Input[str] saved_report_id: The saved report ID which can also be used to generate a query.
         :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param pulumi.Input[str] time_scheduled: The date and time of the first time job execution.
                
@@ -711,10 +711,10 @@ class Schedule(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description of the schedule.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: The unique name of the user-created schedule.
-        :param pulumi.Input[str] output_file_format: (Updatable) Specifies supported output file format.
+        :param pulumi.Input[str] output_file_format: (Updatable) Specifies the supported output file format.
         :param pulumi.Input[pulumi.InputType['ScheduleQueryPropertiesArgs']] query_properties: The query properties.
         :param pulumi.Input[pulumi.InputType['ScheduleResultLocationArgs']] result_location: (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
-        :param pulumi.Input[str] saved_report_id: The saved report id which can also be used to generate query.
+        :param pulumi.Input[str] saved_report_id: The saved report ID which can also be used to generate a query.
         :param pulumi.Input[str] schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param pulumi.Input[str] state: The schedule lifecycle state.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -791,7 +791,7 @@ class Schedule(pulumi.CustomResource):
     @pulumi.getter(name="outputFileFormat")
     def output_file_format(self) -> pulumi.Output[str]:
         """
-        (Updatable) Specifies supported output file format.
+        (Updatable) Specifies the supported output file format.
         """
         return pulumi.get(self, "output_file_format")
 
@@ -815,7 +815,7 @@ class Schedule(pulumi.CustomResource):
     @pulumi.getter(name="savedReportId")
     def saved_report_id(self) -> pulumi.Output[str]:
         """
-        The saved report id which can also be used to generate query.
+        The saved report ID which can also be used to generate a query.
         """
         return pulumi.get(self, "saved_report_id")
 

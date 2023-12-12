@@ -71,6 +71,7 @@ import (
 //								GroupingColumns:        pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_grouping_columns),
 //								Length:                 pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_length),
 //								LibraryMaskingFormatId: pulumi.Any(oci_data_safe_library_masking_format.Test_library_masking_format.Id),
+//								Pattern:                pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_pattern),
 //								PostProcessingFunction: pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_post_processing_function),
 //								RandomLists:            pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_random_list),
 //								RegularExpression:      pulumi.Any(_var.Masking_policies_masking_column_masking_formats_format_entries_regular_expression),

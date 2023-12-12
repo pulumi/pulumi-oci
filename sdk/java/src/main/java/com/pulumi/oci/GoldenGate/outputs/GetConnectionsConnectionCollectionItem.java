@@ -195,7 +195,8 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private Integer port;
     /**
-     * @return The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * @return Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+     * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      * 
      */
     private String privateIp;
@@ -208,6 +209,11 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String region;
+    /**
+     * @return Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service&#39;s network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment&#39;s private endpoint through the deployment&#39;s subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+     * 
+     */
+    private String routingMethod;
     private String sasToken;
     private String secretAccessKey;
     /**
@@ -264,7 +270,7 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String streamPoolId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      * 
      */
     private String subnetId;
@@ -578,7 +584,8 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.port;
     }
     /**
-     * @return The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+     * @return Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+     * The private IP address of the connection&#39;s endpoint in the customer&#39;s VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      * 
      */
     public String privateIp() {
@@ -602,6 +609,13 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     public String region() {
         return this.region;
+    }
+    /**
+     * @return Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service&#39;s network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment&#39;s private endpoint through the deployment&#39;s subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+     * 
+     */
+    public String routingMethod() {
+        return this.routingMethod;
     }
     public String sasToken() {
         return this.sasToken;
@@ -691,7 +705,7 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.streamPoolId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      * 
      */
     public String subnetId() {
@@ -826,6 +840,7 @@ public final class GetConnectionsConnectionCollectionItem {
         private String producerProperties;
         private String publicKeyFingerprint;
         private String region;
+        private String routingMethod;
         private String sasToken;
         private String secretAccessKey;
         private String securityProtocol;
@@ -905,6 +920,7 @@ public final class GetConnectionsConnectionCollectionItem {
     	      this.producerProperties = defaults.producerProperties;
     	      this.publicKeyFingerprint = defaults.publicKeyFingerprint;
     	      this.region = defaults.region;
+    	      this.routingMethod = defaults.routingMethod;
     	      this.sasToken = defaults.sasToken;
     	      this.secretAccessKey = defaults.secretAccessKey;
     	      this.securityProtocol = defaults.securityProtocol;
@@ -1184,6 +1200,11 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder routingMethod(String routingMethod) {
+            this.routingMethod = Objects.requireNonNull(routingMethod);
+            return this;
+        }
+        @CustomType.Setter
         public Builder sasToken(String sasToken) {
             this.sasToken = Objects.requireNonNull(sasToken);
             return this;
@@ -1377,6 +1398,7 @@ public final class GetConnectionsConnectionCollectionItem {
             _resultValue.producerProperties = producerProperties;
             _resultValue.publicKeyFingerprint = publicKeyFingerprint;
             _resultValue.region = region;
+            _resultValue.routingMethod = routingMethod;
             _resultValue.sasToken = sasToken;
             _resultValue.secretAccessKey = secretAccessKey;
             _resultValue.securityProtocol = securityProtocol;

@@ -105,7 +105,7 @@ class GetSecurityAssessmentFindingsResult:
     @pulumi.getter
     def severity(self) -> Optional[str]:
         """
-        The severity of the finding.
+        The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
         """
         return pulumi.get(self, "severity")
 

@@ -78,6 +78,8 @@ type LookupSensitiveTypeResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the sensitive type.
 	Id string `pulumi:"id"`
+	// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+	IsCommon bool `pulumi:"isCommon"`
 	// A regular expression to be used by data discovery for matching column names.
 	NamePattern string `pulumi:"namePattern"`
 	// The OCID of the parent sensitive category.
@@ -185,6 +187,11 @@ func (o LookupSensitiveTypeResultOutput) FreeformTags() pulumi.MapOutput {
 // The OCID of the sensitive type.
 func (o LookupSensitiveTypeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSensitiveTypeResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+func (o LookupSensitiveTypeResultOutput) IsCommon() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) bool { return v.IsCommon }).(pulumi.BoolOutput)
 }
 
 // A regular expression to be used by data discovery for matching column names.

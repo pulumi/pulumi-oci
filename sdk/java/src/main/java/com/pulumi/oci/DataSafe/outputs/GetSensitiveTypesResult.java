@@ -44,6 +44,11 @@ public final class GetSensitiveTypesResult {
      */
     private String id;
     /**
+     * @return Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    private @Nullable Boolean isCommon;
+    /**
      * @return The OCID of the parent sensitive category.
      * 
      */
@@ -109,6 +114,13 @@ public final class GetSensitiveTypesResult {
         return this.id;
     }
     /**
+     * @return Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    public Optional<Boolean> isCommon() {
+        return Optional.ofNullable(this.isCommon);
+    }
+    /**
      * @return The OCID of the parent sensitive category.
      * 
      */
@@ -159,6 +171,7 @@ public final class GetSensitiveTypesResult {
         private @Nullable String entityType;
         private @Nullable List<GetSensitiveTypesFilter> filters;
         private String id;
+        private @Nullable Boolean isCommon;
         private @Nullable String parentCategoryId;
         private List<GetSensitiveTypesSensitiveTypeCollection> sensitiveTypeCollections;
         private @Nullable String sensitiveTypeId;
@@ -177,6 +190,7 @@ public final class GetSensitiveTypesResult {
     	      this.entityType = defaults.entityType;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.isCommon = defaults.isCommon;
     	      this.parentCategoryId = defaults.parentCategoryId;
     	      this.sensitiveTypeCollections = defaults.sensitiveTypeCollections;
     	      this.sensitiveTypeId = defaults.sensitiveTypeId;
@@ -230,6 +244,11 @@ public final class GetSensitiveTypesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isCommon(@Nullable Boolean isCommon) {
+            this.isCommon = isCommon;
+            return this;
+        }
+        @CustomType.Setter
         public Builder parentCategoryId(@Nullable String parentCategoryId) {
             this.parentCategoryId = parentCategoryId;
             return this;
@@ -277,6 +296,7 @@ public final class GetSensitiveTypesResult {
             _resultValue.entityType = entityType;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.isCommon = isCommon;
             _resultValue.parentCategoryId = parentCategoryId;
             _resultValue.sensitiveTypeCollections = sensitiveTypeCollections;
             _resultValue.sensitiveTypeId = sensitiveTypeId;

@@ -127,7 +127,7 @@ class GetScheduleResult:
     @pulumi.getter(name="outputFileFormat")
     def output_file_format(self) -> str:
         """
-        Specifies supported output file format.
+        Specifies the supported output file format.
         """
         return pulumi.get(self, "output_file_format")
 
@@ -151,7 +151,7 @@ class GetScheduleResult:
     @pulumi.getter(name="savedReportId")
     def saved_report_id(self) -> str:
         """
-        The saved report id which can also be used to generate query.
+        The saved report ID which can also be used to generate a query.
         """
         return pulumi.get(self, "saved_report_id")
 

@@ -64,6 +64,10 @@ export interface GetAwrHubResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
+     * Dst Time Zone Version of the AWR Hub
+     */
+    readonly hubDstTimezoneVersion: string;
+    /**
      * AWR Hub OCID
      */
     readonly id: string;

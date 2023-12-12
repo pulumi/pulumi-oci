@@ -12,7 +12,7 @@ namespace Pulumi.Oci.DataSafe
     /// <summary>
     /// This resource provides the Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
     /// 
-    /// Updates the SQL firewall policy.
+    /// Updates the SQL Firewall policy.
     /// 
     /// ## Import
     /// 
@@ -26,25 +26,25 @@ namespace Pulumi.Oci.DataSafe
     public partial class SqlFirewallPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) List of allowed ip addresses for the SQL firewall policy.
+        /// (Updatable) List of allowed ip addresses for the SQL Firewall policy.
         /// </summary>
         [Output("allowedClientIps")]
         public Output<ImmutableArray<string>> AllowedClientIps { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) List of allowed operating system user names for the SQL firewall policy.
+        /// (Updatable) List of allowed operating system user names for the SQL Firewall policy.
         /// </summary>
         [Output("allowedClientOsUsernames")]
         public Output<ImmutableArray<string>> AllowedClientOsUsernames { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) List of allowed client programs for the SQL firewall policy.
+        /// (Updatable) List of allowed client programs for the SQL Firewall policy.
         /// </summary>
         [Output("allowedClientPrograms")]
         public Output<ImmutableArray<string>> AllowedClientPrograms { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing the SQL firewall policy.
+        /// (Updatable) The OCID of the compartment containing the SQL Firewall policy.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -62,19 +62,19 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The description of the SQL firewall policy.
+        /// (Updatable) The description of the SQL Firewall policy.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+        /// (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies the SQL firewall policy enforcement option.
+        /// (Updatable) Specifies the SQL Firewall policy enforcement option.
         /// </summary>
         [Output("enforcementScope")]
         public Output<string> EnforcementScope { get; private set; } = null!;
@@ -86,37 +86,37 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Details about the current state of the SQL firewall policy in Data Safe.
+        /// Details about the current state of the SQL Firewall policy in Data Safe.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the security policy corresponding to the SQL firewall policy.
+        /// The OCID of the security policy corresponding to the SQL Firewall policy.
         /// </summary>
         [Output("securityPolicyId")]
         public Output<string> SecurityPolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the SQL firewall policy resource.
+        /// The OCID of the SQL Firewall policy resource.
         /// </summary>
         [Output("sqlFirewallPolicyId")]
         public Output<string> SqlFirewallPolicyId { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+        /// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
         /// </summary>
         [Output("sqlLevel")]
         public Output<string> SqlLevel { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the SQL firewall policy.
+        /// The current state of the SQL Firewall policy.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+        /// (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
         /// </summary>
         [Output("status")]
         public Output<string> Status { get; private set; } = null!;
@@ -128,25 +128,25 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time that the SQL firewall policy was created, in the format defined by RFC3339.
+        /// The time that the SQL Firewall policy was created, in the format defined by RFC3339.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+        /// The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+        /// (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
         /// </summary>
         [Output("violationAction")]
         public Output<string> ViolationAction { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+        /// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -205,7 +205,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _allowedClientIps;
 
         /// <summary>
-        /// (Updatable) List of allowed ip addresses for the SQL firewall policy.
+        /// (Updatable) List of allowed ip addresses for the SQL Firewall policy.
         /// </summary>
         public InputList<string> AllowedClientIps
         {
@@ -217,7 +217,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _allowedClientOsUsernames;
 
         /// <summary>
-        /// (Updatable) List of allowed operating system user names for the SQL firewall policy.
+        /// (Updatable) List of allowed operating system user names for the SQL Firewall policy.
         /// </summary>
         public InputList<string> AllowedClientOsUsernames
         {
@@ -229,7 +229,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _allowedClientPrograms;
 
         /// <summary>
-        /// (Updatable) List of allowed client programs for the SQL firewall policy.
+        /// (Updatable) List of allowed client programs for the SQL Firewall policy.
         /// </summary>
         public InputList<string> AllowedClientPrograms
         {
@@ -238,7 +238,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing the SQL firewall policy.
+        /// (Updatable) The OCID of the compartment containing the SQL Firewall policy.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -256,19 +256,19 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The description of the SQL firewall policy.
+        /// (Updatable) The description of the SQL Firewall policy.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+        /// (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies the SQL firewall policy enforcement option.
+        /// (Updatable) Specifies the SQL Firewall policy enforcement option.
         /// </summary>
         [Input("enforcementScope")]
         public Input<string>? EnforcementScope { get; set; }
@@ -286,25 +286,25 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// The OCID of the SQL firewall policy resource.
+        /// The OCID of the SQL Firewall policy resource.
         /// </summary>
         [Input("sqlFirewallPolicyId", required: true)]
         public Input<string> SqlFirewallPolicyId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+        /// (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+        /// (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
         /// </summary>
         [Input("violationAction")]
         public Input<string>? ViolationAction { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+        /// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -325,7 +325,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _allowedClientIps;
 
         /// <summary>
-        /// (Updatable) List of allowed ip addresses for the SQL firewall policy.
+        /// (Updatable) List of allowed ip addresses for the SQL Firewall policy.
         /// </summary>
         public InputList<string> AllowedClientIps
         {
@@ -337,7 +337,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _allowedClientOsUsernames;
 
         /// <summary>
-        /// (Updatable) List of allowed operating system user names for the SQL firewall policy.
+        /// (Updatable) List of allowed operating system user names for the SQL Firewall policy.
         /// </summary>
         public InputList<string> AllowedClientOsUsernames
         {
@@ -349,7 +349,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _allowedClientPrograms;
 
         /// <summary>
-        /// (Updatable) List of allowed client programs for the SQL firewall policy.
+        /// (Updatable) List of allowed client programs for the SQL Firewall policy.
         /// </summary>
         public InputList<string> AllowedClientPrograms
         {
@@ -358,7 +358,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing the SQL firewall policy.
+        /// (Updatable) The OCID of the compartment containing the SQL Firewall policy.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -382,19 +382,19 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The description of the SQL firewall policy.
+        /// (Updatable) The description of the SQL Firewall policy.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+        /// (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies the SQL firewall policy enforcement option.
+        /// (Updatable) Specifies the SQL Firewall policy enforcement option.
         /// </summary>
         [Input("enforcementScope")]
         public Input<string>? EnforcementScope { get; set; }
@@ -412,37 +412,37 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Details about the current state of the SQL firewall policy in Data Safe.
+        /// Details about the current state of the SQL Firewall policy in Data Safe.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The OCID of the security policy corresponding to the SQL firewall policy.
+        /// The OCID of the security policy corresponding to the SQL Firewall policy.
         /// </summary>
         [Input("securityPolicyId")]
         public Input<string>? SecurityPolicyId { get; set; }
 
         /// <summary>
-        /// The OCID of the SQL firewall policy resource.
+        /// The OCID of the SQL Firewall policy resource.
         /// </summary>
         [Input("sqlFirewallPolicyId")]
         public Input<string>? SqlFirewallPolicyId { get; set; }
 
         /// <summary>
-        /// Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+        /// Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
         /// </summary>
         [Input("sqlLevel")]
         public Input<string>? SqlLevel { get; set; }
 
         /// <summary>
-        /// The current state of the SQL firewall policy.
+        /// The current state of the SQL Firewall policy.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+        /// (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
@@ -460,25 +460,25 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// The time that the SQL firewall policy was created, in the format defined by RFC3339.
+        /// The time that the SQL Firewall policy was created, in the format defined by RFC3339.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+        /// The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+        /// (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
         /// </summary>
         [Input("violationAction")]
         public Input<string>? ViolationAction { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+        /// (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
         /// 
         /// 
         /// ** IMPORTANT **

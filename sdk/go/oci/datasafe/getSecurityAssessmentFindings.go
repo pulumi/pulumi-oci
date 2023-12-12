@@ -54,7 +54,7 @@ type GetSecurityAssessmentFindingsResult struct {
 	// Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
 	References           *string `pulumi:"references"`
 	SecurityAssessmentId string  `pulumi:"securityAssessmentId"`
-	// The severity of the finding.
+	// The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
 	Severity *string `pulumi:"severity"`
 }
 
@@ -142,7 +142,7 @@ func (o GetSecurityAssessmentFindingsResultOutput) SecurityAssessmentId() pulumi
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) string { return v.SecurityAssessmentId }).(pulumi.StringOutput)
 }
 
-// The severity of the finding.
+// The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
 func (o GetSecurityAssessmentFindingsResultOutput) Severity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.Severity }).(pulumi.StringPtrOutput)
 }

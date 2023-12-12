@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataCatalog.CatalogPrivateEndpointArgs;
 import com.pulumi.oci.DataCatalog.inputs.CatalogPrivateEndpointState;
+import com.pulumi.oci.DataCatalog.outputs.CatalogPrivateEndpointLock;
 import com.pulumi.oci.Utilities;
 import java.lang.Object;
 import java.lang.String;
@@ -166,6 +167,20 @@ public class CatalogPrivateEndpoint extends com.pulumi.resources.CustomResource 
         return this.lifecycleDetails;
     }
     /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,CatalogPrivateEndpointLock.class}, tree="[0,1]")
+    private Output<List<CatalogPrivateEndpointLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<CatalogPrivateEndpointLock>> locks() {
+        return this.locks;
+    }
+    /**
      * The current state of the private endpoint resource.
      * 
      */
@@ -198,6 +213,20 @@ public class CatalogPrivateEndpoint extends com.pulumi.resources.CustomResource 
      */
     public Output<String> subnetId() {
         return this.subnetId;
+    }
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
+    private Output<Map<String,Object>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Output<Map<String,Object>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

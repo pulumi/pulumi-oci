@@ -34,6 +34,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
+        /// Dst Time Zone Version of the AWR Hub
+        /// </summary>
+        public readonly string HubDstTimezoneVersion;
+        /// <summary>
         /// Unique Awr Hub identifier
         /// </summary>
         public readonly string Id;
@@ -78,6 +82,8 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             ImmutableDictionary<string, object> freeformTags,
 
+            string hubDstTimezoneVersion,
+
             string id,
 
             string lifecycleDetails,
@@ -99,6 +105,7 @@ namespace Pulumi.Oci.Opsi.Outputs
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
+            HubDstTimezoneVersion = hubDstTimezoneVersion;
             Id = id;
             LifecycleDetails = lifecycleDetails;
             ObjectStorageBucketName = objectStorageBucketName;

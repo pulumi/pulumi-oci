@@ -90,6 +90,8 @@ type SensitiveType struct {
 	EntityType pulumi.StringOutput `pulumi:"entityType"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+	IsCommon pulumi.BoolOutput `pulumi:"isCommon"`
 	// (Updatable) A regular expression to be used by data discovery for matching column names.
 	NamePattern pulumi.StringOutput `pulumi:"namePattern"`
 	// (Updatable) The OCID of the parent sensitive category.
@@ -167,6 +169,8 @@ type sensitiveTypeState struct {
 	EntityType *string `pulumi:"entityType"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+	IsCommon *bool `pulumi:"isCommon"`
 	// (Updatable) A regular expression to be used by data discovery for matching column names.
 	NamePattern *string `pulumi:"namePattern"`
 	// (Updatable) The OCID of the parent sensitive category.
@@ -209,6 +213,8 @@ type SensitiveTypeState struct {
 	EntityType pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+	IsCommon pulumi.BoolPtrInput
 	// (Updatable) A regular expression to be used by data discovery for matching column names.
 	NamePattern pulumi.StringPtrInput
 	// (Updatable) The OCID of the parent sensitive category.
@@ -431,6 +437,11 @@ func (o SensitiveTypeOutput) EntityType() pulumi.StringOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 func (o SensitiveTypeOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *SensitiveType) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+func (o SensitiveTypeOutput) IsCommon() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SensitiveType) pulumi.BoolOutput { return v.IsCommon }).(pulumi.BoolOutput)
 }
 
 // (Updatable) A regular expression to be used by data discovery for matching column names.

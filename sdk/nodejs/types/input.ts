@@ -16163,6 +16163,44 @@ export namespace Core {
 }
 
 export namespace DataCatalog {
+    export interface CatalogLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface CatalogPrivateEndpointLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type?: pulumi.Input<string>;
+    }
+
     export interface GetCatalogPrivateEndpointsFilter {
         name: string;
         regex?: boolean;
@@ -16241,6 +16279,24 @@ export namespace DataCatalog {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface MetastoreLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type?: pulumi.Input<string>;
+    }
 }
 
 export namespace DataFlow {
@@ -18391,6 +18447,10 @@ export namespace DataSafe {
          */
         libraryMaskingFormatId?: pulumi.Input<string>;
         /**
+         * (Updatable) The pattern that should be used to mask data.
+         */
+        pattern?: pulumi.Input<string>;
+        /**
          * (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
          */
         postProcessingFunction?: pulumi.Input<string>;
@@ -18504,6 +18564,10 @@ export namespace DataSafe {
          * (Updatable) The OCID of the library masking format.
          */
         libraryMaskingFormatId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The pattern that should be used to mask data.
+         */
+        pattern?: pulumi.Input<string>;
         /**
          * (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
          */
@@ -29907,7 +29971,8 @@ export namespace GoldenGate {
          */
         port?: pulumi.Input<number>;
         /**
-         * (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+         * (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+         * The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
          */
         privateIp?: pulumi.Input<string>;
     }
@@ -29944,6 +30009,13 @@ export namespace GoldenGate {
          * The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
          */
         timeDiagnosticStart?: pulumi.Input<string>;
+    }
+
+    export interface DeploymentIngressIp {
+        /**
+         * A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+         */
+        ingressIp?: pulumi.Input<string>;
     }
 
     export interface DeploymentMaintenanceConfiguration {
@@ -42862,6 +42934,314 @@ export namespace Identity {
         requestable?: pulumi.Input<boolean>;
     }
 
+    export interface DomainsIdentityPropagationTrustIdcsCreatedBy {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
+         */
+        ocid?: pulumi.Input<string>;
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the inbound token from the Identity cloud provider.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * multiValued: false
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityPropagationTrustIdcsLastModifiedBy {
+        /**
+         * (Updatable) The displayName of the User or App who modified this Resource
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        display?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
+         */
+        ocid?: pulumi.Input<string>;
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of the inbound token from the Identity cloud provider.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * required: true
+         * * mutability: readWrite
+         * * returned: default
+         * * type: string
+         * * multiValued: false
+         * * uniqueness: none
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        type?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityPropagationTrustImpersonationServiceUser {
+        /**
+         * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: global
+         */
+        ocid?: pulumi.Input<string>;
+        ref?: pulumi.Input<string>;
+        /**
+         * (Updatable) The rule expression to be used for matching the inbound token for impersonation.
+         *
+         * **SCIM++ Properties:**
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        rule: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityPropagationTrustKeytab {
+        /**
+         * (Updatable) The OCID of the secret. The secret content corresponding to the OCID is expected to be in Base64 encoded content type.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        secretOcid: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the secret. When the version is not specified, then the latest secret version is used during runtime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: true
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: false
+         * * returned: default
+         * * type: integer
+         * * uniqueness: none
+         */
+        secretVersion?: pulumi.Input<number>;
+    }
+
+    export interface DomainsIdentityPropagationTrustMeta {
+        /**
+         * (Updatable) The DateTime the Resource was added to the Service Provider
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         */
+        created?: pulumi.Input<string>;
+        /**
+         * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: dateTime
+         * * uniqueness: none
+         */
+        lastModified?: pulumi.Input<string>;
+        /**
+         * (Updatable) The URI of the Resource being returned. This value MUST be the same as the Location HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of the resource type of the resource--for example, Users or Groups
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        resourceType?: pulumi.Input<string>;
+        /**
+         * (Updatable) The version of the Resource being returned. This value must be the same as the ETag HTTP response header.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: false
+         * * multiValued: false
+         * * mutability: readOnly
+         * * required: false
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        version?: pulumi.Input<string>;
+    }
+
+    export interface DomainsIdentityPropagationTrustTag {
+        /**
+         * (Updatable) Key or name of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) Value of the tag.
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
+         * * uniqueness: none
+         */
+        value: pulumi.Input<string>;
+    }
+
     export interface DomainsIdentityProviderCorrelationPolicy {
         /**
          * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
@@ -53294,12 +53674,12 @@ export namespace Identity {
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
          */
-        familyName: pulumi.Input<string>;
+        familyName?: pulumi.Input<string>;
         /**
          * (Updatable) Full name
          *
@@ -56449,6 +56829,24 @@ export namespace Identity {
          * * uniqueness: none
          */
         preferredUiLandingPage?: pulumi.Input<string>;
+        /**
+         * (Updatable) Indicates if User is a Service User
+         *
+         * **Added In:** 2306131901
+         *
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Service User
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         */
+        serviceUser?: pulumi.Input<boolean>;
         /**
          * (Updatable) A supplemental status indicating the reason why a user is disabled
          *
@@ -59938,6 +60336,10 @@ export namespace Logging {
          */
         category: pulumi.Input<string>;
         /**
+         * (Updatable) Log category parameters are stored here.
+         */
+        parameters?: pulumi.Input<{[key: string]: any}>;
+        /**
          * The unique identifier of the resource emitting the log.
          */
         resource: pulumi.Input<string>;
@@ -60948,6 +61350,18 @@ export namespace MeteringComputation {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetUsageCarbonEmissionsQueriesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetUsageCarbonEmissionsQueriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface QueryQueryDefinition {
         /**
          * (Updatable) The common fields for Cost Analysis UI rendering.
@@ -61146,6 +61560,203 @@ export namespace MeteringComputation {
          * (Updatable) The destination Object Store Region specified by the customer.
          */
         region: pulumi.Input<string>;
+    }
+
+    export interface UsageCarbonEmissionGroupByTag {
+        /**
+         * The tag key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * The tag namespace.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * The tag value.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface UsageCarbonEmissionItem {
+        /**
+         * The availability domain of the usage.
+         */
+        ad?: pulumi.Input<string>;
+        /**
+         * The compartment OCID.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * The compartment name.
+         */
+        compartmentName?: pulumi.Input<string>;
+        /**
+         * The compartment path, starting from root.
+         */
+        compartmentPath?: pulumi.Input<string>;
+        /**
+         * The carbon emission in MTCO2 unit.
+         */
+        computedCarbonEmission?: pulumi.Input<number>;
+        /**
+         * The method used to calculate carbon emission.
+         */
+        emissionCalculationMethod?: pulumi.Input<string>;
+        /**
+         * Platform for the cost.
+         */
+        platform?: pulumi.Input<string>;
+        /**
+         * The region of the usage.
+         */
+        region?: pulumi.Input<string>;
+        /**
+         * The resource OCID that is incurring the cost.
+         */
+        resourceId?: pulumi.Input<string>;
+        /**
+         * The resource name that is incurring the cost.
+         */
+        resourceName?: pulumi.Input<string>;
+        /**
+         * The service name that is incurring the cost.
+         */
+        service?: pulumi.Input<string>;
+        /**
+         * The SKU friendly name.
+         */
+        skuName?: pulumi.Input<string>;
+        /**
+         * The SKU part number.
+         */
+        skuPartNumber?: pulumi.Input<string>;
+        /**
+         * The subscription ID.
+         */
+        subscriptionId?: pulumi.Input<string>;
+        /**
+         * For grouping, a tag definition. For filtering, a definition and key.
+         */
+        tags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionItemTag>[]>;
+        /**
+         * Tenant ID.
+         */
+        tenantId?: pulumi.Input<string>;
+        /**
+         * The tenancy name.
+         */
+        tenantName?: pulumi.Input<string>;
+        /**
+         * The usage end time.
+         */
+        timeUsageEnded?: pulumi.Input<string>;
+        /**
+         * The usage start time.
+         */
+        timeUsageStarted?: pulumi.Input<string>;
+    }
+
+    export interface UsageCarbonEmissionItemTag {
+        /**
+         * The tag key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * The tag namespace.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * The tag value.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface UsageCarbonEmissionsQueryQueryDefinition {
+        /**
+         * (Updatable) The common fields for Cost Analysis UI rendering.
+         */
+        costAnalysisUi: pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi>;
+        /**
+         * (Updatable) The query display name. Avoid entering confidential information.
+         */
+        displayName: pulumi.Input<string>;
+        /**
+         * (Updatable) The request of the generated usage carbon emissions report.
+         */
+        reportQuery: pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionsQueryQueryDefinitionReportQuery>;
+        /**
+         * (Updatable) The saved query version.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        version: pulumi.Input<number>;
+    }
+
+    export interface UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUi {
+        /**
+         * (Updatable) The graph type.
+         */
+        graph?: pulumi.Input<string>;
+        /**
+         * (Updatable) A cumulative graph.
+         */
+        isCumulativeGraph?: pulumi.Input<boolean>;
+    }
+
+    export interface UsageCarbonEmissionsQueryQueryDefinitionReportQuery {
+        /**
+         * (Updatable) The compartment depth level.
+         */
+        compartmentDepth?: pulumi.Input<number>;
+        /**
+         * (Updatable) The UI date range, for example, LAST_THREE_MONTHS. It will override timeUsageStarted and timeUsageEnded properties.
+         */
+        dateRangeName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies what to aggregate the result by. For example: `["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]`
+         */
+        groupBies?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: `[{"namespace":"oracle", "key":"createdBy"]`
+         */
+        groupByTags?: pulumi.Input<pulumi.Input<inputs.MeteringComputation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag>[]>;
+        /**
+         * (Updatable) Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
+         */
+        isAggregateByTime?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Tenant ID.
+         */
+        tenantId: pulumi.Input<string>;
+        /**
+         * (Updatable) The usage end time.
+         */
+        timeUsageEnded?: pulumi.Input<string>;
+        /**
+         * (Updatable) The usage start time.
+         */
+        timeUsageStarted?: pulumi.Input<string>;
+        /**
+         * (Updatable) The filter object for query usage.
+         */
+        usageCarbonEmissionsQueryFilter?: pulumi.Input<string>;
+    }
+
+    export interface UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTag {
+        /**
+         * (Updatable) The tag key.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) The tag namespace.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) The tag value.
+         */
+        value?: pulumi.Input<string>;
     }
 
     export interface UsageForecast {
@@ -64698,6 +65309,24 @@ export namespace Opsi {
     }
 
     export interface GetAwrHubAwrSnapshotsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAwrHubSourcesFilter {
+        /**
+         * Awr Hub source database name
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAwrHubSourcesFilterArgs {
+        /**
+         * Awr Hub source database name
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

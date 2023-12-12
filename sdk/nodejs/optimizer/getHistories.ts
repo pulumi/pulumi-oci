@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  * const testHistories = oci.Optimizer.getHistories({
  *     compartmentId: _var.compartment_id,
  *     compartmentIdInSubtree: _var.history_compartment_id_in_subtree,
+ *     includeResourceMetadata: _var.history_include_resource_metadata,
  *     name: _var.history_name,
  *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
  *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
@@ -37,6 +38,7 @@ export function getHistories(args: GetHistoriesArgs, opts?: pulumi.InvokeOptions
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
+        "includeResourceMetadata": args.includeResourceMetadata,
         "name": args.name,
         "recommendationId": args.recommendationId,
         "recommendationName": args.recommendationName,
@@ -61,6 +63,10 @@ export interface GetHistoriesArgs {
      */
     compartmentIdInSubtree: boolean;
     filters?: inputs.Optimizer.GetHistoriesFilter[];
+    /**
+     * Supplement additional resource information in extended metadata response.
+     */
+    includeResourceMetadata?: boolean;
     /**
      * Optional. A filter that returns results that match the name specified.
      */
@@ -105,6 +111,7 @@ export interface GetHistoriesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly includeResourceMetadata?: boolean;
     /**
      * The name assigned to the resource.
      */
@@ -145,6 +152,7 @@ export interface GetHistoriesResult {
  * const testHistories = oci.Optimizer.getHistories({
  *     compartmentId: _var.compartment_id,
  *     compartmentIdInSubtree: _var.history_compartment_id_in_subtree,
+ *     includeResourceMetadata: _var.history_include_resource_metadata,
  *     name: _var.history_name,
  *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
  *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
@@ -173,6 +181,10 @@ export interface GetHistoriesOutputArgs {
      */
     compartmentIdInSubtree: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.Optimizer.GetHistoriesFilterArgs>[]>;
+    /**
+     * Supplement additional resource information in extended metadata response.
+     */
+    includeResourceMetadata?: pulumi.Input<boolean>;
     /**
      * Optional. A filter that returns results that match the name specified.
      */

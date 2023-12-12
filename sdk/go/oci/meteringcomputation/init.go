@@ -29,6 +29,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Schedule{}
 	case "oci:MeteringComputation/usage:Usage":
 		r = &Usage{}
+	case "oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission":
+		r = &UsageCarbonEmission{}
+	case "oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery":
+		r = &UsageCarbonEmissionsQuery{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -60,6 +64,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"MeteringComputation/usage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"MeteringComputation/usageCarbonEmission",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"MeteringComputation/usageCarbonEmissionsQuery",
 		&module{version},
 	)
 }

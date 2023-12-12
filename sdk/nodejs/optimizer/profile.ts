@@ -115,6 +115,7 @@ export class Profile extends pulumi.CustomResource {
      * The profile's current state.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * (Updatable) Optional. The compartments specified in the profile override for a recommendation.
      */
@@ -153,6 +154,7 @@ export class Profile extends pulumi.CustomResource {
             resourceInputs["levelsConfiguration"] = state ? state.levelsConfiguration : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["targetCompartments"] = state ? state.targetCompartments : undefined;
             resourceInputs["targetTags"] = state ? state.targetTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -178,6 +180,7 @@ export class Profile extends pulumi.CustomResource {
             resourceInputs["targetCompartments"] = args ? args.targetCompartments : undefined;
             resourceInputs["targetTags"] = args ? args.targetTags : undefined;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -222,6 +225,7 @@ export interface ProfileState {
      * The profile's current state.
      */
     state?: pulumi.Input<string>;
+    systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Optional. The compartments specified in the profile override for a recommendation.
      */

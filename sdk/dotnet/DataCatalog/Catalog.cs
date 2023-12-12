@@ -94,6 +94,12 @@ namespace Pulumi.Oci.DataCatalog
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.CatalogLock>> Locks { get; private set; } = null!;
+
+        /// <summary>
         /// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
         /// </summary>
         [Output("numberOfObjects")]
@@ -116,6 +122,12 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -293,6 +305,18 @@ namespace Pulumi.Oci.DataCatalog
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        [Input("locks")]
+        private InputList<Inputs.CatalogLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.CatalogLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.CatalogLockGetArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
         /// </summary>
@@ -316,6 +340,18 @@ namespace Pulumi.Oci.DataCatalog
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<object>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<object> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<object>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

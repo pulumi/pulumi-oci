@@ -38,6 +38,7 @@ namespace Pulumi.Oci.Logging
     ///                 Resource = @var.Log_configuration_source_resource,
     ///                 Service = @var.Log_configuration_source_service,
     ///                 SourceType = @var.Log_configuration_source_source_type,
+    ///                 Parameters = @var.Log_configuration_source_parameters,
     ///             },
     ///             CompartmentId = @var.Compartment_id,
     ///         },

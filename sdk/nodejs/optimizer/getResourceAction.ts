@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testResourceAction = oci.Optimizer.getResourceAction({
  *     resourceActionId: oci_optimizer_resource_action.test_resource_action.id,
+ *     includeResourceMetadata: _var.resource_action_include_resource_metadata,
  * });
  * ```
  */
@@ -26,6 +27,7 @@ export function getResourceAction(args: GetResourceActionArgs, opts?: pulumi.Inv
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getResourceAction:getResourceAction", {
+        "includeResourceMetadata": args.includeResourceMetadata,
         "resourceActionId": args.resourceActionId,
     }, opts);
 }
@@ -34,6 +36,10 @@ export function getResourceAction(args: GetResourceActionArgs, opts?: pulumi.Inv
  * A collection of arguments for invoking getResourceAction.
  */
 export interface GetResourceActionArgs {
+    /**
+     * Supplement additional resource information in extended metadata response.
+     */
+    includeResourceMetadata?: boolean;
     /**
      * The unique OCID associated with the resource action.
      */
@@ -72,6 +78,7 @@ export interface GetResourceActionResult {
      * The unique OCID associated with the resource action.
      */
     readonly id: string;
+    readonly includeResourceMetadata?: boolean;
     /**
      * Custom metadata key/value pairs for the resource action.
      */
@@ -131,6 +138,7 @@ export interface GetResourceActionResult {
  *
  * const testResourceAction = oci.Optimizer.getResourceAction({
  *     resourceActionId: oci_optimizer_resource_action.test_resource_action.id,
+ *     includeResourceMetadata: _var.resource_action_include_resource_metadata,
  * });
  * ```
  */
@@ -142,6 +150,10 @@ export function getResourceActionOutput(args: GetResourceActionOutputArgs, opts?
  * A collection of arguments for invoking getResourceAction.
  */
 export interface GetResourceActionOutputArgs {
+    /**
+     * Supplement additional resource information in extended metadata response.
+     */
+    includeResourceMetadata?: pulumi.Input<boolean>;
     /**
      * The unique OCID associated with the resource action.
      */

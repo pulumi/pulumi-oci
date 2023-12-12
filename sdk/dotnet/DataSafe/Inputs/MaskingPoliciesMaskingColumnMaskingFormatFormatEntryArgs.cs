@@ -79,6 +79,12 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string>? LibraryMaskingFormatId { get; set; }
 
         /// <summary>
+        /// (Updatable) The pattern that should be used to mask data.
+        /// </summary>
+        [Input("pattern")]
+        public Input<string>? Pattern { get; set; }
+
+        /// <summary>
         /// (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         /// </summary>
         [Input("postProcessingFunction")]

@@ -50,6 +50,8 @@ type Deployment struct {
 	Fqdn pulumi.StringOutput `pulumi:"fqdn"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+	IngressIps DeploymentIngressIpArrayOutput `pulumi:"ingressIps"`
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolOutput `pulumi:"isAutoScalingEnabled"`
 	// True if all of the aggregate resources are working correctly.
@@ -66,6 +68,10 @@ type Deployment struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState pulumi.StringOutput `pulumi:"lifecycleSubState"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	LoadBalancerSubnetId pulumi.StringOutput `pulumi:"loadBalancerSubnetId"`
 	// (Updatable) Defines the maintenance configuration for create operation.
 	MaintenanceConfiguration DeploymentMaintenanceConfigurationOutput `pulumi:"maintenanceConfiguration"`
 	// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -85,7 +91,7 @@ type Deployment struct {
 	State           pulumi.StringOutput `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes pulumi.StringOutput `pulumi:"storageUtilizationInBytes"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
@@ -174,6 +180,8 @@ type deploymentState struct {
 	Fqdn *string `pulumi:"fqdn"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+	IngressIps []DeploymentIngressIp `pulumi:"ingressIps"`
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled *bool `pulumi:"isAutoScalingEnabled"`
 	// True if all of the aggregate resources are working correctly.
@@ -190,6 +198,10 @@ type deploymentState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState *string `pulumi:"lifecycleSubState"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+	LoadBalancerId *string `pulumi:"loadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	LoadBalancerSubnetId *string `pulumi:"loadBalancerSubnetId"`
 	// (Updatable) Defines the maintenance configuration for create operation.
 	MaintenanceConfiguration *DeploymentMaintenanceConfiguration `pulumi:"maintenanceConfiguration"`
 	// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -209,7 +221,7 @@ type deploymentState struct {
 	State           *string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes *string `pulumi:"storageUtilizationInBytes"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
 	SubnetId *string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -248,6 +260,8 @@ type DeploymentState struct {
 	Fqdn pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+	IngressIps DeploymentIngressIpArrayInput
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolPtrInput
 	// True if all of the aggregate resources are working correctly.
@@ -264,6 +278,10 @@ type DeploymentState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+	LoadBalancerId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	LoadBalancerSubnetId pulumi.StringPtrInput
 	// (Updatable) Defines the maintenance configuration for create operation.
 	MaintenanceConfiguration DeploymentMaintenanceConfigurationPtrInput
 	// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -283,7 +301,7 @@ type DeploymentState struct {
 	State           pulumi.StringPtrInput
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
 	SubnetId pulumi.StringPtrInput
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput
@@ -328,6 +346,8 @@ type deploymentArgs struct {
 	IsPublic *bool `pulumi:"isPublic"`
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel string `pulumi:"licenseModel"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	LoadBalancerSubnetId *string `pulumi:"loadBalancerSubnetId"`
 	// (Updatable) Defines the maintenance configuration for create operation.
 	MaintenanceConfiguration *DeploymentMaintenanceConfiguration `pulumi:"maintenanceConfiguration"`
 	// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -337,7 +357,7 @@ type deploymentArgs struct {
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData *DeploymentOggData `pulumi:"oggData"`
 	State   *string            `pulumi:"state"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
 	SubnetId string `pulumi:"subnetId"`
 }
 
@@ -367,6 +387,8 @@ type DeploymentArgs struct {
 	IsPublic pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to a Deployment.
 	LicenseModel pulumi.StringInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	LoadBalancerSubnetId pulumi.StringPtrInput
 	// (Updatable) Defines the maintenance configuration for create operation.
 	MaintenanceConfiguration DeploymentMaintenanceConfigurationPtrInput
 	// (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
@@ -376,7 +398,7 @@ type DeploymentArgs struct {
 	// (Updatable) Deployment Data for creating an OggDeployment
 	OggData DeploymentOggDataPtrInput
 	State   pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
 	SubnetId pulumi.StringInput
 }
 
@@ -522,6 +544,11 @@ func (o DeploymentOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
+// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+func (o DeploymentOutput) IngressIps() DeploymentIngressIpArrayOutput {
+	return o.ApplyT(func(v *Deployment) DeploymentIngressIpArrayOutput { return v.IngressIps }).(DeploymentIngressIpArrayOutput)
+}
+
 // (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 func (o DeploymentOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.BoolOutput { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
@@ -560,6 +587,16 @@ func (o DeploymentOutput) LifecycleDetails() pulumi.StringOutput {
 // Possible GGS lifecycle sub-states.
 func (o DeploymentOutput) LifecycleSubState() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.LifecycleSubState }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+func (o DeploymentOutput) LoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.LoadBalancerId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+func (o DeploymentOutput) LoadBalancerSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.LoadBalancerSubnetId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Defines the maintenance configuration for create operation.
@@ -611,7 +648,7 @@ func (o DeploymentOutput) StorageUtilizationInBytes() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.StorageUtilizationInBytes }).(pulumi.StringOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
 func (o DeploymentOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
 }

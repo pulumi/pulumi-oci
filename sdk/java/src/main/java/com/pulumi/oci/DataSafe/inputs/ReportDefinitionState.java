@@ -265,14 +265,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The OCID of the compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource will be created.
      * 
      */
     @Import(name="scheduledReportCompartmentId")
     private @Nullable Output<String> scheduledReportCompartmentId;
 
     /**
-     * @return The OCID of the compartment in which the scheduled resource should be created.
+     * @return The OCID of the compartment in which the scheduled resource will be created.
      * 
      */
     public Optional<Output<String>> scheduledReportCompartmentId() {
@@ -280,14 +280,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Specifies the format of the report ( either XLS or PDF )
+     * Specifies the format of the report ( either .xls or .pdf )
      * 
      */
     @Import(name="scheduledReportMimeType")
     private @Nullable Output<String> scheduledReportMimeType;
 
     /**
-     * @return Specifies the format of the report ( either XLS or PDF )
+     * @return Specifies the format of the report ( either .xls or .pdf )
      * 
      */
     public Optional<Output<String>> scheduledReportMimeType() {
@@ -391,14 +391,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Specifies the data and time the report definition was created.
+     * Specifies the date and time the report definition was created.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return Specifies the data and time the report definition was created.
+     * @return Specifies the date and time the report definition was created.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -406,14 +406,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The date and time the report definition was update.
+     * The date and time the report definition was updated.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the report definition was update.
+     * @return The date and time the report definition was updated.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -846,7 +846,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scheduledReportCompartmentId The OCID of the compartment in which the scheduled resource should be created.
+         * @param scheduledReportCompartmentId The OCID of the compartment in which the scheduled resource will be created.
          * 
          * @return builder
          * 
@@ -857,7 +857,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scheduledReportCompartmentId The OCID of the compartment in which the scheduled resource should be created.
+         * @param scheduledReportCompartmentId The OCID of the compartment in which the scheduled resource will be created.
          * 
          * @return builder
          * 
@@ -867,7 +867,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scheduledReportMimeType Specifies the format of the report ( either XLS or PDF )
+         * @param scheduledReportMimeType Specifies the format of the report ( either .xls or .pdf )
          * 
          * @return builder
          * 
@@ -878,7 +878,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scheduledReportMimeType Specifies the format of the report ( either XLS or PDF )
+         * @param scheduledReportMimeType Specifies the format of the report ( either .xls or .pdf )
          * 
          * @return builder
          * 
@@ -1030,7 +1030,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param timeCreated Specifies the data and time the report definition was created.
+         * @param timeCreated Specifies the date and time the report definition was created.
          * 
          * @return builder
          * 
@@ -1041,7 +1041,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param timeCreated Specifies the data and time the report definition was created.
+         * @param timeCreated Specifies the date and time the report definition was created.
          * 
          * @return builder
          * 
@@ -1051,7 +1051,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param timeUpdated The date and time the report definition was update.
+         * @param timeUpdated The date and time the report definition was updated.
          * 
          * @return builder
          * 
@@ -1062,7 +1062,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param timeUpdated The date and time the report definition was update.
+         * @param timeUpdated The date and time the report definition was updated.
          * 
          * @return builder
          * 

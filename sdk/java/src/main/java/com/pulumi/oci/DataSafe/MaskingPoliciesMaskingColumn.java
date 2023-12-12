@@ -83,6 +83,7 @@ import javax.annotation.Nullable;
  *                     .groupingColumns(var_.masking_policies_masking_column_masking_formats_format_entries_grouping_columns())
  *                     .length(var_.masking_policies_masking_column_masking_formats_format_entries_length())
  *                     .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+ *                     .pattern(var_.masking_policies_masking_column_masking_formats_format_entries_pattern())
  *                     .postProcessingFunction(var_.masking_policies_masking_column_masking_formats_format_entries_post_processing_function())
  *                     .randomLists(var_.masking_policies_masking_column_masking_formats_format_entries_random_list())
  *                     .regularExpression(var_.masking_policies_masking_column_masking_formats_format_entries_regular_expression())

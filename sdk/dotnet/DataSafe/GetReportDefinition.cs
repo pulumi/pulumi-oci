@@ -175,11 +175,11 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Schedule;
         /// <summary>
-        /// The OCID of the compartment in which the scheduled resource should be created.
+        /// The OCID of the compartment in which the scheduled resource will be created.
         /// </summary>
         public readonly string ScheduledReportCompartmentId;
         /// <summary>
-        /// Specifies the format of the report ( either XLS or PDF )
+        /// Specifies the format of the report ( either .xls or .pdf )
         /// </summary>
         public readonly string ScheduledReportMimeType;
         /// <summary>
@@ -207,11 +207,11 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// Specifies the data and time the report definition was created.
+        /// Specifies the date and time the report definition was created.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the report definition was update.
+        /// The date and time the report definition was updated.
         /// </summary>
         public readonly string TimeUpdated;
 

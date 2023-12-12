@@ -43,7 +43,7 @@ export interface GetSdmMaskingPolicyDifferenceArgs {
  */
 export interface GetSdmMaskingPolicyDifferenceResult {
     /**
-     * The OCID of the compartment that contains the SDM masking policy difference.
+     * The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
      */
     readonly compartmentId: string;
     /**
@@ -63,7 +63,7 @@ export interface GetSdmMaskingPolicyDifferenceResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The OCID of the SDM masking policy difference.
+     * The OCID of the Sensitive data model and masking policy difference resource.
      */
     readonly id: string;
     /**

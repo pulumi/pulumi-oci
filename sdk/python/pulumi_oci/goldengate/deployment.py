@@ -29,6 +29,7 @@ class DeploymentArgs:
                  fqdn: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_public: Optional[pulumi.Input[bool]] = None,
+                 load_balancer_subnet_id: Optional[pulumi.Input[str]] = None,
                  maintenance_configuration: Optional[pulumi.Input['DeploymentMaintenanceConfigurationArgs']] = None,
                  maintenance_window: Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -42,13 +43,14 @@ class DeploymentArgs:
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param pulumi.Input[str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
+        :param pulumi.Input[str] load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
         :param pulumi.Input['DeploymentMaintenanceConfigurationArgs'] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
@@ -73,6 +75,8 @@ class DeploymentArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_public is not None:
             pulumi.set(__self__, "is_public", is_public)
+        if load_balancer_subnet_id is not None:
+            pulumi.set(__self__, "load_balancer_subnet_id", load_balancer_subnet_id)
         if maintenance_configuration is not None:
             pulumi.set(__self__, "maintenance_configuration", maintenance_configuration)
         if maintenance_window is not None:
@@ -160,7 +164,7 @@ class DeploymentArgs:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -241,6 +245,18 @@ class DeploymentArgs:
         pulumi.set(self, "is_public", value)
 
     @property
+    @pulumi.getter(name="loadBalancerSubnetId")
+    def load_balancer_subnet_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        """
+        return pulumi.get(self, "load_balancer_subnet_id")
+
+    @load_balancer_subnet_id.setter
+    def load_balancer_subnet_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "load_balancer_subnet_id", value)
+
+    @property
     @pulumi.getter(name="maintenanceConfiguration")
     def maintenance_configuration(self) -> Optional[pulumi.Input['DeploymentMaintenanceConfigurationArgs']]:
         """
@@ -312,6 +328,7 @@ class _DeploymentState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  fqdn: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentIngressIpArgs']]]] = None,
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
                  is_healthy: Optional[pulumi.Input[bool]] = None,
                  is_latest_version: Optional[pulumi.Input[bool]] = None,
@@ -320,6 +337,8 @@ class _DeploymentState:
                  license_model: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
+                 load_balancer_id: Optional[pulumi.Input[str]] = None,
+                 load_balancer_subnet_id: Optional[pulumi.Input[str]] = None,
                  maintenance_configuration: Optional[pulumi.Input['DeploymentMaintenanceConfigurationArgs']] = None,
                  maintenance_window: Optional[pulumi.Input['DeploymentMaintenanceWindowArgs']] = None,
                  next_maintenance_action_type: Optional[pulumi.Input[str]] = None,
@@ -350,6 +369,7 @@ class _DeploymentState:
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentIngressIpArgs']]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[bool] is_healthy: True if all of the aggregate resources are working correctly.
         :param pulumi.Input[bool] is_latest_version: Indicates if the resource is the the latest available version.
@@ -358,6 +378,8 @@ class _DeploymentState:
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
+        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+        :param pulumi.Input[str] load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
         :param pulumi.Input['DeploymentMaintenanceConfigurationArgs'] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[str] next_maintenance_action_type: Type of the next maintenance.
@@ -367,7 +389,7 @@ class _DeploymentState:
         :param pulumi.Input[str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param pulumi.Input[str] public_ip_address: The public IP address representing the access point for the Deployment.
         :param pulumi.Input[str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -397,6 +419,8 @@ class _DeploymentState:
             pulumi.set(__self__, "fqdn", fqdn)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if ingress_ips is not None:
+            pulumi.set(__self__, "ingress_ips", ingress_ips)
         if is_auto_scaling_enabled is not None:
             pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         if is_healthy is not None:
@@ -413,6 +437,10 @@ class _DeploymentState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if lifecycle_sub_state is not None:
             pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        if load_balancer_id is not None:
+            pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        if load_balancer_subnet_id is not None:
+            pulumi.set(__self__, "load_balancer_subnet_id", load_balancer_subnet_id)
         if maintenance_configuration is not None:
             pulumi.set(__self__, "maintenance_configuration", maintenance_configuration)
         if maintenance_window is not None:
@@ -581,6 +609,18 @@ class _DeploymentState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="ingressIps")
+    def ingress_ips(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentIngressIpArgs']]]]:
+        """
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        """
+        return pulumi.get(self, "ingress_ips")
+
+    @ingress_ips.setter
+    def ingress_ips(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentIngressIpArgs']]]]):
+        pulumi.set(self, "ingress_ips", value)
+
+    @property
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -675,6 +715,30 @@ class _DeploymentState:
     @lifecycle_sub_state.setter
     def lifecycle_sub_state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_sub_state", value)
+
+    @property
+    @pulumi.getter(name="loadBalancerId")
+    def load_balancer_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+        """
+        return pulumi.get(self, "load_balancer_id")
+
+    @load_balancer_id.setter
+    def load_balancer_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "load_balancer_id", value)
+
+    @property
+    @pulumi.getter(name="loadBalancerSubnetId")
+    def load_balancer_subnet_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        """
+        return pulumi.get(self, "load_balancer_subnet_id")
+
+    @load_balancer_subnet_id.setter
+    def load_balancer_subnet_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "load_balancer_subnet_id", value)
 
     @property
     @pulumi.getter(name="maintenanceConfiguration")
@@ -797,7 +861,7 @@ class _DeploymentState:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -895,6 +959,7 @@ class Deployment(pulumi.CustomResource):
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
                  is_public: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 load_balancer_subnet_id: Optional[pulumi.Input[str]] = None,
                  maintenance_configuration: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceConfigurationArgs']]] = None,
                  maintenance_window: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -929,11 +994,12 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[bool] is_public: (Updatable) True if this object is publicly available.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
+        :param pulumi.Input[str] load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
         :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceConfigurationArgs']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input[pulumi.InputType['DeploymentOggDataArgs']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         """
         ...
     @overload
@@ -981,6 +1047,7 @@ class Deployment(pulumi.CustomResource):
                  is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
                  is_public: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 load_balancer_subnet_id: Optional[pulumi.Input[str]] = None,
                  maintenance_configuration: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceConfigurationArgs']]] = None,
                  maintenance_window: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1020,6 +1087,7 @@ class Deployment(pulumi.CustomResource):
             if license_model is None and not opts.urn:
                 raise TypeError("Missing required property 'license_model'")
             __props__.__dict__["license_model"] = license_model
+            __props__.__dict__["load_balancer_subnet_id"] = load_balancer_subnet_id
             __props__.__dict__["maintenance_configuration"] = maintenance_configuration
             __props__.__dict__["maintenance_window"] = maintenance_window
             __props__.__dict__["nsg_ids"] = nsg_ids
@@ -1030,11 +1098,13 @@ class Deployment(pulumi.CustomResource):
             __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["deployment_diagnostic_datas"] = None
             __props__.__dict__["deployment_url"] = None
+            __props__.__dict__["ingress_ips"] = None
             __props__.__dict__["is_healthy"] = None
             __props__.__dict__["is_latest_version"] = None
             __props__.__dict__["is_storage_utilization_limit_exceeded"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["lifecycle_sub_state"] = None
+            __props__.__dict__["load_balancer_id"] = None
             __props__.__dict__["next_maintenance_action_type"] = None
             __props__.__dict__["next_maintenance_description"] = None
             __props__.__dict__["private_ip_address"] = None
@@ -1067,6 +1137,7 @@ class Deployment(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             fqdn: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentIngressIpArgs']]]]] = None,
             is_auto_scaling_enabled: Optional[pulumi.Input[bool]] = None,
             is_healthy: Optional[pulumi.Input[bool]] = None,
             is_latest_version: Optional[pulumi.Input[bool]] = None,
@@ -1075,6 +1146,8 @@ class Deployment(pulumi.CustomResource):
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
+            load_balancer_id: Optional[pulumi.Input[str]] = None,
+            load_balancer_subnet_id: Optional[pulumi.Input[str]] = None,
             maintenance_configuration: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceConfigurationArgs']]] = None,
             maintenance_window: Optional[pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']]] = None,
             next_maintenance_action_type: Optional[pulumi.Input[str]] = None,
@@ -1110,6 +1183,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[str] fqdn: (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentIngressIpArgs']]]] ingress_ips: List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         :param pulumi.Input[bool] is_auto_scaling_enabled: (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param pulumi.Input[bool] is_healthy: True if all of the aggregate resources are working correctly.
         :param pulumi.Input[bool] is_latest_version: Indicates if the resource is the the latest available version.
@@ -1118,6 +1192,8 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to a Deployment.
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param pulumi.Input[str] lifecycle_sub_state: Possible GGS lifecycle sub-states.
+        :param pulumi.Input[str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+        :param pulumi.Input[str] load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
         :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceConfigurationArgs']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input[pulumi.InputType['DeploymentMaintenanceWindowArgs']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[str] next_maintenance_action_type: Type of the next maintenance.
@@ -1127,7 +1203,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param pulumi.Input[str] public_ip_address: The public IP address representing the access point for the Deployment.
         :param pulumi.Input[str] storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
-        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         :param pulumi.Input[Mapping[str, Any]] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -1150,6 +1226,7 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["fqdn"] = fqdn
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["ingress_ips"] = ingress_ips
         __props__.__dict__["is_auto_scaling_enabled"] = is_auto_scaling_enabled
         __props__.__dict__["is_healthy"] = is_healthy
         __props__.__dict__["is_latest_version"] = is_latest_version
@@ -1158,6 +1235,8 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["lifecycle_sub_state"] = lifecycle_sub_state
+        __props__.__dict__["load_balancer_id"] = load_balancer_id
+        __props__.__dict__["load_balancer_subnet_id"] = load_balancer_subnet_id
         __props__.__dict__["maintenance_configuration"] = maintenance_configuration
         __props__.__dict__["maintenance_window"] = maintenance_window
         __props__.__dict__["next_maintenance_action_type"] = next_maintenance_action_type
@@ -1266,6 +1345,14 @@ class Deployment(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="ingressIps")
+    def ingress_ips(self) -> pulumi.Output[Sequence['outputs.DeploymentIngressIp']]:
+        """
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        """
+        return pulumi.get(self, "ingress_ips")
+
+    @property
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> pulumi.Output[bool]:
         """
@@ -1328,6 +1415,22 @@ class Deployment(pulumi.CustomResource):
         Possible GGS lifecycle sub-states.
         """
         return pulumi.get(self, "lifecycle_sub_state")
+
+    @property
+    @pulumi.getter(name="loadBalancerId")
+    def load_balancer_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+        """
+        return pulumi.get(self, "load_balancer_id")
+
+    @property
+    @pulumi.getter(name="loadBalancerSubnetId")
+    def load_balancer_subnet_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        """
+        return pulumi.get(self, "load_balancer_subnet_id")
 
     @property
     @pulumi.getter(name="maintenanceConfiguration")
@@ -1410,7 +1513,7 @@ class Deployment(pulumi.CustomResource):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         """
         return pulumi.get(self, "subnet_id")
 

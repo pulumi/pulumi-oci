@@ -83,6 +83,8 @@ type LookupDeploymentResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	Id string `pulumi:"id"`
+	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+	IngressIps []GetDeploymentIngressIp `pulumi:"ingressIps"`
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
 	// True if all of the aggregate resources are working correctly.
@@ -99,6 +101,10 @@ type LookupDeploymentResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState string `pulumi:"lifecycleSubState"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+	LoadBalancerId string `pulumi:"loadBalancerId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+	LoadBalancerSubnetId string `pulumi:"loadBalancerSubnetId"`
 	// Attributes for configuring automatic deployment maintenance.
 	MaintenanceConfigurations []GetDeploymentMaintenanceConfiguration `pulumi:"maintenanceConfigurations"`
 	// Defines the maintenance window, when automatic actions can be performed.
@@ -119,7 +125,7 @@ type LookupDeploymentResult struct {
 	State string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes string `pulumi:"storageUtilizationInBytes"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
 	SubnetId string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -239,6 +245,11 @@ func (o LookupDeploymentResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+func (o LookupDeploymentResultOutput) IngressIps() GetDeploymentIngressIpArrayOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentIngressIp { return v.IngressIps }).(GetDeploymentIngressIpArrayOutput)
+}
+
 // Indicates if auto scaling is enabled for the Deployment's CPU core count.
 func (o LookupDeploymentResultOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
@@ -277,6 +288,16 @@ func (o LookupDeploymentResultOutput) LifecycleDetails() pulumi.StringOutput {
 // Possible GGS lifecycle sub-states.
 func (o LookupDeploymentResultOutput) LifecycleSubState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LifecycleSubState }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+func (o LookupDeploymentResultOutput) LoadBalancerId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LoadBalancerId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+func (o LookupDeploymentResultOutput) LoadBalancerSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LoadBalancerSubnetId }).(pulumi.StringOutput)
 }
 
 // Attributes for configuring automatic deployment maintenance.
@@ -331,7 +352,7 @@ func (o LookupDeploymentResultOutput) StorageUtilizationInBytes() pulumi.StringO
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.StorageUtilizationInBytes }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
 func (o LookupDeploymentResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }

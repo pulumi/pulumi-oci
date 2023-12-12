@@ -245,6 +245,7 @@ class _SensitiveTypeState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  entity_type: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_common: Optional[pulumi.Input[bool]] = None,
                  name_pattern: Optional[pulumi.Input[str]] = None,
                  parent_category_id: Optional[pulumi.Input[str]] = None,
                  search_type: Optional[pulumi.Input[str]] = None,
@@ -265,6 +266,7 @@ class _SensitiveTypeState:
         :param pulumi.Input[str] display_name: (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[str] entity_type: (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_common: Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
         :param pulumi.Input[str] name_pattern: (Updatable) A regular expression to be used by data discovery for matching column names.
         :param pulumi.Input[str] parent_category_id: (Updatable) The OCID of the parent sensitive category.
         :param pulumi.Input[str] search_type: (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
@@ -297,6 +299,8 @@ class _SensitiveTypeState:
             pulumi.set(__self__, "entity_type", entity_type)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_common is not None:
+            pulumi.set(__self__, "is_common", is_common)
         if name_pattern is not None:
             pulumi.set(__self__, "name_pattern", name_pattern)
         if parent_category_id is not None:
@@ -423,6 +427,18 @@ class _SensitiveTypeState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="isCommon")
+    def is_common(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        """
+        return pulumi.get(self, "is_common")
+
+    @is_common.setter
+    def is_common(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_common", value)
 
     @property
     @pulumi.getter(name="namePattern")
@@ -718,6 +734,7 @@ class SensitiveType(pulumi.CustomResource):
             __props__.__dict__["parent_category_id"] = parent_category_id
             __props__.__dict__["search_type"] = search_type
             __props__.__dict__["short_name"] = short_name
+            __props__.__dict__["is_common"] = None
             __props__.__dict__["source"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -742,6 +759,7 @@ class SensitiveType(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             entity_type: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            is_common: Optional[pulumi.Input[bool]] = None,
             name_pattern: Optional[pulumi.Input[str]] = None,
             parent_category_id: Optional[pulumi.Input[str]] = None,
             search_type: Optional[pulumi.Input[str]] = None,
@@ -767,6 +785,7 @@ class SensitiveType(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
         :param pulumi.Input[str] entity_type: (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_common: Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
         :param pulumi.Input[str] name_pattern: (Updatable) A regular expression to be used by data discovery for matching column names.
         :param pulumi.Input[str] parent_category_id: (Updatable) The OCID of the parent sensitive category.
         :param pulumi.Input[str] search_type: (Updatable) The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
@@ -794,6 +813,7 @@ class SensitiveType(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["entity_type"] = entity_type
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_common"] = is_common
         __props__.__dict__["name_pattern"] = name_pattern
         __props__.__dict__["parent_category_id"] = parent_category_id
         __props__.__dict__["search_type"] = search_type
@@ -876,6 +896,14 @@ class SensitiveType(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="isCommon")
+    def is_common(self) -> pulumi.Output[bool]:
+        """
+        Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        """
+        return pulumi.get(self, "is_common")
 
     @property
     @pulumi.getter(name="namePattern")

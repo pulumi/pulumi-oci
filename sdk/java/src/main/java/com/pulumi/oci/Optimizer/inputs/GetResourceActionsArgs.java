@@ -110,6 +110,21 @@ public final class GetResourceActionsArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
+     * Supplement additional resource information in extended metadata response.
+     * 
+     */
+    @Import(name="includeResourceMetadata")
+    private @Nullable Output<Boolean> includeResourceMetadata;
+
+    /**
+     * @return Supplement additional resource information in extended metadata response.
+     * 
+     */
+    public Optional<Output<Boolean>> includeResourceMetadata() {
+        return Optional.ofNullable(this.includeResourceMetadata);
+    }
+
+    /**
      * Optional. A filter that returns results that match the name specified.
      * 
      */
@@ -207,6 +222,7 @@ public final class GetResourceActionsArgs extends com.pulumi.resources.InvokeArg
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.includeOrganization = $.includeOrganization;
+        this.includeResourceMetadata = $.includeResourceMetadata;
         this.name = $.name;
         this.recommendationId = $.recommendationId;
         this.recommendationName = $.recommendationName;
@@ -368,6 +384,27 @@ public final class GetResourceActionsArgs extends com.pulumi.resources.InvokeArg
          */
         public Builder includeOrganization(Boolean includeOrganization) {
             return includeOrganization(Output.of(includeOrganization));
+        }
+
+        /**
+         * @param includeResourceMetadata Supplement additional resource information in extended metadata response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeResourceMetadata(@Nullable Output<Boolean> includeResourceMetadata) {
+            $.includeResourceMetadata = includeResourceMetadata;
+            return this;
+        }
+
+        /**
+         * @param includeResourceMetadata Supplement additional resource information in extended metadata response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeResourceMetadata(Boolean includeResourceMetadata) {
+            return includeResourceMetadata(Output.of(includeResourceMetadata));
         }
 
         /**

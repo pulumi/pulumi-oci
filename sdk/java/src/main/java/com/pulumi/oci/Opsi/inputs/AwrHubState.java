@@ -93,6 +93,21 @@ public final class AwrHubState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Dst Time Zone Version of the AWR Hub
+     * 
+     */
+    @Import(name="hubDstTimezoneVersion")
+    private @Nullable Output<String> hubDstTimezoneVersion;
+
+    /**
+     * @return Dst Time Zone Version of the AWR Hub
+     * 
+     */
+    public Optional<Output<String>> hubDstTimezoneVersion() {
+        return Optional.ofNullable(this.hubDstTimezoneVersion);
+    }
+
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -211,6 +226,7 @@ public final class AwrHubState extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.hubDstTimezoneVersion = $.hubDstTimezoneVersion;
         this.lifecycleDetails = $.lifecycleDetails;
         this.objectStorageBucketName = $.objectStorageBucketName;
         this.operationsInsightsWarehouseId = $.operationsInsightsWarehouseId;
@@ -341,6 +357,27 @@ public final class AwrHubState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param hubDstTimezoneVersion Dst Time Zone Version of the AWR Hub
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hubDstTimezoneVersion(@Nullable Output<String> hubDstTimezoneVersion) {
+            $.hubDstTimezoneVersion = hubDstTimezoneVersion;
+            return this;
+        }
+
+        /**
+         * @param hubDstTimezoneVersion Dst Time Zone Version of the AWR Hub
+         * 
+         * @return builder
+         * 
+         */
+        public Builder hubDstTimezoneVersion(String hubDstTimezoneVersion) {
+            return hubDstTimezoneVersion(Output.of(hubDstTimezoneVersion));
         }
 
         /**

@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GoldenGate.DeploymentArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentState;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentDeploymentDiagnosticData;
+import com.pulumi.oci.GoldenGate.outputs.DeploymentIngressIp;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentMaintenanceConfiguration;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentMaintenanceWindow;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentOggData;
@@ -193,6 +194,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     * 
+     */
+    @Export(name="ingressIps", refs={List.class,DeploymentIngressIp.class}, tree="[0,1]")
+    private Output<List<DeploymentIngressIp>> ingressIps;
+
+    /**
+     * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     * 
+     */
+    public Output<List<DeploymentIngressIp>> ingressIps() {
+        return this.ingressIps;
+    }
+    /**
      * (Updatable) Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
@@ -303,6 +318,34 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleSubState() {
         return this.lifecycleSubState;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer&#39;s subnet. The loadbalancer of the public deployment created in the customer subnet.
+     * 
+     */
+    @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
+    private Output<String> loadBalancerId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer&#39;s subnet. The loadbalancer of the public deployment created in the customer subnet.
+     * 
+     */
+    public Output<String> loadBalancerId() {
+        return this.loadBalancerId;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+     * 
+     */
+    @Export(name="loadBalancerSubnetId", refs={String.class}, tree="[0]")
+    private Output<String> loadBalancerSubnetId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+     * 
+     */
+    public Output<String> loadBalancerSubnetId() {
+        return this.loadBalancerSubnetId;
     }
     /**
      * (Updatable) Defines the maintenance configuration for create operation.
@@ -437,14 +480,14 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.storageUtilizationInBytes;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
      * 
      */
     public Output<String> subnetId() {

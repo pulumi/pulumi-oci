@@ -71,6 +71,21 @@ public final class GetDiscoveryAnalyticsArgs extends com.pulumi.resources.Invoke
     }
 
     /**
+     * A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    @Import(name="isCommon")
+    private @Nullable Output<Boolean> isCommon;
+
+    /**
+     * @return A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     * 
+     */
+    public Optional<Output<Boolean>> isCommon() {
+        return Optional.ofNullable(this.isCommon);
+    }
+
+    /**
      * A filter to return only the resources that match the specified sensitive data model OCID.
      * 
      */
@@ -83,6 +98,21 @@ public final class GetDiscoveryAnalyticsArgs extends com.pulumi.resources.Invoke
      */
     public Optional<Output<String>> sensitiveDataModelId() {
         return Optional.ofNullable(this.sensitiveDataModelId);
+    }
+
+    /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     * 
+     */
+    @Import(name="sensitiveTypeId")
+    private @Nullable Output<String> sensitiveTypeId;
+
+    /**
+     * @return A filter to return only items related to a specific sensitive type OCID.
+     * 
+     */
+    public Optional<Output<String>> sensitiveTypeId() {
+        return Optional.ofNullable(this.sensitiveTypeId);
     }
 
     /**
@@ -107,7 +137,9 @@ public final class GetDiscoveryAnalyticsArgs extends com.pulumi.resources.Invoke
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.groupBy = $.groupBy;
+        this.isCommon = $.isCommon;
         this.sensitiveDataModelId = $.sensitiveDataModelId;
+        this.sensitiveTypeId = $.sensitiveTypeId;
         this.targetId = $.targetId;
     }
 
@@ -206,6 +238,27 @@ public final class GetDiscoveryAnalyticsArgs extends com.pulumi.resources.Invoke
         }
 
         /**
+         * @param isCommon A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCommon(@Nullable Output<Boolean> isCommon) {
+            $.isCommon = isCommon;
+            return this;
+        }
+
+        /**
+         * @param isCommon A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCommon(Boolean isCommon) {
+            return isCommon(Output.of(isCommon));
+        }
+
+        /**
          * @param sensitiveDataModelId A filter to return only the resources that match the specified sensitive data model OCID.
          * 
          * @return builder
@@ -224,6 +277,27 @@ public final class GetDiscoveryAnalyticsArgs extends com.pulumi.resources.Invoke
          */
         public Builder sensitiveDataModelId(String sensitiveDataModelId) {
             return sensitiveDataModelId(Output.of(sensitiveDataModelId));
+        }
+
+        /**
+         * @param sensitiveTypeId A filter to return only items related to a specific sensitive type OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sensitiveTypeId(@Nullable Output<String> sensitiveTypeId) {
+            $.sensitiveTypeId = sensitiveTypeId;
+            return this;
+        }
+
+        /**
+         * @param sensitiveTypeId A filter to return only items related to a specific sensitive type OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sensitiveTypeId(String sensitiveTypeId) {
+            return sensitiveTypeId(Output.of(sensitiveTypeId));
         }
 
         /**

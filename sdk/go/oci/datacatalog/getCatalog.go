@@ -73,6 +73,8 @@ type LookupCatalogResult struct {
 	Id string `pulumi:"id"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetCatalogLock `pulumi:"locks"`
 	// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
 	NumberOfObjects int `pulumi:"numberOfObjects"`
 	// The REST front endpoint URL to the data catalog instance.
@@ -81,6 +83,8 @@ type LookupCatalogResult struct {
 	ServiceConsoleUrl string `pulumi:"serviceConsoleUrl"`
 	// The current state of the data catalog resource.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -164,6 +168,11 @@ func (o LookupCatalogResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCatalogResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o LookupCatalogResultOutput) Locks() GetCatalogLockArrayOutput {
+	return o.ApplyT(func(v LookupCatalogResult) []GetCatalogLock { return v.Locks }).(GetCatalogLockArrayOutput)
+}
+
 // The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
 func (o LookupCatalogResultOutput) NumberOfObjects() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCatalogResult) int { return v.NumberOfObjects }).(pulumi.IntOutput)
@@ -182,6 +191,11 @@ func (o LookupCatalogResultOutput) ServiceConsoleUrl() pulumi.StringOutput {
 // The current state of the data catalog resource.
 func (o LookupCatalogResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCatalogResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupCatalogResultOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v LookupCatalogResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

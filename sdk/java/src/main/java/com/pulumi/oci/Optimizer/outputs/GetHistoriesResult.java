@@ -32,6 +32,7 @@ public final class GetHistoriesResult {
      * 
      */
     private String id;
+    private @Nullable Boolean includeResourceMetadata;
     /**
      * @return The name assigned to the resource.
      * 
@@ -91,6 +92,9 @@ public final class GetHistoriesResult {
     public String id() {
         return this.id;
     }
+    public Optional<Boolean> includeResourceMetadata() {
+        return Optional.ofNullable(this.includeResourceMetadata);
+    }
     /**
      * @return The name assigned to the resource.
      * 
@@ -148,6 +152,7 @@ public final class GetHistoriesResult {
         private @Nullable List<GetHistoriesFilter> filters;
         private List<GetHistoriesHistoryCollection> historyCollections;
         private String id;
+        private @Nullable Boolean includeResourceMetadata;
         private @Nullable String name;
         private @Nullable String recommendationId;
         private @Nullable String recommendationName;
@@ -162,6 +167,7 @@ public final class GetHistoriesResult {
     	      this.filters = defaults.filters;
     	      this.historyCollections = defaults.historyCollections;
     	      this.id = defaults.id;
+    	      this.includeResourceMetadata = defaults.includeResourceMetadata;
     	      this.name = defaults.name;
     	      this.recommendationId = defaults.recommendationId;
     	      this.recommendationName = defaults.recommendationName;
@@ -202,6 +208,11 @@ public final class GetHistoriesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder includeResourceMetadata(@Nullable Boolean includeResourceMetadata) {
+            this.includeResourceMetadata = includeResourceMetadata;
+            return this;
+        }
+        @CustomType.Setter
         public Builder name(@Nullable String name) {
             this.name = name;
             return this;
@@ -238,6 +249,7 @@ public final class GetHistoriesResult {
             _resultValue.filters = filters;
             _resultValue.historyCollections = historyCollections;
             _resultValue.id = id;
+            _resultValue.includeResourceMetadata = includeResourceMetadata;
             _resultValue.name = name;
             _resultValue.recommendationId = recommendationId;
             _resultValue.recommendationName = recommendationName;

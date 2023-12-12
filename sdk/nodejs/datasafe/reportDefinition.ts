@@ -159,11 +159,11 @@ export class ReportDefinition extends pulumi.CustomResource {
      */
     public /*out*/ readonly schedule!: pulumi.Output<string>;
     /**
-     * The OCID of the compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource will be created.
      */
     public /*out*/ readonly scheduledReportCompartmentId!: pulumi.Output<string>;
     /**
-     * Specifies the format of the report ( either XLS or PDF )
+     * Specifies the format of the report ( either .xls or .pdf )
      */
     public /*out*/ readonly scheduledReportMimeType!: pulumi.Output<string>;
     /**
@@ -195,11 +195,11 @@ export class ReportDefinition extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Specifies the data and time the report definition was created.
+     * Specifies the date and time the report definition was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time the report definition was update.
+     * The date and time the report definition was updated.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
@@ -366,11 +366,11 @@ export interface ReportDefinitionState {
      */
     schedule?: pulumi.Input<string>;
     /**
-     * The OCID of the compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource will be created.
      */
     scheduledReportCompartmentId?: pulumi.Input<string>;
     /**
-     * Specifies the format of the report ( either XLS or PDF )
+     * Specifies the format of the report ( either .xls or .pdf )
      */
     scheduledReportMimeType?: pulumi.Input<string>;
     /**
@@ -402,11 +402,11 @@ export interface ReportDefinitionState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Specifies the data and time the report definition was created.
+     * Specifies the date and time the report definition was created.
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time the report definition was update.
+     * The date and time the report definition was updated.
      */
     timeUpdated?: pulumi.Input<string>;
 }

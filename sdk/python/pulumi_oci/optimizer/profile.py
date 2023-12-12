@@ -173,6 +173,7 @@ class _ProfileState:
                  levels_configuration: Optional[pulumi.Input['ProfileLevelsConfigurationArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  target_compartments: Optional[pulumi.Input['ProfileTargetCompartmentsArgs']] = None,
                  target_tags: Optional[pulumi.Input['ProfileTargetTagsArgs']] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -208,6 +209,8 @@ class _ProfileState:
             pulumi.set(__self__, "name", name)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_compartments is not None:
             pulumi.set(__self__, "target_compartments", target_compartments)
         if target_tags is not None:
@@ -312,6 +315,15 @@ class _ProfileState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="targetCompartments")
@@ -540,6 +552,7 @@ class Profile(pulumi.CustomResource):
             __props__.__dict__["target_compartments"] = target_compartments
             __props__.__dict__["target_tags"] = target_tags
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(Profile, __self__).__init__(
@@ -560,6 +573,7 @@ class Profile(pulumi.CustomResource):
             levels_configuration: Optional[pulumi.Input[pulumi.InputType['ProfileLevelsConfigurationArgs']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             target_compartments: Optional[pulumi.Input[pulumi.InputType['ProfileTargetCompartmentsArgs']]] = None,
             target_tags: Optional[pulumi.Input[pulumi.InputType['ProfileTargetTagsArgs']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -596,6 +610,7 @@ class Profile(pulumi.CustomResource):
         __props__.__dict__["levels_configuration"] = levels_configuration
         __props__.__dict__["name"] = name
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["target_compartments"] = target_compartments
         __props__.__dict__["target_tags"] = target_tags
         __props__.__dict__["time_created"] = time_created
@@ -665,6 +680,11 @@ class Profile(pulumi.CustomResource):
         The profile's current state.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetCompartments")

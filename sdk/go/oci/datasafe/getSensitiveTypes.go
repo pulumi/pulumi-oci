@@ -36,6 +36,7 @@ import (
 //				DefaultMaskingFormatId:          pulumi.StringRef(oci_data_safe_default_masking_format.Test_default_masking_format.Id),
 //				DisplayName:                     pulumi.StringRef(_var.Sensitive_type_display_name),
 //				EntityType:                      pulumi.StringRef(_var.Sensitive_type_entity_type),
+//				IsCommon:                        pulumi.BoolRef(_var.Sensitive_type_is_common),
 //				ParentCategoryId:                pulumi.StringRef(oci_marketplace_category.Test_category.Id),
 //				SensitiveTypeId:                 pulumi.StringRef(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
 //				SensitiveTypeSource:             pulumi.StringRef(_var.Sensitive_type_sensitive_type_source),
@@ -76,6 +77,8 @@ type GetSensitiveTypesArgs struct {
 	// A filter to return the sensitive type resources based on the value of their entityType attribute.
 	EntityType *string                   `pulumi:"entityType"`
 	Filters    []GetSensitiveTypesFilter `pulumi:"filters"`
+	// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+	IsCommon *bool `pulumi:"isCommon"`
 	// A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
 	ParentCategoryId *string `pulumi:"parentCategoryId"`
 	// A filter to return only items related to a specific sensitive type OCID.
@@ -109,6 +112,8 @@ type GetSensitiveTypesResult struct {
 	Filters    []GetSensitiveTypesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+	IsCommon *bool `pulumi:"isCommon"`
 	// The OCID of the parent sensitive category.
 	ParentCategoryId *string `pulumi:"parentCategoryId"`
 	// The list of sensitive_type_collection.
@@ -149,6 +154,8 @@ type GetSensitiveTypesOutputArgs struct {
 	// A filter to return the sensitive type resources based on the value of their entityType attribute.
 	EntityType pulumi.StringPtrInput             `pulumi:"entityType"`
 	Filters    GetSensitiveTypesFilterArrayInput `pulumi:"filters"`
+	// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+	IsCommon pulumi.BoolPtrInput `pulumi:"isCommon"`
 	// A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
 	ParentCategoryId pulumi.StringPtrInput `pulumi:"parentCategoryId"`
 	// A filter to return only items related to a specific sensitive type OCID.
@@ -221,6 +228,11 @@ func (o GetSensitiveTypesResultOutput) Filters() GetSensitiveTypesFilterArrayOut
 // The provider-assigned unique ID for this managed resource.
 func (o GetSensitiveTypesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSensitiveTypesResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+func (o GetSensitiveTypesResultOutput) IsCommon() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetSensitiveTypesResult) *bool { return v.IsCommon }).(pulumi.BoolPtrOutput)
 }
 
 // The OCID of the parent sensitive category.

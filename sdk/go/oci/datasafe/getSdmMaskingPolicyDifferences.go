@@ -77,7 +77,7 @@ type GetSdmMaskingPolicyDifferencesArgs struct {
 
 // A collection of values returned by getSdmMaskingPolicyDifferences.
 type GetSdmMaskingPolicyDifferencesResult struct {
-	// The OCID of the compartment that contains the SDM masking policy difference.
+	// The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
 	CompartmentId          string  `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool   `pulumi:"compartmentIdInSubtree"`
 	DifferenceAccessLevel  *string `pulumi:"differenceAccessLevel"`
@@ -147,7 +147,7 @@ func (o GetSdmMaskingPolicyDifferencesResultOutput) ToGetSdmMaskingPolicyDiffere
 	return o
 }
 
-// The OCID of the compartment that contains the SDM masking policy difference.
+// The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
 func (o GetSdmMaskingPolicyDifferencesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

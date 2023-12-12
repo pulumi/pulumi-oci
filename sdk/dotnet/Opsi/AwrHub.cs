@@ -29,7 +29,6 @@ namespace Pulumi.Oci.Opsi
     ///     {
     ///         CompartmentId = @var.Compartment_id,
     ///         DisplayName = @var.Awr_hub_display_name,
-    ///         ObjectStorageBucketName = oci_objectstorage_bucket.Test_bucket.Name,
     ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
     ///         DefinedTags = 
     ///         {
@@ -39,6 +38,7 @@ namespace Pulumi.Oci.Opsi
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         ObjectStorageBucketName = oci_objectstorage_bucket.Test_bucket.Name,
     ///     });
     /// 
     /// });
@@ -84,6 +84,12 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// Dst Time Zone Version of the AWR Hub
+        /// </summary>
+        [Output("hubDstTimezoneVersion")]
+        public Output<string> HubDstTimezoneVersion { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -216,8 +222,8 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// Object Storage Bucket Name
         /// </summary>
-        [Input("objectStorageBucketName", required: true)]
-        public Input<string> ObjectStorageBucketName { get; set; } = null!;
+        [Input("objectStorageBucketName")]
+        public Input<string>? ObjectStorageBucketName { get; set; }
 
         /// <summary>
         /// OPSI Warehouse OCID
@@ -278,6 +284,12 @@ namespace Pulumi.Oci.Opsi
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// Dst Time Zone Version of the AWR Hub
+        /// </summary>
+        [Input("hubDstTimezoneVersion")]
+        public Input<string>? HubDstTimezoneVersion { get; set; }
 
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

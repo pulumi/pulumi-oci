@@ -1775,6 +1775,8 @@ type LibraryMasingFormatFormatEntry struct {
 	Length *int `pulumi:"length"`
 	// (Updatable) The OCID of the library masking format.
 	LibraryMaskingFormatId *string `pulumi:"libraryMaskingFormatId"`
+	// (Updatable) The pattern that should be used to mask data.
+	Pattern *string `pulumi:"pattern"`
 	// (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
 	PostProcessingFunction *string `pulumi:"postProcessingFunction"`
 	// (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
@@ -1839,6 +1841,8 @@ type LibraryMasingFormatFormatEntryArgs struct {
 	Length pulumi.IntPtrInput `pulumi:"length"`
 	// (Updatable) The OCID of the library masking format.
 	LibraryMaskingFormatId pulumi.StringPtrInput `pulumi:"libraryMaskingFormatId"`
+	// (Updatable) The pattern that should be used to mask data.
+	Pattern pulumi.StringPtrInput `pulumi:"pattern"`
 	// (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
 	PostProcessingFunction pulumi.StringPtrInput `pulumi:"postProcessingFunction"`
 	// (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
@@ -1970,6 +1974,11 @@ func (o LibraryMasingFormatFormatEntryOutput) Length() pulumi.IntPtrOutput {
 // (Updatable) The OCID of the library masking format.
 func (o LibraryMasingFormatFormatEntryOutput) LibraryMaskingFormatId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LibraryMasingFormatFormatEntry) *string { return v.LibraryMaskingFormatId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The pattern that should be used to mask data.
+func (o LibraryMasingFormatFormatEntryOutput) Pattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LibraryMasingFormatFormatEntry) *string { return v.Pattern }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
@@ -2199,6 +2208,8 @@ type MaskingPoliciesMaskingColumnMaskingFormatFormatEntry struct {
 	Length *int `pulumi:"length"`
 	// (Updatable) The OCID of the library masking format.
 	LibraryMaskingFormatId *string `pulumi:"libraryMaskingFormatId"`
+	// (Updatable) The pattern that should be used to mask data.
+	Pattern *string `pulumi:"pattern"`
 	// (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
 	PostProcessingFunction *string `pulumi:"postProcessingFunction"`
 	// (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
@@ -2263,6 +2274,8 @@ type MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs struct {
 	Length pulumi.IntPtrInput `pulumi:"length"`
 	// (Updatable) The OCID of the library masking format.
 	LibraryMaskingFormatId pulumi.StringPtrInput `pulumi:"libraryMaskingFormatId"`
+	// (Updatable) The pattern that should be used to mask data.
+	Pattern pulumi.StringPtrInput `pulumi:"pattern"`
 	// (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
 	PostProcessingFunction pulumi.StringPtrInput `pulumi:"postProcessingFunction"`
 	// (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
@@ -2394,6 +2407,11 @@ func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) Length() pul
 // (Updatable) The OCID of the library masking format.
 func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) LibraryMaskingFormatId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MaskingPoliciesMaskingColumnMaskingFormatFormatEntry) *string { return v.LibraryMaskingFormatId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The pattern that should be used to mask data.
+func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) Pattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MaskingPoliciesMaskingColumnMaskingFormatFormatEntry) *string { return v.Pattern }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
@@ -8059,7 +8077,7 @@ func (o GetAuditEventsAuditEventCollectionArrayOutput) Index(i pulumi.IntInput) 
 type GetAuditEventsAuditEventCollectionItem struct {
 	// The action taken for this audit event.
 	ActionTaken string `pulumi:"actionTaken"`
-	// The time of the audit event occurrence in the target database.
+	// The time that the audit event occurs in the target database.
 	AuditEventTime string `pulumi:"auditEventTime"`
 	// The location of the audit. Currently the value is audit table.
 	AuditLocation string `pulumi:"auditLocation"`
@@ -8075,7 +8093,7 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	ClientId string `pulumi:"clientId"`
 	// The IP address of the host machine from which the session was spawned.
 	ClientIp string `pulumi:"clientIp"`
-	// The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+	// The application from which the audit event was generated. For example SQL Plus or SQL Developer.
 	ClientProgram string `pulumi:"clientProgram"`
 	// List of bind variables associated with the command text.
 	CommandParam string `pulumi:"commandParam"`
@@ -8094,9 +8112,9 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Oracle Error code generated by the action. Zero indicates the action was successful.
 	ErrorCode string `pulumi:"errorCode"`
-	// The detailed message on why the Error occurred.
+	// The detailed message on why the error occurred.
 	ErrorMessage string `pulumi:"errorMessage"`
-	// The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+	// The name of the detail action executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
 	EventName string `pulumi:"eventName"`
 	// List of all other attributes of the audit event seperated by a colon other than the one returned in audit record.
 	ExtendedEventAttributes string `pulumi:"extendedEventAttributes"`
@@ -8110,9 +8128,9 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	Object string `pulumi:"object"`
 	// The schema name of the object affected by the action.
 	ObjectOwner string `pulumi:"objectOwner"`
-	// The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+	// The type of the object in the source database affected by the action. For example PL/SQL, SYNONYM or PACKAGE BODY.
 	ObjectType string `pulumi:"objectType"`
-	// The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+	// The name of the action executed by the user on the target database. For example ALTER, CREATE or DROP.
 	Operation string `pulumi:"operation"`
 	// Indicates whether the operation was a success or a failure.
 	OperationStatus string `pulumi:"operationStatus"`
@@ -8144,7 +8162,7 @@ type GetAuditEventsAuditEventCollectionItemInput interface {
 type GetAuditEventsAuditEventCollectionItemArgs struct {
 	// The action taken for this audit event.
 	ActionTaken pulumi.StringInput `pulumi:"actionTaken"`
-	// The time of the audit event occurrence in the target database.
+	// The time that the audit event occurs in the target database.
 	AuditEventTime pulumi.StringInput `pulumi:"auditEventTime"`
 	// The location of the audit. Currently the value is audit table.
 	AuditLocation pulumi.StringInput `pulumi:"auditLocation"`
@@ -8160,7 +8178,7 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	ClientId pulumi.StringInput `pulumi:"clientId"`
 	// The IP address of the host machine from which the session was spawned.
 	ClientIp pulumi.StringInput `pulumi:"clientIp"`
-	// The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+	// The application from which the audit event was generated. For example SQL Plus or SQL Developer.
 	ClientProgram pulumi.StringInput `pulumi:"clientProgram"`
 	// List of bind variables associated with the command text.
 	CommandParam pulumi.StringInput `pulumi:"commandParam"`
@@ -8179,9 +8197,9 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Oracle Error code generated by the action. Zero indicates the action was successful.
 	ErrorCode pulumi.StringInput `pulumi:"errorCode"`
-	// The detailed message on why the Error occurred.
+	// The detailed message on why the error occurred.
 	ErrorMessage pulumi.StringInput `pulumi:"errorMessage"`
-	// The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+	// The name of the detail action executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
 	EventName pulumi.StringInput `pulumi:"eventName"`
 	// List of all other attributes of the audit event seperated by a colon other than the one returned in audit record.
 	ExtendedEventAttributes pulumi.StringInput `pulumi:"extendedEventAttributes"`
@@ -8195,9 +8213,9 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	Object pulumi.StringInput `pulumi:"object"`
 	// The schema name of the object affected by the action.
 	ObjectOwner pulumi.StringInput `pulumi:"objectOwner"`
-	// The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+	// The type of the object in the source database affected by the action. For example PL/SQL, SYNONYM or PACKAGE BODY.
 	ObjectType pulumi.StringInput `pulumi:"objectType"`
-	// The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+	// The name of the action executed by the user on the target database. For example ALTER, CREATE or DROP.
 	Operation pulumi.StringInput `pulumi:"operation"`
 	// Indicates whether the operation was a success or a failure.
 	OperationStatus pulumi.StringInput `pulumi:"operationStatus"`
@@ -8271,7 +8289,7 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) ActionTaken() pulumi.Strin
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ActionTaken }).(pulumi.StringOutput)
 }
 
-// The time of the audit event occurrence in the target database.
+// The time that the audit event occurs in the target database.
 func (o GetAuditEventsAuditEventCollectionItemOutput) AuditEventTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.AuditEventTime }).(pulumi.StringOutput)
 }
@@ -8311,7 +8329,7 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) ClientIp() pulumi.StringOu
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ClientIp }).(pulumi.StringOutput)
 }
 
-// The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+// The application from which the audit event was generated. For example SQL Plus or SQL Developer.
 func (o GetAuditEventsAuditEventCollectionItemOutput) ClientProgram() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ClientProgram }).(pulumi.StringOutput)
 }
@@ -8354,12 +8372,12 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) ErrorCode() pulumi.StringO
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ErrorCode }).(pulumi.StringOutput)
 }
 
-// The detailed message on why the Error occurred.
+// The detailed message on why the error occurred.
 func (o GetAuditEventsAuditEventCollectionItemOutput) ErrorMessage() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ErrorMessage }).(pulumi.StringOutput)
 }
 
-// The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+// The name of the detail action executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
 func (o GetAuditEventsAuditEventCollectionItemOutput) EventName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.EventName }).(pulumi.StringOutput)
 }
@@ -8394,12 +8412,12 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) ObjectOwner() pulumi.Strin
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ObjectOwner }).(pulumi.StringOutput)
 }
 
-// The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+// The type of the object in the source database affected by the action. For example PL/SQL, SYNONYM or PACKAGE BODY.
 func (o GetAuditEventsAuditEventCollectionItemOutput) ObjectType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.ObjectType }).(pulumi.StringOutput)
 }
 
-// The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+// The name of the action executed by the user on the target database. For example ALTER, CREATE or DROP.
 func (o GetAuditEventsAuditEventCollectionItemOutput) Operation() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) string { return v.Operation }).(pulumi.StringOutput)
 }
@@ -14283,6 +14301,8 @@ func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemArrayOutput) Index(
 type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension struct {
 	// A filter to return only the resources that match the specified sensitive data model OCID.
 	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
+	// A filter to return only items related to a specific sensitive type OCID.
+	SensitiveTypeId string `pulumi:"sensitiveTypeId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
 }
@@ -14301,6 +14321,8 @@ type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionInput interfa
 type GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionArgs struct {
 	// A filter to return only the resources that match the specified sensitive data model OCID.
 	SensitiveDataModelId pulumi.StringInput `pulumi:"sensitiveDataModelId"`
+	// A filter to return only items related to a specific sensitive type OCID.
+	SensitiveTypeId pulumi.StringInput `pulumi:"sensitiveTypeId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 }
@@ -14360,6 +14382,13 @@ func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutput) To
 func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutput) SensitiveDataModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension) string {
 		return v.SensitiveDataModelId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only items related to a specific sensitive type OCID.
+func (o GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionOutput) SensitiveTypeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimension) string {
+		return v.SensitiveTypeId
 	}).(pulumi.StringOutput)
 }
 
@@ -15227,6 +15256,8 @@ type GetLibraryMaskingFormatFormatEntry struct {
 	Length int `pulumi:"length"`
 	// The OCID of the library masking format.
 	LibraryMaskingFormatId string `pulumi:"libraryMaskingFormatId"`
+	// The pattern that should be used to mask data.
+	Pattern string `pulumi:"pattern"`
 	// The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
 	PostProcessingFunction string `pulumi:"postProcessingFunction"`
 	// A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
@@ -15287,6 +15318,8 @@ type GetLibraryMaskingFormatFormatEntryArgs struct {
 	Length pulumi.IntInput `pulumi:"length"`
 	// The OCID of the library masking format.
 	LibraryMaskingFormatId pulumi.StringInput `pulumi:"libraryMaskingFormatId"`
+	// The pattern that should be used to mask data.
+	Pattern pulumi.StringInput `pulumi:"pattern"`
 	// The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
 	PostProcessingFunction pulumi.StringInput `pulumi:"postProcessingFunction"`
 	// A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
@@ -15414,6 +15447,11 @@ func (o GetLibraryMaskingFormatFormatEntryOutput) Length() pulumi.IntOutput {
 // The OCID of the library masking format.
 func (o GetLibraryMaskingFormatFormatEntryOutput) LibraryMaskingFormatId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLibraryMaskingFormatFormatEntry) string { return v.LibraryMaskingFormatId }).(pulumi.StringOutput)
+}
+
+// The pattern that should be used to mask data.
+func (o GetLibraryMaskingFormatFormatEntryOutput) Pattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatFormatEntry) string { return v.Pattern }).(pulumi.StringOutput)
 }
 
 // The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
@@ -15926,6 +15964,8 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry struc
 	Length int `pulumi:"length"`
 	// A filter to return only the resources that match the specified library masking format OCID.
 	LibraryMaskingFormatId string `pulumi:"libraryMaskingFormatId"`
+	// The pattern that should be used to mask data.
+	Pattern string `pulumi:"pattern"`
 	// The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
 	PostProcessingFunction string `pulumi:"postProcessingFunction"`
 	// A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
@@ -15986,6 +16026,8 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArgs s
 	Length pulumi.IntInput `pulumi:"length"`
 	// A filter to return only the resources that match the specified library masking format OCID.
 	LibraryMaskingFormatId pulumi.StringInput `pulumi:"libraryMaskingFormatId"`
+	// The pattern that should be used to mask data.
+	Pattern pulumi.StringInput `pulumi:"pattern"`
 	// The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
 	PostProcessingFunction pulumi.StringInput `pulumi:"postProcessingFunction"`
 	// A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
@@ -16127,6 +16169,11 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOut
 	return o.ApplyT(func(v GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry) string {
 		return v.LibraryMaskingFormatId
 	}).(pulumi.StringOutput)
+}
+
+// The pattern that should be used to mask data.
+func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryOutput) Pattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry) string { return v.Pattern }).(pulumi.StringOutput)
 }
 
 // The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
@@ -17370,6 +17417,8 @@ type GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry struct {
 	Length int `pulumi:"length"`
 	// The OCID of the library masking format.
 	LibraryMaskingFormatId string `pulumi:"libraryMaskingFormatId"`
+	// The pattern that should be used to mask data.
+	Pattern string `pulumi:"pattern"`
 	// The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
 	PostProcessingFunction string `pulumi:"postProcessingFunction"`
 	// A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
@@ -17430,6 +17479,8 @@ type GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs struct {
 	Length pulumi.IntInput `pulumi:"length"`
 	// The OCID of the library masking format.
 	LibraryMaskingFormatId pulumi.StringInput `pulumi:"libraryMaskingFormatId"`
+	// The pattern that should be used to mask data.
+	Pattern pulumi.StringInput `pulumi:"pattern"`
 	// The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
 	PostProcessingFunction pulumi.StringInput `pulumi:"postProcessingFunction"`
 	// A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
@@ -17559,6 +17610,11 @@ func (o GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) LibraryMa
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry) string {
 		return v.LibraryMaskingFormatId
 	}).(pulumi.StringOutput)
+}
+
+// The pattern that should be used to mask data.
+func (o GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) Pattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntry) string { return v.Pattern }).(pulumi.StringOutput)
 }
 
 // The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
@@ -18228,6 +18284,8 @@ type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFor
 	Length int `pulumi:"length"`
 	// The OCID of the library masking format.
 	LibraryMaskingFormatId string `pulumi:"libraryMaskingFormatId"`
+	// The pattern that should be used to mask data.
+	Pattern string `pulumi:"pattern"`
 	// The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
 	PostProcessingFunction string `pulumi:"postProcessingFunction"`
 	// A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
@@ -18288,6 +18346,8 @@ type GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFor
 	Length pulumi.IntInput `pulumi:"length"`
 	// The OCID of the library masking format.
 	LibraryMaskingFormatId pulumi.StringInput `pulumi:"libraryMaskingFormatId"`
+	// The pattern that should be used to mask data.
+	Pattern pulumi.StringInput `pulumi:"pattern"`
 	// The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
 	PostProcessingFunction pulumi.StringInput `pulumi:"postProcessingFunction"`
 	// A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
@@ -18434,6 +18494,13 @@ func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormat
 func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutput) LibraryMaskingFormatId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry) string {
 		return v.LibraryMaskingFormatId
+	}).(pulumi.StringOutput)
+}
+
+// The pattern that should be used to mask data.
+func (o GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntryOutput) Pattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFormatEntry) string {
+		return v.Pattern
 	}).(pulumi.StringOutput)
 }
 
@@ -21834,9 +21901,9 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	RecordTimeSpan string `pulumi:"recordTimeSpan"`
 	// The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
 	Schedule string `pulumi:"schedule"`
-	// The OCID of the compartment in which the scheduled resource should be created.
+	// The OCID of the compartment in which the scheduled resource will be created.
 	ScheduledReportCompartmentId string `pulumi:"scheduledReportCompartmentId"`
-	// Specifies the format of the report ( either XLS or PDF )
+	// Specifies the format of the report ( either .xls or .pdf )
 	ScheduledReportMimeType string `pulumi:"scheduledReportMimeType"`
 	// The name of the report to be scheduled.
 	ScheduledReportName string `pulumi:"scheduledReportName"`
@@ -21850,9 +21917,9 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	Summaries []GetReportDefinitionsReportDefinitionCollectionItemSummary `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Specifies the data and time the report definition was created.
+	// Specifies the date and time the report definition was created.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the report definition was update.
+	// The date and time the report definition was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -21902,9 +21969,9 @@ type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	RecordTimeSpan pulumi.StringInput `pulumi:"recordTimeSpan"`
 	// The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
 	Schedule pulumi.StringInput `pulumi:"schedule"`
-	// The OCID of the compartment in which the scheduled resource should be created.
+	// The OCID of the compartment in which the scheduled resource will be created.
 	ScheduledReportCompartmentId pulumi.StringInput `pulumi:"scheduledReportCompartmentId"`
-	// Specifies the format of the report ( either XLS or PDF )
+	// Specifies the format of the report ( either .xls or .pdf )
 	ScheduledReportMimeType pulumi.StringInput `pulumi:"scheduledReportMimeType"`
 	// The name of the report to be scheduled.
 	ScheduledReportName pulumi.StringInput `pulumi:"scheduledReportName"`
@@ -21918,9 +21985,9 @@ type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	Summaries GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayInput `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// Specifies the data and time the report definition was created.
+	// Specifies the date and time the report definition was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time the report definition was update.
+	// The date and time the report definition was updated.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -22070,14 +22137,14 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) Schedule() pul
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.Schedule }).(pulumi.StringOutput)
 }
 
-// The OCID of the compartment in which the scheduled resource should be created.
+// The OCID of the compartment in which the scheduled resource will be created.
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ScheduledReportCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string {
 		return v.ScheduledReportCompartmentId
 	}).(pulumi.StringOutput)
 }
 
-// Specifies the format of the report ( either XLS or PDF )
+// Specifies the format of the report ( either .xls or .pdf )
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) ScheduledReportMimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.ScheduledReportMimeType }).(pulumi.StringOutput)
 }
@@ -22114,12 +22181,12 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) SystemTags() p
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Specifies the data and time the report definition was created.
+// Specifies the date and time the report definition was created.
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the report definition was update.
+// The date and time the report definition was updated.
 func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -22880,7 +22947,7 @@ type GetReportsReportCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the report.
 	Id string `pulumi:"id"`
-	// Specifies the format of report to be excel or pdf
+	// Specifies the format of report to be .xls or .pdf
 	MimeType string `pulumi:"mimeType"`
 	// The ID of the report definition to filter the list of reports
 	ReportDefinitionId string `pulumi:"reportDefinitionId"`
@@ -22918,7 +22985,7 @@ type GetReportsReportCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the report.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Specifies the format of report to be excel or pdf
+	// Specifies the format of report to be .xls or .pdf
 	MimeType pulumi.StringInput `pulumi:"mimeType"`
 	// The ID of the report definition to filter the list of reports
 	ReportDefinitionId pulumi.StringInput `pulumi:"reportDefinitionId"`
@@ -23013,7 +23080,7 @@ func (o GetReportsReportCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportsReportCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Specifies the format of report to be excel or pdf
+// Specifies the format of report to be .xls or .pdf
 func (o GetReportsReportCollectionItemOutput) MimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReportsReportCollectionItem) string { return v.MimeType }).(pulumi.StringOutput)
 }
@@ -23687,7 +23754,7 @@ type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem stru
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the SDM masking policy difference.
+	// The OCID of the Sensitive data model and masking policy difference resource.
 	Id string `pulumi:"id"`
 	// A filter to return only the resources that match the specified masking policy OCID.
 	MaskingPolicyId string `pulumi:"maskingPolicyId"`
@@ -23725,7 +23792,7 @@ type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs 
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The OCID of the SDM masking policy difference.
+	// The OCID of the Sensitive data model and masking policy difference resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only the resources that match the specified masking policy OCID.
 	MaskingPolicyId pulumi.StringInput `pulumi:"maskingPolicyId"`
@@ -23827,7 +23894,7 @@ func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOu
 	}).(pulumi.MapOutput)
 }
 
-// The OCID of the SDM masking policy difference.
+// The OCID of the Sensitive data model and masking policy difference resource.
 func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -34194,6 +34261,8 @@ type GetSensitiveTypesSensitiveTypeCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the sensitive type.
 	Id string `pulumi:"id"`
+	// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+	IsCommon bool `pulumi:"isCommon"`
 	// A regular expression to be used by data discovery for matching column names.
 	NamePattern string `pulumi:"namePattern"`
 	// A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
@@ -34246,6 +34315,8 @@ type GetSensitiveTypesSensitiveTypeCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the sensitive type.
 	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+	IsCommon pulumi.BoolInput `pulumi:"isCommon"`
 	// A regular expression to be used by data discovery for matching column names.
 	NamePattern pulumi.StringInput `pulumi:"namePattern"`
 	// A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
@@ -34365,6 +34436,11 @@ func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) FreeformTags() pulum
 // The OCID of the sensitive type.
 func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSensitiveTypesSensitiveTypeCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) IsCommon() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSensitiveTypesSensitiveTypeCollectionItem) bool { return v.IsCommon }).(pulumi.BoolOutput)
 }
 
 // A regular expression to be used by data discovery for matching column names.

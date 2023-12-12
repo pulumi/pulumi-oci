@@ -93,9 +93,9 @@ type LookupReportDefinitionResult struct {
 	ReportDefinitionId string `pulumi:"reportDefinitionId"`
 	// The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
 	Schedule string `pulumi:"schedule"`
-	// The OCID of the compartment in which the scheduled resource should be created.
+	// The OCID of the compartment in which the scheduled resource will be created.
 	ScheduledReportCompartmentId string `pulumi:"scheduledReportCompartmentId"`
-	// Specifies the format of the report ( either XLS or PDF )
+	// Specifies the format of the report ( either .xls or .pdf )
 	ScheduledReportMimeType string `pulumi:"scheduledReportMimeType"`
 	// The name of the report to be scheduled.
 	ScheduledReportName string `pulumi:"scheduledReportName"`
@@ -109,9 +109,9 @@ type LookupReportDefinitionResult struct {
 	Summaries []GetReportDefinitionSummary `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// Specifies the data and time the report definition was created.
+	// Specifies the date and time the report definition was created.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the report definition was update.
+	// The date and time the report definition was updated.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -242,12 +242,12 @@ func (o LookupReportDefinitionResultOutput) Schedule() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.Schedule }).(pulumi.StringOutput)
 }
 
-// The OCID of the compartment in which the scheduled resource should be created.
+// The OCID of the compartment in which the scheduled resource will be created.
 func (o LookupReportDefinitionResultOutput) ScheduledReportCompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportCompartmentId }).(pulumi.StringOutput)
 }
 
-// Specifies the format of the report ( either XLS or PDF )
+// Specifies the format of the report ( either .xls or .pdf )
 func (o LookupReportDefinitionResultOutput) ScheduledReportMimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportMimeType }).(pulumi.StringOutput)
 }
@@ -282,12 +282,12 @@ func (o LookupReportDefinitionResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// Specifies the data and time the report definition was created.
+// Specifies the date and time the report definition was created.
 func (o LookupReportDefinitionResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the report definition was update.
+// The date and time the report definition was updated.
 func (o LookupReportDefinitionResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

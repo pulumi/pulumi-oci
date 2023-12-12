@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string SensitiveDataModelId;
         /// <summary>
+        /// A filter to return only items related to a specific sensitive type OCID.
+        /// </summary>
+        public readonly string SensitiveTypeId;
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         public readonly string TargetId;
@@ -26,9 +30,12 @@ namespace Pulumi.Oci.DataSafe.Outputs
         private GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult(
             string sensitiveDataModelId,
 
+            string sensitiveTypeId,
+
             string targetId)
         {
             SensitiveDataModelId = sensitiveDataModelId;
+            SensitiveTypeId = sensitiveTypeId;
             TargetId = targetId;
         }
     }

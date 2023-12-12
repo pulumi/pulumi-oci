@@ -5,12 +5,15 @@ package com.pulumi.oci.Optimizer.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Optimizer.outputs.GetResourceActionAction;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetResourceActionResult {
@@ -49,6 +52,7 @@ public final class GetResourceActionResult {
      * 
      */
     private String id;
+    private @Nullable Boolean includeResourceMetadata;
     /**
      * @return Custom metadata key/value pairs for the resource action.
      * 
@@ -156,6 +160,9 @@ public final class GetResourceActionResult {
     public String id() {
         return this.id;
     }
+    public Optional<Boolean> includeResourceMetadata() {
+        return Optional.ofNullable(this.includeResourceMetadata);
+    }
     /**
      * @return Custom metadata key/value pairs for the resource action.
      * 
@@ -253,6 +260,7 @@ public final class GetResourceActionResult {
         private Double estimatedCostSaving;
         private Map<String,Object> extendedMetadata;
         private String id;
+        private @Nullable Boolean includeResourceMetadata;
         private Map<String,Object> metadata;
         private String name;
         private String recommendationId;
@@ -275,6 +283,7 @@ public final class GetResourceActionResult {
     	      this.estimatedCostSaving = defaults.estimatedCostSaving;
     	      this.extendedMetadata = defaults.extendedMetadata;
     	      this.id = defaults.id;
+    	      this.includeResourceMetadata = defaults.includeResourceMetadata;
     	      this.metadata = defaults.metadata;
     	      this.name = defaults.name;
     	      this.recommendationId = defaults.recommendationId;
@@ -325,6 +334,11 @@ public final class GetResourceActionResult {
         @CustomType.Setter
         public Builder id(String id) {
             this.id = Objects.requireNonNull(id);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder includeResourceMetadata(@Nullable Boolean includeResourceMetadata) {
+            this.includeResourceMetadata = includeResourceMetadata;
             return this;
         }
         @CustomType.Setter
@@ -396,6 +410,7 @@ public final class GetResourceActionResult {
             _resultValue.estimatedCostSaving = estimatedCostSaving;
             _resultValue.extendedMetadata = extendedMetadata;
             _resultValue.id = id;
+            _resultValue.includeResourceMetadata = includeResourceMetadata;
             _resultValue.metadata = metadata;
             _resultValue.name = name;
             _resultValue.recommendationId = recommendationId;

@@ -140,6 +140,7 @@ type LookupConnectionResult struct {
 	Password string   `pulumi:"password"`
 	// The port of an endpoint usually specified for a connection.
 	Port int `pulumi:"port"`
+	// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 	PrivateIp            string `pulumi:"privateIp"`
 	PrivateKeyFile       string `pulumi:"privateKeyFile"`
@@ -147,7 +148,9 @@ type LookupConnectionResult struct {
 	ProducerProperties   string `pulumi:"producerProperties"`
 	PublicKeyFingerprint string `pulumi:"publicKeyFingerprint"`
 	// The name of the region. e.g.: us-ashburn-1
-	Region          string `pulumi:"region"`
+	Region string `pulumi:"region"`
+	// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+	RoutingMethod   string `pulumi:"routingMethod"`
 	SasToken        string `pulumi:"sasToken"`
 	SecretAccessKey string `pulumi:"secretAccessKey"`
 	// Security Protocol to be provided for the following connection types:
@@ -176,7 +179,7 @@ type LookupConnectionResult struct {
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
 	StreamPoolId string `pulumi:"streamPoolId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 	SubnetId string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -447,6 +450,7 @@ func (o LookupConnectionResultOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupConnectionResult) int { return v.Port }).(pulumi.IntOutput)
 }
 
+// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
 // The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
 func (o LookupConnectionResultOutput) PrivateIp() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.PrivateIp }).(pulumi.StringOutput)
@@ -471,6 +475,11 @@ func (o LookupConnectionResultOutput) PublicKeyFingerprint() pulumi.StringOutput
 // The name of the region. e.g.: us-ashburn-1
 func (o LookupConnectionResultOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+func (o LookupConnectionResultOutput) RoutingMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.RoutingMethod }).(pulumi.StringOutput)
 }
 
 func (o LookupConnectionResultOutput) SasToken() pulumi.StringOutput {
@@ -549,7 +558,7 @@ func (o LookupConnectionResultOutput) StreamPoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.StreamPoolId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 func (o LookupConnectionResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }

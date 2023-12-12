@@ -29,6 +29,7 @@ public final class GetResourceActionsResult {
      */
     private String id;
     private @Nullable Boolean includeOrganization;
+    private @Nullable Boolean includeResourceMetadata;
     /**
      * @return The name assigned to the resource.
      * 
@@ -87,6 +88,9 @@ public final class GetResourceActionsResult {
     }
     public Optional<Boolean> includeOrganization() {
         return Optional.ofNullable(this.includeOrganization);
+    }
+    public Optional<Boolean> includeResourceMetadata() {
+        return Optional.ofNullable(this.includeResourceMetadata);
     }
     /**
      * @return The name assigned to the resource.
@@ -149,6 +153,7 @@ public final class GetResourceActionsResult {
         private @Nullable List<GetResourceActionsFilter> filters;
         private String id;
         private @Nullable Boolean includeOrganization;
+        private @Nullable Boolean includeResourceMetadata;
         private @Nullable String name;
         private @Nullable String recommendationId;
         private @Nullable String recommendationName;
@@ -165,6 +170,7 @@ public final class GetResourceActionsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.includeOrganization = defaults.includeOrganization;
+    	      this.includeResourceMetadata = defaults.includeResourceMetadata;
     	      this.name = defaults.name;
     	      this.recommendationId = defaults.recommendationId;
     	      this.recommendationName = defaults.recommendationName;
@@ -208,6 +214,11 @@ public final class GetResourceActionsResult {
         @CustomType.Setter
         public Builder includeOrganization(@Nullable Boolean includeOrganization) {
             this.includeOrganization = includeOrganization;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder includeResourceMetadata(@Nullable Boolean includeResourceMetadata) {
+            this.includeResourceMetadata = includeResourceMetadata;
             return this;
         }
         @CustomType.Setter
@@ -256,6 +267,7 @@ public final class GetResourceActionsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.includeOrganization = includeOrganization;
+            _resultValue.includeResourceMetadata = includeResourceMetadata;
             _resultValue.name = name;
             _resultValue.recommendationId = recommendationId;
             _resultValue.recommendationName = recommendationName;

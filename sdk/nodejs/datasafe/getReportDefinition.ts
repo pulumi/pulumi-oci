@@ -114,11 +114,11 @@ export interface GetReportDefinitionResult {
      */
     readonly schedule: string;
     /**
-     * The OCID of the compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource will be created.
      */
     readonly scheduledReportCompartmentId: string;
     /**
-     * Specifies the format of the report ( either XLS or PDF )
+     * Specifies the format of the report ( either .xls or .pdf )
      */
     readonly scheduledReportMimeType: string;
     /**
@@ -146,11 +146,11 @@ export interface GetReportDefinitionResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * Specifies the data and time the report definition was created.
+     * Specifies the date and time the report definition was created.
      */
     readonly timeCreated: string;
     /**
-     * The date and time the report definition was update.
+     * The date and time the report definition was updated.
      */
     readonly timeUpdated: string;
 }

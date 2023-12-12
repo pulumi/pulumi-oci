@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID of the SDM masking policy difference.
+        /// The OCID of the Sensitive data model and masking policy difference resource.
         /// </summary>
         public readonly string Id;
         /// <summary>

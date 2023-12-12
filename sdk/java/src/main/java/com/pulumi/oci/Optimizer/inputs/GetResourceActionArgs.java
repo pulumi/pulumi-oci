@@ -5,13 +5,31 @@ package com.pulumi.oci.Optimizer.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetResourceActionArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetResourceActionArgs Empty = new GetResourceActionArgs();
+
+    /**
+     * Supplement additional resource information in extended metadata response.
+     * 
+     */
+    @Import(name="includeResourceMetadata")
+    private @Nullable Output<Boolean> includeResourceMetadata;
+
+    /**
+     * @return Supplement additional resource information in extended metadata response.
+     * 
+     */
+    public Optional<Output<Boolean>> includeResourceMetadata() {
+        return Optional.ofNullable(this.includeResourceMetadata);
+    }
 
     /**
      * The unique OCID associated with the resource action.
@@ -31,6 +49,7 @@ public final class GetResourceActionArgs extends com.pulumi.resources.InvokeArgs
     private GetResourceActionArgs() {}
 
     private GetResourceActionArgs(GetResourceActionArgs $) {
+        this.includeResourceMetadata = $.includeResourceMetadata;
         this.resourceActionId = $.resourceActionId;
     }
 
@@ -50,6 +69,27 @@ public final class GetResourceActionArgs extends com.pulumi.resources.InvokeArgs
 
         public Builder(GetResourceActionArgs defaults) {
             $ = new GetResourceActionArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param includeResourceMetadata Supplement additional resource information in extended metadata response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeResourceMetadata(@Nullable Output<Boolean> includeResourceMetadata) {
+            $.includeResourceMetadata = includeResourceMetadata;
+            return this;
+        }
+
+        /**
+         * @param includeResourceMetadata Supplement additional resource information in extended metadata response.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder includeResourceMetadata(Boolean includeResourceMetadata) {
+            return includeResourceMetadata(Output.of(includeResourceMetadata));
         }
 
         /**

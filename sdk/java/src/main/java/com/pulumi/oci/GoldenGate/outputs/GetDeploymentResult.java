@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentDeploymentDiagnosticData;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentIngressIp;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentMaintenanceConfiguration;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentMaintenanceWindow;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentOggData;
@@ -80,6 +81,11 @@ public final class GetDeploymentResult {
      */
     private String id;
     /**
+     * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     * 
+     */
+    private List<GetDeploymentIngressIp> ingressIps;
+    /**
      * @return Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
@@ -119,6 +125,16 @@ public final class GetDeploymentResult {
      * 
      */
     private String lifecycleSubState;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer&#39;s subnet. The loadbalancer of the public deployment created in the customer subnet.
+     * 
+     */
+    private String loadBalancerId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+     * 
+     */
+    private String loadBalancerSubnetId;
     /**
      * @return Attributes for configuring automatic deployment maintenance.
      * 
@@ -170,7 +186,7 @@ public final class GetDeploymentResult {
      */
     private String storageUtilizationInBytes;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
      * 
      */
     private String subnetId;
@@ -294,6 +310,13 @@ public final class GetDeploymentResult {
         return this.id;
     }
     /**
+     * @return List of ingress IP addresses from where the GoldenGate deployment connects to this connection&#39;s privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+     * 
+     */
+    public List<GetDeploymentIngressIp> ingressIps() {
+        return this.ingressIps;
+    }
+    /**
      * @return Indicates if auto scaling is enabled for the Deployment&#39;s CPU core count.
      * 
      */
@@ -348,6 +371,20 @@ public final class GetDeploymentResult {
      */
     public String lifecycleSubState() {
         return this.lifecycleSubState;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer&#39;s subnet. The loadbalancer of the public deployment created in the customer subnet.
+     * 
+     */
+    public String loadBalancerId() {
+        return this.loadBalancerId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+     * 
+     */
+    public String loadBalancerSubnetId() {
+        return this.loadBalancerSubnetId;
     }
     /**
      * @return Attributes for configuring automatic deployment maintenance.
@@ -420,7 +457,7 @@ public final class GetDeploymentResult {
         return this.storageUtilizationInBytes;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
      * 
      */
     public String subnetId() {
@@ -491,6 +528,7 @@ public final class GetDeploymentResult {
         private String fqdn;
         private Map<String,Object> freeformTags;
         private String id;
+        private List<GetDeploymentIngressIp> ingressIps;
         private Boolean isAutoScalingEnabled;
         private Boolean isHealthy;
         private Boolean isLatestVersion;
@@ -499,6 +537,8 @@ public final class GetDeploymentResult {
         private String licenseModel;
         private String lifecycleDetails;
         private String lifecycleSubState;
+        private String loadBalancerId;
+        private String loadBalancerSubnetId;
         private List<GetDeploymentMaintenanceConfiguration> maintenanceConfigurations;
         private List<GetDeploymentMaintenanceWindow> maintenanceWindows;
         private String nextMaintenanceActionType;
@@ -532,6 +572,7 @@ public final class GetDeploymentResult {
     	      this.fqdn = defaults.fqdn;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.ingressIps = defaults.ingressIps;
     	      this.isAutoScalingEnabled = defaults.isAutoScalingEnabled;
     	      this.isHealthy = defaults.isHealthy;
     	      this.isLatestVersion = defaults.isLatestVersion;
@@ -540,6 +581,8 @@ public final class GetDeploymentResult {
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.lifecycleSubState = defaults.lifecycleSubState;
+    	      this.loadBalancerId = defaults.loadBalancerId;
+    	      this.loadBalancerSubnetId = defaults.loadBalancerSubnetId;
     	      this.maintenanceConfigurations = defaults.maintenanceConfigurations;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
     	      this.nextMaintenanceActionType = defaults.nextMaintenanceActionType;
@@ -628,6 +671,14 @@ public final class GetDeploymentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder ingressIps(List<GetDeploymentIngressIp> ingressIps) {
+            this.ingressIps = Objects.requireNonNull(ingressIps);
+            return this;
+        }
+        public Builder ingressIps(GetDeploymentIngressIp... ingressIps) {
+            return ingressIps(List.of(ingressIps));
+        }
+        @CustomType.Setter
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = Objects.requireNonNull(isAutoScalingEnabled);
             return this;
@@ -665,6 +716,16 @@ public final class GetDeploymentResult {
         @CustomType.Setter
         public Builder lifecycleSubState(String lifecycleSubState) {
             this.lifecycleSubState = Objects.requireNonNull(lifecycleSubState);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder loadBalancerId(String loadBalancerId) {
+            this.loadBalancerId = Objects.requireNonNull(loadBalancerId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder loadBalancerSubnetId(String loadBalancerSubnetId) {
+            this.loadBalancerSubnetId = Objects.requireNonNull(loadBalancerSubnetId);
             return this;
         }
         @CustomType.Setter
@@ -779,6 +840,7 @@ public final class GetDeploymentResult {
             _resultValue.fqdn = fqdn;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.ingressIps = ingressIps;
             _resultValue.isAutoScalingEnabled = isAutoScalingEnabled;
             _resultValue.isHealthy = isHealthy;
             _resultValue.isLatestVersion = isLatestVersion;
@@ -787,6 +849,8 @@ public final class GetDeploymentResult {
             _resultValue.licenseModel = licenseModel;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.lifecycleSubState = lifecycleSubState;
+            _resultValue.loadBalancerId = loadBalancerId;
+            _resultValue.loadBalancerSubnetId = loadBalancerSubnetId;
             _resultValue.maintenanceConfigurations = maintenanceConfigurations;
             _resultValue.maintenanceWindows = maintenanceWindows;
             _resultValue.nextMaintenanceActionType = nextMaintenanceActionType;

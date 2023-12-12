@@ -28,6 +28,7 @@ import * as utilities from "../utilities";
  *             resource: _var.log_configuration_source_resource,
  *             service: _var.log_configuration_source_service,
  *             sourceType: _var.log_configuration_source_source_type,
+ *             parameters: _var.log_configuration_source_parameters,
  *         },
  *         compartmentId: _var.compartment_id,
  *     },

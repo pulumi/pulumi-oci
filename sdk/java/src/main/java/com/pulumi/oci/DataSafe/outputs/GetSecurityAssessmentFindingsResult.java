@@ -36,7 +36,7 @@ public final class GetSecurityAssessmentFindingsResult {
     private @Nullable String references;
     private String securityAssessmentId;
     /**
-     * @return The severity of the finding.
+     * @return The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
      * 
      */
     private @Nullable String severity;
@@ -79,7 +79,7 @@ public final class GetSecurityAssessmentFindingsResult {
         return this.securityAssessmentId;
     }
     /**
-     * @return The severity of the finding.
+     * @return The severity of the finding as determined by security assessment and is same as oracleDefinedSeverity, unless modified by user.
      * 
      */
     public Optional<String> severity() {

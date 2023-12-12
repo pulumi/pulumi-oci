@@ -65,6 +65,11 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
      */
     private @Nullable String libraryMaskingFormatId;
     /**
+     * @return (Updatable) The pattern that should be used to mask data.
+     * 
+     */
+    private @Nullable String pattern;
+    /**
      * @return (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
      * 
      */
@@ -206,6 +211,13 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
         return Optional.ofNullable(this.libraryMaskingFormatId);
     }
     /**
+     * @return (Updatable) The pattern that should be used to mask data.
+     * 
+     */
+    public Optional<String> pattern() {
+        return Optional.ofNullable(this.pattern);
+    }
+    /**
      * @return (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
      * 
      */
@@ -320,6 +332,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
         private @Nullable List<String> groupingColumns;
         private @Nullable Integer length;
         private @Nullable String libraryMaskingFormatId;
+        private @Nullable String pattern;
         private @Nullable String postProcessingFunction;
         private @Nullable List<String> randomLists;
         private @Nullable String regularExpression;
@@ -346,6 +359,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
     	      this.groupingColumns = defaults.groupingColumns;
     	      this.length = defaults.length;
     	      this.libraryMaskingFormatId = defaults.libraryMaskingFormatId;
+    	      this.pattern = defaults.pattern;
     	      this.postProcessingFunction = defaults.postProcessingFunction;
     	      this.randomLists = defaults.randomLists;
     	      this.regularExpression = defaults.regularExpression;
@@ -412,6 +426,11 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
         @CustomType.Setter
         public Builder libraryMaskingFormatId(@Nullable String libraryMaskingFormatId) {
             this.libraryMaskingFormatId = libraryMaskingFormatId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder pattern(@Nullable String pattern) {
+            this.pattern = pattern;
             return this;
         }
         @CustomType.Setter
@@ -494,6 +513,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
             _resultValue.groupingColumns = groupingColumns;
             _resultValue.length = length;
             _resultValue.libraryMaskingFormatId = libraryMaskingFormatId;
+            _resultValue.pattern = pattern;
             _resultValue.postProcessingFunction = postProcessingFunction;
             _resultValue.randomLists = randomLists;
             _resultValue.regularExpression = regularExpression;

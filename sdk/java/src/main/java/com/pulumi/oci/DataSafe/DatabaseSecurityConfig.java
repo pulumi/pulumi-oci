@@ -153,14 +153,14 @@ public class DatabaseSecurityConfig extends com.pulumi.resources.CustomResource 
         return Codegen.optional(this.refreshTrigger);
     }
     /**
-     * (Updatable) Details to update the SQL firewall config.
+     * (Updatable) Details to update the SQL Firewall config.
      * 
      */
     @Export(name="sqlFirewallConfig", refs={DatabaseSecurityConfigSqlFirewallConfig.class}, tree="[0]")
     private Output<DatabaseSecurityConfigSqlFirewallConfig> sqlFirewallConfig;
 
     /**
-     * @return (Updatable) Details to update the SQL firewall config.
+     * @return (Updatable) Details to update the SQL Firewall config.
      * 
      */
     public Output<DatabaseSecurityConfigSqlFirewallConfig> sqlFirewallConfig() {

@@ -81,6 +81,7 @@ export interface GetProfileResult {
      * The profile's current state.
      */
     readonly state: string;
+    readonly systemTags: {[key: string]: any};
     /**
      * Optional. The compartments specified in the profile override for a recommendation.
      */

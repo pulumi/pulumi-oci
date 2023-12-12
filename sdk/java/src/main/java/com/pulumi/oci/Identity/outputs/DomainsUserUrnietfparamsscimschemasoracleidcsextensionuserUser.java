@@ -314,6 +314,25 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private @Nullable String preferredUiLandingPage;
     /**
+     * @return (Updatable) Indicates if User is a Service User
+     * 
+     * **Added In:** 2306131901
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Service User
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable Boolean serviceUser;
+    /**
      * @return (Updatable) A supplemental status indicating the reason why a user is disabled
      * 
      * **SCIM++ Properties:**
@@ -742,6 +761,27 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.preferredUiLandingPage);
     }
     /**
+     * @return (Updatable) Indicates if User is a Service User
+     * 
+     * **Added In:** 2306131901
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Service User
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Boolean> serviceUser() {
+        return Optional.ofNullable(this.serviceUser);
+    }
+    /**
      * @return (Updatable) A supplemental status indicating the reason why a user is disabled
      * 
      * **SCIM++ Properties:**
@@ -880,6 +920,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         private @Nullable Boolean isGroupMembershipSyncedToUsersGroups;
         private @Nullable String notificationEmailTemplateId;
         private @Nullable String preferredUiLandingPage;
+        private @Nullable Boolean serviceUser;
         private @Nullable String status;
         private @Nullable List<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccount> supportAccounts;
         private @Nullable DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp syncedFromApp;
@@ -907,6 +948,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     	      this.isGroupMembershipSyncedToUsersGroups = defaults.isGroupMembershipSyncedToUsersGroups;
     	      this.notificationEmailTemplateId = defaults.notificationEmailTemplateId;
     	      this.preferredUiLandingPage = defaults.preferredUiLandingPage;
+    	      this.serviceUser = defaults.serviceUser;
     	      this.status = defaults.status;
     	      this.supportAccounts = defaults.supportAccounts;
     	      this.syncedFromApp = defaults.syncedFromApp;
@@ -1021,6 +1063,11 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
             return this;
         }
         @CustomType.Setter
+        public Builder serviceUser(@Nullable Boolean serviceUser) {
+            this.serviceUser = serviceUser;
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
@@ -1076,6 +1123,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
             _resultValue.isGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
             _resultValue.notificationEmailTemplateId = notificationEmailTemplateId;
             _resultValue.preferredUiLandingPage = preferredUiLandingPage;
+            _resultValue.serviceUser = serviceUser;
             _resultValue.status = status;
             _resultValue.supportAccounts = supportAccounts;
             _resultValue.syncedFromApp = syncedFromApp;

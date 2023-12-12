@@ -95,14 +95,14 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Specifies supported output file format.
+     * (Updatable) Specifies the supported output file format.
      * 
      */
     @Import(name="outputFileFormat")
     private @Nullable Output<String> outputFileFormat;
 
     /**
-     * @return (Updatable) Specifies supported output file format.
+     * @return (Updatable) Specifies the supported output file format.
      * 
      */
     public Optional<Output<String>> outputFileFormat() {
@@ -140,14 +140,14 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The saved report id which can also be used to generate query.
+     * The saved report ID which can also be used to generate a query.
      * 
      */
     @Import(name="savedReportId")
     private @Nullable Output<String> savedReportId;
 
     /**
-     * @return The saved report id which can also be used to generate query.
+     * @return The saved report ID which can also be used to generate a query.
      * 
      */
     public Optional<Output<String>> savedReportId() {
@@ -394,7 +394,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param outputFileFormat (Updatable) Specifies supported output file format.
+         * @param outputFileFormat (Updatable) Specifies the supported output file format.
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param outputFileFormat (Updatable) Specifies supported output file format.
+         * @param outputFileFormat (Updatable) Specifies the supported output file format.
          * 
          * @return builder
          * 
@@ -457,7 +457,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param savedReportId The saved report id which can also be used to generate query.
+         * @param savedReportId The saved report ID which can also be used to generate a query.
          * 
          * @return builder
          * 
@@ -468,7 +468,7 @@ public final class ScheduleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param savedReportId The saved report id which can also be used to generate query.
+         * @param savedReportId The saved report ID which can also be used to generate a query.
          * 
          * @return builder
          * 

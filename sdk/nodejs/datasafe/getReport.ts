@@ -67,7 +67,7 @@ export interface GetReportResult {
      */
     readonly id: string;
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of report to be .xls or .pdf
      */
     readonly mimeType: string;
     /**

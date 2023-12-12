@@ -37,6 +37,7 @@ namespace Pulumi.Oci.DataSafe
         ///         DefaultMaskingFormatId = oci_data_safe_default_masking_format.Test_default_masking_format.Id,
         ///         DisplayName = @var.Sensitive_type_display_name,
         ///         EntityType = @var.Sensitive_type_entity_type,
+        ///         IsCommon = @var.Sensitive_type_is_common,
         ///         ParentCategoryId = oci_marketplace_category.Test_category.Id,
         ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
         ///         SensitiveTypeSource = @var.Sensitive_type_sensitive_type_source,
@@ -79,6 +80,7 @@ namespace Pulumi.Oci.DataSafe
         ///         DefaultMaskingFormatId = oci_data_safe_default_masking_format.Test_default_masking_format.Id,
         ///         DisplayName = @var.Sensitive_type_display_name,
         ///         EntityType = @var.Sensitive_type_entity_type,
+        ///         IsCommon = @var.Sensitive_type_is_common,
         ///         ParentCategoryId = oci_marketplace_category.Test_category.Id,
         ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
         ///         SensitiveTypeSource = @var.Sensitive_type_sensitive_type_source,
@@ -142,6 +144,12 @@ namespace Pulumi.Oci.DataSafe
             get => _filters ?? (_filters = new List<Inputs.GetSensitiveTypesFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        /// </summary>
+        [Input("isCommon")]
+        public bool? IsCommon { get; set; }
 
         /// <summary>
         /// A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
@@ -236,6 +244,12 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
+        /// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        /// </summary>
+        [Input("isCommon")]
+        public Input<bool>? IsCommon { get; set; }
+
+        /// <summary>
         /// A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
         /// </summary>
         [Input("parentCategoryId")]
@@ -309,6 +323,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        /// </summary>
+        public readonly bool? IsCommon;
+        /// <summary>
         /// The OCID of the parent sensitive category.
         /// </summary>
         public readonly string? ParentCategoryId;
@@ -343,6 +361,8 @@ namespace Pulumi.Oci.DataSafe
 
             string id,
 
+            bool? isCommon,
+
             string? parentCategoryId,
 
             ImmutableArray<Outputs.GetSensitiveTypesSensitiveTypeCollectionResult> sensitiveTypeCollections,
@@ -365,6 +385,7 @@ namespace Pulumi.Oci.DataSafe
             EntityType = entityType;
             Filters = filters;
             Id = id;
+            IsCommon = isCommon;
             ParentCategoryId = parentCategoryId;
             SensitiveTypeCollections = sensitiveTypeCollections;
             SensitiveTypeId = sensitiveTypeId;

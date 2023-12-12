@@ -21,7 +21,7 @@ class GetSensitiveTypeResult:
     """
     A collection of values returned by getSensitiveType.
     """
-    def __init__(__self__, comment_pattern=None, compartment_id=None, data_pattern=None, default_masking_format_id=None, defined_tags=None, description=None, display_name=None, entity_type=None, freeform_tags=None, id=None, name_pattern=None, parent_category_id=None, search_type=None, sensitive_type_id=None, short_name=None, source=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, comment_pattern=None, compartment_id=None, data_pattern=None, default_masking_format_id=None, defined_tags=None, description=None, display_name=None, entity_type=None, freeform_tags=None, id=None, is_common=None, name_pattern=None, parent_category_id=None, search_type=None, sensitive_type_id=None, short_name=None, source=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if comment_pattern and not isinstance(comment_pattern, str):
             raise TypeError("Expected argument 'comment_pattern' to be a str")
         pulumi.set(__self__, "comment_pattern", comment_pattern)
@@ -52,6 +52,9 @@ class GetSensitiveTypeResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_common and not isinstance(is_common, bool):
+            raise TypeError("Expected argument 'is_common' to be a bool")
+        pulumi.set(__self__, "is_common", is_common)
         if name_pattern and not isinstance(name_pattern, str):
             raise TypeError("Expected argument 'name_pattern' to be a str")
         pulumi.set(__self__, "name_pattern", name_pattern)
@@ -164,6 +167,14 @@ class GetSensitiveTypeResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isCommon")
+    def is_common(self) -> bool:
+        """
+        Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        """
+        return pulumi.get(self, "is_common")
+
+    @property
     @pulumi.getter(name="namePattern")
     def name_pattern(self) -> str:
         """
@@ -257,6 +268,7 @@ class AwaitableGetSensitiveTypeResult(GetSensitiveTypeResult):
             entity_type=self.entity_type,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_common=self.is_common,
             name_pattern=self.name_pattern,
             parent_category_id=self.parent_category_id,
             search_type=self.search_type,
@@ -304,6 +316,7 @@ def get_sensitive_type(sensitive_type_id: Optional[str] = None,
         entity_type=pulumi.get(__ret__, 'entity_type'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_common=pulumi.get(__ret__, 'is_common'),
         name_pattern=pulumi.get(__ret__, 'name_pattern'),
         parent_category_id=pulumi.get(__ret__, 'parent_category_id'),
         search_type=pulumi.get(__ret__, 'search_type'),

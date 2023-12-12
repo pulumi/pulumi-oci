@@ -111,6 +111,10 @@ export class SensitiveType extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    public /*out*/ readonly isCommon!: pulumi.Output<boolean>;
+    /**
      * (Updatable) A regular expression to be used by data discovery for matching column names.
      */
     public readonly namePattern!: pulumi.Output<string>;
@@ -173,6 +177,7 @@ export class SensitiveType extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["entityType"] = state ? state.entityType : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isCommon"] = state ? state.isCommon : undefined;
             resourceInputs["namePattern"] = state ? state.namePattern : undefined;
             resourceInputs["parentCategoryId"] = state ? state.parentCategoryId : undefined;
             resourceInputs["searchType"] = state ? state.searchType : undefined;
@@ -203,6 +208,7 @@ export class SensitiveType extends pulumi.CustomResource {
             resourceInputs["parentCategoryId"] = args ? args.parentCategoryId : undefined;
             resourceInputs["searchType"] = args ? args.searchType : undefined;
             resourceInputs["shortName"] = args ? args.shortName : undefined;
+            resourceInputs["isCommon"] = undefined /*out*/;
             resourceInputs["source"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -254,6 +260,10 @@ export interface SensitiveTypeState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+     */
+    isCommon?: pulumi.Input<boolean>;
     /**
      * (Updatable) A regular expression to be used by data discovery for matching column names.
      */

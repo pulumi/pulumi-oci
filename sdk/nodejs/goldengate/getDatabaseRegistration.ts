@@ -118,7 +118,7 @@ export interface GetDatabaseRegistrationResult {
      */
     readonly state: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
     readonly subnetId: string;
     /**

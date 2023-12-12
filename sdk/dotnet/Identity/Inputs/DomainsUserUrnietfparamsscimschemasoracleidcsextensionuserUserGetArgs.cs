@@ -352,6 +352,26 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? PreferredUiLandingPage { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates if User is a Service User
+        /// 
+        /// **Added In:** 2306131901
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsCsvAttributeName: Service User
+        /// * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: immutable
+        /// * required: false
+        /// * returned: default
+        /// * type: boolean
+        /// * uniqueness: none
+        /// </summary>
+        [Input("serviceUser")]
+        public Input<bool>? ServiceUser { get; set; }
+
+        /// <summary>
         /// (Updatable) A supplemental status indicating the reason why a user is disabled
         /// 
         /// **SCIM++ Properties:**

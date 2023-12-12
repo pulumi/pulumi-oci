@@ -50,6 +50,11 @@ export type AutonomousDatabaseRegionalWalletManagement = import("./autonomousDat
 export const AutonomousDatabaseRegionalWalletManagement: typeof import("./autonomousDatabaseRegionalWalletManagement").AutonomousDatabaseRegionalWalletManagement = null as any;
 utilities.lazyLoad(exports, ["AutonomousDatabaseRegionalWalletManagement"], () => require("./autonomousDatabaseRegionalWalletManagement"));
 
+export { AutonomousDatabaseSaasAdminUserArgs, AutonomousDatabaseSaasAdminUserState } from "./autonomousDatabaseSaasAdminUser";
+export type AutonomousDatabaseSaasAdminUser = import("./autonomousDatabaseSaasAdminUser").AutonomousDatabaseSaasAdminUser;
+export const AutonomousDatabaseSaasAdminUser: typeof import("./autonomousDatabaseSaasAdminUser").AutonomousDatabaseSaasAdminUser = null as any;
+utilities.lazyLoad(exports, ["AutonomousDatabaseSaasAdminUser"], () => require("./autonomousDatabaseSaasAdminUser"));
+
 export { AutonomousDatabaseWalletArgs, AutonomousDatabaseWalletState } from "./autonomousDatabaseWallet";
 export type AutonomousDatabaseWallet = import("./autonomousDatabaseWallet").AutonomousDatabaseWallet;
 export const AutonomousDatabaseWallet: typeof import("./autonomousDatabaseWallet").AutonomousDatabaseWallet = null as any;
@@ -928,6 +933,8 @@ const _module = {
                 return new AutonomousDatabaseInstanceWalletManagement(name, <any>undefined, { urn })
             case "oci:Database/autonomousDatabaseRegionalWalletManagement:AutonomousDatabaseRegionalWalletManagement":
                 return new AutonomousDatabaseRegionalWalletManagement(name, <any>undefined, { urn })
+            case "oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser":
+                return new AutonomousDatabaseSaasAdminUser(name, <any>undefined, { urn })
             case "oci:Database/autonomousDatabaseWallet:AutonomousDatabaseWallet":
                 return new AutonomousDatabaseWallet(name, <any>undefined, { urn })
             case "oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure":
@@ -1042,6 +1049,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabase", _mod
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseBackup", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseInstanceWalletManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseRegionalWalletManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseSaasAdminUser", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseWallet", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousExadataInfrastructure", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousVmCluster", _module)

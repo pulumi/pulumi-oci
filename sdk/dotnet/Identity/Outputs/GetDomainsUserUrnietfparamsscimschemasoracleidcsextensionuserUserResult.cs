@@ -86,6 +86,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string PreferredUiLandingPage;
         /// <summary>
+        /// Indicates if User is a Service User
+        /// </summary>
+        public readonly bool ServiceUser;
+        /// <summary>
         /// A supplemental status indicating the reason why a user is disabled
         /// </summary>
         public readonly string Status;
@@ -148,6 +152,8 @@ namespace Pulumi.Oci.Identity.Outputs
 
             string preferredUiLandingPage,
 
+            bool serviceUser,
+
             string status,
 
             ImmutableArray<Outputs.GetDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountResult> supportAccounts,
@@ -178,6 +184,7 @@ namespace Pulumi.Oci.Identity.Outputs
             IsGroupMembershipSyncedToUsersGroups = isGroupMembershipSyncedToUsersGroups;
             NotificationEmailTemplateId = notificationEmailTemplateId;
             PreferredUiLandingPage = preferredUiLandingPage;
+            ServiceUser = serviceUser;
             Status = status;
             SupportAccounts = supportAccounts;
             SyncedFromApps = syncedFromApps;

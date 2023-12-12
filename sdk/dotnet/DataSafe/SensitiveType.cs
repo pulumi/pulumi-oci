@@ -118,6 +118,12 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        /// </summary>
+        [Output("isCommon")]
+        public Output<bool> IsCommon { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) A regular expression to be used by data discovery for matching column names.
         /// </summary>
         [Output("namePattern")]
@@ -388,6 +394,12 @@ namespace Pulumi.Oci.DataSafe
             get => _freeformTags ?? (_freeformTags = new InputMap<object>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        /// </summary>
+        [Input("isCommon")]
+        public Input<bool>? IsCommon { get; set; }
 
         /// <summary>
         /// (Updatable) A regular expression to be used by data discovery for matching column names.

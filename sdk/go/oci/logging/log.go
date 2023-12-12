@@ -41,6 +41,7 @@ import (
 //						Resource:   pulumi.Any(_var.Log_configuration_source_resource),
 //						Service:    pulumi.Any(_var.Log_configuration_source_service),
 //						SourceType: pulumi.Any(_var.Log_configuration_source_source_type),
+//						Parameters: pulumi.Any(_var.Log_configuration_source_parameters),
 //					},
 //					CompartmentId: pulumi.Any(_var.Compartment_id),
 //				},

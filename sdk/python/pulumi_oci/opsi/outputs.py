@@ -31,6 +31,9 @@ __all__ = [
     'GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemItemResult',
     'GetAwrHubAwrSnapshotsFilterResult',
     'GetAwrHubAwrSourcesSummaryItemResult',
+    'GetAwrHubSourcesAwrHubSourceSummaryCollectionResult',
+    'GetAwrHubSourcesAwrHubSourceSummaryCollectionItemResult',
+    'GetAwrHubSourcesFilterResult',
     'GetAwrHubsAwrHubSummaryCollectionResult',
     'GetAwrHubsAwrHubSummaryCollectionItemResult',
     'GetAwrHubsFilterResult',
@@ -1649,6 +1652,311 @@ class GetAwrHubAwrSourcesSummaryItemResult(dict):
 
 
 @pulumi.output_type
+class GetAwrHubSourcesAwrHubSourceSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAwrHubSourcesAwrHubSourceSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAwrHubSourcesAwrHubSourceSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAwrHubSourcesAwrHubSourceSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 associated_opsi_id: str,
+                 associated_resource_id: str,
+                 awr_hub_id: str,
+                 awr_hub_opsi_source_id: str,
+                 awr_source_database_id: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, Any],
+                 hours_since_last_import: float,
+                 id: str,
+                 is_registered_with_awr_hub: bool,
+                 max_snapshot_identifier: float,
+                 min_snapshot_identifier: float,
+                 name: str,
+                 source_mail_box_url: str,
+                 state: str,
+                 status: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_first_snapshot_generated: str,
+                 time_last_snapshot_generated: str,
+                 time_updated: str,
+                 type: str):
+        """
+        :param str associated_opsi_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
+        :param str associated_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
+        :param str awr_hub_id: Unique Awr Hub identifier
+        :param str awr_hub_opsi_source_id: The shorted string of the Awr Hub source database identifier.
+        :param str awr_source_database_id: DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param float hours_since_last_import: Number of hours since last AWR snapshots import happened from the Source database.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Awr Hub source database.
+        :param bool is_registered_with_awr_hub: This is `true` if the source databse is registered with a Awr Hub, otherwise `false`
+        :param float max_snapshot_identifier: The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+        :param float min_snapshot_identifier: The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+        :param str name: Awr Hub source database name
+        :param str source_mail_box_url: Opsi Mailbox URL based on the Awr Hub and Awr Hub source.
+        :param str state: Lifecycle states
+        :param str status: Resource Status
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
+        :param str time_first_snapshot_generated: The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+        :param str time_last_snapshot_generated: The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+        :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
+        :param str type: source type of the database
+        """
+        pulumi.set(__self__, "associated_opsi_id", associated_opsi_id)
+        pulumi.set(__self__, "associated_resource_id", associated_resource_id)
+        pulumi.set(__self__, "awr_hub_id", awr_hub_id)
+        pulumi.set(__self__, "awr_hub_opsi_source_id", awr_hub_opsi_source_id)
+        pulumi.set(__self__, "awr_source_database_id", awr_source_database_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "hours_since_last_import", hours_since_last_import)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_registered_with_awr_hub", is_registered_with_awr_hub)
+        pulumi.set(__self__, "max_snapshot_identifier", max_snapshot_identifier)
+        pulumi.set(__self__, "min_snapshot_identifier", min_snapshot_identifier)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "source_mail_box_url", source_mail_box_url)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_first_snapshot_generated", time_first_snapshot_generated)
+        pulumi.set(__self__, "time_last_snapshot_generated", time_last_snapshot_generated)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="associatedOpsiId")
+    def associated_opsi_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
+        """
+        return pulumi.get(self, "associated_opsi_id")
+
+    @property
+    @pulumi.getter(name="associatedResourceId")
+    def associated_resource_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
+        """
+        return pulumi.get(self, "associated_resource_id")
+
+    @property
+    @pulumi.getter(name="awrHubId")
+    def awr_hub_id(self) -> str:
+        """
+        Unique Awr Hub identifier
+        """
+        return pulumi.get(self, "awr_hub_id")
+
+    @property
+    @pulumi.getter(name="awrHubOpsiSourceId")
+    def awr_hub_opsi_source_id(self) -> str:
+        """
+        The shorted string of the Awr Hub source database identifier.
+        """
+        return pulumi.get(self, "awr_hub_opsi_source_id")
+
+    @property
+    @pulumi.getter(name="awrSourceDatabaseId")
+    def awr_source_database_id(self) -> str:
+        """
+        DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
+        """
+        return pulumi.get(self, "awr_source_database_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="hoursSinceLastImport")
+    def hours_since_last_import(self) -> float:
+        """
+        Number of hours since last AWR snapshots import happened from the Source database.
+        """
+        return pulumi.get(self, "hours_since_last_import")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Awr Hub source database.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isRegisteredWithAwrHub")
+    def is_registered_with_awr_hub(self) -> bool:
+        """
+        This is `true` if the source databse is registered with a Awr Hub, otherwise `false`
+        """
+        return pulumi.get(self, "is_registered_with_awr_hub")
+
+    @property
+    @pulumi.getter(name="maxSnapshotIdentifier")
+    def max_snapshot_identifier(self) -> float:
+        """
+        The maximum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+        """
+        return pulumi.get(self, "max_snapshot_identifier")
+
+    @property
+    @pulumi.getter(name="minSnapshotIdentifier")
+    def min_snapshot_identifier(self) -> float:
+        """
+        The minimum snapshot identifier of the source database for which AWR data is uploaded to AWR Hub.
+        """
+        return pulumi.get(self, "min_snapshot_identifier")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Awr Hub source database name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="sourceMailBoxUrl")
+    def source_mail_box_url(self) -> str:
+        """
+        Opsi Mailbox URL based on the Awr Hub and Awr Hub source.
+        """
+        return pulumi.get(self, "source_mail_box_url")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Lifecycle states
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> str:
+        """
+        Resource Status
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time at which the resource was first created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeFirstSnapshotGenerated")
+    def time_first_snapshot_generated(self) -> str:
+        """
+        The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_first_snapshot_generated")
+
+    @property
+    @pulumi.getter(name="timeLastSnapshotGenerated")
+    def time_last_snapshot_generated(self) -> str:
+        """
+        The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_last_snapshot_generated")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time at which the resource was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        source type of the database
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetAwrHubSourcesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: Awr Hub source database name
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Awr Hub source database name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetAwrHubsAwrHubSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAwrHubsAwrHubSummaryCollectionItemResult']):
@@ -1668,6 +1976,7 @@ class GetAwrHubsAwrHubSummaryCollectionItemResult(dict):
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
+                 hub_dst_timezone_version: str,
                  id: str,
                  lifecycle_details: str,
                  object_storage_bucket_name: str,
@@ -1682,6 +1991,7 @@ class GetAwrHubsAwrHubSummaryCollectionItemResult(dict):
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str hub_dst_timezone_version: Dst Time Zone Version of the AWR Hub
         :param str id: Unique Awr Hub identifier
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str object_storage_bucket_name: Object Storage Bucket Name
@@ -1696,6 +2006,7 @@ class GetAwrHubsAwrHubSummaryCollectionItemResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "hub_dst_timezone_version", hub_dst_timezone_version)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "object_storage_bucket_name", object_storage_bucket_name)
@@ -1744,6 +2055,14 @@ class GetAwrHubsAwrHubSummaryCollectionItemResult(dict):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="hubDstTimezoneVersion")
+    def hub_dst_timezone_version(self) -> str:
+        """
+        Dst Time Zone Version of the AWR Hub
+        """
+        return pulumi.get(self, "hub_dst_timezone_version")
 
     @property
     @pulumi.getter

@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Sql Firewall Policy resource in Oracle Cloud Infrastructure Data Safe service.
  *
- * Updates the SQL firewall policy.
+ * Updates the SQL Firewall policy.
  *
  * ## Import
  *
@@ -46,19 +46,19 @@ export class SqlFirewallPolicy extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) List of allowed ip addresses for the SQL firewall policy.
+     * (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      */
     public readonly allowedClientIps!: pulumi.Output<string[]>;
     /**
-     * (Updatable) List of allowed operating system user names for the SQL firewall policy.
+     * (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      */
     public readonly allowedClientOsUsernames!: pulumi.Output<string[]>;
     /**
-     * (Updatable) List of allowed client programs for the SQL firewall policy.
+     * (Updatable) List of allowed client programs for the SQL Firewall policy.
      */
     public readonly allowedClientPrograms!: pulumi.Output<string[]>;
     /**
-     * (Updatable) The OCID of the compartment containing the SQL firewall policy.
+     * (Updatable) The OCID of the compartment containing the SQL Firewall policy.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -70,15 +70,15 @@ export class SqlFirewallPolicy extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) The description of the SQL firewall policy.
+     * (Updatable) The description of the SQL Firewall policy.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+     * (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) Specifies the SQL firewall policy enforcement option.
+     * (Updatable) Specifies the SQL Firewall policy enforcement option.
      */
     public readonly enforcementScope!: pulumi.Output<string>;
     /**
@@ -86,27 +86,27 @@ export class SqlFirewallPolicy extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Details about the current state of the SQL firewall policy in Data Safe.
+     * Details about the current state of the SQL Firewall policy in Data Safe.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * The OCID of the security policy corresponding to the SQL firewall policy.
+     * The OCID of the security policy corresponding to the SQL Firewall policy.
      */
     public /*out*/ readonly securityPolicyId!: pulumi.Output<string>;
     /**
-     * The OCID of the SQL firewall policy resource.
+     * The OCID of the SQL Firewall policy resource.
      */
     public readonly sqlFirewallPolicyId!: pulumi.Output<string>;
     /**
-     * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      */
     public /*out*/ readonly sqlLevel!: pulumi.Output<string>;
     /**
-     * The current state of the SQL firewall policy.
+     * The current state of the SQL Firewall policy.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
-     * (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+     * (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
      */
     public readonly status!: pulumi.Output<string>;
     /**
@@ -114,19 +114,19 @@ export class SqlFirewallPolicy extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time that the SQL firewall policy was created, in the format defined by RFC3339.
+     * The time that the SQL Firewall policy was created, in the format defined by RFC3339.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+     * The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+     * (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
      */
     public readonly violationAction!: pulumi.Output<string>;
     /**
-     * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+     * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
      *
      *
      * ** IMPORTANT **
@@ -205,19 +205,19 @@ export class SqlFirewallPolicy extends pulumi.CustomResource {
  */
 export interface SqlFirewallPolicyState {
     /**
-     * (Updatable) List of allowed ip addresses for the SQL firewall policy.
+     * (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      */
     allowedClientIps?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) List of allowed operating system user names for the SQL firewall policy.
+     * (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      */
     allowedClientOsUsernames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) List of allowed client programs for the SQL firewall policy.
+     * (Updatable) List of allowed client programs for the SQL Firewall policy.
      */
     allowedClientPrograms?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The OCID of the compartment containing the SQL firewall policy.
+     * (Updatable) The OCID of the compartment containing the SQL Firewall policy.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -229,15 +229,15 @@ export interface SqlFirewallPolicyState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The description of the SQL firewall policy.
+     * (Updatable) The description of the SQL Firewall policy.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+     * (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Specifies the SQL firewall policy enforcement option.
+     * (Updatable) Specifies the SQL Firewall policy enforcement option.
      */
     enforcementScope?: pulumi.Input<string>;
     /**
@@ -245,27 +245,27 @@ export interface SqlFirewallPolicyState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Details about the current state of the SQL firewall policy in Data Safe.
+     * Details about the current state of the SQL Firewall policy in Data Safe.
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * The OCID of the security policy corresponding to the SQL firewall policy.
+     * The OCID of the security policy corresponding to the SQL Firewall policy.
      */
     securityPolicyId?: pulumi.Input<string>;
     /**
-     * The OCID of the SQL firewall policy resource.
+     * The OCID of the SQL Firewall policy resource.
      */
     sqlFirewallPolicyId?: pulumi.Input<string>;
     /**
-     * Specifies the level of SQL included for this SQL firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
+     * Specifies the level of SQL included for this SQL Firewall policy. USER_ISSUED_SQL - User issued SQL statements only. ALL_SQL - Includes all SQL statements including SQL statement issued inside PL/SQL units.
      */
     sqlLevel?: pulumi.Input<string>;
     /**
-     * The current state of the SQL firewall policy.
+     * The current state of the SQL Firewall policy.
      */
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+     * (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
      */
     status?: pulumi.Input<string>;
     /**
@@ -273,19 +273,19 @@ export interface SqlFirewallPolicyState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time that the SQL firewall policy was created, in the format defined by RFC3339.
+     * The time that the SQL Firewall policy was created, in the format defined by RFC3339.
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time the SQL firewall policy was last updated, in the format defined by RFC3339.
+     * The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+     * (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
      */
     violationAction?: pulumi.Input<string>;
     /**
-     * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+     * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
      *
      *
      * ** IMPORTANT **
@@ -299,19 +299,19 @@ export interface SqlFirewallPolicyState {
  */
 export interface SqlFirewallPolicyArgs {
     /**
-     * (Updatable) List of allowed ip addresses for the SQL firewall policy.
+     * (Updatable) List of allowed ip addresses for the SQL Firewall policy.
      */
     allowedClientIps?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) List of allowed operating system user names for the SQL firewall policy.
+     * (Updatable) List of allowed operating system user names for the SQL Firewall policy.
      */
     allowedClientOsUsernames?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) List of allowed client programs for the SQL firewall policy.
+     * (Updatable) List of allowed client programs for the SQL Firewall policy.
      */
     allowedClientPrograms?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) The OCID of the compartment containing the SQL firewall policy.
+     * (Updatable) The OCID of the compartment containing the SQL Firewall policy.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -319,15 +319,15 @@ export interface SqlFirewallPolicyArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The description of the SQL firewall policy.
+     * (Updatable) The description of the SQL Firewall policy.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The display name of the SQL firewall policy. The name does not have to be unique, and it is changeable.
+     * (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Specifies the SQL firewall policy enforcement option.
+     * (Updatable) Specifies the SQL Firewall policy enforcement option.
      */
     enforcementScope?: pulumi.Input<string>;
     /**
@@ -335,19 +335,19 @@ export interface SqlFirewallPolicyArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The OCID of the SQL firewall policy resource.
+     * The OCID of the SQL Firewall policy resource.
      */
     sqlFirewallPolicyId: pulumi.Input<string>;
     /**
-     * (Updatable) Specifies whether the SQL firewall policy is enabled or disabled.
+     * (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
      */
     status?: pulumi.Input<string>;
     /**
-     * (Updatable) Specifies the SQL firewall action based on detection of SQL firewall violations.
+     * (Updatable) Specifies the SQL Firewall action based on detection of SQL Firewall violations.
      */
     violationAction?: pulumi.Input<string>;
     /**
-     * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL firewall policy violations.
+     * (Updatable) Specifies whether a unified audit policy should be enabled for auditing the SQL Firewall policy violations.
      *
      *
      * ** IMPORTANT **

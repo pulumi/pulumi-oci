@@ -30,6 +30,7 @@ from .domains_customer_secret_key import *
 from .domains_dynamic_resource_group import *
 from .domains_grant import *
 from .domains_group import *
+from .domains_identity_propagation_trust import *
 from .domains_identity_provider import *
 from .domains_identity_setting import *
 from .domains_kmsi_setting import *
@@ -108,6 +109,8 @@ from .get_domains_grant import *
 from .get_domains_grants import *
 from .get_domains_group import *
 from .get_domains_groups import *
+from .get_domains_identity_propagation_trust import *
+from .get_domains_identity_propagation_trusts import *
 from .get_domains_identity_provider import *
 from .get_domains_identity_providers import *
 from .get_domains_identity_setting import *

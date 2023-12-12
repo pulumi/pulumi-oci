@@ -1303,6 +1303,7 @@ class LibraryMasingFormatFormatEntryArgs:
                  grouping_columns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  length: Optional[pulumi.Input[int]] = None,
                  library_masking_format_id: Optional[pulumi.Input[str]] = None,
+                 pattern: Optional[pulumi.Input[str]] = None,
                  post_processing_function: Optional[pulumi.Input[str]] = None,
                  random_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  regular_expression: Optional[pulumi.Input[str]] = None,
@@ -1327,6 +1328,7 @@ class LibraryMasingFormatFormatEntryArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] grouping_columns: (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
         :param pulumi.Input[int] length: (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
         :param pulumi.Input[str] library_masking_format_id: (Updatable) The OCID of the library masking format.
+        :param pulumi.Input[str] pattern: (Updatable) The pattern that should be used to mask data.
         :param pulumi.Input[str] post_processing_function: (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] random_lists: (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param pulumi.Input[str] regular_expression: (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
@@ -1365,6 +1367,8 @@ class LibraryMasingFormatFormatEntryArgs:
             pulumi.set(__self__, "length", length)
         if library_masking_format_id is not None:
             pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+        if pattern is not None:
+            pulumi.set(__self__, "pattern", pattern)
         if post_processing_function is not None:
             pulumi.set(__self__, "post_processing_function", post_processing_function)
         if random_lists is not None:
@@ -1521,6 +1525,18 @@ class LibraryMasingFormatFormatEntryArgs:
     @library_masking_format_id.setter
     def library_masking_format_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "library_masking_format_id", value)
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The pattern that should be used to mask data.
+        """
+        return pulumi.get(self, "pattern")
+
+    @pattern.setter
+    def pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "pattern", value)
 
     @property
     @pulumi.getter(name="postProcessingFunction")
@@ -1739,6 +1755,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
                  grouping_columns: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  length: Optional[pulumi.Input[int]] = None,
                  library_masking_format_id: Optional[pulumi.Input[str]] = None,
+                 pattern: Optional[pulumi.Input[str]] = None,
                  post_processing_function: Optional[pulumi.Input[str]] = None,
                  random_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  regular_expression: Optional[pulumi.Input[str]] = None,
@@ -1763,6 +1780,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] grouping_columns: (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
         :param pulumi.Input[int] length: (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
         :param pulumi.Input[str] library_masking_format_id: (Updatable) The OCID of the library masking format.
+        :param pulumi.Input[str] pattern: (Updatable) The pattern that should be used to mask data.
         :param pulumi.Input[str] post_processing_function: (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] random_lists: (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param pulumi.Input[str] regular_expression: (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
@@ -1801,6 +1819,8 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
             pulumi.set(__self__, "length", length)
         if library_masking_format_id is not None:
             pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+        if pattern is not None:
+            pulumi.set(__self__, "pattern", pattern)
         if post_processing_function is not None:
             pulumi.set(__self__, "post_processing_function", post_processing_function)
         if random_lists is not None:
@@ -1957,6 +1977,18 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs:
     @library_masking_format_id.setter
     def library_masking_format_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "library_masking_format_id", value)
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The pattern that should be used to mask data.
+        """
+        return pulumi.get(self, "pattern")
+
+    @pattern.setter
+    def pattern(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "pattern", value)
 
     @property
     @pulumi.getter(name="postProcessingFunction")

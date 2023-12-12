@@ -77,6 +77,8 @@ type CatalogPrivateEndpoint struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks CatalogPrivateEndpointLockArrayOutput `pulumi:"locks"`
 	// The current state of the private endpoint resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The OCID of subnet to which the reverse connection is to be created
@@ -84,6 +86,8 @@ type CatalogPrivateEndpoint struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -143,6 +147,8 @@ type catalogPrivateEndpointState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []CatalogPrivateEndpointLock `pulumi:"locks"`
 	// The current state of the private endpoint resource.
 	State *string `pulumi:"state"`
 	// The OCID of subnet to which the reverse connection is to be created
@@ -150,6 +156,8 @@ type catalogPrivateEndpointState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -171,6 +179,8 @@ type CatalogPrivateEndpointState struct {
 	FreeformTags pulumi.MapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks CatalogPrivateEndpointLockArrayInput
 	// The current state of the private endpoint resource.
 	State pulumi.StringPtrInput
 	// The OCID of subnet to which the reverse connection is to be created
@@ -178,6 +188,8 @@ type CatalogPrivateEndpointState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -347,6 +359,11 @@ func (o CatalogPrivateEndpointOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o CatalogPrivateEndpointOutput) Locks() CatalogPrivateEndpointLockArrayOutput {
+	return o.ApplyT(func(v *CatalogPrivateEndpoint) CatalogPrivateEndpointLockArrayOutput { return v.Locks }).(CatalogPrivateEndpointLockArrayOutput)
+}
+
 // The current state of the private endpoint resource.
 func (o CatalogPrivateEndpointOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
@@ -358,6 +375,11 @@ func (o CatalogPrivateEndpointOutput) State() pulumi.StringOutput {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CatalogPrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o CatalogPrivateEndpointOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *CatalogPrivateEndpoint) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

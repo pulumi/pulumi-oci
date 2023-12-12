@@ -34,6 +34,7 @@ namespace Pulumi.Oci.Optimizer
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         CompartmentIdInSubtree = @var.History_compartment_id_in_subtree,
+        ///         IncludeResourceMetadata = @var.History_include_resource_metadata,
         ///         Name = @var.History_name,
         ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
         ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
@@ -73,6 +74,7 @@ namespace Pulumi.Oci.Optimizer
         ///     {
         ///         CompartmentId = @var.Compartment_id,
         ///         CompartmentIdInSubtree = @var.History_compartment_id_in_subtree,
+        ///         IncludeResourceMetadata = @var.History_include_resource_metadata,
         ///         Name = @var.History_name,
         ///         RecommendationId = oci_optimizer_recommendation.Test_recommendation.Id,
         ///         RecommendationName = oci_optimizer_recommendation.Test_recommendation.Name,
@@ -114,6 +116,12 @@ namespace Pulumi.Oci.Optimizer
             get => _filters ?? (_filters = new List<Inputs.GetHistoriesFilterArgs>());
             set => _filters = value;
         }
+
+        /// <summary>
+        /// Supplement additional resource information in extended metadata response.
+        /// </summary>
+        [Input("includeResourceMetadata")]
+        public bool? IncludeResourceMetadata { get; set; }
 
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
@@ -182,6 +190,12 @@ namespace Pulumi.Oci.Optimizer
         }
 
         /// <summary>
+        /// Supplement additional resource information in extended metadata response.
+        /// </summary>
+        [Input("includeResourceMetadata")]
+        public Input<bool>? IncludeResourceMetadata { get; set; }
+
+        /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
         [Input("name")]
@@ -241,6 +255,7 @@ namespace Pulumi.Oci.Optimizer
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IncludeResourceMetadata;
         /// <summary>
         /// The name assigned to the resource.
         /// </summary>
@@ -278,6 +293,8 @@ namespace Pulumi.Oci.Optimizer
 
             string id,
 
+            bool? includeResourceMetadata,
+
             string? name,
 
             string? recommendationId,
@@ -295,6 +312,7 @@ namespace Pulumi.Oci.Optimizer
             Filters = filters;
             HistoryCollections = historyCollections;
             Id = id;
+            IncludeResourceMetadata = includeResourceMetadata;
             Name = name;
             RecommendationId = recommendationId;
             RecommendationName = recommendationName;

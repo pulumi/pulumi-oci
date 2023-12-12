@@ -14,6 +14,7 @@ __all__ = [
     'ConnectionBootstrapServerArgs',
     'ConnectionIngressIpArgs',
     'DeploymentDeploymentDiagnosticDataArgs',
+    'DeploymentIngressIpArgs',
     'DeploymentMaintenanceConfigurationArgs',
     'DeploymentMaintenanceWindowArgs',
     'DeploymentOggDataArgs',
@@ -80,7 +81,8 @@ class ConnectionBootstrapServerArgs:
         :param pulumi.Input[str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
-        :param pulumi.Input[str] private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param pulumi.Input[str] private_ip: (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+               The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         if host is not None:
             pulumi.set(__self__, "host", host)
@@ -118,7 +120,8 @@ class ConnectionBootstrapServerArgs:
     @pulumi.getter(name="privateIp")
     def private_ip(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        (Updatable) Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
+        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         return pulumi.get(self, "private_ip")
 
@@ -251,6 +254,29 @@ class DeploymentDeploymentDiagnosticDataArgs:
     @time_diagnostic_start.setter
     def time_diagnostic_start(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_diagnostic_start", value)
+
+
+@pulumi.input_type
+class DeploymentIngressIpArgs:
+    def __init__(__self__, *,
+                 ingress_ip: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        if ingress_ip is not None:
+            pulumi.set(__self__, "ingress_ip", ingress_ip)
+
+    @property
+    @pulumi.getter(name="ingressIp")
+    def ingress_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        return pulumi.get(self, "ingress_ip")
+
+    @ingress_ip.setter
+    def ingress_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ingress_ip", value)
 
 
 @pulumi.input_type

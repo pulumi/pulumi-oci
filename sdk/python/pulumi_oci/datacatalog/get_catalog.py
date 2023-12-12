@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetCatalogResult',
@@ -21,7 +22,7 @@ class GetCatalogResult:
     """
     A collection of values returned by getCatalog.
     """
-    def __init__(__self__, attached_catalog_private_endpoints=None, catalog_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, number_of_objects=None, service_api_url=None, service_console_url=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, attached_catalog_private_endpoints=None, catalog_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, locks=None, number_of_objects=None, service_api_url=None, service_console_url=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if attached_catalog_private_endpoints and not isinstance(attached_catalog_private_endpoints, list):
             raise TypeError("Expected argument 'attached_catalog_private_endpoints' to be a list")
         pulumi.set(__self__, "attached_catalog_private_endpoints", attached_catalog_private_endpoints)
@@ -46,6 +47,9 @@ class GetCatalogResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if number_of_objects and not isinstance(number_of_objects, int):
             raise TypeError("Expected argument 'number_of_objects' to be a int")
         pulumi.set(__self__, "number_of_objects", number_of_objects)
@@ -58,6 +62,9 @@ class GetCatalogResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -127,6 +134,14 @@ class GetCatalogResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetCatalogLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="numberOfObjects")
     def number_of_objects(self) -> int:
         """
@@ -159,6 +174,14 @@ class GetCatalogResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
@@ -189,10 +212,12 @@ class AwaitableGetCatalogResult(GetCatalogResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             number_of_objects=self.number_of_objects,
             service_api_url=self.service_api_url,
             service_console_url=self.service_console_url,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -230,10 +255,12 @@ def get_catalog(catalog_id: Optional[str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         number_of_objects=pulumi.get(__ret__, 'number_of_objects'),
         service_api_url=pulumi.get(__ret__, 'service_api_url'),
         service_console_url=pulumi.get(__ret__, 'service_console_url'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 

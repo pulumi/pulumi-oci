@@ -130,6 +130,11 @@ export type DomainsGroup = import("./domainsGroup").DomainsGroup;
 export const DomainsGroup: typeof import("./domainsGroup").DomainsGroup = null as any;
 utilities.lazyLoad(exports, ["DomainsGroup"], () => require("./domainsGroup"));
 
+export { DomainsIdentityPropagationTrustArgs, DomainsIdentityPropagationTrustState } from "./domainsIdentityPropagationTrust";
+export type DomainsIdentityPropagationTrust = import("./domainsIdentityPropagationTrust").DomainsIdentityPropagationTrust;
+export const DomainsIdentityPropagationTrust: typeof import("./domainsIdentityPropagationTrust").DomainsIdentityPropagationTrust = null as any;
+utilities.lazyLoad(exports, ["DomainsIdentityPropagationTrust"], () => require("./domainsIdentityPropagationTrust"));
+
 export { DomainsIdentityProviderArgs, DomainsIdentityProviderState } from "./domainsIdentityProvider";
 export type DomainsIdentityProvider = import("./domainsIdentityProvider").DomainsIdentityProvider;
 export const DomainsIdentityProvider: typeof import("./domainsIdentityProvider").DomainsIdentityProvider = null as any;
@@ -519,6 +524,16 @@ export { GetDomainsGroupsArgs, GetDomainsGroupsResult, GetDomainsGroupsOutputArg
 export const getDomainsGroups: typeof import("./getDomainsGroups").getDomainsGroups = null as any;
 export const getDomainsGroupsOutput: typeof import("./getDomainsGroups").getDomainsGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getDomainsGroups","getDomainsGroupsOutput"], () => require("./getDomainsGroups"));
+
+export { GetDomainsIdentityPropagationTrustArgs, GetDomainsIdentityPropagationTrustResult, GetDomainsIdentityPropagationTrustOutputArgs } from "./getDomainsIdentityPropagationTrust";
+export const getDomainsIdentityPropagationTrust: typeof import("./getDomainsIdentityPropagationTrust").getDomainsIdentityPropagationTrust = null as any;
+export const getDomainsIdentityPropagationTrustOutput: typeof import("./getDomainsIdentityPropagationTrust").getDomainsIdentityPropagationTrustOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsIdentityPropagationTrust","getDomainsIdentityPropagationTrustOutput"], () => require("./getDomainsIdentityPropagationTrust"));
+
+export { GetDomainsIdentityPropagationTrustsArgs, GetDomainsIdentityPropagationTrustsResult, GetDomainsIdentityPropagationTrustsOutputArgs } from "./getDomainsIdentityPropagationTrusts";
+export const getDomainsIdentityPropagationTrusts: typeof import("./getDomainsIdentityPropagationTrusts").getDomainsIdentityPropagationTrusts = null as any;
+export const getDomainsIdentityPropagationTrustsOutput: typeof import("./getDomainsIdentityPropagationTrusts").getDomainsIdentityPropagationTrustsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomainsIdentityPropagationTrusts","getDomainsIdentityPropagationTrustsOutput"], () => require("./getDomainsIdentityPropagationTrusts"));
 
 export { GetDomainsIdentityProviderArgs, GetDomainsIdentityProviderResult, GetDomainsIdentityProviderOutputArgs } from "./getDomainsIdentityProvider";
 export const getDomainsIdentityProvider: typeof import("./getDomainsIdentityProvider").getDomainsIdentityProvider = null as any;
@@ -1115,6 +1130,8 @@ const _module = {
                 return new DomainsGrant(name, <any>undefined, { urn })
             case "oci:Identity/domainsGroup:DomainsGroup":
                 return new DomainsGroup(name, <any>undefined, { urn })
+            case "oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust":
+                return new DomainsIdentityPropagationTrust(name, <any>undefined, { urn })
             case "oci:Identity/domainsIdentityProvider:DomainsIdentityProvider":
                 return new DomainsIdentityProvider(name, <any>undefined, { urn })
             case "oci:Identity/domainsIdentitySetting:DomainsIdentitySetting":
@@ -1227,6 +1244,7 @@ pulumi.runtime.registerResourceModule("oci", "Identity/domainsCustomerSecretKey"
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsDynamicResourceGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsGrant", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsGroup", _module)
+pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentityPropagationTrust", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentityProvider", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsIdentitySetting", _module)
 pulumi.runtime.registerResourceModule("oci", "Identity/domainsKmsiSetting", _module)

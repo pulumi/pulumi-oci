@@ -23,7 +23,7 @@ class GetDiscoveryAnalyticsResult:
     """
     A collection of values returned by getDiscoveryAnalytics.
     """
-    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, discovery_analytics_collections=None, filters=None, group_by=None, id=None, sensitive_data_model_id=None, target_id=None):
+    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, discovery_analytics_collections=None, filters=None, group_by=None, id=None, is_common=None, sensitive_data_model_id=None, sensitive_type_id=None, target_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -42,9 +42,15 @@ class GetDiscoveryAnalyticsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_common and not isinstance(is_common, bool):
+            raise TypeError("Expected argument 'is_common' to be a bool")
+        pulumi.set(__self__, "is_common", is_common)
         if sensitive_data_model_id and not isinstance(sensitive_data_model_id, str):
             raise TypeError("Expected argument 'sensitive_data_model_id' to be a str")
         pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        if sensitive_type_id and not isinstance(sensitive_type_id, str):
+            raise TypeError("Expected argument 'sensitive_type_id' to be a str")
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
@@ -86,12 +92,25 @@ class GetDiscoveryAnalyticsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isCommon")
+    def is_common(self) -> Optional[bool]:
+        return pulumi.get(self, "is_common")
+
+    @property
     @pulumi.getter(name="sensitiveDataModelId")
     def sensitive_data_model_id(self) -> Optional[str]:
         """
         The OCID of the sensitive data model.
         """
         return pulumi.get(self, "sensitive_data_model_id")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeId")
+    def sensitive_type_id(self) -> Optional[str]:
+        """
+        The OCID of the sensitive type.
+        """
+        return pulumi.get(self, "sensitive_type_id")
 
     @property
     @pulumi.getter(name="targetId")
@@ -114,7 +133,9 @@ class AwaitableGetDiscoveryAnalyticsResult(GetDiscoveryAnalyticsResult):
             filters=self.filters,
             group_by=self.group_by,
             id=self.id,
+            is_common=self.is_common,
             sensitive_data_model_id=self.sensitive_data_model_id,
+            sensitive_type_id=self.sensitive_type_id,
             target_id=self.target_id)
 
 
@@ -122,7 +143,9 @@ def get_discovery_analytics(compartment_id: Optional[str] = None,
                             compartment_id_in_subtree: Optional[bool] = None,
                             filters: Optional[Sequence[pulumi.InputType['GetDiscoveryAnalyticsFilterArgs']]] = None,
                             group_by: Optional[str] = None,
+                            is_common: Optional[bool] = None,
                             sensitive_data_model_id: Optional[str] = None,
+                            sensitive_type_id: Optional[str] = None,
                             target_id: Optional[str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDiscoveryAnalyticsResult:
     """
@@ -141,7 +164,9 @@ def get_discovery_analytics(compartment_id: Optional[str] = None,
     test_discovery_analytics = oci.DataSafe.get_discovery_analytics(compartment_id=var["compartment_id"],
         compartment_id_in_subtree=var["discovery_analytic_compartment_id_in_subtree"],
         group_by=var["discovery_analytic_group_by"],
+        is_common=var["discovery_analytic_is_common"],
         sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
+        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
         target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
 
@@ -149,7 +174,9 @@ def get_discovery_analytics(compartment_id: Optional[str] = None,
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param str group_by: Attribute by which the discovery analytics data should be grouped.
+    :param bool is_common: A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
     :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
+    :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
     :param str target_id: A filter to return only items related to a specific target OCID.
     """
     __args__ = dict()
@@ -157,7 +184,9 @@ def get_discovery_analytics(compartment_id: Optional[str] = None,
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     __args__['groupBy'] = group_by
+    __args__['isCommon'] = is_common
     __args__['sensitiveDataModelId'] = sensitive_data_model_id
+    __args__['sensitiveTypeId'] = sensitive_type_id
     __args__['targetId'] = target_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getDiscoveryAnalytics:getDiscoveryAnalytics', __args__, opts=opts, typ=GetDiscoveryAnalyticsResult).value
@@ -169,7 +198,9 @@ def get_discovery_analytics(compartment_id: Optional[str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         group_by=pulumi.get(__ret__, 'group_by'),
         id=pulumi.get(__ret__, 'id'),
+        is_common=pulumi.get(__ret__, 'is_common'),
         sensitive_data_model_id=pulumi.get(__ret__, 'sensitive_data_model_id'),
+        sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
 
 
@@ -178,7 +209,9 @@ def get_discovery_analytics_output(compartment_id: Optional[pulumi.Input[str]] =
                                    compartment_id_in_subtree: Optional[pulumi.Input[Optional[bool]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDiscoveryAnalyticsFilterArgs']]]]] = None,
                                    group_by: Optional[pulumi.Input[Optional[str]]] = None,
+                                   is_common: Optional[pulumi.Input[Optional[bool]]] = None,
                                    sensitive_data_model_id: Optional[pulumi.Input[Optional[str]]] = None,
+                                   sensitive_type_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                    opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDiscoveryAnalyticsResult]:
     """
@@ -197,7 +230,9 @@ def get_discovery_analytics_output(compartment_id: Optional[pulumi.Input[str]] =
     test_discovery_analytics = oci.DataSafe.get_discovery_analytics(compartment_id=var["compartment_id"],
         compartment_id_in_subtree=var["discovery_analytic_compartment_id_in_subtree"],
         group_by=var["discovery_analytic_group_by"],
+        is_common=var["discovery_analytic_is_common"],
         sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
+        sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
         target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
 
@@ -205,7 +240,9 @@ def get_discovery_analytics_output(compartment_id: Optional[pulumi.Input[str]] =
     :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param str group_by: Attribute by which the discovery analytics data should be grouped.
+    :param bool is_common: A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
     :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
+    :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
     :param str target_id: A filter to return only items related to a specific target OCID.
     """
     ...

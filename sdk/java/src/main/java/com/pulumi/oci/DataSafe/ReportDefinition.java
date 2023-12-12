@@ -329,28 +329,28 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
         return this.schedule;
     }
     /**
-     * The OCID of the compartment in which the scheduled resource should be created.
+     * The OCID of the compartment in which the scheduled resource will be created.
      * 
      */
     @Export(name="scheduledReportCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> scheduledReportCompartmentId;
 
     /**
-     * @return The OCID of the compartment in which the scheduled resource should be created.
+     * @return The OCID of the compartment in which the scheduled resource will be created.
      * 
      */
     public Output<String> scheduledReportCompartmentId() {
         return this.scheduledReportCompartmentId;
     }
     /**
-     * Specifies the format of the report ( either XLS or PDF )
+     * Specifies the format of the report ( either .xls or .pdf )
      * 
      */
     @Export(name="scheduledReportMimeType", refs={String.class}, tree="[0]")
     private Output<String> scheduledReportMimeType;
 
     /**
-     * @return Specifies the format of the report ( either XLS or PDF )
+     * @return Specifies the format of the report ( either .xls or .pdf )
      * 
      */
     public Output<String> scheduledReportMimeType() {
@@ -447,28 +447,28 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * Specifies the data and time the report definition was created.
+     * Specifies the date and time the report definition was created.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return Specifies the data and time the report definition was created.
+     * @return Specifies the date and time the report definition was created.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time the report definition was update.
+     * The date and time the report definition was updated.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the report definition was update.
+     * @return The date and time the report definition was updated.
      * 
      */
     public Output<String> timeUpdated() {

@@ -7,6 +7,10 @@ import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
+import com.pulumi.oci.MeteringComputation.inputs.GetAverageCarbonEmissionArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetAverageCarbonEmissionPlainArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetCleanEnergyUsageArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetCleanEnergyUsagePlainArgs;
 import com.pulumi.oci.MeteringComputation.inputs.GetConfigurationArgs;
 import com.pulumi.oci.MeteringComputation.inputs.GetConfigurationPlainArgs;
 import com.pulumi.oci.MeteringComputation.inputs.GetCustomTableArgs;
@@ -25,6 +29,14 @@ import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsArgs;
 import com.pulumi.oci.MeteringComputation.inputs.GetScheduledRunsPlainArgs;
 import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesArgs;
 import com.pulumi.oci.MeteringComputation.inputs.GetSchedulesPlainArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsConfigArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsConfigPlainArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesPlainArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryPlainArgs;
+import com.pulumi.oci.MeteringComputation.outputs.GetAverageCarbonEmissionResult;
+import com.pulumi.oci.MeteringComputation.outputs.GetCleanEnergyUsageResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetConfigurationResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetCustomTableResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetCustomTablesResult;
@@ -34,10 +46,333 @@ import com.pulumi.oci.MeteringComputation.outputs.GetScheduleResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetScheduledRunResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetScheduledRunsResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetSchedulesResult;
+import com.pulumi.oci.MeteringComputation.outputs.GetUsageCarbonEmissionsConfigResult;
+import com.pulumi.oci.MeteringComputation.outputs.GetUsageCarbonEmissionsQueriesResult;
+import com.pulumi.oci.MeteringComputation.outputs.GetUsageCarbonEmissionsQueryResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class MeteringComputationFunctions {
+    /**
+     * This data source provides details about a specific Average Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the average carbon emissions summary by SKU.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetAverageCarbonEmissionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAverageCarbonEmission = MeteringComputationFunctions.getAverageCarbonEmission(GetAverageCarbonEmissionArgs.builder()
+     *             .skuPartNumber(var_.average_carbon_emission_sku_part_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAverageCarbonEmissionResult> getAverageCarbonEmission(GetAverageCarbonEmissionArgs args) {
+        return getAverageCarbonEmission(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Average Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the average carbon emissions summary by SKU.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetAverageCarbonEmissionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAverageCarbonEmission = MeteringComputationFunctions.getAverageCarbonEmission(GetAverageCarbonEmissionArgs.builder()
+     *             .skuPartNumber(var_.average_carbon_emission_sku_part_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAverageCarbonEmissionResult> getAverageCarbonEmissionPlain(GetAverageCarbonEmissionPlainArgs args) {
+        return getAverageCarbonEmissionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Average Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the average carbon emissions summary by SKU.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetAverageCarbonEmissionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAverageCarbonEmission = MeteringComputationFunctions.getAverageCarbonEmission(GetAverageCarbonEmissionArgs.builder()
+     *             .skuPartNumber(var_.average_carbon_emission_sku_part_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAverageCarbonEmissionResult> getAverageCarbonEmission(GetAverageCarbonEmissionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MeteringComputation/getAverageCarbonEmission:getAverageCarbonEmission", TypeShape.of(GetAverageCarbonEmissionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Average Carbon Emission resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the average carbon emissions summary by SKU.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetAverageCarbonEmissionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAverageCarbonEmission = MeteringComputationFunctions.getAverageCarbonEmission(GetAverageCarbonEmissionArgs.builder()
+     *             .skuPartNumber(var_.average_carbon_emission_sku_part_number())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAverageCarbonEmissionResult> getAverageCarbonEmissionPlain(GetAverageCarbonEmissionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getAverageCarbonEmission:getAverageCarbonEmission", TypeShape.of(GetAverageCarbonEmissionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the clean energy usage summary by region.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCleanEnergyUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCleanEnergyUsage = MeteringComputationFunctions.getCleanEnergyUsage(GetCleanEnergyUsageArgs.builder()
+     *             .region(var_.clean_energy_usage_region())
+     *             .ad(var_.clean_energy_usage_ad())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetCleanEnergyUsageResult> getCleanEnergyUsage(GetCleanEnergyUsageArgs args) {
+        return getCleanEnergyUsage(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the clean energy usage summary by region.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCleanEnergyUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCleanEnergyUsage = MeteringComputationFunctions.getCleanEnergyUsage(GetCleanEnergyUsageArgs.builder()
+     *             .region(var_.clean_energy_usage_region())
+     *             .ad(var_.clean_energy_usage_ad())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetCleanEnergyUsageResult> getCleanEnergyUsagePlain(GetCleanEnergyUsagePlainArgs args) {
+        return getCleanEnergyUsagePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the clean energy usage summary by region.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCleanEnergyUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCleanEnergyUsage = MeteringComputationFunctions.getCleanEnergyUsage(GetCleanEnergyUsageArgs.builder()
+     *             .region(var_.clean_energy_usage_region())
+     *             .ad(var_.clean_energy_usage_ad())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetCleanEnergyUsageResult> getCleanEnergyUsage(GetCleanEnergyUsageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", TypeShape.of(GetCleanEnergyUsageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the clean energy usage summary by region.
+     * 
+     * ## Example Usage
+     * 
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCleanEnergyUsageArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCleanEnergyUsage = MeteringComputationFunctions.getCleanEnergyUsage(GetCleanEnergyUsageArgs.builder()
+     *             .region(var_.clean_energy_usage_region())
+     *             .ad(var_.clean_energy_usage_ad())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetCleanEnergyUsageResult> getCleanEnergyUsagePlain(GetCleanEnergyUsagePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", TypeShape.of(GetCleanEnergyUsageResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
@@ -1449,5 +1784,473 @@ public final class MeteringComputationFunctions {
      */
     public static CompletableFuture<GetSchedulesResult> getSchedulesPlain(GetSchedulesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getSchedules:getSchedules", TypeShape.of(GetSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Usage Carbon Emissions Config resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageCarbonEmissionsConfig = MeteringComputationFunctions.getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs.builder()
+     *             .tenantId(oci_metering_computation_tenant.test_tenant().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetUsageCarbonEmissionsConfigResult> getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs args) {
+        return getUsageCarbonEmissionsConfig(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Usage Carbon Emissions Config resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageCarbonEmissionsConfig = MeteringComputationFunctions.getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs.builder()
+     *             .tenantId(oci_metering_computation_tenant.test_tenant().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetUsageCarbonEmissionsConfigResult> getUsageCarbonEmissionsConfigPlain(GetUsageCarbonEmissionsConfigPlainArgs args) {
+        return getUsageCarbonEmissionsConfigPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Usage Carbon Emissions Config resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageCarbonEmissionsConfig = MeteringComputationFunctions.getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs.builder()
+     *             .tenantId(oci_metering_computation_tenant.test_tenant().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetUsageCarbonEmissionsConfigResult> getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MeteringComputation/getUsageCarbonEmissionsConfig:getUsageCarbonEmissionsConfig", TypeShape.of(GetUsageCarbonEmissionsConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Usage Carbon Emissions Config resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the configuration list for the UI drop-down list of carbon emission console.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageCarbonEmissionsConfig = MeteringComputationFunctions.getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs.builder()
+     *             .tenantId(oci_metering_computation_tenant.test_tenant().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetUsageCarbonEmissionsConfigResult> getUsageCarbonEmissionsConfigPlain(GetUsageCarbonEmissionsConfigPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getUsageCarbonEmissionsConfig:getUsageCarbonEmissionsConfig", TypeShape.of(GetUsageCarbonEmissionsConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the usage carbon emissions saved query list.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageCarbonEmissionsQueries = MeteringComputationFunctions.getUsageCarbonEmissionsQueries(GetUsageCarbonEmissionsQueriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetUsageCarbonEmissionsQueriesResult> getUsageCarbonEmissionsQueries(GetUsageCarbonEmissionsQueriesArgs args) {
+        return getUsageCarbonEmissionsQueries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the usage carbon emissions saved query list.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageCarbonEmissionsQueries = MeteringComputationFunctions.getUsageCarbonEmissionsQueries(GetUsageCarbonEmissionsQueriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetUsageCarbonEmissionsQueriesResult> getUsageCarbonEmissionsQueriesPlain(GetUsageCarbonEmissionsQueriesPlainArgs args) {
+        return getUsageCarbonEmissionsQueriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the usage carbon emissions saved query list.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageCarbonEmissionsQueries = MeteringComputationFunctions.getUsageCarbonEmissionsQueries(GetUsageCarbonEmissionsQueriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetUsageCarbonEmissionsQueriesResult> getUsageCarbonEmissionsQueries(GetUsageCarbonEmissionsQueriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MeteringComputation/getUsageCarbonEmissionsQueries:getUsageCarbonEmissionsQueries", TypeShape.of(GetUsageCarbonEmissionsQueriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Usage Carbon Emissions Queries in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the usage carbon emissions saved query list.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageCarbonEmissionsQueries = MeteringComputationFunctions.getUsageCarbonEmissionsQueries(GetUsageCarbonEmissionsQueriesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetUsageCarbonEmissionsQueriesResult> getUsageCarbonEmissionsQueriesPlain(GetUsageCarbonEmissionsQueriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getUsageCarbonEmissionsQueries:getUsageCarbonEmissionsQueries", TypeShape.of(GetUsageCarbonEmissionsQueriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the usage carbon emissions saved query.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageCarbonEmissionsQuery = MeteringComputationFunctions.getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs.builder()
+     *             .usageCarbonEmissionsQueryId(oci_metering_computation_usage_carbon_emissions_query.test_usage_carbon_emissions_query().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetUsageCarbonEmissionsQueryResult> getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs args) {
+        return getUsageCarbonEmissionsQuery(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the usage carbon emissions saved query.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageCarbonEmissionsQuery = MeteringComputationFunctions.getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs.builder()
+     *             .usageCarbonEmissionsQueryId(oci_metering_computation_usage_carbon_emissions_query.test_usage_carbon_emissions_query().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetUsageCarbonEmissionsQueryResult> getUsageCarbonEmissionsQueryPlain(GetUsageCarbonEmissionsQueryPlainArgs args) {
+        return getUsageCarbonEmissionsQueryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the usage carbon emissions saved query.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageCarbonEmissionsQuery = MeteringComputationFunctions.getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs.builder()
+     *             .usageCarbonEmissionsQueryId(oci_metering_computation_usage_carbon_emissions_query.test_usage_carbon_emissions_query().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetUsageCarbonEmissionsQueryResult> getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MeteringComputation/getUsageCarbonEmissionsQuery:getUsageCarbonEmissionsQuery", TypeShape.of(GetUsageCarbonEmissionsQueryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Usage Carbon Emissions Query resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Returns the usage carbon emissions saved query.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageCarbonEmissionsQuery = MeteringComputationFunctions.getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs.builder()
+     *             .usageCarbonEmissionsQueryId(oci_metering_computation_usage_carbon_emissions_query.test_usage_carbon_emissions_query().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetUsageCarbonEmissionsQueryResult> getUsageCarbonEmissionsQueryPlain(GetUsageCarbonEmissionsQueryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getUsageCarbonEmissionsQuery:getUsageCarbonEmissionsQuery", TypeShape.of(GetUsageCarbonEmissionsQueryResult.class), args, Utilities.withVersion(options));
     }
 }

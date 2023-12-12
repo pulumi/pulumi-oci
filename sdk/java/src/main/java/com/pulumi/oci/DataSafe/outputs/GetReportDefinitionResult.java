@@ -105,12 +105,12 @@ public final class GetReportDefinitionResult {
      */
     private String schedule;
     /**
-     * @return The OCID of the compartment in which the scheduled resource should be created.
+     * @return The OCID of the compartment in which the scheduled resource will be created.
      * 
      */
     private String scheduledReportCompartmentId;
     /**
-     * @return Specifies the format of the report ( either XLS or PDF )
+     * @return Specifies the format of the report ( either .xls or .pdf )
      * 
      */
     private String scheduledReportMimeType;
@@ -145,12 +145,12 @@ public final class GetReportDefinitionResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return Specifies the data and time the report definition was created.
+     * @return Specifies the date and time the report definition was created.
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the report definition was update.
+     * @return The date and time the report definition was updated.
      * 
      */
     private String timeUpdated;
@@ -279,14 +279,14 @@ public final class GetReportDefinitionResult {
         return this.schedule;
     }
     /**
-     * @return The OCID of the compartment in which the scheduled resource should be created.
+     * @return The OCID of the compartment in which the scheduled resource will be created.
      * 
      */
     public String scheduledReportCompartmentId() {
         return this.scheduledReportCompartmentId;
     }
     /**
-     * @return Specifies the format of the report ( either XLS or PDF )
+     * @return Specifies the format of the report ( either .xls or .pdf )
      * 
      */
     public String scheduledReportMimeType() {
@@ -335,14 +335,14 @@ public final class GetReportDefinitionResult {
         return this.systemTags;
     }
     /**
-     * @return Specifies the data and time the report definition was created.
+     * @return Specifies the date and time the report definition was created.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the report definition was update.
+     * @return The date and time the report definition was updated.
      * 
      */
     public String timeUpdated() {

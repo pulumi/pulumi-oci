@@ -37,7 +37,7 @@ public final class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceColle
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The OCID of the SDM masking policy difference.
+     * @return The OCID of the Sensitive data model and masking policy difference resource.
      * 
      */
     private String id;
@@ -109,7 +109,7 @@ public final class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceColle
         return this.freeformTags;
     }
     /**
-     * @return The OCID of the SDM masking policy difference.
+     * @return The OCID of the Sensitive data model and masking policy difference resource.
      * 
      */
     public String id() {

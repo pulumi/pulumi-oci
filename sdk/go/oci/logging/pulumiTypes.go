@@ -172,6 +172,8 @@ func (o LogConfigurationPtrOutput) Source() LogConfigurationSourcePtrOutput {
 type LogConfigurationSource struct {
 	// Log object category.
 	Category string `pulumi:"category"`
+	// (Updatable) Log category parameters are stored here.
+	Parameters map[string]interface{} `pulumi:"parameters"`
 	// The unique identifier of the resource emitting the log.
 	Resource string `pulumi:"resource"`
 	// Service generating log.
@@ -195,6 +197,8 @@ type LogConfigurationSourceInput interface {
 type LogConfigurationSourceArgs struct {
 	// Log object category.
 	Category pulumi.StringInput `pulumi:"category"`
+	// (Updatable) Log category parameters are stored here.
+	Parameters pulumi.MapInput `pulumi:"parameters"`
 	// The unique identifier of the resource emitting the log.
 	Resource pulumi.StringInput `pulumi:"resource"`
 	// Service generating log.
@@ -286,6 +290,11 @@ func (o LogConfigurationSourceOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v LogConfigurationSource) string { return v.Category }).(pulumi.StringOutput)
 }
 
+// (Updatable) Log category parameters are stored here.
+func (o LogConfigurationSourceOutput) Parameters() pulumi.MapOutput {
+	return o.ApplyT(func(v LogConfigurationSource) map[string]interface{} { return v.Parameters }).(pulumi.MapOutput)
+}
+
 // The unique identifier of the resource emitting the log.
 func (o LogConfigurationSourceOutput) Resource() pulumi.StringOutput {
 	return o.ApplyT(func(v LogConfigurationSource) string { return v.Resource }).(pulumi.StringOutput)
@@ -334,6 +343,16 @@ func (o LogConfigurationSourcePtrOutput) Category() pulumi.StringPtrOutput {
 		}
 		return &v.Category
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Log category parameters are stored here.
+func (o LogConfigurationSourcePtrOutput) Parameters() pulumi.MapOutput {
+	return o.ApplyT(func(v *LogConfigurationSource) map[string]interface{} {
+		if v == nil {
+			return nil
+		}
+		return v.Parameters
+	}).(pulumi.MapOutput)
 }
 
 // The unique identifier of the resource emitting the log.
@@ -2742,6 +2761,8 @@ func (o GetLogConfigurationArrayOutput) Index(i pulumi.IntInput) GetLogConfigura
 type GetLogConfigurationSource struct {
 	// Log object category.
 	Category string `pulumi:"category"`
+	// Log category parameters are stored here.
+	Parameters map[string]interface{} `pulumi:"parameters"`
 	// The unique identifier of the resource emitting the log.
 	Resource string `pulumi:"resource"`
 	// Service generating log.
@@ -2765,6 +2786,8 @@ type GetLogConfigurationSourceInput interface {
 type GetLogConfigurationSourceArgs struct {
 	// Log object category.
 	Category pulumi.StringInput `pulumi:"category"`
+	// Log category parameters are stored here.
+	Parameters pulumi.MapInput `pulumi:"parameters"`
 	// The unique identifier of the resource emitting the log.
 	Resource pulumi.StringInput `pulumi:"resource"`
 	// Service generating log.
@@ -2828,6 +2851,11 @@ func (o GetLogConfigurationSourceOutput) ToGetLogConfigurationSourceOutputWithCo
 // Log object category.
 func (o GetLogConfigurationSourceOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogConfigurationSource) string { return v.Category }).(pulumi.StringOutput)
+}
+
+// Log category parameters are stored here.
+func (o GetLogConfigurationSourceOutput) Parameters() pulumi.MapOutput {
+	return o.ApplyT(func(v GetLogConfigurationSource) map[string]interface{} { return v.Parameters }).(pulumi.MapOutput)
 }
 
 // The unique identifier of the resource emitting the log.
@@ -3957,6 +3985,8 @@ func (o GetLogsLogConfigurationArrayOutput) Index(i pulumi.IntInput) GetLogsLogC
 type GetLogsLogConfigurationSource struct {
 	// Log object category.
 	Category string `pulumi:"category"`
+	// Log category parameters are stored here.
+	Parameters map[string]interface{} `pulumi:"parameters"`
 	// The unique identifier of the resource emitting the log.
 	Resource string `pulumi:"resource"`
 	// Service generating log.
@@ -3980,6 +4010,8 @@ type GetLogsLogConfigurationSourceInput interface {
 type GetLogsLogConfigurationSourceArgs struct {
 	// Log object category.
 	Category pulumi.StringInput `pulumi:"category"`
+	// Log category parameters are stored here.
+	Parameters pulumi.MapInput `pulumi:"parameters"`
 	// The unique identifier of the resource emitting the log.
 	Resource pulumi.StringInput `pulumi:"resource"`
 	// Service generating log.
@@ -4043,6 +4075,11 @@ func (o GetLogsLogConfigurationSourceOutput) ToGetLogsLogConfigurationSourceOutp
 // Log object category.
 func (o GetLogsLogConfigurationSourceOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLogsLogConfigurationSource) string { return v.Category }).(pulumi.StringOutput)
+}
+
+// Log category parameters are stored here.
+func (o GetLogsLogConfigurationSourceOutput) Parameters() pulumi.MapOutput {
+	return o.ApplyT(func(v GetLogsLogConfigurationSource) map[string]interface{} { return v.Parameters }).(pulumi.MapOutput)
 }
 
 // The unique identifier of the resource emitting the log.

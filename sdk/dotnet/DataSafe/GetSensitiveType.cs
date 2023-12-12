@@ -146,6 +146,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        /// </summary>
+        public readonly bool IsCommon;
+        /// <summary>
         /// A regular expression to be used by data discovery for matching column names.
         /// </summary>
         public readonly string NamePattern;
@@ -205,6 +209,8 @@ namespace Pulumi.Oci.DataSafe
 
             string id,
 
+            bool isCommon,
+
             string namePattern,
 
             string parentCategoryId,
@@ -235,6 +241,7 @@ namespace Pulumi.Oci.DataSafe
             EntityType = entityType;
             FreeformTags = freeformTags;
             Id = id;
+            IsCommon = isCommon;
             NamePattern = namePattern;
             ParentCategoryId = parentCategoryId;
             SearchType = searchType;

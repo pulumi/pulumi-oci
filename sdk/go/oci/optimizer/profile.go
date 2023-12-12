@@ -98,7 +98,8 @@ type Profile struct {
 	// (Updatable) The name assigned to the profile. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The profile's current state.
-	State pulumi.StringOutput `pulumi:"state"`
+	State      pulumi.StringOutput `pulumi:"state"`
+	SystemTags pulumi.MapOutput    `pulumi:"systemTags"`
 	// (Updatable) Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments ProfileTargetCompartmentsOutput `pulumi:"targetCompartments"`
 	// (Updatable) Optional. The tags specified in the profile override for a recommendation.
@@ -163,7 +164,8 @@ type profileState struct {
 	// (Updatable) The name assigned to the profile. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
 	// The profile's current state.
-	State *string `pulumi:"state"`
+	State      *string                `pulumi:"state"`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// (Updatable) Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments *ProfileTargetCompartments `pulumi:"targetCompartments"`
 	// (Updatable) Optional. The tags specified in the profile override for a recommendation.
@@ -190,7 +192,8 @@ type ProfileState struct {
 	// (Updatable) The name assigned to the profile. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
 	// The profile's current state.
-	State pulumi.StringPtrInput
+	State      pulumi.StringPtrInput
+	SystemTags pulumi.MapInput
 	// (Updatable) Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments ProfileTargetCompartmentsPtrInput
 	// (Updatable) Optional. The tags specified in the profile override for a recommendation.
@@ -373,6 +376,10 @@ func (o ProfileOutput) Name() pulumi.StringOutput {
 // The profile's current state.
 func (o ProfileOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+func (o ProfileOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v *Profile) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // (Updatable) Optional. The compartments specified in the profile override for a recommendation.

@@ -254,6 +254,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly int Port;
         /// <summary>
+        /// Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
         /// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         /// </summary>
         public readonly string PrivateIp;
@@ -265,6 +266,10 @@ namespace Pulumi.Oci.GoldenGate
         /// The name of the region. e.g.: us-ashburn-1
         /// </summary>
         public readonly string Region;
+        /// <summary>
+        /// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+        /// </summary>
+        public readonly string RoutingMethod;
         public readonly string SasToken;
         public readonly string SecretAccessKey;
         /// <summary>
@@ -312,7 +317,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string StreamPoolId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
@@ -453,6 +458,8 @@ namespace Pulumi.Oci.GoldenGate
 
             string region,
 
+            string routingMethod,
+
             string sasToken,
 
             string secretAccessKey,
@@ -559,6 +566,7 @@ namespace Pulumi.Oci.GoldenGate
             ProducerProperties = producerProperties;
             PublicKeyFingerprint = publicKeyFingerprint;
             Region = region;
+            RoutingMethod = routingMethod;
             SasToken = sasToken;
             SecretAccessKey = secretAccessKey;
             SecurityProtocol = securityProtocol;

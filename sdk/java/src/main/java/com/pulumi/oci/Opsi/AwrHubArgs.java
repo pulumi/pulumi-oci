@@ -81,15 +81,15 @@ public final class AwrHubArgs extends com.pulumi.resources.ResourceArgs {
      * Object Storage Bucket Name
      * 
      */
-    @Import(name="objectStorageBucketName", required=true)
-    private Output<String> objectStorageBucketName;
+    @Import(name="objectStorageBucketName")
+    private @Nullable Output<String> objectStorageBucketName;
 
     /**
      * @return Object Storage Bucket Name
      * 
      */
-    public Output<String> objectStorageBucketName() {
-        return this.objectStorageBucketName;
+    public Optional<Output<String>> objectStorageBucketName() {
+        return Optional.ofNullable(this.objectStorageBucketName);
     }
 
     /**
@@ -232,7 +232,7 @@ public final class AwrHubArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder objectStorageBucketName(Output<String> objectStorageBucketName) {
+        public Builder objectStorageBucketName(@Nullable Output<String> objectStorageBucketName) {
             $.objectStorageBucketName = objectStorageBucketName;
             return this;
         }
@@ -277,7 +277,6 @@ public final class AwrHubArgs extends com.pulumi.resources.ResourceArgs {
         public AwrHubArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
             $.displayName = Objects.requireNonNull($.displayName, "expected parameter 'displayName' to be non-null");
-            $.objectStorageBucketName = Objects.requireNonNull($.objectStorageBucketName, "expected parameter 'objectStorageBucketName' to be non-null");
             $.operationsInsightsWarehouseId = Objects.requireNonNull($.operationsInsightsWarehouseId, "expected parameter 'operationsInsightsWarehouseId' to be non-null");
             return $;
         }

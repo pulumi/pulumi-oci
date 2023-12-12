@@ -32,6 +32,7 @@ namespace Pulumi.Oci.Optimizer
         ///     var testResourceAction = Oci.Optimizer.GetResourceAction.Invoke(new()
         ///     {
         ///         ResourceActionId = oci_optimizer_resource_action.Test_resource_action.Id,
+        ///         IncludeResourceMetadata = @var.Resource_action_include_resource_metadata,
         ///     });
         /// 
         /// });
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.Optimizer
         ///     var testResourceAction = Oci.Optimizer.GetResourceAction.Invoke(new()
         ///     {
         ///         ResourceActionId = oci_optimizer_resource_action.Test_resource_action.Id,
+        ///         IncludeResourceMetadata = @var.Resource_action_include_resource_metadata,
         ///     });
         /// 
         /// });
@@ -78,6 +80,12 @@ namespace Pulumi.Oci.Optimizer
     public sealed class GetResourceActionArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
+        /// Supplement additional resource information in extended metadata response.
+        /// </summary>
+        [Input("includeResourceMetadata")]
+        public bool? IncludeResourceMetadata { get; set; }
+
+        /// <summary>
         /// The unique OCID associated with the resource action.
         /// </summary>
         [Input("resourceActionId", required: true)]
@@ -91,6 +99,12 @@ namespace Pulumi.Oci.Optimizer
 
     public sealed class GetResourceActionInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Supplement additional resource information in extended metadata response.
+        /// </summary>
+        [Input("includeResourceMetadata")]
+        public Input<bool>? IncludeResourceMetadata { get; set; }
+
         /// <summary>
         /// The unique OCID associated with the resource action.
         /// </summary>
@@ -135,6 +149,7 @@ namespace Pulumi.Oci.Optimizer
         /// The unique OCID associated with the resource action.
         /// </summary>
         public readonly string Id;
+        public readonly bool? IncludeResourceMetadata;
         /// <summary>
         /// Custom metadata key/value pairs for the resource action.
         /// </summary>
@@ -197,6 +212,8 @@ namespace Pulumi.Oci.Optimizer
 
             string id,
 
+            bool? includeResourceMetadata,
+
             ImmutableDictionary<string, object> metadata,
 
             string name,
@@ -228,6 +245,7 @@ namespace Pulumi.Oci.Optimizer
             EstimatedCostSaving = estimatedCostSaving;
             ExtendedMetadata = extendedMetadata;
             Id = id;
+            IncludeResourceMetadata = includeResourceMetadata;
             Metadata = metadata;
             Name = name;
             RecommendationId = recommendationId;

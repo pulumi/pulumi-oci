@@ -4,7 +4,9 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -14,6 +16,11 @@ public final class GetLogsLogConfigurationSource {
      * 
      */
     private String category;
+    /**
+     * @return Log category parameters are stored here.
+     * 
+     */
+    private Map<String,Object> parameters;
     /**
      * @return The unique identifier of the resource emitting the log.
      * 
@@ -38,6 +45,13 @@ public final class GetLogsLogConfigurationSource {
      */
     public String category() {
         return this.category;
+    }
+    /**
+     * @return Log category parameters are stored here.
+     * 
+     */
+    public Map<String,Object> parameters() {
+        return this.parameters;
     }
     /**
      * @return The unique identifier of the resource emitting the log.
@@ -72,6 +86,7 @@ public final class GetLogsLogConfigurationSource {
     @CustomType.Builder
     public static final class Builder {
         private String category;
+        private Map<String,Object> parameters;
         private String resource;
         private String service;
         private String sourceType;
@@ -79,6 +94,7 @@ public final class GetLogsLogConfigurationSource {
         public Builder(GetLogsLogConfigurationSource defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.category = defaults.category;
+    	      this.parameters = defaults.parameters;
     	      this.resource = defaults.resource;
     	      this.service = defaults.service;
     	      this.sourceType = defaults.sourceType;
@@ -87,6 +103,11 @@ public final class GetLogsLogConfigurationSource {
         @CustomType.Setter
         public Builder category(String category) {
             this.category = Objects.requireNonNull(category);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder parameters(Map<String,Object> parameters) {
+            this.parameters = Objects.requireNonNull(parameters);
             return this;
         }
         @CustomType.Setter
@@ -107,6 +128,7 @@ public final class GetLogsLogConfigurationSource {
         public GetLogsLogConfigurationSource build() {
             final var _resultValue = new GetLogsLogConfigurationSource();
             _resultValue.category = category;
+            _resultValue.parameters = parameters;
             _resultValue.resource = resource;
             _resultValue.service = service;
             _resultValue.sourceType = sourceType;

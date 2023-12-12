@@ -1566,6 +1566,7 @@ class LibraryMasingFormatFormatEntry(dict):
                  grouping_columns: Optional[Sequence[str]] = None,
                  length: Optional[int] = None,
                  library_masking_format_id: Optional[str] = None,
+                 pattern: Optional[str] = None,
                  post_processing_function: Optional[str] = None,
                  random_lists: Optional[Sequence[str]] = None,
                  regular_expression: Optional[str] = None,
@@ -1590,6 +1591,7 @@ class LibraryMasingFormatFormatEntry(dict):
         :param Sequence[str] grouping_columns: (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
         :param int length: (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
         :param str library_masking_format_id: (Updatable) The OCID of the library masking format.
+        :param str pattern: (Updatable) The pattern that should be used to mask data.
         :param str post_processing_function: (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param Sequence[str] random_lists: (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param str regular_expression: (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
@@ -1628,6 +1630,8 @@ class LibraryMasingFormatFormatEntry(dict):
             pulumi.set(__self__, "length", length)
         if library_masking_format_id is not None:
             pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+        if pattern is not None:
+            pulumi.set(__self__, "pattern", pattern)
         if post_processing_function is not None:
             pulumi.set(__self__, "post_processing_function", post_processing_function)
         if random_lists is not None:
@@ -1740,6 +1744,14 @@ class LibraryMasingFormatFormatEntry(dict):
         (Updatable) The OCID of the library masking format.
         """
         return pulumi.get(self, "library_masking_format_id")
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> Optional[str]:
+        """
+        (Updatable) The pattern that should be used to mask data.
+        """
+        return pulumi.get(self, "pattern")
 
     @property
     @pulumi.getter(name="postProcessingFunction")
@@ -1970,6 +1982,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
                  grouping_columns: Optional[Sequence[str]] = None,
                  length: Optional[int] = None,
                  library_masking_format_id: Optional[str] = None,
+                 pattern: Optional[str] = None,
                  post_processing_function: Optional[str] = None,
                  random_lists: Optional[Sequence[str]] = None,
                  regular_expression: Optional[str] = None,
@@ -1994,6 +2007,7 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
         :param Sequence[str] grouping_columns: (Updatable) One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
         :param int length: (Updatable) The number of characters that should be there in the substring. It should be an integer and greater than zero.
         :param str library_masking_format_id: (Updatable) The OCID of the library masking format.
+        :param str pattern: (Updatable) The pattern that should be used to mask data.
         :param str post_processing_function: (Updatable) The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param Sequence[str] random_lists: (Updatable) A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param str regular_expression: (Updatable) The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
@@ -2032,6 +2046,8 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
             pulumi.set(__self__, "length", length)
         if library_masking_format_id is not None:
             pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+        if pattern is not None:
+            pulumi.set(__self__, "pattern", pattern)
         if post_processing_function is not None:
             pulumi.set(__self__, "post_processing_function", post_processing_function)
         if random_lists is not None:
@@ -2144,6 +2160,14 @@ class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry(dict):
         (Updatable) The OCID of the library masking format.
         """
         return pulumi.get(self, "library_masking_format_id")
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> Optional[str]:
+        """
+        (Updatable) The pattern that should be used to mask data.
+        """
+        return pulumi.get(self, "pattern")
 
     @property
     @pulumi.getter(name="postProcessingFunction")
@@ -5556,7 +5580,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
                  time_collected: str):
         """
         :param str action_taken: The action taken for this audit event.
-        :param str audit_event_time: The time of the audit event occurrence in the target database.
+        :param str audit_event_time: The time that the audit event occurs in the target database.
         :param str audit_location: The location of the audit. Currently the value is audit table.
         :param str audit_policies: Comma-seperated list of audit policies that caused the current audit event.
         :param str audit_trail_id: The OCID of the audit trail that generated this audit event. To be noted, this field has been deprecated.
@@ -5564,7 +5588,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         :param str client_hostname: The name of the host machine from which the session was spawned.
         :param str client_id: The client identifier in each Oracle session.
         :param str client_ip: The IP address of the host machine from which the session was spawned.
-        :param str client_program: The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+        :param str client_program: The application from which the audit event was generated. For example SQL Plus or SQL Developer.
         :param str command_param: List of bind variables associated with the command text.
         :param str command_text: The SQL associated with the audit event.
         :param str compartment_id: A filter to return only resources that match the specified compartment OCID.
@@ -5575,16 +5599,16 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         :param str db_user_name: The name of the database user whose actions were audited.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param str error_code: Oracle Error code generated by the action. Zero indicates the action was successful.
-        :param str error_message: The detailed message on why the Error occurred.
-        :param str event_name: The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        :param str error_message: The detailed message on why the error occurred.
+        :param str event_name: The name of the detail action executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
         :param str extended_event_attributes: List of all other attributes of the audit event seperated by a colon other than the one returned in audit record.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the audit event.
         :param bool is_alerted: Indicates whether an alert was raised for this audit event.
         :param str object: The name of the object affected by the action.
         :param str object_owner: The schema name of the object affected by the action.
-        :param str object_type: The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
-        :param str operation: The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+        :param str object_type: The type of the object in the source database affected by the action. For example PL/SQL, SYNONYM or PACKAGE BODY.
+        :param str operation: The name of the action executed by the user on the target database. For example ALTER, CREATE or DROP.
         :param str operation_status: Indicates whether the operation was a success or a failure.
         :param str os_terminal: The operating system terminal of the user session.
         :param str os_user_name: The name of the operating system user for the database session.
@@ -5640,7 +5664,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="auditEventTime")
     def audit_event_time(self) -> str:
         """
-        The time of the audit event occurrence in the target database.
+        The time that the audit event occurs in the target database.
         """
         return pulumi.get(self, "audit_event_time")
 
@@ -5704,7 +5728,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="clientProgram")
     def client_program(self) -> str:
         """
-        The application from which the audit event was generated. Examples SQL Plus or SQL Developer.
+        The application from which the audit event was generated. For example SQL Plus or SQL Developer.
         """
         return pulumi.get(self, "client_program")
 
@@ -5771,7 +5795,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="errorMessage")
     def error_message(self) -> str:
         """
-        The detailed message on why the Error occurred.
+        The detailed message on why the error occurred.
         """
         return pulumi.get(self, "error_message")
 
@@ -5779,7 +5803,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="eventName")
     def event_name(self) -> str:
         """
-        The name of the detail action executed by the user on the target database. i.e ALTER SEQUENCE, CREATE TRIGGER, CREATE INDEX.
+        The name of the detail action executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
         """
         return pulumi.get(self, "event_name")
 
@@ -5835,7 +5859,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter(name="objectType")
     def object_type(self) -> str:
         """
-        The type of the object in the source database affected by the action. i.e PL/SQL, SYNONYM, PACKAGE BODY.
+        The type of the object in the source database affected by the action. For example PL/SQL, SYNONYM or PACKAGE BODY.
         """
         return pulumi.get(self, "object_type")
 
@@ -5843,7 +5867,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
     @pulumi.getter
     def operation(self) -> str:
         """
-        The name of the action executed by the user on the target database. i.e ALTER, CREATE, DROP.
+        The name of the action executed by the user on the target database. For example ALTER, CREATE or DROP.
         """
         return pulumi.get(self, "operation")
 
@@ -8581,12 +8605,15 @@ class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemResult(dict):
 class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult(dict):
     def __init__(__self__, *,
                  sensitive_data_model_id: str,
+                 sensitive_type_id: str,
                  target_id: str):
         """
         :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
+        :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
         :param str target_id: A filter to return only items related to a specific target OCID.
         """
         pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
         pulumi.set(__self__, "target_id", target_id)
 
     @property
@@ -8596,6 +8623,14 @@ class GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult(dict)
         A filter to return only the resources that match the specified sensitive data model OCID.
         """
         return pulumi.get(self, "sensitive_data_model_id")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeId")
+    def sensitive_type_id(self) -> str:
+        """
+        A filter to return only items related to a specific sensitive type OCID.
+        """
+        return pulumi.get(self, "sensitive_type_id")
 
     @property
     @pulumi.getter(name="targetId")
@@ -8979,6 +9014,7 @@ class GetLibraryMaskingFormatFormatEntryResult(dict):
                  grouping_columns: Sequence[str],
                  length: int,
                  library_masking_format_id: str,
+                 pattern: str,
                  post_processing_function: str,
                  random_lists: Sequence[str],
                  regular_expression: str,
@@ -9003,6 +9039,7 @@ class GetLibraryMaskingFormatFormatEntryResult(dict):
         :param Sequence[str] grouping_columns: One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
         :param int length: The number of characters that should be there in the substring. It should be an integer and greater than zero.
         :param str library_masking_format_id: The OCID of the library masking format.
+        :param str pattern: The pattern that should be used to mask data.
         :param str post_processing_function: The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param Sequence[str] random_lists: A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param str regular_expression: The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
@@ -9027,6 +9064,7 @@ class GetLibraryMaskingFormatFormatEntryResult(dict):
         pulumi.set(__self__, "grouping_columns", grouping_columns)
         pulumi.set(__self__, "length", length)
         pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+        pulumi.set(__self__, "pattern", pattern)
         pulumi.set(__self__, "post_processing_function", post_processing_function)
         pulumi.set(__self__, "random_lists", random_lists)
         pulumi.set(__self__, "regular_expression", regular_expression)
@@ -9120,6 +9158,14 @@ class GetLibraryMaskingFormatFormatEntryResult(dict):
         The OCID of the library masking format.
         """
         return pulumi.get(self, "library_masking_format_id")
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> str:
+        """
+        The pattern that should be used to mask data.
+        """
+        return pulumi.get(self, "pattern")
 
     @property
     @pulumi.getter(name="postProcessingFunction")
@@ -9417,6 +9463,7 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResul
                  grouping_columns: Sequence[str],
                  length: int,
                  library_masking_format_id: str,
+                 pattern: str,
                  post_processing_function: str,
                  random_lists: Sequence[str],
                  regular_expression: str,
@@ -9441,6 +9488,7 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResul
         :param Sequence[str] grouping_columns: One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
         :param int length: The number of characters that should be there in the substring. It should be an integer and greater than zero.
         :param str library_masking_format_id: A filter to return only the resources that match the specified library masking format OCID.
+        :param str pattern: The pattern that should be used to mask data.
         :param str post_processing_function: The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param Sequence[str] random_lists: A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param str regular_expression: The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
@@ -9465,6 +9513,7 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResul
         pulumi.set(__self__, "grouping_columns", grouping_columns)
         pulumi.set(__self__, "length", length)
         pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+        pulumi.set(__self__, "pattern", pattern)
         pulumi.set(__self__, "post_processing_function", post_processing_function)
         pulumi.set(__self__, "random_lists", random_lists)
         pulumi.set(__self__, "regular_expression", regular_expression)
@@ -9558,6 +9607,14 @@ class GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryResul
         A filter to return only the resources that match the specified library masking format OCID.
         """
         return pulumi.get(self, "library_masking_format_id")
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> str:
+        """
+        The pattern that should be used to mask data.
+        """
+        return pulumi.get(self, "pattern")
 
     @property
     @pulumi.getter(name="postProcessingFunction")
@@ -10016,6 +10073,7 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult(dict):
                  grouping_columns: Sequence[str],
                  length: int,
                  library_masking_format_id: str,
+                 pattern: str,
                  post_processing_function: str,
                  random_lists: Sequence[str],
                  regular_expression: str,
@@ -10040,6 +10098,7 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult(dict):
         :param Sequence[str] grouping_columns: One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
         :param int length: The number of characters that should be there in the substring. It should be an integer and greater than zero.
         :param str library_masking_format_id: The OCID of the library masking format.
+        :param str pattern: The pattern that should be used to mask data.
         :param str post_processing_function: The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param Sequence[str] random_lists: A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param str regular_expression: The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
@@ -10064,6 +10123,7 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult(dict):
         pulumi.set(__self__, "grouping_columns", grouping_columns)
         pulumi.set(__self__, "length", length)
         pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+        pulumi.set(__self__, "pattern", pattern)
         pulumi.set(__self__, "post_processing_function", post_processing_function)
         pulumi.set(__self__, "random_lists", random_lists)
         pulumi.set(__self__, "regular_expression", regular_expression)
@@ -10157,6 +10217,14 @@ class GetMaskingPoliciesMaskingColumnMaskingFormatFormatEntryResult(dict):
         The OCID of the library masking format.
         """
         return pulumi.get(self, "library_masking_format_id")
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> str:
+        """
+        The pattern that should be used to mask data.
+        """
+        return pulumi.get(self, "pattern")
 
     @property
     @pulumi.getter(name="postProcessingFunction")
@@ -10538,6 +10606,7 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
                  grouping_columns: Sequence[str],
                  length: int,
                  library_masking_format_id: str,
+                 pattern: str,
                  post_processing_function: str,
                  random_lists: Sequence[str],
                  regular_expression: str,
@@ -10562,6 +10631,7 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
         :param Sequence[str] grouping_columns: One or more reference columns to be used to group column values so that they can be shuffled within their own group. The grouping columns and  the column to be masked must belong to the same table.
         :param int length: The number of characters that should be there in the substring. It should be an integer and greater than zero.
         :param str library_masking_format_id: The OCID of the library masking format.
+        :param str pattern: The pattern that should be used to mask data.
         :param str post_processing_function: The post processing function in SCHEMA_NAME.PACKAGE_NAME.FUNCTION_NAME format. It can be a standalone or packaged function, so PACKAGE_NAME is optional.
         :param Sequence[str] random_lists: A comma-separated list of values to be used to replace column values. The list can be of strings, numbers, or dates. The data type of each value in the list must be compatible with the data type of the column. The number of entries in the list cannot be more than 999.
         :param str regular_expression: The regular expression to be used for masking. For data with characters in the ASCII character set, providing a regular expression is optional. However, it  is required if the data contains multi-byte characters. If not provided, an  error is returned when a multi-byte character is found.
@@ -10586,6 +10656,7 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
         pulumi.set(__self__, "grouping_columns", grouping_columns)
         pulumi.set(__self__, "length", length)
         pulumi.set(__self__, "library_masking_format_id", library_masking_format_id)
+        pulumi.set(__self__, "pattern", pattern)
         pulumi.set(__self__, "post_processing_function", post_processing_function)
         pulumi.set(__self__, "random_lists", random_lists)
         pulumi.set(__self__, "regular_expression", regular_expression)
@@ -10679,6 +10750,14 @@ class GetMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemMaskingFormatFo
         The OCID of the library masking format.
         """
         return pulumi.get(self, "library_masking_format_id")
+
+    @property
+    @pulumi.getter
+    def pattern(self) -> str:
+        """
+        The pattern that should be used to mask data.
+        """
+        return pulumi.get(self, "pattern")
 
     @property
     @pulumi.getter(name="postProcessingFunction")
@@ -12256,16 +12335,16 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         :param str parent_id: The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
         :param str record_time_span: The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         :param str schedule: The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
-        :param str scheduled_report_compartment_id: The OCID of the compartment in which the scheduled resource should be created.
-        :param str scheduled_report_mime_type: Specifies the format of the report ( either XLS or PDF )
+        :param str scheduled_report_compartment_id: The OCID of the compartment in which the scheduled resource will be created.
+        :param str scheduled_report_mime_type: Specifies the format of the report ( either .xls or .pdf )
         :param str scheduled_report_name: The name of the report to be scheduled.
         :param int scheduled_report_row_limit: Specifies the limit on the number of rows in the report.
         :param str scim_filter: Additional scim filters used to get the specific summary.
         :param str state: An optional filter to return only resources that match the specified lifecycle state.
         :param Sequence['GetReportDefinitionsReportDefinitionCollectionItemSummaryArgs'] summaries: An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: Specifies the data and time the report definition was created.
-        :param str time_updated: The date and time the report definition was update.
+        :param str time_created: Specifies the date and time the report definition was created.
+        :param str time_updated: The date and time the report definition was updated.
         """
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "column_filters", column_filters)
@@ -12435,7 +12514,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="scheduledReportCompartmentId")
     def scheduled_report_compartment_id(self) -> str:
         """
-        The OCID of the compartment in which the scheduled resource should be created.
+        The OCID of the compartment in which the scheduled resource will be created.
         """
         return pulumi.get(self, "scheduled_report_compartment_id")
 
@@ -12443,7 +12522,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="scheduledReportMimeType")
     def scheduled_report_mime_type(self) -> str:
         """
-        Specifies the format of the report ( either XLS or PDF )
+        Specifies the format of the report ( either .xls or .pdf )
         """
         return pulumi.get(self, "scheduled_report_mime_type")
 
@@ -12499,7 +12578,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        Specifies the data and time the report definition was created.
+        Specifies the date and time the report definition was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -12507,7 +12586,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the report definition was update.
+        The date and time the report definition was updated.
         """
         return pulumi.get(self, "time_updated")
 
@@ -12810,7 +12889,7 @@ class GetReportsReportCollectionItemResult(dict):
         :param str display_name: The name of the report definition to query.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the report.
-        :param str mime_type: Specifies the format of report to be excel or pdf
+        :param str mime_type: Specifies the format of report to be .xls or .pdf
         :param str report_definition_id: The ID of the report definition to filter the list of reports
         :param str state: An optional filter to return only resources that match the specified lifecycle state.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -12882,7 +12961,7 @@ class GetReportsReportCollectionItemResult(dict):
     @pulumi.getter(name="mimeType")
     def mime_type(self) -> str:
         """
-        Specifies the format of report to be excel or pdf
+        Specifies the format of report to be .xls or .pdf
         """
         return pulumi.get(self, "mime_type")
 
@@ -13154,7 +13233,7 @@ class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResu
         :param str difference_type: The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
         :param str display_name: A filter to return only resources that match the specified display name.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param str id: The OCID of the SDM masking policy difference.
+        :param str id: The OCID of the Sensitive data model and masking policy difference resource.
         :param str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
         :param str sensitive_data_model_id: A filter to return only the resources that match the specified sensitive data model OCID.
         :param str state: A filter to return only the resources that match the specified lifecycle states.
@@ -13219,7 +13298,7 @@ class GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemResu
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the SDM masking policy difference.
+        The OCID of the Sensitive data model and masking policy difference resource.
         """
         return pulumi.get(self, "id")
 
@@ -18279,6 +18358,7 @@ class GetSensitiveTypesSensitiveTypeCollectionItemResult(dict):
                  entity_type: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_common: bool,
                  name_pattern: str,
                  parent_category_id: str,
                  search_type: str,
@@ -18299,6 +18379,7 @@ class GetSensitiveTypesSensitiveTypeCollectionItemResult(dict):
         :param str entity_type: A filter to return the sensitive type resources based on the value of their entityType attribute.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the sensitive type.
+        :param bool is_common: A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
         :param str name_pattern: A regular expression to be used by data discovery for matching column names.
         :param str parent_category_id: A filter to return only the sensitive types that are children of the sensitive category identified by the specified OCID.
         :param str search_type: The search type indicating how the column name, comment and data patterns should be used by data discovery. [Learn more](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/sensitive-types.html#GUID-1D1AD98E-B93F-4FF2-80AE-CB7D8A14F6CC).
@@ -18319,6 +18400,7 @@ class GetSensitiveTypesSensitiveTypeCollectionItemResult(dict):
         pulumi.set(__self__, "entity_type", entity_type)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_common", is_common)
         pulumi.set(__self__, "name_pattern", name_pattern)
         pulumi.set(__self__, "parent_category_id", parent_category_id)
         pulumi.set(__self__, "search_type", search_type)
@@ -18408,6 +18490,14 @@ class GetSensitiveTypesSensitiveTypeCollectionItemResult(dict):
         The OCID of the sensitive type.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCommon")
+    def is_common(self) -> bool:
+        """
+        A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
+        """
+        return pulumi.get(self, "is_common")
 
     @property
     @pulumi.getter(name="namePattern")

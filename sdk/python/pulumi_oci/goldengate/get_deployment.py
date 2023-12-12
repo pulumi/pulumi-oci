@@ -22,7 +22,7 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_updated=None, time_upgrade_required=None):
+    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_updated=None, time_upgrade_required=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -62,6 +62,9 @@ class GetDeploymentResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if ingress_ips and not isinstance(ingress_ips, list):
+            raise TypeError("Expected argument 'ingress_ips' to be a list")
+        pulumi.set(__self__, "ingress_ips", ingress_ips)
         if is_auto_scaling_enabled and not isinstance(is_auto_scaling_enabled, bool):
             raise TypeError("Expected argument 'is_auto_scaling_enabled' to be a bool")
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
@@ -86,6 +89,12 @@ class GetDeploymentResult:
         if lifecycle_sub_state and not isinstance(lifecycle_sub_state, str):
             raise TypeError("Expected argument 'lifecycle_sub_state' to be a str")
         pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
+        if load_balancer_id and not isinstance(load_balancer_id, str):
+            raise TypeError("Expected argument 'load_balancer_id' to be a str")
+        pulumi.set(__self__, "load_balancer_id", load_balancer_id)
+        if load_balancer_subnet_id and not isinstance(load_balancer_subnet_id, str):
+            raise TypeError("Expected argument 'load_balancer_subnet_id' to be a str")
+        pulumi.set(__self__, "load_balancer_subnet_id", load_balancer_subnet_id)
         if maintenance_configurations and not isinstance(maintenance_configurations, list):
             raise TypeError("Expected argument 'maintenance_configurations' to be a list")
         pulumi.set(__self__, "maintenance_configurations", maintenance_configurations)
@@ -240,6 +249,14 @@ class GetDeploymentResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="ingressIps")
+    def ingress_ips(self) -> Sequence['outputs.GetDeploymentIngressIpResult']:
+        """
+        List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
+        """
+        return pulumi.get(self, "ingress_ips")
+
+    @property
     @pulumi.getter(name="isAutoScalingEnabled")
     def is_auto_scaling_enabled(self) -> bool:
         """
@@ -302,6 +319,22 @@ class GetDeploymentResult:
         Possible GGS lifecycle sub-states.
         """
         return pulumi.get(self, "lifecycle_sub_state")
+
+    @property
+    @pulumi.getter(name="loadBalancerId")
+    def load_balancer_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
+        """
+        return pulumi.get(self, "load_balancer_id")
+
+    @property
+    @pulumi.getter(name="loadBalancerSubnetId")
+    def load_balancer_subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        """
+        return pulumi.get(self, "load_balancer_subnet_id")
 
     @property
     @pulumi.getter(name="maintenanceConfigurations")
@@ -387,7 +420,7 @@ class GetDeploymentResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -459,6 +492,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             fqdn=self.fqdn,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            ingress_ips=self.ingress_ips,
             is_auto_scaling_enabled=self.is_auto_scaling_enabled,
             is_healthy=self.is_healthy,
             is_latest_version=self.is_latest_version,
@@ -467,6 +501,8 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
             lifecycle_sub_state=self.lifecycle_sub_state,
+            load_balancer_id=self.load_balancer_id,
+            load_balancer_subnet_id=self.load_balancer_subnet_id,
             maintenance_configurations=self.maintenance_configurations,
             maintenance_windows=self.maintenance_windows,
             next_maintenance_action_type=self.next_maintenance_action_type,
@@ -524,6 +560,7 @@ def get_deployment(deployment_id: Optional[str] = None,
         fqdn=pulumi.get(__ret__, 'fqdn'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        ingress_ips=pulumi.get(__ret__, 'ingress_ips'),
         is_auto_scaling_enabled=pulumi.get(__ret__, 'is_auto_scaling_enabled'),
         is_healthy=pulumi.get(__ret__, 'is_healthy'),
         is_latest_version=pulumi.get(__ret__, 'is_latest_version'),
@@ -532,6 +569,8 @@ def get_deployment(deployment_id: Optional[str] = None,
         license_model=pulumi.get(__ret__, 'license_model'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
+        load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
+        load_balancer_subnet_id=pulumi.get(__ret__, 'load_balancer_subnet_id'),
         maintenance_configurations=pulumi.get(__ret__, 'maintenance_configurations'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
         next_maintenance_action_type=pulumi.get(__ret__, 'next_maintenance_action_type'),

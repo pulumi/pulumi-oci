@@ -20,13 +20,13 @@ public final class DomainsUserName {
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
      * 
      */
-    private String familyName;
+    private @Nullable String familyName;
     /**
      * @return (Updatable) Full name
      * 
@@ -115,14 +115,14 @@ public final class DomainsUserName {
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
      * 
      */
-    public String familyName() {
-        return this.familyName;
+    public Optional<String> familyName() {
+        return Optional.ofNullable(this.familyName);
     }
     /**
      * @return (Updatable) Full name
@@ -221,7 +221,7 @@ public final class DomainsUserName {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String familyName;
+        private @Nullable String familyName;
         private @Nullable String formatted;
         private @Nullable String givenName;
         private @Nullable String honorificPrefix;
@@ -239,8 +239,8 @@ public final class DomainsUserName {
         }
 
         @CustomType.Setter
-        public Builder familyName(String familyName) {
-            this.familyName = Objects.requireNonNull(familyName);
+        public Builder familyName(@Nullable String familyName) {
+            this.familyName = familyName;
             return this;
         }
         @CustomType.Setter

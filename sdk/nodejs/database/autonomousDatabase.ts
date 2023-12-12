@@ -335,7 +335,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
     /**
      * Details for the long-term backup schedule.
      */
-    public /*out*/ readonly longTermBackupSchedules!: pulumi.Output<outputs.Database.AutonomousDatabaseLongTermBackupSchedule[]>;
+    public readonly longTermBackupSchedules!: pulumi.Output<outputs.Database.AutonomousDatabaseLongTermBackupSchedule[]>;
     /**
      * (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      */
@@ -781,6 +781,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
             resourceInputs["localAdgAutoFailoverMaxDataLossLimit"] = args ? args.localAdgAutoFailoverMaxDataLossLimit : undefined;
+            resourceInputs["longTermBackupSchedules"] = args ? args.longTermBackupSchedules : undefined;
             resourceInputs["maxCpuCoreCount"] = args ? args.maxCpuCoreCount : undefined;
             resourceInputs["ncharacterSet"] = args ? args.ncharacterSet : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
@@ -832,7 +833,6 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["localDisasterRecoveryType"] = undefined /*out*/;
             resourceInputs["localStandbyDbs"] = undefined /*out*/;
-            resourceInputs["longTermBackupSchedules"] = undefined /*out*/;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = undefined /*out*/;
             resourceInputs["nextLongTermBackupTimeStamp"] = undefined /*out*/;
             resourceInputs["peerDbIds"] = undefined /*out*/;
@@ -1622,6 +1622,10 @@ export interface AutonomousDatabaseArgs {
      * Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
      */
     localAdgAutoFailoverMaxDataLossLimit?: pulumi.Input<number>;
+    /**
+     * Details for the long-term backup schedule.
+     */
+    longTermBackupSchedules?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabaseLongTermBackupSchedule>[]>;
     /**
      * (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
      */

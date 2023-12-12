@@ -66,7 +66,7 @@ class GetSdmMaskingPolicyDifferenceResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The OCID of the compartment that contains the SDM masking policy difference.
+        The OCID of the compartment that contains the Sensitive data model and masking policy difference resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -106,7 +106,7 @@ class GetSdmMaskingPolicyDifferenceResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID of the SDM masking policy difference.
+        The OCID of the Sensitive data model and masking policy difference resource.
         """
         return pulumi.get(self, "id")
 

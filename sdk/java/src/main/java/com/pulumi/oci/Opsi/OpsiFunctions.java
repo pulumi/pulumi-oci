@@ -15,6 +15,10 @@ import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSnapshotsPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSourcesSummaryArgs;
 import com.pulumi.oci.Opsi.inputs.GetAwrHubAwrSourcesSummaryPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetAwrHubPlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetAwrHubSourceArgs;
+import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcePlainArgs;
+import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesArgs;
+import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetAwrHubsArgs;
 import com.pulumi.oci.Opsi.inputs.GetAwrHubsPlainArgs;
 import com.pulumi.oci.Opsi.inputs.GetDatabaseInsightArgs;
@@ -69,6 +73,8 @@ import com.pulumi.oci.Opsi.outputs.GetAwrHubAwrSnapshotResult;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubAwrSnapshotsResult;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubAwrSourcesSummaryResult;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubResult;
+import com.pulumi.oci.Opsi.outputs.GetAwrHubSourceResult;
+import com.pulumi.oci.Opsi.outputs.GetAwrHubSourcesResult;
 import com.pulumi.oci.Opsi.outputs.GetAwrHubsResult;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightResult;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightsResult;
@@ -761,6 +767,342 @@ public final class OpsiFunctions {
      */
     public static CompletableFuture<GetAwrHubAwrSourcesSummaryResult> getAwrHubAwrSourcesSummaryPlain(GetAwrHubAwrSourcesSummaryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Opsi/getAwrHubAwrSourcesSummary:getAwrHubAwrSourcesSummary", TypeShape.of(GetAwrHubAwrSourcesSummaryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the Awr Hub source object.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubSource = OpsiFunctions.getAwrHubSource(GetAwrHubSourceArgs.builder()
+     *             .awrHubSourceId(oci_opsi_awr_hub_source.test_awr_hub_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAwrHubSourceResult> getAwrHubSource(GetAwrHubSourceArgs args) {
+        return getAwrHubSource(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the Awr Hub source object.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubSource = OpsiFunctions.getAwrHubSource(GetAwrHubSourceArgs.builder()
+     *             .awrHubSourceId(oci_opsi_awr_hub_source.test_awr_hub_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAwrHubSourceResult> getAwrHubSourcePlain(GetAwrHubSourcePlainArgs args) {
+        return getAwrHubSourcePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the Awr Hub source object.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubSource = OpsiFunctions.getAwrHubSource(GetAwrHubSourceArgs.builder()
+     *             .awrHubSourceId(oci_opsi_awr_hub_source.test_awr_hub_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAwrHubSourceResult> getAwrHubSource(GetAwrHubSourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getAwrHubSource:getAwrHubSource", TypeShape.of(GetAwrHubSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Awr Hub Source resource in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets the Awr Hub source object.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubSource = OpsiFunctions.getAwrHubSource(GetAwrHubSourceArgs.builder()
+     *             .awrHubSourceId(oci_opsi_awr_hub_source.test_awr_hub_source().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAwrHubSourceResult> getAwrHubSourcePlain(GetAwrHubSourcePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getAwrHubSource:getAwrHubSource", TypeShape.of(GetAwrHubSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Awr Hub Sources in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Awr Hub source objects.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubSources = OpsiFunctions.getAwrHubSources(GetAwrHubSourcesArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .awrHubSourceId(oci_opsi_awr_hub_source.test_awr_hub_source().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.awr_hub_source_name())
+     *             .sourceTypes(var_.awr_hub_source_source_type())
+     *             .states(var_.awr_hub_source_state())
+     *             .statuses(var_.awr_hub_source_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAwrHubSourcesResult> getAwrHubSources(GetAwrHubSourcesArgs args) {
+        return getAwrHubSources(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Awr Hub Sources in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Awr Hub source objects.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubSources = OpsiFunctions.getAwrHubSources(GetAwrHubSourcesArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .awrHubSourceId(oci_opsi_awr_hub_source.test_awr_hub_source().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.awr_hub_source_name())
+     *             .sourceTypes(var_.awr_hub_source_source_type())
+     *             .states(var_.awr_hub_source_state())
+     *             .statuses(var_.awr_hub_source_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAwrHubSourcesResult> getAwrHubSourcesPlain(GetAwrHubSourcesPlainArgs args) {
+        return getAwrHubSourcesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Awr Hub Sources in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Awr Hub source objects.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubSources = OpsiFunctions.getAwrHubSources(GetAwrHubSourcesArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .awrHubSourceId(oci_opsi_awr_hub_source.test_awr_hub_source().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.awr_hub_source_name())
+     *             .sourceTypes(var_.awr_hub_source_source_type())
+     *             .states(var_.awr_hub_source_state())
+     *             .statuses(var_.awr_hub_source_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetAwrHubSourcesResult> getAwrHubSources(GetAwrHubSourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Opsi/getAwrHubSources:getAwrHubSources", TypeShape.of(GetAwrHubSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Awr Hub Sources in Oracle Cloud Infrastructure Opsi service.
+     * 
+     * Gets a list of Awr Hub source objects.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Opsi.OpsiFunctions;
+     * import com.pulumi.oci.Opsi.inputs.GetAwrHubSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAwrHubSources = OpsiFunctions.getAwrHubSources(GetAwrHubSourcesArgs.builder()
+     *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
+     *             .awrHubSourceId(oci_opsi_awr_hub_source.test_awr_hub_source().id())
+     *             .compartmentId(var_.compartment_id())
+     *             .name(var_.awr_hub_source_name())
+     *             .sourceTypes(var_.awr_hub_source_source_type())
+     *             .states(var_.awr_hub_source_state())
+     *             .statuses(var_.awr_hub_source_status())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetAwrHubSourcesResult> getAwrHubSourcesPlain(GetAwrHubSourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Opsi/getAwrHubSources:getAwrHubSources", TypeShape.of(GetAwrHubSourcesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Awr Hubs in Oracle Cloud Infrastructure Opsi service.

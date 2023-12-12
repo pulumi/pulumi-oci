@@ -84,7 +84,7 @@ export class DatabaseSecurityConfig extends pulumi.CustomResource {
      */
     public readonly refreshTrigger!: pulumi.Output<number | undefined>;
     /**
-     * (Updatable) Details to update the SQL firewall config.
+     * (Updatable) Details to update the SQL Firewall config.
      */
     public readonly sqlFirewallConfig!: pulumi.Output<outputs.DataSafe.DatabaseSecurityConfigSqlFirewallConfig>;
     /**
@@ -207,7 +207,7 @@ export interface DatabaseSecurityConfigState {
      */
     refreshTrigger?: pulumi.Input<number>;
     /**
-     * (Updatable) Details to update the SQL firewall config.
+     * (Updatable) Details to update the SQL Firewall config.
      */
     sqlFirewallConfig?: pulumi.Input<inputs.DataSafe.DatabaseSecurityConfigSqlFirewallConfig>;
     /**
@@ -273,7 +273,7 @@ export interface DatabaseSecurityConfigArgs {
      */
     refreshTrigger?: pulumi.Input<number>;
     /**
-     * (Updatable) Details to update the SQL firewall config.
+     * (Updatable) Details to update the SQL Firewall config.
      */
     sqlFirewallConfig?: pulumi.Input<inputs.DataSafe.DatabaseSecurityConfigSqlFirewallConfig>;
 }

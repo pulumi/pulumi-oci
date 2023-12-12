@@ -13,6 +13,626 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type CatalogLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type *string `pulumi:"type"`
+}
+
+// CatalogLockInput is an input type that accepts CatalogLockArgs and CatalogLockOutput values.
+// You can construct a concrete instance of `CatalogLockInput` via:
+//
+//	CatalogLockArgs{...}
+type CatalogLockInput interface {
+	pulumi.Input
+
+	ToCatalogLockOutput() CatalogLockOutput
+	ToCatalogLockOutputWithContext(context.Context) CatalogLockOutput
+}
+
+type CatalogLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (CatalogLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CatalogLock)(nil)).Elem()
+}
+
+func (i CatalogLockArgs) ToCatalogLockOutput() CatalogLockOutput {
+	return i.ToCatalogLockOutputWithContext(context.Background())
+}
+
+func (i CatalogLockArgs) ToCatalogLockOutputWithContext(ctx context.Context) CatalogLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CatalogLockOutput)
+}
+
+// CatalogLockArrayInput is an input type that accepts CatalogLockArray and CatalogLockArrayOutput values.
+// You can construct a concrete instance of `CatalogLockArrayInput` via:
+//
+//	CatalogLockArray{ CatalogLockArgs{...} }
+type CatalogLockArrayInput interface {
+	pulumi.Input
+
+	ToCatalogLockArrayOutput() CatalogLockArrayOutput
+	ToCatalogLockArrayOutputWithContext(context.Context) CatalogLockArrayOutput
+}
+
+type CatalogLockArray []CatalogLockInput
+
+func (CatalogLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CatalogLock)(nil)).Elem()
+}
+
+func (i CatalogLockArray) ToCatalogLockArrayOutput() CatalogLockArrayOutput {
+	return i.ToCatalogLockArrayOutputWithContext(context.Background())
+}
+
+func (i CatalogLockArray) ToCatalogLockArrayOutputWithContext(ctx context.Context) CatalogLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CatalogLockArrayOutput)
+}
+
+type CatalogLockOutput struct{ *pulumi.OutputState }
+
+func (CatalogLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CatalogLock)(nil)).Elem()
+}
+
+func (o CatalogLockOutput) ToCatalogLockOutput() CatalogLockOutput {
+	return o
+}
+
+func (o CatalogLockOutput) ToCatalogLockOutputWithContext(ctx context.Context) CatalogLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o CatalogLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CatalogLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o CatalogLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CatalogLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+func (o CatalogLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CatalogLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o CatalogLockOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CatalogLock) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type CatalogLockArrayOutput struct{ *pulumi.OutputState }
+
+func (CatalogLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CatalogLock)(nil)).Elem()
+}
+
+func (o CatalogLockArrayOutput) ToCatalogLockArrayOutput() CatalogLockArrayOutput {
+	return o
+}
+
+func (o CatalogLockArrayOutput) ToCatalogLockArrayOutputWithContext(ctx context.Context) CatalogLockArrayOutput {
+	return o
+}
+
+func (o CatalogLockArrayOutput) Index(i pulumi.IntInput) CatalogLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CatalogLock {
+		return vs[0].([]CatalogLock)[vs[1].(int)]
+	}).(CatalogLockOutput)
+}
+
+type CatalogPrivateEndpointLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type *string `pulumi:"type"`
+}
+
+// CatalogPrivateEndpointLockInput is an input type that accepts CatalogPrivateEndpointLockArgs and CatalogPrivateEndpointLockOutput values.
+// You can construct a concrete instance of `CatalogPrivateEndpointLockInput` via:
+//
+//	CatalogPrivateEndpointLockArgs{...}
+type CatalogPrivateEndpointLockInput interface {
+	pulumi.Input
+
+	ToCatalogPrivateEndpointLockOutput() CatalogPrivateEndpointLockOutput
+	ToCatalogPrivateEndpointLockOutputWithContext(context.Context) CatalogPrivateEndpointLockOutput
+}
+
+type CatalogPrivateEndpointLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (CatalogPrivateEndpointLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CatalogPrivateEndpointLock)(nil)).Elem()
+}
+
+func (i CatalogPrivateEndpointLockArgs) ToCatalogPrivateEndpointLockOutput() CatalogPrivateEndpointLockOutput {
+	return i.ToCatalogPrivateEndpointLockOutputWithContext(context.Background())
+}
+
+func (i CatalogPrivateEndpointLockArgs) ToCatalogPrivateEndpointLockOutputWithContext(ctx context.Context) CatalogPrivateEndpointLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CatalogPrivateEndpointLockOutput)
+}
+
+// CatalogPrivateEndpointLockArrayInput is an input type that accepts CatalogPrivateEndpointLockArray and CatalogPrivateEndpointLockArrayOutput values.
+// You can construct a concrete instance of `CatalogPrivateEndpointLockArrayInput` via:
+//
+//	CatalogPrivateEndpointLockArray{ CatalogPrivateEndpointLockArgs{...} }
+type CatalogPrivateEndpointLockArrayInput interface {
+	pulumi.Input
+
+	ToCatalogPrivateEndpointLockArrayOutput() CatalogPrivateEndpointLockArrayOutput
+	ToCatalogPrivateEndpointLockArrayOutputWithContext(context.Context) CatalogPrivateEndpointLockArrayOutput
+}
+
+type CatalogPrivateEndpointLockArray []CatalogPrivateEndpointLockInput
+
+func (CatalogPrivateEndpointLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CatalogPrivateEndpointLock)(nil)).Elem()
+}
+
+func (i CatalogPrivateEndpointLockArray) ToCatalogPrivateEndpointLockArrayOutput() CatalogPrivateEndpointLockArrayOutput {
+	return i.ToCatalogPrivateEndpointLockArrayOutputWithContext(context.Background())
+}
+
+func (i CatalogPrivateEndpointLockArray) ToCatalogPrivateEndpointLockArrayOutputWithContext(ctx context.Context) CatalogPrivateEndpointLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CatalogPrivateEndpointLockArrayOutput)
+}
+
+type CatalogPrivateEndpointLockOutput struct{ *pulumi.OutputState }
+
+func (CatalogPrivateEndpointLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CatalogPrivateEndpointLock)(nil)).Elem()
+}
+
+func (o CatalogPrivateEndpointLockOutput) ToCatalogPrivateEndpointLockOutput() CatalogPrivateEndpointLockOutput {
+	return o
+}
+
+func (o CatalogPrivateEndpointLockOutput) ToCatalogPrivateEndpointLockOutputWithContext(ctx context.Context) CatalogPrivateEndpointLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o CatalogPrivateEndpointLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CatalogPrivateEndpointLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o CatalogPrivateEndpointLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CatalogPrivateEndpointLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+func (o CatalogPrivateEndpointLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CatalogPrivateEndpointLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o CatalogPrivateEndpointLockOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CatalogPrivateEndpointLock) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type CatalogPrivateEndpointLockArrayOutput struct{ *pulumi.OutputState }
+
+func (CatalogPrivateEndpointLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CatalogPrivateEndpointLock)(nil)).Elem()
+}
+
+func (o CatalogPrivateEndpointLockArrayOutput) ToCatalogPrivateEndpointLockArrayOutput() CatalogPrivateEndpointLockArrayOutput {
+	return o
+}
+
+func (o CatalogPrivateEndpointLockArrayOutput) ToCatalogPrivateEndpointLockArrayOutputWithContext(ctx context.Context) CatalogPrivateEndpointLockArrayOutput {
+	return o
+}
+
+func (o CatalogPrivateEndpointLockArrayOutput) Index(i pulumi.IntInput) CatalogPrivateEndpointLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CatalogPrivateEndpointLock {
+		return vs[0].([]CatalogPrivateEndpointLock)[vs[1].(int)]
+	}).(CatalogPrivateEndpointLockOutput)
+}
+
+type MetastoreLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type *string `pulumi:"type"`
+}
+
+// MetastoreLockInput is an input type that accepts MetastoreLockArgs and MetastoreLockOutput values.
+// You can construct a concrete instance of `MetastoreLockInput` via:
+//
+//	MetastoreLockArgs{...}
+type MetastoreLockInput interface {
+	pulumi.Input
+
+	ToMetastoreLockOutput() MetastoreLockOutput
+	ToMetastoreLockOutputWithContext(context.Context) MetastoreLockOutput
+}
+
+type MetastoreLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (MetastoreLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetastoreLock)(nil)).Elem()
+}
+
+func (i MetastoreLockArgs) ToMetastoreLockOutput() MetastoreLockOutput {
+	return i.ToMetastoreLockOutputWithContext(context.Background())
+}
+
+func (i MetastoreLockArgs) ToMetastoreLockOutputWithContext(ctx context.Context) MetastoreLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetastoreLockOutput)
+}
+
+// MetastoreLockArrayInput is an input type that accepts MetastoreLockArray and MetastoreLockArrayOutput values.
+// You can construct a concrete instance of `MetastoreLockArrayInput` via:
+//
+//	MetastoreLockArray{ MetastoreLockArgs{...} }
+type MetastoreLockArrayInput interface {
+	pulumi.Input
+
+	ToMetastoreLockArrayOutput() MetastoreLockArrayOutput
+	ToMetastoreLockArrayOutputWithContext(context.Context) MetastoreLockArrayOutput
+}
+
+type MetastoreLockArray []MetastoreLockInput
+
+func (MetastoreLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MetastoreLock)(nil)).Elem()
+}
+
+func (i MetastoreLockArray) ToMetastoreLockArrayOutput() MetastoreLockArrayOutput {
+	return i.ToMetastoreLockArrayOutputWithContext(context.Background())
+}
+
+func (i MetastoreLockArray) ToMetastoreLockArrayOutputWithContext(ctx context.Context) MetastoreLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MetastoreLockArrayOutput)
+}
+
+type MetastoreLockOutput struct{ *pulumi.OutputState }
+
+func (MetastoreLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MetastoreLock)(nil)).Elem()
+}
+
+func (o MetastoreLockOutput) ToMetastoreLockOutput() MetastoreLockOutput {
+	return o
+}
+
+func (o MetastoreLockOutput) ToMetastoreLockOutputWithContext(ctx context.Context) MetastoreLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o MetastoreLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetastoreLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o MetastoreLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetastoreLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+func (o MetastoreLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetastoreLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o MetastoreLockOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MetastoreLock) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type MetastoreLockArrayOutput struct{ *pulumi.OutputState }
+
+func (MetastoreLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MetastoreLock)(nil)).Elem()
+}
+
+func (o MetastoreLockArrayOutput) ToMetastoreLockArrayOutput() MetastoreLockArrayOutput {
+	return o
+}
+
+func (o MetastoreLockArrayOutput) ToMetastoreLockArrayOutputWithContext(ctx context.Context) MetastoreLockArrayOutput {
+	return o
+}
+
+func (o MetastoreLockArrayOutput) Index(i pulumi.IntInput) MetastoreLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MetastoreLock {
+		return vs[0].([]MetastoreLock)[vs[1].(int)]
+	}).(MetastoreLockOutput)
+}
+
+type GetCatalogLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetCatalogLockInput is an input type that accepts GetCatalogLockArgs and GetCatalogLockOutput values.
+// You can construct a concrete instance of `GetCatalogLockInput` via:
+//
+//	GetCatalogLockArgs{...}
+type GetCatalogLockInput interface {
+	pulumi.Input
+
+	ToGetCatalogLockOutput() GetCatalogLockOutput
+	ToGetCatalogLockOutputWithContext(context.Context) GetCatalogLockOutput
+}
+
+type GetCatalogLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetCatalogLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogLock)(nil)).Elem()
+}
+
+func (i GetCatalogLockArgs) ToGetCatalogLockOutput() GetCatalogLockOutput {
+	return i.ToGetCatalogLockOutputWithContext(context.Background())
+}
+
+func (i GetCatalogLockArgs) ToGetCatalogLockOutputWithContext(ctx context.Context) GetCatalogLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogLockOutput)
+}
+
+// GetCatalogLockArrayInput is an input type that accepts GetCatalogLockArray and GetCatalogLockArrayOutput values.
+// You can construct a concrete instance of `GetCatalogLockArrayInput` via:
+//
+//	GetCatalogLockArray{ GetCatalogLockArgs{...} }
+type GetCatalogLockArrayInput interface {
+	pulumi.Input
+
+	ToGetCatalogLockArrayOutput() GetCatalogLockArrayOutput
+	ToGetCatalogLockArrayOutputWithContext(context.Context) GetCatalogLockArrayOutput
+}
+
+type GetCatalogLockArray []GetCatalogLockInput
+
+func (GetCatalogLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogLock)(nil)).Elem()
+}
+
+func (i GetCatalogLockArray) ToGetCatalogLockArrayOutput() GetCatalogLockArrayOutput {
+	return i.ToGetCatalogLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetCatalogLockArray) ToGetCatalogLockArrayOutputWithContext(ctx context.Context) GetCatalogLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogLockArrayOutput)
+}
+
+type GetCatalogLockOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogLock)(nil)).Elem()
+}
+
+func (o GetCatalogLockOutput) ToGetCatalogLockOutput() GetCatalogLockOutput {
+	return o
+}
+
+func (o GetCatalogLockOutput) ToGetCatalogLockOutputWithContext(ctx context.Context) GetCatalogLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetCatalogLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetCatalogLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+func (o GetCatalogLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetCatalogLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetCatalogLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogLock)(nil)).Elem()
+}
+
+func (o GetCatalogLockArrayOutput) ToGetCatalogLockArrayOutput() GetCatalogLockArrayOutput {
+	return o
+}
+
+func (o GetCatalogLockArrayOutput) ToGetCatalogLockArrayOutputWithContext(ctx context.Context) GetCatalogLockArrayOutput {
+	return o
+}
+
+func (o GetCatalogLockArrayOutput) Index(i pulumi.IntInput) GetCatalogLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogLock {
+		return vs[0].([]GetCatalogLock)[vs[1].(int)]
+	}).(GetCatalogLockOutput)
+}
+
+type GetCatalogPrivateEndpointLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetCatalogPrivateEndpointLockInput is an input type that accepts GetCatalogPrivateEndpointLockArgs and GetCatalogPrivateEndpointLockOutput values.
+// You can construct a concrete instance of `GetCatalogPrivateEndpointLockInput` via:
+//
+//	GetCatalogPrivateEndpointLockArgs{...}
+type GetCatalogPrivateEndpointLockInput interface {
+	pulumi.Input
+
+	ToGetCatalogPrivateEndpointLockOutput() GetCatalogPrivateEndpointLockOutput
+	ToGetCatalogPrivateEndpointLockOutputWithContext(context.Context) GetCatalogPrivateEndpointLockOutput
+}
+
+type GetCatalogPrivateEndpointLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetCatalogPrivateEndpointLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogPrivateEndpointLock)(nil)).Elem()
+}
+
+func (i GetCatalogPrivateEndpointLockArgs) ToGetCatalogPrivateEndpointLockOutput() GetCatalogPrivateEndpointLockOutput {
+	return i.ToGetCatalogPrivateEndpointLockOutputWithContext(context.Background())
+}
+
+func (i GetCatalogPrivateEndpointLockArgs) ToGetCatalogPrivateEndpointLockOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogPrivateEndpointLockOutput)
+}
+
+// GetCatalogPrivateEndpointLockArrayInput is an input type that accepts GetCatalogPrivateEndpointLockArray and GetCatalogPrivateEndpointLockArrayOutput values.
+// You can construct a concrete instance of `GetCatalogPrivateEndpointLockArrayInput` via:
+//
+//	GetCatalogPrivateEndpointLockArray{ GetCatalogPrivateEndpointLockArgs{...} }
+type GetCatalogPrivateEndpointLockArrayInput interface {
+	pulumi.Input
+
+	ToGetCatalogPrivateEndpointLockArrayOutput() GetCatalogPrivateEndpointLockArrayOutput
+	ToGetCatalogPrivateEndpointLockArrayOutputWithContext(context.Context) GetCatalogPrivateEndpointLockArrayOutput
+}
+
+type GetCatalogPrivateEndpointLockArray []GetCatalogPrivateEndpointLockInput
+
+func (GetCatalogPrivateEndpointLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogPrivateEndpointLock)(nil)).Elem()
+}
+
+func (i GetCatalogPrivateEndpointLockArray) ToGetCatalogPrivateEndpointLockArrayOutput() GetCatalogPrivateEndpointLockArrayOutput {
+	return i.ToGetCatalogPrivateEndpointLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetCatalogPrivateEndpointLockArray) ToGetCatalogPrivateEndpointLockArrayOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogPrivateEndpointLockArrayOutput)
+}
+
+type GetCatalogPrivateEndpointLockOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogPrivateEndpointLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogPrivateEndpointLock)(nil)).Elem()
+}
+
+func (o GetCatalogPrivateEndpointLockOutput) ToGetCatalogPrivateEndpointLockOutput() GetCatalogPrivateEndpointLockOutput {
+	return o
+}
+
+func (o GetCatalogPrivateEndpointLockOutput) ToGetCatalogPrivateEndpointLockOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetCatalogPrivateEndpointLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetCatalogPrivateEndpointLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+func (o GetCatalogPrivateEndpointLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetCatalogPrivateEndpointLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetCatalogPrivateEndpointLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogPrivateEndpointLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogPrivateEndpointLock)(nil)).Elem()
+}
+
+func (o GetCatalogPrivateEndpointLockArrayOutput) ToGetCatalogPrivateEndpointLockArrayOutput() GetCatalogPrivateEndpointLockArrayOutput {
+	return o
+}
+
+func (o GetCatalogPrivateEndpointLockArrayOutput) ToGetCatalogPrivateEndpointLockArrayOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointLockArrayOutput {
+	return o
+}
+
+func (o GetCatalogPrivateEndpointLockArrayOutput) Index(i pulumi.IntInput) GetCatalogPrivateEndpointLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogPrivateEndpointLock {
+		return vs[0].([]GetCatalogPrivateEndpointLock)[vs[1].(int)]
+	}).(GetCatalogPrivateEndpointLockOutput)
+}
+
 type GetCatalogPrivateEndpointsCatalogPrivateEndpoint struct {
 	// The list of catalogs using the private reverse connection endpoint
 	AttachedCatalogs []string `pulumi:"attachedCatalogs"`
@@ -30,10 +650,14 @@ type GetCatalogPrivateEndpointsCatalogPrivateEndpoint struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetCatalogPrivateEndpointsCatalogPrivateEndpointLock `pulumi:"locks"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State string `pulumi:"state"`
 	// Subnet Identifier
 	SubnetId string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -68,10 +692,14 @@ type GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayInput `pulumi:"locks"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// Subnet Identifier
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -169,6 +797,13 @@ func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) LifecycleDetails
 	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) Locks() GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) []GetCatalogPrivateEndpointsCatalogPrivateEndpointLock {
+		return v.Locks
+	}).(GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput)
+}
+
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) string { return v.State }).(pulumi.StringOutput)
@@ -177,6 +812,11 @@ func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) State() pulumi.S
 // Subnet Identifier
 func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -207,6 +847,130 @@ func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogPrivateEndpointsCatalogPrivateEndpoint {
 		return vs[0].([]GetCatalogPrivateEndpointsCatalogPrivateEndpoint)[vs[1].(int)]
 	}).(GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput)
+}
+
+type GetCatalogPrivateEndpointsCatalogPrivateEndpointLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetCatalogPrivateEndpointsCatalogPrivateEndpointLockInput is an input type that accepts GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArgs and GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput values.
+// You can construct a concrete instance of `GetCatalogPrivateEndpointsCatalogPrivateEndpointLockInput` via:
+//
+//	GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArgs{...}
+type GetCatalogPrivateEndpointsCatalogPrivateEndpointLockInput interface {
+	pulumi.Input
+
+	ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput() GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput
+	ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutputWithContext(context.Context) GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput
+}
+
+type GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogPrivateEndpointsCatalogPrivateEndpointLock)(nil)).Elem()
+}
+
+func (i GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArgs) ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput() GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput {
+	return i.ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutputWithContext(context.Background())
+}
+
+func (i GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArgs) ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput)
+}
+
+// GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayInput is an input type that accepts GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArray and GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput values.
+// You can construct a concrete instance of `GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayInput` via:
+//
+//	GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArray{ GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArgs{...} }
+type GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayInput interface {
+	pulumi.Input
+
+	ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput() GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput
+	ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutputWithContext(context.Context) GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput
+}
+
+type GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArray []GetCatalogPrivateEndpointsCatalogPrivateEndpointLockInput
+
+func (GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogPrivateEndpointsCatalogPrivateEndpointLock)(nil)).Elem()
+}
+
+func (i GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArray) ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput() GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput {
+	return i.ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArray) ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput)
+}
+
+type GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogPrivateEndpointsCatalogPrivateEndpointLock)(nil)).Elem()
+}
+
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput) ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput() GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput {
+	return o
+}
+
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput) ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpointLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpointLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpointLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpointLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogPrivateEndpointsCatalogPrivateEndpointLock)(nil)).Elem()
+}
+
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput) ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput() GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput {
+	return o
+}
+
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput) ToGetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutputWithContext(ctx context.Context) GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput {
+	return o
+}
+
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput) Index(i pulumi.IntInput) GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogPrivateEndpointsCatalogPrivateEndpointLock {
+		return vs[0].([]GetCatalogPrivateEndpointsCatalogPrivateEndpointLock)[vs[1].(int)]
+	}).(GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput)
 }
 
 type GetCatalogPrivateEndpointsFilter struct {
@@ -690,6 +1454,8 @@ type GetCatalogsCatalog struct {
 	Id string `pulumi:"id"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetCatalogsCatalogLock `pulumi:"locks"`
 	// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
 	NumberOfObjects int `pulumi:"numberOfObjects"`
 	// The REST front endpoint URL to the data catalog instance.
@@ -698,6 +1464,8 @@ type GetCatalogsCatalog struct {
 	ServiceConsoleUrl string `pulumi:"serviceConsoleUrl"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -730,6 +1498,8 @@ type GetCatalogsCatalogArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetCatalogsCatalogLockArrayInput `pulumi:"locks"`
 	// The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
 	NumberOfObjects pulumi.IntInput `pulumi:"numberOfObjects"`
 	// The REST front endpoint URL to the data catalog instance.
@@ -738,6 +1508,8 @@ type GetCatalogsCatalogArgs struct {
 	ServiceConsoleUrl pulumi.StringInput `pulumi:"serviceConsoleUrl"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -830,6 +1602,11 @@ func (o GetCatalogsCatalogOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCatalogsCatalog) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o GetCatalogsCatalogOutput) Locks() GetCatalogsCatalogLockArrayOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) []GetCatalogsCatalogLock { return v.Locks }).(GetCatalogsCatalogLockArrayOutput)
+}
+
 // The number of data objects added to the data catalog. Please see the data catalog documentation for further information on how this is calculated.
 func (o GetCatalogsCatalogOutput) NumberOfObjects() pulumi.IntOutput {
 	return o.ApplyT(func(v GetCatalogsCatalog) int { return v.NumberOfObjects }).(pulumi.IntOutput)
@@ -848,6 +1625,11 @@ func (o GetCatalogsCatalogOutput) ServiceConsoleUrl() pulumi.StringOutput {
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 func (o GetCatalogsCatalogOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCatalogsCatalog) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetCatalogsCatalogOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -878,6 +1660,130 @@ func (o GetCatalogsCatalogArrayOutput) Index(i pulumi.IntInput) GetCatalogsCatal
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogsCatalog {
 		return vs[0].([]GetCatalogsCatalog)[vs[1].(int)]
 	}).(GetCatalogsCatalogOutput)
+}
+
+type GetCatalogsCatalogLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetCatalogsCatalogLockInput is an input type that accepts GetCatalogsCatalogLockArgs and GetCatalogsCatalogLockOutput values.
+// You can construct a concrete instance of `GetCatalogsCatalogLockInput` via:
+//
+//	GetCatalogsCatalogLockArgs{...}
+type GetCatalogsCatalogLockInput interface {
+	pulumi.Input
+
+	ToGetCatalogsCatalogLockOutput() GetCatalogsCatalogLockOutput
+	ToGetCatalogsCatalogLockOutputWithContext(context.Context) GetCatalogsCatalogLockOutput
+}
+
+type GetCatalogsCatalogLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetCatalogsCatalogLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogsCatalogLock)(nil)).Elem()
+}
+
+func (i GetCatalogsCatalogLockArgs) ToGetCatalogsCatalogLockOutput() GetCatalogsCatalogLockOutput {
+	return i.ToGetCatalogsCatalogLockOutputWithContext(context.Background())
+}
+
+func (i GetCatalogsCatalogLockArgs) ToGetCatalogsCatalogLockOutputWithContext(ctx context.Context) GetCatalogsCatalogLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogsCatalogLockOutput)
+}
+
+// GetCatalogsCatalogLockArrayInput is an input type that accepts GetCatalogsCatalogLockArray and GetCatalogsCatalogLockArrayOutput values.
+// You can construct a concrete instance of `GetCatalogsCatalogLockArrayInput` via:
+//
+//	GetCatalogsCatalogLockArray{ GetCatalogsCatalogLockArgs{...} }
+type GetCatalogsCatalogLockArrayInput interface {
+	pulumi.Input
+
+	ToGetCatalogsCatalogLockArrayOutput() GetCatalogsCatalogLockArrayOutput
+	ToGetCatalogsCatalogLockArrayOutputWithContext(context.Context) GetCatalogsCatalogLockArrayOutput
+}
+
+type GetCatalogsCatalogLockArray []GetCatalogsCatalogLockInput
+
+func (GetCatalogsCatalogLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogsCatalogLock)(nil)).Elem()
+}
+
+func (i GetCatalogsCatalogLockArray) ToGetCatalogsCatalogLockArrayOutput() GetCatalogsCatalogLockArrayOutput {
+	return i.ToGetCatalogsCatalogLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetCatalogsCatalogLockArray) ToGetCatalogsCatalogLockArrayOutputWithContext(ctx context.Context) GetCatalogsCatalogLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCatalogsCatalogLockArrayOutput)
+}
+
+type GetCatalogsCatalogLockOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogsCatalogLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCatalogsCatalogLock)(nil)).Elem()
+}
+
+func (o GetCatalogsCatalogLockOutput) ToGetCatalogsCatalogLockOutput() GetCatalogsCatalogLockOutput {
+	return o
+}
+
+func (o GetCatalogsCatalogLockOutput) ToGetCatalogsCatalogLockOutputWithContext(ctx context.Context) GetCatalogsCatalogLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetCatalogsCatalogLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogsCatalogLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetCatalogsCatalogLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogsCatalogLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+func (o GetCatalogsCatalogLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogsCatalogLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetCatalogsCatalogLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCatalogsCatalogLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetCatalogsCatalogLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCatalogsCatalogLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCatalogsCatalogLock)(nil)).Elem()
+}
+
+func (o GetCatalogsCatalogLockArrayOutput) ToGetCatalogsCatalogLockArrayOutput() GetCatalogsCatalogLockArrayOutput {
+	return o
+}
+
+func (o GetCatalogsCatalogLockArrayOutput) ToGetCatalogsCatalogLockArrayOutputWithContext(ctx context.Context) GetCatalogsCatalogLockArrayOutput {
+	return o
+}
+
+func (o GetCatalogsCatalogLockArrayOutput) Index(i pulumi.IntInput) GetCatalogsCatalogLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCatalogsCatalogLock {
+		return vs[0].([]GetCatalogsCatalogLock)[vs[1].(int)]
+	}).(GetCatalogsCatalogLockOutput)
 }
 
 type GetCatalogsFilter struct {
@@ -1859,6 +2765,130 @@ func (o GetDataAssetsFilterArrayOutput) Index(i pulumi.IntInput) GetDataAssetsFi
 	}).(GetDataAssetsFilterOutput)
 }
 
+type GetMetastoreLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetMetastoreLockInput is an input type that accepts GetMetastoreLockArgs and GetMetastoreLockOutput values.
+// You can construct a concrete instance of `GetMetastoreLockInput` via:
+//
+//	GetMetastoreLockArgs{...}
+type GetMetastoreLockInput interface {
+	pulumi.Input
+
+	ToGetMetastoreLockOutput() GetMetastoreLockOutput
+	ToGetMetastoreLockOutputWithContext(context.Context) GetMetastoreLockOutput
+}
+
+type GetMetastoreLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMetastoreLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetastoreLock)(nil)).Elem()
+}
+
+func (i GetMetastoreLockArgs) ToGetMetastoreLockOutput() GetMetastoreLockOutput {
+	return i.ToGetMetastoreLockOutputWithContext(context.Background())
+}
+
+func (i GetMetastoreLockArgs) ToGetMetastoreLockOutputWithContext(ctx context.Context) GetMetastoreLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetastoreLockOutput)
+}
+
+// GetMetastoreLockArrayInput is an input type that accepts GetMetastoreLockArray and GetMetastoreLockArrayOutput values.
+// You can construct a concrete instance of `GetMetastoreLockArrayInput` via:
+//
+//	GetMetastoreLockArray{ GetMetastoreLockArgs{...} }
+type GetMetastoreLockArrayInput interface {
+	pulumi.Input
+
+	ToGetMetastoreLockArrayOutput() GetMetastoreLockArrayOutput
+	ToGetMetastoreLockArrayOutputWithContext(context.Context) GetMetastoreLockArrayOutput
+}
+
+type GetMetastoreLockArray []GetMetastoreLockInput
+
+func (GetMetastoreLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetastoreLock)(nil)).Elem()
+}
+
+func (i GetMetastoreLockArray) ToGetMetastoreLockArrayOutput() GetMetastoreLockArrayOutput {
+	return i.ToGetMetastoreLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetastoreLockArray) ToGetMetastoreLockArrayOutputWithContext(ctx context.Context) GetMetastoreLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetastoreLockArrayOutput)
+}
+
+type GetMetastoreLockOutput struct{ *pulumi.OutputState }
+
+func (GetMetastoreLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetastoreLock)(nil)).Elem()
+}
+
+func (o GetMetastoreLockOutput) ToGetMetastoreLockOutput() GetMetastoreLockOutput {
+	return o
+}
+
+func (o GetMetastoreLockOutput) ToGetMetastoreLockOutputWithContext(ctx context.Context) GetMetastoreLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetMetastoreLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetastoreLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetMetastoreLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetastoreLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+func (o GetMetastoreLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetastoreLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetMetastoreLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetastoreLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMetastoreLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetastoreLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetastoreLock)(nil)).Elem()
+}
+
+func (o GetMetastoreLockArrayOutput) ToGetMetastoreLockArrayOutput() GetMetastoreLockArrayOutput {
+	return o
+}
+
+func (o GetMetastoreLockArrayOutput) ToGetMetastoreLockArrayOutputWithContext(ctx context.Context) GetMetastoreLockArrayOutput {
+	return o
+}
+
+func (o GetMetastoreLockArrayOutput) Index(i pulumi.IntInput) GetMetastoreLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetastoreLock {
+		return vs[0].([]GetMetastoreLock)[vs[1].(int)]
+	}).(GetMetastoreLockOutput)
+}
+
 type GetMetastoresFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -1982,8 +3012,12 @@ type GetMetastoresMetastore struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetMetastoresMetastoreLock `pulumi:"locks"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -2018,8 +3052,12 @@ type GetMetastoresMetastoreArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetMetastoresMetastoreLockArrayInput `pulumi:"locks"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -2117,9 +3155,19 @@ func (o GetMetastoresMetastoreOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetastoresMetastore) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o GetMetastoresMetastoreOutput) Locks() GetMetastoresMetastoreLockArrayOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) []GetMetastoresMetastoreLock { return v.Locks }).(GetMetastoresMetastoreLockArrayOutput)
+}
+
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 func (o GetMetastoresMetastoreOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMetastoresMetastore) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetMetastoresMetastoreOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
 // Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -2152,9 +3200,145 @@ func (o GetMetastoresMetastoreArrayOutput) Index(i pulumi.IntInput) GetMetastore
 	}).(GetMetastoresMetastoreOutput)
 }
 
+type GetMetastoresMetastoreLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetMetastoresMetastoreLockInput is an input type that accepts GetMetastoresMetastoreLockArgs and GetMetastoresMetastoreLockOutput values.
+// You can construct a concrete instance of `GetMetastoresMetastoreLockInput` via:
+//
+//	GetMetastoresMetastoreLockArgs{...}
+type GetMetastoresMetastoreLockInput interface {
+	pulumi.Input
+
+	ToGetMetastoresMetastoreLockOutput() GetMetastoresMetastoreLockOutput
+	ToGetMetastoresMetastoreLockOutputWithContext(context.Context) GetMetastoresMetastoreLockOutput
+}
+
+type GetMetastoresMetastoreLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMetastoresMetastoreLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetastoresMetastoreLock)(nil)).Elem()
+}
+
+func (i GetMetastoresMetastoreLockArgs) ToGetMetastoresMetastoreLockOutput() GetMetastoresMetastoreLockOutput {
+	return i.ToGetMetastoresMetastoreLockOutputWithContext(context.Background())
+}
+
+func (i GetMetastoresMetastoreLockArgs) ToGetMetastoresMetastoreLockOutputWithContext(ctx context.Context) GetMetastoresMetastoreLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetastoresMetastoreLockOutput)
+}
+
+// GetMetastoresMetastoreLockArrayInput is an input type that accepts GetMetastoresMetastoreLockArray and GetMetastoresMetastoreLockArrayOutput values.
+// You can construct a concrete instance of `GetMetastoresMetastoreLockArrayInput` via:
+//
+//	GetMetastoresMetastoreLockArray{ GetMetastoresMetastoreLockArgs{...} }
+type GetMetastoresMetastoreLockArrayInput interface {
+	pulumi.Input
+
+	ToGetMetastoresMetastoreLockArrayOutput() GetMetastoresMetastoreLockArrayOutput
+	ToGetMetastoresMetastoreLockArrayOutputWithContext(context.Context) GetMetastoresMetastoreLockArrayOutput
+}
+
+type GetMetastoresMetastoreLockArray []GetMetastoresMetastoreLockInput
+
+func (GetMetastoresMetastoreLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetastoresMetastoreLock)(nil)).Elem()
+}
+
+func (i GetMetastoresMetastoreLockArray) ToGetMetastoresMetastoreLockArrayOutput() GetMetastoresMetastoreLockArrayOutput {
+	return i.ToGetMetastoresMetastoreLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetMetastoresMetastoreLockArray) ToGetMetastoresMetastoreLockArrayOutputWithContext(ctx context.Context) GetMetastoresMetastoreLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMetastoresMetastoreLockArrayOutput)
+}
+
+type GetMetastoresMetastoreLockOutput struct{ *pulumi.OutputState }
+
+func (GetMetastoresMetastoreLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMetastoresMetastoreLock)(nil)).Elem()
+}
+
+func (o GetMetastoresMetastoreLockOutput) ToGetMetastoresMetastoreLockOutput() GetMetastoresMetastoreLockOutput {
+	return o
+}
+
+func (o GetMetastoresMetastoreLockOutput) ToGetMetastoresMetastoreLockOutputWithContext(ctx context.Context) GetMetastoresMetastoreLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetMetastoresMetastoreLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetastoresMetastoreLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetMetastoresMetastoreLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetastoresMetastoreLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+func (o GetMetastoresMetastoreLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetastoresMetastoreLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetMetastoresMetastoreLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMetastoresMetastoreLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMetastoresMetastoreLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMetastoresMetastoreLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMetastoresMetastoreLock)(nil)).Elem()
+}
+
+func (o GetMetastoresMetastoreLockArrayOutput) ToGetMetastoresMetastoreLockArrayOutput() GetMetastoresMetastoreLockArrayOutput {
+	return o
+}
+
+func (o GetMetastoresMetastoreLockArrayOutput) ToGetMetastoresMetastoreLockArrayOutputWithContext(ctx context.Context) GetMetastoresMetastoreLockArrayOutput {
+	return o
+}
+
+func (o GetMetastoresMetastoreLockArrayOutput) Index(i pulumi.IntInput) GetMetastoresMetastoreLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMetastoresMetastoreLock {
+		return vs[0].([]GetMetastoresMetastoreLock)[vs[1].(int)]
+	}).(GetMetastoresMetastoreLockOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CatalogLockInput)(nil)).Elem(), CatalogLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CatalogLockArrayInput)(nil)).Elem(), CatalogLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CatalogPrivateEndpointLockInput)(nil)).Elem(), CatalogPrivateEndpointLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CatalogPrivateEndpointLockArrayInput)(nil)).Elem(), CatalogPrivateEndpointLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetastoreLockInput)(nil)).Elem(), MetastoreLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MetastoreLockArrayInput)(nil)).Elem(), MetastoreLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogLockInput)(nil)).Elem(), GetCatalogLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogLockArrayInput)(nil)).Elem(), GetCatalogLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogPrivateEndpointLockInput)(nil)).Elem(), GetCatalogPrivateEndpointLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogPrivateEndpointLockArrayInput)(nil)).Elem(), GetCatalogPrivateEndpointLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogPrivateEndpointsCatalogPrivateEndpointInput)(nil)).Elem(), GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayInput)(nil)).Elem(), GetCatalogPrivateEndpointsCatalogPrivateEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogPrivateEndpointsCatalogPrivateEndpointLockInput)(nil)).Elem(), GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayInput)(nil)).Elem(), GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogPrivateEndpointsFilterInput)(nil)).Elem(), GetCatalogPrivateEndpointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogPrivateEndpointsFilterArrayInput)(nil)).Elem(), GetCatalogPrivateEndpointsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogTypesFilterInput)(nil)).Elem(), GetCatalogTypesFilterArgs{})
@@ -2165,6 +3349,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogTypesTypeCollectionItemArrayInput)(nil)).Elem(), GetCatalogTypesTypeCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogsCatalogInput)(nil)).Elem(), GetCatalogsCatalogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogsCatalogArrayInput)(nil)).Elem(), GetCatalogsCatalogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogsCatalogLockInput)(nil)).Elem(), GetCatalogsCatalogLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogsCatalogLockArrayInput)(nil)).Elem(), GetCatalogsCatalogLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogsFilterInput)(nil)).Elem(), GetCatalogsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCatalogsFilterArrayInput)(nil)).Elem(), GetCatalogsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionInput)(nil)).Elem(), GetConnectionsConnectionCollectionArgs{})
@@ -2179,12 +3365,28 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataAssetsDataAssetCollectionItemArrayInput)(nil)).Elem(), GetDataAssetsDataAssetCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataAssetsFilterInput)(nil)).Elem(), GetDataAssetsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDataAssetsFilterArrayInput)(nil)).Elem(), GetDataAssetsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetastoreLockInput)(nil)).Elem(), GetMetastoreLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetastoreLockArrayInput)(nil)).Elem(), GetMetastoreLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMetastoresFilterInput)(nil)).Elem(), GetMetastoresFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMetastoresFilterArrayInput)(nil)).Elem(), GetMetastoresFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMetastoresMetastoreInput)(nil)).Elem(), GetMetastoresMetastoreArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMetastoresMetastoreArrayInput)(nil)).Elem(), GetMetastoresMetastoreArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetastoresMetastoreLockInput)(nil)).Elem(), GetMetastoresMetastoreLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMetastoresMetastoreLockArrayInput)(nil)).Elem(), GetMetastoresMetastoreLockArray{})
+	pulumi.RegisterOutputType(CatalogLockOutput{})
+	pulumi.RegisterOutputType(CatalogLockArrayOutput{})
+	pulumi.RegisterOutputType(CatalogPrivateEndpointLockOutput{})
+	pulumi.RegisterOutputType(CatalogPrivateEndpointLockArrayOutput{})
+	pulumi.RegisterOutputType(MetastoreLockOutput{})
+	pulumi.RegisterOutputType(MetastoreLockArrayOutput{})
+	pulumi.RegisterOutputType(GetCatalogLockOutput{})
+	pulumi.RegisterOutputType(GetCatalogLockArrayOutput{})
+	pulumi.RegisterOutputType(GetCatalogPrivateEndpointLockOutput{})
+	pulumi.RegisterOutputType(GetCatalogPrivateEndpointLockArrayOutput{})
 	pulumi.RegisterOutputType(GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput{})
 	pulumi.RegisterOutputType(GetCatalogPrivateEndpointsCatalogPrivateEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetCatalogPrivateEndpointsCatalogPrivateEndpointLockOutput{})
+	pulumi.RegisterOutputType(GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArrayOutput{})
 	pulumi.RegisterOutputType(GetCatalogPrivateEndpointsFilterOutput{})
 	pulumi.RegisterOutputType(GetCatalogPrivateEndpointsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetCatalogTypesFilterOutput{})
@@ -2195,6 +3397,8 @@ func init() {
 	pulumi.RegisterOutputType(GetCatalogTypesTypeCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetCatalogsCatalogOutput{})
 	pulumi.RegisterOutputType(GetCatalogsCatalogArrayOutput{})
+	pulumi.RegisterOutputType(GetCatalogsCatalogLockOutput{})
+	pulumi.RegisterOutputType(GetCatalogsCatalogLockArrayOutput{})
 	pulumi.RegisterOutputType(GetCatalogsFilterOutput{})
 	pulumi.RegisterOutputType(GetCatalogsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionOutput{})
@@ -2209,8 +3413,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDataAssetsDataAssetCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDataAssetsFilterOutput{})
 	pulumi.RegisterOutputType(GetDataAssetsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMetastoreLockOutput{})
+	pulumi.RegisterOutputType(GetMetastoreLockArrayOutput{})
 	pulumi.RegisterOutputType(GetMetastoresFilterOutput{})
 	pulumi.RegisterOutputType(GetMetastoresFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMetastoresMetastoreOutput{})
 	pulumi.RegisterOutputType(GetMetastoresMetastoreArrayOutput{})
+	pulumi.RegisterOutputType(GetMetastoresMetastoreLockOutput{})
+	pulumi.RegisterOutputType(GetMetastoresMetastoreLockArrayOutput{})
 }

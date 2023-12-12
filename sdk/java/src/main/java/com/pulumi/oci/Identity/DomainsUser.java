@@ -65,11 +65,11 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Identity.DomainsUser;
  * import com.pulumi.oci.Identity.DomainsUserArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsUserNameArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsUserAddressArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsUserEmailArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsUserEntitlementArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsUserImArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsUserNameArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsUserPhoneNumberArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsUserPhotoArgs;
  * import com.pulumi.oci.Identity.inputs.DomainsUserRoleArgs;
@@ -115,14 +115,6 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testUser = new DomainsUser(&#34;testUser&#34;, DomainsUserArgs.builder()        
  *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
- *             .name(DomainsUserNameArgs.builder()
- *                 .familyName(var_.user_name_family_name())
- *                 .formatted(var_.user_name_formatted())
- *                 .givenName(var_.user_name_given_name())
- *                 .honorificPrefix(var_.user_name_honorific_prefix())
- *                 .honorificSuffix(var_.user_name_honorific_suffix())
- *                 .middleName(var_.user_name_middle_name())
- *                 .build())
  *             .schemas(&#34;urn:ietf:params:scim:schemas:core:2.0:User&#34;)
  *             .userName(&#34;userName&#34;)
  *             .active(var_.user_active())
@@ -168,6 +160,14 @@ import javax.annotation.Nullable;
  *                 .primary(var_.user_ims_primary())
  *                 .build())
  *             .locale(var_.user_locale())
+ *             .name(DomainsUserNameArgs.builder()
+ *                 .familyName(var_.user_name_family_name())
+ *                 .formatted(var_.user_name_formatted())
+ *                 .givenName(var_.user_name_given_name())
+ *                 .honorificPrefix(var_.user_name_honorific_prefix())
+ *                 .honorificSuffix(var_.user_name_honorific_suffix())
+ *                 .middleName(var_.user_name_middle_name())
+ *                 .build())
  *             .nickName(var_.user_nick_name())
  *             .ocid(var_.user_ocid())
  *             .password(var_.user_password())
@@ -354,7 +354,8 @@ import javax.annotation.Nullable;
  *                 .isGroupMembershipNormalized(var_.user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_normalized())
  *                 .isGroupMembershipSyncedToUsersGroups(var_.user_urnietfparamsscimschemasoracleidcsextensionuser_user_is_group_membership_synced_to_users_groups())
  *                 .notificationEmailTemplateId(oci_identity_domains_notification_email_template.test_notification_email_template().id())
- *                 .preferredUiLandingPage(var_.user_urnietfparamsscimschemasoracleidcsextensionuser_user_preferred_ui_landing_page())
+ *                 .preferredUiLandingPage(var_.user_urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user_preferred_ui_landing_page())
+ *                 .serviceUser(var_.user_urn_ietf_params_scim_schemas_oracle_idcs_extension_user_user_service_user())
  *                 .syncedFromApp(DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs.builder()
  *                     .type(var_.user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_type())
  *                     .value(var_.user_urnietfparamsscimschemasoracleidcsextensionuser_user_synced_from_app_value())

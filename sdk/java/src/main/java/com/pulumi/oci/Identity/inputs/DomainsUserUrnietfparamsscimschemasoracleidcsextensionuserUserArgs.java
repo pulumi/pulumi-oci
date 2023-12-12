@@ -699,6 +699,49 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
+     * (Updatable) Indicates if User is a Service User
+     * 
+     * **Added In:** 2306131901
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Service User
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    @Import(name="serviceUser")
+    private @Nullable Output<Boolean> serviceUser;
+
+    /**
+     * @return (Updatable) Indicates if User is a Service User
+     * 
+     * **Added In:** 2306131901
+     * 
+     * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Service User
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+     * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: immutable
+     * * required: false
+     * * returned: default
+     * * type: boolean
+     * * uniqueness: none
+     * 
+     */
+    public Optional<Output<Boolean>> serviceUser() {
+        return Optional.ofNullable(this.serviceUser);
+    }
+
+    /**
      * (Updatable) A supplemental status indicating the reason why a user is disabled
      * 
      * **SCIM++ Properties:**
@@ -947,6 +990,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         this.isGroupMembershipSyncedToUsersGroups = $.isGroupMembershipSyncedToUsersGroups;
         this.notificationEmailTemplateId = $.notificationEmailTemplateId;
         this.preferredUiLandingPage = $.preferredUiLandingPage;
+        this.serviceUser = $.serviceUser;
         this.status = $.status;
         this.supportAccounts = $.supportAccounts;
         this.syncedFromApp = $.syncedFromApp;
@@ -1851,6 +1895,55 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
          */
         public Builder preferredUiLandingPage(String preferredUiLandingPage) {
             return preferredUiLandingPage(Output.of(preferredUiLandingPage));
+        }
+
+        /**
+         * @param serviceUser (Updatable) Indicates if User is a Service User
+         * 
+         * **Added In:** 2306131901
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Service User
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceUser(@Nullable Output<Boolean> serviceUser) {
+            $.serviceUser = serviceUser;
+            return this;
+        }
+
+        /**
+         * @param serviceUser (Updatable) Indicates if User is a Service User
+         * 
+         * **Added In:** 2306131901
+         * 
+         * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Service User
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Service User]]
+         * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: immutable
+         * * required: false
+         * * returned: default
+         * * type: boolean
+         * * uniqueness: none
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceUser(Boolean serviceUser) {
+            return serviceUser(Output.of(serviceUser));
         }
 
         /**

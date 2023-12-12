@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  * const testAwrHub = new oci.opsi.AwrHub("testAwrHub", {
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.awr_hub_display_name,
- *     objectStorageBucketName: oci_objectstorage_bucket.test_bucket.name,
  *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -27,6 +26,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     objectStorageBucketName: oci_objectstorage_bucket.test_bucket.name,
  * });
  * ```
  *
@@ -87,6 +87,10 @@ export class AwrHub extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * Dst Time Zone Version of the AWR Hub
+     */
+    public /*out*/ readonly hubDstTimezoneVersion!: pulumi.Output<string>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -137,6 +141,7 @@ export class AwrHub extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["hubDstTimezoneVersion"] = state ? state.hubDstTimezoneVersion : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["objectStorageBucketName"] = state ? state.objectStorageBucketName : undefined;
             resourceInputs["operationsInsightsWarehouseId"] = state ? state.operationsInsightsWarehouseId : undefined;
@@ -152,9 +157,6 @@ export class AwrHub extends pulumi.CustomResource {
             if ((!args || args.displayName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.objectStorageBucketName === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'objectStorageBucketName'");
-            }
             if ((!args || args.operationsInsightsWarehouseId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'operationsInsightsWarehouseId'");
             }
@@ -165,6 +167,7 @@ export class AwrHub extends pulumi.CustomResource {
             resourceInputs["objectStorageBucketName"] = args ? args.objectStorageBucketName : undefined;
             resourceInputs["operationsInsightsWarehouseId"] = args ? args.operationsInsightsWarehouseId : undefined;
             resourceInputs["awrMailboxUrl"] = undefined /*out*/;
+            resourceInputs["hubDstTimezoneVersion"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -200,6 +203,10 @@ export interface AwrHubState {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * Dst Time Zone Version of the AWR Hub
+     */
+    hubDstTimezoneVersion?: pulumi.Input<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
@@ -257,7 +264,7 @@ export interface AwrHubArgs {
     /**
      * Object Storage Bucket Name
      */
-    objectStorageBucketName: pulumi.Input<string>;
+    objectStorageBucketName?: pulumi.Input<string>;
     /**
      * OPSI Warehouse OCID
      *

@@ -139,7 +139,7 @@ def get_user_assessment_profile_analytics(access_level: Optional[str] = None,
     When you perform the ListProfileAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
     parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
     permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-    root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+    root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
     compartmentId, then "Not Authorized" is returned.
 
     The parameter compartmentIdInSubtree applies when you perform ListProfileAnalytics on the compartmentId passed and when it is
@@ -212,7 +212,7 @@ def get_user_assessment_profile_analytics_output(access_level: Optional[pulumi.I
     When you perform the ListProfileAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
     parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
     permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
-    root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+    root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
     compartmentId, then "Not Authorized" is returned.
 
     The parameter compartmentIdInSubtree applies when you perform ListProfileAnalytics on the compartmentId passed and when it is

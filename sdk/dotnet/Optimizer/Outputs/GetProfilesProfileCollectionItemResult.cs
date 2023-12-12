@@ -49,6 +49,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// A filter that returns results that match the lifecycle state specified.
         /// </summary>
         public readonly string State;
+        public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
         /// Optional. The compartments specified in the profile override for a recommendation.
         /// </summary>
@@ -86,6 +87,8 @@ namespace Pulumi.Oci.Optimizer.Outputs
 
             string state,
 
+            ImmutableDictionary<string, object> systemTags,
+
             ImmutableArray<Outputs.GetProfilesProfileCollectionItemTargetCompartmentResult> targetCompartments,
 
             ImmutableArray<Outputs.GetProfilesProfileCollectionItemTargetTagResult> targetTags,
@@ -103,6 +106,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
             LevelsConfigurations = levelsConfigurations;
             Name = name;
             State = state;
+            SystemTags = systemTags;
             TargetCompartments = targetCompartments;
             TargetTags = targetTags;
             TimeCreated = timeCreated;

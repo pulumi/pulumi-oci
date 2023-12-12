@@ -23,7 +23,7 @@ class GetResourceActionsResult:
     """
     A collection of values returned by getResourceActions.
     """
-    def __init__(__self__, child_tenancy_ids=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, id=None, include_organization=None, name=None, recommendation_id=None, recommendation_name=None, resource_action_collections=None, resource_type=None, state=None, status=None):
+    def __init__(__self__, child_tenancy_ids=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, id=None, include_organization=None, include_resource_metadata=None, name=None, recommendation_id=None, recommendation_name=None, resource_action_collections=None, resource_type=None, state=None, status=None):
         if child_tenancy_ids and not isinstance(child_tenancy_ids, list):
             raise TypeError("Expected argument 'child_tenancy_ids' to be a list")
         pulumi.set(__self__, "child_tenancy_ids", child_tenancy_ids)
@@ -42,6 +42,9 @@ class GetResourceActionsResult:
         if include_organization and not isinstance(include_organization, bool):
             raise TypeError("Expected argument 'include_organization' to be a bool")
         pulumi.set(__self__, "include_organization", include_organization)
+        if include_resource_metadata and not isinstance(include_resource_metadata, bool):
+            raise TypeError("Expected argument 'include_resource_metadata' to be a bool")
+        pulumi.set(__self__, "include_resource_metadata", include_resource_metadata)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -99,6 +102,11 @@ class GetResourceActionsResult:
     @pulumi.getter(name="includeOrganization")
     def include_organization(self) -> Optional[bool]:
         return pulumi.get(self, "include_organization")
+
+    @property
+    @pulumi.getter(name="includeResourceMetadata")
+    def include_resource_metadata(self) -> Optional[bool]:
+        return pulumi.get(self, "include_resource_metadata")
 
     @property
     @pulumi.getter
@@ -166,6 +174,7 @@ class AwaitableGetResourceActionsResult(GetResourceActionsResult):
             filters=self.filters,
             id=self.id,
             include_organization=self.include_organization,
+            include_resource_metadata=self.include_resource_metadata,
             name=self.name,
             recommendation_id=self.recommendation_id,
             recommendation_name=self.recommendation_name,
@@ -180,6 +189,7 @@ def get_resource_actions(child_tenancy_ids: Optional[Sequence[str]] = None,
                          compartment_id_in_subtree: Optional[bool] = None,
                          filters: Optional[Sequence[pulumi.InputType['GetResourceActionsFilterArgs']]] = None,
                          include_organization: Optional[bool] = None,
+                         include_resource_metadata: Optional[bool] = None,
                          name: Optional[str] = None,
                          recommendation_id: Optional[str] = None,
                          recommendation_name: Optional[str] = None,
@@ -202,6 +212,7 @@ def get_resource_actions(child_tenancy_ids: Optional[Sequence[str]] = None,
         compartment_id_in_subtree=var["resource_action_compartment_id_in_subtree"],
         child_tenancy_ids=var["resource_action_child_tenancy_ids"],
         include_organization=var["resource_action_include_organization"],
+        include_resource_metadata=var["resource_action_include_resource_metadata"],
         name=var["resource_action_name"],
         recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
         recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
@@ -227,6 +238,7 @@ def get_resource_actions(child_tenancy_ids: Optional[Sequence[str]] = None,
            Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like  to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate the list with tenancy id of P and A.
            
            When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+    :param bool include_resource_metadata: Supplement additional resource information in extended metadata response.
     :param str name: Optional. A filter that returns results that match the name specified.
     :param str recommendation_id: The unique OCID associated with the recommendation.
     :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
@@ -240,6 +252,7 @@ def get_resource_actions(child_tenancy_ids: Optional[Sequence[str]] = None,
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     __args__['includeOrganization'] = include_organization
+    __args__['includeResourceMetadata'] = include_resource_metadata
     __args__['name'] = name
     __args__['recommendationId'] = recommendation_id
     __args__['recommendationName'] = recommendation_name
@@ -256,6 +269,7 @@ def get_resource_actions(child_tenancy_ids: Optional[Sequence[str]] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         include_organization=pulumi.get(__ret__, 'include_organization'),
+        include_resource_metadata=pulumi.get(__ret__, 'include_resource_metadata'),
         name=pulumi.get(__ret__, 'name'),
         recommendation_id=pulumi.get(__ret__, 'recommendation_id'),
         recommendation_name=pulumi.get(__ret__, 'recommendation_name'),
@@ -271,6 +285,7 @@ def get_resource_actions_output(child_tenancy_ids: Optional[pulumi.Input[Optiona
                                 compartment_id_in_subtree: Optional[pulumi.Input[bool]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetResourceActionsFilterArgs']]]]] = None,
                                 include_organization: Optional[pulumi.Input[Optional[bool]]] = None,
+                                include_resource_metadata: Optional[pulumi.Input[Optional[bool]]] = None,
                                 name: Optional[pulumi.Input[Optional[str]]] = None,
                                 recommendation_id: Optional[pulumi.Input[Optional[str]]] = None,
                                 recommendation_name: Optional[pulumi.Input[Optional[str]]] = None,
@@ -293,6 +308,7 @@ def get_resource_actions_output(child_tenancy_ids: Optional[pulumi.Input[Optiona
         compartment_id_in_subtree=var["resource_action_compartment_id_in_subtree"],
         child_tenancy_ids=var["resource_action_child_tenancy_ids"],
         include_organization=var["resource_action_include_organization"],
+        include_resource_metadata=var["resource_action_include_resource_metadata"],
         name=var["resource_action_name"],
         recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
         recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
@@ -318,6 +334,7 @@ def get_resource_actions_output(child_tenancy_ids: Optional[pulumi.Input[Optiona
            Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like  to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate the list with tenancy id of P and A.
            
            When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
+    :param bool include_resource_metadata: Supplement additional resource information in extended metadata response.
     :param str name: Optional. A filter that returns results that match the name specified.
     :param str recommendation_id: The unique OCID associated with the recommendation.
     :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.

@@ -57,6 +57,7 @@ class AutonomousDatabaseArgs:
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
+                 long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]] = None,
                  max_cpu_core_count: Optional[pulumi.Input[int]] = None,
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -157,6 +158,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]] long_term_backup_schedules: Details for the long-term backup schedule.
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param pulumi.Input[str] ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -300,6 +302,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "license_model", license_model)
         if local_adg_auto_failover_max_data_loss_limit is not None:
             pulumi.set(__self__, "local_adg_auto_failover_max_data_loss_limit", local_adg_auto_failover_max_data_loss_limit)
+        if long_term_backup_schedules is not None:
+            pulumi.set(__self__, "long_term_backup_schedules", long_term_backup_schedules)
         if max_cpu_core_count is not None:
             pulumi.set(__self__, "max_cpu_core_count", max_cpu_core_count)
         if ncharacter_set is not None:
@@ -877,6 +881,18 @@ class AutonomousDatabaseArgs:
     @local_adg_auto_failover_max_data_loss_limit.setter
     def local_adg_auto_failover_max_data_loss_limit(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "local_adg_auto_failover_max_data_loss_limit", value)
+
+    @property
+    @pulumi.getter(name="longTermBackupSchedules")
+    def long_term_backup_schedules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]:
+        """
+        Details for the long-term backup schedule.
+        """
+        return pulumi.get(self, "long_term_backup_schedules")
+
+    @long_term_backup_schedules.setter
+    def long_term_backup_schedules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseLongTermBackupScheduleArgs']]]]):
+        pulumi.set(self, "long_term_backup_schedules", value)
 
     @property
     @pulumi.getter(name="maxCpuCoreCount")
@@ -3385,6 +3401,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
+                 long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLongTermBackupScheduleArgs']]]]] = None,
                  max_cpu_core_count: Optional[pulumi.Input[int]] = None,
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -3499,6 +3516,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adbddoverview.htm), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#AEI), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
         :param pulumi.Input[int] local_adg_auto_failover_max_data_loss_limit: Parameter that allows users to select an acceptable maximum data loss limit in seconds, up to which Automatic Failover will be triggered when necessary for a Local Autonomous Data Guard
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLongTermBackupScheduleArgs']]]] long_term_backup_schedules: Details for the long-term backup schedule.
         :param pulumi.Input[int] max_cpu_core_count: (Updatable) The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
         :param pulumi.Input[str] ncharacter_set: The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -3637,6 +3655,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
                  local_adg_auto_failover_max_data_loss_limit: Optional[pulumi.Input[int]] = None,
+                 long_term_backup_schedules: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseLongTermBackupScheduleArgs']]]]] = None,
                  max_cpu_core_count: Optional[pulumi.Input[int]] = None,
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -3719,6 +3738,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["license_model"] = license_model
             __props__.__dict__["local_adg_auto_failover_max_data_loss_limit"] = local_adg_auto_failover_max_data_loss_limit
+            __props__.__dict__["long_term_backup_schedules"] = long_term_backup_schedules
             __props__.__dict__["max_cpu_core_count"] = max_cpu_core_count
             __props__.__dict__["ncharacter_set"] = ncharacter_set
             __props__.__dict__["nsg_ids"] = nsg_ids
@@ -3770,7 +3790,6 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["local_disaster_recovery_type"] = None
             __props__.__dict__["local_standby_dbs"] = None
-            __props__.__dict__["long_term_backup_schedules"] = None
             __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = None
             __props__.__dict__["next_long_term_backup_time_stamp"] = None
             __props__.__dict__["peer_db_ids"] = None
